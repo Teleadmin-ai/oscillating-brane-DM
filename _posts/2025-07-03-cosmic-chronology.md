@@ -4,7 +4,6 @@ title: "Cosmic Chronology: From Inflation to the Current Beat"
 date: 2025-07-03
 author: Oscillating Brane Theory Team
 tags: [cosmology, evolution, big-bang, inflation]
-show_videos: false
 ---
 
 In our framework, the cosmic membrane has evolved dramatically from its violent birth to its current gentle oscillation. This chronology reveals how the universe tuned itself to play its fundamental melody.

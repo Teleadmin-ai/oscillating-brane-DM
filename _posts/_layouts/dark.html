@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+    <link rel="stylesheet" href="{{ "/assets/css/dark-theme.css?v=" | append: site.github.build_revision | relative_url }}">
+    
+    <!-- MathJax for equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    {% feed_meta %}
+    {% seo %}
+</head>
+<body class="dark-theme">
+    <div class="main-container">
+        <header class="site-header">
+            <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+            {% if site.subtitle %}
+                <p class="subtitle">{{ site.subtitle }}</p>
+            {% endif %}
+            <nav>
+                <ul>
+                    {% for item in site.navigation %}
+                        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="text-column">
+                <div class="text-content">
+                    {{ content }}
+                </div>
+            </div>
+            
+            <div class="video-column">
+                <div class="video-carousel-container">
+                    <div class="video-carousel">
+                        <!-- Video 1: Cosmic Dance Introduction -->
+                        <div class="video-slide active" data-section="intro">
+                            <video autoplay muted loop playsinline>
+                                <source src="{{ '/assets/videos/20250703_0202_Cosmic Dance of Light_storyboard_01jz6sfb9yfy0acsxmn1zsmbjd.mp4' | relative_url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Video 2: Cosmic Sphere Theory -->
+                        <div class="video-slide" data-section="theory">
+                            <video autoplay muted loop playsinline>
+                                <source src="{{ '/assets/videos/20250703_0218_Cosmic Sphere Dance_storyboard_01jz6tbyv3ed0a5nhqpt4b09ck.mp4' | relative_url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Video 3: Dark Matter Yo-Yo -->
+                        <div class="video-slide" data-section="excitation">
+                            <video autoplay muted loop playsinline>
+                                <source src="{{ '/assets/videos/20250703_1411_Dark Matter Yo-Yo_storyboard_01jz835zypec4b3s7757stjr50.mp4' | relative_url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Video 4: Cosmic Evolution -->
+                        <div class="video-slide" data-section="chronology">
+                            <video autoplay muted loop playsinline>
+                                <source src="{{ '/assets/videos/20250703_1403_Cosmic Dance of Light_storyboard_01jz82p96ke29v6dvswtqqwk0g.mp4' | relative_url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Video 5: Cosmic Unveiling -->
+                        <div class="video-slide" data-section="oscillations">
+                            <video autoplay muted loop playsinline>
+                                <source src="{{ '/assets/videos/20250703_1416_Cosmic Unveiling_storyboard_01jz83ex9jfq4r97t8fdbg7sbv.mp4' | relative_url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <!-- Video 6: Final Cosmic Dance -->
+                        <div class="video-slide" data-section="predictions">
+                            <video autoplay muted loop playsinline>
+                                <source src="{{ '/assets/videos/20250703_1421_Cosmic Dance of Light_storyboard_01jz83rrt2fhzaezjz0d8797n7.mp4' | relative_url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ "/assets/js/video-carousel.js?v=" | append: site.github.build_revision | relative_url }}"></script>
+</body>
+</html>
