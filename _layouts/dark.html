@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+    <link rel="stylesheet" href="{{ "/assets/css/dark-theme.css?v=" | append: site.github.build_revision | relative_url }}">
+    
+    <!-- MathJax for equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    {% feed_meta %}
+    {% seo %}
+</head>
+<body class="dark-theme">
+    <div class="main-container">
+        <header class="site-header">
+            <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+            {% if site.subtitle %}
+                <p class="subtitle">{{ site.subtitle }}</p>
+            {% endif %}
+            <nav>
+                <ul>
+                    {% for item in site.navigation %}
+                        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="text-column">
+                <div class="text-content">
+                    {{ content }}
+                </div>
+            </div>
+            
+            <div class="video-column">
+                <div class="video-carousel-container">
+                    <div class="video-carousel">
+                        <!-- Video 1: Introduction -->
+                        <div class="video-slide active" data-section="intro">
+                            <iframe src="https://www.youtube.com/embed/yyFwoLVYzPI?autoplay=1&mute=1&loop=1&playlist=yyFwoLVYzPI&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        
+                        <!-- Video 2: Membrane Theory -->
+                        <div class="video-slide" data-section="theory">
+                            <iframe src="https://www.youtube.com/embed/SL0Z3sOkPt8?autoplay=1&mute=1&loop=1&playlist=SL0Z3sOkPt8&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        
+                        <!-- Video 3: Dark Matter Flow -->
+                        <div class="video-slide" data-section="excitation">
+                            <iframe src="https://www.youtube.com/embed/_kOGPBBS94U?autoplay=1&mute=1&loop=1&playlist=_kOGPBBS94U&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        
+                        <!-- Video 4: Cosmic Evolution -->
+                        <div class="video-slide" data-section="chronology">
+                            <iframe src="https://www.youtube.com/embed/r2okQnpdd-E?autoplay=1&mute=1&loop=1&playlist=r2okQnpdd-E&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        
+                        <!-- Video 5: Oscillations -->
+                        <div class="video-slide" data-section="oscillations">
+                            <iframe src="https://www.youtube.com/embed/_NtDTNmcJhI?autoplay=1&mute=1&loop=1&playlist=_NtDTNmcJhI&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        
+                        <!-- Video 6: Predictions -->
+                        <div class="video-slide" data-section="predictions">
+                            <iframe src="https://www.youtube.com/embed/ouATc1kTi_Q?autoplay=1&mute=1&loop=1&playlist=ouATc1kTi_Q&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        
+                        <!-- Video 7: Observations -->
+                        <div class="video-slide" data-section="observations">
+                            <iframe src="https://www.youtube.com/embed/R7hkFHXGwv4?autoplay=1&mute=1&loop=1&playlist=R7hkFHXGwv4&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        
+                        <!-- Video 8: Future -->
+                        <div class="video-slide" data-section="future">
+                            <iframe src="https://www.youtube.com/embed/F7fDq39e-XQ?autoplay=1&mute=1&loop=1&playlist=F7fDq39e-XQ&controls=0&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ "/assets/js/video-carousel.js?v=" | append: site.github.build_revision | relative_url }}"></script>
+</body>
+</html>
