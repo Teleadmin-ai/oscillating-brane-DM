@@ -49,13 +49,9 @@
     
     // Add invisible markers to content for section detection
     function addSectionMarkers() {
-        const headers = textContent.querySelectorAll('h2');
-        headers.forEach((header, index) => {
-            if (index < sectionMap.length) {
-                header.classList.add('section-marker');
-                header.dataset.section = sectionMap[index].id;
-            }
-        });
+        // Markers are already in HTML, just ensure they're visible to observer
+        const markers = document.querySelectorAll('.section-marker');
+        console.log(`Found ${markers.length} section markers`);
     }
     
     // Handle scroll events
@@ -126,16 +122,17 @@
     function setupIntersectionObserver() {
         const options = {
             root: document.querySelector('.text-column'),
-            rootMargin: '-40% 0px -40% 0px',
+            rootMargin: '-30% 0px -60% 0px',
             threshold: 0
         };
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !isTransitioning) {
                     const sectionId = entry.target.dataset.section;
                     const section = sectionMap.find(s => s.id === sectionId);
-                    if (section) {
+                    if (section && section.videoIndex !== currentVideoIndex) {
+                        console.log(`Section ${sectionId} is visible, switching to video ${section.videoIndex}`);
                         transitionToVideo(section.videoIndex);
                     }
                 }
@@ -143,9 +140,13 @@
         }, options);
         
         // Observe all section markers
-        document.querySelectorAll('.section-marker').forEach(marker => {
-            observer.observe(marker);
-        });
+        setTimeout(() => {
+            const markers = document.querySelectorAll('.section-marker');
+            markers.forEach(marker => {
+                observer.observe(marker);
+                console.log(`Observing section: ${marker.dataset.section}`);
+            });
+        }, 100);
     }
     
     // Keyboard navigation

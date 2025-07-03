@@ -62,36 +62,21 @@ Our theory presents a paradigm shift in understanding cosmic dynamics:
   </article>
 {% endfor %}
 
-<style>
-.hero-section {
-  margin: 2em 0;
-  padding: 2em;
-  background: #f8f9fa;
-  border-radius: 8px;
-}
+<div class="section-marker" data-section="chronology"></div>
 
-.key-predictions table {
-  width: 100%;
-  border-collapse: collapse;
-}
+## Cosmic Evolution
 
-.key-predictions td {
-  padding: 0.5em;
-  border-bottom: 1px solid #dee2e6;
-}
+The universe began with a violent birth, the brane appearing with quasi-Planckian tension. Through phases of inflation, reheating, and slow stabilization, it found its natural frequency and began its two-billion-year oscillation.
 
-.post-preview {
-  margin: 2em 0;
-  padding-bottom: 1em;
-  border-bottom: 1px solid #eee;
-}
+<div class="section-marker" data-section="oscillations"></div>
 
-.post-preview h3 {
-  margin-bottom: 0.3em;
-}
+## The Oscillating Universe
 
-.post-preview time {
-  color: #666;
-  font-size: 0.9em;
-}
-</style>
+Every two billion years, the cosmic membrane completes one full cycle. This oscillation creates the dark energy we observe, modulates structure formation, and leaves its fingerprint in the cosmic microwave background.
+
+<div class="section-marker" data-section="predictions"></div>
+
+## Future Tests
+
+The coming decade will be decisive. Euclid will measure the dark energy equation of state with unprecedented precision. DESI will map the power spectrum modulation. Pulsar timing arrays will search for our gravitational wave signature.
+
