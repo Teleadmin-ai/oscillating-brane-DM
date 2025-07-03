@@ -1,5 +1,5 @@
 ---
-layout: dark
+layout: post
 title: "The Universe as a Vibrating Membrane"
 date: 2025-07-03
 author: Oscillating Brane Theory Team
