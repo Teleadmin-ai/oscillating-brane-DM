@@ -1,5 +1,5 @@
 ---
-layout: dark
+layout: page
 title: Observational Predictions
 permalink: /predictions/
 ---

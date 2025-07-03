@@ -1,6 +1,7 @@
 ---
-layout: dark
+layout: home
 title: Home
+show_videos: true
 ---
 
 # Welcome to Oscillating Brane Cosmology
