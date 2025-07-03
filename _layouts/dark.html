@@ -24,6 +24,9 @@
             {% if site.subtitle %}
                 <p class="subtitle">{{ site.subtitle }}</p>
             {% endif %}
+            <div style="position: absolute; top: 20px; right: 40px; font-size: 0.8rem;">
+                <a href="#" onclick="alert('This theoretical framework was developed as an intellectual exploration using AI assistance. While the mathematical formalism is internally consistent and makes testable predictions, it represents a personal curiosity project rather than peer-reviewed science. We humbly invite professional physicists to examine these ideas.'); return false;" style="color: #999; text-decoration: underline;">Disclaimer</a>
+            </div>
             <nav>
                 <ul>
                     {% for item in site.navigation %}
