@@ -30,12 +30,21 @@
     function init() {
         videoSlides[0].classList.add('active');
         
+        // Ensure first video plays
+        const firstVideo = videoSlides[0].querySelector('video');
+        if (firstVideo) {
+            firstVideo.play();
+        }
+        
         // Add section markers to content for scroll detection
         addSectionMarkers();
         
         // Set up scroll listener
         const textColumn = document.querySelector('.text-column');
         textColumn.addEventListener('scroll', handleScroll);
+        
+        // Also set up intersection observer for better detection
+        setupIntersectionObserver();
     }
     
     // Add invisible markers to content for section detection
@@ -57,25 +66,20 @@
         const scrollHeight = e.target.scrollHeight;
         const clientHeight = e.target.clientHeight;
         
-        // Calculate scroll percentage
-        const scrollPercentage = scrollTop / (scrollHeight - clientHeight);
+        // Calculate scroll percentage (0 to 1)
+        const scrollPercentage = Math.min(1, Math.max(0, scrollTop / Math.max(1, scrollHeight - clientHeight)));
         
-        // Determine which video should be showing
-        let targetVideoIndex = 0;
+        // Determine which video should be showing based on percentage
+        const videoCount = sectionMap.length;
+        const sectionSize = 1 / videoCount;
+        let targetVideoIndex = Math.floor(scrollPercentage / sectionSize);
         
-        // Find the appropriate video based on scroll position
-        for (let i = sectionMap.length - 1; i >= 0; i--) {
-            const section = sectionMap[i];
-            const sectionScrollPercentage = section.scrollPosition / (scrollHeight - clientHeight);
-            
-            if (scrollPercentage >= sectionScrollPercentage * 0.8) { // Trigger slightly before
-                targetVideoIndex = section.videoIndex;
-                break;
-            }
-        }
+        // Ensure we don't exceed the last video
+        targetVideoIndex = Math.min(targetVideoIndex, videoCount - 1);
         
         // Change video if needed
         if (targetVideoIndex !== currentVideoIndex) {
+            console.log(`Changing from video ${currentVideoIndex} to ${targetVideoIndex} at scroll ${Math.round(scrollPercentage * 100)}%`);
             transitionToVideo(targetVideoIndex);
         }
     }

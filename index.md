@@ -5,6 +5,8 @@ title: Home
 
 # Welcome to Oscillating Brane Cosmology
 
+<div class="section-marker" data-section="intro"></div>
+
 ## The Universe as a Vibrating Cosmic Membrane
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—floats in an ocean of hidden dimensions.
@@ -37,6 +39,8 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
   </div>
 </div>
 
+<div class="section-marker" data-section="theory"></div>
+
 ## Revolutionary Insights
 
 Our theory presents a paradigm shift in understanding cosmic dynamics:
@@ -45,6 +49,8 @@ Our theory presents a paradigm shift in understanding cosmic dynamics:
 - **Dark matter** is the invisible bow that vibrates this giant harp
 - **Dark energy** emerges naturally from membrane oscillations
 - **Modified gravity** appears at cosmic scales without new particles
+
+<div class="section-marker" data-section="excitation"></div>
 
 ## Recent Posts
 
