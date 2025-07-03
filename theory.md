@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Theory
+title: Complete Theoretical Framework
 permalink: /theory/
 ---
-
-# Complete Theoretical Framework
 
 The oscillating brane dark matter theory represents a paradigm shift in our understanding of the cosmos. Here we present the complete mathematical framework and physical insights.
 

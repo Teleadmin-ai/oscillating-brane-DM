@@ -1,10 +1,8 @@
 ---
 layout: page
-title: About
+title: About the Oscillating Brane Theory
 permalink: /about/
 ---
-
-# About the Oscillating Brane Theory
 
 ## The Vision
 

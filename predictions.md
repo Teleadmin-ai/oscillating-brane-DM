@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Predictions
+title: Observational Predictions
 permalink: /predictions/
 ---
-
-# Observational Predictions
 
 The oscillating brane theory makes specific, testable predictions that distinguish it from standard cosmology. Here we summarize the key observables and upcoming tests.
 

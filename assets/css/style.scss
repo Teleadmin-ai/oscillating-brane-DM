@@ -21,6 +21,7 @@ header {
   background: #f8f9fa;
   padding: 20px 0;
   margin-bottom: 30px;
+  position: relative; /* Ensure header doesn't overlap content */
 }
 
 header h1 {
@@ -30,6 +31,17 @@ header h1 {
 header p {
   color: #666;
   font-size: 1.1em;
+}
+
+/* Page header */
+.page-header {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.page-title {
+  margin-top: 0;
 }
 
 /* Navigation */
