@@ -9,7 +9,7 @@ url: "https://teleadmin-ai.github.io"
 author: Oscillating Brane Theory Team
 
 # Build settings
-theme: minima
+theme: jekyll-theme-minimal
 markdown: kramdown
 highlighter: rouge
 

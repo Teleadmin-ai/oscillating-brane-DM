@@ -1,0 +1,162 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom styles for Oscillating Brane blog */
+
+/* Base overrides */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.wrapper {
+  max-width: 900px;
+}
+
+/* Header styling */
+header {
+  background: #f8f9fa;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #666;
+  font-size: 1.1em;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #267CB9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+section {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+/* Hero section */
+.hero-section {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 30px 0;
+}
+
+.key-predictions h3 {
+  color: #267CB9;
+  margin-bottom: 15px;
+}
+
+/* Post previews */
+.post-preview {
+  margin: 30px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.post-preview h3 {
+  margin-bottom: 5px;
+}
+
+.post-preview time {
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Code blocks */
+pre {
+  background-color: #f6f8fa;
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  border-radius: 6px;
+}
+
+code {
+  background-color: rgba(27,31,35,.05);
+  padding: 0.2em 0.4em;
+  font-size: 85%;
+  border-radius: 3px;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #267CB9;
+  padding-left: 20px;
+  margin-left: 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* Math display */
+.MathJax {
+  font-size: 1.1em !important;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  nav li {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  section {
+    padding: 20px;
+  }
+  
+  table {
+    font-size: 14px;
+  }
+}
