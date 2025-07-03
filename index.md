@@ -5,6 +5,11 @@ title: Home
 
 # Welcome to Oscillating Brane Cosmology
 
+<div class="disclaimer-box" style="background: #f0f0f0; border: 2px solid #333; padding: 20px; margin: 20px 0; border-radius: 8px;">
+<h4>Important Note</h4>
+<p>This theoretical framework was developed as an intellectual exploration using AI assistance. While the mathematical formalism is internally consistent and makes testable predictions, it represents a personal curiosity project rather than peer-reviewed science. We humbly invite professional physicists to examine these ideas, given their profound implications if validated. Your expert assessment would be invaluable in determining whether this framework warrants serious scientific investigation.</p>
+</div>
+
 <div class="section-marker" data-section="intro"></div>
 
 ## The Universe as a Vibrating Cosmic Membrane
