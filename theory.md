@@ -19,6 +19,17 @@ The entire universe vibrates as a single entity with a period of approximately 2
 
 ## Mathematical Framework
 
+### Microscopic Excitation
+
+The surface pressure induced by dark matter impacts writes:
+
+$$\Pi(t) = \sum_i \dot{N}_i m_{MN} v_{\perp} \simeq f_{osc} \rho_{DM} v_{\perp}^2 [1 + \sin(\omega_0 t)]$$
+
+Key features:
+- **Coherent phase**: Bulk crossing time ≪ 1 Gyr ensures identical phase across the sky
+- **ℓ=0 selectivity**: The coupling integral $$\int Y_{\ell m} d\Omega$$ vanishes for ℓ > 0
+- **Fundamental mode dominance**: Only the spherically symmetric mode is excited
+
 ### Energy of the Membrane
 
 The deformation energy of the cosmic membrane is:
@@ -44,6 +55,27 @@ With amplitude A_w ≃ 0.003 and period T = 2.0 Gyr.
 At low accelerations, the membrane's properties create MOND-like effects:
 
 $$a_0 = \frac{cH_0}{2π} × ξ ≃ 1.1 × 10^{-10} \text{ m/s}^2$$
+
+## Stability and Higher Resonances
+
+### Mode Damping Analysis
+
+The coupling factor for higher modes scales as:
+
+$$g_{\ell} \propto [\omega_{\ell}^2 - \omega_0^2]^{-1}$$
+
+For the ℓ=2 mode: $$g_2/g_0 \sim (3\omega_0^2)^{-1} \approx 0.11$$
+
+With Kelvin-Voigt damping γ ~ 10⁻² Gyr⁻¹:
+- Fundamental mode Q-factor: Q₀ > 200
+- First harmonic: Q₁ < 4
+- **Result**: The fundamental mode dominates by factor > 50
+
+### Why Only ℓ=0 Survives
+
+1. **Geometric coupling**: Dark matter flux is isotropic, coupling only to spherically symmetric modes
+2. **Damping hierarchy**: Higher modes experience stronger dissipation
+3. **Energy cascade**: Non-linear interactions transfer energy to ℓ=0
 
 ## Key Predictions
 

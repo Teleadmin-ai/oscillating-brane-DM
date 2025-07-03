@@ -29,6 +29,8 @@ navigation:
     url: /
   - title: Theory
     url: /theory/
+  - title: Chronology
+    url: /chronology/
   - title: Predictions
     url: /predictions/
   - title: Tools
