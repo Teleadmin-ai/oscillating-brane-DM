@@ -93,4 +93,4 @@ For questions or collaborations, please open an issue or contact the maintainers
 
 ---
 
-*"Space is not a stage; it is the string that vibrates and generates the gravitational melody of the cosmos. Every dark matter particle is a note, every black hole a finger on the string, and we—conscious stardust—are the rare privileged listeners of this two-billion-year symphony."*
+*"Space is not a stage; it is the string that vibrates and generates the gravitational melody of the cosmos. Every dark matter particle is a note, every black hole a finger on the string, and we—conscious stardust—are the rare privileged listeners of this two-billion-year symphony."*# Enable GitHub Pages
