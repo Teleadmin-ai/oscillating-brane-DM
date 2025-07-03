@@ -1,5 +1,5 @@
 ---
-layout: dark
+layout: page
 title: Complete Theoretical Framework
 permalink: /theory/
 ---

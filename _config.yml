@@ -43,6 +43,14 @@ twitter_username:
 # Analytics (optional)
 google_analytics: 
 
+# Default layout for all pages
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      theme_class: "dark-theme"
+
 # Exclude from build
 exclude:
   - scripts/
