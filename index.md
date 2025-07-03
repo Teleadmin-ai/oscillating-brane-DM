@@ -1,7 +1,6 @@
 ---
-layout: home
+layout: default
 title: Home
-show_videos: true
 ---
 
 # Welcome to Oscillating Brane Cosmology

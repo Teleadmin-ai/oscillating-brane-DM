@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Cosmic Chronology: From Inflation to the Current Beat"
 date: 2025-07-03
 author: Oscillating Brane Theory Team

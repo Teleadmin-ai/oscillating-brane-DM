@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Experimental Tests: Where to Seek the Truth"
 date: 2025-07-03
 author: Oscillating Brane Theory Team
