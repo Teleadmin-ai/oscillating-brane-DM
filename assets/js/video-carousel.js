@@ -16,16 +16,14 @@
     let currentVideoIndex = 0;
     let isTransitioning = false;
     
-    // Section markers for video changes
+    // Section markers for video changes (6 videos now)
     const sectionMap = [
         { id: 'intro', videoIndex: 0, scrollPosition: 0 },
         { id: 'theory', videoIndex: 1, scrollPosition: 800 },
         { id: 'excitation', videoIndex: 2, scrollPosition: 1600 },
         { id: 'chronology', videoIndex: 3, scrollPosition: 2400 },
         { id: 'oscillations', videoIndex: 4, scrollPosition: 3200 },
-        { id: 'predictions', videoIndex: 5, scrollPosition: 4000 },
-        { id: 'observations', videoIndex: 6, scrollPosition: 4800 },
-        { id: 'future', videoIndex: 7, scrollPosition: 5600 }
+        { id: 'predictions', videoIndex: 5, scrollPosition: 4000 }
     ];
     
     // Initialize first video
@@ -97,6 +95,13 @@
             // Switch videos during black screen
             currentSlide.classList.remove('active');
             newSlide.classList.add('active');
+            
+            // Ensure new video starts playing
+            const newVideo = newSlide.querySelector('video');
+            if (newVideo) {
+                newVideo.currentTime = 0;
+                newVideo.play();
+            }
             
             // Update current index
             currentVideoIndex = newIndex;
