@@ -4,6 +4,7 @@ title: "Experimental Tests: Where to Seek the Truth"
 date: 2025-07-03
 author: Oscillating Brane Theory Team
 tags: [predictions, experiments, observations]
+show_videos: false
 ---
 
 The oscillating brane theory makes specific, quantitative predictions across multiple observational channels. The coming decade will either confirm a revolutionary new understanding of cosmic dynamics or definitively rule it out.

@@ -4,6 +4,7 @@ title: "How Dark Matter Makes the Universe Vibrate"
 date: 2025-07-03
 author: Oscillating Brane Theory Team
 tags: [dark-matter, mechanics, gravitational-funnels]
+show_videos: false
 ---
 
 But how, concretely, does dark matter excite this gigantic membrane? Each dark matter particle crossing a funnel follows a precise ballet that creates the cosmic symphony we observe.

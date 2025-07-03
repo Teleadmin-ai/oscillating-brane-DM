@@ -328,6 +328,21 @@ li {
   font-size: 0.9em;
 }
 
+/* Simple container for posts */
+.simple-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.simple-content {
+  margin-top: 40px;
+  padding: 40px;
+  background: rgba(10, 10, 10, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Responsive design */
 @media (max-width: 1200px) {
   .content-wrapper {
