@@ -1,0 +1,55 @@
+# Site settings
+title: Oscillating Brane Cosmology
+subtitle: The Universe as a Vibrating Membrane
+description: >-
+  A revolutionary theory where dark matter flows through gravitational funnels
+  create cosmic oscillations, explaining dark energy and modified gravity.
+baseurl: "/oscillating-brane-DM"
+url: "https://teleadmin-ai.github.io"
+author: Oscillating Brane Theory Team
+
+# Build settings
+theme: minima
+markdown: kramdown
+highlighter: rouge
+
+# Math support
+kramdown:
+  math_engine: mathjax
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Theory
+    url: /theory/
+  - title: Predictions
+    url: /predictions/
+  - title: Tools
+    url: /tools/
+  - title: About
+    url: /about/
+
+# Social
+github_username: Teleadmin-ai
+twitter_username: 
+
+# Analytics (optional)
+google_analytics: 
+
+# Exclude from build
+exclude:
+  - scripts/
+  - data/
+  - notebooks/
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - *.py
+  - *.npz
