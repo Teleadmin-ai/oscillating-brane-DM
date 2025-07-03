@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How Dark Matter Makes the Universe Vibrate"
-date: 2024-01-16
+date: 2025-07-03
 author: Oscillating Brane Theory Team
 tags: [dark-matter, mechanics, gravitational-funnels]
 ---

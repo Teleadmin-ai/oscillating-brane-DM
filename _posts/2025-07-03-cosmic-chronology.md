@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cosmic Chronology: From Inflation to the Current Beat"
-date: 2024-01-17
+date: 2025-07-03
 author: Oscillating Brane Theory Team
 tags: [cosmology, evolution, big-bang, inflation]
 ---
