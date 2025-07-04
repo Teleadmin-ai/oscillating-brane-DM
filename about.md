@@ -59,7 +59,7 @@ This theoretical framework was developed as a personal intellectual exploration 
 - Modified gravity theories
 - Precision cosmological measurements
 
-This specific synthesis and its predictions are original work developed through curiosity-driven research using AI tools. We welcome professional physicists to examine and potentially validate these ideas.
+This specific synthesis and its predictions are original work developed through curiosity-driven research using AI tools. We welcome professional physicists to examine and potentially validate or invalidate these ideas so that we may progress in our understanding.
 
 ---
 
