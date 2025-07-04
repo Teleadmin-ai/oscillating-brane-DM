@@ -84,6 +84,30 @@ With Kelvin-Voigt damping γ ~ 10⁻² Gyr⁻¹:
 3. **Growth suppression** reconciling Planck and weak lensing
 4. **Hubble anisotropy** mapping cosmic tension variations
 
+## Role of Primordial Black Holes
+
+### PBH Contribution (Ω_PBH ≲ 10⁻⁴)
+
+Primordial black holes, if present, could enhance the oscillation mechanism:
+
+**Key Parameters:**
+- PBH mass: ~10⁻¹² M_⊙ 
+- Funnel radius: ~30 nm (comparable to L)
+- Required density: >10⁻⁵ Mpc⁻³
+
+**Effects on Theory:**
+- Increases f_osc from 0.10 to 0.15 (50% enhancement)
+- Amplifies A_w by ~30%
+- Creates additional structure in BAO modulation
+
+**Observational Test:**
+The enhanced oscillation amplitude would be detectable through:
+- Stronger BAO peak modulation
+- Modified matter power spectrum at k ~ 0.1 Mpc⁻¹
+- Distinct pattern in weak lensing cross-correlations
+
+This provides a direct probe of sub-stellar mass PBHs that are otherwise undetectable.
+
 ## Further Reading
 
 - [Introduction to the Universe as a Membrane]({{ site.baseurl }}{% post_url 2024-01-15-introduction-universe-membrane %})

@@ -42,11 +42,18 @@ The membrane oscillation creates a time-varying equation of state:
 
 ### 2. Gravitational Wave Background
 
-The membrane reversal creates a unique GW signature:
+The membrane reversal creates a unique GW signature with an echo effect:
 
 - **Fundamental**: f₀ = 1.6 × 10⁻¹⁷ Hz
-- **Harmonic**: 2f₀ from flux reversal
-- **Strain**: h_c ~ 2 × 10⁻¹⁸
+- **Echo**: 2f₀ from flux reversal at membrane extrema
+- **Strain**: h_c ~ 2 × 10⁻¹⁸ at f₀, ~ 10⁻¹⁸ at 2f₀
+
+![PTA Doublet Signature](/plots/pta_doublet.png)
+
+This doublet structure is a smoking gun for brane oscillations:
+- The fundamental frequency tracks the membrane oscillation period
+- The echo at 2f₀ arises from dark matter flux reversal
+- No other cosmological mechanism produces this specific pattern
 
 **Detection**: Requires coherent signal over ≥5 cycles, achievable with SKA-PTA + LISA.
 
