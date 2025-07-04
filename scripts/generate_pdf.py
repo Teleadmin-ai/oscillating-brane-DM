@@ -265,8 +265,8 @@ class PDFGenerator:
         # Remove front matter
         content = re.sub(r"^---\s*\n.*?\n---\s*\n", "", content, flags=re.DOTALL)
 
-        # Convert Unicode to LaTeX - DISABLED to let XeLaTeX handle it
-        # content = self.convert_unicode_to_latex(content)
+        # Clean Unicode artifacts (only problematic ligatures, not math symbols)
+        content = self.clean_unicode_artifacts(content)
 
         # Fix image paths to be absolute
         # Replace relative paths like /plots/image.png with absolute paths
