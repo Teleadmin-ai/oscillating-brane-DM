@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -33,7 +33,7 @@ jobs:
         python scripts/brane_oscillation_1d.py
     
     - name: Upload plots
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: simulation-plots
         path: plots/*.png
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
@@ -60,7 +60,7 @@ jobs:
         bundle exec jekyll build
     
     - name: Upload site artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: jekyll-site
         path: _site/
@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -91,7 +91,7 @@ jobs:
         python scripts/generate_pdf.py
     
     - name: Upload PDF
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: theory-pdf
         path: output/*.pdf
