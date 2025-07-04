@@ -87,9 +87,9 @@ But how, concretely, does dark matter excite this gigantic membrane? Each dark m
 2. **Journey**: It travels a short geodesic in the bulk
 3. **Return**: It re-impacts the brane near another funnel
 
-This return deposits a momentum "hit" δp ~ m_MN × v_⊥ radially opposite to the outgoing flux. The surface density of these impacts, summed over all black holes, creates a periodic pressure:
+This return deposits a momentum "hit" δp ~ m_DM × v_⊥ radially opposite to the outgoing flux. The surface density of these impacts, summed over all black holes, creates a periodic pressure:
 
-Π(t) = Σᵢ Ṅᵢ m_MN v_⊥ ≃ f_osc ρ_DM v_⊥²
+Π(t) = Σᵢ Ṅᵢ m_DM v_⊥ ≃ f_osc ρ_DM v_⊥²
 
 The miracle: In the limit where the bulk crossing time is very short compared to period T, this pressure Π(t) becomes quasi-sinusoidal. Even more remarkable, it selectively couples to the fundamental mode (ℓ = 0) because all funnels share the same topology toward the bulk-point—the phase is identical across the entire surface!
 
