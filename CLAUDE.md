@@ -107,6 +107,11 @@ The repository includes comprehensive computational tools:
 
 ## Recent Updates and Known Issues
 
+### Version 4.0.3 Documentation Update (2025-07-04)
+- **Complete Theory page**: Added front-matter to make theory_v4_complete.md visible at /theory-complete/
+- **Navigation**: Added "Complete Theory" to main menu
+- **English abstract**: Added for international readers
+
 ### Version 4.0.2 Editorial Corrections (2025-07-04)
 Following comprehensive o3 pro audit:
 - **H₀ anisotropy**: Harmonized to ~0.01% (was inconsistently showing 1.5%)

@@ -1,3 +1,27 @@
+---
+layout: dark
+title: "Complete Theory v4.0 – Oscillating-Brane Cosmology"
+permalink: /theory-complete/
+description: |
+  Full derivation of the membrane-vibration model (τ₀ = 7×10¹⁹ J/m², T ≈ 2 Gyr),
+  including microscopic excitation by dark-matter flux and stability analysis.
+---
+
+> **English Abstract**
+> 
+> This page presents the full, unabridged v4.0 write-up of the oscillating-brane cosmology theory. 
+> It demonstrates how a 7×10¹⁹ J/m² brane tension and a 10% oscillating dark-matter fraction yield 
+> a 2 Gyr global membrane mode, driving both evolving dark energy (w oscillating ±0.3% around -1) 
+> and an emergent MOND acceleration a₀ ≈ 1.1×10⁻¹⁰ m/s². 
+> 
+> Key sections include:
+> - Microscopic excitation mechanism via gravitational funnels
+> - Global mode dominance and stability analysis  
+> - Cosmic chronology from inflation to present oscillations
+> - Testable predictions for DESI, Euclid, and PTA
+> 
+> *Note: The main text is in French. For English content, see the [main theory page](/theory/).*
+
 # Oscillations de la matière noire et genèse dynamique de l'énergie sombre via les entonnoirs gravitationnels convergents
 
 ## Version 4.0 — Le cosmos comme membrane vibrante (édition complète)

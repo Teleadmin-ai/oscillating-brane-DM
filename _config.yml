@@ -30,6 +30,8 @@ navigation:
     url: /
   - title: Theory
     url: /theory/
+  - title: Complete Theory
+    url: /theory-complete/
   - title: Chronology
     url: /chronology/
   - title: Predictions

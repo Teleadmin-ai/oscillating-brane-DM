@@ -158,4 +158,6 @@ The "null distance" internally corresponds to external deployment - a return to 
 - [Cosmic Evolution and Chronology]({{ site.baseurl }}{% post_url 2024-01-17-cosmic-chronology %})
 - [Experimental Tests and Predictions]({{ site.baseurl }}{% post_url 2024-01-18-observational-tests %})
 
-For the complete mathematical derivations and detailed analysis, see our [technical documentation](https://github.com/{{ site.github_username }}/oscillating-brane-DM/tree/main/docs).
+For the complete mathematical derivations and detailed analysis:
+- [Full theoretical framework](/theory-complete/) (comprehensive version with all derivations)
+- [Technical documentation](https://github.com/{{ site.github_username }}/oscillating-brane-DM/tree/main/docs) (GitHub repository)
