@@ -193,7 +193,7 @@ Future ultra-sensitive detectors (MADMAX, NANOGrav) could track this slow diluti
 
 The oscillation of w(z) periodically slows structure growth, creating a net suppression:
 
-D₊^osc/D₊^ΛCDM(z=0) = 0,948 (-5,2%)
+D₊^osc/D₊^ΛCDM(z=0) = 0.948 (-5.2%)
 
 Naturally reconciling Planck (S₈ = 0.83) and lensing (S₈ ≈ 0.79).
 
@@ -212,7 +212,7 @@ This doublet, if it maintains coherence over ≥ 5 cycles, would be detectable b
 
 | Test | Limite 2024 | Notre modèle | Verdict |
 |------|-------------|--------------|---------|
-| Newton @ 25 μm | Aucune déviation | L = 0,2 μm | ✓ Invisible |
+| Newton @ 25 μm | Aucune déviation | L = 0.2 μm | ✓ Invisible |
 | PTA 15 ans | h_c < 3×10⁻¹⁵ | h_c ~ 2×10⁻¹⁸ | ✓ Silencieux |
 | H₀ dipole | < 2% | ~0.01% | ✓ Subtle |
 
@@ -221,7 +221,7 @@ This doublet, if it maintains coherence over ≥ 5 cycles, would be detectable b
 | Mission | Signature recherchée | Seuil de réfutation |
 |---------|---------------------|---------------------|
 | Euclid | w(z) sinusoïdal A ≥ 3×10⁻³ | Signal < 5σ |
-| DESI Full | ΔP/P = 0,5% à k₀ | Spectre lisse |
+| DESI Full | ΔP/P = 0.5% à k₀ | Spectre lisse |
 | IPTA DR5 | Doublet f₀, 2f₀ | Bruit pur |
 | H0LiCOW++ | Anisotropy ≤ 0.1% | Isotropy < 0.2% |
 

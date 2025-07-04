@@ -39,7 +39,7 @@ The next generation of experiments will provide crucial tests:
 
 ### H0LiCOW++ Program
 - **Target**: Directional H₀ measurements
-- **Signature**: Anisotropy ≤ 1.5%
+- **Signature**: Anisotropy ≤ 0.1%
 - **Refutation threshold**: Isotropy < 0.2%
 
 ## Key Observable Signatures
