@@ -989,10 +989,10 @@ We implemented a (1+1)D toy model following BraneCode methodology:
 
 **Model Setup**:
 ```python
-# Simplified metric
+## Simplified metric
 ds² = -n²(t,y)dt² + a²(t,y)dx² + b²(t,y)dy²
 
-# Parameters (natural units)
+## Parameters (natural units)
 L = 1.0          # Extra dimension size  
 k_ads = 1.0      # AdS curvature
 tau_0 = 3.0      # Brane tension
