@@ -382,7 +382,7 @@ class PDFGenerator:
 
         # Determine heading level based on file type
         if "_posts" in str(file_path):
-            heading = f"## Blog Post: {title}"
+            heading = f"# {title}"
             date = front_matter.get("date", "")
             if date:
                 heading += f"\n*{date}*"
