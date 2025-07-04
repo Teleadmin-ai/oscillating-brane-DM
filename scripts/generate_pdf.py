@@ -77,7 +77,7 @@ class PDFGenerator:
 
     def clean_unicode_artifacts(self, text: str) -> str:
         """Clean common Unicode artifacts from text."""
-        # Common ligature and encoding issues
+        # Only clean truly problematic ligatures, preserve mathematical symbols
         replacements = {
             "ﬀ": "ff",  # ff ligature
             "ﬁ": "fi",  # fi ligature
@@ -86,20 +86,175 @@ class PDFGenerator:
             "ﬄ": "ffl",  # ffl ligature
             "ff¹": "ff",  # Corrupted ff
             "ff": "ff",  # Another variant
-            "−": "-",  # Minus sign to hyphen
-            "–": "--",  # En dash
-            "—": "---",  # Em dash
-            '"': '"',  # Smart quotes
-            '"': '"',
-            """: "'",
-            """: "'",
-            "…": "...",  # Ellipsis
+            # Remove these replacements to preserve mathematical notation
+            # "−": "-",  # Keep minus sign for math
+            # "–": "--",  # Keep en dash
+            # "—": "---",  # Keep em dash
+            # Keep smart quotes and special characters
         }
 
         for old, new in replacements.items():
             text = text.replace(old, new)
 
         return text
+
+    def convert_unicode_to_latex(self, text: str) -> str:
+        """Convert Unicode mathematical symbols to LaTeX commands."""
+        # First, handle emojis and special characters that should always be replaced
+        emoji_replacements = {
+            '🌌': '[universe]',
+            '📥': '[download]',
+            '✓': '[check]',
+            '☉': 'Sun',
+            '🤖': '[AI]',
+            'ï': 'i',  # Convert to regular i
+        }
+        
+        for old, new in emoji_replacements.items():
+            text = text.replace(old, new)
+        
+        # For math blocks, we need different replacements (no $ wrapper)
+        math_replacements = {
+            'τ': r'\tau',
+            'σ': r'\sigma',
+            'ρ': r'\rho',
+            'π': r'\pi',
+            'μ': r'\mu',
+            'λ': r'\lambda',
+            'η': r'\eta',
+            'δ': r'\delta',
+            'γ': r'\gamma',
+            'ω': r'\omega',
+            'φ': r'\phi',
+            'χ': r'\chi',
+            'ξ': r'\xi',
+            'Δ': r'\Delta',
+            'Ω': r'\Omega',
+            '₀': r'_0',
+            '₁': r'_1',
+            '₂': r'_2',
+            '₃': r'_3',
+            '₄': r'_4',
+            '₅': r'_5',
+            '₆': r'_6',
+            '₇': r'_7',
+            '₈': r'_8',
+            '₉': r'_9',
+            '₊': r'_+',
+            '⁻': r'^-',
+            '⁰': r'^0',
+            '¹': r'^1',
+            '²': r'^2',
+            '³': r'^3',
+            '⁴': r'^4',
+            '⁵': r'^5',
+            '⁶': r'^6',
+            '⁷': r'^7',
+            '⁸': r'^8',
+            '⁹': r'^9',
+            '≈': r'\approx',
+            '≃': r'\simeq',
+            '≤': r'\leq',
+            '≥': r'\geq',
+            '≪': r'\ll',
+            '≫': r'\gg',
+            '≲': r'\lesssim',
+            '≳': r'\gtrsim',
+            '∝': r'\propto',
+            '∂': r'\partial',
+            '∞': r'\infty',
+            '⊥': r'\perp',
+            'ℓ': r'\ell',
+            'ℏ': r'\hbar',
+            '⊙': r'\odot',
+        }
+        
+        # Replace in math environments first
+        import re
+        
+        # Pattern to match math environments
+        math_pattern = r'(\$\$[\s\S]*?\$\$|\$[^\$\n]+\$|\\begin\{equation\}[\s\S]*?\\end\{equation\}|\\begin\{align\}[\s\S]*?\\end\{align\}|\\\[[\s\S]*?\\\])'
+        
+        def replace_in_math(match):
+            math_text = match.group(0)
+            # Replace Greek letters carefully
+            for old, new in math_replacements.items():
+                if old in 'τσρπμλδηγωφχξΔ':
+                    # Use a more careful approach - look for the character followed by a letter
+                    import re
+                    # Find positions where Greek letter is followed by a letter
+                    pattern = re.escape(old) + r'(?=[a-zA-Z])'
+                    replacement = new.replace('\\', '\\\\') + ' '
+                    math_text = re.sub(pattern, replacement, math_text)
+                # Always do the general replacement too (for cases not followed by letters)
+                math_text = math_text.replace(old, new)
+            return math_text
+        
+        text = re.sub(math_pattern, replace_in_math, text)
+        
+        # Now handle non-math text (add $ wrappers)
+        non_math_replacements = {
+            'τ': r'$\tau$',
+            'σ': r'$\sigma$',
+            'ρ': r'$\rho$',
+            'π': r'$\pi$',
+            'μ': r'$\mu$',
+            'λ': r'$\lambda$',
+            'η': r'$\eta$',
+            'δ': r'$\delta$',
+            'γ': r'$\gamma$',
+            'ω': r'$\omega$',
+            'φ': r'$\phi$',
+            'χ': r'$\chi$',
+            'ξ': r'$\xi$',
+            'Δ': r'$\Delta$',
+            'Ω': r'$\Omega$',
+            '₀': r'$_0$',
+            '₁': r'$_1$',
+            '₂': r'$_2$',
+            '₃': r'$_3$',
+            '₄': r'$_4$',
+            '₅': r'$_5$',
+            '₆': r'$_6$',
+            '₇': r'$_7$',
+            '₈': r'$_8$',
+            '₉': r'$_9$',
+            '⁻': r'$^-$',
+            '⁰': r'$^0$',
+            '¹': r'$^1$',
+            '²': r'$^2$',
+            '³': r'$^3$',
+            '⁴': r'$^4$',
+            '⁵': r'$^5$',
+            '⁶': r'$^6$',
+            '⁷': r'$^7$',
+            '⁸': r'$^8$',
+            '⁹': r'$^9$',
+            '≈': r'$\approx$',
+            '≃': r'$\simeq$',
+            '≤': r'$\leq$',
+            '≥': r'$\geq$',
+            '≪': r'$\ll$',
+            '≲': r'$\lesssim$',
+            '≳': r'$\gtrsim$',
+            '∝': r'$\propto$',
+            '∂': r'$\partial$',
+            '∞': r'$\infty$',
+            '⊥': r'$\perp$',
+            'ℓ': r'$\ell$',
+            'ℏ': r'$\hbar$',
+            '⊙': r'$\odot$',
+        }
+        
+        # Split and process non-math parts
+        parts = re.split(math_pattern, text)
+        for i in range(len(parts)):
+            # Even indices are non-math text
+            if i % 2 == 0:
+                for old, new in non_math_replacements.items():
+                    parts[i] = parts[i].replace(old, new)
+        
+        return ''.join(parts)
 
     def process_markdown(self, file_path: Path, front_matter: Dict) -> str:
         """Process a markdown file for inclusion in the PDF."""
@@ -109,8 +264,8 @@ class PDFGenerator:
         # Remove front matter
         content = re.sub(r"^---\s*\n.*?\n---\s*\n", "", content, flags=re.DOTALL)
 
-        # Clean Unicode artifacts
-        content = self.clean_unicode_artifacts(content)
+        # Convert Unicode to LaTeX - DISABLED to let XeLaTeX handle it
+        # content = self.convert_unicode_to_latex(content)
 
         # Fix image paths to be absolute
         # Replace relative paths like /plots/image.png with absolute paths
@@ -173,10 +328,10 @@ linkcolor: black
 This document contains the complete theoretical framework and documentation for the Oscillating Brane Dark Matter Theory, where the universe is conceptualized as a vibrating 4-dimensional membrane in 5D space. The theory proposes that dark matter effects emerge from membrane oscillations excited by gravitational flows, naturally producing dark energy and MOND-like phenomena.
 
 **Key Parameters:**
-- Brane tension: τ₀ = 7.0 × 10¹⁹ J/m²
+- Brane tension: $\\tau_0$ = 7.0 × 10$^{19}$ J/m$^2$
 - Oscillation period: T = 2.0 ± 0.3 Gyr
-- Extra dimension size: L = 0.2 μm
-- MOND acceleration: a₀ = 1.1 × 10⁻¹⁰ m/s²
+- Extra dimension size: L = 0.2 $\\mu$m
+- MOND acceleration: a$_0$ = 1.1 × 10$^{-10}$ m/s$^2$
 
 \\newpage
 
@@ -225,37 +380,23 @@ This document contains the complete theoretical framework and documentation for 
 
         # Convert to PDF using pandoc
         try:
-            # Basic conversion with Unicode handling
+            # Basic conversion - try pdflatex with minimal options
             pypandoc.convert_text(
                 combined_md,
                 "pdf",
-                format="markdown+smart",  # Enable smart typography
+                format="markdown",  # Basic markdown
                 outputfile=str(output_path),
                 extra_args=[
-                    "--pdf-engine=xelatex",  # XeLaTeX handles Unicode better
+                    "--pdf-engine=xelatex",  # XeLaTeX for Unicode support
                     "--highlight-style=tango",
-                    "--top-level-division=chapter",
+                    "-V",
+                    "geometry:margin=1in",
                     "-V",
                     "colorlinks=true",
                     "-V",
-                    "toccolor=blue",
+                    "mainfont=DejaVu Serif",
                     "-V",
-                    "urlcolor=blue",
-                    "-V",
-                    "linkcolor=black",
-                    "--dpi=150",  # Reduce image resolution
-                    "-V",
-                    "classoption=compress",  # Enable compression
-                    "-V",
-                    "fontsize=10pt",  # Slightly smaller font
-                    "-V",
-                    "mainfont=Latin Modern Roman",  # Use Unicode-aware font
-                    "-V",
-                    "sansfont=Latin Modern Sans",
-                    "-V",
-                    "monofont=Latin Modern Mono",
-                    "-V",
-                    "mathfont=Latin Modern Math",
+                    "monofont=DejaVu Sans Mono",
                 ],
             )
             print(f"PDF generated successfully: {output_path}")
