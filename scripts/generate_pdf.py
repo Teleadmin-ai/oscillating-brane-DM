@@ -490,6 +490,7 @@ This document contains the complete theoretical framework and documentation for 
                 outputfile=str(output_path),
                 extra_args=[
                     "--pdf-engine=xelatex",  # XeLaTeX for Unicode support
+                    "--top-level-division=chapter",  # Each file = new chapter
                     "--highlight-style=tango",
                     "-V",
                     "geometry:margin=1in",
