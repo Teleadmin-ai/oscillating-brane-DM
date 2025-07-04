@@ -166,6 +166,7 @@ class PBHOpacity:
 
         τ = ∫ n_e σ_T c dt = ∫ n_e σ_T c / (H(z)(1+z)) dz
         """
+
         # Calculate optical depth with proper normalization
         def integrand(z):
             # Total ionization fraction (standard + PBH)
@@ -209,21 +210,23 @@ class PBHOpacity:
             # Dark ages - only PBH contribution
             # PBH ionization builds up slowly
             x_e_residual = 2e-4  # Background ionization
-            
+
             # Use realistic accretion-based ionization
             if self.f_pbh > 0:
                 # Calculate ionization rate from PBH accretion
                 ion_rate = self.ionization_rate(z)
                 # Approximate steady-state ionization fraction
                 # Balance ionization and recombination
-                alpha_rec = 2.6e-13 * (z/1000)**0.7  # cm³/s recombination coefficient
+                alpha_rec = (
+                    2.6e-13 * (z / 1000) ** 0.7
+                )  # cm³/s recombination coefficient
                 n_H = Omega_b * rho_crit_0 * (1 + z) ** 3 / m_p  # m⁻³
                 n_H_cgs = n_H * 1e-6  # cm⁻³
                 x_e_pbh = ion_rate / (alpha_rec * n_H_cgs * 1e-6)  # Convert units
                 x_e_pbh = min(x_e_pbh * self.f_pbh, 0.1)  # Cap at 10%
             else:
                 x_e_pbh = 0
-                
+
             return x_e_residual + x_e_pbh
         else:
             # Standard reionization dominates

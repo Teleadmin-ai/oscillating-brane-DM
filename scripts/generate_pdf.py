@@ -79,26 +79,26 @@ class PDFGenerator:
         """Clean common Unicode artifacts from text."""
         # Common ligature and encoding issues
         replacements = {
-            'ﬀ': 'ff',  # ff ligature
-            'ﬁ': 'fi',  # fi ligature
-            'ﬂ': 'fl',  # fl ligature
-            'ﬃ': 'ffi', # ffi ligature
-            'ﬄ': 'ffl', # ffl ligature
-            'ff¹': 'ff',  # Corrupted ff
-            'ff': 'ff',  # Another variant
-            '−': '-',    # Minus sign to hyphen
-            '–': '--',   # En dash
-            '—': '---',  # Em dash
-            '"': '"',    # Smart quotes
+            "ﬀ": "ff",  # ff ligature
+            "ﬁ": "fi",  # fi ligature
+            "ﬂ": "fl",  # fl ligature
+            "ﬃ": "ffi",  # ffi ligature
+            "ﬄ": "ffl",  # ffl ligature
+            "ff¹": "ff",  # Corrupted ff
+            "ff": "ff",  # Another variant
+            "−": "-",  # Minus sign to hyphen
+            "–": "--",  # En dash
+            "—": "---",  # Em dash
+            '"': '"',  # Smart quotes
             '"': '"',
-            ''': "'",
-            ''': "'",
-            '…': '...',  # Ellipsis
+            """: "'",
+            """: "'",
+            "…": "...",  # Ellipsis
         }
-        
+
         for old, new in replacements.items():
             text = text.replace(old, new)
-            
+
         return text
 
     def process_markdown(self, file_path: Path, front_matter: Dict) -> str:
@@ -108,7 +108,7 @@ class PDFGenerator:
 
         # Remove front matter
         content = re.sub(r"^---\s*\n.*?\n---\s*\n", "", content, flags=re.DOTALL)
-        
+
         # Clean Unicode artifacts
         content = self.clean_unicode_artifacts(content)
 
