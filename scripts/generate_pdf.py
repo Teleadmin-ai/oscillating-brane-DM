@@ -493,43 +493,16 @@ This document contains the complete theoretical framework and documentation for 
                     "-V",
                     "monofont=DejaVu Sans Mono",
                     "-V",
-                    "mathfont=DejaVu Math TeX Gyre",
+                    "fontenc=",  # Don't use T1 encoding with XeLaTeX
                     "-V",
-                    "fontsize=11pt",
-                    "--variable=fontenc:",  # Proper way to set empty fontenc
+                    "fontspec",  # Use fontspec package for better font handling
                 ],
             )
             print(f"PDF generated successfully: {output_path}")
 
-        except Exception as e:
+        except RuntimeError as e:
             print(f"Error generating PDF: {e}")
-            print(f"Error type: {type(e).__name__}")
-            import traceback
-
-            traceback.print_exc()
-
-            # Try without XeLaTeX
-            print("\nTrying with pdflatex instead of xelatex...")
-            try:
-                pypandoc.convert_text(
-                    combined_md,
-                    "pdf",
-                    format="markdown",
-                    outputfile=str(output_path),
-                    extra_args=[
-                        "--pdf-engine=pdflatex",
-                        "--highlight-style=tango",
-                        "-V",
-                        "geometry:margin=1in",
-                        "-V",
-                        "colorlinks=true",
-                    ],
-                )
-                print(f"PDF generated with pdflatex: {output_path}")
-            except Exception as e2:
-                print(f"pdflatex also failed: {e2}")
-                # Re-raise the exception to make CI fail properly
-                raise
+            print("\nTrying alternative method with HTML intermediate...")
 
             # Alternative: markdown -> HTML -> PDF
             try:
