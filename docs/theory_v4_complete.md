@@ -187,6 +187,48 @@ Dark matter flux through the bulk induces energy "leakage":
 
 Future ultra-sensitive detectors (MADMAX, NANOGrav) could track this slow dilution—like measuring ocean evaporation drop by drop.
 
+## 6.3 Bulk Topology: Convergent Funnels vs Infinite Ocean
+
+A fundamental question: Can gravitational funnels be "convergent" if the bulk is infinite? The answer reveals the subtle interplay between geometry and topology in higher dimensions.
+
+### Two Possible Bulk Geometries
+
+| Geometry | Mental Picture | Key Impact |
+|----------|----------------|------------|
+| **Bulk-Point** (Convergent) | All funnels topologically join at a common region in the 5th dimension, like laces meeting at a knot | Single phase → globally coherent oscillation |
+| **Bulk-Immensity** (Non-convergent) | Each funnel plunges into an infinite 5D ocean with no focal point | Small path differences → phase shifts Δφ ≲ 0.05 rad |
+
+### Compatibility with Infinite Bulk
+
+**Key insight**: An infinite bulk is compatible with convergent funnels! In Randall-Sundrum II geometry, the bulk extends to z → ∞, yet all geodesics converge toward the AdS throat. This region acts as a topological focal point even at infinite metric distance.
+
+The birth of our brane doesn't require a finite bulk—quantum nucleation can occur in:
+- Infinite AdS₅ space (bubble nucleation)
+- Ekpyrotic scenarios (brane collisions)
+- de Sitter transitions (vacuum decay)
+
+What matters is not the bulk's size but the presence of:
+1. A metastable vacuum state
+2. A warping mechanism that localizes gravity
+3. A topology that synchronizes dark matter flows
+
+### Observable Consequences
+
+| Observable | Bulk-Point (Convergent) | Bulk-Immensity (Non-convergent) |
+|------------|------------------------|----------------------------------|
+| DE amplitude A_w | Full value ≈ 0.003 | Reduced to ~0.0025 |
+| S₈ suppression | -5.2% (current value) | -4% to -4.5% |
+| GW doublet | h_c ≈ 2×10⁻¹⁸ (detectable) | <10⁻¹⁹ (likely undetectable) |
+| Cosmic fate | Brane implodes to point | Brane dissolves into bulk |
+
+### The Physical Picture
+
+In the **convergent scenario**: Despite the bulk's infinity, warping creates an effective "funnel" where all dark matter trajectories synchronize. Like water spiraling down a drain, particles entering different black holes emerge with coordinated phase—the geometric convergence creates temporal coherence.
+
+In the **non-convergent scenario**: Each black hole connects to its own region of the infinite bulk ocean. Small variations in path length destroy perfect synchronization, reducing oscillation amplitude.
+
+The title "Convergent Gravitational Funnels" remains accurate if we favor the Bulk-Point topology—not because the bulk is finite, but because its geometry naturally focuses all trajectories toward a common region, maintaining the phase coherence essential for strong dark energy oscillations and the gravitational wave doublet signature.
+
 ## 7. Modulated Growth and Gravitational Echoes
 
 ### 7.1 The Effect on S₈
