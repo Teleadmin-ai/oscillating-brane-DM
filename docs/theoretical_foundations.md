@@ -1111,4 +1111,9 @@ While significant theoretical and observational work remains, the framework show
 ### Damping Mechanisms
 - Kelvin-Voigt model - See Landau, L.D. & Lifshitz, E.M. (1986) - "Theory of Elasticity", Vol. 7, Pergamon Press
 
+### Data Analysis and Software
+- Black formatter (2024) - "The uncompromising Python code formatter", https://github.com/psf/black
+- Hairer, E. & Wanner, G. (1996) - "Solving Ordinary Differential Equations II: Stiff and Differential-Algebraic Problems", Springer (DOP853 method implementation)
+- Rakhmetov, P. et al. (2025) - "5D numerical relativity with dynamic branes: Technical implementation", in preparation
+
 For complete references and technical details, see the [Complete Theory](/theory-complete/) document.

@@ -75,6 +75,32 @@ class PDFGenerator:
                 return {}
         return {}
 
+    def clean_unicode_artifacts(self, text: str) -> str:
+        """Clean common Unicode artifacts from text."""
+        # Common ligature and encoding issues
+        replacements = {
+            'ﬀ': 'ff',  # ff ligature
+            'ﬁ': 'fi',  # fi ligature
+            'ﬂ': 'fl',  # fl ligature
+            'ﬃ': 'ffi', # ffi ligature
+            'ﬄ': 'ffl', # ffl ligature
+            'ff¹': 'ff',  # Corrupted ff
+            'ff': 'ff',  # Another variant
+            '−': '-',    # Minus sign to hyphen
+            '–': '--',   # En dash
+            '—': '---',  # Em dash
+            '"': '"',    # Smart quotes
+            '"': '"',
+            ''': "'",
+            ''': "'",
+            '…': '...',  # Ellipsis
+        }
+        
+        for old, new in replacements.items():
+            text = text.replace(old, new)
+            
+        return text
+
     def process_markdown(self, file_path: Path, front_matter: Dict) -> str:
         """Process a markdown file for inclusion in the PDF."""
         with open(file_path, "r", encoding="utf-8") as f:
@@ -82,6 +108,9 @@ class PDFGenerator:
 
         # Remove front matter
         content = re.sub(r"^---\s*\n.*?\n---\s*\n", "", content, flags=re.DOTALL)
+        
+        # Clean Unicode artifacts
+        content = self.clean_unicode_artifacts(content)
 
         # Fix image paths to be absolute
         # Replace relative paths like /plots/image.png with absolute paths
@@ -196,14 +225,14 @@ This document contains the complete theoretical framework and documentation for 
 
         # Convert to PDF using pandoc
         try:
-            # Basic conversion
+            # Basic conversion with Unicode handling
             pypandoc.convert_text(
                 combined_md,
                 "pdf",
-                format="markdown",
+                format="markdown+smart",  # Enable smart typography
                 outputfile=str(output_path),
                 extra_args=[
-                    "--pdf-engine=xelatex",  # or pdflatex, lualatex
+                    "--pdf-engine=xelatex",  # XeLaTeX handles Unicode better
                     "--highlight-style=tango",
                     "--top-level-division=chapter",
                     "-V",
@@ -219,6 +248,14 @@ This document contains the complete theoretical framework and documentation for 
                     "classoption=compress",  # Enable compression
                     "-V",
                     "fontsize=10pt",  # Slightly smaller font
+                    "-V",
+                    "mainfont=Latin Modern Roman",  # Use Unicode-aware font
+                    "-V",
+                    "sansfont=Latin Modern Sans",
+                    "-V",
+                    "monofont=Latin Modern Mono",
+                    "-V",
+                    "mathfont=Latin Modern Math",
                 ],
             )
             print(f"PDF generated successfully: {output_path}")
