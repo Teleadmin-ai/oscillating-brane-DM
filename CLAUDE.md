@@ -34,13 +34,23 @@ oscillating-brane-DM/
 ├── plots/              # Generated scientific figures
 ├── scripts/            # Python computational tools
 │   ├── brane_dynamics.py      # Membrane oscillation calculations
+│   ├── brane_oscillation_1d.py # 1D radion field evolution prototype (NEW)
 │   ├── growth_factor.py       # Structure formation calculations
 │   ├── bayesian_analysis.py   # Model comparison
 │   ├── kk_spectrum.py         # Kaluza-Klein mode analysis
 │   ├── pta_echo.py           # Gravitational wave predictions
-│   └── generate_figures.py    # Figure generation script
-├── docs/               # Technical documentation (PDFs, theory details)
+│   ├── generate_figures.py    # Figure generation script
+│   └── generate_pdf.py        # PDF generation from all docs
+├── docs/               # Technical documentation
+│   ├── theoretical_foundations.md  # Rigorous mathematical framework (NEW)
+│   └── theory_v4_complete.md      # Complete theory v4
 ├── data/               # Posterior samples and analysis results
+├── output/             # Generated PDFs (NEW)
+├── .github/            # GitHub Actions workflows (NEW)
+│   └── workflows/
+│       ├── ci.yml              # Main CI pipeline
+│       ├── python-lint.yml     # Code quality checks
+│       └── weekly-report.yml   # Automated reports
 ├── index.md           # Homepage
 ├── theory.md          # Complete theoretical framework
 ├── predictions.md     # Observational predictions
@@ -49,6 +59,7 @@ oscillating-brane-DM/
 ├── about.md           # About page with disclaimer
 ├── CNAME              # Custom domain configuration
 ├── requirements.txt   # Python dependencies
+├── Gemfile            # Ruby dependencies for Jekyll
 └── _config.yml        # Jekyll configuration
 ```
 
@@ -93,11 +104,13 @@ The theory's fundamental parameters:
 ## Python Scripts
 The repository includes comprehensive computational tools:
 1. `brane_dynamics.py` - Membrane oscillation calculations (fixed dimensional consistency)
-2. `growth_factor.py` - Structure formation with oscillating w(z) (improved lookback time)
-3. `bayesian_analysis.py` - Model comparison and evidence
-4. `kk_spectrum.py` - Kaluza-Klein mode analysis
-5. `pta_echo.py` - Gravitational wave predictions
-6. `generate_figures.py` - Scientific visualization generation
+2. `brane_oscillation_1d.py` - 1D prototype for radion field evolution with energy conservation
+3. `growth_factor.py` - Structure formation with oscillating w(z) (improved lookback time)
+4. `bayesian_analysis.py` - Model comparison and evidence
+5. `kk_spectrum.py` - Kaluza-Klein mode analysis
+6. `pta_echo.py` - Gravitational wave predictions
+7. `generate_figures.py` - Scientific visualization generation
+8. `generate_pdf.py` - Comprehensive PDF generation with all documentation
 
 ## Blog Post Topics
 1. Introduction to the universe as a vibrating membrane
@@ -107,28 +120,33 @@ The repository includes comprehensive computational tools:
 
 ## Recent Updates and Known Issues
 
-### Version 4.0.3 Documentation Update (2025-07-04)
-- **Complete Theory page**: Added front-matter to make theory_v4_complete.md visible at /theory-complete/
-- **Navigation**: Added "Complete Theory" to main menu
-- **English abstract**: Added for international readers
+### O3 Pro Conformity Check Implementation (2025-07-04)
+Following O3 Pro's comprehensive theoretical analysis and conformity check:
+- **Dimensional consistency**: Fixed A_osc formula to have proper length units, V_1-loop properly dimensioned
+- **Numerical stability**: Fixed overflow in brane_oscillation_1d.py with ρ_crit normalization
+- **Energy conservation**: Added test showing conservation to 0.1% accuracy
+- **Citations**: Added proper references [Martin et al. 2005], [Garriga et al. 2001], [Rakhmetov et al. 2025]
+- **Notations table**: Created comprehensive units table in section 6.0
+- **PDF optimization**: Reduced size with --dpi=150 and smaller font
 
-### Version 4.0.2 Editorial Corrections (2025-07-04)
-Following comprehensive o3 pro audit:
-- **H₀ anisotropy**: Harmonized to ~0.01% (was inconsistently showing 1.5%)
-- **arXiv placeholder**: Changed to "in preparation, 2025"
-- **README H0LiCOW++**: Updated to 0.1% anisotropy threshold
+### GitHub Actions Setup (2025-07-04)
+- **CI Pipeline**: Automated testing of Python simulations, Jekyll build, PDF generation
+- **Artifacts**: Simulation plots (134 KB) and theory PDF (2.36 MB) generated on each push
+- **Code quality**: Python linting with flake8, black, isort
+- **Weekly reports**: Automated progress reports every Monday
 
-### Scientific Corrections (2025-07-04)
-Based on thorough scientific review:
-- **Kaluza-Klein mass**: Corrected from 10⁻³ eV to 1 eV (consistent with L = 0.2 μm)
-- **PBH mass**: Corrected from 10⁻¹² M_⊙ to 10⁻¹¹ M_⊙ (to match r_s ≈ 30 nm)
-- **K_MW notation**: Clarified as local tension contrast δτ/τ₀ ≈ 2×10⁻⁴
-- **GitHub links**: Updated from YoyoCosmo to Teleadmin-ai repository
+### Theoretical Foundations Document (2025-07-04)
+- **New document**: docs/theoretical_foundations.md with rigorous mathematical framework
+- **Section 6.1**: Detailed theoretical challenges including 5D numerical relativity
+- **Initial conditions**: Multiple mechanisms for brane oscillation onset
+- **Quantum corrections**: Beyond one-loop analysis with Casimir effects
+- **Development roadmap**: 18-month phased approach for full theory implementation
 
-### Header Overlap Fix (2025-07-04)
-- Increased content-wrapper padding-top to 200px
-- Added text-content padding-top of 40px
-- Ensures first line of text is fully visible below fixed header
+### 1D Prototype Implementation (2025-07-04)
+- **New script**: brane_oscillation_1d.py demonstrating radion field evolution
+- **Goldberger-Wise potential**: Stabilization mechanism implementation
+- **Energy conservation**: Verified to 0.1% accuracy
+- **Plots generated**: radion_evolution_1d.png and radion_energy_1d.png
 
 ### CSS Implementation Details
 - Dark theme with video carousel on 40/60 split
@@ -136,12 +154,45 @@ Based on thorough scientific review:
 - Responsive design for mobile devices
 - Custom dark layout for all pages including blog posts
 
+## GitHub Actions & CI/CD
+
+### Workflows
+1. **CI (ci.yml)**: Main pipeline running on push
+   - Runs Python simulations (brane_dynamics.py, brane_oscillation_1d.py)
+   - Builds Jekyll site
+   - Generates PDF documentation
+   - Uploads artifacts (plots, PDFs)
+
+2. **Python Linting (python-lint.yml)**: Code quality checks
+   - flake8 for syntax errors
+   - black for formatting
+   - isort for import ordering
+
+3. **Weekly Reports (weekly-report.yml)**: Automated Monday reports
+   - Runs all simulations
+   - Generates progress summary
+
+### Common Commands
+```bash
+# Run tests locally
+python scripts/brane_dynamics.py
+python scripts/brane_oscillation_1d.py
+
+# Generate PDF
+python scripts/generate_pdf.py
+
+# Build Jekyll site locally
+bundle exec jekyll build
+bundle exec jekyll serve
+```
+
 ## Maintenance Tasks
 - Keep blog posts updated with latest theoretical developments
 - Update predictions as new observational data arrives
 - Maintain compatibility with GitHub Pages requirements
 - Ensure all mathematical equations render correctly with MathJax
-- Monitor header spacing to prevent text overlap
+- Monitor GitHub Actions for any failures
+- Update CLAUDE.md when significant changes are made
 
 ## Contact
 - GitHub Issues: https://github.com/Teleadmin-ai/oscillating-brane-DM/issues
