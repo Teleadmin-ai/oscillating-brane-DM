@@ -53,13 +53,13 @@ This poetic vision guides our scientific exploration. We seek to understand the 
 
 ## Acknowledgments
 
-This work builds upon decades of research in:
+This theoretical framework was developed as a personal intellectual exploration with AI assistance. While it builds upon established concepts in:
 - Brane cosmology and extra dimensions
 - Dark matter and dark energy observations
 - Modified gravity theories
 - Precision cosmological measurements
 
-We are grateful to all researchers whose work has made this synthesis possible.
+This specific synthesis and its predictions are original work developed through curiosity-driven research using AI tools. We welcome professional physicists to examine and potentially validate these ideas.
 
 ---
 
