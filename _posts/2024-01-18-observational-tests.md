@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: dark
 title: "Experimental Tests: Where to Seek the Truth"
 date: 2024-01-18
 author: Oscillating Brane Theory Team

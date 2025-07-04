@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: dark
 title: "How Dark Matter Makes the Universe Vibrate"
 date: 2024-01-16
 author: Oscillating Brane Theory Team
