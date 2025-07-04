@@ -4,7 +4,7 @@ title: Cosmic Chronology
 permalink: /chronology/
 ---
 
-# From Inflation to Current Oscillations
+## From Inflation to Current Oscillations
 
 The evolution of brane tension from the Big Bang to today reveals how the universe tuned itself to its fundamental frequency.
 
