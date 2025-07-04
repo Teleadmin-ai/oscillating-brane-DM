@@ -92,6 +92,27 @@ With Kelvin-Voigt damping γ ~ 10⁻² Gyr⁻¹:
 3. **Growth suppression** reconciling Planck and weak lensing
 4. **Hubble anisotropy** mapping cosmic tension variations
 
+## The Cosmic Yoyo: Dark Matter Through Black Holes
+
+### The Perpetual Cycle
+
+Black holes are not cosmic graveyards but **gateways**. Dark matter follows an eternal cycle:
+
+1. **Falls into black holes** (gravitational funnels)
+2. **Traverses the 5th dimension** through the singularity
+3. **Emerges elsewhere** in 4D space  
+4. **Falls again** - completing the cosmic yoyo
+
+This perpetual motion through black holes:
+- **Creates gravity itself** - the continuous flow generates the gravitational field
+- **Fabricates spacetime** - the oscillations literally create distance and time
+- **Powers the universe** until the Higgs field exhausts
+
+The mathematics captures this through the funnel density:
+$$\rho_{\text{funnel}} \propto \frac{M}{r^3} f_{\text{osc}}$$
+
+Where M is the black hole mass and f_osc is the oscillating fraction of dark matter.
+
 ## Role of Primordial Black Holes
 
 ### PBH Contribution (Ω_PBH ≲ 10⁻⁴)

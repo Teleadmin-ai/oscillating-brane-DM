@@ -4,17 +4,26 @@ title: About the Oscillating Brane Theory
 permalink: /about/
 ---
 
-## The Vision
+## The Vision: The Cosmic Yoyo
 
 We propose a revolutionary understanding of the cosmos where:
 - The universe is a vibrating 4D membrane in 5D space
-- Dark matter flows create cosmic oscillations
-- Dark energy emerges from membrane dynamics
-- Modified gravity appears naturally at large scales
+- **Dark matter perpetually cycles through black holes like a cosmic yoyo**
+- This eternal flow through gravitational funnels creates gravity itself
+- The oscillations "fabricate distance" - generating the very fabric of spacetime
+- The cycle continues until "the end of the Higgs field"
 
 ## The Science
 
-This theory emerged from the observation of discrete oscillations in the cosmic scale factor by Ringermacher & Mead (2014). By conceptualizing the universe as an elastic membrane excited by dark matter flows through gravitational funnels (black holes), we explain multiple cosmological puzzles within a single, elegant framework.
+This theory emerged from the observation of discrete oscillations in the cosmic scale factor by Ringermacher & Mead (2014). The key insight: **black holes are not endpoints but gateways**. Dark matter falls into black holes, traverses the 5th dimension, emerges elsewhere, and falls again - an eternal cosmic yoyo that maintains the universe's heartbeat.
+
+### The Yoyo Mechanism
+- **Descent**: Dark matter spirals into black holes (gravitational funnels)
+- **Traverse**: Passes through the 5th dimension via the funnel singularity
+- **Ascent**: Emerges and is expelled back into 4D space
+- **Return**: Falls again, creating a perpetual 2-billion-year cycle
+
+This continuous motion through black holes is what creates gravity and spacetime itself. The mathematics shows this explicitly through the funnel density term ρ_funnel ∝ M/r³.
 
 ### Key Achievements
 
