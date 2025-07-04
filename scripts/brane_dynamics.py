@@ -72,8 +72,10 @@ class BraneOscillator:
         z_brane = self.membrane_displacement(t)
         
         # Kinetic and potential energy densities
+        # rho_kin in J/m³
         rho_kin = 0.5 * self.M_osc * self.omega**2 * z_brane**2 / self.R_H**3
-        rho_pot = 0.5 * self.tau_0 * (2 * np.pi * z_brane / (2 * self.R_H))**2
+        # rho_pot: convert from J/m² to J/m³ by dividing by R_H
+        rho_pot = 0.5 * self.tau_0 * (np.pi * z_brane / self.R_H)**2 / self.R_H
         
         # Total energy density
         rho_DE = rho_kin + rho_pot
@@ -110,7 +112,7 @@ class BraneOscillator:
     
     def redshift_to_time(self, z: np.ndarray) -> np.ndarray:
         """
-        Convert redshift to cosmic time (approximation for z < 2).
+        Convert redshift to cosmic time using proper cosmological integration.
         
         Parameters
         ----------
@@ -122,12 +124,29 @@ class BraneOscillator:
         t : array-like
             Cosmic time in seconds
         """
-        # For simplicity, use analytical approximation
-        # More accurate: integrate 1/[(1+z)H(z)]
-        t0 = 13.8 * Gyr_to_s  # Current age of universe
-        t = t0 / (1 + z)**(3/2)  # Matter-dominated approximation
+        from scipy.integrate import quad
         
-        return t
+        # Cosmological parameters (Planck 2018)
+        Omega_m = 0.31
+        Omega_L = 0.69
+        t0 = 13.8 * Gyr_to_s  # Current age
+        
+        def E(z):
+            """Dimensionless Hubble parameter"""
+            return np.sqrt(Omega_m * (1 + z)**3 + Omega_L)
+        
+        # Calculate lookback time
+        z = np.atleast_1d(z)
+        t_lb = np.zeros_like(z, dtype=float)
+        
+        for i, zi in enumerate(z):
+            # Integrate dt/dz = -1/[(1+z)H(z)]
+            integrand = lambda zp: 1.0 / ((1 + zp) * E(zp))
+            t_lb[i], _ = quad(integrand, 0, zi)
+        
+        # Convert to seconds and return cosmic time
+        t_lb *= (1 / self.H0)
+        return t0 - t_lb if len(z) > 1 else float(t0 - t_lb)
     
     def growth_suppression(self) -> float:
         """

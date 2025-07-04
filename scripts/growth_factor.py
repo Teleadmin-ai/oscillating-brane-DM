@@ -227,7 +227,7 @@ class GrowthFactorCalculator:
     
     def _redshift_to_lookback_time(self, z: np.ndarray) -> np.ndarray:
         """
-        Convert redshift to lookback time in Gyr (approximate).
+        Convert redshift to lookback time in Gyr using proper integration.
         
         Parameters
         ----------
@@ -239,11 +239,24 @@ class GrowthFactorCalculator:
         t_lb : array-like
             Lookback time in Gyr
         """
-        # Simple approximation for z < 2
-        H0_Gyr = h * 100 / 3.086e19 * 3.156e16  # H0 in 1/Gyr
-        t_lb = np.log(1 + z) / H0_Gyr / 0.7  # Rough approximation
+        from scipy.integrate import quad
         
-        return t_lb
+        # Convert H0 to 1/Gyr
+        H0_Gyr = h * 100 / 3.086e19 * 3.156e16  # H0 in 1/Gyr
+        
+        # Calculate lookback time for each redshift
+        z = np.atleast_1d(z)
+        t_lb = np.zeros_like(z, dtype=float)
+        
+        for i, zi in enumerate(z):
+            # Integrate dt/dz = -1/[(1+z)E(z)]
+            integrand = lambda zp: 1.0 / ((1 + zp) * self.E_z(zp))
+            t_lb[i], _ = quad(integrand, 0, zi)
+        
+        # Convert to Gyr
+        t_lb /= H0_Gyr
+        
+        return t_lb if len(z) > 1 else float(t_lb)
     
     def calculate_s8(self, sigma8_cmb: float = 0.811) -> float:
         """

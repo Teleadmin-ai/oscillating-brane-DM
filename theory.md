@@ -50,6 +50,11 @@ $$w(z) = -1 + A_w \sin\left(\frac{2π t_{lb}(z)}{T}\right)$$
 
 With amplitude A_w ≃ 0.003 and period T = 2.0 Gyr.
 
+**Key insight**: Though the amplitude is small (±0.3%), w oscillates between ≈ -1.003 and -0.997. This subtle variation is sufficient to:
+- Suppress structure growth by 5.2%
+- Resolve the S₈ tension
+- Be detectable by Euclid at >5σ significance
+
 ### Modified Gravity
 
 At low accelerations, the membrane's properties create MOND-like effects:
@@ -107,6 +112,41 @@ The enhanced oscillation amplitude would be detectable through:
 - Distinct pattern in weak lensing cross-correlations
 
 This provides a direct probe of sub-stellar mass PBHs that are otherwise undetectable.
+
+## Nature of the Bulk: Point vs Immensity
+
+### Two Limiting Cases
+
+The extra-dimensional bulk can be understood in two extreme limits:
+
+**Bulk-Point Scenario:**
+- Warped geometry contracts the 5th dimension logarithmically
+- All black holes connect to the same topological point
+- Perfect phase coherence in dark matter oscillations
+- Prediction: No angular variation in w(z) phase
+
+**Bulk-Immensity Scenario:**
+- Extended extra dimension with weak curvature
+- Multiple pathways through the bulk
+- The "void" as infinite creative potential
+- Prediction: Δφ ≳ 0.05 rad phase decorrelation
+
+### Observable Signatures
+
+| Observable | Bulk-Point | Bulk-Immensity |
+|------------|------------|----------------|
+| w(z) phase coherence | Perfect | Δφ ≳ 0.05 rad |
+| GW echo at 2f₀ | Strong | Weakened |
+| KK mode spectrum | Discrete | Quasi-continuous |
+
+### End of the Universe
+
+When oscillations cease (H* → 0):
+- **4D view**: Metric implosion, distances → 0
+- **5D view**: Brane dilutes into expanding bulk
+- Not destruction but geometric phase transition
+
+The "null distance" internally corresponds to external deployment - a return to the creative void from which branes emerged.
 
 ## Further Reading
 
