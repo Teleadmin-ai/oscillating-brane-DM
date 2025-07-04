@@ -92,14 +92,15 @@ nav a:hover {
   display: grid;
   grid-template-columns: 40% 60%;
   min-height: 100vh;
-  padding-top: 120px; /* Space for fixed header */
+  padding-top: 140px; /* Increased space for fixed header */
 }
 
 /* Text column */
 .text-column {
   padding: 40px;
+  padding-top: 20px; /* Reduced top padding since wrapper handles it */
   overflow-y: auto;
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 140px); /* Match wrapper padding */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
@@ -366,6 +367,7 @@ li {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 140px; /* Offset for fixed header */
 }
 
 /* Selection color */
