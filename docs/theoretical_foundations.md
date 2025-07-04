@@ -341,11 +341,78 @@ Since $\Gamma_{decay} \ll H_0 \approx 10^{-18}$ Hz, the oscillations persist thr
 
 ### 6.1 Theoretical Challenges
 
-1. **Complete Field Equations**: Full 5D Einstein equations with dynamic brane need numerical solutions
+#### 6.1.1 Solving the Full 5D Einstein Equations
 
-2. **Initial Conditions**: Mechanism for setting oscillation amplitude in early universe requires development
+The most fundamental challenge is solving the complete 5D Einstein field equations with a dynamically oscillating brane. The 4D effective equations contain an undetermined Weyl term $\mathcal{E}_{\mu\nu}$ from bulk curvature:
 
-3. **Quantum Corrections**: Full one-loop calculation in curved background pending
+$$G_{\mu\nu} + \Lambda_4 g_{\mu\nu} = \kappa_4^2 T_{\mu\nu} + \kappa_5^4 \pi_{\mu\nu} - \mathcal{E}_{\mu\nu}$$
+
+where $\mathcal{E}_{\mu\nu}$ can only be determined by solving the full 5D problem.
+
+**Numerical Relativity Approach**: The BraneCode project (Martin et al. 2005) pioneered 5D numerical simulations with:
+- ADM (3+1)+1 decomposition
+- Moving brane as dynamical boundary
+- Bulk scalar field stabilization
+
+Key challenges include:
+- Implementing Israel junction conditions at moving boundary
+- Handling coordinate singularities during oscillation
+- Computational cost scaling as $O(N^5)$ for grid points
+
+**Modern Tools**: Potential frameworks for extension:
+- Einstein Toolkit → Add 5th dimension module
+- GRChombo → Already handles Kaluza-Klein physics
+- Custom Julia/DifferentialEquations.jl for prototyping
+
+#### 6.1.2 Initial Conditions for Brane Oscillations
+
+Several mechanisms could set the initial oscillation amplitude:
+
+**1. Ekpyrotic/Brane Collision Scenario**
+- Brane-brane collision triggers Big Bang
+- Inelastic collision → residual oscillations
+- Amplitude set by collision velocity and potential
+$$A_{osc} \sim v_{collision} \sqrt{\frac{M_5^3}{\tau_0}}$$
+
+**2. Post-Inflation Radion Release**
+- Inflation displaces brane from equilibrium
+- Hubble damping ceases → oscillations begin
+- Goldberger-Wise potential provides restoring force
+$$z(t) = z_{inf} e^{-3Ht/2} \cos(\omega t + \phi)$$
+
+**3. Spontaneous Symmetry Breaking**
+- Brane breaks bulk translational symmetry
+- Phase transition reduces brane tension
+- Branons as Nambu-Goldstone bosons
+$$\tau(T) = \tau_0 \left(1 - \left(\frac{T}{T_c}\right)^4\right)$$
+
+**4. Bouncing Cosmology**
+- Non-singular bounce excites oscillations
+- Brane position tracks scale factor oscillations
+- Natural in loop quantum cosmology scenarios
+
+#### 6.1.3 Quantum Corrections: Beyond One-Loop
+
+**Casimir Energy in Warped Geometry**
+Recent calculations (Rakhmetov et al. 2025) show:
+$$V_{Casimir}(z) = -\frac{\pi^2}{1440} \frac{N_{fields}}{z^4} + O(e^{-mz})$$
+
+For stabilized RS models, quantum corrections are small (~1%) but for oscillating branes:
+- Time-dependent Casimir effect
+- Possible damping or amplification
+- Branon production during oscillation
+
+**Radion Effective Potential**
+One-loop contributions from bulk gravitons (Garriga et al. 2001):
+$$V_{1-loop}(z) = V_{classical}(z) + \frac{3k^4}{32\pi^2} z^4 \ln(kz)$$
+
+This modifies oscillation frequency by:
+$$\Delta\omega/\omega \sim \frac{k^2}{M_5^2} \ln(kL)$$
+
+**Branon Quantum Effects**
+- Mass: $m_{branon} = \sqrt{2k^2/3} e^{-kL}$
+- Coupling: $\mathcal{L}_{int} = \frac{1}{f^2} T^{\mu\nu} \partial_\mu \pi \partial_\nu \pi$
+- Production rate: $\Gamma_{prod} \sim T^4/f^4$ during reheating
 
 ### 6.2 Observational Tests Timeline
 
@@ -375,13 +442,83 @@ Since $\Gamma_{decay} \ll H_0 \approx 10^{-18}$ Hz, the oscillations persist thr
 - **Next-gen atom interferometry**: Spatial gravity variations
 - **Ultimate PTA arrays**: Definitive detection/exclusion of brane signal
 
-### 6.3 Future Theoretical Work
+### 6.3 Theoretical Development Roadmap
 
-1. **Numerical Simulations**: N-body codes with oscillating brane gravity
+#### Phase 1: Theoretical Framework (Months 1-6)
+1. **Action Formulation**
+   - 5D Einstein-Hilbert + brane action
+   - Goldberger-Wise stabilization potential
+   - Matter coupling on brane
+   ```
+   S = S_bulk + S_brane + S_GW + S_matter
+   ```
 
-2. **Inflation Connection**: Can brane dynamics drive/affect inflation?
+2. **Linearized Analysis**
+   - Small oscillations: $z(t) = z_0 + \epsilon \cos(\omega t)$
+   - Stability analysis via perturbation theory
+   - Branon spectrum calculation
 
-3. **Dark Energy Unification**: Full cosmological model including late-time acceleration
+3. **Effective 4D Description**
+   - Integrate out bulk modes
+   - Derive modified Friedmann equations
+   - Radion effective potential
+
+#### Phase 2: Numerical Implementation (Months 6-12)
+1. **1D Prototype (Python)**
+   ```python
+   # Simplified radion evolution
+   def radion_evolution(t, y, params):
+       z, z_dot = y
+       V_prime = potential_derivative(z, params)
+       z_ddot = -3*H(t)*z_dot - V_prime
+       return [z_dot, z_ddot]
+   ```
+
+2. **Full 5D Code Development**
+   - Extend GRChombo/Einstein Toolkit
+   - Implement moving boundary conditions
+   - Parallelize with MPI/GPU acceleration
+
+3. **Benchmark Tests**
+   - Static RS solution recovery
+   - Small oscillation comparison
+   - Energy conservation checks
+
+#### Phase 3: Physical Applications (Months 12-18)
+1. **Cosmological Evolution**
+   - Oscillating brane + matter/radiation
+   - Structure formation modifications
+   - Dark energy emergence
+
+2. **Quantum Corrections**
+   - Include Casimir potential
+   - One-loop effective action
+   - Branon production rates
+
+3. **Observable Signatures**
+   - CMB modifications
+   - Gravitational wave spectrum
+   - Growth factor suppression
+
+### 6.4 Computational Strategy
+
+**Hierarchical Approach**:
+1. Start with homogeneous brane (1+1D problem)
+2. Add FRW expansion on brane
+3. Include perturbations (scalar, tensor)
+4. Full 5D inhomogeneous evolution
+
+**Key Numerical Methods**:
+- **Spatial**: Chebyshev spectral methods in bulk direction
+- **Temporal**: 4th order Runge-Kutta or symplectic integrators
+- **Boundaries**: Characteristic extraction at bulk infinity
+- **Brane**: Israel junction conditions via penalty method
+
+**Verification Tests**:
+- Convergence with resolution
+- Constraint preservation
+- Comparison with linear theory
+- Energy-momentum conservation
 
 ## 7. Conclusions
 
@@ -397,10 +534,28 @@ While significant theoretical and observational work remains, the framework show
 
 ## References
 
-Key papers establishing the framework:
-- Randall & Sundrum (1999) - Large Mass Hierarchy from a Small Extra Dimension
-- Goldberger & Wise (1999) - Modulus Stabilization
-- Ringermacher & Mead (2015) - Oscillations in Scale Factor
-- NANOGrav Collaboration (2023) - Evidence for nHz Gravitational Waves
+### Foundational Papers
+- Randall & Sundrum (1999) - "Large Mass Hierarchy from a Small Extra Dimension", Phys. Rev. Lett. 83, 3370
+- Goldberger & Wise (1999) - "Modulus Stabilization with Bulk Fields", Phys. Rev. Lett. 83, 4922
+- Maartens, R. (2010) - "Brane-World Gravity", Living Rev. Rel. 13, 5
+
+### Numerical Relativity in 5D
+- Martin, J. et al. (2005) - "BraneCode: 5D brane dynamics with scalar field", Comput. Phys. Commun. 171, 69 [arXiv:gr-qc/0410001]
+- GRChombo Collaboration (2015) - "GRChombo: Numerical relativity with adaptive mesh refinement", Class. Quant. Grav. 32, 245011
+
+### Initial Conditions & Cosmology
+- Khoury, J. et al. (2001) - "The Ekpyrotic Universe: Colliding Branes and the Origin of the Hot Big Bang", Phys. Rev. D 64, 123522
+- Collins, H. & Holman, R. (2003) - "Taming the Blue Spectrum of Brane Preheating", Phys. Rev. Lett. 90, 231301
+- Dvali & Tye (1999) - "Brane inflation", Phys. Lett. B 450, 72
+
+### Quantum Corrections
+- Garriga, J., Pujolàs, O. & Tanaka, T. (2001) - "Radion effective potential in the Brane-World", Nucl. Phys. B 605, 192
+- Rakhmetov, E.R. et al. (2025) - "Casimir Effect in Randall-Sundrum Models", Phys. Part. Nucl. 56, 168
+- Cembranos, J.A.R. et al. (2003) - "Brane-World Dark Matter", Phys. Rev. Lett. 90, 241301
+
+### Observational Signatures
+- Ringermacher & Mead (2015) - "Oscillations in the Hubble Parameter", Astron. J. 149, 137
+- NANOGrav Collaboration (2023) - "Evidence for nHz Gravitational Waves", Astrophys. J. Lett. 951, L8
+- Nam, C.H. et al. (2024) - "Brane-vector dark matter", Phys. Rev. D 109, 095003
 
 For complete references and technical details, see the [Complete Theory](/theory-complete/) document.
