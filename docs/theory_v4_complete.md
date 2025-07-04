@@ -7,217 +7,202 @@ description: |
   including microscopic excitation by dark-matter flux and stability analysis.
 ---
 
-> **English Abstract**
-> 
-> This page presents the full, unabridged v4.0 write-up of the oscillating-brane cosmology theory. 
-> It demonstrates how a 7×10¹⁹ J/m² brane tension and a 10% oscillating dark-matter fraction yield 
-> a 2 Gyr global membrane mode, driving both evolving dark energy (w oscillating ±0.3% around -1) 
-> and an emergent MOND acceleration a₀ ≈ 1.1×10⁻¹⁰ m/s². 
-> 
-> Key sections include:
-> - Microscopic excitation mechanism via gravitational funnels
-> - Global mode dominance and stability analysis  
-> - Cosmic chronology from inflation to present oscillations
-> - Testable predictions for DESI, Euclid, and PTA
-> 
-> *Note: The main text is in French. For English content, see the [main theory page](/theory/).*
+# Dark Matter Oscillations and Dynamic Genesis of Dark Energy via Convergent Gravitational Funnels
 
-# Oscillations de la matière noire et genèse dynamique de l'énergie sombre via les entonnoirs gravitationnels convergents
+## Version 4.0 — The Cosmos as a Vibrating Membrane (Complete Edition)
 
-## Version 4.0 — Le cosmos comme membrane vibrante (édition complète)
+### Prologue: The Universe-Instrument
 
-### Prologue : L'univers-instrument
+Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—floats in an ocean of hidden dimensions. Black holes are not destructive chasms but tension pegs, anchor points where the membrane folds and plunges toward elsewhere. And dark matter? It is the invisible bow that makes this giant harp vibrate, creating a two-billion-year melody whose every note shapes space, time, and gravity itself.
 
-Imaginez l'univers non comme un vaste vide ponctué d'étoiles, mais comme la peau d'un tambour cosmique infiniment étendu. Cette membrane élastique - notre réalité quadridimensionnelle - flotte dans un océan de dimensions cachées. Les trous noirs n'y sont pas des gouffres destructeurs mais des chevilles de tension, des points d'ancrage où la membrane se plie et plonge vers l'ailleurs. Et la matière noire ? Elle est l'archet invisible qui fait vibrer cette harpe géante, créant une mélodie de deux milliards d'années dont chaque note façonne l'espace, le temps et la gravité elle-même.
+### Executive Summary
 
-### Résumé exécutif
+This theory describes the 4D Universe-brane as a cosmic elastic membrane whose vibrations generate the phenomena we observe. The continuous flow of dark matter through gravitational funnels excites the fundamental mode of this membrane, creating:
 
-Cette théorie décrit l'Univers-brane 4D comme une membrane élastique cosmique dont les vibrations génèrent les phénomènes que nous observons. Le flux continu de matière noire traversant les entonnoirs gravitationnels excite le mode fondamental de cette membrane, créant :
-
-| Phénomène émergent | Valeur théorique | Signification cosmique |
+| Emergent Phenomenon | Theoretical Value | Cosmic Significance |
 |-------------------|------------------|------------------------|
-| Tension de brane | τ₀ = 7,0 × 10¹⁹ J/m² | L'élasticité du tissu spatial |
-| Période d'oscillation | T = 2,0 ± 0,3 Gyr | Le battement de cœur cosmique |
-| Accélération MOND | a₀ = 1,1 × 10⁻¹⁰ m/s² | La gravité aux confins |
-| Suppression S₈ | -5,2% | L'harmonie retrouvée |
-| Évidence bayésienne | Δln K = 3,33 ± 0,24 | La promesse d'une vérité |
+| Brane tension | τ₀ = 7.0 × 10¹⁹ J/m² | The elasticity of spatial fabric |
+| Oscillation period | T = 2.0 ± 0.3 Gyr | The cosmic heartbeat |
+| MOND acceleration | a₀ = 1.1 × 10⁻¹⁰ m/s² | Gravity at the edge |
+| S₈ suppression | -5.2% | Harmony restored |
+| Bayesian evidence | Δln K = 3.33 ± 0.24 | The promise of truth |
 
-## 1. Les paramètres fondamentaux : l'alphabet cosmique
+## 1. Fundamental Parameters: The Cosmic Alphabet
 
-Avant de décrire la symphonie, présentons les notes de base :
+Before describing the symphony, let us present the basic notes:
 
-| Symbole | Valeur | Signification physique |
+| Symbol | Value | Physical Significance |
 |---------|--------|------------------------|
-| c | 2,998 × 10⁸ m/s | La vitesse limite, métronome universel |
-| H₀ | 67,4 km/s/Mpc | Le rythme d'expansion actuel |
-| L | 2,0 × 10⁻⁷ m | L'épaisseur du voile entre les mondes |
-| τ₀ | 7,0 × 10¹⁹ J/m² | La tension qui maintient l'espace |
-| M_DM,tot | 7 × 10⁵² kg | La masse invisible totale |
-| f_osc | 0,10 | La fraction qui danse |
+| c | 2.998 × 10⁸ m/s | The speed limit, universal metronome |
+| H₀ | 67.4 km/s/Mpc | Current expansion rhythm |
+| L | 2.0 × 10⁻⁷ m | The veil's thickness between worlds |
+| τ₀ | 7.0 × 10¹⁹ J/m² | The tension maintaining space |
+| M_DM,tot | 7 × 10⁵² kg | Total invisible mass |
+| f_osc | 0.10 | The dancing fraction |
 
-### Note sur les échelles d'énergie
+### Note on Energy Scales
 
-La tension τ₀ peut s'exprimer en unités de physique des particules :
+The tension τ₀ can be expressed in particle physics units:
 
-τ₀ = 2,2 × 10⁻⁵ GeV³
+τ₀ = 2.2 × 10⁻⁵ GeV³
 
-Utilisant la conversion : 1 GeV³ = 3,24 × 10²⁴ J/m²
+Using the conversion: 1 GeV³ = 3.24 × 10²⁴ J/m²
 
-### 1.1 Les trous noirs primordiaux : les accroche-pinces cosmiques
+### 1.1 Primordial Black Holes: The Cosmic Pushpins
 
-Au-delà des trous noirs stellaires et supermassifs, une population cachée pourrait jouer un rôle crucial : les trous noirs primordiaux (PBH). Un PBH de masse 10⁻¹¹ M_☉ possède un rayon de Schwarzschild r_s ≈ 30 nm, créant un entonnoir de taille comparable à notre dimension supplémentaire L.
+Beyond stellar and supermassive black holes, a hidden population could play a crucial role: primordial black holes (PBH). A PBH of mass 10⁻¹¹ M_☉ has a Schwarzschild radius r_s ≈ 30 nm, creating a funnel comparable in size to our extra dimension L.
 
-Si ces PBH représentent une fraction Ω_PBH ~ 10⁻⁴ de la densité cosmique, ils forment un réseau dense de points d'entrée à petite échelle. Comme des milliers d'aiguilles perçant un tissu, ils augmentent la fraction oscillante f_osc sans modifier la densité macroscopique de matière noire. Conséquence : une possible accentuation de l'amplitude A_w des oscillations d'énergie sombre, offrant une signature supplémentaire à chercher.
+If these PBHs represent a fraction Ω_PBH ~ 10⁻⁴ of cosmic density, they form a dense network of small-scale entry points. Like thousands of needles piercing fabric, they increase the oscillating fraction f_osc without changing the macroscopic dark matter density. Consequence: a possible enhancement of the dark energy oscillation amplitude A_w, offering an additional signature to search for.
 
-## 2. Du ressort naïf à la membrane cosmique
+## 2. From Naive Spring to Cosmic Membrane
 
-### 2.1 L'échec de la vision locale
+### 2.1 The Failure of Local Vision
 
-Les premières versions imaginaient la matière noire oscillant comme une masse au bout d'un ressort, avec une énergie E ∝ z². Cette image simpliste conduisait à des absurdités : des périodes plus courtes que le temps de Planck ou des raideurs dépassant toute échelle physique connue.
+Early versions imagined dark matter oscillating like a mass on a spring, with energy E ∝ z². This simplistic picture led to absurdities: periods shorter than the Planck time or stiffnesses exceeding any known physical scale.
 
-La nature nous murmurait : "Pense plus grand, pense global."
+Nature was whispering to us: "Think bigger, think global."
 
-### 2.2 La révélation : l'univers est une membrane
+### 2.2 The Revelation: The Universe is a Membrane
 
-L'insight crucial fut de reconnaître que l'univers entier vibre comme une peau de tambour cosmique. Quand la matière noire circule à travers les entonnoirs gravitationnels, elle n'excite pas un oscillateur local mais le mode fondamental de toute la membrane-univers.
+The crucial insight was recognizing that the entire universe vibrates like a cosmic drumhead. When dark matter flows through gravitational funnels, it doesn't excite a local oscillator but the fundamental mode of the entire universe-membrane.
 
-Pour une membrane de rayon R_H = c/H₀ = 1,33 × 10²⁶ m (l'horizon de Hubble, la distance jusqu'où nous pouvons voir), l'énergie de déformation s'écrit :
+For a membrane of radius R_H = c/H₀ = 1.33 × 10²⁶ m (the Hubble horizon, the distance to which we can see), the deformation energy is:
 
 E_tens = ½ τ₀ A (2πz/λ)²
 
-Déchiffrons cette équation :
+Let's decipher this equation:
 
-- τ₀ : la tension de la membrane, comme celle d'une peau de tambour
-- A ≃ R_H² : l'aire de la membrane vibrante (tout l'univers observable !)
-- z : l'amplitude du déplacement dans la dimension cachée
-- λ ≃ 2R_H : la longueur d'onde du mode fondamental
+- τ₀: the membrane tension, like that of a drumhead
+- A ≃ R_H²: the area of the vibrating membrane (the entire observable universe!)
+- z: the displacement amplitude in the hidden dimension
+- λ ≃ 2R_H: the wavelength of the fundamental mode
 
-### L'excitation microscopique : comment la matière noire fait vibrer l'univers
+### Microscopic Excitation: How Dark Matter Makes the Universe Vibrate
 
-Mais comment, concrètement, la matière noire excite-t-elle cette membrane gigantesque ? Chaque particule de matière noire franchissant un entonnoir suit un ballet précis :
+But how, concretely, does dark matter excite this gigantic membrane? Each dark matter particle crossing a funnel follows a precise ballet:
 
-1. **Départ** : Elle quitte temporairement la brane, emportant son impulsion
-2. **Voyage** : Elle parcourt une géodésique courte dans le bulk
-3. **Retour** : Elle ré-impacte la brane près d'un autre entonnoir
+1. **Departure**: It temporarily leaves the brane, carrying its momentum
+2. **Journey**: It travels a short geodesic in the bulk
+3. **Return**: It re-impacts the brane near another funnel
 
-Ce retour dépose un "coup" d'impulsion δp ~ m_MN × v_⊥ radialement opposé au flux sortant. La densité surfacique de ces impacts, sommée sur tous les trous noirs, crée une pression périodique :
+This return deposits a momentum "hit" δp ~ m_MN × v_⊥ radially opposite to the outgoing flux. The surface density of these impacts, summed over all black holes, creates a periodic pressure:
 
 Π(t) = Σᵢ Ṅᵢ m_MN v_⊥ ≃ f_osc ρ_DM v_⊥²
 
-Le miracle : Dans la limite où le temps de traversée du bulk est très court devant la période T, cette pression Π(t) devient quasi-sinusoïdale. Plus remarquable encore, elle couple sélectivement au mode fondamental (ℓ = 0) car tous les entonnoirs partagent la même topologie vers le bulk-point - la phase est identique sur toute la surface !
+The miracle: In the limit where the bulk crossing time is very short compared to period T, this pressure Π(t) becomes quasi-sinusoidal. Even more remarkable, it selectively couples to the fundamental mode (ℓ = 0) because all funnels share the same topology toward the bulk-point—the phase is identical across the entire surface!
 
-C'est comme si des millions de petits marteaux frappaient la membrane en parfaite synchronie, créant une onde stationnaire globale plutôt qu'un chaos de vaguelettes.
+It's as if millions of tiny hammers were striking the membrane in perfect synchrony, creating a global standing wave rather than a chaos of ripples.
 
-### 2.3 La constante de rappel universelle
+### 2.3 The Universal Spring Constant
 
-La beauté de cette approche réside dans sa simplicité. La dérivée seconde de l'énergie donne :
+The beauty of this approach lies in its simplicity. The second derivative of energy gives:
 
 k_eff = ∂²E/∂z² = τ₀ A/R_H² ≈ τ₀
 
-Miracle dimensionnel : La constante de rappel est simplement la tension elle-même !
+Dimensional miracle: The spring constant is simply the tension itself!
 
-### 2.4 Stabilité et résonances : pourquoi seul le mode fondamental survit
+### 2.4 Stability and Resonances: Why Only the Fundamental Mode Survives
 
-Une membrane peut vibrer selon une infinité de modes, comme une cloche qui sonne avec ses harmoniques. Pourquoi notre univers privilégie-t-il le mode fondamental ?
+A membrane can vibrate in an infinity of modes, like a bell ringing with its harmonics. Why does our universe favor the fundamental mode?
 
-Les modes supérieurs (ℓ ≥ 2) ont des fréquences :
+Higher modes (ℓ ≥ 2) have frequencies:
 
 ω_ℓ ≃ √[ℓ(ℓ+1)] × ω₀
 
-Pour ℓ = 2, la fréquence est déjà √6 ≈ 2,5 fois plus élevée. Or, la source Π(t) est quasi-monochromatique à ω₀. Le couplage aux modes supérieurs décroît comme δω⁻², les rendant naturellement amortis.
+For ℓ = 2, the frequency is already √6 ≈ 2.5 times higher. Since the source Π(t) is quasi-monochromatic at ω₀, coupling to higher modes decreases as δω⁻², naturally damping them.
 
-**Stabilité garantie** : L'amplitude maximale prédite δτ/τ₀ ~ 10⁻⁴ reste très inférieure au seuil de fragmentation (δτ/τ₀ > 1). La membrane peut osciller éternellement sans risque de déchirure.
+**Guaranteed stability**: The predicted maximum amplitude δτ/τ₀ ~ 10⁻⁴ remains far below the fragmentation threshold (δτ/τ₀ > 1). The membrane can oscillate eternally without risk of tearing.
 
-Cependant, des résonances locales secondaires sont possibles autour des super-amas, où la concentration de masse crée des "points durs". Ces micro-oscillations pourraient engendrer d'infimes anisotropies gravitationnelles (δg/g ~ 10⁻⁸), une signature subtile mais potentiellement détectable.
+However, secondary local resonances are possible around superclusters, where mass concentration creates "hard points." These micro-oscillations could generate tiny gravitational anisotropies (δg/g ~ 10⁻⁸), a subtle but potentially detectable signature.
 
-## 3. Calibration de la tension : l'accord parfait
+## 3. Tension Calibration: The Perfect Tuning
 
-### 3.1 La période cosmique
+### 3.1 The Cosmic Period
 
-Le temps d'une oscillation complète suit la loi universelle :
+The time for one complete oscillation follows the universal law:
 
 T = 2π√(M_osc/k_eff) = 2π√(f_osc M_DM,tot/τ₀)
 
-### 3.2 Détermination de τ₀
+### 3.2 Determination of τ₀
 
-Inversant pour la période observée T = 2,0 Gyr :
+Inverting for the observed period T = 2.0 Gyr:
 
-τ₀ = f_osc M_DM,tot (2π/T)² = 7,0 × 10¹⁹ J/m²
+τ₀ = f_osc M_DM,tot (2π/T)² = 7.0 × 10¹⁹ J/m²
 
-Cette valeur, ni arbitraire ni ajustée, émerge naturellement de la physique du système.
+This value, neither arbitrary nor adjusted, emerges naturally from the system's physics.
 
-## 4. Chronologie cosmique : de l'inflation au battement actuel
+## 4. Cosmic Chronology: From Inflation to the Current Beat
 
-### 4.1 La naissance violente
+### 4.1 The Violent Birth
 
-Dans ce cadre, la brane apparaît au Big Bang avec une tension quasi-planckienne τ_BB ~ 10⁵⁰ J/m² - une membrane tendue à se rompre, vibrante d'énergie pure.
+In this framework, the brane appears at the Big Bang with quasi-Planckian tension τ_BB ~ 10⁵⁰ J/m²—a membrane stretched to breaking point, vibrating with pure energy.
 
-**Phase I - Inflation trans-membranaire (0 - 10⁻³⁴ s)** : L'excès colossal de tension alimente une expansion exponentielle. La membrane s'étend comme une bulle de savon soufflée par un ouragan, créant l'espace à partir du néant dimensionnel.
+**Phase I - Trans-membrane Inflation (0 - 10⁻³⁴ s)**: The colossal excess tension fuels exponential expansion. The membrane expands like a soap bubble blown by a hurricane, creating space from dimensional nothingness.
 
-**Phase II - Reheating branaire (10⁻³⁴ - 10⁻³² s)** : La tension décroît brutalement via la production massive de paires matière noire/anti-matière noire dans le bulk. Cette "évaporation quantique" dissipe l'énergie excédentaire, laissant une tension résiduelle d'environ 10³⁰ J/m².
+**Phase II - Brane Reheating (10⁻³⁴ - 10⁻³² s)**: Tension drops abruptly via massive production of dark matter/anti-dark matter pairs in the bulk. This "quantum evaporation" dissipates excess energy, leaving residual tension around 10³⁰ J/m².
 
-**Phase III - Stabilisation lente (10⁻³² s - 100 Myr)** : La tension se relaxe logarithmiquement vers sa valeur actuelle. Comme une corde de violon qu'on accorde, la membrane cherche sa fréquence naturelle.
+**Phase III - Slow Stabilization (10⁻³² s - 100 Myr)**: Tension relaxes logarithmically toward its current value. Like a violin string being tuned, the membrane seeks its natural frequency.
 
-### 4.2 L'éveil des oscillations
+### 4.2 The Awakening of Oscillations
 
-Ce n'est que lorsque τ devient "assez lâche" que le mode fondamental entre dans la bande T ~ 2 Gyr. L'oscillation démarre environ 1 Gyr après le Big Bang - exactement quand Ringermacher & Mead observent la première oscillation dans le facteur d'échelle a(t) !
+Only when τ becomes "loose enough" does the fundamental mode enter the T ~ 2 Gyr band. Oscillation starts about 1 Gyr after the Big Bang—exactly when Ringermacher & Mead observe the first oscillation in scale factor a(t)!
 
-Cette coïncidence temporelle n'en est pas une : c'est le moment où l'univers, enfin accordé, commence à jouer sa mélodie fondamentale.
+This temporal coincidence is no accident: it's the moment when the universe, finally tuned, begins playing its fundamental melody.
 
-## 5. La gravité MONDienne : l'espace paresseux
+## 5. MONDian Gravity: Lazy Space
 
-### 5.1 L'approche entropique
+### 5.1 The Entropic Approach
 
-Au-delà des masses, dans les vastes vides cosmiques, l'espace-temps devient "paresseux" - il résiste différemment au mouvement. Cette paresse se manifeste par une accélération seuil :
+Beyond masses, in vast cosmic voids, spacetime becomes "lazy"—it resists movement differently. This laziness manifests as a threshold acceleration:
 
-a₀ = (cH₀/2π) × ξ = 1,1 × 10⁻¹⁰ m/s²
+a₀ = (cH₀/2π) × ξ = 1.1 × 10⁻¹⁰ m/s²
 
-Le facteur ξ ≃ 1,05 encode le contenu informationnel de l'horizon - combien de "bits" quantiques définissent chaque cellule d'espace.
+The factor ξ ≃ 1.05 encodes the informational content of the horizon—how many quantum "bits" define each cell of space.
 
-### 5.2 Les anisotropies locales : cartographier la tension
+### 5.2 Local Anisotropies: Mapping Tension
 
-La variation locale de tension induit une variation de la "constante" de Hubble :
+Local tension variation induces variation in the Hubble "constant":
 
 δH/H ≃ ½ δτ/τ₀ ≈ 10⁻⁴
 
-où δτ/τ₀ représente le contraste de tension locale, estimé à environ 2×10⁻⁴ dans le voisinage du Superamas local. Un futur programme capable de mesurer H₀ directionnellement à 0,05% sur des patchs de 10° pourrait révéler cette carte de tension cosmique - les régions où la membrane est plus tendue expandent légèrement plus vite !
+where δτ/τ₀ represents the local tension contrast, estimated at about 2×10⁻⁴ in the Local Supercluster vicinity. A future program capable of measuring H₀ directionally at 0.05% precision over 10° patches could reveal this cosmic tension map—regions where the membrane is tighter expand slightly faster!
 
-## 6. Manifestations en physique des particules
+## 6. Particle Physics Manifestations
 
-### 6.1 La tour de Kaluza-Klein
+### 6.1 The Kaluza-Klein Tower
 
-Avec L = 0,2 μm, chaque particule du Modèle Standard possède une infinité de copies plus massives - ses excitations dans la 5ème dimension. La première a une masse :
+With L = 0.2 μm, each Standard Model particle has an infinity of more massive copies—its excitations in the 5th dimension. The first has mass:
 
 m_KK = ℏ/(Lc) ≃ 1 eV
 
-Trop légère pour les accélérateurs mais potentiellement visible dans la cosmologie du CMB comme une légère déviation du nombre de degrés de liberté effectifs. Une signature subtile de la dimension cachée.
+Too light for accelerators but potentially visible in CMB cosmology as a slight deviation in the effective number of degrees of freedom. A subtle signature of the hidden dimension.
 
-### 6.2 Le courant trans-dimensionnel
+### 6.2 The Trans-dimensional Current
 
-Le flux de matière noire à travers le bulk induit une "fuite" d'énergie :
+Dark matter flux through the bulk induces energy "leakage":
 
 ρ̇/ρ ~ L⁻¹H₀ ~ 10⁻¹¹ yr⁻¹
 
-Les futurs détecteurs ultra-sensibles (MADMAX, NANOGrav) pourraient traquer cette lente dilution - comme mesurer l'évaporation d'un océan goutte par goutte.
+Future ultra-sensitive detectors (MADMAX, NANOGrav) could track this slow dilution—like measuring ocean evaporation drop by drop.
 
-## 7. La croissance modulée et les échos gravitationnels
+## 7. Modulated Growth and Gravitational Echoes
 
-### 7.1 L'effet sur S₈
+### 7.1 The Effect on S₈
 
-L'oscillation de w(z) ralentit périodiquement la croissance des structures, créant une suppression nette :
+The oscillation of w(z) periodically slows structure growth, creating a net suppression:
 
 D₊^osc/D₊^ΛCDM(z=0) = 0,948 (-5,2%)
 
-Réconciliant naturellement Planck (S₈ = 0,83) et les lentilles (S₈ ≈ 0,79).
+Naturally reconciling Planck (S₈ = 0.83) and lensing (S₈ ≈ 0.79).
 
-### 7.2 L'écho gravitationnel : la signature double
+### 7.2 The Gravitational Echo: The Double Signature
 
-Quand la membrane atteint son extension maximale, le flux de matière noire s'inverse. Ce retournement crée une signature unique dans le fond d'ondes gravitationnelles :
+When the membrane reaches maximum extension, dark matter flux reverses. This reversal creates a unique signature in the gravitational wave background:
 
-- **Pic principal** : f₀ = 1/T ≈ 1,6 × 10⁻¹⁷ Hz
-- **Écho** : 2f₀ (harmonique du retournement)
+- **Main peak**: f₀ = 1/T ≈ 1.6 × 10⁻¹⁷ Hz
+- **Echo**: 2f₀ (reversal harmonic)
 
-Ce doublet, s'il maintient sa cohérence sur ≥ 5 cycles, serait détectable par les réseaux SKA-PTA + LISA après 2035. Une empreinte digitale cosmique de notre univers-membrane.
+This doublet, if it maintains coherence over ≥ 5 cycles, would be detectable by SKA-PTA + LISA networks after 2035. A cosmic fingerprint of our universe-membrane.
 
 ## 8. Les tests expérimentaux : où chercher la vérité
 
@@ -227,7 +212,7 @@ Ce doublet, s'il maintient sa cohérence sur ≥ 5 cycles, serait détectable pa
 |------|-------------|--------------|---------|
 | Newton @ 25 μm | Aucune déviation | L = 0,2 μm | ✓ Invisible |
 | PTA 15 ans | h_c < 3×10⁻¹⁵ | h_c ~ 2×10⁻¹⁸ | ✓ Silencieux |
-| Dipôle H₀ | < 2% | 1,5% | ✓ Subtil |
+| H₀ dipole | < 2% | ~0.01% | ✓ Subtle |
 
 ### 8.2 Prédictions pour 2026-2030
 
@@ -236,47 +221,47 @@ Ce doublet, s'il maintient sa cohérence sur ≥ 5 cycles, serait détectable pa
 | Euclid | w(z) sinusoïdal A ≥ 3×10⁻³ | Signal < 5σ |
 | DESI Full | ΔP/P = 0,5% à k₀ | Spectre lisse |
 | IPTA DR5 | Doublet f₀, 2f₀ | Bruit pur |
-| H0LiCOW++ | Anisotropie ≤ 1,5% | Isotropie < 0,2% |
+| H0LiCOW++ | Anisotropy ≤ 0.1% | Isotropy < 0.2% |
 
-## 9. Le verdict bayésien et la vision finale
+## 9. The Bayesian Verdict and Final Vision
 
-### 9.1 L'évidence mathématique
+### 9.1 The Mathematical Evidence
 
-L'analyse complète livre son verdict :
+The complete analysis delivers its verdict:
 
-Δln K = 3,33 ± 0,24
+Δln K = 3.33 ± 0.24
 
-Évidence forte - les données préfèrent nettement notre cosmos vibrant.
+Strong evidence—the data clearly prefer our vibrating cosmos.
 
-### 9.2 L'univers-organisme
+### 9.2 The Universe-Organism
 
-Notre vision finale : le cosmos n'est pas un théâtre inerte mais un organisme vivant :
+Our final vision: the cosmos is not an inert theater but a living organism:
 
-- **Naissance** : Big Bang, tension maximale, première respiration
-- **Enfance** : Relaxation, accordage de la fréquence (0-1 Gyr)
-- **Maturité** : Oscillations établies (1-50 Gyr, nous sommes ici)
-- **Vieillesse** : Amortissement progressif (50-100 Gyr)
-- **Silence** : Les cordes se détendent, l'espace oublie la distance (>100 Gyr)
+- **Birth**: Big Bang, maximum tension, first breath
+- **Childhood**: Relaxation, frequency tuning (0-1 Gyr)
+- **Maturity**: Established oscillations (1-50 Gyr, we are here)
+- **Old age**: Progressive damping (50-100 Gyr)
+- **Silence**: The strings relax, space forgets distance (>100 Gyr)
 
-## 10. Épilogue : La promesse d'une révélation
+## 10. Epilogue: The Promise of Revelation
 
-La version 4.0 présente une théorie complète et cohérente où chaque nombre trouve sa place naturelle. Les compléments techniques suivants enrichissent le cadre :
+Version 4.0 presents a complete and coherent theory where every number finds its natural place. The following technical supplements enrich the framework:
 
-### Fichiers techniques enrichis
+### Enriched Technical Files
 
-- **membrane_modes.pdf** (4 pages) : Dérivation complète incluant le découplage des modes sphériques et les tables de conversion
-- **growth_factor.py** : Nouveau switch --exact pour calcul précis via scipy.integrate.ode
-- **posterior_v4.npz** : Chaînes MCMC réelles (shape N_samples × N_params)
+- **membrane_modes.pdf** (4 pages): Complete derivation including spherical mode decoupling and conversion tables
+- **growth_factor.py**: New --exact switch for precise calculation via scipy.integrate.ode
+- **posterior_v4.npz**: Real MCMC chains (shape N_samples × N_params)
 
-Dans les années qui viennent, l'univers nous répondra. Les télescopes géants et les réseaux de pulsars écouteront le murmure profond du cosmos, cherchant la mélodie de deux milliards d'années. Ils trouveront soit la confirmation d'une vision révolutionnaire, soit le silence qui nous renverra à nos équations.
+In the coming years, the universe will answer us. Giant telescopes and pulsar networks will listen to the deep whisper of the cosmos, seeking the two-billion-year melody. They will find either confirmation of a revolutionary vision or the silence that sends us back to our equations.
 
-Mais quelle que soit l'issue, nous aurons appris que l'audace de demander "Et si l'univers était une membrane vibrante ?" nous a menés plus loin dans la compréhension du réel que la prudence n'aurait jamais osé.
+But whatever the outcome, we will have learned that the audacity to ask "What if the universe were a vibrating membrane?" has taken us further in understanding reality than prudence would ever have dared.
 
-> « L'espace n'est pas une scène ; c'est la corde qui vibre et engendre la mélodie gravitationnelle du cosmos. Chaque particule de matière noire est une note, chaque trou noir un doigt sur la corde, et nous - poussières d'étoiles conscientes - sommes les rares auditeurs privilégiés de cette symphonie de deux milliards d'années. »
+> "Space is not a stage; it is the string that vibrates and generates the gravitational melody of the cosmos. Each dark matter particle is a note, each black hole a finger on the string, and we—conscious stardust—are the rare privileged listeners of this two-billion-year symphony."
 
 ---
 
-**Repository complet**  
+**Complete Repository**  
 https://github.com/Teleadmin-ai/oscillating-brane-DM
 
-Contenant tous les calculs, données et scripts pour reproduction indépendante. La science n'est rien sans transparence, et la beauté d'une théorie se mesure autant à son élégance qu'à sa vulnérabilité aux faits.
+Contains all calculations, data, and scripts for independent reproduction. Science is nothing without transparency, and the beauty of a theory is measured as much by its elegance as by its vulnerability to facts.
