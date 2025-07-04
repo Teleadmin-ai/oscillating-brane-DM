@@ -4,9 +4,10 @@ PTA echo effect calculation and visualization
 Shows the gravitational wave doublet at f0 and 2f0
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
 import os
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Set up plot style
 plt.style.use("dark_background")

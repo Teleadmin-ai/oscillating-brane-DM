@@ -12,10 +12,10 @@ Based on literature:
 - Serpico et al. (2020) - Updated PBH constraints
 """
 
+import matplotlib.pyplot as plt
 import numpy as np
 from scipy import integrate
 from scipy.special import erf
-import matplotlib.pyplot as plt
 
 # Physical constants
 c = 2.998e8  # m/s

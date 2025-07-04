@@ -7,11 +7,11 @@ Generate trace plots, convergence diagnostics, and posterior tables
 from the Bayesian analysis results.
 """
 
-import numpy as np
+import corner
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 from scipy import stats
-import corner
 
 
 def load_posterior_data(filename="data/posterior_v4.npz"):

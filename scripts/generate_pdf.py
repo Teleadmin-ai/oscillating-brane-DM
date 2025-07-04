@@ -6,11 +6,12 @@ Combines theory documents, blog posts, and other content into a single PDF.
 
 import os
 import re
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Tuple
+
 import pypandoc
 import yaml
-from typing import List, Dict, Tuple
 
 # Install required packages:
 # pip install pypandoc pyyaml

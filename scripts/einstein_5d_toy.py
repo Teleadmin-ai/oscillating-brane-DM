@@ -12,11 +12,12 @@ Based on:
 - Various Randall-Sundrum extensions
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
-from matplotlib.animation import FuncAnimation
 import time
+
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.animation import FuncAnimation
+from scipy.integrate import solve_ivp
 
 # Physical constants (in natural units where c = ℏ = 1)
 # Length unit: 1/TeV ≈ 0.2 fm

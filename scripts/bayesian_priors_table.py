@@ -7,10 +7,10 @@ Detailed documentation of priors used in the Bayesian evidence calculation
 and cross-check with alternative prior choices.
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
-from scipy import stats
+import numpy as np
 import pandas as pd
+from scipy import stats
 
 
 class PriorTable:

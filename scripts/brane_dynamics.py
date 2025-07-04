@@ -8,10 +8,11 @@ Computes membrane oscillations, dark energy equation of state,
 and cosmological observables.
 """
 
+from typing import Optional, Tuple
+
+import matplotlib.pyplot as plt
 import numpy as np
 from scipy import integrate
-from typing import Tuple, Optional
-import matplotlib.pyplot as plt
 
 # Physical constants
 c = 2.998e8  # m/s

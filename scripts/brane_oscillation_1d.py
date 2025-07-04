@@ -5,10 +5,10 @@ Solves for radion field evolution with Goldberger-Wise potential
 Based on O3 pro's theoretical development suggestions
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+from scipy.constants import G, c
 from scipy.integrate import solve_ivp
-from scipy.constants import c, G
 
 # Physical constants
 M_P = 1.22e19  # GeV (Planck mass)

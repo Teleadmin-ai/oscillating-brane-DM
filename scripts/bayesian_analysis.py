@@ -7,13 +7,14 @@ Computes Bayesian evidence and posterior distributions
 for the oscillating brane dark matter theory compared to ΛCDM.
 """
 
+from typing import Dict, Optional, Tuple
+
+import corner
+import emcee
+import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 from scipy.special import loggamma
-import emcee
-import corner
-from typing import Dict, Tuple, Optional
-import matplotlib.pyplot as plt
 
 
 class BayesianAnalyzer:

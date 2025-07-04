@@ -8,11 +8,12 @@ in the oscillating brane cosmology, including the effects of
 time-varying dark energy equation of state.
 """
 
+import argparse
+from typing import Optional, Tuple
+
 import numpy as np
 from scipy import integrate
 from scipy.interpolate import interp1d
-import argparse
-from typing import Tuple, Optional
 
 # Cosmological parameters (Planck 2018)
 Omega_m0 = 0.315
