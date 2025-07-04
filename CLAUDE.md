@@ -5,8 +5,9 @@ This is the **Oscillating Brane Dark Matter Theory** project - a revolutionary c
 
 ## Repository Information
 - **GitHub URL**: https://github.com/Teleadmin-ai/oscillating-brane-DM
-- **GitHub Pages URL**: https://teleadmin-ai.github.io/oscillating-brane-DM/
+- **Live Website**: https://higgs-cosmology.com/
 - **Owner**: Teleadmin-ai
+- **Development Status**: Active - AI-assisted theoretical cosmology research
 
 ## GitHub Authentication
 When working with this repository, use GitHub CLI (`gh`) for authentication. The user has personal access tokens configured.
@@ -19,25 +20,46 @@ When working with this repository, use GitHub CLI (`gh`) for authentication. The
 ## Project Structure
 ```
 oscillating-brane-DM/
-├── _posts/              # Blog posts explaining the theory
-├── _layouts/            # Jekyll layouts
-├── assets/css/          # Custom styling
-├── docs/                # Technical documentation
-├── scripts/             # Python computational tools
-├── index.md            # Homepage
-├── theory.md           # Theory page
-├── predictions.md      # Predictions page
-├── tools.md            # Tools documentation
-├── about.md            # About page
-└── _config.yml         # Jekyll configuration
+├── _posts/              # Blog posts explaining the theory (dark theme)
+├── _layouts/            # Jekyll layouts (including custom dark.html)
+│   ├── dark.html       # Main layout with videos and dark theme
+│   ├── default.html    # Standard Jekyll layout
+│   └── post.html       # Blog post layout
+├── assets/
+│   ├── css/            # Custom styling
+│   │   └── dark-theme.css  # Complete dark theme implementation
+│   ├── js/             # JavaScript for video carousel
+│   └── videos/         # Local MP4 files for visual content
+├── plots/              # Generated scientific figures
+├── scripts/            # Python computational tools
+│   ├── brane_dynamics.py      # Membrane oscillation calculations
+│   ├── growth_factor.py       # Structure formation calculations
+│   ├── bayesian_analysis.py   # Model comparison
+│   ├── kk_spectrum.py         # Kaluza-Klein mode analysis
+│   ├── pta_echo.py           # Gravitational wave predictions
+│   └── generate_figures.py    # Figure generation script
+├── docs/               # Technical documentation (PDFs, theory details)
+├── data/               # Posterior samples and analysis results
+├── index.md           # Homepage
+├── theory.md          # Complete theoretical framework
+├── predictions.md     # Observational predictions
+├── chronology.md      # Cosmic timeline (new)
+├── tools.md           # Tools documentation
+├── about.md           # About page with disclaimer
+├── CNAME              # Custom domain configuration
+├── requirements.txt   # Python dependencies
+└── _config.yml        # Jekyll configuration
 ```
 
 ## Jekyll/GitHub Pages Configuration
 
 ### Current Setup
 - **Theme**: `jekyll-theme-minimal` (GitHub Pages supported theme)
-- **Base URL**: `/oscillating-brane-DM`
+- **Custom Layout**: `dark.html` with video carousel and dark theme
+- **Base URL**: `` (empty for custom domain)
+- **URL**: `https://higgs-cosmology.com`
 - **Deployment**: GitHub Pages from main branch
+- **Custom Domain**: higgs-cosmology.com (configured with CNAME)
 
 ### Common Issues & Solutions
 
