@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: dark
 title: About the Oscillating Brane Theory
 permalink: /about/
 ---
