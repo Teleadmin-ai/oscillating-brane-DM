@@ -102,150 +102,151 @@ class PDFGenerator:
         """Convert Unicode mathematical symbols to LaTeX commands."""
         # First, handle emojis and special characters that should always be replaced
         emoji_replacements = {
-            '🌌': '[universe]',
-            '📥': '[download]',
-            '✓': '[check]',
-            '☉': 'Sun',
-            '🤖': '[AI]',
-            'ï': 'i',  # Convert to regular i
+            "🌌": "[universe]",
+            "📥": "[download]",
+            "✓": "[check]",
+            "☉": "Sun",
+            "🤖": "[AI]",
+            "ï": "i",  # Convert to regular i
         }
-        
+
         for old, new in emoji_replacements.items():
             text = text.replace(old, new)
-        
+
         # For math blocks, we need different replacements (no $ wrapper)
         math_replacements = {
-            'τ': r'\tau',
-            'σ': r'\sigma',
-            'ρ': r'\rho',
-            'π': r'\pi',
-            'μ': r'\mu',
-            'λ': r'\lambda',
-            'η': r'\eta',
-            'δ': r'\delta',
-            'γ': r'\gamma',
-            'ω': r'\omega',
-            'φ': r'\phi',
-            'χ': r'\chi',
-            'ξ': r'\xi',
-            'Δ': r'\Delta',
-            'Ω': r'\Omega',
-            '₀': r'_0',
-            '₁': r'_1',
-            '₂': r'_2',
-            '₃': r'_3',
-            '₄': r'_4',
-            '₅': r'_5',
-            '₆': r'_6',
-            '₇': r'_7',
-            '₈': r'_8',
-            '₉': r'_9',
-            '₊': r'_+',
-            '⁻': r'^-',
-            '⁰': r'^0',
-            '¹': r'^1',
-            '²': r'^2',
-            '³': r'^3',
-            '⁴': r'^4',
-            '⁵': r'^5',
-            '⁶': r'^6',
-            '⁷': r'^7',
-            '⁸': r'^8',
-            '⁹': r'^9',
-            '≈': r'\approx',
-            '≃': r'\simeq',
-            '≤': r'\leq',
-            '≥': r'\geq',
-            '≪': r'\ll',
-            '≫': r'\gg',
-            '≲': r'\lesssim',
-            '≳': r'\gtrsim',
-            '∝': r'\propto',
-            '∂': r'\partial',
-            '∞': r'\infty',
-            '⊥': r'\perp',
-            'ℓ': r'\ell',
-            'ℏ': r'\hbar',
-            '⊙': r'\odot',
+            "τ": r"\tau",
+            "σ": r"\sigma",
+            "ρ": r"\rho",
+            "π": r"\pi",
+            "μ": r"\mu",
+            "λ": r"\lambda",
+            "η": r"\eta",
+            "δ": r"\delta",
+            "γ": r"\gamma",
+            "ω": r"\omega",
+            "φ": r"\phi",
+            "χ": r"\chi",
+            "ξ": r"\xi",
+            "Δ": r"\Delta",
+            "Ω": r"\Omega",
+            "₀": r"_0",
+            "₁": r"_1",
+            "₂": r"_2",
+            "₃": r"_3",
+            "₄": r"_4",
+            "₅": r"_5",
+            "₆": r"_6",
+            "₇": r"_7",
+            "₈": r"_8",
+            "₉": r"_9",
+            "₊": r"_+",
+            "⁻": r"^-",
+            "⁰": r"^0",
+            "¹": r"^1",
+            "²": r"^2",
+            "³": r"^3",
+            "⁴": r"^4",
+            "⁵": r"^5",
+            "⁶": r"^6",
+            "⁷": r"^7",
+            "⁸": r"^8",
+            "⁹": r"^9",
+            "≈": r"\approx",
+            "≃": r"\simeq",
+            "≤": r"\leq",
+            "≥": r"\geq",
+            "≪": r"\ll",
+            "≫": r"\gg",
+            "≲": r"\lesssim",
+            "≳": r"\gtrsim",
+            "∝": r"\propto",
+            "∂": r"\partial",
+            "∞": r"\infty",
+            "⊥": r"\perp",
+            "ℓ": r"\ell",
+            "ℏ": r"\hbar",
+            "⊙": r"\odot",
         }
-        
+
         # Replace in math environments first
         import re
-        
+
         # Pattern to match math environments
-        math_pattern = r'(\$\$[\s\S]*?\$\$|\$[^\$\n]+\$|\\begin\{equation\}[\s\S]*?\\end\{equation\}|\\begin\{align\}[\s\S]*?\\end\{align\}|\\\[[\s\S]*?\\\])'
-        
+        math_pattern = r"(\$\$[\s\S]*?\$\$|\$[^\$\n]+\$|\\begin\{equation\}[\s\S]*?\\end\{equation\}|\\begin\{align\}[\s\S]*?\\end\{align\}|\\\[[\s\S]*?\\\])"
+
         def replace_in_math(match):
             math_text = match.group(0)
             # Replace Greek letters carefully
             for old, new in math_replacements.items():
-                if old in 'τσρπμλδηγωφχξΔ':
+                if old in "τσρπμλδηγωφχξΔ":
                     # Use a more careful approach - look for the character followed by a letter
                     import re
+
                     # Find positions where Greek letter is followed by a letter
-                    pattern = re.escape(old) + r'(?=[a-zA-Z])'
-                    replacement = new.replace('\\', '\\\\') + ' '
+                    pattern = re.escape(old) + r"(?=[a-zA-Z])"
+                    replacement = new.replace("\\", "\\\\") + " "
                     math_text = re.sub(pattern, replacement, math_text)
                 # Always do the general replacement too (for cases not followed by letters)
                 math_text = math_text.replace(old, new)
             return math_text
-        
+
         text = re.sub(math_pattern, replace_in_math, text)
-        
+
         # Now handle non-math text (add $ wrappers)
         non_math_replacements = {
-            'τ': r'$\tau$',
-            'σ': r'$\sigma$',
-            'ρ': r'$\rho$',
-            'π': r'$\pi$',
-            'μ': r'$\mu$',
-            'λ': r'$\lambda$',
-            'η': r'$\eta$',
-            'δ': r'$\delta$',
-            'γ': r'$\gamma$',
-            'ω': r'$\omega$',
-            'φ': r'$\phi$',
-            'χ': r'$\chi$',
-            'ξ': r'$\xi$',
-            'Δ': r'$\Delta$',
-            'Ω': r'$\Omega$',
-            '₀': r'$_0$',
-            '₁': r'$_1$',
-            '₂': r'$_2$',
-            '₃': r'$_3$',
-            '₄': r'$_4$',
-            '₅': r'$_5$',
-            '₆': r'$_6$',
-            '₇': r'$_7$',
-            '₈': r'$_8$',
-            '₉': r'$_9$',
-            '⁻': r'$^-$',
-            '⁰': r'$^0$',
-            '¹': r'$^1$',
-            '²': r'$^2$',
-            '³': r'$^3$',
-            '⁴': r'$^4$',
-            '⁵': r'$^5$',
-            '⁶': r'$^6$',
-            '⁷': r'$^7$',
-            '⁸': r'$^8$',
-            '⁹': r'$^9$',
-            '≈': r'$\approx$',
-            '≃': r'$\simeq$',
-            '≤': r'$\leq$',
-            '≥': r'$\geq$',
-            '≪': r'$\ll$',
-            '≲': r'$\lesssim$',
-            '≳': r'$\gtrsim$',
-            '∝': r'$\propto$',
-            '∂': r'$\partial$',
-            '∞': r'$\infty$',
-            '⊥': r'$\perp$',
-            'ℓ': r'$\ell$',
-            'ℏ': r'$\hbar$',
-            '⊙': r'$\odot$',
+            "τ": r"$\tau$",
+            "σ": r"$\sigma$",
+            "ρ": r"$\rho$",
+            "π": r"$\pi$",
+            "μ": r"$\mu$",
+            "λ": r"$\lambda$",
+            "η": r"$\eta$",
+            "δ": r"$\delta$",
+            "γ": r"$\gamma$",
+            "ω": r"$\omega$",
+            "φ": r"$\phi$",
+            "χ": r"$\chi$",
+            "ξ": r"$\xi$",
+            "Δ": r"$\Delta$",
+            "Ω": r"$\Omega$",
+            "₀": r"$_0$",
+            "₁": r"$_1$",
+            "₂": r"$_2$",
+            "₃": r"$_3$",
+            "₄": r"$_4$",
+            "₅": r"$_5$",
+            "₆": r"$_6$",
+            "₇": r"$_7$",
+            "₈": r"$_8$",
+            "₉": r"$_9$",
+            "⁻": r"$^-$",
+            "⁰": r"$^0$",
+            "¹": r"$^1$",
+            "²": r"$^2$",
+            "³": r"$^3$",
+            "⁴": r"$^4$",
+            "⁵": r"$^5$",
+            "⁶": r"$^6$",
+            "⁷": r"$^7$",
+            "⁸": r"$^8$",
+            "⁹": r"$^9$",
+            "≈": r"$\approx$",
+            "≃": r"$\simeq$",
+            "≤": r"$\leq$",
+            "≥": r"$\geq$",
+            "≪": r"$\ll$",
+            "≲": r"$\lesssim$",
+            "≳": r"$\gtrsim$",
+            "∝": r"$\propto$",
+            "∂": r"$\partial$",
+            "∞": r"$\infty$",
+            "⊥": r"$\perp$",
+            "ℓ": r"$\ell$",
+            "ℏ": r"$\hbar$",
+            "⊙": r"$\odot$",
         }
-        
+
         # Split and process non-math parts
         parts = re.split(math_pattern, text)
         for i in range(len(parts)):
@@ -253,8 +254,8 @@ class PDFGenerator:
             if i % 2 == 0:
                 for old, new in non_math_replacements.items():
                     parts[i] = parts[i].replace(old, new)
-        
-        return ''.join(parts)
+
+        return "".join(parts)
 
     def process_markdown(self, file_path: Path, front_matter: Dict) -> str:
         """Process a markdown file for inclusion in the PDF."""
@@ -443,7 +444,7 @@ def main():
 
         shutil.copy2(output_path, latest_path)
         print(f"Latest version copied to: {latest_path}")
-        
+
         # Copy to root directory for website access
         root_pdf_path = base_dir / "oscillating_brane_theory_latest.pdf"
         shutil.copy2(output_path, root_pdf_path)
