@@ -33,15 +33,17 @@ class PDFGenerator:
         files = []
 
         # Main documentation files (in order)
+        # Split into smaller chunks to avoid truncation
         doc_order = [
             "index.md",
             "theory.md",
-            "docs/theory_v4_complete.md",
-            "docs/theoretical_foundations.md",
             "chronology.md",
             "predictions.md",
             "tools.md",
             "about.md",
+            # Large technical docs at the end
+            "docs/theory_v4_complete.md",
+            "docs/theoretical_foundations.md",
         ]
 
         # Add ordered docs first
@@ -346,6 +348,9 @@ class PDFGenerator:
         """Process a markdown file for inclusion in the PDF."""
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
+            
+        # Debug: Print original file size
+        print(f"  Original file size: {len(content)} characters")
 
         # Remove front matter
         content = re.sub(r"^---\s*\n.*?\n---\s*\n", "", content, flags=re.DOTALL)
@@ -363,6 +368,15 @@ class PDFGenerator:
 
         # Clean Unicode artifacts (only problematic ligatures, not math symbols)
         content = self.clean_unicode_artifacts(content)
+        
+        # Fix common LaTeX issues
+        # Fix split dollar signs like $\delta$$\tau$ -> $\delta\tau$
+        # But be careful not to merge equation delimiters $$ with inline math $
+        content = re.sub(r'\$([^$\n]+)\$\$([^$\n]+)\$', r'$\1\2$', content)
+        
+        # Fix the specific pattern that appears in chronology
+        content = content.replace('$\\delta$$\\tau$/$\\tau$$_0$', '$\\delta\\tau/\\tau_0$')
+        content = content.replace('$\\xi$ $\\simeq$', '$\\xi \\simeq$')
 
         # Fix image paths to be absolute
         # Replace relative paths like /plots/image.png with absolute paths
@@ -408,15 +422,19 @@ class PDFGenerator:
                 content = "\n".join(lines)
             # IMPORTANT: Add newpage BEFORE to start a new chapter (unless it's the first)
             if is_first:
-                return f"{content}\n"
+                result = f"{content}\n"
             else:
-                return f"\\newpage\n{content}\n"
+                result = f"\\newpage\n{content}\n"
         else:
             # Add the heading we created with newpage before (unless it's the first)
             if is_first:
-                return f"{heading}\n\n{content}\n"
+                result = f"{heading}\n\n{content}\n"
             else:
-                return f"\\newpage\n{heading}\n\n{content}\n"
+                result = f"\\newpage\n{heading}\n\n{content}\n"
+                
+        # Debug: Print processed content size
+        print(f"  Processed file size: {len(result)} characters")
+        return result
 
     def create_combined_markdown(self) -> str:
         """Combine all markdown files into a single document."""
@@ -428,7 +446,7 @@ title: "{self.metadata['title']}"
 author: "{self.metadata['author']}"
 date: "{self.metadata['date']}"
 subtitle: "{self.metadata['subtitle']}"
-documentclass: book
+documentclass: report
 fontsize: 11pt
 geometry: margin=1in
 toc: true
@@ -459,14 +477,17 @@ This document contains the complete theoretical framework and documentation for 
 
         # Process each file
         combined = header
+        print(f"\nInitial header size: {len(combined)} characters")
 
         # Process all files without parts - just chapters
         for i, (file_path, front_matter) in enumerate(files):
-            print(f"Processing: {file_path}")
+            print(f"\nProcessing {i+1}/{len(files)}: {file_path}")
             # Pass index to know if it's the first file
             content = self.process_markdown(file_path, front_matter, is_first=(i == 0))
             combined += content
+            print(f"  Combined size after adding: {len(combined)} characters")
 
+        print(f"\nFinal combined size: {len(combined)} characters")
         return combined
 
     def generate_pdf(self, output_path: Path):
@@ -483,21 +504,32 @@ This document contains the complete theoretical framework and documentation for 
         # Convert to PDF using pandoc
         try:
             # Basic conversion - try pdflatex with minimal options
-            pypandoc.convert_text(
-                combined_md,
-                "pdf",
-                format="markdown",  # Basic markdown
-                outputfile=str(output_path),
-                extra_args=[
-                    "--pdf-engine=xelatex",  # XeLaTeX for Unicode support
-                    "--top-level-division=chapter",  # Each file = new chapter
-                    "--highlight-style=tango",
-                    "-V",
-                    "geometry:margin=1in",
-                    "-V",
-                    "colorlinks=true",
-                ],
-            )
+            # First save to a temp file to avoid any string size limits
+            import tempfile
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False, encoding='utf-8') as tmp:
+                tmp.write(combined_md)
+                tmp_path = tmp.name
+            
+            try:
+                pypandoc.convert_file(
+                    tmp_path,
+                    "pdf",
+                    format="markdown",  # Basic markdown
+                    outputfile=str(output_path),
+                    extra_args=[
+                        "--pdf-engine=xelatex",  # XeLaTeX for Unicode support
+                        "--top-level-division=chapter",  # Each file = new chapter
+                        "--highlight-style=tango",
+                        "-V",
+                        "geometry:margin=1in",
+                        "-V",
+                        "colorlinks=true",
+                        "--verbose",  # Add verbose output to debug
+                    ],
+                )
+            finally:
+                import os
+                os.unlink(tmp_path)
             print(f"PDF generated successfully: {output_path}")
             return  # Success! Exit the method
 
