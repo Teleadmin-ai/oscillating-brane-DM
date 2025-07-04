@@ -4,8 +4,8 @@ Check PDF for Unicode artifacts mentioned in O3 Pro audit.
 This script extracts text from the PDF and searches for known artifacts.
 """
 
-import sys
 import subprocess
+import sys
 from pathlib import Path
 
 
