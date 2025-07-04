@@ -488,20 +488,16 @@ This document contains the complete theoretical framework and documentation for 
                     "geometry:margin=1in",
                     "-V",
                     "colorlinks=true",
-                    "-V",
-                    "mainfont=DejaVu Serif",
-                    "-V",
-                    "monofont=DejaVu Sans Mono",
-                    "-V",
-                    "fontenc=",  # Don't use T1 encoding with XeLaTeX
-                    "-V",
-                    "fontspec",  # Use fontspec package for better font handling
                 ],
             )
             print(f"PDF generated successfully: {output_path}")
+            return  # Success! Exit the method
 
-        except RuntimeError as e:
+        except Exception as e:
             print(f"Error generating PDF: {e}")
+            print(f"Error type: {type(e).__name__}")
+            import traceback
+            traceback.print_exc()
             print("\nTrying alternative method with HTML intermediate...")
 
             # Alternative: markdown -> HTML -> PDF
@@ -511,11 +507,14 @@ This document contains the complete theoretical framework and documentation for 
                 html = pypandoc.convert_text(combined_md, "html", format="markdown")
                 pdfkit.from_string(html, str(output_path))
                 print(f"PDF generated via HTML: {output_path}")
+                return  # Success with alternative method!
             except Exception as e2:
                 print(f"Alternative method also failed: {e2}")
                 print("\nPlease ensure you have either:")
                 print("1. pandoc and a LaTeX distribution (texlive, miktex) installed")
                 print("2. wkhtmltopdf installed for the HTML->PDF conversion")
+                # Re-raise to stop execution
+                raise RuntimeError(f"Failed to generate PDF: {e}")
 
 
 def main():
@@ -535,6 +534,18 @@ def main():
     generator = PDFGenerator(base_dir)
     generator.generate_pdf(output_path)
 
+    # Debug: Check if PDF was created
+    print(f"\nChecking if PDF was created at: {output_path}")
+    print(f"File exists: {output_path.exists()}")
+    if output_path.exists():
+        print(f"File size: {output_path.stat().st_size} bytes")
+    else:
+        print("ERROR: PDF file was NOT created!")
+        # List files in output directory
+        print("\nFiles in output directory:")
+        for f in output_dir.iterdir():
+            print(f"  - {f.name}")
+    
     # Also create a "latest" version in output directory
     latest_path = output_dir / "oscillating_brane_theory_latest.pdf"
     if output_path.exists():

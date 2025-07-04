@@ -112,6 +112,11 @@ jobs:
         fc-list | grep -i dejavu || echo "DejaVu fonts not found"
         # Run with verbose output
         python scripts/generate_pdf.py
+        # Debug: Check what files were created
+        echo "=== Checking output directory ==="
+        ls -la output/
+        echo "=== Checking root directory for PDF ==="
+        ls -la *.pdf || echo "No PDFs in root"
     
     - name: Upload PDF
       uses: actions/upload-artifact@v4
