@@ -4,6 +4,8 @@ title: Computational Tools
 permalink: /tools/
 ---
 
+# Computational Tools
+
 We provide a suite of Python tools for exploring the oscillating brane theory and computing its predictions.
 
 ## Quick Start

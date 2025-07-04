@@ -358,6 +358,7 @@ class PDFGenerator:
         # Convert Unicode to LaTeX BEFORE cleaning artifacts
         # This prevents Unicode characters from being corrupted during conversion
         content = self.convert_unicode_to_latex(content)
+        
 
         # Clean Unicode artifacts (only problematic ligatures, not math symbols)
         content = self.clean_unicode_artifacts(content)
@@ -398,6 +399,12 @@ class PDFGenerator:
         content_stripped = content.strip()
         if content_stripped.startswith("# "):
             # Content already has a top-level heading, don't add another one
+            # But ensure there's some content visible after the heading
+            lines = content.split('\n')
+            if len(lines) > 1 and lines[1].strip().startswith('##'):
+                # Add a brief intro if the next line is a subheading
+                lines.insert(1, "\n*Content from this section:*\n")
+                content = '\n'.join(lines)
             return f"{content}\n\\newpage\n"
         else:
             # Add the heading we created
@@ -419,6 +426,7 @@ geometry: margin=1in
 toc: true
 toc-depth: 2
 numbersections: true
+chapters: true
 urlcolor: blue
 linkcolor: black
 ---

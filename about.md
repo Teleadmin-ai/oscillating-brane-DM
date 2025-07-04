@@ -4,6 +4,8 @@ title: About the Oscillating Brane Theory
 permalink: /about/
 ---
 
+# About the Oscillating Brane Theory
+
 ## The Vision: The Cosmic Yoyo
 
 We propose a revolutionary understanding of the cosmos where:
