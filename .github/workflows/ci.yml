@@ -113,3 +113,21 @@ jobs:
       with:
         name: theory-pdf
         path: output/oscillating_brane_theory_latest.pdf
+    
+    - name: Commit and push PDF
+      run: |
+        # Copy PDF to root for website
+        cp output/oscillating_brane_theory_latest.pdf oscillating_brane_theory_latest.pdf
+        
+        # Configure git
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Check if PDF has changed
+        if git diff --quiet oscillating_brane_theory_latest.pdf; then
+          echo "PDF has not changed, skipping commit"
+        else
+          git add oscillating_brane_theory_latest.pdf
+          git commit -m "Auto-update PDF with latest content [skip ci]"
+          git push
+        fi
