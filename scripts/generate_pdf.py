@@ -394,7 +394,14 @@ class PDFGenerator:
         if description:
             heading += f"\n\n*{description.strip()}*"
 
-        return f"{heading}\n\n{content}\n\\newpage\n"
+        # Check if content already starts with a heading
+        content_stripped = content.strip()
+        if content_stripped.startswith("# "):
+            # Content already has a top-level heading, don't add another one
+            return f"{content}\n\\newpage\n"
+        else:
+            # Add the heading we created
+            return f"{heading}\n\n{content}\n\\newpage\n"
 
     def create_combined_markdown(self) -> str:
         """Combine all markdown files into a single document."""
