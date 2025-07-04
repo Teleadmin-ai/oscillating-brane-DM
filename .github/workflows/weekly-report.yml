@@ -1,0 +1,48 @@
+name: Weekly Theory Progress Report
+
+on:
+  schedule:
+    # Runs every Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install matplotlib numpy scipy
+    
+    - name: Generate weekly plots
+      run: |
+        mkdir -p weekly-reports
+        python scripts/brane_dynamics.py
+        python scripts/brane_oscillation_1d.py
+        
+    - name: Create report summary
+      run: |
+        echo "# Weekly Theory Progress Report" > weekly-reports/README.md
+        echo "Generated on: $(date)" >> weekly-reports/README.md
+        echo "" >> weekly-reports/README.md
+        echo "## Simulation Results" >> weekly-reports/README.md
+        echo "- Brane dynamics simulation completed" >> weekly-reports/README.md
+        echo "- 1D oscillation prototype tested" >> weekly-reports/README.md
+        echo "- All plots generated successfully" >> weekly-reports/README.md
+        
+    - name: Upload weekly report
+      uses: actions/upload-artifact@v3
+      with:
+        name: weekly-report-$(date +%Y-%m-%d)
+        path: |
+          weekly-reports/
+          plots/
