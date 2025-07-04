@@ -436,13 +436,18 @@ def main():
     generator = PDFGenerator(base_dir)
     generator.generate_pdf(output_path)
 
-    # Also create a "latest" version
+    # Also create a "latest" version in output directory
     latest_path = output_dir / "oscillating_brane_theory_latest.pdf"
     if output_path.exists():
         import shutil
 
         shutil.copy2(output_path, latest_path)
         print(f"Latest version copied to: {latest_path}")
+        
+        # Copy to root directory for website access
+        root_pdf_path = base_dir / "oscillating_brane_theory_latest.pdf"
+        shutil.copy2(output_path, root_pdf_path)
+        print(f"PDF copied to root for website: {root_pdf_path}")
 
 
 if __name__ == "__main__":
