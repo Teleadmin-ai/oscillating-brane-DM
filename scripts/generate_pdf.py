@@ -77,15 +77,21 @@ class PDFGenerator:
 
     def clean_unicode_artifacts(self, text: str) -> str:
         """Clean common Unicode artifacts from text."""
-        # Only clean truly problematic ligatures, preserve mathematical symbols
+        # First, clean up corrupted patterns that O3 Pro found
+        # These appear when Unicode characters get mangled during PDF conversion
+        text = text.replace("10ff¹ff Hz", "10⁻¹⁷ Hz")  # Fix corrupted superscript
+        text = text.replace(
+            "ff27 times", "≈27 times"
+        )  # Fix corrupted approximation symbol
+
+        # Clean up common ligature artifacts
         replacements = {
             "ﬀ": "ff",  # ff ligature
             "ﬁ": "fi",  # fi ligature
             "ﬂ": "fl",  # fl ligature
             "ﬃ": "ffi",  # ffi ligature
             "ﬄ": "ffl",  # ffl ligature
-            "ff¹": "ff",  # Corrupted ff
-            "ff": "ff",  # Another variant
+            "ff¹": "⁻¹",  # This pattern appears when ⁻¹ gets corrupted
             # Remove these replacements to preserve mathematical notation
             # "−": "-",  # Keep minus sign for math
             # "–": "--",  # Keep en dash
@@ -141,6 +147,13 @@ class PDFGenerator:
             "₈": r"_8",
             "₉": r"_9",
             "₊": r"_+",
+            "⁻¹⁷": r"^{-17}",  # Handle common superscript patterns
+            "⁻¹⁸": r"^{-18}",
+            "⁻¹⁰": r"^{-10}",
+            "⁻¹": r"^{-1}",
+            "⁻²": r"^{-2}",
+            "⁻³": r"^{-3}",
+            "⁻⁴": r"^{-4}",
             "⁻": r"^-",
             "⁰": r"^0",
             "¹": r"^1",
@@ -177,16 +190,19 @@ class PDFGenerator:
 
         def replace_in_math(match):
             math_text = match.group(0)
-            # Replace Greek letters carefully
+            # Replace mathematical symbols
             for old, new in math_replacements.items():
                 if old in "τσρπμλδηγωφχξΔ":
-                    # Use a more careful approach - look for the character followed by a letter
+                    # Greek letters: add space when followed by a letter
                     import re
 
-                    # Find positions where Greek letter is followed by a letter
                     pattern = re.escape(old) + r"(?=[a-zA-Z])"
                     replacement = new.replace("\\", "\\\\") + " "
                     math_text = re.sub(pattern, replacement, math_text)
+                elif old == "∂":
+                    # Special handling for partial derivative - always add space after
+                    math_text = math_text.replace(old, new + " ")
+                    continue
                 # Always do the general replacement too (for cases not followed by letters)
                 math_text = math_text.replace(old, new)
             return math_text
@@ -220,6 +236,13 @@ class PDFGenerator:
             "₇": r"$_7$",
             "₈": r"$_8$",
             "₉": r"$_9$",
+            "⁻¹⁷": r"$^{-17}$",  # Handle common superscript patterns
+            "⁻¹⁸": r"$^{-18}$",
+            "⁻¹⁰": r"$^{-10}$",
+            "⁻¹": r"$^{-1}$",
+            "⁻²": r"$^{-2}$",
+            "⁻³": r"$^{-3}$",
+            "⁻⁴": r"$^{-4}$",
             "⁻": r"$^-$",
             "⁰": r"$^0$",
             "¹": r"$^1$",
@@ -264,6 +287,10 @@ class PDFGenerator:
 
         # Remove front matter
         content = re.sub(r"^---\s*\n.*?\n---\s*\n", "", content, flags=re.DOTALL)
+
+        # Convert Unicode to LaTeX BEFORE cleaning artifacts
+        # This prevents Unicode characters from being corrupted during conversion
+        content = self.convert_unicode_to_latex(content)
 
         # Clean Unicode artifacts (only problematic ligatures, not math symbols)
         content = self.clean_unicode_artifacts(content)
@@ -398,6 +425,10 @@ This document contains the complete theoretical framework and documentation for 
                     "mainfont=DejaVu Serif",
                     "-V",
                     "monofont=DejaVu Sans Mono",
+                    "-V",
+                    "fontenc=T1",  # Better font encoding to prevent ligature issues
+                    "-V",
+                    "microtype=false",  # Disable microtype which can cause ligature problems
                 ],
             )
             print(f"PDF generated successfully: {output_path}")
