@@ -46,6 +46,10 @@ This poetic vision guides our scientific exploration. We seek to understand the 
 - Share your questions and ideas
 - Help spread awareness of this new cosmological paradigm
 
+## Author
+
+**Romain Provencal** - Theoretical framework developer and principal investigator
+
 ## Contact
 
 - **GitHub**: [{{ site.github_username }}/oscillating-brane-DM](https://github.com/{{ site.github_username }}/oscillating-brane-DM)

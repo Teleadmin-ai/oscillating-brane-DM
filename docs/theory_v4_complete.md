@@ -11,6 +11,8 @@ description: |
 
 ## Version 4.0 — The Cosmos as a Vibrating Membrane (Complete Edition)
 
+**Author: Romain Provencal**
+
 ### Prologue: The Universe-Instrument
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—floats in an ocean of hidden dimensions. Black holes are not destructive chasms but tension pegs, anchor points where the membrane folds and plunges toward elsewhere. And dark matter? It is the invisible bow that makes this giant harp vibrate, creating a two-billion-year melody whose every note shapes space, time, and gravity itself.

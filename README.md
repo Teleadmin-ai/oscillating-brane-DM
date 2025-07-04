@@ -1,5 +1,7 @@
 # Oscillating Brane Dark Matter Theory v4.0
 
+**Author: Romain Provencal**
+
 ## The Universe as a Vibrating Membrane
 
 This repository contains the complete theoretical framework and computational tools for the **Oscillating Brane Dark Matter Theory**, where the universe is conceptualized as a 4D elastic membrane floating in higher dimensions, with dark matter flows through gravitational funnels exciting fundamental vibrational modes.

@@ -2,7 +2,7 @@
 layout: dark
 title: "Experimental Tests: Where to Seek the Truth"
 date: 2024-01-18
-author: Oscillating Brane Theory Team
+author: Romain Provencal
 tags: [predictions, experiments, observations]
 ---
 

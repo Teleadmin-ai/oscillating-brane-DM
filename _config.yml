@@ -7,7 +7,7 @@ description: >-
   and naturally produce MOND-like effects. Testable predictions for Euclid and PTA.
 baseurl: ""
 url: "https://higgs-cosmology.com"
-author: Oscillating Brane Theory Team
+author: Romain Provencal
 
 # Build settings
 theme: jekyll-theme-minimal

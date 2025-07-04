@@ -2,7 +2,7 @@
 layout: dark
 title: "Cosmic Chronology: From Inflation to the Current Beat"
 date: 2024-01-17
-author: Oscillating Brane Theory Team
+author: Romain Provencal
 tags: [cosmology, evolution, big-bang, inflation]
 ---
 
