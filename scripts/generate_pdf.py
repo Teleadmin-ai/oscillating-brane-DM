@@ -206,6 +206,9 @@ This document contains the complete theoretical framework and documentation for 
                     '-V', 'toccolor=blue',
                     '-V', 'urlcolor=blue',
                     '-V', 'linkcolor=black',
+                    '--dpi=150',  # Reduce image resolution
+                    '-V', 'classoption=compress',  # Enable compression
+                    '-V', 'fontsize=10pt',  # Slightly smaller font
                 ]
             )
             print(f"PDF generated successfully: {output_path}")

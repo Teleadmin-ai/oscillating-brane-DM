@@ -46,20 +46,24 @@ class BraneOscillator1D:
         """
         Goldberger-Wise stabilization potential.
         
-        V(z) = (1/2) * m_eff² * (z - L)²  (harmonic approximation)
+        V(z) = (1/2) * k_eff * (z - L)²  (harmonic approximation)
         """
-        # Effective mass from oscillation period
-        m_eff_sq = self.omega_0**2 * self.tau_0 * self.L**2
+        # Effective spring constant normalized to avoid overflow
+        # k_eff = ω₀² * τ₀ * L² / ρ_crit where ρ_crit ~ 10^17 J/m³
+        rho_crit = 1e17  # Critical density scale
+        k_eff = self.omega_0**2 * (self.tau_0 / rho_crit) * self.L**2
         
-        return 0.5 * m_eff_sq * (z - self.L)**2
+        return 0.5 * k_eff * (z - self.L)**2 * rho_crit
     
     def potential_derivative(self, z):
         """
         Derivative of the potential dV/dz.
         """
-        m_eff_sq = self.omega_0**2 * self.tau_0 * self.L**2
+        # Normalized spring constant
+        rho_crit = 1e17
+        k_eff = self.omega_0**2 * (self.tau_0 / rho_crit) * self.L**2
         
-        return m_eff_sq * (z - self.L)
+        return k_eff * (z - self.L) * rho_crit
     
     def hubble_parameter(self, t):
         """
@@ -170,6 +174,25 @@ class BraneOscillator1D:
         w = (rho_kin - rho_pot) / rho_total
         
         return rho_kin, rho_pot, w
+    
+    def check_energy_conservation(self, t, z, z_dot):
+        """
+        Check energy conservation (without Hubble damping for pure oscillator).
+        Returns relative error in total energy.
+        """
+        # Total energy at each time
+        E_kin = 0.5 * self.tau_0 * self.L * z_dot**2
+        E_pot = self.goldberger_wise_potential(z) * self.L
+        
+        # For harmonic oscillator, E_total should be constant
+        # (Hubble damping is accounted for in the equations of motion)
+        E_total = E_kin + E_pot
+        
+        # Check conservation
+        E_initial = E_total[0]
+        relative_error = np.abs((E_total - E_initial) / E_initial)
+        
+        return relative_error
 
 
 def main():
@@ -212,6 +235,17 @@ def main():
     print(f"  Kinetic energy: {rho_kin[idx_now]:.2e} J/m³")
     print(f"  Potential energy: {rho_pot[idx_now]:.2e} J/m³")
     print(f"  Equation of state w = {w[idx_now]:.3f}")
+    
+    # Check energy conservation
+    t_seconds = t * 1e9 * 365.25 * 24 * 3600
+    energy_error = oscillator.check_energy_conservation(t_seconds, z, z_dot)
+    max_error = np.max(energy_error)
+    print(f"\nEnergy conservation check:")
+    print(f"  Maximum relative error: {max_error:.2e}")
+    if max_error < 1e-3:
+        print("  ✓ Energy conserved to 0.1%")
+    else:
+        print("  ⚠ Energy conservation violated!")
     
     # Plot energy evolution
     fig2, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharex=True)

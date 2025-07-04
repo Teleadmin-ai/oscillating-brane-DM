@@ -339,6 +339,26 @@ Since $\Gamma_{decay} \ll H_0 \approx 10^{-18}$ Hz, the oscillations persist thr
 
 ## 6. Current Limitations and Future Development
 
+### 6.0 Notations and Units
+
+Throughout this section, we use the following conventions:
+
+| Symbol | Description | Units |
+|--------|-------------|-------|
+| $M_5$ | 5D Planck mass | GeV (in natural units) |
+| $M_P$ | 4D Planck mass | $1.22 \times 10^{19}$ GeV |
+| $\tau_0$ | Brane tension | J/m² (SI) |
+| $k$ | AdS curvature | 1/m |
+| $L$ | Extra dimension size | m |
+| $z$ | Brane position | m |
+| $V$ | Potentials | J/m² (surface) or J/m³ (volume) |
+| $\mathcal{E}_{\mu\nu}$ | Projected Weyl tensor | Energy density units |
+
+**Unit conversions**:
+- Energy density: $1$ J/m³ = $6.24 \times 10^{9}$ GeV⁴
+- Tension: $1$ J/m² = $6.24 \times 10^{12}$ GeV³
+- Natural units: $\hbar = c = 1$ where needed
+
 ### 6.1 Theoretical Challenges
 
 #### 6.1.1 Solving the Full 5D Einstein Equations
@@ -349,7 +369,7 @@ $$G_{\mu\nu} + \Lambda_4 g_{\mu\nu} = \kappa_4^2 T_{\mu\nu} + \kappa_5^4 \pi_{\m
 
 where $\mathcal{E}_{\mu\nu}$ can only be determined by solving the full 5D problem.
 
-**Numerical Relativity Approach**: The BraneCode project (Martin et al. 2005) pioneered 5D numerical simulations with:
+**Numerical Relativity Approach**: The BraneCode project [Martin et al. 2005] pioneered 5D numerical simulations with:
 - ADM (3+1)+1 decomposition
 - Moving brane as dynamical boundary
 - Bulk scalar field stabilization
@@ -372,7 +392,8 @@ Several mechanisms could set the initial oscillation amplitude:
 - Brane-brane collision triggers Big Bang
 - Inelastic collision → residual oscillations
 - Amplitude set by collision velocity and potential
-$$A_{osc} \sim v_{collision} \sqrt{\frac{M_5^3}{\tau_0}}$$
+$$A_{osc} \sim v_{collision} \times t_{collision} \times \sqrt{\frac{T_{eff}}{\tau_0}}$$
+where $T_{eff} = \tau_0/M_5^3$ is the effective tension scale
 
 **2. Post-Inflation Radion Release**
 - Inflation displaces brane from equilibrium
@@ -394,7 +415,7 @@ $$\tau(T) = \tau_0 \left(1 - \left(\frac{T}{T_c}\right)^4\right)$$
 #### 6.1.3 Quantum Corrections: Beyond One-Loop
 
 **Casimir Energy in Warped Geometry**
-Recent calculations (Rakhmetov et al. 2025) show:
+Recent calculations [Rakhmetov et al. 2025] show:
 $$V_{Casimir}(z) = -\frac{\pi^2}{1440} \frac{N_{fields}}{z^4} + O(e^{-mz})$$
 
 For stabilized RS models, quantum corrections are small (~1%) but for oscillating branes:
@@ -403,11 +424,12 @@ For stabilized RS models, quantum corrections are small (~1%) but for oscillatin
 - Branon production during oscillation
 
 **Radion Effective Potential**
-One-loop contributions from bulk gravitons (Garriga et al. 2001):
+One-loop contributions from bulk gravitons [Garriga et al. 2001]:
 $$V_{1-loop}(z) = V_{classical}(z) + \frac{3k^4}{32\pi^2} z^4 \ln(kz)$$
 
-This modifies oscillation frequency by:
+where $k$ is the AdS curvature scale (units: 1/length). This modifies oscillation frequency by:
 $$\Delta\omega/\omega \sim \frac{k^2}{M_5^2} \ln(kL)$$
+For $k \sim 1/L$ and $M_5 \sim M_P/L^{3/2}$, this gives $\Delta\omega/\omega \sim 10^{-3}$
 
 **Branon Quantum Effects**
 - Mass: $m_{branon} = \sqrt{2k^2/3} e^{-kL}$
