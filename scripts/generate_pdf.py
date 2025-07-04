@@ -448,7 +448,7 @@ title: "{self.metadata['title']}"
 author: "{self.metadata['author']}"
 date: "{self.metadata['date']}"
 subtitle: "{self.metadata['subtitle']}"
-documentclass: report
+documentclass: book
 fontsize: 11pt
 geometry: margin=1in
 toc: true
@@ -505,37 +505,21 @@ This document contains the complete theoretical framework and documentation for 
 
         # Convert to PDF using pandoc
         try:
-            # Basic conversion - try pdflatex with minimal options
-            # First save to a temp file to avoid any string size limits
-            import tempfile
-
-            with tempfile.NamedTemporaryFile(
-                mode="w", suffix=".md", delete=False, encoding="utf-8"
-            ) as tmp:
-                tmp.write(combined_md)
-                tmp_path = tmp.name
-
-            try:
-                pypandoc.convert_file(
-                    tmp_path,
-                    "pdf",
-                    format="markdown",  # Basic markdown
-                    outputfile=str(output_path),
-                    extra_args=[
-                        "--pdf-engine=xelatex",  # XeLaTeX for Unicode support
-                        "--top-level-division=chapter",  # Each file = new chapter
-                        "--highlight-style=tango",
-                        "-V",
-                        "geometry:margin=1in",
-                        "-V",
-                        "colorlinks=true",
-                        "--verbose",  # Add verbose output to debug
-                    ],
-                )
-            finally:
-                import os
-
-                os.unlink(tmp_path)
+            # Use convert_text which was working before
+            pypandoc.convert_text(
+                combined_md,
+                "pdf",
+                format="markdown",
+                outputfile=str(output_path),
+                extra_args=[
+                    "--pdf-engine=xelatex",  # XeLaTeX for Unicode support
+                    "--highlight-style=tango",
+                    "-V",
+                    "geometry:margin=1in",
+                    "-V",
+                    "colorlinks=true",
+                ],
+            )
             print(f"PDF generated successfully: {output_path}")
             return  # Success! Exit the method
 
