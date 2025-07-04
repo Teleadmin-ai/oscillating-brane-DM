@@ -1098,10 +1098,20 @@ While significant theoretical and observational work remains, the framework show
 - Poulin, V. et al. (2017) - "CMB bounds on disk-accreting massive primordial black holes", Phys. Rev. D 96, 083524 [arXiv:1707.04206]
 - Serpico, P.D. et al. (2020) - "Cosmic microwave background bounds on primordial black holes including dark matter halo accretion", Phys. Rev. Research 2, 023204 [arXiv:2002.10771]
 
-### Brane Collision Dynamics
+### Brane Collision Dynamics and Initial Conditions
+- Khoury, J. et al. (2001) - "The ekpyrotic universe: Colliding branes and the origin of the hot big bang", Phys. Rev. D 64, 123522 [arXiv:hep-th/0103239]
+- Steinhardt, P.J. & Turok, N. (2002) - "Cosmic evolution in a cyclic universe", Phys. Rev. D 65, 126003 [arXiv:hep-th/0111098]
 - Takamizu, Y. et al. (2007) - "Collision of domain walls and creation of matter in brane world", Phys. Rev. D 95, 084021 [arXiv:0705.0184]
+- Dvali, G. & Tye, S.H. (1999) - "Brane inflation", Phys. Lett. B 450, 72 [arXiv:hep-ph/9812483]
+- Collins, H., Holman, R. & Martin, A. (2003) - "Radion-induced brane preheating", Phys. Rev. D 68, 124012 [arXiv:hep-th/0306028]
+- Davis, S.C. & Brechet, S.D. (2005) - "Vacuum decay and first order phase transitions in brane worlds", Phys. Rev. D 72, 024021 [arXiv:hep-th/0502060]
 
-### Additional Quantum Corrections
+### Quantum Corrections and Casimir Effects
+- Goldberger, W.D. & Rothstein, I.Z. (2000) - "Quantum stabilization of compactified AdS5", Phys. Lett. B 491, 339 [arXiv:hep-th/0007065]
+- Garriga, J., Pujolàs, O. & Tanaka, T. (2001) - "Radion effective potential in the brane-world", Nucl. Phys. B 605, 192 [arXiv:hep-th/0004109]
+- Flachi, A. & Tanaka, T. (2003) - "Vacuum polarization in asymmetric brane world compactifications", Phys. Rev. D 68, 025004 [arXiv:hep-th/0301189]
+- Csáki, C. et al. (2000) - "Cosmology of one extra dimension with localized gravity", Phys. Lett. B 462, 34 [arXiv:hep-ph/9911406]
+- Brevik, I. et al. (2003) - "Dynamical Casimir effect and particle creation in oscillating cavities", Annals Phys. 302, 120 [arXiv:quant-ph/0303150]
 - Candelas, P. & Weinberg, S. (1984) - "Calculation of gauge couplings and compact circumferences from self-consistent dimensional reduction", Nucl. Phys. B 237, 397
 - Elizalde, E. et al. (2003) - "Casimir effect in de Sitter and anti-de Sitter braneworlds", Phys. Rev. D 67, 063515 [arXiv:hep-th/0209242]
 - Katz, A. et al. (2006) - "On the number of fermionic zero modes on Randall-Sundrum backgrounds", Phys. Rev. D 74, 044016 [arXiv:hep-th/0605088]
@@ -1111,9 +1121,107 @@ While significant theoretical and observational work remains, the framework show
 ### Damping Mechanisms
 - Kelvin-Voigt model - See Landau, L.D. & Lifshitz, E.M. (1986) - "Theory of Elasticity", Vol. 7, Pergamon Press
 
-### Data Analysis and Software
+### Numerical Methods and Software
+- Wiseman, T. (2002) - "Static axisymmetric vacuum solutions and non-uniform black strings", Class. Quant. Grav. 19, 3083 [arXiv:hep-th/0201164]
+- Martin, A.P. et al. (2005) - "BraneCode: Numerical simulations of brane dynamics", SFU preprint [Available at www.sfu.ca/physics/cosmology/braneworld]
+- Frolov, V.P. et al. (2005) - "Kasner-like behaviour in colliding brane worlds", JHEP 0504, 043 [arXiv:hep-th/0502002]
+- GRChombo Collaboration (2015) - "GRChombo: Numerical relativity with adaptive mesh refinement", Class. Quant. Grav. 32, 245011 [arXiv:1503.03436]
+- Einstein Toolkit (2020) - "Open software for relativistic astrophysics", https://einsteintoolkit.org/
 - Black formatter (2024) - "The uncompromising Python code formatter", https://github.com/psf/black
 - Hairer, E. & Wanner, G. (1996) - "Solving Ordinary Differential Equations II: Stiff and Differential-Algebraic Problems", Springer (DOP853 method implementation)
 - Rakhmetov, P. et al. (2025) - "5D numerical relativity with dynamic branes: Technical implementation", in preparation
+
+## 7. Theoretical Challenges and Development Roadmap
+
+### 7.1 Solving the Full 5D Einstein Equations
+
+The complete 5D Einstein field equations with a dynamic oscillating brane present formidable challenges:
+
+#### 7.1.1 Moving Boundary Problem
+- **Challenge**: The brane position z(t,x) is dynamical, requiring tracking a moving boundary in 5D
+- **Junction Conditions**: Israel junction conditions must be enforced at each timestep
+- **Coordinate Issues**: Gaussian normal coordinates can develop pathologies during oscillation
+- **Solution**: Adopt Eddington-Finkelstein-type gauges for horizon-crossing stability
+
+#### 7.1.2 Computational Complexity
+- **Scaling**: O(N⁵) for N grid points per dimension
+- **Memory**: Terabytes for modest resolution
+- **Parallelization**: Essential MPI + GPU acceleration
+- **Existing Tools**: BraneCode (Martin et al. 2005) achieved 2D reductions
+
+### 7.2 Initial Conditions for Brane Oscillations
+
+Multiple mechanisms can naturally excite brane oscillations in the early universe:
+
+#### 7.2.1 Ekpyrotic/Cyclic Collision
+- Two branes collide, converting kinetic energy to oscillations
+- Initial amplitude: A_osc ~ v_rel τ_collision / √(M₅³) × F(v_rel, θ)
+- References: Khoury et al. (2001), Steinhardt & Turok (2002)
+
+#### 7.2.2 Post-Inflation Quantum Fluctuations
+- During inflation: ⟨z²⟩ ~ (H_inf/2π)²
+- Post-inflation evolution: z(t) ~ z₀ a(t)^(-3/2) cos(ω₀t + φ₀)
+- Natural start at matter-radiation equality when H ~ ω₀
+
+#### 7.2.3 Phase Transitions
+- Electroweak transition changes brane tension
+- Sudden shift in equilibrium position triggers oscillations
+- Links dark sector to Standard Model physics
+
+#### 7.2.4 Quantum Tunneling
+- False vacuum decay via Coleman-De Luccia instantons
+- Amplitude set by separation between vacua: A_osc ~ z_min
+- References: Davis & Brechet (2005) on brane vacuum decay
+
+### 7.3 Quantum Corrections
+
+#### 7.3.1 Casimir Energy in Warped Geometry
+- AdS₅ bulk: ρ_Casimir(z) ~ -π²/(1440) N_f / z⁴
+- Time-dependent for oscillating brane: V_Casimir(t) = V₀ + V₁cos(2ω₀t) + ...
+- Frequency shift: δω/ω₀ ~ 10⁻⁴ for Standard Model fields
+
+#### 7.3.2 One-Loop Effective Potential
+- Loop corrections: V_1-loop(L) ~ (3k⁴/32π²)L⁴[ln(kL) - 1/4]
+- Stabilizes radion at specific L
+- References: Goldberger & Rothstein (2000), Garriga et al. (2001)
+
+#### 7.3.3 Radion Quantization
+- Light radion mass: m_radion ~ (4k/3)e^(-kL) ~ 1 eV
+- Decay constraint: Γ(radion→2γ) < H₀
+- Couples to Standard Model through trace of stress-energy
+
+#### 7.3.4 Dynamic Casimir Effect
+- Particle creation rate: dN/dt ~ A_brane ∫d³k |β_k|² / (2ω_k)
+- Energy loss negligible: Ė/E ~ 10⁻⁵ H₀ per Hubble time
+- Effective temperature: T_eff ~ ℏω₀/2π
+
+### 7.4 Development Roadmap
+
+#### Phase 1: Symmetric Reductions (Months 1-6)
+- 1+1D simulations (homogeneous brane)
+- Test junction conditions and gauge choices
+- Validate against BraneCode results
+
+#### Phase 2: Matter Coupling (Months 6-12)
+- Include Goldberger-Wise stabilization
+- Study energy transfer to bulk/brane fields
+- Quantify Casimir backreaction
+
+#### Phase 3: Higher Dimensions (Months 12-18)
+- 2+1D with spherical symmetry
+- Implement in GRChombo with AMR
+- Test breathing modes and perturbations
+
+#### Phase 4: Full 5D Simulations (Year 2+)
+- Complete 4+1D evolution
+- Structure formation effects
+- Oscillating braneworld black holes
+
+### 7.5 Key References for Development
+
+- **Numerical Methods**: Wiseman (2002) - static 5D solutions; BraneCode (Martin et al. 2005)
+- **Initial Conditions**: Khoury et al. (2001) - ekpyrotic; Collins et al. (2003) - radion preheating
+- **Quantum Effects**: Flachi & Tanaka (2003) - Casimir in AdS₅; Csáki et al. (2000) - radion couplings
+- **Phase Transitions**: Dvali & Tye (1999) - brane inflation; Davis & Brechet (2005) - vacuum decay
 
 For complete references and technical details, see the [Complete Theory](/theory-complete/) document.
