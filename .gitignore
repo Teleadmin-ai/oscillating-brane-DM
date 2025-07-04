@@ -22,10 +22,12 @@ build/
 *.h5
 *.hdf5
 
-# Plots
+# Plots (but allow plots in plots/ directory for documentation)
 *.png
 *.svg
 *.eps
+!plots/*.png
+!plots/*.svg
 
 # PDF files (but allow the generated documentation PDFs)
 *.pdf
