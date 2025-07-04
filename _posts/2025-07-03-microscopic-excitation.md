@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: dark
 title: "How Dark Matter Makes the Universe Vibrate"
-date: 2025-07-03
-author: Oscillating Brane Theory Team
+date: 2024-01-16
+author: Romain Provencal
 tags: [dark-matter, mechanics, gravitational-funnels]
 ---
 
@@ -50,8 +50,9 @@ However, secondary local resonances are possible around superclusters, where mas
 
 ## Primordial Black Holes: The Cosmic Pushpins
 
-Beyond stellar and supermassive black holes, a hidden population could play a crucial role: primordial black holes (PBH). A PBH of mass 10⁻¹² M_☉ has a Schwarzschild radius r_s ≈ 30 nm, creating a funnel comparable in size to our extra dimension L.
+Beyond stellar and supermassive black holes, a hidden population could play a crucial role: primordial black holes (PBH). A PBH of mass 10⁻¹¹ M_☉ has a Schwarzschild radius r_s ≈ 30 nm, creating a funnel comparable in size to our extra dimension L.
 
 If these PBHs represent a fraction Ω_PBH ~ 10⁻⁴ of cosmic density, they form a dense network of small-scale entry points. Like thousands of needles piercing fabric, they increase the oscillating fraction f_osc without changing the macroscopic dark matter density. 
 
 Consequence: a possible enhancement of the dark energy oscillation amplitude A_w, offering an additional signature to search for in future observations.
+

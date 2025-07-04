@@ -76,7 +76,7 @@ Future programs measuring H₀ directionally at 0.05% precision over 10° patche
 ### 4. Kaluza-Klein Tower
 First KK excitation mass:
 ```
-m_KK = ℏ/Lc ≃ 10⁻³ eV
+m_KK = ℏ/(Lc) ≃ 1 eV
 ```
 
 Too light for colliders but potentially visible as:

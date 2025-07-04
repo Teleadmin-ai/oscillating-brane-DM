@@ -1,12 +1,13 @@
 # Site settings
-title: Oscillating Brane Cosmology
+title: Oscillating Brane Dark Matter Theory
 subtitle: The Universe as a Vibrating Membrane
 description: >-
-  A revolutionary theory where dark matter flows through gravitational funnels
-  create cosmic oscillations, explaining dark energy and modified gravity.
+  A revolutionary cosmological theory where the universe is a vibrating 4D membrane 
+  in 5D space. Dark matter oscillations create dark energy, resolve the S₈ tension, 
+  and naturally produce MOND-like effects. Testable predictions for Euclid and PTA.
 baseurl: ""
 url: "https://higgs-cosmology.com"
-author: Oscillating Brane Theory Team
+author: Romain Provencal
 
 # Build settings
 theme: jekyll-theme-minimal
@@ -29,10 +30,18 @@ navigation:
     url: /
   - title: Theory
     url: /theory/
+  - title: Complete Theory
+    url: /theory-complete/
+  - title: Theoretical Foundations
+    url: /theoretical-foundations/
+  - title: Chronology
+    url: /chronology/
   - title: Predictions
     url: /predictions/
   - title: Tools
     url: /tools/
+  - title: Downloads
+    url: /downloads/
   - title: About
     url: /about/
 
@@ -42,14 +51,6 @@ twitter_username:
 
 # Analytics (optional)
 google_analytics: 
-
-# Default layout for all pages
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-      theme_class: "dark-theme"
 
 # Exclude from build
 exclude:
@@ -61,3 +62,10 @@ exclude:
   - LICENSE
   - "*.py"
   - "*.npz"
+  - vendor/
+  - .github/
+  - requirements.txt
+  - README.md
+  - output/
+  - pandoc-3.1.11/
+  - pandoc.tar.gz

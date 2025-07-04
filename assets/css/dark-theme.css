@@ -92,14 +92,15 @@ nav a:hover {
   display: grid;
   grid-template-columns: 40% 60%;
   min-height: 100vh;
-  padding-top: 120px; /* Space for fixed header */
+  padding-top: 200px; /* Increased space for fixed header */
 }
 
 /* Text column */
 .text-column {
   padding: 40px;
+  padding-top: 20px; /* Reduced top padding since wrapper handles it */
   overflow-y: auto;
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 200px); /* Match wrapper padding */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
@@ -112,6 +113,7 @@ nav a:hover {
 .text-content {
   max-width: 500px;
   padding-right: 20px; /* Add some padding since scrollbar is hidden */
+  padding-top: 40px; /* Add top padding to ensure text starts below header */
 }
 
 /* Video column */
@@ -381,6 +383,7 @@ li {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 200px; /* Offset for fixed header */
 }
 
 /* Selection color */
@@ -392,4 +395,126 @@ html {
 ::-moz-selection {
   background: rgba(74, 158, 255, 0.3);
   color: #ffffff;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  /* Make tables scrollable on mobile */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Adjust font sizes */
+  body.dark-theme {
+    font-size: 14px;
+  }
+  
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* Stack layout on mobile */
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .text-column,
+  .video-column {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .video-column {
+    height: 50vh;
+    position: relative;
+  }
+  
+  /* Adjust header for mobile */
+  .site-header {
+    padding: 15px 20px;
+  }
+  
+  .site-header nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .site-header nav li {
+    margin: 0 5px;
+  }
+  
+  /* Make code blocks responsive */
+  pre {
+    overflow-x: auto;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+  
+  /* Images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Key predictions box */
+  .key-predictions {
+    margin: 20px 0;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+  
+  /* Adjust disclaimer position on mobile */
+  .site-header > div[style*="position: absolute"] {
+    position: static !important;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .text-column {
+    width: 45%;
+  }
+  
+  .video-column {
+    width: 55%;
+  }
+  
+  .site-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Ensure text remains readable on very small screens */
+@media (max-width: 380px) {
+  body.dark-theme {
+    font-size: 13px;
+  }
+  
+  .site-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .site-header nav ul {
+    font-size: 0.85rem;
+  }
 }

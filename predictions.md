@@ -42,11 +42,18 @@ The membrane oscillation creates a time-varying equation of state:
 
 ### 2. Gravitational Wave Background
 
-The membrane reversal creates a unique GW signature:
+The membrane reversal creates a unique GW signature with an echo effect:
 
 - **Fundamental**: f₀ = 1.6 × 10⁻¹⁷ Hz
-- **Harmonic**: 2f₀ from flux reversal
-- **Strain**: h_c ~ 2 × 10⁻¹⁸
+- **Echo**: 2f₀ from flux reversal at membrane extrema
+- **Strain**: h_c ~ 2 × 10⁻¹⁸ at f₀, ~ 10⁻¹⁸ at 2f₀
+
+![PTA Doublet Signature](/plots/pta_doublet.png)
+
+This doublet structure is a smoking gun for brane oscillations:
+- The fundamental frequency tracks the membrane oscillation period
+- The echo at 2f₀ arises from dark matter flux reversal
+- No other cosmological mechanism produces this specific pattern
 
 **Detection**: Requires coherent signal over ≥5 cycles, achievable with SKA-PTA + LISA.
 
@@ -57,6 +64,9 @@ Oscillating w(z) modulates structure formation:
 $$\frac{D_+^{osc}}{D_+^{ΛCDM}}(z=0) = 0.948$$
 
 This 5.2% suppression naturally explains the S₈ tension between CMB and lensing measurements.
+
+![Growth Factor Suppression](/plots/growth_factor_comparison.png)
+*Figure: Structure growth suppression in oscillating brane model vs ΛCDM*
 
 ### 4. Hubble Anisotropy
 
@@ -69,7 +79,7 @@ Future programs measuring H₀ to 0.05% precision over 10° patches will map thi
 ## Particle Physics Signatures
 
 ### Kaluza-Klein Modes
-- First excitation: m_KK ≃ 10⁻³ eV
+- First excitation: m_KK ≃ 1 eV
 - CMB signature: ΔN_eff ~ 0.01
 
 ### Trans-dimensional Leakage
@@ -83,7 +93,7 @@ Future programs measuring H₀ to 0.05% precision over 10° patches will map thi
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T) | Time-varying |
 | S₈ | 0.83 (tension) | 0.79 (resolved) | 5.2% lower |
 | GW background | None | Doublet at 10⁻¹⁷ Hz | Unique signature |
-| H₀ variation | Isotropic | 1.5% dipole | Anisotropic |
+| H₀ variation | Isotropic | ~0.01% dipole | Anisotropic |
 
 ## Statistical Significance
 

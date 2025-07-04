@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: dark
 title: "The Universe as a Vibrating Membrane"
-date: 2025-07-03
-author: Oscillating Brane Theory Team
+date: 2024-01-15
+author: Romain Provencal
 tags: [cosmology, dark-matter, brane-theory]
 ---
 

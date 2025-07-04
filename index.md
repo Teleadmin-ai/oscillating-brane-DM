@@ -80,3 +80,22 @@ Every two billion years, the cosmic membrane completes one full cycle. This osci
 
 The coming decade will be decisive. Euclid will measure the dark energy equation of state with unprecedented precision. DESI will map the power spectrum modulation. Pulsar timing arrays will search for our gravitational wave signature.
 
+<div class="section-marker" data-section="download"></div>
+
+## Download the Complete Theory
+
+<div style="text-align: center; margin: 40px 0;">
+  <a href="/downloads/" class="download-main-button" style="display: inline-block; padding: 15px 30px; background: #4a90e2; color: white; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+    📥 Download Complete PDF Documentation
+  </a>
+</div>
+
+<style>
+.download-main-button:hover {
+  background: #357abd !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3) !important;
+  transition: all 0.3s ease;
+}
+</style>
+

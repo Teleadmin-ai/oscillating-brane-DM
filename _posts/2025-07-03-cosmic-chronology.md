@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: dark
 title: "Cosmic Chronology: From Inflation to the Current Beat"
-date: 2025-07-03
-author: Oscillating Brane Theory Team
+date: 2024-01-17
+author: Romain Provencal
 tags: [cosmology, evolution, big-bang, inflation]
 ---
 
@@ -66,6 +66,7 @@ The factor ξ ≃ 1.05 encodes the informational content of the horizon—how ma
 
 Local tension variation induces variation in the Hubble "constant":
 
-$$\frac{δH}{H} ≃ \frac{1}{2} \frac{δτ}{τ_0} ≃ \frac{1}{2} γK_{MW} \sim 10^{-4}$$
+$$\frac{δH}{H} ≃ \frac{1}{2} \frac{δτ}{τ_0} ≈ 10^{-4}$$
 
-A future program capable of measuring H₀ directionally at 0.05% precision over 10° patches could reveal this cosmic tension map—regions where the membrane is tighter expand slightly faster!
+where δτ/τ₀ represents the local tension contrast, estimated at ~2×10⁻⁴ in the Local Supercluster vicinity. A future program capable of measuring H₀ directionally at 0.05% precision over 10° patches could reveal this cosmic tension map—regions where the membrane is tighter expand slightly faster!
+

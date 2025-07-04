@@ -1,5 +1,7 @@
 # Oscillating Brane Dark Matter Theory v4.0
 
+**Author: Romain Provencal**
+
 ## The Universe as a Vibrating Membrane
 
 This repository contains the complete theoretical framework and computational tools for the **Oscillating Brane Dark Matter Theory**, where the universe is conceptualized as a 4D elastic membrane floating in higher dimensions, with dark matter flows through gravitational funnels exciting fundamental vibrational modes.
@@ -72,12 +74,12 @@ print(f"w(z={z}) = {w_de:.3f}")
 | Euclid | Sinusoidal w(z) | A ≥ 3×10⁻³, Signal < 5σ |
 | DESI Full | ΔP/P = 0.5% at k₀ | Smooth spectrum |
 | IPTA DR5 | Doublet f₀, 2f₀ | Pure noise |
-| H0LiCOW++ | Anisotropy ≤ 1.5% | Isotropy < 0.2% |
+| H0LiCOW++ | Anisotropy ≤ 0.1% | Isotropy < 0.2% |
 
 ### 📝 Key Papers
 
 - Ringermacher & Mead (2014): "Observation of discrete oscillations in a model-independent plot of cosmological scale factor versus lookback time"
-- Original theoretical development: [arXiv:XXXX.XXXXX]
+- Original theoretical paper: *(in preparation, 2025)*
 
 ### 🤝 Contributing
 
