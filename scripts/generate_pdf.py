@@ -340,7 +340,9 @@ class PDFGenerator:
 
         return "".join(parts)
 
-    def process_markdown(self, file_path: Path, front_matter: Dict, is_first: bool = False) -> str:
+    def process_markdown(
+        self, file_path: Path, front_matter: Dict, is_first: bool = False
+    ) -> str:
         """Process a markdown file for inclusion in the PDF."""
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
@@ -462,7 +464,7 @@ This document contains the complete theoretical framework and documentation for 
         for i, (file_path, front_matter) in enumerate(files):
             print(f"Processing: {file_path}")
             # Pass index to know if it's the first file
-            content = self.process_markdown(file_path, front_matter, is_first=(i==0))
+            content = self.process_markdown(file_path, front_matter, is_first=(i == 0))
             combined += content
 
         return combined
