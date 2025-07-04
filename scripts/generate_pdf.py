@@ -406,11 +406,11 @@ title: "{self.metadata['title']}"
 author: "{self.metadata['author']}"
 date: "{self.metadata['date']}"
 subtitle: "{self.metadata['subtitle']}"
-documentclass: report
+documentclass: book
 fontsize: 11pt
 geometry: margin=1in
 toc: true
-toc-depth: 3
+toc-depth: 2
 numbersections: true
 urlcolor: blue
 linkcolor: black
