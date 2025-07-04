@@ -104,6 +104,8 @@ jobs:
     
     - name: Generate PDF
       run: |
+        # Ensure output directory exists
+        mkdir -p output
         # Clean old PDFs first
         rm -f output/*.pdf
         python scripts/generate_pdf.py

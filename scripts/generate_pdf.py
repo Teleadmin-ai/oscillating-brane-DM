@@ -255,6 +255,7 @@ class PDFGenerator:
             "⊥": r"\perp",
             "ℓ": r"\ell",
             "ℏ": r"\hbar",
+            "ℒ": r"\mathcal{L}",
             "⊙": r"\odot",
         }
 
@@ -325,6 +326,7 @@ class PDFGenerator:
             "⊥": r"$\perp$",
             "ℓ": r"$\ell$",
             "ℏ": r"$\hbar$",
+            "ℒ": r"$\mathcal{L}$",
             "⊙": r"$\odot$",
         }
 
