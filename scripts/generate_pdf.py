@@ -348,7 +348,7 @@ class PDFGenerator:
         """Process a markdown file for inclusion in the PDF."""
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
-            
+
         # Debug: Print original file size
         print(f"  Original file size: {len(content)} characters")
 
@@ -368,15 +368,17 @@ class PDFGenerator:
 
         # Clean Unicode artifacts (only problematic ligatures, not math symbols)
         content = self.clean_unicode_artifacts(content)
-        
+
         # Fix common LaTeX issues
         # Fix split dollar signs like $\delta$$\tau$ -> $\delta\tau$
         # But be careful not to merge equation delimiters $$ with inline math $
-        content = re.sub(r'\$([^$\n]+)\$\$([^$\n]+)\$', r'$\1\2$', content)
-        
+        content = re.sub(r"\$([^$\n]+)\$\$([^$\n]+)\$", r"$\1\2$", content)
+
         # Fix the specific pattern that appears in chronology
-        content = content.replace('$\\delta$$\\tau$/$\\tau$$_0$', '$\\delta\\tau/\\tau_0$')
-        content = content.replace('$\\xi$ $\\simeq$', '$\\xi \\simeq$')
+        content = content.replace(
+            "$\\delta$$\\tau$/$\\tau$$_0$", "$\\delta\\tau/\\tau_0$"
+        )
+        content = content.replace("$\\xi$ $\\simeq$", "$\\xi \\simeq$")
 
         # Fix image paths to be absolute
         # Replace relative paths like /plots/image.png with absolute paths
@@ -431,7 +433,7 @@ class PDFGenerator:
                 result = f"{heading}\n\n{content}\n"
             else:
                 result = f"\\newpage\n{heading}\n\n{content}\n"
-                
+
         # Debug: Print processed content size
         print(f"  Processed file size: {len(result)} characters")
         return result
@@ -506,10 +508,13 @@ This document contains the complete theoretical framework and documentation for 
             # Basic conversion - try pdflatex with minimal options
             # First save to a temp file to avoid any string size limits
             import tempfile
-            with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False, encoding='utf-8') as tmp:
+
+            with tempfile.NamedTemporaryFile(
+                mode="w", suffix=".md", delete=False, encoding="utf-8"
+            ) as tmp:
                 tmp.write(combined_md)
                 tmp_path = tmp.name
-            
+
             try:
                 pypandoc.convert_file(
                     tmp_path,
@@ -529,6 +534,7 @@ This document contains the complete theoretical framework and documentation for 
                 )
             finally:
                 import os
+
                 os.unlink(tmp_path)
             print(f"PDF generated successfully: {output_path}")
             return  # Success! Exit the method
