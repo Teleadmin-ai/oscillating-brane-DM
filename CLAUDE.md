@@ -8,6 +8,7 @@ This is the **Oscillating Brane Dark Matter Theory** project - a revolutionary c
 - **Live Website**: https://higgs-cosmology.com/
 - **Owner**: Teleadmin-ai
 - **Development Status**: Active - AI-assisted theoretical cosmology research
+- **Current Branch**: restore-working-version (pushed to main)
 
 ## GitHub Authentication
 When working with this repository, use GitHub CLI (`gh`) for authentication. The user has personal access tokens configured.
@@ -87,12 +88,16 @@ The theory's fundamental parameters:
 - **Extra dimension size**: L = 2.0 × 10⁻⁷ m
 - **Oscillating fraction**: f_osc = 0.10
 - **MOND acceleration**: a₀ = 1.1 × 10⁻¹⁰ m/s²
+- **Dark energy amplitude**: A_w ≃ 0.003 (±0.3% oscillation)
 
 ## Python Scripts
-The repository includes three main computational tools:
-1. `brane_dynamics.py` - Membrane oscillation calculations
-2. `growth_factor.py` - Structure formation with oscillating w(z)
+The repository includes comprehensive computational tools:
+1. `brane_dynamics.py` - Membrane oscillation calculations (fixed dimensional consistency)
+2. `growth_factor.py` - Structure formation with oscillating w(z) (improved lookback time)
 3. `bayesian_analysis.py` - Model comparison and evidence
+4. `kk_spectrum.py` - Kaluza-Klein mode analysis
+5. `pta_echo.py` - Gravitational wave predictions
+6. `generate_figures.py` - Scientific visualization generation
 
 ## Blog Post Topics
 1. Introduction to the universe as a vibrating membrane
@@ -100,11 +105,32 @@ The repository includes three main computational tools:
 3. Cosmic chronology from inflation to current oscillations
 4. Experimental tests and future predictions
 
+## Recent Updates and Known Issues
+
+### Scientific Corrections (2025-07-04)
+Based on thorough scientific review:
+- **Kaluza-Klein mass**: Corrected from 10⁻³ eV to 1 eV (consistent with L = 0.2 μm)
+- **PBH mass**: Corrected from 10⁻¹² M_⊙ to 10⁻¹¹ M_⊙ (to match r_s ≈ 30 nm)
+- **K_MW notation**: Clarified as local tension contrast δτ/τ₀ ≈ 2×10⁻⁴
+- **GitHub links**: Updated from YoyoCosmo to Teleadmin-ai repository
+
+### Header Overlap Fix (2025-07-04)
+- Increased content-wrapper padding-top to 200px
+- Added text-content padding-top of 40px
+- Ensures first line of text is fully visible below fixed header
+
+### CSS Implementation Details
+- Dark theme with video carousel on 40/60 split
+- Fixed header with navigation
+- Responsive design for mobile devices
+- Custom dark layout for all pages including blog posts
+
 ## Maintenance Tasks
 - Keep blog posts updated with latest theoretical developments
 - Update predictions as new observational data arrives
 - Maintain compatibility with GitHub Pages requirements
 - Ensure all mathematical equations render correctly with MathJax
+- Monitor header spacing to prevent text overlap
 
 ## Contact
 - GitHub Issues: https://github.com/Teleadmin-ai/oscillating-brane-DM/issues

@@ -41,7 +41,7 @@ Utilisant la conversion : 1 GeV³ = 3,24 × 10²⁴ J/m²
 
 ### 1.1 Les trous noirs primordiaux : les accroche-pinces cosmiques
 
-Au-delà des trous noirs stellaires et supermassifs, une population cachée pourrait jouer un rôle crucial : les trous noirs primordiaux (PBH). Un PBH de masse 10⁻¹² M_☉ possède un rayon de Schwarzschild r_s ≈ 30 nm, créant un entonnoir de taille comparable à notre dimension supplémentaire L.
+Au-delà des trous noirs stellaires et supermassifs, une population cachée pourrait jouer un rôle crucial : les trous noirs primordiaux (PBH). Un PBH de masse 10⁻¹¹ M_☉ possède un rayon de Schwarzschild r_s ≈ 30 nm, créant un entonnoir de taille comparable à notre dimension supplémentaire L.
 
 Si ces PBH représentent une fraction Ω_PBH ~ 10⁻⁴ de la densité cosmique, ils forment un réseau dense de points d'entrée à petite échelle. Comme des milliers d'aiguilles perçant un tissu, ils augmentent la fraction oscillante f_osc sans modifier la densité macroscopique de matière noire. Conséquence : une possible accentuation de l'amplitude A_w des oscillations d'énergie sombre, offrant une signature supplémentaire à chercher.
 
@@ -154,9 +154,9 @@ Le facteur ξ ≃ 1,05 encode le contenu informationnel de l'horizon - combien d
 
 La variation locale de tension induit une variation de la "constante" de Hubble :
 
-δH/H ≃ ½ δτ/τ₀ ≃ ½ γK_MW ~ 10⁻⁴
+δH/H ≃ ½ δτ/τ₀ ≈ 10⁻⁴
 
-Un futur programme capable de mesurer H₀ directionnellement à 0,05% sur des patchs de 10° pourrait révéler cette carte de tension cosmique - les régions où la membrane est plus tendue expandent légèrement plus vite !
+où δτ/τ₀ représente le contraste de tension locale, estimé à environ 2×10⁻⁴ dans le voisinage du Superamas local. Un futur programme capable de mesurer H₀ directionnellement à 0,05% sur des patchs de 10° pourrait révéler cette carte de tension cosmique - les régions où la membrane est plus tendue expandent légèrement plus vite !
 
 ## 6. Manifestations en physique des particules
 
@@ -164,7 +164,7 @@ Un futur programme capable de mesurer H₀ directionnellement à 0,05% sur des p
 
 Avec L = 0,2 μm, chaque particule du Modèle Standard possède une infinité de copies plus massives - ses excitations dans la 5ème dimension. La première a une masse :
 
-m_KK = ℏ/Lc ≃ 10⁻³ eV
+m_KK = ℏ/(Lc) ≃ 1 eV
 
 Trop légère pour les accélérateurs mais potentiellement visible dans la cosmologie du CMB comme une légère déviation du nombre de degrés de liberté effectifs. Une signature subtile de la dimension cachée.
 
@@ -253,6 +253,6 @@ Mais quelle que soit l'issue, nous aurons appris que l'audace de demander "Et si
 ---
 
 **Repository complet**  
-https://github.com/YoyoCosmo/oscillating-brane-DM-v4.0
+https://github.com/Teleadmin-ai/oscillating-brane-DM
 
 Contenant tous les calculs, données et scripts pour reproduction indépendante. La science n'est rien sans transparence, et la beauté d'une théorie se mesure autant à son élégance qu'à sa vulnérabilité aux faits.

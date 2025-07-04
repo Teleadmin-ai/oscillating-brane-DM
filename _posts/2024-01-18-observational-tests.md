@@ -69,7 +69,7 @@ This doublet, if it maintains coherence over ≥ 5 cycles, would be detectable b
 
 With L = 0.2 μm, each Standard Model particle has an infinity of more massive copies—its excitations in the 5th dimension. The first has mass:
 
-$$m_{KK} = \frac{ℏ}{Lc} ≃ 10^{-3} \text{ eV}$$
+$$m_{KK} = \frac{ℏ}{Lc} ≃ 1 \text{ eV}$$
 
 Too light for accelerators but potentially visible in CMB cosmology as a slight deviation in the number of effective degrees of freedom. A subtle signature of the hidden dimension.
 

@@ -99,7 +99,7 @@ With Kelvin-Voigt damping γ ~ 10⁻² Gyr⁻¹:
 Primordial black holes, if present, could enhance the oscillation mechanism:
 
 **Key Parameters:**
-- PBH mass: ~10⁻¹² M_⊙ 
+- PBH mass: ~10⁻¹¹ M_⊙ 
 - Funnel radius: ~30 nm (comparable to L)
 - Required density: >10⁻⁵ Mpc⁻³
 

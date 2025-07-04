@@ -79,7 +79,7 @@ Future programs measuring H₀ to 0.05% precision over 10° patches will map thi
 ## Particle Physics Signatures
 
 ### Kaluza-Klein Modes
-- First excitation: m_KK ≃ 10⁻³ eV
+- First excitation: m_KK ≃ 1 eV
 - CMB signature: ΔN_eff ~ 0.01
 
 ### Trans-dimensional Leakage
