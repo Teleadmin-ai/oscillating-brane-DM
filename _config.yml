@@ -62,5 +62,10 @@ exclude:
   - LICENSE
   - "*.py"
   - "*.npz"
-  - "*.py"
-  - "*.npz"
+  - vendor/
+  - .github/
+  - requirements.txt
+  - README.md
+  - output/
+  - pandoc-3.1.11/
+  - pandoc.tar.gz
