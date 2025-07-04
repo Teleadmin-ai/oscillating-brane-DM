@@ -248,7 +248,8 @@ class GrowthFactorCalculator:
         z = np.atleast_1d(z)
         t_lb = np.zeros_like(z, dtype=float)
         
-        # Use simple E(z) for ΛCDM to avoid recursion
+        # Use simple E(z) for ΛCDM to avoid recursion in oscillating case
+        # This is accurate enough since oscillations have small amplitude (A_w ~ 0.003)
         def E_z_simple(zp):
             """Simple E(z) without dark energy oscillations"""
             return np.sqrt(self.omega_m * (1 + zp)**3 + self.omega_r * (1 + zp)**4 + self.omega_de)
