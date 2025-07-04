@@ -493,9 +493,10 @@ This document contains the complete theoretical framework and documentation for 
                     "-V",
                     "monofont=DejaVu Sans Mono",
                     "-V",
-                    "fontenc=",  # Don't use T1 encoding with XeLaTeX
+                    "mathfont=DejaVu Math TeX Gyre",
                     "-V",
-                    "fontspec",  # Use fontspec package for better font handling
+                    "fontsize=11pt",
+                    "--variable=fontenc:",  # Proper way to set empty fontenc
                 ],
             )
             print(f"PDF generated successfully: {output_path}")
@@ -504,8 +505,9 @@ This document contains the complete theoretical framework and documentation for 
             print(f"Error generating PDF: {e}")
             print(f"Error type: {type(e).__name__}")
             import traceback
+
             traceback.print_exc()
-            
+
             # Try without XeLaTeX
             print("\nTrying with pdflatex instead of xelatex...")
             try:
