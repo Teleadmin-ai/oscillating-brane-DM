@@ -40,6 +40,8 @@ navigation:
     url: /predictions/
   - title: Tools
     url: /tools/
+  - title: Downloads
+    url: /downloads/
   - title: About
     url: /about/
 

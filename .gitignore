@@ -24,9 +24,13 @@ build/
 
 # Plots
 *.png
-*.pdf
 *.svg
 *.eps
+
+# PDF files (but allow the generated documentation PDFs)
+*.pdf
+!oscillating_brane_theory_latest.pdf
+!oscillating_brane_theory_*.pdf
 
 # IDEs
 .vscode/
