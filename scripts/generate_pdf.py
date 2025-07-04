@@ -444,28 +444,10 @@ This document contains the complete theoretical framework and documentation for 
         # Process each file
         combined = header
 
-        # Add main content
-        combined += "\\part{Core Theory}\n\n"
-        for i, (file_path, front_matter) in enumerate(
-            files[:4]
-        ):  # First 4 are core docs
+        # Process all files without parts - just chapters
+        for i, (file_path, front_matter) in enumerate(files):
             print(f"Processing: {file_path}")
             combined += self.process_markdown(file_path, front_matter)
-
-        # Add supporting documents
-        combined += "\\part{Supporting Documentation}\n\n"
-        for file_path, front_matter in files[4:8]:  # Next batch
-            if "posts" not in str(file_path):
-                print(f"Processing: {file_path}")
-                combined += self.process_markdown(file_path, front_matter)
-
-        # Add blog posts
-        if any("posts" in str(fp) for fp, _ in files):
-            combined += "\\part{Research Blog Posts}\n\n"
-            for file_path, front_matter in files:
-                if "_posts" in str(file_path):
-                    print(f"Processing: {file_path}")
-                    combined += self.process_markdown(file_path, front_matter)
 
         return combined
 
