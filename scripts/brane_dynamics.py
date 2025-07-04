@@ -47,6 +47,7 @@ class BraneOscillator:
         
         # Derived parameters
         self.omega = 2 * np.pi / (T * Gyr_to_s)
+        self.H0 = H0_SI  # Hubble constant in SI units
         self.R_H = c / H0_SI  # Hubble radius
         self.M_DM_tot = 7e52  # kg, total dark matter mass
         self.M_osc = f_osc * self.M_DM_tot

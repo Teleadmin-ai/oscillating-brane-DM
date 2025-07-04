@@ -49,3 +49,6 @@ Our framework preserves all successful predictions of ΛCDM while adding:
 3. Testable oscillations in cosmological observables
 
 The brane paradigm unifies inflation, dark matter, and dark energy into a single geometric framework.
+
+![Cosmic Timeline](/plots/cosmic_timeline.png)
+*Figure: Evolution of brane tension from inflation to present day*

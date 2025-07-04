@@ -65,6 +65,9 @@ $$\frac{D_+^{osc}}{D_+^{ΛCDM}}(z=0) = 0.948$$
 
 This 5.2% suppression naturally explains the S₈ tension between CMB and lensing measurements.
 
+![Growth Factor Suppression](/plots/growth_factor_comparison.png)
+*Figure: Structure growth suppression in oscillating brane model vs ΛCDM*
+
 ### 4. Hubble Anisotropy
 
 Spatial tension variations create directional H₀ differences:

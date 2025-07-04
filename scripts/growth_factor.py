@@ -248,9 +248,14 @@ class GrowthFactorCalculator:
         z = np.atleast_1d(z)
         t_lb = np.zeros_like(z, dtype=float)
         
+        # Use simple E(z) for ΛCDM to avoid recursion
+        def E_z_simple(zp):
+            """Simple E(z) without dark energy oscillations"""
+            return np.sqrt(self.omega_m * (1 + zp)**3 + self.omega_r * (1 + zp)**4 + self.omega_de)
+        
         for i, zi in enumerate(z):
             # Integrate dt/dz = -1/[(1+z)E(z)]
-            integrand = lambda zp: 1.0 / ((1 + zp) * self.E_z(zp))
+            integrand = lambda zp: 1.0 / ((1 + zp) * E_z_simple(zp))
             t_lb[i], _ = quad(integrand, 0, zi)
         
         # Convert to Gyr

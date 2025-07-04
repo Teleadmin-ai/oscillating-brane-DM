@@ -55,6 +55,9 @@ With amplitude A_w ≃ 0.003 and period T = 2.0 Gyr.
 - Resolve the S₈ tension
 - Be detectable by Euclid at >5σ significance
 
+![Dark Energy Oscillations](/plots/w_z_oscillations.png)
+*Figure: Dark energy equation of state oscillating with 2 Gyr period*
+
 ### Modified Gravity
 
 At low accelerations, the membrane's properties create MOND-like effects:
