@@ -6,9 +6,10 @@ Plot 2D Prototype Results
 Create publication-quality figures from the 2D Einstein toy model results.
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
 import os
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Set publication quality style
 plt.style.use("seaborn-v0_8-whitegrid")
