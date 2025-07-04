@@ -55,3 +55,4 @@ Beyond stellar and supermassive black holes, a hidden population could play a cr
 If these PBHs represent a fraction Ω_PBH ~ 10⁻⁴ of cosmic density, they form a dense network of small-scale entry points. Like thousands of needles piercing fabric, they increase the oscillating fraction f_osc without changing the macroscopic dark matter density. 
 
 Consequence: a possible enhancement of the dark energy oscillation amplitude A_w, offering an additional signature to search for in future observations.
+
