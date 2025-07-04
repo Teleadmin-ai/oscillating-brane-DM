@@ -93,7 +93,7 @@ Future programs measuring H₀ to 0.05% precision over 10° patches will map thi
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T) | Time-varying |
 | S₈ | 0.83 (tension) | 0.79 (resolved) | 5.2% lower |
 | GW background | None | Doublet at 10⁻¹⁷ Hz | Unique signature |
-| H₀ variation | Isotropic | 1.5% dipole | Anisotropic |
+| H₀ variation | Isotropic | ~0.01% dipole | Anisotropic |
 
 ## Statistical Significance
 

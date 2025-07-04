@@ -107,6 +107,12 @@ The repository includes comprehensive computational tools:
 
 ## Recent Updates and Known Issues
 
+### Version 4.0.2 Editorial Corrections (2025-07-04)
+Following comprehensive o3 pro audit:
+- **H₀ anisotropy**: Harmonized to ~0.01% (was inconsistently showing 1.5%)
+- **arXiv placeholder**: Changed to "in preparation, 2025"
+- **README H0LiCOW++**: Updated to 0.1% anisotropy threshold
+
 ### Scientific Corrections (2025-07-04)
 Based on thorough scientific review:
 - **Kaluza-Klein mass**: Corrected from 10⁻³ eV to 1 eV (consistent with L = 0.2 μm)
