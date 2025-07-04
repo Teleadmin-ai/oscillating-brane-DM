@@ -340,7 +340,7 @@ class PDFGenerator:
 
         return "".join(parts)
 
-    def process_markdown(self, file_path: Path, front_matter: Dict) -> str:
+    def process_markdown(self, file_path: Path, front_matter: Dict, is_first: bool = False) -> str:
         """Process a markdown file for inclusion in the PDF."""
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
@@ -404,10 +404,17 @@ class PDFGenerator:
                 # Add a brief intro if the next line is a subheading
                 lines.insert(1, "\n*Content from this section:*\n")
                 content = "\n".join(lines)
-            return f"{content}\n\\newpage\n"
+            # IMPORTANT: Add newpage BEFORE to start a new chapter (unless it's the first)
+            if is_first:
+                return f"{content}\n"
+            else:
+                return f"\\newpage\n{content}\n"
         else:
-            # Add the heading we created
-            return f"{heading}\n\n{content}\n\\newpage\n"
+            # Add the heading we created with newpage before (unless it's the first)
+            if is_first:
+                return f"{heading}\n\n{content}\n"
+            else:
+                return f"\\newpage\n{heading}\n\n{content}\n"
 
     def create_combined_markdown(self) -> str:
         """Combine all markdown files into a single document."""
@@ -454,7 +461,9 @@ This document contains the complete theoretical framework and documentation for 
         # Process all files without parts - just chapters
         for i, (file_path, front_matter) in enumerate(files):
             print(f"Processing: {file_path}")
-            combined += self.process_markdown(file_path, front_matter)
+            # Pass index to know if it's the first file
+            content = self.process_markdown(file_path, front_matter, is_first=(i==0))
+            combined += content
 
         return combined
 
