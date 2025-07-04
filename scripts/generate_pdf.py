@@ -106,7 +106,101 @@ class PDFGenerator:
 
     def convert_unicode_to_latex(self, text: str) -> str:
         """Convert Unicode mathematical symbols to LaTeX commands."""
-        # First, handle emojis and special characters that should always be replaced
+        # First, handle specific number patterns with superscripts
+        # This prevents split math expressions
+        import re
+
+        # Pattern for numbers with Unicode superscripts (e.g., 10⁻¹⁷)
+        def replace_number_superscripts(match):
+            base = match.group(1)
+            superscript = match.group(2)
+
+            # Convert entire superscript sequences first
+            superscript_sequences = {
+                "⁻¹⁷": "-17",
+                "⁻¹⁸": "-18",
+                "⁻¹⁰": "-10",
+                "⁻⁷⁰": "-70",
+                "¹⁹": "19",
+                "¹⁸": "18",
+                "¹⁷": "17",
+                "¹⁶": "16",
+                "¹⁵": "15",
+                "¹⁴": "14",
+                "¹³": "13",
+                "¹²": "12",
+                "¹¹": "11",
+                "¹⁰": "10",
+            }
+
+            # Check for known sequences first
+            for seq, replacement in superscript_sequences.items():
+                if seq in superscript:
+                    superscript = superscript.replace(seq, replacement)
+
+            # Then handle individual characters
+            superscript_chars = {
+                "⁻": "-",
+                "⁰": "0",
+                "¹": "1",
+                "²": "2",
+                "³": "3",
+                "⁴": "4",
+                "⁵": "5",
+                "⁶": "6",
+                "⁷": "7",
+                "⁸": "8",
+                "⁹": "9",
+            }
+
+            # Replace remaining individual characters
+            for uni, num in superscript_chars.items():
+                superscript = superscript.replace(uni, num)
+
+            # Wrap in braces if multi-character or negative
+            if len(superscript) > 1 or "-" in superscript:
+                return f"${base}^{{{superscript}}}$"
+            else:
+                return f"${base}^{superscript}$"
+
+        # Replace number patterns with superscripts (e.g., 10⁻¹⁷ → $10^{-17}$)
+        text = re.sub(
+            r"(\d+)([\u2070-\u209f⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+)", replace_number_superscripts, text
+        )
+
+        # Also handle superscripts after units (e.g., Gyr⁻¹ → Gyr$^{-1}$)
+        def replace_unit_superscripts(match):
+            unit = match.group(1)
+            superscript = match.group(2)
+
+            # Convert superscript characters
+            superscript_chars = {
+                "⁻¹": "^{-1}",
+                "⁻²": "^{-2}",
+                "⁻³": "^{-3}",
+                "⁻": "^{-}",
+                "¹": "^1",
+                "²": "^2",
+                "³": "^3",
+            }
+
+            for uni, latex in superscript_chars.items():
+                superscript = superscript.replace(uni, latex)
+
+            return f"{unit}${superscript}$"
+
+        # Replace superscripts after common units
+        text = re.sub(
+            r"(Gyr|Hz|m|s|kg|GeV|eV|pc|Mpc|cm)([\u2070-\u209f⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+)",
+            replace_unit_superscripts,
+            text,
+        )
+
+        # Fix patterns like "× $10^{-17}$" to be inside single math environment
+        text = re.sub(r"×\s*\$(\d+\^{[^}]+})\$", r"$\\times \1$", text)
+        text = re.sub(r"(\d+)\s*×\s*\$(\d+\^{[^}]+})\$", r"$\1 \\times \2$", text)
+
+        # Handle emojis and special characters that should always be replaced
         emoji_replacements = {
             "🌌": "[universe]",
             "📥": "[download]",
@@ -147,24 +241,6 @@ class PDFGenerator:
             "₈": r"_8",
             "₉": r"_9",
             "₊": r"_+",
-            "⁻¹⁷": r"^{-17}",  # Handle common superscript patterns
-            "⁻¹⁸": r"^{-18}",
-            "⁻¹⁰": r"^{-10}",
-            "⁻¹": r"^{-1}",
-            "⁻²": r"^{-2}",
-            "⁻³": r"^{-3}",
-            "⁻⁴": r"^{-4}",
-            "⁻": r"^-",
-            "⁰": r"^0",
-            "¹": r"^1",
-            "²": r"^2",
-            "³": r"^3",
-            "⁴": r"^4",
-            "⁵": r"^5",
-            "⁶": r"^6",
-            "⁷": r"^7",
-            "⁸": r"^8",
-            "⁹": r"^9",
             "≈": r"\approx",
             "≃": r"\simeq",
             "≤": r"\leq",
@@ -236,24 +312,6 @@ class PDFGenerator:
             "₇": r"$_7$",
             "₈": r"$_8$",
             "₉": r"$_9$",
-            "⁻¹⁷": r"$^{-17}$",  # Handle common superscript patterns
-            "⁻¹⁸": r"$^{-18}$",
-            "⁻¹⁰": r"$^{-10}$",
-            "⁻¹": r"$^{-1}$",
-            "⁻²": r"$^{-2}$",
-            "⁻³": r"$^{-3}$",
-            "⁻⁴": r"$^{-4}$",
-            "⁻": r"$^-$",
-            "⁰": r"$^0$",
-            "¹": r"$^1$",
-            "²": r"$^2$",
-            "³": r"$^3$",
-            "⁴": r"$^4$",
-            "⁵": r"$^5$",
-            "⁶": r"$^6$",
-            "⁷": r"$^7$",
-            "⁸": r"$^8$",
-            "⁹": r"$^9$",
             "≈": r"$\approx$",
             "≃": r"$\simeq$",
             "≤": r"$\leq$",
@@ -287,6 +345,13 @@ class PDFGenerator:
 
         # Remove front matter
         content = re.sub(r"^---\s*\n.*?\n---\s*\n", "", content, flags=re.DOTALL)
+
+        # Fix split math expressions BEFORE conversion
+        # Pattern: number followed by $^{...}$
+        content = re.sub(r"(\d+)\s*\$\^\{([^}]+)\}\$", r"$\1^{\2}$", content)
+
+        # Also fix patterns like "× 10$^{-17}$" to be "× $10^{-17}$"
+        content = re.sub(r"×\s*(\d+)\s*\$\^\{([^}]+)\}\$", r"× $\1^{\2}$", content)
 
         # Convert Unicode to LaTeX BEFORE cleaning artifacts
         # This prevents Unicode characters from being corrupted during conversion
@@ -426,9 +491,9 @@ This document contains the complete theoretical framework and documentation for 
                     "-V",
                     "monofont=DejaVu Sans Mono",
                     "-V",
-                    "fontenc=T1",  # Better font encoding to prevent ligature issues
+                    "fontenc=",  # Don't use T1 encoding with XeLaTeX
                     "-V",
-                    "microtype=false",  # Disable microtype which can cause ligature problems
+                    "fontspec",  # Use fontspec package for better font handling
                 ],
             )
             print(f"PDF generated successfully: {output_path}")
