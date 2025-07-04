@@ -4,6 +4,7 @@ title: Home
 ---
 
 # Welcome to Oscillating Brane Cosmology
+## *The Cosmic Yoyo Theory*
 
 <div class="section-marker" data-section="intro"></div>
 
