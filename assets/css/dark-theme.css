@@ -92,7 +92,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: 40% 60%;
   min-height: 100vh;
-  padding-top: 160px; /* Increased space for fixed header */
+  padding-top: 200px; /* Increased space for fixed header */
 }
 
 /* Text column */
@@ -100,7 +100,7 @@ nav a:hover {
   padding: 40px;
   padding-top: 20px; /* Reduced top padding since wrapper handles it */
   overflow-y: auto;
-  max-height: calc(100vh - 160px); /* Match wrapper padding */
+  max-height: calc(100vh - 200px); /* Match wrapper padding */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
@@ -113,6 +113,7 @@ nav a:hover {
 .text-content {
   max-width: 500px;
   padding-right: 20px; /* Add some padding since scrollbar is hidden */
+  padding-top: 40px; /* Add top padding to ensure text starts below header */
 }
 
 /* Video column */
@@ -367,7 +368,7 @@ li {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 160px; /* Offset for fixed header */
+  scroll-padding-top: 200px; /* Offset for fixed header */
 }
 
 /* Selection color */
