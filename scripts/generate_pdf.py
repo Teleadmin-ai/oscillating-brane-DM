@@ -82,31 +82,36 @@ class FinalPDFGenerator:
     def fix_math_expressions(self, content: str) -> str:
         """Fix common math expression issues."""
         # Fix patterns where math expressions are split or malformed
-        
+
         # Fix underscore issues in math mode (replace with proper subscript)
-        content = re.sub(r'\\_', '_', content)
-        
+        content = re.sub(r"\\_", "_", content)
+
         # Fix incomplete fractions
-        content = re.sub(r'\\frac\{([^}]+)\}\{([^}]*)\s*$', r'\\frac{\1}{\2}', content, flags=re.MULTILINE)
-        
+        content = re.sub(
+            r"\\frac\{([^}]+)\}\{([^}]*)\s*$",
+            r"\\frac{\1}{\2}",
+            content,
+            flags=re.MULTILINE,
+        )
+
         # Fix split math expressions like $\delta$$\tau$ -> $\delta\tau$
-        content = re.sub(r'\$([^$]+)\$\$([^$]+)\$', r'$\1\2$', content)
-        
+        content = re.sub(r"\$([^$]+)\$\$([^$]+)\$", r"$\1\2$", content)
+
         # Fix math expressions that have escaped underscores
-        content = re.sub(r'\\\_([0-9a-zA-Z])', r'_\1', content)
-        
+        content = re.sub(r"\\\_([0-9a-zA-Z])", r"_\1", content)
+
         # Fix specific problematic patterns found in the error
-        content = content.replace('$$\\Pi', '$$\\Pi')
-        content = content.replace('\\dot{N}_i', '\\dot{N}_i')
-        content = content.replace('m_{MN}', 'm_{MN}')
-        
+        content = content.replace("$$\\Pi", "$$\\Pi")
+        content = content.replace("\\dot{N}_i", "\\dot{N}_i")
+        content = content.replace("m_{MN}", "m_{MN}")
+
         # Ensure math blocks are properly closed
         # Count $$ and ensure they're paired
-        parts = content.split('$$')
+        parts = content.split("$$")
         if len(parts) % 2 == 0:  # Odd number of $$, missing closing
             # Find the last unclosed $$ and close it
-            content = content + '$$'
-        
+            content = content + "$$"
+
         return content
 
     def process_markdown(self, file_path: Path, front_matter: Dict) -> str:
@@ -119,22 +124,22 @@ class FinalPDFGenerator:
 
         # First, protect math expressions from Unicode conversion
         math_blocks = []
-        
+
         # Extract display math blocks $$...$$
         def save_display_math(match):
             idx = len(math_blocks)
             math_blocks.append(match.group(0))
             return f"MATHBLOCK{idx}MATHBLOCK"
-        
-        content = re.sub(r'\$\$[^$]+\$\$', save_display_math, content, flags=re.DOTALL)
-        
+
+        content = re.sub(r"\$\$[^$]+\$\$", save_display_math, content, flags=re.DOTALL)
+
         # Extract inline math $...$
         def save_inline_math(match):
             idx = len(math_blocks)
             math_blocks.append(match.group(0))
             return f"MATHBLOCK{idx}MATHBLOCK"
-        
-        content = re.sub(r'\$[^$\n]+\$', save_inline_math, content)
+
+        content = re.sub(r"\$[^$\n]+\$", save_inline_math, content)
 
         # Now do Unicode replacements on non-math content
         unicode_replacements = {
@@ -154,7 +159,6 @@ class FinalPDFGenerator:
             "ξ": "xi",
             "Δ": "Delta",
             "Ω": "Omega",
-            
             # Ligatures
             "ﬀ": "ff",
             "ﬁ": "fi",
@@ -162,7 +166,6 @@ class FinalPDFGenerator:
             "ﬃ": "ffi",
             "ﬄ": "ffl",
             "ï": "i",
-            
             # Symbols
             "∞": "infinity",
             "≈": "approximately",
@@ -171,14 +174,12 @@ class FinalPDFGenerator:
             "≪": "<<",
             "≫": ">>",
             "∝": "proportional to",
-            
             # Emojis
             "🌌": "[universe]",
             "📥": "[download]",
             "✓": "[check]",
             "☉": "Sun",
             "🤖": "[AI]",
-            
             # Special characters
             "—": "---",
             "–": "--",
@@ -218,9 +219,9 @@ class FinalPDFGenerator:
         # Get title and create chapter heading
         title = front_matter.get("title", file_path.stem.replace("_", " ").title())
         self.chapter_count += 1
-        
+
         heading = f"# Chapter {self.chapter_count}: {title}"
-        
+
         if "_posts" in str(file_path):
             date = front_matter.get("date", "")
             if date:
@@ -300,7 +301,7 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
             combined += content
 
         print(f"\nTotal chapters: {self.chapter_count}")
-        
+
         return combined
 
     def generate_pdf_direct(self, output_path: Path) -> bool:
@@ -312,15 +313,24 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
         temp_md = output_path.with_suffix(".combined.md")
         with open(temp_md, "w", encoding="utf-8") as f:
             f.write(combined_md)
-        
+
         print(f"\nCombined markdown saved to: {temp_md}")
         print(f"  Size: {len(combined_md)} bytes ({len(combined_md)/1024:.1f} KB)")
 
         # Generate PDF using multiple attempts with different engines
         engines = [
-            ("pdflatex", ["--pdf-engine=pdflatex", "--pdf-engine-opt=-interaction=nonstopmode"]),
-            ("xelatex", ["--pdf-engine=xelatex", "--pdf-engine-opt=-interaction=nonstopmode"]),
-            ("lualatex", ["--pdf-engine=lualatex", "--pdf-engine-opt=-interaction=nonstopmode"]),
+            (
+                "pdflatex",
+                ["--pdf-engine=pdflatex", "--pdf-engine-opt=-interaction=nonstopmode"],
+            ),
+            (
+                "xelatex",
+                ["--pdf-engine=xelatex", "--pdf-engine-opt=-interaction=nonstopmode"],
+            ),
+            (
+                "lualatex",
+                ["--pdf-engine=lualatex", "--pdf-engine-opt=-interaction=nonstopmode"],
+            ),
         ]
 
         for engine_name, engine_args in engines:
@@ -336,7 +346,7 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
                         "--highlight-style=tango",
                         "--top-level-division=chapter",
                         "--template=default",
-                    ]
+                    ],
                 )
 
                 if output_path.exists():
@@ -356,29 +366,29 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
     def generate_pdf_parts_then_merge(self, output_path: Path) -> bool:
         """Alternative: Generate PDF in parts then merge."""
         print("\nTrying multi-part generation approach...")
-        
+
         files = self.find_markdown_files()
         part_pdfs = []
-        
+
         # Split into 3 parts
         parts = [
             ("Core Documentation", files[:6]),
             ("Technical Documentation", files[6:11]),
-            ("Blog Posts", files[11:])
+            ("Blog Posts", files[11:]),
         ]
-        
+
         for part_name, part_files in parts:
             if not part_files:
                 continue
-                
+
             print(f"\nGenerating {part_name}...")
             part_md = self.create_part_markdown(part_files, part_name)
-            
+
             # Save part markdown
             part_path = output_path.parent / f"part_{len(part_pdfs) + 1}.md"
             with open(part_path, "w", encoding="utf-8") as f:
                 f.write(part_md)
-            
+
             # Generate part PDF
             part_pdf = part_path.with_suffix(".pdf")
             try:
@@ -390,15 +400,15 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
                         "--pdf-engine=pdflatex",
                         "--pdf-engine-opt=-interaction=nonstopmode",
                         "--highlight-style=tango",
-                    ]
+                    ],
                 )
-                
+
                 if part_pdf.exists():
                     print(f"  Generated: {part_pdf.name}")
                     part_pdfs.append(part_pdf)
             except Exception as e:
                 print(f"  Error: {e}")
-        
+
         # Merge PDFs if we have multiple parts
         if len(part_pdfs) > 1:
             print("\nMerging PDF parts...")
@@ -406,25 +416,27 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
                 # Try pdfunite first
                 cmd = ["pdfunite"] + [str(p) for p in part_pdfs] + [str(output_path)]
                 result = subprocess.run(cmd, capture_output=True, text=True)
-                
+
                 if result.returncode == 0 and output_path.exists():
                     print("  Success with pdfunite!")
                     # Clean up parts
                     for p in part_pdfs:
                         p.unlink()
                     return True
-                    
+
             except Exception as e:
                 print(f"  pdfunite failed: {e}")
-                
+
         elif len(part_pdfs) == 1:
             # Just one part, rename it
             shutil.move(str(part_pdfs[0]), str(output_path))
             return True
-            
+
         return False
 
-    def create_part_markdown(self, files: List[Tuple[Path, Dict]], part_name: str) -> str:
+    def create_part_markdown(
+        self, files: List[Tuple[Path, Dict]], part_name: str
+    ) -> str:
         """Create markdown for a part of the document."""
         header = f"""---
 title: "{self.metadata['title']} - {part_name}"
@@ -441,12 +453,12 @@ urlcolor: blue
 ---
 
 """
-        
+
         content = header
         for file_path, front_matter in files:
             processed = self.process_markdown(file_path, front_matter)
             content += processed
-            
+
         return content
 
 
@@ -465,10 +477,10 @@ def main():
 
     # Create generator
     generator = FinalPDFGenerator(base_dir)
-    
+
     # Try direct generation first
     success = generator.generate_pdf_direct(output_path)
-    
+
     # If that fails, try the multi-part approach
     if not success:
         generator.chapter_count = 0  # Reset counter
@@ -484,7 +496,7 @@ def main():
         root_pdf_path = base_dir / "oscillating_brane_theory_latest.pdf"
         shutil.copy2(output_path, root_pdf_path)
         print(f"PDF copied to root for website: {root_pdf_path}")
-        
+
         print(f"\nPDF generation complete!")
         print(f"Total chapters: {generator.chapter_count}")
     else:
