@@ -240,7 +240,68 @@ jupyter>=1.0  # For notebooks
    ```
 ```
 
-### 6.5 Nature of the Bulk and M-Theory Connections
+### 6.5 Updated Development Roadmap (Post O3 Pro Audit - January 2025)
+
+Based on O3 Pro's comprehensive theoretical analysis, we have identified three critical challenges that must be addressed:
+
+#### 6.5.1 Critical Theoretical Challenges
+
+1. **Full 5D Einstein Field Equations**
+   - Current limitation: Using effective 4D approximations with undetermined Weyl term E_μν
+   - Required: Full numerical relativity in 5D with dynamically oscillating brane
+   - Solution: Extend GRChombo/Einstein Toolkit following BraneCode methodology
+
+2. **Initial Oscillation Mechanisms**
+   - Current limitation: Ad hoc initial conditions without physical justification
+   - Required: Concrete mechanism from early universe physics
+   - Solution: Ekpyrotic collision, inflationary fluctuations, or branon excitation
+
+3. **Quantum Loop Corrections**
+   - Current limitation: Classical treatment ignoring quantum effects
+   - Required: One-loop Casimir energy and branon mass generation
+   - Solution: Include effective potential from Haba & Yamada (2022) approach
+
+#### 6.5.2 Enhanced 24-Month Development Plan
+
+**Phase 1: Advanced Theoretical Framework (Months 1-6)**
+- Formulate complete 5D action with Goldberger-Wise stabilization
+- Implement ADM (3+1)+1 decomposition for numerical evolution
+- Derive Israel junction conditions for oscillating brane boundary
+- Choose optimal gauge (Gaussian normal or Eddington-Finkelstein coordinates)
+
+**Phase 2: Numerical Infrastructure (Months 6-12)**
+- Extend GRChombo to 5D geometry with adaptive mesh refinement
+- Implement moving boundary conditions with Z₂ symmetry
+- Develop Python/Julia prototypes for rapid testing
+- Validate against known static solutions (RS metric recovery)
+
+**Phase 3: Physical Applications (Months 12-18)**
+- Simulate brane collision scenarios (v_rel ~ 10⁻³c)
+- Include inflationary quantum fluctuations (⟨z²⟩ = (H_inf/2π)²)
+- Add matter/radiation on brane with proper junction conditions
+- Measure gravitational wave emission into bulk
+
+**Phase 4: Quantum Integration (Months 18-24)**
+- Calculate Casimir energy: ρ_Casimir = -π²N_fields/(1440z⁴)
+- Include branon mass: m_branon ~ √(k/M₅) × e^(-kL) ~ 1 eV
+- Add one-loop corrections to radion potential
+- Study backreaction and vacuum stability
+
+#### 6.5.3 Computational Requirements
+
+**Hardware Specifications**:
+- CPUs: 1000+ cores for production runs
+- Memory: ~10 TB for modest 5D resolutions
+- Storage: ~100 TB for time series data
+- GPU acceleration for finite differencing
+
+**Software Infrastructure**:
+- Base: Modified GRChombo (C++) with 5D support
+- Validation: Comparison with BraneCode results
+- Analysis: Python/Julia for post-processing
+- Visualization: ParaView extensions for 5D data
+
+### 6.6 Nature of the Bulk and M-Theory Connections
 
 #### 6.5.1 Two Limiting Visions of the Bulk
 
@@ -457,6 +518,7 @@ While significant theoretical and observational work remains, the framework show
 
 ### Numerical Relativity in 5D
 - Martin, J. et al. (2005) - "BraneCode: 5D brane dynamics with scalar field", Comput. Phys. Commun. 171, 69 [arXiv:gr-qc/0410001]
+- Tanahashi, N. et al. (2011) - "ADM formulation for braneworld with boundary conditions", Class. Quant. Grav. 28, 155005
 - GRChombo Collaboration (2015) - "GRChombo: Numerical relativity with adaptive mesh refinement", Class. Quant. Grav. 32, 245011
 - Yoshino, H. (2009) - "On the existence of a static black hole on a brane", JHEP 0901, 068
 
@@ -465,6 +527,7 @@ While significant theoretical and observational work remains, the framework show
 - Collins, H. & Holman, R. (2003) - "Taming the Blue Spectrum of Brane Preheating", Phys. Rev. Lett. 90, 231301 [arXiv:hep-ph/0302168]
 - Dvali & Tye (1999) - "Brane inflation", Phys. Lett. B 450, 72 [arXiv:hep-ph/9812483]
 - Steinhardt, P.J. & Turok, N. (2002) - "Cosmic evolution in a cyclic universe", Phys. Rev. D 65, 126003
+- Saridakis, E.N. (2008) - "Cyclic Universes from General Collisionless Braneworld Models", Phys. Rev. D 78, 023516 [arXiv:0807.1731]
 
 ### Quantum Corrections & Casimir Effects
 - Garriga, J., Pujolàs, O. & Tanaka, T. (2001) - "Radion effective potential in the Brane-World", Nucl. Phys. B 605, 192 [arXiv:hep-th/0004109]
@@ -472,6 +535,8 @@ While significant theoretical and observational work remains, the framework show
 - Csaki, C., Graesser, M., Kolda, C. & Terning, J. (2000) - "Cosmology of one extra dimension with localized gravity", Phys. Rev. D 62, 045015 [arXiv:hep-ph/9911406]
 - Brevik, I., Milton, K.A. & Odintsov, S.D. (2003) - "Dynamical Casimir effect and quantum cosmology", Phys. Rev. D 67, 025019 [arXiv:hep-th/0209027]
 - Cembranos, J.A.R. et al. (2003) - "Brane-World Dark Matter", Phys. Rev. Lett. 90, 241301 [arXiv:hep-ph/0302041]
+- Haba, N. & Yamada, Y. (2022) - "Quantum Stabilization of the Radion in Randall-Sundrum Model", JHEP 04, 134 [arXiv:2203.01789]
+- Naylor, W. & Sasaki, M. (2002) - "Casimir energy for de Sitter branes in bulk AdS", Phys. Rev. D 67, 103503 [arXiv:hep-th/0205277]
 
 ### M-Theory and Brane Dynamics
 - Sethi, S., Strassler, M. & Sundrum, R. (2001) - Referenced in text but citation incomplete
@@ -481,7 +546,8 @@ While significant theoretical and observational work remains, the framework show
 ### Observational Signatures
 - Ringermacher, H.I. & Mead, L.R. (2014) - "Observation of Discrete Oscillations in a Model-Independent Plot of Cosmological Scale Factor versus Lookback Time", Astron. J. 149, 137 [arXiv:1502.06028]
 - NANOGrav Collaboration (2023) - "Evidence for nHz Gravitational Waves", Astrophys. J. Lett. 951, L8
-- Nam, C.H. et al. (2024) - "Brane-vector dark matter", Phys. Rev. D 109, 095003
+- Nam, C.H. & Hung, P.Q. (2024) - "Brane-vector dark matter and branons from symmetry breaking", Phys. Rev. D 109, 095003
+- Maartens, R. & Koyama, K. (2010) - "Brane-World Gravity", Living Rev. Relativity 13, 5
 - Verlinde, E. (2016) - "Emergent Gravity and the Dark Universe", SciPost Phys. 2, 016 [arXiv:1611.02269]
 
 ### Computational Physics References
@@ -490,6 +556,16 @@ While significant theoretical and observational work remains, the framework show
 - Gourgoulhon, E. (2012) - "3+1 Formalism in General Relativity", Springer
 - Hairer, E., Nørsett, S.P. & Wanner, G. (1993) - "Solving Ordinary Differential Equations I", Springer-Verlag (DOP853 method)
 
-[Additional references continue...]
+### Additional O3 Pro Recommended References (January 2025)
+- Csaki, C. (2004) - "TASI Lectures on Extra Dimensions and Branes", arXiv:hep-ph/0404096
+- Lehners, J.L. (2008) - "Ekpyrotic and Cyclic Cosmology", Phys. Rept. 465, 223 [arXiv:0806.1245]
+- Kiritsis, E. (2019) - "String Theory in a Nutshell", Princeton University Press (Ch. 13-14 on braneworlds)
+- Tanaka, T. (2004) - "Classical Black Hole Evaporation in Randall-Sundrum Infinite Braneworld", Prog. Theor. Phys. Suppl. 148, 307
 
-For complete references and technical details, see the [Complete Theory](/theory-complete/) document.
+### Open Source Codes for 5D Numerical Relativity
+- **BraneCode**: Original C++ implementation for 5D brane dynamics
+- **GRChombo**: https://github.com/GRChombo/GRChombo (needs 5D extension)
+- **Einstein Toolkit**: https://einsteintoolkit.org (modular, extensible to 5D)
+- **NRPy+**: https://github.com/zachetienne/nrpytutorial (Python-based code generation)
+
+For complete references and technical details, see the [Complete Theory](/theory-complete/) document and [O3 Pro Response](../o3_pro_theoretical_challenges.md).
