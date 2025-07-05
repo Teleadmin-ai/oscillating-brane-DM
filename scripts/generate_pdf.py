@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-Generate a comprehensive PDF document from all markdown files in the site.
-This version handles split foundation files to avoid pandoc truncation.
+Generate a comprehensive PDF document from all markdown files.
+This version properly handles math expressions and generates a complete PDF.
 """
 
 import os
 import re
+import subprocess
+import shutil
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple
@@ -13,36 +15,23 @@ from typing import Dict, List, Tuple
 import pypandoc
 import yaml
 
-try:
-    from PyPDF2 import PdfMerger
-except ImportError:
-    try:
-        from PyPDF2 import PdfFileMerger as PdfMerger
-    except ImportError:
-        print("Warning: PyPDF2 not installed. PDF merging will not be available.")
-        PdfMerger = None
 
-# Install required packages:
-# pip install pypandoc pyyaml
-
-
-class PDFGenerator:
+class FinalPDFGenerator:
     def __init__(self, base_dir: Path):
         self.base_dir = base_dir
-        self.content_files = []
         self.metadata = {
             "title": "Oscillating Brane Dark Matter Theory - Complete Documentation",
             "author": "Romain Provencal",
             "date": datetime.now().strftime("%B %Y"),
             "subtitle": "The Universe as a Vibrating Membrane",
         }
+        self.chapter_count = 0
 
     def find_markdown_files(self) -> List[Tuple[Path, Dict]]:
         """Find all markdown files and extract their front matter."""
         files = []
 
         # Main documentation files (in order)
-        # Now using split foundation files
         doc_order = [
             "index.md",
             "theory.md",
@@ -50,7 +39,7 @@ class PDFGenerator:
             "predictions.md",
             "tools.md",
             "about.md",
-            # Technical docs (theory_v4 is small enough to keep)
+            # Technical docs
             "docs/theory_v4_complete.md",
             # Split foundation files
             "docs/foundations_parts/part1_mathematical_framework.md",
@@ -90,779 +79,420 @@ class PDFGenerator:
                 return {}
         return {}
 
-    def clean_unicode_artifacts(self, text: str) -> str:
-        """Clean common Unicode artifacts from text."""
-        # First, clean up corrupted patterns that O3 Pro found
-        # These appear when Unicode characters get mangled during PDF conversion
-        text = text.replace("10ff¹ff Hz", "10⁻¹⁷ Hz")  # Fix corrupted superscript
-        text = text.replace(
-            "ff27 times", "≈27 times"
-        )  # Fix corrupted approximation symbol
+    def fix_math_expressions(self, content: str) -> str:
+        """Fix common math expression issues."""
+        # Fix patterns where math expressions are split or malformed
+        
+        # Fix underscore issues in math mode (replace with proper subscript)
+        content = re.sub(r'\\_', '_', content)
+        
+        # Fix incomplete fractions
+        content = re.sub(r'\\frac\{([^}]+)\}\{([^}]*)\s*$', r'\\frac{\1}{\2}', content, flags=re.MULTILINE)
+        
+        # Fix split math expressions like $\delta$$\tau$ -> $\delta\tau$
+        content = re.sub(r'\$([^$]+)\$\$([^$]+)\$', r'$\1\2$', content)
+        
+        # Fix math expressions that have escaped underscores
+        content = re.sub(r'\\\_([0-9a-zA-Z])', r'_\1', content)
+        
+        # Fix specific problematic patterns found in the error
+        content = content.replace('$$\\Pi', '$$\\Pi')
+        content = content.replace('\\dot{N}_i', '\\dot{N}_i')
+        content = content.replace('m_{MN}', 'm_{MN}')
+        
+        # Ensure math blocks are properly closed
+        # Count $$ and ensure they're paired
+        parts = content.split('$$')
+        if len(parts) % 2 == 0:  # Odd number of $$, missing closing
+            # Find the last unclosed $$ and close it
+            content = content + '$$'
+        
+        return content
 
-        # Clean up common ligature artifacts
-        replacements = {
-            "ﬀ": "ff",  # ff ligature
-            "ﬁ": "fi",  # fi ligature
-            "ﬂ": "fl",  # fl ligature
-            "ﬃ": "ffi",  # ffi ligature
-            "ﬄ": "ffl",  # ffl ligature
-            "ff¹": "⁻¹",  # This pattern appears when ⁻¹ gets corrupted
-            # Remove these replacements to preserve mathematical notation
-            # "−": "-",  # Keep minus sign for math
-            # "–": "--",  # Keep en dash
-            # "—": "---",  # Keep em dash
-            # Keep smart quotes and special characters
-        }
+    def process_markdown(self, file_path: Path, front_matter: Dict) -> str:
+        """Process a markdown file for inclusion in the PDF."""
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
 
-        for old, new in replacements.items():
-            text = text.replace(old, new)
+        # Remove front matter
+        content = re.sub(r"^---\s*\n.*?\n---\s*\n", "", content, flags=re.DOTALL)
 
-        return text
+        # First, protect math expressions from Unicode conversion
+        math_blocks = []
+        
+        # Extract display math blocks $$...$$
+        def save_display_math(match):
+            idx = len(math_blocks)
+            math_blocks.append(match.group(0))
+            return f"MATHBLOCK{idx}MATHBLOCK"
+        
+        content = re.sub(r'\$\$[^$]+\$\$', save_display_math, content, flags=re.DOTALL)
+        
+        # Extract inline math $...$
+        def save_inline_math(match):
+            idx = len(math_blocks)
+            math_blocks.append(match.group(0))
+            return f"MATHBLOCK{idx}MATHBLOCK"
+        
+        content = re.sub(r'\$[^$\n]+\$', save_inline_math, content)
 
-    def convert_unicode_to_latex(self, text: str) -> str:
-        """Convert Unicode mathematical symbols to LaTeX commands."""
-        # First, handle specific number patterns with superscripts
-        # This prevents split math expressions
-        import re
-
-        # Pattern for numbers with Unicode superscripts (e.g., 10⁻¹⁷)
-        def replace_number_superscripts(match):
-            base = match.group(1)
-            superscript = match.group(2)
-
-            # Convert entire superscript sequences first
-            superscript_sequences = {
-                "⁻¹⁷": "-17",
-                "⁻¹⁸": "-18",
-                "⁻¹⁰": "-10",
-                "⁻⁷⁰": "-70",
-                "¹⁹": "19",
-                "¹⁸": "18",
-                "¹⁷": "17",
-                "¹⁶": "16",
-                "¹⁵": "15",
-                "¹⁴": "14",
-                "¹³": "13",
-                "¹²": "12",
-                "¹¹": "11",
-                "¹⁰": "10",
-            }
-
-            # Check for known sequences first
-            for seq, replacement in superscript_sequences.items():
-                if seq in superscript:
-                    superscript = superscript.replace(seq, replacement)
-
-            # Then handle individual characters
-            superscript_chars = {
-                "⁻": "-",
-                "⁰": "0",
-                "¹": "1",
-                "²": "2",
-                "³": "3",
-                "⁴": "4",
-                "⁵": "5",
-                "⁶": "6",
-                "⁷": "7",
-                "⁸": "8",
-                "⁹": "9",
-            }
-
-            # Replace remaining individual characters
-            for uni, num in superscript_chars.items():
-                superscript = superscript.replace(uni, num)
-
-            # Wrap in braces if multi-character or negative
-            if len(superscript) > 1 or "-" in superscript:
-                return f"${base}^{{{superscript}}}$"
-            else:
-                return f"${base}^{superscript}$"
-
-        # Replace number patterns with superscripts (e.g., 10⁻¹⁷ → $10^{-17}$)
-        text = re.sub(
-            r"(\d+)([\u2070-\u209f⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+)", replace_number_superscripts, text
-        )
-
-        # Also handle superscripts after units (e.g., Gyr⁻¹ → Gyr$^{-1}$)
-        def replace_unit_superscripts(match):
-            unit = match.group(1)
-            superscript = match.group(2)
-
-            # Convert superscript characters
-            superscript_chars = {
-                "⁻¹": "^{-1}",
-                "⁻²": "^{-2}",
-                "⁻³": "^{-3}",
-                "⁻": "^{-}",
-                "¹": "^1",
-                "²": "^2",
-                "³": "^3",
-            }
-
-            for uni, latex in superscript_chars.items():
-                superscript = superscript.replace(uni, latex)
-
-            return f"{unit}${superscript}$"
-
-        # Replace superscripts after common units
-        text = re.sub(
-            r"(Gyr|Hz|m|s|kg|GeV|eV|pc|Mpc|cm)([\u2070-\u209f⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+)",
-            replace_unit_superscripts,
-            text,
-        )
-
-        # Fix patterns like "× $10^{-17}$" to be inside single math environment
-        text = re.sub(r"×\s*\$(\d+\^{[^}]+})\$", r"$\\times \1$", text)
-        text = re.sub(r"(\d+)\s*×\s*\$(\d+\^{[^}]+})\$", r"$\1 \\times \2$", text)
-
-        # Handle emojis and special characters that should always be replaced
-        emoji_replacements = {
+        # Now do Unicode replacements on non-math content
+        unicode_replacements = {
+            # Greek letters outside math
+            "τ": "tau",
+            "σ": "sigma",
+            "ρ": "rho",
+            "π": "pi",
+            "μ": "mu",
+            "λ": "lambda",
+            "η": "eta",
+            "δ": "delta",
+            "γ": "gamma",
+            "ω": "omega",
+            "φ": "phi",
+            "χ": "chi",
+            "ξ": "xi",
+            "Δ": "Delta",
+            "Ω": "Omega",
+            
+            # Ligatures
+            "ﬀ": "ff",
+            "ﬁ": "fi",
+            "ﬂ": "fl",
+            "ﬃ": "ffi",
+            "ﬄ": "ffl",
+            "ï": "i",
+            
+            # Symbols
+            "∞": "infinity",
+            "≈": "approximately",
+            "≤": "<=",
+            "≥": ">=",
+            "≪": "<<",
+            "≫": ">>",
+            "∝": "proportional to",
+            
+            # Emojis
             "🌌": "[universe]",
             "📥": "[download]",
             "✓": "[check]",
             "☉": "Sun",
             "🤖": "[AI]",
-            "ï": "i",  # Convert to regular i
+            
+            # Special characters
+            "—": "---",
+            "–": "--",
+            "'": "'",
+            "'": "'",
+            """: '"',
+            """: '"',
+            "…": "...",
+            "•": "*",
+            "×": "x",
+            "±": "+/-",
         }
 
-        for old, new in emoji_replacements.items():
-            text = text.replace(old, new)
+        for old, new in unicode_replacements.items():
+            content = content.replace(old, new)
 
-        # For math blocks, we need different replacements (no $ wrapper)
-        math_replacements = {
-            "τ": r"\tau",
-            "σ": r"\sigma",
-            "ρ": r"\rho",
-            "π": r"\pi",
-            "μ": r"\mu",
-            "λ": r"\lambda",
-            "η": r"\eta",
-            "δ": r"\delta",
-            "γ": r"\gamma",
-            "ω": r"\omega",
-            "φ": r"\phi",
-            "χ": r"\chi",
-            "ξ": r"\xi",
-            "Δ": r"\Delta",
-            "Ω": r"\Omega",
-            "₀": r"_0",
-            "₁": r"_1",
-            "₂": r"_2",
-            "₃": r"_3",
-            "₄": r"_4",
-            "₅": r"_5",
-            "₆": r"_6",
-            "₇": r"_7",
-            "₈": r"_8",
-            "₉": r"_9",
-            "₊": r"_+",
-            "≈": r"\approx",
-            "≃": r"\simeq",
-            "≤": r"\leq",
-            "≥": r"\geq",
-            "≪": r"\ll",
-            "≫": r"\gg",
-            "≲": r"\lesssim",
-            "≳": r"\gtrsim",
-            "∝": r"\propto",
-            "∂": r"\partial",
-            "∞": r"\infty",
-            "⊥": r"\perp",
-            "ℓ": r"\ell",
-            "ℏ": r"\hbar",
-            "ℒ": r"\mathcal{L}",
-            "⊙": r"\odot",
-        }
+        # Restore math blocks
+        for idx, math_block in enumerate(math_blocks):
+            # Fix the math block before restoring
+            fixed_math = self.fix_math_expressions(math_block)
+            content = content.replace(f"MATHBLOCK{idx}MATHBLOCK", fixed_math)
 
-        # Replace in math environments first
-        import re
-
-        # Pattern to match math environments
-        math_pattern = r"(\$\$[\s\S]*?\$\$|\$[^\$\n]+\$|\\begin\{equation\}[\s\S]*?\\end\{equation\}|\\begin\{align\}[\s\S]*?\\end\{align\}|\\\[[\s\S]*?\\\])"
-
-        def replace_in_math(match):
-            math_text = match.group(0)
-            # Replace mathematical symbols
-            for old, new in math_replacements.items():
-                if old in "τσρπμλδηγωφχξΔ":
-                    # Greek letters: add space when followed by a letter
-                    import re
-
-                    pattern = re.escape(old) + r"(?=[a-zA-Z])"
-                    replacement = new.replace("\\", "\\\\") + " "
-                    math_text = re.sub(pattern, replacement, math_text)
-                elif old == "∂":
-                    # Special handling for partial derivative - always add space after
-                    math_text = math_text.replace(old, new + " ")
-                    continue
-                # Always do the general replacement too (for cases not followed by letters)
-                math_text = math_text.replace(old, new)
-            return math_text
-
-        text = re.sub(math_pattern, replace_in_math, text)
-
-        # Now handle non-math text (add $ wrappers)
-        non_math_replacements = {
-            "τ": r"$\tau$",
-            "σ": r"$\sigma$",
-            "ρ": r"$\rho$",
-            "π": r"$\pi$",
-            "μ": r"$\mu$",
-            "λ": r"$\lambda$",
-            "η": r"$\eta$",
-            "δ": r"$\delta$",
-            "γ": r"$\gamma$",
-            "ω": r"$\omega$",
-            "φ": r"$\phi$",
-            "χ": r"$\chi$",
-            "ξ": r"$\xi$",
-            "Δ": r"$\Delta$",
-            "Ω": r"$\Omega$",
-            "₀": r"$_0$",
-            "₁": r"$_1$",
-            "₂": r"$_2$",
-            "₃": r"$_3$",
-            "₄": r"$_4$",
-            "₅": r"$_5$",
-            "₆": r"$_6$",
-            "₇": r"$_7$",
-            "₈": r"$_8$",
-            "₉": r"$_9$",
-            "≈": r"$\approx$",
-            "≃": r"$\simeq$",
-            "≤": r"$\leq$",
-            "≥": r"$\geq$",
-            "≪": r"$\ll$",
-            "≲": r"$\lesssim$",
-            "≳": r"$\gtrsim$",
-            "∝": r"$\propto$",
-            "∂": r"$\partial$",
-            "∞": r"$\infty$",
-            "⊥": r"$\perp$",
-            "ℓ": r"$\ell$",
-            "ℏ": r"$\hbar$",
-            "ℒ": r"$\mathcal{L}$",
-            "⊙": r"$\odot$",
-        }
-
-        # Split and process non-math parts
-        parts = re.split(math_pattern, text)
-        for i in range(len(parts)):
-            # Even indices are non-math text
-            if i % 2 == 0:
-                for old, new in non_math_replacements.items():
-                    parts[i] = parts[i].replace(old, new)
-
-        return "".join(parts)
-
-    def process_markdown(
-        self, file_path: Path, front_matter: Dict, is_first: bool = False
-    ) -> str:
-        """Process a markdown file for inclusion in the PDF."""
-        with open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
-
-        # Debug: Print original file size
-        print(f"  Original file size: {len(content)} characters")
-
-        # Remove front matter
-        content = re.sub(r"^---\s*\n.*?\n---\s*\n", "", content, flags=re.DOTALL)
-
-        # Fix split math expressions BEFORE conversion
-        # Pattern: number followed by $^{...}$
-        content = re.sub(r"(\d+)\s*\$\^\{([^}]+)\}\$", r"$\1^{\2}$", content)
-
-        # Also fix patterns like "× 10$^{-17}$" to be "× $10^{-17}$"
-        content = re.sub(r"×\s*(\d+)\s*\$\^\{([^}]+)\}\$", r"× $\1^{\2}$", content)
-
-        # Convert Unicode to LaTeX BEFORE cleaning artifacts
-        # This prevents Unicode characters from being corrupted during conversion
-        content = self.convert_unicode_to_latex(content)
-
-        # Clean Unicode artifacts (only problematic ligatures, not math symbols)
-        content = self.clean_unicode_artifacts(content)
-
-        # Fix common LaTeX issues
-        # Fix split dollar signs like $\delta$$\tau$ -> $\delta\tau$
-        # But be careful not to merge equation delimiters $$ with inline math $
-        content = re.sub(r"\$([^$\n]+)\$\$([^$\n]+)\$", r"$\1\2$", content)
-
-        # Fix the specific pattern that appears in chronology
-        content = content.replace(
-            "$\\delta$$\\tau$/$\\tau$$_0$", "$\\delta\\tau/\\tau_0$"
-        )
-        content = content.replace("$\\xi$ $\\simeq$", "$\\xi \\simeq$")
-
-        # Fix image paths to be absolute
-        # Replace relative paths like /plots/image.png with absolute paths
+        # Fix image paths
         content = re.sub(
             r"!\[([^\]]*)\]\((/[^)]+)\)",
             lambda m: f"![{m.group(1)}]({self.base_dir}{m.group(2)})",
             content,
         )
 
-        # Also fix image paths that start with {{ site.baseurl }} or similar
+        # Fix Jekyll image paths
         content = re.sub(
             r'!\[([^\]]*)\]\({{\s*["\']?/?([^}"\']+)["\']?\s*\|\s*relative_url\s*}}\)',
             lambda m: f"![{m.group(1)}]({self.base_dir}/{m.group(2)})",
             content,
         )
 
-        # Add chapter heading based on front matter
+        # Get title and create chapter heading
         title = front_matter.get("title", file_path.stem.replace("_", " ").title())
-
-        # Determine heading level based on file type
+        self.chapter_count += 1
+        
+        heading = f"# Chapter {self.chapter_count}: {title}"
+        
         if "_posts" in str(file_path):
-            heading = f"# {title}"
             date = front_matter.get("date", "")
             if date:
-                heading += f"\n*{date}*"
-        else:
-            heading = f"# {title}"
+                heading += f"\n\n*Date: {date}*"
 
-        # Add description if available
         description = front_matter.get("description", "")
         if description:
             heading += f"\n\n*{description.strip()}*"
 
-        # Check if content already starts with a heading
-        content_stripped = content.strip()
-        if content_stripped.startswith("# "):
-            # Content already has a top-level heading, don't add another one
-            # But ensure there's some content visible after the heading
+        # Remove existing top-level heading if present
+        if content.strip().startswith("# "):
             lines = content.split("\n")
-            if len(lines) > 1 and lines[1].strip().startswith("##"):
-                # Add a brief intro if the next line is a subheading
-                lines.insert(1, "\n*Content from this section:*\n")
-                content = "\n".join(lines)
-            # IMPORTANT: Add newpage BEFORE to start a new chapter (unless it's the first)
-            if is_first:
-                result = f"{content}\n"
-            else:
-                result = f"\\newpage\n{content}\n"
-        else:
-            # Add the heading we created with newpage before (unless it's the first)
-            if is_first:
-                result = f"{heading}\n\n{content}\n"
-            else:
-                result = f"\\newpage\n{heading}\n\n{content}\n"
+            content = "\n".join(lines[1:])
 
-        # Debug: Print processed content size
-        print(f"  Processed file size: {len(result)} characters")
-        return result
+        return heading + "\n\n" + content + "\n\n\\newpage\n\n"
 
     def create_combined_markdown(self) -> str:
         """Combine all markdown files into a single document."""
         files = self.find_markdown_files()
 
-        # Create header
+        # Create header with proper LaTeX setup
         header = f"""---
 title: "{self.metadata['title']}"
 author: "{self.metadata['author']}"
 date: "{self.metadata['date']}"
 subtitle: "{self.metadata['subtitle']}"
-documentclass: book
+documentclass: report
+papersize: a4
 fontsize: 11pt
 geometry: margin=1in
 toc: true
 toc-depth: 2
 numbersections: true
-chapters: true
-urlcolor: blue
+colorlinks: true
 linkcolor: black
+urlcolor: blue
+header-includes:
+  - \\usepackage{{amsmath}}
+  - \\usepackage{{amssymb}}
+  - \\usepackage{{amsthm}}
+  - \\usepackage{{graphicx}}
+  - \\usepackage{{hyperref}}
+  - \\usepackage{{float}}
+  - \\usepackage{{longtable}}
+  - \\usepackage{{booktabs}}
+  - \\usepackage[T1]{{fontenc}}
+  - \\usepackage[utf8]{{inputenc}}
+  - \\usepackage{{lmodern}}
 ---
 
 \\newpage
 
 # Preface
 
-This document contains the complete theoretical framework and documentation for the Oscillating Brane Dark Matter Theory, where the universe is conceptualized as a vibrating 4-dimensional membrane in 5D space. The theory proposes that dark matter effects emerge from membrane oscillations excited by gravitational flows, naturally producing dark energy and MOND-like phenomena.
+This document contains the complete theoretical framework and documentation for the Oscillating Brane Dark Matter Theory, where the universe is conceptualized as a vibrating 4-dimensional membrane in 5D space.
 
 **Key Parameters:**
-- Brane tension: $\\tau_0$ = 7.0 × 10$^{19}$ J/m$^2$
-- Oscillation period: T = 2.0 ± 0.3 Gyr
+
+- Brane tension: $\\tau_0 = 7.0 \\times 10^{19}$ J/m$^2$
+- Oscillation period: T = $2.0 \\pm 0.3$ Gyr
 - Extra dimension size: L = 0.2 $\\mu$m
-- MOND acceleration: a$_0$ = 1.1 × 10$^{-10}$ m/s$^2$
+- MOND acceleration: $a_0 = 1.1 \\times 10^{-10}$ m/s$^2$
+
+The theory proposes that dark matter effects emerge from membrane oscillations excited by gravitational flows, naturally producing dark energy and MOND-like phenomena.
 
 \\newpage
 
 """
 
-        # Add table of contents will be auto-generated by pandoc
+        combined = header
 
         # Process each file
-        combined = header
-        print(f"\nInitial header size: {len(combined)} characters")
-
-        # Process all files without parts - just chapters
-        for i, (file_path, front_matter) in enumerate(files):
-            print(f"\nProcessing {i+1}/{len(files)}: {file_path}")
-            # Pass index to know if it's the first file
-            content = self.process_markdown(file_path, front_matter, is_first=(i == 0))
+        print(f"\nProcessing {len(files)} files for complete PDF...")
+        for file_path, front_matter in files:
+            print(f"  Chapter {self.chapter_count + 1}: {file_path.name}")
+            content = self.process_markdown(file_path, front_matter)
             combined += content
-            print(f"  Combined size after adding: {len(combined)} characters")
 
-        print(f"\nFinal combined size: {len(combined)} characters")
+        print(f"\nTotal chapters: {self.chapter_count}")
+        
         return combined
 
-    def generate_pdf_parts(self, output_dir: Path):
-        """Generate PDF in multiple parts to avoid truncation."""
-        # Part 1: Core documentation (6 files)
-        part1_files = [
-            "index.md",
-            "theory.md",
-            "chronology.md",
-            "predictions.md",
-            "tools.md",
-            "about.md",
-        ]
-
-        # Part 2: Technical documentation
-        part2_files = [
-            "docs/theory_v4_complete.md",
-            "docs/foundations_parts/part1_mathematical_framework.md",
-            "docs/foundations_parts/part2_comparative_predictions.md",
-        ]
-
-        # Part 3: Rest of technical docs and blog posts
-        part3_files = [
-            "docs/foundations_parts/part3_current_limitations.md",
-            "docs/foundations_parts/part4_development_roadmap.md",
-        ]
-
-        generated_pdfs = []
-
-        # Generate Part 1
-        print("\nGenerating Part 1: Core Documentation...")
-        part1_path = output_dir / "part1_core.pdf"
-        if self.generate_partial_pdf(
-            part1_files, part1_path, "Part 1: Core Documentation"
-        ):
-            generated_pdfs.append(part1_path)
-
-        # Generate Part 2
-        print("\nGenerating Part 2: Technical Foundations...")
-        part2_path = output_dir / "part2_technical.pdf"
-        if self.generate_partial_pdf(
-            part2_files, part2_path, "Part 2: Technical Foundations"
-        ):
-            generated_pdfs.append(part2_path)
-
-        # Generate Part 3
-        print("\nGenerating Part 3: Development & Blog...")
-        part3_path = output_dir / "part3_development.pdf"
-        # Add blog posts to part 3
-        posts_dir = self.base_dir / "_posts"
-        if posts_dir.exists():
-            posts = sorted(posts_dir.glob("*.md"), reverse=True)
-            part3_files.extend([str(p.relative_to(self.base_dir)) for p in posts])
-
-        if self.generate_partial_pdf(
-            part3_files, part3_path, "Part 3: Development & Research"
-        ):
-            generated_pdfs.append(part3_path)
-
-        return generated_pdfs
-
-    def generate_partial_pdf(self, file_list, output_path, title):
-        """Generate a PDF from a subset of files."""
-        try:
-            # Create combined markdown for this part
-            header = f"""---
-title: "{self.metadata['title']} - {title}"
-author: "{self.metadata['author']}"
-date: "{self.metadata['date']}"
-documentclass: report
-fontsize: 11pt
-geometry: margin=1in
-toc: true
-numbersections: true
-urlcolor: blue
-linkcolor: black
----
-
-"""
-
-            combined = header
-            file_count = 0
-
-            for i, filename in enumerate(file_list):
-                path = self.base_dir / filename
-                if path.exists():
-                    print(f"  Processing: {filename}")
-                    front_matter = self.extract_front_matter(path)
-                    content = self.process_markdown(
-                        path, front_matter, is_first=(file_count == 0)
-                    )
-                    combined += content
-                    file_count += 1
-
-            if file_count == 0:
-                print(f"  No files found for {title}")
-                return False
-
-            # Generate PDF
-            print(f"  Generating PDF: {output_path.name}")
-            pypandoc.convert_text(
-                combined,
-                "pdf",
-                format="markdown",
-                outputfile=str(output_path),
-                extra_args=[
-                    "--pdf-engine=xelatex",
-                    "--highlight-style=tango",
-                    "-V",
-                    "geometry:margin=1in",
-                    "-V",
-                    "colorlinks=true",
-                ],
-            )
-
-            if output_path.exists():
-                size = output_path.stat().st_size
-                print(
-                    f"  Success! Generated {output_path.name} ({size/1024/1024:.1f} MB)"
-                )
-                return True
-            else:
-                print(f"  Failed to generate {output_path.name}")
-                return False
-
-        except Exception as e:
-            print(f"  Error generating {title}: {e}")
-            import traceback
-
-            traceback.print_exc()
-            return False
-
-    def merge_pdfs(self, pdf_list, output_path):
-        """Merge multiple PDFs into one."""
-        if not PdfMerger:
-            print("\nPyPDF2 not available. Please install: pip install PyPDF2")
-            print("Individual PDFs have been generated but not merged.")
-            return False
-
-        try:
-            print("\nMerging PDFs...")
-            merger = PdfMerger()
-
-            for pdf_path in pdf_list:
-                if pdf_path.exists():
-                    print(f"  Adding: {pdf_path.name}")
-                    merger.append(str(pdf_path))
-
-            print(f"  Writing merged PDF: {output_path.name}")
-            merger.write(str(output_path))
-            merger.close()
-
-            if output_path.exists():
-                size = output_path.stat().st_size
-                print(
-                    f"  Success! Final PDF: {output_path.name} ({size/1024/1024:.1f} MB)"
-                )
-                return True
-            else:
-                print(f"  Failed to create merged PDF")
-                return False
-
-        except Exception as e:
-            print(f"  Error merging PDFs: {e}")
-            import traceback
-
-            traceback.print_exc()
-            return False
-
-    def generate_pdf(self, output_path: Path):
-        """Generate the PDF using pandoc - now with multi-part strategy."""
-        # Try the multi-part approach to avoid truncation
-        output_dir = output_path.parent
-
-        # Generate PDFs in parts
-        pdf_parts = self.generate_pdf_parts(output_dir)
-
-        if len(pdf_parts) >= 2:
-            # Merge the parts
-            success = self.merge_pdfs(pdf_parts, output_path)
-
-            # Clean up part files
-            if success:
-                print("\nCleaning up temporary part files...")
-                for part in pdf_parts:
-                    if part.exists():
-                        part.unlink()
-                        print(f"  Removed: {part.name}")
-                # Success! The merged PDF is at output_path
-                return
-            else:
-                print("\nKeeping individual part files since merge failed.")
-                # Even if merge failed, we have partial PDFs
-                return
-
-        # Fallback to original method if parts generation failed
-        print("\nFalling back to single PDF generation...")
+    def generate_pdf_direct(self, output_path: Path) -> bool:
+        """Generate PDF directly using pandoc with all content."""
+        # Create combined markdown
         combined_md = self.create_combined_markdown()
 
-        # Save intermediate markdown (for debugging)
+        # Save intermediate markdown
         temp_md = output_path.with_suffix(".combined.md")
         with open(temp_md, "w", encoding="utf-8") as f:
             f.write(combined_md)
-        print(f"Combined markdown saved to: {temp_md}")
+        
+        print(f"\nCombined markdown saved to: {temp_md}")
+        print(f"  Size: {len(combined_md)} bytes ({len(combined_md)/1024:.1f} KB)")
 
-        # First generate LaTeX to debug where it cuts off
-        tex_path = output_path.with_suffix(".tex")
-        print("\nGenerating LaTeX file first to debug...")
-        try:
-            pypandoc.convert_text(
-                combined_md,
-                "latex",
-                format="markdown",
-                outputfile=str(tex_path),
-                extra_args=[
-                    "--standalone",
-                    "-V",
-                    "documentclass=report",
-                    "--top-level-division=chapter",
-                ],
-            )
-            print(f"LaTeX file generated: {tex_path}")
-            # Check LaTeX file size
-            tex_size = tex_path.stat().st_size
-            print(f"LaTeX file size: {tex_size} bytes ({tex_size/1024:.1f} KB)")
+        # Generate PDF using multiple attempts with different engines
+        engines = [
+            ("pdflatex", ["--pdf-engine=pdflatex", "--pdf-engine-opt=-interaction=nonstopmode"]),
+            ("xelatex", ["--pdf-engine=xelatex", "--pdf-engine-opt=-interaction=nonstopmode"]),
+            ("lualatex", ["--pdf-engine=lualatex", "--pdf-engine-opt=-interaction=nonstopmode"]),
+        ]
 
-            # Count chapters in LaTeX
-            with open(tex_path, "r", encoding="utf-8") as f:
-                tex_content = f.read()
-                chapter_count = tex_content.count("\\chapter{")
-                print(f"Number of chapters found in LaTeX: {chapter_count}")
-
-                # Check if all expected chapters are there
-                expected_chapters = [
-                    "Theory Overview",
-                    "Development Chronology",
-                    "Predictions",
-                    "Computational Tools",
-                    "About",
-                    "Complete Theory",
-                    "Part 1: Mathematical Framework",
-                    "Part 2: Comparative Analysis",
-                    "Part 3: Current Limitations",
-                    "Part 4: Development Roadmap",
-                ]
-
-                for chapter in expected_chapters:
-                    if chapter in tex_content:
-                        print(f"  ✓ Found chapter: {chapter}")
-                    else:
-                        print(f"  ✗ Missing chapter: {chapter}")
-
-        except Exception as e:
-            print(f"Failed to generate LaTeX: {e}")
-
-        # Convert to PDF using pandoc with pdflatex (more stable for large docs)
-        try:
-            print("\nGenerating PDF with pdflatex...")
-            pypandoc.convert_text(
-                combined_md,
-                "pdf",
-                format="markdown",
-                outputfile=str(output_path),
-                extra_args=[
-                    "--pdf-engine=pdflatex",  # More stable for large documents
-                    "--pdf-engine-opt=-interaction=nonstopmode",
-                    "--highlight-style=tango",
-                    "-V",
-                    "geometry:margin=1in",
-                    "-V",
-                    "colorlinks=true",
-                    "-V",
-                    "documentclass=report",
-                    "-V",
-                    "chapters=true",
-                    "--top-level-division=chapter",
-                ],
-            )
-            print(f"PDF generated successfully: {output_path}")
-
-            # Check PDF size
-            pdf_size = output_path.stat().st_size
-            print(f"PDF file size: {pdf_size} bytes ({pdf_size/1024/1024:.1f} MB)")
-
-        except Exception as e:
-            print(f"Error generating PDF: {e}")
-            import traceback
-
-            traceback.print_exc()
-
-            # If pdflatex fails, try with smaller memory footprint
-            print("\nTrying alternative approach with reduced memory usage...")
+        for engine_name, engine_args in engines:
+            print(f"\nTrying PDF generation with {engine_name}...")
             try:
-                pypandoc.convert_text(
-                    combined_md,
+                # Create PDF using pandoc
+                pypandoc.convert_file(
+                    str(temp_md),
                     "pdf",
-                    format="markdown",
                     outputfile=str(output_path),
                     extra_args=[
-                        "--pdf-engine=xelatex",
-                        "--pdf-engine-opt=-interaction=nonstopmode",
-                        "--pdf-engine-opt=-pool-size=10000000",  # Increase memory pool
+                        *engine_args,
                         "--highlight-style=tango",
-                        "-V",
-                        "geometry:margin=1in",
-                        "-V",
-                        "colorlinks=true",
-                        "-V",
-                        "documentclass=report",
-                        "-V",
-                        "fontsize=10pt",  # Smaller font to reduce size
-                    ],
+                        "--top-level-division=chapter",
+                        "--template=default",
+                    ]
                 )
-                print(f"PDF generated with alternative method: {output_path}")
-            except Exception as e2:
-                print(f"Alternative method also failed: {e2}")
-                raise RuntimeError(f"Failed to generate PDF with both methods")
+
+                if output_path.exists():
+                    size = output_path.stat().st_size
+                    print(f"\nSuccess with {engine_name}!")
+                    print(f"  Generated: {output_path.name}")
+                    print(f"  Size: {size/1024/1024:.1f} MB")
+                    print(f"  Chapters: {self.chapter_count}")
+                    return True
+
+            except Exception as e:
+                print(f"  Error with {engine_name}: {str(e)[:200]}...")
+                continue
+
+        return False
+
+    def generate_pdf_parts_then_merge(self, output_path: Path) -> bool:
+        """Alternative: Generate PDF in parts then merge."""
+        print("\nTrying multi-part generation approach...")
+        
+        files = self.find_markdown_files()
+        part_pdfs = []
+        
+        # Split into 3 parts
+        parts = [
+            ("Core Documentation", files[:6]),
+            ("Technical Documentation", files[6:11]),
+            ("Blog Posts", files[11:])
+        ]
+        
+        for part_name, part_files in parts:
+            if not part_files:
+                continue
+                
+            print(f"\nGenerating {part_name}...")
+            part_md = self.create_part_markdown(part_files, part_name)
+            
+            # Save part markdown
+            part_path = output_path.parent / f"part_{len(part_pdfs) + 1}.md"
+            with open(part_path, "w", encoding="utf-8") as f:
+                f.write(part_md)
+            
+            # Generate part PDF
+            part_pdf = part_path.with_suffix(".pdf")
+            try:
+                pypandoc.convert_file(
+                    str(part_path),
+                    "pdf",
+                    outputfile=str(part_pdf),
+                    extra_args=[
+                        "--pdf-engine=pdflatex",
+                        "--pdf-engine-opt=-interaction=nonstopmode",
+                        "--highlight-style=tango",
+                    ]
+                )
+                
+                if part_pdf.exists():
+                    print(f"  Generated: {part_pdf.name}")
+                    part_pdfs.append(part_pdf)
+            except Exception as e:
+                print(f"  Error: {e}")
+        
+        # Merge PDFs if we have multiple parts
+        if len(part_pdfs) > 1:
+            print("\nMerging PDF parts...")
+            try:
+                # Try pdfunite first
+                cmd = ["pdfunite"] + [str(p) for p in part_pdfs] + [str(output_path)]
+                result = subprocess.run(cmd, capture_output=True, text=True)
+                
+                if result.returncode == 0 and output_path.exists():
+                    print("  Success with pdfunite!")
+                    # Clean up parts
+                    for p in part_pdfs:
+                        p.unlink()
+                    return True
+                    
+            except Exception as e:
+                print(f"  pdfunite failed: {e}")
+                
+        elif len(part_pdfs) == 1:
+            # Just one part, rename it
+            shutil.move(str(part_pdfs[0]), str(output_path))
+            return True
+            
+        return False
+
+    def create_part_markdown(self, files: List[Tuple[Path, Dict]], part_name: str) -> str:
+        """Create markdown for a part of the document."""
+        header = f"""---
+title: "{self.metadata['title']} - {part_name}"
+author: "{self.metadata['author']}"
+date: "{self.metadata['date']}"
+documentclass: report
+papersize: a4
+fontsize: 11pt
+geometry: margin=1in
+numbersections: true
+colorlinks: true
+linkcolor: black
+urlcolor: blue
+---
+
+"""
+        
+        content = header
+        for file_path, front_matter in files:
+            processed = self.process_markdown(file_path, front_matter)
+            content += processed
+            
+        return content
 
 
 def main():
     """Main entry point."""
-    # Get the base directory (parent of scripts/)
+    # Get the base directory
     base_dir = Path(__file__).parent.parent
 
     # Create output directory
     output_dir = base_dir / "output"
     output_dir.mkdir(exist_ok=True)
 
-    # Generate timestamp for filename
+    # Generate timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_path = output_dir / f"oscillating_brane_theory_split_{timestamp}.pdf"
+    output_path = output_dir / f"oscillating_brane_theory_{timestamp}.pdf"
 
-    # Create generator and run
-    generator = PDFGenerator(base_dir)
-    generator.generate_pdf(output_path)
+    # Create generator
+    generator = FinalPDFGenerator(base_dir)
+    
+    # Try direct generation first
+    success = generator.generate_pdf_direct(output_path)
+    
+    # If that fails, try the multi-part approach
+    if not success:
+        generator.chapter_count = 0  # Reset counter
+        success = generator.generate_pdf_parts_then_merge(output_path)
 
-    # Debug: Check if PDF was created
-    print(f"\nChecking if PDF was created at: {output_path}")
-    print(f"File exists: {output_path.exists()}")
-    if output_path.exists():
-        print(f"File size: {output_path.stat().st_size} bytes")
-    else:
-        print("ERROR: PDF file was NOT created!")
-        # List files in output directory
-        print("\nFiles in output directory:")
-        for f in output_dir.iterdir():
-            print(f"  - {f.name}")
-
-    # Also create a "latest" version in output directory
-    latest_path = output_dir / "oscillating_brane_theory_latest.pdf"
-    if output_path.exists():
-        import shutil
-
+    if success and output_path.exists():
+        # Copy to latest versions
+        latest_path = output_dir / "oscillating_brane_theory_latest.pdf"
         shutil.copy2(output_path, latest_path)
-        print(f"Latest version copied to: {latest_path}")
+        print(f"\nLatest version copied to: {latest_path}")
 
-        # Copy to root directory for website access
+        # Copy to root directory
         root_pdf_path = base_dir / "oscillating_brane_theory_latest.pdf"
         shutil.copy2(output_path, root_pdf_path)
         print(f"PDF copied to root for website: {root_pdf_path}")
+        
+        print(f"\nPDF generation complete!")
+        print(f"Total chapters: {generator.chapter_count}")
+    else:
+        print("\nPDF generation failed!")
+        print("Please check that you have one of these installed:")
+        print("  - pdflatex (texlive-latex-base)")
+        print("  - xelatex (texlive-xetex)")
+        print("  - lualatex (texlive-luatex)")
 
 
 if __name__ == "__main__":

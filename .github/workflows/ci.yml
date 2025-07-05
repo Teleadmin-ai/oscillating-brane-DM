@@ -102,7 +102,7 @@ jobs:
     - name: Install pandoc and LaTeX
       run: |
         sudo apt-get update
-        sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic texlive-latex-extra texlive-science fonts-dejavu-core fonts-dejavu-extra
+        sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic texlive-latex-extra texlive-science fonts-dejavu-core fonts-dejavu-extra poppler-utils
     
     - name: Generate PDF
       run: |
