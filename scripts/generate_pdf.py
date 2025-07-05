@@ -691,9 +691,11 @@ linkcolor: black
                     if part.exists():
                         part.unlink()
                         print(f"  Removed: {part.name}")
+                # Success! The merged PDF is at output_path
                 return
             else:
                 print("\nKeeping individual part files since merge failed.")
+                # Even if merge failed, we have partial PDFs
                 return
 
         # Fallback to original method if parts generation failed
