@@ -12,6 +12,14 @@ from typing import Dict, List, Tuple
 
 import pypandoc
 import yaml
+try:
+    from PyPDF2 import PdfMerger
+except ImportError:
+    try:
+        from PyPDF2 import PdfFileMerger as PdfMerger
+    except ImportError:
+        print("Warning: PyPDF2 not installed. PDF merging will not be available.")
+        PdfMerger = None
 
 # Install required packages:
 # pip install pypandoc pyyaml
@@ -496,9 +504,185 @@ This document contains the complete theoretical framework and documentation for 
         print(f"\nFinal combined size: {len(combined)} characters")
         return combined
 
+    def generate_pdf_parts(self, output_dir: Path):
+        """Generate PDF in multiple parts to avoid truncation."""
+        # Part 1: Core documentation (6 files)
+        part1_files = [
+            "index.md",
+            "theory.md",
+            "chronology.md",
+            "predictions.md",
+            "tools.md",
+            "about.md",
+        ]
+        
+        # Part 2: Technical documentation 
+        part2_files = [
+            "docs/theory_v4_complete.md",
+            "docs/foundations_parts/part1_mathematical_framework.md",
+            "docs/foundations_parts/part2_comparative_predictions.md",
+        ]
+        
+        # Part 3: Rest of technical docs and blog posts
+        part3_files = [
+            "docs/foundations_parts/part3_current_limitations.md",
+            "docs/foundations_parts/part4_development_roadmap.md",
+        ]
+        
+        generated_pdfs = []
+        
+        # Generate Part 1
+        print("\nGenerating Part 1: Core Documentation...")
+        part1_path = output_dir / "part1_core.pdf"
+        if self.generate_partial_pdf(part1_files, part1_path, "Part 1: Core Documentation"):
+            generated_pdfs.append(part1_path)
+        
+        # Generate Part 2
+        print("\nGenerating Part 2: Technical Foundations...")
+        part2_path = output_dir / "part2_technical.pdf"
+        if self.generate_partial_pdf(part2_files, part2_path, "Part 2: Technical Foundations"):
+            generated_pdfs.append(part2_path)
+        
+        # Generate Part 3
+        print("\nGenerating Part 3: Development & Blog...")
+        part3_path = output_dir / "part3_development.pdf"
+        # Add blog posts to part 3
+        posts_dir = self.base_dir / "_posts"
+        if posts_dir.exists():
+            posts = sorted(posts_dir.glob("*.md"), reverse=True)
+            part3_files.extend([str(p.relative_to(self.base_dir)) for p in posts])
+        
+        if self.generate_partial_pdf(part3_files, part3_path, "Part 3: Development & Research"):
+            generated_pdfs.append(part3_path)
+        
+        return generated_pdfs
+    
+    def generate_partial_pdf(self, file_list, output_path, title):
+        """Generate a PDF from a subset of files."""
+        try:
+            # Create combined markdown for this part
+            header = f"""---
+title: "{self.metadata['title']} - {title}"
+author: "{self.metadata['author']}"
+date: "{self.metadata['date']}"
+documentclass: report
+fontsize: 11pt
+geometry: margin=1in
+toc: true
+numbersections: true
+urlcolor: blue
+linkcolor: black
+---
+
+"""
+            
+            combined = header
+            file_count = 0
+            
+            for i, filename in enumerate(file_list):
+                path = self.base_dir / filename
+                if path.exists():
+                    print(f"  Processing: {filename}")
+                    front_matter = self.extract_front_matter(path)
+                    content = self.process_markdown(path, front_matter, is_first=(file_count == 0))
+                    combined += content
+                    file_count += 1
+            
+            if file_count == 0:
+                print(f"  No files found for {title}")
+                return False
+            
+            # Generate PDF
+            print(f"  Generating PDF: {output_path.name}")
+            pypandoc.convert_text(
+                combined,
+                "pdf",
+                format="markdown",
+                outputfile=str(output_path),
+                extra_args=[
+                    "--pdf-engine=xelatex",
+                    "--highlight-style=tango",
+                    "-V",
+                    "geometry:margin=1in",
+                    "-V",
+                    "colorlinks=true",
+                ],
+            )
+            
+            if output_path.exists():
+                size = output_path.stat().st_size
+                print(f"  Success! Generated {output_path.name} ({size/1024/1024:.1f} MB)")
+                return True
+            else:
+                print(f"  Failed to generate {output_path.name}")
+                return False
+                
+        except Exception as e:
+            print(f"  Error generating {title}: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
+    
+    def merge_pdfs(self, pdf_list, output_path):
+        """Merge multiple PDFs into one."""
+        if not PdfMerger:
+            print("\nPyPDF2 not available. Please install: pip install PyPDF2")
+            print("Individual PDFs have been generated but not merged.")
+            return False
+        
+        try:
+            print("\nMerging PDFs...")
+            merger = PdfMerger()
+            
+            for pdf_path in pdf_list:
+                if pdf_path.exists():
+                    print(f"  Adding: {pdf_path.name}")
+                    merger.append(str(pdf_path))
+            
+            print(f"  Writing merged PDF: {output_path.name}")
+            merger.write(str(output_path))
+            merger.close()
+            
+            if output_path.exists():
+                size = output_path.stat().st_size
+                print(f"  Success! Final PDF: {output_path.name} ({size/1024/1024:.1f} MB)")
+                return True
+            else:
+                print(f"  Failed to create merged PDF")
+                return False
+                
+        except Exception as e:
+            print(f"  Error merging PDFs: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
+    
     def generate_pdf(self, output_path: Path):
-        """Generate the PDF using pandoc."""
-        # Create combined markdown
+        """Generate the PDF using pandoc - now with multi-part strategy."""
+        # Try the multi-part approach to avoid truncation
+        output_dir = output_path.parent
+        
+        # Generate PDFs in parts
+        pdf_parts = self.generate_pdf_parts(output_dir)
+        
+        if len(pdf_parts) >= 2:
+            # Merge the parts
+            success = self.merge_pdfs(pdf_parts, output_path)
+            
+            # Clean up part files
+            if success:
+                print("\nCleaning up temporary part files...")
+                for part in pdf_parts:
+                    if part.exists():
+                        part.unlink()
+                        print(f"  Removed: {part.name}")
+                return
+            else:
+                print("\nKeeping individual part files since merge failed.")
+                return
+        
+        # Fallback to original method if parts generation failed
+        print("\nFalling back to single PDF generation...")
         combined_md = self.create_combined_markdown()
 
         # Save intermediate markdown (for debugging)
