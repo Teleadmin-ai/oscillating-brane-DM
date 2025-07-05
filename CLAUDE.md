@@ -50,6 +50,11 @@ oscillating-brane-DM/
 ├── docs/               # Technical documentation
 │   ├── theoretical_foundations.md  # Rigorous mathematical framework with 1100+ lines
 │   ├── theory_v4_complete.md      # Complete theory v4
+│   ├── foundations_parts/         # Split mathematical framework
+│   │   ├── part1_mathematical_framework.md
+│   │   ├── part2_comparative_predictions.md
+│   │   ├── part3_current_limitations.md
+│   │   └── part4_development_roadmap.md
 │   ├── posterior_table.tex        # MCMC posterior statistics table (NEW)
 │   └── einstein_2d_table.tex      # 2D prototype results table (NEW)
 ├── data/               # Posterior samples and analysis results
@@ -104,10 +109,12 @@ oscillating-brane-DM/
 The theory's fundamental parameters:
 - **Brane tension**: τ₀ = 7.0 × 10¹⁹ J/m²
 - **Oscillation period**: T = 2.0 ± 0.3 Gyr
-- **Extra dimension size**: L = 2.0 × 10⁻⁷ m
+- **Extra dimension size**: L = 2.0 × 10⁻⁷ m (0.2 μm)
 - **Oscillating fraction**: f_osc = 0.10
 - **MOND acceleration**: a₀ = 1.1 × 10⁻¹⁰ m/s²
 - **Dark energy amplitude**: A_w ≃ 0.003 (±0.3% oscillation)
+- **S₈ suppression**: -5.2% (resolves tension)
+- **Bayesian evidence**: Δln K = 3.33 ± 0.24 (strong evidence)
 
 ## Python Scripts
 The repository includes comprehensive computational tools:
@@ -133,10 +140,10 @@ The repository includes comprehensive computational tools:
 14. `generate_pdf.py` - PDF generation with Unicode artifact cleaning
 
 ## Blog Post Topics
-1. Introduction to the universe as a vibrating membrane
-2. How dark matter makes the universe vibrate
-3. Cosmic chronology from inflation to current oscillations
-4. Experimental tests and future predictions
+1. **The Universe as a Vibrating Membrane** - Introduction to the cosmic membrane paradigm
+2. **How Dark Matter Makes the Universe Vibrate** - Microscopic excitation mechanism
+3. **Cosmic Chronology: From Inflation to the Current Beat** - Evolution of brane tension
+4. **Experimental Tests: Where to Seek the Truth** - Observational predictions and tests
 
 ## Recent Updates and Known Issues
 
@@ -187,6 +194,13 @@ Following O3 Pro's final audit, all critical points have been addressed:
 - **Import ordering**: Fixed with isort to pass linting checks
 - **GitHub Actions**: All workflows (CI, Python Linting) now passing ✓
 - **PDF generation**: Enhanced with Unicode cleaning and proper font configuration
+
+### PDF Generation Improvements (2025-07-05)
+- **Double chapter numbering fix**: Resolved issue where chapters had duplicate numbers (e.g., "Chapter 5" followed by "Chapter 4: Title")
+- **Pandoc numbering**: Disabled automatic section numbering (`numbersections: false`)
+- **Regex improvements**: Added pattern to remove existing "Chapter X:" prefixes from markdown content
+- **Complete PDF**: Successfully generates 66-page PDF with all 15 chapters properly formatted
+- **Content included**: All theoretical foundations, blog posts, and documentation properly integrated
 
 ## GitHub Actions & CI/CD
 
