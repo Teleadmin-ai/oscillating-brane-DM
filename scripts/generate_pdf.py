@@ -6,8 +6,8 @@ This version properly handles math expressions and generates a complete PDF.
 
 import os
 import re
-import subprocess
 import shutil
+import subprocess
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple
