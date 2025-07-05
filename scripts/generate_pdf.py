@@ -527,13 +527,13 @@ This document contains the complete theoretical framework and documentation for 
             # Check LaTeX file size
             tex_size = tex_path.stat().st_size
             print(f"LaTeX file size: {tex_size} bytes ({tex_size/1024:.1f} KB)")
-            
+
             # Count chapters in LaTeX
-            with open(tex_path, 'r', encoding='utf-8') as f:
+            with open(tex_path, "r", encoding="utf-8") as f:
                 tex_content = f.read()
-                chapter_count = tex_content.count('\\chapter{')
+                chapter_count = tex_content.count("\\chapter{")
                 print(f"Number of chapters found in LaTeX: {chapter_count}")
-                
+
                 # Check if all expected chapters are there
                 expected_chapters = [
                     "Theory Overview",
@@ -545,18 +545,18 @@ This document contains the complete theoretical framework and documentation for 
                     "Part 1: Mathematical Framework",
                     "Part 2: Comparative Analysis",
                     "Part 3: Current Limitations",
-                    "Part 4: Development Roadmap"
+                    "Part 4: Development Roadmap",
                 ]
-                
+
                 for chapter in expected_chapters:
                     if chapter in tex_content:
                         print(f"  ✓ Found chapter: {chapter}")
                     else:
                         print(f"  ✗ Missing chapter: {chapter}")
-                        
+
         except Exception as e:
             print(f"Failed to generate LaTeX: {e}")
-        
+
         # Convert to PDF using pandoc with pdflatex (more stable for large docs)
         try:
             print("\nGenerating PDF with pdflatex...")
@@ -581,16 +581,17 @@ This document contains the complete theoretical framework and documentation for 
                 ],
             )
             print(f"PDF generated successfully: {output_path}")
-            
+
             # Check PDF size
             pdf_size = output_path.stat().st_size
             print(f"PDF file size: {pdf_size} bytes ({pdf_size/1024/1024:.1f} MB)")
-            
+
         except Exception as e:
             print(f"Error generating PDF: {e}")
             import traceback
+
             traceback.print_exc()
-            
+
             # If pdflatex fails, try with smaller memory footprint
             print("\nTrying alternative approach with reduced memory usage...")
             try:
