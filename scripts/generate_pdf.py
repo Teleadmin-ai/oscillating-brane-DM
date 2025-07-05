@@ -238,16 +238,27 @@ class FinalPDFGenerator:
 
         # Fix section numbering conflicts
         # Remove "Chapter X:" prefixes if they exist (e.g., "# Chapter 4: Title" -> "# Title")
-        content = re.sub(r'^(#)\s*Chapter\s+\d+:\s*(.*)$', r'\1 \2', content, flags=re.MULTILINE)
-        
+        content = re.sub(
+            r"^(#)\s*Chapter\s+\d+:\s*(.*)$", r"\1 \2", content, flags=re.MULTILINE
+        )
+
         # Handle deeper subsections first (e.g., "#### 4.1.1 Details" -> "#### Details")
-        content = re.sub(r'^(#{2,6})\s*\d+\.\d+\.\d+\.?\s+(.*)$', r'\1 \2', content, flags=re.MULTILINE)
-        
+        content = re.sub(
+            r"^(#{2,6})\s*\d+\.\d+\.\d+\.?\s+(.*)$",
+            r"\1 \2",
+            content,
+            flags=re.MULTILINE,
+        )
+
         # Handle subsection numbering (e.g., "### 4.1 Model Comparison" -> "### Model Comparison")
-        content = re.sub(r'^(#{2,6})\s*\d+\.\d+\.?\s+(.*)$', r'\1 \2', content, flags=re.MULTILINE)
-        
+        content = re.sub(
+            r"^(#{2,6})\s*\d+\.\d+\.?\s+(.*)$", r"\1 \2", content, flags=re.MULTILINE
+        )
+
         # Remove numbered sections (e.g., "## 4. Comparative Analysis" or "## 4 Comparative Analysis" -> "## Comparative Analysis")
-        content = re.sub(r'^(#{2,6})\s*\d+\.?\s+(.*)$', r'\1 \2', content, flags=re.MULTILINE)
+        content = re.sub(
+            r"^(#{2,6})\s*\d+\.?\s+(.*)$", r"\1 \2", content, flags=re.MULTILINE
+        )
 
         return heading + "\n\n" + content + "\n\n\\newpage\n\n"
 
