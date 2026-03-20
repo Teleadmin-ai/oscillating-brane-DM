@@ -90,15 +90,14 @@ nav a:hover {
 /* Content wrapper */
 .content-wrapper {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 45% 55%;
   min-height: 100vh;
   padding-top: 200px; /* Increased space for fixed header */
 }
 
 /* Text column */
 .text-column {
-  padding: 40px;
-  padding-top: 20px; /* Reduced top padding since wrapper handles it */
+  padding: 20px 30px 40px 40px; /* top right bottom left */
   overflow-y: auto;
   max-height: calc(100vh - 200px); /* Match wrapper padding */
   scrollbar-width: none; /* Firefox */
@@ -111,8 +110,8 @@ nav a:hover {
 }
 
 .text-content {
-  max-width: 500px;
-  padding-right: 20px; /* Add some padding since scrollbar is hidden */
+  max-width: 90%; /* Use most of the column width */
+  padding-right: 40px; /* Add padding to avoid touching the video column */
   padding-top: 40px; /* Add top padding to ensure text starts below header */
 }
 
@@ -348,7 +347,7 @@ li {
 /* Responsive design */
 @media (max-width: 1200px) {
   .content-wrapper {
-    grid-template-columns: 45% 55%;
+    grid-template-columns: 50% 50%;
   }
 }
 
@@ -377,14 +376,16 @@ li {
 
 /* Images in text content */
 .text-content img {
+  width: 100%;
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 20px auto;
+  margin: 20px 0;
 }
 
 /* Constrain figure images specifically */
 .text-content div[style*="max-width"] img {
+  width: 100%;
   max-width: 100%;
   height: auto;
 }
@@ -506,13 +507,13 @@ html {
 /* Tablet adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
   .text-column {
-    width: 45%;
+    width: 50%;
   }
-  
+
   .video-column {
-    width: 55%;
+    width: 50%;
   }
-  
+
   .site-header h1 {
     font-size: 1.6rem;
   }
