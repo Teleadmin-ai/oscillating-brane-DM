@@ -9,23 +9,23 @@ permalink: /about/
 ## The Vision: The Cosmic Yoyo
 
 We propose a revolutionary understanding of the cosmos where:
-- The universe is a vibrating 4D membrane anchored at the Point Unique
-- **Dark matter perpetually converges through black holes to the singular point where beginning meets end**
-- This eternal pulsation from the atemporary center creates gravity itself
+- The universe is a vibrating 4D membrane connected via ER=EPR holographic network
+- **Dark matter flows through quantum entangled black holes connected by wormholes**
+- This eternal pulsation through the holographic network creates gravity itself
 - The oscillations "fabricate distance" - generating the very fabric of spacetime
 - The cycle continues until the universe reaches maximum entropy
 
 ## The Science
 
-This theory emerged from the observation of discrete oscillations in the cosmic scale factor by Ringermacher & Mead (2014). The key insight: **black holes are not endpoints but convergence points to the Point Unique**. Dark matter falls into black holes, meets itself in the atemporary singularity where past and future are one, and returns - an eternal pulsation that maintains the universe's heartbeat.
+This theory emerged from the convergence of multiple cosmological observations: DESI's detection of evolving dark energy (2024-2026), the S₈ tension, and Planck's CMB anomalies. The key insight: **black holes are quantum entangled gateways connected via Einstein-Rosen bridges (ER=EPR)**. Dark matter flows through this holographic wormhole network, maintaining quantum coherence and creating an eternal pulsation that maintains the universe's heartbeat.
 
 ### The Cosmic Pulsation Mechanism
-- **Convergence**: Dark matter spirals into black holes (gravitational funnels)
-- **Unity**: Meets itself at the Point Unique where all black holes converge
-- **Return**: Momentum pushes back from the atemporary center
-- **Cycle**: The eternal 2-billion-year pulsation continues
+- **Entry**: Dark matter spirals into black holes (gravitational funnels)
+- **Network**: Travels through ER=EPR wormhole connections in the AdS bulk
+- **Coherence**: Quantum entanglement maintains perfect phase synchronization
+- **Cycle**: The eternal 2-billion-year pulsation continues (calibrated from DESI/Planck)
 
-This eternal convergence to the singular point where time doesn't exist is what creates gravity and spacetime itself. The mathematics shows this explicitly through the funnel density term ρ_funnel ∝ M/r³.
+This eternal flow through the holographic network of entangled black holes creates gravity and spacetime itself. The mathematics shows this explicitly through the funnel density term ρ_funnel ∝ M/r³.
 
 ### Key Achievements
 

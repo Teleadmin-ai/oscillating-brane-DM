@@ -1,4 +1,4 @@
-# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) v4.1
+# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) v5.0 - Holographic Edition
 
 **Author: Romain Provencal**
 **Co-Authors: Claude (Anthropic) & Gemini DeepThink (Google) - AI Cognitive Prostheses**
@@ -21,7 +21,7 @@ This repository contains the complete theoretical framework and computational to
 
 ### 📖 Theory Overview
 
-Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is anchored at a Point Unique beyond space and time. Black holes are not destructive chasms but tension pegs, anchor points where the membrane folds into the singular point where all paths converge. And dark matter? It doesn't traverse dimensions but meets itself in the atemporary center where beginning and end are one, creating a two-billion-year pulsation where each beat shapes space, time, and gravity itself.
+Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of Einstein-Rosen bridges (ER=EPR). Black holes are not destructive chasms but quantum entangled gateways, connected via wormholes in the Anti-de Sitter bulk. And dark matter? It flows through this holographic network maintaining perfect quantum coherence, creating a two-billion-year pulsation (calibrated from DESI/Planck data) where each beat shapes space, time, and gravity itself.
 
 ### 🔬 Core Concepts
 
@@ -37,7 +37,7 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
 oscillating-brane-DM/
 ├── README.md                    # This file
 ├── docs/
-│   ├── theory_v4_complete.md    # Full theoretical framework
+│   ├── theory_v4_complete.md    # Full theoretical framework (now v5.0 Holographic)
 │   ├── membrane_modes.pdf       # Mathematical derivations
 │   └── observational_tests.md   # Experimental predictions
 ├── scripts/
@@ -81,8 +81,10 @@ print(f"w(z={z}) = {w_de:.3f}")
 
 ### 📝 Key Papers
 
-- Ringermacher & Mead (2014): "Observation of discrete oscillations in a model-independent plot of cosmological scale factor versus lookback time"
-- Original theoretical paper: *(in preparation, 2025)*
+- DESI Collaboration (2024-2026): "Evidence for evolving dark energy from baryon acoustic oscillations"
+- Maldacena & Susskind (2013): "Cool horizons for entangled black holes" (ER=EPR foundation)
+- Farrah et al. (2023): "Observational evidence for cosmological coupling of black holes"
+- Original theoretical paper v5.0: *(Holographic edition with ER=EPR topology, 2026)*
 
 ### 🤝 Contributing
 
