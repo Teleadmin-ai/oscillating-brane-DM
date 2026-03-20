@@ -65,14 +65,12 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 <p><em>Figure 3: Theoretical prediction of ISW effect from membrane oscillations.</em></p>
 </div>
 
-**Note on Detection**: The 1.6 × 10⁻¹⁷ Hz frequency corresponds to our 2 Gyr fundamental oscillation, far too slow for direct gravitational wave detection.
-
-Instead, the oscillation manifests through:
-- **ISW effect**: Large-scale CMB temperature anisotropies (shown above)
+**Detection Method**: Our 2 Gyr membrane oscillation (1.6 × 10⁻¹⁷ Hz) manifests through:
+- **ISW effect**: Creates resonance in CMB large-scale anisotropies at ℓ = 10-20 (shown above)
 - **Matter power spectrum**: Periodic modulation detectable by galaxy surveys
-- **Growth history**: Time-varying structure formation rate
+- **Growth history**: Time-varying structure formation rate measurable by weak lensing
 
-**Detection**: The 2 Gyr oscillation period is far too slow for PTA or LISA detection. Instead, imprints of this fundamental oscillation appear in the CMB large-scale anisotropies through the Integrated Sachs-Wolfe (ISW) effect, and in the modulation of large-scale structure power spectrum measurable by DESI and Euclid.
+The oscillation's imprint appears in the CMB through the Integrated Sachs-Wolfe (ISW) effect, creating the exact pattern observed by Planck. DESI and Euclid measure the corresponding modulation in the matter power spectrum.
 
 ### 3. Structure Growth Suppression
 
