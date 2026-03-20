@@ -23,12 +23,12 @@ The entire universe vibrates as a single entity with a period T = 2.0 ± 0.3 Gyr
 
 ### Microscopic Excitation
 
-The surface pressure induced by dark matter impacts writes:
+The effective pressure on the brane arises from topological backreaction (Complexity=Volume), not kinetic impacts. As black holes absorb dark matter and their wormhole interiors grow, the collective traction on the membrane produces:
 
 $$\Pi(t) = \sum_i \dot{N}_i m_{MN} v_{\perp} \simeq f_{osc} \rho_{DM} v_{\perp}^2 [1 + \sin(\omega_0 t)]$$
 
 Key features:
-- **Coherent phase**: Bulk crossing time ≪ 1 Gyr ensures identical phase across the sky
+- **Coherent phase**: ER=EPR entanglement ensures identical phase across the sky
 - **ℓ=0 selectivity**: The coupling integral $$\int Y_{\ell m} d\Omega$$ vanishes for ℓ > 0
 - **Fundamental mode dominance**: Only the spherically symmetric mode is excited
 

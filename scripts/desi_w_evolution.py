@@ -56,7 +56,7 @@ ax.plot(redshifts, w_lcdm, linestyle='--', color='gray', alpha=0.8,
 
 # Oscillating brane theory line (the Cosmic Yoyo wave)
 ax.plot(redshifts, w_brane, color='#00ffcc', linewidth=3,
-        label=f'Oscillating Brane (T={T_osc} Gyr, Point Unique)')
+        label=f'Oscillating Brane (T={T_osc} Gyr, ER=EPR)')
 
 # Sensitivity zone simulation (DESI / Euclid)
 ax.fill_between(redshifts, -1.004, -0.996, color='#ff3366', alpha=0.15,
