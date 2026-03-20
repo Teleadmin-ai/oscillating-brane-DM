@@ -155,25 +155,31 @@ The enhanced oscillation amplitude would be detectable through:
 
 This provides a direct probe of sub-stellar mass PBHs that are otherwise undetectable.
 
-## Nature of the Bulk: ER=EPR Holographic Network
+## Nature of the Bulk: Non-Local Topological State
 
-### The Holographic Topology
+### Beyond Points and Volumes
 
-The extra-dimensional bulk contains a quantum entangled network of Einstein-Rosen bridges based on the ER=EPR correspondence (Maldacena-Susskind):
+The bulk is neither a geometric point (which would produce divergent curvature) nor a classical volume (which would require signal propagation for synchronization). It is a **non-local topological state** where spacetime itself is emergent (Van Raamsdonk 2010).
 
-**ER=EPR Holographic Reality:**
-- Black holes are quantum entangled through the Anti-de Sitter bulk
-- Einstein-Rosen bridges (wormholes) connect entangled black holes
-- Perfect phase coherence emerges from quantum correlations
-- Dark matter flows through this holographic wormhole network
-- No violation of relativity - information transfer via entanglement
+Distance and duration are properties of the 4D brane. In the bulk, they lose operational meaning. This resolves the apparent paradox: how can billions of black holes synchronize instantaneously? They don't need to — in a space where distance doesn't exist, there is nothing to traverse.
+
+### ER=EPR Holographic Connectivity
+
+The ER=EPR correspondence (Maldacena & Susskind 2013) provides the mathematical framework:
+
+**Non-Local Bulk Reality:**
+- Black holes are quantum entangled through Einstein-Rosen bridges in the AdS bulk
+- Entanglement creates connectivity without signal propagation
+- Perfect phase coherence is a consequence of non-locality, not communication
+- Dark matter entering any black hole is instantaneously correlated with all others
+- Spacetime geometry on the brane emerges from this underlying entanglement
 
 ### Observable Signatures
 
-| Observable | ER=EPR Prediction |
+| Observable | Non-Local Bulk Prediction |
 |------------|------------------------|
-| w(z) phase coherence | Perfect (quantum entanglement) |
-| Oscillation synchronization | Global (holographic principle) |
+| w(z) phase coherence | Perfect (non-local entanglement) |
+| Oscillation synchronization | Global (spacetime is emergent) |
 | KK mode spectrum | Discrete (AdS/CFT) |
 
 ### End of the Universe
