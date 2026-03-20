@@ -14,10 +14,10 @@ The evolution of brane tension from the Big Bang to today reveals how the univer
 
 | Phase | Age | τ (J/m²) | Description |
 |-------|-----|----------|-------------|
-| Inflation | 0 → 10⁻³⁴ s | 10⁵⁰ | Quasi-exponential expansion, hyper-tense brane |
-| Brane Reheating | 10⁻³⁴ → 10⁻³² s | 10³⁰ | Tension decay via MN-antiMN production in bulk |
-| Relaxation | 10⁻³² s → 1 Gyr | 10²⁷ → 7×10¹⁹ | τ ∝ t⁻¹/², fundamental mode enters resonance ≈ 1 Gyr |
-| Current Era | 13.8 Gyr | 7×10¹⁹ | Stable oscillation with 2 Gyr period |
+| Inflation | 0 → 10<sup>-34</sup> s | 10<sup>50</sup> | Quasi-exponential expansion, hyper-tense brane |
+| Brane Reheating | 10<sup>-34</sup> → 10<sup>-32</sup> s | 10<sup>30</sup> | Tension decay via MN-antiMN production in bulk |
+| Relaxation | 10<sup>-32</sup> s → 1 Gyr | 10<sup>27</sup> → 7×10<sup>19</sup> | τ ∝ t<sup>-1/2</sup>, fundamental mode enters resonance ≈ 1 Gyr |
+| Current Era | 13.8 Gyr | 7×10<sup>19</sup> | Stable oscillation with 2 Gyr period |
 
 ## Physical Processes
 
@@ -39,7 +39,7 @@ This natural cooling allows the fundamental mode to enter resonance when the osc
 
 ### Current Oscillations
 Today, the brane has reached its equilibrium configuration:
-- Stable tension τ₀ = 7×10¹⁹ J/m²
+- Stable tension τ₀ = 7×10<sup>19</sup> J/m²
 - Fundamental period T = 2.0 Gyr
 - 10% of dark matter participates in oscillations
 

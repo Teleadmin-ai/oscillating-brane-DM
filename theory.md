@@ -39,7 +39,7 @@ The deformation energy of the cosmic membrane is:
 $$E_{tens} = \frac{1}{2} τ_0 A \left(\frac{2πz}{λ}\right)^2$$
 
 Where:
-- τ₀ = 7.0 × 10¹⁹ J/m² is the brane tension
+- τ₀ = 7.0 × 10<sup>19</sup> J/m² is the brane tension
 - A ≃ R_H² is the area of the observable universe
 - z is the displacement in the extra dimension
 - λ ≃ 2R_H is the fundamental wavelength

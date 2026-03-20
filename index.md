@@ -20,7 +20,7 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
     <table>
       <tr>
         <td><strong>Brane tension</strong></td>
-        <td>τ₀ = 7.0 × 10¹⁹ J/m²</td>
+        <td>τ₀ = 7.0 × 10<sup>19</sup> J/m²</td>
       </tr>
       <tr>
         <td><strong>Oscillation period</strong></td>
@@ -28,7 +28,7 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
       </tr>
       <tr>
         <td><strong>MOND acceleration</strong></td>
-        <td>a₀ = 1.1 × 10⁻¹⁰ m/s²</td>
+        <td>a₀ = 1.1 × 10<sup>-10</sup> m/s²</td>
       </tr>
       <tr>
         <td><strong>S₈ suppression</strong></td>

@@ -13,9 +13,9 @@ This repository contains the complete theoretical framework and computational to
 
 | Phenomenon | Theoretical Value | Cosmic Significance |
 |------------|------------------|---------------------|
-| Brane tension | τ₀ = 7.0 × 10¹⁹ J/m² | The elasticity of spacetime fabric |
+| Brane tension | τ₀ = 7.0 × 10<sup>19</sup> J/m² | The elasticity of spacetime fabric |
 | Oscillation period | T = 2.0 ± 0.3 Gyr | The cosmic heartbeat |
-| MOND acceleration | a₀ = 1.1 × 10⁻¹⁰ m/s² | Gravity at the confines |
+| MOND acceleration | a₀ = 1.1 × 10<sup>-10</sup> m/s² | Gravity at the confines |
 | S₈ suppression | -5.2% | Restored harmony |
 | Bayesian evidence | Δln K = 3.33 ± 0.24 | Promise of truth |
 
