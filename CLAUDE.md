@@ -20,12 +20,13 @@ This is the **Oscillating Brane Dark Matter Theory V5.0 (Holographic Edition)** 
 - Black holes are connected via **ER=EPR wormhole network** (Maldacena & Susskind 2013)
 - Distance and time are properties of the 4D brane only; in the bulk they have no meaning
 - Oscillation period T = 2.0 Gyr calibrated from **DESI BAO + Planck ISW resonance**
+- **Dark energy equation**: w(z) = -1 + A_w sin(2πt_lb/T + **φ₀**) with **φ₀ = π/2** — places us at a MAXIMUM of w(z) today, reproducing DESI's phantom crossing (w_a < 0) without ghost fields
 - **Excitation mechanism**: Susskind's Complexity=Volume — wormhole interiors grow as BHs absorb DM, exerting topological traction (backreaction) on the brane. NOT ballistic impacts/"tiny hammers"
-- **S₈ suppression**: Via G_eff = G_N × e^{-2k|z|} — gravity "leaks" into 5th dimension (⟨z²⟩ > 0 → ⟨G_eff⟩ < G_N). NOT just w(z) friction
+- **S₈ suppression**: Via G_eff = G_N × e^{-2k|z|} — gravity "leaks" into 5th dimension (⟨z²⟩ > 0 → ⟨G_eff⟩ < G_N). Suppression is a **prediction** adjustable via ⟨z²⟩, not a fixed input
 - **Quantum stability**: Adiabatic theorem — ν_brane/ν_KK ~ 10⁻³¹, Schwinger factor e^{-10³¹} ≈ 0. No quantum friction
 - **QCD connection**: τ₀ = 0.017 GeV³, so τ₀^{1/3} = 257 MeV ≈ Λ_QCD (brane tension set by strong force vacuum)
 - The "smoking gun" is the **ISW resonance** in CMB at ℓ = 10-20 (NOT gravitational waves)
-- **JWST LRDs** explained as "cosmic pushpins" — primordial topological defects anchoring the brane
+- **Brane anchors**: Primordial **micro-PBHs** of asteroid mass (~10⁻¹² M☉, r_s ~ 30nm ~ L) — NOT JWST's LRDs which may be stellar clusters (Chisholm et al. 2026)
 
 ### BANNED Concepts (old versions — NEVER use):
 - **"Point Unique" as a 0D geometric point** — divergent curvature, violates Einstein 5D
@@ -39,6 +40,8 @@ This is the **Oscillating Brane Dark Matter Theory V5.0 (Holographic Edition)** 
 - **Version 4.0 / 4.1 references** — current version is 5.0
 - **τ₀ = 2.2 × 10⁻⁵ GeV³** — WRONG old conversion. Correct: τ₀ = 0.017 GeV³
 - **contact@higgs-cosmology.com** — does not exist. Use provencal.romain@teleadmin.net
+- **w(z) without phase φ₀** — MUST include φ₀ = π/2 to get correct w_a sign
+- **JWST LRDs as definite BH anchors** — cautious: may be stellar clusters (Chisholm 2026)
 
 ### Key references:
 - Maldacena & Susskind (2013) - ER=EPR conjecture
@@ -47,19 +50,22 @@ This is the **Oscillating Brane Dark Matter Theory V5.0 (Holographic Edition)** 
 - Brownsberger, Stubbs & Scolnic (2020) - Debunking of Ringermacher
 - DESI Collaboration (2024, 2026) - Evolving dark energy evidence
 - Farrah et al. (2023) - Black hole cosmological coupling
+- Chisholm, Gieles et al. (2026) - LRDs as possible stellar clusters (arXiv:2602.15935)
 
 ## Key Technical Parameters
 
 - **Brane tension**: τ₀ = 7.0 × 10¹⁹ J/m² = 0.017 GeV³
 - **Energy scale**: τ₀^{1/3} = 257 MeV ≈ Λ_QCD
 - **Oscillation period**: T = 2.0 ± 0.3 Gyr (from DESI/Planck, NOT Ringermacher)
+- **Phase**: φ₀ = π/2 (places us at w(z) maximum today → w_a < 0)
 - **Extra dimension size**: L = 2.0 × 10⁻⁷ m (0.2 μm) — NEVER write "L = 0.2 m" without μ
 - **Oscillating fraction**: f_osc = 0.10
 - **MOND acceleration**: a₀ = 1.1 × 10⁻¹⁰ m/s² — ALWAYS negative exponent
 - **Dark energy amplitude**: A_w ≃ 0.003
-- **S₈ suppression**: -5.2% via G_eff leak
+- **S₈ suppression**: ~5.2% via G_eff leak (adjustable, not fixed)
 - **ISW χ² improvement**: 32.9 (6σ over ΛCDM)
 - **Bayesian evidence**: Δln K = 3.33 ± 0.24
+- **Micro-PBH anchors**: ~10⁻¹² M☉, r_s ~ 30 nm (comparable to L)
 
 ## PDF Generation — KNOWN RACE CONDITION
 
@@ -104,12 +110,12 @@ oscillating-brane-DM/
 │   ├── brane_dynamics.py       # Core physics
 │   └── ...
 ├── paper/
-│   └── cosmic_yoyo_prl.tex    # V5.0 white paper LaTeX (5 pages)
+│   └── cosmic_yoyo_prl.tex    # V5.0 white paper LaTeX (5 pages, 10 refs)
 ├── docs/
 │   ├── theory_v4_complete.md       # Complete theory (V5.0 content)
 │   ├── theoretical_foundations.md  # Mathematical framework
 │   └── foundations_parts/          # Split framework (4 parts)
-├── output/              # Generated PDFs (excluded from Jekyll, contains stale combined.md files)
+├── output/              # Generated PDFs (excluded from Jekyll, contains stale combined.md)
 ├── cosmic_yoyo_v5_holographic.pdf  # White paper (5 pages)
 ├── oscillating_brane_theory_latest.pdf  # Full theory (72 pages)
 ├── index.md, theory.md, predictions.md, chronology.md, tools.md, about.md, downloads.md
@@ -127,27 +133,30 @@ oscillating-brane-DM/
 - **Navigation**: Home, Theory, Complete Theory, Theoretical Foundations, Chronology, Predictions, Tools, Downloads, About
 
 ## Downloads (2 PDFs only)
-1. **White Paper V5.0** (`cosmic_yoyo_v5_holographic.pdf`) — 5 pages, LaTeX
+1. **White Paper V5.0** (`cosmic_yoyo_v5_holographic.pdf`) — 5 pages, 10 references
 2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — 72 pages
 - Old V4 white paper: DELETED
 
 ## Human-AI Collaboration Model
-The author (Romain) is the conceptual architect — geometric intuition, synthesis of anomalies, direction of research. The AI systems (Claude, Gemini) serve as mathematical co-processors — translating concepts into formal frameworks, executing derivations, verifying physical consistency. This is the Faraday-Maxwell model: vision + formalization. The acknowledgments in the white paper are radically transparent about this methodology.
+The author (Romain) is the conceptual architect — geometric intuition, synthesis of anomalies, direction of research. The AI systems (Claude, Gemini) serve as mathematical co-processors — translating concepts into formal frameworks, executing derivations, verifying physical consistency. This is the Faraday-Maxwell model: vision + formalization. The acknowledgments in the white paper are radically transparent about this methodology. When asked about AI involvement, never minimize it — the author explicitly wants honest disclosure.
 
-## Observational Confirmations (2024-2026)
-- **DESI 2024-2026**: Dark energy evolves (4σ) — matches oscillating w(z)
-- **JWST "Little Red Dots"**: Primordial massive BHs at z>6 — our "Cosmic Pushpins"
+## Observational Status (2024-2026)
+- **DESI 2024-2026**: Dark energy evolves (4σ) — matches oscillating w(z) with φ₀ = π/2
+- **Micro-PBHs**: Primary brane anchors (~10⁻¹² M☉) — undetectable by JWST
+- **JWST LRDs**: CAUTIOUS — may be stellar clusters (Chisholm 2026), theory does NOT depend on them
 - **Farrah et al. 2023-2024**: BH mass coupled to expansion (k=3.11±0.19)
-- **S₈ tension**: 5.2% growth suppression via G_eff leak bridges CMB/lensing gap
+- **S₈ tension**: ~5.2% growth suppression via G_eff leak (adjustable if tension evolves)
 - **Planck low-ℓ anomaly**: ISW resonance explains it (Δχ²=32.9)
 
 ## Maintenance Checklist
 - Check ALL source files in PDF generator list when hunting ghosts
 - After PDF generation, ALWAYS verify with pdftotext grep
-- Never use ballistic/impact language for brane excitation — use Complexity=Volume
+- Never use ballistic/impact language — use Complexity=Volume
+- Always include φ₀ = π/2 in w(z) equation
+- Use micro-PBHs as anchors, not JWST LRDs
+- S₈ suppression is adjustable, not a fixed constant
 - Run `black` and `isort` before committing Python code
 - Watch for CI auto-overwriting PDF after push
-- Keep downloads.md in sync with available PDFs
 
 ## Contact
 - **Author**: provencal.romain@teleadmin.net
