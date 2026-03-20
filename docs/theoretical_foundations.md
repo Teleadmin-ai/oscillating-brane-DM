@@ -354,10 +354,12 @@ Throughout this section, we use the following conventions:
 | $V$ | Potentials | J/m² (surface) or J/m³ (volume) |
 | $\mathcal{E}_{\mu\nu}$ | Projected Weyl tensor | Energy density units |
 
-**Unit conversions**:
-- Energy density: $1$ J/m³ = $6.24 \times 10^{9}$ GeV⁴
-- Tension: $1$ J/m² = $6.24 \times 10^{12}$ GeV³
-- Natural units: $\hbar = c = 1$ where needed
+**Unit conversions** (natural units $\hbar = c = 1$):
+- Length: $1$ m = $5.07 \times 10^{15}$ GeV$^{-1}$
+- Energy: $1$ J = $6.24 \times 10^{9}$ GeV
+- Tension: $1$ J/m² = $2.43 \times 10^{-22}$ GeV³
+- Brane tension: $\tau_0 = 7.0 \times 10^{19}$ J/m² = $0.017$ GeV³
+- **Fundamental scale**: $\tau_0^{1/3} = 257$ MeV $\approx \Lambda_{QCD}$ (QCD confinement scale)
 
 ### 6.1 Theoretical Challenges
 
