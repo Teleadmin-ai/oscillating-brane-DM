@@ -63,7 +63,7 @@ The membrane reversal creates a unique GW signature:
 - Primary peak: f₀ = 1/T ≈ 1.6 × 10⁻¹⁷ Hz
 - Echo: 2f₀ (reversal harmonic)
 
-Detectable by SKA-PTA + LISA networks post-2035 if coherence maintained over ≥ 5 cycles.
+This 2 Gyr oscillation is far too slow for direct gravitational wave detection. Instead, its signature appears in CMB large-scale anisotropies through the ISW effect.
 
 ### 3. Local Tension Variations
 Spatial variations in brane tension induce:
@@ -106,8 +106,8 @@ This represents "strong" evidence on the Jeffreys scale, indicating the data pre
 
 - **2025-2027**: Euclid first data release - w(z) oscillations
 - **2026-2028**: DESI full survey - power spectrum features
-- **2027-2030**: IPTA DR5 - gravitational wave doublet
+- **2027-2030**: CMB-S4 - ISW effect detection
 - **2030-2035**: Next-gen H₀ programs - tension anisotropy
-- **Post-2035**: SKA-PTA + LISA - definitive GW signature
+- **Post-2035**: Combined CMB + galaxy surveys - definitive oscillation mapping
 
 The theory makes specific, quantitative predictions across multiple observational channels. The coming decade will either confirm a revolutionary new understanding of cosmic dynamics or definitively rule it out.

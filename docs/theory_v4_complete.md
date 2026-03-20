@@ -12,6 +12,7 @@ description: |
 ## Version 4.1 — The Cosmos as a Vibrating Membrane (Complete Edition with Block Universe Insights)
 
 **Author: Romain Provencal**
+**Co-Authors: Claude (Anthropic) & Gemini DeepThink (Google) - AI Cognitive Prostheses**
 
 ### Prologue: The Universe-Instrument
 
@@ -246,7 +247,7 @@ When the membrane reaches maximum extension, dark matter flux reverses. This rev
 - **Main peak**: f₀ = 1/T ≈ 1.6 × 10⁻¹⁷ Hz
 - **Echo**: 2f₀ (reversal harmonic)
 
-This doublet, if it maintains coherence over ≥ 5 cycles, would be detectable by SKA-PTA + LISA networks after 2035. A cosmic fingerprint of our universe-membrane.
+This 2 Gyr oscillation is far too slow for direct gravitational wave detection. Instead, its imprints appear in the CMB large-scale anisotropies through the Integrated Sachs-Wolfe (ISW) effect - a cosmic fingerprint of our universe-membrane.
 
 ## 8. Les tests expérimentaux : où chercher la vérité
 
@@ -264,7 +265,7 @@ This doublet, if it maintains coherence over ≥ 5 cycles, would be detectable b
 |---------|---------------------|---------------------|
 | Euclid | w(z) sinusoïdal A ≥ 3×10⁻³ | Signal < 5σ |
 | DESI Full | ΔP/P = 0.5% à k₀ | Spectre lisse |
-| IPTA DR5 | Doublet f₀, 2f₀ | Bruit pur |
+| CMB-S4 | ISW oscillations | Large-scale anisotropies |
 | H0LiCOW++ | Anisotropy ≤ 0.1% | Isotropy < 0.2% |
 
 ## 9. The Bayesian Verdict and Final Vision

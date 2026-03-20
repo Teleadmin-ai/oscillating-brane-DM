@@ -1,6 +1,7 @@
 # Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) v4.1
 
 **Author: Romain Provencal**
+**Co-Authors: Claude (Anthropic) & Gemini DeepThink (Google) - AI Cognitive Prostheses**
 
 🌐 **Website: [https://higgs-cosmology.com/](https://higgs-cosmology.com/)**
 
