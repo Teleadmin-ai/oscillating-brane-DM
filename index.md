@@ -94,23 +94,17 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 ## Download the Theory
 
 <div style="text-align: center; margin: 40px 0;">
-  <div style="display: inline-block; margin: 0 10px;">
-    <a href="/cosmic_yoyo_v5_holographic.pdf" download class="viral-download-button" style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, #ff0066, #00ffcc); color: white; text-decoration: none; border-radius: 30px; font-size: 18px; font-weight: bold; box-shadow: 0 0 25px rgba(255,0,102,0.6); animation: glow 2s infinite;">
-      ⚡ V5.0 Holographic (NEW!)
+  <div style="display: inline-block; margin: 0 15px;">
+    <a href="/cosmic_yoyo_v5_holographic.pdf" download style="display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,255,204,0.4);">
+      White Paper (4 pages)
     </a>
-    <p style="margin: 5px 0 0 0; font-size: 12px; color: #ff0066; font-weight: bold;">ER=EPR topology • Bulletproof</p>
+    <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">V5.0 with ER=EPR topology</p>
   </div>
-  <div style="display: inline-block; margin: 0 10px;">
-    <a href="/whitepaper_oscillating_brane.pdf" download class="viral-download-button" style="display: inline-block; padding: 12px 25px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,255,204,0.4);">
-      🚀 White Paper (4p)
+  <div style="display: inline-block; margin: 0 15px;">
+    <a href="/downloads/" class="download-main-button" style="display: inline-block; padding: 14px 28px; background: #4a90e2; color: white; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+      Full Theory (70 pages)
     </a>
-    <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">Original version</p>
-  </div>
-  <div style="display: inline-block; margin: 0 10px;">
-    <a href="/downloads/" class="download-main-button" style="display: inline-block; padding: 12px 25px; background: #4a90e2; color: white; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
-      📄 Full Theory (70p)
-    </a>
-    <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">Complete docs</p>
+    <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">Complete documentation</p>
   </div>
 </div>
 
@@ -120,12 +114,6 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3) !important;
   transition: all 0.3s ease;
-}
-
-@keyframes glow {
-  0% { box-shadow: 0 0 5px rgba(255,0,102,0.5), 0 0 20px rgba(255,0,102,0.3); }
-  50% { box-shadow: 0 0 20px rgba(255,0,102,0.8), 0 0 40px rgba(0,255,204,0.5); }
-  100% { box-shadow: 0 0 5px rgba(255,0,102,0.5), 0 0 20px rgba(255,0,102,0.3); }
 }
 </style>
 

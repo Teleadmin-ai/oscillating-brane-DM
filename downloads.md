@@ -6,38 +6,21 @@ permalink: /downloads/
 
 # Download Resources
 
-## 🔥 NEW: V5.0 Holographic White Paper (4 pages) - Post-DeepSearch Edition
+## White Paper V5.0 (4 pages)
 
-**CRITICAL UPDATE**: Following brutal "peer review" by DeepSearch AI, we've upgraded to V5.0 with quantum gravity-level rigor!
-
-<div style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(255,0,0,0.2), rgba(0,255,204,0.2)); border-radius: 10px; border: 3px solid #ff0066; box-shadow: 0 0 30px rgba(255,0,102,0.5);">
-  <h3>⚡ V5.0 HOLOGRAPHIC - The Invincible Version</h3>
-  <p><strong>Major theoretical upgrades that make the theory bulletproof:</strong></p>
-  <ul style="margin: 15px 0; font-weight: bold;">
-    <li>🌀 ER=EPR holographic topology replaces "Point Unique" (now speaks Stanford/Princeton language)</li>
-    <li>📊 Period calibrated directly from DESI BAO + Planck ISW (no more Ringermacher)</li>
-    <li>🛡️ One-loop quantum corrections prevent Casimir instabilities</li>
-    <li>✅ All three crises resolved with 4-6σ significance</li>
-  </ul>
-  <a href="/cosmic_yoyo_v5_holographic.pdf" download class="viral-button" style="display: inline-block; padding: 15px 35px; background: linear-gradient(135deg, #ff0066, #00ffcc); color: white; text-decoration: none; border-radius: 30px; margin-top: 10px; font-weight: bold; text-transform: uppercase; font-size: 18px; animation: glow 2s infinite;">
-    ⚡ Download V5.0 Holographic Paper (Reddit/arXiv Ready!)
-  </a>
-</div>
-
-## 🚀 Original Viral White Paper (4 pages)
-
-Perfect for sharing on social media, Reddit, Twitter/X!
+Condensed version with ER=EPR holographic topology and the three key observational confirmations. Ideal for sharing.
 
 <div style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(255,51,102,0.1), rgba(0,255,204,0.1)); border-radius: 10px; border: 2px solid #00ffcc;">
-  <h4>🎯 Executive Summary - Three Cosmological Crises Resolved</h4>
-  <p><strong>4-page condensed version</strong> with the three "money plots" showing how a single mechanism explains:</p>
+  <h4>The Holographic Cosmic Yoyo</h4>
+  <p>4-page summary including:</p>
   <ul style="margin: 15px 0;">
-    <li>✅ Dark energy evolution (DESI 2024)</li>
-    <li>✅ S₈ tension resolution</li>
-    <li>✅ Planck CMB anomaly</li>
+    <li>ER=EPR holographic topology (Maldacena-Susskind)</li>
+    <li>Period calibrated from DESI BAO + Planck ISW</li>
+    <li>One-loop quantum stability corrections</li>
+    <li>Three crises resolved: dark energy, S₈, CMB anomaly</li>
   </ul>
-  <a href="/whitepaper_oscillating_brane.pdf" download class="viral-button" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; margin-top: 10px; font-weight: bold; text-transform: uppercase;">
-    🚀 Download Original White Paper
+  <a href="/cosmic_yoyo_v5_holographic.pdf" download class="viral-button" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; margin-top: 10px; font-weight: bold; text-transform: uppercase;">
+    Download White Paper (PDF, 4 pages)
   </a>
 </div>
 
@@ -76,7 +59,7 @@ All computational tools are available in the [GitHub repository](https://github.
   
   <div style="padding: 20px; background: rgba(74, 144, 226, 0.1); border: 1px solid #4a90e2; border-radius: 8px;">
     <h4>📚 Theory Document</h4>
-    <p>Complete v4.1 framework with Block Universe insights</p>
+    <p>Complete v5.0 framework with ER=EPR holographic topology</p>
     <a href="/theory-complete/" style="color: #4a90e2;">View Online →</a>
   </div>
   
@@ -136,9 +119,5 @@ This work is released under the MIT License. You are free to use, modify, and di
   100% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0); }
 }
 
-@keyframes glow {
-  0% { box-shadow: 0 0 5px rgba(255,0,102,0.5), 0 0 20px rgba(255,0,102,0.3); }
-  50% { box-shadow: 0 0 20px rgba(255,0,102,0.8), 0 0 40px rgba(0,255,204,0.5); }
-  100% { box-shadow: 0 0 5px rgba(255,0,102,0.5), 0 0 20px rgba(255,0,102,0.3); }
-}
+
 </style>
