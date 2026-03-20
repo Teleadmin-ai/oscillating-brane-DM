@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  20 MAR 2026 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  20 MAR 2026 12:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -285,46 +285,127 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen163
 \Gm@dimlist=\toks22
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
+\c@tracingmulticols=\count285
+\mult@box=\box53
+\multicol@leftmargin=\dimen164
+\c@unbalance=\count286
+\c@collectmore=\count287
+\doublecol@number=\count288
+\multicoltolerance=\count289
+\multicolpretolerance=\count290
+\full@width=\dimen165
+\page@free=\dimen166
+\premulticols=\dimen167
+\postmulticols=\dimen168
+\multicolsep=\skip54
+\multicolbaselineskip=\skip55
+\partial@page=\box54
+\last@line=\box55
+\maxbalancingoverflow=\dimen169
+\mult@rightbox=\box56
+\mult@grightbox=\box57
+\mult@firstbox=\box58
+\mult@gfirstbox=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\c@minrows=\count291
+\c@columnbadness=\count292
+\c@finalcolumnbadness=\count293
+\last@try=\dimen170
+\multicolovershoot=\dimen171
+\multicolundershoot=\dimen172
+\mult@nat@firstbox=\box96
+\colbreak@box=\box97
+\mc@col@check@num=\count294
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box98
+\beforetitleunit=\skip56
+\aftertitleunit=\skip57
+\ttl@plus=\dimen173
+\ttl@minus=\dimen174
+\ttl@toksa=\toks23
+\titlewidth=\dimen175
+\titlewidthlast=\dimen176
+\titlewidthfirst=\dimen177
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count285
-\l__pdf_internal_box=\box53
+\l__color_backend_stack_int=\count295
+\l__pdf_internal_box=\box99
 )
 (./cosmic_yoyo_prl.aux)
 \openout1 = `cosmic_yoyo_prl.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count286
-\scratchdimen=\dimen164
-\scratchbox=\box54
-\nofMPsegments=\count287
-\nofMParguments=\count288
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count289
-\MPscratchDim=\dimen165
-\MPnumerator=\count290
-\makeMPintoPDFobject=\count291
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count296
+\scratchdimen=\dimen178
+\scratchbox=\box100
+\nofMPsegments=\count297
+\nofMParguments=\count298
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count299
+\MPscratchDim=\dimen179
+\MPnumerator=\count300
+\makeMPintoPDFobject=\count301
+\everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -334,7 +415,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 9.
+Package hyperref Info: Link coloring OFF on input line 17.
 
 (./cosmic_yoyo_prl.out) (./cosmic_yoyo_prl.out)
 \@outlinefile=\write3
@@ -349,143 +430,112 @@ Package hyperref Info: Link coloring OFF on input line 9.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(42.67912pt, 512.14963pt, 42.67912pt)
-* v-part:(T,H,B)=(56.9055pt, 745.46222pt, 42.67912pt)
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=512.14963pt
-* \textheight=745.46222pt
-* \oddsidemargin=-29.59087pt
-* \evensidemargin=-29.59087pt
-* \topmargin=-52.36449pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=4.0pt
+* \marginparwidth=59.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumntrue
+* \@twocolumnfalse
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-]
-Overfull \hbox (5.4901pt too wide) detected at line 38
-[][][]\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 d[]x[] [] \OT1/c
-mr/m/n/10 + [] \OML/cmm/m/it/10 d[]x[] []
+)
+Overfull \hbox (32.63777pt too wide) detected at line 56
+[][][]\OML/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 =  []  \OML/cmm/m/it/10.95 d[]x[
+]  [] \OT1/cmr/m/n/10.95 +  []  \OML/cmm/m/it/10.95 d[]x[]  []
  []
 
+[1
 
-Underfull \hbox (badness 2809) in paragraph at lines 44--46
-\OT1/cmr/m/n/10 pre-vents run-away bra-non pro-duc-tion via dy-nam-i-cal
- []
-
-<../plots/desi_w_evolution.png, id=67, 859.5312pt x 500.1084pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<../plots/desi_w_evolution.png, id=57, 859.5312pt x 500.1084pt>
 File: ../plots/desi_w_evolution.png Graphic file (type png)
 <use ../plots/desi_w_evolution.png>
-Package pdftex.def Info: ../plots/desi_w_evolution.png  used on input line 73.
-(pdftex.def)             Requested size: 251.07481pt x 146.0808pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+Package pdftex.def Info: ../plots/desi_w_evolution.png  used on input line 91.
+(pdftex.def)             Requested size: 386.96027pt x 225.15353pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 78.
+(hyperref)                removing `math shift' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 78.
+(hyperref)                removing `subscript' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 78.
+(hyperref)                removing `math shift' on input line 98.
 
-[2
-
-]
-<../plots/s8_tension_resolution.png, id=93, 1003.1076pt x 430.7292pt>
+<../plots/s8_tension_resolution.png, id=59, 1003.1076pt x 430.7292pt>
 File: ../plots/s8_tension_resolution.png Graphic file (type png)
 <use ../plots/s8_tension_resolution.png>
 Package pdftex.def Info: ../plots/s8_tension_resolution.png  used on input line
- 97.
-(pdftex.def)             Requested size: 251.07481pt x 107.8069pt.
-
-Underfull \hbox (badness 4595) in paragraph at lines 102--102
-[]\OT1/cmr/bx/n/12 C. The ISW Res-o-nance (Planck
- []
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 110.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 110.
-
-Missing character: There is no ° in font cmr10!
-<../plots/isw_cmb_signature.png, id=94, 843.6318pt x 500.1084pt>
+ 112.
+(pdftex.def)             Requested size: 386.96027pt x 166.15659pt.
+[2 <../plots/desi_w_evolution.png> <../plots/s8_tension_resolution.png>]
+<../plots/isw_cmb_signature.png, id=70, 843.6318pt x 500.1084pt>
 File: ../plots/isw_cmb_signature.png Graphic file (type png)
 <use ../plots/isw_cmb_signature.png>
-Package pdftex.def Info: ../plots/isw_cmb_signature.png  used on input line 114
+Package pdftex.def Info: ../plots/isw_cmb_signature.png  used on input line 133
 .
-(pdftex.def)             Requested size: 251.07481pt x 148.8356pt.
+(pdftex.def)             Requested size: 386.96027pt x 229.38875pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3 <../plots/desi_w_evolution.png> <../plots/s8_tension_resolution.png> <../plo
-ts/isw_cmb_signature.png>] [4
-
-] (./cosmic_yoyo_prl.aux)
+[3 <../plots/isw_cmb_signature.png>] [4] (./cosmic_yoyo_prl.aux)
 Package rerunfilecheck Info: File `cosmic_yoyo_prl.out' has not changed.
-(rerunfilecheck)             Checksum: D54A4714A1861DCF70DD0B54A042B138;2050.
+(rerunfilecheck)             Checksum: 0959BFF5FC6466AE02365E5A8F8D2FBC;1319.
  ) 
 Here is how much of TeX's memory you used:
- 9926 strings out of 478051
- 153724 string characters out of 5840944
- 1869330 words of memory out of 5000000
- 29900 multiletter control sequences out of 15000+600000
- 520952 words of font info for 66 fonts, out of 8000000 for 9000
+ 10343 strings out of 478051
+ 159868 string characters out of 5840944
+ 1870330 words of memory out of 5000000
+ 30319 multiletter control sequences out of 15000+600000
+ 520782 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,9n,76p,1100b,452s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </root/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cosmic_yoyo_prl.pdf (4 pages, 700519 bytes).
+ 75i,6n,76p,1033b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on cosmic_yoyo_prl.pdf (4 pages, 666820 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 104 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 80 words of extra memory for PDF output out of 10000 (max. 10000000)
 
