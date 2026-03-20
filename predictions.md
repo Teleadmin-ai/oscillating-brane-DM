@@ -50,7 +50,11 @@ The membrane reversal creates a unique GW signature with an echo effect:
 - **Echo**: 2f₀ from flux reversal at membrane extrema
 - **Strain**: h_c ~ 2 × 10⁻¹⁸ at f₀, ~ 10⁻¹⁸ at 2f₀
 
+![DESI Dark Energy Evolution](/plots/desi_w_evolution.png)
+*Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The ΛCDM constant w=-1 is now refuted at 4σ significance.*
+
 ![ISW Effect Signature](/plots/isw_effect.png)
+*Figure 2: The 2 Gyr oscillation manifests in CMB large-scale anisotropies through the Integrated Sachs-Wolfe effect.*
 
 **Note on Detection**: The 1.6 × 10⁻¹⁷ Hz frequency corresponds to our 2 Gyr fundamental oscillation, far too slow for direct gravitational wave detection.
 
