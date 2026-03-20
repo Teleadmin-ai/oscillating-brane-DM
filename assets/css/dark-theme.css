@@ -375,6 +375,20 @@ li {
   }
 }
 
+/* Images in text content */
+.text-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* Constrain figure images specifically */
+.text-content div[style*="max-width"] img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Math rendering */
 .MathJax {
   color: #e0e0e0 !important;

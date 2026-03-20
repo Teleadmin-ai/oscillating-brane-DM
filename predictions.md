@@ -50,14 +50,20 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 - **Power suppression**: 16% at resonance
 - **Statistical significance**: χ² improvement of 32.9 (6σ over ΛCDM)
 
-![DESI Dark Energy Evolution](/plots/desi_w_evolution.png)
-*Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The ΛCDM constant w=-1 is now refuted at 4σ significance.*
+<div style="max-width: 100%; margin: 20px 0;">
+<img src="/plots/desi_w_evolution.png" alt="DESI Dark Energy Evolution" style="width: 100%; height: auto;">
+<p><em>Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The ΛCDM constant w=-1 is now refuted at 4σ significance.</em></p>
+</div>
 
-![ISW CMB Signature](/plots/isw_cmb_signature.png)
-*Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-ℓ power deficit. The χ² improvement of 32.9 (6σ significance) proves the oscillating brane model.*
+<div style="max-width: 100%; margin: 20px 0;">
+<img src="/plots/isw_cmb_signature.png" alt="ISW CMB Signature" style="width: 100%; height: auto;">
+<p><em>Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-ℓ power deficit. The χ² improvement of 32.9 (6σ significance) proves the oscillating brane model.</em></p>
+</div>
 
-![ISW Effect Theory](/plots/isw_effect.png)
-*Figure 3: Theoretical prediction of ISW effect from membrane oscillations.*
+<div style="max-width: 100%; margin: 20px 0;">
+<img src="/plots/isw_effect.png" alt="ISW Effect Theory" style="width: 100%; height: auto;">
+<p><em>Figure 3: Theoretical prediction of ISW effect from membrane oscillations.</em></p>
+</div>
 
 **Note on Detection**: The 1.6 × 10⁻¹⁷ Hz frequency corresponds to our 2 Gyr fundamental oscillation, far too slow for direct gravitational wave detection.
 
@@ -70,8 +76,10 @@ Instead, the oscillation manifests through:
 
 ### 3. Structure Growth Suppression
 
-![S8 Tension Resolution](/plots/s8_tension_resolution.png)
-*Figure 4: The oscillating brane naturally suppresses structure growth by 5.2%, perfectly resolving the S₈ tension between CMB and weak lensing measurements.*
+<div style="max-width: 100%; margin: 20px 0;">
+<img src="/plots/s8_tension_resolution.png" alt="S8 Tension Resolution" style="width: 100%; height: auto;">
+<p><em>Figure 4: The oscillating brane naturally suppresses structure growth by 5.2%, perfectly resolving the S₈ tension between CMB and weak lensing measurements.</em></p>
+</div>
 
 Oscillating w(z) modulates structure formation:
 
@@ -79,8 +87,10 @@ $$\frac{D_+^{osc}}{D_+^{ΛCDM}}(z=0) = 0.948$$
 
 This 5.2% suppression naturally explains the S₈ tension between CMB and lensing measurements.
 
-![Growth Factor Suppression](/plots/growth_factor_comparison.png)
-*Figure: Structure growth suppression in oscillating brane model vs ΛCDM*
+<div style="max-width: 100%; margin: 20px 0;">
+<img src="/plots/growth_factor_comparison.png" alt="Growth Factor Suppression" style="width: 100%; height: auto;">
+<p><em>Figure 5: Structure growth suppression in oscillating brane model vs ΛCDM</em></p>
+</div>
 
 ### 4. Hubble Anisotropy
 
