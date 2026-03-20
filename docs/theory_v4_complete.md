@@ -55,9 +55,9 @@ This extraordinary coincidence reveals that the brane tension is set by the QCD 
 
 ### 1.1 Primordial Black Holes: The Cosmic Pushpins
 
-Beyond stellar and supermassive black holes, a hidden population could play a crucial role: primordial black holes (PBH). A PBH of mass 10⁻¹¹ M_☉ has a Schwarzschild radius r_s ≈ 30 nm, creating a funnel comparable in size to our extra dimension L.
+Beyond stellar and supermassive black holes, the true topological anchors of our brane are **primordial micro-PBHs** of asteroid mass (~10⁻¹² M_☉). Their Schwarzschild radius r_s ≈ 30 nm is structurally comparable to the extra dimension size L = 0.2 μm, creating optimal porosity between brane and bulk. These micro-PBHs constitute ~10% of dark matter and form the fundamental connective tissue of the ER=EPR holographic network.
 
-If these PBHs represent a fraction Ω_PBH ~ 10⁻⁴ of cosmic density, they form a dense network of small-scale entry points. Like thousands of needles piercing fabric, they increase the oscillating fraction f_osc without changing the macroscopic dark matter density. Consequence: a possible enhancement of the dark energy oscillation amplitude A_w, offering an additional signature to search for.
+Note: JWST's "Little Red Dots" at z > 6 were initially proposed as supermassive cosmic pushpins, but recent work (Chisholm, Gieles et al. 2026, arXiv:2602.15935) suggests many may be young stellar clusters rather than black holes. Our theory does not depend on supermassive BHs — the microscopic PBH anchors are the primary mechanism, completely undetectable by JWST but structurally essential.
 
 ## 2. From Naive Spring to Cosmic Membrane
 
@@ -127,13 +127,13 @@ Where:
 
 **The Adiabatic Shield**: The oscillation frequency (ν ~ 1.6 × 10⁻¹⁷ Hz) is 10³¹ times slower than the lightest Kaluza-Klein mode (ν_KK ~ 10¹⁴ Hz for m_KK ~ 1 eV). By the adiabatic theorem of quantum mechanics, particle creation is suppressed by a Schwinger factor Γ ∝ e^(-10³¹) ≈ 0. The cosmic yoyo oscillates without quantum friction.
 
-### Effective Gravity and S₈ Suppression
+### Effective Gravity (G_eff) and S₈ Suppression
 
-The primary mechanism for structure growth suppression is not direct w(z) friction but effective gravity variation. In the warped AdS bulk:
+The primary mechanism for structure growth suppression is not direct w(z) friction but **effective gravitational constant variation**. In the warped AdS bulk, the effective Newton constant G_eff depends on the brane position z in the extra dimension:
 
-G_eff = G_Newton × e^(-2k|z|)
+$$G_{\text{eff}} = G_N \times e^{-2k|z|}$$
 
-Since the brane oscillates, ⟨z²⟩ > 0, therefore ⟨G_eff⟩ < G_Newton. This gravitational "leak" into the 5th dimension slows halo collapse by 5.2%, resolving the S₈ tension between CMB (0.830) and weak lensing (0.787).
+Since the brane oscillates, the mean-square displacement is non-zero (average of z-squared > 0), so the time-averaged effective gravity is strictly less than Newton's constant: average G_eff < G_Newton. This gravitational "leak" into the 5th dimension slows halo collapse. Inserting this dynamical G_eff(t) into the linear perturbation equation for matter density contrast delta_m yields a cumulative suppression of 5.2%, resolving the S₈ tension between CMB (0.830) and weak lensing (0.787). If ongoing surveys reduce the tension, the model accommodates this via the adjustable oscillation amplitude.
 
 However, secondary local resonances are possible around superclusters, where mass concentration creates "hard points." These micro-oscillations could generate tiny gravitational anisotropies (δg/g ~ 10⁻⁸), a subtle but potentially detectable signature.
 
