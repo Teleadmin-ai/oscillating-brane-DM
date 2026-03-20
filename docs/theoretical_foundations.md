@@ -300,7 +300,7 @@ with:
 
 The model would be falsified by:
 - Direct detection of DM particles with $\sigma > 10^{-48}$ cm²
-- Absence of GW doublet with sensitivity $< 10^{-19}$
+- Absence of ISW resonance signature in upcoming CMB-S4 surveys
 - Discovery of DM-dominated structures without baryons
 - Variations in fundamental constants beyond $|\dot{G}/G| > 10^{-13}$ yr⁻¹
 
@@ -1031,8 +1031,9 @@ While significant theoretical and observational work remains, the framework show
 - Lukas, A., Ovrut, B.A. & Waldram, D. (1999) - "The cosmology of M-theory and Type II superstrings", Nucl. Phys. B 540, 230
 
 ### Observational Signatures
-- Ringermacher, H.I. & Mead, L.R. (2014) - "Observation of Discrete Oscillations in a Model-Independent Plot of Cosmological Scale Factor versus Lookback Time", Astron. J. 149, 137 [arXiv:1502.06028]
-- NANOGrav Collaboration (2023) - "Evidence for nHz Gravitational Waves", Astrophys. J. Lett. 951, L8
+- DESI Collaboration (2024) - "Evidence for evolving dark energy from baryon acoustic oscillations", arXiv:2404.03002
+- DESI Collaboration (2026) - "DESI DR2: Measurements of BAO and Cosmological Constraints", arXiv:2503.14738
+- Brownsberger, S., Stubbs, C.W. & Scolnic, D.M. (2020) - "Windowing artefacts likely account for recent claimed detection of oscillating cosmic scale factor", MNRAS 498, 5512
 - Nam, C.H. et al. (2024) - "Brane-vector dark matter", Phys. Rev. D 109, 095003
 - Verlinde, E. (2016) - "Emergent Gravity and the Dark Universe", SciPost Phys. 2, 016 [arXiv:1611.02269]
 

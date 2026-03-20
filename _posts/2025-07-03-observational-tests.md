@@ -79,7 +79,7 @@ Dark matter flux through the bulk induces energy "leakage":
 
 $$\frac{\dot{ρ}}{ρ} \sim L^{-1}H_0 \sim 10^{-11} \text{ yr}^{-1}$$
 
-Future ultra-sensitive detectors (MADMAX, NANOGrav) could track this slow dilution—like measuring ocean evaporation drop by drop.
+Future ultra-sensitive detectors (MADMAX, sub-millimeter gravity experiments) could track this slow dilution—like measuring ocean evaporation drop by drop.
 
 ## The Bayesian Verdict
 

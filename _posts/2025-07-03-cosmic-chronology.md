@@ -26,7 +26,7 @@ Tension relaxes logarithmically toward its current value. Like a violin string b
 
 ## The Awakening of Oscillations
 
-Only when τ becomes "loose enough" does the fundamental mode enter the T ~ 2 Gyr band. Oscillation starts about 1 Gyr after the Big Bang—exactly when Ringermacher & Mead observe the first oscillation in scale factor a(t)!
+Only when τ becomes "loose enough" does the fundamental mode enter the T ~ 2 Gyr band. Oscillation starts about 1 Gyr after the Big Bang — a timing now confirmed independently by DESI's baryon acoustic oscillation measurements and Planck's ISW resonance signature.
 
 This temporal coincidence is no accident: it's the moment when the universe, finally tuned, begins playing its fundamental melody.
 

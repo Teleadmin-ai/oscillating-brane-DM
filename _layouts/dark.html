@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{ "/assets/css/dark-theme.css?v=" | append: site.github.build_revision | relative_url }}">
     
     <!-- MathJax for equations -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <!-- SEO and OpenGraph -->
@@ -19,7 +18,7 @@
     <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
-    <meta property="og:image" content="{{ "/plots/pta_doublet.png" | absolute_url }}" />
+    <meta property="og:image" content="{{ "/plots/cosmic_yoyo_simple.gif" | absolute_url }}" />
     <meta name="twitter:card" content="summary_large_image" />
     
     {% feed_meta %}

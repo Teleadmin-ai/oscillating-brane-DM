@@ -199,7 +199,7 @@ Dark matter flux through the bulk induces energy "leakage":
 
 ρ̇/ρ ~ L⁻¹H₀ ~ 10⁻¹¹ yr⁻¹
 
-Future ultra-sensitive detectors (MADMAX, NANOGrav) could track this slow dilution—like measuring ocean evaporation drop by drop.
+Future ultra-sensitive detectors (MADMAX, sub-millimeter gravity experiments) could track this slow dilution—like measuring ocean evaporation drop by drop.
 
 
 ## 7. Modulated Growth and Gravitational Echoes
