@@ -304,10 +304,10 @@ This document contains the complete theoretical framework and documentation for 
 
 **Key Parameters:**
 
-- Brane tension: $\\tau_0 = 7.0 \\times 10^{19}$ J/m$^2$
-- Oscillation period: T = $2.0 \\pm 0.3$ Gyr
-- Extra dimension size: L = 0.2 $\\mu$m
-- MOND acceleration: $a_0 = 1.1 \\times 10^{-10}$ m/s$^2$
+- Brane tension: 7.0e19 J/m²
+- Oscillation period: T = 2.0 Gyr (±0.3)
+- Extra dimension size: L = 0.2 microns
+- MOND acceleration: a0 = 1.1e-10 m/s²
 
 The theory proposes that dark matter effects emerge from membrane oscillations excited by gravitational flows, naturally producing dark energy and MOND-like phenomena.
 
