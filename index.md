@@ -6,6 +6,12 @@ title: Home
 # Welcome to Oscillating Brane Cosmology
 ## *The Cosmic Yoyo Theory*
 
+<div style="text-align: center; margin: 30px 0;">
+  <h2 style="color: #00ffcc; margin-bottom: 20px;">⚡ Watch the Universe Breathe ⚡</h2>
+  <img src="/plots/cosmic_yoyo_simple.gif" alt="Cosmic Yoyo Animation" style="max-width: 100%; border: 2px solid #00ffcc; border-radius: 10px; box-shadow: 0 0 20px rgba(0,255,204,0.5);">
+  <p style="color: #888; margin-top: 10px; font-style: italic;">13.8 billion years of cosmic evolution: The membrane oscillates, dark energy pulsates, structure growth modulates</p>
+</div>
+
 <div class="section-marker" data-section="intro"></div>
 
 ## The Universe as a Vibrating Cosmic Membrane
