@@ -65,7 +65,7 @@ Where:
 
 ## The Promise of Revelation
 
-Version 4.0 presents a complete and coherent theory where every number finds its natural place. In the coming years, the universe will answer us. Giant telescopes and pulsar networks will listen to the deep murmur of the cosmos, searching for the two-billion-year melody. They will find either confirmation of a revolutionary vision or the silence that sends us back to our equations.
+Version 4.1 presents a complete and coherent theory where every number finds its natural place, now enhanced with the Block Universe topology where all black holes converge to a unique point. Recent observations from DESI and JWST are already confirming our predictions. Giant telescopes will continue to listen to the deep murmur of the cosmos, searching for the two-billion-year melody through ISW effects in the CMB. They will find either confirmation of a revolutionary vision or the silence that sends us back to our equations.
 
 But whatever the outcome, we will have learned that the audacity to ask "What if the universe were a vibrating membrane?" has led us further in understanding reality than prudence would have ever dared.
 

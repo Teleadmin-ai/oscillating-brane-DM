@@ -1,6 +1,6 @@
 ---
 layout: dark
-title: "Complete Theory v4.0 – Oscillating-Brane Cosmology"
+title: "Complete Theory v4.1 – Oscillating-Brane Cosmology"
 permalink: /theory-complete/
 description: |
   Full derivation of the membrane-vibration model (τ₀ = 7×10¹⁹ J/m², T ≈ 2 Gyr),
@@ -9,7 +9,7 @@ description: |
 
 # Dark Matter Oscillations and Dynamic Genesis of Dark Energy via Convergent Gravitational Funnels
 
-## Version 4.0 — The Cosmos as a Vibrating Membrane (Complete Edition)
+## Version 4.1 — The Cosmos as a Vibrating Membrane (Complete Edition with Block Universe Insights)
 
 **Author: Romain Provencal**
 
@@ -289,7 +289,7 @@ The Bayes factor tells us: listening to the data (CMB + BAO + supernovae + lensi
 
 | Technical Term | Intuitive Vision | Interpretation for Vibrating Brane Theory |
 |----------------|------------------|-------------------------------------------|
-| ln K (log Bayes factor) | "Preference score" that data assigns to one model over another | We compare Oscillating-Brane v4.0 to ΛCDM |
+| ln K (log Bayes factor) | "Preference score" that data assigns to one model over another | We compare Oscillating-Brane v4.1 to ΛCDM |
 | Δln K = 3.3 ± 0.24 | The data make the "vibrating brane" scenario ≈27 times more probable than ΛCDM (since e³·³ ≈ 27) | The model wins because it simultaneously explains:<br>• S₈ suppression (-5%)<br>• Observed oscillation in a(t) (~2 Gyr)<br>• MOND coincidence (a₀ ≈ cH₀/2π)<br>without damaging CMB or BAO fits |
 | Jeffreys Scale | <1: negligible<br>1-2.5: modest<br>2.5-5: strong<br>>5: decisive | 3.3 falls in the "strong" zone: no longer statistical anecdote, but not yet absolute certainty |
 
@@ -309,7 +309,7 @@ Our final vision: the cosmos is not an inert theater but a living organism:
 
 ## 10. Epilogue: The Promise of Revelation
 
-Version 4.0 presents a complete and coherent theory where every number finds its natural place. The following technical supplements enrich the framework:
+Version 4.1 presents a complete and coherent theory where every number finds its natural place, now enhanced with the Block Universe topology and observational confirmations. The following technical supplements enrich the framework:
 
 ### Enriched Technical Files
 

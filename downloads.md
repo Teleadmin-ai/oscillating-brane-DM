@@ -41,7 +41,7 @@ All computational tools are available in the [GitHub repository](https://github.
   
   <div style="padding: 20px; background: rgba(74, 144, 226, 0.1); border: 1px solid #4a90e2; border-radius: 8px;">
     <h4>📚 Theory Document</h4>
-    <p>Complete v4.0 framework</p>
+    <p>Complete v4.1 framework with Block Universe insights</p>
     <a href="/theory-complete/" style="color: #4a90e2;">View Online →</a>
   </div>
   

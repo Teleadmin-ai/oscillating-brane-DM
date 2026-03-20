@@ -1,4 +1,4 @@
-# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) v4.0
+# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) v4.1
 
 **Author: Romain Provencal**
 

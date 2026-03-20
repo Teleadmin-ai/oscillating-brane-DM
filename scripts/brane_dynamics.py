@@ -243,7 +243,7 @@ def main():
     z_test = np.array([0, 0.5, 1.0, 1.5, 2.0])
     w_test = brane.equation_of_state(z_test)
 
-    print("Oscillating Brane Dark Matter Theory v4.0")
+    print("Oscillating Brane Dark Matter Theory v4.1")
     print("=========================================")
     print(f"Brane tension: τ₀ = {brane.tau_0:.2e} J/m²")
     print(f"Oscillation period: T = {brane.T} Gyr")
