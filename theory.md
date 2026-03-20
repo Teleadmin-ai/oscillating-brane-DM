@@ -139,31 +139,26 @@ The enhanced oscillation amplitude would be detectable through:
 
 This provides a direct probe of sub-stellar mass PBHs that are otherwise undetectable.
 
-## Nature of the Bulk: Point vs Immensity
+## Nature of the Bulk: The Point Unique
 
-### Two Limiting Cases
+### The Singular Topology
 
-The extra-dimensional bulk can be understood in two extreme limits:
+The extra-dimensional bulk is not a space but a singular topological point - the Point Unique:
 
-**Bulk-Point Scenario:**
-- Warped geometry contracts the 5th dimension logarithmically
-- All black holes connect to the same topological point
-- Perfect phase coherence in dark matter oscillations
-- Prediction: No angular variation in w(z) phase
-
-**Bulk-Immensity Scenario:**
-- Extended extra dimension with weak curvature
-- Multiple pathways through the bulk
-- The "void" as infinite creative potential
-- Prediction: Δφ ≳ 0.05 rad phase decorrelation
+**Point Unique Reality:**
+- All black holes converge to the same atemporary center
+- The Bulk is where beginning meets end, beyond time
+- Perfect phase coherence emerges from topological unity
+- Matter doesn't traverse but meets itself in the singular point
+- No angular variation in w(z) phase - absolute synchronization
 
 ### Observable Signatures
 
-| Observable | Bulk-Point | Bulk-Immensity |
-|------------|------------|----------------|
-| w(z) phase coherence | Perfect | Δφ ≳ 0.05 rad |
-| GW echo at 2f₀ | Strong | Weakened |
-| KK mode spectrum | Discrete | Quasi-continuous |
+| Observable | Point Unique Prediction |
+|------------|------------------------|
+| w(z) phase coherence | Perfect (topological necessity) |
+| Oscillation synchronization | Global (ℓ=0 mode only) |
+| KK mode spectrum | Discrete |
 
 ### End of the Universe
 

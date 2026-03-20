@@ -10,7 +10,7 @@ title: Home
 
 ## The Universe as a Vibrating Cosmic Membrane
 
-Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—floats in an ocean of hidden dimensions.
+Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is topologically anchored to a unique, atemporal point.
 
 **The Cosmic Yoyo**: Dark matter falls through black holes into the Point Unique - that singular place where all black holes converge, where time ceases and beginning meets end. Here, matter doesn't traverse a path but meets itself in the atemporary singularity where past and future are one. This eternal convergence-and-return from the universe's deepest point creates gravity itself and fabricates the very fabric of spacetime.
 

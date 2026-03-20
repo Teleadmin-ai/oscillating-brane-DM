@@ -13,8 +13,8 @@ But how, concretely, does dark matter excite this gigantic membrane? Each dark m
 Each dark matter particle crossing a gravitational funnel follows three precise steps:
 
 1. **Departure**: It temporarily leaves the brane, carrying its momentum
-2. **Journey**: It travels a short geodesic in the bulk
-3. **Return**: It re-impacts the brane near another funnel
+2. **Topological Return**: It exits 4D time to reach the absolute geometric center - the Point Unique
+3. **Return**: It re-emerges from the atemporary center where all paths converge
 
 This return deposits a momentum "hit" δp ~ m_MN × v_⊥ radially opposite to the outgoing flux. The surface density of these impacts, summed over all black holes, creates a periodic pressure:
 

@@ -16,7 +16,7 @@ description: |
 
 ### Prologue: The Universe-Instrument
 
-Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—floats in an ocean of hidden dimensions. Black holes are not destructive chasms but tension pegs, anchor points where the membrane folds and plunges toward elsewhere. And dark matter? It is the invisible bow that makes this giant harp vibrate, creating a two-billion-year melody whose every note shapes space, time, and gravity itself.
+Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is topologically anchored to a unique, atemporal point. Black holes are not destructive chasms but tension pegs, anchor points where the membrane folds into the Point Unique where all paths converge. And dark matter? It doesn't traverse dimensions but meets itself in the atemporary center where beginning and end are one, creating a two-billion-year pulsation where each beat shapes space, time, and gravity itself.
 
 ### Executive Summary
 

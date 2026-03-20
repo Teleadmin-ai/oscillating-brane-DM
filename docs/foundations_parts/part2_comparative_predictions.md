@@ -59,10 +59,10 @@ description: |
 | S₈ suppression | -5.2% | ±0.5% | Weak lensing | Current |
 | w(z) amplitude A_w | 0.003 | ±0.001 | BAO + SNe | 2025+ |
 | H₀ anisotropy | 0.01% | ±0.005% | Precision cosmology | 2030+ |
-| **Gravitational Waves** |
-| Fundamental f₀ | 1.6 × 10⁻¹⁷ Hz | ±10% | PTA arrays | 2035+ |
-| Strain h_c | 2 × 10⁻¹⁸ | Factor of 3 | SKA-PTA | 2035+ |
-| Spectral index n_t | 2/3 | ±0.1 | NANOGrav+ | 2025+ |
+| **CMB ISW Effect** |
+| Oscillation period | 2.0 Gyr | ±0.3 Gyr | CMB large-scale | 2027+ |
+| ISW amplitude | δT/T ~ 10⁻⁶ | Factor of 2 | CMB-S4 | 2030+ |
+| Angular scale | ℓ < 10 | Full sky | Planck + CMB-S4 | Current+ |
 | **Galactic Scale** |
 | MOND a₀ | 1.1 × 10⁻¹⁰ m/s² | ±5% | Galaxy dynamics | Current |
 | Halo core radius | ~10 kpc | ±3 kpc | Stellar kinematics | 2025+ |
@@ -76,10 +76,10 @@ description: |
 
 1. **No Direct Detection**: The model predicts null results in all particle DM searches (XENON, LUX, etc.)
 
-2. **Gravitational Wave Spectrum**:
-   - Doublet at $(f_0, 2f_0)$ with strain $h_c \sim 2 \times 10^{-18}$
-   - Phase transition background at nHz frequencies
-   - Detectable by SKA-PTA + LISA (2035+)
+2. **ISW Signature in CMB**:
+   - 2 Gyr oscillation imprint in large-scale anisotropies
+   - Detectable through ISW effect at ℓ < 10
+   - Observable with CMB-S4 precision measurements (2030+)
 
 3. **Modified Halo Structure**:
    - Fewer subhalos than ΛCDM (factor ~2-3)

@@ -25,16 +25,16 @@ description: |
 - **CMB-S4**: Primordial fluctuations → initial conditions
 
 **2030-2035 (Long Term)**:
-- **SKA-PTA**: 
-  - Sensitivity to h_c ~ 10⁻¹⁹ at nHz
-  - Search for f₀ = 1.6×10⁻¹⁷ Hz doublet
+- **CMB-S4 Full Survey**:
+  - Precision ISW measurements
+  - 2 Gyr oscillation signature in large-scale anisotropies
 - **ELT/TMT**: Dwarf galaxy kinematics → core sizes
 - **Advanced gravitational tests**: δg/g measurements
 
 **2035+ (Future)**:
-- **LISA**: May detect high harmonics of oscillation
+- **Next-gen CMB experiments**: Enhanced ISW detection
 - **Next-gen atom interferometry**: Spatial gravity variations
-- **Ultimate PTA arrays**: Definitive detection/exclusion of brane signal
+- **Combined CMB + galaxy surveys**: Definitive oscillation mapping
 
 ### 6.3 Theoretical Development Roadmap
 
