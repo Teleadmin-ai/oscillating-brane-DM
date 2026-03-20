@@ -6,19 +6,15 @@ author: Romain Provencal
 tags: [dark-matter, mechanics, gravitational-funnels]
 ---
 
-But how, concretely, does dark matter excite this gigantic membrane? Each dark matter particle crossing a funnel follows a precise ballet that creates the cosmic symphony we observe.
+But how, concretely, does dark matter excite this gigantic membrane? The excitation does not come from kinetic impacts, but from topological backreaction.
 
-## The Dark Matter Dance
+## The Complexity=Volume Mechanism
 
-Each dark matter particle crossing a gravitational funnel follows three precise steps:
+When dark matter falls into a gravitational funnel (black hole), it enters the non-local ER=EPR network. According to Susskind's **Complexity = Volume** conjecture, the quantum complexity of the black hole increases, causing the interior volume of its wormhole to elongate linearly into the AdS bulk.
 
-1. **Departure**: It temporarily leaves the brane, carrying its momentum
-2. **Non-Local Transit**: It enters the bulk — a non-local topological state where distance has no meaning
-3. **Return**: It re-emerges via ER=EPR quantum correlations, maintaining perfect phase coherence
+This continuous topological elongation of billions of wormholes in the 5th dimension exerts a collective gravitational **traction** (backreaction) on the elastic membrane. The effective pressure on the brane follows:
 
-This return deposits a momentum "hit" δp ~ m_MN × v_⊥ radially opposite to the outgoing flux. The surface density of these impacts, summed over all black holes, creates a periodic pressure:
-
-$$Π(t) = \sum_i \dot{N}_i m_{MN} v_⊥ ≃ f_{osc} ρ_{DM} v_⊥^2$$
+$$\Pi(t) = \sum_i \dot{N}_i m_{MN} v_{\perp} \simeq f_{osc} \rho_{DM} v_{\perp}^2$$
 
 ## The Topological Necessity: ER=EPR and Non-Local Coherence
 

@@ -84,19 +84,15 @@ Let's decipher this equation:
 
 ### Microscopic Excitation: How Dark Matter Makes the Universe Vibrate
 
-But how, concretely, does dark matter excite this gigantic membrane? Each dark matter particle crossing a funnel follows a precise ballet:
+But how, concretely, does dark matter excite this gigantic membrane? The excitation does not come from kinetic impacts, but from topological backreaction dictated by the ER=EPR and Complexity=Volume (CV) conjectures.
 
-1. **Departure**: It temporarily leaves the brane, carrying its momentum
-2. **Journey**: It travels a short geodesic in the bulk
-3. **Return**: It re-impacts the brane near another funnel
+When dark matter falls into the gravitational funnels, it enters the non-local ER=EPR network. According to Susskind's CV conjecture, the quantum complexity of the black holes increases, causing the interior volume of their wormholes to elongate linearly into the AdS bulk.
 
-This return deposits a momentum "hit" δp ~ m_DM × v_⊥ radially opposite to the outgoing flux. The surface density of these impacts, summed over all black holes, creates a periodic pressure:
+This continuous topological elongation of billions of wormholes in the 5th dimension exerts a collective gravitational traction (backreaction) on the elastic membrane. The effective pressure on the brane follows:
 
 Π(t) = Σᵢ Ṅᵢ m_DM v_⊥ ≃ f_osc ρ_DM v_⊥²
 
-The miracle: In the limit where the bulk crossing time is very short compared to period T, this pressure Π(t) becomes quasi-sinusoidal. Even more remarkable, it selectively couples to the fundamental mode (ℓ = 0) because all funnels share the same topology toward the bulk-point—the phase is identical across the entire surface!
-
-It's as if millions of tiny hammers were striking the membrane in perfect synchrony, creating a global standing wave rather than a chaos of ripples.
+The brane vibrates because it is periodically pulled by the growing entanglement complexity of its own black holes. Since all black holes share quantum correlations through the ER=EPR network, the traction selectively couples to the fundamental spherical mode (ℓ=0) — the phase is identical across the entire surface.
 
 ### 2.3 The Universal Spring Constant
 
