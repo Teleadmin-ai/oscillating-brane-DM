@@ -75,7 +75,7 @@ print(f"w(z={z}) = {w_de:.3f}")
 |---------|-----------------|---------------------|
 | Euclid | Sinusoidal w(z) | A ≥ 3×10⁻³, Signal < 5σ |
 | DESI Full | ΔP/P = 0.5% at k₀ | Smooth spectrum |
-| IPTA DR5 | Doublet f₀, 2f₀ | Pure noise |
+| CMB-S4 | ISW signature | T = 2.0 Gyr oscillation |
 | H0LiCOW++ | Anisotropy ≤ 0.1% | Isotropy < 0.2% |
 
 ### 📝 Key Papers

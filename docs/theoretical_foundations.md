@@ -259,10 +259,10 @@ with:
 | S₈ suppression | -5.2% | ±0.5% | Weak lensing | Current |
 | w(z) amplitude A_w | 0.003 | ±0.001 | BAO + SNe | 2025+ |
 | H₀ anisotropy | 0.01% | ±0.005% | Precision cosmology | 2030+ |
-| **Gravitational Waves** |
-| Fundamental f₀ | 1.6 × 10⁻¹⁷ Hz | ±10% | PTA arrays | 2035+ |
-| Strain h_c | 2 × 10⁻¹⁸ | Factor of 3 | SKA-PTA | 2035+ |
-| Spectral index n_t | 2/3 | ±0.1 | NANOGrav+ | 2025+ |
+| **Gravitational Signatures** |
+| Fundamental f₀ | 1.6 × 10⁻¹⁷ Hz | ±10% | ISW in CMB | 2030+ |
+| Oscillation period | 2.0 Gyr | ±0.3 Gyr | Large-scale structure | 2028+ |
+| ISW amplitude | ~10⁻⁵ ΔT/T | Factor of 2 | CMB-S4 | 2030+ |
 | **Galactic Scale** |
 | MOND a₀ | 1.1 × 10⁻¹⁰ m/s² | ±5% | Galaxy dynamics | Current |
 | Halo core radius | ~10 kpc | ±3 kpc | Stellar kinematics | 2025+ |
@@ -276,10 +276,10 @@ with:
 
 1. **No Direct Detection**: The model predicts null results in all particle DM searches (XENON, LUX, etc.)
 
-2. **Gravitational Wave Spectrum**:
-   - Doublet at $(f_0, 2f_0)$ with strain $h_c \sim 2 \times 10^{-18}$
-   - Phase transition background at nHz frequencies
-   - Detectable by SKA-PTA + LISA (2035+)
+2. **Oscillation Signatures**:
+   - Fundamental period T = 2.0 Gyr (too slow for direct GW detection)
+   - ISW effect in CMB large-scale anisotropies
+   - Modulation in matter power spectrum detectable by DESI/Euclid
 
 3. **Modified Halo Structure**:
    - Fewer subhalos than ΛCDM (factor ~2-3)
@@ -628,16 +628,16 @@ To include quantum corrections in simulations:
 - **CMB-S4**: Primordial fluctuations → initial conditions
 
 **2030-2035 (Long Term)**:
-- **SKA-PTA**: 
-  - Sensitivity to h_c ~ 10⁻¹⁹ at nHz
-  - Search for f₀ = 1.6×10⁻¹⁷ Hz doublet
+- **CMB-S4**:
+  - Detect ISW imprints of 2 Gyr oscillation
+  - Map large-scale temperature anisotropies
 - **ELT/TMT**: Dwarf galaxy kinematics → core sizes
 - **Advanced gravitational tests**: δg/g measurements
 
 **2035+ (Future)**:
-- **LISA**: May detect high harmonics of oscillation
+- **Next-gen CMB experiments**: Definitive ISW detection
 - **Next-gen atom interferometry**: Spatial gravity variations
-- **Ultimate PTA arrays**: Definitive detection/exclusion of brane signal
+- **Complete matter power spectrum**: Full oscillation mapping via combined surveys
 
 ### 6.3 Theoretical Development Roadmap
 

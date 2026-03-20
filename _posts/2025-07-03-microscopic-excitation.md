@@ -20,11 +20,17 @@ This return deposits a momentum "hit" δp ~ m_MN × v_⊥ radially opposite to t
 
 $$Π(t) = \sum_i \dot{N}_i m_{MN} v_⊥ ≃ f_{osc} ρ_{DM} v_⊥^2$$
 
-## The Miracle of Synchronization
+## The Topological Necessity: Block Universe and the Unique Point
 
-The miracle: In the limit where the bulk crossing time is very short compared to period T, this pressure Π(t) becomes quasi-sinusoidal. Even more remarkable, it selectively couples to the fundamental mode (ℓ = 0) because all funnels share the same topology toward the bulk-point—the phase is identical across the entire surface!
+The apparent miracle of perfect synchronization across billions of light-years dissolves when we embrace the profound topological truth: the Bulk is not a vast spatial expanse. Time and space as we perceive them are emergent properties strictly confined to our 4D membrane.
 
-It's as if millions of tiny hammers were striking the membrane in perfect synchrony, creating a global standing wave rather than a chaos of ripples.
+In the Bulk, there is no time. The extra dimension is topologically a **unique geometric point**, atempora l and aspatial.
+
+Black holes across our universe are not distant wells plunging into separate voids. They are multiple "punctures" of our spacetime that all converge toward the same central singularity. This resonates with the quantum conjecture ER=EPR (Maldacena & Susskind), postulating that wormholes and quantum entanglement share the same fundamental geometry.
+
+When dark matter crosses the event horizon, it doesn't "travel" through the Bulk. It exits the illusion of 4D time to reach the entropy zero-point—that absolute place where beginning meets end. When it returns its momentum to the brane, it does so from this absolute center.
+
+The perfect synchronization (ℓ = 0 mode) is therefore not a "miracle" of information transmission. It's a **strict topological necessity**. The entire brane vibrates in unison (period T ≈ 2.0 Gyr) simply because it's being "pushed" from within, from its fundamental geometric center. The Universe beats as one because, in its deepest dimension, it has never ceased being a single point.
 
 ## The Universal Spring Constant
 

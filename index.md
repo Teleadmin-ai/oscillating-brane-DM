@@ -81,7 +81,7 @@ Every two billion years, the cosmic membrane completes one full cycle. This osci
 
 ## Future Tests
 
-The coming decade will be decisive. Euclid will measure the dark energy equation of state with unprecedented precision. DESI will map the power spectrum modulation. Pulsar timing arrays will search for our gravitational wave signature.
+The coming decade will be decisive. Euclid will measure the dark energy equation of state with unprecedented precision. DESI will map the power spectrum modulation. CMB large-scale analysis will reveal the ISW imprints of our fundamental oscillation.
 
 <div class="section-marker" data-section="download"></div>
 

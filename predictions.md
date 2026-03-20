@@ -19,14 +19,14 @@ The oscillating brane theory makes specific, testable predictions that distingui
 2027    DESI full survey complete
    |    → Power spectrum modulation
    |
-2028    IPTA DR5 release
-   |    → Gravitational wave doublet
+2028    Advanced BAO analysis
+   |    → Power spectrum oscillations
    |
 2030    Next-gen H₀ programs
    |    → Directional measurements
    |
-2035    SKA-PTA + LISA combined
-   |    → Definitive GW signature
+2035    CMB large-scale analysis
+   |    → ISW signature detection
    ↓
 ```
 
@@ -50,14 +50,16 @@ The membrane reversal creates a unique GW signature with an echo effect:
 - **Echo**: 2f₀ from flux reversal at membrane extrema
 - **Strain**: h_c ~ 2 × 10⁻¹⁸ at f₀, ~ 10⁻¹⁸ at 2f₀
 
-![PTA Doublet Signature](/plots/pta_doublet.png)
+![ISW Effect Signature](/plots/isw_effect.png)
 
-This doublet structure is a smoking gun for brane oscillations:
-- The fundamental frequency tracks the membrane oscillation period
-- The echo at 2f₀ arises from dark matter flux reversal
-- No other cosmological mechanism produces this specific pattern
+**Note on Detection**: The 1.6 × 10⁻¹⁷ Hz frequency corresponds to our 2 Gyr fundamental oscillation, far too slow for direct gravitational wave detection.
 
-**Detection**: Requires coherent signal over ≥5 cycles, achievable with SKA-PTA + LISA.
+Instead, the oscillation manifests through:
+- **ISW effect**: Large-scale CMB temperature anisotropies (shown above)
+- **Matter power spectrum**: Periodic modulation detectable by galaxy surveys
+- **Growth history**: Time-varying structure formation rate
+
+**Detection**: The 2 Gyr oscillation period is far too slow for PTA or LISA detection. Instead, imprints of this fundamental oscillation appear in the CMB large-scale anisotropies through the Integrated Sachs-Wolfe (ISW) effect, and in the modulation of large-scale structure power spectrum measurable by DESI and Euclid.
 
 ### 3. Structure Growth Suppression
 
