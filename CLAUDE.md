@@ -1,265 +1,180 @@
 # CLAUDE.md - Project Information for AI Assistants
 
 ## Project Overview
-This is the **Oscillating Brane Dark Matter Theory** project - a revolutionary cosmological theory where the universe is conceptualized as a vibrating 4D membrane in 5D space.
+This is the **Oscillating Brane Dark Matter Theory V5.0 (Holographic Edition)** - a cosmological theory where the universe is a vibrating 4D membrane in 5D Anti-de Sitter space, with black holes connected via ER=EPR holographic entanglement.
 
 ## Repository Information
 - **GitHub URL**: https://github.com/Teleadmin-ai/oscillating-brane-DM
 - **Live Website**: https://higgs-cosmology.com/
 - **Owner**: Teleadmin-ai
 - **Development Status**: Active - AI-assisted theoretical cosmology research
-- **Current Branch**: restore-working-version (pushed to main)
+- **Current Version**: V5.0 Holographic Edition (March 2026)
+- **AI Collaborators**: Claude (Anthropic) & Gemini DeepThink (Google) as cognitive prostheses
 
 ## GitHub Authentication
-When working with this repository, use GitHub CLI (`gh`) for authentication. The user has personal access tokens configured.
+- The GitHub user is `Teleadmin-ai` (not `Teleadmin`)
+- Always use `gh` commands for GitHub operations
+- Remote is already configured with authentication
 
-### Important Notes:
-1. The GitHub user is `Teleadmin-ai` (not `Teleadmin`)
-2. Always use `gh` commands for GitHub operations
-3. For git push/pull, the remote is already configured with authentication
+## CRITICAL: Theory V5.0 Paradigm (MUST FOLLOW)
+
+### What the theory IS (V5.0):
+- The bulk is a **non-local topological state** where spacetime is emergent (Van Raamsdonk 2010)
+- Black holes are connected via **ER=EPR wormhole network** (Maldacena & Susskind 2013)
+- Distance and time are properties of the 4D brane only; in the bulk they have no meaning
+- Oscillation period T = 2.0 Gyr is calibrated from **DESI BAO + Planck ISW resonance**
+- Quantum stability ensured by **one-loop effective potential corrections** (Goldberger-Wise + Casimir)
+- The "smoking gun" is the **ISW resonance** in CMB at ℓ = 10-20 (NOT gravitational waves)
+
+### What the theory is NOT (BANNED concepts from old versions):
+- **"Point Unique" as a 0D geometric point** - BANNED (divergent curvature, violates Einstein 5D)
+- **Ringermacher & Mead (2014)** - BANNED (debunked by Brownsberger et al. 2020 as windowing artifact)
+- **GW doublet detection via PTA/NANOGrav/LISA** - BANNED (2 Gyr frequency far too low)
+- **"Bulk-Infinity" vs "Bulk-Point" debate** - BANNED (replaced by non-local state)
+- **"Two Limiting Visions of the Bulk"** - BANNED (deleted section)
+- **"Convergent Funnels vs Infinite Ocean"** - BANNED (deleted section)
+- **"Block Universe topology"** - BANNED (replaced by ER=EPR holographic topology)
+- **Version 4.0 / 4.1 references** - BANNED (current version is 5.0)
+
+### Key references for V5.0:
+- Maldacena & Susskind (2013) - ER=EPR conjecture
+- Van Raamsdonk (2010) - Emergent spacetime from entanglement
+- Brownsberger, Stubbs & Scolnic (2020) - Debunking of Ringermacher
+- DESI Collaboration (2024, 2026) - Evolving dark energy evidence
+- Farrah et al. (2023) - Black hole cosmological coupling
+
+## Key Technical Parameters
+
+- **Brane tension**: τ₀ = 7.0 × 10¹⁹ J/m²
+- **Oscillation period**: T = 2.0 ± 0.3 Gyr (from DESI/Planck, NOT Ringermacher)
+- **Extra dimension size**: L = 2.0 × 10⁻⁷ m (0.2 μm) — NEVER write "L = 0.2 m" without μ
+- **Oscillating fraction**: f_osc = 0.10
+- **MOND acceleration**: a₀ = 1.1 × 10⁻¹⁰ m/s² — ALWAYS negative exponent (10⁻¹⁰, NEVER 10¹⁰)
+- **Dark energy amplitude**: A_w ≃ 0.003 (±0.3% oscillation)
+- **S₈ suppression**: -5.2% (resolves tension)
+- **Bayesian evidence**: Δln K = 3.33 ± 0.24 (strong evidence)
+- **ISW χ² improvement**: 32.9 (6σ over ΛCDM)
+
+## PDF Generation — KNOWN RACE CONDITION
+
+### The Problem
+The CI workflow (`.github/workflows/ci.yml`) has a `generate-pdf` job that:
+1. Clones the repo
+2. Runs `python scripts/generate_pdf.py`
+3. **Commits and pushes the PDF automatically** (lines 129-145)
+
+This creates a **race condition**: when you push corrections, CI triggers, regenerates the PDF from the new code, and pushes it. But timing conflicts with other pushes can cause merge conflicts or stale PDFs.
+
+### The Solution
+After modifying any source `.md` file:
+1. Always regenerate the PDF locally: `python3 scripts/generate_pdf.py`
+2. Verify the PDF content: `pdftotext oscillating_brane_theory_latest.pdf - | grep -i "GHOST_PATTERN"`
+3. Force-add and commit the PDF: `git add -f oscillating_brane_theory_latest.pdf`
+4. If push is rejected, always `git pull --rebase` then `git push`
+5. After push, check if CI overwrites your PDF with `git log --oneline -3 -- oscillating_brane_theory_latest.pdf`
+
+### Files the PDF generator reads (in order):
+```
+index.md, theory.md, chronology.md, predictions.md, tools.md, about.md,
+docs/theory_v4_complete.md,
+docs/foundations_parts/part1_mathematical_framework.md,
+docs/foundations_parts/part2_comparative_predictions.md,
+docs/foundations_parts/part3_current_limitations.md,
+docs/foundations_parts/part4_development_roadmap.md,
+_posts/*.md (all blog posts, sorted reverse chronological)
+```
+**ALL these files must be checked** when hunting for ghost content. Missing even one blog post will leave ghosts in the PDF.
 
 ## Project Structure
 ```
 oscillating-brane-DM/
-├── _posts/              # Blog posts explaining the theory (dark theme)
-├── _layouts/            # Jekyll layouts (including custom dark.html)
-│   ├── dark.html       # Main layout with videos and dark theme
-│   ├── default.html    # Standard Jekyll layout
-│   └── post.html       # Blog post layout
+├── _posts/              # Blog posts (5 total, dark theme)
+├── _layouts/
+│   └── dark.html        # Main layout (NO polyfill.io - removed for security)
 ├── assets/
-│   ├── css/            # Custom styling
-│   │   └── dark-theme.css  # Complete dark theme implementation
-│   ├── js/             # JavaScript for video carousel
-│   └── videos/         # Local MP4 files for visual content
-├── plots/              # Generated scientific figures
-├── scripts/            # Python computational tools
-│   ├── brane_dynamics.py      # Membrane oscillation calculations
-│   ├── brane_oscillation_1d.py # 1D radion field evolution prototype
-│   ├── einstein_5d_toy.py     # 2D prototype for 5D Einstein equations (NEW)
-│   ├── growth_factor.py       # Structure formation calculations
-│   ├── bayesian_analysis.py   # Model comparison
-│   ├── bayesian_priors_table.py # Prior specifications for Bayesian analysis (NEW)
-│   ├── pbh_cmb_opacity.py     # PBH impact on CMB optical depth (NEW)
-│   ├── analyse_posterior.py   # MCMC diagnostics and trace plots (NEW)
-│   ├── mcmc_diagnostics.py    # Convergence diagnostics (NEW)
-│   ├── plot_2d_results.py     # 2D prototype visualization (NEW)
-│   ├── kk_spectrum.py         # Kaluza-Klein mode analysis
-│   ├── pta_echo.py           # Gravitational wave predictions
-│   ├── generate_figures.py    # Figure generation script
-│   └── generate_pdf.py        # PDF generation with Unicode fixes
-├── docs/               # Technical documentation
-│   ├── theoretical_foundations.md  # Rigorous mathematical framework with 1100+ lines
-│   ├── theory_v4_complete.md      # Complete theory v4
-│   ├── foundations_parts/         # Split mathematical framework
-│   │   ├── part1_mathematical_framework.md
-│   │   ├── part2_comparative_predictions.md
-│   │   ├── part3_current_limitations.md
-│   │   └── part4_development_roadmap.md
-│   ├── posterior_table.tex        # MCMC posterior statistics table (NEW)
-│   └── einstein_2d_table.tex      # 2D prototype results table (NEW)
-├── data/               # Posterior samples and analysis results
-├── output/             # Generated PDFs (NEW)
-├── .github/            # GitHub Actions workflows (NEW)
-│   └── workflows/
-│       ├── ci.yml              # Main CI pipeline
-│       ├── python-lint.yml     # Code quality checks
-│       └── weekly-report.yml   # Automated reports
-├── index.md           # Homepage
-├── theory.md          # Complete theoretical framework
-├── predictions.md     # Observational predictions
-├── chronology.md      # Cosmic timeline (new)
-├── tools.md           # Tools documentation
-├── about.md           # About page with disclaimer
-├── CNAME              # Custom domain configuration
-├── requirements.txt   # Python dependencies
-├── Gemfile            # Ruby dependencies for Jekyll
-└── _config.yml        # Jekyll configuration
+│   ├── css/dark-theme.css  # 45%/55% text/video split layout
+│   ├── js/video-carousel.js
+│   └── videos/          # Local MP4 files
+├── plots/               # Scientific figures (23 files, 8 referenced)
+├── scripts/
+│   ├── generate_pdf.py         # Main PDF generator (reads ALL .md files)
+│   ├── generate_whitepaper.py  # V4 white paper generator (OBSOLETE)
+│   ├── brane_dynamics.py       # Membrane oscillation calculations
+│   ├── brane_oscillation_1d.py # 1D radion field evolution
+│   ├── growth_factor.py        # Structure formation
+│   ├── bayesian_analysis.py    # Model comparison
+│   └── ...                     # Other analysis scripts
+├── paper/
+│   └── cosmic_yoyo_prl.tex    # V5.0 white paper LaTeX source
+├── docs/
+│   ├── theory_v4_complete.md       # Complete theory (now V5.0)
+│   ├── theoretical_foundations.md  # Mathematical framework
+│   └── foundations_parts/          # Split framework (4 parts)
+├── output/              # Generated PDFs (excluded from Jekyll build)
+├── cosmic_yoyo_v5_holographic.pdf  # V5.0 white paper (4 pages)
+├── oscillating_brane_theory_latest.pdf  # Full theory (70 pages)
+├── index.md, theory.md, predictions.md, chronology.md, tools.md, about.md, downloads.md
+├── _config.yml          # Jekyll config (navigation, theme)
+├── CNAME                # higgs-cosmology.com
+└── .github/workflows/ci.yml  # CI with PDF auto-generation
 ```
 
 ## Jekyll/GitHub Pages Configuration
 
-### Current Setup
-- **Theme**: `jekyll-theme-minimal` (GitHub Pages supported theme)
-- **Custom Layout**: `dark.html` with video carousel and dark theme
-- **Base URL**: `` (empty for custom domain)
-- **URL**: `https://higgs-cosmology.com`
-- **Deployment**: GitHub Pages from main branch
-- **Custom Domain**: higgs-cosmology.com (configured with CNAME)
+- **Theme**: `jekyll-theme-minimal` (GitHub Pages supported)
+- **Custom Layout**: `dark.html` with video carousel
+- **Domain**: higgs-cosmology.com (CNAME)
+- **MathJax**: Loaded directly from CDN (polyfill.io REMOVED - was compromised)
+- **CSS**: 45%/55% text/video grid split, images use 100% of text column width
+- **OpenGraph image**: `/plots/cosmic_yoyo_simple.gif`
 
-### Common Issues & Solutions
+### Navigation pages (in _config.yml):
+Home, Theory, Complete Theory (/theory-complete/), Theoretical Foundations (/theoretical-foundations/), Chronology, Predictions, Tools, Downloads, About
 
-1. **YAML Syntax Errors**: Always quote wildcards in `_config.yml`:
-   ```yaml
-   exclude:
-     - "*.py"
-     - "*.npz"
-   ```
+### Blog Posts (5 total):
+1. `2025-07-03-introduction-universe-membrane.md` - Introduction (updated V5.0)
+2. `2025-07-03-microscopic-excitation.md` - Excitation mechanism (updated V5.0 ER=EPR)
+3. `2025-07-03-cosmic-chronology.md` - Timeline (Ringermacher removed)
+4. `2025-07-03-observational-tests.md` - Tests (NANOGrav removed)
+5. `2026-03-20-observational-confirmations.md` - 2024-2026 confirmations
 
-2. **Theme Not Working**: Must use officially supported GitHub Pages themes:
-   - jekyll-theme-minimal ✓
-   - minima ✗ (not in the official list for automated builds)
+## Key Observational Confirmations (2024-2026)
+- **DESI 2024-2026**: Dark energy evolves (4σ) — matches oscillating w(z)
+- **JWST "Little Red Dots"**: Primordial massive BHs at z>6 — our "Cosmic Pushpins"
+- **Farrah et al. 2023-2024**: BH mass coupled to expansion (k=3.11±0.19)
+- **S₈ tension**: Our 5.2% growth suppression bridges CMB/lensing gap
+- **Planck low-ℓ anomaly**: Our ISW resonance explains it (Δχ²=32.9)
 
-3. **CSS Not Loading**: Use the correct path:
-   ```html
-   <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-   ```
+## Downloads Structure
+Two PDFs available on the site:
+1. **White Paper V5.0** (`cosmic_yoyo_v5_holographic.pdf`) - 4 pages, LaTeX, full-width figures
+2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) - 70 pages, all chapters
 
-## Key Technical Parameters
+The old V4 white paper (`whitepaper_oscillating_brane.pdf`) has been DELETED.
 
-The theory's fundamental parameters:
-- **Brane tension**: τ₀ = 7.0 × 10¹⁹ J/m²
-- **Oscillation period**: T = 2.0 ± 0.3 Gyr
-- **Extra dimension size**: L = 2.0 × 10⁻⁷ m (0.2 μm)
-- **Oscillating fraction**: f_osc = 0.10
-- **MOND acceleration**: a₀ = 1.1 × 10⁻¹⁰ m/s²
-- **Dark energy amplitude**: A_w ≃ 0.003 (±0.3% oscillation)
-- **S₈ suppression**: -5.2% (resolves tension)
-- **Bayesian evidence**: Δln K = 3.33 ± 0.24 (strong evidence)
-
-## Python Scripts
-The repository includes comprehensive computational tools:
-
-### Core Physics Simulations
-1. `brane_dynamics.py` - Membrane oscillation calculations (fixed dimensional consistency)
-2. `brane_oscillation_1d.py` - 1D prototype for radion field evolution with energy conservation
-3. `einstein_5d_toy.py` - 2D prototype solving simplified 5D Einstein equations
-4. `growth_factor.py` - Structure formation with oscillating w(z) (improved lookback time)
-5. `kk_spectrum.py` - Kaluza-Klein mode analysis
-6. `pta_echo.py` - Gravitational wave predictions
-
-### Analysis and Validation
-7. `bayesian_analysis.py` - Model comparison and Bayesian evidence calculation
-8. `bayesian_priors_table.py` - Complete prior specifications with sensitivity analysis
-9. `pbh_cmb_opacity.py` - PBH contributions to CMB optical depth (Ali-Haïmoud 2017)
-10. `analyse_posterior.py` - Comprehensive MCMC diagnostics with trace/corner plots
-11. `mcmc_diagnostics.py` - Gelman-Rubin R̂ and effective sample size calculations
-
-### Visualization and Output
-12. `plot_2d_results.py` - Generate publication-quality plots from 2D prototype
-13. `generate_figures.py` - Scientific visualization generation
-14. `generate_pdf.py` - PDF generation with Unicode artifact cleaning
-
-## Blog Post Topics
-1. **The Universe as a Vibrating Membrane** - Introduction to the cosmic membrane paradigm
-2. **How Dark Matter Makes the Universe Vibrate** - Microscopic excitation mechanism
-3. **Cosmic Chronology: From Inflation to the Current Beat** - Evolution of brane tension
-4. **Experimental Tests: Where to Seek the Truth** - Observational predictions and tests
-
-## Recent Updates and Known Issues
-
-### O3 Pro Conformity Check Implementation (2025-07-04)
-Following O3 Pro's comprehensive theoretical analysis and conformity check:
-- **Dimensional consistency**: Fixed A_osc formula to have proper length units, V_1-loop properly dimensioned
-- **Numerical stability**: Fixed overflow in brane_oscillation_1d.py with ρ_crit normalization
-- **Energy conservation**: Added test showing conservation to 0.1% accuracy
-- **Citations**: Added proper references [Martin et al. 2005], [Garriga et al. 2001], [Rakhmetov et al. 2025]
-- **Notations table**: Created comprehensive units table in section 6.0
-- **PDF optimization**: Reduced size with --dpi=150 and smaller font
-
-### GitHub Actions Setup (2025-07-04)
-- **CI Pipeline**: Automated testing of Python simulations, Jekyll build, PDF generation
-- **Artifacts**: Simulation plots (134 KB) and theory PDF (2.36 MB) generated on each push
-- **Code quality**: Python linting with flake8, black, isort
-- **Weekly reports**: Automated progress reports every Monday
-
-### Theoretical Foundations Document (2025-07-04)
-- **New document**: docs/theoretical_foundations.md with rigorous mathematical framework
-- **Section 6.1**: Detailed theoretical challenges including 5D numerical relativity
-- **Initial conditions**: Multiple mechanisms for brane oscillation onset
-- **Quantum corrections**: Beyond one-loop analysis with Casimir effects
-- **Development roadmap**: 18-month phased approach for full theory implementation
-
-### 1D Prototype Implementation (2025-07-04)
-- **New script**: brane_oscillation_1d.py demonstrating radion field evolution
-- **Goldberger-Wise potential**: Stabilization mechanism implementation
-- **Energy conservation**: Verified to 0.1% accuracy
-- **Plots generated**: radion_evolution_1d.png and radion_energy_1d.png
-
-### CSS Implementation Details
-- Dark theme with video carousel on 40/60 split
-- Fixed header with navigation
-- Responsive design for mobile devices
-- Custom dark layout for all pages including blog posts
-
-### O3 Pro Final Audit Implementation (2025-07-04)
-Following O3 Pro's final audit, all critical points have been addressed:
-- **Δτ_CMB calculation**: Fixed to show τ_total = 0.0646 for f_PBH = 1% (consistent with Planck)
-- **MCMC diagnostics**: Created analyse_posterior.py generating trace plots, corner plots, and LaTeX tables
-- **Bibliography**: Added 50+ references including Ali-Haïmoud, Poulin, Serpico, DOP853
-- **2D prototype**: Generated einstein_2d_summary.png showing 37% oscillation amplitude
-- **Unicode fixes**: Added artifact cleaning in generate_pdf.py with XeLaTeX configuration
-
-### Code Quality and CI/CD (2025-07-04)
-- **All Python scripts**: Formatted with black and isort for consistent style
-- **Import ordering**: Fixed with isort to pass linting checks
-- **GitHub Actions**: All workflows (CI, Python Linting) now passing ✓
-- **PDF generation**: Enhanced with Unicode cleaning and proper font configuration
-
-### PDF Generation Improvements (2025-07-05)
-- **Double chapter numbering fix**: Resolved issue where chapters had duplicate numbers (e.g., "Chapter 5" followed by "Chapter 4: Title")
-- **Pandoc numbering**: Disabled automatic section numbering (`numbersections: false`)
-- **Regex improvements**: Added pattern to remove existing "Chapter X:" prefixes from markdown content
-- **Complete PDF**: Successfully generates 66-page PDF with all 15 chapters properly formatted
-- **Content included**: All theoretical foundations, blog posts, and documentation properly integrated
-
-## GitHub Actions & CI/CD
-
-### Workflows
-1. **CI (ci.yml)**: Main pipeline running on push
-   - Runs Python simulations (brane_dynamics.py, brane_oscillation_1d.py)
-   - Builds Jekyll site
-   - Generates PDF documentation
-   - Uploads artifacts (plots, PDFs)
-
-2. **Python Linting (python-lint.yml)**: Code quality checks
-   - flake8 for syntax errors
-   - black for formatting
-   - isort for import ordering
-
-3. **Weekly Reports (weekly-report.yml)**: Automated Monday reports
-   - Runs all simulations
-   - Generates progress summary
-
-### Common Commands
+## Common Commands
 ```bash
-# Run tests locally
-python scripts/brane_dynamics.py
-python scripts/brane_oscillation_1d.py
+# Generate the big PDF
+python3 scripts/generate_pdf.py
 
-# Generate PDF
-python scripts/generate_pdf.py
+# Compile the white paper
+cd paper && pdflatex cosmic_yoyo_prl.tex && pdflatex cosmic_yoyo_prl.tex
+cp cosmic_yoyo_prl.pdf ../cosmic_yoyo_v5_holographic.pdf
+
+# Verify PDF is clean of ghosts
+pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point Unique\|NANOGrav.*doublet\|Block Universe\|Version 4\|Infinite Ocean"
 
 # Build Jekyll site locally
 bundle exec jekyll build
-bundle exec jekyll serve
 ```
 
-## Key Results and Findings
-
-### Bayesian Evidence
-- **Δln K = 3.33 ± 0.42**: Strong evidence favoring oscillating brane over ΛCDM
-- **Posterior constraints**: τ₀ = 7.0 × 10¹⁹ J/m², f_osc = 0.10 ± 0.02, T = 2.0 ± 0.2 Gyr
-- **All chains converged**: R̂ < 1.001, n_eff > 8000
-
-### Numerical Validations
-- **1D prototype**: Oscillation period matches theory to 0.1%
-- **2D Einstein toy model**: 37% amplitude oscillations, 320% warp modulation
-- **Energy conservation**: Achieved to 0.1% in 1D (2D requires better integrator)
-
-### Observational Compatibility
-- **CMB optical depth**: τ = 0.0646 (within 1.5σ of Planck)
-- **PBH constraints**: f_PBH < 0.1 for M ~ 10⁻¹¹ M_⊙
-- **S₈ tension**: 5.2% suppression explains galaxy cluster observations
-
-## Maintenance Tasks
-- Keep blog posts updated with latest theoretical developments
-- Update predictions as new observational data arrives
-- Maintain compatibility with GitHub Pages requirements
-- Ensure all mathematical equations render correctly with MathJax
-- Monitor GitHub Actions for any failures
-- Update CLAUDE.md when significant changes are made
-- Run black and isort before committing Python code
-- Check PDF generation for Unicode artifacts
+## Maintenance Checklist
+- When editing theory content, check ALL source files listed in PDF generator
+- After PDF generation, always verify with pdftotext grep for banned terms
+- Run `black` and `isort` before committing Python code
+- Never reference Ringermacher, Point Unique (0D), or GW doublets
+- Keep downloads.md in sync with available PDFs
+- Watch for CI auto-updating the PDF after your push
 
 ## Contact
 - GitHub Issues: https://github.com/Teleadmin-ai/oscillating-brane-DM/issues
