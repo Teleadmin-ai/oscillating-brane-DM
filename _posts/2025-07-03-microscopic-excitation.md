@@ -6,15 +6,19 @@ author: Romain Provencal
 tags: [dark-matter, mechanics, gravitational-funnels]
 ---
 
-But how, concretely, does dark matter excite this gigantic membrane? The excitation does not come from kinetic impacts, but from topological backreaction.
+But how, concretely, does dark matter excite this gigantic membrane? The answer is a **stick-slip motor** driven by topological backreaction.
 
-## The Complexity=Volume Mechanism
+## The Stick-Slip Motor (V6.0)
 
-When dark matter falls into a gravitational funnel (black hole), it enters the non-local ER=EPR network. According to Susskind's **Complexity = Volume** conjecture, the quantum complexity of the black hole increases, causing the interior volume of its wormhole to elongate linearly into the AdS bulk.
+The brane position (radion φ) obeys a non-linear relaxation oscillator:
 
-This continuous topological elongation of billions of wormholes in the 5th dimension exerts a collective gravitational **traction** (backreaction) on the elastic membrane. The effective pressure on the brane follows:
+$$\ddot{\phi} + 3H\dot{\phi} + \frac{\partial V_{GW}}{\partial \phi} = \gamma \dot{M}_{DM} - \mathcal{R}(\phi, \dot{\phi})\,\Theta(|\phi| - \phi_{crit})$$
 
-$$\Pi(t) = \sum_i \dot{N}_i m_{MN} v_{\perp} \simeq f_{osc} \rho_{DM} v_{\perp}^2$$
+**The Stick Phase**: When dark matter falls into micro-PBH capillaries, it enters the non-local ER=EPR network. According to Susskind's **Complexity = Volume** conjecture, the quantum complexity of entangled black holes increases, causing wormhole interiors to elongate linearly into the AdS bulk. This collective topological traction (the forcing term γṀ_DM) slowly charges the radion φ toward the critical threshold φ_crit.
+
+**The Slip Phase**: When |φ| exceeds φ_crit (set by the QCD confinement scale, τ₀^{1/3} = 257 MeV), the non-linear release function R activates. The brane snaps back to equilibrium — like a violin string released by the bow.
+
+**Why it never stops**: Unlike a simple harmonic oscillator (which Hubble friction 3Hφ̇ would kill in a few e-foldings), the stick-slip motor is continuously fueled by cosmological dark matter accretion. The period T ≈ t_stick + t_slip ≈ 2.0 Gyr is self-sustaining.
 
 ## The Topological Necessity: ER=EPR and Non-Local Coherence
 
@@ -28,13 +32,13 @@ When dark matter crosses the event horizon, it enters this non-local network. No
 
 The perfect synchronization (ℓ = 0 mode) is therefore not a "miracle" of information transmission. It's a **strict topological necessity**. The entire brane vibrates in unison (period T ≈ 2.0 Gyr) because the entangled wormhole network ensures all black holes share the same quantum state. The Universe beats as one because, at the deepest level, all its black holes are quantumly connected.
 
-## The Universal Spring Constant
+## The Restoring Force
 
-The beauty of this approach lies in its simplicity. The second derivative of energy gives:
+The Goldberger-Wise potential V_GW provides the restoring force, with effective spring constant:
 
-$$k_{eff} = \frac{∂^2E}{∂z^2} = \frac{τ_0 A}{R_H^2} ≈ τ_0$$
+$$k_{eff} = \frac{∂^2 V_{GW}}{∂\phi^2} ≈ τ_0$$
 
-Dimensional miracle: The spring constant is simply the tension itself!
+The spring constant equals the brane tension — connecting membrane mechanics to the QCD vacuum energy. In the stick-slip framework, this determines the stick phase duration and the critical threshold φ_crit.
 
 ## Stability and Resonances
 
@@ -50,11 +54,14 @@ For ℓ = 2, the frequency is already √6 ≈ 2.5 times higher. Since the sourc
 
 However, secondary local resonances are possible around superclusters, where mass concentration creates "hard points." These micro-oscillations could generate tiny gravitational anisotropies (δg/g ~ 10⁻⁸), a subtle but potentially detectable signature.
 
-## Primordial Black Holes: The Cosmic Pushpins
+## Micro-PBH Anchors: The Sole Topological Capillaries
 
-Beyond stellar and supermassive black holes, a hidden population could play a crucial role: primordial black holes (PBH). A PBH of mass 10⁻¹¹ M_☉ has a Schwarzschild radius r_s ≈ 30 nm, creating a funnel comparable in size to our extra dimension L.
+The brane's sole topological connection to the bulk is through primordial micro-PBHs of asteroid mass (~10⁻¹² M☉). Their Schwarzschild radius r_s ≈ 3-30 nm is geometrically commensurate with the extra dimension thickness L = 200 nm. Constituting ~10% of dark matter, these microscopic capillaries:
 
-If these PBHs represent a fraction Ω_PBH ~ 10⁻⁴ of cosmic density, they form a dense network of small-scale entry points. Like thousands of needles piercing fabric, they increase the oscillating fraction f_osc without changing the macroscopic dark matter density. 
+- Penetrate the bulk without tearing the macroscopic 4D structure
+- Set the critical threshold φ_crit via their geometric ratio r_s/L
+- Are completely invisible to JWST and all electromagnetic observations
+- Trace the cosmic web, creating local tension variations τ(x) that explain the CatWISE quasar dipole
 
-Consequence: a possible enhancement of the dark energy oscillation amplitude A_w, offering an additional signature to search for in future observations.
+Note: JWST's "Little Red Dots" are definitively abandoned as anchors — Chisholm et al. (2026) show many are stellar clusters, not black holes.
 
