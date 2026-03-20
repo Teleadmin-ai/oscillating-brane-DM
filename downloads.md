@@ -6,12 +6,12 @@ permalink: /downloads/
 
 # Download Resources
 
-## White Paper V5.0 (4 pages)
+## White Paper V6.0 (5 pages)
 
-Condensed version with ER=EPR holographic topology and the three key observational confirmations. Ideal for sharing.
+Stick-slip motor edition resolving five cosmological anomalies. Ideal for sharing.
 
 <div style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(255,51,102,0.1), rgba(0,255,204,0.1)); border-radius: 10px; border: 2px solid #00ffcc;">
-  <h4>The Holographic Cosmic Yoyo</h4>
+  <h4>The Cosmic Yoyo: Stick-Slip Brane Motor</h4>
   <p>4-page summary including:</p>
   <ul style="margin: 15px 0;">
     <li>ER=EPR holographic topology (Maldacena-Susskind)</li>

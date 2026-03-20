@@ -18,7 +18,7 @@ title: Home
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of quantum entangled black holes.
 
-**The Cosmic Yoyo**: Dark matter flows through black holes into the bulk — a non-local topological state where distance and time lose all meaning. Connected via Einstein-Rosen bridges (ER=EPR), all black holes share instantaneous quantum correlations. This eternal cycle of absorption and return creates gravity itself and fabricates the very fabric of spacetime.
+**The Cosmic Yoyo V6.0**: Dark matter flows through primordial micro-black holes into the bulk — a non-local topological state where distance and time lose all meaning. Connected via Einstein-Rosen bridges (ER=EPR), all black holes share instantaneous quantum correlations. A **stick-slip motor** converts this continuous topological traction into a 2-billion-year pulsation that survives Hubble friction forever. This eternal cycle creates gravity itself and fabricates the very fabric of spacetime. It resolves five cosmological anomalies simultaneously: DESI's evolving dark energy, the S₈ tension, Planck's CMB anomaly, the CatWISE quasar dipole, and the EDGES 21cm signal.
 
 <div class="hero-section">
   <div class="key-predictions">
@@ -96,9 +96,9 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 <div style="text-align: center; margin: 40px 0;">
   <div style="display: inline-block; margin: 0 15px;">
     <a href="/cosmic_yoyo_v5_holographic.pdf" download style="display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,255,204,0.4);">
-      White Paper (4 pages)
+      White Paper (5 pages)
     </a>
-    <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">V5.0 with ER=EPR topology</p>
+    <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">V6.0 Stick-Slip Motor</p>
   </div>
   <div style="display: inline-block; margin: 0 15px;">
     <a href="/downloads/" class="download-main-button" style="display: inline-block; padding: 14px 28px; background: #4a90e2; color: white; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
