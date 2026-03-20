@@ -56,9 +56,9 @@ The brane tension is set precisely at the QCD confinement scale — the energy w
 
 The oscillating membrane creates a time-varying dark energy:
 
-$$w(z) = -1 + A_w \sin\left(\frac{2π t_{lb}(z)}{T}\right)$$
+$$w(z) = -1 + A_w \sin\left(\frac{2π t_{lb}(z)}{T} + \phi_0\right)$$
 
-With amplitude A_w ≃ 0.003 and period T = 2.0 ± 0.3 Gyr (calibrated from DESI BAO + Planck ISW, not supernova oscillations).
+With amplitude A_w ≃ 0.003, period T = 2.0 ± 0.3 Gyr (calibrated from DESI BAO + Planck ISW), and phase φ₀ = π/2. The phase places us today at a **maximum** of w(z) ≈ -0.997, with w descending into phantom territory (w < -1) in the recent past — exactly reproducing DESI's measured phantom crossing (w_a < 0) without ghost fields.
 
 **Key insight**: Though the amplitude is small (±0.3%), w oscillates between ≈ -1.003 and -0.997. But the primary mechanism for structure suppression is not direct w(z) friction — it is the variation of effective gravity.
 

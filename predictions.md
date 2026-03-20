@@ -40,7 +40,7 @@ The oscillating brane theory makes specific, testable predictions that distingui
 
 **✅ Already Observed:**
 - **DESI 2024**: Dark energy evolves with 4σ significance - exactly matching our oscillating w(z)
-- **JWST**: Primordial black holes ("Little Red Dots") at z > 6 confirm our BH-dominated early universe
+- **JWST**: Massive compact objects at z > 6 (though recent work suggests some LRDs may be stellar clusters [Chisholm 2026], our theory relies on primordial micro-BHs as anchors, not supermassive BHs)
 - **Farrah et al. 2023-2024**: Black hole masses coupled to dark energy density (k = 3.11 ± 0.19)
 - **S₈ tension**: Our 5.2% growth suppression perfectly explains CMB vs weak lensing discrepancy
 
