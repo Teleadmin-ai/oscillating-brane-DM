@@ -3,75 +3,73 @@
 ## Project Overview
 This is the **Oscillating Brane Dark Matter Theory V5.0 (Holographic Edition)** - a cosmological theory where the universe is a vibrating 4D membrane in 5D Anti-de Sitter space, with black holes connected via ER=EPR holographic entanglement.
 
+**Author**: Romain Provencal (provencal.romain@teleadmin.net) - Independent conceptual researcher
+**AI Collaborators**: Claude (Anthropic) & Gemini DeepThink (Google) as theoretical co-processors
+
 ## Repository Information
 - **GitHub URL**: https://github.com/Teleadmin-ai/oscillating-brane-DM
 - **Live Website**: https://higgs-cosmology.com/
-- **Owner**: Teleadmin-ai
-- **Development Status**: Active - AI-assisted theoretical cosmology research
+- **Owner**: Teleadmin-ai (NOT "Teleadmin")
 - **Current Version**: V5.0 Holographic Edition (March 2026)
-- **AI Collaborators**: Claude (Anthropic) & Gemini DeepThink (Google) as cognitive prostheses
-
-## GitHub Authentication
-- The GitHub user is `Teleadmin-ai` (not `Teleadmin`)
 - Always use `gh` commands for GitHub operations
-- Remote is already configured with authentication
 
 ## CRITICAL: Theory V5.0 Paradigm (MUST FOLLOW)
 
-### What the theory IS (V5.0):
+### Core Physics (V5.0):
 - The bulk is a **non-local topological state** where spacetime is emergent (Van Raamsdonk 2010)
 - Black holes are connected via **ER=EPR wormhole network** (Maldacena & Susskind 2013)
 - Distance and time are properties of the 4D brane only; in the bulk they have no meaning
-- Oscillation period T = 2.0 Gyr is calibrated from **DESI BAO + Planck ISW resonance**
-- Quantum stability ensured by **one-loop effective potential corrections** (Goldberger-Wise + Casimir)
+- Oscillation period T = 2.0 Gyr calibrated from **DESI BAO + Planck ISW resonance**
+- **Excitation mechanism**: Susskind's Complexity=Volume — wormhole interiors grow as BHs absorb DM, exerting topological traction (backreaction) on the brane. NOT ballistic impacts/"tiny hammers"
+- **S₈ suppression**: Via G_eff = G_N × e^{-2k|z|} — gravity "leaks" into 5th dimension (⟨z²⟩ > 0 → ⟨G_eff⟩ < G_N). NOT just w(z) friction
+- **Quantum stability**: Adiabatic theorem — ν_brane/ν_KK ~ 10⁻³¹, Schwinger factor e^{-10³¹} ≈ 0. No quantum friction
+- **QCD connection**: τ₀ = 0.017 GeV³, so τ₀^{1/3} = 257 MeV ≈ Λ_QCD (brane tension set by strong force vacuum)
 - The "smoking gun" is the **ISW resonance** in CMB at ℓ = 10-20 (NOT gravitational waves)
+- **JWST LRDs** explained as "cosmic pushpins" — primordial topological defects anchoring the brane
 
-### What the theory is NOT (BANNED concepts from old versions):
-- **"Point Unique" as a 0D geometric point** - BANNED (divergent curvature, violates Einstein 5D)
-- **Ringermacher & Mead (2014)** - BANNED (debunked by Brownsberger et al. 2020 as windowing artifact)
-- **GW doublet detection via PTA/NANOGrav/LISA** - BANNED (2 Gyr frequency far too low)
-- **"Bulk-Infinity" vs "Bulk-Point" debate** - BANNED (replaced by non-local state)
-- **"Two Limiting Visions of the Bulk"** - BANNED (deleted section)
-- **"Convergent Funnels vs Infinite Ocean"** - BANNED (deleted section)
-- **"Block Universe topology"** - BANNED (replaced by ER=EPR holographic topology)
-- **Version 4.0 / 4.1 references** - BANNED (current version is 5.0)
+### BANNED Concepts (old versions — NEVER use):
+- **"Point Unique" as a 0D geometric point** — divergent curvature, violates Einstein 5D
+- **Ringermacher & Mead (2014)** — debunked by Brownsberger et al. 2020 (windowing artifact)
+- **GW doublet detection via PTA/NANOGrav/LISA** — 2 Gyr frequency far too low
+- **"Bulk-Infinity" / "Bulk-Point" debate / "Two Limiting Visions"** — replaced by non-local state
+- **"Convergent Funnels vs Infinite Ocean"** — deleted section
+- **"Block Universe topology"** — replaced by ER=EPR holographic topology
+- **"tiny hammers" / "momentum hit" / ballistic impacts** — replaced by Complexity=Volume traction
+- **"dark matter impacts the brane"** — replaced by topological backreaction
+- **Version 4.0 / 4.1 references** — current version is 5.0
+- **τ₀ = 2.2 × 10⁻⁵ GeV³** — WRONG old conversion. Correct: τ₀ = 0.017 GeV³
+- **contact@higgs-cosmology.com** — does not exist. Use provencal.romain@teleadmin.net
 
-### Key references for V5.0:
+### Key references:
 - Maldacena & Susskind (2013) - ER=EPR conjecture
 - Van Raamsdonk (2010) - Emergent spacetime from entanglement
+- Susskind - Complexity=Volume conjecture
 - Brownsberger, Stubbs & Scolnic (2020) - Debunking of Ringermacher
 - DESI Collaboration (2024, 2026) - Evolving dark energy evidence
 - Farrah et al. (2023) - Black hole cosmological coupling
 
 ## Key Technical Parameters
 
-- **Brane tension**: τ₀ = 7.0 × 10¹⁹ J/m²
+- **Brane tension**: τ₀ = 7.0 × 10¹⁹ J/m² = 0.017 GeV³
+- **Energy scale**: τ₀^{1/3} = 257 MeV ≈ Λ_QCD
 - **Oscillation period**: T = 2.0 ± 0.3 Gyr (from DESI/Planck, NOT Ringermacher)
 - **Extra dimension size**: L = 2.0 × 10⁻⁷ m (0.2 μm) — NEVER write "L = 0.2 m" without μ
 - **Oscillating fraction**: f_osc = 0.10
-- **MOND acceleration**: a₀ = 1.1 × 10⁻¹⁰ m/s² — ALWAYS negative exponent (10⁻¹⁰, NEVER 10¹⁰)
-- **Dark energy amplitude**: A_w ≃ 0.003 (±0.3% oscillation)
-- **S₈ suppression**: -5.2% (resolves tension)
-- **Bayesian evidence**: Δln K = 3.33 ± 0.24 (strong evidence)
+- **MOND acceleration**: a₀ = 1.1 × 10⁻¹⁰ m/s² — ALWAYS negative exponent
+- **Dark energy amplitude**: A_w ≃ 0.003
+- **S₈ suppression**: -5.2% via G_eff leak
 - **ISW χ² improvement**: 32.9 (6σ over ΛCDM)
+- **Bayesian evidence**: Δln K = 3.33 ± 0.24
 
 ## PDF Generation — KNOWN RACE CONDITION
 
-### The Problem
-The CI workflow (`.github/workflows/ci.yml`) has a `generate-pdf` job that:
-1. Clones the repo
-2. Runs `python scripts/generate_pdf.py`
-3. **Commits and pushes the PDF automatically** (lines 129-145)
+The CI workflow (`.github/workflows/ci.yml`) auto-regenerates and pushes the PDF on every commit. This creates merge conflicts.
 
-This creates a **race condition**: when you push corrections, CI triggers, regenerates the PDF from the new code, and pushes it. But timing conflicts with other pushes can cause merge conflicts or stale PDFs.
-
-### The Solution
-After modifying any source `.md` file:
-1. Always regenerate the PDF locally: `python3 scripts/generate_pdf.py`
-2. Verify the PDF content: `pdftotext oscillating_brane_theory_latest.pdf - | grep -i "GHOST_PATTERN"`
-3. Force-add and commit the PDF: `git add -f oscillating_brane_theory_latest.pdf`
-4. If push is rejected, always `git pull --rebase` then `git push`
-5. After push, check if CI overwrites your PDF with `git log --oneline -3 -- oscillating_brane_theory_latest.pdf`
+### After modifying any source .md file:
+1. Regenerate locally: `python3 scripts/generate_pdf.py`
+2. Verify: `pdftotext oscillating_brane_theory_latest.pdf - | grep -i "GHOST_PATTERN"`
+3. Commit the PDF explicitly
+4. If push rejected: `git pull origin main` then resolve PDF conflict with `git checkout --ours oscillating_brane_theory_latest.pdf`
 
 ### Files the PDF generator reads (in order):
 ```
@@ -81,101 +79,77 @@ docs/foundations_parts/part1_mathematical_framework.md,
 docs/foundations_parts/part2_comparative_predictions.md,
 docs/foundations_parts/part3_current_limitations.md,
 docs/foundations_parts/part4_development_roadmap.md,
-_posts/*.md (all blog posts, sorted reverse chronological)
+_posts/*.md (all 5 blog posts, sorted reverse chronological)
 ```
-**ALL these files must be checked** when hunting for ghost content. Missing even one blog post will leave ghosts in the PDF.
+**ALL these files must be checked** when hunting for ghost content.
+
+### Ghost verification command:
+```bash
+pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point Unique\|tiny hammers\|momentum hit\|NANOGrav\|Block Universe\|Version 4\|Infinite Ocean\|dark matter impacts"
+```
 
 ## Project Structure
 ```
 oscillating-brane-DM/
-├── _posts/              # Blog posts (5 total, dark theme)
-├── _layouts/
-│   └── dark.html        # Main layout (NO polyfill.io - removed for security)
+├── _posts/              # 5 blog posts (all updated V5.0)
+├── _layouts/dark.html   # Main layout (NO polyfill.io)
 ├── assets/
-│   ├── css/dark-theme.css  # 45%/55% text/video split layout
+│   ├── css/dark-theme.css  # 45%/55% text/video grid
 │   ├── js/video-carousel.js
-│   └── videos/          # Local MP4 files
-├── plots/               # Scientific figures (23 files, 8 referenced)
+│   └── videos/
+├── plots/               # 23 figures (8 referenced by served pages)
 ├── scripts/
-│   ├── generate_pdf.py         # Main PDF generator (reads ALL .md files)
-│   ├── generate_whitepaper.py  # V4 white paper generator (OBSOLETE)
-│   ├── brane_dynamics.py       # Membrane oscillation calculations
-│   ├── brane_oscillation_1d.py # 1D radion field evolution
-│   ├── growth_factor.py        # Structure formation
-│   ├── bayesian_analysis.py    # Model comparison
-│   └── ...                     # Other analysis scripts
+│   ├── generate_pdf.py         # PDF generator (reads ALL .md files)
+│   ├── desi_w_evolution.py     # DESI plot generator (label: ER=EPR)
+│   ├── brane_dynamics.py       # Core physics
+│   └── ...
 ├── paper/
-│   └── cosmic_yoyo_prl.tex    # V5.0 white paper LaTeX source
+│   └── cosmic_yoyo_prl.tex    # V5.0 white paper LaTeX (5 pages)
 ├── docs/
-│   ├── theory_v4_complete.md       # Complete theory (now V5.0)
+│   ├── theory_v4_complete.md       # Complete theory (V5.0 content)
 │   ├── theoretical_foundations.md  # Mathematical framework
 │   └── foundations_parts/          # Split framework (4 parts)
-├── output/              # Generated PDFs (excluded from Jekyll build)
-├── cosmic_yoyo_v5_holographic.pdf  # V5.0 white paper (4 pages)
-├── oscillating_brane_theory_latest.pdf  # Full theory (70 pages)
+├── output/              # Generated PDFs (excluded from Jekyll, contains stale combined.md files)
+├── cosmic_yoyo_v5_holographic.pdf  # White paper (5 pages)
+├── oscillating_brane_theory_latest.pdf  # Full theory (72 pages)
 ├── index.md, theory.md, predictions.md, chronology.md, tools.md, about.md, downloads.md
-├── _config.yml          # Jekyll config (navigation, theme)
+├── _config.yml          # Jekyll config
 ├── CNAME                # higgs-cosmology.com
-└── .github/workflows/ci.yml  # CI with PDF auto-generation
+└── .github/workflows/ci.yml  # CI with PDF auto-generation (race condition!)
 ```
 
-## Jekyll/GitHub Pages Configuration
-
-- **Theme**: `jekyll-theme-minimal` (GitHub Pages supported)
-- **Custom Layout**: `dark.html` with video carousel
+## Jekyll/GitHub Pages
+- **Theme**: jekyll-theme-minimal
 - **Domain**: higgs-cosmology.com (CNAME)
-- **MathJax**: Loaded directly from CDN (polyfill.io REMOVED - was compromised)
-- **CSS**: 45%/55% text/video grid split, images use 100% of text column width
-- **OpenGraph image**: `/plots/cosmic_yoyo_simple.gif`
+- **MathJax**: Direct CDN (polyfill.io REMOVED — compromised in 2024)
+- **CSS**: 45%/55% text/video grid, images 100% column width
+- **OpenGraph image**: /plots/cosmic_yoyo_simple.gif
+- **Navigation**: Home, Theory, Complete Theory, Theoretical Foundations, Chronology, Predictions, Tools, Downloads, About
 
-### Navigation pages (in _config.yml):
-Home, Theory, Complete Theory (/theory-complete/), Theoretical Foundations (/theoretical-foundations/), Chronology, Predictions, Tools, Downloads, About
+## Downloads (2 PDFs only)
+1. **White Paper V5.0** (`cosmic_yoyo_v5_holographic.pdf`) — 5 pages, LaTeX
+2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — 72 pages
+- Old V4 white paper: DELETED
 
-### Blog Posts (5 total):
-1. `2025-07-03-introduction-universe-membrane.md` - Introduction (updated V5.0)
-2. `2025-07-03-microscopic-excitation.md` - Excitation mechanism (updated V5.0 ER=EPR)
-3. `2025-07-03-cosmic-chronology.md` - Timeline (Ringermacher removed)
-4. `2025-07-03-observational-tests.md` - Tests (NANOGrav removed)
-5. `2026-03-20-observational-confirmations.md` - 2024-2026 confirmations
+## Human-AI Collaboration Model
+The author (Romain) is the conceptual architect — geometric intuition, synthesis of anomalies, direction of research. The AI systems (Claude, Gemini) serve as mathematical co-processors — translating concepts into formal frameworks, executing derivations, verifying physical consistency. This is the Faraday-Maxwell model: vision + formalization. The acknowledgments in the white paper are radically transparent about this methodology.
 
-## Key Observational Confirmations (2024-2026)
+## Observational Confirmations (2024-2026)
 - **DESI 2024-2026**: Dark energy evolves (4σ) — matches oscillating w(z)
 - **JWST "Little Red Dots"**: Primordial massive BHs at z>6 — our "Cosmic Pushpins"
 - **Farrah et al. 2023-2024**: BH mass coupled to expansion (k=3.11±0.19)
-- **S₈ tension**: Our 5.2% growth suppression bridges CMB/lensing gap
-- **Planck low-ℓ anomaly**: Our ISW resonance explains it (Δχ²=32.9)
-
-## Downloads Structure
-Two PDFs available on the site:
-1. **White Paper V5.0** (`cosmic_yoyo_v5_holographic.pdf`) - 4 pages, LaTeX, full-width figures
-2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) - 70 pages, all chapters
-
-The old V4 white paper (`whitepaper_oscillating_brane.pdf`) has been DELETED.
-
-## Common Commands
-```bash
-# Generate the big PDF
-python3 scripts/generate_pdf.py
-
-# Compile the white paper
-cd paper && pdflatex cosmic_yoyo_prl.tex && pdflatex cosmic_yoyo_prl.tex
-cp cosmic_yoyo_prl.pdf ../cosmic_yoyo_v5_holographic.pdf
-
-# Verify PDF is clean of ghosts
-pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point Unique\|NANOGrav.*doublet\|Block Universe\|Version 4\|Infinite Ocean"
-
-# Build Jekyll site locally
-bundle exec jekyll build
-```
+- **S₈ tension**: 5.2% growth suppression via G_eff leak bridges CMB/lensing gap
+- **Planck low-ℓ anomaly**: ISW resonance explains it (Δχ²=32.9)
 
 ## Maintenance Checklist
-- When editing theory content, check ALL source files listed in PDF generator
-- After PDF generation, always verify with pdftotext grep for banned terms
+- Check ALL source files in PDF generator list when hunting ghosts
+- After PDF generation, ALWAYS verify with pdftotext grep
+- Never use ballistic/impact language for brane excitation — use Complexity=Volume
 - Run `black` and `isort` before committing Python code
-- Never reference Ringermacher, Point Unique (0D), or GW doublets
+- Watch for CI auto-overwriting PDF after push
 - Keep downloads.md in sync with available PDFs
-- Watch for CI auto-updating the PDF after your push
 
 ## Contact
-- GitHub Issues: https://github.com/Teleadmin-ai/oscillating-brane-DM/issues
-- Repository owner: @Teleadmin-ai
+- **Author**: provencal.romain@teleadmin.net
+- **GitHub Issues**: https://github.com/Teleadmin-ai/oscillating-brane-DM/issues
+- **Repository owner**: @Teleadmin-ai
