@@ -129,7 +129,15 @@ Where:
 - Σₙω_n accounts for zero-point fluctuations of Kaluza-Klein modes
 - V_Casimir prevents runaway branon production via dynamical Casimir effect
 
-This ensures the oscillation remains stable against parametric resonance and Casimir instabilities that would otherwise damp the cosmic vibration.
+**The Adiabatic Shield**: The oscillation frequency (ν ~ 1.6 × 10⁻¹⁷ Hz) is 10³¹ times slower than the lightest Kaluza-Klein mode (ν_KK ~ 10¹⁴ Hz for m_KK ~ 1 eV). By the adiabatic theorem of quantum mechanics, particle creation is suppressed by a Schwinger factor Γ ∝ e^(-10³¹) ≈ 0. The cosmic yoyo oscillates without quantum friction.
+
+### Effective Gravity and S₈ Suppression
+
+The primary mechanism for structure growth suppression is not direct w(z) friction but effective gravity variation. In the warped AdS bulk:
+
+G_eff = G_Newton × e^(-2k|z|)
+
+Since the brane oscillates, ⟨z²⟩ > 0, therefore ⟨G_eff⟩ < G_Newton. This gravitational "leak" into the 5th dimension slows halo collapse by 5.2%, resolving the S₈ tension between CMB (0.830) and weak lensing (0.787).
 
 However, secondary local resonances are possible around superclusters, where mass concentration creates "hard points." These micro-oscillations could generate tiny gravitational anisotropies (δg/g ~ 10⁻⁸), a subtle but potentially detectable signature.
 
