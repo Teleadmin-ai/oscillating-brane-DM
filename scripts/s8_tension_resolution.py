@@ -6,7 +6,7 @@ Shows how the oscillating dark energy naturally suppresses structure
 growth by exactly the amount needed to resolve the S₈ tension.
 
 Author: Romain Provencal (with Claude & Gemini DeepThink)
-Version: 4.1
+Version: 6.0
 """
 
 import numpy as np

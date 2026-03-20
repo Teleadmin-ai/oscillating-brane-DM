@@ -7,7 +7,7 @@ showing the membrane vibration, dark energy evolution, and structure
 growth suppression over 13.8 billion years of cosmic history.
 
 Author: Romain Provencal (with Claude & Gemini DeepThink)
-Version: 4.1
+Version: 6.0
 """
 
 import numpy as np

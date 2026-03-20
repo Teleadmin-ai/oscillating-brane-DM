@@ -6,7 +6,7 @@ Visualizes how the 2 Gyr oscillation of the cosmic brane imprints
 a resonant signature on the Cosmic Microwave Background via the
 Integrated Sachs-Wolfe (ISW) effect, naturally explaining Planck's low-l anomaly.
 Author: Romain Provencal (with Claude & Gemini DeepThink)
-Version: 4.1
+Version: 6.0
 """
 
 import numpy as np

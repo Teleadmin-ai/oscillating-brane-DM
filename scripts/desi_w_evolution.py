@@ -6,7 +6,7 @@ Shows how the oscillating brane model predicts time-varying dark energy
 that aligns with DESI 2024 observations showing w(z) evolution.
 
 Author: Romain Provencal (with Gemini DeepThink)
-Version: 4.1
+Version: 6.0
 """
 
 import numpy as np
@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import quad
 
 # ==========================================
-# OSCILLATING BRANE MODEL (V4.1)
+# OSCILLATING BRANE MODEL (V6.0 Stick-Slip Motor)
 # ==========================================
 T_osc = 2.0           # Cosmic Yoyo Period (Gyr)
 A_w = 0.003           # Oscillation amplitude (subtle but sufficient)
