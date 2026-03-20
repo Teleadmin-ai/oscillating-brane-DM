@@ -28,7 +28,7 @@ All computational tools are available in the [GitHub repository](https://github.
 - **Growth Factor Analysis** (`growth_factor.py`)
 - **Bayesian Model Comparison** (`bayesian_analysis.py`)
 - **Kaluza-Klein Spectrum** (`kk_spectrum.py`)
-- **PTA Echo Predictions** (`pta_echo.py`)
+- **ISW Effect Analysis** (`isw_effect.py`)
 
 ### 📊 Data Files
 

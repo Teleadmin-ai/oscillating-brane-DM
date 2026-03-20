@@ -21,7 +21,7 @@ This repository contains the complete theoretical framework and computational to
 
 ### 📖 Theory Overview
 
-Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—floats in an ocean of hidden dimensions. Black holes are not destructive chasms but tension pegs, anchor points where the membrane folds and plunges elsewhere. And dark matter? It is the invisible bow that vibrates this giant harp, creating a two-billion-year melody where each note shapes space, time, and gravity itself.
+Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is anchored at a Point Unique beyond space and time. Black holes are not destructive chasms but tension pegs, anchor points where the membrane folds into the singular point where all paths converge. And dark matter? It doesn't traverse dimensions but meets itself in the atemporary center where beginning and end are one, creating a two-billion-year pulsation where each beat shapes space, time, and gravity itself.
 
 ### 🔬 Core Concepts
 

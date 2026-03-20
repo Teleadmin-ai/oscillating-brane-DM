@@ -101,14 +101,14 @@ With Kelvin-Voigt damping γ ~ 10⁻² Gyr⁻¹:
 Black holes are not cosmic graveyards but **gateways**. Dark matter follows an eternal cycle:
 
 1. **Falls into black holes** (gravitational funnels)
-2. **Traverses the 5th dimension** through the singularity
-3. **Emerges elsewhere** in 4D space  
+2. **Converges to the Point Unique** where all black holes meet
+3. **Returns from the atemporary center** where beginning and end are one
 4. **Falls again** - completing the cosmic yoyo
 
-This perpetual motion through black holes:
-- **Creates gravity itself** - the continuous flow generates the gravitational field
+This eternal convergence to the singular point:
+- **Creates gravity itself** - the pulsation from the Point Unique generates the gravitational field
 - **Fabricates spacetime** - the oscillations literally create distance and time
-- **Powers the universe** until the Higgs field exhausts
+- **Powers the universe** until maximum entropy is reached
 
 The mathematics captures this through the funnel density:
 $$\rho_{\text{funnel}} \propto \frac{M}{r^3} f_{\text{osc}}$$
