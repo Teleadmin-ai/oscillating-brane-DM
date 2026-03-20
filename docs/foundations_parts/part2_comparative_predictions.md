@@ -100,7 +100,7 @@ description: |
 
 The model would be falsified by:
 - Direct detection of DM particles with $\sigma > 10^{-48}$ cm²
-- Absence of GW doublet with sensitivity $< 10^{-19}$
+- Absence of ISW resonance signature in upcoming CMB-S4 surveys
 - Discovery of DM-dominated structures without baryons
 - Variations in fundamental constants beyond $|\dot{G}/G| > 10^{-13}$ yr⁻¹
 

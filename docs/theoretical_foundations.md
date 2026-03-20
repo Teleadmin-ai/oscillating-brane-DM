@@ -845,26 +845,8 @@ jupyter>=1.0  # For notebooks
 
 ### 6.5 Nature of the Bulk and M-Theory Connections
 
-#### 6.5.1 Two Limiting Visions of the Bulk
 
-The oscillating brane theory admits two complementary interpretations of the bulk geometry, representing different limits of the same underlying M-theory construction:
-
-| Aspect | Bulk-Point Limit | Bulk-Infinity Limit |
-|--------|------------------|---------------------|
-| **5D Geometry** | Logarithmic approach to zero radius | Weakly curved or flat extra dimension |
-| **Quantum State** | Single quantum state (E = phase space) | Continuum of KK modes |
-| **PBH Topology** | All wormholes connect to same point | Multiple independent channels |
-| **Oscillation Coherence** | Perfect phase alignment | Potential decoherence |
-| **M-theory Realization** | Orbifold singularity | Smooth Calabi-Yau |
-
-**Physical Interpretation**:
-- **IR Regime** (low energy): Tension $\tau(t)$ large → extra dimension contracts → bulk-point behavior
-- **UV Regime** (high energy): Tension $\tau \to 0$ → brane "melts" → bulk-infinity behavior
-
-The transition between regimes occurs at:
-$$E_{transition} \sim \sqrt{\tau_0 M_5^3} \sim 10^{16} \text{ GeV}$$
-
-#### 6.5.2 M-Theory Brane Genesis Mechanism
+#### 6.5.1 M-Theory Brane Genesis Mechanism
 
 The oscillating brane naturally emerges from M-theory dynamics [Sethi, Strassler & Sundrum 2001]:
 
@@ -886,39 +868,6 @@ membrane nucleation becomes energetically favorable.
 
 This provides a microscopic origin for our oscillating 3-brane from fundamental M-theory.
 
-#### 6.5.3 Observable Signatures of Bulk Nature
-
-Different bulk scenarios lead to distinct observational signatures:
-
-| Observable | Bulk-Point Prediction | Bulk-Infinity Prediction |
-|------------|----------------------|-------------------------|
-| **w(z) Phase Coherence** | Perfect alignment | Decoherence $\Delta\phi > 0.05$ rad |
-| **GW Echo Structure** | Clean doublet (f₀, 2f₀) | Broadened peaks |
-| **KK Mode Spectrum** | Discrete, aligned | Quasi-continuous |
-| **CMB $\Delta N_{eff}$** | ~0.01 | ~0.1 |
-| **Halo Profiles** | Universal shape | Environment-dependent |
-
-**Key Discriminator**: The angular correlation function of w(z) across the sky
-- Bulk-point: $C(\theta) = 1$ (perfect correlation)
-- Bulk-infinity: $C(\theta) = \exp(-\theta^2/\theta_0^2)$ with $\theta_0 \sim 10°$
-
-#### 6.5.4 Philosophical Implications: Universe End State
-
-When Hubble damping ceases ($H_* \to 0$), the fate depends on bulk nature:
-
-**Bulk-Point Scenario**:
-- 4D metric: $ds^2 \to 0$ (distances vanish)
-- 5D view: Brane collapses to orbifold point
-- Information preserved in bulk quantum state
-- "Distance zero = infinite connection"
-
-**Bulk-Infinity Scenario**:
-- 4D metric: Oscillations grow without bound
-- 5D view: Brane dissolves into bulk ("delamination")
-- Matter spreads through extra dimension
-- Effective transition to higher-dimensional phase
-
-This isn't destruction but **topological phase transition** - the apparent "end" in 4D corresponds to liberation into the full bulk geometry.
 
 ## 6.6 Numerical Validation and Prior Specifications
 

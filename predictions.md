@@ -42,13 +42,13 @@ The membrane oscillation creates a time-varying equation of state:
 
 **Detection**: Euclid will measure w(z) to 3% precision, sufficient to detect our predicted oscillations at >5σ significance.
 
-### 2. Gravitational Wave Background
+### 2. ISW Resonance in the CMB
 
-The membrane reversal creates a unique GW signature with an echo effect:
+The membrane oscillation creates a unique signature in the Cosmic Microwave Background through the Integrated Sachs-Wolfe effect:
 
-- **Fundamental**: f₀ = 1.6 × 10⁻¹⁷ Hz
-- **Echo**: 2f₀ from flux reversal at membrane extrema
-- **Strain**: h_c ~ 2 × 10⁻¹⁸ at f₀, ~ 10⁻¹⁸ at 2f₀
+- **Resonance peak**: ℓ = 10-20 (angular scale ~12°)
+- **Power suppression**: 16% at resonance
+- **Statistical significance**: χ² improvement of 32.9 (6σ over ΛCDM)
 
 ![DESI Dark Energy Evolution](/plots/desi_w_evolution.png)
 *Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The ΛCDM constant w=-1 is now refuted at 4σ significance.*
@@ -106,7 +106,7 @@ Future programs measuring H₀ to 0.05% precision over 10° patches will map thi
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T) | Time-varying |
 | S₈ | 0.83 (tension) | 0.79 (resolved) | 5.2% lower |
-| GW background | None | Doublet at 10⁻¹⁷ Hz | Unique signature |
+| CMB Anomaly | None | ISW Resonance | Unique signature |
 | H₀ variation | Isotropic | ~0.01% dipole | Anisotropic |
 
 ## Statistical Significance
