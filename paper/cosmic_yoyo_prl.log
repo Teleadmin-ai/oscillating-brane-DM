@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  20 MAR 2026 22:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  20 MAR 2026 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -467,18 +467,24 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (32.63777pt too wide) detected at line 56
+Overfull \hbox (32.63777pt too wide) detected at line 55
 [][][]\OML/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 =  []  \OML/cmm/m/it/10.95 d[]x[
 ]  [] \OT1/cmr/m/n/10.95 +  []  \OML/cmm/m/it/10.95 d[]x[]  []
+ []
+
+
+Overfull \hbox (30.56458pt too wide) detected at line 60
+[][][][]
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<../plots/desi_w_evolution.png, id=59, 859.5312pt x 500.1084pt>
+<../plots/desi_w_evolution.png, id=65, 859.5312pt x 500.1084pt>
 File: ../plots/desi_w_evolution.png Graphic file (type png)
 <use ../plots/desi_w_evolution.png>
-Package pdftex.def Info: ../plots/desi_w_evolution.png  used on input line 99.
+Package pdftex.def Info: ../plots/desi_w_evolution.png  used on input line 104.
+
 (pdftex.def)             Requested size: 386.96027pt x 225.15353pt.
 
 
@@ -486,72 +492,87 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 106.
+(hyperref)                removing `math shift' on input line 111.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 106.
+(hyperref)                removing `subscript' on input line 111.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 106.
+(hyperref)                removing `math shift' on input line 111.
 
-<../plots/s8_tension_resolution.png, id=61, 1003.1076pt x 430.7292pt>
+<../plots/s8_tension_resolution.png, id=67, 1003.1076pt x 430.7292pt>
 File: ../plots/s8_tension_resolution.png Graphic file (type png)
 <use ../plots/s8_tension_resolution.png>
 Package pdftex.def Info: ../plots/s8_tension_resolution.png  used on input line
- 123.
+ 127.
 (pdftex.def)             Requested size: 386.96027pt x 166.15659pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2]
-Overfull \hbox (30.68346pt too wide) detected at line 135
+
+Overfull \hbox (25.81688pt too wide) detected at line 139
 [][][]\OT1/cmr/m/n/10.95 ^^A\OML/cmm/m/it/10.95 C[] \OT1/cmr/m/n/10.95 = [] [] 
 \OML/cmm/m/it/10.95 dk k[]P[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k\OT1/cmr/
 m/n/10.95 ) [][]
  []
 
-<../plots/isw_cmb_signature.png, id=70, 843.6318pt x 500.1084pt>
+
+Overfull \vbox (35.92065pt too high) has occurred while \output is active []
+
+
+[2]
+<../plots/isw_cmb_signature.png, id=79, 843.6318pt x 500.1084pt>
 File: ../plots/isw_cmb_signature.png Graphic file (type png)
 <use ../plots/isw_cmb_signature.png>
-Package pdftex.def Info: ../plots/isw_cmb_signature.png  used on input line 144
+Package pdftex.def Info: ../plots/isw_cmb_signature.png  used on input line 146
 .
 (pdftex.def)             Requested size: 386.96027pt x 229.38875pt.
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 161.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 1.8254pt
+(hyperref)                removed on input line 161.
 
 [3 <../plots/desi_w_evolution.png> <../plots/s8_tension_resolution.png>]
 [4 <../plots/isw_cmb_signature.png>] [5] (./cosmic_yoyo_prl.aux)
 Package rerunfilecheck Info: File `cosmic_yoyo_prl.out' has not changed.
-(rerunfilecheck)             Checksum: 0959BFF5FC6466AE02365E5A8F8D2FBC;1319.
+(rerunfilecheck)             Checksum: 11B56C3E4BDB5C5FFBDAF67263B2729E;1639.
  ) 
 Here is how much of TeX's memory you used:
- 10352 strings out of 478051
- 159944 string characters out of 5840944
+ 10370 strings out of 478051
+ 160122 string characters out of 5840944
  1870330 words of memory out of 5000000
- 30322 multiletter control sequences out of 15000+600000
- 521128 words of font info for 65 fonts, out of 8000000 for 9000
+ 30331 multiletter control sequences out of 15000+600000
+ 521469 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,6n,76p,1135b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cosmic_yoyo_prl.pdf (5 pages, 693499 bytes).
+ 75i,6n,76p,1573b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </root/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on cosmic_yoyo_prl.pdf (5 pages, 692256 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 80 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 192 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
