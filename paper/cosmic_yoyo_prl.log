@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  20 MAR 2026 23:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  21 MAR 2026 01:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,13 +480,17 @@ Overfull \hbox (30.56458pt too wide) detected at line 60
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<../plots/desi_w_evolution.png, id=65, 859.5312pt x 500.1084pt>
+Underfull \hbox (badness 6047) in paragraph at lines 66--67
+[]$\OML/cmm/m/it/10.95 ^^M[]$\OT1/cmr/m/n/10.95 : Ther-mo-dy-namic topo-log-i-c
+al
+ []
+
+<../plots/desi_w_evolution.png, id=59, 859.5312pt x 500.1084pt>
 File: ../plots/desi_w_evolution.png Graphic file (type png)
 <use ../plots/desi_w_evolution.png>
 Package pdftex.def Info: ../plots/desi_w_evolution.png  used on input line 104.
 
 (pdftex.def)             Requested size: 386.96027pt x 225.15353pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -502,15 +506,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 111.
 
-<../plots/s8_tension_resolution.png, id=67, 1003.1076pt x 430.7292pt>
+
+Overfull \vbox (19.52017pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (19.52017pt too high) has occurred while \output is active []
+
+
+[2]
+<../plots/s8_tension_resolution.png, id=72, 1003.1076pt x 430.7292pt>
 File: ../plots/s8_tension_resolution.png Graphic file (type png)
 <use ../plots/s8_tension_resolution.png>
 Package pdftex.def Info: ../plots/s8_tension_resolution.png  used on input line
  127.
 (pdftex.def)             Requested size: 386.96027pt x 166.15659pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 
 Overfull \hbox (25.81688pt too wide) detected at line 139
 [][][]\OT1/cmr/m/n/10.95 ^^A\OML/cmm/m/it/10.95 C[] \OT1/cmr/m/n/10.95 = [] [] 
@@ -518,43 +527,28 @@ Overfull \hbox (25.81688pt too wide) detected at line 139
 m/n/10.95 ) [][]
  []
 
-
-Overfull \vbox (35.92065pt too high) has occurred while \output is active []
-
-
-[2]
-<../plots/isw_cmb_signature.png, id=79, 843.6318pt x 500.1084pt>
+<../plots/isw_cmb_signature.png, id=73, 843.6318pt x 500.1084pt>
 File: ../plots/isw_cmb_signature.png Graphic file (type png)
 <use ../plots/isw_cmb_signature.png>
 Package pdftex.def Info: ../plots/isw_cmb_signature.png  used on input line 146
 .
 (pdftex.def)             Requested size: 386.96027pt x 229.38875pt.
 
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 161.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 1.8254pt
-(hyperref)                removed on input line 161.
 
 [3 <../plots/desi_w_evolution.png> <../plots/s8_tension_resolution.png>]
 [4 <../plots/isw_cmb_signature.png>] [5] (./cosmic_yoyo_prl.aux)
 Package rerunfilecheck Info: File `cosmic_yoyo_prl.out' has not changed.
-(rerunfilecheck)             Checksum: 11B56C3E4BDB5C5FFBDAF67263B2729E;1639.
+(rerunfilecheck)             Checksum: 62C76E4AE8591C44CBE55607DD58E11D;1550.
  ) 
 Here is how much of TeX's memory you used:
- 10370 strings out of 478051
- 160122 string characters out of 5840944
- 1870330 words of memory out of 5000000
- 30331 multiletter control sequences out of 15000+600000
+ 10368 strings out of 478051
+ 160092 string characters out of 5840944
+ 1872330 words of memory out of 5000000
+ 30330 multiletter control sequences out of 15000+600000
  521469 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,6n,76p,1573b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,76p,1976b,645s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </root/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -569,10 +563,10 @@ cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cosmic_yoyo_prl.pdf (5 pages, 692256 bytes).
+Output written on cosmic_yoyo_prl.pdf (5 pages, 694675 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
