@@ -27,10 +27,10 @@ import numpy as np
 # ---------------------------------------------------------------------------
 # Physical constants
 # ---------------------------------------------------------------------------
-G_N = 6.674e-11       # m^3 kg^-1 s^-2
-c = 2.998e8            # m/s
-M_sun = 1.989e30       # kg
-L_extra = 2.0e-7       # extra dimension size in meters (0.2 um)
+G_N = 6.674e-11  # m^3 kg^-1 s^-2
+c = 2.998e8  # m/s
+M_sun = 1.989e30  # kg
+L_extra = 2.0e-7  # extra dimension size in meters (0.2 um)
 
 PLOTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "plots")
 
@@ -220,7 +220,10 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
     """Main plot: EMF + constraint curves + effective fraction."""
     plt.style.use("dark_background")
     fig, (ax1, ax2) = plt.subplots(
-        2, 1, figsize=(12, 10), height_ratios=[3, 1],
+        2,
+        1,
+        figsize=(12, 10),
+        height_ratios=[3, 1],
         gridspec_kw={"hspace": 0.08},
     )
 
@@ -232,17 +235,24 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
     f_eros = eros_macho_constraint(M_range)
     f_femto = femtolensing_constraint(M_range)
 
-    ax1.fill_between(log_M, 0, f_hsc, alpha=0.15, color="red",
-                     label="Subaru-HSC excluded")
-    ax1.fill_between(log_M, 0, f_eros, alpha=0.08, color="orange",
-                     label="EROS/MACHO excluded")
+    ax1.fill_between(
+        log_M, 0, f_hsc, alpha=0.15, color="red", label="Subaru-HSC excluded"
+    )
+    ax1.fill_between(
+        log_M, 0, f_eros, alpha=0.08, color="orange", label="EROS/MACHO excluded"
+    )
     ax1.plot(log_M, f_hsc, color="red", linewidth=1.5, alpha=0.7)
     ax1.plot(log_M, f_eros, color="orange", linewidth=1.5, alpha=0.5)
 
     # EMF (scaled to f_total = 0.10)
     f_local = result["f_local"]
-    ax1.plot(log_M, f_local, color="#00ffcc", linewidth=2.5,
-             label=f"EMF (log-normal, $\\sigma_M$={sigma_M})")
+    ax1.plot(
+        log_M,
+        f_local,
+        color="#00ffcc",
+        linewidth=2.5,
+        label=f"EMF (log-normal, $\\sigma_M$={sigma_M})",
+    )
     ax1.fill_between(log_M, 0, f_local, alpha=0.2, color="#00ffcc")
 
     # Mark where EMF violates constraints
@@ -250,12 +260,20 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
         ax1.scatter(
             log_M[result["violation_mask"]],
             f_local[result["violation_mask"]],
-            color="yellow", s=10, zorder=5, label="Constraint violation",
+            color="yellow",
+            s=10,
+            zorder=5,
+            label="Constraint violation",
         )
 
     # Mark M_c and key masses
-    ax1.axvline(np.log10(M_c), color="#00ffcc", linestyle="--", alpha=0.5,
-                label=f"$M_c = 10^{{{int(np.log10(M_c))}}} M_\\odot$")
+    ax1.axvline(
+        np.log10(M_c),
+        color="#00ffcc",
+        linestyle="--",
+        alpha=0.5,
+        label=f"$M_c = 10^{{{int(np.log10(M_c))}}} M_\\odot$",
+    )
 
     # r_s / L ratio on top axis
     ax1_top = ax1.twiny()
@@ -291,13 +309,14 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
     cumulative = np.zeros_like(M_range)
     for i in range(1, len(M_range)):
         cumulative[i] = np.trapezoid(
-            np.minimum(result["f_local"][:i+1], result["f_max"][:i+1]),
-            ln_M[:i+1],
+            np.minimum(result["f_local"][: i + 1], result["f_max"][: i + 1]),
+            ln_M[: i + 1],
         )
 
     ax2.plot(log_M, cumulative, color="#00ffcc", linewidth=2)
-    ax2.axhline(0.10, color="white", linestyle="--", alpha=0.5,
-                label="Target $f_{PBH}$ = 0.10")
+    ax2.axhline(
+        0.10, color="white", linestyle="--", alpha=0.5, label="Target $f_{PBH}$ = 0.10"
+    )
     ax2.fill_between(log_M, 0, cumulative, alpha=0.15, color="#00ffcc")
 
     ax2.set_xlabel(r"$\log_{10}(M / M_\odot)$", fontsize=13)
@@ -354,17 +373,23 @@ def main():
         M = 10**M_exp
         r_s = schwarzschild_radius(M)
         ratio = r_s / L_extra
-        print(f"  M = 10^{M_exp} Msun: r_s = {r_s:.2e} m = "
-              f"{r_s*1e9:.2f} nm, r_s/L = {ratio:.4f}")
+        print(
+            f"  M = 10^{M_exp} Msun: r_s = {r_s:.2e} m = "
+            f"{r_s*1e9:.2f} nm, r_s/L = {ratio:.4f}"
+        )
     print(f"  Extra dimension: L = {L_extra*1e9:.0f} nm = {L_extra*1e6:.1f} um")
 
     # Try different sigma values
     print("\n[4] Sensitivity to sigma_M:")
     for sig in [1.0, 1.5, 2.0, 2.5]:
         res = compute_effective_fpbh(M_range, M_c, sig, f_total)
-        status = "PASS" if res["n_violated"] == 0 else f"FAIL ({res['n_violated']} bins)"
-        print(f"  sigma_M = {sig:.1f}: f_eff = {res['f_effective']:.4f}, "
-              f"f_max_achievable = {res['f_max_achievable']:.4f}, {status}")
+        status = (
+            "PASS" if res["n_violated"] == 0 else f"FAIL ({res['n_violated']} bins)"
+        )
+        print(
+            f"  sigma_M = {sig:.1f}: f_eff = {res['f_effective']:.4f}, "
+            f"f_max_achievable = {res['f_max_achievable']:.4f}, {status}"
+        )
 
     # Plot
     print("\n[5] Generating plot...")

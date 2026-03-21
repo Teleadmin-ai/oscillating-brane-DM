@@ -22,14 +22,17 @@ A_w = 0.003  # Amplitude of w(z) oscillation
 H0 = 70  # km/s/Mpc
 c = 3e5  # km/s
 
+
 def lookback_time(z):
     """Approximate lookback time in Gyr"""
     return 9.8 * np.log(1 + z) / np.log(10)
+
 
 def w_de(z):
     """Dark energy equation of state with oscillation"""
     t_lb = lookback_time(z)
     return -1 + A_w * np.sin(2 * np.pi * t_lb / T_osc)
+
 
 def isw_amplitude(l, z):
     """ISW temperature fluctuation amplitude at multipole l and redshift z"""
@@ -41,6 +44,7 @@ def isw_amplitude(l, z):
     # This is a simplified model for visualization
     amplitude = np.abs(dw_dt * (1 + w) / (l * (l + 1)))
     return amplitude * 1e-5  # Scale to realistic CMB units
+
 
 # Create figure with subplots
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
@@ -64,9 +68,17 @@ l_array = np.logspace(0, 3, 100)
 z_isw = 0.5  # Redshift where ISW is strongest
 
 # ISW contribution to CMB
-isw_spectrum = np.array([isw_amplitude(l, z_isw) * l * (l + 1) / (2 * np.pi) for l in l_array])
+isw_spectrum = np.array(
+    [isw_amplitude(l, z_isw) * l * (l + 1) / (2 * np.pi) for l in l_array]
+)
 
-ax2.loglog(l_array, isw_spectrum * 1e12, "yellow", linewidth=2.5, label="ISW from brane oscillation")
+ax2.loglog(
+    l_array,
+    isw_spectrum * 1e12,
+    "yellow",
+    linewidth=2.5,
+    label="ISW from brane oscillation",
+)
 ax2.set_xlabel("Multipole ℓ", fontsize=12)
 ax2.set_ylabel("ℓ(ℓ+1)Cℓ/2π [μK²]", fontsize=12)
 ax2.set_title("ISW Contribution to CMB Angular Power Spectrum", fontsize=14)
@@ -104,14 +116,30 @@ sensitivity = [5e-6, 1e-6, 2e-7]  # Temperature sensitivity in K
 colors = ["blue", "green", "red"]
 
 for i, exp in enumerate(experiments):
-    ax4.scatter(l_peak[i], sensitivity[i] * 1e6, s=200, c=colors[i],
-                marker="*", label=exp, edgecolor="white", linewidth=1.5, zorder=5)
+    ax4.scatter(
+        l_peak[i],
+        sensitivity[i] * 1e6,
+        s=200,
+        c=colors[i],
+        marker="*",
+        label=exp,
+        edgecolor="white",
+        linewidth=1.5,
+        zorder=5,
+    )
 
 # Show our predicted signal
 l_signal = np.array([10, 30, 100, 300])
 signal_amplitude = np.array([3e-5, 1e-5, 3e-6, 1e-6])
-ax4.plot(l_signal, signal_amplitude * 1e6, "cyan", linewidth=2.5,
-         label="Brane oscillation ISW signal", marker="o", markersize=8)
+ax4.plot(
+    l_signal,
+    signal_amplitude * 1e6,
+    "cyan",
+    linewidth=2.5,
+    label="Brane oscillation ISW signal",
+    marker="o",
+    markersize=8,
+)
 
 ax4.set_xscale("log")
 ax4.set_yscale("log")
@@ -123,8 +151,9 @@ ax4.legend()
 ax4.set_xlim(5, 1000)
 ax4.set_ylim(0.1, 100)
 
-plt.suptitle("Integrated Sachs-Wolfe Effect from Brane Oscillation",
-             fontsize=16, y=1.02)
+plt.suptitle(
+    "Integrated Sachs-Wolfe Effect from Brane Oscillation", fontsize=16, y=1.02
+)
 plt.tight_layout()
 
 # Save the figure

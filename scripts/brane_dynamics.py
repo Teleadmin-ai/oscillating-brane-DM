@@ -172,7 +172,7 @@ class BraneOscillator:
         xi_term = xi * R_curvature * (phi_hat - phi_eq_hat)
 
         # GW restoring force
-        gw = -omega_0**2 * (phi_hat - phi_eq_hat)
+        gw = -(omega_0**2) * (phi_hat - phi_eq_hat)
 
         # Geometric forcing F[E_uv] * trace_coupling
         # Forcing decays with expansion (DM accretion ~ a^-3)
@@ -199,8 +199,7 @@ class BraneOscillator:
 
         # V8.0 ODE: trace coupling + radiative damping + attractor
         ddphi_hat = (
-            -(3 * H_gyr + gamma_rad) * dphi_hat
-            - xi_term + gw + forcing - release
+            -(3 * H_gyr + gamma_rad) * dphi_hat - xi_term + gw + forcing - release
         )
 
         return [dphi_hat, ddphi_hat]
@@ -425,8 +424,12 @@ def main():
     g_nl = brane.growth_suppression("nonlinear")
     g_lin = brane.growth_suppression("linear")
     print("Scale-Dependent Growth Suppression (Yukawa Screening):")
-    print(f"  Non-linear scales (DES): D_+^osc/D_+^LCDM = {g_nl:.3f} ({(1-g_nl)*100:.1f}%)")
-    print(f"  Linear scales (KiDS/CMB): D_+^osc/D_+^LCDM = {g_lin:.3f} ({(1-g_lin)*100:.1f}%)")
+    print(
+        f"  Non-linear scales (DES): D_+^osc/D_+^LCDM = {g_nl:.3f} ({(1-g_nl)*100:.1f}%)"
+    )
+    print(
+        f"  Linear scales (KiDS/CMB): D_+^osc/D_+^LCDM = {g_lin:.3f} ({(1-g_lin)*100:.1f}%)"
+    )
     print()
 
     # Solve stick-slip ODE with attractor
@@ -445,7 +448,9 @@ def main():
                 T_measured = np.mean(periods)
                 print(f"  Measured period: T = {T_measured:.2f} Gyr")
                 print(f"  Target period:   T = {brane.T:.2f} Gyr")
-                print(f"  Attractor convergence: {'YES' if abs(T_measured - brane.T) < 0.5 else 'TUNING NEEDED'}")
+                print(
+                    f"  Attractor convergence: {'YES' if abs(T_measured - brane.T) < 0.5 else 'TUNING NEEDED'}"
+                )
 
         # phi is in units of L (dimensionless)
         amplitude = (np.max(phi) - np.min(phi)) / 2

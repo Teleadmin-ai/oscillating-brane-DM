@@ -35,15 +35,15 @@ from scipy.signal import find_peaks
 # ---------------------------------------------------------------------------
 # Physical constants and parameters (dimensionless units: time in Gyr, phi in L)
 # ---------------------------------------------------------------------------
-H0_gyr = 1.0 / 14.5        # H0 in Gyr^-1 (67.4 km/s/Mpc)
+H0_gyr = 1.0 / 14.5  # H0 in Gyr^-1 (67.4 km/s/Mpc)
 Omega_m = 0.315
 Omega_L = 0.685
-T_target = 2.0              # Target period in Gyr
+T_target = 2.0  # Target period in Gyr
 omega_0 = 2 * np.pi / T_target  # natural frequency Gyr^-1
-phi_eq = 0.5                # equilibrium position (phi/L)
-phi_crit = 0.1              # critical threshold (phi/L)
-xi = 0.15                   # non-minimal coupling
-t_age = 13.8                # current age of universe in Gyr
+phi_eq = 0.5  # equilibrium position (phi/L)
+phi_crit = 0.1  # critical threshold (phi/L)
+xi = 0.15  # non-minimal coupling
+t_age = 13.8  # current age of universe in Gyr
 
 PLOTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "plots")
 
@@ -53,7 +53,7 @@ PLOTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "plots")
 # ---------------------------------------------------------------------------
 def hubble(a):
     """Hubble parameter H(a) in Gyr^-1."""
-    return H0_gyr * np.sqrt(Omega_m * a**(-3) + Omega_L)
+    return H0_gyr * np.sqrt(Omega_m * a ** (-3) + Omega_L)
 
 
 def scale_factor_from_time(t_gyr):
@@ -92,7 +92,7 @@ def radion_rhs(t_gyr, y):
     xi_term = -xi * R_curv * (phi - phi_eq)
 
     # Goldberger-Wise restoring force
-    gw = -omega_0**2 * (phi - phi_eq)
+    gw = -(omega_0**2) * (phi - phi_eq)
 
     # Geometric forcing F[E_uv] decaying as a^-3 (Bondi-Hoyle accretion)
     # Normalize so that at a=1, forcing balances to give T ~ 2 Gyr
@@ -121,12 +121,12 @@ def solve_multi_ic(t_span=(2.0, 20.0), n_points=4000):
 
     # Various initial conditions (phi_0, dphi_0)
     initial_conditions = [
-        (0.45, 0.0,  "phi0=0.45, v0=0"),
-        (0.50, 0.5,  "phi0=0.50, v0=+0.5"),
-        (0.55, 0.0,  "phi0=0.55, v0=0"),
-        (0.60, 0.0,  "phi0=0.60, v0=0"),
+        (0.45, 0.0, "phi0=0.45, v0=0"),
+        (0.50, 0.5, "phi0=0.50, v0=+0.5"),
+        (0.55, 0.0, "phi0=0.55, v0=0"),
+        (0.60, 0.0, "phi0=0.60, v0=0"),
         (0.50, -0.5, "phi0=0.50, v0=-0.5"),
-        (0.65, 0.0,  "phi0=0.65, v0=0"),
+        (0.65, 0.0, "phi0=0.65, v0=0"),
     ]
 
     solutions = []
@@ -142,12 +142,14 @@ def solve_multi_ic(t_span=(2.0, 20.0), n_points=4000):
             max_step=0.01,
         )
         if sol.success:
-            solutions.append({
-                "t": sol.t,
-                "phi": sol.y[0],
-                "dphi": sol.y[1],
-                "label": label,
-            })
+            solutions.append(
+                {
+                    "t": sol.t,
+                    "phi": sol.y[0],
+                    "dphi": sol.y[1],
+                    "label": label,
+                }
+            )
             print(f"  Solved: {label} -> {len(sol.t)} points")
         else:
             print(f"  FAILED: {label} -> {sol.message}")
@@ -194,7 +196,9 @@ def plot_phase_portrait(solutions):
         for i in range(0, n - 1, 10):
             frac = i / n
             c = plt.cm.viridis(0.2 + 0.7 * frac)
-            ax.plot(phi[i:i+11], dphi[i:i+11], color=c, linewidth=0.5, alpha=0.8)
+            ax.plot(
+                phi[i : i + 11], dphi[i : i + 11], color=c, linewidth=0.5, alpha=0.8
+            )
 
         # Mark start
         ax.plot(phi[0], dphi[0], "o", color=color, markersize=8, zorder=5)
@@ -208,11 +212,15 @@ def plot_phase_portrait(solutions):
         )
 
     # Mark thresholds
-    ax.axvline(phi_eq + phi_crit, color="red", linestyle="--", alpha=0.5,
-               label=r"$\phi_{crit}$")
+    ax.axvline(
+        phi_eq + phi_crit,
+        color="red",
+        linestyle="--",
+        alpha=0.5,
+        label=r"$\phi_{crit}$",
+    )
     ax.axvline(phi_eq - phi_crit, color="red", linestyle="--", alpha=0.5)
-    ax.axvline(phi_eq, color="gray", linestyle=":", alpha=0.3,
-               label=r"$\phi_{eq}$")
+    ax.axvline(phi_eq, color="gray", linestyle=":", alpha=0.3, label=r"$\phi_{eq}$")
 
     ax.set_xlabel(r"$\hat{\phi}$ (units of L)", fontsize=14)
     ax.set_ylabel(r"$\dot{\hat{\phi}}$ (Gyr$^{-1}$)", fontsize=14)
@@ -249,11 +257,22 @@ def plot_temporal(solutions):
 
     # --- Upper panel: phi(t) ---
     for sol, color in zip(solutions, colors):
-        ax1.plot(sol["t"], sol["phi"], color=color, linewidth=0.8,
-                 alpha=0.85, label=sol["label"])
+        ax1.plot(
+            sol["t"],
+            sol["phi"],
+            color=color,
+            linewidth=0.8,
+            alpha=0.85,
+            label=sol["label"],
+        )
 
-    ax1.axhline(phi_eq + phi_crit, color="red", linestyle="--", alpha=0.4,
-                label=r"$\phi_{crit}$ threshold")
+    ax1.axhline(
+        phi_eq + phi_crit,
+        color="red",
+        linestyle="--",
+        alpha=0.4,
+        label=r"$\phi_{crit}$ threshold",
+    )
     ax1.axhline(phi_eq - phi_crit, color="red", linestyle="--", alpha=0.4)
     ax1.axhline(phi_eq, color="gray", linestyle=":", alpha=0.3)
 
@@ -270,15 +289,25 @@ def plot_temporal(solutions):
     for sol, color in zip(solutions, colors):
         t_p, periods = measure_periods(sol["t"], sol["phi"])
         if len(periods) > 0:
-            ax2.plot(t_p, periods, "o-", color=color, markersize=3,
-                     linewidth=1, alpha=0.8)
+            ax2.plot(
+                t_p, periods, "o-", color=color, markersize=3, linewidth=1, alpha=0.8
+            )
 
-    ax2.axhline(T_target, color="#00ffcc", linestyle="-", linewidth=2,
-                alpha=0.6, label=f"Target T = {T_target} Gyr")
+    ax2.axhline(
+        T_target,
+        color="#00ffcc",
+        linestyle="-",
+        linewidth=2,
+        alpha=0.6,
+        label=f"Target T = {T_target} Gyr",
+    )
     ax2.fill_between(
         [solutions[0]["t"][0], solutions[0]["t"][-1]],
-        T_target - 0.3, T_target + 0.3,
-        color="#00ffcc", alpha=0.1, label=r"T = $2.0 \pm 0.3$ Gyr"
+        T_target - 0.3,
+        T_target + 0.3,
+        color="#00ffcc",
+        alpha=0.1,
+        label=r"T = $2.0 \pm 0.3$ Gyr",
     )
 
     ax2.set_xlabel("Cosmic time (Gyr)", fontsize=13)
@@ -357,15 +386,25 @@ def compare_with_without_xi():
     # V8.0: attractor (stable period)
     sol_with = solve_ivp(
         lambda t, y: chirp_rhs(t, y, mode="attractor"),
-        t_span, y0, method="RK45",
-        t_eval=t_eval, rtol=1e-8, atol=1e-10, max_step=0.01,
+        t_span,
+        y0,
+        method="RK45",
+        t_eval=t_eval,
+        rtol=1e-8,
+        atol=1e-10,
+        max_step=0.01,
     )
 
     # V6.0: chirp (drifting period)
     sol_without = solve_ivp(
         lambda t, y: chirp_rhs(t, y, mode="chirp"),
-        t_span, y0, method="RK45",
-        t_eval=t_eval, rtol=1e-8, atol=1e-10, max_step=0.01,
+        t_span,
+        y0,
+        method="RK45",
+        t_eval=t_eval,
+        rtol=1e-8,
+        atol=1e-10,
+        max_step=0.01,
     )
 
     return sol_with, sol_without
@@ -377,13 +416,29 @@ def plot_comparison(sol_with, sol_without):
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8), height_ratios=[2, 1])
 
     # Upper: waveforms
-    ax1.plot(sol_without.t, sol_without.y[0], color="#ff6699", linewidth=1.0,
-             alpha=0.85, label=r"V6.0 without $\xi$ (chirp)")
-    ax1.plot(sol_with.t, sol_with.y[0], color="#00ffcc", linewidth=1.2,
-             label=r"V8.0 with $\xi R\phi$ (attractor)")
+    ax1.plot(
+        sol_without.t,
+        sol_without.y[0],
+        color="#ff6699",
+        linewidth=1.0,
+        alpha=0.85,
+        label=r"V6.0 without $\xi$ (chirp)",
+    )
+    ax1.plot(
+        sol_with.t,
+        sol_with.y[0],
+        color="#00ffcc",
+        linewidth=1.2,
+        label=r"V8.0 with $\xi R\phi$ (attractor)",
+    )
     ax1.axhline(phi_eq, color="gray", linestyle=":", alpha=0.3)
-    ax1.axhline(phi_eq + phi_crit, color="red", linestyle="--", alpha=0.25,
-                label=r"$\phi_{crit}$")
+    ax1.axhline(
+        phi_eq + phi_crit,
+        color="red",
+        linestyle="--",
+        alpha=0.25,
+        label=r"$\phi_{crit}$",
+    )
     ax1.axhline(phi_eq - phi_crit, color="red", linestyle="--", alpha=0.25)
     ax1.set_ylabel(r"$\hat{\phi}$ (units of L)", fontsize=13)
     ax1.set_title(
@@ -398,18 +453,40 @@ def plot_comparison(sol_with, sol_without):
     t_p2, per2 = measure_periods(sol_without.t, sol_without.y[0])
 
     if len(per2) > 0:
-        ax2.plot(t_p2, per2, "s-", color="#ff6699", markersize=4, linewidth=1.5,
-                 alpha=0.85, label=r"V6.0 without $\xi$ (drifting)")
+        ax2.plot(
+            t_p2,
+            per2,
+            "s-",
+            color="#ff6699",
+            markersize=4,
+            linewidth=1.5,
+            alpha=0.85,
+            label=r"V6.0 without $\xi$ (drifting)",
+        )
     if len(per1) > 0:
-        ax2.plot(t_p1, per1, "o-", color="#00ffcc", markersize=4, linewidth=1.5,
-                 label=r"V8.0 with $\xi R\phi$ (locked)")
+        ax2.plot(
+            t_p1,
+            per1,
+            "o-",
+            color="#00ffcc",
+            markersize=4,
+            linewidth=1.5,
+            label=r"V8.0 with $\xi R\phi$ (locked)",
+        )
 
-    ax2.axhline(T_target, color="white", linestyle="--", alpha=0.5,
-                label=f"Target T = {T_target} Gyr")
+    ax2.axhline(
+        T_target,
+        color="white",
+        linestyle="--",
+        alpha=0.5,
+        label=f"Target T = {T_target} Gyr",
+    )
     ax2.fill_between(
         [sol_with.t[0], sol_with.t[-1]],
-        T_target - 0.3, T_target + 0.3,
-        color="white", alpha=0.05,
+        T_target - 0.3,
+        T_target + 0.3,
+        color="white",
+        alpha=0.05,
     )
     ax2.set_xlabel("Cosmic time (Gyr)", fontsize=13)
     ax2.set_ylabel("Period T (Gyr)", fontsize=13)
@@ -446,11 +523,15 @@ def main():
         if len(periods) >= 3:
             T_final = np.mean(periods[-3:])
             T_first = periods[0] if len(periods) > 0 else float("nan")
-            print(f"  {sol['label']:30s} -> T_initial={T_first:.2f}, "
-                  f"T_final={T_final:.2f} Gyr")
+            print(
+                f"  {sol['label']:30s} -> T_initial={T_first:.2f}, "
+                f"T_final={T_final:.2f} Gyr"
+            )
         elif len(periods) > 0:
-            print(f"  {sol['label']:30s} -> T={np.mean(periods):.2f} Gyr "
-                  f"({len(periods)} cycles)")
+            print(
+                f"  {sol['label']:30s} -> T={np.mean(periods):.2f} Gyr "
+                f"({len(periods)} cycles)"
+            )
         else:
             print(f"  {sol['label']:30s} -> No oscillation detected")
 
@@ -479,7 +560,9 @@ def main():
         print(f"  Attractor period:   T = {T_mean:.2f} +/- {T_std:.3f} Gyr")
         print(f"  Target:             T = {T_target:.2f} Gyr")
         print(f"  xi (non-minimal):   {xi}")
-        print(f"  Convergence:        {'YES' if abs(T_mean - T_target) < 0.5 else 'NEEDS TUNING'}")
+        print(
+            f"  Convergence:        {'YES' if abs(T_mean - T_target) < 0.5 else 'NEEDS TUNING'}"
+        )
     print(f"  Plots saved to:     {PLOTS_DIR}/")
     print("=" * 70)
 

@@ -38,19 +38,19 @@ from scipy.integrate import solve_ivp
 # ---------------------------------------------------------------------------
 # Physical parameters (dimensionless units)
 # ---------------------------------------------------------------------------
-L_bulk = 1.0           # bulk extent (normalized)
-k_AdS = 2.0            # AdS curvature parameter (kL = 2 for visible warping)
-N_z = 200              # number of spatial grid points
-t_max = 4.0            # simulation time (in units of L/c)
+L_bulk = 1.0  # bulk extent (normalized)
+k_AdS = 2.0  # AdS curvature parameter (kL = 2 for visible warping)
+N_z = 200  # number of spatial grid points
+t_max = 4.0  # simulation time (in units of L/c)
 
 # Source pulse parameters
 pulse_amplitude = 1.0
-pulse_t0 = 0.8         # pulse center time
-pulse_sigma = 0.2      # pulse temporal width
-pulse_freq = 8.0       # oscillation frequency of the source
+pulse_t0 = 0.8  # pulse center time
+pulse_sigma = 0.2  # pulse temporal width
+pulse_freq = 8.0  # oscillation frequency of the source
 
 # Brane boundary condition
-kappa_brane = k_AdS    # Robin BC stiffness (matches AdS curvature)
+kappa_brane = k_AdS  # Robin BC stiffness (matches AdS curvature)
 
 PLOTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "plots")
 
@@ -62,8 +62,8 @@ z = np.linspace(0, L_bulk, N_z)
 dz = z[1] - z[0]
 
 # Warp factor profile
-warp = np.exp(-2 * k_AdS * z)        # e^{-2kz} (metric factor)
-warp_inv = np.exp(2 * k_AdS * z)     # e^{+2kz} (appears in wave eq)
+warp = np.exp(-2 * k_AdS * z)  # e^{-2kz} (metric factor)
+warp_inv = np.exp(2 * k_AdS * z)  # e^{+2kz} (appears in wave eq)
 
 
 # ---------------------------------------------------------------------------
@@ -184,8 +184,9 @@ def plot_warped_shielding(t_out, Phi):
     fig = plt.figure(figsize=(14, 8))
 
     # Layout: main heatmap + side panels
-    gs = fig.add_gridspec(2, 2, width_ratios=[4, 1], height_ratios=[3, 1],
-                          hspace=0.15, wspace=0.08)
+    gs = fig.add_gridspec(
+        2, 2, width_ratios=[4, 1], height_ratios=[3, 1], hspace=0.15, wspace=0.08
+    )
     ax_main = fig.add_subplot(gs[0, 0])
     ax_warp = fig.add_subplot(gs[0, 1], sharey=ax_main)
     ax_brane = fig.add_subplot(gs[1, 0], sharex=ax_main)
@@ -197,8 +198,9 @@ def plot_warped_shielding(t_out, Phi):
     vmax = np.max(np.abs(Phi)) * 0.5
     norm = SymLogNorm(linthresh=vmax * 0.01, vmin=-vmax, vmax=vmax)
 
-    im = ax_main.pcolormesh(T, Z, Phi, cmap="RdBu_r", norm=norm,
-                            shading="auto", rasterized=True)
+    im = ax_main.pcolormesh(
+        T, Z, Phi, cmap="RdBu_r", norm=norm, shading="auto", rasterized=True
+    )
     ax_main.set_ylabel("Bulk depth $z / L$", fontsize=13)
     ax_main.set_title(
         "V8.0 Warped Shielding: Scalar Wave in AdS$_5$ Background\n"
@@ -214,8 +216,7 @@ def plot_warped_shielding(t_out, Phi):
 
     # Mark brane and source
     ax_main.axhline(0, color="#00ffcc", linewidth=2, alpha=0.7, label="Brane (z=0)")
-    ax_main.axhline(L_bulk, color="red", linewidth=1, alpha=0.5,
-                    label="Source (z=L)")
+    ax_main.axhline(L_bulk, color="red", linewidth=1, alpha=0.5, label="Source (z=L)")
     ax_main.legend(fontsize=9, loc="upper left")
 
     # --- Right panel: warp factor profile ---
@@ -227,13 +228,13 @@ def plot_warped_shielding(t_out, Phi):
     ax_warp.tick_params(labelleft=False)
 
     # --- Bottom panel: brane amplitude vs source ---
-    Phi_brane = Phi[0, :]      # z = 0
-    Phi_source = Phi[-1, :]    # z = L
+    Phi_brane = Phi[0, :]  # z = 0
+    Phi_source = Phi[-1, :]  # z = L
 
-    ax_brane.plot(t_out, Phi_source, color="red", linewidth=1.5,
-                  alpha=0.7, label=f"Source (z=L)")
-    ax_brane.plot(t_out, Phi_brane, color="#00ffcc", linewidth=2,
-                  label=f"Brane (z=0)")
+    ax_brane.plot(
+        t_out, Phi_source, color="red", linewidth=1.5, alpha=0.7, label=f"Source (z=L)"
+    )
+    ax_brane.plot(t_out, Phi_brane, color="#00ffcc", linewidth=2, label=f"Brane (z=0)")
     ax_brane.set_xlabel("Time $t$ (units of $L/c$)", fontsize=13)
     ax_brane.set_ylabel(r"$\Phi(z, t)$", fontsize=11)
     ax_brane.legend(fontsize=9)
@@ -247,7 +248,8 @@ def plot_warped_shielding(t_out, Phi):
         ax_brane.set_title(
             f"Attenuation: |Phi_brane|/|Phi_source| = {attenuation:.4f} "
             f"(theoretical e^{{-2kL}} = {theoretical:.4f})",
-            fontsize=10, color="#00ffcc",
+            fontsize=10,
+            color="#00ffcc",
         )
 
     plt.tight_layout()
@@ -294,10 +296,12 @@ def main():
     print("\n[4] Stability check:")
     Phi_brane = Phi[0, :]
     max_amp = np.max(np.abs(Phi_brane))
-    late_amp = np.max(np.abs(Phi_brane[len(t_out)//2:]))
+    late_amp = np.max(np.abs(Phi_brane[len(t_out) // 2 :]))
     print(f"  Max brane amplitude: {max_amp:.6f}")
     print(f"  Late-time max:       {late_amp:.6f}")
-    print(f"  Stable: {'YES (bounded)' if late_amp < 10 * max_amp and max_amp < 1 else 'UNSTABLE'}")
+    print(
+        f"  Stable: {'YES (bounded)' if late_amp < 10 * max_amp and max_amp < 1 else 'UNSTABLE'}"
+    )
 
     print("\n[5] Generating heatmap...")
     plot_warped_shielding(t_out, Phi)

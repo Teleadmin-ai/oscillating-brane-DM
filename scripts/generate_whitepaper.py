@@ -8,6 +8,7 @@ import subprocess
 import os
 from pathlib import Path
 
+
 def generate_whitepaper():
     """Generate the viral white paper LaTeX document."""
 
@@ -163,24 +164,38 @@ The oscillating brane naturally resolves three major cosmological crises through
     try:
         print("🔧 Compiling with pdflatex...")
         subprocess.run(
-            ["pdflatex", "-interaction=nonstopmode", "-output-directory", str(output_dir), str(latex_file)],
+            [
+                "pdflatex",
+                "-interaction=nonstopmode",
+                "-output-directory",
+                str(output_dir),
+                str(latex_file),
+            ],
             capture_output=True,
             text=True,
-            check=True
+            check=True,
         )
 
         # Run twice for references
         subprocess.run(
-            ["pdflatex", "-interaction=nonstopmode", "-output-directory", str(output_dir), str(latex_file)],
+            [
+                "pdflatex",
+                "-interaction=nonstopmode",
+                "-output-directory",
+                str(output_dir),
+                str(latex_file),
+            ],
             capture_output=True,
             text=True,
-            check=True
+            check=True,
         )
 
         pdf_file = output_dir / "whitepaper_oscillating_brane.pdf"
 
         # Copy to root for website
-        root_pdf = Path("/root/bulk/oscillating-brane-DM/whitepaper_oscillating_brane.pdf")
+        root_pdf = Path(
+            "/root/bulk/oscillating-brane-DM/whitepaper_oscillating_brane.pdf"
+        )
         subprocess.run(["cp", str(pdf_file), str(root_pdf)])
 
         # Get file size
@@ -202,14 +217,22 @@ The oscillating brane naturally resolves three major cosmological crises through
         print("🔧 Trying xelatex...")
         try:
             subprocess.run(
-                ["xelatex", "-interaction=nonstopmode", "-output-directory", str(output_dir), str(latex_file)],
+                [
+                    "xelatex",
+                    "-interaction=nonstopmode",
+                    "-output-directory",
+                    str(output_dir),
+                    str(latex_file),
+                ],
                 capture_output=True,
                 text=True,
-                check=True
+                check=True,
             )
 
             pdf_file = output_dir / "whitepaper_oscillating_brane.pdf"
-            root_pdf = Path("/root/bulk/oscillating-brane-DM/whitepaper_oscillating_brane.pdf")
+            root_pdf = Path(
+                "/root/bulk/oscillating-brane-DM/whitepaper_oscillating_brane.pdf"
+            )
             subprocess.run(["cp", str(pdf_file), str(root_pdf)])
 
             size = os.path.getsize(pdf_file)
@@ -223,6 +246,7 @@ The oscillating brane naturally resolves three major cosmological crises through
         except:
             print("❌ Both pdflatex and xelatex failed")
             return False
+
 
 if __name__ == "__main__":
     generate_whitepaper()

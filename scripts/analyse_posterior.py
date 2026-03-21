@@ -203,7 +203,9 @@ class PosteriorAnalyzer:
             ax_trace.set_ylabel(f"{param_name}")
             if self.param_units[param_name]:
                 ax_trace.set_ylabel(f"{param_name} ({self.param_units[param_name]})")
-            ax_trace.set_title(f"Trace: {param_name} (R̂={diagnostics[i]['R_hat']:.3f})")
+            ax_trace.set_title(
+                f"Trace: {param_name} (R̂={diagnostics[i]['R_hat']:.3f})"
+            )
             ax_trace.grid(True, alpha=0.3)
 
             # Histogram with statistics

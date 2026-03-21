@@ -29,10 +29,10 @@ import numpy as np
 # ---------------------------------------------------------------------------
 # Physical constants
 # ---------------------------------------------------------------------------
-T_QCD = 170.0          # QCD crossover temperature in MeV
-T_BBN_high = 1.0       # BBN window upper bound in MeV
-T_BBN_low = 0.07       # BBN window lower bound in MeV
-delta_G_max = 0.05     # Maximum G_eff modulation at late times (5%)
+T_QCD = 170.0  # QCD crossover temperature in MeV
+T_BBN_high = 1.0  # BBN window upper bound in MeV
+T_BBN_low = 0.07  # BBN window lower bound in MeV
+delta_G_max = 0.05  # Maximum G_eff modulation at late times (5%)
 BBN_constraint = 0.13  # Upper bound on |delta_G/G| at BBN (95% CL)
 
 PLOTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "plots")
@@ -93,9 +93,7 @@ def hubble_radiation(T_MeV):
 def plot_bbn_protection():
     """Three-panel plot showing BBN protection via conformal symmetry."""
     plt.style.use("dark_background")
-    fig, (ax1, ax2, ax3) = plt.subplots(
-        3, 1, figsize=(12, 11), height_ratios=[1, 1, 1]
-    )
+    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 11), height_ratios=[1, 1, 1])
 
     T = np.logspace(-1.5, 4, 2000)
 
@@ -104,13 +102,24 @@ def plot_bbn_protection():
     tc = trace_coupling(T)
 
     ax1.plot(T, w, color="#66ccff", linewidth=2.5, label=r"$w_{eff}(T) = p/\rho$")
-    ax1.plot(T, tc, color="#00ffcc", linewidth=2.5,
-             label=r"Trace coupling $(1 - 3w_{eff})$")
+    ax1.plot(
+        T, tc, color="#00ffcc", linewidth=2.5, label=r"Trace coupling $(1 - 3w_{eff})$"
+    )
 
-    ax1.axvspan(T_BBN_low, T_BBN_high, color="yellow", alpha=0.15,
-                label=f"BBN window ({T_BBN_low}--{T_BBN_high} MeV)")
-    ax1.axvline(T_QCD, color="red", linestyle="--", alpha=0.7,
-                label=f"QCD crossover T = {T_QCD} MeV")
+    ax1.axvspan(
+        T_BBN_low,
+        T_BBN_high,
+        color="yellow",
+        alpha=0.15,
+        label=f"BBN window ({T_BBN_low}--{T_BBN_high} MeV)",
+    )
+    ax1.axvline(
+        T_QCD,
+        color="red",
+        linestyle="--",
+        alpha=0.7,
+        label=f"QCD crossover T = {T_QCD} MeV",
+    )
     ax1.axhline(1.0 / 3.0, color="#66ccff", linestyle=":", alpha=0.3)
 
     ax1.set_xscale("log")
@@ -125,10 +134,20 @@ def plot_bbn_protection():
     ax1.legend(fontsize=9, loc="center right")
     ax1.set_xlim(T[0], T[-1])
 
-    ax1.annotate("Motor OFF\n" + r"$T^\mu_\mu = 0$" + "\n(conformal)",
-                 xy=(0.3, 0.05), fontsize=9, color="yellow", ha="center")
-    ax1.annotate("Motor ON\n" + r"$T^\mu_\mu = -\rho$" + "\n(trace anomaly)",
-                 xy=(5000, 0.5), fontsize=9, color="#00ffcc", ha="center")
+    ax1.annotate(
+        "Motor OFF\n" + r"$T^\mu_\mu = 0$" + "\n(conformal)",
+        xy=(0.3, 0.05),
+        fontsize=9,
+        color="yellow",
+        ha="center",
+    )
+    ax1.annotate(
+        "Motor ON\n" + r"$T^\mu_\mu = -\rho$" + "\n(trace anomaly)",
+        xy=(5000, 0.5),
+        fontsize=9,
+        color="#00ffcc",
+        ha="center",
+    )
 
     # --- Panel 2: G_eff / G_N ---
     g_mod = g_eff_modulation(T)
@@ -140,9 +159,14 @@ def plot_bbn_protection():
     ax2.axvspan(T_BBN_low, T_BBN_high, color="yellow", alpha=0.15)
     ax2.axvline(T_QCD, color="red", linestyle="--", alpha=0.7)
 
-    ax2.fill_between(T, 1 - BBN_constraint, 1 + BBN_constraint,
-                     color="green", alpha=0.08,
-                     label=f"BBN constraint: $|\\delta G/G|$ < {BBN_constraint}")
+    ax2.fill_between(
+        T,
+        1 - BBN_constraint,
+        1 + BBN_constraint,
+        color="green",
+        alpha=0.08,
+        label=f"BBN constraint: $|\\delta G/G|$ < {BBN_constraint}",
+    )
 
     ax2.set_xscale("log")
     ax2.set_ylabel(r"$G_{eff} / G_N$", fontsize=13)
@@ -156,23 +180,29 @@ def plot_bbn_protection():
         dev = abs(1.0 - g_val)
         ax2.annotate(
             f"T={T_val} MeV\n$\\delta G/G$={dev:.1e}",
-            xy=(T_val, g_val), xytext=(T_val * 5, g_val - 0.03),
-            fontsize=7, color="#66ccff",
+            xy=(T_val, g_val),
+            xytext=(T_val * 5, g_val - 0.03),
+            fontsize=7,
+            color="#66ccff",
             arrowprops=dict(arrowstyle="->", color="#66ccff", alpha=0.5),
         )
 
     # --- Panel 3: Trace T^mu_mu evolution ---
     # Normalized trace: T^mu_mu / rho = -(1 - 3w)
     trace_norm = -(1.0 - 3.0 * w_eff(T))
-    ax3.plot(T, trace_norm, color="#ff9966", linewidth=2.5,
-             label=r"$T^\mu_\mu / \rho = -(1 - 3w)$")
-    ax3.axhline(0, color="white", linestyle=":", alpha=0.3,
-                label=r"Conformal: $T^\mu_\mu = 0$")
+    ax3.plot(
+        T,
+        trace_norm,
+        color="#ff9966",
+        linewidth=2.5,
+        label=r"$T^\mu_\mu / \rho = -(1 - 3w)$",
+    )
+    ax3.axhline(
+        0, color="white", linestyle=":", alpha=0.3, label=r"Conformal: $T^\mu_\mu = 0$"
+    )
 
-    ax3.axvspan(T_BBN_low, T_BBN_high, color="yellow", alpha=0.15,
-                label="BBN window")
-    ax3.axvline(T_QCD, color="red", linestyle="--", alpha=0.7,
-                label="QCD crossover")
+    ax3.axvspan(T_BBN_low, T_BBN_high, color="yellow", alpha=0.15, label="BBN window")
+    ax3.axvline(T_QCD, color="red", linestyle="--", alpha=0.7, label="QCD crossover")
 
     ax3.set_xscale("log")
     ax3.set_xlabel("Temperature T (MeV)", fontsize=13)
@@ -183,11 +213,17 @@ def plot_bbn_protection():
 
     ax3.annotate(
         r"$T^\mu_\mu = 0$" + "\nRadion blind\nBBN safe",
-        xy=(0.3, 0.0), fontsize=9, color="yellow", ha="center",
+        xy=(0.3, 0.0),
+        fontsize=9,
+        color="yellow",
+        ha="center",
     )
     ax3.annotate(
         r"$T^\mu_\mu = -\rho$" + "\nChiral symmetry broken\nMotor ignited",
-        xy=(5000, -0.5), fontsize=9, color="#ff9966", ha="center",
+        xy=(5000, -0.5),
+        fontsize=9,
+        color="#ff9966",
+        ha="center",
     )
 
     plt.tight_layout()
@@ -223,8 +259,10 @@ def main():
     print("\n[3] G_eff modulation during BBN:")
     for T_val in [1.0, 0.5, 0.1]:
         delta = g_eff_modulation(T_val)
-        print(f"  T = {T_val:.1f} MeV: |delta_G/G| = {delta:.2e} "
-              f"(constraint: {BBN_constraint})")
+        print(
+            f"  T = {T_val:.1f} MeV: |delta_G/G| = {delta:.2e} "
+            f"(constraint: {BBN_constraint})"
+        )
 
     print("\n[4] Generating plot...")
     plot_bbn_protection()

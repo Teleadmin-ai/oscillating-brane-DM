@@ -32,15 +32,15 @@ from scipy.integrate import solve_ivp
 # Cosmological parameters
 # ---------------------------------------------------------------------------
 H0_kmsMpc = 67.4
-H0_inv_Gyr = 14.5      # 1/H0 in Gyr
+H0_inv_Gyr = 14.5  # 1/H0 in Gyr
 Omega_m0 = 0.315
 Omega_L0 = 0.685
 
 # Yukawa screening parameters
-L_extra = 2.0e-7        # extra dimension in meters
-A_osc_max = 0.053       # max oscillation amplitude (tuned for ~5% suppression)
-k_Yukawa = 0.05         # Yukawa screening scale in h/Mpc
-a_activation = 0.1      # scale factor where oscillation activates (~QCD era)
+L_extra = 2.0e-7  # extra dimension in meters
+A_osc_max = 0.053  # max oscillation amplitude (tuned for ~5% suppression)
+k_Yukawa = 0.05  # Yukawa screening scale in h/Mpc
+a_activation = 0.1  # scale factor where oscillation activates (~QCD era)
 
 PLOTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "plots")
 
@@ -50,7 +50,7 @@ PLOTS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "plots")
 # ---------------------------------------------------------------------------
 def E_squared(a):
     """Dimensionless Hubble parameter squared: E^2 = H^2/H0^2."""
-    return Omega_m0 * a**(-3) + Omega_L0
+    return Omega_m0 * a ** (-3) + Omega_L0
 
 
 def E(a):
@@ -60,13 +60,13 @@ def E(a):
 
 def Omega_m(a):
     """Matter density parameter at scale factor a."""
-    return Omega_m0 * a**(-3) / E_squared(a)
+    return Omega_m0 * a ** (-3) / E_squared(a)
 
 
 def dlnE_dlna(a):
     """d ln E / d ln a for the Friedmann equation."""
     E2 = E_squared(a)
-    dE2_da = -3 * Omega_m0 * a**(-4)
+    dE2_da = -3 * Omega_m0 * a ** (-4)
     return 0.5 * dE2_da * a / E2
 
 
@@ -115,7 +115,9 @@ def growth_ode(a, y, k):
 
     # Coefficient of D (gravitational source)
     Geff = G_eff_ratio(a, k)
-    coeff_D = 1.5 * Om_a * Geff / (a**2 * E2) * (H0_kmsMpc * 1e3 / 3.086e22)**0  # dimensionless
+    coeff_D = (
+        1.5 * Om_a * Geff / (a**2 * E2) * (H0_kmsMpc * 1e3 / 3.086e22) ** 0
+    )  # dimensionless
 
     # Actually the proper form in terms of a:
     # D'' + [3/a + E'/E * 1/a] D' - (3/2) Omega_m0 / (a^5 E^2) * G_eff/G_N * D = 0
@@ -140,7 +142,8 @@ def solve_growth(k, a_range=(0.001, 1.0), n_points=2000):
 
     sol = solve_ivp(
         lambda a, y: growth_ode(a, y, k),
-        a_range, y0,
+        a_range,
+        y0,
         method="RK45",
         t_eval=a_eval,
         rtol=1e-10,
@@ -191,16 +194,20 @@ def main():
             if k in k_highlight or any(abs(k - kh) / kh < 0.1 for kh in k_highlight):
                 D_evolution[k] = (a, D / D_lcdm)
 
-    print(f"  Done. D(a=1, k) / D_LCDM(a=1) range: "
-          f"[{D_ratio_final.min():.4f}, {D_ratio_final.max():.4f}]")
+    print(
+        f"  Done. D(a=1, k) / D_LCDM(a=1) range: "
+        f"[{D_ratio_final.min():.4f}, {D_ratio_final.max():.4f}]"
+    )
 
     # Report key values
     print("\n[4] Growth suppression at key scales:")
     for k in k_highlight:
         idx = np.argmin(np.abs(k_grid - k))
         suppression = (1 - D_ratio_final[idx]) * 100
-        print(f"  k = {k:.3f} h/Mpc: D/D_LCDM = {D_ratio_final[idx]:.4f} "
-              f"({suppression:.1f}% suppression)")
+        print(
+            f"  k = {k:.3f} h/Mpc: D/D_LCDM = {D_ratio_final[idx]:.4f} "
+            f"({suppression:.1f}% suppression)"
+        )
 
     # Implied S8
     # S8 probes k ~ 0.1-0.3 h/Mpc
@@ -214,13 +221,21 @@ def main():
     print("\n[5] Generating plot...")
     plt.style.use("dark_background")
     fig, (ax1, ax2) = plt.subplots(
-        2, 1, figsize=(12, 10), height_ratios=[2, 1],
+        2,
+        1,
+        figsize=(12, 10),
+        height_ratios=[2, 1],
         gridspec_kw={"hspace": 0.12},
     )
 
     # --- Upper panel: D(k)/D_LCDM at a=1 ---
-    ax1.plot(k_grid, D_ratio_final, color="#00ffcc", linewidth=2.5,
-             label="V8.0 Yukawa screening")
+    ax1.plot(
+        k_grid,
+        D_ratio_final,
+        color="#00ffcc",
+        linewidth=2.5,
+        label="V8.0 Yukawa screening",
+    )
     ax1.axhline(1.0, color="gray", linestyle=":", alpha=0.4)
 
     # Survey bands
@@ -230,14 +245,23 @@ def main():
     ax1.axvspan(0.01, 0.1, color="cyan", alpha=0.05, label="KiDS/CMB range")
 
     # Reference lines
-    ax1.axhline(0.95, color="orange", linestyle="--", alpha=0.4,
-                label=r"5% suppression ($S_8$ = 0.79)")
-    ax1.axhline(0.99, color="cyan", linestyle="--", alpha=0.4,
-                label="1% suppression")
+    ax1.axhline(
+        0.95,
+        color="orange",
+        linestyle="--",
+        alpha=0.4,
+        label=r"5% suppression ($S_8$ = 0.79)",
+    )
+    ax1.axhline(0.99, color="cyan", linestyle="--", alpha=0.4, label="1% suppression")
 
     # Mark k_Yukawa
-    ax1.axvline(k_Yukawa, color="yellow", linestyle=":", alpha=0.4,
-                label=f"$k_{{Yukawa}}$ = {k_Yukawa} h/Mpc")
+    ax1.axvline(
+        k_Yukawa,
+        color="yellow",
+        linestyle=":",
+        alpha=0.4,
+        label=f"$k_{{Yukawa}}$ = {k_Yukawa} h/Mpc",
+    )
 
     ax1.set_xscale("log")
     ax1.set_xlabel(r"Wavenumber $k$ (h/Mpc)", fontsize=13)
@@ -253,9 +277,14 @@ def main():
     ax1.legend(fontsize=9, loc="lower left")
 
     # --- Lower panel: D(a, k)/D_LCDM(a) for selected k ---
-    colors_k = {"0.001": "white", "0.01": "#66ccff",
-                "0.05": "#ffcc00", "0.1": "#ff9966",
-                "0.5": "#ff6699", "1.0": "#cc66ff"}
+    colors_k = {
+        "0.001": "white",
+        "0.01": "#66ccff",
+        "0.05": "#ffcc00",
+        "0.1": "#ff9966",
+        "0.5": "#ff6699",
+        "1.0": "#cc66ff",
+    }
 
     for k, (a, D_ratio) in sorted(D_evolution.items()):
         k_str = f"{k:.3f}"
@@ -278,8 +307,12 @@ def main():
     print("\n" + "=" * 70)
     print("SUMMARY")
     print("=" * 70)
-    print(f"  DES scales (k~0.1-1):  ~{(1-D_ratio_final[np.argmin(np.abs(k_grid-0.3))])*100:.1f}% suppression")
-    print(f"  KiDS/CMB (k~0.01):     ~{(1-D_ratio_final[np.argmin(np.abs(k_grid-0.01))])*100:.1f}% suppression")
+    print(
+        f"  DES scales (k~0.1-1):  ~{(1-D_ratio_final[np.argmin(np.abs(k_grid-0.3))])*100:.1f}% suppression"
+    )
+    print(
+        f"  KiDS/CMB (k~0.01):     ~{(1-D_ratio_final[np.argmin(np.abs(k_grid-0.01))])*100:.1f}% suppression"
+    )
     print(f"  => Scale-dependent: DES sees tension, KiDS/CMB see less")
     print("=" * 70)
 
