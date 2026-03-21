@@ -1,4 +1,4 @@
-# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) v5.0 - Holographic Edition
+# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) V6.0 - Stick-Slip Motor Edition
 
 **Author: Romain Provencal**
 **Co-Authors: Claude (Anthropic) & Gemini DeepThink (Google) - AI Cognitive Prostheses**
