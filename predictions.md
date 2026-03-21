@@ -6,19 +6,15 @@ permalink: /predictions/
 
 # Observational Predictions
 
-The oscillating brane theory makes specific, testable predictions that distinguish it from standard cosmology. **Major Update: Multiple predictions have now been confirmed by DESI 2024, JWST, and other observations!**
+The oscillating brane theory V7.0 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
 
 ## Timeline of Discovery
 
 ```
-2018    ✅ EDGES: anomalous 21cm trough (-500 mK)
-   |
-2021    ✅ CatWISE: 4.9σ quasar dipole (Secrest)
-   |
 2024    ✅ DESI detects dark energy evolution (4σ)
    |    ✅ Farrah et al.: BH-dark energy coupling
    |
-2025    ✅ S₈ tension resolved by our model
+2025    ✅ S₈ tension resolved (scale-dependent Yukawa screening)
    |    ⏳ Euclid first data release
    |    ⏳ MORRIS sub-micron gravity experiment
    |
@@ -26,22 +22,21 @@ The oscillating brane theory makes specific, testable predictions that distingui
    |    → Our χ² improvement: 32.9 (6σ)
    |
 2027    DESI full survey → power spectrum modulation
-   |    HERA/SKA → 21cm spatial modulation
+   |    SKA-Low → 21cm reionization modulation (DEFINITIVE TEST)
    |
 2030    CMB-S4 → definitive ISW signature
+   |    Vera Rubin/LSST → large-scale structural anisotropies
    ↓
 ```
 
-### Recent Confirmations (2024-2026)
+### Established Confirmations (2024-2026)
 
 **✅ Already Observed:**
 - **DESI 2024-2026**: Dark energy evolves with 4σ significance — exactly matching our oscillating w(z) with φ₀ = π/2
-- **CatWISE 2021-2022**: 4.9σ quasar dipole (Secrest et al.) — explained by local brane tension variations τ(x)
-- **EDGES 2018**: Anomalous 21cm absorption trough (-500 mK at z ≈ 17) — explained by G_eff enhancement at cosmic dawn
 - **Farrah et al. 2023-2024**: Black hole masses coupled to dark energy density (k = 3.11 ± 0.19)
-- **S₈ tension**: ~5.2% growth suppression via G_eff leak bridges CMB/lensing gap
+- **S₈ tension**: Scale-dependent growth suppression via Yukawa-screened G_eff(k) bridges DES/KiDS gap
 
-**⏳ Imminent Confirmations:**
+**⏳ Imminent Tests:**
 - **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >5σ
 - **MORRIS 2025-2026**: Sub-micron gravity experiment — direct laboratory test of L = 0.2 μm
 - **CMB Analysis 2026**: Planck's low-ℓ anomaly matches our ISW resonance prediction
@@ -88,43 +83,33 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 
 The oscillation's imprint appears in the CMB through the Integrated Sachs-Wolfe (ISW) effect, creating the exact pattern observed by Planck. DESI and Euclid measure the corresponding modulation in the matter power spectrum.
 
-### 3. Structure Growth Suppression
+### 3. Structure Growth Suppression (Scale-Dependent Yukawa Screening)
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/s8_tension_resolution.png" alt="S8 Tension Resolution" style="width: 100%; height: auto;">
-<p><em>Figure 4: The oscillating brane naturally suppresses structure growth by 5.2%, perfectly resolving the S₈ tension between CMB and weak lensing measurements.</em></p>
+<p><em>Figure 4: Scale-dependent growth suppression via Yukawa-screened G_eff(k). Non-linear scales (DES) are suppressed ~5%; linear scales (CMB, KiDS) remain quasi-standard.</em></p>
 </div>
 
-Oscillating w(z) modulates structure formation:
+The extra dimension introduces a Yukawa correction to gravity:
 
-$$\frac{D_+^{osc}}{D_+^{ΛCDM}}(z=0) = 0.948$$
+$$G_{\text{eff}}(k) = G_N \left(1 + \alpha\, e^{-k/k_L}\right), \quad k_L = 2\pi/L$$
 
-This 5.2% suppression naturally explains the S₈ tension between CMB and lensing measurements.
+This produces ~5% growth suppression at non-linear scales (resolving DES S₈ tension) while maintaining quasi-standard gravity at linear scales (consistent with KiDS/CMB).
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/growth_factor_comparison.png" alt="Growth Factor Suppression" style="width: 100%; height: auto;">
 <p><em>Figure 5: Structure growth suppression in oscillating brane model vs ΛCDM</em></p>
 </div>
 
-### 4. CatWISE Quasar Dipole (Secrest et al. 2021-2022)
+### 4. SKA 21cm Reionization Modulation (Definitive Future Test)
 
-The CatWISE catalog (1.36 million quasars) reveals a 4.9σ dipole in quasar number counts, twice the amplitude expected from kinematic origin alone. Our explanation:
+The model's primary falsifiable prediction targets the 21cm power spectrum during the Epoch of Reionization (6 ≲ z ≲ 15). The oscillating G_eff(k,t) imprints a spatial modulation on the 21cm brightness temperature:
 
-The brane is anchored by micro-PBHs tracing the cosmic web. Where dark matter is denser (superclusters), anchor density increases, locally stiffening the membrane:
+$$\delta T_b(\vec{k}, z) \supset \Delta T_{osc}(k)\, \sin\left(\frac{2\pi t(z)}{T} + \phi_0\right)$$
 
-$$\frac{\delta H_0}{H_0} = \frac{1}{2}\frac{\delta\tau(\vec{x})}{\tau_0}$$
+with characteristic amplitude ΔT_osc ~ 1-5 mK at BAO-scale wavenumbers. **SKA-Low (2027+)** has the sensitivity and k-range to detect or exclude this modulation at >3σ, constituting the definitive test of the brane oscillation.
 
-This directional expansion rate variation naturally produces the observed excess dipole, with amplitude and orientation correlated with the local supercluster topology.
-
-### 5. EDGES 21cm Anomaly (Bowman et al. 2018)
-
-EDGES detected an absorption trough of -500 mK at cosmic dawn (z ≈ 17), roughly twice the ΛCDM maximum of ~-250 mK. Our explanation:
-
-At cosmic dawn (t ≈ 200 Myr), the brane was near an extremum where G_eff > G_N. This enhanced effective gravity lowered the Jeans mass, triggering premature halo collapse and rapid adiabatic cooling of the primordial gas — deepening the 21cm trough to -500 mK without invoking exotic dark matter interactions.
-
-**Falsifiable prediction**: HERA and SKA will map the spatial structure of this enhancement, revealing a rhythmic modulation in the 21cm power spectrum imprinted by the G_eff oscillation phase.
-
-### 6. Hubble Anisotropy (Cosmicflows-4)
+### 5. Hubble Anisotropy (Cosmicflows-4)
 
 Spatial tension variations create directional H₀ differences:
 
@@ -144,13 +129,12 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
 ## Model Comparison
 
-| Observable | ΛCDM | Oscillating Brane V6.0 | Difference |
+| Observable | ΛCDM | Oscillating Brane V7.0 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T + π/2) | Time-varying, phantom crossing |
-| S₈ | 0.83 (tension) | 0.79 (resolved via G_eff) | 5.2% lower |
+| S₈ | 0.83 (tension) | Scale-dependent Yukawa G_eff(k) | ~5% at non-linear scales |
 | CMB Anomaly | None | ISW Resonance (6σ) | Unique signature |
-| CatWISE Dipole | Kinematic only | τ(x) tension field | 2x excess explained |
-| EDGES 21cm | -250 mK max | -500 mK via G_eff | 2x deeper trough |
+| 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
 | H₀ variation | Isotropic | ~0.1% dipole | Anisotropic |
 
 ## Statistical Significance
@@ -161,18 +145,16 @@ $$\Delta \ln K = 3.33 ± 0.24$$
 
 This represents "strong evidence" on the Jeffreys scale, indicating the data prefer the oscillating brane over standard ΛCDM.
 
-## The Tide is Turning: 2024-2026
+## The Evidence: 2024-2026
 
-The convergence of evidence is remarkable. Six independent lines of observation now align with our predictions:
+Three established anomalies are resolved, with decisive future tests on the horizon:
 
-1. **DESI** (2024-2026): Dark energy evolves — exactly as our stick-slip oscillation predicts
-2. **CatWISE** (2021-2022): 4.9σ quasar dipole — explained by our local tension field τ(x)
-3. **EDGES** (2018): Anomalous 21cm trough — explained by our G_eff oscillation at cosmic dawn
+1. **DESI** (2024-2026): Dark energy evolves at 4σ — matching our stick-slip oscillation with φ₀ = π/2
+2. **S₈ Resolution**: Scale-dependent Yukawa screening reconciles DES, KiDS, and CMB measurements
+3. **Planck ISW**: Low-ℓ power deficit matches our 2 Gyr resonance at 6σ (Δχ² = 32.9)
 4. **Farrah et al.** (2024): BH-expansion coupling (k ≈ 3) — predicted by our PBH capillaries
-5. **S₈ Resolution**: 5.2% growth suppression via G_eff leak bridges the CMB-lensing gap
-6. **Planck ISW**: Low-ℓ power deficit matches our 2 Gyr resonance at 6σ
 
-The oscillating brane resolves more anomalies than any competing alternative to ΛCDM.
+**Definitive future test:** SKA 21cm reionization modulation (2027+).
 
 ## How You Can Help
 

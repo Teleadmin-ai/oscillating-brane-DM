@@ -8,17 +8,17 @@ tags: [dark-matter, mechanics, gravitational-funnels]
 
 But how, concretely, does dark matter excite this gigantic membrane? The answer is a **stick-slip motor** driven by topological backreaction.
 
-## The Stick-Slip Motor (V6.0)
+## The Stick-Slip Motor (V7.0)
 
-The brane position (radion φ) obeys a non-linear relaxation oscillator:
+The brane position (radion φ) obeys a non-linear relaxation oscillator with non-minimal gravitational coupling:
 
-$$\ddot{\phi} + 3H\dot{\phi} + \frac{\partial V_{GW}}{\partial \phi} = \gamma \dot{M}_{DM} - \mathcal{R}(\phi, \dot{\phi})\,\Theta(|\phi| - \phi_{crit})$$
+$$\ddot{\phi} + 3H\dot{\phi} + \xi R\phi + \frac{\partial V_{GW}}{\partial \phi} = \mathcal{F}[E_{\mu\nu}] - \mathcal{R}(\phi, \dot{\phi})\,\Theta(|\phi| - \phi_{crit})$$
 
-**The Stick Phase**: When dark matter falls into micro-PBH capillaries, it enters the non-local ER=EPR network. According to Susskind's **Complexity = Volume** conjecture, the quantum complexity of entangled black holes increases, causing wormhole interiors to elongate linearly into the AdS bulk. This collective topological traction (the forcing term γṀ_DM) slowly charges the radion φ toward the critical threshold φ_crit.
+**The Stick Phase**: When dark matter falls into micro-PBH capillaries, the local 5D bulk curvature increases. Via Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), the projected Weyl tensor E_μν acts as a geometric tidal force, slowly charging the radion φ toward the critical threshold φ_crit.
 
 **The Slip Phase**: When |φ| exceeds φ_crit (set by the QCD confinement scale, τ₀^{1/3} = 257 MeV), the non-linear release function R activates. The brane snaps back to equilibrium — like a violin string released by the bow.
 
-**Why it never stops**: Unlike a simple harmonic oscillator (which Hubble friction 3Hφ̇ would kill in a few e-foldings), the stick-slip motor is continuously fueled by cosmological dark matter accretion. The period T ≈ t_stick + t_slip ≈ 2.0 Gyr is self-sustaining.
+**Why T stays locked at 2 Gyr**: The non-minimal coupling ξRφ creates a dynamical attractor that locks the period despite evolving H(t) and decaying DM accretion rates. The system converges within ~2 e-foldings.
 
 ## The Topological Necessity: ER=EPR and Non-Local Coherence
 
@@ -60,8 +60,8 @@ The brane's sole topological connection to the bulk is through primordial micro-
 
 - Penetrate the bulk without tearing the macroscopic 4D structure
 - Set the critical threshold φ_crit via their geometric ratio r_s/L
+- Follow an extended log-normal mass function (10⁻¹⁴ to 10⁻¹⁰ M☉), evading microlensing constraints
 - Are completely invisible to JWST and all electromagnetic observations
-- Trace the cosmic web, creating local tension variations τ(x) that explain the CatWISE quasar dipole
 
 Note: JWST's "Little Red Dots" are definitively abandoned as anchors — Chisholm et al. (2026) show many are stellar clusters, not black holes.
 

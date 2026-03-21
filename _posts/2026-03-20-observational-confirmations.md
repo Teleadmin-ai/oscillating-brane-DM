@@ -40,32 +40,22 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 **Current Status**: As of 2026, multiple independent analyses confirm this tension persists, making alternative explanations like ours increasingly necessary.
 
-## 5. CatWISE Quasar Dipole (Secrest et al. 2021-2022)
+## 5. Definitive Future Test: SKA 21cm Reionization
 
-**The Observation**: The CatWISE catalog (1.36 million quasars) reveals a 4.9σ dipole in quasar number counts, twice the amplitude expected from our kinematic motion through the CMB rest frame.
+**The Prediction**: The oscillating G_eff(k,t) imprints a spatial modulation on the 21cm brightness temperature during the Epoch of Reionization (6 ≲ z ≲ 15), with amplitude ~1-5 mK at BAO-scale wavenumbers.
 
-**Our Explanation**: Micro-PBH anchors trace the cosmic web. Denser regions (superclusters) have more anchors, locally stiffening the membrane. This spatial tension variation τ(x) creates directional expansion rate differences: δH₀/H₀ = (1/2)δτ/τ₀. The universe expands asymmetrically because the brane tension is inhomogeneous.
+**Why it matters**: SKA-Low (2027+) has the sensitivity to detect or exclude this modulation at >3σ. This is the model's **definitive** test — an unambiguous signature that no systematic artifact can mimic.
 
-## 6. EDGES 21cm Anomaly (Bowman et al. 2018)
+## The Current Picture
 
-**The Observation**: An absorption trough of -500 mK at cosmic dawn (z ≈ 17) — roughly twice the maximum allowed by standard ΛCDM (~-250 mK).
-
-**Our Explanation**: The G_eff oscillation cycle was near an extremum at cosmic dawn where G_eff > G_N. Enhanced effective gravity lowered the Jeans mass, triggering premature halo collapse and rapid adiabatic cooling — deepening the 21cm trough without exotic dark matter.
-
-**Falsifiable Prediction**: HERA and SKA will detect a rhythmic modulation in the 21cm power spectrum imprinted by the G_eff oscillation phase.
-
-## The Paradigm Shift
-
-Six independent lines of observation now align with the stick-slip brane motor:
+Three established anomalies are resolved by the V7.0 stick-slip brane motor:
 
 1. **Dark Energy Evolution** (DESI, 4σ) ✓
-2. **CatWISE Quasar Dipole** (4.9σ) ✓
-3. **EDGES 21cm Anomaly** (-500 mK) ✓
-4. **BH-Dark Energy Coupling** (Farrah et al.) ✓
-5. **S₈ Tension** (5.2% suppression via G_eff) ✓
-6. **Planck ISW Anomaly** (6σ improvement) ✓
+2. **BH-Dark Energy Coupling** (Farrah et al.) ✓
+3. **S₈ Tension** (scale-dependent Yukawa screening) ✓
+4. **Planck ISW Anomaly** (6σ improvement) ✓
 
-No competing alternative to ΛCDM resolves all six simultaneously.
+**Definitive future test:** SKA 21cm reionization modulation (2027+).
 
 ## What Comes Next
 

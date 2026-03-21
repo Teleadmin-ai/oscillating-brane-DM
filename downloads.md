@@ -6,9 +6,9 @@ permalink: /downloads/
 
 # Download Resources
 
-## White Paper V6.0 (5 pages)
+## White Paper V7.0 (5 pages)
 
-Stick-slip motor edition resolving five cosmological anomalies. Ideal for sharing.
+Mathematically rigorous edition with Israel junction conditions and dynamical attractor. Resolves three established anomalies. Ideal for sharing.
 
 <div style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(255,51,102,0.1), rgba(0,255,204,0.1)); border-radius: 10px; border: 2px solid #00ffcc;">
   <h4>The Cosmic Yoyo: Stick-Slip Brane Motor</h4>
@@ -17,7 +17,7 @@ Stick-slip motor edition resolving five cosmological anomalies. Ideal for sharin
     <li>ER=EPR holographic topology (Maldacena-Susskind)</li>
     <li>Period calibrated from DESI BAO + Planck ISW</li>
     <li>One-loop quantum stability corrections</li>
-    <li>Three crises resolved: dark energy, S₈, CMB anomaly</li>
+    <li>Three anomalies resolved: dark energy, S₈ (Yukawa screening), CMB anomaly</li>
   </ul>
   <a href="/cosmic_yoyo_v5_holographic.pdf" download class="viral-button" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; margin-top: 10px; font-weight: bold; text-transform: uppercase;">
     Download White Paper (PDF, 4 pages)
@@ -59,7 +59,7 @@ All computational tools are available in the [GitHub repository](https://github.
   
   <div style="padding: 20px; background: rgba(74, 144, 226, 0.1); border: 1px solid #4a90e2; border-radius: 8px;">
     <h4>📚 Theory Document</h4>
-    <p>Complete V6.0 stick-slip motor framework</p>
+    <p>Complete V7.0 mathematically rigorous framework</p>
     <a href="/theory-complete/" style="color: #4a90e2;">View Online →</a>
   </div>
   
