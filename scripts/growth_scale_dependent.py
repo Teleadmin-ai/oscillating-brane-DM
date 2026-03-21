@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Scale-Dependent Growth Factor with Yukawa Screening — V7.1
+Scale-Dependent Growth Factor with Yukawa Screening — V8.0
 ============================================================
 
 Solves the linear growth ODE delta_m(a, k) with a scale-dependent
@@ -159,7 +159,7 @@ def solve_growth(k, a_range=(0.001, 1.0), n_points=2000):
 # ---------------------------------------------------------------------------
 def main():
     print("=" * 70)
-    print("V7.1 Scale-Dependent Growth Factor (Yukawa Screening)")
+    print("V8.0 Scale-Dependent Growth Factor (Yukawa Screening)")
     print("=" * 70)
 
     os.makedirs(PLOTS_DIR, exist_ok=True)
@@ -220,7 +220,7 @@ def main():
 
     # --- Upper panel: D(k)/D_LCDM at a=1 ---
     ax1.plot(k_grid, D_ratio_final, color="#00ffcc", linewidth=2.5,
-             label="V7.1 Yukawa screening")
+             label="V8.0 Yukawa screening")
     ax1.axhline(1.0, color="gray", linestyle=":", alpha=0.4)
 
     # Survey bands
@@ -243,7 +243,7 @@ def main():
     ax1.set_xlabel(r"Wavenumber $k$ (h/Mpc)", fontsize=13)
     ax1.set_ylabel(r"$D(a=1, k) / D_{\Lambda CDM}(a=1)$", fontsize=13)
     ax1.set_title(
-        r"V7.1: Scale-Dependent Growth Suppression via Yukawa Screening"
+        r"V8.0: Scale-Dependent Growth Suppression via Yukawa Screening"
         "\n"
         r"$G_{eff}(k) = G_N \left(1 - A_{osc} \cdot k^2/(k^2 + k_Y^2)\right)$",
         fontsize=13,

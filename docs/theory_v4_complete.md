@@ -1,6 +1,6 @@
 ---
 layout: dark
-title: "Complete Theory V7.1 – Stick-Slip Oscillating-Brane Cosmology"
+title: "Complete Theory V8.0 – Hybrid Topology Oscillating-Brane Cosmology"
 permalink: /theory-complete/
 description: |
   Full derivation of the membrane-vibration model (τ₀ = 7×10¹⁹ J/m², T ≈ 2 Gyr),
@@ -67,7 +67,7 @@ This range is geometrically commensurate with the extra dimension thickness L = 
 
 **Evading microlensing constraints:** A single mass at 10⁻¹² M☉ would be constrained by Subaru-HSC surveys. The extended mass function evades these via: (1) finite-source effects for the smallest PBHs (Einstein radius < source angular size), and (2) brane-proximal clustering reducing effective lensing cross-section.
 
-JWST's "Little Red Dots" are irrelevant — Chisholm et al. (2026) show many are stellar clusters. Our theory depends on microscopic PBHs invisible to electromagnetic observations.
+Subaru-HSC microlensing constraints are physically inapplicable: for M ~ 10⁻¹² M☉, the Fresnel diffraction parameter w = 2πr_s/λ ≈ 0.03 ≪ 1, placing these PBHs in the deep wave-optics regime where optical telescopes are blind.
 
 ## 2. From Naive Spring to Cosmic Membrane
 
@@ -96,7 +96,7 @@ Let's decipher this equation:
 
 How does dark matter excite this gigantic membrane? The answer is a **stick-slip relaxation motor** driven by geometric tidal forcing from the 5D bulk.
 
-The V7.1 radion field φ (brane position in the extra dimension) obeys:
+The V8.0 radion field φ (brane position in the extra dimension) obeys:
 
 φ̈ + 3Hφ̇ + ξRφ + ∂V_GW/∂φ = F[E_μν] - R(φ,φ̇)·Θ(|φ| - φ_crit)
 
@@ -166,7 +166,7 @@ This continuous emission of Dark Radiation introduces a highly non-linear radiat
 
 ### Geometric Forcing via Israel Junction Conditions (F[E_μν])
 
-V7.1 grounds the forcing mechanism in 5D general relativity, replacing the information-theoretic CV conjecture with rigorous brane-world gravity. The Shiromizu-Maeda-Sasaki (2000) formalism projects the 5D Einstein equations onto the brane via Israel junction conditions, yielding the effective 4D Einstein equations:
+V8.0 grounds the forcing mechanism in 5D general relativity, replacing the information-theoretic CV conjecture with rigorous brane-world gravity. The Shiromizu-Maeda-Sasaki (2000) formalism projects the 5D Einstein equations onto the brane via Israel junction conditions, yielding the effective 4D Einstein equations:
 
 G_μν = 8πG_N T_μν + κ₅⁴ π_μν - E_μν
 
@@ -176,7 +176,7 @@ When micro-PBH capillaries accrete dark matter, the local 5D curvature increases
 
 ### BBN Protection via Conformal Symmetry and the Trace Anomaly
 
-In V7.1, BBN protection emerges from fundamental QFT rather than an ad-hoc temperature-dependent tension. The radion couples to the **trace of the energy-momentum tensor** T^μ_μ = -ρ + 3p, giving the forcing a coupling factor (1 - 3w_eff).
+In V8.0, BBN protection emerges from fundamental QFT rather than an ad-hoc temperature-dependent tension. The radion couples to the **trace of the energy-momentum tensor** T^μ_μ = -ρ + 3p, giving the forcing a coupling factor (1 - 3w_eff).
 
 **Conformal Freeze-Out (Radiation Era):** During BBN, the universe is dominated by a relativistic plasma with w_eff = 1/3. The trace vanishes rigorously: T^μ_μ = -ρ + 3(ρ/3) = 0. The coupling factor (1 - 3w_eff) = 0, so the radion is **completely blind** to the bulk forcing. Combined with extreme Hubble friction (3Hφ̇), the brane is perfectly frozen. Standard GR is recovered, ensuring pristine primordial abundances.
 
@@ -190,7 +190,7 @@ The period is not given by a simple harmonic formula. The stick-slip cycle has:
 
 T ≈ t_stick + t_slip ≈ 2.0 Gyr
 
-where t_stick is the charging time (E_μν forcing against GW restoring potential) and t_slip is the rapid discharge time. The harmonic approximation T ≈ 2π√(f_osc M_DM,tot/τ₀) gives the correct order of magnitude but the precise period requires numerical integration of the full V7.1 ODE including the ξRφ attractor term.
+where t_stick is the charging time (E_μν forcing against GW restoring potential) and t_slip is the rapid discharge time. The harmonic approximation T ≈ 2π√(f_osc M_DM,tot/τ₀) gives the correct order of magnitude but the precise period requires numerical integration of the full V8.0 ODE including the ξRφ attractor term.
 
 ### 3.2 Determination of τ₀
 

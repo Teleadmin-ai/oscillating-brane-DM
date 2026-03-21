@@ -1,4 +1,4 @@
-# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) V7.1 - Fundamental Physics Edition
+# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) V8.0 - Hybrid Topology Edition
 
 **Author: Romain Provencal**
 **Co-Authors: Claude (Anthropic) & Gemini DeepThink (Google) - AI Cognitive Prostheses**
@@ -83,7 +83,7 @@ print(f"w(z={z}) = {w_de:.3f}")
 
 - DESI Collaboration (2024-2026): "Evidence for evolving dark energy from baryon acoustic oscillations"
 - Maldacena & Susskind (2013): "Cool horizons for entangled black holes" (ER=EPR foundation)
-- Farrah et al. (2023): "Observational evidence for cosmological coupling of black holes"
+- Shiromizu, Maeda & Sasaki (2000): "Gravitational equations on the brane" (Israel junction conditions)
 - Original theoretical paper v5.0: *(Holographic edition with ER=EPR topology, 2026)*
 
 ### 🤝 Contributing

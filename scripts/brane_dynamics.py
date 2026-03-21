@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Brane Dynamics Calculator — V7.1 Fundamental Physics Edition
+Brane Dynamics Calculator — V8.0 Fundamental Physics Edition
 ==============================================================
 
 Core implementation of the oscillating brane dark matter theory.
@@ -8,7 +8,7 @@ Computes stick-slip membrane oscillations with dynamical attractor (ξRφ),
 Israel junction conditions forcing, trace-modulated coupling (1-3w),
 radiative damping via bulk graviton emission, and PBH extended mass function.
 
-Version: 7.1 (Conformal Symmetry + Radiative Damping + Israel JC)
+Version: 8.0 (Hybrid Topology: Cosmic Web + ER=EPR PBH Network)
 """
 
 from typing import Optional, Tuple
@@ -29,7 +29,7 @@ M_sun = 1.989e30  # kg
 
 class BraneOscillator:
     """
-    V7.1 Stick-Slip Brane Motor with Fundamental Physics.
+    V8.0 Stick-Slip Brane Motor with Fundamental Physics.
 
     The radion field phi obeys:
     phi_ddot + (3H + Gamma_rad)*phi_dot + xi*R*phi + dV_GW/dphi
@@ -128,7 +128,7 @@ class BraneOscillator:
 
     def stick_slip_rhs_dimless(self, t_gyr: float, y: np.ndarray) -> list:
         """
-        V7.1 Stick-slip ODE in dimensionless units (time in Gyr, length in L).
+        V8.0 Stick-slip ODE in dimensionless units (time in Gyr, length in L).
 
         Includes:
         - Non-minimal coupling xi*R*phi (dynamical attractor)
@@ -197,7 +197,7 @@ class BraneOscillator:
         else:
             release = 0.0
 
-        # V7.1 ODE: trace coupling + radiative damping + attractor
+        # V8.0 ODE: trace coupling + radiative damping + attractor
         ddphi_hat = (
             -(3 * H_gyr + gamma_rad) * dphi_hat
             - xi_term + gw + forcing - release
@@ -384,10 +384,10 @@ class BraneOscillator:
 
 
 def main():
-    """Example usage of the V7.1 Stick-Slip BraneOscillator."""
+    """Example usage of the V8.0 Stick-Slip BraneOscillator."""
     brane = BraneOscillator()
 
-    print("Oscillating Brane Dark Matter Theory V7.1 (Fundamental Physics Edition)")
+    print("Oscillating Brane Dark Matter Theory V8.0 (Fundamental Physics Edition)")
     print("=" * 65)
     print(f"Brane tension:       tau_0 = {brane.tau_0:.2e} J/m^2")
     print(f"                     tau_0 = 0.017 GeV^3")
@@ -430,7 +430,7 @@ def main():
     print()
 
     # Solve stick-slip ODE with attractor
-    print("Solving V7.1 stick-slip ODE (with xi*R*phi attractor)...")
+    print("Solving V8.0 stick-slip ODE (with xi*R*phi attractor)...")
     sol = brane.solve_oscillation(t_span_gyr=(0, 10))
     if sol is not None:
         phi = sol["phi"]
@@ -452,7 +452,7 @@ def main():
         print(f"  Oscillation amplitude: {amplitude:.4f} L")
         print(f"  Amplitude in meters: {amplitude * brane.L:.2e} m")
     print()
-    print("V7.1 Conformal Symmetry + Radiative Damping + Israel JC: operational")
+    print("V8.0 Conformal Symmetry + Radiative Damping + Israel JC: operational")
 
 
 if __name__ == "__main__":

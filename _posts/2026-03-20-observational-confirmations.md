@@ -22,17 +22,11 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 **What Our Theory Requires**: The brane must be anchored to the bulk by topological capillaries whose size (~3-30 nm) matches the extra dimension thickness (L = 200 nm).
 
-**The Current Picture**: JWST's "Little Red Dots" were initially proposed as supermassive anchor points. However, Chisholm et al. (2026) demonstrated that many LRDs are young stellar clusters, not black holes. This is irrelevant to our model — the true anchors are **primordial micro-PBHs** of asteroid mass (~10⁻¹² M☉), completely invisible to electromagnetic observations but structurally essential.
+**The Current Picture**: The true anchors are **primordial micro-PBHs** of asteroid mass (~10⁻¹² M☉), completely invisible to electromagnetic observations but structurally essential.
 
 **The Implication**: The brane's topological anchoring is robust and independent of JWST's specific findings. Micro-PBHs constituting ~10% of dark matter form a pervasive network of capillaries connecting our 4D reality to the 5D bulk.
 
-## 3. Black Holes Coupled to Dark Energy (Farrah et al. 2023)
-
-**The Observation**: A team of astrophysicists published observational evidence showing "cosmological coupling"—black holes grow in exact synchronization with universal expansion. Their controversial but peer-reviewed conclusion: "black holes are the astrophysical source of dark energy."
-
-**Our Explanation**: They have the observation but lack the geometric explanation. This validates 100% our idea that black holes are the funnels connecting our universe to the mechanism generating dark energy through membrane oscillation.
-
-## 4. The S₈ Tension Resolution
+## 3. The S₈ Tension Resolution
 
 **The Problem**: CMB measurements give S₈ = 0.83, while weak lensing surveys find S₈ = 0.79—a persistent 4% discrepancy.
 
@@ -40,7 +34,7 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 **Current Status**: As of 2026, multiple independent analyses confirm this tension persists, making alternative explanations like ours increasingly necessary.
 
-## 5. Definitive Future Test: SKA 21cm Reionization
+## 4. Definitive Future Test: SKA 21cm Reionization
 
 **The Prediction**: The oscillating G_eff(k,t) imprints a spatial modulation on the 21cm brightness temperature during the Epoch of Reionization (6 ≲ z ≲ 15), with amplitude ~1-5 mK at BAO-scale wavenumbers.
 
@@ -48,12 +42,11 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 ## The Current Picture
 
-Three established anomalies are resolved by the V7.1 stick-slip brane motor:
+Three established anomalies are resolved by the V8.0 stick-slip brane motor:
 
 1. **Dark Energy Evolution** (DESI, 4σ) ✓
-2. **BH-Dark Energy Coupling** (Farrah et al.) ✓
-3. **S₈ Tension** (scale-dependent Yukawa screening) ✓
-4. **Planck ISW Anomaly** (6σ improvement) ✓
+2. **S₈ Tension** (scale-dependent Yukawa screening) ✓
+3. **Planck ISW Anomaly** (6σ improvement) ✓
 
 **Definitive future test:** SKA 21cm reionization modulation (2027+).
 

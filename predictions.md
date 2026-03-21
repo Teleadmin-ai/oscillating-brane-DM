@@ -6,13 +6,12 @@ permalink: /predictions/
 
 # Observational Predictions
 
-The oscillating brane theory V7.1 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
+The oscillating brane theory V8.0 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
 
 ## Timeline of Discovery
 
 ```
 2024    ✅ DESI detects dark energy evolution (4σ)
-   |    ✅ Farrah et al.: BH-dark energy coupling
    |
 2025    ✅ S₈ tension resolved (scale-dependent Yukawa screening)
    |    ⏳ Euclid first data release
@@ -33,7 +32,6 @@ The oscillating brane theory V7.1 makes specific, testable predictions that dist
 
 **✅ Already Observed:**
 - **DESI 2024-2026**: Dark energy evolves with 4σ significance — exactly matching our oscillating w(z) with φ₀ = π/2
-- **Farrah et al. 2023-2024**: Black hole masses coupled to dark energy density (k = 3.11 ± 0.19)
 - **S₈ tension**: Scale-dependent growth suppression via Yukawa-screened G_eff(k) bridges DES/KiDS gap
 
 **⏳ Imminent Tests:**
@@ -129,7 +127,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
 ## Model Comparison
 
-| Observable | ΛCDM | Oscillating Brane V7.1 | Difference |
+| Observable | ΛCDM | Oscillating Brane V8.0 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T + π/2) | Time-varying, phantom crossing |
 | S₈ | 0.83 (tension) | Scale-dependent Yukawa G_eff(k) | ~5% at non-linear scales |
@@ -152,7 +150,7 @@ Three established anomalies are resolved, with decisive future tests on the hori
 1. **DESI** (2024-2026): Dark energy evolves at 4σ — matching our stick-slip oscillation with φ₀ = π/2
 2. **S₈ Resolution**: Scale-dependent Yukawa screening reconciles DES, KiDS, and CMB measurements
 3. **Planck ISW**: Low-ℓ power deficit matches our 2 Gyr resonance at 6σ (Δχ² = 32.9)
-4. **Farrah et al.** (2024): BH-expansion coupling (k ≈ 3) — predicted by our PBH capillaries
+4. **Wave-optics immunity**: Subaru-HSC microlensing constraints physically inapplicable to asteroid-mass PBHs (Fresnel parameter w = 2πr_s/λ ≈ 0.03 ≪ 1)
 
 **Definitive future test:** SKA 21cm reionization modulation (2027+).
 

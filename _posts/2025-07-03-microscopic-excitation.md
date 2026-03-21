@@ -8,7 +8,7 @@ tags: [dark-matter, mechanics, gravitational-funnels]
 
 But how, concretely, does dark matter excite this gigantic membrane? The answer is a **stick-slip motor** driven by topological backreaction.
 
-## The Stick-Slip Motor (V7.1)
+## The Hybrid Stick-Slip Motor (V8.0)
 
 The brane position (radion φ) obeys a non-linear relaxation oscillator with non-minimal gravitational coupling:
 
@@ -63,5 +63,5 @@ The brane's sole topological connection to the bulk is through primordial micro-
 - Follow an extended log-normal mass function (10⁻¹⁴ to 10⁻¹⁰ M☉), evading microlensing constraints
 - Are completely invisible to JWST and all electromagnetic observations
 
-Note: JWST's "Little Red Dots" are definitively abandoned as anchors — Chisholm et al. (2026) show many are stellar clusters, not black holes.
+Note: Subaru-HSC microlensing constraints are physically inapplicable to this mass window — the Fresnel-Kirchhoff diffraction parameter w = 2πr_s/λ ≈ 0.03 ≪ 1 places these PBHs in the deep wave-optics regime where optical telescopes are blind.
 

@@ -1,7 +1,7 @@
 # CLAUDE.md - Project Information for AI Assistants
 
 ## Project Overview
-**Oscillating Brane Dark Matter Theory V7.1 (Fundamental Physics Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a non-linear stick-slip relaxation motor with Israel junction conditions, trace-modulated forcing (conformal symmetry → QCD trace anomaly), dynamical attractor, radiative damping via bulk graviton emission, and ER=EPR holographic entanglement.
+**Oscillating Brane Dark Matter Theory V8.0 (Hybrid Topology Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome).
 
 **Author**: Romain Provencal (provencal.romain@teleadmin.net) - Independent conceptual researcher
 **AI Collaborators**: Claude (Anthropic) & Gemini DeepThink (Google) as theoretical co-processors
@@ -10,71 +10,69 @@
 - **GitHub**: https://github.com/Teleadmin-ai/oscillating-brane-DM
 - **Website**: https://higgs-cosmology.com/
 - **Owner**: Teleadmin-ai (NOT "Teleadmin")
-- **Version**: V7.1 Fundamental Physics Edition (March 2026)
+- **Version**: V8.0 Hybrid Topology Edition (March 2026)
 
-## CRITICAL: Theory V7.1 Paradigm
+## CRITICAL: Theory V8.0 Paradigm
 
-### Core Physics:
+### Core Physics — The Hybrid Motor:
 - **Bulk**: Non-local topological state, spacetime is emergent (Van Raamsdonk 2010)
 - **Connectivity**: ER=EPR wormhole network (Maldacena & Susskind 2013)
-- **Oscillation ODE** (stick-slip with trace coupling + radiative damping, NOT harmonic):
-  `φ̈ + (3H + Γ_rad)φ̇ + ξRφ + ∂V_GW/∂φ = F[E_μν]·(1-3w) - R(φ,φ̇)Θ(|φ|-φ_crit)`
-  - **(3H + Γ_rad)φ̇**: Hubble friction + radiative damping via bulk graviton emission (KK modes). Γ_rad ≈ 0 during stick phase, spikes during slip to cap amplitude
-  - **ξRφ**: Non-minimal coupling to 4D Ricci scalar → dynamical attractor locking T = 2 Gyr
-  - **F[E_μν]·(1-3w)**: Geometric forcing from projected Weyl tensor, modulated by the trace of the energy-momentum tensor. Factor (1-3w) = 0 during radiation era (conformal symmetry), = 1 after QCD transition (trace anomaly)
-  - Stick phase: E_μν tidal forcing charges φ toward φ_crit
-  - Slip phase: Threshold release snaps brane back; Γ_rad caps velocity via graviton emission
-- **Forcing term** (F[E_μν]): Derived from 5D GR via Israel junction conditions (Shiromizu, Maeda & Sasaki 2000). The electric Weyl tensor E_μν = C⁵_AMBN n^A n^B acts as tidal force on the brane. Pure geometric mechanism. CV conjecture is historical motivation only
-- **BBN protection**: Via **conformal symmetry** of the radiation-dominated plasma. The radion couples to T^μ_μ = -ρ + 3p. For radiation (w=1/3), T^μ_μ = 0 rigorously → forcing vanishes → motor OFF during BBN. At QCD transition (~150-200 MeV), chiral symmetry breaks, w→0, T^μ_μ ≠ 0 → motor ON. No ad-hoc parameters needed
-- **5D stability**: **Radiative damping via bulk graviton emission**. During the violent slip phase, the accelerating brane emits KK gravitons (Dark Radiation) into the AdS bulk. This non-linear radiation reaction force (Γ_rad) caps the amplitude. The 320% modulation in (1+1)D prototypes is the strict consequence of omitting this 5D dissipation channel
+- **Oscillation ODE** (hybrid stick-slip, NOT harmonic):
+  `φ̈ + (3H + Γ_rad)φ̇ + ξRφ + ∂V_GW/∂φ = F_web[E_μν]·(1-3w) - R_PBH(φ,φ̇)Θ(|φ|-φ_crit)`
+  - **F_web[E_μν] (the Muscle)**: Macroscopic forcing from the Cosmic Web. Superclusters, filaments, and voids create inhomogeneous stress S_μν on the brane. Via Israel junction conditions ΔK_μν = -κ₅²(S_μν - ⅓S h_μν), this generates the projected Weyl tensor E_μν — a continuous 5D tidal force pressing the brane toward the bulk
+  - **R_PBH·Θ (the Metronome)**: Microscopic release orchestrated by the ER=EPR-entangled network of asteroid-mass PBHs. When φ reaches φ_crit, the holographic wormhole network releases tension simultaneously everywhere (ℓ=0 mode) — quantum synchronization
+  - **(3H + Γ_rad)φ̇**: Hubble friction + radiative damping via bulk graviton emission (KK modes) during slip phase
+  - **ξRφ**: Non-minimal coupling → dynamical attractor locking T = 2 Gyr
+  - **(1-3w)**: Trace coupling. = 0 for radiation (conformal symmetry, BBN safe), = 1 after QCD (trace anomaly, motor ON)
+- **BBN protection**: Via **conformal symmetry** (T^μ_μ = 0 for radiation w=1/3). QCD chiral symmetry breaking ignites motor at Λ_QCD = 257 MeV
+- **5D stability**: **Radiative damping** via bulk graviton emission during slip phase caps amplitude
+- **PBH wave-optics immunity**: For M ~ 10⁻¹² M☉, r_s ≈ 3 nm ≪ λ_opt ≈ 600 nm. Fresnel parameter w = 2πr_s/λ ≈ 0.03 ≪ 1. Subaru-HSC is physically blind (deep wave-optics regime). Micro-PBH capillaries rehabilitated
 - **Dark energy**: w(z) = -1 + A_w sin(2πt_lb/T + φ₀) with **φ₀ = π/2** → w_a < 0 (DESI)
-- **S₈ suppression**: Via **Yukawa screening** G_eff(k) = G_N(1 + α exp(-k/k_L)). Scale-dependent: ~5% at non-linear scales (DES), quasi-standard at linear scales (KiDS/CMB)
-- **Quantum stability**: Adiabatic theorem (ν_brane/ν_KK ~ 10⁻³¹) + geometric forcing double guarantee
-- **QCD connection**: τ₀ = 0.017 GeV³, τ₀^{1/3} = 257 MeV ≈ Λ_QCD. The motor ignites at this scale because conformal symmetry breaks here (trace anomaly)
+- **S₈ suppression**: Via **Yukawa screening** G_eff(k) = G_N(1 + α exp(-k/k_L)). Scale-dependent
 - **ISW resonance**: CMB ℓ = 10-20, Δχ² = 32.9 (6σ)
-- **Anchors**: Micro-PBHs with **extended log-normal mass function** (10⁻¹⁴ to 10⁻¹⁰ M☉, peak ~10⁻¹² M☉). Clustered near brane, evade microlensing via finite-source effects
-- **Laboratory tests**: Sub-micron Yukawa corrections at L = 0.2 μm testable by **qBOUNCE** (ultra-cold quantum neutrons at ILL, Grenoble) and **levitated nanoscale optomechanics** (Geraci, Moore groups). These bypass the Casimir background that blinds macroscopic experiments
+- **Anchors**: Micro-PBHs with **extended log-normal mass function** (10⁻¹⁴ to 10⁻¹⁰ M☉). Dual role: topological capillaries AND quantum synchronization nodes (ER=EPR)
+- **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
 
 ### Epistemological Framework:
 - **3 established anomalies resolved**: DESI phantom crossing, S₈ tension (scale-dependent), Planck ISW
 - **Definitive future test**: SKA 21cm reionization modulation (2027+)
-- **Complementary tests**: Vera Rubin/LSST (structural anisotropies), qBOUNCE/optomechanics (sub-micron gravity), Euclid (w(z) oscillation)
-- EDGES and CatWISE are **NOT** claimed as confirmations (EDGES refuted by SARAS 3; CatWISE debated)
+- **Complementary tests**: Vera Rubin/LSST, qBOUNCE/optomechanics, Euclid
+- **Theory is purely tensorial and geometric** — no dependence on astrophysical controversies
 
 ### BANNED Concepts (NEVER use):
-- "Point Unique" 0D, Ringermacher, GW doublet/NANOGrav, Bulk-Infinity/Two Limiting Visions/Convergent Funnels
+- "Point Unique" 0D, Ringermacher, GW doublet/NANOGrav, Bulk-Infinity
 - "Block Universe", "tiny hammers"/"momentum hit"/"dark matter impacts"
-- "Simple harmonic oscillator"/"SHO"/"z = z_max sin(ωt)" as the dynamics
-- "T = 2π√(f_osc M_DM/τ₀)" as exact formula
-- JWST LRDs as anchors (Chisholm 2026: may be stellar clusters)
+- "Simple harmonic oscillator"/"SHO" as the dynamics
+- JWST LRDs as anchors
 - τ₀ = 2.2 × 10⁻⁵ GeV³ (wrong), contact@higgs-cosmology.com (nonexistent)
-- w(z) without phase φ₀, Version 4/5/6/7.0 references
-- **"holographic thermodynamics"** / **"entropic force"** / **"F_ent = T_bulk ∇S_ent"**
-- **"thermodynamic backreaction of bulk information processing"**
-- **"Complexity=Volume" as the motor/forcing mechanism** (ok as historical motivation only)
-- **EDGES as confirmation or prediction** (refuted by SARAS 3)
-- **CatWISE as confirmation or prediction** (debated systematics)
+- w(z) without phase φ₀, Version 4/5/6/7.x references
+- **"holographic thermodynamics"** / **"entropic force"**
+- **"Complexity=Volume" as the motor** (ok as historical motivation only)
+- **EDGES/CatWISE as confirmations**
 - **Single PBH mass 10⁻¹² M☉** (must use extended mass function)
-- **"global S₈ suppression of 5.2%"** (must be scale-dependent Yukawa screening)
-- **"temperature-dependent brane tension" / "τ(T)" / "τ(T_cosm)"** (replaced by conformal symmetry + trace anomaly in V7.1)
-- **"MORRIS" experiment** (operates at 1 mm, blinded by Casimir at sub-micron; use qBOUNCE/optomechanics instead)
-- **"Warped Shielding" as geometric filter** (replaced by radiative damping via bulk graviton emission in V7.1)
+- **"global S₈ suppression of 5.2%"** (must be scale-dependent Yukawa)
+- **"temperature-dependent brane tension" / "τ(T)"** (replaced by conformal symmetry)
+- **"MORRIS" experiment** (operates at 1 mm, blinded by Casimir)
+- **"Warped Shielding" as mere geometric filter** (replaced by radiative damping)
+- **Farrah et al. (2023)** / **BH cosmological coupling** / **k = 3.11** (refuted by JWST at 11σ, incompatible with virialized systems)
+- **"Little Red Dots"** as relevant to anchor mechanism
 
-### REQUIRED Concepts (V7.1):
-- **Israel junction conditions** (Shiromizu, Maeda & Sasaki 2000) for forcing mechanism
-- **Projected Weyl tensor E_μν** as geometric tidal force on the brane
-- **Trace coupling (1-3w)**: forcing modulated by T^μ_μ. = 0 for radiation (BBN safe), ≠ 0 after QCD (motor ON)
-- **Conformal symmetry** of radiation plasma as BBN protection (NOT ad-hoc τ(T))
-- **QCD trace anomaly** as the ignition mechanism (chiral symmetry breaking)
-- **Radiative damping Γ_rad** via bulk graviton emission (KK modes) during slip phase
-- **ξRφ non-minimal coupling** as dynamical attractor locking T = 2 Gyr
-- **Extended mass function (EMF)** log-normal for PBHs (10⁻¹⁴ to 10⁻¹⁰ M☉)
-- **Yukawa screening** G_eff(k) for scale-dependent S₈ suppression
-- **SKA 21cm reionization modulation** as definitive future test
-- **qBOUNCE** (ILL) and **levitated optomechanics** for sub-micron laboratory tests
+### REQUIRED Concepts (V8.0):
+- **Hybrid motor**: F_web (Cosmic Web macro-forcing) + R_PBH (micro-PBH ER=EPR synchronization)
+- **Israel junction conditions** ΔK_μν = -κ₅²(S_μν - ⅓S h_μν) for macro-forcing
+- **Projected Weyl tensor E_μν** generated by Cosmic Web inhomogeneity
+- **ER=EPR entangled PBH network** as quantum metronome (ℓ=0 synchronization)
+- **Wave-optics immunity**: Fresnel parameter w = 2πr_s/λ ≈ 0.03 ≪ 1 rehabilitates PBHs
+- **Trace coupling (1-3w)**: conformal BBN protection + QCD trace anomaly ignition
+- **Radiative damping Γ_rad** via bulk graviton emission
+- **ξRφ non-minimal coupling** as dynamical attractor
+- **Extended mass function (EMF)** log-normal for PBHs
+- **Yukawa screening** G_eff(k) for scale-dependent S₈
+- **SKA 21cm** as definitive future test
+- **qBOUNCE + optomechanics** for sub-micron lab tests
 
 ### Key References:
-Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, Brownsberger 2020, DESI 2024/2026, Farrah 2023, Chisholm 2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Subaru-HSC 2025, Jenke et al. (qBOUNCE) 2014
+Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014
 
 ## Key Parameters
 | Parameter | Value |
@@ -86,13 +84,12 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | Extra dimension L | 0.2 μm (NEVER "0.2 m") |
 | φ_crit | ~0.1 L (QCD threshold) |
 | f_osc | 0.10 |
-| MOND a₀ | 1.1 × 10⁻¹⁰ m/s² (ALWAYS negative exp) |
 | A_w | 0.003 |
-| S₈ suppression | ~5% at non-linear scales (Yukawa screening, scale-dependent) |
+| S₈ suppression | ~5% at non-linear scales (Yukawa screening) |
 | ISW Δχ² | 32.9 (6σ) |
-| Micro-PBH EMF | Log-normal, 10⁻¹⁴ to 10⁻¹⁰ M☉, peak ~10⁻¹² M☉ |
+| Micro-PBH EMF | Log-normal, 10⁻¹⁴ to 10⁻¹⁰ M☉ |
 | ξ (non-minimal coupling) | ~0.15 |
-| T_QCD (trace anomaly ignition) | ~150-200 MeV |
+| Fresnel parameter (PBH) | w = 2πr_s/λ ≈ 0.03 ≪ 1 (wave-optics immune) |
 
 ## PDF Generation — Race Condition
 CI auto-pushes PDF. After modifying .md files:
@@ -100,30 +97,24 @@ CI auto-pushes PDF. After modifying .md files:
 2. Verify: `pdftotext oscillating_brane_theory_latest.pdf - | grep -i "GHOST"`
 3. Resolve conflicts: `git checkout --ours oscillating_brane_theory_latest.pdf`
 
-### Source files for PDF (in order):
-```
-index.md, theory.md, chronology.md, predictions.md, tools.md, about.md,
-docs/theory_v4_complete.md, docs/foundations_parts/part1-4, _posts/*.md (5)
-```
-
-### Ghost grep (V7.1 extended):
+### Ghost grep (V8.0):
 ```bash
-pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point Unique\|tiny hammers\|momentum hit\|NANOGrav\|Block Universe\|Version 4\|Version 5\|Infinite Ocean\|dark matter impacts\|LRDs.*anchor\|holographic thermodynamics\|entropic force\|F_ent.*T_bulk\|thermodynamic backreaction\|EDGES.*confirm\|CatWISE.*confirm\|single.*PBH.*mass\|global.*5.2\|MORRIS\|tau(T)"
+pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point Unique\|tiny hammers\|momentum hit\|Block Universe\|dark matter impacts\|LRDs.*anchor\|holographic thermodynamics\|entropic force\|thermodynamic backreaction\|EDGES.*confirm\|CatWISE.*confirm\|single.*PBH.*mass\|global.*5.2\|MORRIS\|Farrah\|cosmological coupling.*k.*3"
 ```
 
 ## Downloads
-1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages, 15 refs (filename kept for link stability)
+1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages (filename kept for link stability)
 2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~80 pages
 
-## V7.1 Computational Scripts
+## V8.0 Computational Scripts
 | Script | Purpose | Output |
 |--------|---------|--------|
-| `scripts/brane_dynamics.py` | Core V7.1 ODE (trace coupling + Γ_rad + ξRφ + E_μν) | Console + verification |
-| `scripts/radion_attractor.py` | Dynamical attractor demonstration | `plots/radion_attractor_*.png` (3) |
-| `scripts/pbh_emf_constraints.py` | PBH EMF vs microlensing | `plots/pbh_emf_constraints.png` |
-| `scripts/bbn_thermal_freezeout.py` | BBN protection via conformal symmetry & trace anomaly | `plots/bbn_thermal_freezeout.png` |
+| `scripts/brane_dynamics.py` | Core V8.0 ODE (F_web + R_PBH + trace + Γ_rad + ξRφ) | Console |
+| `scripts/radion_attractor.py` | Dynamical attractor demonstration | `plots/radion_attractor_*.png` |
+| `scripts/pbh_emf_constraints.py` | PBH EMF vs microlensing (wave-optics) | `plots/pbh_emf_constraints.png` |
+| `scripts/bbn_thermal_freezeout.py` | BBN via conformal symmetry & trace anomaly | `plots/bbn_thermal_freezeout.png` |
 | `scripts/growth_scale_dependent.py` | Scale-dependent S₈ Yukawa | `plots/growth_scale_dependent.png` |
-| `scripts/numerical_relativity_1d.py` | 5D radiative damping demonstration (1+1)D MoL | `plots/warped_shielding_1D.png` |
+| `scripts/numerical_relativity_1d.py` | 5D radiative damping (1+1)D MoL | `plots/warped_shielding_1D.png` |
 
 ## Human-AI Collaboration
 Romain = conceptual architect (Faraday). AI = mathematical co-processors (Maxwell). Radically transparent acknowledgments. Never minimize AI involvement.

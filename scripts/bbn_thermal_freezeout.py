@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BBN Protection via Conformal Symmetry and Trace Anomaly — V7.1
+BBN Protection via Conformal Symmetry and Trace Anomaly — V8.0
 ================================================================
 
 Demonstrates that BBN is protected not by an ad-hoc temperature-dependent
@@ -116,7 +116,7 @@ def plot_bbn_protection():
     ax1.set_xscale("log")
     ax1.set_ylabel("Dimensionless", fontsize=13)
     ax1.set_title(
-        "V7.1 BBN Protection: Conformal Symmetry & QCD Trace Anomaly\n"
+        "V8.0 BBN Protection: Conformal Symmetry & QCD Trace Anomaly\n"
         r"Forcing $\propto (1 - 3w_{eff})$: vanishes for radiation ($w=1/3$), "
         r"activates after QCD ($w \to 0$)",
         fontsize=12,
@@ -202,7 +202,7 @@ def plot_bbn_protection():
 # ---------------------------------------------------------------------------
 def main():
     print("=" * 70)
-    print("V7.1 BBN Protection via Conformal Symmetry & Trace Anomaly")
+    print("V8.0 BBN Protection via Conformal Symmetry & Trace Anomaly")
     print("=" * 70)
 
     os.makedirs(PLOTS_DIR, exist_ok=True)

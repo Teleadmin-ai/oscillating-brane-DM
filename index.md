@@ -18,7 +18,7 @@ title: Home
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of quantum entangled black holes.
 
-**The Cosmic Yoyo V7.1**: Dark matter flows through primordial micro-black holes into the bulk — a non-local topological state where distance and time lose all meaning. Connected via Einstein-Rosen bridges (ER=EPR), all black holes share instantaneous quantum correlations. A **stick-slip motor**, driven by the projected Weyl tensor E_μν via Israel junction conditions and modulated by the trace of the energy-momentum tensor (T^μ_μ), converts geometric tidal forcing into a 2-billion-year pulsation locked by a dynamical attractor (ξRφ). Conformal symmetry (T^μ_μ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at Λ_QCD = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. It resolves three established cosmological anomalies: DESI's evolving dark energy, the S₈ tension (via scale-dependent Yukawa screening), and Planck's CMB anomaly.
+**The Cosmic Yoyo V8.0**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor E_μν forcing — the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally (ℓ=0 mode) — the metronome. Conformal symmetry (T^μ_μ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at Λ_QCD = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor (ξRφ) locks the period at T = 2 Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the S₈ tension (via scale-dependent Yukawa screening), and Planck's CMB anomaly.
 
 <div class="hero-section">
   <div class="key-predictions">
@@ -98,7 +98,7 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
     <a href="/cosmic_yoyo_v5_holographic.pdf" download style="display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,255,204,0.4);">
       White Paper (5 pages)
     </a>
-    <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">V7.1 Fundamental Physics Edition</p>
+    <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">V8.0 Hybrid Topology Edition</p>
   </div>
   <div style="display: inline-block; margin: 0 15px;">
     <a href="/downloads/" class="download-main-button" style="display: inline-block; padding: 14px 28px; background: #4a90e2; color: white; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
