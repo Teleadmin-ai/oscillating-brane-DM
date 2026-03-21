@@ -8,7 +8,7 @@ tags: [dark-matter, mechanics, gravitational-funnels]
 
 But how, concretely, does dark matter excite this gigantic membrane? The answer is a **stick-slip motor** driven by topological backreaction.
 
-## The Stick-Slip Motor (V7.0)
+## The Stick-Slip Motor (V7.1)
 
 The brane position (radion φ) obeys a non-linear relaxation oscillator with non-minimal gravitational coupling:
 

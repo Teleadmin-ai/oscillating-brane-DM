@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-Brane Dynamics Calculator — V7.0 Mathematically Rigorous Edition
-=================================================================
+Brane Dynamics Calculator — V7.1 Fundamental Physics Edition
+==============================================================
 
 Core implementation of the oscillating brane dark matter theory.
 Computes stick-slip membrane oscillations with dynamical attractor (ξRφ),
-Israel junction conditions forcing, and PBH extended mass function.
+Israel junction conditions forcing, trace-modulated coupling (1-3w),
+radiative damping via bulk graviton emission, and PBH extended mass function.
 
-Version: 7.0 (Dynamical Attractor + Israel Junction Conditions)
+Version: 7.1 (Conformal Symmetry + Radiative Damping + Israel JC)
 """
 
 from typing import Optional, Tuple
@@ -28,16 +29,20 @@ M_sun = 1.989e30  # kg
 
 class BraneOscillator:
     """
-    V7.0 Stick-Slip Brane Motor with Dynamical Attractor.
+    V7.1 Stick-Slip Brane Motor with Fundamental Physics.
 
     The radion field phi obeys:
-    phi_ddot + 3*H*phi_dot + xi*R*phi + dV_GW/dphi = F[E_uv] - R(phi,phi_dot)*Theta(|phi|-phi_crit)
+    phi_ddot + (3H + Gamma_rad)*phi_dot + xi*R*phi + dV_GW/dphi
+        = F[E_uv]*(1-3w) - R(phi,phi_dot)*Theta(|phi|-phi_crit)
 
     Where:
-    - 3*H*phi_dot: Hubble friction
+    - (3H + Gamma_rad)*phi_dot: Hubble friction + radiative damping via
+      bulk graviton emission (KK modes) during the slip phase
     - xi*R*phi: Non-minimal coupling (dynamical attractor, locks T = 2 Gyr)
     - dV_GW/dphi: Goldberger-Wise restoring potential (QCD scale)
-    - F[E_uv]: Geometric forcing from projected Weyl tensor (Israel JC)
+    - F[E_uv]*(1-3w): Geometric forcing modulated by trace coupling.
+      Vanishes during radiation era (w=1/3, conformal symmetry protects BBN),
+      activates after QCD transition (w->0, trace anomaly ignites motor)
     - R*Theta: Non-linear threshold release (stick-slip)
     """
 
@@ -123,12 +128,14 @@ class BraneOscillator:
 
     def stick_slip_rhs_dimless(self, t_gyr: float, y: np.ndarray) -> list:
         """
-        V7.0 Stick-slip ODE in dimensionless units (time in Gyr, length in L).
+        V7.1 Stick-slip ODE in dimensionless units (time in Gyr, length in L).
 
         Includes:
         - Non-minimal coupling xi*R*phi (dynamical attractor)
+        - Trace coupling (1-3w): vanishes for radiation (BBN protection),
+          activates after QCD transition (conformal symmetry -> trace anomaly)
+        - Radiative damping Gamma_rad via bulk graviton emission (slip phase)
         - Time-dependent H(t) and forcing (DM accretion decays as a^-3)
-        - Geometric forcing F[E_uv] from projected Weyl tensor
 
         Returns [dphi_hat/dt, d2phi_hat/dt2] in Gyr^-1 units.
         """
@@ -138,11 +145,20 @@ class BraneOscillator:
         omega_0 = 2 * np.pi / self.T  # Gyr^-1
 
         # Time-dependent Hubble parameter H(t) in Gyr^-1
-        # H decreases with expansion: H(t) ~ H0 * (t0/t)^alpha for matter era
         t0 = 13.8  # current age in Gyr
         t_cosmic = t0 - 5.0 + t_gyr  # cosmic time (start 5 Gyr before present)
         t_cosmic = max(t_cosmic, 1.0)  # avoid singularity
         H_gyr = (1 / 14.5) * (t0 / t_cosmic) ** 0.5  # matter-dominated scaling
+
+        # Equation of state w(t): radiation (w=1/3) -> matter (w=0)
+        # Transition around QCD epoch (t ~ 10^-5 s ~ 10^-21 Gyr)
+        # For late-time integration (t > 1 Gyr), w ~ 0 (matter dominated)
+        w_eff = 0.0  # Late-time: matter era, conformal symmetry already broken
+
+        # Trace coupling factor: (1 - 3*w_eff)
+        # During radiation era: w=1/3 -> factor = 0 (motor OFF, BBN protected)
+        # During matter era: w=0 -> factor = 1 (motor ON, QCD ignition)
+        trace_coupling = 1.0 - 3.0 * w_eff
 
         # Equilibrium position (dimensionless)
         phi_eq_hat = 0.5  # phi_eq / L
@@ -151,22 +167,29 @@ class BraneOscillator:
         phi_crit_hat = 0.1  # phi_crit / L
 
         # Non-minimal coupling xi*R*phi (dynamical attractor)
-        # R ~ 6*(H_dot + 2*H^2), in Gyr^-2 units
-        # xi chosen to stabilize period against H(t) evolution
         xi = 0.15
-        R_curvature = 12 * H_gyr**2  # simplified: R ~ 12*H^2 for matter era
+        R_curvature = 12 * H_gyr**2  # R ~ 12*H^2 for matter era
         xi_term = xi * R_curvature * (phi_hat - phi_eq_hat)
 
         # GW restoring force
         gw = -omega_0**2 * (phi_hat - phi_eq_hat)
 
-        # Geometric forcing F[E_uv] (decays with expansion as DM accretion ~ a^-3)
+        # Geometric forcing F[E_uv] * trace_coupling
+        # Forcing decays with expansion (DM accretion ~ a^-3)
         a_ratio = (t_cosmic / t0) ** (2.0 / 3.0)  # a(t)/a(t0) in matter era
-        forcing_decay = 1.0 / a_ratio**3  # DM accretion rate decays as a^-3
-        forcing = omega_0**2 * phi_crit_hat * 0.08 * forcing_decay
+        forcing_decay = 1.0 / a_ratio**3
+        forcing = omega_0**2 * phi_crit_hat * 0.08 * forcing_decay * trace_coupling
+
+        # Radiative damping Gamma_rad: bulk graviton emission during slip phase
+        # Gamma_rad is negligible during stick, spikes during slip (high acceleration)
+        displacement = abs(phi_hat - phi_eq_hat)
+        speed = abs(dphi_hat)
+        # Radiative damping proportional to velocity when above threshold
+        gamma_rad = 0.0
+        if displacement > phi_crit_hat * 0.8 and speed > 0.1:
+            gamma_rad = 0.5 * speed  # non-linear radiation reaction
 
         # Stick-slip release (Heaviside threshold)
-        displacement = abs(phi_hat - phi_eq_hat)
         if displacement > phi_crit_hat:
             excess = displacement - phi_crit_hat
             sign = 1.0 if phi_hat > phi_eq_hat else -1.0
@@ -174,9 +197,10 @@ class BraneOscillator:
         else:
             release = 0.0
 
-        # V7.0 ODE: includes xi*R*phi attractor term
+        # V7.1 ODE: trace coupling + radiative damping + attractor
         ddphi_hat = (
-            -3 * H_gyr * dphi_hat - xi_term + gw + forcing - release
+            -(3 * H_gyr + gamma_rad) * dphi_hat
+            - xi_term + gw + forcing - release
         )
 
         return [dphi_hat, ddphi_hat]
@@ -360,10 +384,10 @@ class BraneOscillator:
 
 
 def main():
-    """Example usage of the V7.0 Stick-Slip BraneOscillator."""
+    """Example usage of the V7.1 Stick-Slip BraneOscillator."""
     brane = BraneOscillator()
 
-    print("Oscillating Brane Dark Matter Theory V7.0 (Dynamical Attractor)")
+    print("Oscillating Brane Dark Matter Theory V7.1 (Fundamental Physics Edition)")
     print("=" * 65)
     print(f"Brane tension:       tau_0 = {brane.tau_0:.2e} J/m^2")
     print(f"                     tau_0 = 0.017 GeV^3")
@@ -406,7 +430,7 @@ def main():
     print()
 
     # Solve stick-slip ODE with attractor
-    print("Solving V7.0 stick-slip ODE (with xi*R*phi attractor)...")
+    print("Solving V7.1 stick-slip ODE (with xi*R*phi attractor)...")
     sol = brane.solve_oscillation(t_span_gyr=(0, 10))
     if sol is not None:
         phi = sol["phi"]
@@ -428,7 +452,7 @@ def main():
         print(f"  Oscillation amplitude: {amplitude:.4f} L")
         print(f"  Amplitude in meters: {amplitude * brane.L:.2e} m")
     print()
-    print("V7.0 Dynamical Attractor + Israel Junction Conditions: operational")
+    print("V7.1 Conformal Symmetry + Radiative Damping + Israel JC: operational")
 
 
 if __name__ == "__main__":

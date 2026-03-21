@@ -48,7 +48,7 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 ## The Current Picture
 
-Three established anomalies are resolved by the V7.0 stick-slip brane motor:
+Three established anomalies are resolved by the V7.1 stick-slip brane motor:
 
 1. **Dark Energy Evolution** (DESI, 4σ) ✓
 2. **BH-Dark Energy Coupling** (Farrah et al.) ✓
@@ -60,7 +60,7 @@ Three established anomalies are resolved by the V7.0 stick-slip brane motor:
 ## What Comes Next
 
 The next 5 years will be decisive:
-- **MORRIS** (2025-2026): Sub-micron gravity experiment — direct laboratory test of L = 0.2 μm
+- **qBOUNCE (ILL) + optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments — sub-micron test at L = 0.2 μm
 - **Euclid** (2025-2027): Will measure w(z) to 3% precision
 - **DESI Full Survey** (2027): Complete power spectrum modulation
 - **HERA/SKA** (2027+): 21cm spatial modulation from G_eff oscillation

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PBH Extended Mass Function vs Microlensing Constraints — V7.0
+PBH Extended Mass Function vs Microlensing Constraints — V7.1
 ==============================================================
 
 Demonstrates that a log-normal extended mass function (EMF) centered
@@ -278,7 +278,7 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
     ax1.set_ylim(1e-5, 2)
     ax1.legend(fontsize=10, loc="upper left")
     ax1.set_title(
-        "V7.0: Extended PBH Mass Function vs Microlensing Constraints\n"
+        "V7.1: Extended PBH Mass Function vs Microlensing Constraints\n"
         f"$f_{{PBH}}$ = {result['f_effective']:.3f} "
         f"(target: 0.10, achievable: {result['f_max_achievable']:.3f})",
         fontsize=13,
@@ -318,7 +318,7 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
 # ---------------------------------------------------------------------------
 def main():
     print("=" * 70)
-    print("V7.0 PBH Extended Mass Function Analysis")
+    print("V7.1 PBH Extended Mass Function Analysis")
     print("=" * 70)
 
     os.makedirs(PLOTS_DIR, exist_ok=True)

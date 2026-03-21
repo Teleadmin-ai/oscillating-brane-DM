@@ -6,7 +6,7 @@ permalink: /predictions/
 
 # Observational Predictions
 
-The oscillating brane theory V7.0 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
+The oscillating brane theory V7.1 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
 
 ## Timeline of Discovery
 
@@ -16,7 +16,7 @@ The oscillating brane theory V7.0 makes specific, testable predictions that dist
    |
 2025    ✅ S₈ tension resolved (scale-dependent Yukawa screening)
    |    ⏳ Euclid first data release
-   |    ⏳ MORRIS sub-micron gravity experiment
+   |    ⏳ qBOUNCE / nanoscale optomechanics (sub-micron gravity)
    |
 2026    ⏳ Planck CMB anomaly = ISW resonance
    |    → Our χ² improvement: 32.9 (6σ)
@@ -38,7 +38,7 @@ The oscillating brane theory V7.0 makes specific, testable predictions that dist
 
 **⏳ Imminent Tests:**
 - **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >5σ
-- **MORRIS 2025-2026**: Sub-micron gravity experiment — direct laboratory test of L = 0.2 μm
+- **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments — sub-micron gravity test at L = 0.2 μm, bypassing Casimir background
 - **CMB Analysis 2026**: Planck's low-ℓ anomaly matches our ISW resonance prediction
 
 ## Key Signatures
@@ -129,7 +129,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
 ## Model Comparison
 
-| Observable | ΛCDM | Oscillating Brane V7.0 | Difference |
+| Observable | ΛCDM | Oscillating Brane V7.1 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T + π/2) | Time-varying, phantom crossing |
 | S₈ | 0.83 (tension) | Scale-dependent Yukawa G_eff(k) | ~5% at non-linear scales |

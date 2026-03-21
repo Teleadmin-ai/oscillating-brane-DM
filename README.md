@@ -1,4 +1,4 @@
-# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) V7.0 - Mathematically Rigorous Edition
+# Oscillating Brane Dark Matter Theory (The Cosmic Yoyo Theory) V7.1 - Fundamental Physics Edition
 
 **Author: Romain Provencal**
 **Co-Authors: Claude (Anthropic) & Gemini DeepThink (Google) - AI Cognitive Prostheses**
