@@ -6,7 +6,7 @@ permalink: /theory/
 
 # Complete Theoretical Framework V8.0 (Hybrid Topology Edition)
 
-**V8.0 — Hybrid Topology**: The stick-slip motor operates at two scales: (1) **macroscopic** — the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous E_μν forcing; (2) **microscopic** — the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally (ℓ=0 mode). Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (r_s ≪ λ_opt). Farrah et al. (2023) BH cosmological coupling removed (refuted by JWST). All V7.1 physics retained: ξRφ attractor, conformal BBN protection, Yukawa S₈ screening, radiative damping, qBOUNCE lab tests.
+**V8.0 — Hybrid Topology**: The stick-slip motor operates at two scales: (1) **macroscopic** — the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous E_μν forcing; (2) **microscopic** — the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally (ℓ=0 mode). Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1).
 
 ## Core Concepts
 
@@ -150,14 +150,14 @@ During the slow stick phase, acceleration is minimal and Γ_rad ≈ 0. But the m
 
 ## The Stick-Slip Cycle: Dark Matter Through Black Holes
 
-### The Perpetual Motor
+### The Hybrid Motor
 
-Black holes are not cosmic graveyards but **topological capillaries**. The stick-slip cycle proceeds:
+The stick-slip cycle operates at two scales simultaneously:
 
-1. **Stick phase**: Dark matter falls into micro-PBH capillaries. The resulting increase in local bulk curvature amplifies the projected Weyl tensor E_μν, which exerts geometric tidal forcing on the brane, slowly charging the radion field φ toward the critical threshold φ_crit
-2. **Threshold crossing**: When |φ| exceeds φ_crit (set by the QCD confinement scale), the non-linear release function activates
-3. **Slip phase**: Rapid energy discharge — the brane snaps back toward equilibrium, like a violin string released by the bow
-4. **Re-adhesion**: The cycle begins anew. Dark matter accretion is cosmologically persistent — the motor never runs out of fuel
+1. **Stick phase (the Macroscopic Muscle)**: The Cosmic Web — composed of massive dark matter superclusters, filaments, and vast voids — creates a highly inhomogeneous stress tensor S_μν on the brane. Via the Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), this asymmetric mass distribution bends the brane toward the 5D bulk, generating the projected Weyl tensor E_μν. This continuous macroscopic geometric tidal force slowly charges the radion φ toward the critical threshold φ_crit
+2. **Threshold crossing**: When |φ| exceeds φ_crit (set by the QCD confinement scale), the ER=EPR-entangled PBH network activates
+3. **Slip phase (the Quantum Metronome)**: The holographic wormhole network connecting billions of micro-PBHs synchronizes the non-linear release across the entire brane (ℓ=0 mode). The brane snaps back toward equilibrium — the tension is released everywhere simultaneously
+4. **Re-adhesion**: The cycle begins anew. The Cosmic Web is cosmologically persistent — the motor never runs out of fuel
 
 ### Hybrid Forcing: Cosmic Web (Muscle) + PBH Network (Metronome)
 
@@ -183,7 +183,7 @@ $$r_s = \frac{2GM}{c^2} \approx 0.03\text{-}300 \text{ nm} \sim \mathcal{O}(L)$$
 
 The asteroid-mass PBH window (10⁻¹⁴ to 10⁻¹⁰ M☉) is often claimed to be excluded by Subaru-HSC microlensing surveys. This claim is physically invalid due to three fundamental biases:
 
-**1. Wave-optics diffraction (fatal):** For M ~ 10⁻¹² M☉, the Schwarzschild radius is r_s ≈ 3 nm. Subaru-HSC observes in the optical r-band (λ ≈ 600 nm). Since r_s ≪ λ, geometrical optics breaks down completely. The Fresnel-Kirchhoff diffraction parameter w = 2πr_s/λ ≈ 0.03 ≪ 1 places these objects in the deep wave-optics regime where light diffracts around the PBH. The characteristic microlensing amplification pattern is entirely washed out. The telescope is physically blind.
+**1. Wave-optics diffraction (fatal):** For M ~ 10⁻¹² M☉, the Schwarzschild radius is r_s ≈ 3 nm. Subaru-HSC observes in the optical r-band (λ ≈ 600 nm). Since r_s ≪ λ, geometrical optics breaks down completely. The Fresnel-Kirchhoff diffraction parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1 places these objects in the deep wave-optics regime where light diffracts around the PBH. The characteristic microlensing amplification pattern is entirely washed out. The telescope is physically blind.
 
 **2. Finite-source effects:** Subaru monitors giant and supergiant stars in M31. For PBHs with Einstein radii of micro-arcseconds, the amplification covers a negligible fraction of the stellar disk. The signal is drowned by the unamplifed photon flux from the rest of the star.
 

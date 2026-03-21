@@ -19,13 +19,11 @@ We propose a revolutionary understanding of the cosmos where:
 
 This theory emerged from the convergence of multiple cosmological observations: DESI's detection of evolving dark energy (2024-2026), the S₈ tension, and Planck's CMB anomalies. The key insight: **black holes are quantum entangled gateways connected via Einstein-Rosen bridges (ER=EPR)**. Dark matter flows through this holographic wormhole network, maintaining quantum coherence and creating an eternal pulsation that maintains the universe's heartbeat.
 
-### The Cosmic Pulsation Mechanism
-- **Entry**: Dark matter spirals into black holes (gravitational funnels)
-- **Network**: Travels through ER=EPR wormhole connections in the AdS bulk
-- **Coherence**: Quantum entanglement maintains perfect phase synchronization
+### The Hybrid Motor (V8.0)
+- **Muscle**: The Cosmic Web (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions
+- **Metronome**: The ER=EPR-entangled network of micro-PBHs synchronizes the threshold release globally (ℓ=0 mode)
+- **Coherence**: Quantum entanglement through holographic wormholes ensures perfect phase synchronization across 93 billion light-years
 - **Cycle**: The eternal 2-billion-year pulsation continues (calibrated from DESI/Planck)
-
-This eternal flow through the holographic network of entangled black holes creates gravity and spacetime itself. The mathematics shows this explicitly through the funnel density term ρ_funnel ∝ M/r³.
 
 ### Key Achievements
 

@@ -150,7 +150,7 @@ Three established anomalies are resolved, with decisive future tests on the hori
 1. **DESI** (2024-2026): Dark energy evolves at 4σ — matching our stick-slip oscillation with φ₀ = π/2
 2. **S₈ Resolution**: Scale-dependent Yukawa screening reconciles DES, KiDS, and CMB measurements
 3. **Planck ISW**: Low-ℓ power deficit matches our 2 Gyr resonance at 6σ (Δχ² = 32.9)
-4. **Wave-optics immunity**: Subaru-HSC microlensing constraints physically inapplicable to asteroid-mass PBHs (Fresnel parameter w = 2πr_s/λ ≈ 0.03 ≪ 1)
+4. **Wave-optics immunity**: Subaru-HSC microlensing constraints physically inapplicable to asteroid-mass PBHs (Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1)
 
 **Definitive future test:** SKA 21cm reionization modulation (2027+).
 

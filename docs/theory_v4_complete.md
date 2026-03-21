@@ -67,7 +67,7 @@ This range is geometrically commensurate with the extra dimension thickness L = 
 
 **Evading microlensing constraints:** A single mass at 10⁻¹² M☉ would be constrained by Subaru-HSC surveys. The extended mass function evades these via: (1) finite-source effects for the smallest PBHs (Einstein radius < source angular size), and (2) brane-proximal clustering reducing effective lensing cross-section.
 
-Subaru-HSC microlensing constraints are physically inapplicable: for M ~ 10⁻¹² M☉, the Fresnel diffraction parameter w = 2πr_s/λ ≈ 0.03 ≪ 1, placing these PBHs in the deep wave-optics regime where optical telescopes are blind.
+Subaru-HSC microlensing constraints are physically inapplicable: for M ~ 10⁻¹² M☉, the Fresnel diffraction parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1, placing these PBHs in the deep wave-optics regime where optical telescopes are blind.
 
 ## 2. From Naive Spring to Cosmic Membrane
 
@@ -100,11 +100,11 @@ The V8.0 radion field φ (brane position in the extra dimension) obeys:
 
 φ̈ + 3Hφ̇ + ξRφ + ∂V_GW/∂φ = F[E_μν] - R(φ,φ̇)·Θ(|φ| - φ_crit)
 
-**The Stick Phase**: Dark matter falls into micro-PBH capillaries, increasing the local 5D bulk curvature. Via the Shiromizu-Maeda-Sasaki formalism (2000), the Israel junction conditions project the 5D Weyl tensor onto the brane as the electric Weyl tensor E_μν = C⁵_AMBN n^A n^B. This geometric tidal forcing F[E_μν] slowly charges the radion φ toward the critical threshold φ_crit, against the Goldberger-Wise restoring potential V_GW.
+**The Stick Phase (the Macroscopic Muscle)**: The engine is driven by the structural weight of the universe itself. The Cosmic Web — composed of massive dark matter superclusters, filaments, and vast voids — creates a highly inhomogeneous stress tensor S_μν on the brane. Via the Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), this asymmetric mass distribution bends the brane toward the 5D bulk, generating the projected Weyl tensor E_μν = C⁵_AMBN n^A n^B. This continuous macroscopic geometric tidal force slowly charges the radion φ toward the critical threshold φ_crit, against the Goldberger-Wise restoring potential V_GW.
 
-**The Slip Phase**: When |φ| exceeds φ_crit (a threshold set by the QCD confinement scale, τ₀^{1/3} = 257 MeV), the non-linear release function R activates via the Heaviside function Θ. The brane snaps back to equilibrium in a rapid energy discharge — like a violin string released by the bow.
+**The Slip Phase (the Quantum Metronome)**: When |φ| exceeds φ_crit (set by the QCD confinement scale, τ₀^{1/3} = 257 MeV), the ER=EPR-entangled network of micro-PBHs synchronizes the non-linear release across the entire brane (ℓ=0 mode). The brane snaps back to equilibrium — tension is released everywhere simultaneously, like a cosmic violin string.
 
-**Re-adhesion**: The cycle begins anew. The forcing is sourced by ongoing cosmological dark matter accretion into PBH capillaries. Unlike a simple harmonic oscillator (which Hubble friction 3Hφ̇ would damp in a few e-foldings), this driven stick-slip motor sustains oscillation indefinitely.
+**Re-adhesion**: The cycle begins anew. The Cosmic Web is cosmologically persistent — the motor never runs out of fuel. Unlike a simple harmonic oscillator (which Hubble friction 3Hφ̇ would damp in a few e-foldings), this driven hybrid motor sustains oscillation indefinitely.
 
 **Dynamical Attractor (ξRφ):** The non-minimal coupling ξRφ to the 4D Ricci scalar R = 6(Ḣ + 2H²) prevents the "chirp" instability where decreasing H(t) and decaying accretion rates (∝ a⁻³) would accelerate the period. The coupled system {H(t), φ(t), Ṁ_DM(t)} converges to an attractor manifold that locks T = 2.0 Gyr.
 
@@ -336,7 +336,7 @@ Our final vision: the cosmos is not an inert theater but a living organism:
 
 ## 10. Epilogue: The Promise of Revelation
 
-Version 7.1 presents a theory grounded in 5D GR and QFT. Key pillars: the dynamical attractor (ξRφ) locks the period, Israel junction conditions provide the geometric forcing, conformal symmetry (T^μ_μ = 0) protects BBN while the QCD trace anomaly ignites the motor, radiative damping via bulk graviton emission ensures stability, the extended PBH mass function evades microlensing, Yukawa screening gives scale-dependent S₈ suppression, and the definitive test is SKA's 21cm reionization modulation. The following technical supplements enrich the framework:
+Version 8.0 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, Yukawa screening gives scale-dependent S₈ suppression, and the definitive test is SKA's 21cm reionization modulation. The following technical supplements enrich the framework:
 
 ### Enriched Technical Files
 

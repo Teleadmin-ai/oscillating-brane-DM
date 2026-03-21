@@ -14,9 +14,9 @@ The brane position (radion φ) obeys a non-linear relaxation oscillator with non
 
 $$\ddot{\phi} + 3H\dot{\phi} + \xi R\phi + \frac{\partial V_{GW}}{\partial \phi} = \mathcal{F}[E_{\mu\nu}] - \mathcal{R}(\phi, \dot{\phi})\,\Theta(|\phi| - \phi_{crit})$$
 
-**The Stick Phase**: When dark matter falls into micro-PBH capillaries, the local 5D bulk curvature increases. Via Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), the projected Weyl tensor E_μν acts as a geometric tidal force, slowly charging the radion φ toward the critical threshold φ_crit.
+**The Stick Phase (the Macroscopic Muscle)**: The Cosmic Web — superclusters, filaments, voids — creates an inhomogeneous stress tensor S_μν on the brane. Via Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), this asymmetric mass distribution generates the projected Weyl tensor E_μν, a continuous macroscopic tidal force slowly charging the radion φ toward φ_crit.
 
-**The Slip Phase**: When |φ| exceeds φ_crit (set by the QCD confinement scale, τ₀^{1/3} = 257 MeV), the non-linear release function R activates. The brane snaps back to equilibrium — like a violin string released by the bow.
+**The Slip Phase (the Quantum Metronome)**: When |φ| exceeds φ_crit (set by the QCD confinement scale, τ₀^{1/3} = 257 MeV), the ER=EPR-entangled PBH network synchronizes the release across the entire brane (ℓ=0 mode). The tension is released everywhere simultaneously.
 
 **Why T stays locked at 2 Gyr**: The non-minimal coupling ξRφ creates a dynamical attractor that locks the period despite evolving H(t) and decaying DM accretion rates. The system converges within ~2 e-foldings.
 
@@ -63,5 +63,5 @@ The brane's sole topological connection to the bulk is through primordial micro-
 - Follow an extended log-normal mass function (10⁻¹⁴ to 10⁻¹⁰ M☉), evading microlensing constraints
 - Are completely invisible to JWST and all electromagnetic observations
 
-Note: Subaru-HSC microlensing constraints are physically inapplicable to this mass window — the Fresnel-Kirchhoff diffraction parameter w = 2πr_s/λ ≈ 0.03 ≪ 1 places these PBHs in the deep wave-optics regime where optical telescopes are blind.
+Note: Subaru-HSC microlensing constraints are physically inapplicable to this mass window — the Fresnel-Kirchhoff diffraction parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1 places these PBHs in the deep wave-optics regime where optical telescopes are blind.
 
