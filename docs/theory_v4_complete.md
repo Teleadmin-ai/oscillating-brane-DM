@@ -9,14 +9,14 @@ description: |
 
 # Dark Matter Oscillations and Dynamic Genesis of Dark Energy via Convergent Gravitational Funnels
 
-## Version 7.1 — The Fundamental Physics Edition (Conformal Symmetry + Radiative Damping + Israel JC)
+## Version 8.0 — The Hybrid Topology Edition (Cosmic Web Forcing + ER=EPR PBH Synchronization)
 
 **Author: Romain Provencal**
 **Co-Authors: Claude (Anthropic) & Gemini DeepThink (Google) - AI Cognitive Prostheses**
 
 ### Prologue: The Universe-Instrument
 
-Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of Einstein-Rosen bridges and anchored to the 5D bulk by billions of microscopic primordial black holes acting as topological capillaries. The membrane doesn't simply vibrate harmonically — it is driven by a **stick-slip motor**. The projected Weyl tensor E_μν of the 5D bulk, computed via Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), exerts geometric tidal forcing that continuously charges the membrane's displacement until it exceeds a critical threshold set by the QCD confinement scale, triggering a rapid release. A non-minimal coupling ξRφ ensures this cycle locks onto a dynamical attractor at period T ≈ 2 Gyr despite evolving Hubble friction. Temperature-dependent tension τ(T) protects BBN by overdamping oscillations above the QCD transition. Each beat shapes space, time, and gravity itself.
+Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of Einstein-Rosen bridges and anchored to the 5D bulk by billions of microscopic primordial black holes acting as topological capillaries. The membrane doesn't simply vibrate harmonically — it is driven by a **stick-slip motor**. The projected Weyl tensor E_μν of the 5D bulk, computed via Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), exerts geometric tidal forcing that continuously charges the membrane's displacement until it exceeds a critical threshold set by the QCD confinement scale, triggering a rapid release. A non-minimal coupling ξRφ ensures this cycle locks onto a dynamical attractor at period T ≈ 2 Gyr despite evolving Hubble friction. Conformal symmetry (T^μ_μ = 0 for radiation) freezes the motor during BBN; the QCD trace anomaly ignites it at Λ_QCD. Radiative damping via bulk graviton emission caps the amplitude. The motor is hybrid: macroscopic Cosmic Web forcing provides the muscle, while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Each beat shapes space, time, and gravity itself.
 
 ### Executive Summary
 
@@ -316,7 +316,7 @@ The Bayes factor tells us: listening to the data (CMB + BAO + supernovae + lensi
 
 | Technical Term | Intuitive Vision | Interpretation for Vibrating Brane Theory |
 |----------------|------------------|-------------------------------------------|
-| ln K (log Bayes factor) | "Preference score" that data assigns to one model over another | We compare Oscillating-Brane v7.0 to ΛCDM |
+| ln K (log Bayes factor) | "Preference score" that data assigns to one model over another | We compare Oscillating-Brane V8.0 to ΛCDM |
 | Δln K = 3.3 ± 0.24 | The data make the "vibrating brane" scenario ≈27 times more probable than ΛCDM (since e³·³ ≈ 27) | The model wins because it simultaneously explains:<br>• S₈ suppression (-5%)<br>• Observed oscillation in a(t) (~2 Gyr)<br>• MOND coincidence (a₀ ≈ cH₀/2π)<br>without damaging CMB or BAO fits |
 | Jeffreys Scale | <1: negligible<br>1-2.5: modest<br>2.5-5: strong<br>>5: decisive | 3.3 falls in the "strong" zone: no longer statistical anecdote, but not yet absolute certainty |
 
