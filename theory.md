@@ -41,7 +41,7 @@ A simple harmonic oscillator would be damped by Hubble friction (3Hφ̇) in a fe
 
 1. **Stick phase**: E_μν geometric forcing slowly charges φ toward φ_crit against the Goldberger-Wise restoring potential
 2. **Slip phase**: When |φ| exceeds φ_crit, the non-linear release R activates, triggering rapid energy discharge. The brane snaps back to equilibrium
-3. **Re-adhesion**: The cycle begins again. The forcing is sourced by ongoing dark matter accretion into micro-PBH capillaries
+3. **Re-adhesion**: The cycle begins again. The macroscopic forcing is eternally sourced by the gravitational weight of the Cosmic Web's large-scale structure
 
 **Why T stays locked at 2 Gyr (no chirp):** A naive motor would accelerate as H(t) decreases with expansion and DM accretion rates decay (∝ a⁻³). The non-minimal coupling ξRφ resolves this: the coupled system {H(t), φ(t), Ṁ_DM(t)} converges to an attractor manifold where decreasing friction, decreasing forcing, and curvature feedback balance to lock T = 2.0 Gyr. Numerical integration confirms convergence within ~2 e-foldings.
 

@@ -172,7 +172,7 @@ G_μν = 8πG_N T_μν + κ₅⁴ π_μν - E_μν
 
 where π_μν contains quadratic matter corrections (negligible at late times) and **E_μν is the electric part of the 5D Weyl tensor**, projected onto the brane: E_μν = C⁵_AMBN n^A n^B. This tensor encodes bulk gravitational degrees of freedom — tidal forces from the 5D geometry acting on the 4D brane.
 
-When micro-PBH capillaries accrete dark matter, the local 5D curvature increases around each capillary (Maartens 2004), amplifying the collective E_μν. The forcing term F[E_μν] in the stick-slip ODE is thus a **direct geometric consequence** of 5D gravity — no information-theoretic conjecture is needed. The Complexity=Volume conjecture provided historical motivation but is not required; the forcing is a standard result of brane-world gravity.
+The macroscopic Cosmic Web dictates this boundary condition. The heterogeneous mass distribution of superclusters and voids creates a massive stress tensor S_μν on the brane. This structural weight bends the brane locally, amplifying the collective E_μν. The forcing term F_web[E_μν] in the stick-slip ODE is thus a **direct geometric consequence** of the universe's large-scale structure pressing against the 5D bulk — no information-theoretic conjecture is needed.
 
 ### BBN Protection via Conformal Symmetry and the Trace Anomaly
 
