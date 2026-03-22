@@ -97,15 +97,22 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | ξ (non-minimal coupling) | ~0.15 |
 | Fresnel parameter (PBH) | w_F = 2πr_s/λ ≈ 0.03 ≪ 1 (wave-optics immune) |
 
-## PDF Generation
-CI auto-pushes PDF. After modifying .md files:
-1. `python3 scripts/generate_pdf.py` (generates + compresses via Ghostscript)
-2. Verify: `pdftotext oscillating_brane_theory_latest.pdf - | grep -i "GHOST"`
-3. CI race condition: `git stash && git pull --rebase && git stash pop; git push`
+## PDF Generation — CRITICAL WORKFLOW
+**The CI does NOT auto-push the PDF.** You MUST regenerate and push it manually after ANY .md file change. If you forget, the site will have a stale PDF.
+
+**After modifying any .md file that is in the PDF (index.md, discoveries.md, theory.md, docs/theoretical_foundations.md, tools.md), ALWAYS do:**
+```bash
+python3 scripts/generate_pdf.py
+git add oscillating_brane_theory_latest.pdf output/oscillating_brane_theory_latest.pdf
+git commit -m "Regenerate PDF"
+git push
+```
+
+The CI only generates the PDF as an artifact (for verification). It does NOT push it to the repo.
 
 ### Compression
 PDF pipeline includes Ghostscript post-processing (JPEG/DCT at 200 dpi).
-Reduces ~2 MB → ~1.1 MB without quality loss. Requires `ghostscript` package (installed in CI).
+Reduces ~2 MB → ~1.1 MB without quality loss. Requires `ghostscript` package locally.
 
 ### Ghost grep (V8.0):
 ```bash
