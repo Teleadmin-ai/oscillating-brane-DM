@@ -17,7 +17,7 @@ This repository contains the complete theoretical framework and computational to
 | Oscillation period | T = 2.0 ± 0.3 Gyr | The cosmic heartbeat |
 | MOND acceleration | a₀ = 1.1 × 10<sup>-10</sup> m/s² | Gravity at the confines |
 | S₈ suppression | ~5% (scale-dependent Yukawa) | Restored harmony |
-| Bayesian evidence | Δln K = 3.33 ± 0.24 | Promise of truth |
+| Bayesian evidence | Δln K = 4.13 ± 0.07 | Promise of truth |
 
 ### 📖 Theory Overview
 

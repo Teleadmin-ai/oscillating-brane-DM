@@ -30,7 +30,7 @@ This theory emerged from the convergence of multiple cosmological observations: 
 1. **Unified Description**: Dark energy, modified gravity, and structure formation emerge from one mechanism
 2. **Quantitative Predictions**: Specific, testable signatures across multiple observational channels
 3. **Natural Parameters**: All values emerge from fundamental physics without fine-tuning
-4. **Strong Evidence**: Bayesian analysis favors our model over ΛCDM (Δln K = 3.33 ± 0.24)
+4. **Strong Evidence**: Bayesian analysis favors our model over ΛCDM (Δln K = 4.13 ± 0.07)
 
 ## The Journey
 

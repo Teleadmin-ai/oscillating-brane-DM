@@ -139,7 +139,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
 Current Bayesian evidence strongly favors our model:
 
-$$\Delta \ln K = 3.33 ± 0.24$$
+$$\Delta \ln K = 4.13 \pm 0.07$$
 
 This represents "strong evidence" on the Jeffreys scale, indicating the data prefer the oscillating brane over standard ΛCDM.
 

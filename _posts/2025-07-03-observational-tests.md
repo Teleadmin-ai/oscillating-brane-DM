@@ -85,7 +85,7 @@ Future ultra-sensitive detectors (MADMAX, sub-millimeter gravity experiments) co
 
 The complete analysis delivers its verdict:
 
-$$Δ\ln K = 3.33 ± 0.24$$
+$$\Delta\ln K = 4.13 \pm 0.07$$
 
 Strong evidence—the data clearly prefer our vibrating cosmos over standard ΛCDM.
 
