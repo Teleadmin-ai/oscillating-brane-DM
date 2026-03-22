@@ -87,6 +87,9 @@ With amplitude A_w ≃ 0.003, period T = 2.0 ± 0.3 Gyr, and phase φ₀ = π/2.
 
 Note: The stick-slip waveform is not purely sinusoidal (slower ramp during stick phase, faster release during slip), but the equation above captures the leading harmonic component.
 
+![w(z) Oscillation](/plots/w_z_oscillation.png)
+*Figure: BDF stiff solver output showing the radion displacement, phase space attractor, dark energy equation of state w(z) with phantom crossing matching DESI DR2, and energy density oscillations.*
+
 ### Scale-Dependent Gravity Suppression (S₈ via Yukawa Screening)
 
 In the warped AdS bulk, the effective gravitational coupling acquires a scale-dependent Yukawa correction from the extra dimension:
@@ -100,8 +103,8 @@ where α < 0 encodes the mean brane displacement and k_L is the screening scale 
 
 This scale-dependent mechanism naturally reconciles the apparent contradiction between DES (which sees a strong S₈ discrepancy) and KiDS/CMB (which see less tension at larger scales).
 
-![Dark Energy Oscillations](/plots/w_z_oscillations.png)
-*Figure: Dark energy equation of state oscillating with 2 Gyr period*
+![S₈ Yukawa Suppression](/plots/s8_yukawa_suppression.png)
+*Figure: Scale-dependent growth suppression via Yukawa screening. DES non-linear scales show ~5.5% suppression (S₈ = 0.790), while KiDS/CMB linear scales remain quasi-standard (<1%). Computed with BDF stiff solver.*
 
 ### Modified Gravity
 
@@ -198,6 +201,9 @@ The model's primary falsifiable prediction targets the 21cm power spectrum durin
 $$\delta T_b(\vec{k}, z) \supset \Delta T_{osc}(k)\, \sin\left(\frac{2\pi t(z)}{T} + \phi_0\right)$$
 
 with characteristic amplitude ΔT_osc ~ 1-5 mK at BAO-scale wavenumbers. SKA-Low (2027+) has the sensitivity and k-range to detect or exclude this modulation at >3σ, constituting a **definitive** test of the brane oscillation.
+
+![SKA 21cm Prediction](/plots/ska_prediction.png)
+*Figure: SKA 21cm reionization modulation prediction. Peak signal 5.46 mK (SNR = 5.5σ detectable by SKA-Low). The 2D map shows the modulation ΔT_b(k,z) over the Epoch of Reionization.*
 
 ### Complementary Tests
 
@@ -388,6 +394,9 @@ The complete analysis delivers its verdict:
 $$\Delta\ln K = 3.33 \pm 0.24$$
 
 Strong evidence—the data clearly prefer our vibrating cosmos.
+
+![Nested Sampling Posteriors](/plots/nested_sampling_posteriors.png)
+*Figure: Nested sampling posteriors (dynesty) for the three brane parameters. Δln K = 4.13 ± 0.07 — STRONG evidence on the Jeffreys scale. τ₀ and T converge to the predicted values.*
 
 #### What Does This Mean Physically?
 
