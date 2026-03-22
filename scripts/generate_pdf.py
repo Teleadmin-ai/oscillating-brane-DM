@@ -37,6 +37,7 @@ class FinalPDFGenerator:
             "theory.md",
             "chronology.md",
             "predictions.md",
+            "discoveries.md",
             "tools.md",
             "about.md",
             # Technical docs

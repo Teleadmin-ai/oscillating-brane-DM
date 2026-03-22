@@ -38,6 +38,8 @@ navigation:
     url: /chronology/
   - title: Predictions
     url: /predictions/
+  - title: Discoveries
+    url: /discoveries/
   - title: Tools
     url: /tools/
   - title: Downloads
