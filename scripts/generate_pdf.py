@@ -91,6 +91,75 @@ class FinalPDFGenerator:
                 return {}
         return {}
 
+    # Maps for Unicode superscript/subscript digits
+    SUPERSCRIPT_MAP = {
+        "⁰": "0",
+        "¹": "1",
+        "²": "2",
+        "³": "3",
+        "⁴": "4",
+        "⁵": "5",
+        "⁶": "6",
+        "⁷": "7",
+        "⁸": "8",
+        "⁹": "9",
+        "⁻": "-",
+        "⁺": "+",
+    }
+    SUBSCRIPT_MAP = {
+        "₀": "0",
+        "₁": "1",
+        "₂": "2",
+        "₃": "3",
+        "₄": "4",
+        "₅": "5",
+        "₆": "6",
+        "₇": "7",
+        "₈": "8",
+        "₉": "9",
+    }
+
+    def convert_unicode_math(self, content: str) -> str:
+        """Convert Unicode superscripts/subscripts to LaTeX.
+
+        Handles patterns like:
+          10⁻¹² → $10^{-12}$
+          τ₀    → $\\tau_0$
+          M☉    → $M_\\odot$
+        """
+        sup_chars = "".join(self.SUPERSCRIPT_MAP.keys())
+        sub_chars = "".join(self.SUBSCRIPT_MAP.keys())
+
+        # Convert runs of superscript chars: e.g. "10⁻¹²" → "10$^{-12}$"
+        def replace_superscripts(match):
+            digits = match.group(0)
+            converted = "".join(self.SUPERSCRIPT_MAP.get(c, c) for c in digits)
+            return "$^{" + converted + "}$"
+
+        content = re.sub(
+            f"[{re.escape(sup_chars)}]{{2,}}", replace_superscripts, content
+        )
+
+        # Convert runs of subscript chars: e.g. "S₈" already handled by single char
+        def replace_subscripts(match):
+            digits = match.group(0)
+            converted = "".join(self.SUBSCRIPT_MAP.get(c, c) for c in digits)
+            return "$_{" + converted + "}$"
+
+        content = re.sub(f"[{re.escape(sub_chars)}]{{1,}}", replace_subscripts, content)
+
+        # Handle lone superscript digits (single char like ² after a number)
+        for sup, digit in self.SUPERSCRIPT_MAP.items():
+            if sup in ("⁻", "⁺"):
+                continue  # Only convert these in runs
+            content = content.replace(sup, "$^{" + digit + "}$")
+
+        # Clean up adjacent math mode: $^{19}$ J/m$^{2}$ is fine
+        # But $\tau$$_{0}$ should become $\tau_{0}$
+        content = re.sub(r"\$\$", "", content)  # Remove empty $$ joins
+
+        return content
+
     def fix_math_expressions(self, content: str) -> str:
         """Fix common math expression issues."""
         # Fix patterns where math expressions are split or malformed
@@ -153,56 +222,74 @@ class FinalPDFGenerator:
 
         content = re.sub(r"\$[^$\n]+\$", save_inline_math, content)
 
+        # Convert Unicode superscript/subscript sequences to LaTeX
+        # e.g. "10⁻¹²" → "$10^{-12}$", "M☉" → "$M_\\odot$"
+        content = self.convert_unicode_math(content)
+
         # Now do Unicode replacements on non-math content
         unicode_replacements = {
-            # Greek letters outside math
-            "τ": "tau",
-            "σ": "sigma",
-            "ρ": "rho",
-            "π": "pi",
-            "μ": "mu",
-            "λ": "lambda",
-            "η": "eta",
-            "δ": "delta",
-            "γ": "gamma",
-            "ω": "omega",
-            "φ": "phi",
-            "χ": "chi",
-            "ξ": "xi",
-            "Δ": "Delta",
-            "Ω": "Omega",
+            # Greek letters outside math → LaTeX inline
+            "τ": "$\\tau$",
+            "σ": "$\\sigma$",
+            "ρ": "$\\rho$",
+            "π": "$\\pi$",
+            "μ": "$\\mu$",
+            "λ": "$\\lambda$",
+            "η": "$\\eta$",
+            "δ": "$\\delta$",
+            "γ": "$\\gamma$",
+            "ω": "$\\omega$",
+            "φ": "$\\phi$",
+            "ξ": "$\\xi$",
+            "ν": "$\\nu$",
+            "Δ": "$\\Delta$",
+            "Ω": "$\\Omega$",
+            "Λ": "$\\Lambda$",
+            "χ": "$\\chi$",
+            # Symbols → LaTeX
+            "∞": "$\\infty$",
+            "≈": "$\\approx$",
+            "≤": "$\\leq$",
+            "≥": "$\\geq$",
+            "≪": "$\\ll$",
+            "≫": "$\\gg$",
+            "∝": "$\\propto$",
+            "×": "$\\times$",
+            "±": "$\\pm$",
+            "→": "$\\to$",
+            "ℓ": "$\\ell$",
+            "☉": "$_\\odot$",
+            "²": "$^2$",
             # Ligatures
             "ﬀ": "ff",
             "ﬁ": "fi",
             "ﬂ": "fl",
             "ﬃ": "ffi",
             "ﬄ": "ffl",
-            "ï": "i",
-            # Symbols
-            "∞": "infinity",
-            "≈": "approximately",
-            "≤": "<=",
-            "≥": ">=",
-            "≪": "<<",
-            "≫": ">>",
-            "∝": "proportional to",
-            # Emojis
-            "🌌": "[universe]",
-            "📥": "[download]",
-            "✓": "[check]",
-            "☉": "Sun",
-            "🤖": "[AI]",
+            # Emojis → remove
+            "🌌": "",
+            "📥": "",
+            "📄": "",
+            "📊": "",
+            "📚": "",
+            "🧮": "",
+            "💻": "",
+            "🔬": "",
+            "🔗": "",
+            "✓": "\\checkmark{}",
+            "✅": "[OK]",
+            "⏳": "[pending]",
+            "🤖": "",
+            "⚡": "",
             # Special characters
             "—": "---",
             "–": "--",
             "'": "'",
             "'": "'",
-            """: '"',
-            """: '"',
+            "\u201c": '"',
+            "\u201d": '"',
             "…": "...",
             "•": "*",
-            "×": "x",
-            "±": "+/-",
         }
 
         for old, new in unicode_replacements.items():
