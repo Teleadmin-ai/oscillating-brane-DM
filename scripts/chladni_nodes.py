@@ -13,40 +13,48 @@ The Big Ring (~400 Mpc) and Giant Arc (~1000 Mpc) are Chladni nodes.
 import numpy as np
 from scipy.special import spherical_jn as _sph_jn
 
+
 def sph_j(n, x):
     """Spherical Bessel j_n(x), handles scalar output."""
     val = _sph_jn(n, x)
     return float(val) if np.isscalar(val) else val
-from scipy.integrate import quad
+
+
 import matplotlib
-matplotlib.use('Agg')
+from scipy.integrate import quad
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # ============================================================
 # Cosmological Parameters
 # ============================================================
-H0 = 67.4           # km/s/Mpc
+H0 = 67.4  # km/s/Mpc
 H0_Gyr = 0.0689
 Omega_m = 0.315
 Omega_Lambda = 0.685
-c_km = 3e5           # km/s
-T_osc = 2.0          # Gyr
+c_km = 3e5  # km/s
+T_osc = 2.0  # Gyr
 
 
 def comoving_distance(z):
     """Comoving distance in Mpc."""
+
     def integrand(zp):
-        E_z = np.sqrt(Omega_m * (1 + zp)**3 + Omega_Lambda)
+        E_z = np.sqrt(Omega_m * (1 + zp) ** 3 + Omega_Lambda)
         return c_km / (H0 * E_z)
+
     result, _ = quad(integrand, 0, z)
     return result
 
 
 def lookback_time(z):
     """Lookback time in Gyr."""
+
     def integrand(zp):
-        E_z = np.sqrt(Omega_m * (1 + zp)**3 + Omega_Lambda)
+        E_z = np.sqrt(Omega_m * (1 + zp) ** 3 + Omega_Lambda)
         return 1.0 / ((1 + zp) * E_z)
+
     result, _ = quad(integrand, 0, z)
     return result / H0_Gyr
 
@@ -90,6 +98,7 @@ def main():
 
     # Find peaks (nodal accumulation zones)
     from scipy.signal import find_peaks
+
     peaks, properties = find_peaks(delta_rho, height=0.2, distance=50)
     peak_radii = r[peaks]
     peak_heights = delta_rho[peaks]
@@ -124,7 +133,7 @@ def main():
             if rij > 0:
                 j0 = sph_j(0, k_fund * rij)
                 j2 = sph_j(2, k_fund * rij) if rij > 1 else 0
-                pattern[i, j] = j0**2 + 0.3 * j2**2 * np.cos(2 * theta[i, j])**2
+                pattern[i, j] = j0**2 + 0.3 * j2**2 * np.cos(2 * theta[i, j]) ** 2
             else:
                 pattern[i, j] = 1.0
 
@@ -134,44 +143,66 @@ def main():
     # Plot
     # ============================================================
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-    fig.suptitle(r'Chladni Resonance Nodes — Brane Standing Waves ($T = 2$ Gyr)'
-                 '\nMatter accumulates at geometric nodes like sand on a vibrating plate',
-                 fontsize=12, fontweight='bold')
+    fig.suptitle(
+        r"Chladni Resonance Nodes — Brane Standing Waves ($T = 2$ Gyr)"
+        "\nMatter accumulates at geometric nodes like sand on a vibrating plate",
+        fontsize=12,
+        fontweight="bold",
+    )
 
     # Panel 1: Radial density profile
     ax = axes[0]
-    ax.plot(r, delta_rho, 'b-', linewidth=2)
-    ax.plot(peak_radii, peak_heights, 'rv', markersize=10, label='Chladni nodes')
-    ax.axvline(x=400, color='orange', linestyle='--', alpha=0.7, label='Big Ring (~400 Mpc)')
-    ax.axvline(x=1000, color='purple', linestyle='--', alpha=0.7, label='Giant Arc (~1000 Mpc)')
-    ax.axvline(x=lambda_max_lcdm, color='gray', linestyle=':', alpha=0.5,
-               label=f'$\\Lambda$CDM max ({lambda_max_lcdm} Mpc)')
-    ax.set_xlabel('Comoving distance (Mpc)')
-    ax.set_ylabel(r'$\delta\rho / \rho$ (normalized)')
-    ax.set_title('Radial density modulation')
+    ax.plot(r, delta_rho, "b-", linewidth=2)
+    ax.plot(peak_radii, peak_heights, "rv", markersize=10, label="Chladni nodes")
+    ax.axvline(
+        x=400, color="orange", linestyle="--", alpha=0.7, label="Big Ring (~400 Mpc)"
+    )
+    ax.axvline(
+        x=1000, color="purple", linestyle="--", alpha=0.7, label="Giant Arc (~1000 Mpc)"
+    )
+    ax.axvline(
+        x=lambda_max_lcdm,
+        color="gray",
+        linestyle=":",
+        alpha=0.5,
+        label=f"$\\Lambda$CDM max ({lambda_max_lcdm} Mpc)",
+    )
+    ax.set_xlabel("Comoving distance (Mpc)")
+    ax.set_ylabel(r"$\delta\rho / \rho$ (normalized)")
+    ax.set_title("Radial density modulation")
     ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3)
 
     # Panel 2: 2D Chladni heatmap
     ax = axes[1]
-    im = ax.pcolormesh(X, Y, pattern, cmap='inferno', shading='auto')
+    im = ax.pcolormesh(X, Y, pattern, cmap="inferno", shading="auto")
     # Draw circles at Big Ring and Giant Arc scales
     theta_circle = np.linspace(0, 2 * np.pi, 100)
-    ax.plot(400 * np.cos(theta_circle), 400 * np.sin(theta_circle),
-            'w--', linewidth=1.5, label='Big Ring')
-    ax.plot(1000 * np.cos(theta_circle), 1000 * np.sin(theta_circle),
-            'c--', linewidth=1.5, label='Giant Arc')
-    ax.set_xlabel('x (Mpc)')
-    ax.set_ylabel('y (Mpc)')
-    ax.set_title('2D Chladni pattern (cosmic slice)')
-    ax.legend(fontsize=9, loc='upper right')
-    ax.set_aspect('equal')
-    plt.colorbar(im, ax=ax, label=r'$\delta\rho/\rho$')
+    ax.plot(
+        400 * np.cos(theta_circle),
+        400 * np.sin(theta_circle),
+        "w--",
+        linewidth=1.5,
+        label="Big Ring",
+    )
+    ax.plot(
+        1000 * np.cos(theta_circle),
+        1000 * np.sin(theta_circle),
+        "c--",
+        linewidth=1.5,
+        label="Giant Arc",
+    )
+    ax.set_xlabel("x (Mpc)")
+    ax.set_ylabel("y (Mpc)")
+    ax.set_title("2D Chladni pattern (cosmic slice)")
+    ax.legend(fontsize=9, loc="upper right")
+    ax.set_aspect("equal")
+    plt.colorbar(im, ax=ax, label=r"$\delta\rho/\rho$")
 
     plt.tight_layout()
-    plt.savefig('plots/astro_signatures/chladni_mega_structures.png', dpi=150)
+    plt.savefig("plots/astro_signatures/chladni_mega_structures.png", dpi=150)
     print(f"\nPlot saved: plots/astro_signatures/chladni_mega_structures.png")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

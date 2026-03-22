@@ -12,34 +12,35 @@ Uses BDF stiff solver (mandatory for stick-slip discontinuities).
 Uses exact lookback time via scipy.integrate.quad.
 """
 
-import numpy as np
-from scipy.integrate import solve_ivp, quad
-from scipy.interpolate import interp1d
 import matplotlib
-matplotlib.use('Agg')
+import numpy as np
+from scipy.integrate import quad, solve_ivp
+from scipy.interpolate import interp1d
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # ============================================================
 # Physical Constants
 # ============================================================
-c = 2.998e8          # m/s
-H0_SI = 2.184e-18   # s^-1 (67.4 km/s/Mpc)
-H0_Gyr = 0.0689     # Gyr^-1
-Gyr_s = 3.156e16    # seconds per Gyr
+c = 2.998e8  # m/s
+H0_SI = 2.184e-18  # s^-1 (67.4 km/s/Mpc)
+H0_Gyr = 0.0689  # Gyr^-1
+Gyr_s = 3.156e16  # seconds per Gyr
 Omega_m = 0.315
 Omega_Lambda = 0.685
-R_H = c / H0_SI     # Hubble radius in meters
+R_H = c / H0_SI  # Hubble radius in meters
 
 # ============================================================
 # Brane Parameters (V8.0)
 # ============================================================
-tau_0 = 7.0e19       # J/m^2, brane tension
-f_osc = 0.10         # oscillating DM fraction
-T_osc = 2.0          # Gyr, oscillation period
-L = 2.0e-7           # m, extra dimension size
-A_w = 0.003          # dark energy amplitude
+tau_0 = 7.0e19  # J/m^2, brane tension
+f_osc = 0.10  # oscillating DM fraction
+T_osc = 2.0  # Gyr, oscillation period
+L = 2.0e-7  # m, extra dimension size
+A_w = 0.003  # dark energy amplitude
 phi_0_phase = np.pi / 2  # phase (at w maximum)
-xi = 0.15            # non-minimal coupling
+xi = 0.15  # non-minimal coupling
 
 
 class BraneOscillator:
@@ -60,14 +61,16 @@ class BraneOscillator:
         t_lb = np.zeros_like(z_arr)
         for i, z in enumerate(z_arr):
             t_lb[i] = self.lookback_time_exact(z)
-        self._z_to_tlb = interp1d(z_arr, t_lb, kind='cubic', fill_value='extrapolate')
+        self._z_to_tlb = interp1d(z_arr, t_lb, kind="cubic", fill_value="extrapolate")
 
     @staticmethod
     def lookback_time_exact(z):
         """Exact lookback time in Gyr via cosmological integration."""
+
         def integrand(zp):
-            E_z = np.sqrt(Omega_m * (1 + zp)**3 + Omega_Lambda)
+            E_z = np.sqrt(Omega_m * (1 + zp) ** 3 + Omega_Lambda)
             return 1.0 / ((1 + zp) * E_z)
+
         result, _ = quad(integrand, 0, z)
         return result / H0_Gyr  # Convert to Gyr
 
@@ -85,7 +88,7 @@ class BraneOscillator:
         # For z < 5: t_lb ≈ (1/H0) * integral, use simple fit
         z_approx = np.exp(t_lb * H0_Gyr * 0.95) - 1  # rough but stable
         z_approx = max(z_approx, 0)
-        E_z = np.sqrt(Omega_m * (1 + z_approx)**3 + Omega_Lambda)
+        E_z = np.sqrt(Omega_m * (1 + z_approx) ** 3 + Omega_Lambda)
         return H0_Gyr * E_z
 
     def radion_ode(self, t, y):
@@ -105,7 +108,7 @@ class BraneOscillator:
 
         # Radiative damping: activates exponentially during slip phase
         v_crit = self.omega_0 * self.phi_crit * Gyr_s * 0.1
-        Gamma_rad = 0.5 * H * np.tanh((abs(phi_dot) / v_crit)**2)
+        Gamma_rad = 0.5 * H * np.tanh((abs(phi_dot) / v_crit) ** 2)
 
         # Total friction
         friction = (3 * H + Gamma_rad) * phi_dot
@@ -149,11 +152,11 @@ class BraneOscillator:
             self.radion_ode,
             t_span_Gyr,
             [phi_init, phi_dot_init],
-            method='BDF',
+            method="BDF",
             t_eval=t_eval,
             rtol=1e-10,
             atol=1e-13,
-            max_step=0.01  # Gyr
+            max_step=0.01,  # Gyr
         )
 
         if not sol.success:
@@ -180,7 +183,7 @@ class BraneOscillator:
 
         # Energy densities (J/m³)
         rho_kin = 0.5 * tau_0 * phi_dot_arr**2 / R_H
-        rho_pot = 0.5 * tau_0 * (np.pi * phi_arr / R_H)**2 / R_H
+        rho_pot = 0.5 * tau_0 * (np.pi * phi_arr / R_H) ** 2 / R_H
 
         # Equation of state
         rho_total = rho_kin + rho_pot
@@ -224,41 +227,63 @@ def main():
     # Plot
     # ============================================================
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
-    fig.suptitle('Brane Dynamics V8.0 — Stick-Slip Motor', fontsize=14, fontweight='bold')
+    fig.suptitle(
+        "Brane Dynamics V8.0 — Stick-Slip Motor", fontsize=14, fontweight="bold"
+    )
 
     # Panel 1: Radion displacement
     ax = axes[0, 0]
-    ax.plot(sol.t, sol.y[0] / L, 'b-', linewidth=0.8)
-    ax.axhline(y=0.1, color='r', linestyle='--', alpha=0.5, label=r'$\phi_{crit}/L = 0.1$')
-    ax.axhline(y=-0.1, color='r', linestyle='--', alpha=0.5)
-    ax.set_xlabel('Cosmic time (Gyr)')
-    ax.set_ylabel(r'$\phi / L$')
-    ax.set_title('Radion displacement')
+    ax.plot(sol.t, sol.y[0] / L, "b-", linewidth=0.8)
+    ax.axhline(
+        y=0.1, color="r", linestyle="--", alpha=0.5, label=r"$\phi_{crit}/L = 0.1$"
+    )
+    ax.axhline(y=-0.1, color="r", linestyle="--", alpha=0.5)
+    ax.set_xlabel("Cosmic time (Gyr)")
+    ax.set_ylabel(r"$\phi / L$")
+    ax.set_title("Radion displacement")
     ax.legend()
     ax.grid(True, alpha=0.3)
 
     # Panel 2: Phase space
     ax = axes[0, 1]
-    ax.plot(sol.y[0] / L, sol.y[1] / L, 'g-', linewidth=0.3, alpha=0.7)
-    ax.set_xlabel(r'$\phi / L$')
-    ax.set_ylabel(r'$\dot{\phi} / L$ (Gyr$^{-1}$)')
-    ax.set_title('Phase space (stick-slip attractor)')
+    ax.plot(sol.y[0] / L, sol.y[1] / L, "g-", linewidth=0.3, alpha=0.7)
+    ax.set_xlabel(r"$\phi / L$")
+    ax.set_ylabel(r"$\dot{\phi} / L$ (Gyr$^{-1}$)")
+    ax.set_title("Phase space (stick-slip attractor)")
     ax.grid(True, alpha=0.3)
 
     # Panel 3: w(z) from ODE vs analytic
     ax = axes[1, 0]
     mask = (z_arr > 0) & (z_arr < 3)
-    ax.plot(z_arr[mask], w_DE[mask], 'b-', alpha=0.5, linewidth=0.8, label='ODE solution')
-    ax.plot(z_plot, w_analytic, 'r-', linewidth=1.5, label=r'$w = -1 + 0.003\sin(2\pi t_{lb}/T + \pi/2)$')
-    ax.axhline(y=-1, color='k', linestyle=':', alpha=0.3, label=r'$\Lambda$CDM ($w=-1$)')
+    ax.plot(
+        z_arr[mask], w_DE[mask], "b-", alpha=0.5, linewidth=0.8, label="ODE solution"
+    )
+    ax.plot(
+        z_plot,
+        w_analytic,
+        "r-",
+        linewidth=1.5,
+        label=r"$w = -1 + 0.003\sin(2\pi t_{lb}/T + \pi/2)$",
+    )
+    ax.axhline(
+        y=-1, color="k", linestyle=":", alpha=0.3, label=r"$\Lambda$CDM ($w=-1$)"
+    )
 
     # DESI DR2 mock data point
-    ax.errorbar(0.5, -0.997, yerr=0.003, fmt='*', color='gold', markersize=12,
-                label='DESI DR2 (mock)', zorder=5)
+    ax.errorbar(
+        0.5,
+        -0.997,
+        yerr=0.003,
+        fmt="*",
+        color="gold",
+        markersize=12,
+        label="DESI DR2 (mock)",
+        zorder=5,
+    )
 
-    ax.set_xlabel('Redshift z')
-    ax.set_ylabel(r'$w_{DE}(z)$')
-    ax.set_title('Dark Energy Equation of State')
+    ax.set_xlabel("Redshift z")
+    ax.set_ylabel(r"$w_{DE}(z)$")
+    ax.set_title("Dark Energy Equation of State")
     ax.legend(fontsize=8)
     ax.set_ylim(-1.01, -0.99)
     ax.grid(True, alpha=0.3)
@@ -266,16 +291,20 @@ def main():
     # Panel 4: Energy densities
     ax = axes[1, 1]
     mask2 = (sol.t > 5) & (sol.t < 13.8)
-    ax.semilogy(sol.t[mask2], rho_kin[mask2], 'r-', label=r'$\rho_{kin}$', linewidth=0.8)
-    ax.semilogy(sol.t[mask2], rho_pot[mask2], 'b-', label=r'$\rho_{pot}$', linewidth=0.8)
-    ax.set_xlabel('Cosmic time (Gyr)')
-    ax.set_ylabel(r'Energy density (J/m$^3$)')
-    ax.set_title('Kinetic vs Potential energy')
+    ax.semilogy(
+        sol.t[mask2], rho_kin[mask2], "r-", label=r"$\rho_{kin}$", linewidth=0.8
+    )
+    ax.semilogy(
+        sol.t[mask2], rho_pot[mask2], "b-", label=r"$\rho_{pot}$", linewidth=0.8
+    )
+    ax.set_xlabel("Cosmic time (Gyr)")
+    ax.set_ylabel(r"Energy density (J/m$^3$)")
+    ax.set_title("Kinetic vs Potential energy")
     ax.legend()
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig('plots/w_z_oscillation.png', dpi=150)
+    plt.savefig("plots/w_z_oscillation.png", dpi=150)
     print(f"\nPlot saved: plots/w_z_oscillation.png")
 
     # Summary statistics
@@ -290,5 +319,5 @@ def main():
     print(f"{'=' * 60}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

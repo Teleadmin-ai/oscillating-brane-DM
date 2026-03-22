@@ -10,23 +10,24 @@ Demonstrates ~5% scale-dependent suppression at non-linear scales
 (DES Year 6) while preserving linear scales (Planck/KiDS).
 """
 
+import matplotlib
 import numpy as np
 from scipy.integrate import solve_ivp
-import matplotlib
-matplotlib.use('Agg')
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # ============================================================
 # Cosmological Parameters
 # ============================================================
-H0 = 67.4           # km/s/Mpc
+H0 = 67.4  # km/s/Mpc
 Omega_m = 0.315
 Omega_Lambda = 0.685
 
 # ============================================================
 # Brane Parameters
 # ============================================================
-L_m = 2.0e-7         # Extra dimension size in meters
+L_m = 2.0e-7  # Extra dimension size in meters
 # The Yukawa screening operates at the scale where the extra dimension
 # modifies the gravitational potential. The effective screening wavenumber
 # in the 4D projected theory is set by the warp factor and the AdS
@@ -56,6 +57,7 @@ L_m = 2.0e-7         # Extra dimension size in meters
 k_NL = 0.15  # Mpc^-1, non-linear transition scale
 alpha_base = -0.005  # base Yukawa coupling (small, <1% at linear scales)
 
+
 def alpha_effective(k):
     """Scale-dependent coupling: stronger at non-linear scales.
 
@@ -69,7 +71,7 @@ def alpha_effective(k):
 
 def hubble_normalized(a):
     """E(a) = H(a)/H0 for flat LCDM."""
-    return np.sqrt(Omega_m * a**(-3) + Omega_Lambda)
+    return np.sqrt(Omega_m * a ** (-3) + Omega_Lambda)
 
 
 def G_eff_ratio(k):
@@ -94,7 +96,7 @@ def growth_ode(a, y, k, use_yukawa=True):
     delta, delta_prime = y
 
     E = hubble_normalized(a)
-    E_prime_over_E = -1.5 * Omega_m * a**(-4) / E**2  # dE/da / E
+    E_prime_over_E = -1.5 * Omega_m * a ** (-4) / E**2  # dE/da / E
 
     # Gravitational coupling
     if use_yukawa:
@@ -103,7 +105,7 @@ def growth_ode(a, y, k, use_yukawa=True):
         G_ratio = 1.0
 
     # Friction coefficient
-    friction = (3.0 / a + E_prime_over_E)
+    friction = 3.0 / a + E_prime_over_E
 
     # Source term
     source = 1.5 * Omega_m * G_ratio / (a**5 * E**2)
@@ -124,7 +126,7 @@ def solve_growth(k, use_yukawa=True, a_init=1e-3, a_final=1.0):
         [a_init, a_final],
         [delta_init, delta_prime_init],
         args=(k, use_yukawa),
-        method='BDF',
+        method="BDF",
         rtol=1e-10,
         atol=1e-13,
         dense_output=True,
@@ -160,12 +162,13 @@ def main():
     ratio = D_brane / D_lcdm
 
     # Find suppression at specific scales
-    k_des = 1.0     # DES non-linear scale ~1 Mpc^-1
-    k_kids = 0.1    # KiDS linear scale ~0.1 Mpc^-1
-    k_cmb = 0.01    # CMB scale ~0.01 Mpc^-1
+    k_des = 1.0  # DES non-linear scale ~1 Mpc^-1
+    k_kids = 0.1  # KiDS linear scale ~0.1 Mpc^-1
+    k_cmb = 0.01  # CMB scale ~0.01 Mpc^-1
 
     from scipy.interpolate import interp1d
-    ratio_interp = interp1d(k_arr, ratio, kind='cubic')
+
+    ratio_interp = interp1d(k_arr, ratio, kind="cubic")
 
     supp_des = (1 - ratio_interp(k_des)) * 100
     supp_kids = (1 - ratio_interp(k_kids)) * 100
@@ -190,28 +193,47 @@ def main():
     # Plot
     # ============================================================
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-    fig.suptitle(r'Yukawa Screening: Scale-Dependent $S_8$ Resolution',
-                 fontsize=14, fontweight='bold')
+    fig.suptitle(
+        r"Yukawa Screening: Scale-Dependent $S_8$ Resolution",
+        fontsize=14,
+        fontweight="bold",
+    )
 
     # Panel 1: Suppression ratio
     ax = axes[0]
-    ax.semilogx(k_arr, ratio, 'b-', linewidth=2, label=r'$D_+^{osc} / D_+^{\Lambda CDM}$')
-    ax.axhline(y=1.0, color='k', linestyle=':', alpha=0.3)
+    ax.semilogx(
+        k_arr, ratio, "b-", linewidth=2, label=r"$D_+^{osc} / D_+^{\Lambda CDM}$"
+    )
+    ax.axhline(y=1.0, color="k", linestyle=":", alpha=0.3)
 
     # Mark scales
-    ax.axvline(x=k_des, color='r', linestyle='--', alpha=0.5, label=f'DES scale (k={k_des})')
-    ax.axvline(x=k_kids, color='g', linestyle='--', alpha=0.5, label=f'KiDS scale (k={k_kids})')
-    ax.axvline(x=k_cmb, color='orange', linestyle='--', alpha=0.5, label=f'CMB scale (k={k_cmb})')
+    ax.axvline(
+        x=k_des, color="r", linestyle="--", alpha=0.5, label=f"DES scale (k={k_des})"
+    )
+    ax.axvline(
+        x=k_kids, color="g", linestyle="--", alpha=0.5, label=f"KiDS scale (k={k_kids})"
+    )
+    ax.axvline(
+        x=k_cmb,
+        color="orange",
+        linestyle="--",
+        alpha=0.5,
+        label=f"CMB scale (k={k_cmb})",
+    )
 
     # Annotate suppression
-    ax.annotate(f'{supp_des:.1f}% suppression',
-                xy=(k_des, ratio_interp(k_des)), xytext=(3, 0.97),
-                arrowprops=dict(arrowstyle='->', color='red'),
-                fontsize=10, color='red')
+    ax.annotate(
+        f"{supp_des:.1f}% suppression",
+        xy=(k_des, ratio_interp(k_des)),
+        xytext=(3, 0.97),
+        arrowprops=dict(arrowstyle="->", color="red"),
+        fontsize=10,
+        color="red",
+    )
 
-    ax.set_xlabel(r'Wavenumber $k$ (Mpc$^{-1}$)')
-    ax.set_ylabel(r'$D_+^{osc} / D_+^{\Lambda CDM}$')
-    ax.set_title('Growth suppression ratio')
+    ax.set_xlabel(r"Wavenumber $k$ (Mpc$^{-1}$)")
+    ax.set_ylabel(r"$D_+^{osc} / D_+^{\Lambda CDM}$")
+    ax.set_title("Growth suppression ratio")
     ax.legend(fontsize=9)
     ax.set_ylim(0.93, 1.01)
     ax.grid(True, alpha=0.3)
@@ -219,29 +241,38 @@ def main():
     # Panel 2: G_eff/G_N
     ax = axes[1]
     G_ratio_arr = [G_eff_ratio(k) for k in k_arr]
-    ax.semilogx(k_arr, G_ratio_arr, 'r-', linewidth=2)
-    ax.axhline(y=1.0, color='k', linestyle=':', alpha=0.3, label=r'$G_N$ (standard)')
-    ax.set_xlabel(r'Wavenumber $k$ (Mpc$^{-1}$)')
-    ax.set_ylabel(r'$G_{eff}(k) / G_N$')
-    ax.set_title(r'Yukawa correction: $G_{eff} = G_N(1 + \alpha e^{-k/k_L})$')
+    ax.semilogx(k_arr, G_ratio_arr, "r-", linewidth=2)
+    ax.axhline(y=1.0, color="k", linestyle=":", alpha=0.3, label=r"$G_N$ (standard)")
+    ax.set_xlabel(r"Wavenumber $k$ (Mpc$^{-1}$)")
+    ax.set_ylabel(r"$G_{eff}(k) / G_N$")
+    ax.set_title(r"Yukawa correction: $G_{eff} = G_N(1 + \alpha e^{-k/k_L})$")
     ax.legend()
     ax.grid(True, alpha=0.3)
 
     # Add text box with results
-    textstr = (f'$L = {L_m*1e6:.1f}\\,\\mu$m\n'
-               f'$k_L = 2\\pi/L$\n'
-               f'$\\alpha = {alpha_base}$\n'
-               f'DES: {supp_des:.1f}% supp.\n'
-               f'KiDS: {supp_kids:.2f}% supp.\n'
-               f'CMB: {supp_cmb:.3f}% supp.')
-    props = dict(boxstyle='round', facecolor='wheat', alpha=0.8)
-    ax.text(0.05, 0.95, textstr, transform=ax.transAxes, fontsize=9,
-            verticalalignment='top', bbox=props)
+    textstr = (
+        f"$L = {L_m*1e6:.1f}\\,\\mu$m\n"
+        f"$k_L = 2\\pi/L$\n"
+        f"$\\alpha = {alpha_base}$\n"
+        f"DES: {supp_des:.1f}% supp.\n"
+        f"KiDS: {supp_kids:.2f}% supp.\n"
+        f"CMB: {supp_cmb:.3f}% supp."
+    )
+    props = dict(boxstyle="round", facecolor="wheat", alpha=0.8)
+    ax.text(
+        0.05,
+        0.95,
+        textstr,
+        transform=ax.transAxes,
+        fontsize=9,
+        verticalalignment="top",
+        bbox=props,
+    )
 
     plt.tight_layout()
-    plt.savefig('plots/s8_yukawa_suppression.png', dpi=150)
+    plt.savefig("plots/s8_yukawa_suppression.png", dpi=150)
     print(f"\nPlot saved: plots/s8_yukawa_suppression.png")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

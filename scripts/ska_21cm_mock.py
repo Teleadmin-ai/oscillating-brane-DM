@@ -9,37 +9,40 @@ during the Epoch of Reionization (z=6 to 15).
 Generates a template for SKA-Low detection.
 """
 
+import matplotlib
 import numpy as np
 from scipy.integrate import quad
-import matplotlib
-matplotlib.use('Agg')
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # ============================================================
 # Cosmological Parameters
 # ============================================================
-H0_Gyr = 0.0689     # Gyr^-1
+H0_Gyr = 0.0689  # Gyr^-1
 Omega_m = 0.315
 Omega_Lambda = 0.685
 Omega_b = 0.0493
-T_cmb = 2.725        # K
+T_cmb = 2.725  # K
 
 # ============================================================
 # Brane Parameters
 # ============================================================
-T_osc = 2.0          # Gyr
+T_osc = 2.0  # Gyr
 A_w = 0.003
 phi_0 = np.pi / 2
 f_osc = 0.10
 alpha_base = -0.005  # Yukawa coupling
-k_NL = 0.15          # Mpc^-1
+k_NL = 0.15  # Mpc^-1
 
 
 def lookback_time(z):
     """Exact lookback time in Gyr."""
+
     def integrand(zp):
-        E_z = np.sqrt(Omega_m * (1 + zp)**3 + Omega_Lambda)
+        E_z = np.sqrt(Omega_m * (1 + zp) ** 3 + Omega_Lambda)
         return 1.0 / ((1 + zp) * E_z)
+
     result, _ = quad(integrand, 0, z)
     return result / H0_Gyr
 
@@ -139,34 +142,42 @@ def main():
     # Plots
     # ============================================================
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
-    fig.suptitle('SKA 21cm Reionization Modulation — Definitive Test\n'
-                 'Oscillating Brane V8.0 Prediction',
-                 fontsize=14, fontweight='bold')
+    fig.suptitle(
+        "SKA 21cm Reionization Modulation — Definitive Test\n"
+        "Oscillating Brane V8.0 Prediction",
+        fontsize=14,
+        fontweight="bold",
+    )
 
     # Panel 1: 2D modulation map (k vs z)
     ax = axes[0, 0]
     K, Z = np.meshgrid(k_arr, z_arr)
-    im = ax.pcolormesh(K, Z, delta_T, cmap='RdBu_r', shading='auto',
-                       vmin=-max_mod, vmax=max_mod)
-    ax.set_xscale('log')
-    ax.set_xlabel(r'Wavenumber $k$ (Mpc$^{-1}$)')
-    ax.set_ylabel('Redshift $z$')
-    ax.set_title(r'$\Delta T_b(k, z)$ modulation (mK)')
-    plt.colorbar(im, ax=ax, label='mK')
+    im = ax.pcolormesh(
+        K, Z, delta_T, cmap="RdBu_r", shading="auto", vmin=-max_mod, vmax=max_mod
+    )
+    ax.set_xscale("log")
+    ax.set_xlabel(r"Wavenumber $k$ (Mpc$^{-1}$)")
+    ax.set_ylabel("Redshift $z$")
+    ax.set_title(r"$\Delta T_b(k, z)$ modulation (mK)")
+    plt.colorbar(im, ax=ax, label="mK")
 
     # Panel 2: Modulation at fixed z=10 (peak reionization)
     ax = axes[0, 1]
     z_fixed = 10
     iz = np.argmin(np.abs(z_arr - z_fixed))
-    ax.semilogx(k_arr, delta_T[iz, :], 'b-', linewidth=2,
-                label=f'z = {z_arr[iz]:.0f}')
-    ax.axhline(y=ska_noise, color='r', linestyle='--', alpha=0.7,
-               label=f'SKA-Low noise ({ska_noise} mK)')
-    ax.axhline(y=-ska_noise, color='r', linestyle='--', alpha=0.7)
-    ax.fill_between(k_arr, -ska_noise, ska_noise, color='red', alpha=0.1)
-    ax.set_xlabel(r'Wavenumber $k$ (Mpc$^{-1}$)')
-    ax.set_ylabel(r'$\Delta T_b$ (mK)')
-    ax.set_title(f'Modulation at $z = {z_fixed}$')
+    ax.semilogx(k_arr, delta_T[iz, :], "b-", linewidth=2, label=f"z = {z_arr[iz]:.0f}")
+    ax.axhline(
+        y=ska_noise,
+        color="r",
+        linestyle="--",
+        alpha=0.7,
+        label=f"SKA-Low noise ({ska_noise} mK)",
+    )
+    ax.axhline(y=-ska_noise, color="r", linestyle="--", alpha=0.7)
+    ax.fill_between(k_arr, -ska_noise, ska_noise, color="red", alpha=0.1)
+    ax.set_xlabel(r"Wavenumber $k$ (Mpc$^{-1}$)")
+    ax.set_ylabel(r"$\Delta T_b$ (mK)")
+    ax.set_title(f"Modulation at $z = {z_fixed}$")
     ax.legend()
     ax.grid(True, alpha=0.3)
 
@@ -174,15 +185,21 @@ def main():
     ax = axes[1, 0]
     k_bao = 0.1  # Mpc^-1
     ik = np.argmin(np.abs(k_arr - k_bao))
-    ax.plot(z_arr, delta_T[:, ik], 'b-', linewidth=2,
-            label=f'k = {k_arr[ik]:.2f} Mpc$^{{-1}}$')
-    ax.axhline(y=ska_noise, color='r', linestyle='--', alpha=0.7,
-               label=f'SKA-Low noise')
-    ax.axhline(y=-ska_noise, color='r', linestyle='--', alpha=0.7)
-    ax.fill_between(z_arr, -ska_noise, ska_noise, color='red', alpha=0.1)
-    ax.set_xlabel('Redshift $z$')
-    ax.set_ylabel(r'$\Delta T_b$ (mK)')
-    ax.set_title(f'Modulation at BAO scale ($k = {k_bao}$ Mpc$^{{-1}}$)')
+    ax.plot(
+        z_arr,
+        delta_T[:, ik],
+        "b-",
+        linewidth=2,
+        label=f"k = {k_arr[ik]:.2f} Mpc$^{{-1}}$",
+    )
+    ax.axhline(
+        y=ska_noise, color="r", linestyle="--", alpha=0.7, label=f"SKA-Low noise"
+    )
+    ax.axhline(y=-ska_noise, color="r", linestyle="--", alpha=0.7)
+    ax.fill_between(z_arr, -ska_noise, ska_noise, color="red", alpha=0.1)
+    ax.set_xlabel("Redshift $z$")
+    ax.set_ylabel(r"$\Delta T_b$ (mK)")
+    ax.set_title(f"Modulation at BAO scale ($k = {k_bao}$ Mpc$^{{-1}}$)")
     ax.legend()
     ax.grid(True, alpha=0.3)
 
@@ -190,18 +207,24 @@ def main():
     ax = axes[1, 1]
     T_std = np.array([T_21cm_standard(z) for z in z_arr])
     T_mod = T_std + delta_T[:, ik]
-    ax.plot(z_arr, T_std, 'k--', linewidth=1.5, label=r'$\Lambda$CDM (standard)')
-    ax.plot(z_arr, T_mod, 'b-', linewidth=2, label='Brane V8.0')
-    ax.fill_between(z_arr, T_std - ska_noise, T_std + ska_noise,
-                     color='gray', alpha=0.2, label='SKA noise band')
-    ax.set_xlabel('Redshift $z$')
-    ax.set_ylabel(r'$T_b$ (mK)')
-    ax.set_title('21cm Global Signal: Standard vs Brane')
+    ax.plot(z_arr, T_std, "k--", linewidth=1.5, label=r"$\Lambda$CDM (standard)")
+    ax.plot(z_arr, T_mod, "b-", linewidth=2, label="Brane V8.0")
+    ax.fill_between(
+        z_arr,
+        T_std - ska_noise,
+        T_std + ska_noise,
+        color="gray",
+        alpha=0.2,
+        label="SKA noise band",
+    )
+    ax.set_xlabel("Redshift $z$")
+    ax.set_ylabel(r"$T_b$ (mK)")
+    ax.set_title("21cm Global Signal: Standard vs Brane")
     ax.legend()
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig('plots/ska_prediction.png', dpi=150)
+    plt.savefig("plots/ska_prediction.png", dpi=150)
     print(f"\nPlot saved: plots/ska_prediction.png")
 
     # Detection significance
@@ -217,5 +240,5 @@ def main():
     print(f"{'=' * 60}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -11,9 +11,10 @@ standard central SMBH — exactly the 43 anomalies found by ESA AI
 Simulation: 2D collisionless particle cloud before/after slip kick.
 """
 
-import numpy as np
 import matplotlib
-matplotlib.use('Agg')
+import numpy as np
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 
@@ -89,76 +90,100 @@ def main():
     x0, y0, vx0, vy0 = create_disk(N)
 
     # Evolve the disk slightly (show stability)
-    x_pre, y_pre, _, _ = evolve(x0.copy(), y0.copy(), vx0.copy(), vy0.copy(),
-                                 dt=0.3, n_steps=10)
+    x_pre, y_pre, _, _ = evolve(
+        x0.copy(), y0.copy(), vx0.copy(), vy0.copy(), dt=0.3, n_steps=10
+    )
 
     # Apply slip kick
-    vx_kicked, vy_kicked = apply_slip_kick(x0.copy(), y0.copy(),
-                                            vx0.copy(), vy0.copy(),
-                                            kick_strength=8.0)
+    vx_kicked, vy_kicked = apply_slip_kick(
+        x0.copy(), y0.copy(), vx0.copy(), vy0.copy(), kick_strength=8.0
+    )
 
     # Evolve post-kick
-    x_post, y_post, _, _ = evolve(x0.copy(), y0.copy(), vx_kicked, vy_kicked,
-                                   dt=0.5, n_steps=40)
+    x_post, y_post, _, _ = evolve(
+        x0.copy(), y0.copy(), vx_kicked, vy_kicked, dt=0.5, n_steps=40
+    )
 
     print(f"  Particles: {N}")
     print(f"  Pre-kick RMS radius: {np.sqrt(np.mean(x_pre**2 + y_pre**2)):.1f}")
     print(f"  Post-kick RMS radius: {np.sqrt(np.mean(x_post**2 + y_post**2)):.1f}")
-    print(f"  Expansion factor: {np.sqrt(np.mean(x_post**2 + y_post**2)) / np.sqrt(np.mean(x_pre**2 + y_pre**2)):.1f}x")
+    print(
+        f"  Expansion factor: {np.sqrt(np.mean(x_post**2 + y_post**2)) / np.sqrt(np.mean(x_pre**2 + y_pre**2)):.1f}x"
+    )
 
     # ============================================================
     # Plot
     # ============================================================
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-    fig.suptitle("ER=EPR Topological Scarring — Hubble's 43 Anomalous Objects\n"
-                 r"Stick-slip kick at $\phi_{crit}$ disrupts protogalaxy $\to$ hazy blob",
-                 fontsize=12, fontweight='bold')
+    fig.suptitle(
+        "ER=EPR Topological Scarring — Hubble's 43 Anomalous Objects\n"
+        r"Stick-slip kick at $\phi_{crit}$ disrupts protogalaxy $\to$ hazy blob",
+        fontsize=12,
+        fontweight="bold",
+    )
 
     # Panel 1: Before slip (ordered disk)
     ax = axes[0]
-    ax.scatter(x_pre, y_pre, s=0.5, c='cyan', alpha=0.6)
+    ax.scatter(x_pre, y_pre, s=0.5, c="cyan", alpha=0.6)
     ax.set_xlim(-20, 20)
     ax.set_ylim(-20, 20)
-    ax.set_xlabel('x (kpc)')
-    ax.set_ylabel('y (kpc)')
-    ax.set_title('BEFORE Slip: Ordered rotating disk\n(standard protogalaxy)')
-    ax.set_aspect('equal')
-    ax.set_facecolor('black')
+    ax.set_xlabel("x (kpc)")
+    ax.set_ylabel("y (kpc)")
+    ax.set_title("BEFORE Slip: Ordered rotating disk\n(standard protogalaxy)")
+    ax.set_aspect("equal")
+    ax.set_facecolor("black")
 
     # Add rotation arrows
-    for angle in [0, np.pi/2, np.pi, 3*np.pi/2]:
+    for angle in [0, np.pi / 2, np.pi, 3 * np.pi / 2]:
         r_arrow = 8
-        ax.annotate('', xy=(r_arrow*np.cos(angle+0.3), r_arrow*np.sin(angle+0.3)),
-                    xytext=(r_arrow*np.cos(angle), r_arrow*np.sin(angle)),
-                    arrowprops=dict(arrowstyle='->', color='yellow', lw=1.5))
+        ax.annotate(
+            "",
+            xy=(r_arrow * np.cos(angle + 0.3), r_arrow * np.sin(angle + 0.3)),
+            xytext=(r_arrow * np.cos(angle), r_arrow * np.sin(angle)),
+            arrowprops=dict(arrowstyle="->", color="yellow", lw=1.5),
+        )
 
     # Panel 2: After slip (topological scar)
     ax = axes[1]
 
     # Use a 2D histogram for the "hazy blob" effect
     from matplotlib.colors import LogNorm
-    h, xedges, yedges = np.histogram2d(x_post, y_post, bins=80,
-                                        range=[[-60, 60], [-60, 60]])
+
+    h, xedges, yedges = np.histogram2d(
+        x_post, y_post, bins=80, range=[[-60, 60], [-60, 60]]
+    )
     # Gaussian blur for hazy effect
     from scipy.ndimage import gaussian_filter
+
     h_smooth = gaussian_filter(h, sigma=2)
 
-    ax.imshow(h_smooth.T, extent=[-60, 60, -60, 60], origin='lower',
-              cmap='hot', norm=LogNorm(vmin=0.1, vmax=h_smooth.max()),
-              interpolation='bilinear')
-    ax.set_xlabel('x (kpc)')
-    ax.set_ylabel('y (kpc)')
-    ax.set_title('AFTER Slip: Topological scar\n(hazy blob — no central SMBH)')
-    ax.set_aspect('equal')
+    ax.imshow(
+        h_smooth.T,
+        extent=[-60, 60, -60, 60],
+        origin="lower",
+        cmap="hot",
+        norm=LogNorm(vmin=0.1, vmax=h_smooth.max()),
+        interpolation="bilinear",
+    )
+    ax.set_xlabel("x (kpc)")
+    ax.set_ylabel("y (kpc)")
+    ax.set_title("AFTER Slip: Topological scar\n(hazy blob — no central SMBH)")
+    ax.set_aspect("equal")
 
     # Annotate
-    ax.text(0.05, 0.95, 'Non-virialized\nAsymmetric\nNo central mass',
-            transform=ax.transAxes, fontsize=10, color='white',
-            verticalalignment='top',
-            bbox=dict(boxstyle='round', facecolor='red', alpha=0.5))
+    ax.text(
+        0.05,
+        0.95,
+        "Non-virialized\nAsymmetric\nNo central mass",
+        transform=ax.transAxes,
+        fontsize=10,
+        color="white",
+        verticalalignment="top",
+        bbox=dict(boxstyle="round", facecolor="red", alpha=0.5),
+    )
 
     plt.tight_layout()
-    plt.savefig('plots/astro_signatures/hubble_scar_morphology.png', dpi=150)
+    plt.savefig("plots/astro_signatures/hubble_scar_morphology.png", dpi=150)
     print(f"\nPlot saved: plots/astro_signatures/hubble_scar_morphology.png")
 
     print(f"\n{'=' * 60}")
@@ -170,5 +195,5 @@ def main():
     print(f"{'=' * 60}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

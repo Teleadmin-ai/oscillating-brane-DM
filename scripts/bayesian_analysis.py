@@ -13,11 +13,12 @@ Mock data encodes:
   3. DES weak lensing: S₈ ≈ 0.79 preference
 """
 
-import numpy as np
 import dynesty
-from dynesty import utils as dyfunc
 import matplotlib
-matplotlib.use('Agg')
+import numpy as np
+from dynesty import utils as dyfunc
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # Seed for reproducibility
@@ -26,9 +27,9 @@ np.random.seed(42)
 # ============================================================
 # Theory Parameters (V8.0)
 # ============================================================
-TAU0_TRUE = 7.0e19   # J/m^2
+TAU0_TRUE = 7.0e19  # J/m^2
 F_OSC_TRUE = 0.10
-T_OSC_TRUE = 2.0     # Gyr
+T_OSC_TRUE = 2.0  # Gyr
 A_W_TRUE = 0.003
 
 # ============================================================
@@ -40,8 +41,8 @@ WA_OBS = -0.15
 WA_ERR = 0.06
 
 # Planck ISW: preference for T ≈ 2.0 Gyr oscillation
-T_ISW_OBS = 2.0      # Gyr
-T_ISW_ERR = 0.3      # Gyr
+T_ISW_OBS = 2.0  # Gyr
+T_ISW_ERR = 0.3  # Gyr
 
 # DES Y6 weak lensing: S8 = 0.790 ± 0.015
 S8_OBS = 0.790
@@ -72,7 +73,7 @@ def brane_predictions(theta):
 
     # S8 prediction: scale-dependent suppression
     # Suppression depends on tau0 (sets Yukawa strength) and f_osc
-    suppression = 0.055 * (f_osc / 0.10) * (tau0 / 7.0e19)**0.3
+    suppression = 0.055 * (f_osc / 0.10) * (tau0 / 7.0e19) ** 0.3
     s8_pred = S8_PLANCK * (1.0 - suppression)
 
     return w0_pred, wa_pred, T_osc, s8_pred
@@ -85,13 +86,13 @@ def log_likelihood_brane(theta):
     chi2 = 0.0
 
     # DESI: phantom crossing w_a
-    chi2 += ((wa_pred - WA_OBS) / WA_ERR)**2
+    chi2 += ((wa_pred - WA_OBS) / WA_ERR) ** 2
 
     # ISW: oscillation period
-    chi2 += ((T_pred - T_ISW_OBS) / T_ISW_ERR)**2
+    chi2 += ((T_pred - T_ISW_OBS) / T_ISW_ERR) ** 2
 
     # DES S8
-    chi2 += ((s8_pred - S8_OBS) / S8_ERR)**2
+    chi2 += ((s8_pred - S8_OBS) / S8_ERR) ** 2
 
     return -0.5 * chi2
 
@@ -114,8 +115,12 @@ def prior_transform_brane(u):
     theta[1] = 0.05 + u[1] * 0.15
 
     # T: Gaussian truncated to [1.0, 3.0]
-    theta[2] = norm.ppf(u[2] * (norm.cdf(3.0, 2.0, 0.3) - norm.cdf(1.0, 2.0, 0.3))
-                        + norm.cdf(1.0, 2.0, 0.3), 2.0, 0.3)
+    theta[2] = norm.ppf(
+        u[2] * (norm.cdf(3.0, 2.0, 0.3) - norm.cdf(1.0, 2.0, 0.3))
+        + norm.cdf(1.0, 2.0, 0.3),
+        2.0,
+        0.3,
+    )
 
     return theta
 
@@ -131,13 +136,13 @@ def log_likelihood_lcdm(theta):
     chi2 = 0.0
 
     # DESI: w_a = 0 vs observed w_a = -0.15
-    chi2 += ((0.0 - WA_OBS) / WA_ERR)**2
+    chi2 += ((0.0 - WA_OBS) / WA_ERR) ** 2
 
     # No ISW oscillation preference (flat penalty)
     # chi2 += 0  (ΛCDM makes no prediction about T)
 
     # S8: ΛCDM predicts Planck value, but DES sees lower
-    chi2 += ((S8_PLANCK - S8_OBS) / S8_ERR)**2
+    chi2 += ((S8_PLANCK - S8_OBS) / S8_ERR) ** 2
 
     return -0.5 * chi2
 
@@ -148,8 +153,12 @@ def prior_transform_lcdm(u):
 
     theta = np.empty(2)
     theta[0] = 60.0 + u[0] * 20.0  # H0
-    theta[1] = norm.ppf(u[1] * (norm.cdf(0.5, 0.315, 0.02) - norm.cdf(0.1, 0.315, 0.02))
-                        + norm.cdf(0.1, 0.315, 0.02), 0.315, 0.02)
+    theta[1] = norm.ppf(
+        u[1] * (norm.cdf(0.5, 0.315, 0.02) - norm.cdf(0.1, 0.315, 0.02))
+        + norm.cdf(0.1, 0.315, 0.02),
+        0.315,
+        0.02,
+    )
     return theta
 
 
@@ -228,12 +237,15 @@ def main():
     indices = np.random.choice(len(samples), size=n_resample, p=weights)
     samples_equal = samples[indices]
 
-    labels = [r'$\log_{10}(\tau_0)$', r'$f_{osc}$', r'$T_{osc}$ (Gyr)']
+    labels = [r"$\log_{10}(\tau_0)$", r"$f_{osc}$", r"$T_{osc}$ (Gyr)"]
 
     fig, axes = plt.subplots(3, 3, figsize=(10, 10))
-    fig.suptitle(f'Nested Sampling Posteriors — Brane V8.0\n'
-                 f'$\\Delta\\ln K = {delta_ln_K:.2f} \\pm {delta_ln_K_err:.2f}$ ({strength})',
-                 fontsize=13, fontweight='bold')
+    fig.suptitle(
+        f"Nested Sampling Posteriors — Brane V8.0\n"
+        f"$\\Delta\\ln K = {delta_ln_K:.2f} \\pm {delta_ln_K_err:.2f}$ ({strength})",
+        fontsize=13,
+        fontweight="bold",
+    )
 
     for i in range(3):
         for j in range(3):
@@ -244,20 +256,32 @@ def main():
 
             if i == j:
                 # 1D histogram
-                ax.hist(samples_equal[:, i], bins=40, density=True,
-                        color='steelblue', alpha=0.7, edgecolor='navy')
-                ax.axvline(samples_equal[:, i].mean(), color='r',
-                           linestyle='--', linewidth=1.5)
+                ax.hist(
+                    samples_equal[:, i],
+                    bins=40,
+                    density=True,
+                    color="steelblue",
+                    alpha=0.7,
+                    edgecolor="navy",
+                )
+                ax.axvline(
+                    samples_equal[:, i].mean(), color="r", linestyle="--", linewidth=1.5
+                )
                 ax.set_xlabel(labels[i])
             else:
                 # 2D scatter
-                ax.scatter(samples_equal[:, j], samples_equal[:, i],
-                           s=1, alpha=0.3, color='steelblue')
+                ax.scatter(
+                    samples_equal[:, j],
+                    samples_equal[:, i],
+                    s=1,
+                    alpha=0.3,
+                    color="steelblue",
+                )
                 ax.set_xlabel(labels[j])
                 ax.set_ylabel(labels[i])
 
     plt.tight_layout()
-    plt.savefig('plots/nested_sampling_posteriors.png', dpi=150)
+    plt.savefig("plots/nested_sampling_posteriors.png", dpi=150)
     print(f"\nPlot saved: plots/nested_sampling_posteriors.png")
 
     # Print posterior summary
@@ -268,5 +292,5 @@ def main():
         print(f"  {label}: {mean:.4f} ± {std:.4f}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

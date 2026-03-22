@@ -16,18 +16,19 @@ locking in the asymmetry. No fine-tuned ε_CP needed!
 Based on Cohen-Kaplan spontaneous baryogenesis framework.
 """
 
+import matplotlib
 import numpy as np
 from scipy.integrate import solve_ivp
-import matplotlib
-matplotlib.use('Agg')
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # ============================================================
 # Physical Constants
 # ============================================================
-L = 2.0e-7           # m, extra dimension
-T_osc = 2.0          # Gyr (oscillation period)
-Lambda_QCD = 257.0   # MeV (motor ignition temperature)
+L = 2.0e-7  # m, extra dimension
+T_osc = 2.0  # Gyr (oscillation period)
+Lambda_QCD = 257.0  # MeV (motor ignition temperature)
 eta_B_obs = 6.1e-10  # observed baryon asymmetry
 
 # QCD coupling for radion-gluon interaction
@@ -44,7 +45,7 @@ def T_to_time(T_MeV):
 
     In radiation domination: t ≈ (1 MeV / T)² × 1 second
     """
-    t_seconds = (1.0 / T_MeV)**2  # seconds (radiation dominated)
+    t_seconds = (1.0 / T_MeV) ** 2  # seconds (radiation dominated)
     return t_seconds / Gyr_to_s
 
 
@@ -64,7 +65,7 @@ def first_slip_velocity(t_Gyr, t_ignition):
 
     # Gaussian spike
     dt = t_Gyr - t_ignition
-    phi_dot = phi_dot_max * np.exp(-0.5 * (dt / t_slip)**2)
+    phi_dot = phi_dot_max * np.exp(-0.5 * (dt / t_slip) ** 2)
 
     return phi_dot
 
@@ -146,7 +147,7 @@ def main():
         [t_start, t_end],
         [0.0],
         args=(t_QCD,),
-        method='BDF',
+        method="BDF",
         t_eval=t_eval,
         rtol=1e-12,
         atol=1e-18,
@@ -200,56 +201,88 @@ def main():
     # Plot
     # ============================================================
     fig, axes = plt.subplots(1, 3, figsize=(16, 5))
-    fig.suptitle(r'Spontaneous QCD Baryogenesis — Radion as Dynamic $\theta_{QCD}$'
-                 '\n'
-                 r'First slip at $\Lambda_{QCD} = 257$ MeV drives baryon asymmetry',
-                 fontsize=12, fontweight='bold')
+    fig.suptitle(
+        r"Spontaneous QCD Baryogenesis — Radion as Dynamic $\theta_{QCD}$"
+        "\n"
+        r"First slip at $\Lambda_{QCD} = 257$ MeV drives baryon asymmetry",
+        fontsize=12,
+        fontweight="bold",
+    )
 
     # Panel 1: Radion velocity spike at QCD
     ax = axes[0]
-    ax.plot(T_arr, phi_dot_arr / np.max(phi_dot_arr + 1e-30), 'b-', linewidth=2)
-    ax.axvline(x=Lambda_QCD, color='r', linestyle='--', alpha=0.7,
-               label=r'$\Lambda_{QCD} = 257$ MeV')
-    ax.set_xlabel('Temperature (MeV)')
-    ax.set_ylabel(r'$\dot{\phi}$ (normalized)')
-    ax.set_title('First slip velocity at QCD ignition')
+    ax.plot(T_arr, phi_dot_arr / np.max(phi_dot_arr + 1e-30), "b-", linewidth=2)
+    ax.axvline(
+        x=Lambda_QCD,
+        color="r",
+        linestyle="--",
+        alpha=0.7,
+        label=r"$\Lambda_{QCD} = 257$ MeV",
+    )
+    ax.set_xlabel("Temperature (MeV)")
+    ax.set_ylabel(r"$\dot{\phi}$ (normalized)")
+    ax.set_title("First slip velocity at QCD ignition")
     ax.set_xlim(500, 100)
     ax.legend()
     ax.grid(True, alpha=0.3)
 
     # Panel 2: Baryon yield accumulation
     ax = axes[1]
-    ax.semilogy(T_arr, np.abs(Y_B), 'r-', linewidth=2)
-    ax.axhline(y=eta_B_obs, color='green', linestyle='--', linewidth=2,
-               label=f'Observed $\\eta_B = {eta_B_obs}$')
-    ax.axvline(x=Lambda_QCD, color='gray', linestyle=':', alpha=0.5)
-    ax.set_xlabel('Temperature (MeV)')
-    ax.set_ylabel(r'$\eta_B$')
-    ax.set_title(r'Baryon yield: geometric freeze-out at $\eta_B = 6.1 \times 10^{-10}$')
+    ax.semilogy(T_arr, np.abs(Y_B), "r-", linewidth=2)
+    ax.axhline(
+        y=eta_B_obs,
+        color="green",
+        linestyle="--",
+        linewidth=2,
+        label=f"Observed $\\eta_B = {eta_B_obs}$",
+    )
+    ax.axvline(x=Lambda_QCD, color="gray", linestyle=":", alpha=0.5)
+    ax.set_xlabel("Temperature (MeV)")
+    ax.set_ylabel(r"$\eta_B$")
+    ax.set_title(
+        r"Baryon yield: geometric freeze-out at $\eta_B = 6.1 \times 10^{-10}$"
+    )
     ax.set_xlim(500, 100)
     ax.legend()
     ax.grid(True, alpha=0.3)
 
     # Panel 3: Comparison — old vs new mechanism
     ax = axes[2]
-    methods = ['Old: KK decay\n$\\epsilon_{CP}$ tuned', 'New: Spontaneous\nQCD baryogenesis']
+    methods = [
+        "Old: KK decay\n$\\epsilon_{CP}$ tuned",
+        "New: Spontaneous\nQCD baryogenesis",
+    ]
     params = [1e-6, c_QCD_eff]
-    colors = ['red', 'green']
-    bars = ax.bar(methods, params, color=colors, alpha=0.7, edgecolor='black')
-    ax.set_ylabel('Key parameter value')
-    ax.set_title('Fine-tuning eliminated!')
-    ax.set_yscale('log')
+    colors = ["red", "green"]
+    bars = ax.bar(methods, params, color=colors, alpha=0.7, edgecolor="black")
+    ax.set_ylabel("Key parameter value")
+    ax.set_title("Fine-tuning eliminated!")
+    ax.set_yscale("log")
     ax.set_ylim(1e-8, 1e2)
 
-    ax.annotate(f'$\\epsilon_{{CP}} = 10^{{-6}}$\nFINE-TUNED!', xy=(0, 1e-6),
-                ha='center', va='bottom', fontsize=10, color='red', fontweight='bold')
-    ax.annotate(f'$c_{{QCD}} = {c_QCD_eff:.1f}$\nNATURAL ✓', xy=(1, c_QCD_eff),
-                ha='center', va='bottom', fontsize=10, color='darkgreen', fontweight='bold')
+    ax.annotate(
+        f"$\\epsilon_{{CP}} = 10^{{-6}}$\nFINE-TUNED!",
+        xy=(0, 1e-6),
+        ha="center",
+        va="bottom",
+        fontsize=10,
+        color="red",
+        fontweight="bold",
+    )
+    ax.annotate(
+        f"$c_{{QCD}} = {c_QCD_eff:.1f}$\nNATURAL ✓",
+        xy=(1, c_QCD_eff),
+        ha="center",
+        va="bottom",
+        fontsize=10,
+        color="darkgreen",
+        fontweight="bold",
+    )
 
     plt.tight_layout()
-    plt.savefig('plots/advanced_proofs/baryon_asymmetry.png', dpi=150)
+    plt.savefig("plots/advanced_proofs/baryon_asymmetry.png", dpi=150)
     print(f"\nPlot saved: plots/advanced_proofs/baryon_asymmetry.png")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
