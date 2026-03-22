@@ -6,13 +6,13 @@ permalink: /downloads/
 
 # Download Resources
 
-## White Paper V8.0 (5 pages)
+## White Paper V8.0 (6 pages)
 
 Mathematically rigorous edition with Israel junction conditions and dynamical attractor. Resolves three established anomalies. Ideal for sharing.
 
 <div style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(255,51,102,0.1), rgba(0,255,204,0.1)); border-radius: 10px; border: 2px solid #00ffcc;">
   <h4>The Cosmic Yoyo: Stick-Slip Brane Motor</h4>
-  <p>4-page summary including:</p>
+  <p>6-page summary including:</p>
   <ul style="margin: 15px 0;">
     <li>ER=EPR holographic topology (Maldacena-Susskind)</li>
     <li>Period calibrated from DESI BAO + Planck ISW</li>
@@ -20,13 +20,13 @@ Mathematically rigorous edition with Israel junction conditions and dynamical at
     <li>Three anomalies resolved: dark energy, S₈ (Yukawa screening), CMB anomaly</li>
   </ul>
   <a href="/cosmic_yoyo_v5_holographic.pdf" download class="viral-button" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; margin-top: 10px; font-weight: bold; text-transform: uppercase;">
-    Download White Paper (PDF, 4 pages)
+    Download White Paper (PDF, 6 pages)
   </a>
 </div>
 
 ## Complete Theory Documentation
 
-### 📄 Full PDF Version (70 pages)
+### 📄 Full PDF Version (55 pages)
 
 The complete theory documentation including all mathematical derivations, observational confrontations, and blog posts.
 
@@ -85,7 +85,7 @@ If you use this work in your research, please cite:
 @misc{provencal2025oscillating,
   title={Oscillating Brane Dark Matter Theory: The Universe as a Vibrating Membrane},
   author={Provencal, Romain},
-  year={2025},
+  year={2026},
   url={https://higgs-cosmology.com}
 }
 ```

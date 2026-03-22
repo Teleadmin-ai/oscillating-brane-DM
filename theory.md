@@ -236,10 +236,10 @@ The "null distance" internally corresponds to external deployment - a return to 
 
 ## Further Reading
 
-- [Introduction to the Universe as a Membrane]({{ site.baseurl }}{% post_url 2024-01-15-introduction-universe-membrane %})
-- [How Dark Matter Excites the Membrane]({{ site.baseurl }}{% post_url 2024-01-16-microscopic-excitation %})
-- [Cosmic Evolution and Chronology]({{ site.baseurl }}{% post_url 2024-01-17-cosmic-chronology %})
-- [Experimental Tests and Predictions]({{ site.baseurl }}{% post_url 2024-01-18-observational-tests %})
+- [Introduction to the Universe as a Membrane]({{ site.baseurl }}{% post_url 2025-07-03-introduction-universe-membrane %})
+- [How Dark Matter Excites the Membrane]({{ site.baseurl }}{% post_url 2025-07-03-microscopic-excitation %})
+- [Cosmic Evolution and Chronology]({{ site.baseurl }}{% post_url 2025-07-03-cosmic-chronology %})
+- [Experimental Tests and Predictions]({{ site.baseurl }}{% post_url 2025-07-03-observational-tests %})
 
 For the complete mathematical derivations and detailed analysis:
 - [Full theoretical framework](/theory-complete/) (comprehensive version with all derivations)

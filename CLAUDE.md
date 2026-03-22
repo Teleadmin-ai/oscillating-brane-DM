@@ -104,7 +104,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 
 ## Downloads
 1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages (filename kept for link stability)
-2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~80 pages
+2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~55 pages
 
 ## V8.0 Computational Scripts
 | Script | Purpose | Output |
