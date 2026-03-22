@@ -4,8 +4,8 @@ Generate a concise 4-5 page white paper for viral distribution.
 Professional LaTeX formatting in Physical Review Letters style.
 """
 
-import subprocess
 import os
+import subprocess
 from pathlib import Path
 
 

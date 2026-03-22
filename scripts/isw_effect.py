@@ -5,6 +5,7 @@ Shows how the 2 Gyr brane oscillation manifests in CMB large-scale anisotropies
 """
 
 import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 

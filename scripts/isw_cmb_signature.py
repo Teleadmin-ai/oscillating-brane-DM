@@ -9,8 +9,8 @@ Author: Romain Provencal (with Claude & Gemini DeepThink)
 Version: 6.0
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 # ==========================================
 # SIMULATION DES DONNÉES ET MODÈLES
