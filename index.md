@@ -18,7 +18,7 @@ title: Home
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of quantum entangled black holes.
 
-**The Cosmic Yoyo V8.0**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor E_μν forcing — the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally (ℓ=0 mode) — the metronome. Conformal symmetry (T^μ_μ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at Λ_QCD = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor (ξRφ) locks the period at T = 2 Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the S₈ tension (via scale-dependent Yukawa screening), and Planck's CMB anomaly.
+**The Cosmic Yoyo V8.0**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor $E_{\mu\nu}$ forcing — the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally ($\ell=0$ mode) — the metronome. Conformal symmetry ($T^\mu{}_\mu = 0$) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda_\text{QCD} = 257$ MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor ($\xi R\phi$) locks the period at $T = 2$ Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the $S_8$ tension (via scale-dependent Yukawa screening), and Planck's CMB anomaly.
 
 <div class="hero-section">
   <div class="key-predictions">
@@ -26,23 +26,23 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
     <table>
       <tr>
         <td><strong>Brane tension</strong></td>
-        <td>τ₀ = 7.0 × 10<sup>19</sup> J/m²</td>
+        <td>$\tau_0 = 7.0 \times 10^{19}$ J/m$^2$</td>
       </tr>
       <tr>
         <td><strong>Oscillation period</strong></td>
-        <td>T = 2.0 ± 0.3 Gyr</td>
+        <td>$T = 2.0 \pm 0.3$ Gyr</td>
       </tr>
       <tr>
         <td><strong>MOND acceleration</strong></td>
-        <td>a₀ = 1.1 × 10<sup>-10</sup> m/s²</td>
+        <td>$a_0 = 1.1 \times 10^{-10}$ m/s$^2$</td>
       </tr>
       <tr>
-        <td><strong>S₈ suppression</strong></td>
+        <td><strong>$S_8$ suppression</strong></td>
         <td>~5% (scale-dependent Yukawa)</td>
       </tr>
       <tr>
         <td><strong>Bayesian evidence</strong></td>
-        <td>Δln K = 3.33 ± 0.24</td>
+        <td>$\Delta\ln K = 3.33 \pm 0.24$</td>
       </tr>
     </table>
   </div>

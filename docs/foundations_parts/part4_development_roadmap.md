@@ -11,25 +11,25 @@ description: |
 ### 6.2 Observational Tests Timeline
 
 **2025-2027 (Near Term)**:
-- **Euclid**: Wide-field weak lensing → S₈ precision to 1%
-- **DESI**: BAO measurements → w(z) amplitude constraints
-- **CMB-S4**: Large-scale anisotropies → ISW resonance detection
-- **JWST**: Ultra-faint dwarf census → subhalo abundance
+- **Euclid**: Wide-field weak lensing -- $S_8$ precision to 1%
+- **DESI**: BAO measurements -- $w(z)$ amplitude constraints
+- **CMB-S4**: Large-scale anisotropies -- ISW resonance detection
+- **JWST**: Ultra-faint dwarf census -- subhalo abundance
 
 **2028-2030 (Medium Term)**:
 - **Vera Rubin Observatory (LSST)**:
-  - 10-year survey → halo profiles to 200 kpc
-  - Stellar streams → substructure constraints
-  - Microlensing → smooth vs clumpy halos
-- **Roman Space Telescope**: High-z structure → growth history
-- **CMB-S4**: Primordial fluctuations → initial conditions
+  - 10-year survey -- halo profiles to 200 kpc
+  - Stellar streams -- substructure constraints
+  - Microlensing -- smooth vs clumpy halos
+- **Roman Space Telescope**: High-z structure -- growth history
+- **CMB-S4**: Primordial fluctuations -- initial conditions
 
 **2030-2035 (Long Term)**:
 - **CMB-S4 Full Survey**:
   - Precision ISW measurements
   - 2 Gyr oscillation signature in large-scale anisotropies
-- **ELT/TMT**: Dwarf galaxy kinematics → core sizes
-- **Advanced gravitational tests**: δg/g measurements
+- **ELT/TMT**: Dwarf galaxy kinematics -- core sizes
+- **Advanced gravitational tests**: $\delta g/g$ measurements
 
 **2035+ (Future)**:
 - **Next-gen CMB experiments**: Enhanced ISW detection
@@ -247,7 +247,7 @@ Based on O3 Pro's comprehensive theoretical analysis, we have identified three c
 #### 6.5.1 Critical Theoretical Challenges
 
 1. **Full 5D Einstein Field Equations**
-   - Current limitation: Using effective 4D approximations with undetermined Weyl term E_μν
+   - Current limitation: Using effective 4D approximations with undetermined Weyl term $E_{\mu\nu}$
    - Required: Full numerical relativity in 5D with dynamically oscillating brane
    - Solution: Extend GRChombo/Einstein Toolkit following BraneCode methodology
 
@@ -271,19 +271,19 @@ Based on O3 Pro's comprehensive theoretical analysis, we have identified three c
 
 **Phase 2: Numerical Infrastructure (Months 6-12)**
 - Extend GRChombo to 5D geometry with adaptive mesh refinement
-- Implement moving boundary conditions with Z₂ symmetry
+- Implement moving boundary conditions with $\mathbb{Z}_2$ symmetry
 - Develop Python/Julia prototypes for rapid testing
 - Validate against known static solutions (RS metric recovery)
 
 **Phase 3: Physical Applications (Months 12-18)**
-- Simulate brane collision scenarios (v_rel ~ 10⁻³c)
-- Include inflationary quantum fluctuations (⟨z²⟩ = (H_inf/2π)²)
+- Simulate brane collision scenarios ($v_\text{rel} \sim 10^{-3}c$)
+- Include inflationary quantum fluctuations ($\langle z^2\rangle = (H_\text{inf}/2\pi)^2$)
 - Add matter/radiation on brane with proper junction conditions
 - Measure gravitational wave emission into bulk
 
 **Phase 4: Quantum Integration (Months 18-24)**
-- Calculate Casimir energy: ρ_Casimir = -π²N_fields/(1440z⁴)
-- Include branon mass: m_branon ~ √(k/M₅) × e^(-kL) ~ 1 eV
+- Calculate Casimir energy: $\rho_\text{Casimir} = -\pi^2 N_\text{fields}/(1440\,z^4)$
+- Include branon mass: $m_\text{branon} \sim \sqrt{k/M_5} \times e^{-kL} \sim 1$ eV
 - Add one-loop corrections to radion potential
 - Study backreaction and vacuum stability
 
@@ -322,7 +322,7 @@ membrane nucleation becomes energetically favorable.
 - Initial separation determines oscillation amplitude
 - Natural scale: $L \sim l_{11}(g_s)^{1/3} \sim 0.2 \mu$m
 
-**4. Dimensional Reduction**: M2-brane wraps 2-cycle → effective 3-brane in 5D
+**4. Dimensional Reduction**: M2-brane wraps 2-cycle -- effective 3-brane in 5D
 
 This provides a microscopic origin for our oscillating 3-brane from fundamental M-theory.
 
@@ -337,34 +337,34 @@ This isn't destruction but **topological phase transition** - the apparent "end"
 
 ### 6.6.1 Bayesian Analysis: Explicit Prior Distributions
 
-The Bayesian evidence calculation (Δln K = 3.33) relies on specific prior choices. Here we document the complete prior specifications:
+The Bayesian evidence calculation ($\Delta\ln K = 3.33$) relies on specific prior choices. Here we document the complete prior specifications:
 
 **Table 1: Prior distributions for Bayesian analysis**
 
 | Model | Parameter | Distribution | Range/Parameters | Units | Motivation |
 |-------|-----------|--------------|------------------|--------|------------|
-| Oscillating | τ₀ | Log-uniform | [10¹⁹, 10²⁰] | J/m² | Scale-invariant prior for unknown energy scale |
-| | f_osc | Uniform | [0.05, 0.20] | - | Weak prior based on halo core constraints |
-| | T | Gaussian | μ=2.0, σ=0.3 | Gyr | Centered on theoretical prediction |
-| | A_w | Uniform | [0.001, 0.005] | - | Constrained by dark energy observations |
-| ΛCDM | H₀ | Uniform | [60, 80] | km/s/Mpc | Wide range covering all measurements |
-| | Ω_m | Gaussian | μ=0.31, σ=0.02 | - | CMB+LSS constraints |
+| Oscillating | $\tau_0$ | Log-uniform | $[10^{19}, 10^{20}]$ | J/m$^2$ | Scale-invariant prior for unknown energy scale |
+| | $f_\text{osc}$ | Uniform | [0.05, 0.20] | - | Weak prior based on halo core constraints |
+| | $T$ | Gaussian | $\mu$=2.0, $\sigma$=0.3 | Gyr | Centered on theoretical prediction |
+| | $A_w$ | Uniform | [0.001, 0.005] | - | Constrained by dark energy observations |
+| $\Lambda$CDM | $H_0$ | Uniform | [60, 80] | km/s/Mpc | Wide range covering all measurements |
+| | $\Omega_m$ | Gaussian | $\mu$=0.31, $\sigma$=0.02 | - | CMB+LSS constraints |
 
 **Prior Sensitivity Analysis**:
-- Conservative priors (wider ranges): Δln K = 2.8 ± 0.4
-- Informative priors (tighter Gaussians): Δln K = 3.6 ± 0.3
+- Conservative priors (wider ranges): $\Delta\ln K = 2.8 \pm 0.4$
+- Informative priors (tighter Gaussians): $\Delta\ln K = 3.6 \pm 0.3$
 - Result: Evidence is robust to reasonable prior variations
 
 **Table 2: Posterior statistics from MCMC analysis**
 
-| Parameter | Mean | Median | Std | 68% CI | R̂ |
+| Parameter | Mean | Median | Std | 68% CI | $\hat{R}$ |
 |-----------|------|--------|-----|--------|-----|
-| τ₀ (J/m²) | 7.08×10¹⁹ | 7.00×10¹⁹ | 1.07×10¹⁹ | [6.03×10¹⁹, 8.13×10¹⁹] | 1.000 |
-| f_osc | 0.100 | 0.100 | 0.020 | [0.081, 0.120] | 1.000 |
-| T (Gyr) | 2.00 | 2.00 | 0.20 | [1.80, 2.20] | 1.000 |
-| A_w | 0.003 | 0.003 | 0.001 | [0.002, 0.004] | 1.000 |
+| $\tau_0$ (J/m$^2$) | $7.08\times 10^{19}$ | $7.00\times 10^{19}$ | $1.07\times 10^{19}$ | $[6.03\times 10^{19}, 8.13\times 10^{19}]$ | 1.000 |
+| $f_\text{osc}$ | 0.100 | 0.100 | 0.020 | [0.081, 0.120] | 1.000 |
+| $T$ (Gyr) | 2.00 | 2.00 | 0.20 | [1.80, 2.20] | 1.000 |
+| $A_w$ | 0.003 | 0.003 | 0.001 | [0.002, 0.004] | 1.000 |
 
-All chains show excellent convergence (R̂ ≈ 1.000) with effective sample sizes > 4900.
+All chains show excellent convergence ($\hat{R} \approx 1.000$) with effective sample sizes > 4900.
 
 ### 6.6.2 PBH Impact on CMB Optical Depth
 
@@ -372,10 +372,10 @@ The oscillating brane model predicts primordial black hole formation in collapsi
 
 **PBH Accretion Model** (Ali-Haïmoud & Kamionkowski 2017):
 - Bondi-Hoyle accretion with velocity suppression
-- Radiative efficiency η ~ 0.1
+- Radiative efficiency $\eta \sim 0.1$
 - Ionization efficiency f_ion ~ 0.3
 
-For our fiducial parameters (M_PBH = 10⁻¹¹ M_⊙, f_PBH = 1%):
+For our fiducial parameters (M_PBH = $10^{-11}$ $M_\odot$, f_PBH = 1%):
 
 ```
 τ_standard = 0.0646 (includes standard reionization)
@@ -385,15 +385,15 @@ For our fiducial parameters (M_PBH = 10⁻¹¹ M_⊙, f_PBH = 1%):
 ```
 
 **Key Finding**: With realistic ionization history, PBH contribution is small for f_PBH ~ 1%. The constraint becomes:
-1. f_PBH < 0.1 for M ~ 10⁻¹¹ M_⊙ (from τ < 0.066)
+1. $f_\text{PBH} < 0.1$ for $M \sim 10^{-11}$ $M_\odot$ (from $\tau < 0.066$)
 2. Accretion is naturally suppressed at high redshift
 3. Model consistent with Planck optical depth
 
-**Figure**: τ vs f_PBH shows linear scaling with maximum f_PBH ~ 0.1 before exceeding Poulin+2017 limit.
+**Figure**: $\tau$ vs $f_\text{PBH}$ shows linear scaling with maximum f_PBH ~ 0.1 before exceeding Poulin+2017 limit.
 
 **Literature Constraints**:
-- Poulin et al. (2017): Δτ < 0.012 at 95% CL
-- Serpico et al. (2020): Spectral distortions limit f_PBH < 0.1 for M ~ 10⁻¹¹ M_⊙
+- Poulin et al. (2017): $\Delta\tau < 0.012$ at 95% CL
+- Serpico et al. (2020): Spectral distortions limit f_PBH < 0.1 for M ~ $10^{-11}$ $M_\odot$
 - Our requirement: Modified accretion physics in oscillating background
 
 ### 6.6.3 2D Numerical Prototype: 5D Einstein Equations
@@ -413,7 +413,7 @@ m_radion = 0.5   # Radion mass
 ```
 
 **Key Results**:
-1. **Oscillation Period**: T_measured = 12.4 ± 0.2 (vs T_expected = 12.57)
+1. **Oscillation Period**: $T_\text{measured} = 12.4 \pm 0.2$ (vs $T_\text{expected} = 12.57$)
    - Agreement within 1.5%
    
 2. **Amplitude**: 37% of extra dimension size for 10% initial displacement
@@ -458,7 +458,7 @@ The oscillating brane dark matter theory, when formulated rigorously, provides a
 - Respects all known physical principles
 - Reproduces major observational successes
 - Makes unique, testable predictions
-- Addresses some tensions in ΛCDM
+- Addresses some tensions in $\Lambda$CDM
 - Emerges from fundamental physics (string theory)
 
 While significant theoretical and observational work remains, the framework shows promise as a geometric explanation for cosmic dark matter, potentially unifying several cosmological mysteries within a single theoretical structure.

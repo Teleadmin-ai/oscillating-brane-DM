@@ -18,16 +18,16 @@ Throughout this section, we use the following conventions:
 |--------|-------------|-------|
 | $M_5$ | 5D Planck mass | GeV (in natural units) |
 | $M_P$ | 4D Planck mass | $1.22 \times 10^{19}$ GeV |
-| $\tau_0$ | Brane tension | J/m² (SI) |
+| $\tau_0$ | Brane tension | J/m$^2$ (SI) |
 | $k$ | AdS curvature | 1/m |
 | $L$ | Extra dimension size | m |
 | $z$ | Brane position | m |
-| $V$ | Potentials | J/m² (surface) or J/m³ (volume) |
+| $V$ | Potentials | J/m$^2$ (surface) or J/m$^3$ (volume) |
 | $\mathcal{E}_{\mu\nu}$ | Projected Weyl tensor | Energy density units |
 
 **Unit conversions**:
-- Energy density: $1$ J/m³ = $6.24 \times 10^{9}$ GeV⁴
-- Tension: $1$ J/m² = $6.24 \times 10^{12}$ GeV³
+- Energy density: $1$ J/m$^3$ = $6.24 \times 10^{9}$ GeV$^4$
+- Tension: $1$ J/m$^2$ = $6.24 \times 10^{12}$ GeV$^3$
 - Natural units: $\hbar = c = 1$ where needed
 
 ### 6.1 Theoretical Challenges
@@ -98,7 +98,7 @@ In the ekpyrotic model, our universe results from a collision between two parall
 
 - **Pre-collision**: Two branes approach with relative velocity $v_{rel} \sim 10^{-3}c$
 - **Collision dynamics**: Kinetic energy converts to radiation + oscillations
-- **Energy partition**: ~99% → radiation (hot Big Bang), ~1% → coherent oscillations
+- **Energy partition**: ~99% $\to$ radiation (hot Big Bang), ~1% $\to$ coherent oscillations
 
 The initial amplitude depends on collision parameters:
 $$A_{osc} = \frac{v_{rel} \tau_{collision}}{\sqrt{M_5^3}} \times \mathcal{F}(v_{rel}, \theta)$$
@@ -177,7 +177,7 @@ Quantum corrections in the warped geometry present unique challenges beyond flat
 
 **1. Casimir Energy in Warped Geometry** [Flachi & Tanaka 2003, Phys.Rev.D 68, 025004]
 
-The Casimir energy density between two branes separated by distance $L$ in AdS₅:
+The Casimir energy density between two branes separated by distance $L$ in AdS$_5$:
 
 $$\rho_{Casimir}(z) = -\frac{\pi^2}{1440} \frac{N_{fields}}{z^4} \left[1 + \frac{45}{2\pi^2}\zeta(3)e^{-2kz} + O(e^{-4kz})\right]$$
 

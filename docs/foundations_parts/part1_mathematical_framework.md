@@ -10,7 +10,7 @@ description: |
 
 ## Executive Summary
 
-This document provides a rigorous mathematical foundation for the oscillating brane dark matter theory, addressing key criticisms and establishing its viability as a competitive cosmological model. We demonstrate compatibility with general relativity and quantum mechanics, provide detailed observational confrontations, and present testable predictions that distinguish our model from ΛCDM and MOND.
+This document provides a rigorous mathematical foundation for the oscillating brane dark matter theory, addressing key criticisms and establishing its viability as a competitive cosmological model. We demonstrate compatibility with general relativity and quantum mechanics, provide detailed observational confrontations, and present testable predictions that distinguish our model from $\Lambda$CDM and MOND.
 
 ## 1. Mathematical Framework and Internal Consistency
 
@@ -30,7 +30,7 @@ where:
 
 ### 1.2 The Radion Field
 
-Brane oscillations are described by a scalar field φ(x) representing the brane's position in the extra dimension:
+Brane oscillations are described by a scalar field $\phi(x)$ representing the brane's position in the extra dimension:
 
 $$\tau(t,\vec{x}) = \tau_0 + \delta\tau \cos(\omega t + \vec{k} \cdot \vec{x})$$
 
@@ -73,7 +73,7 @@ The model must reproduce all GR successes. We ensure this by:
 
 $$A_\text{osc}(r) = A_0 \exp\left(-\frac{\rho_\text{local}}{\rho_\text{crit}}\right)$$
 
-where $\rho_\text{crit} \sim 10^{-26}$ kg/m³ (galactic density scale).
+where $\rho_\text{crit} \sim 10^{-26}$ kg/m$^3$ (galactic density scale).
 
 This ensures:
 - Negligible effects in the Solar System ($\rho \gg \rho_\text{crit}$)
@@ -89,7 +89,7 @@ $$A_\text{osc}(\text{Solar System}) = A_0 \exp\left(-\frac{\rho_\odot}{\rho_\tex
 This yields:
 $$\delta\dot{\omega} < 0.01 \text{ arcsec/century}$$
 
-compared to GR's prediction of 42.98 arcsec/century (observed: 42.98 ± 0.04).
+compared to GR's prediction of 42.98 arcsec/century (observed: $42.98 \pm 0.04$).
 
 **Light Deflection**: The oscillation contribution to deflection angle:
 $$\delta\alpha = \frac{4GM_\odot}{c^2 b} \times \frac{A_\text{osc}^2}{2} < 10^{-9} \alpha_\text{GR}$$
@@ -159,7 +159,7 @@ with scale radius $r_s \sim 10$ kpc, naturally explaining flat rotation curves.
 
 $$v_\text{flat}^4 = G M_\text{baryon} a_0$$
 
-with $a_0 = cH_0/2\pi \times 1.05 = 1.1 \times 10^{-10}$ m/s².
+with $a_0 = cH_0/2\pi \times 1.05 = 1.1 \times 10^{-10}$ m/s$^2$.
 
 ### 3.3 Gravitational Lensing
 
@@ -203,4 +203,4 @@ with oscillating $w(z)$ causing gravitational potentials to pulsate.
 **Unique Signature**: ISW resonance in CMB power spectrum:
 - Resonance peak: $\ell = 10-20$ (angular scale ~12°)
 - Power suppression: 16% at resonance
-- Statistical significance: $\chi^2$ improvement of 32.9 (6σ over ΛCDM)
+- Statistical significance: $\chi^2$ improvement of 32.9 ($6\sigma$ over $\Lambda$CDM)
