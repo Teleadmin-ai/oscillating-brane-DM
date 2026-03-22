@@ -1,7 +1,7 @@
 ---
 layout: dark
 title: "Experimental Tests: Where to Seek the Truth"
-date: 2024-01-18
+date: 2025-07-03
 author: Romain Provencal
 tags: [predictions, experiments, observations]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: dark
 title: "The Universe as a Vibrating Membrane"
-date: 2024-01-15
+date: 2025-07-03
 author: Romain Provencal
 tags: [cosmology, dark-matter, brane-theory]
 ---
@@ -17,7 +17,7 @@ Our theory describes the Universe-brane 4D as a cosmic elastic membrane whose vi
 | Brane tension | τ₀ = 7.0 × 10¹⁹ J/m² | The elasticity of spatial fabric |
 | Oscillation period | T = 2.0 ± 0.3 Gyr | The cosmic heartbeat |
 | MOND acceleration | a₀ = 1.1 × 10⁻¹⁰ m/s² | Gravity at the confines |
-| S₈ suppression | -5.2% | Restored harmony |
+| S₈ suppression | ~5% (scale-dependent Yukawa) | Restored harmony |
 | Bayesian evidence | Δln K = 3.33 ± 0.24 | Promise of truth |
 
 ## The Fundamental Parameters: The Cosmic Alphabet

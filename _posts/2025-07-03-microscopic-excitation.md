@@ -1,7 +1,7 @@
 ---
 layout: dark
 title: "How Dark Matter Makes the Universe Vibrate"
-date: 2024-01-16
+date: 2025-07-03
 author: Romain Provencal
 tags: [dark-matter, mechanics, gravitational-funnels]
 ---

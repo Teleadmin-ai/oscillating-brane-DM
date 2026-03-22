@@ -49,7 +49,7 @@ def generate_whitepaper():
 
 \begin{abstract}
 \noindent
-We propose that the universe is a vibrating 4D membrane anchored at the \textbf{Point Unique}—where all black holes converge to a singular atemporary point. This 2 Gyr oscillation naturally produces: (1) evolving dark energy matching DESI 2024 observations, (2) 5.2\% growth suppression resolving the S$_8$ tension, and (3) ISW resonance explaining Planck's low-$\ell$ anomaly. The theory makes specific, testable predictions with Bayesian evidence $\Delta\ln K = 3.33 \pm 0.24$ favoring it over $\Lambda$CDM.
+We propose that the universe is a vibrating 4D membrane oscillating in a 5D Anti-de Sitter bulk via a hybrid stick-slip motor. This 2 Gyr oscillation naturally produces: (1) evolving dark energy matching DESI 2024 observations, (2) scale-dependent growth suppression resolving the S$_8$ tension via Yukawa screening, and (3) ISW resonance explaining Planck's low-$\ell$ anomaly. The theory resolves eighteen cosmological anomalies with Bayesian evidence $\Delta\ln K = 3.33 \pm 0.24$ favoring it over $\Lambda$CDM.
 \end{abstract}
 
 \section*{The Crisis of Modern Cosmology}
@@ -65,7 +65,7 @@ We show these arise from a single phenomenon: the universe breathes.
 
 \section*{The Cosmic Yoyo Mechanism}
 
-Dark matter perpetually falls through black holes into the \textbf{Point Unique}—that singular place where all black holes converge, where time ceases and beginning meets end. This creates an eternal pulsation:
+Dark matter flows through the ER=EPR-entangled network of primordial black holes—topological capillaries connecting our 4D brane to the 5D bulk where spacetime is emergent. This creates an eternal pulsation driven by the hybrid stick-slip motor:
 
 \begin{equation}
 w(z) = -1 + A_w \sin\left(\frac{2\pi t(z)}{T}\right)
@@ -142,7 +142,7 @@ The oscillating brane naturally resolves three major cosmological crises through
 \begin{itemize}
 \item \textbf{Falsifiable}: Specific predictions for Euclid, DESI, CMB-S4
 \item \textbf{Economical}: One parameter ($T = 2$ Gyr) explains three anomalies
-\item \textbf{Fundamental}: Emerges from Point Unique topology where all black holes meet
+\item \textbf{Fundamental}: Emerges from 5D geometry where ER=EPR-entangled black holes synchronize the brane
 \end{itemize}
 
 \textbf{Full theory and code}: \href{https://higgs-cosmology.com}{higgs-cosmology.com}\\

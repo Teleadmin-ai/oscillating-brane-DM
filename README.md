@@ -16,7 +16,7 @@ This repository contains the complete theoretical framework and computational to
 | Brane tension | τ₀ = 7.0 × 10<sup>19</sup> J/m² | The elasticity of spacetime fabric |
 | Oscillation period | T = 2.0 ± 0.3 Gyr | The cosmic heartbeat |
 | MOND acceleration | a₀ = 1.1 × 10<sup>-10</sup> m/s² | Gravity at the confines |
-| S₈ suppression | -5.2% | Restored harmony |
+| S₈ suppression | ~5% (scale-dependent Yukawa) | Restored harmony |
 | Bayesian evidence | Δln K = 3.33 ± 0.24 | Promise of truth |
 
 ### 📖 Theory Overview
@@ -37,7 +37,7 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
 oscillating-brane-DM/
 ├── README.md                    # This file
 ├── docs/
-│   ├── theory_v4_complete.md    # Full theoretical framework (now v5.0 Holographic)
+│   ├── theoretical_foundations.md  # Rigorous mathematical foundations
 │   ├── membrane_modes.pdf       # Mathematical derivations
 │   └── observational_tests.md   # Experimental predictions
 ├── scripts/
