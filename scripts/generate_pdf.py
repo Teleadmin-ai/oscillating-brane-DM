@@ -37,11 +37,8 @@ class FinalPDFGenerator:
             "index.md",  # Ch 1: Home / Introduction
             "discoveries.md",  # Ch 2: Discovery & Correction
             "theory.md",  # Ch 3: Complete Theoretical Framework
-            "docs/foundations_parts/part1_mathematical_framework.md",  # Ch 4: Mathematical Framework
-            "docs/foundations_parts/part2_comparative_predictions.md",  # Ch 5: Comparative Analysis
-            "docs/foundations_parts/part3_current_limitations.md",  # Ch 6: Current Limitations
-            "docs/foundations_parts/part4_development_roadmap.md",  # Ch 7: Roadmap & References
-            "tools.md",  # Ch 8: Computational Tools
+            "docs/theoretical_foundations.md",  # Ch 4: Theoretical Foundations
+            "tools.md",  # Ch 5: Computational Tools
         ]
 
         for doc in doc_order:
