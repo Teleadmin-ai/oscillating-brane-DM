@@ -495,6 +495,41 @@ def main():
         success = generator.generate_pdf_parts_then_merge(output_path)
 
     if success and output_path.exists():
+        # Compress PDF with Ghostscript (convert bitmap images to JPEG)
+        compressed_path = output_path.with_suffix(".compressed.pdf")
+        try:
+            gs_cmd = [
+                "gs",
+                "-sDEVICE=pdfwrite",
+                "-dCompatibilityLevel=1.5",
+                "-dNOPAUSE",
+                "-dBATCH",
+                "-dQUIET",
+                "-dDownsampleColorImages=true",
+                "-dDownsampleGrayImages=true",
+                "-dColorImageResolution=200",
+                "-dGrayImageResolution=200",
+                "-dColorImageDownsampleType=/Bicubic",
+                "-dAutoFilterColorImages=false",
+                "-dColorImageFilter=/DCTEncode",
+                f"-sOutputFile={compressed_path}",
+                str(output_path),
+            ]
+            result = subprocess.run(gs_cmd, capture_output=True, text=True)
+            if result.returncode == 0 and compressed_path.exists():
+                size_before = output_path.stat().st_size
+                size_after = compressed_path.stat().st_size
+                shutil.move(str(compressed_path), str(output_path))
+                print(
+                    f"\nPDF compressed: {size_before/1024/1024:.1f} MB"
+                    f" -> {size_after/1024/1024:.1f} MB"
+                    f" ({size_after/size_before*100:.0f}%)"
+                )
+            else:
+                print(f"\nGhostscript compression skipped (gs not available)")
+        except FileNotFoundError:
+            print(f"\nGhostscript not installed, skipping compression")
+
         # Copy to latest versions
         latest_path = output_dir / "oscillating_brane_theory_latest.pdf"
         shutil.copy2(output_path, latest_path)
