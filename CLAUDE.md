@@ -1,7 +1,7 @@
 # CLAUDE.md - Project Information for AI Assistants
 
 ## Project Overview
-**Oscillating Brane Dark Matter Theory V8.0 (Hybrid Topology Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome).
+**Oscillating Brane Cosmology V8.0 (Hybrid Topology Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome).
 
 **Author**: Romain Provencal (provencal.romain@teleadmin.net) - Independent conceptual researcher
 **AI Collaborators**: Claude (Anthropic) & Gemini DeepThink (Google) as theoretical co-processors

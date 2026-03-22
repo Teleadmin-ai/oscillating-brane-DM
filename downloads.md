@@ -31,7 +31,7 @@ Mathematically rigorous edition with Israel junction conditions and dynamical at
 The complete theory documentation including all mathematical derivations, observational confrontations, and computational validation.
 
 <div style="margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
-  <h4>🔗 Oscillating Brane Dark Matter Theory - Complete Documentation</h4>
+  <h4>🔗 Oscillating Brane Cosmology - Complete Documentation</h4>
   <p>Comprehensive PDF containing the full theoretical framework, mathematical foundations, and all supporting materials.</p>
   <a href="/oscillating_brane_theory_latest.pdf" download class="download-button" style="display: inline-block; padding: 10px 20px; background: #4a90e2; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px;">
     📥 Download PDF (Latest Version)
@@ -83,7 +83,7 @@ If you use this work in your research, please cite:
 
 ```bibtex
 @misc{provencal2025oscillating,
-  title={Oscillating Brane Dark Matter Theory: The Universe as a Vibrating Membrane},
+  title={Oscillating Brane Cosmology: The Universe as a Vibrating Membrane},
   author={Provencal, Romain},
   year={2025},
   url={https://higgs-cosmology.com}
