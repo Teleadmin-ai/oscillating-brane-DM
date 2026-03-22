@@ -523,4 +523,4 @@ While significant theoretical and observational work remains, the framework show
 - **Einstein Toolkit**: https://einsteintoolkit.org (modular, extensible to 5D)
 - **NRPy+**: https://github.com/zachetienne/nrpytutorial (Python-based code generation)
 
-For complete references and technical details, see the [Complete Theory](/theory-complete/) document and [O3 Pro Response](../o3_pro_theoretical_challenges.md).
+For complete references and technical details, see the [Complete Theory](/theory/) document and [O3 Pro Response](../o3_pro_theoretical_challenges.md).
