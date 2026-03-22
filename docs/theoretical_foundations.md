@@ -810,7 +810,7 @@ def log_prior(theta):
 numpy>=1.20.0
 scipy>=1.7.0
 matplotlib>=3.4.0
-emcee>=3.1.0
+dynesty>=2.1.0
 corner>=2.2.0
 astropy>=5.0  # For cosmological calculations
 h5py>=3.0     # For data storage

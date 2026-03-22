@@ -73,15 +73,15 @@ from scripts.bayesian_analysis import BayesianAnalyzer
 
 # Run analysis with your data
 analyzer = BayesianAnalyzer(observational_data)
-sampler = analyzer.run_mcmc(model='oscillating')
-log_evidence, error = analyzer.compute_evidence(sampler)
+results = analyzer.run_nested_sampling(model='oscillating')
+log_evidence, error = results.logz[-1], results.logzerr[-1]
 ```
 
 **Capabilities**:
-- MCMC sampling with emcee
-- Evidence calculation
-- Parameter constraints
-- Model comparison statistics
+- Nested sampling with dynesty (rigorous Bayesian evidence)
+- Marginal likelihood calculation (ln Z)
+- Parameter constraints and posterior convergence
+- Model comparison (Bayes factor Δln K)
 
 ## Interactive Notebooks
 
@@ -101,7 +101,7 @@ cd oscillating-brane-DM
 
 2. Install dependencies:
 ```bash
-pip install numpy scipy matplotlib emcee corner
+pip install numpy scipy matplotlib dynesty corner h5py tqdm
 ```
 
 3. Run example:
