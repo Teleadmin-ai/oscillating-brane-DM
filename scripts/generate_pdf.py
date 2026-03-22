@@ -38,7 +38,8 @@ class FinalPDFGenerator:
             "discoveries.md",  # Ch 2: Discovery & Correction
             "theory.md",  # Ch 3: Complete Theoretical Framework
             "docs/theoretical_foundations.md",  # Ch 4: Theoretical Foundations
-            "tools.md",  # Ch 5: Computational Tools
+            "laboratory.md",  # Ch 5: Laboratory Proofs
+            "tools.md",  # Ch 6: Computational Tools
         ]
 
         for doc in doc_order:

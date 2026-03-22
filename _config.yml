@@ -38,6 +38,8 @@ navigation:
     url: /predictions/
   - title: Discoveries
     url: /discoveries/
+  - title: Laboratory
+    url: /laboratory/
   - title: Tools
     url: /tools/
   - title: Downloads
