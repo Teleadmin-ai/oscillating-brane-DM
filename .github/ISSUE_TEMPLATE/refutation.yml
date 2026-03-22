@@ -1,0 +1,76 @@
+name: "Scientific Refutation"
+description: "Challenge a specific claim of the Oscillating Brane Cosmology V8.0"
+title: "[Refutation] "
+labels: ["refutation", "pending-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Scientific Refutation Template
+        Thank you for engaging with the theory. All rigorous scientific critiques are welcome.
+        Your argument will be reviewed and responded to with detailed calculations.
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: "Which aspect of the theory do you contest?"
+      options:
+        - "Core Physics (Stick-Slip Motor, ODE)"
+        - "BBN Protection (Conformal Symmetry)"
+        - "Dark Energy w(z) (DESI)"
+        - "S₈ Tension (Yukawa Screening)"
+        - "ISW Resonance (Planck)"
+        - "PBH Wave-Optics Immunity"
+        - "Bayesian Evidence (Δln K)"
+        - "Cosmic Chronology"
+        - "Lithium-7 Problem"
+        - "Baryon Asymmetry"
+        - "CMB Birefringence"
+        - "NANOGrav / eROSITA / DF2 / Amaterasu"
+        - "Laboratory Predictions (qBOUNCE)"
+        - "5D Geometric Bypass"
+        - "Mathematical Consistency"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: argument
+    attributes:
+      label: "Your scientific argument"
+      description: "State your objection clearly. Include equations (LaTeX syntax supported), references, and data."
+      placeholder: |
+        Example: "The Yukawa screening G_eff(k) = G_N(1 + α exp(-k/k_L)) with L = 0.2 μm
+        implies k_L ~ 10^30 Mpc⁻¹, making the correction uniform across all cosmological
+        scales. How do you obtain scale-dependent S₈ suppression?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "Supporting references"
+      description: "Published papers, arxiv preprints, or experimental data supporting your objection."
+      placeholder: "e.g., Niikura et al. (2019), Nature Astronomy 3, 524"
+
+  - type: dropdown
+    id: attribution
+    attributes:
+      label: "Attribution preference"
+      description: "If your critique leads to a theory update, how should you be credited?"
+      options:
+        - "Use my GitHub username"
+        - "Use my real name (I will provide it)"
+        - "Remain anonymous"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Engagement terms"
+      options:
+        - label: "I understand this is a scientific discussion. My argument is based on physics, mathematics, or observational data."
+          required: true
+        - label: "I accept that my critique will be publicly visible and may be responded to with counter-arguments."
+          required: true

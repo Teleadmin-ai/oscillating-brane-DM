@@ -44,6 +44,8 @@ navigation:
     url: /tools/
   - title: Downloads
     url: /downloads/
+  - title: Peer Review
+    url: /refutation/
   - title: About
     url: /about/
 
