@@ -31,14 +31,12 @@ class FinalPDFGenerator:
         """Find all markdown files and extract their front matter."""
         files = []
 
-        # V8.0 curated structure — 8 chapters, no duplicates
-        # Removed: theory.md (duplicate of theory_v4), chronology.md (inside theory_v4),
-        #          predictions.md (inside theory_v4), about.md (non-essential),
-        #          all blog posts (duplicates of main chapters)
+        # V8.0 structure — site pages + technical docs, no duplicates
+        # Each entry = a page on the site = a chapter in the PDF
         doc_order = [
             "index.md",  # Ch 1: Home / Introduction
             "discoveries.md",  # Ch 2: Discovery & Correction
-            "docs/theory_v4_complete.md",  # Ch 3: Complete Theory V8.0
+            "theory.md",  # Ch 3: Complete Theoretical Framework
             "docs/foundations_parts/part1_mathematical_framework.md",  # Ch 4: Mathematical Framework
             "docs/foundations_parts/part2_comparative_predictions.md",  # Ch 5: Comparative Analysis
             "docs/foundations_parts/part3_current_limitations.md",  # Ch 6: Current Limitations
