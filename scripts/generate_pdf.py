@@ -55,15 +55,15 @@ class FinalPDFGenerator:
 
         # V8.0 curated file list — 8 chapters, zero duplication
         doc_order = [
-            "index.md",                                              # Frontmatter / Introduction
-            "discoveries.md",                                        # Ch 1: Discovery & Correction
-            "theory.md",                                             # Ch 2: Theoretical Framework (canonical)
-            "chronology.md",                                         # Ch 3: Cosmic Chronology
-            "docs/foundations_parts/part1_mathematical_framework.md", # Ch 4: Math Framework & Stability
-            "predictions.md",                                        # Ch 5: Predictions & Tests
-            "docs/foundations_parts/part2_comparative_predictions.md", # Ch 6: Comparative & Falsifiability
-            "docs/foundations_parts/part3_current_limitations.md",    # Ch 7: Limitations & Challenges
-            "docs/foundations_parts/part4_development_roadmap.md",    # Ch 8: Tools, Roadmap & References
+            "index.md",  # Frontmatter / Introduction
+            "discoveries.md",  # Ch 1: Discovery & Correction
+            "theory.md",  # Ch 2: Theoretical Framework (canonical)
+            "chronology.md",  # Ch 3: Cosmic Chronology
+            "docs/foundations_parts/part1_mathematical_framework.md",  # Ch 4: Math Framework & Stability
+            "predictions.md",  # Ch 5: Predictions & Tests
+            "docs/foundations_parts/part2_comparative_predictions.md",  # Ch 6: Comparative & Falsifiability
+            "docs/foundations_parts/part3_current_limitations.md",  # Ch 7: Limitations & Challenges
+            "docs/foundations_parts/part4_development_roadmap.md",  # Ch 8: Tools, Roadmap & References
         ]
 
         for doc in doc_order:
