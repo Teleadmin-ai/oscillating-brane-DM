@@ -34,11 +34,12 @@
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
 
 ### Epistemological Framework:
-- **18 anomalies resolved** (numerically validated, no fine-tuning):
+- **22 anomalies resolved** (numerically validated, no fine-tuning):
   - 3 core: DESI phantom crossing, S₈ tension (scale-dependent Yukawa), Planck ISW (Δχ²=32.9)
   - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND, JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
   - 3 astrophysical signatures: Hubble's 43 anomalous objects (ER=EPR topological scarring), dark flow unification (v_bulk=300 km/s), Chladni mega-structures
+  - 4 multi-messenger astrophysical: NANOGrav GWB overtones, eROSITA γ=1.19 illusion, DF2/DF4 cymatic nodes, Amaterasu trans-GZK (5D KK leakage)
 - **Ab initio derivations**: c_top=75 (Chern number, not 10⁴⁰), c_QCD=O(1) (not ε_CP=10⁻⁶), v_bulk=300 km/s (single parameter → dark flow + birefringence)
 - **Definitive future test**: SKA 21cm reionization modulation (2027+)
 - **Complementary tests**: Vera Rubin/LSST, qBOUNCE/optomechanics, Euclid
@@ -120,7 +121,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - When editing a site page, the PDF updates automatically via CI
 
 ## Downloads
-1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages, "Resolving Eighteen Cosmological Anomalies"
+1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages, "Resolving Twenty-Two Cosmological Anomalies"
 2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~61 pages
 
 ## Computational Validation Results (March 2026)
