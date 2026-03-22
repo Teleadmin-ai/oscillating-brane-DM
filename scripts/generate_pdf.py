@@ -20,49 +20,60 @@ class FinalPDFGenerator:
     def __init__(self, base_dir: Path):
         self.base_dir = base_dir
         self.metadata = {
-            "title": "Oscillating Brane Dark Matter Theory - Complete Documentation",
+            "title": "Oscillating Brane Dark Matter Theory V8.0 — Hybrid Topology Edition",
             "author": "Romain Provencal",
             "date": datetime.now().strftime("%B %Y"),
-            "subtitle": "The Universe as a Vibrating Membrane",
+            "subtitle": "The Cosmic Yoyo: A Vibrating 4D Membrane in 5D Anti-de Sitter Space",
         }
         self.chapter_count = 0
 
+    # V8.0 Restructured chapter titles — eliminates all Frankenstein duplicates
+    CHAPTER_TITLES = {
+        "index.md": "The Cosmic Yoyo Theory",
+        "discoveries.md": "Discovery & Correction of Modern Cosmology",
+        "theory.md": "Complete Theoretical Framework",
+        "chronology.md": "Cosmic Chronology: From Inflation to the Current Beat",
+        "docs/foundations_parts/part1_mathematical_framework.md": "Mathematical Framework & Stability",
+        "predictions.md": "Observational Predictions & Experimental Tests",
+        "docs/foundations_parts/part2_comparative_predictions.md": "Comparative Analysis & Falsifiability",
+        "docs/foundations_parts/part3_current_limitations.md": "Current Limitations & Theoretical Challenges",
+        "docs/foundations_parts/part4_development_roadmap.md": "Computational Tools, Roadmap & References",
+    }
+
     def find_markdown_files(self) -> List[Tuple[Path, Dict]]:
-        """Find all markdown files and extract their front matter."""
+        """Find markdown files for the 8-chapter V8.0 structure (no duplicates).
+
+        Eliminated files (absorbed into canonical chapters):
+        - about.md → acknowledgments in preface
+        - tools.md → absorbed into Ch 8 (part4_development_roadmap)
+        - docs/theory_v4_complete.md → duplicates theory.md
+        - docs/theoretical_foundations.md → duplicates theory.md + part1
+        - docs/observational_tests.md → duplicates predictions.md
+        - All _posts/*.md → duplicate various chapters
+        """
         files = []
 
-        # Main documentation files (in order)
+        # V8.0 curated file list — 8 chapters, zero duplication
         doc_order = [
-            "index.md",
-            "theory.md",
-            "chronology.md",
-            "predictions.md",
-            "discoveries.md",
-            "tools.md",
-            "about.md",
-            # Technical docs
-            "docs/theory_v4_complete.md",
-            # Split foundation files
-            "docs/foundations_parts/part1_mathematical_framework.md",
-            "docs/foundations_parts/part2_comparative_predictions.md",
-            "docs/foundations_parts/part3_current_limitations.md",
-            "docs/foundations_parts/part4_development_roadmap.md",
+            "index.md",                                              # Frontmatter / Introduction
+            "discoveries.md",                                        # Ch 1: Discovery & Correction
+            "theory.md",                                             # Ch 2: Theoretical Framework (canonical)
+            "chronology.md",                                         # Ch 3: Cosmic Chronology
+            "docs/foundations_parts/part1_mathematical_framework.md", # Ch 4: Math Framework & Stability
+            "predictions.md",                                        # Ch 5: Predictions & Tests
+            "docs/foundations_parts/part2_comparative_predictions.md", # Ch 6: Comparative & Falsifiability
+            "docs/foundations_parts/part3_current_limitations.md",    # Ch 7: Limitations & Challenges
+            "docs/foundations_parts/part4_development_roadmap.md",    # Ch 8: Tools, Roadmap & References
         ]
 
-        # Add ordered docs first
         for doc in doc_order:
             path = self.base_dir / doc
             if path.exists():
                 front_matter = self.extract_front_matter(path)
+                # Override title with V8.0 restructured chapter title
+                if doc in self.CHAPTER_TITLES:
+                    front_matter["title"] = self.CHAPTER_TITLES[doc]
                 files.append((path, front_matter))
-
-        # Add blog posts
-        posts_dir = self.base_dir / "_posts"
-        if posts_dir.exists():
-            posts = sorted(posts_dir.glob("*.md"), reverse=True)
-            for post in posts:
-                front_matter = self.extract_front_matter(post)
-                files.append((post, front_matter))
 
         return files
 
@@ -301,16 +312,25 @@ header-includes:
 
 # Preface
 
-This document contains the complete theoretical framework and documentation for the Oscillating Brane Dark Matter Theory, where the universe is conceptualized as a vibrating 4-dimensional membrane in 5D space.
+**Version 8.0 --- Hybrid Topology Edition (March 2026)**
+
+The Universe is a vibrating 4D membrane in 5D Anti-de Sitter space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome).
 
 **Key Parameters:**
 
-- Brane tension: 7.0e19 J/m²
-- Oscillation period: T = 2.0 Gyr (±0.3)
-- Extra dimension size: L = 0.2 microns
-- MOND acceleration: a0 = 1.1e-10 m/s²
+| Parameter | Value |
+|-----------|-------|
+| Brane tension $\\tau_0$ | $7.0 \\times 10^{{19}}$ J/m$^2$ = 0.017 GeV$^3$ |
+| Energy scale $\\tau_0^{{1/3}}$ | 257 MeV $\\approx \\Lambda_{{QCD}}$ |
+| Period $T$ | 2.0 $\\pm$ 0.3 Gyr |
+| Phase $\\phi_0$ | $\\pi/2$ |
+| Extra dimension $L$ | 0.2 $\\mu$m |
+| PBH mass function | $10^{{-14}}$ to $10^{{-10}}$ $M_\\odot$ (log-normal) |
+| Fresnel parameter | $w_F \\approx 0.03 \\ll 1$ |
 
-The theory proposes that dark matter effects emerge from membrane oscillations excited by gravitational flows, naturally producing dark energy and MOND-like phenomena.
+**Three anomalies resolved:** DESI phantom crossing, $S_8$ tension (scale-dependent Yukawa), Planck ISW ($\\Delta\\chi^2 = 32.9$, $6\\sigma$). **Definitive future test:** SKA 21 cm reionization modulation (2027+).
+
+*Human-AI collaboration: Romain Provencal (conceptual architect) with Claude (Anthropic) and Gemini DeepThink (Google) as mathematical co-processors.*
 
 \\newpage
 
@@ -343,11 +363,9 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
         print(f"  Size: {len(combined_md)} bytes ({len(combined_md)/1024:.1f} KB)")
 
         # Generate PDF using multiple attempts with different engines
+        # xelatex first — source files contain Unicode (Greek letters, symbols)
+        # that pdflatex cannot handle without heavy preprocessing
         engines = [
-            (
-                "pdflatex",
-                ["--pdf-engine=pdflatex", "--pdf-engine-opt=-interaction=nonstopmode"],
-            ),
             (
                 "xelatex",
                 ["--pdf-engine=xelatex", "--pdf-engine-opt=-interaction=nonstopmode"],
@@ -355,6 +373,10 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
             (
                 "lualatex",
                 ["--pdf-engine=lualatex", "--pdf-engine-opt=-interaction=nonstopmode"],
+            ),
+            (
+                "pdflatex",
+                ["--pdf-engine=pdflatex", "--pdf-engine-opt=-interaction=nonstopmode"],
             ),
         ]
 
