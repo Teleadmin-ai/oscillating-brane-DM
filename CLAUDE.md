@@ -97,11 +97,15 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | ξ (non-minimal coupling) | ~0.15 |
 | Fresnel parameter (PBH) | w_F = 2πr_s/λ ≈ 0.03 ≪ 1 (wave-optics immune) |
 
-## PDF Generation — Race Condition
+## PDF Generation
 CI auto-pushes PDF. After modifying .md files:
-1. `python3 scripts/generate_pdf.py`
+1. `python3 scripts/generate_pdf.py` (generates + compresses via Ghostscript)
 2. Verify: `pdftotext oscillating_brane_theory_latest.pdf - | grep -i "GHOST"`
-3. Resolve conflicts: `git checkout --ours oscillating_brane_theory_latest.pdf`
+3. CI race condition: `git stash && git pull --rebase && git stash pop; git push`
+
+### Compression
+PDF pipeline includes Ghostscript post-processing (JPEG/DCT at 200 dpi).
+Reduces ~2 MB → ~1.1 MB without quality loss. Requires `ghostscript` package (installed in CI).
 
 ### Ghost grep (V8.0):
 ```bash
@@ -122,7 +126,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 
 ## Downloads
 1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages, "Resolving Twenty-Two Cosmological Anomalies"
-2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~61 pages
+2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~63 pages (~1.1 MB compressed)
 
 ## Computational Validation Results (March 2026)
 | Validation | Method | Key Result |
@@ -157,6 +161,11 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | `scripts/bbn_thermal_freezeout.py` | BBN via conformal symmetry & trace anomaly | `plots/bbn_thermal_freezeout.png` |
 | `scripts/growth_scale_dependent.py` | Scale-dependent S₈ Yukawa (legacy) | `plots/growth_scale_dependent.png` |
 | `scripts/numerical_relativity_1d.py` | 5D radiative damping (1+1)D MoL | `plots/warped_shielding_1D.png` |
+
+## CI / Code Quality
+- **black + isort**: All scripts must pass `black --check scripts/` and `isort --check-only scripts/`
+- After adding/modifying any `.py` file: run `black scripts/*.py && isort scripts/*.py` before commit
+- CI job `test` will fail if formatting is wrong — does not affect PDF or site deployment
 
 ## Human-AI Collaboration
 Romain = conceptual architect (Faraday). AI = mathematical co-processors (Maxwell). Radically transparent acknowledgments. Never minimize AI involvement.
