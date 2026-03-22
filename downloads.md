@@ -28,7 +28,7 @@ Mathematically rigorous edition with Israel junction conditions and dynamical at
 
 ### 📄 Full PDF Version (55 pages)
 
-The complete theory documentation including all mathematical derivations, observational confrontations, and blog posts.
+The complete theory documentation including all mathematical derivations, observational confrontations, and comparative analysis.
 
 <div style="margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
   <h4>🔗 Oscillating Brane Dark Matter Theory - Complete Documentation</h4>
@@ -82,7 +82,7 @@ All computational tools are available in the [GitHub repository](https://github.
 If you use this work in your research, please cite:
 
 ```bibtex
-@misc{provencal2025oscillating,
+@misc{provencal2026oscillating,
   title={Oscillating Brane Dark Matter Theory: The Universe as a Vibrating Membrane},
   author={Provencal, Romain},
   year={2026},

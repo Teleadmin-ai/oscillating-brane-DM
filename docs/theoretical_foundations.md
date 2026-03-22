@@ -225,7 +225,7 @@ with:
 | **Cusp-Core** | Cores ~10 kpc | Cusps (ρ ∝ r⁻¹) | Cores (by construction) |
 | **Missing Satellites** | Factor 2-3 reduction | Too many by 5-10× | Better match |
 | **Direct Detection** | σ < 10⁻⁴⁸ cm² forever | σ > 10⁻⁴⁷ cm² expected | No prediction |
-| **S₈ Tension** | Resolved (-5.2%) | 3σ tension | Not addressed |
+| **S₈ Tension** | Resolved (scale-dep. Yukawa) | 3σ tension | Not addressed |
 | **H₀ Tension** | Potential resolution | 5σ tension | Not addressed |
 | **GW Prediction** | f₀ = 1.6×10⁻¹⁷ Hz | None specific | None |
 | **Falsifiability** | Multiple clear tests | Particle discovery | Limited tests |
@@ -256,7 +256,7 @@ with:
 | Extra dimension L | 0.2 μm | Factor of 2 | KK modes | 2035+ |
 | KK mass m_KK | 1 eV | ±0.5 eV | Cosmological bounds | Current |
 | **Cosmological Effects** |
-| S₈ suppression | -5.2% | ±0.5% | Weak lensing | Current |
+| S₈ suppression | ~5% (scale-dep.) | ±0.5% | Weak lensing | Current |
 | w(z) amplitude A_w | 0.003 | ±0.001 | BAO + SNe | 2025+ |
 | H₀ anisotropy | 0.01% | ±0.005% | Precision cosmology | 2030+ |
 | **Gravitational Signatures** |

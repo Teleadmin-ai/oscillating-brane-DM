@@ -46,13 +46,11 @@ The next generation of experiments will provide crucial tests:
 
 ### 1. Growth Suppression
 
-The oscillating w(z) leads to a 5.2% suppression in structure growth:
-
-$$\frac{D_+^{osc}}{D_+^{ΛCDM}}(z=0) = 0.948$$
+The extra dimension introduces a Yukawa correction $G_{eff}(k) = G_N(1 + \alpha\,e^{-k/k_L})$ producing scale-dependent growth suppression (~5% at non-linear scales, quasi-standard at linear scales).
 
 This naturally reconciles:
-- Planck S₈ = 0.83
-- Weak lensing S₈ ≈ 0.79
+- Planck / CMB S₈ = 0.83 (linear scales, quasi-standard gravity)
+- DES weak lensing S₈ ≈ 0.79 (non-linear scales, ~5% suppression)
 
 ### 2. The Membrane Reversal Signature
 
