@@ -46,7 +46,7 @@ This poetic vision guides our scientific exploration. We seek to understand the 
 - Check our [predictions]({{ '/predictions/' | relative_url }}) against your data
 
 ### For Students
-- Start with our [introductory post]({{ site.baseurl }}{% post_url 2025-07-03-introduction-universe-membrane %})
+- Start with our [introductory post]({{ site.baseurl }}{% post_url 2024-01-15-introduction-universe-membrane %})
 - Try our Python scripts to understand the calculations
 - Join the discussion on our GitHub repository
 

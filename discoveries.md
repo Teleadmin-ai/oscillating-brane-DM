@@ -107,7 +107,7 @@ $$\Delta\chi^2 = 32.9 \quad (6\sigma \text{ improvement over } \Lambda\text{CDM}
 
 ### 3.4. Dark Matter Invisibility: Direct Detection Failures
 
-The LZ experiment holds the world record, excluding spin-independent WIMP-nucleon cross-sections down to $2.2 \times 10^{-48}$ cm$^2$ at 36 GeV (December 2025). LZ now detects solar neutrinos via coherent elastic neutrino-nucleus scattering (CEvNS) at $4.5\sigma$, plunging into the irreducible "neutrino fog". LHC Run 3 at 13.6 TeV found no evidence of beyond-Standard-Model physics.
+The LZ experiment holds the world record, excluding spin-independent WIMP-nucleon cross-sections down to $2.2 \times 10^{-48}$ cm$^2$ at 36 GeV (December 2025). LZ now detects solar neutrinos via coherent elastic neutrino-nucleus scattering (CE$\nu$NS) at $4.5\sigma$, plunging into the irreducible "neutrino fog". LHC Run 3 at 13.6 TeV found no evidence of beyond-Standard-Model physics.
 
 In the Brane paradigm, this series of null results is not a disappointment but confirmation of a primordial ontological prediction: **there are no WIMP particles to detect**. The colossal gravitational effects attributed to an invisible particle halo arise from geometric properties --- the coupling between Yukawa-screened $G_{eff}(k)$ and the diffuse topological anchoring by the macroscopic PBH network. Dark matter is geometric, arising from the 5D Weyl tensor projected via Shiromizu-Maeda-Sasaki junction conditions.
 

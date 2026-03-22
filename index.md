@@ -7,7 +7,7 @@ title: Home
 ## *The Cosmic Yoyo Theory*
 
 <div style="text-align: center; margin: 30px 0;">
-  <h2 style="color: #00ffcc; margin-bottom: 20px;">Watch the Universe Breathe</h2>
+  <h2 style="color: #00ffcc; margin-bottom: 20px;">⚡ Watch the Universe Breathe ⚡</h2>
   <img src="/plots/cosmic_yoyo_simple.gif" alt="Cosmic Yoyo Animation" style="max-width: 100%; border: 2px solid #00ffcc; border-radius: 10px; box-shadow: 0 0 20px rgba(0,255,204,0.5);">
   <p style="color: #888; margin-top: 10px; font-style: italic;">13.8 billion years of cosmic evolution: The membrane oscillates, dark energy pulsates, structure growth modulates</p>
 </div>
@@ -18,31 +18,31 @@ title: Home
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of quantum entangled black holes.
 
-**The Cosmic Yoyo V8.0**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor $E_{\mu\nu}$ forcing — the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally ($\ell=0$ mode) — the metronome. Conformal symmetry ($T^\mu{}_\mu = 0$) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda_\text{QCD} = 257$ MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor ($\xi R\phi$) locks the period at $T = 2$ Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the $S_8$ tension (via scale-dependent Yukawa screening), and Planck's CMB anomaly.
+**The Cosmic Yoyo V8.0**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor E_μν forcing — the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally (ℓ=0 mode) — the metronome. Conformal symmetry (T^μ_μ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at Λ_QCD = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor (ξRφ) locks the period at T = 2 Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the S₈ tension (via scale-dependent Yukawa screening), and Planck's CMB anomaly.
 
 <div class="hero-section">
   <div class="key-predictions">
-    <h3>Key Predictions</h3>
+    <h3>🌌 Key Predictions</h3>
     <table>
       <tr>
         <td><strong>Brane tension</strong></td>
-        <td>$\tau_0 = 7.0 \times 10^{19}$ J/m$^2$</td>
+        <td>τ₀ = 7.0 × 10<sup>19</sup> J/m²</td>
       </tr>
       <tr>
         <td><strong>Oscillation period</strong></td>
-        <td>$T = 2.0 \pm 0.3$ Gyr</td>
+        <td>T = 2.0 ± 0.3 Gyr</td>
       </tr>
       <tr>
         <td><strong>MOND acceleration</strong></td>
-        <td>$a_0 = 1.1 \times 10^{-10}$ m/s$^2$</td>
+        <td>a₀ = 1.1 × 10<sup>-10</sup> m/s²</td>
       </tr>
       <tr>
-        <td><strong>$S_8$ suppression</strong></td>
-        <td>~5% (scale-dependent Yukawa)</td>
+        <td><strong>S₈ suppression</strong></td>
+        <td>-5.2%</td>
       </tr>
       <tr>
         <td><strong>Bayesian evidence</strong></td>
-        <td>$\Delta\ln K = 3.33 \pm 0.24$</td>
+        <td>Δln K = 3.33 ± 0.24</td>
       </tr>
     </table>
   </div>
@@ -96,13 +96,13 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 <div style="text-align: center; margin: 40px 0;">
   <div style="display: inline-block; margin: 0 15px;">
     <a href="/cosmic_yoyo_v5_holographic.pdf" download style="display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,255,204,0.4);">
-      White Paper (6 pages)
+      White Paper (5 pages)
     </a>
     <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">V8.0 Hybrid Topology Edition</p>
   </div>
   <div style="display: inline-block; margin: 0 15px;">
     <a href="/downloads/" class="download-main-button" style="display: inline-block; padding: 14px 28px; background: #4a90e2; color: white; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
-      Full Theory (55 pages)
+      Full Theory (70 pages)
     </a>
     <p style="margin: 5px 0 0 0; font-size: 12px; color: #888;">Complete documentation</p>
   </div>

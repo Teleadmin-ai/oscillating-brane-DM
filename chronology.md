@@ -12,12 +12,12 @@ The evolution of brane tension from the Big Bang to today reveals how the univer
 
 ## Timeline of Brane Evolution
 
-| Phase | Age | $\tau$ (J/m$^2$) | Description |
+| Phase | Age | τ (J/m²) | Description |
 |-------|-----|----------|-------------|
-| Inflation | $0 \to 10^{-34}$ s | $10^{50}$ | Quasi-exponential expansion, hyper-tense brane |
-| Brane Reheating | $10^{-34} \to 10^{-32}$ s | $10^{30}$ | Tension decay via MN-antiMN production in bulk |
-| Relaxation | $10^{-32}$ s $\to$ 1 Gyr | $10^{27} \to 7\times 10^{19}$ | $\tau \propto t^{-1/2}$, fundamental mode enters resonance $\approx$ 1 Gyr |
-| Current Era | 13.8 Gyr | $7\times 10^{19}$ | Stable oscillation with 2 Gyr period |
+| Inflation | 0 → 10<sup>-34</sup> s | 10<sup>50</sup> | Quasi-exponential expansion, hyper-tense brane |
+| Brane Reheating | 10<sup>-34</sup> → 10<sup>-32</sup> s | 10<sup>30</sup> | Tension decay via MN-antiMN production in bulk |
+| Relaxation | 10<sup>-32</sup> s → 1 Gyr | 10<sup>27</sup> → 7×10<sup>19</sup> | τ ∝ t<sup>-1/2</sup>, fundamental mode enters resonance ≈ 1 Gyr |
+| Current Era | 13.8 Gyr | 7×10<sup>19</sup> | Stable oscillation with 2 Gyr period |
 
 ## Physical Processes
 
@@ -39,13 +39,13 @@ This natural cooling allows the fundamental mode to enter resonance when the osc
 
 ### Current Oscillations
 Today, the brane has reached its equilibrium configuration:
-- Stable tension $\tau_0 = 7\times 10^{19}$ J/m$^2$
+- Stable tension τ₀ = 7×10<sup>19</sup> J/m²
 - Fundamental period T = 2.0 Gyr
 - 10% of dark matter participates in oscillations
 
 ## Connection to Standard Cosmology
 
-Our framework preserves all successful predictions of $\Lambda$CDM while adding:
+Our framework preserves all successful predictions of ΛCDM while adding:
 1. Natural explanation for dark energy timing
 2. Mechanism for MOND-like effects at large scales
 3. Testable oscillations in cosmological observables

@@ -30,14 +30,14 @@ The oscillating brane theory V8.0 makes specific, testable predictions that dist
 
 ### Established Confirmations (2024-2026)
 
-**Already Observed:**
-- **DESI 2024-2026**: Dark energy evolves with $4\sigma$ significance — exactly matching our oscillating $w(z)$ with $\phi_0 = \pi/2$
-- **$S_8$ tension**: Scale-dependent growth suppression via Yukawa-screened $G_\text{eff}(k)$ bridges DES/KiDS gap
+**✅ Already Observed:**
+- **DESI 2024-2026**: Dark energy evolves with 4σ significance — exactly matching our oscillating w(z) with φ₀ = π/2
+- **S₈ tension**: Scale-dependent growth suppression via Yukawa-screened G_eff(k) bridges DES/KiDS gap
 
-**Imminent Tests:**
-- **Euclid 2025**: Will measure $w(z)$ to 3% precision, detecting our oscillations at $>5\sigma$
-- **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments — sub-micron gravity test at $L = 0.2\,\mu$m, bypassing Casimir background
-- **CMB Analysis 2026**: Planck's low-$\ell$ anomaly matches our ISW resonance prediction
+**⏳ Imminent Tests:**
+- **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >5σ
+- **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments — sub-micron gravity test at L = 0.2 μm, bypassing Casimir background
+- **CMB Analysis 2026**: Planck's low-ℓ anomaly matches our ISW resonance prediction
 
 ## Key Signatures
 
@@ -45,28 +45,28 @@ The oscillating brane theory V8.0 makes specific, testable predictions that dist
 
 The membrane oscillation creates a time-varying equation of state:
 
-- **Amplitude**: $A_w \geq 3\times 10^{-3}$
-- **Period**: $T = 2.0 \pm 0.3$ Gyr
-- **Phase**: Maximum at $z \approx 0.5$
+- **Amplitude**: A_w ≥ 3×10⁻³
+- **Period**: T = 2.0 ± 0.3 Gyr
+- **Phase**: Maximum at z ≈ 0.5
 
-**Detection**: Euclid will measure $w(z)$ to 3% precision, sufficient to detect our predicted oscillations at $>5\sigma$ significance.
+**Detection**: Euclid will measure w(z) to 3% precision, sufficient to detect our predicted oscillations at >5σ significance.
 
 ### 2. ISW Resonance in the CMB
 
 The membrane oscillation creates a unique signature in the Cosmic Microwave Background through the Integrated Sachs-Wolfe effect:
 
-- **Resonance peak**: $\ell = 10$--$20$ (angular scale ~$12°$)
+- **Resonance peak**: ℓ = 10-20 (angular scale ~12°)
 - **Power suppression**: 16% at resonance
-- **Statistical significance**: $\chi^2$ improvement of 32.9 ($6\sigma$ over $\Lambda$CDM)
+- **Statistical significance**: χ² improvement of 32.9 (6σ over ΛCDM)
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/desi_w_evolution.png" alt="DESI Dark Energy Evolution" style="width: 100%; height: auto;">
-<p><em>Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The $\Lambda$CDM constant w=-1 is now refuted at $4\sigma$ significance.</em></p>
+<p><em>Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The ΛCDM constant w=-1 is now refuted at 4σ significance.</em></p>
 </div>
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/isw_cmb_signature.png" alt="ISW CMB Signature" style="width: 100%; height: auto;">
-<p><em>Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-$\ell$ power deficit. The $\chi^2$ improvement of 32.9 ($6\sigma$ significance) proves the oscillating brane model.</em></p>
+<p><em>Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-ℓ power deficit. The χ² improvement of 32.9 (6σ significance) proves the oscillating brane model.</em></p>
 </div>
 
 <div style="max-width: 100%; margin: 20px 0;">
@@ -74,8 +74,8 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 <p><em>Figure 3: Theoretical prediction of ISW effect from membrane oscillations.</em></p>
 </div>
 
-**Detection Method**: Our 2 Gyr membrane oscillation ($1.6 \times 10^{-17}$ Hz) manifests through:
-- **ISW effect**: Creates resonance in CMB large-scale anisotropies at $\ell = 10$--$20$ (shown above)
+**Detection Method**: Our 2 Gyr membrane oscillation (1.6 × 10⁻¹⁷ Hz) manifests through:
+- **ISW effect**: Creates resonance in CMB large-scale anisotropies at ℓ = 10-20 (shown above)
 - **Matter power spectrum**: Periodic modulation detectable by galaxy surveys
 - **Growth history**: Time-varying structure formation rate measurable by weak lensing
 
@@ -92,65 +92,65 @@ The extra dimension introduces a Yukawa correction to gravity:
 
 $$G_{\text{eff}}(k) = G_N \left(1 + \alpha\, e^{-k/k_L}\right), \quad k_L = 2\pi/L$$
 
-This produces ~5% growth suppression at non-linear scales (resolving DES $S_8$ tension) while maintaining quasi-standard gravity at linear scales (consistent with KiDS/CMB).
+This produces ~5% growth suppression at non-linear scales (resolving DES S₈ tension) while maintaining quasi-standard gravity at linear scales (consistent with KiDS/CMB).
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/growth_factor_comparison.png" alt="Growth Factor Suppression" style="width: 100%; height: auto;">
-<p><em>Figure 5: Structure growth suppression in oscillating brane model vs $\Lambda$CDM</em></p>
+<p><em>Figure 5: Structure growth suppression in oscillating brane model vs ΛCDM</em></p>
 </div>
 
 ### 4. SKA 21cm Reionization Modulation (Definitive Future Test)
 
-The model's primary falsifiable prediction targets the 21cm power spectrum during the Epoch of Reionization ($6 \lesssim z \lesssim 15$). The oscillating $G_\text{eff}(k,t)$ imprints a spatial modulation on the 21cm brightness temperature:
+The model's primary falsifiable prediction targets the 21cm power spectrum during the Epoch of Reionization (6 ≲ z ≲ 15). The oscillating G_eff(k,t) imprints a spatial modulation on the 21cm brightness temperature:
 
-$$\delta T_b(\vec{k}, z) \supset \Delta T_\text{osc}(k)\, \sin\left(\frac{2\pi t(z)}{T} + \phi_0\right)$$
+$$\delta T_b(\vec{k}, z) \supset \Delta T_{osc}(k)\, \sin\left(\frac{2\pi t(z)}{T} + \phi_0\right)$$
 
-with characteristic amplitude $\Delta T_\text{osc} \sim 1$--$5$ mK at BAO-scale wavenumbers. **SKA-Low (2027+)** has the sensitivity and k-range to detect or exclude this modulation at $>3\sigma$, constituting the definitive test of the brane oscillation.
+with characteristic amplitude ΔT_osc ~ 1-5 mK at BAO-scale wavenumbers. **SKA-Low (2027+)** has the sensitivity and k-range to detect or exclude this modulation at >3σ, constituting the definitive test of the brane oscillation.
 
 ### 5. Hubble Anisotropy (Cosmicflows-4)
 
-Spatial tension variations create directional $H_0$ differences:
+Spatial tension variations create directional H₀ differences:
 
-$$\frac{\delta H}{H} \sim 10^{-3}$$
+$$\frac{δH}{H} \sim 10^{-3}$$
 
 Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
 ## Particle Physics Signatures
 
 ### Kaluza-Klein Modes
-- First excitation: $m_\text{KK} \simeq 1$ eV
-- CMB signature: $\Delta N_\text{eff} \sim 0.01$
+- First excitation: m_KK ≃ 1 eV
+- CMB signature: ΔN_eff ~ 0.01
 
 ### Trans-dimensional Leakage
-- Energy loss rate: $10^{-11}$ yr$^{-1}$
+- Energy loss rate: 10⁻¹¹ yr⁻¹
 - Detection: Ultra-precise dark matter experiments
 
 ## Model Comparison
 
-| Observable | $\Lambda$CDM | Oscillating Brane V8.0 | Difference |
+| Observable | ΛCDM | Oscillating Brane V8.0 | Difference |
 |------------|------|-------------------|------------|
-| $w(z)$ | $-1$ (constant) | $-1 + 0.003 \sin(2\pi t/T + \pi/2)$ | Time-varying, phantom crossing |
-| $S_8$ | 0.83 (tension) | Scale-dependent Yukawa $G_\text{eff}(k)$ | ~5% at non-linear scales |
-| CMB Anomaly | None | ISW Resonance ($6\sigma$) | Unique signature |
+| w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T + π/2) | Time-varying, phantom crossing |
+| S₈ | 0.83 (tension) | Scale-dependent Yukawa G_eff(k) | ~5% at non-linear scales |
+| CMB Anomaly | None | ISW Resonance (6σ) | Unique signature |
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
-| $H_0$ variation | Isotropic | ~0.1% dipole | Anisotropic |
+| H₀ variation | Isotropic | ~0.1% dipole | Anisotropic |
 
 ## Statistical Significance
 
 Current Bayesian evidence strongly favors our model:
 
-$$\Delta \ln K = 3.33 \pm 0.24$$
+$$\Delta \ln K = 3.33 ± 0.24$$
 
-This represents "strong evidence" on the Jeffreys scale, indicating the data prefer the oscillating brane over standard $\Lambda$CDM.
+This represents "strong evidence" on the Jeffreys scale, indicating the data prefer the oscillating brane over standard ΛCDM.
 
 ## The Evidence: 2024-2026
 
 Three established anomalies are resolved, with decisive future tests on the horizon:
 
-1. **DESI** (2024-2026): Dark energy evolves at $4\sigma$ — matching our stick-slip oscillation with $\phi_0 = \pi/2$
-2. **$S_8$ Resolution**: Scale-dependent Yukawa screening reconciles DES, KiDS, and CMB measurements
-3. **Planck ISW**: Low-$\ell$ power deficit matches our 2 Gyr resonance at $6\sigma$ ($\Delta\chi^2 = 32.9$)
-4. **Wave-optics immunity**: Subaru-HSC microlensing constraints physically inapplicable to asteroid-mass PBHs (Fresnel parameter $w_F = 2\pi r_s/\lambda \approx 0.03 \ll 1$)
+1. **DESI** (2024-2026): Dark energy evolves at 4σ — matching our stick-slip oscillation with φ₀ = π/2
+2. **S₈ Resolution**: Scale-dependent Yukawa screening reconciles DES, KiDS, and CMB measurements
+3. **Planck ISW**: Low-ℓ power deficit matches our 2 Gyr resonance at 6σ (Δχ² = 32.9)
+4. **Wave-optics immunity**: Subaru-HSC microlensing constraints physically inapplicable to asteroid-mass PBHs (Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1)
 
 **Definitive future test:** SKA 21cm reionization modulation (2027+).
 

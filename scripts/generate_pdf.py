@@ -20,59 +20,36 @@ class FinalPDFGenerator:
     def __init__(self, base_dir: Path):
         self.base_dir = base_dir
         self.metadata = {
-            "title": "Oscillating Brane Dark Matter Theory V8.0 — Hybrid Topology Edition",
+            "title": "Oscillating Brane Dark Matter Theory - Complete Documentation",
             "author": "Romain Provencal",
             "date": datetime.now().strftime("%B %Y"),
-            "subtitle": "The Cosmic Yoyo: A Vibrating 4D Membrane in 5D Anti-de Sitter Space",
+            "subtitle": "The Universe as a Vibrating Membrane",
         }
         self.chapter_count = 0
 
-    # V8.0 Restructured chapter titles — eliminates all Frankenstein duplicates
-    CHAPTER_TITLES = {
-        "index.md": "The Cosmic Yoyo Theory",
-        "discoveries.md": "Discovery & Correction of Modern Cosmology",
-        "theory.md": "Complete Theoretical Framework",
-        "chronology.md": "Cosmic Chronology: From Inflation to the Current Beat",
-        "docs/foundations_parts/part1_mathematical_framework.md": "Mathematical Framework & Stability",
-        "predictions.md": "Observational Predictions & Experimental Tests",
-        "docs/foundations_parts/part2_comparative_predictions.md": "Comparative Analysis & Falsifiability",
-        "docs/foundations_parts/part3_current_limitations.md": "Current Limitations & Theoretical Challenges",
-        "docs/foundations_parts/part4_development_roadmap.md": "Computational Tools, Roadmap & References",
-    }
-
     def find_markdown_files(self) -> List[Tuple[Path, Dict]]:
-        """Find markdown files for the 8-chapter V8.0 structure (no duplicates).
-
-        Eliminated files (absorbed into canonical chapters):
-        - about.md → acknowledgments in preface
-        - tools.md → absorbed into Ch 8 (part4_development_roadmap)
-        - docs/theory_v4_complete.md → duplicates theory.md
-        - docs/theoretical_foundations.md → duplicates theory.md + part1
-        - docs/observational_tests.md → duplicates predictions.md
-        - All _posts/*.md → duplicate various chapters
-        """
+        """Find all markdown files and extract their front matter."""
         files = []
 
-        # V8.0 curated file list — 8 chapters, zero duplication
+        # V8.0 curated structure — 8 chapters, no duplicates
+        # Removed: theory.md (duplicate of theory_v4), chronology.md (inside theory_v4),
+        #          predictions.md (inside theory_v4), about.md (non-essential),
+        #          all blog posts (duplicates of main chapters)
         doc_order = [
-            "index.md",  # Frontmatter / Introduction
-            "discoveries.md",  # Ch 1: Discovery & Correction
-            "theory.md",  # Ch 2: Theoretical Framework (canonical)
-            "chronology.md",  # Ch 3: Cosmic Chronology
-            "docs/foundations_parts/part1_mathematical_framework.md",  # Ch 4: Math Framework & Stability
-            "predictions.md",  # Ch 5: Predictions & Tests
-            "docs/foundations_parts/part2_comparative_predictions.md",  # Ch 6: Comparative & Falsifiability
-            "docs/foundations_parts/part3_current_limitations.md",  # Ch 7: Limitations & Challenges
-            "docs/foundations_parts/part4_development_roadmap.md",  # Ch 8: Tools, Roadmap & References
+            "index.md",  # Ch 1: Home / Introduction
+            "discoveries.md",  # Ch 2: Discovery & Correction
+            "docs/theory_v4_complete.md",  # Ch 3: Complete Theory V8.0
+            "docs/foundations_parts/part1_mathematical_framework.md",  # Ch 4: Mathematical Framework
+            "docs/foundations_parts/part2_comparative_predictions.md",  # Ch 5: Comparative Analysis
+            "docs/foundations_parts/part3_current_limitations.md",  # Ch 6: Current Limitations
+            "docs/foundations_parts/part4_development_roadmap.md",  # Ch 7: Roadmap & References
+            "tools.md",  # Ch 8: Computational Tools
         ]
 
         for doc in doc_order:
             path = self.base_dir / doc
             if path.exists():
                 front_matter = self.extract_front_matter(path)
-                # Override title with V8.0 restructured chapter title
-                if doc in self.CHAPTER_TITLES:
-                    front_matter["title"] = self.CHAPTER_TITLES[doc]
                 files.append((path, front_matter))
 
         return files
@@ -90,75 +67,6 @@ class FinalPDFGenerator:
             except:
                 return {}
         return {}
-
-    # Maps for Unicode superscript/subscript digits
-    SUPERSCRIPT_MAP = {
-        "⁰": "0",
-        "¹": "1",
-        "²": "2",
-        "³": "3",
-        "⁴": "4",
-        "⁵": "5",
-        "⁶": "6",
-        "⁷": "7",
-        "⁸": "8",
-        "⁹": "9",
-        "⁻": "-",
-        "⁺": "+",
-    }
-    SUBSCRIPT_MAP = {
-        "₀": "0",
-        "₁": "1",
-        "₂": "2",
-        "₃": "3",
-        "₄": "4",
-        "₅": "5",
-        "₆": "6",
-        "₇": "7",
-        "₈": "8",
-        "₉": "9",
-    }
-
-    def convert_unicode_math(self, content: str) -> str:
-        """Convert Unicode superscripts/subscripts to LaTeX.
-
-        Handles patterns like:
-          10⁻¹² → $10^{-12}$
-          τ₀    → $\\tau_0$
-          M☉    → $M_\\odot$
-        """
-        sup_chars = "".join(self.SUPERSCRIPT_MAP.keys())
-        sub_chars = "".join(self.SUBSCRIPT_MAP.keys())
-
-        # Convert runs of superscript chars: e.g. "10⁻¹²" → "10$^{-12}$"
-        def replace_superscripts(match):
-            digits = match.group(0)
-            converted = "".join(self.SUPERSCRIPT_MAP.get(c, c) for c in digits)
-            return "$^{" + converted + "}$"
-
-        content = re.sub(
-            f"[{re.escape(sup_chars)}]{{2,}}", replace_superscripts, content
-        )
-
-        # Convert runs of subscript chars: e.g. "S₈" already handled by single char
-        def replace_subscripts(match):
-            digits = match.group(0)
-            converted = "".join(self.SUBSCRIPT_MAP.get(c, c) for c in digits)
-            return "$_{" + converted + "}$"
-
-        content = re.sub(f"[{re.escape(sub_chars)}]{{1,}}", replace_subscripts, content)
-
-        # Handle lone superscript digits (single char like ² after a number)
-        for sup, digit in self.SUPERSCRIPT_MAP.items():
-            if sup in ("⁻", "⁺"):
-                continue  # Only convert these in runs
-            content = content.replace(sup, "$^{" + digit + "}$")
-
-        # Clean up adjacent math mode: $^{19}$ J/m$^{2}$ is fine
-        # But $\tau$$_{0}$ should become $\tau_{0}$
-        content = re.sub(r"\$\$", "", content)  # Remove empty $$ joins
-
-        return content
 
     def fix_math_expressions(self, content: str) -> str:
         """Fix common math expression issues."""
@@ -222,74 +130,56 @@ class FinalPDFGenerator:
 
         content = re.sub(r"\$[^$\n]+\$", save_inline_math, content)
 
-        # Convert Unicode superscript/subscript sequences to LaTeX
-        # e.g. "10⁻¹²" → "$10^{-12}$", "M☉" → "$M_\\odot$"
-        content = self.convert_unicode_math(content)
-
         # Now do Unicode replacements on non-math content
         unicode_replacements = {
-            # Greek letters outside math → LaTeX inline
-            "τ": "$\\tau$",
-            "σ": "$\\sigma$",
-            "ρ": "$\\rho$",
-            "π": "$\\pi$",
-            "μ": "$\\mu$",
-            "λ": "$\\lambda$",
-            "η": "$\\eta$",
-            "δ": "$\\delta$",
-            "γ": "$\\gamma$",
-            "ω": "$\\omega$",
-            "φ": "$\\phi$",
-            "ξ": "$\\xi$",
-            "ν": "$\\nu$",
-            "Δ": "$\\Delta$",
-            "Ω": "$\\Omega$",
-            "Λ": "$\\Lambda$",
-            "χ": "$\\chi$",
-            # Symbols → LaTeX
-            "∞": "$\\infty$",
-            "≈": "$\\approx$",
-            "≤": "$\\leq$",
-            "≥": "$\\geq$",
-            "≪": "$\\ll$",
-            "≫": "$\\gg$",
-            "∝": "$\\propto$",
-            "×": "$\\times$",
-            "±": "$\\pm$",
-            "→": "$\\to$",
-            "ℓ": "$\\ell$",
-            "☉": "$_\\odot$",
-            "²": "$^2$",
+            # Greek letters outside math
+            "τ": "tau",
+            "σ": "sigma",
+            "ρ": "rho",
+            "π": "pi",
+            "μ": "mu",
+            "λ": "lambda",
+            "η": "eta",
+            "δ": "delta",
+            "γ": "gamma",
+            "ω": "omega",
+            "φ": "phi",
+            "χ": "chi",
+            "ξ": "xi",
+            "Δ": "Delta",
+            "Ω": "Omega",
             # Ligatures
             "ﬀ": "ff",
             "ﬁ": "fi",
             "ﬂ": "fl",
             "ﬃ": "ffi",
             "ﬄ": "ffl",
-            # Emojis → remove
-            "🌌": "",
-            "📥": "",
-            "📄": "",
-            "📊": "",
-            "📚": "",
-            "🧮": "",
-            "💻": "",
-            "🔬": "",
-            "🔗": "",
-            "✓": "\\checkmark{}",
-            "✅": "[OK]",
-            "⏳": "[pending]",
-            "🤖": "",
-            "⚡": "",
+            "ï": "i",
+            # Symbols
+            "∞": "infinity",
+            "≈": "approximately",
+            "≤": "<=",
+            "≥": ">=",
+            "≪": "<<",
+            "≫": ">>",
+            "∝": "proportional to",
+            # Emojis
+            "🌌": "[universe]",
+            "📥": "[download]",
+            "✓": "[check]",
+            "☉": "Sun",
+            "🤖": "[AI]",
             # Special characters
             "—": "---",
             "–": "--",
             "'": "'",
             "'": "'",
-            "\u201c": '"',
-            "\u201d": '"',
+            """: '"',
+            """: '"',
             "…": "...",
             "•": "*",
+            "×": "x",
+            "±": "+/-",
         }
 
         for old, new in unicode_replacements.items():
@@ -399,25 +289,16 @@ header-includes:
 
 # Preface
 
-**Version 8.0 --- Hybrid Topology Edition (March 2026)**
-
-The Universe is a vibrating 4D membrane in 5D Anti-de Sitter space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome).
+This document contains the complete theoretical framework and documentation for the Oscillating Brane Dark Matter Theory, where the universe is conceptualized as a vibrating 4-dimensional membrane in 5D space.
 
 **Key Parameters:**
 
-| Parameter | Value |
-|-----------|-------|
-| Brane tension $\\tau_0$ | $7.0 \\times 10^{{19}}$ J/m$^2$ = 0.017 GeV$^3$ |
-| Energy scale $\\tau_0^{{1/3}}$ | 257 MeV $\\approx \\Lambda_{{QCD}}$ |
-| Period $T$ | 2.0 $\\pm$ 0.3 Gyr |
-| Phase $\\phi_0$ | $\\pi/2$ |
-| Extra dimension $L$ | 0.2 $\\mu$m |
-| PBH mass function | $10^{{-14}}$ to $10^{{-10}}$ $M_\\odot$ (log-normal) |
-| Fresnel parameter | $w_F \\approx 0.03 \\ll 1$ |
+- Brane tension: 7.0e19 J/m²
+- Oscillation period: T = 2.0 Gyr (±0.3)
+- Extra dimension size: L = 0.2 microns
+- MOND acceleration: a0 = 1.1e-10 m/s²
 
-**Three anomalies resolved:** DESI phantom crossing, $S_8$ tension (scale-dependent Yukawa), Planck ISW ($\\Delta\\chi^2 = 32.9$, $6\\sigma$). **Definitive future test:** SKA 21 cm reionization modulation (2027+).
-
-*Human-AI collaboration: Romain Provencal (conceptual architect) with Claude (Anthropic) and Gemini DeepThink (Google) as mathematical co-processors.*
+The theory proposes that dark matter effects emerge from membrane oscillations excited by gravitational flows, naturally producing dark energy and MOND-like phenomena.
 
 \\newpage
 
@@ -450,9 +331,11 @@ The Universe is a vibrating 4D membrane in 5D Anti-de Sitter space, driven by a 
         print(f"  Size: {len(combined_md)} bytes ({len(combined_md)/1024:.1f} KB)")
 
         # Generate PDF using multiple attempts with different engines
-        # xelatex first — source files contain Unicode (Greek letters, symbols)
-        # that pdflatex cannot handle without heavy preprocessing
         engines = [
+            (
+                "pdflatex",
+                ["--pdf-engine=pdflatex", "--pdf-engine-opt=-interaction=nonstopmode"],
+            ),
             (
                 "xelatex",
                 ["--pdf-engine=xelatex", "--pdf-engine-opt=-interaction=nonstopmode"],
@@ -460,10 +343,6 @@ The Universe is a vibrating 4D membrane in 5D Anti-de Sitter space, driven by a 
             (
                 "lualatex",
                 ["--pdf-engine=lualatex", "--pdf-engine-opt=-interaction=nonstopmode"],
-            ),
-            (
-                "pdflatex",
-                ["--pdf-engine=pdflatex", "--pdf-engine-opt=-interaction=nonstopmode"],
             ),
         ]
 

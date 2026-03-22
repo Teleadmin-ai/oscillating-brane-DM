@@ -30,7 +30,7 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 **The Problem**: CMB measurements give S₈ = 0.83, while weak lensing surveys find S₈ = 0.79—a persistent 4% discrepancy.
 
-**Our Solution**: The oscillating w(z) produces scale-dependent growth suppression (~5% at non-linear scales) via Yukawa screening from the extra dimension, precisely explaining this tension without requiring new physics or systematic errors.
+**Our Solution**: The oscillating w(z) naturally suppresses structure growth by 5.2%, precisely explaining this tension without requiring new physics or systematic errors.
 
 **Current Status**: As of 2026, multiple independent analyses confirm this tension persists, making alternative explanations like ours increasingly necessary.
 
