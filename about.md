@@ -44,12 +44,12 @@ I am a one-man company ("SSII à moi tout seul") who has built national-scale in
 
 This theory was not built alone. It was built in radical symbiosis with AI:
 
-- **Claude** (Anthropic) — Mathematical co-processor, code generation, rigorous derivations
-- **Gemini DeepThink** (Google) — Theoretical oracle, peer review, ab initio corrections
+- **Gemini DeepThink** (Google) — The mathematical powerhouse. Deep theoretical derivations, ab initio corrections, peer review of equations. When a calculation has a flaw, DeepThink finds it. The 5D geometric Chern-Simons fix ($c_{top} = 75$ replacing $10^{40}$), the spontaneous QCD baryogenesis mechanism — these came from DeepThink's theoretical depth.
+- **Claude** (Anthropic) — Code architect, numerical implementation, site/PDF pipeline, computational validation scripts. Fast, reliable, autonomous execution. All 22 validation scripts, the entire website, and this document were built with Claude.
 
-I am the **conceptual architect** (Faraday). The AIs are my **mathematical co-processors** (Maxwell). I provide the physical intuition, the geometric vision, the "what if". They provide the tensor calculus, the numerical solvers, the systematic verification.
+I am the **conceptual architect** (Faraday). Gemini DeepThink is my **theoretical physicist** (Maxwell). Claude is my **computational engineer** (Tesla). I provide the physical intuition, the geometric vision, the "what if". DeepThink provides the mathematical rigor and catches errors. Claude builds, computes, and deploys.
 
-This collaboration model is radically transparent. I will never minimize AI involvement, and I will never claim mathematical rigor I did not produce myself. The theory's conceptual architecture — the stick-slip motor, the ER=EPR synchronization, the QCD ignition — is mine. The equations are ours.
+This collaboration model is radically transparent. I will never minimize AI involvement, and I will never claim mathematical rigor I did not produce myself. The theory's conceptual architecture — the stick-slip motor, the ER=EPR synchronization, the QCD ignition — is mine. The deep mathematics are DeepThink's. The code and infrastructure are Claude's.
 
 ### Why This Matters
 
