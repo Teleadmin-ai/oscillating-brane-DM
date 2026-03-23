@@ -50,6 +50,25 @@ This is a **transparent, public peer review** process:
   </a>
 </div>
 
+## Contribute to the Theory
+
+Have you applied the V8.0 framework to solve a problem, derive a new prediction, or reproduce our results independently? **Submit your contribution** — if validated, it will be integrated into the theory with full credit to you.
+
+Examples of contributions we're looking for:
+- Applying the Yukawa screening to specific galaxy rotation curves
+- Computing new signatures from the stick-slip motor
+- Independent numerical reproduction of our Bayesian evidence
+- Proposing new laboratory experiments to test $L = 0.2\,\mu$m
+- Extending the theory to new domains (particle physics, gravitational waves, etc.)
+
+<div style="text-align: center; margin: 30px 0;">
+  <a href="https://github.com/Teleadmin-ai/oscillating-brane-DM/issues/new?template=contribution.yml" style="display: inline-block; padding: 14px 28px; background: #5319E7; color: white; text-decoration: none; border-radius: 25px; font-size: 16px; font-weight: bold;">
+    Submit a Contribution
+  </a>
+</div>
+
+Validated contributions are acknowledged in the theory documentation and, if substantial, in the white paper's acknowledgments section.
+
 ## Our Commitment
 
 - **Every serious critique gets a response** — with calculations, not hand-waving

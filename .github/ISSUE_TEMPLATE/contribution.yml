@@ -1,0 +1,71 @@
+name: "Scientific Contribution"
+description: "You used the Oscillating Brane Cosmology to solve a problem — share your result"
+title: "[Contribution] "
+labels: ["contribution", "pending-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Scientific Contribution Template
+        You applied the V8.0 framework to resolve an anomaly, make a prediction,
+        or derive a new result? We want to hear about it.
+        Validated contributions will be integrated into the theory with full credit.
+
+  - type: textarea
+    id: result
+    attributes:
+      label: "Your result"
+      description: "Describe what you solved or predicted using the Oscillating Brane Cosmology. Include equations (LaTeX supported), numerical results, and plots if available."
+      placeholder: |
+        Example: "Using the Yukawa screening G_eff(k) with L = 0.2 μm,
+        I computed the rotation curve of NGC 3198 and obtained a fit
+        with χ²/dof = 1.03 without free dark matter halo parameters."
+    validations:
+      required: true
+
+  - type: textarea
+    id: method
+    attributes:
+      label: "Method and parameters used"
+      description: "Which V8.0 parameters did you use? Which equations? What solver/code?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "Your references or preprint"
+      description: "Link to your paper, preprint, or code repository if available."
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category"
+      options:
+        - "New anomaly resolved"
+        - "New prediction derived"
+        - "Existing prediction refined"
+        - "Numerical validation / independent reproduction"
+        - "Experimental proposal"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: "How should you be credited?"
+      description: "Full name and affiliation, or 'anonymous', or 'GitHub username only'"
+      placeholder: "e.g., Dr. Jane Smith, University of Geneva"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Terms"
+      options:
+        - label: "I confirm this is original work or properly attributed."
+          required: true
+        - label: "I agree that validated contributions may be integrated into the theory documentation with credit."
+          required: true
