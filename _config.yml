@@ -71,5 +71,6 @@ exclude:
   - requirements.txt
   - README.md
   - output/
+  - romain.md
   - pandoc-3.1.11/
   - pandoc.tar.gz
