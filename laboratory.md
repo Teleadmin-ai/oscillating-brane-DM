@@ -12,7 +12,7 @@ The V8.0 Oscillating Brane Theory makes specific, falsifiable predictions for Ea
 
 ### The Experiment
 
-The **qBOUNCE experiment** at the **Institut Laue-Langevin (ILL), Grenoble, France** (PI: Hartmut Abele, TU Wien; collaborators at ILL including Tobias Jenke) uses ultra-cold neutrons (UCN) bounced on a perfect mirror to probe gravity at the quantum level. These neutrons don't bounce classically — they form quantum gravitational bound states described by Airy functions (Jenke et al., PRL 112, 151105, 2014). The team observed a slight anomaly in the $|1\rangle \to |6\rangle$ transition, forcing them to introduce a phenomenological "Robin boundary condition" parameter $\lambda$.
+The **qBOUNCE experiment** at the **Institut Laue-Langevin (ILL), Grenoble, France** (PI: Hartmut Abele, TU Wien; collaborators at ILL including Tobias Jenke) uses ultra-cold neutrons (UCN) bounced on a perfect mirror to probe gravity at the quantum level. These neutrons don't bounce classically — they form quantum gravitational bound states described by Airy functions (Jenke et al., PRL 112, 151105, 2014). The team observed a slight anomaly in the $\vert 1\rangle \to \vert 6\rangle$ transition, forcing them to introduce a phenomenological "Robin boundary condition" parameter $\lambda$.
 
 The qBOUNCE experiment is uniquely positioned to validate or falsify the extra dimension at $L = 0.2\,\mu$m: its spatial sensitivity is already within one order of magnitude of the predicted scale, and the next-generation upgrade (qBOUNCE-II) aims for sub-micron resolution.
 
@@ -26,7 +26,7 @@ At the current qBOUNCE resolution (~1 $\mu$m), the experiment sees only the expo
 
 ### Numerical Validation
 
-The matrix element $\langle 1|\delta V|6\rangle$ was computed using Airy wavefunctions integrated against the Yukawa potential (BDF solver). The effective Robin parameter $\lambda_\text{OBT}$ was extracted as a function of spatial resolution $z_\text{res}$.
+The matrix element $\langle 1\vert\delta V\vert 6\rangle$ was computed using Airy wavefunctions integrated against the Yukawa potential (BDF solver). The effective Robin parameter $\lambda_\text{OBT}$ was extracted as a function of spatial resolution $z_\text{res}$.
 
 ![qBOUNCE Lambda Prediction](/plots/qbounce_lambda_prediction.png)
 *Figure: The Robin parameter $\lambda$ as a function of experimental resolution. At current qBOUNCE resolution (1 $\mu$m), $\lambda$ is tiny. As resolution approaches $L = 0.2\,\mu$m, it amplifies by 55$\times$ — a direct detection of the extra dimension.*
