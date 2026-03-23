@@ -217,6 +217,13 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | `scripts/qbounce_yukawa_lambda.py` | qBOUNCE Robin parameter from Yukawa | `plots/qbounce_lambda_prediction.png` |
 | `scripts/laplace_demon_hamiltonian.py` | 5D Geometric Bypass Hamiltonian | `plots/laplace_demon_readout.png` |
 
+## MathJax — DO NOT TOUCH
+- MathJax 3 is configured in `_layouts/dark.html` with inline math `$...$` and display math `$$...$$`
+- **It works. Do NOT replace LaTeX with plain text** (e.g., do NOT change `$\lambda$` to "Lambda")
+- **Do NOT remove or modify the MathJax config block** in `_layouts/dark.html`
+- LaTeX renders correctly on ALL site pages and in the PDF (pandoc/xelatex handles it natively)
+- The `\vert` workaround for bra-ket notation (`$\vert 1\rangle$` instead of `$|1\rangle$`) is still needed because kramdown confuses `|` with table delimiters
+
 ## CI / Code Quality
 - **black + isort**: All scripts must pass `black --check scripts/` and `isort --check-only scripts/`
 - After adding/modifying any `.py` file: run `black scripts/*.py && isort scripts/*.py` before commit
