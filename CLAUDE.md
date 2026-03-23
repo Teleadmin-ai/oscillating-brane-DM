@@ -15,8 +15,10 @@ The following .md files compose the PDF and are the SOLE source of truth for the
 **It is STRICTLY FORBIDDEN to:**
 - Add theoretical content in a file that is not in this list
 - Remove any of these files from the PDF pipeline
-- Create new .md files for theory content without adding them to the PDF
+- Create new .md files for theory content (the 7 files above cover ALL topics — enrich them, do NOT create new ones)
 - Move content between these files without verifying NOTHING is lost
+
+**New .md files may ONLY be created for non-theory site pages (e.g., about, research, refutation) that are NOT in the PDF.**
 
 **Breaking this rule causes data loss in INPI deposits and costs the user money.**
 
