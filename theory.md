@@ -200,25 +200,9 @@ The asteroid-mass PBH window (10⁻¹⁴ to 10⁻¹⁰ M☉) is often claimed to
 
 These micro-PBHs (~10% of dark matter) act as **topological capillaries** and **quantum synchronization nodes** (ER=EPR). Their geometric commensurability with L (r_s/L ~ 0.01-1.5) is structurally required for the stick-slip release mechanism.
 
-## Definitive Future Test: SKA 21cm Reionization Modulation
+## Definitive Future Test
 
-The model's primary falsifiable prediction targets the 21cm power spectrum during the Epoch of Reionization (6 ≲ z ≲ 15). The oscillating G_eff(k,t) imprints a spatial modulation on the 21cm brightness temperature:
-
-$$\delta T_b(\vec{k}, z) \supset \Delta T_{osc}(k)\, \sin\left(\frac{2\pi t(z)}{T} + \phi_0\right)$$
-
-with characteristic amplitude ΔT_osc ~ 1-5 mK at BAO-scale wavenumbers. SKA-Low (2027+) has the sensitivity and k-range to detect or exclude this modulation at >3σ, constituting a **definitive** test of the brane oscillation.
-
-![SKA 21cm Prediction](/plots/ska_prediction.png)
-*Figure: SKA 21cm reionization modulation prediction. Peak signal 5.46 mK (SNR = 5.5σ detectable by SKA-Low). The 2D map shows the modulation ΔT_b(k,z) over the Epoch of Reionization.*
-
-**Numerical validation (21cm mock, exact lookback time):** The oscillating $G_\text{eff}(k,t)$ modulates the 21cm brightness temperature $T_b$ during the Epoch of Reionization ($z = 6$--$15$). Using a standard reionization model with neutral fraction $x_\text{HI}$ transitioning from 1 to 0 between $z = 12$ and $z = 6$, the brane-induced modulation reaches a **peak amplitude of 5.46 mK** at high redshift. At BAO scales ($k \sim 0.1$ Mpc$^{-1}$), the modulation is 0.70 mK. Against SKA-Low thermal noise (~1 mK per mode for ~1000h integration), this yields a **detection SNR of 5.5$\sigma$** — well above the $3\sigma$ discovery threshold. This constitutes the model's definitive falsifiable prediction: if SKA-Low observes no $2$ Gyr spatial modulation in the 21cm power spectrum, the oscillating brane theory is ruled out.
-
-### Complementary Tests
-
-- **Vera C. Rubin Observatory (LSST)**: Large-scale structural anisotropies from scale-dependent growth
-- **qBOUNCE (ILL, Grenoble)**: Ultra-cold quantum neutrons mapping gravity at sub-micron scale (immune to Casimir background)
-- **Levitated nanoscale optomechanics**: Silica nanospheres probing Yukawa corrections at L = 0.2 μm
-- **Euclid + DESI Full Survey**: w(z) oscillation detection at >5σ
+The definitive future test involves the spatial modulation of the 21cm power spectrum during the Epoch of Reionization by SKA-Low (2027+), with a predicted detection SNR of $5.5\sigma$. Detailed predictions, numerical validation, and complementary tests (Vera Rubin, qBOUNCE, Euclid) are presented in the [Observational Predictions](/predictions/) chapter.
 
 ## Nature of the Bulk: Non-Local Topological State
 
