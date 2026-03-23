@@ -33,7 +33,7 @@ I have never hidden this. My brain is not a disability for this work — it is t
 | Age 18 | World-first innovation | Created the first worldwide Windows backup/restore system (modified DOS + CD) |
 | Age 24 | Founded **Teleadmin** | Hosting company, OVH Advanced Partner |
 | Career | National infrastructure | **Qwant** (3 server racks, ZFS NAS, 5 DB servers), **Atout France**, **Euresto**, **Incepto** (100+ hospitals), **GELMAD** Lyon (3 medical imaging centers including Hôpital Mermoz) |
-| Age 50 | AI Research | R-JEPA (Reasoning JEPA) — open-source AGI research |
+| Age 50 | AI Research | R-JEPA — adaptation of Yann LeCun's JEPA architecture for text reasoning in the latent space of an LLM |
 | 2026 | **Oscillating Brane Cosmology** | 22 anomalies resolved, V8.0 Hybrid Topology Edition |
 
 **Career trajectory**: Systems administrator → Data Scientist → AI Agent Developer → Independent Cosmological Researcher.
