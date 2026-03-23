@@ -37,9 +37,11 @@ class FinalPDFGenerator:
             "index.md",  # Ch 1: Home / Introduction
             "discoveries.md",  # Ch 2: Discovery & Correction
             "theory.md",  # Ch 3: Complete Theoretical Framework
-            "docs/theoretical_foundations.md",  # Ch 4: Theoretical Foundations
-            "laboratory.md",  # Ch 5: Laboratory Proofs
-            "tools.md",  # Ch 6: Computational Tools
+            "chronology.md",  # Ch 4: Cosmic Chronology
+            "predictions.md",  # Ch 5: Observational Predictions
+            "docs/theoretical_foundations.md",  # Ch 6: Theoretical Foundations
+            "laboratory.md",  # Ch 7: Laboratory Proofs
+            "tools.md",  # Ch 8: Computational Tools
         ]
 
         for doc in doc_order:

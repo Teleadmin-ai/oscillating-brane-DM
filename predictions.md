@@ -154,11 +154,70 @@ Three established anomalies are resolved, with decisive future tests on the hori
 
 **Definitive future test:** SKA 21cm reionization modulation (2027+).
 
+## Modulated Growth and Gravitational Echoes
+
+### The Effect on $S_8$ (Scale-Dependent)
+
+The Yukawa-screened $G_\text{eff}(k)$ produces scale-dependent growth suppression:
+
+- At non-linear scales (DES, lensing): $D_+^\text{osc}/D_+^{\Lambda\text{CDM}} \approx 0.95$ (~5% suppression)
+- At linear scales (CMB, KiDS): $D_+^\text{osc}/D_+^{\Lambda\text{CDM}} \approx 0.99$ (quasi-standard)
+
+This naturally reconciles DES ($S_8 \approx 0.79$) with CMB/KiDS (less tension at larger scales). The model's suppression is intrinsically scale-dependent, not a global 5.2% applied uniformly.
+
+### The Gravitational Echo: The Double Signature
+
+When the membrane reaches maximum extension, dark matter flux reverses. This reversal creates a unique signature in the gravitational wave background:
+
+- **Main peak**: $f_0 = 1/T \approx 1.6 \times 10^{-17}$ Hz
+- **Echo**: $2f_0$ (reversal harmonic)
+
+This 2 Gyr oscillation is far too slow for direct gravitational wave detection. Instead, its imprints appear in the CMB large-scale anisotropies through the Integrated Sachs-Wolfe (ISW) effect — a cosmic fingerprint of our universe-membrane.
+
+## Experimental Tests
+
+### Current Constraints
+
+| Test | 2024 Limit | Our Model | Verdict |
+|------|------------|-----------|---------|
+| Newton @ 25 μm | No deviation | $L = 0.2\,\mu$m | ✓ Invisible |
+| PTA 15 years | $h_c < 3\times 10^{-15}$ | $h_c \sim 2\times 10^{-18}$ | ✓ Silent |
+| $H_0$ dipole | < 2% | ~0.01% | ✓ Subtle |
+
+### Predictions for 2026-2030
+
+| Mission | Target Signature | Refutation Threshold |
+|---------|-----------------|---------------------|
+| Euclid | $w(z)$ sinusoidal $A \geq 3\times 10^{-3}$ | Signal $< 5\sigma$ |
+| DESI Full | $\Delta P/P = 0.5\%$ at $k_0$ | Smooth spectrum |
+| CMB-S4 | ISW oscillations | No large-scale pattern |
+| SKA-Low | 21cm modulation 1-5 mK | No detection |
+| qBOUNCE | Sub-micron gravity deviation | No signal at $L = 0.2\,\mu$m |
+
+## The Bayesian Verdict
+
+The complete analysis delivers its verdict:
+
+$$\Delta\ln K = 4.13 \pm 0.07$$
+
+Strong evidence — the data clearly prefer our vibrating cosmos.
+
+![Nested Sampling Posteriors](/plots/nested_sampling_posteriors.png)
+*Figure: Nested sampling posteriors (dynesty) for the three brane parameters. Δln K = 4.13 ± 0.07 — STRONG evidence on the Jeffreys scale.*
+
+**Numerical validation (dynesty Nested Sampling, 500 live points):** Results: $\ln Z_\text{Brane} = 11.96 \pm 0.07$, $\ln Z_{\Lambda\text{CDM}} = 7.83 \pm 0.01$, yielding **Bayes factor $\Delta\ln K = 4.13 \pm 0.07$** — STRONG evidence on the Jeffreys scale ($e^{4.13} \approx 62\times$ more probable than $\Lambda$CDM). Posterior convergence: $\tau_0 = 10^{19.51 \pm 0.28}$ J/m$^2$, $f_\text{osc} = 0.126 \pm 0.035$, $T_\text{osc} = 2.00 \pm 0.21$ Gyr (all $\hat{R} \approx 1.000$).
+
+| Technical Term | Intuitive Vision | Interpretation |
+|----------------|------------------|----------------|
+| $\ln K$ (log Bayes factor) | "Preference score" | We compare Oscillating-Brane V8.0 to $\Lambda$CDM |
+| $\Delta\ln K = 4.13 \pm 0.07$ | $\approx 62\times$ more probable | $S_8$ + oscillation + MOND coincidence |
+| Jeffreys Scale | 2.5-5 = strong | 4.13 is in the "strong" zone |
+
 ## How You Can Help
 
 1. **Theorists**: Refine predictions for specific experiments
 2. **Observers**: Design targeted searches for our signatures
 3. **Data analysts**: Look for oscillations in existing datasets
-4. **Simulators**: Model structure formation with oscillating w(z)
+4. **Simulators**: Model structure formation with oscillating $w(z)$
 
 The universe has been singing its two-billion-year song all along. Finally, we're learning to hear it.
