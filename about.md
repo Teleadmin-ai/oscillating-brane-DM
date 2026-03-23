@@ -14,7 +14,7 @@ I am a neuroatypical entrepreneur who has been building technology for 26 years.
 
 ### My Neurodivergent Brain
 
-I was evaluated in 2025 for a complex neurodevelopmental profile: **ADHD + suspected ASD Level 1 + HPI** (High Intellectual Potential) — a condition known as "Triple Exceptionality" where each trait masks the others.
+After 50 years of compensating without understanding why, I self-identified in 2025 a complex neurodevelopmental profile: **ADHD + suspected ASD Level 1 + HPI** (High Intellectual Potential) — a condition known as "Triple Exceptionality" where each trait masks the others. Formal diagnosis remains pending — in France, adult neurodevelopmental evaluation is notoriously difficult to access, with multi-year waiting lists and systemic under-diagnosis of high-functioning profiles.
 
 What this means for my research:
 
