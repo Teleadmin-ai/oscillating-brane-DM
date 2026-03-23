@@ -20,7 +20,15 @@ The following .md files compose the PDF and are the SOLE source of truth for the
 
 **New .md files may ONLY be created for non-theory site pages (e.g., about, research, refutation) that are NOT in the PDF.**
 
-**Breaking this rule causes data loss in INPI deposits and costs the user money.**
+**After ANY modification to these 7 files, you MUST regenerate and push the PDF:**
+```bash
+python3 scripts/generate_pdf.py
+git add oscillating_brane_theory_latest.pdf output/oscillating_brane_theory_latest.pdf
+git commit -m "Regenerate PDF" && git push
+```
+**If you forget, the PDF on the site will be stale and inconsistent with the site pages.**
+
+**Breaking these rules causes data loss in INPI deposits and costs the user money.**
 
 ## Project Overview
 **Oscillating Brane Cosmology V8.0 (Hybrid Topology Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome).
