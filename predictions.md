@@ -218,4 +218,4 @@ In the coming years, the universe will answer us. Giant telescopes and pulsar ne
 
 But whatever the outcome, we will have learned that the audacity to ask "What if the universe were a vibrating membrane?" has taken us further in understanding reality than prudence would ever have dared.
 
-> *"Space is not a stage; it is the string that vibrates and generates the gravitational melody of the cosmos. Each dark matter particle is a note, each black hole a finger on the string, and we — conscious stardust — are the rare privileged listeners of this two-billion-year symphony."*
+> *"Space is not a stage; it is the membrane that vibrates and generates the gravitational melody of the cosmos. Each oscillation shapes the fabric of reality, each black hole a quantum bridge to the fifth dimension, and we — conscious stardust — are the rare privileged listeners of this two-billion-year symphony."*

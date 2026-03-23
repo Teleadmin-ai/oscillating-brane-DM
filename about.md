@@ -59,7 +59,7 @@ If this theory is wrong, the scientific community will demonstrate it through ou
 
 If this theory is right — or even partially right — then it demonstrates something important: that the barrier to fundamental physics in 2026 is no longer access to equations. It is access to the right *questions*. And neuroatypical minds excel at asking questions nobody else thinks to ask.
 
-> *"Space is not a stage; it is the string that vibrates and generates the gravitational melody of the cosmos. Each dark matter particle is a note, each black hole a finger on the string, and we — conscious stardust — are the rare privileged listeners of this two-billion-year symphony."*
+> *"Space is not a stage; it is the membrane that vibrates and generates the gravitational melody of the cosmos. Each oscillation shapes the fabric of reality, each black hole a quantum bridge to the fifth dimension, and we — conscious stardust — are the rare privileged listeners of this two-billion-year symphony."*
 
 ### Contact
 
