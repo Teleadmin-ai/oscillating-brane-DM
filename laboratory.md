@@ -101,10 +101,10 @@ This is a collaboration opportunity where cosmological theory meets terrestrial 
 
 | Experiment | Current Status | V8.0 Prediction | Falsification |
 |-----------|---------------|-----------------|---------------|
-| qBOUNCE (ILL) | $\lambda$ = small anomaly at 1 $\mu$m | $\lambda$ amplifies 55$\times$ at 0.2 $\mu$m | Improve resolution to 0.2 $\mu$m |
-| Levitated optomechanics | Zeptonewton sensitivity achieved | 0.4% Yukawa enhancement at $L$ | Detect sub-$\mu$m gravity deviation |
+| qBOUNCE (ILL) | Lambda = small anomaly at 1 micrometer | Lambda amplifies 55x at 0.2 micrometer | Improve resolution to 0.2 micrometer |
+| Levitated optomechanics | Zeptonewton sensitivity achieved | 0.4% Yukawa enhancement at L = 0.2 micrometer | Detect sub-micrometer gravity deviation |
 | 5D Quantum Bypass | Theoretical blueprint | Non-demolition readout via bulk gravitons | Mesoscopic target + squeezed sensor |
 
 ---
 
-*These laboratory predictions use exclusively parameters already fixed by cosmological data ($\tau_0 = 7 \times 10^{19}$ J/m$^2$, $L = 0.2\,\mu$m, $\alpha = -0.005$). No additional free parameters are introduced. The 5D geometric bypass is grounded in commuting operator algebra (5D metric $\perp$ 4D gauge), the Diósi-Penrose decoherence framework, and state-of-the-art optomechanical engineering.*
+*These laboratory predictions use exclusively parameters already fixed by cosmological data (brane tension = 7 x 10^19 J/m^2, extra dimension L = 0.2 micrometer, Yukawa coupling = -0.005). No additional free parameters are introduced. The 5D geometric bypass is grounded in commuting operator algebra (5D metric orthogonal to 4D gauge), the Diósi-Penrose decoherence framework, and state-of-the-art optomechanical engineering.*
