@@ -613,33 +613,7 @@ To include quantum corrections in simulations:
    - Run couplings with energy scale: $\tau(\mu) = \tau_0 + \beta_\tau \ln(\mu/M_5)$
    - Include threshold corrections at $m_{KK}$
 
-### 6.2 Observational Tests Timeline
-
-**2025-2027 (Near Term)**:
-- **Euclid**: Wide-field weak lensing → S₈ precision to 1%
-- **DESI**: BAO measurements → w(z) amplitude constraints
-- **NANOGrav**: 15-year dataset → GW spectral index n_t
-- **JWST**: Ultra-faint dwarf census → subhalo abundance
-
-**2028-2030 (Medium Term)**:
-- **Vera Rubin Observatory (LSST)**:
-  - 10-year survey → halo profiles to 200 kpc
-  - Stellar streams → substructure constraints
-  - Microlensing → smooth vs clumpy halos
-- **Roman Space Telescope**: High-z structure → growth history
-- **CMB-S4**: Primordial fluctuations → initial conditions
-
-**2030-2035 (Long Term)**:
-- **CMB-S4**:
-  - Detect ISW imprints of 2 Gyr oscillation
-  - Map large-scale temperature anisotropies
-- **ELT/TMT**: Dwarf galaxy kinematics → core sizes
-- **Advanced gravitational tests**: δg/g measurements
-
-**2035+ (Future)**:
-- **Next-gen CMB experiments**: Definitive ISW detection
-- **Next-gen atom interferometry**: Spatial gravity variations
-- **Complete matter power spectrum**: Full oscillation mapping via combined surveys
+For the complete observational tests timeline, see the [Predictions](/predictions/) chapter.
 
 ### 6.3 Theoretical Development Roadmap
 
@@ -1058,12 +1032,8 @@ While significant theoretical and observational work remains, the framework show
 - Collins, H., Holman, R. & Martin, A. (2003) - "Radion-induced brane preheating", Phys. Rev. D 68, 124012 [arXiv:hep-th/0306028]
 - Davis, S.C. & Brechet, S.D. (2005) - "Vacuum decay and first order phase transitions in brane worlds", Phys. Rev. D 72, 024021 [arXiv:hep-th/0502060]
 
-### Quantum Corrections and Casimir Effects
+### Additional Quantum Corrections References
 - Goldberger, W.D. & Rothstein, I.Z. (2000) - "Quantum stabilization of compactified AdS5", Phys. Lett. B 491, 339 [arXiv:hep-th/0007065]
-- Garriga, J., Pujolàs, O. & Tanaka, T. (2001) - "Radion effective potential in the brane-world", Nucl. Phys. B 605, 192 [arXiv:hep-th/0004109]
-- Flachi, A. & Tanaka, T. (2003) - "Vacuum polarization in asymmetric brane world compactifications", Phys. Rev. D 68, 025004 [arXiv:hep-th/0301189]
-- Csáki, C. et al. (2000) - "Cosmology of one extra dimension with localized gravity", Phys. Lett. B 462, 34 [arXiv:hep-ph/9911406]
-- Brevik, I. et al. (2003) - "Dynamical Casimir effect and particle creation in oscillating cavities", Annals Phys. 302, 120 [arXiv:quant-ph/0303150]
 - Candelas, P. & Weinberg, S. (1984) - "Calculation of gauge couplings and compact circumferences from self-consistent dimensional reduction", Nucl. Phys. B 237, 397
 - Elizalde, E. et al. (2003) - "Casimir effect in de Sitter and anti-de Sitter braneworlds", Phys. Rev. D 67, 063515 [arXiv:hep-th/0209242]
 - Katz, A. et al. (2006) - "On the number of fermionic zero modes on Randall-Sundrum backgrounds", Phys. Rev. D 74, 044016 [arXiv:hep-th/0605088]

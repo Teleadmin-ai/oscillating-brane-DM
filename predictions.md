@@ -135,35 +135,8 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
 | H₀ variation | Isotropic | ~0.1% dipole | Anisotropic |
 
-## Statistical Significance
 
-Current Bayesian evidence strongly favors our model:
-
-$$\Delta \ln K = 4.13 \pm 0.07$$
-
-This represents "strong evidence" on the Jeffreys scale, indicating the data prefer the oscillating brane over standard ΛCDM.
-
-## The Evidence: 2024-2026
-
-Three established anomalies are resolved, with decisive future tests on the horizon:
-
-1. **DESI** (2024-2026): Dark energy evolves at 4σ — matching our stick-slip oscillation with φ₀ = π/2
-2. **S₈ Resolution**: Scale-dependent Yukawa screening reconciles DES, KiDS, and CMB measurements
-3. **Planck ISW**: Low-ℓ power deficit matches our 2 Gyr resonance at 6σ (Δχ² = 32.9)
-4. **Wave-optics immunity**: Subaru-HSC microlensing constraints physically inapplicable to asteroid-mass PBHs (Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1)
-
-**Definitive future test:** SKA 21cm reionization modulation (2027+).
-
-## Modulated Growth and Gravitational Echoes
-
-### The Effect on $S_8$ (Scale-Dependent)
-
-The Yukawa-screened $G_\text{eff}(k)$ produces scale-dependent growth suppression:
-
-- At non-linear scales (DES, lensing): $D_+^\text{osc}/D_+^{\Lambda\text{CDM}} \approx 0.95$ (~5% suppression)
-- At linear scales (CMB, KiDS): $D_+^\text{osc}/D_+^{\Lambda\text{CDM}} \approx 0.99$ (quasi-standard)
-
-This naturally reconciles DES ($S_8 \approx 0.79$) with CMB/KiDS (less tension at larger scales). The model's suppression is intrinsically scale-dependent, not a global 5.2% applied uniformly.
+## Gravitational Echoes
 
 ### The Gravitational Echo: The Double Signature
 
