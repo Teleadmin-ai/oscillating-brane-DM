@@ -1,5 +1,25 @@
 # CLAUDE.md - Project Information for AI Assistants
 
+## ⛔ SACRED RULE — READ THIS FIRST ⛔
+The following .md files compose the PDF and are the SOLE source of truth for the theory:
+1. `discoveries.md` — 22 anomalies resolved
+2. `theory.md` — core theoretical framework (motor, ODE, BBN, QCD, stability, PBH, bulk)
+3. `chronology.md` — cosmic chronology, tension calibration, MOND
+4. `predictions.md` — observational predictions, tests, Bayesian evidence
+5. `docs/theoretical_foundations.md` — rigorous mathematical foundations
+6. `laboratory.md` — laboratory proofs (qBOUNCE, 5D Geometric Bypass)
+7. `tools.md` — computational tools
+
+**ALL theoretical content MUST be written in these files and ONLY these files.**
+**The PDF MUST contain ALL of these files and ONLY these files (+ index.md as intro).**
+**It is STRICTLY FORBIDDEN to:**
+- Add theoretical content in a file that is not in this list
+- Remove any of these files from the PDF pipeline
+- Create new .md files for theory content without adding them to the PDF
+- Move content between these files without verifying NOTHING is lost
+
+**Breaking this rule causes data loss in INPI deposits and costs the user money.**
+
 ## Project Overview
 **Oscillating Brane Cosmology V8.0 (Hybrid Topology Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome).
 
