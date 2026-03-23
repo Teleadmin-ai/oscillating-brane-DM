@@ -6,7 +6,7 @@ description: |
   Detailed comparison with ΛCDM and MOND, testable predictions, and quantum loop corrections
 ---
 
-# Theoretical Foundations of Oscillating Brane Dark Matter - Part 2
+# Theoretical Foundations of Oscillating Brane Cosmology - Part 2
 
 ## 4. Comparative Analysis
 

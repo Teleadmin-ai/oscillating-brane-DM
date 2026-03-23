@@ -7,7 +7,7 @@ description: |
   and detailed comparison with ΛCDM and MOND theories
 ---
 
-# Theoretical Foundations of Oscillating Brane Dark Matter
+# Theoretical Foundations of Oscillating Brane Cosmology
 
 ## Executive Summary
 

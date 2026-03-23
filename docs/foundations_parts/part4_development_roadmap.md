@@ -6,7 +6,7 @@ description: |
   Observational tests timeline, theoretical development, and comprehensive references
 ---
 
-# Theoretical Foundations of Oscillating Brane Dark Matter - Part 4
+# Theoretical Foundations of Oscillating Brane Cosmology - Part 4
 
 ### 6.2 Observational Tests Timeline
 

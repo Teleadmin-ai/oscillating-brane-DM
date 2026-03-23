@@ -6,7 +6,7 @@ description: |
   Mathematical framework, compatibility with GR/QM, and observational confrontations
 ---
 
-# Theoretical Foundations of Oscillating Brane Dark Matter - Part 1
+# Theoretical Foundations of Oscillating Brane Cosmology - Part 1
 
 ## Executive Summary
 

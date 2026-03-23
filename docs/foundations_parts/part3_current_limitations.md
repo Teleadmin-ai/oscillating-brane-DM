@@ -6,7 +6,7 @@ description: |
   Theoretical challenges, numerical implementation, and development roadmap
 ---
 
-# Theoretical Foundations of Oscillating Brane Dark Matter - Part 3
+# Theoretical Foundations of Oscillating Brane Cosmology - Part 3
 
 ## 6. Current Limitations and Future Development
 
