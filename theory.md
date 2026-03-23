@@ -23,7 +23,9 @@ The entire universe vibrates as a single entity with a period T = 2.0 ± 0.3 Gyr
 
 ### The V8.0 Hybrid Stick-Slip Motor Equation
 
-The brane position (radion field φ) obeys the hybrid stick-slip ODE coupling macro and micro scales:
+The formal framework for oscillating p-branes in Anti-de Sitter space was established by Clark, Love, Nitta, ter Veldhuis & Xiong (Phys. Rev. D 76, 105014, 2007), who constructed the $SO(2,p+N)$ invariant Nambu-Goto action for a 3-brane with codimension $N=1$. We extend this formalism with a non-linear stick-slip driving mechanism coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
+
+The brane position (radion field $\phi$) obeys the hybrid stick-slip ODE coupling macro and micro scales:
 
 $$\ddot{\phi} + (3H + \Gamma_{rad})\dot{\phi} + \xi R\phi + \frac{\partial V_{GW}}{\partial \phi} = \mathcal{F}_{web}[E_{\mu\nu}] \times (1 - 3w_{eff}) - \mathcal{R}_{PBH}(\phi, \dot{\phi})\,\Theta(|\phi| - \phi_{crit})$$
 
