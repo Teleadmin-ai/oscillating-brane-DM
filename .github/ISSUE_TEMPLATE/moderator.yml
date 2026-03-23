@@ -1,0 +1,116 @@
+name: "Apply as Scientific Moderator"
+description: "Qualified physicists can apply to become peer review moderators"
+title: "[Moderator Application] "
+labels: ["moderator-application"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Scientific Moderator Application
+        We are building a panel of qualified physicists to moderate the open peer review
+        of the Oscillating Brane Cosmology. Moderators can validate or refute critiques,
+        label tickets, and contribute to the theory's scientific governance.
+
+        **Requirements:**
+        - PhD in Physics, Cosmology, Astrophysics, or related field (or equivalent research experience)
+        - Published work in peer-reviewed journals
+        - Willingness to engage publicly and rigorously
+
+        Your application will be reviewed by the principal investigator.
+
+  - type: input
+    id: name
+    attributes:
+      label: "Full name"
+      placeholder: "Dr. Jane Smith"
+    validations:
+      required: true
+
+  - type: input
+    id: affiliation
+    attributes:
+      label: "Current affiliation"
+      placeholder: "e.g., CERN, MIT, ILL Grenoble, University of Tokyo"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: field
+    attributes:
+      label: "Primary field of expertise"
+      options:
+        - "Cosmology / Dark Energy"
+        - "Particle Physics / Beyond Standard Model"
+        - "General Relativity / Numerical Relativity"
+        - "String Theory / Extra Dimensions / Braneworlds"
+        - "Gravitational Waves / PTA"
+        - "Quantum Gravity / AdS-CFT"
+        - "Observational Astrophysics"
+        - "Quantum Mechanics / Optomechanics"
+        - "Nuclear Physics / BBN"
+        - "Mathematical Physics"
+        - "Other (specify below)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: publications
+    attributes:
+      label: "Key publications (3-5 most relevant)"
+      description: "Peer-reviewed papers demonstrating your expertise. Include DOI or arXiv links."
+      placeholder: |
+        1. Smith, J. et al. (2024), "Title", Phys. Rev. D 109, 012345 [arXiv:2401.xxxxx]
+        2. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "Why do you want to moderate this theory's peer review?"
+      description: "What aspects interest you? What would you bring to the review process?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: stance
+    attributes:
+      label: "Your current stance on the theory"
+      description: "We welcome all perspectives — skeptics make the best reviewers."
+      options:
+        - "Interested and want to evaluate rigorously"
+        - "Skeptical but open to examining the evidence"
+        - "Critical — I believe I can identify fundamental flaws"
+        - "Supportive — I see merit and want to help strengthen it"
+        - "Neutral — I want to evaluate without preconception"
+    validations:
+      required: true
+
+  - type: input
+    id: orcid
+    attributes:
+      label: "ORCID ID (optional)"
+      placeholder: "e.g., 0000-0002-1234-5678"
+
+  - type: input
+    id: profile
+    attributes:
+      label: "Public profile link"
+      description: "Google Scholar, ResearchGate, institutional page, etc."
+      placeholder: "https://scholar.google.com/citations?user=..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Moderator commitments"
+      options:
+        - label: "I will base all evaluations on physics, mathematics, and observational data — not on the author's credentials or lack thereof."
+          required: true
+        - label: "I will engage respectfully with all contributors, regardless of their background."
+          required: true
+        - label: "I accept that my moderator status and affiliation will be publicly visible on the project's website."
+          required: true
+        - label: "I understand that the principal investigator retains final authority on theory modifications."
+          required: true

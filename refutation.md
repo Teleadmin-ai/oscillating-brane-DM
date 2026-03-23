@@ -69,6 +69,36 @@ Examples of contributions we're looking for:
 
 Validated contributions are acknowledged in the theory documentation and, if substantial, in the white paper's acknowledgments section.
 
+## Scientific Moderator Panel
+
+The peer review process is governed by an independent panel of qualified physicists. Moderators can validate or refute critiques, label resolution outcomes, and ensure scientific rigor.
+
+### Current Moderators
+
+*No moderators yet — be the first to apply.*
+
+### How to Become a Moderator
+
+We are recruiting physicists with:
+- **PhD** in Physics, Cosmology, Astrophysics, or related field
+- **Published work** in peer-reviewed journals
+- **Willingness to engage publicly** — your name and affiliation will appear here
+
+All perspectives welcome — skeptics make the best reviewers. The principal investigator reviews each application and retains final authority on theory modifications.
+
+<div style="text-align: center; margin: 30px 0;">
+  <a href="https://github.com/Teleadmin-ai/oscillating-brane-DM/issues/new?template=moderator.yml" style="display: inline-block; padding: 14px 28px; background: #006B75; color: white; text-decoration: none; border-radius: 25px; font-size: 16px; font-weight: bold;">
+    Apply as Scientific Moderator
+  </a>
+</div>
+
+### Why Moderate?
+
+- Your name publicly associated with a theory resolving 22 anomalies
+- Direct influence on the theory's scientific governance
+- Co-authorship opportunity on future publications if your contributions are substantial
+- Be part of a new model of open, transparent physics research
+
 ## Our Commitment
 
 - **Every serious critique gets a response** — with calculations, not hand-waving
