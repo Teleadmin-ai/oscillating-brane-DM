@@ -8,7 +8,7 @@ permalink: /laboratory/
 
 The V8.0 Oscillating Brane Theory makes specific, falsifiable predictions for Earth-based experiments. These are not cosmological inferences — they are direct laboratory measurements targeting the extra dimension at $L = 0.2\,\mu$m.
 
-## 1. The qBOUNCE Anomaly: Deriving the Robin Parameter $\lambda$
+## 1. The qBOUNCE Anomaly: Deriving the Robin Parameter Lambda
 
 ### The Experiment
 
