@@ -97,6 +97,13 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | ξ (non-minimal coupling) | ~0.15 |
 | Fresnel parameter (PBH) | w_F = 2πr_s/λ ≈ 0.03 ≪ 1 (wave-optics immune) |
 
+## ABSOLUTE RULE: Site = PDF symmetry
+**Every scientific page on the site MUST be a chapter in the PDF. No exceptions.**
+Pages excluded from PDF (non-scientific): index.md (Home), about.md, downloads.md, research.md, refutation.md.
+ALL other .md pages with scientific content MUST be in generate_pdf.py doc_order.
+**If you add a new scientific page to the site, add it to the PDF immediately.**
+**If you remove a page from the PDF, you are BREAKING the symmetry. Do NOT do this.**
+
 ## PDF Generation — CRITICAL WORKFLOW
 **The CI does NOT auto-push the PDF.** You MUST regenerate and push it manually after ANY .md file change. If you forget, the site will have a stale PDF.
 
