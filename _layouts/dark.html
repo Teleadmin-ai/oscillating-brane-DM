@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="{{ "/assets/css/dark-theme.css?v=" | append: site.github.build_revision | relative_url }}">
     
     <!-- MathJax for equations -->
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <!-- SEO and OpenGraph -->
