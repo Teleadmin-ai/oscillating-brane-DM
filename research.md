@@ -30,23 +30,24 @@ The Oscillating Brane Cosmology is part of a broader research program exploring 
 
   <div style="padding: 25px; background: rgba(255,51,102,0.05); border: 2px solid #ff3366; border-radius: 12px;">
     <h3 style="color: #ff3366; margin-top: 0;">Civilisation Cyber — Planetary Nervous System</h3>
-    <p><strong>Cybernetic governance via R-JEPA</strong></p>
-    <p>A negentropic operating system for society. Replaces competitive waste with coordinated optimization. Human-AI symbiosis via "Majordomo" agents. Privacy-by-design through stigmergic latent vectors. Lexicographic fairness (worst-off improve first). Inspired by Stafford Beer's Viable System Model and Chile's Project Cybersyn.</p>
+    <p><strong>A utopian vision, decades in the making</strong></p>
+    <p>This idea has been simmering in various forms since my youth. A negentropic operating system for society — replacing competitive waste with coordinated optimization via human-AI symbiosis. Inspired by Stafford Beer's Viable System Model and Chile's Project Cybersyn. It is this vision, more than anything, that motivated me to understand the fundamental nature of the world — so that one day, the tools to build it could be given to humanity.</p>
+    <p><em>This remains a long-term utopian aspiration, not a product.</em></p>
     <a href="https://civilisationcyber.com" style="color: #ff3366;">civilisationcyber.com</a>
   </div>
 
   <div style="padding: 25px; background: rgba(147,51,234,0.05); border: 2px solid #9333ea; border-radius: 12px;">
-    <h3 style="color: #9333ea; margin-top: 0;">Senior Robotics — Joe</h3>
-    <p><strong>AI companion robot for the elderly</strong></p>
-    <p>Humanoid robot (Reachy 2 by Pollen Robotics / Hugging Face) powered by Claude (Anthropic). Multi-agent system: conversation, health monitoring, fall detection, family coordination. Joe Pro: autonomous navigation + VR teleoperation for healthcare facilities.</p>
-    <a href="https://senior-robotics.com" style="color: #9333ea;">senior-robotics.com</a>
+    <h3 style="color: #9333ea; margin-top: 0;">CyberPlace — AI Ecosystem Portal</h3>
+    <p><strong>Hub for all Teleadmin AI projects</strong></p>
+    <p>Central portal regrouping the various AI initiatives: R-JEPA cognitive engine, Senior Robotics companion robot (Joe), agent platforms, and more. Early stage — the ecosystem is being assembled.</p>
+    <a href="https://cyberplace.ai" style="color: #9333ea;">cyberplace.ai</a>
   </div>
 
 </div>
 
 ## The Common Thread
 
-All four projects share the same DNA:
+All projects share the same DNA:
 
 - **Human-AI symbiosis** — Humans provide vision and validation; AIs provide cognitive extension and execution
 - **Latent space reasoning** — Whether predicting reasoning steps (R-JEPA), cosmic oscillations (Brane), or social coordination (CivCyber), the underlying mathematics operate in high-dimensional representation spaces
