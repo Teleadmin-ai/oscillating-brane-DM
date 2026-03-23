@@ -76,7 +76,7 @@ I thank the DESI, Planck, JWST, and NANOGrav collaborations for transformative o
 
 ### Intellectual Property
 
-The conceptual architecture of the Oscillating Brane Cosmology V8.0 — including the hybrid stick-slip motor, the 22 anomaly resolutions, and the 5D Geometric Bypass — has been registered with the **French National Institute of Industrial Property (INPI)** in March 2026, establishing a dated proof of priority.
+The conceptual architecture of the Oscillating Brane Cosmology V8.0 — including the hybrid stick-slip motor, the 22 anomaly resolutions, the 5D Geometric Bypass, and the 5D Laplace Demon quantum computer architecture — has been registered with the **French National Institute of Industrial Property (INPI)** in March 2026, establishing a dated proof of priority.
 
 This registration does not restrict the use of the theory for scientific research. The code, documentation, and computational tools remain open-source under the MIT License. The INPI deposit serves solely as proof of authorship and chronological priority.
 
