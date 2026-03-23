@@ -74,6 +74,12 @@ This theoretical framework was developed through curiosity-driven research. It b
 
 I thank the DESI, Planck, JWST, and NANOGrav collaborations for transformative open data. I thank the qBOUNCE team (Hartmut Abele, Tobias Jenke) at ILL Grenoble for pioneering the quantum neutron experiments that may validate the extra dimension. And I thank Claude and Gemini for being patient with a brain that thinks in spirals.
 
+### Intellectual Property
+
+The conceptual architecture of the Oscillating Brane Cosmology V8.0 — including the hybrid stick-slip motor, the 22 anomaly resolutions, and the 5D Geometric Bypass — has been registered with the **French National Institute of Industrial Property (INPI)** in March 2026, establishing a dated proof of priority.
+
+This registration does not restrict the use of the theory for scientific research. The code, documentation, and computational tools remain open-source under the MIT License. The INPI deposit serves solely as proof of authorship and chronological priority.
+
 ---
 
 *The universe whispers its secrets through a two-billion-year melody. We are learning to listen.*
