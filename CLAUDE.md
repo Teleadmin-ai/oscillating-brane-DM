@@ -213,6 +213,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - **black + isort**: All scripts must pass `black --check scripts/` and `isort --check-only scripts/`
 - After adding/modifying any `.py` file: run `black scripts/*.py && isort scripts/*.py` before commit
 - CI job `test` will fail if formatting is wrong — does not affect PDF or site deployment
+- **NEVER pin black to an exact version** in ci.yml (e.g., `black==26.3.1`) — it breaks when CI uses a different Python version. Just use `black` (latest).
 
 ## Human-AI Collaboration
 Romain = conceptual architect (Faraday). AI = mathematical co-processors (Maxwell). Radically transparent acknowledgments. Never minimize AI involvement.
