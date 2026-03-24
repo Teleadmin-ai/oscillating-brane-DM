@@ -63,6 +63,36 @@ A 6-part vulgarization series explaining the Oscillating Brane Cosmology V8.0, a
 </div>
 </div>
 
+<hr style="border-color: #333; margin: 50px 0;">
+
+## Prediction Series: The 3 Crash Tests
+
+Three detailed deep-dives into the key predictions that can confirm or kill the theory. Each prediction is a make-or-break observational test.
+
+<div style="margin: 30px 0;">
+<h3>Prediction 1 — The qBOUNCE Crash Test</h3>
+<p>Testing the 5th dimension at sub-micron scale with ultra-cold neutrons at ILL Grenoble. Can qBOUNCE detect the Yukawa signature of L = 0.2 μm?</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
+<iframe src="https://www.youtube.com/embed/2-YzmvfbyO8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+</div>
+
+<div style="margin: 30px 0;">
+<h3>Prediction 2 — The SKA Crash Test</h3>
+<p>The definitive test: SKA 21cm reionization modulation. A 5.5σ signal in the hydrogen line that ΛCDM cannot produce.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
+<iframe src="https://www.youtube.com/embed/f81ekUtMe0A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+</div>
+
+<div style="margin: 30px 0;">
+<h3>Prediction 3 — Final Boss: The Stick-Slip Universe & Amaterasu</h3>
+<p>The ultimate prediction: trans-GZK cosmic rays via 5D Kaluza-Klein leakage. Amaterasu as the smoking gun of extra dimensions.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
+<iframe src="https://www.youtube.com/embed/s8w9_tn8V1Q" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+</div>
+
 </div>
 
 <div id="videos-fr" style="display: none;">
@@ -112,6 +142,36 @@ A 6-part vulgarization series explaining the Oscillating Brane Cosmology V8.0, a
 <p>L'ordinateur quantique qui lit la réalité à travers la cinquième dimension.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/-9nNuXUndio" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+</div>
+
+<hr style="border-color: #333; margin: 50px 0;">
+
+## Série Prédictions : Les 3 Crash Tests
+
+Trois plongées détaillées dans les prédictions clés qui peuvent confirmer ou tuer la théorie. Chaque prédiction est un test observationnel décisif.
+
+<div style="margin: 30px 0;">
+<h3>Prédiction 1 — Le Crash Test qBOUNCE</h3>
+<p>Tester la 5ème dimension à l'échelle sub-micronique avec des neutrons ultra-froids à l'ILL Grenoble. qBOUNCE peut-il détecter la signature Yukawa de L = 0.2 μm ?</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
+<iframe src="https://www.youtube.com/embed/oo2zm1OUBwY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+</div>
+
+<div style="margin: 30px 0;">
+<h3>Prédiction 2 — Le Crash Test SKA</h3>
+<p>Le test définitif : modulation de la réionisation SKA 21cm. Un signal à 5.5σ dans la raie hydrogène que ΛCDM ne peut pas produire.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
+<iframe src="https://www.youtube.com/embed/4k9DJddShIU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
+</div>
+
+<div style="margin: 30px 0;">
+<h3>Prédiction 3 — Final Boss : L'Univers Stick-Slip & Amaterasu</h3>
+<p>La prédiction ultime : rayons cosmiques trans-GZK via fuite Kaluza-Klein 5D. Amaterasu comme preuve irréfutable des dimensions supplémentaires.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
+<iframe src="https://www.youtube.com/embed/AJvJh7QO5II" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
