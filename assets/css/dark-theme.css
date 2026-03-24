@@ -605,6 +605,6 @@ html {
 /* Mobile: reduce top padding (header is shorter with hamburger only) */
 @media (max-width: 768px) {
   .content-wrapper {
-    padding-top: 100px !important;
+    padding-top: 60px !important;
   }
 }
