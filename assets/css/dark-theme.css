@@ -601,3 +601,21 @@ html {
     display: none !important;
   }
 }
+
+/* Force hide all nav elements on mobile */
+@media (max-width: 768px) {
+  .desktop-nav,
+  .desktop-nav ul,
+  .desktop-nav li,
+  .desktop-nav a,
+  header nav,
+  header nav ul,
+  header nav li,
+  .site-header nav:not(.desktop-nav):not(.mobile-nav) {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+}
