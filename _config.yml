@@ -40,8 +40,6 @@ navigation:
     url: /discoveries/
   - title: Laboratory
     url: /laboratory/
-  - title: Research
-    url: /research/
   - title: Tools
     url: /tools/
   - title: Downloads
@@ -50,6 +48,8 @@ navigation:
     url: /videos/
   - title: Peer Review
     url: /refutation/
+  - title: Research
+    url: /research/
   - title: About
     url: /about/
 
