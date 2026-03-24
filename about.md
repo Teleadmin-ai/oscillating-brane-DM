@@ -18,7 +18,7 @@ After 50 years of compensating without understanding why, I self-identified in 2
 
 What this means for my research:
 
-- **ADHD** gives me hyperfocus — not 16 hours, but 36-hour sessions followed by 4 hours of sleep, then another 36 hours. This entire theory was produced in roughly 15 days at this intensity, spread over a year — one week at the start, then 5 days straight for the current V8.0 edition. The same pattern produced R-JEPA. Every creative output is born in these volcanic bursts, separated by phases of procrastination, depression, and silent reflection.
+- **ADHD** gives me hyperfocus — the ability to dive into a problem with extreme intensity for extended periods. Every creative output is born in volcanic bursts of deep concentration, separated by phases of reflection and incubation.
 - **Suspected ASD** gives me pattern recognition — I see structural connections between disparate fields (QCD, braneworlds, cosmological data) that specialists trained in a single domain might miss.
 - **HPI** gives me the cognitive horsepower to hold the entire theoretical architecture in working memory simultaneously — but only with AI as a cognitive prosthesis to externalize and structure the chaos.
 
