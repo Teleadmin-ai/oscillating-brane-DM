@@ -40,16 +40,16 @@ navigation:
     url: /discoveries/
   - title: Laboratory
     url: /laboratory/
-  - title: Tools
-    url: /tools/
   - title: Research
     url: /research/
+  - title: Tools
+    url: /tools/
   - title: Downloads
     url: /downloads/
-  - title: Peer Review
-    url: /refutation/
   - title: Videos
     url: /videos/
+  - title: Peer Review
+    url: /refutation/
   - title: About
     url: /about/
 
