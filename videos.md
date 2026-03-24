@@ -50,7 +50,9 @@ A 6-part vulgarization series explaining the Oscillating Brane Cosmology V8.0, a
 <div style="margin: 30px 0;">
 <h3>Part 5 — 5D Topological Blueprint</h3>
 <p>The laboratory predictions: qBOUNCE, optomechanics, and the road to validation.</p>
-<p><em>Coming soon</em></p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
+<iframe src="https://www.youtube.com/embed/MBY24Vr8Ncw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
 </div>
 
 <div style="margin: 30px 0;">
@@ -108,7 +110,9 @@ A 6-part vulgarization series explaining the Oscillating Brane Cosmology V8.0, a
 <div style="margin: 30px 0;">
 <h3>Partie 6 — Le Démon de Laplace 5D</h3>
 <p>L'ordinateur quantique qui lit la réalité à travers la cinquième dimension.</p>
-<p><em>Bientôt disponible</em></p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
+<iframe src="https://www.youtube.com/embed/-9nNuXUndio" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
 </div>
 
 </div>
