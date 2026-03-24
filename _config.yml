@@ -42,10 +42,10 @@ navigation:
     url: /laboratory/
   - title: Tools
     url: /tools/
-  - title: Downloads
-    url: /downloads/
   - title: Research
     url: /research/
+  - title: Downloads
+    url: /downloads/
   - title: Peer Review
     url: /refutation/
   - title: Videos
