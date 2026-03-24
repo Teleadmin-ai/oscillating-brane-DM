@@ -602,12 +602,9 @@ html {
   }
 }
 
-/* Mobile: hide ALL nav except mobile-nav */
+/* Mobile: reduce top padding (header is shorter with hamburger only) */
 @media (max-width: 768px) {
-  nav {
-    display: none !important;
-  }
-  .mobile-nav {
-    display: block !important;
+  .content-wrapper {
+    padding-top: 100px !important;
   }
 }
