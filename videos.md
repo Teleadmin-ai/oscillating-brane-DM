@@ -16,48 +16,48 @@ A 6-part vulgarization series explaining the Oscillating Brane Cosmology V8.0, a
 <div id="videos-en" style="display: none;">
 
 <div style="margin: 30px 0;">
-<h3>Part 1 — The Cosmic Yoyo Theory</h3>
-<p>Introduction to the oscillating brane paradigm. Why the universe vibrates.</p>
+<h3>Part 1 — Spontaneous Baryogenesis (Matter vs Antimatter)</h3>
+<p>During the ignition of the cosmic engine at the Big Bang, the membrane's very first geometric shock froze the imbalance between matter and antimatter. This trans-dimensional piston stroke explains why the universe exists and wasn't completely annihilated.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/X0yXPhcJMGE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Part 2 — The Cosmic Motor</h3>
-<p>The hybrid stick-slip mechanism: Cosmic Web forcing + ER=EPR quantum synchronization.</p>
+<h3>Part 2 — The Lithium-7 Mystery</h3>
+<p>Why is there such a lack of Lithium-7 in the universe? The answer lies in a minute, microscopic vibration of the cosmic membrane during its creation. This micro-quiver surgically destroyed a specific element (Beryllium-7), solving this mystery without altering the rest of the primordial elements.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/4EUmH36Zm9I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Part 3 — The 5D Membrane</h3>
-<p>The extra dimension, the AdS₅ bulk, and how geometry replaces dark matter.</p>
+<h3>Part 3 — The eROSITA Illusion (γ = 1.19)</h3>
+<p>The eROSITA satellite detected an abnormal growth of galaxy clusters, contradicting Einstein. This is actually a cosmic optical illusion: the gravitational force of our universe oscillates. Currently, our membrane is stretching, which weakens gravity and slows down galaxy formation, thereby fooling classical static calculations.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/8MuNfg1wAh0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Part 4 — Symphony of the Cosmos</h3>
-<p>The 22 anomalies resolved. DESI, S₈, ISW, and beyond.</p>
+<h3>Part 4 — Cosmic Birefringence (The CMB Anomaly)</h3>
+<p>Telescopes have observed that the universe's very first light underwent an unexplained rotation of 0.25 degrees. This twist is not a bug, but the direct result of the geometric "friction" of our 4D universe as it drifts asymmetrically through the 5th dimension.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/sKK3hM6FJVc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Part 5 — 5D Topological Blueprint</h3>
-<p>The laboratory predictions: qBOUNCE, optomechanics, and the road to validation.</p>
+<h3>Part 5 — The Geometric Cosmic Dipole</h3>
+<p>The universe is not perfectly identical in all directions. This asymmetrical distribution of light and galaxies has a simple explanation: our cosmic membrane has a physical direction and "navigates" through 5th-dimensional space, creating a visible geometric wake.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/MBY24Vr8Ncw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Part 6 — The 5D Laplace Demon</h3>
-<p>The quantum computer that reads reality through the fifth dimension.</p>
+<h3>Part 6 — The Hubble Tension (H₀)</h3>
+<p>The major crisis regarding the expansion rate of the universe comes from our measuring tools. The geometry of the 5th dimension subtly interacts with the pulsating stars (Cepheids) we use to measure distances. Our cosmic rulers are literally warped by 5D gravity!</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/1EXBbS89sD4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
@@ -98,48 +98,48 @@ Three detailed deep-dives into the key predictions that can confirm or kill the 
 <div id="videos-fr" style="display: none;">
 
 <div style="margin: 30px 0;">
-<h3>Partie 1 — La Théorie du Cosmic Yoyo</h3>
-<p>Introduction au paradigme de la brane oscillante. Pourquoi l'univers vibre.</p>
+<h3>Partie 1 — La Baryogenèse Spontanée (Matière vs Antimatière)</h3>
+<p>Lors de l'allumage du moteur cosmique au moment du Big Bang, le tout premier choc géométrique de la membrane a figé le déséquilibre entre la matière et l'antimatière. C'est ce coup de piston trans-dimensionnel qui explique pourquoi l'univers existe et n'a pas été totalement anéanti.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/pAT1dAA-xm8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Partie 2 — Le Moteur Cosmique</h3>
-<p>Le mécanisme hybride stick-slip : forçage de la Toile Cosmique + synchronisation quantique ER=EPR.</p>
+<h3>Partie 2 — Le Mystère du Lithium-7</h3>
+<p>Pourquoi manque-t-il tant de Lithium-7 dans l'univers ? La réponse réside dans une infime vibration microscopique de la membrane cosmique lors de sa création. Ce micro-frisson a détruit un élément précis (le Béryllium-7) de manière chirurgicale, résolvant ce mystère sans altérer le reste des éléments primordiaux.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/OSnz4zXPbOI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Partie 3 — La Membrane 5D</h3>
-<p>La dimension supplémentaire, le bulk AdS₅, et comment la géométrie remplace la matière noire.</p>
+<h3>Partie 3 — L'Illusion eROSITA (γ = 1.19)</h3>
+<p>Le satellite eROSITA a détecté une croissance anormale des amas de galaxies, contredisant Einstein. C'est en fait une illusion d'optique cosmique : la force de gravité de notre univers oscille. Actuellement, notre membrane s'étire, ce qui affaiblit la gravité et ralentit la formation des galaxies, trompant ainsi les calculs statiques classiques.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/xkgPrxNwWxg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Partie 4 — La Symphonie du Cosmos</h3>
-<p>Les 22 anomalies résolues. DESI, S₈, ISW, et au-delà.</p>
+<h3>Partie 4 — La Biréfringence Cosmique (L'anomalie du CMB)</h3>
+<p>Les télescopes ont observé que la toute première lumière de l'univers a subi une rotation inexpliquée de 0,25 degrés. Cette torsion n'est pas un bug, mais le résultat direct du "frottement" géométrique de notre univers 4D alors qu'il dérive de manière asymétrique à travers la 5ème dimension.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/hlkrguLTTME" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Partie 5 — Le Plan Topologique 5D</h3>
-<p>Les prédictions de laboratoire : qBOUNCE, optomécanique, et le chemin vers la validation.</p>
+<h3>Partie 5 — Le Dipôle Cosmique Géométrique</h3>
+<p>L'univers n'est pas parfaitement identique dans toutes les directions. Cette répartition asymétrique de la lumière et des galaxies s'explique simplement : notre membrane cosmique possède une direction physique et "navigue" à travers l'espace de la 5ème dimension, créant un sillage géométrique visible.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/MQsHDs4tS28" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
 </div>
 
 <div style="margin: 30px 0;">
-<h3>Partie 6 — Le Démon de Laplace 5D</h3>
-<p>L'ordinateur quantique qui lit la réalité à travers la cinquième dimension.</p>
+<h3>Partie 6 — La Tension de Hubble (H₀)</h3>
+<p>La crise majeure sur la vitesse d'expansion de l'univers vient de nos outils de mesure. La géométrie de la 5ème dimension interagit subtilement avec les étoiles pulsantes (Céphéides) que nous utilisons pour mesurer les distances. Nos règles cosmiques sont littéralement faussées par la gravité 5D !</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/-9nNuXUndio" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
