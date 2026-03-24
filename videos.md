@@ -71,7 +71,7 @@ Three detailed deep-dives into the key predictions that can confirm or kill the 
 
 <div style="margin: 30px 0;">
 <h3>Prediction 1 — The qBOUNCE Crash Test</h3>
-<p>Testing the 5th dimension at sub-micron scale with ultra-cold neutrons at ILL Grenoble. Can qBOUNCE detect the Yukawa signature of L = 0.2 μm?</p>
+<p>Did we just find the 5th Dimension on a lab table? The answer could be hiding at the subatomic level, at the Institut Laue-Langevin in Grenoble. We explore the quantum gravity anomaly of the qBOUNCE experiment: why do ultra-cold neutrons not bounce exactly as predicted by Newtonian gravity? The Oscillating Brane Theory (V8.0) proves that the mysterious "Robin parameter" is actually the geometric shadow of a 5th dimension measuring exactly 0.2 micrometers. The ultimate crash-test is set: qBOUNCE-II must measure an explosive 55-fold amplification of this anomaly.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/2-YzmvfbyO8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
@@ -79,7 +79,7 @@ Three detailed deep-dives into the key predictions that can confirm or kill the 
 
 <div style="margin: 30px 0;">
 <h3>Prediction 2 — The SKA Crash Test</h3>
-<p>The definitive test: SKA 21cm reionization modulation. A 5.5σ signal in the hydrogen line that ΛCDM cannot produce.</p>
+<p>Cosmology is facing a historic crisis. DESI has proven that dark energy is evolving, and telescopes are finding "impossible" galaxies devoid of dark matter. What if the solution is understanding that our Universe vibrates? We use the Chladni Plate experiment (cymatics) to show how a Universe vibrating every 2 billion years geometrically creates the illusion of dark matter and perfectly matches DESI data. The ultimate cosmological crash-test: a formal prediction (a 5.46 millikelvin signal) that SKA-Low must detect in primordial hydrogen during the Cosmic Dawn.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/f81ekUtMe0A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
@@ -87,7 +87,7 @@ Three detailed deep-dives into the key predictions that can confirm or kill the 
 
 <div style="margin: 30px 0;">
 <h3>Prediction 3 — Final Boss: The Stick-Slip Universe & Amaterasu</h3>
-<p>The ultimate prediction: trans-GZK cosmic rays via 5D Kaluza-Klein leakage. Amaterasu as the smoking gun of extra dimensions.</p>
+<p>In 2021, the mysterious "Amaterasu" particle struck Earth with a colossal energy (244 EeV) defying the laws of physics. It should have been destroyed by cosmic radiation (the GZK horizon), but it survived — through a geometric pressure valve leaking energy into the 5th dimension. We reveal the hidden mechanical engine of our Universe: the Stick-Slip mechanism. Mind-bending revelation: converting the titanic macroscopic tension stretching our galaxies, we land exactly on 257 MeV — the scale of QCD binding our atoms! This asymmetric cosmic whip-crack perfectly explains the gravitational wave background detected by NANOGrav.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/s8w9_tn8V1Q" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
@@ -153,7 +153,7 @@ Trois plongées détaillées dans les prédictions clés qui peuvent confirmer o
 
 <div style="margin: 30px 0;">
 <h3>Prédiction 1 — Le Crash Test qBOUNCE</h3>
-<p>Tester la 5ème dimension à l'échelle sub-micronique avec des neutrons ultra-froids à l'ILL Grenoble. qBOUNCE peut-il détecter la signature Yukawa de L = 0.2 μm ?</p>
+<p>A-t-on trouvé la 5ème Dimension sur une simple table de laboratoire ? La réponse se trouve peut-être à l'échelle subatomique, à l'Institut Laue-Langevin de Grenoble. Nous explorons l'anomalie quantique de l'expérience qBOUNCE : pourquoi les neutrons ultra-froids ne rebondissent-ils pas exactement comme le prévoit la gravité de Newton ? La théorie de la Brane Oscillante (V8.0) démontre que le mystérieux "paramètre de Robin" est en réalité l'ombre géométrique d'une 5ème dimension mesurant très exactement 0,2 micromètre. Le crash-test absolu est lancé : qBOUNCE-II devra mesurer une amplification explosive (x55) de cette anomalie.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/oo2zm1OUBwY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
@@ -161,7 +161,7 @@ Trois plongées détaillées dans les prédictions clés qui peuvent confirmer o
 
 <div style="margin: 30px 0;">
 <h3>Prédiction 2 — Le Crash Test SKA</h3>
-<p>Le test définitif : modulation de la réionisation SKA 21cm. Un signal à 5.5σ dans la raie hydrogène que ΛCDM ne peut pas produire.</p>
+<p>La cosmologie traverse une crise historique. DESI vient de prouver que l'énergie sombre n'est pas constante, et les télescopes trouvent des galaxies "impossibles" sans matière noire. Et si la solution n'était pas d'inventer de nouvelles particules fantômes, mais de comprendre que notre Univers vibre ? Nous utilisons l'expérience de la "Plaque de Chladni" (cymatique) pour montrer comment un Univers vibrant toutes les 2 milliards d'années crée géométriquement l'illusion de la matière noire. Le crash-test ultime : une prédiction formelle (5,46 millikelvins) que SKA-Low devra détecter dans l'hydrogène primordial lors de l'Aube Cosmique.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/4k9DJddShIU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
@@ -169,7 +169,7 @@ Trois plongées détaillées dans les prédictions clés qui peuvent confirmer o
 
 <div style="margin: 30px 0;">
 <h3>Prédiction 3 — Final Boss : L'Univers Stick-Slip & Amaterasu</h3>
-<p>La prédiction ultime : rayons cosmiques trans-GZK via fuite Kaluza-Klein 5D. Amaterasu comme preuve irréfutable des dimensions supplémentaires.</p>
+<p>En 2021, la mystérieuse particule "Amaterasu" a frappé la Terre avec une énergie colossale (244 EeV) défiant les lois de la physique. Elle aurait dû être désintégrée par le rayonnement cosmique (l'horizon GZK), mais elle a survécu — grâce à une "soupape géométrique" libérant l'énergie dans la 5ème dimension. Nous révélons le moteur mécanique caché de notre Univers : le mécanisme Stick-Slip. Vertige absolu : en convertissant la tension macroscopique qui étire nos galaxies, on retombe exactement sur 257 MeV — l'échelle de la force nucléaire forte (QCD) qui lie nos atomes ! Ce claquement cosmique asymétrique explique à la perfection le fond d'ondes gravitationnelles détecté par NANOGrav.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/AJvJh7QO5II" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
