@@ -158,17 +158,23 @@ The script applies a 3-step sanitization pipeline before pandoc:
 2. **HTML→Markdown** (`convert_html_tables_to_markdown`): Converts `<table>` to pipe-tables, strips `<div>`, `<h3>`, Jekyll Liquid templates, emojis. Fixes indented headers.
 3. **Polish** (`polish_combined_markdown`): Merges split exponents (`10$^{1}$$^{9}$` → `$10^{19}$`), fixes hybrid notation (`tau$_{0}$` → `$\tau_0$`), converts image paths to relative `./plots/`.
 
-**Engine**: xelatex (primary), pdflatex (fallback). xelatex handles remaining Unicode natively.
+**Engine**: pdflatex (first attempt), xelatex (fallback, currently used — pdflatex fails on HTML table remnants). xelatex handles remaining Unicode natively and fixes fi/fl ligature issues.
 **Output**: PDF + `.md.txt` (same content, AI/text-parser friendly, downloadable from site).
 
 ### Compression
 PDF pipeline includes Ghostscript post-processing (JPEG/DCT at 200 dpi).
 Reduces ~2 MB → ~1.1 MB without quality loss. Requires `ghostscript` package locally.
 
-### Ghost grep (V8.0):
+### Ghost grep (V8.0 + March 2026 audit):
 ```bash
-pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point Unique\|tiny hammers\|momentum hit\|Block Universe\|dark matter impacts\|LRDs.*anchor\|holographic thermodynamics\|entropic force\|thermodynamic backreaction\|EDGES.*confirm\|CatWISE.*confirm\|single.*PBH.*mass\|global.*5.2\|MORRIS\|Farrah\|cosmological coupling.*k.*3"
+pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point Unique\|tiny hammers\|momentum hit\|Block Universe\|dark matter impacts\|LRDs.*anchor\|holographic thermodynamics\|entropic force\|thermodynamic backreaction\|EDGES.*confirm\|CatWISE.*confirm\|single.*PBH.*mass\|global.*5.2\|MORRIS\|Farrah\|cosmological coupling.*k.*3\|scale.dependent.*Yukawa\|Bottle.*Beam\|Neutron Lifetime"
 ```
+
+### CRITICAL: Jekyll/Liquid Traps
+- **NEVER write literal Liquid tags** in any .md file (including CLAUDE.md). Jekyll interprets them and the build crashes.
+- Bad: writing the characters percent-brace literally in documentation
+- Good: describe as "Jekyll Liquid templates" or "Liquid tags" in prose
+- This crashed the entire site deployment on 2026-03-25 until fixed.
 
 ## Document Architecture
 - **Site pages = PDF chapters** (one file, one page, one chapter)
