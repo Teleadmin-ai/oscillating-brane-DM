@@ -503,12 +503,34 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
             flags=re.DOTALL,
         )
 
-        # Also strip standalone HTML block elements that pdflatex can't render
-        # (div, h3 with emoji, etc.) but keep their text content
+        # Strip standalone HTML block elements that pdflatex can't render
         text = re.sub(r'<div[^>]*class="[^"]*"[^>]*>\s*</div>', "", text)
         text = re.sub(r"</?div[^>]*>", "", text)
         text = re.sub(r"<h3[^>]*>(.*?)</h3>", r"### \1", text)
         text = re.sub(r"<p><em>(.*?)</em></p>", r"*\1*", text, flags=re.DOTALL)
+        text = re.sub(r"<img[^>]*>", "", text)  # strip bare img tags
+        text = re.sub(r"</?p[^>]*>", "", text)  # strip p tags
+
+        # Strip Jekyll/Liquid template tags (they render as garbage in PDF)
+        text = re.sub(r"\{%.*?%\}", "", text)
+        text = re.sub(r"\{\{.*?\}\}", "", text)
+
+        # Fix indented markdown headers (4+ spaces = code block in pandoc)
+        text = re.sub(r"^[ \t]+(#{1,6}\s)", r"\1", text, flags=re.MULTILINE)
+
+        # Strip emoji characters (they render as boxes or [?] in pdflatex)
+        emoji_pattern = re.compile(
+            "["
+            "\U0001F300-\U0001F9FF"  # Misc Symbols, Emoticons, etc.
+            "\U00002600-\U000027BF"  # Misc symbols
+            "\U0001FA00-\U0001FA6F"
+            "\U0001FA70-\U0001FAFF"
+            "]+",
+            flags=re.UNICODE,
+        )
+        text = emoji_pattern.sub("", text)
+        # Strip emoji name artifacts like [universe], [rocket], etc.
+        text = re.sub(r"\[(?:universe|rocket|star|warning|check|microscope|telescope)\]\s*", "", text)
 
         return text
 
