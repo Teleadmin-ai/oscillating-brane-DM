@@ -49,35 +49,31 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 ## *The Cosmic Yoyo Theory*
 
 
-  <h2 style="color: #00ffcc; margin-bottom: 20px;"> Watch the Universe Breathe </h2>
+  ##  Watch the Universe Breathe 
   
   13.8 billion years of cosmic evolution: The membrane oscillates, dark energy pulsates, structure growth modulates
-
-
 
 
 ## The Universe as a Vibrating Cosmic Membrane
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane---our four-dimensional reality---is connected through a holographic network of quantum entangled black holes.
 
-**The Cosmic Yoyo V8.0**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor E_mu$\nu$ forcing --- the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally ($\ell$=0 mode) --- the metronome. Conformal symmetry (T^mu_mu = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda$_QCD = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor (xiRphi) locks the period at T = 2 Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the S$_{8}$ tension (via time-dependent growth suppression), and Planck's CMB anomaly.
+**The Cosmic Yoyo V8.0**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor $E_{\mu\nu}$ forcing --- the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally ($\ell$=0 mode) --- the metronome. Conformal symmetry ($T^\mu_\mu$ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda_{QCD}$ = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor (xiRphi) locks the period at T = 2 Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the S$_{8}$ tension (via time-dependent growth suppression), and Planck's CMB anomaly.
 
 
   
 ### Key Predictions
     
 
-| **Brane tension** | tau$_{0}$ = 7.0 x 10$^{19}$ J/m$^{2}$ |
+| **Brane tension** | $\tau_0$ = 7.0 x 10$^{19}$ J/m$^{2}$ |
 |---|---|
 | **Oscillation period** | T = 2.0 +/- 0.3 Gyr |
 | **MOND acceleration** | a$_{0}$ = 1.1 x 10$^{-10}$ m/s$^{2}$ |
 | **S$_{8}$ suppression** | ~5% (time-dependent G_eff oscillation) |
-| **Bayesian evidence** | Deltaln K = 4.13 +/- 0.07 |
+| **Bayesian evidence** | $\Delta\ln K$ = 4.13 +/- 0.07 |
 
 
   
-
-
 
 
 ## Revolutionary Insights
@@ -90,17 +86,10 @@ Our theory presents a paradigm shift in understanding cosmic dynamics:
 - **Modified gravity** appears at cosmic scales without new particles
 
 
-
 ## Recent Posts
 
 
-  <article class="post-preview">
-### <a href=""></a>
-    <time></time>
-    
-  </article>
-
-
+  
 
 
 ## Cosmic Evolution
@@ -108,11 +97,9 @@ Our theory presents a paradigm shift in understanding cosmic dynamics:
 The universe began with a violent birth, the brane appearing with quasi-Planckian tension. Through phases of inflation, reheating, and slow stabilization, it found its natural frequency and began its two-billion-year oscillation.
 
 
-
 ## The Oscillating Universe
 
 Every two billion years, the cosmic membrane completes one full cycle. This oscillation creates the dark energy we observe, modulates structure formation, and leaves its fingerprint in the cosmic microwave background.
-
 
 
 ## Future Tests
@@ -120,13 +107,11 @@ Every two billion years, the cosmic membrane completes one full cycle. This osci
 The coming decade will be decisive. Euclid will measure the dark energy equation of state with unprecedented precision. DESI will map the power spectrum modulation. CMB large-scale analysis will reveal the ISW imprints of our fundamental oscillation.
 
 
-
 ## Download the Theory
 
 - **[White Paper (6 pages)](/cosmic_yoyo_v5_holographic.pdf)** --- V8.0 Hybrid Topology Edition
 - **[Full Theory (~59 pages)](/oscillating_brane_theory_latest.pdf)** --- Complete documentation with computational validation
 - **[All Downloads](/downloads/)** --- Scripts, data, and additional resources
-
 
 
 \newpage
@@ -291,14 +276,14 @@ While the simple parametric $w(z)$ oscillation alone does not fully resolve the 
 
 The irreducible Lithium-7 abundance anomaly (observed deficit of factor 3--4 relative to $\Lambda$CDM predictions) is resolved by an infinitesimal conformal tolerance ($\delta H/H \sim 10^{-3}$) during the narrow thermal window of $^7$Be synthesis ($T \sim 0.03$--$0.05$ MeV). The brane geometric jitter selectively enhances $^7$Be destruction while preserving Helium-4 and Deuterium yields.
 
-![Lithium-7 Resolution](/root/bulk/oscillating-brane-DM/plots/lithium_resolution.png)
+![Lithium-7 Resolution](./plots/lithium_resolution.png)
 *Figure: BBN conformal tolerance resolves the Lithium-7 problem. $^7$Li suppressed by 3.5$\times$ (from $5.6 \times 10^{-10}$ to $1.6 \times 10^{-10}$), matching the Spite plateau. D and $^4$He abundances remain strictly at standard values (0% change). Solver: BDF stiff ODE.*
 
 ### Baryon Asymmetry via Kaluza-Klein Leptogenesis
 
 The matter-antimatter imbalance ($\eta_B \approx 6.1 \times 10^{-10}$) finds no adequate explanation in the Standard Model. The radion $\phi$ universally couples to gluons via $\mathcal{L} \supset c_{QCD}(\phi/L)\,G_{\mu\nu}\tilde{G}^{\mu\nu}$, making the radion position a **dynamic $\theta_{QCD}$ angle**. When the motor ignites at $T \approx 257$ MeV (first violent slip), $\dot{\theta}_{eff} = c_{QCD}\,\dot{\phi}/L \neq 0$ creates an effective baryon chemical potential exactly when quarks confine into baryons, locking in the asymmetry (Cohen-Kaplan spontaneous baryogenesis). With $c_{QCD} = \mathcal{O}(1)$ (natural, no fine-tuning), this geometric quench yields $\eta_B \approx 6.1 \times 10^{-10}$.
 
-![Baryon Asymmetry](/root/bulk/oscillating-brane-DM/plots/baryon_asymmetry.png)
+![Baryon Asymmetry](./plots/baryon_asymmetry.png)
 *Figure: Spontaneous QCD baryogenesis via radion-driven dynamic $\theta_{QCD}$. The first slip at $\Lambda_{QCD} = 257$ MeV drives the baryon chemical potential, freezing out at $\eta_B = 6.10 \times 10^{-10}$. Coupling $c_{QCD} = 1.0$ (natural O(1), no fine-tuning). No $\varepsilon$_CP needed.*
 
 ### The Big Ring and Ultra-Large Structures
@@ -307,7 +292,7 @@ Recent discoveries of the Big Ring ($\sim 1.3$ billion light-years diameter at $
 
 The geometric oscillation topology naturally generates these immense spatial density modes. The 2 Gyr temporal oscillation converts to comoving spatial resonance, creating standing wave harmonics in the matter distribution that exceed $\Lambda$CDM's maximum clustering scale (370 Mpc).
 
-![Big Ring Resonance](/root/bulk/oscillating-brane-DM/plots/big_ring_resonance.png)
+![Big Ring Resonance](./plots/big_ring_resonance.png)
 *Figure: Brane transverse resonance produces clustering peaks at $\lambda_1 \approx 816$ Mpc and $\lambda_2 \approx 2041$ Mpc, both exceeding $\Lambda$CDM's maximum structure size (370 Mpc). The fundamental resonance scale matches the Big Ring observation at $z \approx 0.8$.*
 
 ### CMB Alignments and Cosmic Birefringence
@@ -320,8 +305,8 @@ $$\mathcal{L}_{CS} = \frac{\alpha_{em}}{4\pi}\,c_{top}\left(\frac{\phi}{L}\right
 
 The cumulative rotation is $\Delta\beta = (\alpha_{em}/2\pi)\,c_{top}\,(\Delta\phi/L)$. With $\Delta\phi/L \approx 0.05$ from V8.0 dynamics and $c_{top} \approx 75$ (a natural topological Chern number for $G_2$ compactifications), this yields $\Delta\beta = 0.25°$ --- **derived ab initio, no fine-tuning**.
 
-![CMB Birefringence](/root/bulk/oscillating-brane-DM/plots/cmb_birefringence.png)
-*Figure: Ab initio CMB birefringence from 5D geometry. The 4D axion approach required an unnatural $c_{CS} \sim 10^{40}$; the correct 5D geometric formula gives $c_{top} = 75$ (natural O(10$^{2}$) Chern number). Delta$\beta$ = 0.250° matches ACT/Planck.*
+![CMB Birefringence](./plots/cmb_birefringence.png)
+*Figure: Ab initio CMB birefringence from 5D geometry. The 4D axion approach required an unnatural $c_{CS} \sim 10^{40}$; the correct 5D geometric formula gives $c_{top} = 75$ (natural O(10$^{2}$) Chern number). $\Delta\beta$ = 0.250° matches ACT/Planck.*
 
 ## Multi-Messenger Astrophysical Signatures
 
@@ -331,28 +316,28 @@ The V8.0 parameters ($L = 0.2\,\mu$m, $T = 2.0$ Gyr, stick-slip motor) predict s
 
 The NANOGrav 15-year dataset reveals a stochastic gravitational wave background (SGWB) with spectral features (excess at ~16 nHz, dip at ~2 nHz) unexplained by supermassive black hole binaries alone. The stick-slip motor's violent "slip" phase is a near-instantaneous geometric jerk. The Fourier transform of this asymmetric sawtooth waveform (slow stick, explosive slip) generates anharmonic overtones that leak directly into the nanohertz band.
 
-![NANOGrav Spectrum](/root/bulk/oscillating-brane-DM/plots/nanograv_spectrum.png)
+![NANOGrav Spectrum](./plots/nanograv_spectrum.png)
 *Figure: Stick-slip overtones in the NANOGrav nHz band. The asymmetric sawtooth waveform (left) produces high-frequency harmonics via FFT that match the observed spectral features (right).*
 
 ### The eROSITA Structure Growth Illusion ($\gamma = 1.19$)
 
 The eROSITA satellite measured a structure growth index $\gamma = 1.19$, while standard GR predicts $\gamma = 0.55$. In V8.0, $G_\text{eff}(z)$ oscillates with the brane. Our current epoch corresponds to a temporarily weakened gravity phase (brane stretched), causing cluster formation to stall. Fitting a constant-$G$ $\Lambda$CDM model to this oscillating data extracts an artificially inflated $\gamma$ --- the "illusion" of modified gravity is actually an artifact of applying a static model to a dynamic universe.
 
-![eROSITA Growth Illusion](/root/bulk/oscillating-brane-DM/plots/erosita_gamma_illusion.png)
+![eROSITA Growth Illusion](./plots/erosita_gamma_illusion.png)
 *Figure: Oscillating $G_\text{eff}(z)$ creates the illusion of $\gamma = 1.19$ when fitted with a constant-$G$ model. The growth rate $f(z)$ deviates from GR's $\Omega_m^{0.55}$ at low redshifts where the brane is currently stretched.*
 
 ### Dark-Matter-Free Galaxies: Cymatic Nodes (DF2/DF4)
 
 Galaxies NGC 1052-DF2 and DF4 appear to contain no dark matter, defying all standard formation models. In V8.0, dark matter is a geometric effect of the vibrating brane. Like a Chladni plate, the 3D standing wave possesses spatial nodes where the oscillation amplitude vanishes. Galaxies forming at these nodes experience pure Newtonian gravity --- zero Yukawa modification, zero apparent dark matter. Our simulation shows that ~3.4% of galaxies naturally fall at these nodes, consistent with the observed rarity of DM-free galaxies.
 
-![DF2 Cymatic Nodes](/root/bulk/oscillating-brane-DM/plots/df2_cymatic_nodes.png)
+![DF2 Cymatic Nodes](./plots/df2_cymatic_nodes.png)
 *Figure: Cymatic dark matter distribution. Galaxies at standing wave nodes (cyan) have zero apparent DM (like DF2/DF4). Galaxies at antinodes (red) have maximum apparent DM. ~3.4% of galaxies are DM-free --- matching observed rarity.*
 
 ### The Amaterasu Particle: Trans-GZK via 5D Leakage
 
 The Amaterasu cosmic ray (244 EeV) violated the GZK horizon --- it should have been destroyed by CMB photon collisions before reaching Earth. In V8.0, the extra dimension ($L = 0.2\,\mu$m) creates Kaluza-Klein gravitons ($m_\text{KK} \approx 1$ eV). At ultra-high energies, the proton-CMB collision opens virtual KK graviton exchange channels, leaking energy into the 5th dimension. This suppresses the pion-production cross-section, extending the GZK attenuation length by a factor of ~60 at 244 EeV --- the particle survives its intergalactic journey.
 
-![Amaterasu GZK Horizon](/root/bulk/oscillating-brane-DM/plots/amaterasu_gzk_horizon.png)
+![Amaterasu GZK Horizon](./plots/amaterasu_gzk_horizon.png)
 *Figure: 5D KK leakage extends the GZK horizon. At 244 EeV, the standard horizon is ~41 Mpc (particle dies); the V8.0 horizon is ~2482 Mpc (particle SURVIVES). Extension factor: 60$\times$.*
 
 ## Comparative Synthesis
@@ -397,7 +382,7 @@ The Universe ceases to be perceived as an inert spacetime matrix in desperate in
 # Chapter 3: Complete Theoretical Framework
 
 
-**V8.0 --- Hybrid Topology**: The stick-slip motor operates at two scales: (1) **macroscopic** --- the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous E_mu$\nu$ forcing; (2) **microscopic** --- the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally ($\ell$=0 mode). Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2pir_s/lambda approximately 0.03 << 1).
+**V8.0 --- Hybrid Topology**: The stick-slip motor operates at two scales: (1) **macroscopic** --- the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous $E_{\mu\nu}$ forcing; (2) **microscopic** --- the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally ($\ell$=0 mode). Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2pir_s/lambda approximately 0.03 << 1).
 
 ## Core Concepts
 
@@ -424,15 +409,15 @@ Each term has a distinct physical role:
 
 - **(3H + $\Gamma$_rad)phi̇** --- Hubble friction plus radiative damping. $\Gamma$_rad accounts for energy loss via bulk graviton emission (KK modes) during the violent slip phase. During the slow stick phase, $\Gamma$_rad approximately 0; during slip, $\Gamma$_rad spikes, capping the maximum velocity and preventing runaway amplitudes
 - **xiRphi** --- Non-minimal coupling to the 4D Ricci scalar R = 6($\dot{H}$ + 2H$^{2}$). This term ensures convergence to a dynamical attractor that locks T = 2.0 Gyr despite evolving H(t) and decaying DM accretion rates, resolving the chirp instability
-- **$\partial$V_GW/$\partial$phi** --- Goldberger-Wise restoring potential (Goldberger & Wise 1999), with minimum at the QCD confinement scale (tau$_{0}$^{1/3} = 257 MeV approximately $\Lambda$_QCD)
-- **F_web[E_mu$\nu$] x (1 - 3w_eff)** --- **Macroscopic forcing (the Muscle)**: the inhomogeneous Cosmic Web (superclusters, filaments, voids) creates a stress tensor S_mu$\nu$ on the brane. Via Israel junction conditions DeltaK_mu$\nu$ = -$\kappa$$_{5}$$^{2}$(S_mu$\nu$ - $\frac{1}{3}$S h_mu$\nu$), this generates the projected Weyl tensor E_mu$\nu$, which acts as a continuous 5D tidal force pressing the brane toward the bulk. The trace factor (1-3w) ensures conformal freeze-out during BBN and QCD ignition at $\Lambda$_QCD
+- **$\partial$V_GW/$\partial$phi** --- Goldberger-Wise restoring potential (Goldberger & Wise 1999), with minimum at the QCD confinement scale ($\tau_0$^{1/3} = 257 MeV approximately $\Lambda_{QCD}$)
+- **F_web[$E_{\mu\nu}$] x (1 - 3w_eff)** --- **Macroscopic forcing (the Muscle)**: the inhomogeneous Cosmic Web (superclusters, filaments, voids) creates a stress tensor $S_{\mu\nu}$ on the brane. Via Israel junction conditions Delta$K_{\mu\nu}$ = -$\kappa$$_{5}$$^{2}$($S_{\mu\nu}$ - $\frac{1}{3}$S $h_{\mu\nu}$), this generates the projected Weyl tensor $E_{\mu\nu}$, which acts as a continuous 5D tidal force pressing the brane toward the bulk. The trace factor (1-3w) ensures conformal freeze-out during BBN and QCD ignition at $\Lambda_{QCD}$
 - **R_PBH(phi,phi̇)·$\Theta$(|phi| - phi_crit)** --- **Microscopic release (the Metronome)**: when |phi| exceeds the QCD threshold phi_crit, the ER=EPR-entangled network of micro-PBHs allows the brane to release tension simultaneously everywhere in the universe ($\ell$=0 mode). The holographic wormhole network ensures global phase coherence --- the "slip" is quantum-synchronized
 
 ### Dynamical Attractor and Period Stability
 
 A simple harmonic oscillator would be damped by Hubble friction (3Hphi̇) in a few e-foldings. The stick-slip motor is fundamentally different --- it is a **driven** system with a **dynamical attractor**:
 
-1. **Stick phase**: E_mu$\nu$ geometric forcing slowly charges phi toward phi_crit against the Goldberger-Wise restoring potential
+1. **Stick phase**: $E_{\mu\nu}$ geometric forcing slowly charges phi toward phi_crit against the Goldberger-Wise restoring potential
 2. **Slip phase**: When |phi| exceeds phi_crit, the non-linear release R activates, triggering rapid energy discharge. The brane snaps back to equilibrium
 3. **Re-adhesion**: The cycle begins again. The macroscopic forcing is eternally sourced by the gravitational weight of the Cosmic Web's large-scale structure
 
@@ -440,7 +425,7 @@ A simple harmonic oscillator would be damped by Hubble friction (3Hphi̇) in a f
 
 ### BBN Protection via Conformal Symmetry and the Trace Anomaly
 
-In braneworld effective actions, the radion field phi does not couple to the raw energy density rho, but to the **trace of the energy-momentum tensor** T^mu_mu = -rho + 3p. The geometric forcing acquires a trace-coupling factor (1 - 3w_eff):
+In braneworld effective actions, the radion field phi does not couple to the raw energy density rho, but to the **trace of the energy-momentum tensor** $T^\mu_\mu$ = -rho + 3p. The geometric forcing acquires a trace-coupling factor (1 - 3w_eff):
 
 **1. Conformal Freeze-Out (Radiation Era):** During the BBN epoch, the universe is dominated by a relativistic plasma (photons, neutrinos, e+/- pairs) with w_eff = 1/3. The trace vanishes rigorously:
 
@@ -448,7 +433,7 @@ $$T^\mu_\mu = -\rho + 3\left(\frac{\rho}{3}\right) = 0$$
 
 Because of this perfect conformal symmetry, the coupling factor (1 - 3w_eff) = 0. The radion is **completely blind** to the bulk's geometric forcing. Combined with extreme Hubble friction (3Hphi̇), the brane remains frozen at equilibrium. Standard 4D GR is fully recovered, ensuring pristine primordial light-element abundances.
 
-**2. QCD Ignition (Trace Anomaly):** As the universe cools to the QCD phase transition (T approximately 150-200 MeV), chiral symmetry breaks, quarks confine into hadrons, and matter becomes non-relativistic (w_eff $\to$ 0). The trace becomes non-zero (T^mu_mu approximately -rho), and the coupling factor jumps from 0 to 1 --- instantly igniting the stick-slip motor. This fundamentally explains why the membrane's energy scale (tau$_{0}$^{1/3} = 257 MeV) is locked to $\Lambda$_QCD: the motor can only activate when conformal symmetry breaks at the QCD scale.
+**2. QCD Ignition (Trace Anomaly):** As the universe cools to the QCD phase transition (T approximately 150-200 MeV), chiral symmetry breaks, quarks confine into hadrons, and matter becomes non-relativistic (w_eff $\to$ 0). The trace becomes non-zero ($T^\mu_\mu$ approximately -rho), and the coupling factor jumps from 0 to 1 --- instantly igniting the stick-slip motor. This fundamentally explains why the membrane's energy scale ($\tau_0$^{1/3} = 257 MeV) is locked to $\Lambda_{QCD}$: the motor can only activate when conformal symmetry breaks at the QCD scale.
 
 ### Energy of the Membrane
 
@@ -457,14 +442,14 @@ The deformation energy of the cosmic membrane is:
 $$E_{tens} = \frac{1}{2} \tau_0 A \left(\frac{2\pi z}{\lambda}\right)^2$$
 
 Where:
-- tau$_{0}$ = 7.0 x 10<sup>19</sup> J/m$^{2}$ is the brane tension
+- $\tau_0$ = 7.0 x 10<sup>19</sup> J/m$^{2}$ is the brane tension
 - A $\simeq$ R_H$^{2}$ is the area of the observable universe
 - z is the displacement in the extra dimension
 - lambda $\simeq$ 2R_H is the fundamental wavelength
 
 ### The QCD Connection
 
-In natural units: tau$_{0}$ = 0.017 GeV$^{3}$. The fundamental energy scale is:
+In natural units: $\tau_0$ = 0.017 GeV$^{3}$. The fundamental energy scale is:
 
 $$E_\tau = \tau_0^{1/3} = 257 \text{ MeV} \approx \Lambda_{QCD}$$
 
@@ -499,11 +484,11 @@ The stick-slip oscillation creates a time-varying dark energy:
 
 $$w(z) = -1 + A_w \sin\left(\frac{2\pi t_{lb}(z)}{T} + \phi_0\right)$$
 
-With amplitude A_w $\simeq$ 0.003, period T = 2.0 +/- 0.3 Gyr, and phase phi$_{0}$ = pi/2. The phase places us today at a **maximum** of w(z) approximately -0.997, with w descending into phantom territory (w < -1) in the recent past --- exactly reproducing DESI's measured phantom crossing (w_a < 0) without ghost fields.
+With amplitude A_w $\simeq$ 0.003, period T = 2.0 +/- 0.3 Gyr, and phase $\phi_0$ = pi/2. The phase places us today at a **maximum** of w(z) approximately -0.997, with w descending into phantom territory (w < -1) in the recent past --- exactly reproducing DESI's measured phantom crossing (w_a < 0) without ghost fields.
 
 Note: The stick-slip waveform is not purely sinusoidal (slower ramp during stick phase, faster release during slip), but the equation above captures the leading harmonic component.
 
-![w(z) Oscillation](/root/bulk/oscillating-brane-DM/plots/w_z_oscillation.png)
+![w(z) Oscillation](./plots/w_z_oscillation.png)
 *Figure: BDF stiff solver output showing the radion displacement, phase space attractor, dark energy equation of state w(z) with phantom crossing matching DESI DR2, and energy density oscillations.*
 
 **Numerical validation (BDF stiff solver, `scipy.integrate.solve_ivp`):** The radion ODE was integrated from 0.5 to 13.8 Gyr using a stiff BDF solver with exact cosmological lookback time (no logarithmic approximation). Results: $w_{DE}(z)$ oscillates in the range $[-1.003, -0.997]$ with amplitude $A_w = 0.003$ and period $T = 2.0$ Gyr. The phantom crossing ($w < -1$) occurs naturally without ghost fields, matching DESI DR2 observations. Maximum radion displacement $|\phi|/L = 0.05$, well below the fragmentation threshold. The stick-slip attractor converges within ~2 e-foldings, confirming period stability despite evolving Hubble friction.
@@ -533,7 +518,7 @@ $$a_0 = \frac{cH_0}{2\pi} \approx 1.1 \times 10^{-10} \text{ m/s}^2$$
 
 ### The Adiabatic Shield
 
-The brane oscillation frequency is $\nu$ ~ 1.6 x 10$^{-17}$ Hz (period 2 Gyr), while the lightest Kaluza-Klein excitations have mass ~1 eV, corresponding to $\nu$_KK ~ 10$^{1}$$^{4}$ Hz. The ratio is:
+The brane oscillation frequency is $\nu$ ~ 1.6 x 10$^{-17}$ Hz (period 2 Gyr), while the lightest Kaluza-Klein excitations have mass ~1 eV, corresponding to $\nu$_KK ~ $10^{14}$ Hz. The ratio is:
 
 $$\frac{\nu_{\text{brane}}}{\nu_{KK}} \sim 10^{-31}$$
 
@@ -543,7 +528,7 @@ $$\Gamma_{\text{branon}} \propto e^{-\pi m_{KK}^2 / (eE)} \sim e^{-10^{31}} \app
 
 ### Double Stability Guarantee
 
-The stick-slip motor provides a **second** stability guarantee beyond the adiabatic shield. Even if quantum friction were non-zero, the E_mu$\nu$ geometric forcing continuously replenishes energy lost to any dissipation mechanism. The oscillation is both quantum-protected AND actively driven.
+The stick-slip motor provides a **second** stability guarantee beyond the adiabatic shield. Even if quantum friction were non-zero, the $E_{\mu\nu}$ geometric forcing continuously replenishes energy lost to any dissipation mechanism. The oscillation is both quantum-protected AND actively driven.
 
 ### 5D Topological Stability and Radiative Damping
 
@@ -562,7 +547,7 @@ During the slow stick phase, acceleration is minimal and $\Gamma$_rad approximat
 ## Key Predictions
 
 1. **Oscillating dark energy** detectable by Euclid and DESI
-2. **ISW resonance** at CMB multipole $\ell$ = 10-20 (the "smoking gun", Deltachi$^{2}$ = 32.9)
+2. **ISW resonance** at CMB multipole $\ell$ = 10-20 (the "smoking gun", $\Delta\chi$$^{2}$ = 32.9)
 3. **Time-dependent growth suppression** via oscillating G_eff(t) reconciling DES and KiDS
 4. **SKA 21cm reionization modulation**: spatial modulation of 21cm power spectrum during the Epoch of Reionization (definitive future test)
 5. **Hubble anisotropy** mapping cosmic tension variations (Cosmicflows-4)
@@ -574,7 +559,7 @@ During the slow stick phase, acceleration is minimal and $\Gamma$_rad approximat
 
 The stick-slip cycle operates at two scales simultaneously:
 
-1. **Stick phase (the Macroscopic Muscle)**: The Cosmic Web --- composed of massive dark matter superclusters, filaments, and vast voids --- creates a highly inhomogeneous stress tensor S_mu$\nu$ on the brane. Via the Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), this asymmetric mass distribution bends the brane toward the 5D bulk, generating the projected Weyl tensor E_mu$\nu$. This continuous macroscopic geometric tidal force slowly charges the radion phi toward the critical threshold phi_crit
+1. **Stick phase (the Macroscopic Muscle)**: The Cosmic Web --- composed of massive dark matter superclusters, filaments, and vast voids --- creates a highly inhomogeneous stress tensor $S_{\mu\nu}$ on the brane. Via the Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), this asymmetric mass distribution bends the brane toward the 5D bulk, generating the projected Weyl tensor $E_{\mu\nu}$. This continuous macroscopic geometric tidal force slowly charges the radion phi toward the critical threshold phi_crit
 2. **Threshold crossing**: When |phi| exceeds phi_crit (set by the QCD confinement scale), the ER=EPR-entangled PBH network activates
 3. **Slip phase (the Quantum Metronome)**: The holographic wormhole network connecting billions of micro-PBHs synchronizes the non-linear release across the entire brane ($\ell$=0 mode). The brane snaps back toward equilibrium --- the tension is released everywhere simultaneously
 4. **Re-adhesion**: The cycle begins anew. The Cosmic Web is cosmologically persistent --- the motor never runs out of fuel
@@ -583,7 +568,7 @@ The stick-slip cycle operates at two scales simultaneously:
 
 The V8.0 motor operates through the coupling of two physical scales:
 
-**Macroscopic forcing (Cosmic Web):** The universe is not smooth --- the Cosmic Web's superclusters, filaments, and voids create a massive, inhomogeneous stress tensor S_mu$\nu$ on the brane. Via the Shiromizu-Maeda-Sasaki (2000) Israel junction conditions, DeltaK_mu$\nu$ = -$\kappa$$_{5}$$^{2}$(S_mu$\nu$ - $\frac{1}{3}$S h_mu$\nu$), this heterogeneous mass distribution bends the brane toward the 5D bulk, generating the continuous Weyl tensor E_mu$\nu$ that drives phi toward phi_crit. This is the macroscopic engine --- the brane breathes under the gravitational weight of its own large-scale structure.
+**Macroscopic forcing (Cosmic Web):** The universe is not smooth --- the Cosmic Web's superclusters, filaments, and voids create a massive, inhomogeneous stress tensor $S_{\mu\nu}$ on the brane. Via the Shiromizu-Maeda-Sasaki (2000) Israel junction conditions, Delta$K_{\mu\nu}$ = -$\kappa$$_{5}$$^{2}$($S_{\mu\nu}$ - $\frac{1}{3}$S $h_{\mu\nu}$), this heterogeneous mass distribution bends the brane toward the 5D bulk, generating the continuous Weyl tensor $E_{\mu\nu}$ that drives phi toward phi_crit. This is the macroscopic engine --- the brane breathes under the gravitational weight of its own large-scale structure.
 
 **Microscopic synchronization (PBH ER=EPR network):** Without a non-local synchronization mechanism, the brane would vibrate chaotically (information limited by c). The ER=EPR-entangled network of billions of asteroid-mass PBHs provides this mechanism. Because they share quantum correlations through Einstein-Rosen bridges in the bulk, they act as quantum pressure valves: when phi reaches phi_crit, the entire network releases simultaneously, ensuring the pure $\ell$=0 fundamental mode. This is the metronome --- guaranteeing that the 2 Gyr pulsation is coherent across 93 billion light-years.
 
@@ -655,7 +640,7 @@ Nature was whispering to us: "Think bigger, think global."
 
 The crucial insight was recognizing that the entire universe vibrates like a cosmic drumhead. When dark matter flows through gravitational funnels, it doesn't excite a local oscillator but the fundamental mode of the entire universe-membrane.
 
-For a membrane of radius R_H = c/H$_{0}$ = 1.33 x 10$^{2}$$^{6}$ m (the Hubble horizon, the distance to which we can see), the deformation energy is:
+For a membrane of radius R_H = c/H$_{0}$ = 1.33 x $10^{26}$ m (the Hubble horizon, the distance to which we can see), the deformation energy is:
 
 $$E_\text{tens} = \frac{1}{2}\,\tau_0\, A \left(\frac{2\pi z}{\lambda}\right)^2$$
 
@@ -732,17 +717,17 @@ This natural cooling allows the fundamental mode to enter resonance when the osc
 
 ### Current Oscillations
 Today, the brane has reached its equilibrium configuration:
-- Stable tension tau$_{0}$ = 7x10<sup>19</sup> J/m$^{2}$
+- Stable tension $\tau_0$ = 7x10<sup>19</sup> J/m$^{2}$
 - Fundamental period T = 2.0 Gyr
 - 10% of dark matter participates in oscillations
 
 ## The Violent Birth
 
-In this framework, the brane appears at the Big Bang with quasi-Planckian tension tau_BB ~ 10$^{5}$$^{0}$ J/m$^{2}$---a membrane stretched to breaking point, vibrating with pure energy.
+In this framework, the brane appears at the Big Bang with quasi-Planckian tension tau_BB ~ $10^{50}$ J/m$^{2}$---a membrane stretched to breaking point, vibrating with pure energy.
 
 **Phase I - Trans-membrane Inflation (0 - 10$^{-34}$ s)**: The colossal excess tension fuels exponential expansion. The membrane expands like a soap bubble blown by a hurricane, creating space from dimensional nothingness.
 
-**Phase II - Brane Reheating (10$^{-34}$ - 10$^{-32}$ s)**: Tension drops abruptly via massive production of dark matter/anti-dark matter pairs in the bulk. This "quantum evaporation" dissipates excess energy, leaving residual tension around 10$^{3}$$^{0}$ J/m$^{2}$.
+**Phase II - Brane Reheating (10$^{-34}$ - 10$^{-32}$ s)**: Tension drops abruptly via massive production of dark matter/anti-dark matter pairs in the bulk. This "quantum evaporation" dissipates excess energy, leaving residual tension around $10^{30}$ J/m$^{2}$.
 
 **Phase III - Slow Stabilization (10$^{-32}$ s - 100 Myr)**: Tension relaxes logarithmically toward its current value. Like a violin string being tuned, the membrane seeks its natural frequency.
 
@@ -762,7 +747,7 @@ $$T \approx t_\text{stick} + t_\text{slip} \approx 2.0 \text{ Gyr}$$
 
 where t_stick is the charging time ($E_{\mu\nu}$ forcing against GW restoring potential) and t_slip is the rapid discharge time. The harmonic approximation $T \approx 2\pi\sqrt{f_\text{osc} M_\text{DM,tot}/\tau_0}$ gives the correct order of magnitude but the precise period requires numerical integration of the full V8.0 ODE including the $\xi R\phi$ attractor term.
 
-### Determination of tau$_{0}$
+### Determination of $\tau_0$
 
 Inverting for the observed period T = 2.0 Gyr:
 
@@ -796,7 +781,7 @@ Our framework preserves all successful predictions of $\Lambda$CDM while adding:
 
 The brane paradigm unifies inflation, dark matter, and dark energy into a single geometric framework.
 
-![Cosmic Timeline](/root/bulk/oscillating-brane-DM/plots/cosmic_timeline.png)
+![Cosmic Timeline](./plots/cosmic_timeline.png)
 *Figure: Evolution of brane tension from inflation to present day*
 
 \newpage
@@ -816,7 +801,7 @@ The oscillating brane theory V8.0 makes specific, testable predictions that dist
    |    ⏳ qBOUNCE / nanoscale optomechanics (sub-micron gravity)
    |
 2026    ⏳ Planck CMB anomaly = ISW resonance
-   |    $\to$ Our chi$^{2}$ improvement: 32.9 (6sigma)
+   |    $\to$ Our $\chi^2$ improvement: 32.9 (6sigma)
    |
 2027    DESI full survey $\to$ power spectrum modulation
    |    SKA-Low $\to$ 21cm reionization modulation (DEFINITIVE TEST)
@@ -829,7 +814,7 @@ The oscillating brane theory V8.0 makes specific, testable predictions that dist
 ### Established Confirmations (2024-2026)
 
 ** Already Observed:**
-- **DESI 2024-2026**: Dark energy evolves with 4sigma significance --- exactly matching our oscillating w(z) with phi$_{0}$ = pi/2
+- **DESI 2024-2026**: Dark energy evolves with 4sigma significance --- exactly matching our oscillating w(z) with $\phi_0$ = pi/2
 - **S$_{8}$ tension**: Time-dependent growth suppression via oscillating G_eff(t) bridges DES/KiDS gap
 
 **⏳ Imminent Tests:**
@@ -855,18 +840,13 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 
 - **Resonance peak**: $\ell$ = 10-20 (angular scale ~12°)
 - **Power suppression**: 16% at resonance
-- **Statistical significance**: chi$^{2}$ improvement of 32.9 (6sigma over $\Lambda$CDM)
-
+- **Statistical significance**: $\chi^2$ improvement of 32.9 (6sigma over $\Lambda$CDM)
 
 
 *Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The $\Lambda$CDM constant w=-1 is now refuted at 4sigma significance.*
 
 
-
-
-*Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-$\ell$ power deficit. The chi$^{2}$ improvement of 32.9 (6sigma significance) proves the oscillating brane model.*
-
-
+*Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-$\ell$ power deficit. The $\chi^2$ improvement of 32.9 (6sigma significance) proves the oscillating brane model.*
 
 
 *Figure 3: Theoretical prediction of ISW effect from membrane oscillations.*
@@ -882,7 +862,6 @@ The oscillation's imprint appears in the CMB through the Integrated Sachs-Wolfe 
 ### Structure Growth Suppression (Time-Dependent Gravitational Oscillation)
 
 
-
 *Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (~5% slower); CMB/KiDS extrapolations from earlier phases remain quasi-standard.*
 
 
@@ -891,7 +870,6 @@ The brane oscillation modulates the effective gravitational coupling in time:
 $$G_{\text{eff}}(t) = G_N \left(1 + f_\text{osc}\, \sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
 The current stretched phase ($G_\text{eff} < G_N$) produces ~5% growth suppression at low redshift (resolving DES S$_{8}$ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). This is the same temporal mechanism explaining the eROSITA $\gamma = 1.19$ anomaly.
-
 
 
 *Figure 5: Structure growth suppression in oscillating brane model vs $\Lambda$CDM*
@@ -905,7 +883,7 @@ $$\delta T_b(\vec{k}, z) \supset \Delta T_{osc}(k)\, \sin\left(\frac{2\pi t(z)}{
 
 with characteristic amplitude $\Delta T_\text{osc} \sim 1$--$5$ mK at BAO-scale wavenumbers. **SKA-Low (2027+)** has the sensitivity and k-range to detect or exclude this modulation at $>3\sigma$, constituting the definitive test of the brane oscillation.
 
-![SKA 21cm Prediction](/root/bulk/oscillating-brane-DM/plots/ska_prediction.png)
+![SKA 21cm Prediction](./plots/ska_prediction.png)
 *Figure: SKA 21cm reionization modulation prediction. Peak signal 5.46 mK (SNR = 5.5sigma detectable by SKA-Low). The 2D map shows the modulation DeltaT_b(k,z) over the Epoch of Reionization.*
 
 **Numerical validation (21cm mock, exact lookback time):** The brane-induced modulation reaches a **peak amplitude of 5.46 mK** at high redshift. At BAO scales ($k \sim 0.1$ Mpc$^{-1}$), the modulation is 0.70 mK. Against SKA-Low thermal noise (~1 mK per mode for ~1000h integration), this yields a **detection SNR of 5.5$\sigma$** --- well above the $3\sigma$ discovery threshold. If SKA-Low observes no $2$ Gyr spatial modulation in the 21cm power spectrum, the oscillating brane theory is ruled out.
@@ -978,8 +956,8 @@ $$\Delta\ln K = 4.13 \pm 0.07$$
 
 Strong evidence --- the data clearly prefer our vibrating cosmos.
 
-![Nested Sampling Posteriors](/root/bulk/oscillating-brane-DM/plots/nested_sampling_posteriors.png)
-*Figure: Nested sampling posteriors (dynesty) for the three brane parameters. Deltaln K = 4.13 +/- 0.07 --- STRONG evidence on the Jeffreys scale.*
+![Nested Sampling Posteriors](./plots/nested_sampling_posteriors.png)
+*Figure: Nested sampling posteriors (dynesty) for the three brane parameters. $\Delta\ln K$ = 4.13 +/- 0.07 --- STRONG evidence on the Jeffreys scale.*
 
 **Numerical validation (dynesty Nested Sampling, 500 live points):** Results: $\ln Z_\text{Brane} = 11.96 \pm 0.07$, $\ln Z_{\Lambda\text{CDM}} = 7.83 \pm 0.01$, yielding **Bayes factor $\Delta\ln K = 4.13 \pm 0.07$** --- STRONG evidence on the Jeffreys scale ($e^{4.13} \approx 62\times$ more probable than $\Lambda$CDM). Posterior convergence: $\tau_0 = 10^{19.51 \pm 0.28}$ J/m$^2$, $f_\text{osc} = 0.126 \pm 0.035$, $T_\text{osc} = 2.00 \pm 0.21$ Gyr (all $\hat{R} \approx 1.000$).
 
@@ -1233,8 +1211,8 @@ with:
 |-----------|-------------------|------|------|
 | **DM Nature** | Geometric effect from extra dimensions | Unknown particles (WIMPs, axions) | No DM, modified gravity |
 | **Theoretical Basis** | String theory/M-theory (RS extension) | Particle physics extensions | Empirical modification |
-| **Free Parameters** | 3 (tau$_{0}$, f_osc, L) | 2+ (Omega_c, sigma_v, m_chi) | 1 (a$_{0}$) + relativistic ext. |
-| **CMB Fit Quality** | DeltaC_$\ell$/C_$\ell$ < 10$^{-3}$ | chi$^{2}$/dof approximately 1.00 | Poor without 2eV neutrinos |
+| **Free Parameters** | 3 ($\tau_0$, f_osc, L) | 2+ (Omega_c, sigma_v, m_chi) | 1 (a$_{0}$) + relativistic ext. |
+| **CMB Fit Quality** | DeltaC_$\ell$/C_$\ell$ < 10$^{-3}$ | $\chi^2$/dof approximately 1.00 | Poor without 2eV neutrinos |
 | **Galaxy Rotations** | v$^{4}$ proportional to M_b automatically | Requires NFW/Einasto profiles | v$^{4}$ proportional to M_b by design |
 | **Tully-Fisher sigma** | ~0.05 dex predicted | ~0.3 dex (with scatter) | ~0.05 dex (built-in) |
 | **Cluster M/L ratio** | 300-400 (factor 5-6 boost) | 200-500 (varies) | Fails without DM |
@@ -1268,7 +1246,7 @@ with:
 | Observable | Prediction | Uncertainty | Detection Method | Timeline |
 |------------|------------|-------------|------------------|----------|
 | **Fundamental Parameters** |
-| Brane tension tau$_{0}$ | 7.0 x 10$^{1}$$^{9}$ J/m$^{2}$ | +/-15% | Indirect via H$_{0}$(z) | Current |
+| Brane tension $\tau_0$ | 7.0 x $10^{19}$ J/m$^{2}$ | +/-15% | Indirect via H$_{0}$(z) | Current |
 | Oscillation period T | 2.0 Gyr | +/-0.3 Gyr | GW spectrum | 2030+ |
 | Extra dimension L | 0.2 mum | Factor of 2 | KK modes | 2035+ |
 | KK mass m_KK | 1 eV | +/-0.5 eV | Cosmological bounds | Current |
@@ -1872,7 +1850,7 @@ The Bayesian evidence calculation (Deltaln K = 3.33) relies on specific prior ch
 
 | Model | Parameter | Distribution | Range/Parameters | Units | Motivation |
 |-------|-----------|--------------|------------------|--------|------------|
-| Oscillating | tau$_{0}$ | Log-uniform | [10$^{1}$$^{9}$, 10$^{2}$$^{0}$] | J/m$^{2}$ | Scale-invariant prior for unknown energy scale |
+| Oscillating | tau$_{0}$ | Log-uniform | [$10^{19}$, $10^{20}$] | J/m$^{2}$ | Scale-invariant prior for unknown energy scale |
 | | f_osc | Uniform | [0.05, 0.20] | - | Weak prior based on halo core constraints |
 | | T | Gaussian | mu=2.0, sigma=0.3 | Gyr | Centered on theoretical prediction |
 | | A_w | Uniform | [0.001, 0.005] | - | Constrained by dark energy observations |
@@ -1888,7 +1866,7 @@ The Bayesian evidence calculation (Deltaln K = 3.33) relies on specific prior ch
 
 | Parameter | Mean | Median | Std | 68% CI | R̂ |
 |-----------|------|--------|-----|--------|-----|
-| tau$_{0}$ (J/m$^{2}$) | 7.08x10$^{1}$$^{9}$ | 7.00x10$^{1}$$^{9}$ | 1.07x10$^{1}$$^{9}$ | [6.03x10$^{1}$$^{9}$, 8.13x10$^{1}$$^{9}$] | 1.000 |
+| tau$_{0}$ (J/m$^{2}$) | 7.08x$10^{19}$ | 7.00x$10^{19}$ | 1.07x$10^{19}$ | [6.03x$10^{19}$, 8.13x$10^{19}$] | 1.000 |
 | f_osc | 0.100 | 0.100 | 0.020 | [0.081, 0.120] | 1.000 |
 | T (Gyr) | 2.00 | 2.00 | 0.20 | [1.80, 2.20] | 1.000 |
 | A_w | 0.003 | 0.003 | 0.001 | [0.002, 0.004] | 1.000 |
@@ -2071,7 +2049,6 @@ While significant theoretical and observational work remains, the framework show
 - Rakhmetov, P. et al. (2025) - "5D numerical relativity with dynamic branes: Technical implementation", in preparation
 
 
-
 \newpage
 
 # Chapter 7: Laboratory Proofs
@@ -2127,7 +2104,7 @@ At the current qBOUNCE resolution (~1 $\mu$m), the experiment sees only the expo
 
 The matrix element $\langle 1\vert\delta V\vert 6\rangle$ was computed using Airy wavefunctions integrated against the Yukawa potential (BDF solver). The effective Robin parameter $\lambda_\text{OBT}$ was extracted as a function of spatial resolution $z_\text{res}$.
 
-![qBOUNCE Lambda Prediction](/root/bulk/oscillating-brane-DM/plots/qbounce_lambda_prediction.png)
+![qBOUNCE Lambda Prediction](./plots/qbounce_lambda_prediction.png)
 *Figure: The Robin parameter $\lambda$ as a function of experimental resolution. At current qBOUNCE resolution (1 $\mu$m), $\lambda$ is tiny. As resolution approaches $L = 0.2\,\mu$m, it amplifies by 55$\times$ --- a direct detection of the extra dimension.*
 
 **Key results:**
@@ -2179,7 +2156,7 @@ $$\dot{\rho} = -\frac{i}{\hbar}[H_\text{sys} + H_\text{int}, \rho] + \mathcal{D}
 
 where the dissipator $\mathcal{D}[\phi(t)]$ is fully determined by the radion trajectory --- not a free noise parameter. The software predicts the objective collapse locus by tracking $\phi$ fluctuations in real-time via the Weyl tensor data from the sensor array.
 
-![Laplace Demon Readout](/root/bulk/oscillating-brane-DM/plots/laplace_demon_readout.png)
+![Laplace Demon Readout](./plots/laplace_demon_readout.png)
 *Figure: Sensor displacement vs target distance. At $r = L = 0.2\,\mu$m, the V8.0 Yukawa correction enhances Newton by 0.4%. The "5D Readout Zone" (green) is where the extra-dimensional signal dominates. Current gap with single atoms acknowledged; mesoscopic targets + squeezed states + Q-accumulation bring SNR within near-term reach.*
 
 ### Implications: Toward the 5D Topological Quantum Computer
@@ -2295,7 +2272,7 @@ log_evidence, error = results.logz[-1], results.logzerr[-1]
 - Nested sampling with dynesty (rigorous Bayesian evidence)
 - Marginal likelihood calculation (ln Z)
 - Parameter constraints and posterior convergence
-- Model comparison (Bayes factor Deltaln K)
+- Model comparison (Bayes factor $\Delta\ln K$)
 
 ## Interactive Notebooks
 

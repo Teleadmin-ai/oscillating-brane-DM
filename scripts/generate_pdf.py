@@ -521,16 +521,20 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
         # Strip emoji characters (they render as boxes or [?] in pdflatex)
         emoji_pattern = re.compile(
             "["
-            "\U0001F300-\U0001F9FF"  # Misc Symbols, Emoticons, etc.
-            "\U00002600-\U000027BF"  # Misc symbols
-            "\U0001FA00-\U0001FA6F"
-            "\U0001FA70-\U0001FAFF"
+            "\U0001f300-\U0001f9ff"  # Misc Symbols, Emoticons, etc.
+            "\U00002600-\U000027bf"  # Misc symbols
+            "\U0001fa00-\U0001fa6f"
+            "\U0001fa70-\U0001faff"
             "]+",
             flags=re.UNICODE,
         )
         text = emoji_pattern.sub("", text)
         # Strip emoji name artifacts like [universe], [rocket], etc.
-        text = re.sub(r"\[(?:universe|rocket|star|warning|check|microscope|telescope)\]\s*", "", text)
+        text = re.sub(
+            r"\[(?:universe|rocket|star|warning|check|microscope|telescope)\]\s*",
+            "",
+            text,
+        )
 
         return text
 
@@ -557,18 +561,107 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 
         return "".join(result)
 
+    @staticmethod
+    def polish_combined_markdown(text: str) -> str:
+        """Clean up hybrid LaTeX/text artifacts for readable standalone .md.
+
+        After Unicode sanitization, the combined markdown has artifacts like
+        tau$_{0}$ (should be $\\tau_0$) and 10$^{1}$$^{9}$ (should be $10^{19}$).
+        This pass merges them into clean inline LaTeX.
+        """
+
+        # ── Merge adjacent inline math blocks ──
+        # 10$^{1}$$^{9}$ → $10^{19}$  (split superscripts from Unicode digits)
+        # Pattern: digit(s)$^{X}$$^{Y}$... → $digit^{XY...}$
+        def merge_superscripts(m):
+            prefix = m.group(1)  # e.g. "10" or ""
+            exponents = re.findall(r"\^\{([^}]*)\}", m.group(0))
+            merged = "".join(exponents)
+            return f"${prefix}^{{{merged}}}$"
+
+        text = re.sub(
+            r"(\d*)\$\^\{[^}]*\}\$(?:\$\^\{[^}]*\}\$)+",
+            merge_superscripts,
+            text,
+        )
+
+        # Same for subscripts: X$_{0}$$_{8}$ → $X_{08}$
+        def merge_subscripts(m):
+            prefix = m.group(1)
+            subs = re.findall(r"_\{([^}]*)\}", m.group(0))
+            merged = "".join(subs)
+            return f"${prefix}_{{{merged}}}$"
+
+        text = re.sub(
+            r"(\w*)\$_\{[^}]*\}\$(?:\$_\{[^}]*\}\$)+",
+            merge_subscripts,
+            text,
+        )
+
+        # ── Fix hybrid text+math patterns (protect display math blocks) ──
+        hybrid_fixes = [
+            (r"\btau\$_\{0\}\$", r"$\\tau_0$"),
+            (r"\btau\$_\{BB\}\$", r"$\\tau_{BB}$"),
+            (r"\bphi\$_\{crit\}\$", r"$\\phi_{crit}$"),
+            (r"\bphi\$_\{0\}\$", r"$\\phi_0$"),
+            (r"E_mu\$\\nu\$", r"$E_{\\mu\\nu}$"),
+            (r"S_mu\$\\nu\$", r"$S_{\\mu\\nu}$"),
+            (r"K_mu\$\\nu\$", r"$K_{\\mu\\nu}$"),
+            (r"h_mu\$\\nu\$", r"$h_{\\mu\\nu}$"),
+            (r"T\^mu_mu", r"$T^\\mu_\\mu$"),
+            (r"\$\\Lambda\$_QCD", r"$\\Lambda_{QCD}$"),
+            (r"\$\\Lambda\$CDM", r"$\\Lambda$CDM"),
+            (r"(?<!\$)Deltaln K", r"$\\Delta\\ln K$"),
+            (r"(?<!\$)Deltachi\b", r"$\\Delta\\chi$"),
+            (r"\bchi\$\^\{2\}\$", r"$\\chi^2$"),
+            (r"(?<!\$)Delta\$\\beta\$", r"$\\Delta\\beta$"),
+        ]
+        # Apply only outside display math $$...$$ blocks
+        display_math = re.compile(r"(\$\$[\s\S]*?\$\$)")
+        segments = display_math.split(text)
+        result_segs = []
+        for i, seg in enumerate(segments):
+            if i % 2 == 1:
+                result_segs.append(seg)  # display math — untouched
+            else:
+                for pattern, replacement in hybrid_fixes:
+                    seg = re.sub(pattern, replacement, seg)
+                result_segs.append(seg)
+        text = "".join(result_segs)
+
+        # ── Fix image paths for standalone readability ──
+        # /root/bulk/.../plots/xxx.png → ./plots/xxx.png
+        text = re.sub(
+            r"!\[([^\]]*)\]\(/root/[^)]*?/plots/", r"![\1](./plots/", text
+        )
+        # /plots/xxx.png → ./plots/xxx.png
+        text = re.sub(r"!\[([^\]]*)\]\(/plots/", r"![\1](./plots/", text)
+        # HTML img tags
+        text = re.sub(r'src="/root/[^"]*?/plots/', 'src="./plots/', text)
+        text = re.sub(r'src="/plots/', 'src="./plots/', text)
+
+        # ── Strip residual HTML block elements ──
+        text = re.sub(r"<article[^>]*>.*?</article>", "", text, flags=re.DOTALL)
+        text = re.sub(r"<time[^>]*>.*?</time>", "", text, flags=re.DOTALL)
+        text = re.sub(r'<h2\s+style="[^"]*"[^>]*>(.*?)</h2>', r"## \1", text)
+        text = re.sub(r"<span[^>]*>(.*?)</span>", r"\1", text)
+
+        # ── Clean up multiple blank lines ──
+        text = re.sub(r"\n{4,}", "\n\n\n", text)
+
+        return text
+
     def generate_pdf_direct(self, output_path: Path) -> bool:
         """Generate PDF directly using pandoc with all content."""
         # Create combined markdown
         combined_md = self.create_combined_markdown()
 
-        # Pipeline: sanitize Unicode → convert HTML tables
+        # Pipeline: sanitize Unicode → convert HTML → polish artifacts
         combined_md = self.sanitize_unicode_for_latex(combined_md)
         combined_md = self.convert_html_tables_to_markdown(combined_md)
-        # Note: fi/fl ligature fix removed — too aggressive (breaks LaTeX
-        # package names like float.sty). Ligature rendering is cosmetic only.
+        combined_md = self.polish_combined_markdown(combined_md)
         print(
-            f"\n  Pre-processed: Unicode sanitized, HTML tables converted"
+            f"\n  Pre-processed: Unicode sanitized, HTML converted, markdown polished"
         )
 
         # Save intermediate markdown
