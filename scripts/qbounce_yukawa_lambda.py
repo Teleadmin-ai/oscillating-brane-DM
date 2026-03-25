@@ -252,8 +252,8 @@ def main():
     ax.set_xlim(0, 5)
 
     plt.tight_layout()
-    plt.savefig("plots/lab_signatures/qbounce_lambda_prediction.png", dpi=150)
-    print(f"\nPlot saved: plots/lab_signatures/qbounce_lambda_prediction.png")
+    plt.savefig("plots/qbounce_lambda_prediction.png", dpi=150)
+    print(f"\nPlot saved: plots/qbounce_lambda_prediction.png")
 
     # Analytical Robin parameter via Higgs-Radion mixing
     print(f"\n{'=' * 60}")
