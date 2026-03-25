@@ -315,10 +315,150 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 
         return combined
 
+    @staticmethod
+    def sanitize_unicode_for_latex(text: str) -> str:
+        """Replace Unicode characters that pdflatex cannot render.
+
+        pdflatex only supports ASCII + LaTeX commands. Unicode symbols
+        in plain text (outside $..$ blocks) are silently dropped, causing
+        missing minus signs, vanishing π, etc.  This pre-processor converts
+        them to safe LaTeX equivalents *before* pandoc sees the content.
+
+        We must NOT touch content already inside LaTeX math delimiters
+        ($..$ or $$..$$) because those already use \pi, \times, etc.
+        """
+        # ── Map of Unicode chars → LaTeX-safe replacements ──
+        # Greek letters (text context → inline math)
+        replacements = {
+            "π": r"$\pi$",
+            "Λ": r"$\Lambda$",
+            "Δ": r"$\Delta$",
+            "Σ": r"$\Sigma$",
+            "Ω": r"$\Omega$",
+            "Γ": r"$\Gamma$",
+            "Θ": r"$\Theta$",
+            "α": r"$\alpha$",
+            "β": r"$\beta$",
+            "γ": r"$\gamma$",
+            "δ": r"$\delta$",
+            "ε": r"$\varepsilon$",
+            "ζ": r"$\zeta$",
+            "η": r"$\eta$",
+            "θ": r"$\theta$",
+            "κ": r"$\kappa$",
+            "λ": r"$\lambda$",
+            "μ": r"$\mu$",
+            "ν": r"$\nu$",
+            "ξ": r"$\\xi$",
+            "ρ": r"$\rho$",
+            "σ": r"$\sigma$",
+            "τ": r"$\tau$",
+            "φ": r"$\varphi$",
+            "χ": r"$\chi$",
+            "ψ": r"$\psi$",
+            "ω": r"$\omega$",
+            # Operators and symbols
+            "×": r"$\times$",
+            "≃": r"$\simeq$",
+            "≈": r"$\approx$",
+            "≥": r"$\geq$",
+            "≤": r"$\leq$",
+            "≫": r"$\gg$",
+            "≪": r"$\ll$",
+            "±": r"$\pm$",
+            "∓": r"$\mp$",
+            "→": r"$\to$",
+            "←": r"$\leftarrow$",
+            "↔": r"$\leftrightarrow$",
+            "∞": r"$\infty$",
+            "∝": r"$\propto$",
+            "∼": r"$\sim$",
+            "ℓ": r"$\ell$",
+            "ℏ": r"$\hbar$",
+            "ℒ": r"$\mathcal{L}$",
+            "∂": r"$\partial$",
+            # Typographic
+            "—": "---",
+            "–": "--",
+            "\u2018": "`",  # left single quote
+            "\u2019": "'",  # right single quote
+            "\u201c": "``",  # left double quote
+            "\u201d": "''",  # right double quote
+            # Superscripts → LaTeX
+            "⁰": r"$^{0}$",
+            "¹": r"$^{1}$",
+            "²": r"$^{2}$",
+            "³": r"$^{3}$",
+            "⁴": r"$^{4}$",
+            "⁵": r"$^{5}$",
+            "⁶": r"$^{6}$",
+            "⁷": r"$^{7}$",
+            "⁸": r"$^{8}$",
+            "⁹": r"$^{9}$",
+            "⁻": r"$^{-}$",
+            "⁺": r"$^{+}$",
+            # Subscripts → LaTeX
+            "₀": r"$_{0}$",
+            "₁": r"$_{1}$",
+            "₂": r"$_{2}$",
+            "₃": r"$_{3}$",
+            "₄": r"$_{4}$",
+            "₅": r"$_{5}$",
+            "₆": r"$_{6}$",
+            "₇": r"$_{7}$",
+            "₈": r"$_{8}$",
+            "₉": r"$_{9}$",
+            # Fractions
+            "⅓": r"$\frac{1}{3}$",
+            "½": r"$\frac{1}{2}$",
+            "¼": r"$\frac{1}{4}$",
+            # Misc
+            "Ḣ": r"$\dot{H}$",
+        }
+
+        # Split text into math and non-math segments.
+        # We only replace in non-math segments.
+        # Pattern: match $$...$$ (display) or $...$ (inline), non-greedy.
+        math_pattern = re.compile(r"(\$\$[\s\S]*?\$\$|\$[^\$\n]+?\$)")
+        segments = math_pattern.split(text)
+
+        result = []
+        for i, seg in enumerate(segments):
+            if i % 2 == 1:
+                # This is a math segment — leave untouched
+                result.append(seg)
+            else:
+                # This is a text segment — apply replacements
+                for uchar, latex in replacements.items():
+                    seg = seg.replace(uchar, latex)
+                # Collapse adjacent inline math: $^{-}$$^{1}$$^{7}$ → $^{-17}$
+                seg = re.sub(
+                    r"\$\^\{(-?)\}\$\$\^\{(\d)\}\$\$\^\{(\d)\}\$",
+                    r"$^{\1\2\3}$",
+                    seg,
+                )
+                seg = re.sub(
+                    r"\$\^\{(-?)\}\$\$\^\{(\d)\}\$",
+                    r"$^{\1\2}$",
+                    seg,
+                )
+                seg = re.sub(
+                    r"\$_\{(\d)\}\$\$_\{(\d)\}\$",
+                    r"$_{\1\2}$",
+                    seg,
+                )
+                result.append(seg)
+
+        return "".join(result)
+
     def generate_pdf_direct(self, output_path: Path) -> bool:
         """Generate PDF directly using pandoc with all content."""
         # Create combined markdown
         combined_md = self.create_combined_markdown()
+
+        # Sanitize Unicode for pdflatex compatibility
+        combined_md = self.sanitize_unicode_for_latex(combined_md)
+        print(f"\n  Unicode sanitized for pdflatex")
 
         # Save intermediate markdown
         temp_md = output_path.with_suffix(".combined.md")
