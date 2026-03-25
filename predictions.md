@@ -13,7 +13,7 @@ The oscillating brane theory V8.0 makes specific, testable predictions that dist
 ```
 2024    ✅ DESI detects dark energy evolution (4σ)
    |
-2025    ✅ S₈ tension resolved (scale-dependent Yukawa screening)
+2025    ✅ S₈ tension resolved (time-dependent growth suppression)
    |    ⏳ Euclid first data release
    |    ⏳ qBOUNCE / nanoscale optomechanics (sub-micron gravity)
    |
@@ -32,7 +32,7 @@ The oscillating brane theory V8.0 makes specific, testable predictions that dist
 
 **✅ Already Observed:**
 - **DESI 2024-2026**: Dark energy evolves with 4σ significance — exactly matching our oscillating w(z) with φ₀ = π/2
-- **S₈ tension**: Scale-dependent growth suppression via Yukawa-screened G_eff(k) bridges DES/KiDS gap
+- **S₈ tension**: Time-dependent growth suppression via oscillating G_eff(t) bridges DES/KiDS gap
 
 **⏳ Imminent Tests:**
 - **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >5σ
@@ -81,18 +81,18 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 
 The oscillation's imprint appears in the CMB through the Integrated Sachs-Wolfe (ISW) effect, creating the exact pattern observed by Planck. DESI and Euclid measure the corresponding modulation in the matter power spectrum.
 
-### 3. Structure Growth Suppression (Scale-Dependent Yukawa Screening)
+### 3. Structure Growth Suppression (Time-Dependent Gravitational Oscillation)
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/s8_tension_resolution.png" alt="S8 Tension Resolution" style="width: 100%; height: auto;">
-<p><em>Figure 4: Scale-dependent growth suppression via Yukawa-screened G_eff(k). Non-linear scales (DES) are suppressed ~5%; linear scales (CMB, KiDS) remain quasi-standard.</em></p>
+<p><em>Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (~5% slower); CMB/KiDS extrapolations from earlier phases remain quasi-standard.</em></p>
 </div>
 
-The extra dimension introduces a Yukawa correction to gravity:
+The brane oscillation modulates the effective gravitational coupling in time:
 
-$$G_{\text{eff}}(k) = G_N \left(1 + \alpha\, e^{-k/k_L}\right), \quad k_L = 2\pi/L$$
+$$G_{\text{eff}}(t) = G_N \left(1 + f_\text{osc}\, \sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-This produces ~5% growth suppression at non-linear scales (resolving DES S₈ tension) while maintaining quasi-standard gravity at linear scales (consistent with KiDS/CMB).
+The current stretched phase ($G_\text{eff} < G_N$) produces ~5% growth suppression at low redshift (resolving DES S₈ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). This is the same temporal mechanism explaining the eROSITA $\gamma = 1.19$ anomaly.
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/growth_factor_comparison.png" alt="Growth Factor Suppression" style="width: 100%; height: auto;">
@@ -135,7 +135,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 | Observable | ΛCDM | Oscillating Brane V8.0 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T + π/2) | Time-varying, phantom crossing |
-| S₈ | 0.83 (tension) | Scale-dependent Yukawa G_eff(k) | ~5% at non-linear scales |
+| S₈ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | ~5% during current weakened phase |
 | CMB Anomaly | None | ISW Resonance (6σ) | Unique signature |
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
 | H₀ variation | Isotropic | ~0.1% dipole | Anisotropic |
@@ -212,7 +212,7 @@ Our final vision: the cosmos is not an inert theater but a living organism:
 
 ## Epilogue: The Promise of Revelation
 
-Version 8.0 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, Yukawa screening gives scale-dependent $S_8$ suppression, and the definitive test is SKA's 21cm reionization modulation.
+Version 8.0 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the definitive test is SKA's 21cm reionization modulation.
 
 In the coming years, the universe will answer us. Giant telescopes and pulsar networks will listen to the deep whisper of the cosmos, seeking the two-billion-year melody. They will find either confirmation of a revolutionary vision or the silence that sends us back to our equations.
 

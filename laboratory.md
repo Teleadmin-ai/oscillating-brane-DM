@@ -66,77 +66,7 @@ The matrix element $\langle 1\vert\delta V\vert 6\rangle$ was computed using Air
 
 **Falsifiable prediction**: Improve qBOUNCE spatial resolution from 1 $\mu$m to 0.2 $\mu$m. If the Robin parameter does not amplify by at least an order of magnitude, the extra dimension at $L = 0.2\,\mu$m is ruled out.
 
-## 2. The Neutron Lifetime Anomaly: Bottle vs Beam
-
-### The Mystery
-
-One of the most persistent puzzles in nuclear physics is the **neutron lifetime anomaly**: two independent methods of measuring the neutron's mean lifetime yield systematically different results at $> 4\sigma$ significance.
-
-- **Beam method** (counting protons from in-flight decay): $\tau_\text{beam} = 888.0 \pm 2.0$ s
-- **Bottle method** (trapping UCNs in material walls): $\tau_\text{bottle} = 878.4 \pm 0.5$ s
-- **Discrepancy**: $\Delta\tau \approx 9.5$ s ($\sim 1\%$)
-
-No Standard Model explanation accounts for this difference. Proposals invoking exotic decay channels (neutron → dark matter) have been experimentally excluded. The anomaly remains open.
-
-### The V8.0 Resolution: Higgs-Radion Resonance at the Walls
-
-The Higgs-Radion mixing mechanism provides a natural resolution. In **bottle experiments**, ultra-cold neutrons bounce repeatedly against material walls. At each bounce, the neutron's wavefunction penetrates the $\sim 0.2\,\mu$m boundary layer where the 5D Yukawa potential is concentrated. Within this layer, the Higgs VEV is locally perturbed:
-
-$$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right)$$
-
-The neutron's $\beta$-decay rate ($n \to p + e^- + \bar{\nu}_e$) is governed by the Fermi coupling $G_F \propto g^2/M_W^2$, where the W-boson mass $M_W = gv/2$ depends directly on the Higgs VEV. In the boundary layer, the locally enhanced VEV increases $M_W$, modifying the available phase space for decay. The weak decay rate scales as:
-
-$$\Gamma_\beta \propto G_F^2 \propto \frac{1}{v^4}$$
-
-However, the phase-space integral for neutron $\beta$-decay depends on the mass difference $\Delta m = m_n - m_p$ and the electron mass, both of which are VEV-dependent. The net effect of the locally perturbed VEV during wall interactions is a **slight acceleration of the decay rate** during the fraction of time the neutron spends in the Yukawa boundary layer.
-
-### Quantitative Mechanism: The Quantum Overlap Integral
-
-A classical "dwell time" argument — estimating how long a bouncing ball spends near the wall — would suggest the effect is negligibly small. The correct treatment requires rigorous quantum mechanics.
-
-The UCN wavefunction in a gravitational bottle is not a classical trajectory but a standing quantum state described by Airy functions $\psi_n(z) = N_n \text{Ai}(z/z_0 - a_n)$, with characteristic length scale $z_0 \approx 5.87\,\mu$m. Crucially, $|\psi_n(z)|^2$ is **non-zero at the mirror surface** and has significant probability density throughout the sub-micron region where the Yukawa perturbation is concentrated.
-
-The effective lifetime shift is governed by the **spatial overlap integral** of the UCN probability density with the Higgs VEV perturbation zone:
-
-$$\mathcal{I}_n = \int_0^\infty |\psi_n(z)|^2 \, \eta\,e^{-z/L} \, dz$$
-
-This integral does not vanish even though $L = 0.2\,\mu$m is much smaller than $z_0$, because the Airy wavefunction has a finite boundary value $|\psi_n(0)|^2 > 0$ (guaranteed by the Robin condition, which precisely encodes the 5D physics). The exponential Yukawa factor $e^{-z/L}$ acts as a sharp spatial filter, extracting the wavefunction amplitude at the mirror surface and weighting it by the Higgs-Radion coupling strength.
-
-The fractional decay rate enhancement per bounce is:
-
-$$\frac{\delta\Gamma}{\Gamma_0} = 4\,\mathcal{I}_n$$
-
-where the factor of 4 derives from $\Gamma_\beta \propto G_F^2 \propto v^{-4}$. Integrated over the UCN collision frequency ($\nu_\text{bounce} \sim 10$-$20$ Hz) and the neutron's full lifetime ($\sim 880$ s), the cumulative phase-space modification yields:
-
-$$\frac{\Delta\tau}{\tau} \sim \nu_\text{bounce} \times \tau \times \frac{\delta\Gamma}{\Gamma_0} \sim \mathcal{O}(1\%)$$
-
-The key insight is that the quantum overlap $\mathcal{I}_n$ is orders of magnitude larger than what a classical dwell-time estimate would suggest, because the wavefunction samples the Yukawa zone **continuously** (not just during fleeting classical wall collisions). This quantum enhancement mechanism transforms a seemingly microscopic boundary effect into a macroscopically observable 9.5-second lifetime deficit.
-
-### Falsifiable Prediction
-
-**Beam experiments see no anomaly** because the neutrons decay in free flight, far from any material surface — they never encounter the 0.2 $\mu$m Yukawa boundary layer. **Bottle experiments see faster decay** because every bounce exposes the neutron to the Higgs-Radion resonance zone.
-
-This resolution makes a testable prediction: **if the anomaly is strictly material-dependent**, magnetic bottle experiments (confining neutrons with magnetic fields, no physical walls) should measure a lifetime closer to the beam value ($\tau \approx 888$ s).
-
-### Preempting the Magnetic Bottle Counter-Argument (UCNτ)
-
-The immediate objection is that the **UCNτ experiment** at Los Alamos National Laboratory, which confines neutrons using Halbach-array magnetic fields with no material walls, still measures a short lifetime ($\tau = 877.75 \pm 0.28$ s) — apparently invalidating a wall-dependent mechanism.
-
-The V8.0 framework resolves this apparent contradiction. The anomaly is not material-dependent — it is **geometry-dependent (confinement-dependent)**. The critical variable is not whether the neutron touches matter, but whether it encounters a region of intense localized energy density that curves spacetime at the sub-micron scale.
-
-**The magnetic confinement produces the same geometric effect.** While the classical electromagnetic stress-energy tensor is traceless ($T^\mu_\mu = 0$ for free radiation), the magnetic confinement in UCNτ is far from classical vacuum electrodynamics. The Halbach arrays produce highly asymmetric, rapidly varying magnetic field gradients with localized energy density:
-
-$$T_{00}^\text{mag} = \frac{B^2}{2\mu_0} \sim \mathcal{O}(1\text{ T}^2 / \mu_0) \sim 4 \times 10^5 \text{ J/m}^3$$
-
-concentrated at the magnetic turning points where the UCN's kinetic energy equals the magnetic potential ($\mu_n \cdot B \sim 60$ neV/T). At these turning points, the neutron wavefunction decelerates and accumulates probability density within a spatial region of $\sim \mathcal{O}(\mu\text{m})$ — precisely the scale of the extra dimension $L$.
-
-The intense, spatially confined energy density at the magnetic turning points curves the local 4D metric, generating a non-zero Ricci scalar $R$ in a region commensurate with $L$. Through the non-minimal coupling $\xi R H^\dagger H$, this localized curvature excites the radion and triggers the **identical Higgs-Radion resonance** as a physical sapphire mirror. The magnetic "wall" acts as a **virtual geometric wall** in the 5D metric: the neutron never touches matter, but it traverses a region where 5D geometry is locally distorted by the concentrated electromagnetic energy density.
-
-**Quantitative consistency**: The magnetic turning point produces a softer Yukawa overlap than a sharp material surface (the field gradient extends over $\sim 1$-$10\,\mu$m vs. the atomic-scale step function of a sapphire mirror), which slightly reduces $\mathcal{I}_n$. This is consistent with the UCNτ measurement ($877.75$ s) being marginally closer to the beam value ($888$ s) than material bottle measurements ($878.4$ s), though the difference is within current experimental uncertainties.
-
-**The falsifiable test**: A future experiment confining neutrons in a **purely gravitational trap** (e.g., a parabolic flight trajectory with no walls and no magnetic fields) should recover the beam lifetime $\tau \approx 888$ s. Only gravitational confinement avoids both material surfaces and concentrated electromagnetic energy density, eliminating all sources of sub-micron curvature that could trigger the Higgs-Radion resonance.
-
-## 3. The 5D Geometric Bypass: Non-Demolition Quantum State Readout
+## 2. The 5D Geometric Bypass: Non-Demolition Quantum State Readout
 
 ### The Epistemological Shift
 
@@ -206,7 +136,6 @@ This is a collaboration opportunity where cosmological theory meets terrestrial 
 | Experiment | Current Status | V8.0 Prediction | Falsification |
 |-----------|---------------|-----------------|---------------|
 | qBOUNCE (ILL) | $\lambda$ = small anomaly at 1 $\mu$m | $\lambda$ amplifies 55$\times$ at 0.2 $\mu$m | Improve resolution to 0.2 $\mu$m |
-| Neutron lifetime (Bottle vs Beam) | $\Delta\tau \approx 9.5$ s at $> 4\sigma$ | Higgs-Radion resonance at walls accelerates decay | Gravitational-only trap should recover 888 s |
 | Levitated optomechanics | Zeptonewton sensitivity achieved | 0.4% Yukawa enhancement at $L$ | Detect sub-$\mu$m gravity deviation |
 | 5D Quantum Bypass | Theoretical blueprint | Non-demolition readout via bulk gravitons | Mesoscopic target + squeezed sensor |
 

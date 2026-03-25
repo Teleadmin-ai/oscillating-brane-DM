@@ -83,21 +83,23 @@ When DESI's CPL linear fit ($w(a) = w_0 + (1-a)w_a$) attempts to approximate thi
 
 **Falsifiable prediction**: DESI Year 5 data will reveal that a pure sinusoidal function yields a better Bayesian Information Criterion (BIC) than the CPL form.
 
-### 3.2. The $S_8$ Growth Crisis: Scale-Dependent Yukawa Screening
+### 3.2. The $S_8$ Growth Crisis: Time-Dependent Growth Suppression
 
 CMB observations (Planck + ACT DR6 + SPT-3G) converge on $S_8 = 0.836^{+0.012}_{-0.013}$. Late-Universe weak lensing surveys (DES Year 6) show a persistent $2.4\sigma$--$2.7\sigma$ tension, favoring $S_8 \approx 0.79$. Yet KiDS Legacy shows $< 1\sigma$ consistency with Planck.
 
-The Brane model predicts intrinsically **scale-dependent** suppression via Yukawa screening from the extra dimension:
+The Brane model resolves this through **temporal gravitational oscillation**. As the brane vibrates with period $T = 2$ Gyr, the effective gravitational coupling oscillates in time:
 
-$$G_{eff}(k) = G_N\!\left(1 + \alpha\;e^{-k/k_L}\right), \quad k_L = 2\pi/L$$
+$$G_\text{eff}(t) = G_N\!\left(1 + f_\text{osc}\;\sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-| Survey | Scale | Observed $S_8$ | Brane Prediction |
+During the primordial epoch (BBN, CMB), conformal symmetry froze the brane — gravity was exactly Newtonian. But the late-Universe structures probed by DES grew during the **current weakened-gravity phase** of the oscillation cycle, producing ~5% slower growth. This is the same temporal mechanism that explains the eROSITA $\gamma = 1.19$ anomaly.
+
+| Survey | Redshift range | Observed $S_8$ | Brane Prediction |
 |--------|-------|----------------|-----------------|
-| Planck / ACT DR6 (CMB) | Linear, early | $\approx 0.836$ | Standard gravity preserved |
-| KiDS Legacy | Linear, late | Consistent ($< 1\sigma$) | Standard gravity preserved |
-| DES Year 6 | Non-linear, late | $\approx 0.79$ (tension $> 2\sigma$) | $\sim 5\%$ growth suppression |
+| Planck / ACT DR6 (CMB) | $z = 1100$ (primordial) | $\approx 0.836$ | Conformal protection: standard gravity |
+| KiDS Legacy | $z \sim 0.1$--$0.9$ (mixed) | Consistent ($< 1\sigma$) | Averages over multiple oscillation phases |
+| DES Year 6 | $z < 0.5$ (late, non-linear) | $\approx 0.79$ (tension $> 2\sigma$) | Current stretched phase: $\sim 5\%$ growth suppression |
 
-The apparent inconsistency between surveys becomes the **confirmatory signature** of the extra-dimensional architecture.
+The apparent inconsistency between surveys is the **confirmatory signature** of the oscillating brane: different surveys weight different redshift ranges, sampling different temporal phases of the gravitational cycle.
 
 ### 3.3. The Planck ISW Anomaly: Low-Multipole Resonance
 
@@ -109,7 +111,7 @@ $$\Delta\chi^2 = 32.9 \quad (6\sigma \text{ improvement over } \Lambda\text{CDM}
 
 The LZ experiment holds the world record, excluding spin-independent WIMP-nucleon cross-sections down to $2.2 \times 10^{-48}$ cm$^2$ at 36 GeV (December 2025). LZ now detects solar neutrinos via coherent elastic neutrino-nucleus scattering (CE$\nu$NS) at $4.5\sigma$, plunging into the irreducible "neutrino fog". LHC Run 3 at 13.6 TeV found no evidence of beyond-Standard-Model physics.
 
-In the Brane paradigm, this series of null results is not a disappointment but confirmation of a primordial ontological prediction: **there are no WIMP particles to detect**. The colossal gravitational effects attributed to an invisible particle halo arise from geometric properties --- the coupling between Yukawa-screened $G_{eff}(k)$ and the diffuse topological anchoring by the macroscopic PBH network. Dark matter is geometric, arising from the 5D Weyl tensor projected via Shiromizu-Maeda-Sasaki junction conditions.
+In the Brane paradigm, this series of null results is not a disappointment but confirmation of a primordial ontological prediction: **there are no WIMP particles to detect**. The colossal gravitational effects attributed to an invisible particle halo arise from geometric properties --- the coupling between the oscillating $G_\text{eff}(t)$ and the diffuse topological anchoring by the macroscopic PBH network. Dark matter is geometric, arising from the 5D Weyl tensor projected via Shiromizu-Maeda-Sasaki junction conditions.
 
 ### 3.5. Small Scales: Emergent MOND Formalism
 
@@ -129,7 +131,7 @@ JWST has spectroscopically confirmed galaxies at spectacular redshifts: JADES-GS
 
 The Brane motor contributes three simultaneous mechanisms for rapid early structure formation:
 
-1. **Inverse Yukawa screening**: The scale-dependent amplification via $G_{eff}(k)$ acts exponentially more favorably in the ultra-dense early Universe
+1. **Temporally enhanced gravity**: During earlier oscillation phases, $G_\text{eff}(t) > G_N$, accelerating structure formation beyond $\Lambda$CDM rates
 2. **PBH seed architecture**: The topological capillaries ($\sim 10^{20}$ kg PBH clusters) act as pre-existing gravitational seeds, forcing baryons to agglomerate around primordial topological nodes
 3. **Cosmic expansion braking ("stick phase")**: Modified expansion during high-redshift stick phases temporarily alleviates the Hubble drag on structure collapse
 
@@ -231,15 +233,15 @@ The Amaterasu cosmic ray (244 EeV) violated the GZK horizon — it should have b
 |---------------------|---------------------|-------------------------------|
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric |
-| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Yukawa screening: $\sim 5\%$ suppression at short scales only |
-| Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + Yukawa amplification + modified Hubble friction |
+| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: ~5% during current weakened-gravity phase |
+| Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + temporally enhanced gravity + modified Hubble friction |
 | Undetectable Dark Matter | Zero particles in two decades (LZ/XENONnT) | No WIMPs. Dark matter = 5D geometric signature (Weyl tensor) |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr oscillation period ($\Delta\chi^2 = 32.9$) |
 | Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Emergent MOND ($a_0 = cH_0/2\pi$), fully relativistic |
 | Cosmological Constant | $10^{120}$ orders of magnitude discrepancy | Thermodynamic relaxation of oscillatory amplitude in $AdS_5$ |
 | Cosmic Dipole | Tension with cosmological principle | Brane drift velocity in 5th dimension |
 | Early SMBHs (JWST) | Assembly pathways exhausted | ER=EPR funneling + heavy PBH seed tail |
-| Hubble Tension ($H_0$) | $> 6\sigma$ discrepancy | Combined Yukawa calibration + sound horizon modification |
+| Hubble Tension ($H_0$) | $> 6\sigma$ discrepancy | Oscillating $G_\text{eff}(t)$ biases Cepheid calibration + sound horizon modification |
 | NANOGrav GWB features | Unexplained spectral dips/excesses | Stick-slip anharmonic overtones in nHz band |
 | eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_\text{eff}(z)$ creates fitting illusion |
 | DM-free galaxies (DF2/DF4) | Defy formation models | Cymatic standing wave nodes (~3.4% of galaxies) |

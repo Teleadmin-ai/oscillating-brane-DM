@@ -81,9 +81,9 @@ This value, neither arbitrary nor adjusted, emerges naturally from the system's 
 
 Beyond masses, in vast cosmic voids, spacetime becomes "lazy"—it resists movement differently. This laziness manifests as a threshold acceleration:
 
-$$a_0 = \frac{cH_0}{2\pi} \times \xi = 1.1 \times 10^{-10} \text{ m/s}^2$$
+$$a_0 = \frac{cH_0}{2\pi} \approx 1.1 \times 10^{-10} \text{ m/s}^2$$
 
-The factor $\xi \simeq 1.05$ encodes the informational content of the horizon—how many quantum "bits" define each cell of space.
+This is the standard holographic acceleration scale — it emerges naturally from the brane's elastic coupling to the Hubble horizon, without any free parameter.
 
 ### Local Anisotropies: Mapping Tension
 
@@ -97,9 +97,9 @@ where $\delta\tau/\tau_0$ represents the local tension contrast, estimated at ab
 
 Our framework preserves all successful predictions of $\Lambda$CDM while adding:
 1. Natural explanation for dark energy timing (QCD ignition)
-2. Mechanism for MOND-like effects at large scales (Yukawa screening)
+2. Mechanism for MOND-like effects at galactic scales (holographic acceleration $a_0 = cH_0/2\pi$)
 3. Testable oscillations in cosmological observables ($w(z)$, ISW, 21cm)
-4. Scale-dependent structure growth reconciling DES and KiDS
+4. Time-dependent structure growth reconciling DES and KiDS
 
 The brane paradigm unifies inflation, dark matter, and dark energy into a single geometric framework.
 

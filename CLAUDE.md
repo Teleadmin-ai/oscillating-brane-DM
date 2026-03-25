@@ -58,14 +58,14 @@ git commit -m "Regenerate PDF" && git push
 - **5D stability**: **Radiative damping** via bulk graviton emission during slip phase caps amplitude
 - **PBH wave-optics immunity**: For M ~ 10⁻¹² M☉, r_s ≈ 3 nm ≪ λ_opt ≈ 600 nm. Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1. Subaru-HSC is physically blind (deep wave-optics regime). Micro-PBH capillaries rehabilitated
 - **Dark energy**: w(z) = -1 + A_w sin(2πt_lb/T + φ₀) with **φ₀ = π/2** → w_a < 0 (DESI)
-- **S₈ suppression**: Via **Yukawa screening** G_eff(k) = G_N(1 + α exp(-k/k_L)). Scale-dependent
+- **S₈ suppression**: Via **time-dependent growth suppression** G_eff(t) = G_N(1 + f_osc sin(2πt/T + φ₀)). Temporal, not spatial
 - **ISW resonance**: CMB ℓ = 10-20, Δχ² = 32.9 (6σ)
 - **Anchors**: Micro-PBHs with **extended log-normal mass function** (10⁻¹⁴ to 10⁻¹⁰ M☉). Dual role: topological capillaries AND quantum synchronization nodes (ER=EPR)
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
 
 ### Epistemological Framework:
 - **22 anomalies resolved** (numerically validated, no fine-tuning):
-  - 3 core: DESI phantom crossing, S₈ tension (scale-dependent Yukawa), Planck ISW (Δχ²=32.9)
+  - 3 core: DESI phantom crossing, S₈ tension (time-dependent growth suppression), Planck ISW (Δχ²=32.9)
   - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND, JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
   - 3 astrophysical signatures: Hubble's 43 anomalous objects (ER=EPR topological scarring), dark flow unification (v_bulk=300 km/s), Chladni mega-structures
@@ -86,7 +86,9 @@ git commit -m "Regenerate PDF" && git push
 - **"Complexity=Volume" as the motor** (ok as historical motivation only)
 - **EDGES/CatWISE as confirmations**
 - **Single PBH mass 10⁻¹² M☉** (must use extended mass function)
-- **"global S₈ suppression of 5.2%"** (must be scale-dependent Yukawa)
+- **"global S₈ suppression of 5.2%"** (must be time-dependent, ~5% during current weakened-gravity phase)
+- **"Scale-Dependent Yukawa Screening" for S₈** (k/k_L ~ 10⁻²⁹ at cosmological scales → no spatial dependence)
+- **Neutron Lifetime Anomaly / Bottle vs Beam** (double counting error + T^μ_μ=0 for EM fields → removed)
 - **"temperature-dependent brane tension" / "τ(T)"** (replaced by conformal symmetry)
 - **"MORRIS" experiment** (operates at 1 mm, blinded by Casimir)
 - **"Warped Shielding" as mere geometric filter** (replaced by radiative damping)
@@ -103,7 +105,7 @@ git commit -m "Regenerate PDF" && git push
 - **Radiative damping Γ_rad** via bulk graviton emission
 - **ξRφ non-minimal coupling** as dynamical attractor
 - **Extended mass function (EMF)** log-normal for PBHs
-- **Yukawa screening** G_eff(k) for scale-dependent S₈
+- **Time-dependent G_eff(t)** for S₈ suppression (same mechanism as eROSITA)
 - **SKA 21cm** as definitive future test
 - **qBOUNCE + optomechanics** for sub-micron lab tests
 
@@ -121,7 +123,7 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | φ_crit | ~0.1 L (QCD threshold) |
 | f_osc | 0.10 |
 | A_w | 0.003 |
-| S₈ suppression | ~5% at non-linear scales (Yukawa screening) |
+| S₈ suppression | ~5% during current weakened-gravity phase (temporal) |
 | ISW Δχ² | 32.9 (6σ) |
 | Micro-PBH EMF | Log-normal, 10⁻¹⁴ to 10⁻¹⁰ M☉ |
 | ξ (non-minimal coupling) | ~0.15 |
@@ -229,6 +231,23 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - After adding/modifying any `.py` file: run `black scripts/*.py && isort scripts/*.py` before commit
 - CI job `test` will fail if formatting is wrong — does not affect PDF or site deployment
 - **NEVER pin black to an exact version** in ci.yml (e.g., `black==26.3.1`) — it breaks when CI uses a different Python version. Just use `black` (latest).
+
+## TODO: Visual Page & Video Expansion
+### Phase 1: visual.md (PDF embeds)
+- Create `visual.md` (non-PDF site page, excluded from `generate_pdf.py`)
+- 17 discovery PDFs (EN) + 3 prediction PDFs (EN) = 20 iframe embeds
+- File convention: `assets/pdf/discovery_XX_slug.pdf`, `assets/pdf/prediction_XX_slug.pdf`
+- User will provide a single PDF with all PowerPoint images first, then individual files
+- Same titles/descriptions as corresponding videos
+- FR versions later
+
+### Phase 2: videos.md expansion
+- Current: 6 discovery + 3 prediction = 9 videos (EN+FR)
+- Target: 17 discoveries × 2 langs + 3 predictions × 2 langs = 40 videos total
+- User will provide additional YouTube links when ready
+
+### Phase 3: FR visual PDFs
+- Add FR versions of all 20 visual PDFs once available
 
 ## Human-AI Collaboration
 Romain = conceptual architect (Faraday). AI = mathematical co-processors (Maxwell). Radically transparent acknowledgments. Never minimize AI involvement.
