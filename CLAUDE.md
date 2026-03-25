@@ -56,6 +56,7 @@ git commit -m "Regenerate PDF" && git push
   - **(1-3w)**: Trace coupling. = 0 for radiation (conformal symmetry, BBN safe), = 1 after QCD (trace anomaly, motor ON)
 - **BBN protection**: Via **conformal symmetry** (T^μ_μ = 0 for radiation w=1/3). QCD chiral symmetry breaking ignites motor at Λ_QCD = 257 MeV
 - **5D stability**: **Radiative damping** via bulk graviton emission during slip phase caps amplitude
+- **Period stability (anti-chirp)**: ξRφ non-minimal coupling acts as **geometric Phase-Locked Loop**. Three competing decays (Hubble friction ↓, Cosmic Web forcing ↓, curvature feedback ↓) cancel on attractor manifold. |dT/T| < 10⁻³ per Hubble time. Van der Pol oscillator analogy.
 - **PBH wave-optics immunity**: For M ~ 10⁻¹² M☉, r_s ≈ 3 nm ≪ λ_opt ≈ 600 nm. Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1. Subaru-HSC is physically blind (deep wave-optics regime). Micro-PBH capillaries rehabilitated
 - **Dark energy**: w(z) = -1 + A_w sin(2πt_lb/T + φ₀) with **φ₀ = π/2** → w_a < 0 (DESI)
 - **S₈ suppression**: Via **time-dependent growth suppression** G_eff(t) = G_N(1 + f_osc sin(2πt/T + φ₀)). Temporal, not spatial
@@ -74,6 +75,8 @@ git commit -m "Regenerate PDF" && git push
 - **Definitive future test**: SKA 21cm reionization modulation (2027+)
 - **Complementary tests**: Vera Rubin/LSST, qBOUNCE/optomechanics, Euclid
 - **Theory is purely tensorial and geometric** — no dependence on astrophysical controversies
+- **Cross-AI audit status (March 2026)**: Math validated 100% by Gemini DeepThink (independent recalculation of τ₀→257 MeV, a₀=cH₀/2π, Fresnel w_F=0.031, Δβ=0.25°, Schwinger 10⁻³¹). Physics validated: trace anomaly ignition, von Neumann self-adjoint extensions, Higgs-Radion mixing, 5D QND bypass, temporal S₈ resolution. Primary peer-review attack vector (chirp stability) addressed via ξRφ PLL attractor.
+- **Audit-driven corrections (March 2026)**: S₈ spatial→temporal, neutron lifetime removed, MOND formula corrected (cH₀/2π), 6 Unicode-in-math formulas fixed
 
 ### BANNED Concepts (NEVER use):
 - "Point Unique" 0D, Ringermacher, GW doublet/NANOGrav, Bulk-Infinity
@@ -142,12 +145,21 @@ ALL other .md pages with scientific content MUST be in generate_pdf.py doc_order
 **After modifying any .md file that is in the PDF (index.md, discoveries.md, theory.md, docs/theoretical_foundations.md, tools.md), ALWAYS do:**
 ```bash
 python3 scripts/generate_pdf.py
-git add oscillating_brane_theory_latest.pdf output/oscillating_brane_theory_latest.pdf
-git commit -m "Regenerate PDF"
+git add oscillating_brane_theory_latest.pdf oscillating_brane_theory_latest.md.txt output/oscillating_brane_theory_latest.pdf output/oscillating_brane_theory_latest.combined.md
+git commit -m "Regenerate PDF + markdown"
 git push
 ```
 
 The CI only generates the PDF as an artifact (for verification). It does NOT push it to the repo.
+
+### PDF Pipeline Pre-Processor (generate_pdf.py)
+The script applies a 3-step sanitization pipeline before pandoc:
+1. **Unicode→LaTeX** (`sanitize_unicode_for_latex`): Greek letters, operators, super/subscripts, typographic chars → LaTeX commands. Only operates outside `$...$` and `$$...$$` blocks.
+2. **HTML→Markdown** (`convert_html_tables_to_markdown`): Converts `<table>` to pipe-tables, strips `<div>`, `<h3>`, Jekyll `{% %}` templates, emojis. Fixes indented headers.
+3. **Polish** (`polish_combined_markdown`): Merges split exponents (`10$^{1}$$^{9}$` → `$10^{19}$`), fixes hybrid notation (`tau$_{0}$` → `$\tau_0$`), converts image paths to relative `./plots/`.
+
+**Engine**: xelatex (primary), pdflatex (fallback). xelatex handles remaining Unicode natively.
+**Output**: PDF + `.md.txt` (same content, AI/text-parser friendly, downloadable from site).
 
 ### Compression
 PDF pipeline includes Ghostscript post-processing (JPEG/DCT at 200 dpi).
