@@ -96,9 +96,11 @@ where $R$ is the 4D Ricci scalar and $\xi \approx 0.15$ is the mixing parameter.
 
 **Mesoscopic mass variation.** When a neutron probes the extra-dimensional boundary at $z \to L = 0.2\,\mu$m, it encounters an abrupt Yukawa gradient that forces the radion into a high-excitation regime. Through the mixing $\xi R H^\dagger H$, this geometric excitation resonates with the Higgs field, inducing a **local perturbation of the Higgs VEV**:
 
-$$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right)$$
+$$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right), \quad \eta = \xi|\alpha| \ll 1$$
 
-where $v_0 = 246$ GeV is the standard electroweak VEV and $\eta \propto \xi\alpha$ is a small mixing coefficient. Since fermion masses $m_f = y_f v/\sqrt{2}$ are proportional to the Higgs VEV, this spatially-varying VEV produces a spatially-varying effective mass. Experimentally, this manifests not as a particle "gaining weight" but as shifted transition frequencies between quantum gravitational bound states — precisely the Robin parameter anomaly $\lambda$ observed by qBOUNCE.
+where $v_0 = 246$ GeV is the standard electroweak VEV and $\eta = \xi|\alpha|$ is the effective Higgs-Radion mixing coefficient ($\xi \approx 0.15$ is the non-minimal coupling, $\alpha \approx -0.005$ is the Yukawa strength). The **negative exponent is essential**: a positive exponent ($e^{+z/L}$) would cause the Higgs VEV — and thus all particle masses — to diverge exponentially at large distances, an obvious physical absurdity. The decaying Yukawa form $e^{-z/L}$ correctly localizes the perturbation within $\sim L$ of the boundary, where the 5D geometric gradient is concentrated.
+
+The Lagrangian origin is transparent: the non-minimal coupling $\mathcal{L}_\text{mix} \supset \xi R H^\dagger H$ transfers the radion's geometric excitation (encoded in the 4D Ricci scalar $R$) into a spatial resonance of the Higgs field. Since fermion masses $m_f = y_f v/\sqrt{2}$ are proportional to the Higgs VEV, this spatially-varying VEV produces a spatially-varying effective mass. Experimentally, this manifests not as a particle "gaining weight" but as shifted transition frequencies between quantum gravitational bound states — precisely the Robin parameter anomaly $\lambda$ observed by qBOUNCE.
 
 ### Dark Energy Equation of State
 
