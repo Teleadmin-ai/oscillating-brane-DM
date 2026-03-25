@@ -155,7 +155,7 @@ The CI only generates the PDF as an artifact (for verification). It does NOT pus
 ### PDF Pipeline Pre-Processor (generate_pdf.py)
 The script applies a 3-step sanitization pipeline before pandoc:
 1. **Unicode→LaTeX** (`sanitize_unicode_for_latex`): Greek letters, operators, super/subscripts, typographic chars → LaTeX commands. Only operates outside `$...$` and `$$...$$` blocks.
-2. **HTML→Markdown** (`convert_html_tables_to_markdown`): Converts `<table>` to pipe-tables, strips `<div>`, `<h3>`, Jekyll `{% %}` templates, emojis. Fixes indented headers.
+2. **HTML→Markdown** (`convert_html_tables_to_markdown`): Converts `<table>` to pipe-tables, strips `<div>`, `<h3>`, Jekyll Liquid templates, emojis. Fixes indented headers.
 3. **Polish** (`polish_combined_markdown`): Merges split exponents (`10$^{1}$$^{9}$` → `$10^{19}$`), fixes hybrid notation (`tau$_{0}$` → `$\tau_0$`), converts image paths to relative `./plots/`.
 
 **Engine**: xelatex (primary), pdflatex (fallback). xelatex handles remaining Unicode natively.
