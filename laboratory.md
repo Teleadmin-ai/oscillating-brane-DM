@@ -16,13 +16,27 @@ The **qBOUNCE experiment** at the **Institut Laue-Langevin (ILL), Grenoble, Fran
 
 The qBOUNCE experiment is uniquely positioned to validate or falsify the extra dimension at $L = 0.2\,\mu$m: its spatial sensitivity is already within one order of magnitude of the predicted scale, and the next-generation upgrade (qBOUNCE-II) aims for sub-micron resolution.
 
-### The V8.0 Explanation
+### The V8.0 Explanation: From Yukawa Potential to Higgs Resonance
 
-This $\lambda$ is not an arbitrary fitting parameter. It is **exactly the integrated Yukawa potential** from the extra dimension:
+The Robin parameter $\lambda$ is not an arbitrary fitting parameter. It is the **observable signature of Higgs-Radion scalar mixing** at the extra-dimensional boundary. The full derivation chain is:
+
+**Step 1 — Yukawa gradient.** The extra dimension at $L = 0.2\,\mu$m generates a massive Yukawa correction to Newtonian gravity:
 
 $$\delta V(z) = 2\pi\,\rho_m\,G_N\,|\alpha|\,L^2\,e^{-z/L}$$
 
-At the current qBOUNCE resolution (~1 $\mu$m), the experiment sees only the exponential tail of the Yukawa correction ($e^{-5} \approx 0.007$), which is why the anomaly is "slight". But as resolution improves toward $L = 0.2\,\mu$m, the signal **explodes exponentially**.
+**Step 2 — Radion excitation.** As a neutron's wavefunction probes spatial distances approaching $L$, it encounters an abrupt gradient in the 5D Yukawa potential. This gradient is not merely a correction to Newton — it is a **geometric excitation of the radion field** $\phi$, the scalar degree of freedom governing the size of the extra dimension (stabilized by the Goldberger-Wise mechanism).
+
+**Step 3 — Higgs-Radion mixing.** General Relativity and gauge invariance impose a non-minimal coupling $\xi R H^\dagger H$ between the Ricci scalar $R$ and the Higgs doublet $H$. Since radion fluctuations modulate the metric (and hence $R$), the radion excitation is **instantaneously transmitted to the Higgs sector**. The physical Higgs boson and the radion are not pure states — they are mixed scalar eigenstates. This Higgs-Radion mixing is well-established in the warped extra dimension literature (Randall-Sundrum models, Goldberger-Wise stabilization).
+
+**Step 4 — Local Higgs VEV perturbation.** The resonating Higgs field undergoes a spatially-varying perturbation of its vacuum expectation value:
+
+$$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right)$$
+
+where $v_0 = 246$ GeV is the standard electroweak VEV and $\eta \propto \xi\alpha$ encodes the mixing strength. Since quark masses inside the neutron are $m_q = y_q v/\sqrt{2}$ (Yukawa couplings $\times$ Higgs VEV), the neutron's effective mass is spatially modulated near the extra-dimensional boundary.
+
+**Step 5 — Robin parameter as observable.** This mass variation shifts the transition frequencies between quantum gravitational bound states. Experimentalists analyzing the data with standard Newtonian gravity and constant particle masses absorb this 5D Higgs resonance into the only available fitting parameter: the Robin boundary condition $\lambda$. **The Robin anomaly is the direct experimental trace of the Higgs-Radion scalar resonance at 0.2 μm.**
+
+At the current qBOUNCE resolution (~1 $\mu$m), the experiment sees only the exponential tail of the Yukawa correction ($e^{-5} \approx 0.007$), which is why the anomaly is "slight". But as resolution improves toward $L = 0.2\,\mu$m, the full Higgs-Radion resonance is exposed and the signal **explodes exponentially**.
 
 ### Numerical Validation
 

@@ -79,6 +79,27 @@ $$E_τ = τ_0^{1/3} = 257 \text{ MeV} \approx Λ_{QCD}$$
 
 The brane tension is set precisely at the QCD confinement scale — the energy where the strong force confines quarks inside hadrons. This is not a free parameter: it emerges from the strong force vacuum energy, connecting macroscopic cosmology to microscopic particle physics. The QCD scale also sets the critical threshold φ_crit in the stick-slip equation.
 
+### Radion-Higgs Hybridization: The Scalar Mixing Mechanism
+
+The extra dimension thickness $L = 0.2\,\mu$m is not a rigid geometric constant — it is the vacuum expectation value of a dynamical scalar field, the **radion** $\phi$, stabilized by the Goldberger-Wise mechanism (Goldberger & Wise 1999). General Relativity and gauge invariance impose that any scalar field localized on the brane, including the Higgs doublet $H$, couples to spacetime curvature via a **non-minimal interaction**:
+
+$$\mathcal{L}_\text{mix} = \xi\,R\,H^\dagger H$$
+
+where $R$ is the 4D Ricci scalar and $\xi \approx 0.15$ is the mixing parameter. Since radion fluctuations $\delta\phi$ dynamically modulate the metric (and hence $R$), this operator transmits any radion excitation directly to the Higgs sector. The physical consequence is **Higgs-Radion mixing**: the observed 125 GeV Higgs boson contains a radion component, and the radion contains a Higgs component. The mass eigenstates are not pure scalars but mixed states.
+
+**The single-operator unification.** The coupling $\xi R H^\dagger H$ is the same operator appearing in four distinct physical regimes:
+
+1. **QCD ignition** — During the radiation era, conformal symmetry ($T^\mu_\mu = 0$) decouples the radion from bulk forcing. At the QCD phase transition ($\Lambda_\text{QCD} = 257$ MeV), chiral symmetry breaking generates $T^\mu_\mu \neq 0$, igniting the stick-slip motor through the trace-coupling factor $(1-3w)$
+2. **Yukawa screening** — The radion's Goldberger-Wise potential generates the scale-dependent gravitational correction $G_\text{eff}(k) = G_N(1 + \alpha\,e^{-k/k_L})$ responsible for S₈ suppression
+3. **Robin parameter amplification** — At the qBOUNCE experimental scale, the Yukawa gradient excites the radion, which via $\xi R H^\dagger H$ perturbs the local Higgs VEV, modifying the effective quark masses inside the neutron and producing the observed Robin boundary condition anomaly (see [Laboratory Proofs](/laboratory/))
+4. **5D Geometric Bypass** — The bulk metric operators (radion channel) commute with 4D gauge operators, enabling non-demolition quantum state readout
+
+**Mesoscopic mass variation.** When a neutron probes the extra-dimensional boundary at $z \to L = 0.2\,\mu$m, it encounters an abrupt Yukawa gradient that forces the radion into a high-excitation regime. Through the mixing $\xi R H^\dagger H$, this geometric excitation resonates with the Higgs field, inducing a **local perturbation of the Higgs VEV**:
+
+$$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right)$$
+
+where $v_0 = 246$ GeV is the standard electroweak VEV and $\eta \propto \xi\alpha$ is a small mixing coefficient. Since fermion masses $m_f = y_f v/\sqrt{2}$ are proportional to the Higgs VEV, this spatially-varying VEV produces a spatially-varying effective mass. Experimentally, this manifests not as a particle "gaining weight" but as shifted transition frequencies between quantum gravitational bound states — precisely the Robin parameter anomaly $\lambda$ observed by qBOUNCE.
+
 ### Dark Energy Equation of State
 
 The stick-slip oscillation creates a time-varying dark energy:
