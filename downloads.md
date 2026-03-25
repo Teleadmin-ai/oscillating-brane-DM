@@ -36,7 +36,7 @@ The complete theory documentation including all mathematical derivations, observ
   <a href="/oscillating_brane_theory_latest.pdf" download class="download-button" style="display: inline-block; padding: 10px 20px; background: #4a90e2; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px;">
     📥 Download PDF (Latest Version)
   </a>
-  <a href="/oscillating_brane_theory_latest.combined.md" download class="download-button" style="display: inline-block; padding: 10px 20px; background: #2ecc71; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; margin-left: 10px;">
+  <a href="/oscillating_brane_theory_latest.md.txt" download class="download-button" style="display: inline-block; padding: 10px 20px; background: #2ecc71; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; margin-left: 10px;">
     📄 Download Markdown (AI-readable)
   </a>
   <p style="margin-top: 10px; font-size: 0.85em; color: #888;">The Markdown version contains the same content as the PDF, in plain text with LaTeX formulas. Ideal for AI analysis, text search, and accessibility.</p>
