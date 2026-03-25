@@ -160,7 +160,7 @@ with scale radius $r_s \sim 10$ kpc, naturally explaining flat rotation curves.
 
 $$v_\text{flat}^4 = G M_\text{baryon} a_0$$
 
-with $a_0 = cH_0/2\pi \times 1.05 = 1.1 \times 10^{-10}$ m/s².
+with $a_0 = cH_0/2\pi \approx 1.1 \times 10^{-10}$ m/s².
 
 ### 3.3 Gravitational Lensing
 
