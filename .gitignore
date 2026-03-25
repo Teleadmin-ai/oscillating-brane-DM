@@ -49,4 +49,5 @@ Thumbs.db
 data/raw/
 results/
 cache/
-logs/
+logs/.env
+.env

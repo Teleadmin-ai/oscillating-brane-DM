@@ -273,11 +273,13 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 
 ## TODO: Interactive Theory Agent
 - **Purpose**: Chatbot on the site that knows the full V8.0 theory and can do math (Python sandbox)
-- **Infrastructure**: Dedicated Debian VM on OVH (Romain is OVH Advanced Partner)
-- **LLM**: Ollama Cloud (Kimi K2.5 or similar) via Romain's existing subscription
-- **Architecture**: Ollama Cloud API + Python sandbox (numpy/scipy/matplotlib) + web UI (Gradio or Open WebUI) + iframe embed on higgs-cosmology.com
-- **Context**: Inject `oscillating_brane_theory_latest.md.txt` as system prompt
-- **Status**: Planning. VM needs deployment first.
+- **Infrastructure**: Dedicated Debian 12 VM on OVH — 4 CPU, 8 GB RAM, 48 GB disk — IP: 51.254.22.29
+- **LLM**: Kimi K2 Thinking via Ollama Cloud (99.1% AIME, Agent Swarm, 256K context)
+- **Token**: stored in `.env` (gitignored, NEVER commit)
+- **Architecture**: Open WebUI (multi-user sessions) + Ollama Cloud API + Docker ephemeral containers (numpy/scipy/matplotlib sandbox) + iframe embed on higgs-cosmology.com
+- **Context**: Inject `oscillating_brane_theory_latest.md.txt` as system prompt (~140 KB)
+- **Isolation**: Each user gets ephemeral Docker container for code execution, destroyed after session
+- **Status**: VM ready, token stored. Next: install Docker + Open WebUI + configure Ollama Cloud backend.
 
 ## Human-AI Collaboration
 Romain = conceptual architect (Faraday). AI = mathematical co-processors (Maxwell). Radically transparent acknowledgments. Never minimize AI involvement.
