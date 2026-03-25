@@ -549,7 +549,7 @@ $$V_{radion}^{1-loop} = \frac{3k^4}{32\pi^2} z^4 \left[\ln(kz) - \frac{1}{4}\rig
 The quantized radion field has peculiar properties due to the warped geometry:
 
 **Wave function normalization**:
-$$\int d^4x \sqrt{-g_{ind}} |ψ_n(x)|^2 = 1$$
+$$\int d^4x \sqrt{-g_{ind}} |\psi_n(x)|^2 = 1$$
 
 requires careful treatment of the induced metric $g_{ind}$.
 
@@ -568,7 +568,7 @@ For $n=0$ (radion): $m_{radion} = \frac{4k}{3}e^{-kL} \approx 1$ eV
 The oscillating brane creates particles from vacuum:
 
 **Particle creation rate** [Brevik et al. 2003, Phys.Rev.D 67, 025019]:
-$$\frac{dN}{dt} = \frac{A_{brane}}{(2\pi)^3} \int d^3k \,|β_k|^2 \omega_k$$
+$$\frac{dN}{dt} = \frac{A_{brane}}{(2\pi)^3} \int d^3k \,|\beta_k|^2 \omega_k$$
 
 where $\beta_k$ are Bogoliubov coefficients satisfying:
 $$|\beta_k|^2 = \frac{\omega_0^2 A_{osc}^2}{4\omega_k^2} \sinh^2\left(\frac{\pi\omega_k}{aH}\right)$$

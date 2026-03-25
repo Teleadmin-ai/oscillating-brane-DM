@@ -451,14 +451,103 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 
         return "".join(result)
 
+    @staticmethod
+    def convert_html_tables_to_markdown(text: str) -> str:
+        """Convert simple HTML tables to markdown tables for pandoc/pdflatex.
+
+        Raw HTML <table> blocks render as garbage in pdflatex.
+        This converts them to markdown pipe-tables that pandoc handles.
+        """
+
+        def _html_table_to_md(match):
+            html = match.group(0)
+            # Extract rows
+            rows = re.findall(r"<tr>(.*?)</tr>", html, re.DOTALL)
+            if not rows:
+                return html  # Can't parse, leave as-is
+
+            md_rows = []
+            for row in rows:
+                # Extract cells (td or th)
+                cells = re.findall(r"<(?:td|th)[^>]*>(.*?)</(?:td|th)>", row, re.DOTALL)
+                # Strip HTML tags inside cells but keep text
+                clean_cells = []
+                for cell in cells:
+                    cell = re.sub(r"<strong>(.*?)</strong>", r"**\1**", cell)
+                    cell = re.sub(r"<em>(.*?)</em>", r"*\1*", cell)
+                    cell = re.sub(r"<sup>(.*?)</sup>", r"$^{\1}$", cell)
+                    cell = re.sub(r"<sub>(.*?)</sub>", r"$_{\1}$", cell)
+                    cell = re.sub(r"<[^>]+>", "", cell)  # strip remaining tags
+                    cell = cell.strip()
+                    clean_cells.append(cell)
+                if clean_cells:
+                    md_rows.append("| " + " | ".join(clean_cells) + " |")
+
+            if not md_rows:
+                return html
+
+            # Add header separator after first row
+            ncols = md_rows[0].count("|") - 1
+            separator = "|" + "|".join(["---"] * ncols) + "|"
+            result = md_rows[0] + "\n" + separator
+            for row in md_rows[1:]:
+                result += "\n" + row
+
+            return "\n\n" + result + "\n\n"
+
+        # Match <table>...</table> blocks (possibly with attributes)
+        text = re.sub(
+            r"<table[^>]*>.*?</table>",
+            _html_table_to_md,
+            text,
+            flags=re.DOTALL,
+        )
+
+        # Also strip standalone HTML block elements that pdflatex can't render
+        # (div, h3 with emoji, etc.) but keep their text content
+        text = re.sub(r'<div[^>]*class="[^"]*"[^>]*>\s*</div>', "", text)
+        text = re.sub(r"</?div[^>]*>", "", text)
+        text = re.sub(r"<h3[^>]*>(.*?)</h3>", r"### \1", text)
+        text = re.sub(r"<p><em>(.*?)</em></p>", r"*\1*", text, flags=re.DOTALL)
+
+        return text
+
+    @staticmethod
+    def fix_pdflatex_ligatures(text: str) -> str:
+        r"""Fix fi/fl ligature rendering issue in pdflatex Computer Modern.
+
+        pdflatex with CM fonts sometimes mangles fi/fl ligatures.
+        Insert a zero-width space via LaTeX to break the ligature
+        and force correct rendering: fi → f{}i, fl → f{}l.
+        Only applied outside math blocks.
+        """
+        math_pattern = re.compile(r"(\$\$[\s\S]*?\$\$|\$[^\$\n]+?\$)")
+        segments = math_pattern.split(text)
+
+        result = []
+        for i, seg in enumerate(segments):
+            if i % 2 == 1:
+                result.append(seg)
+            else:
+                seg = seg.replace("fi", "f{}i")
+                seg = seg.replace("fl", "f{}l")
+                result.append(seg)
+
+        return "".join(result)
+
     def generate_pdf_direct(self, output_path: Path) -> bool:
         """Generate PDF directly using pandoc with all content."""
         # Create combined markdown
         combined_md = self.create_combined_markdown()
 
-        # Sanitize Unicode for pdflatex compatibility
+        # Pipeline: sanitize Unicode → convert HTML tables
         combined_md = self.sanitize_unicode_for_latex(combined_md)
-        print(f"\n  Unicode sanitized for pdflatex")
+        combined_md = self.convert_html_tables_to_markdown(combined_md)
+        # Note: fi/fl ligature fix removed — too aggressive (breaks LaTeX
+        # package names like float.sty). Ligature rendering is cosmetic only.
+        print(
+            f"\n  Pre-processed: Unicode sanitized, HTML tables converted"
+        )
 
         # Save intermediate markdown
         temp_md = output_path.with_suffix(".combined.md")

@@ -116,7 +116,7 @@ with characteristic amplitude $\Delta T_\text{osc} \sim 1$--$5$ mK at BAO-scale 
 
 Spatial tension variations create directional H₀ differences:
 
-$$\frac{δH}{H} \sim 10^{-3}$$
+$$\frac{\delta H}{H} \sim 10^{-3}$$
 
 Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 

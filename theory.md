@@ -63,7 +63,7 @@ Because of this perfect conformal symmetry, the coupling factor (1 - 3w_eff) = 0
 
 The deformation energy of the cosmic membrane is:
 
-$$E_{tens} = \frac{1}{2} τ_0 A \left(\frac{2πz}{λ}\right)^2$$
+$$E_{tens} = \frac{1}{2} \tau_0 A \left(\frac{2\pi z}{\lambda}\right)^2$$
 
 Where:
 - τ₀ = 7.0 × 10<sup>19</sup> J/m² is the brane tension
@@ -75,7 +75,7 @@ Where:
 
 In natural units: τ₀ = 0.017 GeV³. The fundamental energy scale is:
 
-$$E_τ = τ_0^{1/3} = 257 \text{ MeV} \approx Λ_{QCD}$$
+$$E_\tau = \tau_0^{1/3} = 257 \text{ MeV} \approx \Lambda_{QCD}$$
 
 The brane tension is set precisely at the QCD confinement scale — the energy where the strong force confines quarks inside hadrons. This is not a free parameter: it emerges from the strong force vacuum energy, connecting macroscopic cosmology to microscopic particle physics. The QCD scale also sets the critical threshold φ_crit in the stick-slip equation.
 
@@ -106,7 +106,7 @@ The Lagrangian origin is transparent: the non-minimal coupling $\mathcal{L}_\tex
 
 The stick-slip oscillation creates a time-varying dark energy:
 
-$$w(z) = -1 + A_w \sin\left(\frac{2π t_{lb}(z)}{T} + \phi_0\right)$$
+$$w(z) = -1 + A_w \sin\left(\frac{2\pi t_{lb}(z)}{T} + \phi_0\right)$$
 
 With amplitude A_w ≃ 0.003, period T = 2.0 ± 0.3 Gyr, and phase φ₀ = π/2. The phase places us today at a **maximum** of w(z) ≈ -0.997, with w descending into phantom territory (w < -1) in the recent past — exactly reproducing DESI's measured phantom crossing (w_a < 0) without ghost fields.
 
