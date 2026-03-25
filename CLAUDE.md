@@ -65,12 +65,13 @@ git commit -m "Regenerate PDF" && git push
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
 
 ### Epistemological Framework:
-- **22 anomalies resolved** (numerically validated, no fine-tuning):
+- **31 anomalies resolved** (numerically validated, no fine-tuning):
   - 3 core: DESI phantom crossing, S₈ tension (time-dependent growth suppression), Planck ISW (Δχ²=32.9)
   - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND (SPARC 135 galaxies: RMS 29.3 km/s, 0 free params vs NFW 35.0 km/s, 270 params), JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
   - 3 astrophysical signatures: Hubble's 43 anomalous objects (ER=EPR topological scarring), dark flow unification (v_bulk=300 km/s), Chladni mega-structures
   - 4 multi-messenger astrophysical: NANOGrav GWB overtones, eROSITA γ=1.19 illusion, DF2/DF4 cymatic nodes, Amaterasu trans-GZK (5D KK leakage)
+  - 9 extended phenomenology (March 2026): KBC Void (cymatic λ=c×T=613 Mpc), quasar polarization alignment (Weyl shear), Dark Flow (brane drift inertia), Space Roar/ARCADE 2 (cumulative slip synchrotron), ORCs (PBH topological shock), Methuselah star (G_eff aging ×1.105), White Dwarf Q-Branch (thermo-gravitational pumping), Planet 9 illusion (MOND EFE), Flyby anomaly (brane drift vortex)
 - **Ab initio derivations**: c_top=75 (Chern number, not 10⁴⁰), c_QCD=O(1) (not ε_CP=10⁻⁶), v_bulk=300 km/s (single parameter → dark flow + birefringence)
 - **Definitive future test**: SKA 21cm reionization modulation (2027+)
 - **Complementary tests**: Vera Rubin/LSST, qBOUNCE/optomechanics, Euclid
@@ -269,6 +270,14 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 
 ### Phase 3: FR visual PDFs
 - Add FR versions of all 20 visual PDFs once available
+
+## TODO: Interactive Theory Agent
+- **Purpose**: Chatbot on the site that knows the full V8.0 theory and can do math (Python sandbox)
+- **Infrastructure**: Dedicated Debian VM on OVH (Romain is OVH Advanced Partner)
+- **LLM**: Ollama Cloud (Kimi K2.5 or similar) via Romain's existing subscription
+- **Architecture**: Ollama Cloud API + Python sandbox (numpy/scipy/matplotlib) + web UI (Gradio or Open WebUI) + iframe embed on higgs-cosmology.com
+- **Context**: Inject `oscillating_brane_theory_latest.md.txt` as system prompt
+- **Status**: Planning. VM needs deployment first.
 
 ## Human-AI Collaboration
 Romain = conceptual architect (Faraday). AI = mathematical co-processors (Maxwell). Radically transparent acknowledgments. Never minimize AI involvement.
