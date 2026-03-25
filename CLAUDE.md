@@ -173,13 +173,14 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 
 ## Downloads
 1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages, "Resolving Twenty-Two Cosmological Anomalies"
-2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~64 pages, 6 chapters (~1.3 MB compressed)
+2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~72 pages, 8 chapters (~1.3 MB compressed)
+3. **Full Theory (Markdown)** (`oscillating_brane_theory_latest.combined.md`) — same content as PDF, AI/text-parser friendly
 
 ## Computational Validation Results (March 2026)
 | Validation | Method | Key Result |
 |-----------|--------|------------|
 | w(z) phantom crossing | BDF stiff solver, exact lookback time | w ∈ [-1.003, -0.997], matches DESI DR2 |
-| S₈ tension resolution | Linear growth ODE, 200 wavenumbers | 5.5% at DES, 0.67% at KiDS, S₈ = 0.790 |
+| S₈ tension resolution | Time-dependent G_eff(t) oscillation | ~5% during current weakened-gravity phase |
 | Bayesian evidence | dynesty nested sampling, 500 live points | Δln K = 4.13 ± 0.07 (STRONG) |
 | SKA 21cm prediction | Reionization mock, z=6-15 | 5.46 mK peak, SNR = 5.5σ |
 | Lithium-7 problem | BBN conformal tolerance, BDF solver | 3.5× suppression, D/⁴He preserved |
@@ -201,7 +202,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Script | Purpose | Output |
 |--------|---------|--------|
 | `scripts/brane_dynamics.py` | Core V8.0 ODE (BDF stiff solver, w(z) oscillation) | `plots/w_z_oscillation.png` |
-| `scripts/growth_factor.py` | Scale-dependent S₈ Yukawa screening | `plots/s8_yukawa_suppression.png` |
+| `scripts/growth_factor.py` | Time-dependent S₈ growth suppression | `plots/s8_yukawa_suppression.png` |
 | `scripts/bayesian_analysis.py` | Nested sampling Bayesian evidence (dynesty) | `plots/nested_sampling_posteriors.png` |
 | `scripts/ska_21cm_mock.py` | SKA 21cm reionization modulation prediction | `plots/ska_prediction.png` |
 | `scripts/lithium_bbn_solver.py` | Lithium-7 BBN conformal tolerance | `plots/lithium_resolution.png` |
@@ -223,7 +224,8 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - MathJax 3 is configured in `_layouts/dark.html` with inline math `$...$` and display math `$$...$$`
 - **It works. Do NOT replace LaTeX with plain text** (e.g., do NOT change `$\lambda$` to "Lambda")
 - **Do NOT remove or modify the MathJax config block** in `_layouts/dark.html`
-- LaTeX renders correctly on ALL site pages and in the PDF (pandoc/xelatex handles it natively)
+- LaTeX renders correctly on ALL site pages and in the PDF (xelatex handles it natively)
+- **PDF pipeline pre-processor** (`generate_pdf.py`) sanitizes Unicode→LaTeX, converts HTML tables→markdown, strips Jekyll templates, emojis, and fixes indented headers before pandoc
 - The `\vert` workaround for bra-ket notation (`$\vert 1\rangle$` instead of `$|1\rangle$`) is still needed because kramdown confuses `|` with table delimiters
 
 ## CI / Code Quality

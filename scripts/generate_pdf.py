@@ -794,6 +794,15 @@ def main():
         shutil.copy2(output_path, root_pdf_path)
         print(f"PDF copied to root for website: {root_pdf_path}")
 
+        # Copy combined markdown to latest + root (for download button)
+        combined_md_path = output_path.with_suffix(".combined.md")
+        if combined_md_path.exists():
+            latest_md = output_dir / "oscillating_brane_theory_latest.combined.md"
+            root_md = base_dir / "oscillating_brane_theory_latest.combined.md"
+            shutil.copy2(combined_md_path, latest_md)
+            shutil.copy2(combined_md_path, root_md)
+            print(f"Combined markdown copied to: {root_md}")
+
         print(f"\nPDF generation complete!")
         print(f"Total chapters: {generator.chapter_count}")
     else:

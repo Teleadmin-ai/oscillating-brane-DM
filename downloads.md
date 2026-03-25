@@ -17,7 +17,7 @@ Mathematically rigorous edition with Israel junction conditions and dynamical at
     <li>ER=EPR holographic topology (Maldacena-Susskind)</li>
     <li>Period calibrated from DESI BAO + Planck ISW</li>
     <li>One-loop quantum stability corrections</li>
-    <li>Three anomalies resolved: dark energy, S₈ (Yukawa screening), CMB anomaly</li>
+    <li>Three anomalies resolved: dark energy, S₈ (time-dependent growth suppression), CMB anomaly</li>
   </ul>
   <a href="/cosmic_yoyo_v5_holographic.pdf" download class="viral-button" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; margin-top: 10px; font-weight: bold; text-transform: uppercase;">
     Download White Paper (PDF, 6 pages)
@@ -36,6 +36,10 @@ The complete theory documentation including all mathematical derivations, observ
   <a href="/oscillating_brane_theory_latest.pdf" download class="download-button" style="display: inline-block; padding: 10px 20px; background: #4a90e2; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px;">
     📥 Download PDF (Latest Version)
   </a>
+  <a href="/oscillating_brane_theory_latest.combined.md" download class="download-button" style="display: inline-block; padding: 10px 20px; background: #2ecc71; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; margin-left: 10px;">
+    📄 Download Markdown (AI-readable)
+  </a>
+  <p style="margin-top: 10px; font-size: 0.85em; color: #888;">The Markdown version contains the same content as the PDF, in plain text with LaTeX formulas. Ideal for AI analysis, text search, and accessibility.</p>
 </div>
 
 ### 🔬 Python Scripts
