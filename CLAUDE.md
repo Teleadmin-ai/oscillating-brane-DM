@@ -67,7 +67,7 @@ git commit -m "Regenerate PDF" && git push
 ### Epistemological Framework:
 - **22 anomalies resolved** (numerically validated, no fine-tuning):
   - 3 core: DESI phantom crossing, S₈ tension (time-dependent growth suppression), Planck ISW (Δχ²=32.9)
-  - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND, JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
+  - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND (SPARC 135 galaxies: RMS 29.3 km/s, 0 free params vs NFW 35.0 km/s, 270 params), JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
   - 3 astrophysical signatures: Hubble's 43 anomalous objects (ER=EPR topological scarring), dark flow unification (v_bulk=300 km/s), Chladni mega-structures
   - 4 multi-messenger astrophysical: NANOGrav GWB overtones, eROSITA γ=1.19 illusion, DF2/DF4 cymatic nodes, Amaterasu trans-GZK (5D KK leakage)
@@ -131,6 +131,7 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | Micro-PBH EMF | Log-normal, 10⁻¹⁴ to 10⁻¹⁰ M☉ |
 | ξ (non-minimal coupling) | ~0.15 |
 | Fresnel parameter (PBH) | w_F = 2πr_s/λ ≈ 0.03 ≪ 1 (wave-optics immune) |
+| SPARC rotation curves | RMS = 29.3 km/s (0 params) vs NFW 35.0 km/s (270 params) |
 
 ## ABSOLUTE RULE: Site = PDF symmetry
 **Every scientific page on the site MUST be a chapter in the PDF. No exceptions.**
@@ -192,7 +193,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 ## Downloads
 1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages, "Resolving Twenty-Two Cosmological Anomalies"
 2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~72 pages, 8 chapters (~1.3 MB compressed)
-3. **Full Theory (Markdown)** (`oscillating_brane_theory_latest.combined.md`) — same content as PDF, AI/text-parser friendly
+3. **Full Theory (Markdown)** (`oscillating_brane_theory_latest.md.txt`) — same content as PDF, AI/text-parser friendly, downloadable from site
 
 ## Computational Validation Results (March 2026)
 | Validation | Method | Key Result |
