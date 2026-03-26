@@ -363,17 +363,25 @@ is the most extreme scale hierarchy ever contemplated in numerical relativity �
 
 The computational infrastructure best positioned for this program includes **GRChombo** (native block-structured AMR via the Chombo library, GPU acceleration, demonstrated for scalar field dynamics in extra dimensions) and the **Einstein Toolkit** (Cactus Framework, McLachlan thorn for BSSN evolution). Both require dedicated 5D modules implementing the RS-specific AdS boundary conditions, the Israel junction conditions via Ghost Fluid Method on a moving hypersurface, and the IMEX temporal splitting for the transverse direction.
 
-**4. Asymptotic extraction of $\Gamma_{rad}$: 5D Weyl scalars and radiation reaction.** The physical objective of the Exascale code is the ab initio extraction of the radiation reaction force $\Gamma_{rad}(\phi, \dot{\phi}, t)$ acting on the oscillating brane. During the slip phase, the violently accelerating brane emits a shower of massive Kaluza-Klein gravitons into the $AdS_5$ bulk. The total radiated power is computed by evaluating the outgoing gravitational energy flux on an **asymptotic extraction surface** $\mathcal{S}_{ext}$ in the bulk, located at a coordinate distance $z_{ext} \gg L$ from the brane.
+**6. Asymptotic extraction of $\Gamma_{rad}$: CMPP algebraic classification and the radiative Weyl matrix $\Psi_{ij}^{(5)}$.** The physical objective of the Exascale code is the ab initio extraction of the radiation reaction force $\Gamma_{rad}(\phi, \dot{\phi}, t)$ acting on the oscillating brane. In $D = 5$, the standard 4D Newman-Penrose formalism collapses: the little group of a massless particle is $SO(3)$ (not $SO(2)$ as in 4D), so the 5D graviton carries $D(D-3)/2 = 5$ independent polarization states — impossible to encode in a single complex scalar $\Psi_4$. The correct framework is the **Coley-Milson-Pravda-Pravdova (CMPP) algebraic classification** (2004) of higher-dimensional spacetimes.
 
-The extraction formalism is the 5D generalization of the **Newman-Penrose scalar** $\Psi_4$ used in 4D numerical relativity to extract gravitational wave signals from binary mergers. In 5D, the Weyl tensor $C_{ABCD}^{(5)}$ is decomposed on a null tetrad adapted to the outgoing radiation direction in the bulk. The relevant scalar component — the 5D analogue of $\Psi_4$ — encodes the outgoing transverse-traceless gravitational radiation. The total KK emission rate is obtained by integrating this scalar over the extraction sphere:
+**The real null pentad.** The code constructs a **real null pentad** $(\ell^A, n^A, m_{(1)}^A, m_{(2)}^A, m_{(3)}^A)$ adapted to the asymptotic bulk geometry. Given the Eulerian 5-velocity $u^A$ and the outgoing spatial normal $s^A$ (pointing toward $z \to \infty$): $\ell^A = (u^A + s^A)/\sqrt{2}$ (outgoing null), $n^A = (u^A - s^A)/\sqrt{2}$ (ingoing null), and $m_{(i)}^A$ ($i \in \{1,2,3\}$) is an orthonormal triad spanning the 3D transverse extraction hypersurface. Normalization: $\ell \cdot n = -1$, $\ell \cdot \ell = n \cdot n = 0$, $m_{(i)} \cdot m_{(j)} = \delta_{ij}$.
 
-$$P_{KK} = \lim_{z_{ext} \to \infty} \oint_{\mathcal{S}_{ext}} \left\vert \Psi_4^{(5)} \right\vert^2 r^2_{AdS}\,d\Omega_3$$
+**The radiative Weyl matrix (boost weight -2).** By the higher-dimensional peeling theorem (Godazgar & Reall 2012), outgoing radiation is dominated by the boost-weight $-2$ components of the 5D Weyl tensor. Projecting $C_{ABCD}^{(5)}$ onto the ingoing null vector $n^A$ and the transverse triad:
 
-where $d\Omega_3$ is the solid angle element on the 3-sphere at infinity in the bulk. The radiation reaction force on the brane is then obtained by energy-momentum conservation:
+$$\Psi_{ij}^{(5)} = C_{ABCD}^{(5)}\,n^A\,m_{(i)}^B\,n^C\,m_{(j)}^D$$
+
+By the algebraic symmetries of the Weyl tensor ($C_{ABCD} = C_{CDAB}$, $C^A{}_{BAC} = 0$), this matrix is **symmetric and trace-free (STF)**: $\Psi_{ij}^{(5)} = \Psi_{ji}^{(5)}$ and $\delta^{ij}\Psi_{ij}^{(5)} = 0$. A $3 \times 3$ STF matrix has exactly $3 \times 4/2 - 1 = 5$ independent components — encoding bijectively and without loss of generality all 5 polarization states of the massive KK graviton radiated into the bulk.
+
+**The 5D Bondi news tensor and energy flux.** The total KK radiated power is extracted via the Frobenius norm of the 5D Bondi news tensor $\mathcal{N}_{ij} = \int_{-\infty}^t \Psi_{ij}^{(5)}\,dt^{\prime}$, integrated over the 3-dimensional extraction surface $\mathcal{S}_{ext}$ at asymptotic infinity in the bulk (with proper volume element $d\Sigma_3$):
+
+$$P_{KK} = \lim_{z \to \infty} \frac{1}{32\pi G_5} \oint_{\mathcal{S}_{ext}} \mathcal{N}_{ij}\,\mathcal{N}^{ij}\,d\Sigma_3$$
+
+The radiation reaction force on the brane follows from energy-momentum conservation:
 
 $$\Gamma_{rad}(\phi, \dot{\phi}, t) = -\frac{P_{KK}(\phi, \dot{\phi}, \ddot{\phi})}{\dot{\phi}^2}$$
 
-This converts the phenomenological EFT parameter into a **derived tensorial quantity** — a function of the brane's instantaneous kinematic state, computed directly from the 5D Einstein equations without any adjustable parameter. The successful execution of this program would complete the theory's transition from effective cosmology to fully predictive 5D General Relativity, and would simultaneously provide the exact branching ratio $\mathcal{B}$ between observable SGWB emission and bulk KK dissipation (Section: Exact SGWB Spectrum).
+This converts the phenomenological EFT parameter into a **derived tensorial quantity** — a $3 \times 3$ STF matrix observable reverse-engineered from the 5D non-linear Einstein equations without any adjustable parameter. The successful execution of this program would complete the theory's transition from effective cosmology to fully predictive 5D General Relativity, and would simultaneously provide the exact branching ratio $\mathcal{B}$ between observable SGWB emission (zero-mode channel) and bulk KK dissipation (massive-mode channel).
 
 ### Microscopic Origin of $\gamma_{slip}$: Holographic Tensor Networks and Quantum Scrambling Bounds
 
