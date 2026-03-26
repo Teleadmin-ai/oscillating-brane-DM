@@ -52,6 +52,8 @@ navigation:
     url: /research/
   - title: About
     url: /about/
+  - title: "\U0001F916 Romain AI"
+    url: "#romain-ai"
 
 # Social
 github_username: Teleadmin-ai
