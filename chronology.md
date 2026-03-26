@@ -15,7 +15,7 @@ The evolution of brane tension from the Big Bang to today reveals how the univer
 | Phase | Age | τ (J/m²) | Description |
 |-------|-----|----------|-------------|
 | Inflation | 0 → 10<sup>-34</sup> s | 10<sup>50</sup> | Quasi-exponential expansion, hyper-tense brane |
-| Brane Reheating | 10<sup>-34</sup> → 10<sup>-32</sup> s | 10<sup>30</sup> | Tension decay via MN-antiMN production in bulk |
+| Brane Reheating | 10<sup>-34</sup> → 10<sup>-32</sup> s | 10<sup>30</sup> | Tension decay via bulk graviton emission + KK modes |
 | Relaxation | 10<sup>-32</sup> s → 1 Gyr | 10<sup>27</sup> → 7×10<sup>19</sup> | τ ∝ t<sup>-1/2</sup>, fundamental mode enters resonance ≈ 1 Gyr |
 | Current Era | 13.8 Gyr | 7×10<sup>19</sup> | Stable oscillation with 2 Gyr period |
 
@@ -26,7 +26,7 @@ The brane begins with near-Planckian tension, driving exponential expansion. The
 
 ### Brane Reheating
 As inflation ends, the brane tension converts to particle production:
-- Massive MN-antiMN pairs created in the bulk
+- Bulk graviton emission and KK mode production
 - Energy density transfers from geometric to matter sector
 - Tension drops by 20 orders of magnitude
 

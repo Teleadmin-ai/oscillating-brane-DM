@@ -6,7 +6,7 @@ permalink: /theory/
 
 # Complete Theoretical Framework V8.2 (Hybrid Topology Edition)
 
-**V8.2 — Perforation Hierarchy**: The stick-slip motor operates at two scales: (1) **macroscopic** — the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous E_μν forcing; (2) **microscopic** — the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally (ℓ=0 mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1).
+**V8.2 — Hybrid Topology**: The stick-slip motor operates at two scales: (1) **macroscopic** — the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous E_μν forcing; (2) **microscopic** — the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally (ℓ=0 mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1).
 
 ## Core Concepts
 

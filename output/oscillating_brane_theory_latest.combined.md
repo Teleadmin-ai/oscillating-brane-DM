@@ -459,7 +459,7 @@ The Universe ceases to be perceived as an inert spacetime matrix in desperate in
 # Chapter 3: Complete Theoretical Framework
 
 
-**V8.2 --- Perforation Hierarchy**: The stick-slip motor operates at two scales: (1) **macroscopic** --- the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous $E_{\mu\nu}$ forcing; (2) **microscopic** --- the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally ($\ell$=0 mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2pir_s/lambda approximately 0.03 << 1).
+**V8.2 --- Hybrid Topology**: The stick-slip motor operates at two scales: (1) **macroscopic** --- the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous $E_{\mu\nu}$ forcing; (2) **microscopic** --- the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally ($\ell$=0 mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2pir_s/lambda approximately 0.03 << 1).
 
 ## Core Concepts
 
@@ -817,7 +817,7 @@ The evolution of brane tension from the Big Bang to today reveals how the univer
 | Phase | Age | tau (J/m$^{2}$) | Description |
 |-------|-----|----------|-------------|
 | Inflation | 0 $\to$ 10<sup>-34</sup> s | 10<sup>50</sup> | Quasi-exponential expansion, hyper-tense brane |
-| Brane Reheating | 10<sup>-34</sup> $\to$ 10<sup>-32</sup> s | 10<sup>30</sup> | Tension decay via MN-antiMN production in bulk |
+| Brane Reheating | 10<sup>-34</sup> $\to$ 10<sup>-32</sup> s | 10<sup>30</sup> | Tension decay via bulk graviton emission + KK modes |
 | Relaxation | 10<sup>-32</sup> s $\to$ 1 Gyr | 10<sup>27</sup> $\to$ 7x10<sup>19</sup> | tau proportional to t<sup>-1/2</sup>, fundamental mode enters resonance approximately 1 Gyr |
 | Current Era | 13.8 Gyr | 7x10<sup>19</sup> | Stable oscillation with 2 Gyr period |
 
@@ -828,7 +828,7 @@ The brane begins with near-Planckian tension, driving exponential expansion. The
 
 ### Brane Reheating
 As inflation ends, the brane tension converts to particle production:
-- Massive MN-antiMN pairs created in the bulk
+- Bulk graviton emission and KK mode production
 - Energy density transfers from geometric to matter sector
 - Tension drops by 20 orders of magnitude
 
