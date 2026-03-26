@@ -86,7 +86,7 @@
                             <button onclick="document.getElementById('romain-ai-auth').style.display='none'; document.getElementById('romain-ai-iframe').src='https://agent.higgs-cosmology.com';" style="padding:8px 20px; background:transparent; color:#00ffcc; border:1px solid #00ffcc; border-radius:20px; cursor:pointer; font-size:12px; margin-top:15px;">I'm already signed in — Start chatting</button>
                         </div>
                     </div>
-                    <iframe id="romain-ai-iframe" src="about:blank" style="width:100%; height:100%; border:none; border-radius:10px;" allow="clipboard-write" onload="checkIframeAuth()"></iframe>
+                    <iframe id="romain-ai-iframe" src="about:blank" style="width:100%; height:100%; border:none; border-radius:10px;" allow="clipboard-write"></iframe>
                 </div>
                 <div class="video-carousel-container">
                     <div class="video-carousel">
@@ -147,23 +147,6 @@
 
     <script src="{{ "/assets/js/video-carousel.js?v=" | append: site.github.build_revision | relative_url }}"></script>
     <script>
-    // Check if iframe loaded successfully or got blocked (403/redirect)
-    function checkIframeAuth() {
-        var iframe = document.getElementById('romain-ai-iframe');
-        if (iframe.src === 'about:blank') return;
-        try {
-            // Cross-origin: we can't read the content, but if it loaded
-            // and redirected to a different origin (Google 403), we detect it
-            var loc = iframe.contentWindow.location.href;
-            // If we can read it, it's same-origin = working
-        } catch(e) {
-            // Cross-origin error = redirected to Google/GitHub = session expired
-            // Reset to overlay
-            iframe.src = 'about:blank';
-            document.getElementById('romain-ai-auth').style.display = 'flex';
-        }
-    }
-
     // Romain AI toggle: swap video carousel ↔ chat iframe
     document.addEventListener('DOMContentLoaded', function() {
         // Intercept all Romain AI nav links
