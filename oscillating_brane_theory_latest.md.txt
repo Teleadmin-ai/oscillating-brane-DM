@@ -286,7 +286,7 @@ The irreducible Lithium-7 abundance anomaly (observed deficit of factor 3--4 rel
 The matter-antimatter imbalance ($\eta_B \approx 6.1 \times 10^{-10}$) finds no adequate explanation in the Standard Model. The radion $\phi$ universally couples to gluons via $\mathcal{L} \supset c_{QCD}(\phi/L)\,G_{\mu\nu}\tilde{G}^{\mu\nu}$, making the radion position a **dynamic $\theta_{QCD}$ angle**. When the motor ignites at $T \approx 257$ MeV (first violent slip), $\dot{\theta}_{eff} = c_{QCD}\,\dot{\phi}/L \neq 0$ creates an effective baryon chemical potential exactly when quarks confine into baryons, locking in the asymmetry (Cohen-Kaplan spontaneous baryogenesis). With $c_{QCD} = \mathcal{O}(1)$ (natural, no fine-tuning), this geometric quench yields $\eta_B \approx 6.1 \times 10^{-10}$.
 
 ![Baryon Asymmetry](./plots/baryon_asymmetry.png)
-*Figure: Spontaneous QCD baryogenesis via radion-driven dynamic $\theta_{QCD}$. The first slip at $\Lambda_{QCD} = 257$ MeV drives the baryon chemical potential, freezing out at $\eta_B = 6.10 \times 10^{-10}$. Coupling $c_{QCD} = 1.0$ (natural O(1), no fine-tuning). No $\varepsilon$_CP needed.*
+*Figure: Spontaneous QCD baryogenesis via radion-driven dynamic $\theta_{QCD}$. The first slip at $\Lambda_{QCD} = 257$ MeV drives the baryon chemical potential, freezing out at $\eta_B = 6.10 \times 10^{-10}$. Coupling $c_{QCD} = 1.0$ (natural O(1), no fine-tuning). No $\varepsilon_{CP}$ needed.*
 
 ### The Big Ring and Ultra-Large Structures
 
@@ -372,7 +372,7 @@ The V8.1 theory resolves this without invoking trans-horizon attractors. The bra
 
 The ARCADE 2 experiment detected an isotropic radio background $6\times$ brighter than the sum of all known sources, with a synchrotron power-law spectrum $T \propto \nu^{-2.6}$. No $\Lambda$CDM mechanism produces sufficient relativistic electrons isotropically.
 
-In V8.1, every stick-slip cycle ($T = 2$ Gyr) releases a violent geometric jerk when the brane snaps back. In the transparent post-recombinaison universe, these periodic shocks traverse the magnetized intergalactic medium, accelerating free electrons to relativistic energies. The cumulative synchrotron emission from ${\sim}\,7$ completed cycles since transparency produces a diffuse, isotropic radio background whose power-law index ($\sim -2.6$) matches the expected energy distribution from repeated geometric shock acceleration.
+In V8.1, every stick-slip cycle ($T = 2$ Gyr) releases a violent geometric jerk when the brane snaps back. In the transparent post-recombination universe, these periodic shocks traverse the magnetized intergalactic medium, accelerating free electrons to relativistic energies. The cumulative synchrotron emission from ${\sim}\,7$ completed cycles since transparency produces a diffuse, isotropic radio background whose power-law index ($\sim -2.6$) matches the expected energy distribution from repeated geometric shock acceleration.
 
 ### Odd Radio Circles (ORCs): Topological Shock Waves from PBH Relaxation
 
@@ -388,7 +388,7 @@ In V8.1, the star experienced ${\sim}\,7$ full oscillation cycles. During each $
 
 $$\langle (1 + f_\text{osc} \sin(\omega t))^7 \rangle \approx 1 + \frac{21}{2} f_\text{osc}^2 \approx 1.105$$
 
-Standard age-dating algorithms, assuming constant $G_N$ and therefore a slow constant burn rate, overestimate the elapsed time by this factor. The corrected age is $14.4 / 1.105 \approx 13.0$ Gyr --- comfortably below the age of the universe.
+Standard age-dating algorithms, assuming constant $G_N$ and therefore a slow constant burn rate, overestimate the elapsed time by this factor. The corrected age is $14.2 / 1.105 \approx 12.9$ Gyr --- comfortably below the age of the universe.
 
 ### White Dwarf Q-Branch: Thermo-Gravitational Pumping
 
@@ -714,7 +714,7 @@ The ER=EPR correspondence (Maldacena & Susskind 2013) provides the mathematical 
 - Black holes are quantum entangled through Einstein-Rosen bridges in the AdS bulk
 - Entanglement creates connectivity without signal propagation
 - Perfect phase coherence is a consequence of non-locality, not communication
-- Dark matter entering any black hole is instantaneously correlated with all others
+- All micro-PBH capillaries are instantaneously correlated through ER bridges in the bulk
 - Spacetime geometry on the brane emerges from this underlying entanglement
 
 ### End of the Universe

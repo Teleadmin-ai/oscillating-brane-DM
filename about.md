@@ -70,13 +70,13 @@ If this theory is right — or even partially right — then it demonstrates som
 
 ### Acknowledgments
 
-This theoretical framework was developed through curiosity-driven research. It builds upon established concepts in brane cosmology (Randall-Sundrum, Shiromizu-Maeda-Sasaki), dark energy observations (DESI 2024-2026), and quantum gravity (Maldacena-Susskind ER=EPR). The specific synthesis — the hybrid stick-slip motor, the 22 anomaly resolutions, and the laboratory predictions — is original work.
+This theoretical framework was developed through curiosity-driven research. It builds upon established concepts in brane cosmology (Randall-Sundrum, Shiromizu-Maeda-Sasaki), dark energy observations (DESI 2024-2026), and quantum gravity (Maldacena-Susskind ER=EPR). The specific synthesis — the hybrid stick-slip motor, the 31 anomaly resolutions, and the laboratory predictions — is original work.
 
 I thank the DESI, Planck, JWST, and NANOGrav collaborations for transformative open data. I thank the qBOUNCE team (Hartmut Abele, Tobias Jenke) at ILL Grenoble for pioneering the quantum neutron experiments that may validate the extra dimension. And I thank Claude and Gemini for being patient with a brain that thinks in spirals.
 
 ### Intellectual Property
 
-The conceptual architecture of the Oscillating Brane Cosmology V8.1 — including the hybrid stick-slip motor, the 22 anomaly resolutions, the 5D Geometric Bypass, and the 5D Laplace Demon quantum computer architecture — has been registered with the **French National Institute of Industrial Property (INPI)** in March 2026, establishing a dated proof of priority.
+The conceptual architecture of the Oscillating Brane Cosmology V8.1 — including the hybrid stick-slip motor, the 31 anomaly resolutions, the 5D Geometric Bypass, and the 5D Laplace Demon quantum computer architecture — has been registered with the **French National Institute of Industrial Property (INPI)** in March 2026, establishing a dated proof of priority.
 
 This registration does not restrict the use of the theory for scientific research. The code, documentation, and computational tools remain open-source under the MIT License. The INPI deposit serves solely as proof of authorship and chronological priority.
 

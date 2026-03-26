@@ -261,7 +261,7 @@ The ER=EPR correspondence (Maldacena & Susskind 2013) provides the mathematical 
 - Black holes are quantum entangled through Einstein-Rosen bridges in the AdS bulk
 - Entanglement creates connectivity without signal propagation
 - Perfect phase coherence is a consequence of non-locality, not communication
-- Dark matter entering any black hole is instantaneously correlated with all others
+- All micro-PBH capillaries are instantaneously correlated through ER bridges in the bulk
 - Spacetime geometry on the brane emerges from this underlying entanglement
 
 ### End of the Universe
