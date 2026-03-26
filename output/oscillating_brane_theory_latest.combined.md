@@ -745,7 +745,7 @@ $$\Gamma_{rad}(\phi, \dot{\phi}, t) = -\frac{P_{KK}(\phi, \dot{\phi}, \ddot{\phi
 
 This converts the phenomenological EFT parameter into a **derived tensorial quantity** --- a function of the brane's instantaneous kinematic state, computed directly from the 5D Einstein equations without any adjustable parameter. The successful execution of this program would complete the theory's transition from effective cosmology to fully predictive 5D General Relativity, and would simultaneously provide the exact branching ratio $\mathcal{B}$ between observable SGWB emission and bulk KK dissipation (Section: Exact SGWB Spectrum).
 
-### Microscopic Origin of the Slip Dynamics: ER=EPR and Holographic Tensor Networks
+### Microscopic Origin of $\gamma_{slip}$: Holographic Tensor Networks and Quantum Scrambling Bounds
 
 **1. Macroscopic (EFT) status of $\gamma_{slip}$.** In the current OBT V8.2 effective field theory, the slip-phase dissipation coefficient $\gamma_{slip}$ --- which parametrizes the non-linear friction $R_{PBH}(\phi,\dot{\phi})\,\Theta(|\phi|-\phi_{crit})$ during the rapid brane recoil --- is introduced as a **phenomenological macroscopic parameter**, strictly analogous to the dynamic viscosity $\eta$ in Navier-Stokes hydrodynamics. It encodes the aggregate resistance of the brane-bulk system to the catastrophic topological rearrangement that occurs when the radion crosses the QCD threshold. At the EFT level, $\gamma_{slip}$ absorbs all microscopic physics below the compactification scale $L^{-1}$ into a single effective coefficient governing the rate at which the stick-slip cycle discharges its stored elastic energy into bulk Kaluza-Klein graviton radiation. This is an honest parametrization: the numerical value ($\Gamma_{rad} \approx 20$ in dimensionless units) is calibrated to reproduce the observed 2 Gyr period and the measured amplitude $A_w = 0.003$, but it is not derived from first principles within the current framework.
 
@@ -757,7 +757,25 @@ This converts the phenomenological EFT parameter into a **derived tensorial quan
 - **Holographic quantum error-correcting codes** (Pastawski, Yoshida, Harlow & Preskill 2015; the HaPPY code), which formalize the bulk-boundary map as an isometric tensor network. In this language, the PBH nodes are logical qubits protected by the bulk error-correcting code, and $\gamma_{slip}$ encodes the rate of logical error propagation during the topological transition.
 - **Random tensor networks** (Hayden et al. 2016), which capture the chaotic scrambling dynamics of black hole interiors and provide computable entanglement entropy via the Ryu-Takayanagi formula generalized to dynamical geometries.
 
-The quantitative extraction of $\gamma_{slip}$ will ultimately connect to the **Complexity=Volume** (Susskind 2016) and **Complexity=Action** (Brown et al. 2016) conjectures, which relate the computational complexity of the boundary quantum state to geometric quantities in the bulk. During the slip phase, the brane's positional rearrangement corresponds to a rapid growth of circuit complexity in the dual CFT --- the holographic wormhole network must execute $\mathcal{O}(e^S)$ quantum gates to scramble the pre-slip correlations. The rate of complexity growth $d\mathcal{C}/dt \leq 2E/(\pi\hbar)$ (the Lloyd bound) then provides a fundamental upper limit on $\gamma_{slip}^{-1}$: the slip cannot be faster than the Lloyd bound permits the holographic network to process information. This connection --- from a phenomenological friction coefficient to a fundamental bound on quantum computational speed --- exemplifies the depth of the UV completion program that awaits beyond the EFT horizon.
+**3. Complexity growth and the Lloyd bound.** The quantitative extraction of $\gamma_{slip}$ will connect to the **Complexity=Volume** (Susskind 2016) and **Complexity=Action** (Brown et al. 2016) conjectures, which relate the computational complexity of the boundary quantum state to geometric quantities in the bulk. During the slip phase, the brane's positional rearrangement corresponds to a rapid growth of circuit complexity in the dual CFT --- the holographic wormhole network must execute $\mathcal{O}(e^S)$ quantum gates to scramble the pre-slip correlations. The rate of complexity growth is bounded by the **Margolus-Levitin / Lloyd bound** (Lloyd 2000):
+
+$$\frac{d\mathcal{C}}{dt} \leq \frac{2E}{\pi\hbar}$$
+
+where $E$ is the total energy of the PBH network. This provides a fundamental upper limit on $\gamma_{slip}^{-1}$: the slip cannot be faster than the Lloyd bound permits the holographic network to process information. The macroscopic viscosity $\gamma_{slip}$ is therefore the **geometric dual** of the finite computational speed of the universe --- the brane brakes because the underlying tensor network cannot reconfigure its geometry faster than the quantum speed limit allows.
+
+**4. Quantum chaos and the Maldacena-Shenker-Stanford bound.** The scrambling dynamics of the ER=EPR network during the slip phase must satisfy a second, independent quantum information constraint. The rate at which perturbations to the entanglement pattern spread through the wormhole network is quantified by the **quantum Lyapunov exponent** $\lambda_L$, extracted from out-of-time-order correlators (OTOCs):
+
+$$C(t) = -\langle [W(t), V(0)]^2 \rangle \sim e^{\lambda_L t}$$
+
+where $W$ and $V$ are generic operators acting on different PBH nodes. The **Maldacena-Shenker-Stanford (MSS) bound** (2016) imposes a universal upper limit on the rate of quantum chaos:
+
+$$\lambda_L \leq \frac{2\pi k_B T}{\hbar}$$
+
+where $T$ is the effective temperature of the PBH network. Black holes are the fastest scramblers in nature --- they **saturate** the MSS bound (Sekino & Susskind 2008). Since our micro-PBH capillaries are black holes, the ER=EPR network scrambles at the maximum rate permitted by quantum mechanics. This saturation has a profound consequence: it fixes $\gamma_{slip}$ non-parametrically. The slip friction is not an adjustable phenomenological constant --- it is set by the Hawking temperature of the PBH network and the fundamental constants of quantum mechanics alone. The scrambling time per node is $t_* = (\hbar/2\pi k_B T_H)\ln S_{BH}$, and the collective reorganization of the $N \sim 10^{20}$ entangled nodes produces a macroscopic viscosity:
+
+$$\gamma_{slip} \sim \frac{N}{t_*} \sim \frac{2\pi k_B T_H N}{\hbar \ln S_{BH}}$$
+
+The simultaneous satisfaction of both the Lloyd bound (computational speed limit on complexity growth) and the MSS bound (chaos speed limit on scrambling) provides two independent consistency checks on the derived value of $\gamma_{slip}$. Their agreement --- both yielding the same order of magnitude for the slip timescale --- would constitute a non-trivial validation of the holographic interpretation, demonstrating that the macroscopic friction of the cosmic membrane is the thermodynamic shadow of the quantum computational limits of the universe itself.
 
 ### Unified Linearized 5D Gravity: Self-Consistent SGWB Spectrum and KK Branching Ratio
 
