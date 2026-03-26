@@ -922,6 +922,34 @@ $$\mathcal{C}_n(t) \propto \psi_n(\phi(t)) = \phi(t)^2\,J_2(m_n\phi(t))$$
 
 This is the **kinematic pumping mechanism**: as the radion $\phi(t)$ accelerates violently during the slip, it sweeps through the argument of $J_2$, parametrically exciting the massive KK graviton modes. The energy transfer from the brane's kinetic energy to the bulk radiation field is the microscopic origin of the macroscopic friction $\Gamma_{rad}$.
 
+**Retarded 5D Green's function and topological censorship of KK modes.** The causal propagator is constructed by solving $(\Box_4 + \partial_z^2 - \frac{3}{z}\partial_z)\,G_R^{(5)}(x,z;x',z') = \delta^{(4)}(x-x')\,z^3\,\delta(z-z')$, where the $z^3$ factor arises from the covariant measure $\sqrt{-g} \propto z^{-5}$ combined with $g^{zz} \propto z^2$. The **Liouville transformation** $G_R^{(5)} = (zz')^{3/2}\tilde{G}_R^{(5)}$ absorbs the geometric friction, mapping the 5D d'Alembertian onto a canonical Hermitian Schrödinger operator:
+
+$$\left(\Box_4 + \partial_z^2 - V_{eff}(z)\right)\tilde{G}_R^{(5)} = \delta^{(4)}(x-x')\,\delta(z-z')$$
+
+with the **effective quantum potential** induced by the warp factor:
+
+$$V_{eff}(z) = \frac{15}{4z^2}$$
+
+This is the centrifugal barrier of $AdS_5$: it diverges at $z \to 0$ (UV brane), violently repelling massive modes toward the bulk interior and structuring the holographic localization of gravity.
+
+**Spectral decomposition.** The transverse operator $\hat{H}_z = -\partial_z^2 + 15/(4z^2)$ is self-adjoint with complete eigenbasis $\tilde{\psi}_n(z)$. Exploiting the closure relation, the 5D propagator factorizes into a sum of retarded 4D Klein-Gordon propagators weighted by the transverse profiles:
+
+$$G_R^{(5)}(x,z;\,x',z') = \sum_{n=0}^{\infty} G_R^{(4)}(x,x';\,m_n)\,\psi_n(z)\,\psi_n(z')$$
+
+where each 4D propagator satisfies $(\Box_4 - m_n^2)G_R^{(4)} = \delta^{(4)}(x-x')$ with the causal (retarded) solution:
+
+$$G_R^{(4)}(x,x';\,m_n) = -\Theta(t-t')\int\frac{d^3k}{(2\pi)^3}\,e^{i\vec{k}\cdot(\vec{x}-\vec{x}')}\,\frac{\sin(\omega_n(t-t'))}{\omega_n}$$
+
+with $\omega_n = \sqrt{|\vec{k}|^2 + m_n^2}$. The massive KK modes ($m_n > 0$) generate a dispersive wake inside the light cone --- the causal signature of propagation through the fifth dimension.
+
+**Topological censorship on the UV brane.** Evaluating $G_R^{(5)}$ with source and observer on the UV brane ($z = z' \to 0$): the zero mode has $\psi_0(z) = C_0 = \text{const}$, while massive modes obey $\psi_n(z) \propto z^2 J_2(m_n z)$. The Taylor expansion $J_2(u) \sim u^2/8$ for $u \to 0$ yields $\psi_n(z \to 0) \propto z^4 \to 0$. The entire KK tower is **topologically censored** on the UV brane:
+
+$$G_R^{(5)}(x,0;\,x',0) = |C_0|^2\,G_R^{(4)}(x,x';\,m_0 = 0)$$
+
+A UV-brane observer perceives only a massless 4D graviton --- Newton's $1/r^2$ law is recovered exactly despite the infinite fifth dimension. This is the Randall-Sundrum localization mechanism, derived here from the spectral structure of the 5D propagator.
+
+**Contrast with OBT V8.2 (IR brane).** Our physical brane oscillates at $z = \phi(t) \sim L$ in the infrared, where $\psi_n(L) \propto J_2(m_n L) \neq 0$. The KK tower is **not censored** --- it is fully coupled. The massive modes extract energy from the radion's kinetic motion during each slip, providing the formal ab initio derivation of $\Gamma_{rad}$. The UV censorship theorem simultaneously explains why gravity is Newtonian at macroscopic scales AND why the brane dissipates energy into the bulk at the microscopic scale $L$.
+
 **3. The branching ratio: zero mode versus Kaluza-Klein tower.** The resolution of this 5D wave equation via the **retarded Green's function** $G^{(5)}_R(x,x';z,z')$ in the warped geometry will yield the exact decomposition of the radiated power into two physically distinct channels:
 
 **(a) The brane-confined zero mode (massless graviton, $m_0 = 0$).** The spin-2 transverse-traceless (TT) zero mode of the Kaluza-Klein decomposition is the standard 4D graviton. It is localized on the brane by the Randall-Sundrum warp factor (its wavefunction peaks at $z=0$ and decays exponentially into the bulk). The fraction of radiated energy coupled to this mode propagates as conventional 4D gravitational waves at speed $c$ --- and constitutes the **observable SGWB signal** detected by PTA experiments and the future SKA. The exact spectral shape $\Omega_{GW}^{(0)}(f)$ of this zero-mode channel will differ quantitatively from the naive FFT proxy because the coupling efficiency between the scalar radion source $\ddot{\phi}(t)$ and the tensor TT mode involves the overlap integral of their respective wavefunctions in the extra dimension --- a projection that depends on the warp geometry and cannot be captured by a 4D scalar Fourier transform. In particular, the relative amplitude of the overtones $f_n = n f_0$ will be modulated by this overlap, potentially steepening or flattening the spectral slope $\gamma$ relative to the kinematic prediction.
