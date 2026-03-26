@@ -12,8 +12,8 @@ The target operator is Identity → target state unperturbed.
 The sensor shifts by Δx = F_5D / (M ω₀²).
 """
 
-import numpy as np
 import matplotlib
+import numpy as np
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt

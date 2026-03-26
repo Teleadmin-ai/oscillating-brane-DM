@@ -631,9 +631,7 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 
         # ── Fix image paths for standalone readability ──
         # /root/bulk/.../plots/xxx.png → ./plots/xxx.png
-        text = re.sub(
-            r"!\[([^\]]*)\]\(/root/[^)]*?/plots/", r"![\1](./plots/", text
-        )
+        text = re.sub(r"!\[([^\]]*)\]\(/root/[^)]*?/plots/", r"![\1](./plots/", text)
         # /plots/xxx.png → ./plots/xxx.png
         text = re.sub(r"!\[([^\]]*)\]\(/plots/", r"![\1](./plots/", text)
         # HTML img tags
