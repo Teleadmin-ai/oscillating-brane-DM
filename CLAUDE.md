@@ -279,15 +279,12 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 ### Phase 3: FR visual PDFs
 - Add FR versions of all 20 visual PDFs once available
 
-## TODO: Interactive Theory Agent
-- **Purpose**: Chatbot on the site that knows the full V8.0 theory and can do math (Python sandbox)
-- **Infrastructure**: Dedicated Debian 12 VM on OVH — 4 CPU, 8 GB RAM, 48 GB disk — IP: 51.254.22.29
-- **LLM**: Kimi K2.5 via Ollama Cloud (96.1% AIME, 87.6% GPQA, +20% agentic boost, thinking mode, fast) (99.1% AIME, Agent Swarm, 256K context)
-- **Token**: stored in `.env` (gitignored, NEVER commit)
-- **Architecture**: Open WebUI (multi-user sessions) + Ollama Cloud API + Docker ephemeral containers (numpy/scipy/matplotlib sandbox) + iframe embed on higgs-cosmology.com
-- **Context**: Inject `oscillating_brane_theory_latest.md.txt` as system prompt (~140 KB)
-- **Isolation**: Each user gets ephemeral Docker container for code execution, destroyed after session
-- **Status**: VM ready, token stored. Next: install Docker + Open WebUI + configure Ollama Cloud backend.
+## TODO: Remaining Work
+- Visual page (visual.md) with PDF embeds — waiting for user's PowerPoint PDF
+- Videos.md expansion to 40 videos — waiting for user's YouTube links
+- Google OAuth: pass from test to production mode (needs Google review)
+- Optimize Romain AI system prompt (currently uses RAG, consider direct prompt injection)
+- Code execution sandbox (Docker ephemeral containers) for Romain AI
 
 ## Site Structure (Jekyll + GitHub Pages)
 - **Layout**: `_layouts/dark.html` — two-column grid (45% text left, 55% video right)
@@ -296,7 +293,8 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - **CSS**: `assets/css/dark-theme.css` — dark theme, fixed header with blur, responsive (mobile hides video column)
 - **Mobile**: single column, hamburger menu (`.mobile-nav`), video hidden
 - **Section markers**: `<div class="section-marker" data-section="...">` in content triggers video switching via IntersectionObserver
-- **Non-PDF pages**: index.md, about.md, downloads.md, research.md, refutation.md, videos.md
+- **Romain AI toggle**: "🤖 Romain AI" button in nav swaps `.video-column` between video carousel and Open WebUI iframe. Click again to swap back. Script in `dark.html` bottom.
+- **Non-PDF pages**: index.md, about.md, downloads.md, research.md, refutation.md, videos.md, agent.md (if created)
 
 ## Agent Infrastructure (Romain AI)
 - **URL**: https://agent.higgs-cosmology.com
@@ -304,7 +302,8 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - **Stack**: Docker (Open WebUI v0.8.10 + Nginx Proxy Manager)
 - **LLM**: Kimi K2.5 via Ollama Cloud (96.1% AIME, 87.6% GPQA, +20% agentic boost, thinking mode, fast)
 - **Auth**: GitHub OAuth + Google OAuth (SSO), admin = Romain's account
-- **Model**: Custom "Romain" model with system prompt + knowledge base
+- **Model**: Custom "Romain" model (kimi-k2.5) with system prompt + knowledge base (.md.txt)
+- **Site integration**: iframe in `.video-column` toggled by "🤖 Romain AI" nav button
 - **Config**: `/opt/cosmic-yoyo-agent/docker-compose.yml`
 - **Secrets**: `.env` (gitignored) — Ollama token, GitHub OAuth, Google OAuth
 - **SSL**: Let's Encrypt via NPM, domain: agent.higgs-cosmology.com
