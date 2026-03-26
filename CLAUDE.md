@@ -128,12 +128,14 @@ git commit -m "Regenerate PDF" && git push
 - **M_crit = Lc²/(2G) ≈ 6.77 × 10⁻¹¹ M☉** (perforation hierarchy threshold, from r_s = L)
 - **f_PBH = 0.01 (1%)** everywhere ("tent pegs" metaphor — 1% mass tensions the membrane, 99% is Weyl geometry)
 - **"Loss of local 4D gravitational singularity"** (NOT "loss of mass") for sub-M_crit PBHs → 5D Schwarzschild-Tangherlini
+- **Double miracle at M_crit**: w_F(M_crit) = 2π×200/600 ≈ 2.09 — GL topological transition AND optical detection threshold coincide at same mass
+- **Sugiyama et al. 2026**: 4 PBH candidates at 10⁻⁷ M☉ (above M_crit), zero below — observational validation of perforation hierarchy
 - **GW170817 compatibility**: tensor GW modes (KK zero mode) propagate at c on brane, orthogonal to scalar radion oscillation
 - **Hawking immunity**: T_H ~ 900 K at M_crit, t_evap ~ 10^47 yr, immune to INTEGRAL/Fermi-LAT
 - **QCD Ansatz**: τ₀^{1/3} ≈ 257 MeV is a phenomenological Ansatz, NOT ab initio string derivation
 
 ### Key References:
-Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963
+Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026) — Subaru-HSC PBH microlensing validation
 
 ## Key Parameters
 | Parameter | Value |

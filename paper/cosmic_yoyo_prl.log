@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  26 MAR 2026 17:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  26 MAR 2026 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -543,14 +543,17 @@ LaTeX Warning: Command \textdegree invalid in math mode on input line 187.
 
 Missing character: There is no ° in font cmr10!
 [5 <../plots/isw_cmb_signature.png>] [6] [7] (./cosmic_yoyo_prl.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `cosmic_yoyo_prl.out' has not changed.
 (rerunfilecheck)             Checksum: 47E1EFA98150FDC2B31A5A2AFE15E676;1745.
  ) 
 Here is how much of TeX's memory you used:
- 10378 strings out of 478051
- 160187 string characters out of 5840944
+ 10380 strings out of 478051
+ 160204 string characters out of 5840944
  1871330 words of memory out of 5000000
- 30334 multiletter control sequences out of 15000+600000
+ 30335 multiletter control sequences out of 15000+600000
  522090 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,6n,76p,2942b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -569,10 +572,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on cosmic_yoyo_prl.pdf (7 pages, 731384 bytes).
+Output written on cosmic_yoyo_prl.pdf (7 pages, 731453 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

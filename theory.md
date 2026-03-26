@@ -250,6 +250,14 @@ $$M_{crit} = \frac{Lc^2}{2G} \approx 1.35 \times 10^{20} \text{ kg} \approx 6.77
 
 **The ab initio derivation.** The EMF's operational window (10⁻¹⁴ to 10⁻¹⁰ M☉) is bounded on both sides by physics: below ~10⁻¹⁴ M☉, Hawking evaporation destroys the PBH; above $M_{crit} \approx 6.8 \times 10^{-11} M_\odot$, the PBH becomes brane-anchored and visible. The capillary window is therefore set entirely by $L$ and fundamental constants — no fine-tuning.
 
+**The double miracle: topological AND optical coincidence.** At $M_{crit}$, the Schwarzschild radius equals $L = 200$ nm. For Subaru-HSC observing in the optical $r$-band ($\lambda_{opt} \approx 600$ nm), the Fresnel-Kirchhoff parameter at this exact mass is:
+
+$$w_F(M_{crit}) = \frac{2\pi r_s}{\lambda_{opt}} = \frac{2\pi \times 200}{600} \approx 2.09$$
+
+A value $w_F \approx 2$ marks precisely the transition between the wave-optics regime (where microlensing amplification is washed out by diffraction) and the geometric-optics regime (where classical lensing is detectable). This means the Gregory-Laflamme 5D→4D topological transition and the optical detection threshold coincide at the same mass — a non-trivial geometric coincidence that is not tuned but emerges from $L$ alone. Below $M_{crit}$, PBHs are doubly invisible: they have no local 4D gravitational singularity (GL instability) AND they are in the wave-optics blind spot ($w_F \ll 1$). Above $M_{crit}$, they are doubly visible: they retain 4D gravity AND enter the geometric-optics regime ($w_F > 2$).
+
+**Observational validation (Sugiyama, Takada et al. 2026).** The reanalysis of 39.3 hours of Subaru-HSC data toward M31 (arXiv:2602.05840, February 2026) identified exactly 4 secured microlensing candidates from an initial pool of 25,000+ transient events. All 4 candidates reside at $M \sim 10^{-7}$--$10^{-6} M_\odot$ — firmly above $M_{crit}$ in the brane-anchored regime. Zero candidates were found below $M_{crit}$. This asymmetric detection pattern is the direct observational signature of the perforation hierarchy: below $M_{crit}$, PBHs are 5D capillaries invisible to optical microlensing; above it, they are 4D anchors producing classical lensing events.
+
 **Hawking immunity of topological capillaries.** A common objection invokes Hawking evaporation constraints from INTEGRAL/SPI and Fermi-LAT gamma-ray satellites. This is physically irrelevant for our mass window. The Hawking temperature for a PBH at the critical mass is:
 
 $$T_H = \frac{\hbar c^3}{8\pi G k_B M_{crit}} \approx \frac{1.055 \times 10^{-34} \times (3 \times 10^8)^3}{8\pi \times 6.674 \times 10^{-11} \times 1.381 \times 10^{-23} \times 1.35 \times 10^{20}} \approx 900 \text{ K}$$
