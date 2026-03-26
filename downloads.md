@@ -27,7 +27,7 @@ Mathematically rigorous edition with Israel junction conditions, dynamical attra
 
 ## Complete Theory Documentation
 
-### 📄 Full PDF Version (~77 pages)
+### 📄 Full PDF Version (~78 pages)
 
 The complete theory documentation including all mathematical derivations, observational confrontations, and computational validation.
 
