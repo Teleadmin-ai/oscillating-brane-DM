@@ -83,7 +83,7 @@
                                 <img src="https://www.google.com/favicon.ico" style="width:18px; vertical-align:middle; margin-right:8px;">Continue with Google
                             </button>
                             <p style="color:#666; margin-top:15px; font-size:0.8rem;">Sign in once, then close the popup to start chatting.</p>
-                            <button onclick="document.getElementById('romain-ai-auth').style.display='none'; document.getElementById('romain-ai-iframe').src='https://agent.higgs-cosmology.com'; localStorage.setItem('romainAiAuthed','true');" style="padding:8px 20px; background:transparent; color:#00ffcc; border:1px solid #00ffcc; border-radius:20px; cursor:pointer; font-size:12px; margin-top:15px;">I'm already signed in — Start chatting</button>
+                            <button onclick="document.getElementById('romain-ai-auth').style.display='none'; document.getElementById('romain-ai-iframe').src='https://agent.higgs-cosmology.com?_='+Date.now(); localStorage.setItem('romainAiAuthed','true');" style="padding:8px 20px; background:transparent; color:#00ffcc; border:1px solid #00ffcc; border-radius:20px; cursor:pointer; font-size:12px; margin-top:15px;">I'm already signed in — Start chatting</button>
                         </div>
                     </div>
                     <iframe id="romain-ai-iframe" src="about:blank" style="width:100%; height:100%; border:none; border-radius:10px;" allow="clipboard-write"></iframe>
@@ -153,15 +153,19 @@
         var frame = document.getElementById('romain-ai-frame');
         var carousel = document.querySelector('.video-carousel-container');
 
+        var agentUrl = 'https://agent.higgs-cosmology.com';
+
         function showRomainAI(isRestore) {
             frame.style.display = 'block';
             carousel.style.display = 'none';
             document.querySelectorAll('.video-slide video').forEach(function(v) { v.pause(); });
             localStorage.setItem('romainAiOpen', 'true');
+            // Cache-bust to avoid stale SvelteKit assets
+            var freshUrl = agentUrl + '?_=' + Date.now();
             if (isRestore && localStorage.getItem('romainAiAuthed') === 'true') {
                 // User already authenticated — load iframe directly, skip overlay
                 document.getElementById('romain-ai-auth').style.display = 'none';
-                document.getElementById('romain-ai-iframe').src = 'https://agent.higgs-cosmology.com';
+                document.getElementById('romain-ai-iframe').src = freshUrl;
             } else {
                 // First time — show auth overlay
                 document.getElementById('romain-ai-auth').style.display = 'flex';
