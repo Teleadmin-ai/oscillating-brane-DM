@@ -148,29 +148,42 @@
     <script src="{{ "/assets/js/video-carousel.js?v=" | append: site.github.build_revision | relative_url }}"></script>
     <script>
     // Romain AI toggle: swap video carousel ↔ chat iframe
+    // State persists across page navigation via localStorage
     document.addEventListener('DOMContentLoaded', function() {
-        // Intercept all Romain AI nav links
+        var frame = document.getElementById('romain-ai-frame');
+        var carousel = document.querySelector('.video-carousel-container');
+
+        function showRomainAI() {
+            frame.style.display = 'block';
+            carousel.style.display = 'none';
+            document.getElementById('romain-ai-auth').style.display = 'flex';
+            document.getElementById('romain-ai-iframe').src = 'about:blank';
+            document.querySelectorAll('.video-slide video').forEach(function(v) { v.pause(); });
+            localStorage.setItem('romainAiOpen', 'true');
+        }
+
+        function showVideo() {
+            frame.style.display = 'none';
+            carousel.style.display = 'block';
+            document.getElementById('romain-ai-iframe').src = 'about:blank';
+            var active = document.querySelector('.video-slide.active video');
+            if (active) active.play();
+            localStorage.setItem('romainAiOpen', 'false');
+        }
+
+        // Restore state from previous page
+        if (localStorage.getItem('romainAiOpen') === 'true') {
+            showRomainAI();
+        }
+
+        // Romain AI nav link toggles the switch
         document.querySelectorAll('a[href*="romain-ai"]').forEach(function(link) {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                var frame = document.getElementById('romain-ai-frame');
-                var carousel = document.querySelector('.video-carousel-container');
                 if (frame.style.display === 'none') {
-                    frame.style.display = 'block';
-                    carousel.style.display = 'none';
-                    // Reset: show auth overlay + blank iframe
-                    document.getElementById('romain-ai-auth').style.display = 'flex';
-                    document.getElementById('romain-ai-iframe').src = 'about:blank';
-                    // Pause all videos
-                    document.querySelectorAll('.video-slide video').forEach(function(v) { v.pause(); });
+                    showRomainAI();
                 } else {
-                    frame.style.display = 'none';
-                    carousel.style.display = 'block';
-                    // Reset iframe to blank when hiding
-                    document.getElementById('romain-ai-iframe').src = 'about:blank';
-                    // Resume active video
-                    var active = document.querySelector('.video-slide.active video');
-                    if (active) active.play();
+                    showVideo();
                 }
             });
         });
