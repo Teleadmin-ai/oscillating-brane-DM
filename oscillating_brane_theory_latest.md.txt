@@ -81,7 +81,7 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
 Our theory presents a paradigm shift in understanding cosmic dynamics:
 
 - **Black holes** are not destructive chasms but tension pegs, anchor points where the membrane folds
-- **Dark matter** is the invisible bow that vibrates this giant harp
+- The **Cosmic Web** is the invisible bow that vibrates this giant harp
 - **Dark energy** emerges naturally from membrane oscillations
 - **Modified gravity** appears at cosmic scales without new particles
 
@@ -466,8 +466,8 @@ The Universe ceases to be perceived as an inert spacetime matrix in desperate in
 ### The Brane Universe
 Our 4D spacetime is an elastic membrane floating in a 5D Anti-de Sitter bulk. This isn't merely a mathematical abstraction---it's the fundamental nature of reality.
 
-### Gravitational Funnels
-Black holes serve as conduits between our brane and the bulk. Primordial micro-PBHs with an extended log-normal mass function (10$^{-14}$ to 10$^{-10}$ MSun, peak at ~10$^{-12}$ MSun) are the topological capillaries, with Schwarzschild radii r_s ~ 0.03-300 nm geometrically commensurate with the extra dimension thickness L = 200 nm.
+### Topological Capillaries (Micro-PBH Anchors)
+Micro-PBHs serve as topological anchor points connecting our brane to the bulk. Primordial micro-PBHs with an extended log-normal mass function (10$^{-14}$ to 10$^{-10}$ MSun, peak at ~10$^{-12}$ MSun) are the topological capillaries, with Schwarzschild radii r_s ~ 0.03-300 nm geometrically commensurate with the extra dimension thickness L = 200 nm.
 
 ### Fundamental Oscillation
 The entire universe vibrates as a single entity with a period T = 2.0 +/- 0.3 Gyr, driven by a stick-slip motor mechanism and calibrated from DESI baryon acoustic oscillations and Planck's ISW resonance.
@@ -485,7 +485,7 @@ $$\ddot{\phi} + (3H + \Gamma_{rad})\dot{\phi} + \xi R\phi + \frac{\partial V_{GW
 Each term has a distinct physical role:
 
 - **(3H + $\Gamma$_rad)phi̇** --- Hubble friction plus radiative damping. $\Gamma$_rad accounts for energy loss via bulk graviton emission (KK modes) during the violent slip phase. During the slow stick phase, $\Gamma$_rad approximately 0; during slip, $\Gamma$_rad spikes, capping the maximum velocity and preventing runaway amplitudes
-- **xiRphi** --- Non-minimal coupling to the 4D Ricci scalar R = 6($\dot{H}$ + 2H$^{2}$). This term ensures convergence to a dynamical attractor that locks T = 2.0 Gyr despite evolving H(t) and decaying DM accretion rates, resolving the chirp instability
+- **xiRphi** --- Non-minimal coupling to the 4D Ricci scalar R = 6($\dot{H}$ + 2H$^{2}$). This term ensures convergence to a dynamical attractor that locks T = 2.0 Gyr despite evolving H(t) and decaying Cosmic Web forcing, resolving the chirp instability
 - **$\partial$V_GW/$\partial$phi** --- Goldberger-Wise restoring potential (Goldberger & Wise 1999), with minimum at the QCD confinement scale ($\tau_0$^{1/3} = 257 MeV approximately $\Lambda_{QCD}$)
 - **F_web[$E_{\mu\nu}$] x (1 - 3w_eff)** --- **Macroscopic forcing (the Muscle)**: the inhomogeneous Cosmic Web (superclusters, filaments, voids) creates a stress tensor $S_{\mu\nu}$ on the brane. Via Israel junction conditions Delta$K_{\mu\nu}$ = -$\kappa$$_{5}$$^{2}$($S_{\mu\nu}$ - $\frac{1}{3}$S $h_{\mu\nu}$), this generates the projected Weyl tensor $E_{\mu\nu}$, which acts as a continuous 5D tidal force pressing the brane toward the bulk. The trace factor (1-3w) ensures conformal freeze-out during BBN and QCD ignition at $\Lambda_{QCD}$
 - **R_PBH(phi,phi̇)·$\Theta$(|phi| - phi_crit)** --- **Microscopic release (the Metronome)**: when |phi| exceeds the QCD threshold phi_crit, the ER=EPR-entangled network of micro-PBHs allows the brane to release tension simultaneously everywhere in the universe ($\ell$=0 mode). The holographic wormhole network ensures global phase coherence --- the "slip" is quantum-synchronized
@@ -498,7 +498,7 @@ A simple harmonic oscillator would be damped by Hubble friction (3Hphi̇) in a f
 2. **Slip phase**: When |phi| exceeds phi_crit, the non-linear release R activates, triggering rapid energy discharge. The brane snaps back to equilibrium
 3. **Re-adhesion**: The cycle begins again. The macroscopic forcing is eternally sourced by the gravitational weight of the Cosmic Web's large-scale structure
 
-**Why T stays locked at 2 Gyr (no chirp):** This is the most critical stability question for peer review. A naive dissipative oscillator would "chirp" --- its period would drift as Hubble friction $3H\dot{\phi}$ decreases with cosmic expansion and the Cosmic Web forcing $\mathcal{F}_{web}$ weakens as DM accretion rates decay ($\propto a^{-3}$). Without a stabilization mechanism, the period would accelerate over cosmic time.
+**Why T stays locked at 2 Gyr (no chirp):** This is the most critical stability question for peer review. A naive dissipative oscillator would "chirp" --- its period would drift as Hubble friction $3H\dot{\phi}$ decreases with cosmic expansion and the Cosmic Web forcing $\mathcal{F}_{web}$ weakens as Cosmic Web forcing decays ($\propto a^{-3}$). Without a stabilization mechanism, the period would accelerate over cosmic time.
 
 The non-minimal coupling $\xi R\phi$ acts as a **geometric Phase-Locked Loop (PLL)**. The 4D Ricci scalar $R = 6(\dot{H} + 2H^2)$ decreases as the universe expands. Through the $\xi R\phi$ term, this decreasing curvature feeds back into the radion equation, dynamically adjusting the effective restoring force. The three competing effects --- (1) decreasing Hubble friction ($3H\dot{\phi} \downarrow$), (2) decreasing Cosmic Web forcing ($\mathcal{F}_{web} \downarrow$), and (3) curvature feedback ($\xi R\phi \downarrow$) --- form a coupled dynamical system $\{H(t), \phi(t), \dot{M}_{DM}(t)\}$ that converges to an **attractor manifold** where the three decay rates cancel to first order.
 
@@ -719,7 +719,7 @@ Nature was whispering to us: "Think bigger, think global."
 
 ### The Revelation: The Universe is a Membrane
 
-The crucial insight was recognizing that the entire universe vibrates like a cosmic drumhead. When dark matter flows through gravitational funnels, it doesn't excite a local oscillator but the fundamental mode of the entire universe-membrane.
+The crucial insight was recognizing that the entire universe vibrates like a cosmic drumhead. The hybrid stick-slip motor doesn't excite a local oscillator but the fundamental mode of the entire universe-membrane.
 
 For a membrane of radius R_H = c/H$_{0}$ = 1.33 x $10^{26}$ m (the Hubble horizon, the distance to which we can see), the deformation energy is:
 
@@ -1283,7 +1283,7 @@ with:
 | **Cusp-Core** | Cores ~10 kpc | Cusps (rho proportional to r$^{-1}$) | Cores (by construction) |
 | **Missing Satellites** | Factor 2-3 reduction | Too many by 5-10x | Better match |
 | **Direct Detection** | sigma < 10$^{-48}$ cm$^{2}$ forever | sigma > 10$^{-47}$ cm$^{2}$ expected | No prediction |
-| **S$_{8}$ Tension** | Resolved (-5.2%) | 3sigma tension | Not addressed |
+| **S$_{8}$ Tension** | Resolved (~5%, time-dependent) | 3sigma tension | Not addressed |
 | **H$_{0}$ Tension** | Potential resolution | 5sigma tension | Not addressed |
 | **GW Prediction** | f$_{0}$ = 1.6x10$^{-17}$ Hz | None specific | None |
 | **Falsifiability** | Multiple clear tests | Particle discovery | Limited tests |
@@ -1314,7 +1314,7 @@ with:
 | Extra dimension L | 0.2 mum | Factor of 2 | KK modes | 2035+ |
 | KK mass m_KK | 1 eV | +/-0.5 eV | Cosmological bounds | Current |
 | **Cosmological Effects** |
-| S$_{8}$ suppression | -5.2% | +/-0.5% | Weak lensing | Current |
+| S$_{8}$ suppression | ~5% (time-dependent) | +/-0.5% | Weak lensing | Current |
 | w(z) amplitude A_w | 0.003 | +/-0.001 | BAO + SNe | 2025+ |
 | H$_{0}$ anisotropy | 0.01% | +/-0.005% | Precision cosmology | 2030+ |
 | **Gravitational Signatures** |
@@ -1783,7 +1783,7 @@ def lookback_time_exact(z, omega_m=0.3, omega_lambda=0.7, H0=70):
 
 #### Self-Consistent Growth Suppression
 
-**Issue**: Hardcoded 5.2% suppression factor.
+**Issue**: Approximate 5% suppression factor (time-dependent).
 
 **Implementation**:
 ```python
