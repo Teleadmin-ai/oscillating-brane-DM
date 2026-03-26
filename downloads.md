@@ -6,27 +6,28 @@ permalink: /downloads/
 
 # Download Resources
 
-## White Paper V8.1 (6 pages)
+## White Paper V8.1 (7 pages)
 
-Mathematically rigorous edition with Israel junction conditions and dynamical attractor. Resolves three established anomalies. Ideal for sharing.
+Mathematically rigorous edition with Israel junction conditions, dynamical attractor, and Gregory-Laflamme perforation hierarchy. Resolves thirty-one cosmological anomalies. Ideal for sharing.
 
 <div style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(255,51,102,0.1), rgba(0,255,204,0.1)); border-radius: 10px; border: 2px solid #00ffcc;">
   <h4>The Cosmic Yoyo: Stick-Slip Brane Motor</h4>
-  <p>6-page summary including:</p>
+  <p>7-page summary including:</p>
   <ul style="margin: 15px 0;">
     <li>ER=EPR holographic topology (Maldacena-Susskind)</li>
     <li>Period calibrated from DESI BAO + Planck ISW</li>
     <li>One-loop quantum stability corrections</li>
-    <li>Three anomalies resolved: dark energy, S₈ (time-dependent growth suppression), CMB anomaly</li>
+    <li>Gregory-Laflamme perforation hierarchy (M_crit ab initio derivation)</li>
+    <li>Thirty-one anomalies resolved: dark energy, S₈, CMB, JWST, NANOGrav, and 26 more</li>
   </ul>
   <a href="/cosmic_yoyo_v5_holographic.pdf" download class="viral-button" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #ff3366, #00ffcc); color: white; text-decoration: none; border-radius: 25px; margin-top: 10px; font-weight: bold; text-transform: uppercase;">
-    Download White Paper (PDF, 6 pages)
+    Download White Paper (PDF, 7 pages)
   </a>
 </div>
 
 ## Complete Theory Documentation
 
-### 📄 Full PDF Version (~59 pages)
+### 📄 Full PDF Version (~77 pages)
 
 The complete theory documentation including all mathematical derivations, observational confrontations, and computational validation.
 
