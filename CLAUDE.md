@@ -1,5 +1,12 @@
 # CLAUDE.md - Project Information for AI Assistants
 
+## 🛑 RULE ZERO — DISCUSS BEFORE ACTING 🛑
+**When the user asks a question ("comment on fait ça ?", "à ton avis ?"), ANSWER the question and STOP.**
+- Do NOT start reading files, writing code, or making changes after answering a question
+- WAIT for explicit approval ("vas-y", "fais-le", "ok") before any action
+- The user thinks out loud and discusses before deciding — respect that process
+- Breaking this rule wastes work and causes destructive changes
+
 ## ⛔ SACRED RULE — READ THIS FIRST ⛔
 The following .md files compose the PDF and are the SOLE source of truth for the theory:
 1. `discoveries.md` — 22 anomalies resolved
