@@ -158,11 +158,16 @@
                 if (frame.style.display === 'none') {
                     frame.style.display = 'block';
                     carousel.style.display = 'none';
+                    // Reset: show auth overlay + blank iframe
+                    document.getElementById('romain-ai-auth').style.display = 'flex';
+                    document.getElementById('romain-ai-iframe').src = 'about:blank';
                     // Pause all videos
                     document.querySelectorAll('.video-slide video').forEach(function(v) { v.pause(); });
                 } else {
                     frame.style.display = 'none';
                     carousel.style.display = 'block';
+                    // Reset iframe to blank when hiding
+                    document.getElementById('romain-ai-iframe').src = 'about:blank';
                     // Resume active video
                     var active = document.querySelector('.video-slide.active video');
                     if (active) active.play();
