@@ -6,7 +6,7 @@ permalink: /refutation/
 
 # Open Scientific Peer Review
 
-The Oscillating Brane Cosmology V8.0 invites rigorous scientific scrutiny. This theory claims to resolve 31 cosmological anomalies — extraordinary claims demand extraordinary evidence, and we welcome challenges.
+The Oscillating Brane Cosmology V8.1 invites rigorous scientific scrutiny. This theory claims to resolve 31 cosmological anomalies — extraordinary claims demand extraordinary evidence, and we welcome challenges.
 
 ## How It Works
 
@@ -52,7 +52,7 @@ This is a **transparent, public peer review** process:
 
 ## Contribute to the Theory
 
-Have you applied the V8.0 framework to solve a problem, derive a new prediction, or reproduce our results independently? **Submit your contribution** — if validated, it will be integrated into the theory with full credit to you.
+Have you applied the V8.1 framework to solve a problem, derive a new prediction, or reproduce our results independently? **Submit your contribution** — if validated, it will be integrated into the theory with full credit to you.
 
 Examples of contributions we're looking for:
 - Applying the Yukawa screening to specific galaxy rotation curves

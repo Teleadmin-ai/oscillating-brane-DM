@@ -4,9 +4,9 @@ title: Complete Theoretical Framework
 permalink: /theory/
 ---
 
-# Complete Theoretical Framework V8.0 (Hybrid Topology Edition)
+# Complete Theoretical Framework V8.1 (Perforation Hierarchy Edition)
 
-**V8.0 — Hybrid Topology**: The stick-slip motor operates at two scales: (1) **macroscopic** — the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous E_μν forcing; (2) **microscopic** — the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally (ℓ=0 mode). Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1).
+**V8.1 — Perforation Hierarchy**: The stick-slip motor operates at two scales: (1) **macroscopic** — the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous E_μν forcing; (2) **microscopic** — the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally (ℓ=0 mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1).
 
 ## Core Concepts
 
@@ -21,7 +21,7 @@ The entire universe vibrates as a single entity with a period T = 2.0 ± 0.3 Gyr
 
 ## Mathematical Framework
 
-### The V8.0 Hybrid Stick-Slip Motor Equation
+### The V8.1 Hybrid Stick-Slip Motor Equation
 
 The formal framework for oscillating p-branes in Anti-de Sitter space was established by Clark, Love, Nitta, ter Veldhuis & Xiong (Phys. Rev. D 76, 105014, 2007), who constructed the $SO(2,p+N)$ invariant Nambu-Goto action for a 3-brane with codimension $N=1$. We extend this formalism with a non-linear stick-slip driving mechanism coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
 
@@ -49,7 +49,7 @@ A simple harmonic oscillator would be damped by Hubble friction (3Hφ̇) in a fe
 
 The non-minimal coupling $\xi R\phi$ acts as a **geometric Phase-Locked Loop (PLL)**. The 4D Ricci scalar $R = 6(\dot{H} + 2H^2)$ decreases as the universe expands. Through the $\xi R\phi$ term, this decreasing curvature feeds back into the radion equation, dynamically adjusting the effective restoring force. The three competing effects — (1) decreasing Hubble friction ($3H\dot{\phi} \downarrow$), (2) decreasing Cosmic Web forcing ($\mathcal{F}_{web} \downarrow$), and (3) curvature feedback ($\xi R\phi \downarrow$) — form a coupled dynamical system $\{H(t), \phi(t), \dot{M}_{DM}(t)\}$ that converges to an **attractor manifold** where the three decay rates cancel to first order.
 
-Physically: as the universe expands and friction drops, the motor would speed up — but simultaneously the curvature-dependent restoring force weakens, slowing the motor by the same amount. This self-tuning balance is not fine-tuned; it is the generic behavior of the attractor, analogous to how a van der Pol oscillator maintains constant amplitude despite varying external conditions. Numerical integration of the full V8.0 ODE confirms convergence to $T = 2.0$ Gyr within $\sim 2$ e-foldings, with residual drift $|\dot{T}/T| < 10^{-3}$ per Hubble time — the period is locked to better than 0.1% per Gyr.
+Physically: as the universe expands and friction drops, the motor would speed up — but simultaneously the curvature-dependent restoring force weakens, slowing the motor by the same amount. This self-tuning balance is not fine-tuned; it is the generic behavior of the attractor, analogous to how a van der Pol oscillator maintains constant amplitude despite varying external conditions. Numerical integration of the full V8.1 ODE confirms convergence to $T = 2.0$ Gyr within $\sim 2$ e-foldings, with residual drift $|\dot{T}/T| < 10^{-3}$ per Hubble time — the period is locked to better than 0.1% per Gyr.
 
 ### BBN Protection via Conformal Symmetry and the Trace Anomaly
 
@@ -194,7 +194,7 @@ The stick-slip cycle operates at two scales simultaneously:
 
 ### Hybrid Forcing: Cosmic Web (Muscle) + PBH Network (Metronome)
 
-The V8.0 motor operates through the coupling of two physical scales:
+The V8.1 motor operates through the coupling of two physical scales:
 
 **Macroscopic forcing (Cosmic Web):** The universe is not smooth — the Cosmic Web's superclusters, filaments, and voids create a massive, inhomogeneous stress tensor S_μν on the brane. Via the Shiromizu-Maeda-Sasaki (2000) Israel junction conditions, ΔK_μν = -κ₅²(S_μν - ⅓S h_μν), this heterogeneous mass distribution bends the brane toward the 5D bulk, generating the continuous Weyl tensor E_μν that drives φ toward φ_crit. This is the macroscopic engine — the brane breathes under the gravitational weight of its own large-scale structure.
 
@@ -222,7 +222,24 @@ The asteroid-mass PBH window (10⁻¹⁴ to 10⁻¹⁰ M☉) is often claimed to
 
 **3. Brane-proximal clustering:** PBHs serving as topological capillaries are structurally coupled to the brane, not distributed as an isotropic gas following a smooth NFW profile. Their clustering reduces the effective lensing optical depth compared to standard assumptions.
 
-These micro-PBHs (~10% of dark matter) act as **topological capillaries** and **quantum synchronization nodes** (ER=EPR). Their geometric commensurability with L (r_s/L ~ 0.01-1.5) is structurally required for the stick-slip release mechanism.
+These micro-PBHs (~1% of dark matter by mass, $f_{PBH} = 0.01$) act as **topological capillaries** and **quantum synchronization nodes** (ER=EPR). Like tent pegs anchoring a vast canopy, 1% of the mass as PBHs suffices to tension the entire membrane, with the remaining 99% of gravitational effects arising from the projected Weyl tensor $E_{\mu\nu}$ — the geometry of the brane, not particles.
+
+### Perforation Hierarchy: Gregory-Laflamme Instability and the Critical Mass
+
+The upper bound of the asteroid-mass PBH window is not a free parameter — it emerges ab initio from 5D General Relativity via the **Gregory-Laflamme (GL) instability** (Gregory & Laflamme, PRL 70, 1993).
+
+**The critical mass.** A PBH with Schwarzschild radius $r_s = 2GM/c^2$ that exceeds the extra dimension size $L$ extends beyond the brane and remains anchored as a standard 4D black hole. However, when $r_s < L$, the black hole fits entirely within the extra dimension and becomes subject to the GL instability — a non-perturbative instability of black strings in higher dimensions that causes the 4D horizon to fragment into a **5D Schwarzschild-Tangherlini geometry** (Tangherlini, 1963). The critical mass at the transition $r_s = L$ is:
+
+$$M_{crit} = \frac{Lc^2}{2G} \approx 1.35 \times 10^{20} \text{ kg} \approx 6.77 \times 10^{-11} M_\odot$$
+
+**Below $M_{crit}$ (the capillaries):** The PBH undergoes GL instability and becomes a 5D object. It loses its **local 4D gravitational singularity** — not its mass, but its ability to generate a concentrated $1/r$ potential on the brane. Its gravitational influence is diffused through the bulk Weyl tensor $E_{\mu\nu}$, projected back onto the brane as a soft tidal correction via the Shiromizu-Maeda-Sasaki equations. Without the deep $1/r$ potential well, there is no Bondi-Hoyle accretion, no Shakura-Sunyaev viscous friction, and therefore **no accretion disk and no X-ray emission**. These are the topological capillaries and quantum metronome nodes.
+
+**Above $M_{crit}$ (brane-anchored):** The PBH's horizon extends beyond $L$, anchoring it firmly on the brane. It retains standard 4D gravity ($1/r$ potential), can form accretion disks, and participates in normal astrophysics. The extreme tail of the log-normal EMF above $M_{crit}$ provides endogenous "heavy seeds" for early SMBH formation observed by JWST — without requiring super-Eddington accretion.
+
+**The ab initio derivation.** The EMF's operational window (10⁻¹⁴ to 10⁻¹⁰ M☉) is bounded on both sides by physics: below ~10⁻¹⁴ M☉, Hawking evaporation destroys the PBH; above $M_{crit} \approx 6.8 \times 10^{-11} M_\odot$, the PBH becomes brane-anchored and visible. The capillary window is therefore set entirely by $L$ and fundamental constants — no fine-tuning.
+
+![Perforation Hierarchy](/plots/gregory_laflamme_hierarchy.png)
+*Figure: Gregory-Laflamme perforation hierarchy. PBHs below $M_{crit}$ (purple) undergo GL instability and become 5D objects — topological capillaries invisible to accretion and microlensing. PBHs above $M_{crit}$ (orange) remain brane-anchored with standard 4D gravity.*
 
 ## Definitive Future Test
 

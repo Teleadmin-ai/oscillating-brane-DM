@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PBH Extended Mass Function vs Microlensing Constraints — V8.0
+PBH Extended Mass Function vs Microlensing Constraints — V8.1
 ==============================================================
 
 Demonstrates that a log-normal extended mass function (EMF) centered
 on M_c ~ 10^{-12} M_sun with sigma_M ~ 1.5 achieves a total PBH
-fraction f_PBH = 0.10 while evading Subaru-HSC microlensing constraints.
+fraction f_PBH = 0.01 while evading Subaru-HSC microlensing constraints.
 
 Physics:
   - EMF: dn/d(ln M) ~ exp(-(ln M - ln M_c)^2 / (2*sigma^2))
@@ -16,7 +16,7 @@ Physics:
 Output:
   plots/pbh_emf_constraints.png
 
-Version: 7.0
+Version: 8.1
 """
 
 import os
@@ -155,7 +155,7 @@ def combined_constraint(M):
 # ---------------------------------------------------------------------------
 # Compute effective f_PBH
 # ---------------------------------------------------------------------------
-def compute_effective_fpbh(M_range, M_c=1e-12, sigma_M=1.5, f_total=0.10):
+def compute_effective_fpbh(M_range, M_c=1e-12, sigma_M=1.5, f_total=0.01):
     """Compute whether the EMF can achieve f_total while respecting constraints.
 
     The EMF distributes f_total across all masses. For each mass bin,
@@ -244,7 +244,7 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
     ax1.plot(log_M, f_hsc, color="red", linewidth=1.5, alpha=0.7)
     ax1.plot(log_M, f_eros, color="orange", linewidth=1.5, alpha=0.5)
 
-    # EMF (scaled to f_total = 0.10)
+    # EMF (scaled to f_total = 0.01)
     f_local = result["f_local"]
     ax1.plot(
         log_M,
@@ -275,6 +275,17 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
         label=f"$M_c = 10^{{{int(np.log10(M_c))}}} M_\\odot$",
     )
 
+    # Gregory-Laflamme critical mass line
+    M_crit_msun = L_extra * c**2 / (2 * G_N * M_sun)
+    ax1.axvline(
+        np.log10(M_crit_msun),
+        color="yellow",
+        linestyle="-.",
+        linewidth=2,
+        alpha=0.8,
+        label=f"$M_{{crit}}$ (GL) = {M_crit_msun:.2e} $M_\\odot$",
+    )
+
     # r_s / L ratio on top axis
     ax1_top = ax1.twiny()
     r_s_values = schwarzschild_radius(M_range)
@@ -296,9 +307,9 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
     ax1.set_ylim(1e-5, 2)
     ax1.legend(fontsize=10, loc="upper left")
     ax1.set_title(
-        "V8.0: Extended PBH Mass Function vs Microlensing Constraints\n"
+        "V8.1: Extended PBH Mass Function vs Microlensing Constraints\n"
         f"$f_{{PBH}}$ = {result['f_effective']:.3f} "
-        f"(target: 0.10, achievable: {result['f_max_achievable']:.3f})",
+        f"(target: 0.01, achievable: {result['f_max_achievable']:.3f})",
         fontsize=13,
     )
     ax1.tick_params(labelbottom=False)
@@ -315,13 +326,13 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
 
     ax2.plot(log_M, cumulative, color="#00ffcc", linewidth=2)
     ax2.axhline(
-        0.10, color="white", linestyle="--", alpha=0.5, label="Target $f_{PBH}$ = 0.10"
+        0.01, color="white", linestyle="--", alpha=0.5, label="Target $f_{PBH}$ = 0.01"
     )
     ax2.fill_between(log_M, 0, cumulative, alpha=0.15, color="#00ffcc")
 
     ax2.set_xlabel(r"$\log_{10}(M / M_\odot)$", fontsize=13)
     ax2.set_ylabel(r"Cumulative $f_{PBH}$", fontsize=13)
-    ax2.set_ylim(0, 0.15)
+    ax2.set_ylim(0, 0.03)
     ax2.legend(fontsize=10)
     ax2.set_xlim(log_M[0], log_M[-1])
 
@@ -337,7 +348,7 @@ def plot_emf_constraints(M_range, result, M_c=1e-12, sigma_M=1.5):
 # ---------------------------------------------------------------------------
 def main():
     print("=" * 70)
-    print("V8.0 PBH Extended Mass Function Analysis")
+    print("V8.1 PBH Extended Mass Function Analysis")
     print("=" * 70)
 
     os.makedirs(PLOTS_DIR, exist_ok=True)
@@ -348,7 +359,7 @@ def main():
     # Parameters
     M_c = 1e-12  # central mass
     sigma_M = 2.0  # log-normal width (wider EMF evades microlensing)
-    f_total = 0.10  # target DM fraction
+    f_total = 0.01  # target DM fraction (1% — "tent pegs")
 
     print(f"\n[1] EMF parameters:")
     print(f"  Central mass:  M_c = 10^{int(np.log10(M_c))} M_sun")

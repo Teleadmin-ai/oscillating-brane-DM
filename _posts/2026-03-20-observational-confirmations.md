@@ -24,7 +24,7 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 **The Current Picture**: The true anchors are **primordial micro-PBHs** of asteroid mass (~10⁻¹² M☉), completely invisible to electromagnetic observations but structurally essential.
 
-**The Implication**: The brane's topological anchoring is robust and fundamentally invisible to optical electromagnetic observations. Micro-PBHs constituting ~10% of dark matter form a pervasive network of capillaries connecting our 4D reality to the 5D bulk.
+**The Implication**: The brane's topological anchoring is robust and fundamentally invisible to optical electromagnetic observations. Micro-PBHs constituting ~1% of dark matter by mass ($f_{PBH} = 0.01$) form a pervasive network of capillaries connecting our 4D reality to the 5D bulk.
 
 ## 3. The S₈ Tension Resolution
 
@@ -42,7 +42,7 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 ## The Current Picture
 
-Three established anomalies are resolved by the V8.0 stick-slip brane motor:
+Three established anomalies are resolved by the V8.1 stick-slip brane motor:
 
 1. **Dark Energy Evolution** (DESI, 4σ) ✓
 2. **S₈ Tension** (time-dependent growth suppression) ✓

@@ -41,7 +41,7 @@ This natural cooling allows the fundamental mode to enter resonance when the osc
 Today, the brane has reached its equilibrium configuration:
 - Stable tension τ₀ = 7×10<sup>19</sup> J/m²
 - Fundamental period T = 2.0 Gyr
-- 10% of dark matter participates in oscillations
+- ~1% of dark matter mass in PBH capillaries ($f_{PBH} = 0.01$) tensions the membrane
 
 ## The Violent Birth
 
@@ -67,7 +67,7 @@ The period is not given by a simple harmonic formula. The stick-slip cycle has:
 
 $$T \approx t_\text{stick} + t_\text{slip} \approx 2.0 \text{ Gyr}$$
 
-where t_stick is the charging time ($E_{\mu\nu}$ forcing against GW restoring potential) and t_slip is the rapid discharge time. The harmonic approximation $T \approx 2\pi\sqrt{f_\text{osc} M_\text{DM,tot}/\tau_0}$ gives the correct order of magnitude but the precise period requires numerical integration of the full V8.0 ODE including the $\xi R\phi$ attractor term.
+where t_stick is the charging time ($E_{\mu\nu}$ forcing against GW restoring potential) and t_slip is the rapid discharge time. The harmonic approximation $T \approx 2\pi\sqrt{f_\text{osc} M_\text{DM,tot}/\tau_0}$ gives the correct order of magnitude but the precise period requires numerical integration of the full V8.1 ODE including the $\xi R\phi$ attractor term.
 
 ### Determination of τ₀
 

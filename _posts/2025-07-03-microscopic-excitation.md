@@ -8,7 +8,7 @@ tags: [stick-slip, cosmic-web, brane-oscillation, ER-EPR]
 
 But how, concretely, does the Cosmic Web excite this gigantic membrane? The answer is a **hybrid stick-slip motor** combining macroscopic forcing and quantum synchronization.
 
-## The Hybrid Stick-Slip Motor (V8.0)
+## The Hybrid Stick-Slip Motor (V8.1)
 
 The brane position (radion φ) obeys a non-linear relaxation oscillator with non-minimal gravitational coupling:
 
