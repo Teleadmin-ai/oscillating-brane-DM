@@ -109,7 +109,7 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 
 ## Download the Theory
 
-- **[White Paper (7 pages)](/cosmic_yoyo_v5_holographic.pdf)** --- V8.2 Peer-Review Shield Edition
+- **[White Paper (7 pages)](/cosmic_yoyo_v5_holographic.pdf)** --- V8.2 Hybrid Topology Edition
 - **[Full Theory (~78 pages)](/oscillating_brane_theory_latest.pdf)** --- Complete documentation with computational validation
 - **[All Downloads](/downloads/)** --- Scripts, data, and additional resources
 

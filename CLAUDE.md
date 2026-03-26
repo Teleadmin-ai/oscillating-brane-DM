@@ -39,7 +39,7 @@ git commit -m "Regenerate PDF" && git push
 **Breaking these rules causes data loss in INPI deposits and costs the user money.**
 
 ## Project Overview
-**Oscillating Brane Cosmology V8.2 (Peer-Review Shield Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome). Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window.
+**Oscillating Brane Cosmology V8.2 (Hybrid Topology Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome). Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window.
 
 **Author**: Romain Provencal (provencal.romain@teleadmin.net) - Independent conceptual researcher
 **AI Collaborators**: Claude (Anthropic) & Gemini DeepThink (Google) as theoretical co-processors
@@ -48,7 +48,7 @@ git commit -m "Regenerate PDF" && git push
 - **GitHub**: https://github.com/Teleadmin-ai/oscillating-brane-DM
 - **Website**: https://higgs-cosmology.com/
 - **Owner**: Teleadmin-ai (NOT "Teleadmin")
-- **Version**: V8.2 Peer-Review Shield Edition (March 2026)
+- **Version**: V8.2 Hybrid Topology Edition (March 2026)
 
 ## CRITICAL: Theory V8.2 Paradigm
 

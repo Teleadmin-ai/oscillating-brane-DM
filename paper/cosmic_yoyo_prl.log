@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  26 MAR 2026 17:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  26 MAR 2026 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -543,9 +543,6 @@ LaTeX Warning: Command \textdegree invalid in math mode on input line 187.
 
 Missing character: There is no ° in font cmr10!
 [5 <../plots/isw_cmb_signature.png>] [6] [7] (./cosmic_yoyo_prl.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `cosmic_yoyo_prl.out' has not changed.
 (rerunfilecheck)             Checksum: 47E1EFA98150FDC2B31A5A2AFE15E676;1745.
  ) 
@@ -572,7 +569,7 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on cosmic_yoyo_prl.pdf (7 pages, 731453 bytes).
+Output written on cosmic_yoyo_prl.pdf (7 pages, 731664 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  160 compressed objects within 2 object streams

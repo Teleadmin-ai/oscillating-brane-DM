@@ -34,7 +34,7 @@ I have never hidden this. My brain is not a disability for this work — it is t
 | Age 24 | Founded **Teleadmin** | Hosting company, OVH Advanced Partner |
 | Career | National infrastructure | **Qwant** (3 server racks, ZFS NAS, 5 DB servers), **Atout France**, **Euresto**, **Incepto** (100+ hospitals), **GELMAD** Lyon (3 medical imaging centers including Hôpital Mermoz) |
 | Age 50 | AI Research | R-JEPA — adaptation of Yann LeCun's JEPA architecture for text reasoning in the latent space of an LLM |
-| 2026 | **Oscillating Brane Cosmology** | 31 anomalies resolved, V8.2 Peer-Review Shield Edition |
+| 2026 | **Oscillating Brane Cosmology** | 31 anomalies resolved, V8.2 Hybrid Topology Edition |
 
 **Career trajectory**: Systems administrator → Data Scientist → AI Agent Developer → Independent Cosmological Researcher.
 
