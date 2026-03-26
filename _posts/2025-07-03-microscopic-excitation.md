@@ -18,7 +18,7 @@ $$\ddot{\phi} + 3H\dot{\phi} + \xi R\phi + \frac{\partial V_{GW}}{\partial \phi}
 
 **The Slip Phase (the Quantum Metronome)**: When |φ| exceeds φ_crit (set by the QCD confinement scale, τ₀^{1/3} = 257 MeV), the ER=EPR-entangled PBH network synchronizes the release across the entire brane (ℓ=0 mode). The tension is released everywhere simultaneously.
 
-**Why T stays locked at 2 Gyr**: The non-minimal coupling ξRφ creates a dynamical attractor that locks the period despite evolving H(t) and decaying DM accretion rates. The system converges within ~2 e-foldings.
+**Why T stays locked at 2 Gyr**: The non-minimal coupling ξRφ creates a dynamical attractor that locks the period despite evolving H(t) and decaying Cosmic Web forcing. The system converges within ~2 e-foldings.
 
 ## The Topological Necessity: ER=EPR and Non-Local Coherence
 
@@ -56,7 +56,7 @@ However, secondary local resonances are possible around superclusters, where mas
 
 ## Micro-PBH Anchors: The Sole Topological Capillaries
 
-The brane's sole topological connection to the bulk is through primordial micro-PBHs of asteroid mass (~10⁻¹² M☉). Their Schwarzschild radius r_s ≈ 3-30 nm is geometrically commensurate with the extra dimension thickness L = 200 nm. Constituting ~10% of dark matter, these microscopic capillaries:
+The brane's sole topological connection to the bulk is through primordial micro-PBHs of asteroid mass (~10⁻¹² M☉). Their Schwarzschild radius r_s ≈ 3-30 nm is geometrically commensurate with the extra dimension thickness L = 200 nm. These microscopic capillaries (extended log-normal mass function, 10⁻¹⁴ to 10⁻¹⁰ M☉):
 
 - Penetrate the bulk without tearing the macroscopic 4D structure
 - Set the critical threshold φ_crit via their geometric ratio r_s/L
