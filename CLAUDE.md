@@ -299,7 +299,11 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 ## Agent Infrastructure (Romain AI)
 - **URL**: https://agent.higgs-cosmology.com
 - **VM**: Debian 12, 4 CPU, 8 GB RAM, 48 GB disk — IP: 51.254.22.29
-- **Stack**: Docker (Open WebUI v0.8.10 + Nginx Proxy Manager)
+- **Stack**: Open WebUI v0.8.11 on host (venv: `/opt/open-webui-host/venv/`) + NPM in Docker + gVisor on host
+- **Systemd service**: `open-webui.service` (port 8081), env in `/opt/open-webui-host/.env`
+- **Data**: `/opt/open-webui-host/data/webui.db` (copied from Docker volume)
+- **Old Docker container**: `cosmic-yoyo-agent` kept intact as backup (stopped)
+- **ALWAYS use venv for Python installs, NEVER --break-system-packages**
 - **LLM**: Kimi K2.5 via Ollama Cloud (96.1% AIME, 87.6% GPQA, +20% agentic boost, thinking mode, fast)
 - **Auth**: GitHub OAuth + Google OAuth (SSO), admin = Romain's account
 - **Model**: Custom "Romain" model (kimi-k2.5) with system prompt + knowledge base (.md.txt)
