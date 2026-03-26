@@ -6,7 +6,7 @@ permalink: /downloads/
 
 # Download Resources
 
-## White Paper V8.1 (7 pages)
+## White Paper V8.2 (7 pages)
 
 Mathematically rigorous edition with Israel junction conditions, dynamical attractor, and Gregory-Laflamme perforation hierarchy. Resolves thirty-one cosmological anomalies. Ideal for sharing.
 
@@ -64,7 +64,7 @@ All computational tools are available in the [GitHub repository](https://github.
   
   <div style="padding: 20px; background: rgba(74, 144, 226, 0.1); border: 1px solid #4a90e2; border-radius: 8px;">
     <h4>📚 Theory Document</h4>
-    <p>Complete V8.1 mathematically rigorous framework</p>
+    <p>Complete V8.2 mathematically rigorous framework</p>
     <a href="/theory/" style="color: #4a90e2;">View Online →</a>
   </div>
   

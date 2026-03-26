@@ -6,7 +6,7 @@ permalink: /videos/
 
 # Video Series: The Cosmic Yoyo Explained
 
-A 6-part vulgarization series explaining the Oscillating Brane Cosmology V8.1, available in English and French.
+A 6-part vulgarization series explaining the Oscillating Brane Cosmology V8.2, available in English and French.
 
 <div style="text-align: center; margin: 20px 0;">
   <button id="btn-en" onclick="switchLang('en')" style="padding: 10px 25px; margin: 5px; border: 2px solid #00ffcc; background: transparent; color: #00ffcc; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold;">🇬🇧 English</button>
@@ -71,7 +71,7 @@ Three detailed deep-dives into the key predictions that can confirm or kill the 
 
 <div style="margin: 30px 0;">
 <h3>Prediction 1 — The qBOUNCE Crash Test</h3>
-<p>Did we just find the 5th Dimension on a lab table? The answer could be hiding at the subatomic level, at the Institut Laue-Langevin in Grenoble. We explore the quantum gravity anomaly of the qBOUNCE experiment: why do ultra-cold neutrons not bounce exactly as predicted by Newtonian gravity? The Oscillating Brane Theory (V8.1) proves that the mysterious "Robin parameter" is actually the geometric shadow of a 5th dimension measuring exactly 0.2 micrometers. The ultimate crash-test is set: qBOUNCE-II must measure an explosive 55-fold amplification of this anomaly.</p>
+<p>Did we just find the 5th Dimension on a lab table? The answer could be hiding at the subatomic level, at the Institut Laue-Langevin in Grenoble. We explore the quantum gravity anomaly of the qBOUNCE experiment: why do ultra-cold neutrons not bounce exactly as predicted by Newtonian gravity? The Oscillating Brane Theory (V8.2) proves that the mysterious "Robin parameter" is actually the geometric shadow of a 5th dimension measuring exactly 0.2 micrometers. The ultimate crash-test is set: qBOUNCE-II must measure an explosive 55-fold amplification of this anomaly.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/2-YzmvfbyO8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
@@ -153,7 +153,7 @@ Trois plongées détaillées dans les prédictions clés qui peuvent confirmer o
 
 <div style="margin: 30px 0;">
 <h3>Prédiction 1 — Le Crash Test qBOUNCE</h3>
-<p>A-t-on trouvé la 5ème Dimension sur une simple table de laboratoire ? La réponse se trouve peut-être à l'échelle subatomique, à l'Institut Laue-Langevin de Grenoble. Nous explorons l'anomalie quantique de l'expérience qBOUNCE : pourquoi les neutrons ultra-froids ne rebondissent-ils pas exactement comme le prévoit la gravité de Newton ? La théorie de la Brane Oscillante (V8.1) démontre que le mystérieux "paramètre de Robin" est en réalité l'ombre géométrique d'une 5ème dimension mesurant très exactement 0,2 micromètre. Le crash-test absolu est lancé : qBOUNCE-II devra mesurer une amplification explosive (x55) de cette anomalie.</p>
+<p>A-t-on trouvé la 5ème Dimension sur une simple table de laboratoire ? La réponse se trouve peut-être à l'échelle subatomique, à l'Institut Laue-Langevin de Grenoble. Nous explorons l'anomalie quantique de l'expérience qBOUNCE : pourquoi les neutrons ultra-froids ne rebondissent-ils pas exactement comme le prévoit la gravité de Newton ? La théorie de la Brane Oscillante (V8.2) démontre que le mystérieux "paramètre de Robin" est en réalité l'ombre géométrique d'une 5ème dimension mesurant très exactement 0,2 micromètre. Le crash-test absolu est lancé : qBOUNCE-II devra mesurer une amplification explosive (x55) de cette anomalie.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/oo2zm1OUBwY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>

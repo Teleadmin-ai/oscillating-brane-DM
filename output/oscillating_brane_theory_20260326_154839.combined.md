@@ -58,7 +58,7 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane---our four-dimensional reality---is connected through a holographic network of quantum entangled black holes.
 
-**The Cosmic Yoyo V8.2**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor $E_{\mu\nu}$ forcing --- the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally ($\ell$=0 mode) --- the metronome. Conformal symmetry ($T^\mu_\mu$ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda_{QCD}$ = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor (xiRphi) locks the period at T = 2 Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the S$_{8}$ tension (via time-dependent growth suppression), and Planck's CMB anomaly.
+**The Cosmic Yoyo V8.1**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor $E_{\mu\nu}$ forcing --- the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally ($\ell$=0 mode) --- the metronome. Conformal symmetry ($T^\mu_\mu$ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda_{QCD}$ = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor (xiRphi) locks the period at T = 2 Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the S$_{8}$ tension (via time-dependent growth suppression), and Planck's CMB anomaly.
 
 
   
@@ -109,7 +109,7 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 
 ## Download the Theory
 
-- **[White Paper (6 pages)](/cosmic_yoyo_v5_holographic.pdf)** --- V8.2 Hybrid Topology Edition
+- **[White Paper (6 pages)](/cosmic_yoyo_v5_holographic.pdf)** --- V8.1 Hybrid Topology Edition
 - **[Full Theory (~59 pages)](/oscillating_brane_theory_latest.pdf)** --- Complete documentation with computational validation
 - **[All Downloads](/downloads/)** --- Scripts, data, and additional resources
 
@@ -119,7 +119,7 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 # Chapter 2: Discovery & Correction of Modern Cosmology
 
 
-An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) unifies 31 contemporary cosmological anomalies within a single extra-dimensional geometric framework.
+An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.1) unifies 31 contemporary cosmological anomalies within a single extra-dimensional geometric framework.
 
 ## The Collapse of the Standard Model
 
@@ -129,7 +129,7 @@ The $\Lambda$CDM concordance model is experiencing the most severe empirical cri
 
 Classical parametric extensions (Early Dark Energy, self-interacting dark matter) increasingly resemble desperate mathematical epicycles. The true resolution lies not in adding phantom particles or ad-hoc scalar fields, but in a fundamental revision of the spacetime topology of the Universe.
 
-The **Oscillating Brane Theory V8.2** proposes this paradigm shift: the Universe is a 4D membrane oscillating in a 5D Anti-de Sitter bulk ($AdS_5$), driven by a hybrid stick-slip motor coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
+The **Oscillating Brane Theory V8.1** proposes this paradigm shift: the Universe is a 4D membrane oscillating in a 5D Anti-de Sitter bulk ($AdS_5$), driven by a hybrid stick-slip motor coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
 
 ## Mathematical Pillars: Irrefutable Demonstrations
 
@@ -230,7 +230,7 @@ In the Brane paradigm, this series of null results is not a disappointment but c
 
 $\Lambda$CDM numerical simulations suffer from severe galactic-scale divergences: excessive satellite galaxy predictions, the cusp-core problem in ultra-faint dwarfs, and the unexplained tight correlation between baryonic mass and total gravitational acceleration (the Radial Acceleration Relation).
 
-The V8.2 theory assimilates MOND's phenomenological successes while rejecting its non-relativistic postulate. A critical acceleration scale emerges naturally from the brane's intrinsic elasticity:
+The V8.1 theory assimilates MOND's phenomenological successes while rejecting its non-relativistic postulate. A critical acceleration scale emerges naturally from the brane's intrinsic elasticity:
 
 $$a_0 = \frac{cH_0}{2\pi} \approx 1.1 \times 10^{-10} \text{ m/s}^2$$
 
@@ -305,14 +305,14 @@ The correct 5D coupling uses the geometric ratio $\phi/L$ instead of the 4D Plan
 
 $$\mathcal{L}_{CS} = \frac{\alpha_{em}}{4\pi}\,c_{top}\left(\frac{\phi}{L}\right)F_{\mu\nu}\tilde{F}^{\mu\nu}$$
 
-The cumulative rotation is $\Delta\beta = (\alpha_{em}/2\pi)\,c_{top}\,(\Delta\phi/L)$. With $\Delta\phi/L \approx 0.05$ from V8.2 dynamics and $c_{top} \approx 75$ (a natural topological Chern number for $G_2$ compactifications), this yields $\Delta\beta = 0.25°$ --- **derived ab initio, no fine-tuning**.
+The cumulative rotation is $\Delta\beta = (\alpha_{em}/2\pi)\,c_{top}\,(\Delta\phi/L)$. With $\Delta\phi/L \approx 0.05$ from V8.1 dynamics and $c_{top} \approx 75$ (a natural topological Chern number for $G_2$ compactifications), this yields $\Delta\beta = 0.25°$ --- **derived ab initio, no fine-tuning**.
 
 ![CMB Birefringence](./plots/cmb_birefringence.png)
 *Figure: Ab initio CMB birefringence from 5D geometry. The 4D axion approach required an unnatural $c_{CS} \sim 10^{40}$; the correct 5D geometric formula gives $c_{top} = 75$ (natural O(10$^{2}$) Chern number). $\Delta\beta$ = 0.250° matches ACT/Planck.*
 
 ## Multi-Messenger Astrophysical Signatures
 
-The V8.2 parameters ($L = 0.2\,\mu$m, $T = 2.0$ Gyr, stick-slip motor) predict specific signatures across gravitational wave, X-ray, optical, and ultra-high-energy cosmic ray observations --- all validated numerically.
+The V8.1 parameters ($L = 0.2\,\mu$m, $T = 2.0$ Gyr, stick-slip motor) predict specific signatures across gravitational wave, X-ray, optical, and ultra-high-energy cosmic ray observations --- all validated numerically.
 
 ### NANOGrav Gravitational Wave Overtones
 
@@ -323,34 +323,34 @@ The NANOGrav 15-year dataset reveals a stochastic gravitational wave background 
 
 ### The eROSITA Structure Growth Illusion ($\gamma = 1.19$)
 
-The eROSITA satellite measured a structure growth index $\gamma = 1.19$, while standard GR predicts $\gamma = 0.55$. In V8.2, $G_\text{eff}(z)$ oscillates with the brane. Our current epoch corresponds to a temporarily weakened gravity phase (brane stretched), causing cluster formation to stall. Fitting a constant-$G$ $\Lambda$CDM model to this oscillating data extracts an artificially inflated $\gamma$ --- the "illusion" of modified gravity is actually an artifact of applying a static model to a dynamic universe.
+The eROSITA satellite measured a structure growth index $\gamma = 1.19$, while standard GR predicts $\gamma = 0.55$. In V8.1, $G_\text{eff}(z)$ oscillates with the brane. Our current epoch corresponds to a temporarily weakened gravity phase (brane stretched), causing cluster formation to stall. Fitting a constant-$G$ $\Lambda$CDM model to this oscillating data extracts an artificially inflated $\gamma$ --- the "illusion" of modified gravity is actually an artifact of applying a static model to a dynamic universe.
 
 ![eROSITA Growth Illusion](./plots/erosita_gamma_illusion.png)
 *Figure: Oscillating $G_\text{eff}(z)$ creates the illusion of $\gamma = 1.19$ when fitted with a constant-$G$ model. The growth rate $f(z)$ deviates from GR's $\Omega_m^{0.55}$ at low redshifts where the brane is currently stretched.*
 
 ### Dark-Matter-Free Galaxies: Cymatic Nodes (DF2/DF4)
 
-Galaxies NGC 1052-DF2 and DF4 appear to contain no dark matter, defying all standard formation models. In V8.2, dark matter is a geometric effect of the vibrating brane. Like a Chladni plate, the 3D standing wave possesses spatial nodes where the oscillation amplitude vanishes. Galaxies forming at these nodes experience pure Newtonian gravity --- zero Yukawa modification, zero apparent dark matter. Our simulation shows that ~3.4% of galaxies naturally fall at these nodes, consistent with the observed rarity of DM-free galaxies.
+Galaxies NGC 1052-DF2 and DF4 appear to contain no dark matter, defying all standard formation models. In V8.1, dark matter is a geometric effect of the vibrating brane. Like a Chladni plate, the 3D standing wave possesses spatial nodes where the oscillation amplitude vanishes. Galaxies forming at these nodes experience pure Newtonian gravity --- zero Yukawa modification, zero apparent dark matter. Our simulation shows that ~3.4% of galaxies naturally fall at these nodes, consistent with the observed rarity of DM-free galaxies.
 
 ![DF2 Cymatic Nodes](./plots/df2_cymatic_nodes.png)
 *Figure: Cymatic dark matter distribution. Galaxies at standing wave nodes (cyan) have zero apparent DM (like DF2/DF4). Galaxies at antinodes (red) have maximum apparent DM. ~3.4% of galaxies are DM-free --- matching observed rarity.*
 
 ### The Amaterasu Particle: Trans-GZK via 5D Leakage
 
-The Amaterasu cosmic ray (244 EeV) violated the GZK horizon --- it should have been destroyed by CMB photon collisions before reaching Earth. In V8.2, the extra dimension ($L = 0.2\,\mu$m) creates Kaluza-Klein gravitons ($m_\text{KK} \approx 1$ eV). At ultra-high energies, the proton-CMB collision opens virtual KK graviton exchange channels, leaking energy into the 5th dimension. This suppresses the pion-production cross-section, extending the GZK attenuation length by a factor of ~60 at 244 EeV --- the particle survives its intergalactic journey.
+The Amaterasu cosmic ray (244 EeV) violated the GZK horizon --- it should have been destroyed by CMB photon collisions before reaching Earth. In V8.1, the extra dimension ($L = 0.2\,\mu$m) creates Kaluza-Klein gravitons ($m_\text{KK} \approx 1$ eV). At ultra-high energies, the proton-CMB collision opens virtual KK graviton exchange channels, leaking energy into the 5th dimension. This suppresses the pion-production cross-section, extending the GZK attenuation length by a factor of ~60 at 244 EeV --- the particle survives its intergalactic journey.
 
 ![Amaterasu GZK Horizon](./plots/amaterasu_gzk_horizon.png)
-*Figure: 5D KK leakage extends the GZK horizon. At 244 EeV, the standard horizon is ~41 Mpc (particle dies); the V8.2 horizon is ~2482 Mpc (particle SURVIVES). Extension factor: 60$\times$.*
+*Figure: 5D KK leakage extends the GZK horizon. At 244 EeV, the standard horizon is ~41 Mpc (particle dies); the V8.1 horizon is ~2482 Mpc (particle SURVIVES). Extension factor: 60$\times$.*
 
 ## Extended Phenomenology: 9 Additional Anomalies Resolved
 
-The three fundamental parameters of V8.2 ($\tau_0$, $T$, $L$) were calibrated on the three core anomalies (DESI, $S_8$, ISW). The following nine anomalies were **not** used in any fit --- they are pure predictions of the framework applied to independent astrophysical domains.
+The three fundamental parameters of V8.1 ($\tau_0$, $T$, $L$) were calibrated on the three core anomalies (DESI, $S_8$, ISW). The following nine anomalies were **not** used in any fit --- they are pure predictions of the framework applied to independent astrophysical domains.
 
 ### The KBC Void: Cymatic Standing Wave of the Brane
 
 The KBC Void (Keenan, Barger & Cowie 2013) is a spherical under-density of ${\sim}\,20$--$50\%$ extending over ${\sim}\,600$ Mpc in diameter, centered near our position. $\Lambda$CDM simulations predict voids should not exceed ${\sim}\,100$--$500$ Mly; the KBC Void represents a $> 6\sigma$ tension.
 
-The V8.2 theory predicts this structure ab initio. A temporal oscillation of period $T = 2.0$ Gyr generates a spatial standing wave with fundamental wavelength:
+The V8.1 theory predicts this structure ab initio. A temporal oscillation of period $T = 2.0$ Gyr generates a spatial standing wave with fundamental wavelength:
 
 $$\lambda = c \times T \approx 2.0 \text{ billion light-years} \approx 613 \text{ Mpc}$$
 
@@ -360,31 +360,31 @@ This matches the KBC Void diameter exactly (observed: ${\sim}\,600$ Mpc). The Mi
 
 Observations of 93 quasars in Large Quasar Groups at $z \sim 1.3$ reveal that their polarization vectors (hence spin axes) are aligned parallel or perpendicular to the host filament axis, with random probability $< 1\%$. No $\Lambda$CDM mechanism can produce coherent torques over $> 1$ Gpc.
 
-In V8.2, massive structures press the brane toward the bulk via Israel junction conditions, generating the projected Weyl tensor $\mathcal{E}_{\mu\nu}$ along cosmic filaments. This tensor produces a quadrupolar shear field that torques supermassive black holes (topological anchors) into alignment with the principal stress axes. The observed bimodality (parallel/perpendicular) is the direct signature of the quadrupolar symmetry of $\mathcal{E}_{\mu\nu}$.
+In V8.1, massive structures press the brane toward the bulk via Israel junction conditions, generating the projected Weyl tensor $\mathcal{E}_{\mu\nu}$ along cosmic filaments. This tensor produces a quadrupolar shear field that torques supermassive black holes (topological anchors) into alignment with the principal stress axes. The observed bimodality (parallel/perpendicular) is the direct signature of the quadrupolar symmetry of $\mathcal{E}_{\mu\nu}$.
 
 ### Dark Flow: Brane Drift Inertia
 
 Kashlinsky et al. (2008) detected a coherent bulk flow of $600$--$1000$ km/s across $> 2.5$ Gly toward Centaurus/Hydra, confirmed by Cosmicflows-4. No attractor of sufficient mass exists in that direction within the observable universe.
 
-The V8.2 theory resolves this without invoking trans-horizon attractors. The brane possesses a kinematic drift velocity through the $AdS_5$ bulk (the same drift that explains the cosmic dipole and CMB birefringence). The most massive objects (galaxy clusters) interact most deeply with the extra-dimensional radion field, experiencing asymmetric geometric drag. This inertial lag manifests as a coherent apparent flow in the direction opposite to the brane's 5D drift vector.
+The V8.1 theory resolves this without invoking trans-horizon attractors. The brane possesses a kinematic drift velocity through the $AdS_5$ bulk (the same drift that explains the cosmic dipole and CMB birefringence). The most massive objects (galaxy clusters) interact most deeply with the extra-dimensional radion field, experiencing asymmetric geometric drag. This inertial lag manifests as a coherent apparent flow in the direction opposite to the brane's 5D drift vector.
 
 ### The Space Roar (ARCADE 2): Cumulative Synchrotron from Stick-Slip Cycles
 
 The ARCADE 2 experiment detected an isotropic radio background $6\times$ brighter than the sum of all known sources, with a synchrotron power-law spectrum $T \propto \nu^{-2.6}$. No $\Lambda$CDM mechanism produces sufficient relativistic electrons isotropically.
 
-In V8.2, every stick-slip cycle ($T = 2$ Gyr) releases a violent geometric jerk when the brane snaps back. In the transparent post-recombination universe, these periodic shocks traverse the magnetized intergalactic medium, accelerating free electrons to relativistic energies. The cumulative synchrotron emission from ${\sim}\,7$ completed cycles since transparency produces a diffuse, isotropic radio background whose power-law index ($\sim -2.6$) matches the expected energy distribution from repeated geometric shock acceleration.
+In V8.1, every stick-slip cycle ($T = 2$ Gyr) releases a violent geometric jerk when the brane snaps back. In the transparent post-recombination universe, these periodic shocks traverse the magnetized intergalactic medium, accelerating free electrons to relativistic energies. The cumulative synchrotron emission from ${\sim}\,7$ completed cycles since transparency produces a diffuse, isotropic radio background whose power-law index ($\sim -2.6$) matches the expected energy distribution from repeated geometric shock acceleration.
 
 ### Odd Radio Circles (ORCs): Topological Shock Waves from PBH Relaxation
 
 ORCs are giant (${\sim}\,1$ Mly diameter), perfectly circular radio-only emission rings, invisible at all other wavelengths, centered on massive elliptical galaxies at $z \sim 0.2$--$0.6$. Their near-perfect spherical symmetry and enormous energy ($10^{57}$--$10^{59}$ erg) defy standard MHD models.
 
-In V8.2, massive elliptical galaxies concentrate the densest clusters of micro-PBH topological anchors. During the slip phase, the violent release of brane tension at these high-density nodes creates a radial shock front propagating through the circumgalactic medium. The isotropic nature of the $\ell = 0$ release mode ensures near-perfect spherical symmetry. The shock amplifies ambient magnetic fields and accelerates electrons, producing thin synchrotron shells. ORCs are the local dissipation signatures of the global stick-slip motor.
+In V8.1, massive elliptical galaxies concentrate the densest clusters of micro-PBH topological anchors. During the slip phase, the violent release of brane tension at these high-density nodes creates a radial shock front propagating through the circumgalactic medium. The isotropic nature of the $\ell = 0$ release mode ensures near-perfect spherical symmetry. The shock amplifies ambient magnetic fields and accelerates electrons, producing thin synchrotron shells. ORCs are the local dissipation signatures of the global stick-slip motor.
 
 ### The Methuselah Star (HD 140283): Oscillation-Accelerated Aging
 
 HD 140283 ($[Fe/H] = -2.23$) has a derived age of $14.2 \pm 0.4$ Gyr --- older than the universe itself (13.8 Gyr). Standard stellar models assume constant $G_N$ throughout the star's life.
 
-In V8.2, the star experienced ${\sim}\,7$ full oscillation cycles. During each $G_\text{eff}$ peak, the enhanced gravitational compression of the stellar core dramatically accelerated nuclear burning ($L \propto G^7 M^5$). The time-averaged luminosity enhancement factor is:
+In V8.1, the star experienced ${\sim}\,7$ full oscillation cycles. During each $G_\text{eff}$ peak, the enhanced gravitational compression of the stellar core dramatically accelerated nuclear burning ($L \propto G^7 M^5$). The time-averaged luminosity enhancement factor is:
 
 $$\langle (1 + f_\text{osc} \sin(\omega t))^7 \rangle \approx 1 + \frac{21}{2} f_\text{osc}^2 \approx 1.105$$
 
@@ -394,23 +394,23 @@ Standard age-dating algorithms, assuming constant $G_N$ and therefore a slow con
 
 Gaia observations reveal an anomalous stalling of the cooling sequence for ultramassive white dwarfs (the "Q-branch"), where objects remain hot for ${\sim}\,8$ Gyr longer than predicted. Standard explanations require exotic Ne-22 enrichment ($X > 2.5\%$, exceeding solar values) or beyond-SM particles.
 
-In V8.2, the oscillating $G_\text{eff}(t)$ periodically compresses and relaxes the degenerate core. Unlike ideal gas stars, the degenerate electron pressure depends on density, not temperature. Each compression cycle performs mechanical work ($P\,dV$) on the crystallizing Coulomb lattice, which dissipates as internal heat via thermodynamic friction --- analogous to tidal heating of Io by Jupiter, but driven by the metric itself. This thermo-gravitational pumping provides a continuous endogenous heat source that stalls the cooling without exotic compositions or new particles.
+In V8.1, the oscillating $G_\text{eff}(t)$ periodically compresses and relaxes the degenerate core. Unlike ideal gas stars, the degenerate electron pressure depends on density, not temperature. Each compression cycle performs mechanical work ($P\,dV$) on the crystallizing Coulomb lattice, which dissipates as internal heat via thermodynamic friction --- analogous to tidal heating of Io by Jupiter, but driven by the metric itself. This thermo-gravitational pumping provides a continuous endogenous heat source that stalls the cooling without exotic compositions or new particles.
 
 ### The Planet 9 Illusion: Emergent MOND EFE in the Outer Solar System
 
 The orbits of extreme trans-Neptunian objects (ETNOs, including Sedna) are anomalously clustered in perihelion angle, motivating the "Planet 9" hypothesis. Decades of deep surveys have found no such body.
 
-In V8.2, at distances of $200$--$500$ AU, solar gravitational acceleration falls below $a_0 = cH_0/2\pi \approx 1.1 \times 10^{-10}$ m/s$^2$, entering the emergent MOND regime. The External Field Effect (EFE) from the Milky Way's galactic acceleration (${\sim}\,a_0$) breaks the spherical symmetry of the solar potential, creating a secular torque that aligns ETNO orbits toward the galactic center direction. N-body simulations using this MOND-EFE formalism reproduce the observed clustering without any additional mass.
+In V8.1, at distances of $200$--$500$ AU, solar gravitational acceleration falls below $a_0 = cH_0/2\pi \approx 1.1 \times 10^{-10}$ m/s$^2$, entering the emergent MOND regime. The External Field Effect (EFE) from the Milky Way's galactic acceleration (${\sim}\,a_0$) breaks the spherical symmetry of the solar potential, creating a secular torque that aligns ETNO orbits toward the galactic center direction. N-body simulations using this MOND-EFE formalism reproduce the observed clustering without any additional mass.
 
 ### Flyby Anomaly: Brane Drift Vortex and Frame-Dragging
 
 Multiple spacecraft (Galileo: $+3.92$ mm/s, NEAR: $+13.46$ mm/s) gained unexplained velocity increments during Earth flybys, correlated with orbital inclination (Anderson formula). Symmetric passes (Juno) show no anomaly.
 
-In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining Dark Flow and the cosmic dipole) interacts with Earth's rotation via the Lense-Thirring frame-dragging effect. The rotating Earth creates an asymmetric gravito-magnetic vortex in the brane's drift field. Spacecraft on highly inclined hyperbolic trajectories cut across this vortex asymmetrically, exchanging kinetic energy with the topological drift --- a non-conservative interaction in the geocentric frame that draws energy from the bulk's curvature density. Equatorial or symmetric passes cancel the exchange, explaining the null result for Juno.
+In V8.1, the brane drift through the $AdS_5$ bulk (the same mechanism explaining Dark Flow and the cosmic dipole) interacts with Earth's rotation via the Lense-Thirring frame-dragging effect. The rotating Earth creates an asymmetric gravito-magnetic vortex in the brane's drift field. Spacecraft on highly inclined hyperbolic trajectories cut across this vortex asymmetrically, exchanging kinetic energy with the topological drift --- a non-conservative interaction in the geocentric frame that draws energy from the bulk's curvature density. Equatorial or symmetric passes cancel the exchange, explaining the null result for Juno.
 
 ## Comparative Synthesis
 
-| Cosmological Problem | $\Lambda$CDM Status | Oscillating Brane V8.2 Solution |
+| Cosmological Problem | $\Lambda$CDM Status | Oscillating Brane V8.1 Solution |
 |---------------------|---------------------|-------------------------------|
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric |
@@ -439,7 +439,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 
 ## Conclusions and Decisive Perspectives
 
-The Oscillating Brane paradigm (Cosmic Yoyo V8.2) does not represent yet another statistical adjustment at the margins of a faltering Standard Model. It emerges as a unified extra-dimensional matrix founded on clear, interconnected mathematical deductions. Its effectiveness stems from a simple topological redefinition limiting the number of tuning parameters: the tension $\tau_0$ (fixed by QCD at 257 MeV), the oscillation period (2 Gyr, locked by the $\xi R\phi$ attractor), and the extra-dimension size ($L = 0.2\;\mu$m).
+The Oscillating Brane paradigm (Cosmic Yoyo V8.1) does not represent yet another statistical adjustment at the margins of a faltering Standard Model. It emerges as a unified extra-dimensional matrix founded on clear, interconnected mathematical deductions. Its effectiveness stems from a simple topological redefinition limiting the number of tuning parameters: the tension $\tau_0$ (fixed by QCD at 257 MeV), the oscillation period (2 Gyr, locked by the $\xi R\phi$ attractor), and the extra-dimension size ($L = 0.2\;\mu$m).
 
 The hybrid motor architecture --- macroscopic Cosmic Web forcing ($\mathcal{F}_{web}[E_{\mu\nu}]$) providing the muscle via Israel junction conditions, and microscopic ER=EPR-entangled PBH network ($\mathcal{R}_{PBH}$) providing quantum synchronization as the metronome --- resolves the fundamental paradox of global phase coherence across 93 billion light-years.
 
@@ -459,7 +459,7 @@ The Universe ceases to be perceived as an inert spacetime matrix in desperate in
 # Chapter 3: Complete Theoretical Framework
 
 
-**V8.2 --- Perforation Hierarchy**: The stick-slip motor operates at two scales: (1) **macroscopic** --- the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous $E_{\mu\nu}$ forcing; (2) **microscopic** --- the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally ($\ell$=0 mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2pir_s/lambda approximately 0.03 << 1).
+**V8.1 --- Perforation Hierarchy**: The stick-slip motor operates at two scales: (1) **macroscopic** --- the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous $E_{\mu\nu}$ forcing; (2) **microscopic** --- the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally ($\ell$=0 mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2pir_s/lambda approximately 0.03 << 1).
 
 ## Core Concepts
 
@@ -474,7 +474,7 @@ The entire universe vibrates as a single entity with a period T = 2.0 +/- 0.3 Gy
 
 ## Mathematical Framework
 
-### The V8.2 Hybrid Stick-Slip Motor Equation
+### The V8.1 Hybrid Stick-Slip Motor Equation
 
 The formal framework for oscillating p-branes in Anti-de Sitter space was established by Clark, Love, Nitta, ter Veldhuis & Xiong (Phys. Rev. D 76, 105014, 2007), who constructed the $SO(2,p+N)$ invariant Nambu-Goto action for a 3-brane with codimension $N=1$. We extend this formalism with a non-linear stick-slip driving mechanism coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
 
@@ -502,15 +502,7 @@ A simple harmonic oscillator would be damped by Hubble friction (3Hphi̇) in a f
 
 The non-minimal coupling $\xi R\phi$ acts as a **geometric Phase-Locked Loop (PLL)**. The 4D Ricci scalar $R = 6(\dot{H} + 2H^2)$ decreases as the universe expands. Through the $\xi R\phi$ term, this decreasing curvature feeds back into the radion equation, dynamically adjusting the effective restoring force. The three competing effects --- (1) decreasing Hubble friction ($3H\dot{\phi} \downarrow$), (2) decreasing Cosmic Web forcing ($\mathcal{F}_{web} \downarrow$), and (3) curvature feedback ($\xi R\phi \downarrow$) --- form a coupled dynamical system $\{H(t), \phi(t), \dot{M}_{DM}(t)\}$ that converges to an **attractor manifold** where the three decay rates cancel to first order.
 
-Physically: as the universe expands and friction drops, the motor would speed up --- but simultaneously the curvature-dependent restoring force weakens, slowing the motor by the same amount. This self-tuning balance is not fine-tuned; it is the generic behavior of the attractor, analogous to how a van der Pol oscillator maintains constant amplitude despite varying external conditions. Numerical integration of the full V8.2 ODE confirms convergence to $T = 2.0$ Gyr within $\sim 2$ e-foldings, with residual drift $|\dot{T}/T| < 10^{-3}$ per Hubble time --- the period is locked to better than 0.1% per Gyr.
-
-**EFT formalization of the stick-slip release.** Within the Effective Field Theory (EFT) framework, the non-linear release term $\mathcal{R}_{PBH}$ is formally modeled as a Heaviside-regulated dissipation:
-
-$$\mathcal{R}_{PBH}(\phi, \dot{\phi}) = \gamma_{slip}\,\dot{\phi}\,\Theta(|\phi| - \phi_{crit})$$
-
-where $\gamma_{slip}$ encodes the ER=EPR-mediated coupling strength and $\Theta$ is the Heaviside step function ensuring the release activates only above the QCD threshold $\phi_{crit}$. The stick phase ($|\phi| < \phi_{crit}$) is purely conservative (no dissipation beyond Hubble friction); the slip phase ($|\phi| > \phi_{crit}$) introduces the non-linear damping that snaps the brane back to equilibrium.
-
-**Epistemic note on the attractor proof.** The convergence of the $\xi R\phi$ attractor is currently demonstrated via numerical integration (BDF stiff solver, `scipy.integrate.solve_ivp`), confirming period stability to $|\dot{T}/T| < 10^{-3}$ per Hubble time across 7 Gyr of cosmic evolution. A formal analytical Lyapunov stability proof --- constructing a strict Lyapunov function for the coupled $\{H(t), \phi(t)\}$ system on the attractor manifold --- is identified as a priority for future theoretical work. The numerical evidence is robust, but the analytical proof would elevate the attractor mechanism from empirically demonstrated to mathematically proven.
+Physically: as the universe expands and friction drops, the motor would speed up --- but simultaneously the curvature-dependent restoring force weakens, slowing the motor by the same amount. This self-tuning balance is not fine-tuned; it is the generic behavior of the attractor, analogous to how a van der Pol oscillator maintains constant amplitude despite varying external conditions. Numerical integration of the full V8.1 ODE confirms convergence to $T = 2.0$ Gyr within $\sim 2$ e-foldings, with residual drift $|\dot{T}/T| < 10^{-3}$ per Hubble time --- the period is locked to better than 0.1% per Gyr.
 
 ### BBN Protection via Conformal Symmetry and the Trace Anomaly
 
@@ -542,7 +534,7 @@ In natural units: $\tau_0$ = 0.017 GeV$^{3}$. The fundamental energy scale is:
 
 $$E_\tau = \tau_0^{1/3} = 257 \text{ MeV} \approx \Lambda_{QCD}$$
 
-**Epistemic status (phenomenological Ansatz, not circular derivation).** The brane tension $\tau_0$ is not derived ab initio from string theory. It is constrained empirically: the observed oscillation period $T = 2.0$ Gyr, combined with the Goldberger-Wise restoring potential and the measured Hubble function $H(z)$, fixes $\tau_0 = 7.0 \times 10^{19}$ J/m$^{2}$. The fact that $\tau_0^{1/3}$ then coincides with $\Lambda_{QCD} = 257$ MeV --- the QCD confinement scale --- is a **phenomenological Ansatz**: a numerical coincidence so striking (within 2% of the measured QCD scale) that it motivates identifying the motor's ignition mechanism with the QCD chiral symmetry breaking ($T^\mu_\mu \neq 0$ for $w \neq 1/3$). This is not circular --- the period constrains $\tau_0$ independently of QCD, and the QCD coincidence provides the physical mechanism (conformal symmetry breaking) that explains *when* the motor ignites. The connection between membrane mechanics and the QCD vacuum energy remains the theory's deepest unexplained hint, pointing toward a future UV completion.
+The brane tension is set precisely at the QCD confinement scale --- the energy where the strong force confines quarks inside hadrons. This is not a free parameter: it emerges from the strong force vacuum energy, connecting macroscopic cosmology to microscopic particle physics. The QCD scale also sets the critical threshold phi_crit in the stick-slip equation.
 
 ### Radion-Higgs Hybridization: The Scalar Mixing Mechanism
 
@@ -627,10 +619,6 @@ In a 1D spatial grid, mechanical energy lacks transverse dimensions to dissipate
 
 During the slow stick phase, acceleration is minimal and $\Gamma$_rad approximately 0. But the moment the brane slips and accelerates, $\Gamma$_rad spikes, instantly capping the maximum velocity and evacuating excess geometric strain into the AdS bulk. This fundamental thermodynamic mechanism guarantees that the macroscopic observable w(z) remains in the stable perturbative regime (A_w ~ O(10$^{-3}$)), definitively resolving the 1D runaway artifact using the pure laws of 5D gravity.
 
-### Gravitational Wave Speed: Strict Compatibility with GW170817
-
-The joint LIGO/Virgo detection of GW170817 and its electromagnetic counterpart GRB 170817A constrained the gravitational wave speed to $\vert c_{gw}/c - 1 \vert < 10^{-15}$. This is fully compatible with the brane framework. In Randall-Sundrum-type geometries, **tensor perturbations** (the spin-2 gravitational waves detected by LIGO/Virgo) correspond to the **zero mode of the Kaluza-Klein decomposition**. This zero mode is strictly confined to the 4D brane and propagates exactly at $c$ --- identically to standard GR. The 2 Gyr brane oscillation is a **scalar mode** (the radion $\phi$), which is a background field modulating the brane position in the bulk. It is kinematically and dynamically orthogonal to tensor gravitational waves: the radion sets the stage, the gravitational waves play on it. There is no mixing, no dispersion, and no modification of the tensor propagation speed at any order in perturbation theory.
-
 ### Why Only $\ell$=0 Survives
 
 1. **ER=EPR coherence**: All black holes share quantum entanglement, forcing identical phase
@@ -659,7 +647,7 @@ The stick-slip cycle operates at two scales simultaneously:
 
 ### Hybrid Forcing: Cosmic Web (Muscle) + PBH Network (Metronome)
 
-The V8.2 motor operates through the coupling of two physical scales:
+The V8.1 motor operates through the coupling of two physical scales:
 
 **Macroscopic forcing (Cosmic Web):** The universe is not smooth --- the Cosmic Web's superclusters, filaments, and voids create a massive, inhomogeneous stress tensor $S_{\mu\nu}$ on the brane. Via the Shiromizu-Maeda-Sasaki (2000) Israel junction conditions, Delta$K_{\mu\nu}$ = -$\kappa$$_{5}$$^{2}$($S_{\mu\nu}$ - $\frac{1}{3}$S $h_{\mu\nu}$), this heterogeneous mass distribution bends the brane toward the 5D bulk, generating the continuous Weyl tensor $E_{\mu\nu}$ that drives phi toward phi_crit. This is the macroscopic engine --- the brane breathes under the gravitational weight of its own large-scale structure.
 
@@ -703,12 +691,6 @@ $$M_{crit} = \frac{Lc^2}{2G} \approx 1.35 \times 10^{20} \text{ kg} \approx 6.77
 
 **The ab initio derivation.** The EMF's operational window (10$^{-14}$ to 10$^{-10}$ MSun) is bounded on both sides by physics: below ~10$^{-14}$ MSun, Hawking evaporation destroys the PBH; above $M_{crit} \approx 6.8 \times 10^{-11} M_\odot$, the PBH becomes brane-anchored and visible. The capillary window is therefore set entirely by $L$ and fundamental constants --- no fine-tuning.
 
-**Hawking immunity of topological capillaries.** A common objection invokes Hawking evaporation constraints from INTEGRAL/SPI and Fermi-LAT gamma-ray satellites. This is physically irrelevant for our mass window. The Hawking temperature for a PBH at the critical mass is:
-
-$$T_H = \frac{\hbar c^3}{8\pi G k_B M_{crit}} \approx \frac{1.055 \times 10^{-34} \times (3 \times 10^8)^3}{8\pi \times 6.674 \times 10^{-11} \times 1.381 \times 10^{-23} \times 1.35 \times 10^{20}} \approx 900 \text{ K}$$
-
-This is colder than a candle flame. The corresponding evaporation timescale is $t_{evap} \propto M^3 \sim 10^{47}$ years --- roughly $10^{37}$ times the current age of the Universe. These objects emit zero detectable gamma-ray flux, rendering INTEGRAL/SPI and Fermi-LAT constraints entirely inapplicable. The Hawking channel is closed by $37$ orders of magnitude.
-
 ![Perforation Hierarchy](./plots/gregory_laflamme_hierarchy.png)
 *Figure: Gregory-Laflamme perforation hierarchy. PBHs below $M_{crit}$ (purple) undergo GL instability and become 5D objects --- topological capillaries invisible to accretion and microlensing. PBHs above $M_{crit}$ (orange) remain brane-anchored with standard 4D gravity.*
 
@@ -722,7 +704,7 @@ The definitive future test involves the spatial modulation of the 21cm power spe
 
 The bulk is neither a geometric point (which would produce divergent curvature) nor a classical volume (which would require signal propagation for synchronization). It is a **non-local topological state** where spacetime itself is emergent (Van Raamsdonk 2010).
 
-Distance and duration are properties of the 4D brane. In the bulk, they lose operational meaning. This resolves the apparent paradox of global phase coherence: the micro-PBH network does not "synchronize instantaneously" (which would imply superluminal signaling). Instead, the ER=EPR wormhole network ensures **non-local quantum phase coherence** --- a topological correlation of the brane's wavefunction ($\ell=0$ mode), strictly analogous to Bell correlations in quantum mechanics. No information is transmitted superluminally in 4D; the coherence is a pre-existing topological property of the entangled bulk geometry, not a dynamical signal.
+Distance and duration are properties of the 4D brane. In the bulk, they lose operational meaning. This resolves the apparent paradox: how can billions of black holes synchronize instantaneously? They don't need to --- in a space where distance doesn't exist, there is nothing to traverse.
 
 ### ER=EPR Holographic Connectivity
 
@@ -732,7 +714,7 @@ The ER=EPR correspondence (Maldacena & Susskind 2013) provides the mathematical 
 - Black holes are quantum entangled through Einstein-Rosen bridges in the AdS bulk
 - Entanglement creates connectivity without signal propagation
 - Perfect phase coherence is a consequence of non-locality, not communication
-- All micro-PBH capillaries share non-local quantum phase coherence through ER bridges in the bulk (no superluminal signaling)
+- All micro-PBH capillaries are instantaneously correlated through ER bridges in the bulk
 - Spacetime geometry on the brane emerges from this underlying entanglement
 
 ### End of the Universe
@@ -861,7 +843,7 @@ The period is not given by a simple harmonic formula. The stick-slip cycle has:
 
 $$T \approx t_\text{stick} + t_\text{slip} \approx 2.0 \text{ Gyr}$$
 
-where t_stick is the charging time ($E_{\mu\nu}$ forcing against GW restoring potential) and t_slip is the rapid discharge time. The harmonic approximation $T \approx 2\pi\sqrt{f_\text{osc} M_\text{DM,tot}/\tau_0}$ gives the correct order of magnitude but the precise period requires numerical integration of the full V8.2 ODE including the $\xi R\phi$ attractor term.
+where t_stick is the charging time ($E_{\mu\nu}$ forcing against GW restoring potential) and t_slip is the rapid discharge time. The harmonic approximation $T \approx 2\pi\sqrt{f_\text{osc} M_\text{DM,tot}/\tau_0}$ gives the correct order of magnitude but the precise period requires numerical integration of the full V8.1 ODE including the $\xi R\phi$ attractor term.
 
 ### Determination of $\tau_0$
 
@@ -905,7 +887,7 @@ The brane paradigm unifies inflation, dark matter, and dark energy into a single
 # Chapter 5: Observational Predictions
 
 
-The oscillating brane theory V8.2 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
+The oscillating brane theory V8.1 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
 
 ## Timeline of Discovery
 
@@ -1024,7 +1006,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
 ## Model Comparison
 
-| Observable | $\Lambda$CDM | Oscillating Brane V8.2 | Difference |
+| Observable | $\Lambda$CDM | Oscillating Brane V8.1 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2pit/T + pi/2) | Time-varying, phantom crossing |
 | S$_{8}$ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | ~5% during current weakened phase |
@@ -1079,7 +1061,7 @@ Strong evidence --- the data clearly prefer our vibrating cosmos.
 
 | Technical Term | Intuitive Vision | Interpretation |
 |----------------|------------------|----------------|
-| $\ln K$ (log Bayes factor) | "Preference score" | We compare Oscillating-Brane V8.2 to $\Lambda$CDM |
+| $\ln K$ (log Bayes factor) | "Preference score" | We compare Oscillating-Brane V8.1 to $\Lambda$CDM |
 | $\Delta\ln K = 4.13 \pm 0.07$ | $\approx 62\times$ more probable | $S_8$ + oscillation + MOND coincidence |
 | Jeffreys Scale | 2.5-5 = strong | 4.13 is in the "strong" zone |
 
@@ -2152,7 +2134,7 @@ While significant theoretical and observational work remains, the framework show
 # Chapter 7: Laboratory Proofs
 
 
-The V8.2 Oscillating Brane Theory makes specific, falsifiable predictions for Earth-based experiments. These are not cosmological inferences --- they are direct laboratory measurements targeting the extra dimension at $L = 0.2\,\mu$m.
+The V8.1 Oscillating Brane Theory makes specific, falsifiable predictions for Earth-based experiments. These are not cosmological inferences --- they are direct laboratory measurements targeting the extra dimension at $L = 0.2\,\mu$m.
 
 ## The qBOUNCE Anomaly: Deriving the Robin Parameter $\lambda$
 
@@ -2174,9 +2156,9 @@ $$\psi'(0) + \lambda\,\psi(0) = 0$$
 
 The Dirichlet condition ($\psi(0) = 0$) is recovered only in the singular limit $\lambda \to \infty$ --- it is one point in a continuum of physically valid boundary conditions, not the unique or even the natural choice. The Neumann condition ($\psi'(0) = 0$, i.e. $\lambda = 0$) and all intermediate values are equally admissible from the standpoint of self-adjoint operator theory.
 
-**The physical content of V8.2**: The presence of the 5D Yukawa potential at the mirror surface selects a **specific finite value of $\lambda$** from this one-parameter family. The radion's Yukawa gradient acts as a short-range boundary interaction that forces the self-adjoint extension away from the Dirichlet limit. OBT V8.2 does not merely accommodate the Robin parameter --- it **derives its precise physical origin**: the integrated 5D Yukawa radion gradient at the mirror surface, transmitted to the Higgs sector via $\xi R H^\dagger H$.
+**The physical content of V8.1**: The presence of the 5D Yukawa potential at the mirror surface selects a **specific finite value of $\lambda$** from this one-parameter family. The radion's Yukawa gradient acts as a short-range boundary interaction that forces the self-adjoint extension away from the Dirichlet limit. OBT V8.1 does not merely accommodate the Robin parameter --- it **derives its precise physical origin**: the integrated 5D Yukawa radion gradient at the mirror surface, transmitted to the Higgs sector via $\xi R H^\dagger H$.
 
-### The V8.2 Explanation: From Yukawa Potential to Higgs Resonance
+### The V8.1 Explanation: From Yukawa Potential to Higgs Resonance
 
 The Robin parameter $\lambda$ is the **observable signature of Higgs-Radion scalar mixing** at the extra-dimensional boundary. The full derivation chain is:
 
@@ -2218,7 +2200,7 @@ The matrix element $\langle 1\vert\delta V\vert 6\rangle$ was computed using Air
 
 The Heisenberg uncertainty principle $[\hat{x}, \hat{p}] = i\hbar$ applies to canonically conjugate variables measured via gauge boson exchange (photons). Any electromagnetic measurement of position necessarily transfers momentum, disturbing the system. This is not a technological limitation --- it is a structural property of 4D gauge interactions.
 
-However, the V8.2 theory reveals an **orthogonal information channel**. The key insight is an operator algebra result: the 5D bulk metric operators $\hat{g}_{AB}^{(5)}$ commute exactly with the 4D internal gauge operators $\hat{A}_\mu$ of the target system:
+However, the V8.1 theory reveals an **orthogonal information channel**. The key insight is an operator algebra result: the 5D bulk metric operators $\hat{g}_{AB}^{(5)}$ commute exactly with the 4D internal gauge operators $\hat{A}_\mu$ of the target system:
 
 $$[\hat{g}_{AB}^{(5)},\, \hat{A}_\mu^{(4)}] = 0$$
 
@@ -2246,7 +2228,7 @@ The target operator is the **identity** $\hat{I}$: the target's quantum state is
 
 The predictive algorithm does not rely on speculative "strip theory" or imaginary time. It extends the well-established **Diósi-Penrose gravitational decoherence model** to 5D.
 
-In the standard Diósi-Penrose framework, gravity objectively collapses superpositions at a rate determined by the gravitational self-energy difference between branches. In V8.2, this "collapse noise" is not stochastic --- it is the **deterministic kinematic jitter of the radion field** $\phi(t)$ driven by the stick-slip motor.
+In the standard Diósi-Penrose framework, gravity objectively collapses superpositions at a rate determined by the gravitational self-energy difference between branches. In V8.1, this "collapse noise" is not stochastic --- it is the **deterministic kinematic jitter of the radion field** $\phi(t)$ driven by the stick-slip motor.
 
 The open quantum system master equation (Lindblad form) becomes:
 
@@ -2255,11 +2237,11 @@ $$\dot{\rho} = -\frac{i}{\hbar}[H_\text{sys} + H_\text{int}, \rho] + \mathcal{D}
 where the dissipator $\mathcal{D}[\phi(t)]$ is fully determined by the radion trajectory --- not a free noise parameter. The software predicts the objective collapse locus by tracking $\phi$ fluctuations in real-time via the Weyl tensor data from the sensor array.
 
 ![Laplace Demon Readout](./plots/laplace_demon_readout.png)
-*Figure: Sensor displacement vs target distance. At $r = L = 0.2\,\mu$m, the V8.2 Yukawa correction enhances Newton by 0.4%. The "5D Readout Zone" (green) is where the extra-dimensional signal dominates. Current gap with single atoms acknowledged; mesoscopic targets + squeezed states + Q-accumulation bring SNR within near-term reach.*
+*Figure: Sensor displacement vs target distance. At $r = L = 0.2\,\mu$m, the V8.1 Yukawa correction enhances Newton by 0.4%. The "5D Readout Zone" (green) is where the extra-dimensional signal dominates. Current gap with single atoms acknowledged; mesoscopic targets + squeezed states + Q-accumulation bring SNR within near-term reach.*
 
 ### Implications: Toward the 5D Topological Quantum Computer
 
-If the extra dimension exists at $L = 0.2\,\mu$m, the V8.2 theory provides a fundamentally new information channel for quantum computing:
+If the extra dimension exists at $L = 0.2\,\mu$m, the V8.1 theory provides a fundamentally new information channel for quantum computing:
 
 - **No decoherence from measurement**: The 5D bulk operators commute with 4D gauge operators --- readout does not collapse the computation
 - **Deterministic error correction**: The radion-coupled Lindblad equation predicts decoherence events before they happen, enabling preemptive correction
@@ -2279,7 +2261,7 @@ This is a collaboration opportunity where cosmological theory meets terrestrial 
 
 ## Summary
 
-| Experiment | Current Status | V8.2 Prediction | Falsification |
+| Experiment | Current Status | V8.1 Prediction | Falsification |
 |-----------|---------------|-----------------|---------------|
 | qBOUNCE (ILL) | $\lambda$ = small anomaly at 1 $\mu$m | $\lambda$ amplifies 55$\times$ at 0.2 $\mu$m | Improve resolution to 0.2 $\mu$m |
 | Levitated optomechanics | Zeptonewton sensitivity achieved | 0.4% Yukawa enhancement at $L$ | Detect sub-$\mu$m gravity deviation |

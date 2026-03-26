@@ -42,7 +42,7 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 ## The Current Picture
 
-Three established anomalies are resolved by the V8.1 stick-slip brane motor:
+Three established anomalies are resolved by the V8.2 stick-slip brane motor:
 
 1. **Dark Energy Evolution** (DESI, 4σ) ✓
 2. **S₈ Tension** (time-dependent growth suppression) ✓

@@ -67,7 +67,7 @@ The period is not given by a simple harmonic formula. The stick-slip cycle has:
 
 $$T \approx t_\text{stick} + t_\text{slip} \approx 2.0 \text{ Gyr}$$
 
-where t_stick is the charging time ($E_{\mu\nu}$ forcing against GW restoring potential) and t_slip is the rapid discharge time. The harmonic approximation $T \approx 2\pi\sqrt{f_\text{osc} M_\text{DM,tot}/\tau_0}$ gives the correct order of magnitude but the precise period requires numerical integration of the full V8.1 ODE including the $\xi R\phi$ attractor term.
+where t_stick is the charging time ($E_{\mu\nu}$ forcing against GW restoring potential) and t_slip is the rapid discharge time. The harmonic approximation $T \approx 2\pi\sqrt{f_\text{osc} M_\text{DM,tot}/\tau_0}$ gives the correct order of magnitude but the precise period requires numerical integration of the full V8.2 ODE including the $\xi R\phi$ attractor term.
 
 ### Determination of τ₀
 

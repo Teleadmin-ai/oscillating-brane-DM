@@ -34,7 +34,7 @@ I have never hidden this. My brain is not a disability for this work — it is t
 | Age 24 | Founded **Teleadmin** | Hosting company, OVH Advanced Partner |
 | Career | National infrastructure | **Qwant** (3 server racks, ZFS NAS, 5 DB servers), **Atout France**, **Euresto**, **Incepto** (100+ hospitals), **GELMAD** Lyon (3 medical imaging centers including Hôpital Mermoz) |
 | Age 50 | AI Research | R-JEPA — adaptation of Yann LeCun's JEPA architecture for text reasoning in the latent space of an LLM |
-| 2026 | **Oscillating Brane Cosmology** | 31 anomalies resolved, V8.1 Hybrid Topology Edition |
+| 2026 | **Oscillating Brane Cosmology** | 31 anomalies resolved, V8.2 Hybrid Topology Edition |
 
 **Career trajectory**: Systems administrator → Data Scientist → AI Agent Developer → Independent Cosmological Researcher.
 
@@ -76,7 +76,7 @@ I thank the DESI, Planck, JWST, and NANOGrav collaborations for transformative o
 
 ### Intellectual Property
 
-The conceptual architecture of the Oscillating Brane Cosmology V8.1 — including the hybrid stick-slip motor, the 31 anomaly resolutions, the 5D Geometric Bypass, and the 5D Laplace Demon quantum computer architecture — has been registered with the **French National Institute of Industrial Property (INPI)** in March 2026, establishing a dated proof of priority.
+The conceptual architecture of the Oscillating Brane Cosmology V8.2 — including the hybrid stick-slip motor, the 31 anomaly resolutions, the 5D Geometric Bypass, and the 5D Laplace Demon quantum computer architecture — has been registered with the **French National Institute of Industrial Property (INPI)** in March 2026, establishing a dated proof of priority.
 
 This registration does not restrict the use of the theory for scientific research. The code, documentation, and computational tools remain open-source under the MIT License. The INPI deposit serves solely as proof of authorship and chronological priority.
 

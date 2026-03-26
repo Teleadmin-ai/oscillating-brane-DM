@@ -6,7 +6,7 @@ permalink: /discoveries/
 
 # Discovery & Correction of Modern Cosmology
 
-An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.1) unifies 31 contemporary cosmological anomalies within a single extra-dimensional geometric framework.
+An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) unifies 31 contemporary cosmological anomalies within a single extra-dimensional geometric framework.
 
 ## 1. The Collapse of the Standard Model
 
@@ -16,7 +16,7 @@ The $\Lambda$CDM concordance model is experiencing the most severe empirical cri
 
 Classical parametric extensions (Early Dark Energy, self-interacting dark matter) increasingly resemble desperate mathematical epicycles. The true resolution lies not in adding phantom particles or ad-hoc scalar fields, but in a fundamental revision of the spacetime topology of the Universe.
 
-The **Oscillating Brane Theory V8.1** proposes this paradigm shift: the Universe is a 4D membrane oscillating in a 5D Anti-de Sitter bulk ($AdS_5$), driven by a hybrid stick-slip motor coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
+The **Oscillating Brane Theory V8.2** proposes this paradigm shift: the Universe is a 4D membrane oscillating in a 5D Anti-de Sitter bulk ($AdS_5$), driven by a hybrid stick-slip motor coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
 
 ## 2. Mathematical Pillars: Irrefutable Demonstrations
 
@@ -117,7 +117,7 @@ In the Brane paradigm, this series of null results is not a disappointment but c
 
 $\Lambda$CDM numerical simulations suffer from severe galactic-scale divergences: excessive satellite galaxy predictions, the cusp-core problem in ultra-faint dwarfs, and the unexplained tight correlation between baryonic mass and total gravitational acceleration (the Radial Acceleration Relation).
 
-The V8.1 theory assimilates MOND's phenomenological successes while rejecting its non-relativistic postulate. A critical acceleration scale emerges naturally from the brane's intrinsic elasticity:
+The V8.2 theory assimilates MOND's phenomenological successes while rejecting its non-relativistic postulate. A critical acceleration scale emerges naturally from the brane's intrinsic elasticity:
 
 $$a_0 = \frac{cH_0}{2\pi} \approx 1.1 \times 10^{-10} \text{ m/s}^2$$
 
@@ -192,14 +192,14 @@ The correct 5D coupling uses the geometric ratio $\phi/L$ instead of the 4D Plan
 
 $$\mathcal{L}_{CS} = \frac{\alpha_{em}}{4\pi}\,c_{top}\left(\frac{\phi}{L}\right)F_{\mu\nu}\tilde{F}^{\mu\nu}$$
 
-The cumulative rotation is $\Delta\beta = (\alpha_{em}/2\pi)\,c_{top}\,(\Delta\phi/L)$. With $\Delta\phi/L \approx 0.05$ from V8.1 dynamics and $c_{top} \approx 75$ (a natural topological Chern number for $G_2$ compactifications), this yields $\Delta\beta = 0.25°$ — **derived ab initio, no fine-tuning**.
+The cumulative rotation is $\Delta\beta = (\alpha_{em}/2\pi)\,c_{top}\,(\Delta\phi/L)$. With $\Delta\phi/L \approx 0.05$ from V8.2 dynamics and $c_{top} \approx 75$ (a natural topological Chern number for $G_2$ compactifications), this yields $\Delta\beta = 0.25°$ — **derived ab initio, no fine-tuning**.
 
 ![CMB Birefringence](/plots/cmb_birefringence.png)
 *Figure: Ab initio CMB birefringence from 5D geometry. The 4D axion approach required an unnatural $c_{CS} \sim 10^{40}$; the correct 5D geometric formula gives $c_{top} = 75$ (natural O(10²) Chern number). Δβ = 0.250° matches ACT/Planck.*
 
 ## 6. Multi-Messenger Astrophysical Signatures
 
-The V8.1 parameters ($L = 0.2\,\mu$m, $T = 2.0$ Gyr, stick-slip motor) predict specific signatures across gravitational wave, X-ray, optical, and ultra-high-energy cosmic ray observations — all validated numerically.
+The V8.2 parameters ($L = 0.2\,\mu$m, $T = 2.0$ Gyr, stick-slip motor) predict specific signatures across gravitational wave, X-ray, optical, and ultra-high-energy cosmic ray observations — all validated numerically.
 
 ### 6.1. NANOGrav Gravitational Wave Overtones
 
@@ -210,34 +210,34 @@ The NANOGrav 15-year dataset reveals a stochastic gravitational wave background 
 
 ### 6.2. The eROSITA Structure Growth Illusion ($\gamma = 1.19$)
 
-The eROSITA satellite measured a structure growth index $\gamma = 1.19$, while standard GR predicts $\gamma = 0.55$. In V8.1, $G_\text{eff}(z)$ oscillates with the brane. Our current epoch corresponds to a temporarily weakened gravity phase (brane stretched), causing cluster formation to stall. Fitting a constant-$G$ $\Lambda$CDM model to this oscillating data extracts an artificially inflated $\gamma$ — the "illusion" of modified gravity is actually an artifact of applying a static model to a dynamic universe.
+The eROSITA satellite measured a structure growth index $\gamma = 1.19$, while standard GR predicts $\gamma = 0.55$. In V8.2, $G_\text{eff}(z)$ oscillates with the brane. Our current epoch corresponds to a temporarily weakened gravity phase (brane stretched), causing cluster formation to stall. Fitting a constant-$G$ $\Lambda$CDM model to this oscillating data extracts an artificially inflated $\gamma$ — the "illusion" of modified gravity is actually an artifact of applying a static model to a dynamic universe.
 
 ![eROSITA Growth Illusion](/plots/erosita_gamma_illusion.png)
 *Figure: Oscillating $G_\text{eff}(z)$ creates the illusion of $\gamma = 1.19$ when fitted with a constant-$G$ model. The growth rate $f(z)$ deviates from GR's $\Omega_m^{0.55}$ at low redshifts where the brane is currently stretched.*
 
 ### 6.3. Dark-Matter-Free Galaxies: Cymatic Nodes (DF2/DF4)
 
-Galaxies NGC 1052-DF2 and DF4 appear to contain no dark matter, defying all standard formation models. In V8.1, dark matter is a geometric effect of the vibrating brane. Like a Chladni plate, the 3D standing wave possesses spatial nodes where the oscillation amplitude vanishes. Galaxies forming at these nodes experience pure Newtonian gravity — zero Yukawa modification, zero apparent dark matter. Our simulation shows that ~3.4% of galaxies naturally fall at these nodes, consistent with the observed rarity of DM-free galaxies.
+Galaxies NGC 1052-DF2 and DF4 appear to contain no dark matter, defying all standard formation models. In V8.2, dark matter is a geometric effect of the vibrating brane. Like a Chladni plate, the 3D standing wave possesses spatial nodes where the oscillation amplitude vanishes. Galaxies forming at these nodes experience pure Newtonian gravity — zero Yukawa modification, zero apparent dark matter. Our simulation shows that ~3.4% of galaxies naturally fall at these nodes, consistent with the observed rarity of DM-free galaxies.
 
 ![DF2 Cymatic Nodes](/plots/df2_cymatic_nodes.png)
 *Figure: Cymatic dark matter distribution. Galaxies at standing wave nodes (cyan) have zero apparent DM (like DF2/DF4). Galaxies at antinodes (red) have maximum apparent DM. ~3.4% of galaxies are DM-free — matching observed rarity.*
 
 ### 6.4. The Amaterasu Particle: Trans-GZK via 5D Leakage
 
-The Amaterasu cosmic ray (244 EeV) violated the GZK horizon — it should have been destroyed by CMB photon collisions before reaching Earth. In V8.1, the extra dimension ($L = 0.2\,\mu$m) creates Kaluza-Klein gravitons ($m_\text{KK} \approx 1$ eV). At ultra-high energies, the proton-CMB collision opens virtual KK graviton exchange channels, leaking energy into the 5th dimension. This suppresses the pion-production cross-section, extending the GZK attenuation length by a factor of ~60 at 244 EeV — the particle survives its intergalactic journey.
+The Amaterasu cosmic ray (244 EeV) violated the GZK horizon — it should have been destroyed by CMB photon collisions before reaching Earth. In V8.2, the extra dimension ($L = 0.2\,\mu$m) creates Kaluza-Klein gravitons ($m_\text{KK} \approx 1$ eV). At ultra-high energies, the proton-CMB collision opens virtual KK graviton exchange channels, leaking energy into the 5th dimension. This suppresses the pion-production cross-section, extending the GZK attenuation length by a factor of ~60 at 244 EeV — the particle survives its intergalactic journey.
 
 ![Amaterasu GZK Horizon](/plots/amaterasu_gzk_horizon.png)
-*Figure: 5D KK leakage extends the GZK horizon. At 244 EeV, the standard horizon is ~41 Mpc (particle dies); the V8.1 horizon is ~2482 Mpc (particle SURVIVES). Extension factor: 60$\times$.*
+*Figure: 5D KK leakage extends the GZK horizon. At 244 EeV, the standard horizon is ~41 Mpc (particle dies); the V8.2 horizon is ~2482 Mpc (particle SURVIVES). Extension factor: 60$\times$.*
 
 ## 7. Extended Phenomenology: 9 Additional Anomalies Resolved
 
-The three fundamental parameters of V8.1 ($\tau_0$, $T$, $L$) were calibrated on the three core anomalies (DESI, $S_8$, ISW). The following nine anomalies were **not** used in any fit --- they are pure predictions of the framework applied to independent astrophysical domains.
+The three fundamental parameters of V8.2 ($\tau_0$, $T$, $L$) were calibrated on the three core anomalies (DESI, $S_8$, ISW). The following nine anomalies were **not** used in any fit --- they are pure predictions of the framework applied to independent astrophysical domains.
 
 ### 7.1. The KBC Void: Cymatic Standing Wave of the Brane
 
 The KBC Void (Keenan, Barger & Cowie 2013) is a spherical under-density of ${\sim}\,20$--$50\%$ extending over ${\sim}\,600$ Mpc in diameter, centered near our position. $\Lambda$CDM simulations predict voids should not exceed ${\sim}\,100$--$500$ Mly; the KBC Void represents a $> 6\sigma$ tension.
 
-The V8.1 theory predicts this structure ab initio. A temporal oscillation of period $T = 2.0$ Gyr generates a spatial standing wave with fundamental wavelength:
+The V8.2 theory predicts this structure ab initio. A temporal oscillation of period $T = 2.0$ Gyr generates a spatial standing wave with fundamental wavelength:
 
 $$\lambda = c \times T \approx 2.0 \text{ billion light-years} \approx 613 \text{ Mpc}$$
 
@@ -247,31 +247,31 @@ This matches the KBC Void diameter exactly (observed: ${\sim}\,600$ Mpc). The Mi
 
 Observations of 93 quasars in Large Quasar Groups at $z \sim 1.3$ reveal that their polarization vectors (hence spin axes) are aligned parallel or perpendicular to the host filament axis, with random probability $< 1\%$. No $\Lambda$CDM mechanism can produce coherent torques over $> 1$ Gpc.
 
-In V8.1, massive structures press the brane toward the bulk via Israel junction conditions, generating the projected Weyl tensor $\mathcal{E}_{\mu\nu}$ along cosmic filaments. This tensor produces a quadrupolar shear field that torques supermassive black holes (topological anchors) into alignment with the principal stress axes. The observed bimodality (parallel/perpendicular) is the direct signature of the quadrupolar symmetry of $\mathcal{E}_{\mu\nu}$.
+In V8.2, massive structures press the brane toward the bulk via Israel junction conditions, generating the projected Weyl tensor $\mathcal{E}_{\mu\nu}$ along cosmic filaments. This tensor produces a quadrupolar shear field that torques supermassive black holes (topological anchors) into alignment with the principal stress axes. The observed bimodality (parallel/perpendicular) is the direct signature of the quadrupolar symmetry of $\mathcal{E}_{\mu\nu}$.
 
 ### 7.3. Dark Flow: Brane Drift Inertia
 
 Kashlinsky et al. (2008) detected a coherent bulk flow of $600$--$1000$ km/s across $> 2.5$ Gly toward Centaurus/Hydra, confirmed by Cosmicflows-4. No attractor of sufficient mass exists in that direction within the observable universe.
 
-The V8.1 theory resolves this without invoking trans-horizon attractors. The brane possesses a kinematic drift velocity through the $AdS_5$ bulk (the same drift that explains the cosmic dipole and CMB birefringence). The most massive objects (galaxy clusters) interact most deeply with the extra-dimensional radion field, experiencing asymmetric geometric drag. This inertial lag manifests as a coherent apparent flow in the direction opposite to the brane's 5D drift vector.
+The V8.2 theory resolves this without invoking trans-horizon attractors. The brane possesses a kinematic drift velocity through the $AdS_5$ bulk (the same drift that explains the cosmic dipole and CMB birefringence). The most massive objects (galaxy clusters) interact most deeply with the extra-dimensional radion field, experiencing asymmetric geometric drag. This inertial lag manifests as a coherent apparent flow in the direction opposite to the brane's 5D drift vector.
 
 ### 7.4. The Space Roar (ARCADE 2): Cumulative Synchrotron from Stick-Slip Cycles
 
 The ARCADE 2 experiment detected an isotropic radio background $6\times$ brighter than the sum of all known sources, with a synchrotron power-law spectrum $T \propto \nu^{-2.6}$. No $\Lambda$CDM mechanism produces sufficient relativistic electrons isotropically.
 
-In V8.1, every stick-slip cycle ($T = 2$ Gyr) releases a violent geometric jerk when the brane snaps back. In the transparent post-recombination universe, these periodic shocks traverse the magnetized intergalactic medium, accelerating free electrons to relativistic energies. The cumulative synchrotron emission from ${\sim}\,7$ completed cycles since transparency produces a diffuse, isotropic radio background whose power-law index ($\sim -2.6$) matches the expected energy distribution from repeated geometric shock acceleration.
+In V8.2, every stick-slip cycle ($T = 2$ Gyr) releases a violent geometric jerk when the brane snaps back. In the transparent post-recombination universe, these periodic shocks traverse the magnetized intergalactic medium, accelerating free electrons to relativistic energies. The cumulative synchrotron emission from ${\sim}\,7$ completed cycles since transparency produces a diffuse, isotropic radio background whose power-law index ($\sim -2.6$) matches the expected energy distribution from repeated geometric shock acceleration.
 
 ### 7.5. Odd Radio Circles (ORCs): Topological Shock Waves from PBH Relaxation
 
 ORCs are giant (${\sim}\,1$ Mly diameter), perfectly circular radio-only emission rings, invisible at all other wavelengths, centered on massive elliptical galaxies at $z \sim 0.2$--$0.6$. Their near-perfect spherical symmetry and enormous energy ($10^{57}$--$10^{59}$ erg) defy standard MHD models.
 
-In V8.1, massive elliptical galaxies concentrate the densest clusters of micro-PBH topological anchors. During the slip phase, the violent release of brane tension at these high-density nodes creates a radial shock front propagating through the circumgalactic medium. The isotropic nature of the $\ell = 0$ release mode ensures near-perfect spherical symmetry. The shock amplifies ambient magnetic fields and accelerates electrons, producing thin synchrotron shells. ORCs are the local dissipation signatures of the global stick-slip motor.
+In V8.2, massive elliptical galaxies concentrate the densest clusters of micro-PBH topological anchors. During the slip phase, the violent release of brane tension at these high-density nodes creates a radial shock front propagating through the circumgalactic medium. The isotropic nature of the $\ell = 0$ release mode ensures near-perfect spherical symmetry. The shock amplifies ambient magnetic fields and accelerates electrons, producing thin synchrotron shells. ORCs are the local dissipation signatures of the global stick-slip motor.
 
 ### 7.6. The Methuselah Star (HD 140283): Oscillation-Accelerated Aging
 
 HD 140283 ($[Fe/H] = -2.23$) has a derived age of $14.2 \pm 0.4$ Gyr --- older than the universe itself (13.8 Gyr). Standard stellar models assume constant $G_N$ throughout the star's life.
 
-In V8.1, the star experienced ${\sim}\,7$ full oscillation cycles. During each $G_\text{eff}$ peak, the enhanced gravitational compression of the stellar core dramatically accelerated nuclear burning ($L \propto G^7 M^5$). The time-averaged luminosity enhancement factor is:
+In V8.2, the star experienced ${\sim}\,7$ full oscillation cycles. During each $G_\text{eff}$ peak, the enhanced gravitational compression of the stellar core dramatically accelerated nuclear burning ($L \propto G^7 M^5$). The time-averaged luminosity enhancement factor is:
 
 $$\langle (1 + f_\text{osc} \sin(\omega t))^7 \rangle \approx 1 + \frac{21}{2} f_\text{osc}^2 \approx 1.105$$
 
@@ -281,23 +281,23 @@ Standard age-dating algorithms, assuming constant $G_N$ and therefore a slow con
 
 Gaia observations reveal an anomalous stalling of the cooling sequence for ultramassive white dwarfs (the "Q-branch"), where objects remain hot for ${\sim}\,8$ Gyr longer than predicted. Standard explanations require exotic Ne-22 enrichment ($X > 2.5\%$, exceeding solar values) or beyond-SM particles.
 
-In V8.1, the oscillating $G_\text{eff}(t)$ periodically compresses and relaxes the degenerate core. Unlike ideal gas stars, the degenerate electron pressure depends on density, not temperature. Each compression cycle performs mechanical work ($P\,dV$) on the crystallizing Coulomb lattice, which dissipates as internal heat via thermodynamic friction --- analogous to tidal heating of Io by Jupiter, but driven by the metric itself. This thermo-gravitational pumping provides a continuous endogenous heat source that stalls the cooling without exotic compositions or new particles.
+In V8.2, the oscillating $G_\text{eff}(t)$ periodically compresses and relaxes the degenerate core. Unlike ideal gas stars, the degenerate electron pressure depends on density, not temperature. Each compression cycle performs mechanical work ($P\,dV$) on the crystallizing Coulomb lattice, which dissipates as internal heat via thermodynamic friction --- analogous to tidal heating of Io by Jupiter, but driven by the metric itself. This thermo-gravitational pumping provides a continuous endogenous heat source that stalls the cooling without exotic compositions or new particles.
 
 ### 7.8. The Planet 9 Illusion: Emergent MOND EFE in the Outer Solar System
 
 The orbits of extreme trans-Neptunian objects (ETNOs, including Sedna) are anomalously clustered in perihelion angle, motivating the "Planet 9" hypothesis. Decades of deep surveys have found no such body.
 
-In V8.1, at distances of $200$--$500$ AU, solar gravitational acceleration falls below $a_0 = cH_0/2\pi \approx 1.1 \times 10^{-10}$ m/s$^2$, entering the emergent MOND regime. The External Field Effect (EFE) from the Milky Way's galactic acceleration (${\sim}\,a_0$) breaks the spherical symmetry of the solar potential, creating a secular torque that aligns ETNO orbits toward the galactic center direction. N-body simulations using this MOND-EFE formalism reproduce the observed clustering without any additional mass.
+In V8.2, at distances of $200$--$500$ AU, solar gravitational acceleration falls below $a_0 = cH_0/2\pi \approx 1.1 \times 10^{-10}$ m/s$^2$, entering the emergent MOND regime. The External Field Effect (EFE) from the Milky Way's galactic acceleration (${\sim}\,a_0$) breaks the spherical symmetry of the solar potential, creating a secular torque that aligns ETNO orbits toward the galactic center direction. N-body simulations using this MOND-EFE formalism reproduce the observed clustering without any additional mass.
 
 ### 7.9. Flyby Anomaly: Brane Drift Vortex and Frame-Dragging
 
 Multiple spacecraft (Galileo: $+3.92$ mm/s, NEAR: $+13.46$ mm/s) gained unexplained velocity increments during Earth flybys, correlated with orbital inclination (Anderson formula). Symmetric passes (Juno) show no anomaly.
 
-In V8.1, the brane drift through the $AdS_5$ bulk (the same mechanism explaining Dark Flow and the cosmic dipole) interacts with Earth's rotation via the Lense-Thirring frame-dragging effect. The rotating Earth creates an asymmetric gravito-magnetic vortex in the brane's drift field. Spacecraft on highly inclined hyperbolic trajectories cut across this vortex asymmetrically, exchanging kinetic energy with the topological drift --- a non-conservative interaction in the geocentric frame that draws energy from the bulk's curvature density. Equatorial or symmetric passes cancel the exchange, explaining the null result for Juno.
+In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining Dark Flow and the cosmic dipole) interacts with Earth's rotation via the Lense-Thirring frame-dragging effect. The rotating Earth creates an asymmetric gravito-magnetic vortex in the brane's drift field. Spacecraft on highly inclined hyperbolic trajectories cut across this vortex asymmetrically, exchanging kinetic energy with the topological drift --- a non-conservative interaction in the geocentric frame that draws energy from the bulk's curvature density. Equatorial or symmetric passes cancel the exchange, explaining the null result for Juno.
 
 ## 8. Comparative Synthesis
 
-| Cosmological Problem | $\Lambda$CDM Status | Oscillating Brane V8.1 Solution |
+| Cosmological Problem | $\Lambda$CDM Status | Oscillating Brane V8.2 Solution |
 |---------------------|---------------------|-------------------------------|
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric |
@@ -326,7 +326,7 @@ In V8.1, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 
 ## 9. Conclusions and Decisive Perspectives
 
-The Oscillating Brane paradigm (Cosmic Yoyo V8.1) does not represent yet another statistical adjustment at the margins of a faltering Standard Model. It emerges as a unified extra-dimensional matrix founded on clear, interconnected mathematical deductions. Its effectiveness stems from a simple topological redefinition limiting the number of tuning parameters: the tension $\tau_0$ (fixed by QCD at 257 MeV), the oscillation period (2 Gyr, locked by the $\xi R\phi$ attractor), and the extra-dimension size ($L = 0.2\;\mu$m).
+The Oscillating Brane paradigm (Cosmic Yoyo V8.2) does not represent yet another statistical adjustment at the margins of a faltering Standard Model. It emerges as a unified extra-dimensional matrix founded on clear, interconnected mathematical deductions. Its effectiveness stems from a simple topological redefinition limiting the number of tuning parameters: the tension $\tau_0$ (fixed by QCD at 257 MeV), the oscillation period (2 Gyr, locked by the $\xi R\phi$ attractor), and the extra-dimension size ($L = 0.2\;\mu$m).
 
 The hybrid motor architecture --- macroscopic Cosmic Web forcing ($\mathcal{F}_{web}[E_{\mu\nu}]$) providing the muscle via Israel junction conditions, and microscopic ER=EPR-entangled PBH network ($\mathcal{R}_{PBH}$) providing quantum synchronization as the metronome --- resolves the fundamental paradox of global phase coherence across 93 billion light-years.
 

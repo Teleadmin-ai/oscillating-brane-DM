@@ -6,7 +6,7 @@ permalink: /predictions/
 
 # Observational Predictions
 
-The oscillating brane theory V8.1 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
+The oscillating brane theory V8.2 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
 
 ## Timeline of Discovery
 
@@ -132,7 +132,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
 ## Model Comparison
 
-| Observable | ΛCDM | Oscillating Brane V8.1 | Difference |
+| Observable | ΛCDM | Oscillating Brane V8.2 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T + π/2) | Time-varying, phantom crossing |
 | S₈ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | ~5% during current weakened phase |
@@ -187,7 +187,7 @@ Strong evidence — the data clearly prefer our vibrating cosmos.
 
 | Technical Term | Intuitive Vision | Interpretation |
 |----------------|------------------|----------------|
-| $\ln K$ (log Bayes factor) | "Preference score" | We compare Oscillating-Brane V8.1 to $\Lambda$CDM |
+| $\ln K$ (log Bayes factor) | "Preference score" | We compare Oscillating-Brane V8.2 to $\Lambda$CDM |
 | $\Delta\ln K = 4.13 \pm 0.07$ | $\approx 62\times$ more probable | $S_8$ + oscillation + MOND coincidence |
 | Jeffreys Scale | 2.5-5 = strong | 4.13 is in the "strong" zone |
 
