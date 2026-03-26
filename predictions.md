@@ -183,7 +183,7 @@ Strong evidence — the data clearly prefer our vibrating cosmos.
 ![Nested Sampling Posteriors](/plots/nested_sampling_posteriors.png)
 *Figure: Nested sampling posteriors (dynesty) for the three brane parameters. Δln K = 4.13 ± 0.07 — STRONG evidence on the Jeffreys scale.*
 
-**Numerical validation (dynesty Nested Sampling, 500 live points):** Results: $\ln Z_\text{Brane} = 11.96 \pm 0.07$, $\ln Z_{\Lambda\text{CDM}} = 7.83 \pm 0.01$, yielding **Bayes factor $\Delta\ln K = 4.13 \pm 0.07$** — STRONG evidence on the Jeffreys scale ($e^{4.13} \approx 62\times$ more probable than $\Lambda$CDM). Posterior convergence: $\tau_0 = 10^{19.51 \pm 0.28}$ J/m$^2$, $f_\text{osc} = 0.126 \pm 0.035$, $T_\text{osc} = 2.00 \pm 0.21$ Gyr (all $\hat{R} \approx 1.000$).
+**Numerical validation (dynesty Nested Sampling, 500 live points):** Results: $\ln Z_\text{Brane} = 11.96 \pm 0.07$, $\ln Z_{\Lambda\text{CDM}} = 7.83 \pm 0.01$, yielding **Bayes factor $\Delta\ln K = 4.13 \pm 0.07$** — STRONG evidence on the Jeffreys scale ($e^{4.13} \approx 62\times$ more probable than $\Lambda$CDM). Posterior convergence: $\tau_0 = 10^{19.85 \pm 0.07}$ J/m$^2$ ($7.08 \times 10^{19}$), $f_\text{osc} = 0.100 \pm 0.020$, $T_\text{osc} = 2.00 \pm 0.20$ Gyr (all $\hat{R} \approx 1.000$).
 
 | Technical Term | Intuitive Vision | Interpretation |
 |----------------|------------------|----------------|

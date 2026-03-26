@@ -6,58 +6,46 @@ permalink: /chronology/
 
 # Cosmic Chronology
 
-## From Inflation to Current Oscillations
+## From Compactification to Current Oscillations
 
-The evolution of brane tension from the Big Bang to today reveals how the universe tuned itself to its fundamental frequency.
+The brane tension $\tau_0 = 7 \times 10^{19}$ J/m² is not a dynamical variable that cools from a hot initial state — it is **geometrically fixed** at the QCD scale ($\tau_0^{1/3} = 257$ MeV) by the quantized fluxes ($K = 21$, $M = 10$) threading the Klebanov-Strassler throat in the string compactification (see [Theory: UV Completion](/theory/)). What evolves is not the tension itself, but the **oscillation amplitude** and the **motor activation state**.
 
 ## Timeline of Brane Evolution
 
-| Phase | Age | τ (J/m²) | Description |
-|-------|-----|----------|-------------|
-| Inflation | 0 → 10<sup>-34</sup> s | 10<sup>50</sup> | Quasi-exponential expansion, hyper-tense brane |
-| Brane Reheating | 10<sup>-34</sup> → 10<sup>-32</sup> s | 10<sup>30</sup> | Tension decay via bulk graviton emission + KK modes |
-| Relaxation | 10<sup>-32</sup> s → 1 Gyr | 10<sup>27</sup> → 7×10<sup>19</sup> | τ ∝ t<sup>-1/2</sup>, fundamental mode enters resonance ≈ 1 Gyr |
-| Current Era | 13.8 Gyr | 7×10<sup>19</sup> | Stable oscillation with 2 Gyr period |
+| Phase | Age | Motor State | Description |
+|-------|-----|-------------|-------------|
+| Compactification | 0 → 10<sup>-34</sup> s | Frozen | Brane trapped at KS throat tip, τ₀ fixed by flux geometry |
+| Inflation | 10<sup>-34</sup> → 10<sup>-32</sup> s | Frozen | Exponential expansion driven by inflaton, radion overdamped |
+| Radiation Era | 10<sup>-32</sup> s → 10<sup>-5</sup> s | Frozen (conformal) | $T^\mu_\mu = 0$ (w=1/3): conformal symmetry freezes all radion dynamics. BBN protected |
+| QCD Ignition | ~10<sup>-5</sup> s (T ≈ 257 MeV) | **Motor ON** | Chiral symmetry breaking: $T^\mu_\mu \neq 0$, coupling factor (1-3w) jumps from 0 to 1 |
+| Attractor Locking | 10<sup>-5</sup> s → ~1 Gyr | Transient | $\xi R\phi$ attractor locks period to T = 2.0 Gyr within ~2 e-foldings |
+| Current Era | 13.8 Gyr | Stable limit cycle | Steady oscillation, ~1% PBH capillaries ($f_{PBH} = 0.01$) tension the membrane |
 
 ## Physical Processes
 
-### Inflation Phase
-The brane begins with near-Planckian tension, driving exponential expansion. The extreme curvature prevents any oscillatory modes.
+### Compactification and Flux Stabilization
+The brane is trapped at the infrared tip of a Klebanov-Strassler warped deformed conifold. The exponential warp factor $e^{-2\pi K/(3g_sM)}$ with flux integers $K = 21$, $M = 10$ and string coupling $g_s = 0.1$ crushes the Planck-scale tension to $\tau_0^{1/3} = 257$ MeV — permanently and geometrically. This tension is a topological invariant of the compactification, not a thermodynamic variable.
 
-### Brane Reheating
-As inflation ends, the brane tension converts to particle production:
-- Bulk graviton emission and KK mode production
-- Energy density transfers from geometric to matter sector
-- Tension drops by 20 orders of magnitude
+### Conformal Freeze-Out (Radiation Era)
+During the entire radiation-dominated epoch (BBN, nucleosynthesis), the cosmic fluid has $w = 1/3$ and the energy-momentum trace vanishes rigorously: $T^\mu_\mu = 0$. The radion is completely blind to the Cosmic Web forcing. Combined with extreme Hubble friction ($3H\dot{\phi}$), the brane remains frozen at equilibrium. Standard 4D GR is fully recovered.
 
-### Relaxation Era
-The brane tension follows a power law decay:
+### QCD Ignition
+At $T \approx 257$ MeV, the QCD chiral phase transition breaks conformal symmetry. Quarks confine into hadrons, $w \to 0$, and the trace coupling $(1-3w)$ jumps from 0 to 1 — igniting the stick-slip motor for the first time.
 
-$$\tau(t) = \tau_0 \left(\frac{t_0}{t}\right)^{1/2}$$
-
-This natural cooling allows the fundamental mode to enter resonance when the oscillation period matches the age of the universe.
+### Attractor Locking
+The non-minimal coupling $\xi R\phi$ acts as a geometric Phase-Locked Loop, dynamically adjusting the oscillation period as the cosmological parameters evolve. Within ~2 e-foldings after ignition, the period converges to $T = 2.0$ Gyr and remains locked with drift $|\dot{T}/T| < 10^{-3}$ per Hubble time.
 
 ### Current Oscillations
-Today, the brane has reached its equilibrium configuration:
-- Stable tension τ₀ = 7×10<sup>19</sup> J/m²
-- Fundamental period T = 2.0 Gyr
+Today, the brane has reached its stable limit cycle:
+- Fixed tension τ₀ = 7×10<sup>19</sup> J/m² (set by KS geometry, not by cooling)
+- Fundamental period T = 2.0 Gyr (locked by ξRφ attractor)
 - ~1% of dark matter mass in PBH capillaries ($f_{PBH} = 0.01$) tensions the membrane
-
-## The Violent Birth
-
-In this framework, the brane appears at the Big Bang with quasi-Planckian tension τ_BB ~ 10⁵⁰ J/m²—a membrane stretched to breaking point, vibrating with pure energy.
-
-**Phase I - Trans-membrane Inflation (0 - 10⁻³⁴ s)**: The colossal excess tension fuels exponential expansion. The membrane expands like a soap bubble blown by a hurricane, creating space from dimensional nothingness.
-
-**Phase II - Brane Reheating (10⁻³⁴ - 10⁻³² s)**: Tension drops abruptly as the brane releases energy via bulk graviton emission and KK mode production. This "quantum evaporation" dissipates excess energy, leaving residual tension around 10³⁰ J/m².
-
-**Phase III - Slow Stabilization (10⁻³² s - 100 Myr)**: Tension relaxes logarithmically toward its current value. Like a violin string being tuned, the membrane seeks its natural frequency.
 
 ## The Awakening of Oscillations
 
-Only when τ becomes "loose enough" does the fundamental mode enter the T ~ 2 Gyr band. Oscillation starts about 1 Gyr after the Big Bang—exactly when DESI's baryon acoustic oscillations and Planck's ISW resonance independently confirm the fundamental period!
+The motor ignites at the QCD phase transition ($T \approx 257$ MeV, $t \approx 10^{-5}$ s), when conformal symmetry breaks and the trace coupling $(1-3w)$ activates. The $\xi R\phi$ attractor then locks the period to $T = 2.0$ Gyr within ~2 e-foldings — roughly 1 Gyr after ignition. This is exactly when DESI's baryon acoustic oscillations and Planck's ISW resonance independently confirm the fundamental period.
 
-This temporal coincidence is no accident: it's the moment when the universe, finally tuned, begins playing its fundamental melody.
+This temporal coincidence is not an accident: the QCD scale sets both the motor's energy ($\tau_0^{1/3} = 257$ MeV) and its ignition time, while the attractor dynamics set its period.
 
 ## Tension Calibration: The Perfect Tuning
 

@@ -35,7 +35,9 @@ Brane oscillations are described by a scalar field φ(x) representing the brane'
 
 $$\tau(t,\vec{x}) = \tau_0 + \delta\tau \cos(\omega t + \vec{k} \cdot \vec{x})$$
 
-where oscillations satisfy the Klein-Gordon equation in the bulk:
+**Note:** While the global cosmological dynamics are governed by the highly non-linear stick-slip ODE (Filippov inclusion with Heaviside threshold, detailed in the [Complete Theoretical Framework](/theory/)), this harmonic approximation captures the leading Fourier mode and is sufficient for linearized perturbation theory and local Solar System tests.
+
+The oscillations satisfy the Klein-Gordon equation in the bulk:
 
 $$\Box_5 \phi + m_\phi^2 \phi = 0$$
 
@@ -290,14 +292,18 @@ The model would be falsified by:
 
 ### Quantum Corrections to Brane Tension
 
-The quantum stability of the oscillating brane requires careful analysis. One-loop corrections to the effective brane tension are:
+The quantum stability of the oscillating brane requires careful analysis. The following is a **4D EFT toy model** estimate of one-loop corrections; the rigorous 5D treatment using spectral zeta regularization at $s = -1/2$, Seeley-DeWitt heat kernel coefficients with Gilkey-Branson-Kirsten boundary terms, and Skenderis holographic renormalization is presented in the [Complete Theoretical Framework: Quantum Radiative Stability](/theory/).
 
-$$\delta\tau_{1-loop} = \frac{\Lambda_{UV}^4}{(4\pi)^2} \ln\left(\frac{\Lambda_{UV}}{m_\phi}\right)$$
+In the simplified 4D effective description, one-loop corrections to the brane tension scale as:
+
+$$\delta\tau_{1-loop} \sim \frac{\Lambda_{UV}^4}{(4\pi)^2} \ln\left(\frac{\Lambda_{UV}}{m_\phi}\right)$$
 
 where $\Lambda_{UV}$ is the UV cutoff and $m_\phi \sim 1$ eV is the radion mass.
 
-**Key result**: For $\Lambda_{UV} < M_5$ (the 5D Planck mass), corrections remain small:
+**Key result (4D estimate)**: For $\Lambda_{UV} < M_5$ (the 5D Planck mass), corrections remain small:
 $$\frac{\delta\tau_{1-loop}}{\tau_0} < 10^{-3}$$
+
+The full 5D calculation is expected to confirm this via the exponential warp factor suppression $\mathcal{O}(e^{-2kL})$ of UV contributions to the IR-brane potential.
 
 This ensures quantum corrections don't destabilize the classical oscillation.
 
@@ -378,12 +384,13 @@ The pioneering BraneCode project demonstrated feasibility with:
 - 4th-order finite differencing on the brane
 - Constraint damping via Baumgarte-Shapiro-Shibata-Nakamura formalism
 
-Key numerical methods:
-```
-5D line element: ds² = -α²dt² + γᵢⱼ(dxⁱ + βⁱdt)(dxʲ + βʲdt) + φ⁴dz²
-Evolution: ∂ₜγᵢⱼ = -2αKᵢⱼ + ℒ_β γᵢⱼ
-          ∂ₜKᵢⱼ = α(Rᵢⱼ + KKᵢⱼ - 2KᵢₖK^k_j) + bulk terms
-```
+Key numerical methods — the 5D ADM line element and evolution equations:
+
+$$ds^2 = -\alpha^2 dt^2 + \gamma_{ij}(dx^i + \beta^i dt)(dx^j + \beta^j dt) + \phi^4 dz^2$$
+
+$$\partial_t \gamma_{ij} = -2\alpha K_{ij} + \mathcal{L}_\beta \gamma_{ij}$$
+
+$$\partial_t K_{ij} = \alpha(R_{ij} + K K_{ij} - 2K_{ik}K^k_j) + \text{bulk terms}$$
 
 **Modern Computational Frameworks**:
 - **Einstein Toolkit**: Requires 5D extension module
@@ -403,7 +410,7 @@ Evolution: ∂ₜγᵢⱼ = -2αKᵢⱼ + ℒ_β γᵢⱼ
 
 #### 6.1.2 Initial Conditions for Oscillating Brane - Cosmological Mechanisms
 
-The origin of brane oscillations requires a cosmological mechanism to set the initial amplitude and phase. Several scenarios provide natural explanations:
+**V8.2 primary mechanism:** The QCD trace anomaly is the fundamental ignition switch. During the radiation era, conformal symmetry ($T^\mu_\mu = 0$ for $w = 1/3$) freezes the radion completely. At the QCD phase transition ($T \approx 257$ MeV), chiral symmetry breaking makes the trace non-zero, and the coupling factor $(1-3w)$ jumps from 0 to 1 — igniting the stick-slip motor (see [Theory: BBN Protection](/theory/)). While several generic braneworld mechanisms can also perturb the radion (listed below for completeness), the V8.2 architecture specifically identifies the QCD trace anomaly as the unique physical process that breaks conformal freeze-out:
 
 **1. Ekpyrotic/Cyclic Universe Scenario** [Khoury et al. 2001, Phys.Rev.D 64, 123522]
 
@@ -838,7 +845,7 @@ The Bayesian evidence calculation ($\Delta\ln K = 4.13 \pm 0.07$) relies on spec
 | Model | Parameter | Distribution | Range/Parameters | Units | Motivation |
 |-------|-----------|--------------|------------------|--------|------------|
 | Oscillating | τ₀ | Log-uniform | [10¹⁹, 10²⁰] | J/m² | Scale-invariant prior for unknown energy scale |
-| | f_osc | Uniform | [0.05, 0.20] | - | Weak prior based on halo core constraints |
+| | f_osc | Uniform | [0.05, 0.20] | - | Left free to verify attractor convergence to ~0.10 |
 | | T | Gaussian | μ=2.0, σ=0.3 | Gyr | Centered on theoretical prediction |
 | | A_w | Uniform | [0.001, 0.005] | - | Constrained by dark energy observations |
 | ΛCDM | H₀ | Uniform | [60, 80] | km/s/Mpc | Wide range covering all measurements |
