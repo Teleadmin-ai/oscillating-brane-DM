@@ -272,6 +272,8 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - LaTeX renders correctly on ALL site pages and in the PDF (xelatex handles it natively)
 - **PDF pipeline pre-processor** (`generate_pdf.py`) sanitizes Unicode→LaTeX, converts HTML tables→markdown, strips Jekyll templates, emojis, and fixes indented headers before pandoc
 - The `\vert` workaround for bra-ket notation (`$\vert 1\rangle$` instead of `$|1\rangle$`) is still needed because kramdown confuses `|` with table delimiters
+- **CRITICAL: xelatex unicode-math prime bug** — The `'` (prime) character after `\text{...}` or `\operatorname{...}` causes `Undefined control sequence: \g__um_prime_font_cmd_tl` in xelatex with unicode-math. This breaks PDF generation. **Workaround**: wrap the function name in braces before the prime: `{\text{Ai}}^{\prime}` instead of `\text{Ai}'`. For squared derivatives, use grouping: `({\text{Ai}}^{\prime})^2` to avoid double superscript errors. Alternatively, use `\partial_x\text{Ai}` for inline derivatives. This cost 45 minutes of debugging on 2026-03-26.
+- **scipy `ai_zeros` return order trap** — `ai_zeros(N)` returns `(a, ap, ai, aip)` where the NORMALIZATION constant Ai'(a_n) is in the **4th return** `aip`, NOT the 3rd `ai`. The 3rd return `ai` = Ai(ap) (value of Ai at zeros of Ai'). Using the wrong one silently gives wrong matrix elements. Always unpack as: `a_zeros, _, _, deriv_at_zeros = ai_zeros(N)`.
 
 ## CI / Code Quality
 - **black + isort**: All scripts must pass `black --check scripts/` and `isort --check-only scripts/`
