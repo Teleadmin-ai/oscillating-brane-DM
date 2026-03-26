@@ -894,15 +894,33 @@ The observable gravitational wave signal (NANOGrav/SKA) and the internal dynamic
 
 **1. Current status: the kinematic (FFT) approximation.** The stochastic gravitational wave background (SGWB) spectrum currently predicted by OBT to explain the nanohertz-band overtone structure observed by PTA experiments (NANOGrav 15-year dataset, EPTA DR2, PPTA DR3, CPTA) rests on a **first-order kinematic approximation**: the Fast Fourier Transform (FFT) of the radion trajectory $\phi(t)$ obtained from the V8.2 stick-slip ODE. The asymmetric sawtooth waveform --- slow, quasi-linear charging during the stick phase followed by rapid non-linear discharge during the slip --- generates a characteristic harmonic cascade in which spectral power leaks from the fundamental frequency $f_0 = 1/T \approx 0.5\,\text{Gyr}^{-1} \approx 16\,\text{nHz}$ into the overtones $f_n = n f_0$, with an amplitude envelope governed by the duty cycle and the slip sharpness. This Fourier decomposition captures the essential spectral morphology --- the energy transfer from the fundamental to high harmonics, the slope of the characteristic strain spectrum $h_c(f)$, and the qualitative match to the NANOGrav common-process signal --- but it remains a **scalar kinematic proxy**. The FFT of $\phi(t)$ computes the spectral content of the brane's trajectory; it does not compute the metric perturbation $h_{\mu\nu}$ sourced by that trajectory. The distinction is fundamental: the former is signal processing, the latter is general relativity.
 
-**2. The exact formalism: 5D linearized perturbation theory.** The rigorous derivation of the spectral energy density $\Omega_{GW}(f)$ requires solving the **linearized 5D Einstein equations** around the warped $AdS_5$ background metric $\bar{g}_{AB}$:
+**2. The TT wave equation in $AdS_5$ and the distributional brane source.** The linearized 5D Einstein equations $\delta G_{AB}^{(5)} = \kappa_5^2\,\delta T_{AB}^{(5)}$ on the Poincaré patch $ds^2 = (L/z)^2(\eta_{\mu\nu}dx^\mu dx^\nu + dz^2)$ yield, for the transverse-traceless (TT) tensor sector, a wave equation with geometric friction from the warp factor Christoffel symbols:
 
-$$\delta G_{AB}^{(5)} = \kappa_5^2\,\delta T_{AB}^{(5)}$$
+$$\left(\Box_4 + \partial_z^2 - \frac{3}{z}\,\partial_z\right)h_{\mu\nu}(x,z) = \kappa_5^2\left(\frac{z}{L}\right)^2 \delta T_{\mu\nu}^{TT}$$
 
-where the perturbed energy-momentum tensor of the oscillating brane enters as a **distributional source** --- a dynamical Dirac delta function localized on the moving brane hypersurface:
+The distributional source from the oscillating brane is $\delta T_{\mu\nu}^{TT} = -\tau_0\,h_{\mu\nu}\,(z/L)\,\delta(z - \phi(t))$, so the full right-hand side becomes $\mathcal{S} \propto (z/L)^3\,\delta(z - \phi(t))\,h_{\mu\nu}$. The acceleration of the moving hypersurface $\phi(t)$ during the slip phase sweeps the transverse coordinate and parametrically pumps energy into the bulk modes.
 
-$$T_{AB}^{(\text{brane})} = -\tau_0\,h_{\mu\nu}\,\delta^\mu_A\,\delta^\nu_B\,\frac{\delta(z - \phi(t))}{\sqrt{g_{zz}}}$$
+**Fourier-Kaluza-Klein decomposition.** Expanding $h_{\mu\nu}(x,z) = \int d^4k\,e^{ik\cdot x}\sum_n \tilde{h}_{\mu\nu}^{(n)}(k)\,\psi_n(z)$ with $\Box_4 \to m_n^2$, the homogeneous radial equation for the massive KK tower ($m_n > 0$) is:
 
-with $z$ the extra-dimensional coordinate, $\phi(t)$ the radion trajectory from the stick-slip ODE, and $h_{\mu\nu}$ the induced metric on the brane. The brane undergoing the violent slip phase acts as a time-dependent source whose acceleration profile $\ddot{\phi}(t)$ --- highly impulsive during the slip, quasi-static during the stick --- generates metric perturbations $\delta g_{AB}$ in the full 5D bulk. The mathematical challenge is a **forced wave equation on a warped background with a moving singular source**: the Randall-Sundrum warp factor $e^{-2k\vert z\vert}$ (with $k = 1/L$) introduces a non-trivial potential barrier in the transverse direction that shapes the mode spectrum, while the time-dependence of $\phi(t)$ prevents separation of variables in the standard Kaluza-Klein decomposition. The problem is analytically tractable only in the linearized regime --- precisely because the radion amplitude $A_w = 0.003$ is a small perturbation ($\phi/L \sim \phi_{crit}/L \sim 0.1$), validating the perturbative expansion $g_{AB} = \bar{g}_{AB} + \delta g_{AB}$ with $\vert\delta g_{AB}\vert/\vert\bar{g}_{AB}\vert \ll 1$.
+$$\left(\partial_z^2 - \frac{3}{z}\,\partial_z + m_n^2\right)\psi_n(z) = 0$$
+
+**Sturm-Liouville reduction to Bessel $\nu = 2$.** The substitution $\psi_n(z) = z^2 F_n(z)$ absorbs the geometric friction term. Computing $\psi_n^{\prime\prime} = z^2 F_n^{\prime\prime} + 4z F_n^{\prime} + 2F_n$ and substituting, the equation metamorphoses into the canonical Bessel differential equation of order $\nu = 2$:
+
+$$z^2 F_n^{\prime\prime} + z F_n^{\prime} + (m_n^2 z^2 - 4)F_n = 0$$
+
+The KK eigenfunctions are therefore: $\psi_n(z) = \mathcal{N}_n\,z^2[J_2(m_n z) + \alpha_n Y_2(m_n z)]$. The massless mode ($m_0 = 0$) reduces to $\psi_0 = \text{const}$ --- the standard 4D graviton confined to the brane.
+
+**Neumann quantization via Bessel identity.** The Darmois-Israel $\mathbb{Z}_2$ orbifold symmetry imposes Neumann conditions $\partial_z\psi_n = 0$ at both boundaries. Using the Bessel differential identity $\partial_z[z^2\mathcal{C}_2(mz)] = mz^2\mathcal{C}_1(mz)$ (which lowers the harmonic order from 2 to 1), the boundary condition becomes $m_n z^2[J_1(m_n z) + \alpha_n Y_1(m_n z)] = 0$. Regularity at the UV brane ($z \to 0$, where $Y_1$ diverges) requires $\alpha_n = 0$. At the IR brane ($z = L$), the **exact quantization equation** for the KK mass spectrum is:
+
+$$J_1(m_n L) = 0 \quad \Longrightarrow \quad m_n = j_{1,n}/L$$
+
+where $j_{1,n} = \{3.832, 7.016, 10.173, 13.324, \ldots\}$ are the zeros of $J_1$. The first KK graviton has mass $m_1 = 3.832/L \approx 19.2\,\text{eV}$ for $L = 0.2\,\mu$m --- well above direct detection thresholds but producing the cumulative radiative damping that stabilizes the brane.
+
+**Sturm-Liouville weight and kinematic pumping.** The transverse operator $\partial_z^2 - (3/z)\partial_z$ is self-adjoint in Sturm-Liouville form $z^3\partial_z(z^{-3}\partial_z)$ with weight function $w(z) = z^{-3}$. Projecting the source onto the KK basis: $\int dz\,z^{-3}\,[z^3\delta(z-\phi(t))]\,\psi_n(z)$. The geometric miracle: the factors $z^{-3}$ and $z^3$ cancel exactly, evaluating the eigenfunction at the brane position:
+
+$$\mathcal{C}_n(t) \propto \psi_n(\phi(t)) = \phi(t)^2\,J_2(m_n\phi(t))$$
+
+This is the **kinematic pumping mechanism**: as the radion $\phi(t)$ accelerates violently during the slip, it sweeps through the argument of $J_2$, parametrically exciting the massive KK graviton modes. The energy transfer from the brane's kinetic energy to the bulk radiation field is the microscopic origin of the macroscopic friction $\Gamma_{rad}$.
 
 **3. The branching ratio: zero mode versus Kaluza-Klein tower.** The resolution of this 5D wave equation via the **retarded Green's function** $G^{(5)}_R(x,x';z,z')$ in the warped geometry will yield the exact decomposition of the radiated power into two physically distinct channels:
 
