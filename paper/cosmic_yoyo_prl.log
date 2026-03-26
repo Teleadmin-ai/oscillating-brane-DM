@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  25 MAR 2026 07:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.7.4)  26 MAR 2026 15:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**paper/cosmic_yoyo_prl.tex
-(./paper/cosmic_yoyo_prl.tex
+**cosmic_yoyo_prl.tex
+(./cosmic_yoyo_prl.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -371,7 +371,7 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count295
 \l__pdf_internal_box=\box99
 )
-(paper/cosmic_yoyo_prl.aux)
+(./cosmic_yoyo_prl.aux)
 \openout1 = `cosmic_yoyo_prl.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -417,7 +417,7 @@ e
 ))
 Package hyperref Info: Link coloring OFF on input line 17.
 
-(paper/cosmic_yoyo_prl.out) (paper/cosmic_yoyo_prl.out)
+(./cosmic_yoyo_prl.out) (./cosmic_yoyo_prl.out)
 \@outlinefile=\write3
 \openout3 = `cosmic_yoyo_prl.out'.
 
@@ -480,73 +480,83 @@ Overfull \hbox (182.74895pt too wide) detected at line 60
  []
 
 [2]
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+[]\OT1/cmr/bx/n/10.95 Perforation hi-er-ar-chy (Gregory-
+ []
+
 <../plots/desi_w_evolution.png, id=69, 859.5312pt x 500.1084pt>
 File: ../plots/desi_w_evolution.png Graphic file (type png)
 <use ../plots/desi_w_evolution.png>
-Package pdftex.def Info: ../plots/desi_w_evolution.png  used on input line 111.
+Package pdftex.def Info: ../plots/desi_w_evolution.png  used on input line 117.
 
 (pdftex.def)             Requested size: 386.96027pt x 225.15353pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
 |[]\OT1/cmr/bx/n/12 B. The $\OML/cmm/m/it/12 S[]$ \OT1/cmr/bx/n/12 Ten-sion (Ti
 me-
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 118.
+(hyperref)                removing `math shift' on input line 124.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 118.
+(hyperref)                removing `subscript' on input line 124.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 118.
+(hyperref)                removing `math shift' on input line 124.
 
-[3 <paper/../plots/desi_w_evolution.png>]
-<../plots/s8_tension_resolution.png, id=81, 1003.1076pt x 430.7292pt>
+[3]
+<../plots/s8_tension_resolution.png, id=80, 1003.1076pt x 430.7292pt>
 File: ../plots/s8_tension_resolution.png Graphic file (type png)
 <use ../plots/s8_tension_resolution.png>
 Package pdftex.def Info: ../plots/s8_tension_resolution.png  used on input line
- 130.
+ 136.
 (pdftex.def)             Requested size: 386.96027pt x 166.15659pt.
 
-Overfull \hbox (25.81688pt too wide) detected at line 142
+Overfull \hbox (25.81688pt too wide) detected at line 148
 [][][]\OT1/cmr/m/n/10.95 ^^A\OML/cmm/m/it/10.95 C[] \OT1/cmr/m/n/10.95 = [] [] 
 \OML/cmm/m/it/10.95 dk k[]P[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k\OT1/cmr/
 m/n/10.95 ) [][]
  []
 
-<../plots/isw_cmb_signature.png, id=82, 843.6318pt x 500.1084pt>
+<../plots/isw_cmb_signature.png, id=81, 843.6318pt x 500.1084pt>
 File: ../plots/isw_cmb_signature.png Graphic file (type png)
 <use ../plots/isw_cmb_signature.png>
-Package pdftex.def Info: ../plots/isw_cmb_signature.png  used on input line 149
+Package pdftex.def Info: ../plots/isw_cmb_signature.png  used on input line 155
 .
 (pdftex.def)             Requested size: 386.96027pt x 229.38875pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <paper/../plots/s8_tension_resolution.png>]
+[4 <../plots/desi_w_evolution.png> <../plots/s8_tension_resolution.png>]
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 181.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 187.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 181.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 187.
 
 Missing character: There is no ° in font cmr10!
-[5 <paper/../plots/isw_cmb_signature.png>] [6] (paper/cosmic_yoyo_prl.aux)
+[5 <../plots/isw_cmb_signature.png>] [6] [7] (./cosmic_yoyo_prl.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `cosmic_yoyo_prl.out' has not changed.
 (rerunfilecheck)             Checksum: 47E1EFA98150FDC2B31A5A2AFE15E676;1745.
  ) 
 Here is how much of TeX's memory you used:
- 10373 strings out of 478051
- 160213 string characters out of 5840944
- 1869330 words of memory out of 5000000
- 30332 multiletter control sequences out of 15000+600000
+ 10378 strings out of 478051
+ 160187 string characters out of 5840944
+ 1871330 words of memory out of 5000000
+ 30334 multiletter control sequences out of 15000+600000
  522090 words of font info for 68 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,6n,76p,2948b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,76p,2942b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </root/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -562,10 +572,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on paper/cosmic_yoyo_prl.pdf (6 pages, 728667 bytes).
+Output written on cosmic_yoyo_prl.pdf (7 pages, 731573 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
  88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
