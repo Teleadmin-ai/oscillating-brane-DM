@@ -49,7 +49,7 @@ In this framework, the brane appears at the Big Bang with quasi-Planckian tensio
 
 **Phase I - Trans-membrane Inflation (0 - 10⁻³⁴ s)**: The colossal excess tension fuels exponential expansion. The membrane expands like a soap bubble blown by a hurricane, creating space from dimensional nothingness.
 
-**Phase II - Brane Reheating (10⁻³⁴ - 10⁻³² s)**: Tension drops abruptly via massive production of dark matter/anti-dark matter pairs in the bulk. This "quantum evaporation" dissipates excess energy, leaving residual tension around 10³⁰ J/m².
+**Phase II - Brane Reheating (10⁻³⁴ - 10⁻³² s)**: Tension drops abruptly as the brane releases energy via bulk graviton emission and KK mode production. This "quantum evaporation" dissipates excess energy, leaving residual tension around 10³⁰ J/m².
 
 **Phase III - Slow Stabilization (10⁻³² s - 100 Myr)**: Tension relaxes logarithmically toward its current value. Like a violin string being tuned, the membrane seeks its natural frequency.
 

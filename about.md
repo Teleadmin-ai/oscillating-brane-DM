@@ -34,7 +34,7 @@ I have never hidden this. My brain is not a disability for this work — it is t
 | Age 24 | Founded **Teleadmin** | Hosting company, OVH Advanced Partner |
 | Career | National infrastructure | **Qwant** (3 server racks, ZFS NAS, 5 DB servers), **Atout France**, **Euresto**, **Incepto** (100+ hospitals), **GELMAD** Lyon (3 medical imaging centers including Hôpital Mermoz) |
 | Age 50 | AI Research | R-JEPA — adaptation of Yann LeCun's JEPA architecture for text reasoning in the latent space of an LLM |
-| 2026 | **Oscillating Brane Cosmology** | 31 anomalies resolved, V8.2 Hybrid Topology Edition |
+| 2026 | **Oscillating Brane Cosmology** | 31 anomalies resolved, V8.2 Peer-Review Shield Edition |
 
 **Career trajectory**: Systems administrator → Data Scientist → AI Agent Developer → Independent Cosmological Researcher.
 
@@ -45,7 +45,7 @@ I am a one-man company ("SSII à moi tout seul") who has built national-scale in
 This theory was not built alone. It was built in radical symbiosis with AI:
 
 - **Gemini DeepThink** (Google) — The mathematical powerhouse. Deep theoretical derivations, ab initio corrections, peer review of equations. When a calculation has a flaw, DeepThink finds it. The 5D geometric Chern-Simons fix ($c_{top} = 75$ replacing $10^{40}$), the spontaneous QCD baryogenesis mechanism — these came from DeepThink's theoretical depth.
-- **Claude** (Anthropic) — Code architect, numerical implementation, site/PDF pipeline, computational validation scripts. Fast, reliable, autonomous execution. All 22 validation scripts, the entire website, and this document were built with Claude.
+- **Claude** (Anthropic) — Code architect, numerical implementation, site/PDF pipeline, computational validation scripts. Fast, reliable, autonomous execution. All 44+ validation scripts, the entire website, and this document were built with Claude.
 
 I am the **conceptual architect** — closer to Lorenz (who discovered chaos theory by *observing* weather patterns) than to Maxwell (who derived the equations). My last integration by parts was at age 17. I don't solve the equations — I see the geometry, and the AIs translate that vision into rigorous mathematics. Gemini DeepThink is my **theoretical physicist** (Maxwell). Claude is my **computational engineer** (Tesla). I provide the physical intuition, the geometric vision, the "what if". DeepThink provides the mathematical rigor and catches errors. Claude builds, computes, and deploys.
 

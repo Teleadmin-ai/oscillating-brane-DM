@@ -4,7 +4,7 @@ title: Complete Theoretical Framework
 permalink: /theory/
 ---
 
-# Complete Theoretical Framework V8.2 (Perforation Hierarchy Edition)
+# Complete Theoretical Framework V8.2 (Peer-Review Shield Edition)
 
 **V8.2 — Perforation Hierarchy**: The stick-slip motor operates at two scales: (1) **macroscopic** — the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous E_μν forcing; (2) **microscopic** — the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally (ℓ=0 mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1).
 
@@ -45,7 +45,7 @@ A simple harmonic oscillator would be damped by Hubble friction (3Hφ̇) in a fe
 2. **Slip phase**: When |φ| exceeds φ_crit, the non-linear release R activates, triggering rapid energy discharge. The brane snaps back to equilibrium
 3. **Re-adhesion**: The cycle begins again. The macroscopic forcing is eternally sourced by the gravitational weight of the Cosmic Web's large-scale structure
 
-**Why T stays locked at 2 Gyr (no chirp):** This is the most critical stability question for peer review. A naive dissipative oscillator would "chirp" — its period would drift as Hubble friction $3H\dot{\phi}$ decreases with cosmic expansion and the Cosmic Web forcing $\mathcal{F}_{web}$ weakens as Cosmic Web forcing decays ($\propto a^{-3}$). Without a stabilization mechanism, the period would accelerate over cosmic time.
+**Why T stays locked at 2 Gyr (no chirp):** This is the most critical stability question for peer review. A naive dissipative oscillator would "chirp" — its period would drift as Hubble friction $3H\dot{\phi}$ decreases with cosmic expansion and the Cosmic Web forcing $\mathcal{F}_{web}$ weakens ($\propto a^{-3}$). Without a stabilization mechanism, the period would accelerate over cosmic time.
 
 The non-minimal coupling $\xi R\phi$ acts as a **geometric Phase-Locked Loop (PLL)**. The 4D Ricci scalar $R = 6(\dot{H} + 2H^2)$ decreases as the universe expands. Through the $\xi R\phi$ term, this decreasing curvature feeds back into the radion equation, dynamically adjusting the effective restoring force. The three competing effects — (1) decreasing Hubble friction ($3H\dot{\phi} \downarrow$), (2) decreasing Cosmic Web forcing ($\mathcal{F}_{web} \downarrow$), and (3) curvature feedback ($\xi R\phi \downarrow$) — form a coupled dynamical system $\{H(t), \phi(t), \dot{M}_{DM}(t)\}$ that converges to an **attractor manifold** where the three decay rates cancel to first order.
 
@@ -335,7 +335,7 @@ For observational predictions, experimental tests, Bayesian evidence, and model 
 ---
 
 - [Introduction to the Universe as a Membrane]({{ site.baseurl }}{% post_url 2025-07-03-introduction-universe-membrane %})
-- [How Dark Matter Excites the Membrane]({{ site.baseurl }}{% post_url 2025-07-03-microscopic-excitation %})
+- [The Stick-Slip Motor: How the Cosmic Web Drives the Brane Oscillation]({{ site.baseurl }}{% post_url 2025-07-03-microscopic-excitation %})
 - [Cosmic Evolution and Chronology]({{ site.baseurl }}{% post_url 2025-07-03-cosmic-chronology %})
 - [Experimental Tests and Predictions]({{ site.baseurl }}{% post_url 2025-07-03-observational-tests %})
 

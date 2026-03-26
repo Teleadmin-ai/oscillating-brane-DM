@@ -109,8 +109,8 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 
 ## Download the Theory
 
-- **[White Paper (6 pages)](/cosmic_yoyo_v5_holographic.pdf)** --- V8.2 Hybrid Topology Edition
-- **[Full Theory (~59 pages)](/oscillating_brane_theory_latest.pdf)** --- Complete documentation with computational validation
+- **[White Paper (7 pages)](/cosmic_yoyo_v5_holographic.pdf)** --- V8.2 Peer-Review Shield Edition
+- **[Full Theory (~78 pages)](/oscillating_brane_theory_latest.pdf)** --- Complete documentation with computational validation
 - **[All Downloads](/downloads/)** --- Scripts, data, and additional resources
 
 
@@ -250,7 +250,7 @@ The Brane motor contributes three simultaneous mechanisms for rapid early struct
 2. **PBH seed architecture**: The topological capillaries ($\sim 10^{20}$ kg PBH clusters) act as pre-existing gravitational seeds, forcing baryons to agglomerate around primordial topological nodes
 3. **Cosmic expansion braking ("stick phase")**: Modified expansion during high-redshift stick phases temporarily alleviates the Hubble drag on structure collapse
 
-### Early Supermassive Black Holes: The Funnel Effect
+### Early Supermassive Black Holes: The Gregory-Laflamme Channeling Effect
 
 JWST has identified SMBHs breaking accretion limits: GN-z11 ($z = 10.6$, $10^{6.2}\;M_\odot$), UHZ1 ($> 10^7\;M_\odot$), CANUCS-LRD-z8.6 ($10^8\;M_\odot$). Classical assembly pathways (super-Eddington accretion, direct collapse) are statistically exhausted.
 
@@ -421,7 +421,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Emergent MOND ($a_0 = cH_0/2\pi$), fully relativistic |
 | Cosmological Constant | $10^{120}$ orders of magnitude discrepancy | Thermodynamic relaxation of oscillatory amplitude in $AdS_5$ |
 | Cosmic Dipole | Tension with cosmological principle | Brane drift velocity in 5th dimension |
-| Early SMBHs (JWST) | Assembly pathways exhausted | ER=EPR funneling + heavy PBH seed tail |
+| Early SMBHs (JWST) | Assembly pathways exhausted | GL hierarchy channeling + heavy PBH seed tail |
 | Hubble Tension ($H_0$) | $> 6\sigma$ discrepancy | Oscillating $G_\text{eff}(t)$ biases Cepheid calibration + sound horizon modification |
 | NANOGrav GWB features | Unexplained spectral dips/excesses | Stick-slip anharmonic overtones in nHz band |
 | eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_\text{eff}(z)$ creates fitting illusion |
@@ -498,7 +498,7 @@ A simple harmonic oscillator would be damped by Hubble friction (3Hphi̇) in a f
 2. **Slip phase**: When |phi| exceeds phi_crit, the non-linear release R activates, triggering rapid energy discharge. The brane snaps back to equilibrium
 3. **Re-adhesion**: The cycle begins again. The macroscopic forcing is eternally sourced by the gravitational weight of the Cosmic Web's large-scale structure
 
-**Why T stays locked at 2 Gyr (no chirp):** This is the most critical stability question for peer review. A naive dissipative oscillator would "chirp" --- its period would drift as Hubble friction $3H\dot{\phi}$ decreases with cosmic expansion and the Cosmic Web forcing $\mathcal{F}_{web}$ weakens as Cosmic Web forcing decays ($\propto a^{-3}$). Without a stabilization mechanism, the period would accelerate over cosmic time.
+**Why T stays locked at 2 Gyr (no chirp):** This is the most critical stability question for peer review. A naive dissipative oscillator would "chirp" --- its period would drift as Hubble friction $3H\dot{\phi}$ decreases with cosmic expansion and the Cosmic Web forcing $\mathcal{F}_{web}$ weakens ($\propto a^{-3}$). Without a stabilization mechanism, the period would accelerate over cosmic time.
 
 The non-minimal coupling $\xi R\phi$ acts as a **geometric Phase-Locked Loop (PLL)**. The 4D Ricci scalar $R = 6(\dot{H} + 2H^2)$ decreases as the universe expands. Through the $\xi R\phi$ term, this decreasing curvature feeds back into the radion equation, dynamically adjusting the effective restoring force. The three competing effects --- (1) decreasing Hubble friction ($3H\dot{\phi} \downarrow$), (2) decreasing Cosmic Web forcing ($\mathcal{F}_{web} \downarrow$), and (3) curvature feedback ($\xi R\phi \downarrow$) --- form a coupled dynamical system $\{H(t), \phi(t), \dot{M}_{DM}(t)\}$ that converges to an **attractor manifold** where the three decay rates cancel to first order.
 
@@ -788,7 +788,7 @@ For observational predictions, experimental tests, Bayesian evidence, and model 
 ---
 
 - [Introduction to the Universe as a Membrane]()
-- [How Dark Matter Excites the Membrane]()
+- [The Stick-Slip Motor: How the Cosmic Web Drives the Brane Oscillation]()
 - [Cosmic Evolution and Chronology]()
 - [Experimental Tests and Predictions]()
 
@@ -843,7 +843,7 @@ In this framework, the brane appears at the Big Bang with quasi-Planckian tensio
 
 **Phase I - Trans-membrane Inflation (0 - 10$^{-34}$ s)**: The colossal excess tension fuels exponential expansion. The membrane expands like a soap bubble blown by a hurricane, creating space from dimensional nothingness.
 
-**Phase II - Brane Reheating (10$^{-34}$ - 10$^{-32}$ s)**: Tension drops abruptly via massive production of dark matter/anti-dark matter pairs in the bulk. This "quantum evaporation" dissipates excess energy, leaving residual tension around $10^{30}$ J/m$^{2}$.
+**Phase II - Brane Reheating (10$^{-34}$ - 10$^{-32}$ s)**: Tension drops abruptly as the brane releases energy via bulk graviton emission and KK mode production. This "quantum evaporation" dissipates excess energy, leaving residual tension around $10^{30}$ J/m$^{2}$.
 
 **Phase III - Slow Stabilization (10$^{-32}$ s - 100 Myr)**: Tension relaxes logarithmically toward its current value. Like a violin string being tuned, the membrane seeks its natural frequency.
 
@@ -1037,7 +1037,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
 ### The Gravitational Echo: The Double Signature
 
-When the membrane reaches maximum extension, dark matter flux reverses. This reversal creates a unique signature in the gravitational wave background:
+When the membrane reaches maximum extension, the brane oscillation reverses. This reversal creates a unique signature in the gravitational wave background:
 
 - **Main peak**: $f_0 = 1/T \approx 1.6 \times 10^{-17}$ Hz
 - **Echo**: $2f_0$ (reversal harmonic)
@@ -1104,7 +1104,7 @@ Our final vision: the cosmos is not an inert theater but a living organism:
 
 ## Epilogue: The Promise of Revelation
 
-Version 8.0 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the definitive test is SKA's 21cm reionization modulation.
+Version 8.2 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the definitive test is SKA's 21cm reionization modulation.
 
 In the coming years, the universe will answer us. Giant telescopes and pulsar networks will listen to the deep whisper of the cosmos, seeking the two-billion-year melody. They will find either confirmation of a revolutionary vision or the silence that sends us back to our equations.
 

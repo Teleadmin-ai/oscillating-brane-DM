@@ -137,7 +137,7 @@ The Brane motor contributes three simultaneous mechanisms for rapid early struct
 2. **PBH seed architecture**: The topological capillaries ($\sim 10^{20}$ kg PBH clusters) act as pre-existing gravitational seeds, forcing baryons to agglomerate around primordial topological nodes
 3. **Cosmic expansion braking ("stick phase")**: Modified expansion during high-redshift stick phases temporarily alleviates the Hubble drag on structure collapse
 
-### 4.2. Early Supermassive Black Holes: The Funnel Effect
+### 4.2. Early Supermassive Black Holes: The Gregory-Laflamme Channeling Effect
 
 JWST has identified SMBHs breaking accretion limits: GN-z11 ($z = 10.6$, $10^{6.2}\;M_\odot$), UHZ1 ($> 10^7\;M_\odot$), CANUCS-LRD-z8.6 ($10^8\;M_\odot$). Classical assembly pathways (super-Eddington accretion, direct collapse) are statistically exhausted.
 
@@ -308,7 +308,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Emergent MOND ($a_0 = cH_0/2\pi$), fully relativistic |
 | Cosmological Constant | $10^{120}$ orders of magnitude discrepancy | Thermodynamic relaxation of oscillatory amplitude in $AdS_5$ |
 | Cosmic Dipole | Tension with cosmological principle | Brane drift velocity in 5th dimension |
-| Early SMBHs (JWST) | Assembly pathways exhausted | ER=EPR funneling + heavy PBH seed tail |
+| Early SMBHs (JWST) | Assembly pathways exhausted | GL hierarchy channeling + heavy PBH seed tail |
 | Hubble Tension ($H_0$) | $> 6\sigma$ discrepancy | Oscillating $G_\text{eff}(t)$ biases Cepheid calibration + sound horizon modification |
 | NANOGrav GWB features | Unexplained spectral dips/excesses | Stick-slip anharmonic overtones in nHz band |
 | eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_\text{eff}(z)$ creates fitting illusion |

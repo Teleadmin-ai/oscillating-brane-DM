@@ -145,7 +145,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
 ### The Gravitational Echo: The Double Signature
 
-When the membrane reaches maximum extension, dark matter flux reverses. This reversal creates a unique signature in the gravitational wave background:
+When the membrane reaches maximum extension, the brane oscillation reverses. This reversal creates a unique signature in the gravitational wave background:
 
 - **Main peak**: $f_0 = 1/T \approx 1.6 \times 10^{-17}$ Hz
 - **Echo**: $2f_0$ (reversal harmonic)
@@ -212,7 +212,7 @@ Our final vision: the cosmos is not an inert theater but a living organism:
 
 ## Epilogue: The Promise of Revelation
 
-Version 8.0 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the definitive test is SKA's 21cm reionization modulation.
+Version 8.2 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the definitive test is SKA's 21cm reionization modulation.
 
 In the coming years, the universe will answer us. Giant telescopes and pulsar networks will listen to the deep whisper of the cosmos, seeking the two-billion-year melody. They will find either confirmation of a revolutionary vision or the silence that sends us back to our equations.
 
