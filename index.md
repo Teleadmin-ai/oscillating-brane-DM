@@ -55,7 +55,7 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
 Our theory presents a paradigm shift in understanding cosmic dynamics:
 
 - **Black holes** are not destructive chasms but tension pegs, anchor points where the membrane folds
-- **Dark matter** is the invisible bow that vibrates this giant harp
+- The **Cosmic Web** is the invisible bow that vibrates this giant harp
 - **Dark energy** emerges naturally from membrane oscillations
 - **Modified gravity** appears at cosmic scales without new particles
 

@@ -6,18 +6,18 @@ author: Romain Provencal
 tags: [cosmology, dark-matter, brane-theory]
 ---
 
-Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of quantum entangled black holes. Black holes are not destructive chasms but quantum gateways, connected via Einstein-Rosen bridges in the Anti-de Sitter bulk where distance itself ceases to exist. And dark matter? It flows through this non-local network maintaining perfect quantum coherence, creating a two-billion-year pulsation (calibrated from DESI/Planck data) where each beat shapes space, time, and gravity itself.
+Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of quantum entangled black holes. Black holes are not destructive chasms but quantum gateways, connected via Einstein-Rosen bridges in the Anti-de Sitter bulk where distance itself ceases to exist. And dark matter? The ER=EPR-entangled PBH network maintains perfect quantum coherence across the brane, creating a two-billion-year pulsation (calibrated from DESI/Planck data) where each beat shapes space, time, and gravity itself.
 
 ## A Paradigm Shift
 
-Our theory describes the Universe-brane 4D as a cosmic elastic membrane whose vibrations generate the phenomena we observe. The continuous flow of dark matter through gravitational funnels excites the fundamental mode of this membrane, creating:
+Our theory describes the Universe-brane 4D as a cosmic elastic membrane whose vibrations generate the phenomena we observe. The hybrid stick-slip motor — Cosmic Web forcing + PBH quantum synchronization — excites the fundamental mode of this membrane, creating:
 
 | Emergent Phenomenon | Theoretical Value | Cosmic Significance |
 |-------------------|------------------|---------------------|
 | Brane tension | τ₀ = 7.0 × 10¹⁹ J/m² | The elasticity of spatial fabric |
 | Oscillation period | T = 2.0 ± 0.3 Gyr | The cosmic heartbeat |
 | MOND acceleration | a₀ = 1.1 × 10⁻¹⁰ m/s² | Gravity at the confines |
-| S₈ suppression | ~5% (scale-dependent Yukawa) | Restored harmony |
+| S₈ suppression | ~5% (time-dependent G_eff oscillation) | Restored harmony |
 | Bayesian evidence | Δln K = 4.13 ± 0.07 | Promise of truth |
 
 ## The Fundamental Parameters: The Cosmic Alphabet
@@ -55,7 +55,7 @@ Nature was whispering: "Think bigger, think global."
 
 ### The Revelation: The Universe is a Membrane
 
-The crucial insight was recognizing that the entire universe vibrates like a cosmic drumhead. When dark matter circulates through gravitational funnels, it doesn't excite a local oscillator but the fundamental mode of the entire universe-membrane.
+The crucial insight was recognizing that the entire universe vibrates like a cosmic drumhead. The hybrid motor doesn't excite a local oscillator but the fundamental mode of the entire universe-membrane.
 
 For a membrane of radius R_H = c/H₀ = 1.33 × 10²⁶ m (the Hubble horizon, how far we can see), the deformation energy is:
 

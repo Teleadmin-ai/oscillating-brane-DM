@@ -283,8 +283,8 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - Visual page (visual.md) with PDF embeds — waiting for user's PowerPoint PDF
 - Videos.md expansion to 40 videos — waiting for user's YouTube links
 - Google OAuth: pass from test to production mode (needs Google review)
-- Optimize Romain AI system prompt (currently uses RAG, consider direct prompt injection)
-- Code execution sandbox (Docker ephemeral containers) for Romain AI
+- Optimize Romain AI system prompt (ongoing tuning)
+- Plot display in chat: works via `files` event + URL serving (NPM `/sandbox-images/`)
 
 ## Site Structure (Jekyll + GitHub Pages)
 - **Layout**: `_layouts/dark.html` — two-column grid (45% text left, 55% video right)
@@ -293,25 +293,36 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - **CSS**: `assets/css/dark-theme.css` — dark theme, fixed header with blur, responsive (mobile hides video column)
 - **Mobile**: single column, hamburger menu (`.mobile-nav`), video hidden
 - **Section markers**: `<div class="section-marker" data-section="...">` in content triggers video switching via IntersectionObserver
-- **Romain AI toggle**: "🤖 Romain AI" button in nav swaps `.video-column` between video carousel and Open WebUI iframe. Click again to swap back. Script in `dark.html` bottom.
+- **Romain AI toggle**: "Romain AI" button in nav swaps `.video-column` between video carousel and Open WebUI iframe. State persists across page navigation via `sessionStorage` (resets on new tab/visit). Auth state also cached — no re-auth on page change. Iframe URL uses cache-buster (`?_=timestamp`) to avoid stale SvelteKit assets.
 - **Non-PDF pages**: index.md, about.md, downloads.md, research.md, refutation.md, videos.md, agent.md (if created)
 
 ## Agent Infrastructure (Romain AI)
 - **URL**: https://agent.higgs-cosmology.com
-- **VM**: Debian 12, 4 CPU, 8 GB RAM, 48 GB disk — IP: 51.254.22.29
+- **VM**: Debian 12 (kernel 6.1.0-44 stock), 4 CPU, 8 GB RAM, 48 GB disk — IP: 51.254.22.29
 - **Stack**: Open WebUI v0.8.11 on host (venv: `/opt/open-webui-host/venv/`) + NPM in Docker + gVisor on host
 - **Systemd service**: `open-webui.service` (port 8081), env in `/opt/open-webui-host/.env`
 - **Data**: `/opt/open-webui-host/data/webui.db` (copied from Docker volume)
-- **Old Docker container**: `cosmic-yoyo-agent` kept intact as backup (stopped)
+- **Old Docker container**: `cosmic-yoyo-agent` stopped, `restart: "no"` — kept as backup, does NOT start at boot
 - **ALWAYS use venv for Python installs, NEVER --break-system-packages**
 - **LLM**: Kimi K2.5 via Ollama Cloud (96.1% AIME, 87.6% GPQA, +20% agentic boost, thinking mode, fast)
 - **Auth**: GitHub OAuth + Google OAuth (SSO), admin = Romain's account
 - **Model**: Custom "Romain" model (kimi-k2.5) with system prompt + knowledge base (.md.txt)
-- **Site integration**: iframe in `.video-column` toggled by "🤖 Romain AI" nav button
+- **Site integration**: iframe in `.video-column` toggled by "Romain AI" nav button
 - **Config**: `/opt/cosmic-yoyo-agent/docker-compose.yml`
 - **Secrets**: `.env` (gitignored) — Ollama token, GitHub OAuth, Google OAuth
 - **SSL**: Let's Encrypt via NPM, domain: agent.higgs-cosmology.com
 - **NEVER modify the VM docker-compose without explicit user approval**
+
+### Code Execution Sandbox (gVisor)
+- **Engine**: gVisor (`runsc`) in rootless mode with `--directfs=false --network=host`
+- **Tool**: Community `run_code` tool (patched), stored in `webui.db` table `tool` (id: `run_code`)
+- **Local copy**: `run_code.json` (original), `/tmp/run_code_original.py` (extracted for editing)
+- **Key patch**: Removed `unshare --map-user=1000` inside gVisor (caused nested user namespace failure). Process runs as uid 0 (fake root in user namespace), gVisor provides full isolation
+- **Packages**: numpy, scipy, matplotlib installed in venv
+- **Image pipeline**: `plt.savefig('result.png')` in sandbox → `cp *.png /sandbox/` (gVisor bash cmd) → copy to `/opt/open-webui-host/data/sandbox-images/{uuid}.png` → served by NPM at `https://agent.higgs-cosmology.com/sandbox-images/{uuid}.png` → `emitter._emit("files", ...)` displays in chat
+- **Cleanup**: Cron daily at 08:00 Paris (23:00 US Pacific), deletes images > 24h
+- **Deploy workflow**: Edit `/tmp/run_code_original.py` → repack JSON → `scp` to VM → `UPDATE tool SET content=... WHERE id='run_code'` in SQLite → `systemctl restart open-webui`
+- **Model prompt rules**: Uses calibrated V8.0 formulas only (`lambda(z) = lambda_ref * exp((z_ref - z) / L)`), refuses to recalculate from Airy functions, respects BANNED concepts list
 
 ## Human-AI Collaboration
 Romain = conceptual architect (Faraday). AI = mathematical co-processors (Maxwell). Radically transparent acknowledgments. Never minimize AI involvement.

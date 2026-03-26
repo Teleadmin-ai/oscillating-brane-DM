@@ -13,8 +13,8 @@ permalink: /theory/
 ### The Brane Universe
 Our 4D spacetime is an elastic membrane floating in a 5D Anti-de Sitter bulk. This isn't merely a mathematical abstraction—it's the fundamental nature of reality.
 
-### Gravitational Funnels
-Black holes serve as conduits between our brane and the bulk. Primordial micro-PBHs with an extended log-normal mass function (10⁻¹⁴ to 10⁻¹⁰ M☉, peak at ~10⁻¹² M☉) are the topological capillaries, with Schwarzschild radii r_s ~ 0.03-300 nm geometrically commensurate with the extra dimension thickness L = 200 nm.
+### Topological Capillaries (Micro-PBH Anchors)
+Micro-PBHs serve as topological anchor points connecting our brane to the bulk. Primordial micro-PBHs with an extended log-normal mass function (10⁻¹⁴ to 10⁻¹⁰ M☉, peak at ~10⁻¹² M☉) are the topological capillaries, with Schwarzschild radii r_s ~ 0.03-300 nm geometrically commensurate with the extra dimension thickness L = 200 nm.
 
 ### Fundamental Oscillation
 The entire universe vibrates as a single entity with a period T = 2.0 ± 0.3 Gyr, driven by a stick-slip motor mechanism and calibrated from DESI baryon acoustic oscillations and Planck's ISW resonance.
@@ -32,7 +32,7 @@ $$\ddot{\phi} + (3H + \Gamma_{rad})\dot{\phi} + \xi R\phi + \frac{\partial V_{GW
 Each term has a distinct physical role:
 
 - **(3H + Γ_rad)φ̇** — Hubble friction plus radiative damping. Γ_rad accounts for energy loss via bulk graviton emission (KK modes) during the violent slip phase. During the slow stick phase, Γ_rad ≈ 0; during slip, Γ_rad spikes, capping the maximum velocity and preventing runaway amplitudes
-- **ξRφ** — Non-minimal coupling to the 4D Ricci scalar R = 6(Ḣ + 2H²). This term ensures convergence to a dynamical attractor that locks T = 2.0 Gyr despite evolving H(t) and decaying DM accretion rates, resolving the chirp instability
+- **ξRφ** — Non-minimal coupling to the 4D Ricci scalar R = 6(Ḣ + 2H²). This term ensures convergence to a dynamical attractor that locks T = 2.0 Gyr despite evolving H(t) and decaying Cosmic Web forcing, resolving the chirp instability
 - **∂V_GW/∂φ** — Goldberger-Wise restoring potential (Goldberger & Wise 1999), with minimum at the QCD confinement scale (τ₀^{1/3} = 257 MeV ≈ Λ_QCD)
 - **F_web[E_μν] × (1 - 3w_eff)** — **Macroscopic forcing (the Muscle)**: the inhomogeneous Cosmic Web (superclusters, filaments, voids) creates a stress tensor S_μν on the brane. Via Israel junction conditions ΔK_μν = -κ₅²(S_μν - ⅓S h_μν), this generates the projected Weyl tensor E_μν, which acts as a continuous 5D tidal force pressing the brane toward the bulk. The trace factor (1-3w) ensures conformal freeze-out during BBN and QCD ignition at Λ_QCD
 - **R_PBH(φ,φ̇)·Θ(|φ| - φ_crit)** — **Microscopic release (the Metronome)**: when |φ| exceeds the QCD threshold φ_crit, the ER=EPR-entangled network of micro-PBHs allows the brane to release tension simultaneously everywhere in the universe (ℓ=0 mode). The holographic wormhole network ensures global phase coherence — the "slip" is quantum-synchronized
@@ -45,7 +45,7 @@ A simple harmonic oscillator would be damped by Hubble friction (3Hφ̇) in a fe
 2. **Slip phase**: When |φ| exceeds φ_crit, the non-linear release R activates, triggering rapid energy discharge. The brane snaps back to equilibrium
 3. **Re-adhesion**: The cycle begins again. The macroscopic forcing is eternally sourced by the gravitational weight of the Cosmic Web's large-scale structure
 
-**Why T stays locked at 2 Gyr (no chirp):** This is the most critical stability question for peer review. A naive dissipative oscillator would "chirp" — its period would drift as Hubble friction $3H\dot{\phi}$ decreases with cosmic expansion and the Cosmic Web forcing $\mathcal{F}_{web}$ weakens as DM accretion rates decay ($\propto a^{-3}$). Without a stabilization mechanism, the period would accelerate over cosmic time.
+**Why T stays locked at 2 Gyr (no chirp):** This is the most critical stability question for peer review. A naive dissipative oscillator would "chirp" — its period would drift as Hubble friction $3H\dot{\phi}$ decreases with cosmic expansion and the Cosmic Web forcing $\mathcal{F}_{web}$ weakens as Cosmic Web forcing decays ($\propto a^{-3}$). Without a stabilization mechanism, the period would accelerate over cosmic time.
 
 The non-minimal coupling $\xi R\phi$ acts as a **geometric Phase-Locked Loop (PLL)**. The 4D Ricci scalar $R = 6(\dot{H} + 2H^2)$ decreases as the universe expands. Through the $\xi R\phi$ term, this decreasing curvature feeds back into the radion equation, dynamically adjusting the effective restoring force. The three competing effects — (1) decreasing Hubble friction ($3H\dot{\phi} \downarrow$), (2) decreasing Cosmic Web forcing ($\mathcal{F}_{web} \downarrow$), and (3) curvature feedback ($\xi R\phi \downarrow$) — form a coupled dynamical system $\{H(t), \phi(t), \dot{M}_{DM}(t)\}$ that converges to an **attractor manifold** where the three decay rates cancel to first order.
 
@@ -266,7 +266,7 @@ Nature was whispering to us: "Think bigger, think global."
 
 ### The Revelation: The Universe is a Membrane
 
-The crucial insight was recognizing that the entire universe vibrates like a cosmic drumhead. When dark matter flows through gravitational funnels, it doesn't excite a local oscillator but the fundamental mode of the entire universe-membrane.
+The crucial insight was recognizing that the entire universe vibrates like a cosmic drumhead. The hybrid stick-slip motor doesn't excite a local oscillator but the fundamental mode of the entire universe-membrane.
 
 For a membrane of radius R_H = c/H₀ = 1.33 × 10²⁶ m (the Hubble horizon, the distance to which we can see), the deformation energy is:
 

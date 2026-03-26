@@ -46,7 +46,7 @@ The next generation of experiments will provide crucial tests:
 
 ### 1. Growth Suppression
 
-The oscillating w(z) leads to a 5.2% suppression in structure growth:
+The oscillating w(z) leads to ~5% suppression in structure growth during the current weakened-gravity phase:
 
 $$\frac{D_+^{osc}}{D_+^{ΛCDM}}(z=0) = 0.948$$
 
@@ -56,7 +56,7 @@ This naturally reconciles:
 
 ### 2. The Membrane Reversal Signature
 
-When the membrane reaches maximum extension, dark matter flux reverses. While this creates gravitational waves theoretically:
+When the membrane reaches maximum extension, the brane oscillation reverses. While this creates gravitational waves theoretically:
 
 - **Primary frequency**: f₀ = 1/T ≈ 1.6 × 10⁻¹⁷ Hz
 - **Echo**: 2f₀ (reversal harmonic)
@@ -75,7 +75,7 @@ Too light for accelerators but potentially visible in CMB cosmology as a slight 
 
 #### Trans-dimensional Current
 
-Dark matter flux through the bulk induces energy "leakage":
+The brane oscillation induces energy "leakage" via bulk graviton emission:
 
 $$\frac{\dot{ρ}}{ρ} \sim L^{-1}H_0 \sim 10^{-11} \text{ yr}^{-1}$$
 

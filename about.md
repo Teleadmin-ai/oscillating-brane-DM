@@ -22,7 +22,7 @@ What this means for my research:
 - **Suspected ASD** gives me pattern recognition — I see structural connections between disparate fields (QCD, braneworlds, cosmological data) that specialists trained in a single domain might miss.
 - **HPI** gives me the cognitive horsepower to hold the entire theoretical architecture in working memory simultaneously — but only with AI as a cognitive prosthesis to externalize and structure the chaos.
 
-I have never hidden this. My brain is not a disability for this work — it is the instrument that produced it. The theory's unifying power — resolving 22 anomalies across cosmology, particle physics, and gravitational waves with a single geometric framework — is a direct product of neuroatypical divergent thinking.
+I have never hidden this. My brain is not a disability for this work — it is the instrument that produced it. The theory's unifying power — resolving 31 anomalies across cosmology, particle physics, and gravitational waves with a single geometric framework — is a direct product of neuroatypical divergent thinking.
 
 ### Professional Career
 
@@ -34,7 +34,7 @@ I have never hidden this. My brain is not a disability for this work — it is t
 | Age 24 | Founded **Teleadmin** | Hosting company, OVH Advanced Partner |
 | Career | National infrastructure | **Qwant** (3 server racks, ZFS NAS, 5 DB servers), **Atout France**, **Euresto**, **Incepto** (100+ hospitals), **GELMAD** Lyon (3 medical imaging centers including Hôpital Mermoz) |
 | Age 50 | AI Research | R-JEPA — adaptation of Yann LeCun's JEPA architecture for text reasoning in the latent space of an LLM |
-| 2026 | **Oscillating Brane Cosmology** | 22 anomalies resolved, V8.0 Hybrid Topology Edition |
+| 2026 | **Oscillating Brane Cosmology** | 31 anomalies resolved, V8.0 Hybrid Topology Edition |
 
 **Career trajectory**: Systems administrator → Data Scientist → AI Agent Developer → Independent Cosmological Researcher.
 

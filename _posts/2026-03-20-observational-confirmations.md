@@ -30,7 +30,7 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 
 **The Problem**: CMB measurements give S₈ = 0.83, while weak lensing surveys find S₈ = 0.79—a persistent 4% discrepancy.
 
-**Our Solution**: The oscillating w(z) naturally suppresses structure growth by 5.2%, precisely explaining this tension without requiring new physics or systematic errors.
+**Our Solution**: The oscillating w(z) naturally suppresses structure growth by ~5%, explaining this tension without requiring new physics or systematic errors.
 
 **Current Status**: As of 2026, multiple independent analyses confirm this tension persists, making alternative explanations like ours increasingly necessary.
 
@@ -45,7 +45,7 @@ The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. 
 Three established anomalies are resolved by the V8.0 stick-slip brane motor:
 
 1. **Dark Energy Evolution** (DESI, 4σ) ✓
-2. **S₈ Tension** (scale-dependent Yukawa screening) ✓
+2. **S₈ Tension** (time-dependent growth suppression) ✓
 3. **Planck ISW Anomaly** (6σ improvement) ✓
 
 **Definitive future test:** SKA 21cm reionization modulation (2027+).

@@ -15,7 +15,7 @@ The Oscillating Brane Cosmology is part of a broader research program exploring 
   <div style="padding: 25px; background: rgba(0,255,204,0.05); border: 2px solid #00ffcc; border-radius: 12px;">
     <h3 style="color: #00ffcc; margin-top: 0;">Oscillating Brane Cosmology</h3>
     <p><strong>The universe as a vibrating membrane</strong></p>
-    <p>22 cosmological anomalies resolved. Hybrid stick-slip motor. 5D Geometric Bypass. Laboratory predictions for qBOUNCE.</p>
+    <p>31 cosmological anomalies resolved. Hybrid stick-slip motor. 5D Geometric Bypass. Laboratory predictions for qBOUNCE.</p>
     <p><em>You are here.</em></p>
     <a href="https://higgs-cosmology.com" style="color: #00ffcc;">higgs-cosmology.com</a>
   </div>

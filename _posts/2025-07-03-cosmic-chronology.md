@@ -18,7 +18,7 @@ The colossal excess tension fuels exponential expansion. The membrane expands li
 
 ### Phase II - Brane Reheating (10⁻³⁴ - 10⁻³² s)
 
-Tension drops brutally via massive production of dark matter/anti-dark matter pairs in the bulk. This "quantum evaporation" dissipates excess energy, leaving residual tension around 10³⁰ J/m².
+Tension drops brutally as the brane releases energy via bulk graviton emission during the slip phase. This "quantum evaporation" dissipates excess energy, leaving residual tension around 10³⁰ J/m².
 
 ### Phase III - Slow Stabilization (10⁻³² s - 100 Myr)
 
