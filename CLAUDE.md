@@ -5,6 +5,7 @@
 - Do NOT start reading files, writing code, or making changes after answering a question
 - WAIT for explicit approval ("vas-y", "fais-le", "ok") before any action
 - The user thinks out loud and discusses before deciding — respect that process
+- EXCEPTION: if the user gives a direct instruction (not a question), execute it immediately
 - Breaking this rule wastes work and causes destructive changes
 
 ## ⛔ SACRED RULE — READ THIS FIRST ⛔
@@ -281,7 +282,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 ## TODO: Interactive Theory Agent
 - **Purpose**: Chatbot on the site that knows the full V8.0 theory and can do math (Python sandbox)
 - **Infrastructure**: Dedicated Debian 12 VM on OVH — 4 CPU, 8 GB RAM, 48 GB disk — IP: 51.254.22.29
-- **LLM**: Kimi K2 Thinking via Ollama Cloud (99.1% AIME, Agent Swarm, 256K context)
+- **LLM**: Kimi K2.5 via Ollama Cloud (96.1% AIME, 87.6% GPQA, +20% agentic boost, thinking mode, fast) (99.1% AIME, Agent Swarm, 256K context)
 - **Token**: stored in `.env` (gitignored, NEVER commit)
 - **Architecture**: Open WebUI (multi-user sessions) + Ollama Cloud API + Docker ephemeral containers (numpy/scipy/matplotlib sandbox) + iframe embed on higgs-cosmology.com
 - **Context**: Inject `oscillating_brane_theory_latest.md.txt` as system prompt (~140 KB)
@@ -301,7 +302,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - **URL**: https://agent.higgs-cosmology.com
 - **VM**: Debian 12, 4 CPU, 8 GB RAM, 48 GB disk — IP: 51.254.22.29
 - **Stack**: Docker (Open WebUI v0.8.10 + Nginx Proxy Manager)
-- **LLM**: Kimi K2 Thinking via Ollama Cloud
+- **LLM**: Kimi K2.5 via Ollama Cloud (96.1% AIME, 87.6% GPQA, +20% agentic boost, thinking mode, fast)
 - **Auth**: GitHub OAuth + Google OAuth (SSO), admin = Romain's account
 - **Model**: Custom "Romain" model with system prompt + knowledge base
 - **Config**: `/opt/cosmic-yoyo-agent/docker-compose.yml`
