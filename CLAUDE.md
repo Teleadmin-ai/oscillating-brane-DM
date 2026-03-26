@@ -110,6 +110,11 @@ git commit -m "Regenerate PDF" && git push
 - **"loss of mass" for GL-unstable PBHs** (must say "loss of local 4D gravitational singularity")
 - **M_crit formula involving τ₀** (M_crit = Lc²/(2G), purely geometric, τ₀ is NOT in this formula)
 - **"instantaneous synchronization"** (must say "non-local quantum phase coherence" — no superluminal signaling)
+- **"τ₀ cools/relaxes from 10⁵⁰"** (τ₀ is geometrically FIXED by KS flux integers, what relaxes is oscillation AMPLITUDE)
+- **MLE = -0.016 as transverse contraction** (this captures the longitudinal exponent; true transverse κ = e^{-8.60} from Liouville-Filippov)
+- **Scalar Ψ₄ in 5D** (must use CMPP 3×3 STF matrix Ψ_ij^(5) — SO(3) little group has 5 polarizations)
+- **Global constant κ_Z4** in AMR (must be AMR-level-indexed scalar field κ_Z4^(ℓ) = 1.4/Δt_ℓ)
+- **Explicit Berger-Oliger for 10³² ratio** (CFL wall: 28 million billion years per step on Frontier → must use IMEX)
 
 ### REQUIRED Concepts (V8.2):
 - **Hybrid motor**: F_web (Cosmic Web macro-forcing) + R_PBH (micro-PBH ER=EPR synchronization)
@@ -133,9 +138,20 @@ git commit -m "Regenerate PDF" && git push
 - **GW170817 compatibility**: tensor GW modes (KK zero mode) propagate at c on brane, orthogonal to scalar radion oscillation
 - **Hawking immunity**: T_H ~ 900 K at M_crit, t_evap ~ 10^47 yr, immune to INTEGRAL/Fermi-LAT
 - **QCD Ansatz**: τ₀^{1/3} ≈ 257 MeV is a phenomenological Ansatz, NOT ab initio string derivation
+- **Limit cycle uniqueness**: Liouville-Filippov hyper-contraction κ = e^{-8.60} ≈ 1.84×10⁻⁴ (Banach fixed-point, analytical — NOT the numerical MLE of -0.016)
+- **Fenichel-Neishtadt persistence**: spectral gap |λ_trans|/ε = 4.30/0.14 ≈ 30 → NHIC survives non-autonomous drift
+- **Airy-Yukawa ab initio**: ⟨1|δV|6⟩ = -2V₀(L/z₀)³, perturbative series to O(α⁶) with 5 decimal convergence (0.97460)
+- **Yukawa-Robin mapping**: λ_n(L) = (mg/2V₀)(z₀/L)³[1+4ε_n(L/z₀)²], spectroscopic splitting 3.1% (smoking gun)
+- **KS UV completion**: K=21, M=10, g_s=0.1 → τ₀^{1/3} = 257 MeV with zero fine-tuning
+- **KK spectrum**: J₁(m_nL)=0 (graviton), exact transcendental equation for all ν
+- **Branching ratio**: B ≈ 9.7×10⁻¹¹ (N_max ≈ 8.3×10⁷ KK modes = AdS₅ heat sink)
+- **BSSN 5D**: d=4 conformal weights (1/8 in ∂_tψ, 1/4 in K²), ΔK_μν = -(1/3)κ₅²τ₀h_μν
+- **CMPP extraction**: Ψ_ij^(5) = 3×3 STF matrix (5 polarizations), NOT scalar Ψ₄
+- **Billion-step**: κ_Z4^(ℓ) = 1.4/Δt_ℓ (AMR-indexed) + Kreiss-Oliger order 9
+- **IMEX + HMM**: mandatory for 10³² scale ratio (explicit Berger-Oliger physically impossible)
 
 ### Key References:
-Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026) — Subaru-HSC PBH microlensing validation
+Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions)
 
 ## Key Parameters
 | Parameter | Value |
@@ -156,6 +172,12 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | ξ (non-minimal coupling) | ~0.15 |
 | Fresnel parameter (PBH) | w_F = 2πr_s/λ ≈ 0.03 ≪ 1 (wave-optics immune) |
 | SPARC rotation curves | RMS = 29.3 km/s (0 params) vs NFW 35.0 km/s (270 params) |
+| Banach contraction κ | e^{-8.60} ≈ 1.84×10⁻⁴ (hyper-contraction ×5400/cycle) |
+| Spectral gap (Fenichel) | \|λ_trans\|/ε = 4.30/0.14 ≈ 30 (NHIC persistence) |
+| Branching ratio B | ≈ 9.7×10⁻¹¹ (N_max ≈ 8.3×10⁷ KK modes) |
+| First KK graviton mass | m₁ = 3.832/L ≈ 19.2 eV (from J₁(m_nL)=0) |
+| KS flux integers | K=21, M=10, g_s=0.1 → τ₀^{1/3} = 257 MeV |
+| Robin splitting | Δλ/λ = 3.1% between n=1 and n=6 (smoking gun) |
 
 ## ABSOLUTE RULE: Site = PDF symmetry
 **Every scientific page on the site MUST be a chapter in the PDF. No exceptions.**
@@ -216,7 +238,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 
 ## Downloads
 1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages, "Resolving Thirty-One Cosmological Anomalies" (LaTeX source: `paper/cosmic_yoyo_prl.tex`)
-2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~72 pages, 8 chapters (~1.3 MB compressed)
+2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~90+ pages, 8 chapters (~1.8 MB compressed)
 3. **Full Theory (Markdown)** (`oscillating_brane_theory_latest.md.txt`) — same content as PDF, AI/text-parser friendly, downloadable from site
 
 ## Computational Validation Results (March 2026)
@@ -234,6 +256,13 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Dark flow unification | 5D kinematic brane drift | v_bulk = 300 km/s → δH/H = 10⁻³ AND Δβ = 0.25° |
 | qBOUNCE Robin parameter | Airy wavefunctions + Yukawa integral | λ amplifies 55× from 1μm to 0.2μm resolution |
 | 5D Geometric Bypass | Levitated nanosphere + Yukawa Hamiltonian | 0.4% enhancement at r=L, commuting operators bypass Heisenberg |
+| Airy-Yukawa matrix element | Perturbative series O(α⁶) + contour integral | ⟨1\|δV\|6⟩ = -2V₀(L/z₀)³, 5 decimal convergence (0.97460) |
+| Yukawa-Robin mapping | Closed-form λ_n(L) from von Neumann isomorphism | λ_n = (mg/2V₀)(z₀/L)³[1+4ε_n(L/z₀)²], splitting 3.1% |
+| Limit cycle uniqueness | Liouville-Filippov trace formula (analytical) | κ = e^{-8.60} ≈ 1.84×10⁻⁴ (hyper-contraction ×5400) |
+| Non-autonomous persistence | Fenichel-Neishtadt spectral gap | \|λ_trans\|/ε ≈ 30, NHIC survives Hubble drift |
+| KK branching ratio | Phase space summation + Filippov shock | B ≈ 9.7×10⁻¹¹ (83M KK modes = AdS₅ heat sink) |
+| KK mass spectrum | Transcendental Bessel quantization (3 sectors) | Graviton: m_n/k = {1.892, 3.692, 5.510...}, gap ≈ 1.87 eV |
+| KS naturalness | Flux integers K=21, M=10, g_s=0.1 | τ₀^{1/3} = M_Pl·e^{-2πK/(3g_sM)} = 257 MeV, zero fine-tuning |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
@@ -263,6 +292,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | `scripts/numerical_relativity_1d.py` | 5D radiative damping (1+1)D MoL | `plots/warped_shielding_1D.png` |
 | `scripts/qbounce_yukawa_lambda.py` | qBOUNCE Robin parameter from Yukawa | `plots/qbounce_lambda_prediction.png` |
 | `scripts/qbounce_airy_yukawa.py` | Ab initio Airy-Yukawa matrix elements (97.5% analytical) | `plots/qbounce_airy_yukawa.png` |
+| `scripts/lyapunov_mle.py` | Phase portrait + MLE computation (orbital stability) | `plots/lyapunov_mle.png`, `plots/lyapunov_phase_portrait.png` |
 | `scripts/laplace_demon_hamiltonian.py` | 5D Geometric Bypass Hamiltonian | `plots/laplace_demon_readout.png` |
 
 ## MathJax — DO NOT TOUCH
