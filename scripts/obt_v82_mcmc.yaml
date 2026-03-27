@@ -1,0 +1,42 @@
+# ========================================================
+# COBAYA RUN CONFIGURATION: OBT V8.2 MCMC
+# ========================================================
+# Launch: cobaya-run scripts/obt_v82_mcmc.yaml
+
+likelihood:
+  scripts.obt_v82_likelihood.OBTV82Likelihood:
+    python_path: .
+
+params:
+  tau0:
+    prior:
+      min: 1.0e19
+      max: 20.0e19
+    ref: 7.0e19
+    proposal: 1.0e18
+    latex: \tau_0
+
+  T:
+    prior:
+      min: 0.5
+      max: 5.0
+    ref: 2.0
+    proposal: 0.1
+    latex: T
+
+  L:
+    prior:
+      min: 1.0e-8
+      max: 1.0e-6
+    ref: 2.0e-7
+    proposal: 1.0e-8
+    latex: L
+
+sampler:
+  mcmc:
+    Rminus1_stop: 0.01
+    max_tries: 1000
+    burn_in: 100
+    learn_proposal: true
+
+output: chains/obt_v82
