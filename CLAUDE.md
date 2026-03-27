@@ -189,9 +189,11 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Spectral flattening (NANOGrav)**: tensor TT projection sources from φ̈(t) not φ(t) → Filippov shock = Dirac δ impulses → flat (white noise) acceleration spectrum. f₀ = 1.58×10⁻¹⁷ Hz (16 attoHz), NANOGrav at 16 nHz listens to the n ≈ 10⁹ harmonic. h_c(16 nHz) ~ 10⁻¹⁵ (matches NANOGrav 15yr, zero free params)
 - **f₀ correction**: fundamental brane frequency is 16 attoHertz (NOT 16 nanoHertz). NANOGrav band = billionth overtone
 - **φ_eff ab initio**: geometric dephasing φ_eff = (φ₀+π)×D = (π/2+π)×0.9 = 1.35π ≈ 4.24115 rad. Israel tensorial inversion (+π) × Filippov duty-cycle contraction (×D). NOT a free parameter — exact topological invariant of SMS + Filippov
+- **Kesten-McKay spectrum**: DOS of ER=EPR graph → ρ(λ) = d/(2π(d²-λ²))√(4(d-1)-λ²). Continuum convergence O(1/√N) ~ 10⁻¹⁰. Discrete holographic spacetime = smooth GR manifold to 10 decimal places
+- **Percolation immunity**: site percolation threshold p_c ≈ 1/(d-1) ≈ 2.2% for d=46. Universe survives 98% PBH destruction. Safety hierarchy: N_perc≈46 ≪ N_min≈4500 ≪ N_actual~10²⁰ (19 orders margin). ER=EPR network = most robust quantum error-correcting code physically conceivable
 
 ### Key References:
-Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation), Sekino & Susskind 2008 (fast scrambling), Bousso & Polchinski 2000 (flux landscape), Douglas & Kachru 2007 (string landscape review), Alon 1986 / Alon-Boppana (expander graph spectral gap)
+Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation), Sekino & Susskind 2008 (fast scrambling), Bousso & Polchinski 2000 (flux landscape), Douglas & Kachru 2007 (string landscape review), Alon 1986 / Alon-Boppana (expander graph spectral gap), Kesten 1959 / McKay 1981 (regular graph spectral density), Friedman 2003 (Ramanujan graph proof), Bordenave 2015 (sparse random graph universality)
 
 ## Key Parameters
 | Parameter | Value |
@@ -327,6 +329,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | ΔBIC forecast | Stick-slip 3-harmonic vs CPL on DESI DR2/Y5 | DR2: ΔBIC≈-3.6 (positive-strong), Y5: ΔBIC≈-17.9 (decisive) |
 | Analytical Fisher 3×3 | DESI+Planck ISW+DES Y6 Jacobian | σ(T)/T=6.7%, σ(L)/L=15%, τ₀-L anti-corr r=-0.76, QCD 0.11σ |
 | KdF 4-branch exact | All 4 Kampé de Fériet tensors to O(N=10) | Δ=0.000044 (6 sig figs), O(α⁴) scaling, shadow peak at z≈2L, Δ_{1,m} non-monotone |
+| Kesten-McKay + percolation | ER=EPR graph spectra + site percolation | Continuum O(1/√N)~10⁻¹⁰, p_c≈2.2%, 98% destruction resilience, 19-order safety margin |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
@@ -451,7 +454,7 @@ python scripts/laplace_demon_hamiltonian.py
 ```
 
 ### OPEN MATHEMATICAL WORK (0 items remaining — ALL COMPLETE)
-All 50 mathematical derivations have been completed and integrated into theory.md (March 2026):
+All 51 mathematical derivations have been completed and integrated into theory.md (March 2026):
 - **33 original derivations** (V8.2 core): Filippov-Banach, Fenichel, Γ_rad ab initio, KK spectrum, spectral zeta, Seeley-DeWitt, Skenderis, MERA/HaPPY, OTOCs, Dirac collapse, Kampé de Fériet, Dyson horizon, KS UV completion, Swiss-Cheese LVS, No-Go isotrope, KKLT tadpole, Fisher Jacobian/forecast, Cobaya module, Robin mapping, Airy-Yukawa series
 - **9 DeepThink refinements** (March 2026): (1) Fourier stick-slip spectrum, (2) exact S₈ ODE + eROSITA non-linear, (3) MOND ab initio from 5D, (4) Seeley-DeWitt numerical evaluation, (5) Dirichlet anomaly 4-branch resolution, (6) full 3D Floquet without adiabatic projection, (7) LVS minimization + multi-throat, (8) dynamical Schwinger invulnerability, (9) finite-N corrections to Dirac collapse
 
