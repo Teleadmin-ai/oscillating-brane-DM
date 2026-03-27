@@ -1372,25 +1372,6 @@ For comparison, $\Lambda$CDM requires 6 free parameters ($H_0$, $\Omega_b$, $\Om
 5. **Hubble anisotropy** mapping cosmic tension variations (Cosmicflows-4)
 6. **Sub-micron gravity** deviations at L = 0.2 μm (testable by qBOUNCE quantum neutrons and levitated nanoscale optomechanics)
 
-## The Stick-Slip Cycle: Dark Matter Through Black Holes
-
-### The Hybrid Motor
-
-The stick-slip cycle operates at two scales simultaneously:
-
-1. **Stick phase (the Macroscopic Muscle)**: The Cosmic Web — composed of massive dark matter superclusters, filaments, and vast voids — creates a highly inhomogeneous stress tensor S_μν on the brane. Via the Israel junction conditions (Shiromizu, Maeda & Sasaki 2000), this asymmetric mass distribution bends the brane toward the 5D bulk, generating the projected Weyl tensor E_μν. This continuous macroscopic geometric tidal force slowly charges the radion φ toward the critical threshold φ_crit
-2. **Threshold crossing**: When |φ| exceeds φ_crit (set by the QCD confinement scale), the ER=EPR-entangled PBH network activates
-3. **Slip phase (the Quantum Metronome)**: The holographic wormhole network connecting billions of micro-PBHs synchronizes the non-linear release across the entire brane (ℓ=0 mode). The brane snaps back toward equilibrium — the tension is released everywhere simultaneously
-4. **Re-adhesion**: The cycle begins anew. The Cosmic Web is cosmologically persistent — the motor never runs out of fuel
-
-### Hybrid Forcing: Cosmic Web (Muscle) + PBH Network (Metronome)
-
-The V8.2 motor operates through the coupling of two physical scales:
-
-**Macroscopic forcing (Cosmic Web):** The universe is not smooth — the Cosmic Web's superclusters, filaments, and voids create a massive, inhomogeneous stress tensor S_μν on the brane. Via the Shiromizu-Maeda-Sasaki (2000) Israel junction conditions, ΔK_μν = -κ₅²(S_μν - ⅓S h_μν), this heterogeneous mass distribution bends the brane toward the 5D bulk, generating the continuous Weyl tensor E_μν that drives φ toward φ_crit. This is the macroscopic engine — the brane breathes under the gravitational weight of its own large-scale structure.
-
-**Microscopic synchronization (PBH ER=EPR network):** Without a non-local synchronization mechanism, the brane would vibrate chaotically (information limited by c). The ER=EPR-entangled network of billions of asteroid-mass PBHs provides this mechanism. Because they share quantum correlations through Einstein-Rosen bridges in the bulk, they act as quantum pressure valves: when φ reaches φ_crit, the entire network releases simultaneously, ensuring the pure ℓ=0 fundamental mode. This is the metronome — guaranteeing that the 2 Gyr pulsation is coherent across 93 billion light-years.
-
 ## Micro-PBH Anchors: Extended Mass Function
 
 ### Log-Normal Distribution
@@ -1477,41 +1458,6 @@ When oscillations cease (H* → 0):
 - Not destruction but geometric phase transition
 
 The "null distance" internally corresponds to external deployment - a return to the creative void from which branes emerged.
-
-## From Naive Spring to Cosmic Membrane
-
-### The Failure of Local Vision
-
-Early versions imagined dark matter oscillating like a mass on a spring, with energy E ∝ z². This simplistic picture led to absurdities: periods shorter than the Planck time or stiffnesses exceeding any known physical scale.
-
-Nature was whispering to us: "Think bigger, think global."
-
-### The Revelation: The Universe is a Membrane
-
-The crucial insight was recognizing that the entire universe vibrates like a cosmic drumhead. The hybrid stick-slip motor doesn't excite a local oscillator but the fundamental mode of the entire universe-membrane.
-
-For a membrane of radius R_H = c/H₀ = 1.33 × 10²⁶ m (the Hubble horizon, the distance to which we can see), the deformation energy is:
-
-$$E_\text{tens} = \frac{1}{2}\,\tau_0\, A \left(\frac{2\pi z}{\lambda}\right)^2$$
-
-### The Restoring Force
-
-The Goldberger-Wise potential V_GW provides the restoring force. Its effective spring constant is:
-
-$$k_\text{eff} = \frac{\partial^2 V_\text{GW}}{\partial\phi^2} \approx \tau_0$$
-
-The spring constant is set by the brane tension — a "dimensional miracle" connecting membrane mechanics to the QCD vacuum energy. In the stick-slip framework, this restoring force determines the rate of the stick phase and the critical threshold φ_crit.
-
-### Quantum Stability via One-Loop Corrections
-
-The oscillating brane is protected against quantum instabilities through one-loop effective potential corrections:
-
-$$V_\text{eff}(\phi) = V_\text{GW}(\phi) + \frac{\hbar}{2}\sum_n \omega_n(\phi) + V_\text{Casimir}(\phi)$$
-
-Where:
-- V_GW is the Goldberger-Wise stabilization potential
-- Σₙωₙ accounts for zero-point fluctuations of Kaluza-Klein modes
-- V_Casimir prevents runaway branon production via dynamical Casimir effect
 
 ## Appendix: Numerical Reality Check — The UV Catastrophe and Zeta-Regularized KK Vacuum Energy
 
