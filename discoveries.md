@@ -6,7 +6,7 @@ permalink: /discoveries/
 
 # Discovery & Correction of Modern Cosmology
 
-An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) unifies 31 contemporary cosmological anomalies within a single extra-dimensional geometric framework.
+An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies (ranging from exact quantitative resolutions to qualitative mechanistic frameworks) within a single extra-dimensional geometric framework.
 
 ## 1. The Collapse of the Standard Model
 
@@ -18,7 +18,7 @@ Classical parametric extensions (Early Dark Energy, self-interacting dark matter
 
 The **Oscillating Brane Theory V8.2** proposes this paradigm shift: the Universe is a 4D membrane oscillating in a 5D Anti-de Sitter bulk ($AdS_5$), driven by a hybrid stick-slip motor coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
 
-## 2. Mathematical Pillars: Irrefutable Demonstrations
+## 2. Mathematical Foundations and Phenomenological Alignments
 
 What distinguishes this framework from ad-hoc phenomenology are its explicit, reproducible mathematical demonstrations.
 
@@ -34,7 +34,7 @@ However, when the cosmological constant hypothesis is abandoned for dynamical da
 
 The Oscillating Brane Theory provides the physical origin of this dynamics. The model intrinsically generates an oscillating equation of state $w(z) = -1 + A_w \sin(2\pi t/T + \phi_0)$. The perceived neutrino mass anomaly under $\Lambda$CDM is a pure geometric artifact: the use of a static expansion model artificially compresses the mass parameter. The brane oscillation resolves this by absorbing the expansion rate distortion.
 
-### 2.2. The QCD Proof via Natural Unit Conversion
+### 2.2. The QCD Phenomenological Coincidence and Ignition Ansatz
 
 The fundamental brane tension, derived from macroscopic cosmic acceleration constraints, is fixed at $\tau_0 = 7.0 \times 10^{19}$ J/m$^2$. Converting to natural units ($\hbar = c = 1$):
 
@@ -44,7 +44,7 @@ Extracting the fundamental energy scale:
 
 $$\tau_0^{1/3} \approx 257.1 \text{ MeV} \approx \Lambda_{QCD}$$
 
-This value corresponds spectacularly to the QCD confinement scale (200--300 MeV), where the strong nuclear force confines quarks inside hadrons. This step-by-step mathematical demonstration indissolubly links macroscopic cosmic acceleration to microscopic non-perturbative quantum physics.
+While the fundamental tension $\tau_0$ is empirically calibrated from the macroscopic 2.0 Gyr period, its striking numerical convergence to the QCD confinement scale ($\tau_0^{1/3} \approx 257$ MeV $\approx \Lambda_{QCD}$, 200--300 MeV) is treated as a powerful phenomenological Ansatz. It physically motivates our ignition mechanism: the breaking of conformal symmetry at the QCD phase transition ($T^\mu_\mu \neq 0$ for $w \neq 1/3$) activates the stick-slip motor at exactly this energy scale.
 
 The trace anomaly of the energy-momentum tensor ($T^\mu_\mu \neq 0$) occurring at the QCD phase transition acts as the fundamental ignition switch of the stick-slip motor. While the Universe was radiation-dominated ($w = 1/3$, $T^\mu_\mu = 0$), conformal symmetry froze all extra-dimensional dynamics, protecting BBN. At $\sim 257$ MeV, this symmetry breaks and ignites the oscillation. Dark energy is demystified: it is a direct consequence of the strong force vacuum energy.
 
@@ -230,6 +230,8 @@ The Amaterasu cosmic ray (244 EeV) violated the GZK horizon — it should have b
 *Figure: 5D KK leakage extends the GZK horizon. At 244 EeV, the standard horizon is ~41 Mpc (particle dies); the V8.2 horizon is ~2482 Mpc (particle SURVIVES). Extension factor: 60$\times$.*
 
 ## 7. Extended Phenomenology: 9 Additional Anomalies Resolved
+
+**Epistemological Note on Anomaly Resolution.** To maintain analytical rigor, we strictly distinguish between the core anomalies (DESI $w(z)$, $S_8$ suppression, SPARC rotation curves, ISW resonance, eROSITA $\gamma = 1.19$, qBOUNCE) which are resolved through exact quantitative ODE integrations or formal analytical proofs, and the extended anomalies presented below. The latter are proposed as qualitative mechanistic consequences of the 5D framework, acknowledging that their exact numerical validation via complex hydrodynamical and N-body simulations remains an open target for future work.
 
 The three fundamental parameters of V8.2 ($\tau_0$, $T$, $L$) were calibrated on the three core anomalies (DESI, $S_8$, ISW). The following nine anomalies were **not** used in any fit --- they are pure predictions of the framework applied to independent astrophysical domains.
 

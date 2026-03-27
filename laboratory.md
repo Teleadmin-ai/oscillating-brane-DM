@@ -111,9 +111,9 @@ where the dissipator $\mathcal{D}[\phi(t)]$ is fully determined by the radion tr
 ![Laplace Demon Readout](/plots/laplace_demon_readout.png)
 *Figure: Sensor displacement vs target distance. At $r = L = 0.2\,\mu$m, the V8.2 Yukawa correction enhances Newton by 0.4%. The "5D Readout Zone" (green) is where the extra-dimensional signal dominates. Current gap with single atoms acknowledged; mesoscopic targets + squeezed states + Q-accumulation bring SNR within near-term reach.*
 
-### Implications: Toward the 5D Topological Quantum Computer
+### Long-term Theoretical Perspectives: 5D Information Channels
 
-If the extra dimension exists at $L = 0.2\,\mu$m, the V8.2 theory provides a fundamentally new information channel for quantum computing:
+If the extra dimension exists at $L = 0.2\,\mu$m, the operator commutativity $[\hat{g}_{AB}^{(5)},\, \hat{A}_\mu^{(4)}] = 0$ formally opens the theoretical possibility of an orthogonal information channel. However, we explicitly note that translating this fundamental operator algebra into a functional technology bridges an immense engineering chasm. This section is presented as a speculative horizon for fundamental physics, strictly distinct from the imminent and falsifiable qBOUNCE predictions:
 
 - **No decoherence from measurement**: The 5D bulk operators commute with 4D gauge operators — readout does not collapse the computation
 - **Deterministic error correction**: The radion-coupled Lindblad equation predicts decoherence events before they happen, enabling preemptive correction

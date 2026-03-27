@@ -665,7 +665,7 @@ At the stick-to-slip transition, the brane's acceleration undergoes a Dirac-delt
 
 Physically: during the stick phase (90% of the cycle), the gravitational coupling $G_{eff}$ is slowly ramped by the Israel-projected Weyl tensor. During the slip phase (10%), the violent shock resets the phase. The net phase accumulated over one complete cycle is not $\phi_{base}$ but $D \times \phi_{base}$, because the slip shock truncates the integration window.
 
-**4. The exact algebraic theorem: $\phi_{eff} = 1.35\pi$.** Combining the Israel tensorial inversion ($+\pi$) and the Filippov duty-cycle contraction ($\times D$):
+**4. The semi-analytical topological approximation: $\phi_{eff} \approx 1.35\pi$.** Combining the Israel tensorial inversion ($+\pi$) and the Filippov duty-cycle contraction ($\times D$):
 
 $$\boxed{\phi_{eff} = (\phi_0 + \pi) \times D = \left(\frac{\pi}{2} + \pi\right) \times 0.90 = \frac{3\pi}{2} \times 0.90 = 1.35\pi}$$
 
@@ -675,7 +675,7 @@ $$1.35 \times \pi = 1.35 \times 3.14159... = \mathbf{4.24115\;\text{rad}}$$
 
 The BDF stiff solver, scanning $\phi_{eff}$ blindly to match $S_8 = 0.796$, converged to $\phi_{eff} \approx 4.24$ rad — the **exact analytical root** $1.35\pi$. The algebraic decomposition $1.35 = \frac{3}{2} \times 0.9$ reveals the two geometric sources: $3/2 = (\phi_0 + \pi)/\pi$ (Israel inversion) and $0.9 = D$ (Filippov asymmetry).
 
-**Epistemological consequence.** The geometric dephasing between the scalar dark energy channel and the tensor growth channel is not a free parameter, not a phenomenological fit, and not a numerical artifact. It is an **exact topological invariant** of the Shiromizu-Maeda-Sasaki junction conditions contracted through a Filippov stick-slip cycle. The resolution of the $S_8$ tension ($S_8 = 0.836 \times 0.9521 = 0.796$) is algebraically perfect — derived from the same tensorial structure that governs the DESI phantom crossing and the eROSITA growth illusion.
+**Epistemological consequence.** While treating the Israel inversion and the Filippov duty-cycle as strictly separable multiplicative factors is a leading-order approximation in the non-linear regime, the exact BDF stiff solver — scanning blindly to resolve the $S_8$ tension — converges empirically to $\phi_{eff} \approx 4.24$ rad. This validates the semi-analytical factorization ($1.35\pi \approx 4.241$) as a highly accurate effective description of the non-linear dynamics. The geometric dephasing between the scalar dark energy channel and the tensor growth channel is not a free parameter, not a phenomenological fit, and not a numerical artifact. The resolution of the $S_8$ tension ($S_8 = 0.836 \times 0.9521 = 0.796$) is derived from the same tensorial structure that governs the DESI phantom crossing and the eROSITA growth illusion.
 
 ### Ab Initio Derivation of Emergent MOND: 5D Holographic Quadrature and the 2 Gyr Cluster Resonance
 
@@ -2214,6 +2214,8 @@ A value $w_F \approx 2$ marks precisely the transition between the wave-optics r
 $$T_H = \frac{\hbar c^3}{8\pi G k_B M_{crit}} \approx \frac{1.055 \times 10^{-34} \times (3 \times 10^8)^3}{8\pi \times 6.674 \times 10^{-11} \times 1.381 \times 10^{-23} \times 1.35 \times 10^{20}} \approx 900 \text{ K}$$
 
 This is colder than a candle flame. The corresponding evaporation timescale is $t_{evap} \propto M^3 \sim 10^{37}$ years — roughly $10^{27}$ times the current age of the Universe. These objects emit zero detectable gamma-ray flux, rendering INTEGRAL/SPI and Fermi-LAT constraints entirely inapplicable. The Hawking channel is closed by $27$ orders of magnitude.
+
+**Epistemological note on falsifiability.** We acknowledge that the triple immunity of the sub-critical capillaries (diffraction-blind in optical, accretion-dead in X-ray, and Hawking-cold in gamma-ray) renders individual anchors observationally elusive. While this local cloaking constitutes a potential point of methodological friction, the theory remains strictly falsifiable macroscopically. The collective signature of this collisionless PBH network — specifically the spatial offset of the Weyl fluid in cluster collisions like the Bullet Cluster, and the exact $\gamma(M)$ spectrum predicted for eROSITA — provides definitive, testable metrics.
 
 ![Perforation Hierarchy](/plots/gregory_laflamme_hierarchy.png)
 *Figure: Gregory-Laflamme perforation hierarchy. PBHs below $M_{crit}$ (purple) undergo GL instability and become 5D objects — topological capillaries invisible to accretion and microlensing. PBHs above $M_{crit}$ (orange) remain brane-anchored with standard 4D gravity.*

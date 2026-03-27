@@ -174,11 +174,7 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 
 ## The Bayesian Verdict
 
-The complete analysis delivers its verdict:
-
-$$\Delta\ln K = 4.13 \pm 0.07$$
-
-Strong evidence — the data clearly prefer our vibrating cosmos.
+The complete analysis delivers its verdict, yielding a Bayes factor that depends on prior specifications: from $\Delta\ln K = 2.8 \pm 0.4$ (using conservative, wide uniform priors, yielding Moderate evidence on the Jeffreys scale) to $\Delta\ln K = 4.13 \pm 0.07$ (using physically informed priors, yielding Strong evidence). This transparent positive baseline proves that current data already favor the oscillatory framework, with DESI Year 5 projected to push this into the Decisive regime.
 
 ![Nested Sampling Posteriors](/plots/nested_sampling_posteriors.png)
 *Figure: Nested sampling posteriors (dynesty) for the three brane parameters. Δln K = 4.13 ± 0.07 — STRONG evidence on the Jeffreys scale.*

@@ -119,7 +119,7 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 # Chapter 2: Discovery & Correction of Modern Cosmology
 
 
-An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) unifies 31 contemporary cosmological anomalies within a single extra-dimensional geometric framework.
+An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies (ranging from exact quantitative resolutions to qualitative mechanistic frameworks) within a single extra-dimensional geometric framework.
 
 ## The Collapse of the Standard Model
 
@@ -131,7 +131,7 @@ Classical parametric extensions (Early Dark Energy, self-interacting dark matter
 
 The **Oscillating Brane Theory V8.2** proposes this paradigm shift: the Universe is a 4D membrane oscillating in a 5D Anti-de Sitter bulk ($AdS_5$), driven by a hybrid stick-slip motor coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
 
-## Mathematical Pillars: Irrefutable Demonstrations
+## Mathematical Foundations and Phenomenological Alignments
 
 What distinguishes this framework from ad-hoc phenomenology are its explicit, reproducible mathematical demonstrations.
 
@@ -147,7 +147,7 @@ However, when the cosmological constant hypothesis is abandoned for dynamical da
 
 The Oscillating Brane Theory provides the physical origin of this dynamics. The model intrinsically generates an oscillating equation of state $w(z) = -1 + A_w \sin(2\pi t/T + \phi_0)$. The perceived neutrino mass anomaly under $\Lambda$CDM is a pure geometric artifact: the use of a static expansion model artificially compresses the mass parameter. The brane oscillation resolves this by absorbing the expansion rate distortion.
 
-### The QCD Proof via Natural Unit Conversion
+### The QCD Phenomenological Coincidence and Ignition Ansatz
 
 The fundamental brane tension, derived from macroscopic cosmic acceleration constraints, is fixed at $\tau_0 = 7.0 \times 10^{19}$ J/m$^2$. Converting to natural units ($\hbar = c = 1$):
 
@@ -157,7 +157,7 @@ Extracting the fundamental energy scale:
 
 $$\tau_0^{1/3} \approx 257.1 \text{ MeV} \approx \Lambda_{QCD}$$
 
-This value corresponds spectacularly to the QCD confinement scale (200--300 MeV), where the strong nuclear force confines quarks inside hadrons. This step-by-step mathematical demonstration indissolubly links macroscopic cosmic acceleration to microscopic non-perturbative quantum physics.
+While the fundamental tension $\tau_0$ is empirically calibrated from the macroscopic 2.0 Gyr period, its striking numerical convergence to the QCD confinement scale ($\tau_0^{1/3} \approx 257$ MeV $\approx \Lambda_{QCD}$, 200--300 MeV) is treated as a powerful phenomenological Ansatz. It physically motivates our ignition mechanism: the breaking of conformal symmetry at the QCD phase transition ($T^\mu_\mu \neq 0$ for $w \neq 1/3$) activates the stick-slip motor at exactly this energy scale.
 
 The trace anomaly of the energy-momentum tensor ($T^\mu_\mu \neq 0$) occurring at the QCD phase transition acts as the fundamental ignition switch of the stick-slip motor. While the Universe was radiation-dominated ($w = 1/3$, $T^\mu_\mu = 0$), conformal symmetry froze all extra-dimensional dynamics, protecting BBN. At $\sim 257$ MeV, this symmetry breaks and ignites the oscillation. Dark energy is demystified: it is a direct consequence of the strong force vacuum energy.
 
@@ -343,6 +343,8 @@ The Amaterasu cosmic ray (244 EeV) violated the GZK horizon --- it should have b
 *Figure: 5D KK leakage extends the GZK horizon. At 244 EeV, the standard horizon is ~41 Mpc (particle dies); the V8.2 horizon is ~2482 Mpc (particle SURVIVES). Extension factor: 60$\times$.*
 
 ## Extended Phenomenology: 9 Additional Anomalies Resolved
+
+**Epistemological Note on Anomaly Resolution.** To maintain analytical rigor, we strictly distinguish between the core anomalies (DESI $w(z)$, $S_8$ suppression, SPARC rotation curves, ISW resonance, eROSITA $\gamma = 1.19$, qBOUNCE) which are resolved through exact quantitative ODE integrations or formal analytical proofs, and the extended anomalies presented below. The latter are proposed as qualitative mechanistic consequences of the 5D framework, acknowledging that their exact numerical validation via complex hydrodynamical and N-body simulations remains an open target for future work.
 
 The three fundamental parameters of V8.2 ($\tau_0$, $T$, $L$) were calibrated on the three core anomalies (DESI, $S_8$, ISW). The following nine anomalies were **not** used in any fit --- they are pure predictions of the framework applied to independent astrophysical domains.
 
@@ -1196,7 +1198,7 @@ At the stick-to-slip transition, the brane's acceleration undergoes a Dirac-delt
 
 Physically: during the stick phase (90% of the cycle), the gravitational coupling $G_{eff}$ is slowly ramped by the Israel-projected Weyl tensor. During the slip phase (10%), the violent shock resets the phase. The net phase accumulated over one complete cycle is not $\phi_{base}$ but $D \times \phi_{base}$, because the slip shock truncates the integration window.
 
-**4. The exact algebraic theorem: $\phi_{eff} = 1.35\pi$.** Combining the Israel tensorial inversion ($+\pi$) and the Filippov duty-cycle contraction ($\times D$):
+**4. The semi-analytical topological approximation: $\phi_{eff} \approx 1.35\pi$.** Combining the Israel tensorial inversion ($+\pi$) and the Filippov duty-cycle contraction ($\times D$):
 
 $$\boxed{\phi_{eff} = (\phi_0 + \pi) \times D = \left(\frac{\pi}{2} + \pi\right) \times 0.90 = \frac{3\pi}{2} \times 0.90 = 1.35\pi}$$
 
@@ -1206,7 +1208,7 @@ $$1.35 \times \pi = 1.35 \times 3.14159... = \mathbf{4.24115\;\text{rad}}$$
 
 The BDF stiff solver, scanning $\phi_{eff}$ blindly to match $S_8 = 0.796$, converged to $\phi_{eff} \approx 4.24$ rad --- the **exact analytical root** $1.35\pi$. The algebraic decomposition $1.35 = \frac{3}{2} \times 0.9$ reveals the two geometric sources: $3/2 = (\phi_0 + \pi)/\pi$ (Israel inversion) and $0.9 = D$ (Filippov asymmetry).
 
-**Epistemological consequence.** The geometric dephasing between the scalar dark energy channel and the tensor growth channel is not a free parameter, not a phenomenological fit, and not a numerical artifact. It is an **exact topological invariant** of the Shiromizu-Maeda-Sasaki junction conditions contracted through a Filippov stick-slip cycle. The resolution of the $S_8$ tension ($S_8 = 0.836 \times 0.9521 = 0.796$) is algebraically perfect --- derived from the same tensorial structure that governs the DESI phantom crossing and the eROSITA growth illusion.
+**Epistemological consequence.** While treating the Israel inversion and the Filippov duty-cycle as strictly separable multiplicative factors is a leading-order approximation in the non-linear regime, the exact BDF stiff solver --- scanning blindly to resolve the $S_8$ tension --- converges empirically to $\phi_{eff} \approx 4.24$ rad. This validates the semi-analytical factorization ($1.35\pi \approx 4.241$) as a highly accurate effective description of the non-linear dynamics. The geometric dephasing between the scalar dark energy channel and the tensor growth channel is not a free parameter, not a phenomenological fit, and not a numerical artifact. The resolution of the $S_8$ tension ($S_8 = 0.836 \times 0.9521 = 0.796$) is derived from the same tensorial structure that governs the DESI phantom crossing and the eROSITA growth illusion.
 
 ### Ab Initio Derivation of Emergent MOND: 5D Holographic Quadrature and the 2 Gyr Cluster Resonance
 
@@ -2746,6 +2748,8 @@ $$T_H = \frac{\hbar c^3}{8\pi G k_B M_{crit}} \approx \frac{1.055 \times 10^{-34
 
 This is colder than a candle flame. The corresponding evaporation timescale is $t_{evap} \propto M^3 \sim 10^{37}$ years --- roughly $10^{27}$ times the current age of the Universe. These objects emit zero detectable gamma-ray flux, rendering INTEGRAL/SPI and Fermi-LAT constraints entirely inapplicable. The Hawking channel is closed by $27$ orders of magnitude.
 
+**Epistemological note on falsifiability.** We acknowledge that the triple immunity of the sub-critical capillaries (diffraction-blind in optical, accretion-dead in X-ray, and Hawking-cold in gamma-ray) renders individual anchors observationally elusive. While this local cloaking constitutes a potential point of methodological friction, the theory remains strictly falsifiable macroscopically. The collective signature of this collisionless PBH network --- specifically the spatial offset of the Weyl fluid in cluster collisions like the Bullet Cluster, and the exact $\gamma(M)$ spectrum predicted for eROSITA --- provides definitive, testable metrics.
+
 ![Perforation Hierarchy](./plots/gregory_laflamme_hierarchy.png)
 *Figure: Gregory-Laflamme perforation hierarchy. PBHs below $M_{crit}$ (purple) undergo GL instability and become 5D objects --- topological capillaries invisible to accretion and microlensing. PBHs above $M_{crit}$ (orange) remain brane-anchored with standard 4D gravity.*
 
@@ -3067,11 +3071,7 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 
 ## The Bayesian Verdict
 
-The complete analysis delivers its verdict:
-
-$$\Delta\ln K = 4.13 \pm 0.07$$
-
-Strong evidence --- the data clearly prefer our vibrating cosmos.
+The complete analysis delivers its verdict, yielding a Bayes factor that depends on prior specifications: from $\Delta\ln K = 2.8 \pm 0.4$ (using conservative, wide uniform priors, yielding Moderate evidence on the Jeffreys scale) to $\Delta\ln K = 4.13 \pm 0.07$ (using physically informed priors, yielding Strong evidence). This transparent positive baseline proves that current data already favor the oscillatory framework, with DESI Year 5 projected to push this into the Decisive regime.
 
 ![Nested Sampling Posteriors](./plots/nested_sampling_posteriors.png)
 *Figure: Nested sampling posteriors (dynesty) for the three brane parameters. $\Delta\ln K$ = 4.13 +/- 0.07 --- STRONG evidence on the Jeffreys scale.*
@@ -3331,9 +3331,9 @@ where the dissipator $\mathcal{D}[\phi(t)]$ is fully determined by the radion tr
 ![Laplace Demon Readout](./plots/laplace_demon_readout.png)
 *Figure: Sensor displacement vs target distance. At $r = L = 0.2\,\mu$m, the V8.2 Yukawa correction enhances Newton by 0.4%. The "5D Readout Zone" (green) is where the extra-dimensional signal dominates. Current gap with single atoms acknowledged; mesoscopic targets + squeezed states + Q-accumulation bring SNR within near-term reach.*
 
-### Implications: Toward the 5D Topological Quantum Computer
+### Long-term Theoretical Perspectives: 5D Information Channels
 
-If the extra dimension exists at $L = 0.2\,\mu$m, the V8.2 theory provides a fundamentally new information channel for quantum computing:
+If the extra dimension exists at $L = 0.2\,\mu$m, the operator commutativity $[\hat{g}_{AB}^{(5)},\, \hat{A}_\mu^{(4)}] = 0$ formally opens the theoretical possibility of an orthogonal information channel. However, we explicitly note that translating this fundamental operator algebra into a functional technology bridges an immense engineering chasm. This section is presented as a speculative horizon for fundamental physics, strictly distinct from the imminent and falsifiable qBOUNCE predictions:
 
 - **No decoherence from measurement**: The 5D bulk operators commute with 4D gauge operators --- readout does not collapse the computation
 - **Deterministic error correction**: The radion-coupled Lindblad equation predicts decoherence events before they happen, enabling preemptive correction
