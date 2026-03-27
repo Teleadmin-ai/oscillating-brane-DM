@@ -68,7 +68,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **5D stability**: **Radiative damping** via bulk graviton emission during slip phase caps amplitude
 - **Period stability (anti-chirp)**: ξRφ non-minimal coupling acts as **geometric Phase-Locked Loop**. Three competing decays (Hubble friction ↓, Cosmic Web forcing ↓, curvature feedback ↓) cancel on attractor manifold. |dT/T| < 10⁻³ per Hubble time. Van der Pol oscillator analogy.
 - **PBH wave-optics immunity**: For M ~ 10⁻¹² M☉, r_s ≈ 3 nm ≪ λ_opt ≈ 600 nm. Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1. Subaru-HSC is physically blind (deep wave-optics regime). Micro-PBH capillaries rehabilitated
-- **Dark energy**: w(z) = -1 + Σ A_n sin(2πn t_lb/T + φ_n) — exact Fourier decomposition of stick-slip sawtooth (not just fundamental). A₂/A₁=47.6%, A₃/A₁=29.3%. DESI's "phantom crossing" is aliasing of geometric shock at z≈0.93 (phase 82.8%, just before QCD cliff). ΔBIC ≈ -5 to -8 vs CPL.
+- **Dark energy**: w(z) = -1 + Σ A_n sin(2πn t_lb/T + φ_n) — exact Fourier decomposition of stick-slip sawtooth (not just fundamental). A₂/A₁=47.6%, A₃/A₁=29.3%. DESI's "phantom crossing" is aliasing of geometric shock at z≈0.93 (phase 82.8%, just before QCD cliff). ΔBIC ≈ -3.6 vs CPL (DR2), forecast -17.9 (Year 5, decisive).
 - **S₈ suppression**: Exact ODE integration: S₈ = 0.836 × 0.9521 = **0.796** (4.79% suppression). Geometric dephasing φ_eff ≈ 4.24 rad between scalar w(z) (φ₀=π/2) and tensor G_eff (Israel junction). eROSITA γ=1.19 via non-linear Press-Schechter resonance (not linear growth).
 - **ISW resonance**: CMB ℓ = 10-20, Δχ² = 32.9 (6σ)
 - **Anchors**: Micro-PBHs with **extended log-normal mass function** (10⁻¹⁴ to 10⁻¹⁰ M☉). Dual role: topological capillaries AND quantum synchronization nodes (ER=EPR)
@@ -86,7 +86,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Definitive future test**: SKA 21cm reionization modulation (2027+)
 - **Complementary tests**: Vera Rubin/LSST, qBOUNCE/optomechanics, Euclid
 - **Theory is purely tensorial and geometric** — no dependence on astrophysical controversies
-- **Cross-AI audit status (March 2026)**: Math validated 100% by Gemini DeepThink. Phase 1: independent recalculation (τ₀→257 MeV, a₀=cH₀/2π, Fresnel w_F=0.031, Δβ=0.25°, Schwinger 10⁻³¹). Phase 2: 9 DeepThink prompts (Fourier spectrum, exact S₈ ODE, MOND ab initio, Seeley-DeWitt numerics, Dirichlet anomaly, 3D Floquet, LVS+multi-throat, dynamical Schwinger, finite-N corrections). Physics validated: trace anomaly ignition, von Neumann self-adjoint extensions, Higgs-Radion mixing, 5D QND bypass, temporal S₈ resolution, geometric dephasing, cluster resonance, multi-throat necessity. All peer-review attack vectors addressed.
+- **Cross-AI audit status (March 2026)**: Math validated 100% by Gemini DeepThink. Phase 1: independent recalculation (τ₀→257 MeV, a₀=cH₀/2π, Fresnel w_F=0.031, Δβ=0.25°, Schwinger 10⁻³¹). Phase 2 (Series 1): 9 DeepThink prompts (Fourier spectrum, exact S₈ ODE, MOND ab initio, Seeley-DeWitt numerics, Dirichlet anomaly, 3D Floquet, LVS+multi-throat, dynamical Schwinger, finite-N corrections). Phase 3 (Series 2): 9 DeepThink prompts (Kinematic Blockade, NANOGrav spectral flattening, φ_eff ab initio, Press-Schechter γ(M), MOND sinc theorem, ΔBIC forecast, Fisher analytical 3×3, KdF 4-branch tensor, Kesten-McKay percolation immunity). All peer-review attack vectors addressed. 51 derivations total.
 - **Audit-driven corrections (March 2026)**: S₈ spatial→temporal (then exact 4.79%), neutron lifetime removed, MOND formula derived ab initio (cH₀/2π from Gibbons-Hawking), 6 Unicode-in-math formulas fixed, τ₀ posterior 19.51→19.85
 
 ### BANNED Concepts (NEVER use):
@@ -290,7 +290,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Validation | Method | Key Result |
 |-----------|--------|------------|
 | w(z) phantom crossing | BDF stiff solver, exact lookback time | w ∈ [-1.003, -0.997], matches DESI DR2 |
-| S₈ tension resolution | Exact ODE D₊(a) with oscillating G_eff(t) | 4.79% suppression, S₈=0.796, φ_eff=4.24 rad |
+| S₈ tension resolution | Exact ODE D₊(a) with oscillating G_eff(t) | 4.79% suppression, S₈=0.796, φ_eff=1.35π rad (ab initio) |
 | Bayesian evidence | dynesty nested sampling, 500 live points | Δln K = 4.13 ± 0.07 (STRONG) |
 | SKA 21cm prediction | Reionization mock, z=6-15 | 5.46 mK peak, SNR = 5.5σ |
 | Lithium-7 problem | BBN conformal tolerance, BDF solver | 3.5× suppression, D/⁴He preserved |
@@ -376,7 +376,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - **Do NOT remove or modify the MathJax config block** in `_layouts/dark.html`
 - LaTeX renders correctly on ALL site pages and in the PDF (xelatex handles it natively)
 - **PDF pipeline pre-processor** (`generate_pdf.py`) sanitizes Unicode→LaTeX, converts HTML tables→markdown, strips Jekyll templates, emojis, and fixes indented headers before pandoc
-- The `\vert` workaround for bra-ket notation (`$\vert 1\rangle$` instead of `$|1\rangle$`) is still needed because kramdown confuses `|` with table delimiters
+- The `\vert` workaround applies to ALL absolute values and norms in inline math, not just bra-kets. kramdown interprets `|` as table pipe in inline `$...$`. ALWAYS use `$\vert x\vert$` instead of `$|x|$` for any variable (φ, λ, χ, ψ, etc.). Display math `$$...$$` is safe.
 - **LaTeX prime notation** — NEVER write `\text{Ai}'` or `\operatorname{Ai}'` in .md files — the prime character crashes both pdflatex and xelatex. Use `{\text{Ai}}^{\prime}` in display math or `\partial_x\text{Ai}` in inline math instead. Also applies to derivatives like `D_+'(a)` — must write `D_+^{\prime}(a)` in display math formulas.
 - **scipy `ai_zeros` return order** — `ai_zeros(N)` returns `(a, ap, ai, aip)` where the normalization constant Ai'(a_n) is in the **4th return** `aip`, NOT the 3rd `ai`. Always unpack as: `a_zeros, _, _, deriv_at_zeros = ai_zeros(N)`.
 
@@ -454,16 +454,17 @@ python scripts/laplace_demon_hamiltonian.py
 ```
 
 ### OPEN MATHEMATICAL WORK (0 items remaining — ALL COMPLETE)
-All 51 mathematical derivations have been completed and integrated into theory.md (March 2026):
+All 51 mathematical derivations have been completed and integrated into theory.md + predictions.md (March 2026):
 - **33 original derivations** (V8.2 core): Filippov-Banach, Fenichel, Γ_rad ab initio, KK spectrum, spectral zeta, Seeley-DeWitt, Skenderis, MERA/HaPPY, OTOCs, Dirac collapse, Kampé de Fériet, Dyson horizon, KS UV completion, Swiss-Cheese LVS, No-Go isotrope, KKLT tadpole, Fisher Jacobian/forecast, Cobaya module, Robin mapping, Airy-Yukawa series
-- **9 DeepThink refinements** (March 2026): (1) Fourier stick-slip spectrum, (2) exact S₈ ODE + eROSITA non-linear, (3) MOND ab initio from 5D, (4) Seeley-DeWitt numerical evaluation, (5) Dirichlet anomaly 4-branch resolution, (6) full 3D Floquet without adiabatic projection, (7) LVS minimization + multi-throat, (8) dynamical Schwinger invulnerability, (9) finite-N corrections to Dirac collapse
+- **9 DeepThink Series 1** (March 2026): (1) Fourier stick-slip spectrum, (2) exact S₈ ODE + eROSITA non-linear, (3) MOND ab initio from 5D, (4) Seeley-DeWitt numerical evaluation, (5) Dirichlet anomaly 4-branch resolution, (6) full 3D Floquet without adiabatic projection, (7) LVS minimization + multi-throat, (8) dynamical Schwinger invulnerability, (9) finite-N corrections to Dirac collapse
+- **9 DeepThink Series 2** (March 2026): (1) Kinematic Blockade (Γ_rad^{5D-GR}≡0, PBH necessity proof), (2) NANOGrav spectral flattening (n≈10⁹ overtone, h_c~10⁻¹⁵), (3) φ_eff=1.35π ab initio (Israel inversion + Filippov contraction), (4) Press-Schechter γ(M) spectrum (mass-dependent eROSITA), (5) MOND sinc theorem (orbital averaging, cluster resonance), (6) ΔBIC forecast (DR2: -3.6, Y5: -17.9), (7) Analytical Fisher 3×3 (QCD 0.11σ), (8) KdF 4-branch exact tensor (holographic shadow), (9) Kesten-McKay percolation immunity (98% destruction resilience)
 
 ### SITE & INFRASTRUCTURE TODO
 - Visual page (visual.md) with PDF embeds — waiting for user's PowerPoint PDF
 - Videos.md expansion to 40 videos — waiting for user's YouTube links
 - Google OAuth: pass from test to production mode (needs Google review)
 - Optimize Romain AI system prompt (ongoing tuning)
-- Update Romain AI knowledge base with latest .md.txt (theory.md is now ~1500+ lines after 9 DeepThink prompts)
+- Update Romain AI knowledge base with latest .md.txt (theory.md is now ~1870 lines after 18 DeepThink prompts)
 - Plot display in chat: works via `files` event + URL serving (NPM `/sandbox-images/`)
 
 ## Site Structure (Jekyll + GitHub Pages)
