@@ -121,7 +121,7 @@ def main():
         "r-",
         linewidth=1.5,
         alpha=0.8,
-        label="Brane V8.0 overtones",
+        label="Brane V8.2 overtones",
     )
     if len(peaks) > 0:
         ax.loglog(freqs_masked[peaks], psd_norm[peaks], "rv", markersize=8)
@@ -143,8 +143,8 @@ def main():
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig("plots/astro_signatures/nanograv_spectrum.png", dpi=150)
-    print(f"\nPlot saved: plots/astro_signatures/nanograv_spectrum.png")
+    plt.savefig("plots/nanograv_spectrum.png", dpi=150)
+    print(f"\nPlot saved: plots/nanograv_spectrum.png")
 
 
 if __name__ == "__main__":

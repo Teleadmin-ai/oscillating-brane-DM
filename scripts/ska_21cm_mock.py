@@ -144,7 +144,7 @@ def main():
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
     fig.suptitle(
         "SKA 21cm Reionization Modulation — Definitive Test\n"
-        "Oscillating Brane V8.0 Prediction",
+        "Oscillating Brane V8.2 Prediction",
         fontsize=14,
         fontweight="bold",
     )
@@ -208,7 +208,7 @@ def main():
     T_std = np.array([T_21cm_standard(z) for z in z_arr])
     T_mod = T_std + delta_T[:, ik]
     ax.plot(z_arr, T_std, "k--", linewidth=1.5, label=r"$\Lambda$CDM (standard)")
-    ax.plot(z_arr, T_mod, "b-", linewidth=2, label="Brane V8.0")
+    ax.plot(z_arr, T_mod, "b-", linewidth=2, label="Brane V8.2")
     ax.fill_between(
         z_arr,
         T_std - ska_noise,

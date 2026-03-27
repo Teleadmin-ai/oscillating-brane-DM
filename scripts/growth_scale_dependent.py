@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Scale-Dependent Growth Factor with Yukawa Screening — V8.0
+Scale-Dependent Growth Factor with Yukawa Screening — V8.2
 ============================================================
 
 Solves the linear growth ODE delta_m(a, k) with a scale-dependent
@@ -10,7 +10,7 @@ screening from the extra dimension.
 Physics:
   G_eff(a, k) = G_N * (1 - A_osc(a) * k^2 / (k^2 + k_Yukawa^2))
 
-  - At large k (non-linear scales, DES): ~5% suppression
+  - At large k (non-linear scales, DES): 4.79% suppression
   - At small k (linear scales, KiDS/CMB): quasi-standard gravity
 
   Growth ODE (in scale factor a):
@@ -19,7 +19,7 @@ Physics:
 Output:
   plots/growth_scale_dependent.png
 
-Version: 7.0
+Version: 8.2 (legacy — scale-dependent Yukawa, see growth_factor.py for temporal mechanism)
 """
 
 import os
@@ -38,7 +38,7 @@ Omega_L0 = 0.685
 
 # Yukawa screening parameters
 L_extra = 2.0e-7  # extra dimension in meters
-A_osc_max = 0.053  # max oscillation amplitude (tuned for ~5% suppression)
+A_osc_max = 0.053  # max oscillation amplitude (tuned for 4.79% suppression)
 k_Yukawa = 0.05  # Yukawa screening scale in h/Mpc
 a_activation = 0.1  # scale factor where oscillation activates (~QCD era)
 
@@ -162,7 +162,7 @@ def solve_growth(k, a_range=(0.001, 1.0), n_points=2000):
 # ---------------------------------------------------------------------------
 def main():
     print("=" * 70)
-    print("V8.0 Scale-Dependent Growth Factor (Yukawa Screening)")
+    print("V8.2 Scale-Dependent Growth Factor (Yukawa Screening)")
     print("=" * 70)
 
     os.makedirs(PLOTS_DIR, exist_ok=True)
@@ -234,7 +234,7 @@ def main():
         D_ratio_final,
         color="#00ffcc",
         linewidth=2.5,
-        label="V8.0 Yukawa screening",
+        label="V8.2 Yukawa screening",
     )
     ax1.axhline(1.0, color="gray", linestyle=":", alpha=0.4)
 
@@ -267,7 +267,7 @@ def main():
     ax1.set_xlabel(r"Wavenumber $k$ (h/Mpc)", fontsize=13)
     ax1.set_ylabel(r"$D(a=1, k) / D_{\Lambda CDM}(a=1)$", fontsize=13)
     ax1.set_title(
-        r"V8.0: Scale-Dependent Growth Suppression via Yukawa Screening"
+        r"V8.2: Scale-Dependent Growth Suppression via Yukawa Screening"
         "\n"
         r"$G_{eff}(k) = G_N \left(1 - A_{osc} \cdot k^2/(k^2 + k_Y^2)\right)$",
         fontsize=13,

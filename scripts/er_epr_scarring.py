@@ -35,7 +35,7 @@ def create_disk(N=2000, R_disk=10.0):
 
 
 def apply_slip_kick(x, y, vx, vy, kick_strength=8.0):
-    """Apply the V8.0 slip phase kick.
+    """Apply the V8.2 slip phase kick.
 
     An asymmetric, impulsive gravitational acceleration from the
     ER=EPR node at the center. The kick is:
@@ -183,8 +183,8 @@ def main():
     )
 
     plt.tight_layout()
-    plt.savefig("plots/astro_signatures/hubble_scar_morphology.png", dpi=150)
-    print(f"\nPlot saved: plots/astro_signatures/hubble_scar_morphology.png")
+    plt.savefig("plots/hubble_scar_morphology.png", dpi=150)
+    print(f"\nPlot saved: plots/hubble_scar_morphology.png")
 
     print(f"\n{'=' * 60}")
     print(f"RESULT: Slip kick transforms ordered disk into")

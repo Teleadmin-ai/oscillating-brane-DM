@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Brane Dynamics V8.0 — Stick-Slip Radion ODE with BDF Stiff Solver
+Brane Dynamics V8.2 — Stick-Slip Radion ODE with BDF Stiff Solver
 
 Solves the hybrid stick-slip membrane oscillation ODE:
   φ̈ + (3H + Γ_rad)φ̇ + ξRφ + ∂V_GW/∂φ = F_web(1-3w_eff) - R_PBH·Θ(|φ|-φ_crit)
@@ -32,7 +32,7 @@ Omega_Lambda = 0.685
 R_H = c / H0_SI  # Hubble radius in meters
 
 # ============================================================
-# Brane Parameters (V8.0)
+# Brane Parameters (V8.2)
 # ============================================================
 tau_0 = 7.0e19  # J/m^2, brane tension
 f_osc = 0.10  # oscillating DM fraction
@@ -44,7 +44,7 @@ xi = 0.15  # non-minimal coupling
 
 
 class BraneOscillator:
-    """Solves the V8.0 hybrid stick-slip radion ODE."""
+    """Solves the V8.2 hybrid stick-slip radion ODE."""
 
     def __init__(self):
         # Derived quantities
@@ -203,7 +203,7 @@ class BraneOscillator:
 
 def main():
     print("=" * 60)
-    print("BRANE DYNAMICS V8.0 — Stick-Slip Radion ODE")
+    print("BRANE DYNAMICS V8.2 — Stick-Slip Radion ODE")
     print("Solver: BDF (stiff), exact lookback time")
     print("=" * 60)
 
@@ -228,7 +228,7 @@ def main():
     # ============================================================
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
     fig.suptitle(
-        "Brane Dynamics V8.0 — Stick-Slip Motor", fontsize=14, fontweight="bold"
+        "Brane Dynamics V8.2 — Stick-Slip Motor", fontsize=14, fontweight="bold"
     )
 
     # Panel 1: Radion displacement

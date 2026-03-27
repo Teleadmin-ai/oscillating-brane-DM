@@ -137,8 +137,8 @@ def main():
     )
 
     plt.tight_layout()
-    plt.savefig("plots/astro_signatures/df2_cymatic_nodes.png", dpi=150)
-    print(f"\nPlot saved: plots/astro_signatures/df2_cymatic_nodes.png")
+    plt.savefig("plots/df2_cymatic_nodes.png", dpi=150)
+    print(f"\nPlot saved: plots/df2_cymatic_nodes.png")
 
 
 if __name__ == "__main__":

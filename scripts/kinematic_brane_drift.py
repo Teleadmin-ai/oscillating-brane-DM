@@ -97,7 +97,7 @@ def main():
     # Panel 1: Bulk flow vs distance
     ax = axes[0]
     ax.plot(d_arr, v_lcdm, "b--", linewidth=2, label=r"$\Lambda$CDM (drops to 0)")
-    ax.plot(d_arr, v_brane, "r-", linewidth=2, label="Brane V8.0 (plateau)")
+    ax.plot(d_arr, v_brane, "r-", linewidth=2, label="Brane V8.2 (plateau)")
     ax.errorbar(
         d_data, v_data, yerr=v_err, fmt="ko", capsize=3, label="Cosmicflows-4 (mock)"
     )
@@ -170,8 +170,8 @@ def main():
     )
 
     plt.tight_layout()
-    plt.savefig("plots/astro_signatures/drift_unification.png", dpi=150)
-    print(f"\nPlot saved: plots/astro_signatures/drift_unification.png")
+    plt.savefig("plots/drift_unification.png", dpi=150)
+    print(f"\nPlot saved: plots/drift_unification.png")
 
 
 if __name__ == "__main__":

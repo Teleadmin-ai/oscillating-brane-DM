@@ -33,7 +33,7 @@ T_osc = 2.0  # Gyr
 # From Δβ = (α_em/2π) × c_top × (Δφ/L) = 0.00436 rad
 # → c_top = 0.00436 × 2π / (α_em × 0.05)
 beta_target_rad = 0.25 * np.pi / 180.0
-delta_phi_over_L = 0.05  # from V8.0 stick-slip dynamics
+delta_phi_over_L = 0.05  # from V8.2 stick-slip dynamics
 c_top_derived = beta_target_rad * 2 * np.pi / (alpha_em * delta_phi_over_L)
 
 
@@ -52,7 +52,7 @@ def main():
     print("=" * 60)
 
     print(f"\n  α_em = 1/{1/alpha_em:.0f}")
-    print(f"  Δφ/L = {delta_phi_over_L} (from V8.0 stick-slip)")
+    print(f"  Δφ/L = {delta_phi_over_L} (from V8.2 stick-slip)")
     print(f"  c_top = {c_top_derived:.0f} (topological Chern number)")
 
     # Verify the formula
@@ -171,8 +171,8 @@ def main():
     )
 
     plt.tight_layout()
-    plt.savefig("plots/advanced_proofs/cmb_birefringence.png", dpi=150)
-    print(f"\nPlot saved: plots/advanced_proofs/cmb_birefringence.png")
+    plt.savefig("plots/cmb_birefringence.png", dpi=150)
+    print(f"\nPlot saved: plots/cmb_birefringence.png")
 
 
 if __name__ == "__main__":

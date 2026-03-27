@@ -170,7 +170,7 @@ def main():
     # Panel 1: Power spectrum comparison
     ax = axes[0]
     ax.loglog(k_arr, P_lcdm, "b-", linewidth=1.5, label=r"$\Lambda$CDM", alpha=0.7)
-    ax.loglog(k_arr, P_brane, "r-", linewidth=2, label="Brane V8.0")
+    ax.loglog(k_arr, P_brane, "r-", linewidth=2, label="Brane V8.2")
 
     # Mark resonance scales
     k_ring = 2 * np.pi / lambda_1
@@ -237,8 +237,8 @@ def main():
     )
 
     plt.tight_layout()
-    plt.savefig("plots/advanced_proofs/big_ring_resonance.png", dpi=150)
-    print(f"\nPlot saved: plots/advanced_proofs/big_ring_resonance.png")
+    plt.savefig("plots/big_ring_resonance.png", dpi=150)
+    print(f"\nPlot saved: plots/big_ring_resonance.png")
 
     print(f"\n{'=' * 60}")
     print(f"RESULT: Brane resonance produces clustering peaks at")

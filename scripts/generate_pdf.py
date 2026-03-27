@@ -31,7 +31,7 @@ class FinalPDFGenerator:
         """Find all markdown files and extract their front matter."""
         files = []
 
-        # V8.0 structure — site pages + technical docs, no duplicates
+        # V8.2 structure — site pages + technical docs, no duplicates
         # Each entry = a page on the site = a chapter in the PDF
         doc_order = [
             "index.md",  # Ch 1: Home / Introduction

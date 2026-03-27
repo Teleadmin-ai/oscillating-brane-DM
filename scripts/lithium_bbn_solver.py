@@ -112,12 +112,12 @@ def main():
     # Standard BBN
     D_std, He4_std, Be7_std = bbn_abundances_vs_T(T_arr, delta_H=0.0)
 
-    # Brane V8.0
+    # Brane V8.2
     D_br, He4_br, Be7_br = bbn_abundances_vs_T(T_arr, delta_H=1.0e-3)
 
     print(f"\n{'=' * 60}")
     print(f"RESULTS (at T = 0.01 MeV, post freeze-out):")
-    print(f"  {'':30s} {'Standard':>12s} {'Brane V8.0':>12s} {'Observed':>12s}")
+    print(f"  {'':30s} {'Standard':>12s} {'Brane V8.2':>12s} {'Observed':>12s}")
     print(f"  {'D/H':30s} {D_std[-1]:.2e} {D_br[-1]:.2e} {Y_D_obs:.2e}")
     print(
         f"  {'⁴He mass fraction':30s} {He4_std[-1]:.4f} {He4_br[-1]:.4f} {Y_He4_obs:.4f}"
@@ -149,7 +149,7 @@ def main():
     # Panel 1: Deuterium
     ax = axes[0]
     ax.loglog(T_arr, D_std, "b-", linewidth=2, label=r"$\Lambda$CDM")
-    ax.loglog(T_arr, D_br, "r--", linewidth=2, label="Brane V8.0")
+    ax.loglog(T_arr, D_br, "r--", linewidth=2, label="Brane V8.2")
     ax.axhline(
         y=Y_D_obs, color="green", linestyle=":", linewidth=1.5, label=f"Observed"
     )
@@ -164,7 +164,7 @@ def main():
     # Panel 2: Helium-4
     ax = axes[1]
     ax.semilogx(T_arr, He4_std, "b-", linewidth=2, label=r"$\Lambda$CDM")
-    ax.semilogx(T_arr, He4_br, "r--", linewidth=2, label="Brane V8.0")
+    ax.semilogx(T_arr, He4_br, "r--", linewidth=2, label="Brane V8.2")
     ax.axhline(
         y=Y_He4_obs, color="green", linestyle=":", linewidth=1.5, label=f"Observed"
     )
@@ -185,7 +185,7 @@ def main():
         linewidth=2,
         label=r"$\Lambda$CDM (3.5$\times$ overproduction!)",
     )
-    ax.loglog(T_arr, Be7_br, "r-", linewidth=2.5, label="Brane V8.0 (RESOLVED)")
+    ax.loglog(T_arr, Be7_br, "r-", linewidth=2.5, label="Brane V8.2 (RESOLVED)")
     ax.axhline(
         y=Y_Li7_obs,
         color="green",
@@ -209,8 +209,8 @@ def main():
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig("plots/advanced_proofs/lithium_resolution.png", dpi=150)
-    print(f"\nPlot saved: plots/advanced_proofs/lithium_resolution.png")
+    plt.savefig("plots/lithium_resolution.png", dpi=150)
+    print(f"\nPlot saved: plots/lithium_resolution.png")
 
 
 if __name__ == "__main__":

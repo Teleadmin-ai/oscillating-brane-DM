@@ -120,7 +120,7 @@ def main():
 
     print(f"\n  GR prediction: γ = 0.55")
     print(f"  eROSITA observed: γ = 1.19")
-    print(f"  V8.0 effective γ (fitted): {gamma_eff:.2f}")
+    print(f"  V8.2 effective γ (fitted): {gamma_eff:.2f}")
     print(f"  Match: {'YES' if abs(gamma_eff - 1.19) < 0.3 else 'PARTIAL'}")
 
     # ============================================================
@@ -147,7 +147,7 @@ def main():
         f_osc,
         "r-",
         linewidth=2,
-        label=f"Brane V8.0 ($\\gamma_{{eff}}={gamma_eff:.2f}$)",
+        label=f"Brane V8.2 ($\\gamma_{{eff}}={gamma_eff:.2f}$)",
     )
     ax.plot(
         z_arr,
@@ -202,8 +202,8 @@ def main():
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig("plots/astro_signatures/erosita_gamma_illusion.png", dpi=150)
-    print(f"\nPlot saved: plots/astro_signatures/erosita_gamma_illusion.png")
+    plt.savefig("plots/erosita_gamma_illusion.png", dpi=150)
+    print(f"\nPlot saved: plots/erosita_gamma_illusion.png")
 
 
 if __name__ == "__main__":

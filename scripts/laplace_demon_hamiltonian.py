@@ -42,7 +42,7 @@ def F_newton(r):
 
 
 def F_yukawa(r):
-    """V8.0 Yukawa force (derivative of potential)."""
+    """V8.2 Yukawa force (derivative of potential)."""
     # F = -dV/dr = G_N M m / r² × (1 + α(1 + r/L) exp(-r/L))
     newton = G_N * M_sensor * m_target / r**2
     yukawa_correction = abs(alpha_yukawa) * (1 + r / L) * np.exp(-r / L)
@@ -97,7 +97,7 @@ def main():
     print(f"\n  Zero-point motion: {dx_zpm:.2e} m")
     print(f"\n  At r = L = {L * 1e6:.1f} μm:")
     print(f"    Newton displacement: {dx_N_at_L:.2e} m")
-    print(f"    V8.0 displacement:  {dx_Y_at_L:.2e} m")
+    print(f"    V8.2 displacement:  {dx_Y_at_L:.2e} m")
     print(f"    5D-only signal:     {dx_5D_at_L:.2e} m")
     print(f"    Yukawa/Newton ratio: {dx_Y_at_L / dx_N_at_L:.2f}")
     print(f"    5D signal / ZPM: {dx_5D_at_L / dx_zpm:.2e}")
@@ -126,7 +126,7 @@ def main():
     # Panel 1: Sensor displacement vs distance
     ax = axes[0]
     ax.loglog(r_arr * 1e6, dx_newton, "b--", linewidth=1.5, label="Newton only")
-    ax.loglog(r_arr * 1e6, dx_yukawa, "r-", linewidth=2, label="V8.0 (Newton + Yukawa)")
+    ax.loglog(r_arr * 1e6, dx_yukawa, "r-", linewidth=2, label="V8.2 (Newton + Yukawa)")
     ax.loglog(
         r_arr * 1e6, dx_5D, "g-", linewidth=2, alpha=0.8, label="5D Yukawa signal only"
     )
@@ -146,7 +146,7 @@ def main():
 
     ax.set_xlabel(r"Target distance $r$ ($\mu$m)")
     ax.set_ylabel(r"Sensor displacement $\Delta x$ (m)")
-    ax.set_title("Sensor displacement: Newton vs V8.0")
+    ax.set_title("Sensor displacement: Newton vs V8.2")
     ax.legend(fontsize=7, loc="upper right")
     ax.grid(True, alpha=0.3)
 
@@ -170,7 +170,7 @@ def main():
     )
 
     ax.set_xlabel(r"Target distance $r$ ($\mu$m)")
-    ax.set_ylabel(r"$F_{V8.0} / F_{Newton}$")
+    ax.set_ylabel(r"$F_{V8.2} / F_{Newton}$")
     ax.set_title("5D Yukawa enhancement over Newton")
     ax.legend()
     ax.grid(True, alpha=0.3)
@@ -190,8 +190,8 @@ def main():
     )
 
     plt.tight_layout()
-    plt.savefig("plots/lab_signatures/laplace_demon_readout.png", dpi=150)
-    print(f"\nPlot saved: plots/lab_signatures/laplace_demon_readout.png")
+    plt.savefig("plots/laplace_demon_readout.png", dpi=150)
+    print(f"\nPlot saved: plots/laplace_demon_readout.png")
 
     print(f"\n{'=' * 60}")
     print(f"The 5D Laplace Demon reads the target's gravitational shadow")

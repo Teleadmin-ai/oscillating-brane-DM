@@ -72,7 +72,7 @@ def main():
 
     print(f"\n  At E = {E_amaterasu/1e18:.0f} EeV:")
     print(f"    Standard GZK horizon: {L_std_ama:.1f} Mpc")
-    print(f"    V8.0 (5D leakage): {L_v8_ama:.1f} Mpc")
+    print(f"    V8.2 (5D leakage): {L_v8_ama:.1f} Mpc")
     print(f"    Extension factor: {L_v8_ama/L_std_ama:.1f}×")
     print(f"    Survival: {'YES' if L_v8_ama > 20 else 'NO'} (> 20 Mpc)")
 
@@ -92,7 +92,7 @@ def main():
     ax.loglog(
         E_arr / 1e18, L_std, "b--", linewidth=2, label=r"Standard GZK ($\Lambda$CDM)"
     )
-    ax.loglog(E_arr / 1e18, L_v8, "r-", linewidth=2, label="Brane V8.0 (5D leakage)")
+    ax.loglog(E_arr / 1e18, L_v8, "r-", linewidth=2, label="Brane V8.2 (5D leakage)")
     ax.axvline(
         x=E_amaterasu / 1e18,
         color="gold",
@@ -158,8 +158,8 @@ def main():
     )
 
     plt.tight_layout()
-    plt.savefig("plots/astro_signatures/amaterasu_gzk_horizon.png", dpi=150)
-    print(f"\nPlot saved: plots/astro_signatures/amaterasu_gzk_horizon.png")
+    plt.savefig("plots/amaterasu_gzk_horizon.png", dpi=150)
+    print(f"\nPlot saved: plots/amaterasu_gzk_horizon.png")
 
 
 if __name__ == "__main__":

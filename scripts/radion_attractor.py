@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Radion Dynamical Attractor — V8.0 Demonstration
+Radion Dynamical Attractor — V8.2 Demonstration
 =================================================
 
-Demonstrates that the non-minimal coupling xi*R*phi in the V8.0 stick-slip
+Demonstrates that the non-minimal coupling xi*R*phi in the V8.2 stick-slip
 ODE creates a dynamical attractor that locks the oscillation period at
 T ~ 2.0 Gyr despite evolving H(t) and decaying DM accretion (a^-3).
 
@@ -21,7 +21,7 @@ Output:
   plots/radion_attractor_phase.png    — Phase portrait (multiple ICs -> one limit cycle)
   plots/radion_attractor_temporal.png — Temporal evolution + period convergence
 
-Version: 7.0
+Version: 8.2
 """
 
 import os
@@ -69,10 +69,10 @@ def scale_factor_from_time(t_gyr):
 
 
 # ---------------------------------------------------------------------------
-# V8.0 Stick-Slip ODE with dynamical attractor
+# V8.2 Stick-Slip ODE with dynamical attractor
 # ---------------------------------------------------------------------------
 def radion_rhs(t_gyr, y):
-    """Right-hand side of the V8.0 radion ODE.
+    """Right-hand side of the V8.2 radion ODE.
 
     State vector y = [phi_hat, dphi_hat] (dimensionless).
     """
@@ -225,7 +225,7 @@ def plot_phase_portrait(solutions):
     ax.set_xlabel(r"$\hat{\phi}$ (units of L)", fontsize=14)
     ax.set_ylabel(r"$\dot{\hat{\phi}}$ (Gyr$^{-1}$)", fontsize=14)
     ax.set_title(
-        "V8.0 Radion Phase Portrait — Dynamical Attractor\n"
+        "V8.2 Radion Phase Portrait — Dynamical Attractor\n"
         r"All ICs converge to same limit cycle ($\xi R\phi$ coupling)",
         fontsize=13,
     )
@@ -278,7 +278,7 @@ def plot_temporal(solutions):
 
     ax1.set_ylabel(r"$\hat{\phi}$ (units of L)", fontsize=13)
     ax1.set_title(
-        "V8.0 Radion Oscillation — Multiple Initial Conditions\n"
+        "V8.2 Radion Oscillation — Multiple Initial Conditions\n"
         r"Non-minimal coupling $\xi R\phi$ ensures period convergence",
         fontsize=13,
     )
@@ -334,7 +334,7 @@ def chirp_rhs(t_gyr, y, mode):
 
     The chirp models the physical fact that without non-minimal coupling,
     the restoring force evolves as the bulk geometry changes with expansion.
-    The attractor represents V8.0 where xi*R*phi compensates this drift.
+    The attractor represents V8.2 where xi*R*phi compensates this drift.
     """
     phi, dphi = y
     a = scale_factor_from_time(t_gyr)
@@ -345,7 +345,7 @@ def chirp_rhs(t_gyr, y, mode):
     H_ref = hubble(a_ref)
 
     if mode == "attractor":
-        # V8.0: xi*R*phi compensates bulk geometry evolution
+        # V8.2: xi*R*phi compensates bulk geometry evolution
         # Effective frequency remains constant
         omega_eff = omega_0
     else:
@@ -383,7 +383,7 @@ def compare_with_without_xi():
     t_eval = np.linspace(t_span[0], t_span[1], 5000)
     y0 = [0.55, 0.0]
 
-    # V8.0: attractor (stable period)
+    # V8.2: attractor (stable period)
     sol_with = solve_ivp(
         lambda t, y: chirp_rhs(t, y, mode="attractor"),
         t_span,
@@ -429,7 +429,7 @@ def plot_comparison(sol_with, sol_without):
         sol_with.y[0],
         color="#00ffcc",
         linewidth=1.2,
-        label=r"V8.0 with $\xi R\phi$ (attractor)",
+        label=r"V8.2 with $\xi R\phi$ (attractor)",
     )
     ax1.axhline(phi_eq, color="gray", linestyle=":", alpha=0.3)
     ax1.axhline(
@@ -442,7 +442,7 @@ def plot_comparison(sol_with, sol_without):
     ax1.axhline(phi_eq - phi_crit, color="red", linestyle="--", alpha=0.25)
     ax1.set_ylabel(r"$\hat{\phi}$ (units of L)", fontsize=13)
     ax1.set_title(
-        r"Chirp Instability (V6.0) vs Dynamical Attractor (V8.0, $\xi R\phi$)",
+        r"Chirp Instability (V6.0) vs Dynamical Attractor (V8.2, $\xi R\phi$)",
         fontsize=14,
     )
     ax1.legend(fontsize=10, loc="upper right")
@@ -471,7 +471,7 @@ def plot_comparison(sol_with, sol_without):
             color="#00ffcc",
             markersize=4,
             linewidth=1.5,
-            label=r"V8.0 with $\xi R\phi$ (locked)",
+            label=r"V8.2 with $\xi R\phi$ (locked)",
         )
 
     ax2.axhline(
@@ -506,7 +506,7 @@ def plot_comparison(sol_with, sol_without):
 # ---------------------------------------------------------------------------
 def main():
     print("=" * 70)
-    print("V8.0 Radion Dynamical Attractor Analysis")
+    print("V8.2 Radion Dynamical Attractor Analysis")
     print("=" * 70)
 
     # Ensure output directory exists

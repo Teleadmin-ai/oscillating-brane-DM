@@ -183,8 +183,8 @@ def main():
     ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig("plots/advanced_proofs/baryon_asymmetry.png", dpi=150)
-    print(f"\nPlot saved: plots/advanced_proofs/baryon_asymmetry.png")
+    plt.savefig("plots/baryon_asymmetry.png", dpi=150)
+    print(f"\nPlot saved: plots/baryon_asymmetry.png")
 
 
 if __name__ == "__main__":

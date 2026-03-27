@@ -200,8 +200,8 @@ def main():
     plt.colorbar(im, ax=ax, label=r"$\delta\rho/\rho$")
 
     plt.tight_layout()
-    plt.savefig("plots/astro_signatures/chladni_mega_structures.png", dpi=150)
-    print(f"\nPlot saved: plots/astro_signatures/chladni_mega_structures.png")
+    plt.savefig("plots/chladni_mega_structures.png", dpi=150)
+    print(f"\nPlot saved: plots/chladni_mega_structures.png")
 
 
 if __name__ == "__main__":

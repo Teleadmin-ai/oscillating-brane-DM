@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Numerical Relativity (1+1)D — Warped Shielding Demonstration — V8.0
+Numerical Relativity (1+1)D — Warped Shielding Demonstration — V8.2
 =====================================================================
 
 Solves the scalar wave equation in a warped Anti-de Sitter background
@@ -25,7 +25,7 @@ Numerical method:
 Output:
   plots/warped_shielding_1D.png  — Heatmap of Phi(z, t)
 
-Version: 7.0
+Version: 8.2
 """
 
 import os
@@ -203,7 +203,7 @@ def plot_warped_shielding(t_out, Phi):
     )
     ax_main.set_ylabel("Bulk depth $z / L$", fontsize=13)
     ax_main.set_title(
-        "V8.0 Warped Shielding: Scalar Wave in AdS$_5$ Background\n"
+        "V8.2 Warped Shielding: Scalar Wave in AdS$_5$ Background\n"
         r"$e^{2kz}\,\ddot{\Phi} = \Phi'' - 4k\,\Phi'$"
         f"   (kL = {k_AdS * L_bulk:.1f})",
         fontsize=13,
@@ -266,7 +266,7 @@ def plot_warped_shielding(t_out, Phi):
 # ---------------------------------------------------------------------------
 def main():
     print("=" * 70)
-    print("V8.0 Numerical Relativity (1+1)D — Warped Shielding")
+    print("V8.2 Numerical Relativity (1+1)D — Warped Shielding")
     print("=" * 70)
 
     os.makedirs(PLOTS_DIR, exist_ok=True)

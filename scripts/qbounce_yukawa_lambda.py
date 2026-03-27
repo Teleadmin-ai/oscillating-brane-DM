@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-qBOUNCE Anomaly — Deriving the Robin Parameter λ from V8.0 Yukawa
+qBOUNCE Anomaly — Deriving the Robin Parameter λ from V8.2 Yukawa
 
 Ultra-cold neutrons bouncing on a mirror see a slight anomaly in the
 |1⟩ → |6⟩ transition. The phenomenological Robin parameter λ is
@@ -58,7 +58,7 @@ def airy_wavefunction(n, z):
 
 
 def yukawa_potential(z):
-    """V8.0 Yukawa perturbation potential for neutron above mirror.
+    """V8.2 Yukawa perturbation potential for neutron above mirror.
 
     δV(z) = 2π ρ_m G_N |α| L² exp(-z/L)
     """
@@ -139,7 +139,7 @@ def calculate_robin_parameter(z_res, L_extra=L, alpha=alpha_yukawa):
 
 def main():
     print("=" * 60)
-    print("qBOUNCE ANOMALY — Robin Parameter λ from V8.0 Yukawa")
+    print("qBOUNCE ANOMALY — Robin Parameter λ from V8.2 Yukawa")
     print(f"Extra dimension: L = {L * 1e6:.1f} μm")
     print(f"Yukawa coupling: α = {alpha_yukawa}")
     print(f"Neutron z₀ = {z_0 * 1e6:.2f} μm")
@@ -175,7 +175,7 @@ def main():
     # ============================================================
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
     fig.suptitle(
-        r"qBOUNCE Anomaly — Robin Parameter $\lambda$ from V8.0 Yukawa Potential"
+        r"qBOUNCE Anomaly — Robin Parameter $\lambda$ from V8.2 Yukawa Potential"
         "\n"
         r"$\delta V(z) = 2\pi \rho_m G_N |\alpha| L^2 e^{-z/L}$, $L = 0.2\,\mu$m",
         fontsize=12,
@@ -193,7 +193,7 @@ def main():
         label=r"Current qBOUNCE (1 $\mu$m)",
     )
     ax.axvline(
-        x=0.2, color="green", linestyle="--", alpha=0.7, label=r"$L = 0.2\,\mu$m (V8.0)"
+        x=0.2, color="green", linestyle="--", alpha=0.7, label=r"$L = 0.2\,\mu$m (V8.2)"
     )
     ax.plot(1.0, lambda_at_1um, "bo", markersize=10)
     ax.plot(0.2, lambda_at_02um, "g*", markersize=15)

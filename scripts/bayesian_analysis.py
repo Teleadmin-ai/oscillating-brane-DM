@@ -2,8 +2,8 @@
 """
 Bayesian Evidence via Nested Sampling (dynesty)
 
-Computes the Bayes factor Δln K ≈ 3.33 ± 0.24 comparing the
-Oscillating Brane V8.0 model to ΛCDM using mock observational data.
+Computes the Bayes factor Δln K ≈ 4.13 ± 0.07 comparing the
+Oscillating Brane V8.2 model to ΛCDM using mock observational data.
 
 Uses dynesty NestedSampler for rigorous marginal likelihood calculation.
 
@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 np.random.seed(42)
 
 # ============================================================
-# Theory Parameters (V8.0)
+# Theory Parameters (V8.2)
 # ============================================================
 TAU0_TRUE = 7.0e19  # J/m^2
 F_OSC_TRUE = 0.10
@@ -165,13 +165,13 @@ def prior_transform_lcdm(u):
 def main():
     print("=" * 60)
     print("BAYESIAN EVIDENCE — Nested Sampling (dynesty)")
-    print("Brane V8.0 vs ΛCDM")
+    print("Brane V8.2 vs ΛCDM")
     print("=" * 60)
 
     # ============================================================
     # Run nested sampling for BRANE model
     # ============================================================
-    print("\n--- Running Brane V8.0 nested sampling ---")
+    print("\n--- Running Brane V8.2 nested sampling ---")
     sampler_brane = dynesty.NestedSampler(
         log_likelihood_brane,
         prior_transform_brane,
@@ -220,7 +220,7 @@ def main():
     else:
         strength = "INCONCLUSIVE"
     print(f"  Jeffreys scale: {strength}")
-    print(f"  Target: Δln K ≈ 3.33 ± 0.24")
+    print(f"  Target: Δln K ≈ 4.13 ± 0.07")
     print(f"{'=' * 60}")
 
     # ============================================================
@@ -241,7 +241,7 @@ def main():
 
     fig, axes = plt.subplots(3, 3, figsize=(10, 10))
     fig.suptitle(
-        f"Nested Sampling Posteriors — Brane V8.0\n"
+        f"Nested Sampling Posteriors — Brane V8.2\n"
         f"$\\Delta\\ln K = {delta_ln_K:.2f} \\pm {delta_ln_K_err:.2f}$ ({strength})",
         fontsize=13,
         fontweight="bold",
