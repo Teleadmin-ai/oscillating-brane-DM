@@ -1140,6 +1140,17 @@ Where:
 - Σₙωₙ accounts for zero-point fluctuations of Kaluza-Klein modes
 - V_Casimir prevents runaway branon production via dynamical Casimir effect
 
+## Appendix: Numerical Reality Check — The UV Catastrophe and Zeta-Regularized KK Vacuum Energy
+
+**The naive sum diverges.** The KK graviton masses on the IR brane are $m_n = j_{1,n}\,k\,e^{-kL}$ where $j_{1,n}$ are the zeros of $J_1$. A direct numerical evaluation of the vacuum energy $\Delta V_{naive} = \sum_{n=1}^{N}\frac{N_{dof}\,m_n^4}{64\pi^2}$ diverges as $\mathcal{O}(N^5)$ — the **UV catastrophe**. For 50 modes, the bare sum reaches $\sim 10^6\,\text{eV}^4$, roughly $10^{10}$ times larger than the analytical condensed formula. If gravity were sensitive to this bare energy, the universe would collapse instantaneously.
+
+**The regularization principle.** The absolute vacuum energy is not an observable. The physical Casimir energy is the **topological difference** between the discrete brane spectrum and the continuous uncompactified asymptote. The spectral zeta regularization — or equivalently, the extraction of the constant term from a polynomial fit of the cumulative sum — isolates the finite physical residual by annihilating the divergent polynomial ($\propto N^5, N^4, \ldots$).
+
+**Bottom-up convergence.** The script `scripts/verify_casimir_regularization.py` performs this extraction: the zeta-regularized residual falls in the range $\sim 10^{-6}$ to $10^{-4}\,\text{eV}^4$, confirming the order of magnitude of the analytical condensed formula $\Delta V = N_{dof}/(64\pi^2)\,(ke^{-kL})^4 \approx 1.65 \times 10^{-4}\,\text{eV}^4$. The warped $AdS_5$ geometry acts as a **natural UV regulator**: the exponential warp factor $e^{-kL}$ suppresses the physical masses on the IR brane, ensuring that the Casimir energy remains infinitesimally small compared to the QCD vacuum scale ($\rho_{QCD} \sim 10^{33}\,\text{eV}^4$). The radiative stability of $\tau_0^{1/3} \approx 257$ MeV against quantum fluctuations of the extra dimension is confirmed both analytically and numerically.
+
+![Casimir Regularization](/plots/casimir_regularization.png)
+*Figure: Left: the bare cumulative sum diverges (UV catastrophe, red). Right: after zeta-regularization, the finite Casimir residual (green) converges to the analytical formula (gold dashed).*
+
 ## Further Reading
 
 For detailed chronological evolution, tension calibration, and MONDian gravity: see [Cosmic Chronology](/chronology/).

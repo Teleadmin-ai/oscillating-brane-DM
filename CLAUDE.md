@@ -317,6 +317,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | `scripts/fisher_forecast.py` | Multi-probe Fisher forecast (Planck+DESI+Euclid+SKA+PTA) | `plots/fisher_forecast.png` |
 | `scripts/obt_v82_likelihood.py` | Cobaya MCMC likelihood (BDF stiff ODE at each step) | N/A (inference engine) |
 | `scripts/obt_v82_mcmc.yaml` | Cobaya YAML config (priors, sampler, convergence R-1<0.01) | `chains/obt_v82` |
+| `scripts/verify_casimir_regularization.py` | UV catastrophe demo + zeta-regularized Casimir verification | `plots/casimir_regularization.png` |
 | `scripts/laplace_demon_hamiltonian.py` | 5D Geometric Bypass Hamiltonian | `plots/laplace_demon_readout.png` |
 
 ## MathJax — DO NOT TOUCH
