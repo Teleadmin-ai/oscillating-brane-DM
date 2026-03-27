@@ -119,7 +119,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Global constant κ_Z4** in AMR (must be AMR-level-indexed scalar field κ_Z4^(ℓ) = 1.4/Δt_ℓ)
 - **Explicit Berger-Oliger for 10³² ratio** (CFL wall: 28 million billion years per step on Frontier → must use IMEX)
 - **Single-throat KKLT uplift** (QCD throat is 45 orders too weak for global LVS uplift → must use multi-throat architecture)
-- **"Classical graviton Bremsstrahlung" for Γ_rad** (continuous 5D GR gives Γ_rad ≡ 0 due to kinematic blockade m₁T_slip ~ 10³²; Γ_rad is quantum informational viscosity, NOT radiation)
+- **"Classical graviton Bremsstrahlung" for Γ_rad** (continuous 5D GR gives Γ_rad ≡ 0 due to kinematic blockade m₁T_slip ~ 10³¹; Γ_rad is quantum informational viscosity, NOT radiation)
 
 ### REQUIRED Concepts (V8.2):
 - **Hybrid motor**: F_web (Cosmic Web macro-forcing) + R_PBH (micro-PBH ER=EPR synchronization)
@@ -156,7 +156,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **IMEX + HMM**: mandatory for 10³² scale ratio (explicit Berger-Oliger physically impossible)
 - **Γ_rad = ln(S_BH)/(2π) ≈ 20.7**: CROWNING DERIVATION — not a free parameter but Bekenstein-Hawking entropy ÷ 2π
 - **Retarded 5D Green's function**: V_eff = 15/(4z²), UV censorship ψ_n(0) ∝ z⁴→0, IR coupling ψ_n(L) ∝ J₂(m_nL) ≠ 0
-- **KK spectrum exact**: Bessel quantization m_n = j_{1,n}/L, graviton m₁ = 3.832/L ≈ 19.2 eV, Sturm-Liouville kinematic pumping
+- **KK spectrum exact**: Bessel quantization m_n = j_{1,n}ℏc/L, graviton m₁ = 3.832×0.197/0.2 ≈ 3.78 eV (flat-space; warped: 1.892k ≈ 1.87 eV), Sturm-Liouville kinematic pumping
 - **Spectral zeta**: ζ_Δ(s) → Riemann mapping, Weyl-McMahon baseline -M₀/12 + **exact transcendental correction** from Bessel roots (2.1% inharmonic shift, δE converges O(n⁻³)). Higher poles s=-3/2,-5/2 map bijectively onto Seeley-DeWitt a₂,a₀. **Exact result**: δ_exact/Λ_QCD ≈ 9.5×10⁻³⁹ (confirming 39th-decimal immortality on transcendental Bessel lattice)
 - **Seeley-DeWitt a₀-a₅**: exact for AdS₅ orbifold, Gilkey-Branson-Kirsten boundary terms. Numerically evaluated: ā₀=0.249 eV⁻¹, ā₁=0.902, ā₂=-2.67 eV, ā₃=4.13 eV² (induces Einstein-Hilbert/M_P), ā₄=12.7 eV³. **a₅ (The Holographic Grail)**: a₅_bulk≡0 in D=5 (odd dim), entire log anomaly from branes only. Cubic extrinsic invariants (K³=±64k³, KK_μν²=±16k³, K_μνK^νρK_ρ^μ=±4k³) contract to P₅∝k⁴. **ā₅(UV)=2.845 eV⁴, ā₅(IR)=0.0521 eV⁴** (98.2% confined to Planck brane, ×55 crushing via e⁻⁴ᵏᴸ). c_log counterterm (Skenderis) localized exclusively on UV brane → IR sanctuary.
 - **Skenderis holographic renormalization**: Fefferman-Graham inversion, counterterm dictionary c₁(tension), c₂(G_N), c_log(anomaly)
@@ -183,9 +183,9 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **MOND ab initio**: a₀ = cH₀/2π from Gibbons-Hawking + Unruh (2π = Euclidean time circle S¹)
 - **MOND μ(x)**: x/√(1+x²) from 5D Pythagorean quadrature g_5D = √(g²+a₀²) + Gauss cosine projection
 - **Cluster resonance (sinc theorem)**: ⟨a₀⟩ = a₀^max × sinc(πt_dyn/T). Dwarfs: sinc≈0.996 (99.6% MOND). Clusters: sinc(π)=0 exactly (topologically protected against waveform asymmetry). **Bullet Cluster 3-component resolution**: sinc(0.053π)≈0.995 (MOND survives at 99.5% → 4700 km/s velocity), Weyl fluid decouples ballistically → Δr≈150 kpc offset. Cored Σ_Weyl vs cuspy NFW (falsifiable by JWST/Euclid). Three-component gravity: g_N + MOND×sinc + Weyl
-- **Dynamical Schwinger**: slip shock at v_max=0.05c collapses static exponent 10³² → 10¹² (20 orders), but exp(-4.8×10¹²) ≡ 0. Full KK tower N_total ≡ 0. Dissipation 100% classical (Γ_rad), 0% quantum.
-- **Filippov invulnerability**: shock fierce enough for DE harmonics yet 12 orders below Schwinger threshold — thermodynamic masterpiece
-- **Kinematic Blockade theorem**: Classical 5D GR gives Γ_rad^{5D-GR} ≡ 0 (m₁T_slip ~ 10³², exp(-10³²) = 0). Continuous Nambu-Goto membrane CANNOT dissipate energy into bulk. Proves discrete PBH network is cosmologically NECESSARY, not optional
+- **Dynamical Schwinger**: slip shock at v_max=0.05c collapses static exponent 10³¹ → 10⁹ (22 orders), but exp(-7.2×10⁹) ≡ 0. Full KK tower N_total ≡ 0. Dissipation 100% via holographic viscosity (Γ_rad), 0% quantum pair production.
+- **Filippov invulnerability**: shock fierce enough for DE harmonics yet 9 orders below Schwinger threshold — thermodynamic masterpiece
+- **Kinematic Blockade theorem**: Classical 5D GR gives Γ_rad^{5D-GR} ≡ 0 (m₁T_slip ~ 3.6×10³¹, exp(-3.6×10³¹) = 0). Continuous Nambu-Goto membrane CANNOT dissipate energy into bulk. Proves discrete PBH network is cosmologically NECESSARY, not optional
 - **Holographic viscosity**: Γ_rad is NOT classical Bremsstrahlung but quantum informational viscosity — entropy absorption by PBH scrambling. Two derivations (bottom-up 5D GR vs top-down holographic) deliberately non-convergent: proof that brane is not a continuum
 - **Spectral flattening (NANOGrav)**: tensor TT projection sources from φ̈(t) not φ(t) → Filippov shock = Dirac δ impulses → flat (white noise) acceleration spectrum. f₀ = 1.58×10⁻¹⁷ Hz (16 attoHz), NANOGrav at 16 nHz listens to the n ≈ 10⁹ harmonic. h_c(16 nHz) ~ 10⁻¹⁵ (matches NANOGrav 15yr, zero free params)
 - **f₀ correction**: fundamental brane frequency is 16 attoHertz (NOT 16 nanoHertz). NANOGrav band = billionth overtone
@@ -218,7 +218,7 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | Banach contraction κ | e^{-8.60} ≈ 1.84×10⁻⁴ (hyper-contraction ×5400/cycle) |
 | Spectral gap (Fenichel) | \|λ_trans\|/ε = 4.30/0.14 ≈ 30 (NHIC persistence) |
 | Branching ratio B | ≈ 9.7×10⁻¹¹ (N_max ≈ 8.3×10⁷ KK modes) |
-| First KK graviton mass | m₁ = 3.832/L ≈ 19.2 eV (from J₁(m_nL)=0) |
+| First KK graviton mass | m₁ = j_{1,1}ℏc/L ≈ 3.78 eV flat-space (warped: 1.87 eV) |
 | KS flux integers | K=21, M=10, g_s=0.1 → τ₀^{1/3} = 257 MeV |
 | Robin splitting | Δλ/λ = 3.1% between n=1 and n=6 (smoking gun) |
 
@@ -275,9 +275,9 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
   3. `theory.md` → Ch 3: Complete Theoretical Framework
   4. `chronology.md` → Ch 4: Cosmic Chronology
   5. `predictions.md` → Ch 5: Observational Predictions
-  6. `docs/theoretical_foundations.md` → Ch 6: Theoretical Foundations (pedagogical EFT / toy model)
-  7. `laboratory.md` → Ch 7: Laboratory Proofs (qBOUNCE + 5D Geometric Bypass)
-  8. `tools.md` → Ch 8: Computational Tools
+  6. `laboratory.md` → Ch 6: Laboratory Proofs (qBOUNCE + 5D Geometric Bypass)
+  7. `tools.md` → Ch 7: Computational Tools
+  8. `docs/theoretical_foundations.md` → Appendix A: Simplified 4D EFT (Linearized Toy Model)
 - **No blog posts** in the PDF (they are duplicates of main chapters)
 - **No split files** (parts 1-4 merged into theoretical_foundations.md)
 - When editing a site page, the PDF updates automatically via CI
@@ -320,9 +320,9 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Multi-throat architecture | V_min vs QCD uplift energy comparison | 45-order gap proves multi-throat necessity (geometric theorem) |
 | LVS mass spectrum | Hessian eigenvalues at minimum | M_s=10¹² GeV, m_{3/2}=1.76×10⁹ GeV, LHC null predicted |
 | Full 3D Floquet | Non-autonomous monodromy without adiabatic projection | ε₀=4.30, margin ×30, Neishtadt 2nd order: residual ≤2% |
-| Dynamical Schwinger | Filippov shock kinematics (v_max=0.05c) | Exponent 10³²→10¹², exp(-4.8×10¹²)≡0, N_total≡0 per cycle |
+| Dynamical Schwinger | Filippov shock kinematics (v_max=0.05c) | Exponent 10³¹→10⁹, exp(-7.2×10⁹)≡0, N_total≡0 per cycle |
 | Finite-N Dirac collapse | Expander graph spectra + Cheeger inequality | σ₁/L~10⁻³⁸·⁵, N_min≈4500, ω₀ correction ~10⁻⁷⁶, RT survives |
-| Kinematic Blockade | 5D Bondi flux for continuous membrane | Γ_rad^{5D-GR}≡0, m₁T_slip~10³², exp(-10³²)=0. Proves PBH necessity |
+| Kinematic Blockade | 5D Bondi flux for continuous membrane | Γ_rad^{5D-GR}≡0, m₁T_slip~3.6×10³¹, exp(-3.6×10³¹)=0. Proves PBH necessity |
 | NANOGrav spectral flattening | Tensor TT projection of Filippov shock | φ̈ = Dirac δ → flat spectrum, n_PTA ≈ 10⁹, h_c(16 nHz) ~ 10⁻¹⁵ |
 | φ_eff ab initio | SMS tensor projections + Filippov saltation | φ_eff=(π/2+π)×0.9=1.35π=4.24115 rad, zero free params |
 | Press-Schechter γ(M) | Non-linear spherical collapse + oscillating δ_c | A(M)≈ν²/ln(Ω_m⁻¹), γ(groups)≈0.88, γ(clusters)≈1.19, γ(monsters)≈1.47 |
