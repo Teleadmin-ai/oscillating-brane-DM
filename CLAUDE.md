@@ -149,6 +149,26 @@ git commit -m "Regenerate PDF" && git push
 - **CMPP extraction**: Ψ_ij^(5) = 3×3 STF matrix (5 polarizations), NOT scalar Ψ₄
 - **Billion-step**: κ_Z4^(ℓ) = 1.4/Δt_ℓ (AMR-indexed) + Kreiss-Oliger order 9
 - **IMEX + HMM**: mandatory for 10³² scale ratio (explicit Berger-Oliger physically impossible)
+- **Γ_rad = ln(S_BH)/(2π) ≈ 20.7**: CROWNING DERIVATION — not a free parameter but Bekenstein-Hawking entropy ÷ 2π
+- **Retarded 5D Green's function**: V_eff = 15/(4z²), UV censorship ψ_n(0) ∝ z⁴→0, IR coupling ψ_n(L) ∝ J₂(m_nL) ≠ 0
+- **KK spectrum exact**: Bessel quantization m_n = j_{1,n}/L, graviton m₁ = 3.832/L ≈ 19.2 eV, Sturm-Liouville kinematic pumping
+- **Spectral zeta**: ζ_Δ(s) → Riemann mapping, Weyl-McMahon, meromorphic s=-1/2, Casimir -M₀/12
+- **Seeley-DeWitt a₀-a₅**: exact for AdS₅ orbifold, Gilkey-Branson-Kirsten boundary terms, a₅ = holy grail (log anomaly from branes only)
+- **Skenderis holographic renormalization**: Fefferman-Graham inversion, counterterm dictionary c₁(tension), c₂(G_N), c_log(anomaly)
+- **δ/Λ_QCD ≈ 9.4×10⁻³⁹**: inverse hierarchy, IR bulk (1 eV) cannot destabilize UV brane (257 MeV)
+- **MERA/HaPPY**: 109 layers, bond dim ln χ = S_BH ≈ 4.8×10⁵⁶, RT phase transition → expander graph → ∂S_EE/∂d = 0
+- **OTOCs/MSS**: λ_L = 7.4×10¹⁴ s⁻¹, t* ≈ 0.2 ps, cosmic scrambling ¼ picosecond, t* ≪ t_QCD by 8 orders
+- **Dirac collapse**: σ/L ~ 10⁻¹⁰, multipole hierarchy e^{-2×10²⁰}, ODE = exact corollary of path integral
+- **On-shell ER action**: δS_ij bilocal, c ~ S_BH ~ 10⁵⁶, freeze-out at 10⁷⁴
+- **Dyson horizon**: k_div ≈ 6,360 (hyper-asymptotic immunity)
+- **Schwinger → Kampé de Fériet**: F_{0:1;1}^{3:0;0}, I_{1,6} = 0.002074 (5×10⁻⁷ precision)
+- **CY concrete**: P⁴[18]_{1,1,1,6,9}, χ=23328, tadpole 210≤972
+- **No-Go isotrope**: V ~ 10¹⁶³ → χ=-64000 → Swampland + M_Pl ~ 10⁹⁹
+- **KKLT uplift**: 763-1+210=972, D3 budget +762
+- **Fisher Jacobian**: condition number 2.8, SVD σ={2.51,1.00,0.90}
+- **Fisher forecast**: σ(T)/T=6.7%, σ(L)/L=15%, τ₀-L anti-correlation r=-0.76 broken by PTA
+- **Cobaya module**: obt_v82_likelihood.py + obt_v82_mcmc.yaml
+- **n_σ metrics**: 1.25σ (FLAG MS̄) and 0.11σ (chiral condensate)
 
 ### Key References:
 Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions)
