@@ -37,7 +37,7 @@ This document contains the complete theoretical framework and documentation for 
 
 - Brane tension: 7.0e19 J/m$^{2}$
 - Oscillation period: T = 2.0 Gyr ($\pm$0.3)
-- Extra dimension size: L = 0.2 microns
+- Extra dimension size: L = $0.2\,\mu$m
 - MOND acceleration: a0 = 1.1e-10 m/s$^{2}$
 
 The theory proposes that dark matter effects emerge from membrane oscillations excited by gravitational flows, naturally producing dark energy and MOND-like phenomena.
@@ -323,7 +323,7 @@ The NANOGrav 15-year dataset reveals a stochastic gravitational wave background 
 
 ### The eROSITA Structure Growth Illusion ($\gamma = 1.19$)
 
-The eROSITA satellite measured a structure growth index $\gamma = 1.19$, while standard GR predicts $\gamma = 0.55$. In V8.2, $G_\text{eff}(z)$ oscillates with the brane. Our current epoch corresponds to a temporarily weakened gravity phase (brane stretched), causing cluster formation to stall. Fitting a constant-$G$ $\Lambda$CDM model to this oscillating data extracts an artificially inflated $\gamma$ --- the "illusion" of modified gravity is actually an artifact of applying a static model to a dynamic universe.
+The eROSITA satellite measured a structure growth index $\gamma = 1.19$, while standard GR predicts $\gamma = 0.55$. In V8.2, $G_\text{eff}(z)$ oscillates with the brane. Our current epoch corresponds to a temporarily weakened gravity phase (brane stretched), causing cluster formation to stall. Fitting a constant-$G \Lambda$CDM model to this oscillating data extracts an artificially inflated $\gamma$ --- the "illusion" of modified gravity is actually an artifact of applying a static model to a dynamic universe.
 
 ![eROSITA Growth Illusion](./plots/erosita_gamma_illusion.png)
 *Figure: Oscillating $G_\text{eff}(z)$ creates the illusion of $\gamma = 1.19$ when fitted with a constant-$G$ model. The growth rate $f(z)$ deviates from GR's $\Omega_m^{0.55}$ at low redshifts where the brane is currently stretched.*
@@ -485,7 +485,7 @@ The construction of the V8.2 framework through 60 analytical derivations has gen
 
 **Problem solved:** Explaining eROSITA's anomalous growth index $\gamma = 1.19$ (GR predicts $0.55$).
 
-**Discovery:** The oscillating $G_{eff}(t)$ raises the spherical collapse threshold $\delta_c$ by $\sim 3\%$, which combined with $4.79\%$ $\sigma$ suppression, exponentially depletes massive clusters via the Press-Schechter mass function. The amplification factor $\mathcal{A}(M) \propto \nu^2 = (\delta_c/\sigma(M))^2$ is mass-dependent, converting $\gamma_{linear} \approx 0.80$ to $\gamma_{app} \approx 1.19$ for massive clusters.
+**Discovery:** The oscillating $G_{eff}(t)$ raises the spherical collapse threshold $\delta_c$ by $\sim 3\%$, which combined with $4.79\% \sigma$ suppression, exponentially depletes massive clusters via the Press-Schechter mass function. The amplification factor $\mathcal{A}(M) \propto \nu^2 = (\delta_c/\sigma(M))^2$ is mass-dependent, converting $\gamma_{linear} \approx 0.80$ to $\gamma_{app} \approx 1.19$ for massive clusters.
 
 **Falsifiable prediction for eROSITA DR2:** $\gamma(M)$ is a monotonically increasing spectrum --- groups ($10^{13}\,M_\odot$): $\gamma \approx 0.88$; massive clusters ($10^{14.5}\,M_\odot$): $\gamma \approx 1.19$; monsters ($5 \times 10^{14}\,M_\odot$): $\gamma \approx 1.47$. Classical modified gravity ($f(R)$, scalar-tensor) predicts universal $\gamma$; OBT predicts a mass-dependent spectrum. Testable imminently.
 
@@ -562,7 +562,7 @@ $$\ddot{\phi} + (3H + \Gamma_{rad})\dot{\phi} + \xi R\phi + \frac{\partial V_{GW
 
 Each term has a distinct physical role:
 
-- **(3H + $\Gamma$_rad)$\dot{\phi}$** --- Hubble friction plus radiative damping. $\Gamma$_rad accounts for energy loss via bulk graviton emission (KK modes) during the violent slip phase. During the slow stick phase, $\Gamma$_rad approximately 0; during slip, $\Gamma$_rad spikes, capping the maximum velocity and preventing runaway amplitudes
+- **$(3H + \Gamma_{rad})\dot{\phi}$** --- Hubble friction plus radiative damping. $\Gamma_{rad}$ accounts for energy loss via bulk graviton emission (KK modes) during the violent slip phase. During the slow stick phase, $\Gamma_{rad}$ approximately 0; during slip, $\Gamma_{rad}$ spikes, capping the maximum velocity and preventing runaway amplitudes
 - **$\xi R\phi$** --- Non-minimal coupling to the 4D Ricci scalar R = 6($\dot{H}$ + 2H$^{2}$). This term ensures convergence to a dynamical attractor that locks T = 2.0 Gyr despite evolving H(t) and decaying Cosmic Web forcing, resolving the chirp instability
 - **$\partial$V_GW/$\partial$phi** --- Goldberger-Wise restoring potential (Goldberger & Wise 1999), with minimum at the QCD confinement scale ($\tau_0$^{1/3} = 257 MeV approximately $\Lambda_{QCD}$)
 - **F_web[$E_{\mu\nu}$] x (1 - 3w_eff)** --- **Macroscopic forcing (the Muscle)**: the inhomogeneous Cosmic Web (superclusters, filaments, voids) creates a stress tensor $S_{\mu\nu}$ on the brane. Via Israel junction conditions Delta$K_{\mu\nu}$ = -$\kappa$$_{5}$$^{2}$($S_{\mu\nu}$ - $\frac{1}{3}$S $h_{\mu\nu}$), this generates the projected Weyl tensor $E_{\mu\nu}$, which acts as a continuous 5D tidal force pressing the brane toward the bulk. The trace factor (1-3w) ensures conformal freeze-out during BBN and QCD ignition at $\Lambda_{QCD}$
@@ -1001,8 +1001,8 @@ where $f_\text{osc} \approx 0.10$ is the oscillation amplitude. This is the **sa
 
 **Why this resolves $S_8$:** The $S_8$ parameter is extracted by comparing structure growth at low redshift ($z < 1$, probed by DES/KiDS weak lensing) against the primordial prediction from the CMB ($z = 1100$, probed by Planck). During the primordial epoch, conformal symmetry ($T^\mu_\mu = 0$) froze the brane --- gravity was exactly Newtonian, and the CMB prediction $S_8 \approx 0.836$ is valid. But the late-Universe structures observed by DES grew during the **current stretched phase** of the oscillation, where $G_\text{eff} < G_N$. Structures formed 4.79% more slowly than the CMB-extrapolated rate, producing $S_8 = 0.796$ --- exactly matching DES Year 6 observations (see exact ODE integration below).
 
-- **DES** (non-linear, $z < 0.5$): structures grew during weakened-gravity phase $\to$ $S_8 \approx 0.79$
-- **KiDS/CMB** (linear, $z > 1$ extrapolation): gravity was quasi-standard during earlier oscillation phases $\to$ $S_8$ consistent with Planck
+- **DES** (non-linear, $z < 0.5$): structures grew during weakened-gravity phase $\to S_8 \approx 0.79$
+- **KiDS/CMB** (linear, $z > 1$ extrapolation): gravity was quasi-standard during earlier oscillation phases $\to S_8$ consistent with Planck
 
 The apparent DES/KiDS discrepancy is not a spatial scale effect --- it is a **temporal phase effect**: different surveys weight different redshift ranges, sampling different phases of the gravitational oscillation cycle. This unifies the $S_8$ tension with the eROSITA anomaly ($\gamma = 1.19$) under a single temporal mechanism.
 
@@ -1036,7 +1036,7 @@ The $S_8$ tension is not "approximately" resolved --- it is **algebraically anni
 
 $$n(M, z) \propto \exp\!\left(-\frac{\delta_c^2(z)}{2\sigma^2(M, z)}\right)$$
 
-The abundance of massive clusters depends **exponentially** on the critical density threshold $\delta_c(z)$ for spherical collapse. In the OBT V8.2, the oscillating $G_{eff}(t)$ modulates $\delta_c(z)$ in time: during the current weakened-gravity phase, the collapse barrier rises ($\delta_c > 1.686$), exponentially suppressing the formation of the most massive clusters. When eROSITA's pipeline --- calibrated on a constant-$G$ $\Lambda$CDM cosmology --- interprets this suppressed abundance as a modification of the linear growth index, the exponential sensitivity of the Press-Schechter function amplifies the modest linear $\gamma_{eff} \approx 0.80$ into an apparent $\gamma \approx 1.19$.
+The abundance of massive clusters depends **exponentially** on the critical density threshold $\delta_c(z)$ for spherical collapse. In the OBT V8.2, the oscillating $G_{eff}(t)$ modulates $\delta_c(z)$ in time: during the current weakened-gravity phase, the collapse barrier rises ($\delta_c > 1.686$), exponentially suppressing the formation of the most massive clusters. When eROSITA's pipeline --- calibrated on a constant-$G \Lambda$CDM cosmology --- interprets this suppressed abundance as a modification of the linear growth index, the exponential sensitivity of the Press-Schechter function amplifies the modest linear $\gamma_{eff} \approx 0.80$ into an apparent $\gamma \approx 1.19$.
 
 The eROSITA anomaly is not a linear perturbative effect --- it is a **non-linear resonance** between the oscillating gravitational coupling and the exponential threshold physics of cluster formation. This provides a non-trivial consistency check: the same $G_{eff}(t)$ oscillation, with the same phase and amplitude, simultaneously produces $S_8 = 0.796$ (linear growth, DES) AND $\gamma = 1.19$ (non-linear cluster counts, eROSITA) without any additional parameter.
 
@@ -1507,9 +1507,9 @@ The stick-slip motor provides a **second** stability guarantee beyond the adiaba
 
 Initial (1+1)D numerical prototypes exhibited pathological runaway amplitudes (up to 320% warp factor modulation). We identify this not merely as a dimensional reduction artifact, but as the strict consequence of omitting a fundamental 5D physical process: **radiative damping via bulk graviton emission**.
 
-In a 1D spatial grid, mechanical energy lacks transverse dimensions to dissipate into; it reflects and accumulates destructively. However, in the physical (3+1)+1D topology, the highly accelerated motion of the 3-brane during the violent non-linear "slip" phase (phï >> 0) makes it a macroscopic source of gravitational radiation. According to 5D General Relativity, an accelerating massive brane emits transverse-traceless bulk gravitons (Kaluza-Klein modes) into the extra dimension. This continuous emission of Dark Radiation introduces a highly non-linear radiation reaction force ($\Gamma$_rad) into the radion dynamics.
+In a 1D spatial grid, mechanical energy lacks transverse dimensions to dissipate into; it reflects and accumulates destructively. However, in the physical (3+1)+1D topology, the highly accelerated motion of the 3-brane during the violent non-linear "slip" phase (phï >> 0) makes it a macroscopic source of gravitational radiation. According to 5D General Relativity, an accelerating massive brane emits transverse-traceless bulk gravitons (Kaluza-Klein modes) into the extra dimension. This continuous emission of Dark Radiation introduces a highly non-linear radiation reaction force ($\Gamma_{rad}$) into the radion dynamics.
 
-During the slow stick phase, acceleration is minimal and $\Gamma$_rad approximately 0. But the moment the brane slips and accelerates, $\Gamma$_rad spikes, instantly capping the maximum velocity and evacuating excess geometric strain into the AdS bulk. This fundamental thermodynamic mechanism guarantees that the macroscopic observable w(z) remains in the stable perturbative regime (A_w ~ O(10$^{-3}$)), definitively resolving the 1D runaway artifact using the pure laws of 5D gravity.
+During the slow stick phase, acceleration is minimal and $\Gamma_{rad}$ approximately 0. But the moment the brane slips and accelerates, $\Gamma_{rad}$ spikes, instantly capping the maximum velocity and evacuating excess geometric strain into the AdS bulk. This fundamental thermodynamic mechanism guarantees that the macroscopic observable w(z) remains in the stable perturbative regime (A_w ~ O(10$^{-3}$)), definitively resolving the 1D runaway artifact using the pure laws of 5D gravity.
 
 ### Exascale 5D Numerical Relativity: AMR Scale-Bridging and Ab Initio $\Gamma_{rad}$ Extraction
 
@@ -3051,7 +3051,7 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 
 | Test | 2024 Limit | Our Model | Verdict |
 |------|------------|-----------|---------|
-| Newton @ 25 mum | No deviation | $L = 0.2\,\mu$m | Invisible |
+| Newton @ 25 $\mu$m | No deviation | $L = 0.2\,\mu$m | Invisible |
 | PTA 15 years | $h_c < 3\times 10^{-15}$ | $h_c \sim 2\times 10^{-18}$ | Silent |
 | $H_0$ dipole | < 2% | ~0.01% | Subtle |
 
@@ -3713,7 +3713,7 @@ with:
 | **DM Nature** | Geometric effect from extra dimensions | Unknown particles (WIMPs, axions) | No DM, modified gravity |
 | **Theoretical Basis** | String theory/M-theory (RS extension) | Particle physics extensions | Empirical modification |
 | **Free Parameters** | 3 ($\tau_0$, T, L) | 2+ ($\Omega_c$, $\sigma_v$, $m_\chi$) | 1 ($a_0$) + relativistic ext. |
-| **CMB Fit Quality** | DeltaC_$\ell$/C_$\ell$ < 10$^{-3}$ | $\chi^2$/dof approximately 1.00 | Poor without 2eV neutrinos |
+| **CMB Fit Quality** | $\Delta C_\ell / C_\ell$ < 10$^{-3}$ | $\chi^2$/dof approximately 1.00 | Poor without 2eV neutrinos |
 | **Galaxy Rotations** | v$^{4}$ proportional to M_b automatically | Requires NFW/Einasto profiles | v$^{4}$ proportional to M_b by design |
 | **Tully-Fisher sigma** | ~0.05 dex predicted | ~0.3 dex (with scatter) | ~0.05 dex (built-in) |
 | **Cluster M/L ratio** | 300-400 (factor 5-6 boost) | 200-500 (varies) | Fails without DM |
@@ -4009,7 +4009,7 @@ Quantum corrections in the warped geometry present unique challenges beyond flat
 
 **1. Casimir Energy in Warped Geometry** [Flachi & Tanaka 2003, Phys.Rev.D 68, 025004]
 
-The Casimir energy density between two branes separated by distance $L$ in AdS$_{5}$:
+The Casimir energy density between two branes separated by distance $L$ in Ad$S_{5}$:
 
 $$\rho_{Casimir}(z) = -\frac{\pi^2}{1440} \frac{N_{fields}}{z^4} \left[1 + \frac{45}{2\pi^2}\zeta(3)e^{-2kz} + O(e^{-4kz})\right]$$
 

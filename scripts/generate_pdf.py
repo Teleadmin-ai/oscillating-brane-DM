@@ -664,28 +664,52 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 
         SAFETY: only targets patterns that are unambiguously broken
         formatting — never modifies content inside $$...$$ display math.
+        All replacements use str.replace (exact match) to avoid regex
+        side effects on valid LaTeX.
         """
-        # Split-subscript scories: S$_{8}$ → $S_8$
+        # ── 1. CRASH-LEVEL: Unicode diacritics that break LaTeX ──
+        # phï (phi + diaeresis) → ddot{phi} — WILL crash xelatex
+        text = text.replace("(ph\u00ef >> 0)", r"($\ddot{\phi} \gg 0$)")
+        text = text.replace("ph\u00ef", r"$\ddot{\phi}$")
+        # phi̇ (phi + combining dot above U+0307)
+        text = text.replace("3Hphi\u0307", r"$3H\dot{\phi}$")
+        text = text.replace("phi\u0307", r"$\dot{\phi}$")
+
+        # ── 2. Broken motor equation symbols (plain text → inline math) ──
+        text = text.replace(
+            "**(3H + $\\Gamma$_rad)$\\dot{\\phi}$**",
+            "**$(3H + \\Gamma_{rad})\\dot{\\phi}$**",
+        )
+        text = text.replace(
+            "**R_PBH($\\dot{\\phi}$,$\\dot{\\phi}$)"
+            "\u00b7$\\Theta$(|$\\dot{\\phi}$| - $\\dot{\\phi}$_crit)**",
+            "**$\\mathcal{R}_{PBH}(\\phi, \\dot{\\phi})\\,"
+            "\\Theta(|\\phi| - \\phi_{crit})$**",
+        )
+        text = text.replace("$\\Gamma$_rad", "$\\Gamma_{rad}$")
+        text = text.replace("(xiRphi)", "($\\xi R\\phi$)")
+        text = text.replace("**xiRphi**", "**$\\xi R\\phi$**")
+        text = text.replace("xiRphi", "$\\xi R\\phi$")
+        text = text.replace(
+            "**$\\partial$V_GW/$\\partial$$\\dot{\\phi}$**",
+            "**$\\frac{\\partial V_{GW}}{\\partial \\phi}$**",
+        )
+
+        # ── 3. Split-subscript scories: X$_{n}$ → $X_n$ ──
         text = re.sub(r"S\$_\{8\}\$", "$S_8$", text)
         text = re.sub(r"a\$_\{0\}\$", "$a_0$", text)
         text = re.sub(r"H\$_\{0\}\$", "$H_0$", text)
         text = re.sub(r"f\$_\{0\}\$", "$f_0$", text)
         text = re.sub(r"Q\$_\{(\d)\}\$", r"$Q_\1$", text)
+        # Generic: any single letter followed by $_{X}$ pattern
+        text = re.sub(r"(\w)\$_\{([^}]+)\}\$", r"$\1_{\2}$", text)
 
-        # Plain-text physics that should be inline math
-        text = text.replace("(xiRphi)", r"($\xi R\phi$)")
-        text = text.replace("xiRphi", r"$\xi R\phi$")
-        text = text.replace("0.2 mum", r"$0.2\,\mu$m")
+        # ── 4. Plain-text units and parameters ──
+        text = text.replace("0.2 mum", "$0.2\\,\\mu$m")
+        text = text.replace("25 mum", "25 $\\mu$m")
+        text = text.replace("0.2 microns", "$0.2\\,\\mu$m")
 
-        # Broken Unicode derivatives in plain text (outside math mode)
-        # phi̇ (phi + combining dot above) → $\dot{\phi}$
-        text = text.replace("phi\u0307", r"$\dot{\phi}$")
-        # phï → $\ddot{\phi}$ (phi + diaeresis as double-dot)
-        text = text.replace("ph\u00ef", r"$\ddot{\phi}$")
-        # 3Hphi̇ → $3H\dot{\phi}$
-        text = text.replace("3H$\\dot{\\phi}$", "$3H\\dot{\\phi}$")
-
-        # Broken operator references in plain text
+        # ── 5. Leftover 1 eV vestiges ──
         text = text.replace(
             "m_KK $\\simeq$ 1 eV", "$m_{KK} \\approx 3.78$ eV"
         )
@@ -695,9 +719,20 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
             "$\\Omega_c$, $\\sigma_v$, $m_\\chi$",
         )
 
-        # ($\ell$=0 mode) → ($\ell=0$ mode)
+        # ── 6. Broken ell mode references ──
         text = text.replace("($\\ell$=0 mode)", "($\\ell=0$ mode)")
         text = text.replace("($\\ell$=0)", "($\\ell=0$)")
+
+        # ── 7. Broken table entries ──
+        text = text.replace(
+            "DeltaC_$\\ell$/C_$\\ell$",
+            "$\\Delta C_\\ell / C_\\ell$",
+        )
+
+        # ── 8. Merge adjacent $...$ blocks created by sanitizer ──
+        # e.g. $7.0$ $\times$ $10^{19}$ → $7.0 \times 10^{19}$
+        # Only merge when separated by exactly one space
+        text = re.sub(r"\$([^$]+)\$ \$([^$]+)\$", r"$\1 \2$", text)
 
         return text
 
