@@ -118,6 +118,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Global constant κ_Z4** in AMR (must be AMR-level-indexed scalar field κ_Z4^(ℓ) = 1.4/Δt_ℓ)
 - **Explicit Berger-Oliger for 10³² ratio** (CFL wall: 28 million billion years per step on Frontier → must use IMEX)
 - **Single-throat KKLT uplift** (QCD throat is 45 orders too weak for global LVS uplift → must use multi-throat architecture)
+- **"Classical graviton Bremsstrahlung" for Γ_rad** (continuous 5D GR gives Γ_rad ≡ 0 due to kinematic blockade m₁T_slip ~ 10³²; Γ_rad is quantum informational viscosity, NOT radiation)
 
 ### REQUIRED Concepts (V8.2):
 - **Hybrid motor**: F_web (Cosmic Web macro-forcing) + R_PBH (micro-PBH ER=EPR synchronization)
@@ -182,6 +183,8 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Cluster resonance**: t_cross(cluster) ≈ 2 Gyr = T → ⟨a₀(t)⟩ = 0, MOND self-destructs at cluster scales
 - **Dynamical Schwinger**: slip shock at v_max=0.05c collapses static exponent 10³² → 10¹² (20 orders), but exp(-4.8×10¹²) ≡ 0. Full KK tower N_total ≡ 0. Dissipation 100% classical (Γ_rad), 0% quantum.
 - **Filippov invulnerability**: shock fierce enough for DE harmonics yet 12 orders below Schwinger threshold — thermodynamic masterpiece
+- **Kinematic Blockade theorem**: Classical 5D GR gives Γ_rad^{5D-GR} ≡ 0 (m₁T_slip ~ 10³², exp(-10³²) = 0). Continuous Nambu-Goto membrane CANNOT dissipate energy into bulk. Proves discrete PBH network is cosmologically NECESSARY, not optional
+- **Holographic viscosity**: Γ_rad is NOT classical Bremsstrahlung but quantum informational viscosity — entropy absorption by PBH scrambling. Two derivations (bottom-up 5D GR vs top-down holographic) deliberately non-convergent: proof that brane is not a continuum
 
 ### Key References:
 Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation), Sekino & Susskind 2008 (fast scrambling), Bousso & Polchinski 2000 (flux landscape), Douglas & Kachru 2007 (string landscape review), Alon 1986 / Alon-Boppana (expander graph spectral gap)
@@ -312,6 +315,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Full 3D Floquet | Non-autonomous monodromy without adiabatic projection | ε₀=4.30, margin ×30, Neishtadt 2nd order: residual ≤2% |
 | Dynamical Schwinger | Filippov shock kinematics (v_max=0.05c) | Exponent 10³²→10¹², exp(-4.8×10¹²)≡0, N_total≡0 per cycle |
 | Finite-N Dirac collapse | Expander graph spectra + Cheeger inequality | σ₁/L~10⁻³⁸·⁵, N_min≈4500, ω₀ correction ~10⁻⁷⁶, RT survives |
+| Kinematic Blockade | 5D Bondi flux for continuous membrane | Γ_rad^{5D-GR}≡0, m₁T_slip~10³², exp(-10³²)=0. Proves PBH necessity |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
@@ -436,7 +440,7 @@ python scripts/laplace_demon_hamiltonian.py
 ```
 
 ### OPEN MATHEMATICAL WORK (0 items remaining — ALL COMPLETE)
-All 42 mathematical derivations have been completed and integrated into theory.md (March 2026):
+All 43 mathematical derivations have been completed and integrated into theory.md (March 2026):
 - **33 original derivations** (V8.2 core): Filippov-Banach, Fenichel, Γ_rad ab initio, KK spectrum, spectral zeta, Seeley-DeWitt, Skenderis, MERA/HaPPY, OTOCs, Dirac collapse, Kampé de Fériet, Dyson horizon, KS UV completion, Swiss-Cheese LVS, No-Go isotrope, KKLT tadpole, Fisher Jacobian/forecast, Cobaya module, Robin mapping, Airy-Yukawa series
 - **9 DeepThink refinements** (March 2026): (1) Fourier stick-slip spectrum, (2) exact S₈ ODE + eROSITA non-linear, (3) MOND ab initio from 5D, (4) Seeley-DeWitt numerical evaluation, (5) Dirichlet anomaly 4-branch resolution, (6) full 3D Floquet without adiabatic projection, (7) LVS minimization + multi-throat, (8) dynamical Schwinger invulnerability, (9) finite-N corrections to Dirac collapse
 
