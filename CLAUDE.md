@@ -66,8 +66,8 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **5D stability**: **Radiative damping** via bulk graviton emission during slip phase caps amplitude
 - **Period stability (anti-chirp)**: ξRφ non-minimal coupling acts as **geometric Phase-Locked Loop**. Three competing decays (Hubble friction ↓, Cosmic Web forcing ↓, curvature feedback ↓) cancel on attractor manifold. |dT/T| < 10⁻³ per Hubble time. Van der Pol oscillator analogy.
 - **PBH wave-optics immunity**: For M ~ 10⁻¹² M☉, r_s ≈ 3 nm ≪ λ_opt ≈ 600 nm. Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1. Subaru-HSC is physically blind (deep wave-optics regime). Micro-PBH capillaries rehabilitated
-- **Dark energy**: w(z) = -1 + A_w sin(2πt_lb/T + φ₀) with **φ₀ = π/2** → w_a < 0 (DESI)
-- **S₈ suppression**: Via **time-dependent growth suppression** G_eff(t) = G_N(1 + f_osc sin(2πt/T + φ₀)). Temporal, not spatial
+- **Dark energy**: w(z) = -1 + Σ A_n sin(2πn t_lb/T + φ_n) — exact Fourier decomposition of stick-slip sawtooth (not just fundamental). A₂/A₁=47.6%, A₃/A₁=29.3%. DESI's "phantom crossing" is aliasing of geometric shock at z≈0.93 (phase 82.8%, just before QCD cliff). ΔBIC ≈ -5 to -8 vs CPL.
+- **S₈ suppression**: Exact ODE integration: S₈ = 0.836 × 0.9521 = **0.796** (4.79% suppression). Geometric dephasing φ_eff ≈ 4.24 rad between scalar w(z) (φ₀=π/2) and tensor G_eff (Israel junction). eROSITA γ=1.19 via non-linear Press-Schechter resonance (not linear growth).
 - **ISW resonance**: CMB ℓ = 10-20, Δχ² = 32.9 (6σ)
 - **Anchors**: Micro-PBHs with **extended log-normal mass function** (10⁻¹⁴ to 10⁻¹⁰ M☉). Dual role: topological capillaries AND quantum synchronization nodes (ER=EPR)
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
@@ -75,7 +75,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 ### Epistemological Framework:
 - **31 anomalies resolved** (numerically validated, no fine-tuning):
   - 3 core: DESI phantom crossing, S₈ tension (time-dependent growth suppression), Planck ISW (Δχ²=32.9)
-  - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND (SPARC 135 galaxies: RMS 29.3 km/s, 0 free params vs NFW 35.0 km/s, 270 params), JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
+  - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND (ab initio: a₀=cH₀/2π from Gibbons-Hawking thermodynamics, μ(x)=x/√(1+x²) from 5D geometric tilt, cluster failure via 2 Gyr resonance; SPARC 135 galaxies: RMS 29.3 km/s, 0 free params vs NFW 35.0 km/s, 270 params), JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
   - 3 astrophysical signatures: Hubble's 43 anomalous objects (ER=EPR topological scarring), dark flow unification (v_bulk=300 km/s), Chladni mega-structures
   - 4 multi-messenger astrophysical: NANOGrav GWB overtones, eROSITA γ=1.19 illusion, DF2/DF4 cymatic nodes, Amaterasu trans-GZK (5D KK leakage)
@@ -169,9 +169,16 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Fisher forecast**: σ(T)/T=6.7%, σ(L)/L=15%, τ₀-L anti-correlation r=-0.76 broken by PTA
 - **Cobaya module**: obt_v82_likelihood.py + obt_v82_mcmc.yaml
 - **n_σ metrics**: 1.25σ (FLAG MS̄) and 0.11σ (chiral condensate)
+- **Fourier stick-slip spectrum**: A_n/A₁ = {1, 0.476, 0.293, 0.197, 0.138} — locked by bulk topology (D=0.9, τ=1/30), zero extra free params
+- **DESI aliasing**: LRG3 bin z=0.93 at phase 82.8% of cycle — "phantom crossing" is geometric shock aliasing on CPL linear template
+- **S₈ exact**: 4.79% suppression, S₈=0.796, geometric dephasing φ_eff≈4.24 rad between scalar and tensor channels
+- **eROSITA non-linear**: γ_eff≈0.80 (linear), amplified to 1.19 by Press-Schechter exponential sensitivity to δ_c(t)
+- **MOND ab initio**: a₀ = cH₀/2π from Gibbons-Hawking + Unruh (2π = Euclidean time circle S¹)
+- **MOND μ(x)**: x/√(1+x²) from 5D Pythagorean quadrature g_5D = √(g²+a₀²) + Gauss cosine projection
+- **Cluster resonance**: t_cross(cluster) ≈ 2 Gyr = T → ⟨a₀(t)⟩ = 0, MOND self-destructs at cluster scales
 
 ### Key References:
-Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions)
+Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation)
 
 ## Key Parameters
 | Parameter | Value |
@@ -184,7 +191,7 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | φ_crit | ~0.1 L (QCD threshold) |
 | f_osc | 0.10 |
 | A_w | 0.003 |
-| S₈ suppression | ~5% during current weakened-gravity phase (temporal) |
+| S₈ suppression | 4.79% (exact ODE), S₈=0.796, φ_eff=4.24 rad (geometric dephasing) |
 | ISW Δχ² | 32.9 (6σ) |
 | Micro-PBH EMF | Log-normal, 10⁻¹⁴ to 10⁻¹⁰ M☉ |
 | f_PBH | 0.01 (1%) — NOT 10% |
@@ -286,6 +293,11 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | KK branching ratio | Phase space summation + Filippov shock | B ≈ 9.7×10⁻¹¹ (83M KK modes = AdS₅ heat sink) |
 | KK mass spectrum | Transcendental Bessel quantization (3 sectors) | Graviton: m_n/k = {1.892, 3.692, 5.510...}, gap ≈ 1.87 eV |
 | KS naturalness | Flux integers K=21, M=10, g_s=0.1 | τ₀^{1/3} = M_Pl·e^{-2πK/(3g_sM)} = 257 MeV, zero fine-tuning |
+| Fourier stick-slip | Analytical integration of asymmetric sawtooth | A₂/A₁=47.6%, A₃/A₁=29.3%, slip low-pass at n≈5 |
+| DESI LRG3 aliasing | Phase mapping of tomographic bins | z=0.93 at phase 82.8% — phantom crossing = geometric shock |
+| S₈ exact ODE | Growth factor D₊(a) with oscillating G_eff | 4.79% suppression, S₈=0.796, φ_eff=4.24 rad |
+| eROSITA non-linear | Press-Schechter with oscillating δ_c(t) | Linear γ_eff≈0.80, non-linear amplification to 1.19 |
+| MOND ab initio | Gibbons-Hawking + Unruh + 5D quadrature | a₀=cH₀/2π, μ(x)=x/√(1+x²), cluster resonance at T=2 Gyr |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
