@@ -249,16 +249,18 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
   1. `index.md` → Ch 1: Home
   2. `discoveries.md` → Ch 2: Discovery & Correction (31 anomalies)
   3. `theory.md` → Ch 3: Complete Theoretical Framework
-  4. `docs/theoretical_foundations.md` → Ch 4: Theoretical Foundations
-  5. `laboratory.md` → Ch 5: Laboratory Proofs (qBOUNCE + 5D Geometric Bypass)
-  6. `tools.md` → Ch 6: Computational Tools
+  4. `chronology.md` → Ch 4: Cosmic Chronology
+  5. `predictions.md` → Ch 5: Observational Predictions
+  6. `docs/theoretical_foundations.md` → Ch 6: Theoretical Foundations
+  7. `laboratory.md` → Ch 7: Laboratory Proofs (qBOUNCE + 5D Geometric Bypass)
+  8. `tools.md` → Ch 8: Computational Tools
 - **No blog posts** in the PDF (they are duplicates of main chapters)
 - **No split files** (parts 1-4 merged into theoretical_foundations.md)
 - When editing a site page, the PDF updates automatically via CI
 
 ## Downloads
 1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages, "Resolving Thirty-One Cosmological Anomalies" (LaTeX source: `paper/cosmic_yoyo_prl.tex`)
-2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~90+ pages, 8 chapters (~1.8 MB compressed)
+2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~100+ pages, 8 chapters (~1.8 MB compressed)
 3. **Full Theory (Markdown)** (`oscillating_brane_theory_latest.md.txt`) — same content as PDF, AI/text-parser friendly, downloadable from site
 
 ## Computational Validation Results (March 2026)
@@ -406,8 +408,8 @@ python scripts/fisher_forecast.py
 python scripts/laplace_demon_hamiltonian.py
 ```
 
-### OPEN MATHEMATICAL WORK (1 item remaining)
-- **Kampé de Fériet coefficients**: Explicit evaluation of the first 20 terms of F_{0:1;1}^{3:0;0} for I_{1,6} at α=0.034. Pure mathematical exercise (no physics impact — the numerical result 0.002074 is already confirmed to 5×10⁻⁷).
+### OPEN MATHEMATICAL WORK (0 items remaining — ALL COMPLETE)
+All 33 mathematical derivations have been completed and integrated into theory.md (March 2026). The Kampé de Fériet coefficients (last item) were evaluated: 21 terms of F_{0:1;1}^{3:0;0} at α=0.034, I_{1,6} = 0.002074 confirmed to 5×10⁻⁷, Dirichlet anomaly ~2% diagnosed.
 
 ### SITE & INFRASTRUCTURE TODO
 - Visual page (visual.md) with PDF embeds — waiting for user's PowerPoint PDF

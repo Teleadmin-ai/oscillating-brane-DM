@@ -1226,7 +1226,7 @@ The OBT V8.2 has thus broken the glass ceiling of "beautiful theories." By inter
 
 **4. Trans-scalar inference: MCMC posteriors vs FLAG 2022 Lattice QCD ($n_\sigma$ metric).** The ultimate test of the OBT V8.2 is a **trans-scalar inference**: confronting a purely geometric quantity ($\tau_0$) measured by telescopes with a purely chromodynamic quantity ($\Lambda_{QCD}$) computed on supercomputer lattices.
 
-**Statistical posterior.** The dynesty nested sampling posterior gives $\log_{10}(\tau_0) = 19.51 \pm 0.28$ (J/m$^2$). Propagating to the energy scale $\Lambda_{OBT} = \tau_0^{1/3}$ via logarithmic differentiation ($\sigma_E = E \times \frac{\ln 10}{3}\,\sigma_{\log_{10}\tau_0}$): the relative uncertainty is $\sim 21.5\%$, yielding $\sigma_{stat} \approx 55.2$ MeV.
+**Statistical posterior.** The dynesty nested sampling posterior gives $\log_{10}(\tau_0) = 19.85 \pm 0.28$ (J/m$^2$). Propagating to the energy scale $\Lambda_{OBT} = \tau_0^{1/3}$ via logarithmic differentiation ($\sigma_E = E \times \frac{\ln 10}{3}\,\sigma_{\log_{10}\tau_0}$): the relative uncertainty is $\sim 21.5\%$, yielding $\sigma_{stat} \approx 55.2$ MeV.
 
 **Systematic error budget.** Three dominant systematic drifts from the observational priors:
 - **Hubble prior** ($H_0 \in [68, 73]$): $\tau_0 \propto H_0^2$ induces $\sigma_{H_0} \approx 12.1$ MeV
