@@ -294,6 +294,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | `scripts/qbounce_airy_yukawa.py` | Ab initio Airy-Yukawa matrix elements (97.5% analytical) | `plots/qbounce_airy_yukawa.png` |
 | `scripts/lyapunov_mle.py` | Phase portrait + MLE computation (orbital stability) | `plots/lyapunov_mle.png`, `plots/lyapunov_phase_portrait.png` |
 | `scripts/fisher_jacobian.py` | Numerical Jacobian, SVD, Fisher proxy (condition number 2.8) | `plots/fisher_jacobian.png` |
+| `scripts/fisher_forecast.py` | Multi-probe Fisher forecast (Planck+DESI+Euclid+SKA+PTA) | `plots/fisher_forecast.png` |
 | `scripts/laplace_demon_hamiltonian.py` | 5D Geometric Bypass Hamiltonian | `plots/laplace_demon_readout.png` |
 
 ## MathJax — DO NOT TOUCH
