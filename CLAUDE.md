@@ -317,7 +317,9 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | `scripts/fisher_jacobian_real.py` | Numerical Jacobian (REAL ODE via lyapunov_mle), find_peaks | `plots/fisher_jacobian_real.png` |
 | `scripts/fisher_forecast.py` | Multi-probe Fisher forecast (Planck+DESI+Euclid+SKA+PTA) | `plots/fisher_forecast.png` |
 | `scripts/obt_v82_likelihood.py` | Cobaya MCMC likelihood (BDF stiff ODE at each step) | N/A (inference engine) |
-| `scripts/obt_v82_mcmc.yaml` | Cobaya YAML config (priors, sampler, convergence R-1<0.01) | `chains/obt_v82` |
+| `scripts/obt_v82_mcmc.yaml` | Cobaya YAML config (mock data, priors, R-1<0.01) | `chains/obt_v82` |
+| `scripts/obt_desi_planck.yaml` | PRODUCTION Cobaya (DESI DR2 + Planck ISW + DES Y6) | `chains_real/obt_v82_production` |
+| `scripts/plot_mcmc_results.py` | GetDist triangle plot from converged chains | `plots/obt_v82_corner_plot.pdf` |
 | `scripts/verify_casimir_regularization.py` | UV catastrophe demo + zeta-regularized Casimir verification | `plots/casimir_regularization.png` |
 | `scripts/laplace_demon_hamiltonian.py` | 5D Geometric Bypass Hamiltonian | `plots/laplace_demon_readout.png` |
 
