@@ -175,7 +175,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Cobaya module**: obt_v82_likelihood.py + obt_v82_mcmc.yaml
 - **n_σ metrics**: 1.25σ (FLAG MS̄) and 0.11σ (chiral condensate)
 - **Fourier stick-slip spectrum**: A_n/A₁ = {1, 0.476, 0.293, 0.197, 0.138} — locked by bulk topology (D=0.9, τ=1/30), zero extra free params
-- **DESI aliasing**: LRG3 bin z=0.93 at phase 82.8% of cycle — "phantom crossing" is geometric shock aliasing on CPL linear template
+- **DESI aliasing**: LRG3 bin z=0.93 at phase 82.8% of cycle — "phantom crossing" is geometric shock aliasing on CPL linear template. ΔBIC ≈ -3.6 (DR2, positive-strong), forecast ΔBIC ≈ -17.9 (Year 5, decisive). Stick-slip 3-harmonic template: k=3 params but harmonic ratios locked by topology → zero-cost overtones
 - **S₈ exact**: 4.79% suppression, S₈=0.796, geometric dephasing φ_eff=1.35π≈4.24 rad (ab initio: Israel inversion +π × duty cycle D=0.9)
 - **eROSITA non-linear**: γ_eff≈0.80 (linear), amplified to 1.19 by Press-Schechter exponential sensitivity to δ_c(t). Exact: A(M)≈ν²/ln(Ω_m⁻¹), mass-dependent γ(M) spectrum: groups 0.88, clusters 1.19, monsters 1.47
 - **eROSITA falsifiable prediction**: γ(M) is monotonically increasing with mass. Groups ~0.88, massive clusters ~1.19, monsters ~1.47. f(R)/scalar-tensor predict universal γ — OBT predicts a spectrum. Testable by eROSITA DR2 mass-binned analysis
@@ -324,6 +324,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | φ_eff ab initio | SMS tensor projections + Filippov saltation | φ_eff=(π/2+π)×0.9=1.35π=4.24115 rad, zero free params |
 | Press-Schechter γ(M) | Non-linear spherical collapse + oscillating δ_c | A(M)≈ν²/ln(Ω_m⁻¹), γ(groups)≈0.88, γ(clusters)≈1.19, γ(monsters)≈1.47 |
 | MOND sinc theorem | Orbital averaging of oscillating a₀(t) | sinc(πt_dyn/T): dwarfs 0.996, spirals 0.981, groups 0.637, clusters 0.000 |
+| ΔBIC forecast | Stick-slip 3-harmonic vs CPL on DESI DR2/Y5 | DR2: ΔBIC≈-3.6 (positive-strong), Y5: ΔBIC≈-17.9 (decisive) |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
@@ -448,7 +449,7 @@ python scripts/laplace_demon_hamiltonian.py
 ```
 
 ### OPEN MATHEMATICAL WORK (0 items remaining — ALL COMPLETE)
-All 47 mathematical derivations have been completed and integrated into theory.md (March 2026):
+All 48 mathematical derivations have been completed and integrated into theory.md (March 2026):
 - **33 original derivations** (V8.2 core): Filippov-Banach, Fenichel, Γ_rad ab initio, KK spectrum, spectral zeta, Seeley-DeWitt, Skenderis, MERA/HaPPY, OTOCs, Dirac collapse, Kampé de Fériet, Dyson horizon, KS UV completion, Swiss-Cheese LVS, No-Go isotrope, KKLT tadpole, Fisher Jacobian/forecast, Cobaya module, Robin mapping, Airy-Yukawa series
 - **9 DeepThink refinements** (March 2026): (1) Fourier stick-slip spectrum, (2) exact S₈ ODE + eROSITA non-linear, (3) MOND ab initio from 5D, (4) Seeley-DeWitt numerical evaluation, (5) Dirichlet anomaly 4-branch resolution, (6) full 3D Floquet without adiabatic projection, (7) LVS minimization + multi-throat, (8) dynamical Schwinger invulnerability, (9) finite-N corrections to Dirac collapse
 
