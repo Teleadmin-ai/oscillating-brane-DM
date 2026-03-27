@@ -79,7 +79,7 @@ The Brane theory provides a purely geometric explanation. The stick-slip oscilla
 
 $$w(z) = -1 + 0.003\;\sin\!\left(\frac{2\pi t_{lb}(z)}{T} + \phi_0\right)$$
 
-When DESI's CPL linear fit ($w(a) = w_0 + (1-a)w_a$) attempts to approximate this fundamentally oscillatory signal --- which is currently in its declining phase past a recent peak at $z \approx 0.45$ --- it inevitably produces $w_0 > -1$ and $w_a < 0$. The "phantom crossing" is not an energy violation but the imperfect linear translation of a real sinusoidal curve.
+When DESI's CPL linear fit ($w(a) = w_0 + (1-a)w_a$) attempts to approximate this fundamentally oscillatory signal --- which is currently at a peak at $z = 0$ (today, $\phi_0 = \pi/2$) with the previous maximum at $z \approx 0.16$ ($t_{lb} = 2.0$ Gyr ago) --- it inevitably produces $w_0 > -1$ and $w_a < 0$. The "phantom crossing" is not an energy violation but the imperfect linear translation of a real sinusoidal curve.
 
 **Falsifiable prediction**: DESI Year 5 data will reveal that a pure sinusoidal function yields a better Bayesian Information Criterion (BIC) than the CPL form.
 

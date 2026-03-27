@@ -47,7 +47,7 @@ The membrane oscillation creates a time-varying equation of state:
 
 - **Amplitude**: A_w ≥ 3×10⁻³
 - **Period**: T = 2.0 ± 0.3 Gyr
-- **Phase**: Maximum at z ≈ 0.5
+- **Phase**: Maxima at $z = 0$ (today), $z \approx 0.16$, $z \approx 0.36$ (periodic)
 
 **Detection**: Euclid will measure w(z) to 3% precision, sufficient to detect our predicted oscillations at >5σ significance.
 

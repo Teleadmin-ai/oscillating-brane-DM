@@ -24,9 +24,9 @@ The Hamiltonian for the linear gravitational potential on a half-space, $\hat{H}
 
 The **von Neumann deficiency indices theory** provides the rigorous classification. For the half-line gravitational Hamiltonian, the deficiency indices are $(1,1)$, meaning the operator admits a **one-parameter family** $U(1)$ of self-adjoint extensions. Each extension is uniquely labelled by a single real parameter $\lambda \in \mathbb{R} \cup \{\infty\}$, and corresponds to the generalized Robin boundary condition:
 
-$$\psi'(0) + \lambda\,\psi(0) = 0$$
+$$\psi'(0) + \lambda^{-1}\,\psi(0) = 0$$
 
-The Dirichlet condition ($\psi(0) = 0$) is recovered only in the singular limit $\lambda \to \infty$ — it is one point in a continuum of physically valid boundary conditions, not the unique or even the natural choice. The Neumann condition ($\psi'(0) = 0$, i.e. $\lambda = 0$) and all intermediate values are equally admissible from the standpoint of self-adjoint operator theory.
+The Dirichlet condition ($\psi(0) = 0$) is recovered in the limit $\lambda \to 0$ (where $\lambda^{-1} \to \infty$ forces $\psi(0) = 0$) — it is one point in a continuum of physically valid boundary conditions, not the unique or even the natural choice. The Neumann condition ($\psi'(0) = 0$, i.e. $\lambda \to \infty$) and all intermediate values are equally admissible from the standpoint of self-adjoint operator theory.
 
 **The physical content of V8.2**: The presence of the 5D Yukawa potential at the mirror surface selects a **specific finite value of $\lambda$** from this one-parameter family. The radion's Yukawa gradient acts as a short-range boundary interaction that forces the self-adjoint extension away from the Dirichlet limit. OBT V8.2 does not merely accommodate the Robin parameter — it **derives its precise physical origin**: the integrated 5D Yukawa radion gradient at the mirror surface, transmitted to the Higgs sector via $\xi R H^\dagger H$.
 

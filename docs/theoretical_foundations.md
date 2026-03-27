@@ -7,11 +7,11 @@ description: |
   and detailed comparison with ΛCDM and MOND theories
 ---
 
-# Theoretical Foundations of Oscillating Brane Cosmology
+# Appendix A: Simplified 4D EFT (Linearized Toy Model)
 
 ## Executive Summary
 
-**Pedagogical scope.** This chapter serves as an accessible introduction to the linearized EFT regime of the Oscillating Brane Theory — a "toy model" entry point using the harmonic approximation ($\tau(t) = \tau_0 + \delta\tau\cos(\omega t)$), 4D effective loop corrections, and classical stability arguments. It is designed to build the reader's physical intuition before confronting the full non-smooth V8.2 dynamics. The **complete analytical framework** — non-linear Filippov stick-slip ODE, Liouville-Abel hyper-contraction ($\kappa = e^{-8.60}$), Fenichel-Neishtadt persistence, spectral zeta regularization, CMPP 5D extraction, Klebanov-Strassler UV completion, and holographic ER=EPR phase rigidity — is presented in the [Complete Theoretical Framework](/theory/), which supersedes the simplified treatments below wherever they diverge.
+**Pedagogical scope.** This appendix serves as an accessible introduction to the linearized EFT regime of the Oscillating Brane Theory — a "toy model" entry point using the harmonic approximation ($\tau(t) = \tau_0 + \delta\tau\cos(\omega t)$), 4D effective loop corrections, and classical stability arguments. It is designed to build the reader's physical intuition. The **complete analytical framework** — non-linear Filippov stick-slip ODE, Liouville-Abel hyper-contraction ($\kappa = e^{-8.60}$), Fenichel-Neishtadt persistence, spectral zeta regularization, CMPP 5D extraction, Klebanov-Strassler UV completion, and holographic ER=EPR phase rigidity — is presented in the [Complete Theoretical Framework](/theory/), which supersedes the simplified treatments below wherever they diverge.
 
 This document provides a rigorous mathematical foundation for the oscillating brane dark matter theory, addressing key criticisms and establishing its viability as a competitive cosmological model. We demonstrate compatibility with general relativity and quantum mechanics, provide detailed observational confrontations, and present testable predictions that distinguish our model from ΛCDM and MOND.
 

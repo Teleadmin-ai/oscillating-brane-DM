@@ -39,9 +39,9 @@ class FinalPDFGenerator:
             "theory.md",  # Ch 3: Complete Theoretical Framework
             "chronology.md",  # Ch 4: Cosmic Chronology
             "predictions.md",  # Ch 5: Observational Predictions
-            "docs/theoretical_foundations.md",  # Ch 6: Theoretical Foundations
-            "laboratory.md",  # Ch 7: Laboratory Proofs
-            "tools.md",  # Ch 8: Computational Tools
+            "laboratory.md",  # Ch 6: Laboratory Proofs
+            "tools.md",  # Ch 7: Computational Tools
+            "docs/theoretical_foundations.md",  # Appendix A: Simplified 4D EFT (Linearized Toy Model)
         ]
 
         for doc in doc_order:
