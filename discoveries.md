@@ -326,7 +326,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 
 ## 9. Collateral Theoretical Discoveries: A Rosetta Stone Across Disciplines
 
-The construction of the V8.2 framework through 51 analytical derivations has generated autonomous theorems that transcend the original cosmological problem. Even a researcher skeptical of extra dimensions will find tools here that solve open problems in their own specialty. The theory has become a **mathematical discovery engine** and an interdisciplinary Rosetta Stone.
+The construction of the V8.2 framework through 60 analytical derivations has generated autonomous theorems that transcend the original cosmological problem. Even a researcher skeptical of extra dimensions will find tools here that solve open problems in their own specialty. The theory has become a **mathematical discovery engine** and an interdisciplinary Rosetta Stone.
 
 ### 9.1. Pure Mathematics: The 4-Branch Kampé de Fériet Tensor and the Dirichlet Shadow
 
