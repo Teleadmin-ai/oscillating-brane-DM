@@ -729,7 +729,39 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
             "$\\Delta C_\\ell / C_\\ell$",
         )
 
-        # ── 8. Merge adjacent $...$ blocks created by sanitizer ──
+        # ── 8. Plain-text physics variables (BBN, chronology, predictions) ──
+        text = text.replace("w_eff = 1/3", "$w_{eff} = 1/3$")
+        text = text.replace("w_eff $\\to$ 0", "$w_{eff} \\to 0$")
+        text = text.replace("(1 - 3w_eff) = 0", "$(1 - 3w_{eff}) = 0$")
+        text = text.replace("t_stick + t_slip", "$t_{stick} + t_{slip}$")
+        text = text.replace("M_DM,tot", "$M_{DM,tot}$")
+        text = text.replace("sigma_M approximately 1.5", "$\\sigma_M \\approx 1.5$")
+
+        # ── 9. Broken exponent patterns in tables/text ──
+        text = text.replace("v$^{4}$", "$v^4$")
+        text = text.replace(
+            "$v^4$ proportional to M_b",
+            "$v^4 \\propto M_b$",
+        )
+        text = text.replace(
+            "(rho proportional to r$^{-1}$)",
+            "($\\rho \\propto r^{-1}$)",
+        )
+        text = text.replace(
+            "sigma < 10$^{-48}$ cm$^{2}$",
+            "$\\sigma < 10^{-48}$ cm$^2$",
+        )
+
+        # ── 10. Sigma notation in predictions ──
+        for n in ["4", "5", "6", "3"]:
+            text = text.replace(f"{n}sigma", f"${n}\\sigma$")
+
+        # ── 11. Code block LaTeX cleanup ($ inside ``` blocks) ──
+        text = text.replace("ds$^{2}$", "ds^2")
+        text = text.replace("(J/m$^{2}$)", "(J/m^2)")
+        text = text.replace("(J/m$^{3}$)", "(J/m^3)")
+
+        # ── 12. Merge adjacent $...$ blocks created by sanitizer ──
         # e.g. $7.0$ $\times$ $10^{19}$ → $7.0 \times 10^{19}$
         # Only merge when separated by exactly one space
         text = re.sub(r"\$([^$]+)\$ \$([^$]+)\$", r"$\1 \2$", text)

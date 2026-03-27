@@ -2213,7 +2213,7 @@ A value $w_F \approx 2$ marks precisely the transition between the wave-optics r
 
 $$T_H = \frac{\hbar c^3}{8\pi G k_B M_{crit}} \approx \frac{1.055 \times 10^{-34} \times (3 \times 10^8)^3}{8\pi \times 6.674 \times 10^{-11} \times 1.381 \times 10^{-23} \times 1.35 \times 10^{20}} \approx 900 \text{ K}$$
 
-This is colder than a candle flame. The corresponding evaporation timescale is $t_{evap} \propto M^3 \sim 10^{47}$ years — roughly $10^{37}$ times the current age of the Universe. These objects emit zero detectable gamma-ray flux, rendering INTEGRAL/SPI and Fermi-LAT constraints entirely inapplicable. The Hawking channel is closed by $37$ orders of magnitude.
+This is colder than a candle flame. The corresponding evaporation timescale is $t_{evap} \propto M^3 \sim 10^{37}$ years — roughly $10^{27}$ times the current age of the Universe. These objects emit zero detectable gamma-ray flux, rendering INTEGRAL/SPI and Fermi-LAT constraints entirely inapplicable. The Hawking channel is closed by $27$ orders of magnitude.
 
 ![Perforation Hierarchy](/plots/gregory_laflamme_hierarchy.png)
 *Figure: Gregory-Laflamme perforation hierarchy. PBHs below $M_{crit}$ (purple) undergo GL instability and become 5D objects — topological capillaries invisible to accretion and microlensing. PBHs above $M_{crit}$ (orange) remain brane-anchored with standard 4D gravity.*

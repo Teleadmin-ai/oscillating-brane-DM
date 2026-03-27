@@ -141,7 +141,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Double miracle at M_crit**: w_F(M_crit) = 2π×200/600 ≈ 2.09 — GL topological transition AND optical detection threshold coincide at same mass
 - **Sugiyama et al. 2026**: 4 PBH candidates at 10⁻⁷ M☉ (above M_crit), zero below — observational validation of perforation hierarchy
 - **GW170817 compatibility**: tensor GW modes (KK zero mode) propagate at c on brane, orthogonal to scalar radion oscillation
-- **Hawking immunity**: T_H ~ 900 K at M_crit, t_evap ~ 10^47 yr, immune to INTEGRAL/Fermi-LAT
+- **Hawking immunity**: T_H ~ 900 K at M_crit, t_evap ~ 10^37 yr, immune to INTEGRAL/Fermi-LAT
 - **QCD connection**: τ₀^{1/3} ≈ 257 MeV — phenomenological Ansatz bottom-up (period constrains τ₀ independently of QCD), derived ab initio top-down via KS (K=21, M=10 → 257 MeV). Both approaches converge.
 - **Limit cycle uniqueness**: Liouville-Filippov hyper-contraction κ = e^{-8.60} ≈ 1.84×10⁻⁴ (Banach fixed-point, analytical — NOT the numerical MLE of -0.016)
 - **Fenichel-Neishtadt persistence**: spectral gap |λ_trans|/ε = 4.30/0.14 ≈ 30 → NHIC survives non-autonomous drift

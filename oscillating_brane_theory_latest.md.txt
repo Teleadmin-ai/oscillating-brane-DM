@@ -751,13 +751,13 @@ The complete proof chain: Yoshizawa (boundedness) $\to$ Liouville-Filippov-Banac
 
 In braneworld effective actions, the radion field phi does not couple to the raw energy density rho, but to the **trace of the energy-momentum tensor** $T^\mu_\mu$ = -rho + 3p. The geometric forcing acquires a trace-coupling factor (1 - 3w_eff):
 
-**1. Conformal Freeze-Out (Radiation Era):** During the BBN epoch, the universe is dominated by a relativistic plasma (photons, neutrinos, e+/- pairs) with w_eff = 1/3. The trace vanishes rigorously:
+**1. Conformal Freeze-Out (Radiation Era):** During the BBN epoch, the universe is dominated by a relativistic plasma (photons, neutrinos, e+/- pairs) with $w_{eff} = 1/3$. The trace vanishes rigorously:
 
 $$T^\mu_\mu = -\rho + 3\left(\frac{\rho}{3}\right) = 0$$
 
-Because of this perfect conformal symmetry, the coupling factor (1 - 3w_eff) = 0. The radion is **completely blind** to the bulk's geometric forcing. Combined with extreme Hubble friction ($3H\dot{\phi}$), the brane remains frozen at equilibrium. Standard 4D GR is fully recovered, ensuring pristine primordial light-element abundances.
+Because of this perfect conformal symmetry, the coupling factor $(1 - 3w_{eff}) = 0$. The radion is **completely blind** to the bulk's geometric forcing. Combined with extreme Hubble friction ($3H\dot{\phi}$), the brane remains frozen at equilibrium. Standard 4D GR is fully recovered, ensuring pristine primordial light-element abundances.
 
-**2. QCD Ignition (Trace Anomaly):** As the universe cools to the QCD phase transition (T approximately 150-200 MeV), chiral symmetry breaks, quarks confine into hadrons, and matter becomes non-relativistic (w_eff $\to$ 0). The trace becomes non-zero ($T^\mu_\mu$ approximately -rho), and the coupling factor jumps from 0 to 1 --- instantly igniting the stick-slip motor. This fundamentally explains why the membrane's energy scale ($\tau_0$^{1/3} = 257 MeV) is locked to $\Lambda_{QCD}$: the motor can only activate when conformal symmetry breaks at the QCD scale.
+**2. QCD Ignition (Trace Anomaly):** As the universe cools to the QCD phase transition (T approximately 150-200 MeV), chiral symmetry breaks, quarks confine into hadrons, and matter becomes non-relativistic ($w_{eff} \to 0$). The trace becomes non-zero ($T^\mu_\mu$ approximately -rho), and the coupling factor jumps from 0 to 1 --- instantly igniting the stick-slip motor. This fundamentally explains why the membrane's energy scale ($\tau_0$^{1/3} = 257 MeV) is locked to $\Lambda_{QCD}$: the motor can only activate when conformal symmetry breaks at the QCD scale.
 
 ### Energy of the Membrane
 
@@ -2702,7 +2702,7 @@ The PBH population follows an extended log-normal mass function (Carr, Kühnel &
 
 $$\frac{dn}{d\ln M} = \frac{n_0}{\sqrt{2\pi}\sigma_M}\exp\left(-\frac{(\ln M - \ln M_c)^2}{2\sigma_M^2}\right)$$
 
-with central mass M_c ~ 10$^{-12}$ MSun and width sigma_M approximately 1.5, spanning 10$^{-14}$ to 10$^{-10}$ MSun. The corresponding Schwarzschild radii:
+with central mass M_c ~ 10$^{-12}$ MSun and width $\sigma_M \approx 1.5$, spanning 10$^{-14}$ to 10$^{-10}$ MSun. The corresponding Schwarzschild radii:
 
 $$r_s = \frac{2GM}{c^2} \approx 0.03\text{-}300 \text{ nm} \sim \mathcal{O}(L)$$
 
@@ -2744,7 +2744,7 @@ A value $w_F \approx 2$ marks precisely the transition between the wave-optics r
 
 $$T_H = \frac{\hbar c^3}{8\pi G k_B M_{crit}} \approx \frac{1.055 \times 10^{-34} \times (3 \times 10^8)^3}{8\pi \times 6.674 \times 10^{-11} \times 1.381 \times 10^{-23} \times 1.35 \times 10^{20}} \approx 900 \text{ K}$$
 
-This is colder than a candle flame. The corresponding evaporation timescale is $t_{evap} \propto M^3 \sim 10^{47}$ years --- roughly $10^{37}$ times the current age of the Universe. These objects emit zero detectable gamma-ray flux, rendering INTEGRAL/SPI and Fermi-LAT constraints entirely inapplicable. The Hawking channel is closed by $37$ orders of magnitude.
+This is colder than a candle flame. The corresponding evaporation timescale is $t_{evap} \propto M^3 \sim 10^{37}$ years --- roughly $10^{27}$ times the current age of the Universe. These objects emit zero detectable gamma-ray flux, rendering INTEGRAL/SPI and Fermi-LAT constraints entirely inapplicable. The Hawking channel is closed by $27$ orders of magnitude.
 
 ![Perforation Hierarchy](./plots/gregory_laflamme_hierarchy.png)
 *Figure: Gregory-Laflamme perforation hierarchy. PBHs below $M_{crit}$ (purple) undergo GL instability and become 5D objects --- topological capillaries invisible to accretion and microlensing. PBHs above $M_{crit}$ (orange) remain brane-anchored with standard 4D gravity.*
@@ -2911,14 +2911,14 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 ## Timeline of Discovery
 
 ```
-2024     DESI detects dark energy evolution (4sigma)
+2024     DESI detects dark energy evolution ($4\sigma$)
    |
 2025     $S_8$ tension resolved (time-dependent growth suppression)
    |    ⏳ Euclid first data release
    |    ⏳ qBOUNCE / nanoscale optomechanics (sub-micron gravity)
    |
 2026    ⏳ Planck CMB anomaly = ISW resonance
-   |    $\to$ Our $\chi^2$ improvement: 32.9 (6sigma)
+   |    $\to$ Our $\chi^2$ improvement: 32.9 ($6\sigma$)
    |
 2027    DESI full survey $\to$ power spectrum modulation
    |    SKA-Low $\to$ 21cm reionization modulation (DEFINITIVE TEST)
@@ -2931,11 +2931,11 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 ### Established Confirmations (2024-2026)
 
 ** Already Observed:**
-- **DESI 2024-2026**: Dark energy evolves with 4sigma significance --- exactly matching our oscillating w(z) with $\phi_0$ = pi/2
+- **DESI 2024-2026**: Dark energy evolves with $4\sigma$ significance --- exactly matching our oscillating w(z) with $\phi_0$ = pi/2
 - **$S_8$ tension**: Time-dependent growth suppression via oscillating G_eff(t) bridges DES/KiDS gap
 
 **⏳ Imminent Tests:**
-- **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >5sigma
+- **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >$5\sigma$
 - **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments --- sub-micron gravity test at L = $0.2\,\mu$m, bypassing Casimir background
 - **CMB Analysis 2026**: Planck's low-$\ell$ anomaly matches our ISW resonance prediction
 
@@ -2949,7 +2949,7 @@ The membrane oscillation creates a time-varying equation of state:
 - **Period**: T = 2.0 +/- 0.3 Gyr
 - **Phase**: Maxima at $z = 0$ (today), $z \approx 0.16$, $z \approx 0.36$ (periodic)
 
-**Detection**: Euclid will measure w(z) to 3% precision, sufficient to detect our predicted oscillations at >5sigma significance.
+**Detection**: Euclid will measure w(z) to 3% precision, sufficient to detect our predicted oscillations at >$5\sigma$ significance.
 
 ### ISW Resonance in the CMB
 
@@ -2957,13 +2957,13 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 
 - **Resonance peak**: $\ell$ = 10-20 (angular scale ~12°)
 - **Power suppression**: 16% at resonance
-- **Statistical significance**: $\chi^2$ improvement of 32.9 (6sigma over $\Lambda$CDM)
+- **Statistical significance**: $\chi^2$ improvement of 32.9 ($6\sigma$ over $\Lambda$CDM)
 
 
-*Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The $\Lambda$CDM constant w=-1 is now refuted at 4sigma significance.*
+*Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The $\Lambda$CDM constant w=-1 is now refuted at $4\sigma$ significance.*
 
 
-*Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-$\ell$ power deficit. The $\chi^2$ improvement of 32.9 (6sigma significance) proves the oscillating brane model.*
+*Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-$\ell$ power deficit. The $\chi^2$ improvement of 32.9 ($6\sigma$ significance) proves the oscillating brane model.*
 
 
 *Figure 3: Theoretical prediction of ISW effect from membrane oscillations.*
@@ -3001,7 +3001,7 @@ $$\delta T_b(\vec{k}, z) \supset \Delta T_{osc}(k)\, \sin\left(\frac{2\pi t(z)}{
 with characteristic amplitude $\Delta T_\text{osc} \sim 1$--$5$ mK at BAO-scale wavenumbers. **SKA-Low (2027+)** has the sensitivity and k-range to detect or exclude this modulation at $>3\sigma$, constituting the definitive test of the brane oscillation.
 
 ![SKA 21cm Prediction](./plots/ska_prediction.png)
-*Figure: SKA 21cm reionization modulation prediction. Peak signal 5.46 mK (SNR = 5.5sigma detectable by SKA-Low). The 2D map shows the modulation DeltaT_b(k,z) over the Epoch of Reionization.*
+*Figure: SKA 21cm reionization modulation prediction. Peak signal 5.46 mK (SNR = 5.$5\sigma$ detectable by SKA-Low). The 2D map shows the modulation DeltaT_b(k,z) over the Epoch of Reionization.*
 
 **Numerical validation (21cm mock, exact lookback time):** The brane-induced modulation reaches a **peak amplitude of 5.46 mK** at high redshift. At BAO scales ($k \sim 0.1$ Mpc$^{-1}$), the modulation is 0.70 mK. Against SKA-Low thermal noise (~1 mK per mode for ~1000h integration), this yields a **detection SNR of 5.5$\sigma$** --- well above the $3\sigma$ discovery threshold. If SKA-Low observes no $2$ Gyr spatial modulation in the 21cm power spectrum, the oscillating brane theory is ruled out.
 
@@ -3029,7 +3029,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2pit/T + pi/2) | Time-varying, phantom crossing |
 | $S_8$ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | 4.79% suppression ($S_8$ = 0.796) |
-| CMB Anomaly | None | ISW Resonance (6sigma) | Unique signature |
+| CMB Anomaly | None | ISW Resonance ($6\sigma$) | Unique signature |
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
 | $H_0$ variation | Isotropic | ~0.1% dipole | Anisotropic |
 
@@ -3378,7 +3378,7 @@ from scripts.brane_dynamics import BraneOscillator
 
 # Initialize with default parameters
 brane = BraneOscillator(
-    tau_0=7.0e19,  # Brane tension (J/m$^{2}$)
+    tau_0=7.0e19,  # Brane tension (J/m^2)
     f_osc=0.10,    # Oscillating fraction
     T=2.0          # Period (Gyr)
 )
@@ -3481,7 +3481,7 @@ class BraneOscillator:
     def __init__(self, tau_0=7.0e19, f_osc=0.10, T=2.0, L=2.0e-7):
         """
         Parameters:
-        - tau_0: Brane tension (J/m$^{2}$)
+        - tau_0: Brane tension (J/m^2)
         - f_osc: Oscillating DM fraction
         - T: Period (Gyr)
         - L: Extra dimension size (m)
@@ -3714,15 +3714,15 @@ with:
 | **Theoretical Basis** | String theory/M-theory (RS extension) | Particle physics extensions | Empirical modification |
 | **Free Parameters** | 3 ($\tau_0$, T, L) | 2+ ($\Omega_c$, $\sigma_v$, $m_\chi$) | 1 ($a_0$) + relativistic ext. |
 | **CMB Fit Quality** | $\Delta C_\ell / C_\ell$ < 10$^{-3}$ | $\chi^2$/dof approximately 1.00 | Poor without 2eV neutrinos |
-| **Galaxy Rotations** | v$^{4}$ proportional to M_b automatically | Requires NFW/Einasto profiles | v$^{4}$ proportional to M_b by design |
+| **Galaxy Rotations** | $v^4 \propto M_b$ automatically | Requires NFW/Einasto profiles | $v^4 \propto M_b$ by design |
 | **Tully-Fisher sigma** | ~0.05 dex predicted | ~0.3 dex (with scatter) | ~0.05 dex (built-in) |
 | **Cluster M/L ratio** | 300-400 (factor 5-6 boost) | 200-500 (varies) | Fails without DM |
 | **Bullet Separation** | 150 kpc naturally | Explained (collisionless) | Unexplained |
-| **Cusp-Core** | Cores ~10 kpc | Cusps (rho proportional to r$^{-1}$) | Cores (by construction) |
+| **Cusp-Core** | Cores ~10 kpc | Cusps ($\rho \propto r^{-1}$) | Cores (by construction) |
 | **Missing Satellites** | Factor 2-3 reduction | Too many by 5-10x | Better match |
-| **Direct Detection** | sigma < 10$^{-48}$ cm$^{2}$ forever | sigma > 10$^{-47}$ cm$^{2}$ expected | No prediction |
-| **$S_8$ Tension** | Resolved (4.79%, time-dependent, $S_8$=0.796) | 3sigma tension | Not addressed |
-| **$H_0$ Tension** | Potential resolution | 5sigma tension | Not addressed |
+| **Direct Detection** | $\sigma < 10^{-48}$ cm$^2$ forever | sigma > 10$^{-47}$ cm$^{2}$ expected | No prediction |
+| **$S_8$ Tension** | Resolved (4.79%, time-dependent, $S_8$=0.796) | $3\sigma$ tension | Not addressed |
+| **$H_0$ Tension** | Potential resolution | $5\sigma$ tension | Not addressed |
 | **GW Prediction** | $f_0$ = 1.6x10$^{-17}$ Hz | None specific | None |
 | **Falsifiability** | Multiple clear tests | Particle discovery | Limited tests |
 
@@ -4186,10 +4186,10 @@ Based on the comprehensive O3 pro analysis, several critical improvements should
 ```python
 # Correct dimensional analysis
 def calculate_energy_densities(self, z_brane, z_dot):
-# Kinetic energy density (J/m$^{3}$)
+# Kinetic energy density (J/m^3)
     rho_kin = 0.5 * self.tau_0 * z_dot**2 / self.R_H
     
-# Potential energy density (J/m$^{3}$) 
+# Potential energy density (J/m^3) 
     rho_pot = 0.5 * self.tau_0 * (np.pi * z_brane / self.R_H)**2 / self.R_H
     
 # Total energy density
@@ -4372,7 +4372,7 @@ The Bayesian evidence calculation ($\Delta\ln K = 4.13 \pm 0.07$) relies on spec
 
 | Parameter | Mean | Median | Std | 68% CI | R̂ |
 |-----------|------|--------|-----|--------|-----|
-| $\tau_0$ (J/m$^{2}$) | 7.08x$10^{19}$ | 7.00x$10^{19}$ | 1.07x$10^{19}$ | [6.03x$10^{19}$, 8.13x$10^{19}$] | 1.000 |
+| $\tau_0$ (J/m^2) | 7.08x$10^{19}$ | 7.00x$10^{19}$ | 1.07x$10^{19}$ | [6.03x$10^{19}$, 8.13x$10^{19}$] | 1.000 |
 | f_osc | 0.100 | 0.100 | 0.020 | [0.081, 0.120] | 1.000 |
 | T (Gyr) | 2.00 | 2.00 | 0.20 | [1.80, 2.20] | 1.000 |
 | A_w | 0.003 | 0.003 | 0.001 | [0.002, 0.004] | 1.000 |
@@ -4394,7 +4394,7 @@ For our fiducial parameters (M_PBH = 10$^{-11}$ M_⊙, f_PBH = 1%):
 tau_standard = 0.0646 (includes standard reionization)
 tau_PBH approximately 0.0000 (negligible for f_PBH = 0.01)
 tau_funnel < 0.0001 (negligible)
-tau_total = 0.0646 (within 1.5sigma of Planck)
+tau_total = 0.0646 (within 1.$5\sigma$ of Planck)
 ```
 
 **Key Finding**: With realistic ionization history, PBH contribution is small for f_PBH ~ 1%. The constraint becomes:
@@ -4416,7 +4416,7 @@ We implemented a (1+1)D toy model following BraneCode methodology:
 **Model Setup**:
 ```python
 ## Simplified metric
-ds$^{2}$ = -n$^{2}$(t,y)dt$^{2}$ + a$^{2}$(t,y)dx$^{2}$ + b$^{2}$(t,y)dy$^{2}$
+ds^2 = -n$^{2}$(t,y)dt$^{2}$ + a$^{2}$(t,y)dx$^{2}$ + b$^{2}$(t,y)dy$^{2}$
 
 ## Parameters (natural units)
 L = 1.0          # Extra dimension size  
