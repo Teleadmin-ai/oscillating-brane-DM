@@ -14,7 +14,7 @@ The following .md files compose the PDF and are the SOLE source of truth for the
 2. `theory.md` — core theoretical framework (motor, ODE, BBN, QCD, stability, PBH, bulk)
 3. `chronology.md` — cosmic chronology, tension calibration, MOND
 4. `predictions.md` — observational predictions, tests, Bayesian evidence
-5. `docs/theoretical_foundations.md` — rigorous mathematical foundations
+5. `docs/theoretical_foundations.md` — pedagogical EFT foundations (linearized toy model; full V8.2 non-smooth dynamics are in theory.md)
 6. `laboratory.md` — laboratory proofs (qBOUNCE, 5D Geometric Bypass)
 7. `tools.md` — computational tools
 
@@ -252,7 +252,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
   3. `theory.md` → Ch 3: Complete Theoretical Framework
   4. `chronology.md` → Ch 4: Cosmic Chronology
   5. `predictions.md` → Ch 5: Observational Predictions
-  6. `docs/theoretical_foundations.md` → Ch 6: Theoretical Foundations
+  6. `docs/theoretical_foundations.md` → Ch 6: Theoretical Foundations (pedagogical EFT / toy model)
   7. `laboratory.md` → Ch 7: Laboratory Proofs (qBOUNCE + 5D Geometric Bypass)
   8. `tools.md` → Ch 8: Computational Tools
 - **No blog posts** in the PDF (they are duplicates of main chapters)
