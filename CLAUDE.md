@@ -214,7 +214,7 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | M_crit (Gregory-Laflamme) | Lc²/(2G) ≈ 6.77 × 10⁻¹¹ M☉ (from r_s = L) |
 | ξ (non-minimal coupling) | ~0.15 |
 | Fresnel parameter (PBH) | w_F = 2πr_s/λ ≈ 0.03 ≪ 1 (wave-optics immune) |
-| SPARC rotation curves | RMS = 29.3 km/s (0 params) vs NFW 35.0 km/s (270 params) |
+| SPARC rotation curves | RMS = 29.3 km/s (0 params) vs NFW 35.0 km/s (270 params). Exact RAR: g_obs=√((g²_bar+g_bar√(g²_bar+4a₀²))/2). Sinc(0.11π)≈0.98 (1% galactic correction) |
 | Banach contraction κ | e^{-8.60} ≈ 1.84×10⁻⁴ (hyper-contraction ×5400/cycle) |
 | Spectral gap (Fenichel) | \|λ_trans\|/ε = 4.30/0.14 ≈ 30 (NHIC persistence) |
 | Branching ratio B | ≈ 9.7×10⁻¹¹ (N_max ≈ 8.3×10⁷ KK modes) |
