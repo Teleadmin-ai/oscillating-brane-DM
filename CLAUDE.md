@@ -115,6 +115,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Scalar Ψ₄ in 5D** (must use CMPP 3×3 STF matrix Ψ_ij^(5) — SO(3) little group has 5 polarizations)
 - **Global constant κ_Z4** in AMR (must be AMR-level-indexed scalar field κ_Z4^(ℓ) = 1.4/Δt_ℓ)
 - **Explicit Berger-Oliger for 10³² ratio** (CFL wall: 28 million billion years per step on Frontier → must use IMEX)
+- **Single-throat KKLT uplift** (QCD throat is 45 orders too weak for global LVS uplift → must use multi-throat architecture)
 
 ### REQUIRED Concepts (V8.2):
 - **Hybrid motor**: F_web (Cosmic Web macro-forcing) + R_PBH (micro-PBH ER=EPR synchronization)
@@ -164,7 +165,8 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Schwinger → Kampé de Fériet**: F_{0:1;1}^{3:0;0}, I_{1,6} = 0.002074 (5×10⁻⁷ precision). Dirichlet anomaly RESOLVED: Δ=0.000044 (2.1%) from 4-branch holographic tensor (Ai = c₁f - c₂g → [ff],[fg],[gf],[gg]). Destructive interference under Dirichlet constraint telescopes cross-branches. Anomaly = O(α⁴), exact shadow of brane.
 - **CY concrete**: P⁴[18]_{1,1,1,6,9}, χ=23328, tadpole 210≤972
 - **No-Go isotrope**: V ~ 10¹⁶³ → χ=-64000 → Swampland + M_Pl ~ 10⁹⁹
-- **KKLT uplift**: 763-1+210=972, D3 budget +762
+- **KKLT uplift**: 763-1+210=972, D3 budget +762. Multi-throat architecture: V_min ~ -10⁻³¹ M_Pl⁴, QCD throat (10⁻⁷⁶ M_Pl⁴) 45 orders too weak → REQUIRES second shallow throat at ~5×10¹⁰ GeV for uplift. Geometric selection theorem.
+- **LVS mass spectrum**: m_τs ~ 10⁶ GeV (frozen), m_V ~ 10⁻⁶ eV (ultra-light). M_s = 1.02×10¹² GeV (intermediate string scale). m_{3/2} = 1.76×10⁹ GeV (SUSY above LHC → null results predicted)
 - **Fisher Jacobian**: condition number 2.8, SVD σ={2.51,1.00,0.90}
 - **Fisher forecast**: σ(T)/T=6.7%, σ(L)/L=15%, τ₀-L anti-correlation r=-0.76 broken by PTA
 - **Cobaya module**: obt_v82_likelihood.py + obt_v82_mcmc.yaml
@@ -300,6 +302,10 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | MOND ab initio | Gibbons-Hawking + Unruh + 5D quadrature | a₀=cH₀/2π, μ(x)=x/√(1+x²), cluster resonance at T=2 Gyr |
 | Seeley-DeWitt numerical | V8.2 parameters (k=0.987 eV, kL=1, N_dof=6) | ā₀-ā₅ table, a₅_bulk≡0, UV/IR asymmetry e⁻⁴≈0.018 |
 | Dirichlet anomaly resolution | 4-branch holographic tensor (Ai=c₁f-c₂g) | Δ=0.000044 (2.1%), O(α⁴), destructive interference exact |
+| LVS explicit minimization | V_LVS(τ_large, τ_small) analytical | τ_s=3.65, W₀=4100, both eigenvalues positive (stable) |
+| Multi-throat architecture | V_min vs QCD uplift energy comparison | 45-order gap proves multi-throat necessity (geometric theorem) |
+| LVS mass spectrum | Hessian eigenvalues at minimum | M_s=10¹² GeV, m_{3/2}=1.76×10⁹ GeV, LHC null predicted |
+| Full 3D Floquet | Non-autonomous monodromy without adiabatic projection | ε₀=4.30, margin ×30, Neishtadt 2nd order: residual ≤2% |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
