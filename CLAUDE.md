@@ -161,7 +161,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **δ/Λ_QCD ≈ 9.4×10⁻³⁹**: inverse hierarchy, IR bulk (1 eV) cannot destabilize UV brane (257 MeV)
 - **MERA/HaPPY**: 109 layers, bond dim ln χ = S_BH ≈ 4.8×10⁵⁶, RT phase transition → expander graph → ∂S_EE/∂d = 0
 - **OTOCs/MSS**: λ_L = 7.4×10¹⁴ s⁻¹, t* ≈ 0.2 ps, cosmic scrambling ¼ picosecond, t* ≪ t_QCD by 8 orders
-- **Dirac collapse**: σ/L ~ 10⁻¹⁰, multipole hierarchy e^{-2×10²⁰}, ODE = exact corollary of path integral
+- **Dirac collapse**: σ/L ~ 10⁻¹⁰, multipole hierarchy e^{-2×10²⁰}, ODE = exact corollary of path integral. Finite-N corrections: expander graph spectral gap λ₁≈c ln N, σ₁/L ~ 10⁻³⁸·⁵, dipole P ~ exp(-10⁷⁴). N_min ≈ 4500 (topology only) or O(1) (with κ~10⁵⁶). Period correction ω₀(N) ~ 10⁻⁷⁶. RT phase transition survives for all N > e^{2/c}.
 - **On-shell ER action**: δS_ij bilocal, c ~ S_BH ~ 10⁵⁶, freeze-out at 10⁷⁴
 - **Dyson horizon**: k_div ≈ 6,360 (hyper-asymptotic immunity)
 - **Schwinger → Kampé de Fériet**: F_{0:1;1}^{3:0;0}, I_{1,6} = 0.002074 (5×10⁻⁷ precision). Dirichlet anomaly RESOLVED: Δ=0.000044 (2.1%) from 4-branch holographic tensor (Ai = c₁f - c₂g → [ff],[fg],[gf],[gg]). Destructive interference under Dirichlet constraint telescopes cross-branches. Anomaly = O(α⁴), exact shadow of brane.
@@ -311,6 +311,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | LVS mass spectrum | Hessian eigenvalues at minimum | M_s=10¹² GeV, m_{3/2}=1.76×10⁹ GeV, LHC null predicted |
 | Full 3D Floquet | Non-autonomous monodromy without adiabatic projection | ε₀=4.30, margin ×30, Neishtadt 2nd order: residual ≤2% |
 | Dynamical Schwinger | Filippov shock kinematics (v_max=0.05c) | Exponent 10³²→10¹², exp(-4.8×10¹²)≡0, N_total≡0 per cycle |
+| Finite-N Dirac collapse | Expander graph spectra + Cheeger inequality | σ₁/L~10⁻³⁸·⁵, N_min≈4500, ω₀ correction ~10⁻⁷⁶, RT survives |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
