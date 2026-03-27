@@ -36,7 +36,7 @@ git commit -m "Regenerate PDF" && git push
 ```
 **If you forget, the PDF on the site will be stale and inconsistent with the site pages.**
 
-**Breaking these rules causes data loss in INPI deposits and costs the user money.**
+**Breaking these rules causes data loss and inconsistency between the site and the PDF.**
 
 ## Project Overview
 **Oscillating Brane Cosmology V8.2 (Hybrid Topology Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome). Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window.
