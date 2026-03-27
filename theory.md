@@ -27,7 +27,7 @@ The formal framework for oscillating p-branes in Anti-de Sitter space was establ
 
 The brane position (radion field $\phi$) obeys the hybrid stick-slip ODE coupling macro and micro scales:
 
-$$\ddot{\phi} + (3H + \Gamma_{rad})\dot{\phi} + \xi R\phi + \frac{\partial V_{GW}}{\partial \phi} = \mathcal{F}_{web}[E_{\mu\nu}] \times (1 - 3w_{eff}) - \mathcal{R}_{PBH}(\phi, \dot{\phi})\,\Theta(|\phi| - \phi_{crit})$$
+$$\ddot{\phi} + (3H + \Gamma_{rad})\dot{\phi} + \xi R\phi + \frac{\partial V_{GW}}{\partial \phi} = \mathcal{F}_{web}[E_{\mu\nu}] \times (1 - 3w_{eff}) - \mathcal{R}_{PBH}(\phi, \dot{\phi})\,\Theta(\vert\phi\vert - \phi_{crit})$$
 
 Each term has a distinct physical role:
 
@@ -53,9 +53,9 @@ Physically: as the universe expands and friction drops, the motor would speed up
 
 **EFT formalization of the stick-slip release.** Within the Effective Field Theory (EFT) framework, the non-linear release term $\mathcal{R}_{PBH}$ is formally modeled as a Heaviside-regulated dissipation:
 
-$$\mathcal{R}_{PBH}(\phi, \dot{\phi}) = \gamma_{slip}\,\dot{\phi}\,\Theta(|\phi| - \phi_{crit})$$
+$$\mathcal{R}_{PBH}(\phi, \dot{\phi}) = \gamma_{slip}\,\dot{\phi}\,\Theta(\vert\phi\vert - \phi_{crit})$$
 
-where $\gamma_{slip}$ encodes the ER=EPR-mediated coupling strength and $\Theta$ is the Heaviside step function ensuring the release activates only above the QCD threshold $\phi_{crit}$. The stick phase ($|\phi| < \phi_{crit}$) is purely conservative (no dissipation beyond Hubble friction); the slip phase ($|\phi| > \phi_{crit}$) introduces the non-linear damping that snaps the brane back to equilibrium.
+where $\gamma_{slip}$ encodes the ER=EPR-mediated coupling strength and $\Theta$ is the Heaviside step function ensuring the release activates only above the QCD threshold $\phi_{crit}$. The stick phase ($\vert\phi\vert < \phi_{crit}$) is purely conservative (no dissipation beyond Hubble friction); the slip phase ($\vert\phi\vert > \phi_{crit}$) introduces the non-linear damping that snaps the brane back to equilibrium.
 
 ### Analytical Stability: Filippov Inclusions and Ultimate Boundedness
 
@@ -88,11 +88,11 @@ By the **Yoshizawa Theorem**: $\dot{V} < 0$ outside a compact ball guarantees **
 
 **1. The switching manifold and the non-smooth Poincaré map.** The results above — a strictly negative Maximal Lyapunov Exponent ($\lambda_{max} = -0.016$) and the Yoshizawa GUUB proof — establish orbital stability and topological confinement, but not the **global uniqueness** of the attractor. Non-linear dynamical systems admit multistability: coexisting limit cycles nested within the same bounded region, each locally stable but with distinct basins of attraction. Proving that the 2 Gyr cycle is the unique periodic orbit — that no parasitic competing attractor exists — requires a topological argument beyond Lyapunov theory.
 
-The classical Levinson-Smith theorem (1942), which guarantees uniqueness for smooth Liénard equations via integral conditions on the damping function, is analytically unstable for our system: the Heaviside activation $\Theta(|\phi| - \phi_{crit})$ introduces a distributional discontinuity (a Dirac delta upon differentiation) that invalidates the smoothness hypotheses. Attempting to verify growth conditions on a damping function containing step discontinuities — and requiring uniformity across the slow cosmological parameter $\tau$ — is a distributional minefield that a rigorous reviewer would immediately flag.
+The classical Levinson-Smith theorem (1942), which guarantees uniqueness for smooth Liénard equations via integral conditions on the damping function, is analytically unstable for our system: the Heaviside activation $\Theta(\vert\phi\vert - \phi_{crit})$ introduces a distributional discontinuity (a Dirac delta upon differentiation) that invalidates the smoothness hypotheses. Attempting to verify growth conditions on a damping function containing step discontinuities — and requiring uniformity across the slow cosmological parameter $\tau$ — is a distributional minefield that a rigorous reviewer would immediately flag.
 
 The correct framework is the theory of **piecewise-smooth dynamical systems** (Filippov 1988, di Bernardo et al. 2008). Under the adiabatic projection (freezing $H(t)$, $R(t)$, $\mathcal{F}_{web}(t)$ as slow parameters, valid for $\epsilon = T/t_H \approx 0.14 \ll 1$), the V8.2 ODE reduces to a family of autonomous planar systems indexed by $\tau$. The uniqueness proof is then formulated as a **contraction property of the Poincaré first-return map** on the Filippov switching manifold:
 
-$$\Sigma = \{(\phi, \dot{\phi}) \in \mathbb{R}^2 \mid |\phi| = \phi_{crit}\}$$
+$$\Sigma = \{(\phi, \dot{\phi}) \in \mathbb{R}^2 \mid \vert\phi\vert = \phi_{crit}\}$$
 
 This is the QCD ignition threshold — the exact surface where the vector field jumps discontinuously from the conservative stick dynamics ($f_{stick} = 3H\dot{\phi}$, weak Hubble drag) to the dissipative slip dynamics ($f_{slip} = (3H + \gamma_{slip})\dot{\phi}$, massive radiative damping). A trajectory crossing $\Sigma$ outward enters the slip region, executes the rapid non-linear release, re-enters the stick region, charges back toward $\phi_{crit}$, and returns to $\Sigma$ after one complete stick-slip cycle. The first-return map $\Pi: \Sigma \to \Sigma$ encodes the entire cycle dynamics as a discrete-time operator.
 
@@ -112,7 +112,7 @@ where $\Phi_{stick}$ and $\Phi_{slip}$ are the fundamental solution matrices (st
 
 **3. Exact analytical bound via the Liouville-Filippov trace formula.** Rather than relying on a numerical MLE computation (which, for stiff BDF integrators smoothing the Heaviside discontinuity, risks capturing the near-zero longitudinal exponent $\lambda_1 \approx 0$ of the slow cosmological drift rather than the true transverse contraction), we derive the **exact analytical bound** on the Floquet multiplier $\kappa$ from the Liouville-Abel formula.
 
-For a 2D cycle, $\kappa = \det(M)$. The determinant of the saltation matrix $S$ is evaluated exactly. The switching manifold $\Sigma = \{|\phi| = \phi_{crit}\}$ is purely spatial, with unit normal $n = (1, 0)^T$. The velocity $\dot{\phi}$ is strictly continuous across $\Sigma$ (only the acceleration jumps), so the vector field discontinuity is $\Delta f = (0,\,\Delta\ddot{\phi})^T$. The outer product $\Delta f \cdot n^T$ is a nilpotent matrix with zero trace. By the matrix determinant lemma $\det(I + uv^T) = 1 + v^Tu$:
+For a 2D cycle, $\kappa = \det(M)$. The determinant of the saltation matrix $S$ is evaluated exactly. The switching manifold $\Sigma = \{\vert\phi\vert = \phi_{crit}\}$ is purely spatial, with unit normal $n = (1, 0)^T$. The velocity $\dot{\phi}$ is strictly continuous across $\Sigma$ (only the acceleration jumps), so the vector field discontinuity is $\Delta f = (0,\,\Delta\ddot{\phi})^T$. The outer product $\Delta f \cdot n^T$ is a nilpotent matrix with zero trace. By the matrix determinant lemma $\det(I + uv^T) = 1 + v^Tu$:
 
 $$\det(S) = 1 + n^T \cdot \frac{\Delta f}{n^T \cdot f_{in}} = 1 + \frac{0}{\dot{\phi}} = 1$$
 
@@ -152,13 +152,13 @@ By the **Banach Fixed-Point Theorem**: since $\kappa \approx 10^{-4} \ll 1$, the
 
 The answer is provided by the **geometric singular perturbation theory** for piecewise-smooth systems (Fenichel 1979, extended to Filippov inclusions by Llibre, Novaes & Teixeira 2015). Introducing the slow cosmological time $\tau = \epsilon\,t$, the complete non-autonomous system is recast as an autonomous 3D slow-fast system:
 
-$$\dot{\phi} = y, \quad \dot{y} = \mathcal{F}(\tau) - C(\tau,\phi)\,y - K(\tau)\,\phi - \mathcal{R}(\phi,y)\,\Theta(|\phi|-\phi_{crit}), \quad \dot{\tau} = \epsilon$$
+$$\dot{\phi} = y, \quad \dot{y} = \mathcal{F}(\tau) - C(\tau,\phi)\,y - K(\tau)\,\phi - \mathcal{R}(\phi,y)\,\Theta(\vert\phi\vert-\phi_{crit}), \quad \dot{\tau} = \epsilon$$
 
 For $\epsilon = 0$ (frozen limit), each value of $\tau$ possesses a unique limit cycle $\gamma_\tau$ (proven above via Banach). The continuous stacking of these cycles forms a 2-dimensional **adiabatic invariant cylinder** $\mathcal{M}_0 = \bigcup_\tau (\gamma_\tau \times \{\tau\})$ in the extended phase space $(\phi, \dot{\phi}, \tau)$. The question is whether this cylinder **persists** when $\epsilon > 0$ (the universe unfreezes).
 
 Persistence requires two conditions on the Filippov flow:
 
-**(a) Transversality of crossing (no grazing).** The orbit must cross the switching manifold $\Sigma = \{|\phi| = \phi_{crit}\}$ with finite velocity: $n^T \cdot f = \dot{\phi}_{crit} \neq 0$. At the QCD ignition threshold, the brane is at the end of the stick phase — maximum elastic potential energy, maximum kinetic energy — so $\dot{\phi}$ is strictly non-zero at crossing. This precludes grazing bifurcations (tangential contact with $\Sigma$) and degenerate sliding modes, ensuring that the Poincaré return map remains smooth with respect to the slow parameter $\tau$. **Condition satisfied.**
+**(a) Transversality of crossing (no grazing).** The orbit must cross the switching manifold $\Sigma = \{\vert\phi\vert = \phi_{crit}\}$ with finite velocity: $n^T \cdot f = \dot{\phi}_{crit} \neq 0$. At the QCD ignition threshold, the brane is at the end of the stick phase — maximum elastic potential energy, maximum kinetic energy — so $\dot{\phi}$ is strictly non-zero at crossing. This precludes grazing bifurcations (tangential contact with $\Sigma$) and degenerate sliding modes, ensuring that the Poincaré return map remains smooth with respect to the slow parameter $\tau$. **Condition satisfied.**
 
 **(b) Normal hyperbolicity (spectral gap).** The transverse contraction rate toward the cycle must vastly exceed the slow drift rate along the cylinder. The spectral gap condition requires $|\lambda_{trans}| \gg \epsilon$. From the Liouville-Filippov trace formula: $\lambda_{trans} = \ln(\kappa)/T = -8.60/2.0 = -4.30\,\text{Gyr}^{-1}$. The Hubble drift rate is $\epsilon \approx 0.14\,\text{Gyr}^{-1}$. The ratio:
 
@@ -180,7 +180,7 @@ For $\epsilon \approx 0.14$, the trajectory deviates from the instantaneous froz
 
 $$\dot{\phi} = y, \quad \dot{y} = \mathcal{F}_{web}(\tau) - C(\tau,\phi)\,y - K(\tau)\,\phi, \quad \dot{\tau} = \epsilon$$
 
-The Filippov switching manifold becomes a cylinder $\Sigma_{3D} = \{(\phi, y, \tau) \mid |\phi| = \phi_{crit}\}$ infinite along the $\tau$-axis, with purely spatial normal $n = (1, 0, 0)^T$.
+The Filippov switching manifold becomes a cylinder $\Sigma_{3D} = \{(\phi, y, \tau) \mid \vert\phi\vert = \phi_{crit}\}$ infinite along the $\tau$-axis, with purely spatial normal $n = (1, 0, 0)^T$.
 
 **Block-triangular monodromy.** The 3D saltation matrix at each $\Sigma$ crossing extends trivially: the cosmological drift $\dot{\tau} = \epsilon$ suffers no discontinuity ($\Delta\dot{\tau} = 0$) at the QCD threshold. Crucially, since the equation $\dot{\tau} = \epsilon$ is **completely decoupled** from $\phi$ and $y$ (the brane does not modify the mean cosmic expansion in return), the full system Jacobian — and therefore $\mathbf{M}_{3D}$ — adopts a **strictly upper block-triangular structure**:
 
@@ -405,7 +405,7 @@ Note: The stick-slip waveform is not purely sinusoidal (slower ramp during stick
 ![w(z) Oscillation](/plots/w_z_oscillation.png)
 *Figure: BDF stiff solver output showing the radion displacement, phase space attractor, dark energy equation of state w(z) with phantom crossing matching DESI DR2, and energy density oscillations.*
 
-**Numerical validation (BDF stiff solver, `scipy.integrate.solve_ivp`):** The radion ODE was integrated from 0.5 to 13.8 Gyr using a stiff BDF solver with exact cosmological lookback time (no logarithmic approximation). Results: $w_{DE}(z)$ oscillates in the range $[-1.003, -0.997]$ with amplitude $A_w = 0.003$ and period $T = 2.0$ Gyr. The phantom crossing ($w < -1$) occurs naturally without ghost fields, matching DESI DR2 observations. Maximum radion displacement $|\phi|/L = 0.05$, well below the fragmentation threshold. The stick-slip attractor converges within ~2 e-foldings, confirming period stability despite evolving Hubble friction.
+**Numerical validation (BDF stiff solver, `scipy.integrate.solve_ivp`):** The radion ODE was integrated from 0.5 to 13.8 Gyr using a stiff BDF solver with exact cosmological lookback time (no logarithmic approximation). Results: $w_{DE}(z)$ oscillates in the range $[-1.003, -0.997]$ with amplitude $A_w = 0.003$ and period $T = 2.0$ Gyr. The phantom crossing ($w < -1$) occurs naturally without ghost fields, matching DESI DR2 observations. Maximum radion displacement $\vert\phi\vert/L = 0.05$, well below the fragmentation threshold. The stick-slip attractor converges within ~2 e-foldings, confirming period stability despite evolving Hubble friction.
 
 ### Exact Fourier Spectrum of the Stick-Slip Attractor and the Phantom Crossing Illusion
 
@@ -722,7 +722,7 @@ where $\sigma_{KO} \in [0.01, 0.1]$ is tuned to balance noise suppression agains
 
 ### Microscopic Origin of $\gamma_{slip}$: Holographic Tensor Networks and Quantum Scrambling Bounds
 
-**1. Macroscopic (EFT) status of $\gamma_{slip}$.** In the current OBT V8.2 effective field theory, the slip-phase dissipation coefficient $\gamma_{slip}$ — which parametrizes the non-linear friction $R_{PBH}(\phi,\dot{\phi})\,\Theta(|\phi|-\phi_{crit})$ during the rapid brane recoil — is introduced as a **phenomenological macroscopic parameter**, strictly analogous to the dynamic viscosity $\eta$ in Navier-Stokes hydrodynamics. It encodes the aggregate resistance of the brane-bulk system to the catastrophic topological rearrangement that occurs when the radion crosses the QCD threshold. At the EFT level, $\gamma_{slip}$ absorbs all microscopic physics below the compactification scale $L^{-1}$ into a single effective coefficient governing the rate at which the stick-slip cycle discharges its stored elastic energy into bulk Kaluza-Klein graviton radiation. This is an honest parametrization: the numerical value ($\Gamma_{rad} \approx 20$ in dimensionless units) is calibrated to reproduce the observed 2 Gyr period and the measured amplitude $A_w = 0.003$, but it is not derived from first principles within the current framework.
+**1. Macroscopic (EFT) status of $\gamma_{slip}$.** In the current OBT V8.2 effective field theory, the slip-phase dissipation coefficient $\gamma_{slip}$ — which parametrizes the non-linear friction $R_{PBH}(\phi,\dot{\phi})\,\Theta(\vert\phi\vert-\phi_{crit})$ during the rapid brane recoil — is introduced as a **phenomenological macroscopic parameter**, strictly analogous to the dynamic viscosity $\eta$ in Navier-Stokes hydrodynamics. It encodes the aggregate resistance of the brane-bulk system to the catastrophic topological rearrangement that occurs when the radion crosses the QCD threshold. At the EFT level, $\gamma_{slip}$ absorbs all microscopic physics below the compactification scale $L^{-1}$ into a single effective coefficient governing the rate at which the stick-slip cycle discharges its stored elastic energy into bulk Kaluza-Klein graviton radiation. This is an honest parametrization: the numerical value ($\Gamma_{rad} \approx 20$ in dimensionless units) is calibrated to reproduce the observed 2 Gyr period and the measured amplitude $A_w = 0.003$, but it is not derived from first principles within the current framework.
 
 **2. The quantum information bottleneck.** The microscopic origin of $\gamma_{slip}$ is not a classical dissipative process — it is fundamentally a **quantum information-theoretic phenomenon**. During the slip phase, the brane does not merely recoil mechanically; it undergoes a global topological phase transition in which the entanglement structure of the entire ER=EPR wormhole network must be reorganized. The $\sim 10^{20}$ micro-PBH nodes connected by Einstein-Rosen bridges in the $AdS_5$ bulk must collectively update their quantum correlations to accommodate the new brane position $\phi \to \phi - \Delta\phi$. This reorganization is governed by the **scrambling time** $t_* \sim \beta\,\ln S_{BH}/(2\pi)$ (Sekino & Susskind 2008, Maldacena, Shenker & Stanford 2016), where $\beta$ is the inverse Hawking temperature and $S_{BH}$ the Bekenstein-Hawking entropy of the PBH network. The macroscopic viscosity $\gamma_{slip}$ is therefore the thermodynamic shadow of the **quantum scrambling rate** of the holographic network — the rate at which quantum information, initially localized in the pre-slip entanglement pattern, is redistributed across all degrees of freedom of the bulk wormhole geometry. In the language of quantum channel capacity, the slip is a collective quantum error-correction cycle: the ER=EPR network must decode, process, and re-encode the brane's positional information across $\mathcal{O}(10^{20})$ entangled nodes, and $\gamma_{slip}$ measures the bandwidth cost of this operation. The dissipation is not energy loss — it is the **thermodynamic price of quantum decoherence and re-coherence** across a macroscopic entangled geometry.
 
