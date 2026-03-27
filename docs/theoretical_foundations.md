@@ -202,7 +202,7 @@ with:
 |-----------|-------------------|------|------|
 | **DM Nature** | Geometric effect from extra dimensions | Unknown particles (WIMPs, axions) | No DM, modified gravity |
 | **Theoretical Basis** | String theory/M-theory (RS extension) | Particle physics extensions | Empirical modification |
-| **Free Parameters** | 3 (τ₀, f_osc, L) | 2+ (Ω_c, σ_v, m_χ) | 1 (a₀) + relativistic ext. |
+| **Free Parameters** | 3 (τ₀, T, L) | 2+ (Ω_c, σ_v, m_χ) | 1 (a₀) + relativistic ext. |
 | **CMB Fit Quality** | ΔC_ℓ/C_ℓ < 10⁻³ | χ²/dof ≈ 1.00 | Poor without 2eV neutrinos |
 | **Galaxy Rotations** | v⁴ ∝ M_b automatically | Requires NFW/Einasto profiles | v⁴ ∝ M_b by design |
 | **Tully-Fisher σ** | ~0.05 dex predicted | ~0.3 dex (with scatter) | ~0.05 dex (built-in) |
@@ -211,7 +211,7 @@ with:
 | **Cusp-Core** | Cores ~10 kpc | Cusps (ρ ∝ r⁻¹) | Cores (by construction) |
 | **Missing Satellites** | Factor 2-3 reduction | Too many by 5-10× | Better match |
 | **Direct Detection** | σ < 10⁻⁴⁸ cm² forever | σ > 10⁻⁴⁷ cm² expected | No prediction |
-| **S₈ Tension** | Resolved (~5%, time-dependent) | 3σ tension | Not addressed |
+| **S₈ Tension** | Resolved (4.79%, time-dependent, S₈=0.796) | 3σ tension | Not addressed |
 | **H₀ Tension** | Potential resolution | 5σ tension | Not addressed |
 | **GW Prediction** | f₀ = 1.6×10⁻¹⁷ Hz | None specific | None |
 | **Falsifiability** | Multiple clear tests | Particle discovery | Limited tests |
@@ -242,7 +242,7 @@ with:
 | Extra dimension L | 0.2 μm | Factor of 2 | KK modes | 2035+ |
 | KK mass m_KK | 1 eV | ±0.5 eV | Cosmological bounds | Current |
 | **Cosmological Effects** |
-| S₈ suppression | ~5% (time-dependent) | ±0.5% | Weak lensing | Current |
+| S₈ suppression | 4.79% (time-dependent, S₈=0.796) | ±0.5% | Weak lensing | Current |
 | w(z) amplitude A_w | 0.003 | ±0.001 | BAO + SNe | 2025+ |
 | H₀ anisotropy | 0.01% | ±0.005% | Precision cosmology | 2030+ |
 | **Gravitational Signatures** |
@@ -716,7 +716,7 @@ def lookback_time_exact(z, omega_m=0.3, omega_lambda=0.7, H0=70):
 
 #### 6.6.3 Self-Consistent Growth Suppression
 
-**Issue**: Approximate 5% suppression factor (time-dependent).
+**Issue**: Exact 4.79% suppression factor (time-dependent, S₈=0.796).
 
 **Implementation**:
 ```python

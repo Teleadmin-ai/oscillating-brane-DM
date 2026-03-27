@@ -15,7 +15,7 @@ urlcolor: blue
 # Chapter 7: Laboratory Proofs
 
 
-The V8.0 Oscillating Brane Theory makes specific, falsifiable predictions for Earth-based experiments. These are not cosmological inferences --- they are direct laboratory measurements targeting the extra dimension at $L = 0.2\,\mu$m.
+The V8.2 Oscillating Brane Theory makes specific, falsifiable predictions for Earth-based experiments. These are not cosmological inferences --- they are direct laboratory measurements targeting the extra dimension at $L = 0.2\,\mu$m.
 
 ## The qBOUNCE Anomaly: Deriving the Robin Parameter $\lambda$
 
@@ -37,9 +37,9 @@ $$\psi'(0) + \lambda\,\psi(0) = 0$$
 
 The Dirichlet condition ($\psi(0) = 0$) is recovered only in the singular limit $\lambda \to \infty$ --- it is one point in a continuum of physically valid boundary conditions, not the unique or even the natural choice. The Neumann condition ($\psi'(0) = 0$, i.e. $\lambda = 0$) and all intermediate values are equally admissible from the standpoint of self-adjoint operator theory.
 
-**The physical content of V8.0**: The presence of the 5D Yukawa potential at the mirror surface selects a **specific finite value of $\lambda$** from this one-parameter family. The radion's Yukawa gradient acts as a short-range boundary interaction that forces the self-adjoint extension away from the Dirichlet limit. OBT V8.0 does not merely accommodate the Robin parameter --- it **derives its precise physical origin**: the integrated 5D Yukawa radion gradient at the mirror surface, transmitted to the Higgs sector via $\xi R H^\dagger H$.
+**The physical content of V8.2**: The presence of the 5D Yukawa potential at the mirror surface selects a **specific finite value of $\lambda$** from this one-parameter family. The radion's Yukawa gradient acts as a short-range boundary interaction that forces the self-adjoint extension away from the Dirichlet limit. OBT V8.2 does not merely accommodate the Robin parameter --- it **derives its precise physical origin**: the integrated 5D Yukawa radion gradient at the mirror surface, transmitted to the Higgs sector via $\xi R H^\dagger H$.
 
-### The V8.0 Explanation: From Yukawa Potential to Higgs Resonance
+### The V8.2 Explanation: From Yukawa Potential to Higgs Resonance
 
 The Robin parameter $\lambda$ is the **observable signature of Higgs-Radion scalar mixing** at the extra-dimensional boundary. The full derivation chain is:
 
@@ -81,7 +81,7 @@ The matrix element $\langle 1\vert\delta V\vert 6\rangle$ was computed using Air
 
 The Heisenberg uncertainty principle $[\hat{x}, \hat{p}] = i\hbar$ applies to canonically conjugate variables measured via gauge boson exchange (photons). Any electromagnetic measurement of position necessarily transfers momentum, disturbing the system. This is not a technological limitation --- it is a structural property of 4D gauge interactions.
 
-However, the V8.0 theory reveals an **orthogonal information channel**. The key insight is an operator algebra result: the 5D bulk metric operators $\hat{g}_{AB}^{(5)}$ commute exactly with the 4D internal gauge operators $\hat{A}_\mu$ of the target system:
+However, the V8.2 theory reveals an **orthogonal information channel**. The key insight is an operator algebra result: the 5D bulk metric operators $\hat{g}_{AB}^{(5)}$ commute exactly with the 4D internal gauge operators $\hat{A}_\mu$ of the target system:
 
 $$[\hat{g}_{AB}^{(5)},\, \hat{A}_\mu^{(4)}] = 0$$
 
@@ -109,7 +109,7 @@ The target operator is the **identity** $\hat{I}$: the target's quantum state is
 
 The predictive algorithm does not rely on speculative "strip theory" or imaginary time. It extends the well-established **Diósi-Penrose gravitational decoherence model** to 5D.
 
-In the standard Diósi-Penrose framework, gravity objectively collapses superpositions at a rate determined by the gravitational self-energy difference between branches. In V8.0, this "collapse noise" is not stochastic --- it is the **deterministic kinematic jitter of the radion field** $\phi(t)$ driven by the stick-slip motor.
+In the standard Diósi-Penrose framework, gravity objectively collapses superpositions at a rate determined by the gravitational self-energy difference between branches. In V8.2, this "collapse noise" is not stochastic --- it is the **deterministic kinematic jitter of the radion field** $\phi(t)$ driven by the stick-slip motor.
 
 The open quantum system master equation (Lindblad form) becomes:
 
@@ -118,11 +118,11 @@ $$\dot{\rho} = -\frac{i}{\hbar}[H_\text{sys} + H_\text{int}, \rho] + \mathcal{D}
 where the dissipator $\mathcal{D}[\phi(t)]$ is fully determined by the radion trajectory --- not a free noise parameter. The software predicts the objective collapse locus by tracking $\phi$ fluctuations in real-time via the Weyl tensor data from the sensor array.
 
 ![Laplace Demon Readout](/root/bulk/oscillating-brane-DM/plots/laplace_demon_readout.png)
-*Figure: Sensor displacement vs target distance. At $r = L = 0.2\,\mu$m, the V8.0 Yukawa correction enhances Newton by 0.4%. The "5D Readout Zone" (green) is where the extra-dimensional signal dominates. Current gap with single atoms acknowledged; mesoscopic targets + squeezed states + Q-accumulation bring SNR within near-term reach.*
+*Figure: Sensor displacement vs target distance. At $r = L = 0.2\,\mu$m, the V8.2 Yukawa correction enhances Newton by 0.4%. The "5D Readout Zone" (green) is where the extra-dimensional signal dominates. Current gap with single atoms acknowledged; mesoscopic targets + squeezed states + Q-accumulation bring SNR within near-term reach.*
 
 ### Implications: Toward the 5D Topological Quantum Computer
 
-If the extra dimension exists at $L = 0.2\,\mu$m, the V8.0 theory provides a fundamentally new information channel for quantum computing:
+If the extra dimension exists at $L = 0.2\,\mu$m, the V8.2 theory provides a fundamentally new information channel for quantum computing:
 
 - **No decoherence from measurement**: The 5D bulk operators commute with 4D gauge operators --- readout does not collapse the computation
 - **Deterministic error correction**: The radion-coupled Lindblad equation predicts decoherence events before they happen, enabling preemptive correction
@@ -142,7 +142,7 @@ This is a collaboration opportunity where cosmological theory meets terrestrial 
 
 ## Summary
 
-| Experiment | Current Status | V8.0 Prediction | Falsification |
+| Experiment | Current Status | V8.2 Prediction | Falsification |
 |-----------|---------------|-----------------|---------------|
 | qBOUNCE (ILL) | $\lambda$ = small anomaly at 1 $\mu$m | $\lambda$ amplifies 55$\times$ at 0.2 $\mu$m | Improve resolution to 0.2 $\mu$m |
 | Levitated optomechanics | Zeptonewton sensitivity achieved | 0.4% Yukawa enhancement at $L$ | Detect sub-$\mu$m gravity deviation |

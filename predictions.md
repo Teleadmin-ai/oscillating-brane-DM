@@ -85,14 +85,14 @@ The oscillation's imprint appears in the CMB through the Integrated Sachs-Wolfe 
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/s8_tension_resolution.png" alt="S8 Tension Resolution" style="width: 100%; height: auto;">
-<p><em>Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (~5% slower); CMB/KiDS extrapolations from earlier phases remain quasi-standard.</em></p>
+<p><em>Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (4.79% slower, exact ODE); CMB/KiDS extrapolations from earlier phases remain quasi-standard.</em></p>
 </div>
 
 The brane oscillation modulates the effective gravitational coupling in time:
 
 $$G_{\text{eff}}(t) = G_N \left(1 + f_\text{osc}\, \sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-The current stretched phase ($G_\text{eff} < G_N$) produces ~5% growth suppression at low redshift (resolving DES S₈ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). This is the same temporal mechanism explaining the eROSITA $\gamma = 1.19$ anomaly.
+The current stretched phase ($G_\text{eff} < G_N$) produces 4.79% growth suppression at low redshift (S₈ = 0.796) (resolving DES S₈ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). This is the same temporal mechanism explaining the eROSITA $\gamma = 1.19$ anomaly.
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/growth_factor_comparison.png" alt="Growth Factor Suppression" style="width: 100%; height: auto;">
@@ -135,7 +135,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 | Observable | ΛCDM | Oscillating Brane V8.2 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T + π/2) | Time-varying, phantom crossing |
-| S₈ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | ~5% during current weakened phase |
+| S₈ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | 4.79% suppression (S₈ = 0.796) |
 | CMB Anomaly | None | ISW Resonance (6σ) | Unique signature |
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
 | H₀ variation | Isotropic | ~0.1% dipole | Anisotropic |

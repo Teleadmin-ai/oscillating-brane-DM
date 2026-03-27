@@ -91,13 +91,13 @@ The Brane model resolves this through **temporal gravitational oscillation**. As
 
 $$G_\text{eff}(t) = G_N\!\left(1 + f_\text{osc}\;\sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-During the primordial epoch (BBN, CMB), conformal symmetry froze the brane — gravity was exactly Newtonian. But the late-Universe structures probed by DES grew during the **current weakened-gravity phase** of the oscillation cycle, producing ~5% slower growth. This is the same temporal mechanism that explains the eROSITA $\gamma = 1.19$ anomaly.
+During the primordial epoch (BBN, CMB), conformal symmetry froze the brane — gravity was exactly Newtonian. But the late-Universe structures probed by DES grew during the **current weakened-gravity phase** of the oscillation cycle, producing 4.79% slower growth (exact ODE integration). This is the same temporal mechanism that explains the eROSITA $\gamma = 1.19$ anomaly.
 
 | Survey | Redshift range | Observed $S_8$ | Brane Prediction |
 |--------|-------|----------------|-----------------|
 | Planck / ACT DR6 (CMB) | $z = 1100$ (primordial) | $\approx 0.836$ | Conformal protection: standard gravity |
 | KiDS Legacy | $z \sim 0.1$--$0.9$ (mixed) | Consistent ($< 1\sigma$) | Averages over multiple oscillation phases |
-| DES Year 6 | $z < 0.5$ (late, non-linear) | $\approx 0.79$ (tension $> 2\sigma$) | Current stretched phase: $\sim 5\%$ growth suppression |
+| DES Year 6 | $z < 0.5$ (late, non-linear) | $\approx 0.79$ (tension $> 2\sigma$) | Current stretched phase: $4.79\%$ growth suppression (exact ODE) |
 
 The apparent inconsistency between surveys is the **confirmatory signature** of the oscillating brane: different surveys weight different redshift ranges, sampling different temporal phases of the gravitational cycle.
 
@@ -301,7 +301,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 |---------------------|---------------------|-------------------------------|
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric |
-| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: ~5% during current weakened-gravity phase |
+| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.79% during current weakened-gravity phase (S₈ = 0.796) |
 | Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + temporally enhanced gravity + modified Hubble friction |
 | Undetectable Dark Matter | Zero particles in two decades (LZ/XENONnT) | No WIMPs. Dark matter = 5D geometric signature (Weyl tensor) |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr oscillation period ($\Delta\chi^2 = 32.9$) |

@@ -69,7 +69,7 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
 |---|---|
 | **Oscillation period** | T = 2.0 +/- 0.3 Gyr |
 | **MOND acceleration** | a$_{0}$ = 1.1 x 10$^{-10}$ m/s$^{2}$ |
-| **S$_{8}$ suppression** | ~5% (time-dependent G_eff oscillation) |
+| **S$_{8}$ suppression** | 4.79% (exact ODE, S$_{8}$ = 0.796) |
 | **Bayesian evidence** | $\Delta\ln K$ = 4.13 +/- 0.07 |
 
 
@@ -110,7 +110,7 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 ## Download the Theory
 
 - **[White Paper (7 pages)](/cosmic_yoyo_v5_holographic.pdf)** --- V8.2 Hybrid Topology Edition
-- **[Full Theory (~78 pages)](/oscillating_brane_theory_latest.pdf)** --- Complete documentation with computational validation
+- **[Full Theory (~100+ pages)](/oscillating_brane_theory_latest.pdf)** --- Complete documentation with computational validation
 - **[All Downloads](/downloads/)** --- Scripts, data, and additional resources
 
 
@@ -204,13 +204,13 @@ The Brane model resolves this through **temporal gravitational oscillation**. As
 
 $$G_\text{eff}(t) = G_N\!\left(1 + f_\text{osc}\;\sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-During the primordial epoch (BBN, CMB), conformal symmetry froze the brane --- gravity was exactly Newtonian. But the late-Universe structures probed by DES grew during the **current weakened-gravity phase** of the oscillation cycle, producing ~5% slower growth. This is the same temporal mechanism that explains the eROSITA $\gamma = 1.19$ anomaly.
+During the primordial epoch (BBN, CMB), conformal symmetry froze the brane --- gravity was exactly Newtonian. But the late-Universe structures probed by DES grew during the **current weakened-gravity phase** of the oscillation cycle, producing 4.79% slower growth (exact ODE integration). This is the same temporal mechanism that explains the eROSITA $\gamma = 1.19$ anomaly.
 
 | Survey | Redshift range | Observed $S_8$ | Brane Prediction |
 |--------|-------|----------------|-----------------|
 | Planck / ACT DR6 (CMB) | $z = 1100$ (primordial) | $\approx 0.836$ | Conformal protection: standard gravity |
 | KiDS Legacy | $z \sim 0.1$--$0.9$ (mixed) | Consistent ($< 1\sigma$) | Averages over multiple oscillation phases |
-| DES Year 6 | $z < 0.5$ (late, non-linear) | $\approx 0.79$ (tension $> 2\sigma$) | Current stretched phase: $\sim 5\%$ growth suppression |
+| DES Year 6 | $z < 0.5$ (late, non-linear) | $\approx 0.79$ (tension $> 2\sigma$) | Current stretched phase: $4.79\%$ growth suppression (exact ODE) |
 
 The apparent inconsistency between surveys is the **confirmatory signature** of the oscillating brane: different surveys weight different redshift ranges, sampling different temporal phases of the gravitational cycle.
 
@@ -414,7 +414,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 |---------------------|---------------------|-------------------------------|
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric |
-| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: ~5% during current weakened-gravity phase |
+| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.79% during current weakened-gravity phase (S$_{8}$ = 0.796) |
 | Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + temporally enhanced gravity + modified Hubble friction |
 | Undetectable Dark Matter | Zero particles in two decades (LZ/XENONnT) | No WIMPs. Dark matter = 5D geometric signature (Weyl tensor) |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr oscillation period ($\Delta\chi^2 = 32.9$) |
@@ -2164,14 +2164,14 @@ The oscillation's imprint appears in the CMB through the Integrated Sachs-Wolfe 
 ### Structure Growth Suppression (Time-Dependent Gravitational Oscillation)
 
 
-*Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (~5% slower); CMB/KiDS extrapolations from earlier phases remain quasi-standard.*
+*Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (4.79% slower, exact ODE); CMB/KiDS extrapolations from earlier phases remain quasi-standard.*
 
 
 The brane oscillation modulates the effective gravitational coupling in time:
 
 $$G_{\text{eff}}(t) = G_N \left(1 + f_\text{osc}\, \sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-The current stretched phase ($G_\text{eff} < G_N$) produces ~5% growth suppression at low redshift (resolving DES S$_{8}$ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). This is the same temporal mechanism explaining the eROSITA $\gamma = 1.19$ anomaly.
+The current stretched phase ($G_\text{eff} < G_N$) produces 4.79% growth suppression at low redshift (S$_{8}$ = 0.796) (resolving DES S$_{8}$ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). This is the same temporal mechanism explaining the eROSITA $\gamma = 1.19$ anomaly.
 
 
 *Figure 5: Structure growth suppression in oscillating brane model vs $\Lambda$CDM*
@@ -2213,7 +2213,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 | Observable | $\Lambda$CDM | Oscillating Brane V8.2 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2pit/T + pi/2) | Time-varying, phantom crossing |
-| S$_{8}$ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | ~5% during current weakened phase |
+| S$_{8}$ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | 4.79% suppression (S$_{8}$ = 0.796) |
 | CMB Anomaly | None | ISW Resonance (6sigma) | Unique signature |
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
 | H$_{0}$ variation | Isotropic | ~0.1% dipole | Anisotropic |
@@ -2499,7 +2499,7 @@ with:
 |-----------|-------------------|------|------|
 | **DM Nature** | Geometric effect from extra dimensions | Unknown particles (WIMPs, axions) | No DM, modified gravity |
 | **Theoretical Basis** | String theory/M-theory (RS extension) | Particle physics extensions | Empirical modification |
-| **Free Parameters** | 3 ($\tau_0$, f_osc, L) | 2+ (Omega_c, sigma_v, m_chi) | 1 (a$_{0}$) + relativistic ext. |
+| **Free Parameters** | 3 ($\tau_0$, T, L) | 2+ (Omega_c, sigma_v, m_chi) | 1 (a$_{0}$) + relativistic ext. |
 | **CMB Fit Quality** | DeltaC_$\ell$/C_$\ell$ < 10$^{-3}$ | $\chi^2$/dof approximately 1.00 | Poor without 2eV neutrinos |
 | **Galaxy Rotations** | v$^{4}$ proportional to M_b automatically | Requires NFW/Einasto profiles | v$^{4}$ proportional to M_b by design |
 | **Tully-Fisher sigma** | ~0.05 dex predicted | ~0.3 dex (with scatter) | ~0.05 dex (built-in) |
@@ -2508,7 +2508,7 @@ with:
 | **Cusp-Core** | Cores ~10 kpc | Cusps (rho proportional to r$^{-1}$) | Cores (by construction) |
 | **Missing Satellites** | Factor 2-3 reduction | Too many by 5-10x | Better match |
 | **Direct Detection** | sigma < 10$^{-48}$ cm$^{2}$ forever | sigma > 10$^{-47}$ cm$^{2}$ expected | No prediction |
-| **S$_{8}$ Tension** | Resolved (~5%, time-dependent) | 3sigma tension | Not addressed |
+| **S$_{8}$ Tension** | Resolved (4.79%, time-dependent, S$_{8}$=0.796) | 3sigma tension | Not addressed |
 | **H$_{0}$ Tension** | Potential resolution | 5sigma tension | Not addressed |
 | **GW Prediction** | f$_{0}$ = 1.6x10$^{-17}$ Hz | None specific | None |
 | **Falsifiability** | Multiple clear tests | Particle discovery | Limited tests |
@@ -2539,7 +2539,7 @@ with:
 | Extra dimension L | 0.2 mum | Factor of 2 | KK modes | 2035+ |
 | KK mass m_KK | 1 eV | +/-0.5 eV | Cosmological bounds | Current |
 | **Cosmological Effects** |
-| S$_{8}$ suppression | ~5% (time-dependent) | +/-0.5% | Weak lensing | Current |
+| S$_{8}$ suppression | 4.79% (time-dependent, S$_{8}$=0.796) | +/-0.5% | Weak lensing | Current |
 | w(z) amplitude A_w | 0.003 | +/-0.001 | BAO + SNe | 2025+ |
 | H$_{0}$ anisotropy | 0.01% | +/-0.005% | Precision cosmology | 2030+ |
 | **Gravitational Signatures** |
@@ -3013,7 +3013,7 @@ def lookback_time_exact(z, omega_m=0.3, omega_lambda=0.7, H0=70):
 
 #### Self-Consistent Growth Suppression
 
-**Issue**: Approximate 5% suppression factor (time-dependent).
+**Issue**: Exact 4.79% suppression factor (time-dependent, S$_{8}$=0.796).
 
 **Implementation**:
 ```python
