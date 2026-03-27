@@ -205,9 +205,14 @@ class FinalPDFGenerator:
 
         # Get title and create chapter heading
         title = front_matter.get("title", file_path.stem.replace("_", " ").title())
-        self.chapter_count += 1
 
-        heading = f"# Chapter {self.chapter_count}: {title}"
+        # Appendix detection: theoretical_foundations.md is Appendix A, not a chapter
+        is_appendix = "theoretical_foundations" in str(file_path)
+        if is_appendix:
+            heading = "# Appendix A: Simplified 4D EFT (Linearized Toy Model)"
+        else:
+            self.chapter_count += 1
+            heading = f"# Chapter {self.chapter_count}: {title}"
 
         if "_posts" in str(file_path):
             date = front_matter.get("date", "")

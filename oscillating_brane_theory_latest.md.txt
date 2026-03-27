@@ -1685,7 +1685,7 @@ The holographic derivation (Section above) yields $\Gamma_{rad} = \ln(S_{BH})/(2
 
 **1. The 5D Bondi flux and the kinematic resonance condition.** The brane is a distributional source in the Poincaré AdS$_5$ metric. The TT wave equation $(\Box_4 + \partial_z^2 - \frac{3}{z}\partial_z)h_{\mu\nu} = \kappa_5^2(z/L)^2\,\delta T_{\mu\nu}^{TT}$ propagates radiation into the bulk via the retarded 5D Green's function. The total radiated power into the KK tower is extracted via the CMPP Bondi news tensor: $P_{KK} = (32\pi G_5)^{-1}\oint \mathcal{N}_{ij}\mathcal{N}^{ij}\,d\Sigma_3$.
 
-For a monochromatic source $\phi(t) = \phi_0\sin(\omega t)$, the retarded propagator imposes a **kinematic resonance condition**: energy conservation requires the source frequency to exceed the KK mass threshold. In the spectral decomposition, the coupling to the $n$-th KK mode is proportional to $\Theta(\omega - m_n)$ --- a Heaviside step function enforcing the on-shell condition. The brane oscillation frequency is $\omega = 2\pi/T \approx 10^{-17}$ Hz. The lightest KK graviton mass is $m_1 = 3.832/L \approx 19.2$ eV, corresponding to $\nu_{KK} \approx 4.6 \times 10^{14}$ Hz. Since $\omega/m_1 \sim 10^{-31}$, the kinematic condition $\omega > m_n$ is violated by 31 orders of magnitude for **every** KK mode. The radiated wave is purely evanescent --- exponentially decaying in the bulk with no propagating component. The monochromatic Bondi flux is:
+For a monochromatic source $\phi(t) = \phi_0\sin(\omega t)$, the retarded propagator imposes a **kinematic resonance condition**: energy conservation requires the source frequency to exceed the KK mass threshold. In the spectral decomposition, the coupling to the $n$-th KK mode is proportional to $\Theta(\omega - m_n)$ --- a Heaviside step function enforcing the on-shell condition. The brane oscillation frequency is $\omega = 2\pi/T \approx 10^{-17}$ Hz. The lightest KK graviton mass is $m_1 = j_{1,1}\hbar c/L \approx 3.78$ eV, corresponding to $\nu_{KK} \approx 9.1 \times 10^{14}$ Hz. Since $\omega/m_1 \sim 10^{-31}$, the kinematic condition $\omega > m_n$ is violated by 31 orders of magnitude for **every** KK mode. The radiated wave is purely evanescent --- exponentially decaying in the bulk with no propagating component. The monochromatic Bondi flux is:
 
 $$P_{KK}^{mono} \equiv 0$$
 
@@ -1714,7 +1714,7 @@ A smooth Nambu-Goto membrane oscillating in AdS$_5$ is **radiatively inert**. Cl
 
 The cosmological attractor (2.0 Gyr period, $\kappa = e^{-8.60}$ hyper-contraction) **requires** $\Gamma_{rad} \approx 20$. Without it, the brane oscillates undamped, amplitudes grow without bound, and the universe self-destructs. The holographic value is not merely preferred --- it is **cosmologically mandatory**.
 
-This non-convergence is not a failure of the model. It is the **definitive proof** that the brane cannot be a classical continuum. The Nambu-Goto effective field theory --- a smooth elastic membrane described by a continuous action --- is an infrared (IR) approximation that collapses catastrophically when confronted with the ultraviolet (UV) physics of energy dissipation. The KK mass gap ($m_1 \approx 19.2$ eV) creates an impenetrable frequency barrier that no classical, macroscopic brane motion can breach. The continuum description is thermodynamically dead: it predicts zero dissipation, zero damping, and therefore an unstable universe.
+This non-convergence is not a failure of the model. It is the **definitive proof** that the brane cannot be a classical continuum. The Nambu-Goto effective field theory --- a smooth elastic membrane described by a continuous action --- is an infrared (IR) approximation that collapses catastrophically when confronted with the ultraviolet (UV) physics of energy dissipation. The KK mass gap ($m_1 \approx 3.78$ eV) creates an impenetrable frequency barrier that no classical, macroscopic brane motion can breach. The continuum description is thermodynamically dead: it predicts zero dissipation, zero damping, and therefore an unstable universe.
 
 **4. The holographic viscosity resolution: informational thermodynamics.** The resolution is that $\Gamma_{rad}$ is not a classical radiation reaction force (Bremsstrahlung). It is a **quantum informational viscosity** --- the thermodynamic price of rearranging the entanglement structure of the holographic PBH network.
 
@@ -3513,7 +3513,7 @@ See our [GitHub repository](https://github.com//oscillating-brane-DM) for more d
 
 \newpage
 
-# Chapter 8: Theoretical Foundations and Rigorous Framework
+# Appendix A: Simplified 4D EFT (Linearized Toy Model)
 
 *Comprehensive mathematical framework, observational compatibility analysis,
 and detailed comparison with $\Lambda$CDM and MOND theories*
@@ -3603,7 +3603,7 @@ satisfying Eöt-Wash experiments.
 ### Quantum Regime
 
 **Particle Content**: Oscillation quanta (branons) have:
-- Mass: $m_\text{branon} \sim 1$ eV
+- Mass: $m_\text{branon} \approx 3.8$ eV
 - Coupling to SM: gravitational only
 - Production rate: negligible at collider energies
 
@@ -3750,7 +3750,7 @@ with:
 | Brane tension $\tau_0$ | 7.0 x $10^{19}$ J/m$^{2}$ | +/-15% | Indirect via H$_{0}$(z) | Current |
 | Oscillation period T | 2.0 Gyr | +/-0.3 Gyr | GW spectrum | 2030+ |
 | Extra dimension L | 0.2 mum | Factor of 2 | KK modes | 2035+ |
-| KK mass m_KK | 1 eV | +/-0.5 eV | Cosmological bounds | Current |
+| KK mass $m_{KK}$ | ~3.8 eV | +/-1 eV | Cosmological bounds | Current |
 | **Cosmological Effects** |
 | S$_{8}$ suppression | 4.79% (time-dependent, S$_{8}$=0.796) | +/-0.5% | Weak lensing | Current |
 | w(z) amplitude A_w | 0.003 | +/-0.001 | BAO + SNe | 2025+ |
@@ -3764,7 +3764,7 @@ with:
 | Halo core radius | ~10 kpc | +/-3 kpc | Stellar kinematics | 2025+ |
 | Subhalo reduction | Factor 2-3 | +/-50% | Stream gaps | 2028+ |
 | **Particle Physics** |
-| Branon mass | ~1 eV | Order of magnitude | Non-detection | Current |
+| Branon mass | ~3.8 eV | +/-1 eV | Non-detection | Current |
 | DM cross-section | < 10$^{-48}$ cm$^{2}$ | Lower limit | Direct detection | Current |
 | LHC production | < 10$^{-50}$ fb | Upper limit | Collider searches | Current |
 
@@ -4057,7 +4057,7 @@ requires careful treatment of the induced metric $g_{ind}$.
 **Mass spectrum**:
 $$m_n^2 = \frac{4k^2}{9}\left[4 + n(n+3)\right]e^{-2kL}$$
 
-For $n=0$ (radion): $m_{radion} = \frac{4k}{3}e^{-kL} \approx 1$ eV
+For $n=0$ (radion): $m_{radion} = \frac{4k}{3}e^{-kL} \approx 0.48$ eV
 
 **Quantum stability conditions**:
 1. **Coleman-Weinberg potential** must be bounded below

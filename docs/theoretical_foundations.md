@@ -93,7 +93,7 @@ satisfying Eöt-Wash experiments.
 ### 2.2 Quantum Regime
 
 **Particle Content**: Oscillation quanta (branons) have:
-- Mass: $m_\text{branon} \sim 1$ eV
+- Mass: $m_\text{branon} \approx 3.8$ eV
 - Coupling to SM: gravitational only
 - Production rate: negligible at collider energies
 
@@ -240,7 +240,7 @@ with:
 | Brane tension τ₀ | 7.0 × 10¹⁹ J/m² | ±15% | Indirect via H₀(z) | Current |
 | Oscillation period T | 2.0 Gyr | ±0.3 Gyr | GW spectrum | 2030+ |
 | Extra dimension L | 0.2 μm | Factor of 2 | KK modes | 2035+ |
-| KK mass m_KK | 1 eV | ±0.5 eV | Cosmological bounds | Current |
+| KK mass $m_{KK}$ | ~3.8 eV | ±1 eV | Cosmological bounds | Current |
 | **Cosmological Effects** |
 | S₈ suppression | 4.79% (time-dependent, S₈=0.796) | ±0.5% | Weak lensing | Current |
 | w(z) amplitude A_w | 0.003 | ±0.001 | BAO + SNe | 2025+ |
@@ -254,7 +254,7 @@ with:
 | Halo core radius | ~10 kpc | ±3 kpc | Stellar kinematics | 2025+ |
 | Subhalo reduction | Factor 2-3 | ±50% | Stream gaps | 2028+ |
 | **Particle Physics** |
-| Branon mass | ~1 eV | Order of magnitude | Non-detection | Current |
+| Branon mass | ~3.8 eV | ±1 eV | Non-detection | Current |
 | DM cross-section | < 10⁻⁴⁸ cm² | Lower limit | Direct detection | Current |
 | LHC production | < 10⁻⁵⁰ fb | Upper limit | Collider searches | Current |
 
@@ -547,7 +547,7 @@ requires careful treatment of the induced metric $g_{ind}$.
 **Mass spectrum**:
 $$m_n^2 = \frac{4k^2}{9}\left[4 + n(n+3)\right]e^{-2kL}$$
 
-For $n=0$ (radion): $m_{radion} = \frac{4k}{3}e^{-kL} \approx 1$ eV
+For $n=0$ (radion): $m_{radion} = \frac{4k}{3}e^{-kL} \approx 0.48$ eV
 
 **Quantum stability conditions**:
 1. **Coleman-Weinberg potential** must be bounded below
