@@ -502,7 +502,7 @@ A simple harmonic oscillator would be damped by Hubble friction (3Hphi̇) in a f
 
 The non-minimal coupling $\xi R\phi$ acts as a **geometric Phase-Locked Loop (PLL)**. The 4D Ricci scalar $R = 6(\dot{H} + 2H^2)$ decreases as the universe expands. Through the $\xi R\phi$ term, this decreasing curvature feeds back into the radion equation, dynamically adjusting the effective restoring force. The three competing effects --- (1) decreasing Hubble friction ($3H\dot{\phi} \downarrow$), (2) decreasing Cosmic Web forcing ($\mathcal{F}_{web} \downarrow$), and (3) curvature feedback ($\xi R\phi \downarrow$) --- form a coupled dynamical system $\{H(t), \phi(t), \dot{M}_{DM}(t)\}$ that converges to an **attractor manifold** where the three decay rates cancel to first order.
 
-Physically: as the universe expands and friction drops, the motor would speed up --- but simultaneously the curvature-dependent restoring force weakens, slowing the motor by the same amount. This self-tuning balance is not fine-tuned; it is the generic behavior of the attractor, analogous to how a van der Pol oscillator maintains constant amplitude despite varying external conditions. Numerical integration of the full V8.2 ODE confirms convergence to $T = 2.0$ Gyr within $\sim 2$ e-foldings, with residual drift $|\dot{T}/T| < 10^{-3}$ per Hubble time --- the period is locked to better than 0.1% per Gyr.
+Physically: as the universe expands and friction drops, the motor would speed up --- but simultaneously the curvature-dependent restoring force weakens, slowing the motor by the same amount. This self-tuning balance is not fine-tuned; it is the generic behavior of the attractor, analogous to how a van der Pol oscillator maintains constant amplitude despite varying external conditions. Numerical integration of the full V8.2 ODE confirms convergence to $T = 2.0$ Gyr within $\sim 2$ e-foldings, with residual drift $\vert\dot{T}/T\vert < 10^{-3}$ per Hubble time --- the period is locked to better than 0.1% per Gyr.
 
 **EFT formalization of the stick-slip release.** Within the Effective Field Theory (EFT) framework, the non-linear release term $\mathcal{R}_{PBH}$ is formally modeled as a Heaviside-regulated dissipation:
 
@@ -514,7 +514,7 @@ where $\gamma_{slip}$ encodes the ER=EPR-mediated coupling strength and $\Theta$
 
 **1. Topological obstruction (Converse Lyapunov Theorems).** A common reviewer demand is to produce a closed-form Lyapunov function $V(\phi, \dot{\phi})$ with $\dot{V} < 0$ converging to the 2 Gyr limit cycle. This demand is **mathematically unfounded**. By the converse Lyapunov theorems (Kurzweil-Massera) for pullback attractors of non-autonomous forced systems, the energy pumping required to sustain the cycle against Hubble friction ($\mathcal{F}_{web} > 0$) imposes $\dot{V} > 0$ on segments of the orbit. The theoretical Lyapunov function guaranteed by the converse theorem is constructed as an infinite integral of the flow --- for a non-autonomous Filippov inclusion (the Heaviside $\Theta$), this integral has **no closed-form solution in elementary functions**. The analytical approach therefore focuses on proving strict non-divergence via Global Uniform Ultimate Boundedness (GUUB).
 
-**2. Analytical proof of GUUB (Yoshizawa Theorem).** In the phase space $(x = \phi,\; y = \dot{\phi})$, define the effective stiffness $K(t) = \xi R(t) + k_{eff}$ and the total friction $C(t, x) = 3H(t) + \Gamma_{rad} + \gamma_{slip}\,\Theta(|x| - \phi_{crit})$. We construct a **Liénard-type Lyapunov function with cross-coupling**:
+**2. Analytical proof of GUUB (Yoshizawa Theorem).** In the phase space $(x = \phi,\; y = \dot{\phi})$, define the effective stiffness $K(t) = \xi R(t) + k_{eff}$ and the total friction $C(t, x) = 3H(t) + \Gamma_{rad} + \gamma_{slip}\,\Theta(\vert x\vert - \phi_{crit})$. We construct a **Liénard-type Lyapunov function with cross-coupling**:
 
 $$V(x, y, t) = \frac{1}{2}y^2 + \frac{1}{2}K(t)\,x^2 + \varepsilon\,x\,y$$
 
@@ -524,7 +524,7 @@ $$\dot{V} \leq -(C(t,x) - \varepsilon)\,y^2 - \left(\varepsilon K(t) - \tfrac{1}
 
 Three crucial properties ensure $\dot{V} < 0$ outside a compact set:
 
-- **Filippov treatment of discontinuity.** At $|x| = \phi_{crit}$, the Heaviside $\Theta$ is treated via Clarke's generalized gradient. The differential inclusion assigns $C(t,x)$ values in the convex hull $[C_{min}, C_{max}]$ with $C_{min} = 3H + \Gamma_{rad} > 0$, preserving the proof across the switching surface.
+- **Filippov treatment of discontinuity.** At $\vert x\vert = \phi_{crit}$, the Heaviside $\Theta$ is treated via Clarke's generalized gradient. The differential inclusion assigns $C(t,x)$ values in the convex hull $[C_{min}, C_{max}]$ with $C_{min} = 3H + \Gamma_{rad} > 0$, preserving the proof across the switching surface.
 
 - **Cosmic expansion stabilizes the brane.** The Universe's decelerated expansion makes $R(t) = 12H(t)^2$ decrease, so $\dot{K}(t) = \xi\dot{R}(t) < 0$. The term $-\frac{1}{2}\dot{K}(t)\,x^2 > 0$ is therefore **strictly positive** --- the expansion of the Universe acts as a natural geometric brake that reinforces dissipation. This is not a free parameter; it is an inescapable consequence of 5D cosmological evolution.
 
@@ -597,7 +597,7 @@ This is not a 3% contraction per cycle --- it is a **hyper-contraction by a fact
 
 *Validity conditions* (both verified for OBT V8.2): (a) **Transversality**: $\nabla h^T \cdot f_{in} = \dot{\phi}_{crit} \neq 0$ at the QCD threshold (ballistic crossing, no grazing bifurcation). (b) **No Filippov sliding**: the orbit crosses $\Sigma$ dynamically (crossing cycle), preserving 2D flow invertibility. The finite value $\kappa = e^{-8.60} > 0$ confirms $\det(M) \neq 0$, ruling out topological collapse to 1D.
 
-The transverse multiplier $\lambda_2 = e^{-8.60} \approx 1.84 \times 10^{-4}$ is therefore **identical** to the volume contraction rate. The spectral radius is $\rho(M) = \max(1, |\lambda_2|) = 1$.
+The transverse multiplier $\lambda_2 = e^{-8.60} \approx 1.84 \times 10^{-4}$ is therefore **identical** to the volume contraction rate. The spectral radius is $\rho(M) = \max(1, \vert\lambda_2\vert) = 1$.
 
 By the **Banach Fixed-Point Theorem**: since $\kappa \approx 10^{-4} \ll 1$, the Poincaré first-return map $\Pi$ is an extreme strict contraction. There exists **exactly one periodic orbit** crossing $\Sigma$, and convergence to it is achieved within a **single cycle** (the distance to the attractor drops by a factor of 5,400 per period). The multistability hypothesis is not merely excluded --- it is annihilated with a margin of nearly four orders of magnitude.
 
@@ -613,7 +613,7 @@ Persistence requires two conditions on the Filippov flow:
 
 **(a) Transversality of crossing (no grazing).** The orbit must cross the switching manifold $\Sigma = \{\vert\phi\vert = \phi_{crit}\}$ with finite velocity: $n^T \cdot f = \dot{\phi}_{crit} \neq 0$. At the QCD ignition threshold, the brane is at the end of the stick phase --- maximum elastic potential energy, maximum kinetic energy --- so $\dot{\phi}$ is strictly non-zero at crossing. This precludes grazing bifurcations (tangential contact with $\Sigma$) and degenerate sliding modes, ensuring that the Poincaré return map remains smooth with respect to the slow parameter $\tau$. **Condition satisfied.**
 
-**(b) Normal hyperbolicity (spectral gap).** The transverse contraction rate toward the cycle must vastly exceed the slow drift rate along the cylinder. The spectral gap condition requires $|\lambda_{trans}| \gg \epsilon$. From the Liouville-Filippov trace formula: $\lambda_{trans} = \ln(\kappa)/T = -8.60/2.0 = -4.30\,\text{Gyr}^{-1}$. The Hubble drift rate is $\epsilon \approx 0.14\,\text{Gyr}^{-1}$. The ratio:
+**(b) Normal hyperbolicity (spectral gap).** The transverse contraction rate toward the cycle must vastly exceed the slow drift rate along the cylinder. The spectral gap condition requires $\vert\lambda_{trans}\vert \gg \epsilon$. From the Liouville-Filippov trace formula: $\lambda_{trans} = \ln(\kappa)/T = -8.60/2.0 = -4.30\,\text{Gyr}^{-1}$. The Hubble drift rate is $\epsilon \approx 0.14\,\text{Gyr}^{-1}$. The ratio:
 
 $$\frac{|\lambda_{trans}|}{\epsilon} = \frac{4.30}{0.14} \approx 30$$
 
@@ -647,11 +647,11 @@ where $\mathbf{M}_{2D}$ is the $2 \times 2$ Filippov contraction block (with sal
 - $\lambda_2 = \kappa(\tau) + \mathcal{O}(\epsilon) = e^{-8.60} + \mathcal{O}(\epsilon)$: **transverse fast contraction**
 - $\lambda_3 = 1 + \mathcal{O}(\epsilon)$: slow longitudinal drift along the cosmological cylinder
 
-The cross-coupling $\mathbf{v}_{cross}$ generates off-diagonal terms but the **spectrum is protected** by the triangular structure. Orbital stability depends entirely on $|\lambda_2| < 1$.
+The cross-coupling $\mathbf{v}_{cross}$ generates off-diagonal terms but the **spectrum is protected** by the triangular structure. Orbital stability depends entirely on $\vert\lambda_2\vert < 1$.
 
-**Immunity of the transverse contraction.** The $\mathcal{O}(\epsilon)$ correction to $\lambda_2$ cannot invert the contraction. The base contraction is cataclysmic: $\kappa = e^{-8.60} \approx 1.84 \times 10^{-4}$. The linear perturbation from cosmic expansion adds at most $|\delta\lambda_2| \sim \epsilon \times |\partial_\tau \kappa| \sim 0.14 \times \mathcal{O}(1) \sim 0.14$. Even in the worst case: $|\lambda_2| \leq \kappa + \epsilon \approx 0.00018 + 0.14 = 0.14 < 1$. The inequality $|\lambda_2| < 1$ is satisfied **exactly** at the physical $\epsilon$, not merely asymptotically.
+**Immunity of the transverse contraction.** The $\mathcal{O}(\epsilon)$ correction to $\lambda_2$ cannot invert the contraction. The base contraction is cataclysmic: $\kappa = e^{-8.60} \approx 1.84 \times 10^{-4}$. The linear perturbation from cosmic expansion adds at most $|\delta\lambda_2| \sim \epsilon \times |\partial_\tau \kappa| \sim 0.14 \times \mathcal{O}(1) \sim 0.14$. Even in the worst case: $\vert\lambda_2\vert \leq \kappa + \epsilon \approx 0.00018 + 0.14 = 0.14 < 1$. The inequality $\vert\lambda_2\vert < 1$ is satisfied **exactly** at the physical $\epsilon$, not merely asymptotically.
 
-**The persistence horizon $\epsilon_0$ and safety margin.** The critical expansion rate beyond which the cycle is destroyed requires $|\lambda_2| = 1$, i.e., the transverse contraction rate $|\lambda_{trans}| = |\ln(\kappa)|/T = 8.60/2.0 = 4.30\;\text{Gyr}^{-1}$ must equal the drift speed $\epsilon$:
+**The persistence horizon $\epsilon_0$ and safety margin.** The critical expansion rate beyond which the cycle is destroyed requires $\vert\lambda_2\vert = 1$, i.e., the transverse contraction rate $\vert\lambda_{trans}\vert = |\ln(\kappa)|/T = 8.60/2.0 = 4.30\;\text{Gyr}^{-1}$ must equal the drift speed $\epsilon$:
 
 $$\boxed{\epsilon_0 \approx 4.30}$$
 
@@ -743,7 +743,7 @@ $$\chi(CY) = -\frac{\xi}{0.00242} \approx -64{,}000$$
 
 **The double catastrophe.** This is doubly fatal:
 
-- **Topological**: the exhaustive Kreuzer-Skarke classification of all toric CY threefolds establishes $|\chi_{max}| = 960$. A manifold with $\chi = -64{,}000$ does not exist in the mathematical landscape --- it belongs to the **Swampland**.
+- **Topological**: the exhaustive Kreuzer-Skarke classification of all toric CY threefolds establishes $\vert\chi_{max}\vert = 960$. A manifold with $\chi = -64{,}000$ does not exist in the mathematical landscape --- it belongs to the **Swampland**.
 - **Gravitational**: the 4D Planck mass scales as $M_{Pl} \sim M_s\sqrt{\mathcal{V}}$. For $\mathcal{V} \sim 10^{163}$: $M_{Pl} \sim 10^{18} \times 10^{81} \sim 10^{99}$ GeV. Gravity would decouple completely --- no structure formation, no universe.
 
 **The anisotropic necessity.** This No-Go theorem proves by contradiction that $L = 0.2\,\mu$m **cannot** be a flat isotropic radius. The global CY bulk must remain small ($\mathcal{V} \sim 10^3$-$10^4$), preserving $M_{Pl} \sim 10^{18}$ GeV. The phenomenological scale $L$ is the **warped effective length** at the bottom of the Klebanov-Strassler throat --- a local geometric property generated by the exponential warp factor $e^{-A(y)}$, not a global dimensional size. The Randall-Sundrum architecture is not an ad hoc postulate: it is the **unique topological selection** imposed by the Kreuzer-Skarke bound and the gravitational consistency of string compactifications.
@@ -772,7 +772,7 @@ The 8-order-of-magnitude gap between the QCD scale (MeV) and the radion mass (eV
 
 This volume places the OBT V8.2 squarely in the **Intermediate String Scale Scenario**: $M_s \sim M_{Pl}/\sqrt{\mathcal{V}} \sim 10^{12}$ GeV --- the "sweet spot" for QCD axion dark matter and right-handed neutrino Majorana masses.
 
-**LVS stabilization without fine-tuning.** Using the Kreuzer-Skarke maximum $|\chi| = 960$: $\xi = 0.00242 \times 960 \approx 2.32$. The LVS minimum fixes $\tau_{small} = (3\xi)^{2/3} \approx 3.65$ ($> 1$: supergravity valid). The volume stabilization equation $\mathcal{V} = W_0\sqrt{\tau_{small}}/(4\pi)\,e^{2\pi\tau_{small}}$ yields:
+**LVS stabilization without fine-tuning.** Using the Kreuzer-Skarke maximum $\vert\chi\vert = 960$: $\xi = 0.00242 \times 960 \approx 2.32$. The LVS minimum fixes $\tau_{small} = (3\xi)^{2/3} \approx 3.65$ ($> 1$: supergravity valid). The volume stabilization equation $\mathcal{V} = W_0\sqrt{\tau_{small}}/(4\pi)\,e^{2\pi\tau_{small}}$ yields:
 
 $$W_0 \approx \frac{5.66 \times 10^{12}}{0.152 \times 9.11 \times 10^9} \approx 4{,}100$$
 
@@ -784,7 +784,7 @@ Unlike the KKLT paradigm (which requires pathological fine-tuning $W_0 \sim 10^{
 
 $$V_{LVS} = \frac{3W_0^2\sqrt{\tau_s}}{4a\mathcal{V}}\,e^{-2a\tau_s} - \frac{W_0\,\tau_s}{\mathcal{V}^2}\,e^{-a\tau_s} + \frac{3\xi W_0^2}{4\mathcal{V}^3}$$
 
-Simultaneous minimization ($\partial V/\partial\tau_s = 0$ and $\partial V/\partial\mathcal{V} = 0$) yields an attractor relation coupling the moduli. The first condition gives $a\tau_s = 1 + W_0\sqrt{\tau_s}\,e^{a\tau_s}/(2a\mathcal{V})$, which for $\mathcal{V} \gg 1$ reduces to $\tau_s \approx (3\xi)^{2/3}$. With the Kreuzer-Skarke maximum $|\chi| = 960$: $\xi = 0.00242 \times 960 \approx 2.32$, giving:
+Simultaneous minimization ($\partial V/\partial\tau_s = 0$ and $\partial V/\partial\mathcal{V} = 0$) yields an attractor relation coupling the moduli. The first condition gives $a\tau_s = 1 + W_0\sqrt{\tau_s}\,e^{a\tau_s}/(2a\mathcal{V})$, which for $\mathcal{V} \gg 1$ reduces to $\tau_s \approx (3\xi)^{2/3}$. With the Kreuzer-Skarke maximum $\vert\chi\vert = 960$: $\xi = 0.00242 \times 960 \approx 2.32$, giving:
 
 $$\tau_s \approx (3 \times 2.32)^{2/3} \approx 3.65$$
 
@@ -807,7 +807,7 @@ The gravitino mass: $m_{3/2} = W_0 M_{Pl}/\mathcal{V} \approx 4100 \times 2.43 \
 
 $$V_{min} \sim -\frac{\xi W_0^2}{\mathcal{V}^3}M_{Pl}^4 \sim -\frac{2.32 \times (4100)^2}{(5.66 \times 10^{12})^3}M_{Pl}^4 \approx -2.2 \times 10^{-31}\,M_{Pl}^4$$
 
-Converting to a gauge energy scale: $|V_{min}|^{1/4} \approx (2.2 \times 10^{-31})^{1/4}\,M_{Pl} \approx 5 \times 10^{10}$ GeV. This is the energy scale of the global Calabi-Yau vacuum.
+Converting to a gauge energy scale: $\vert V_{min}\vert^{1/4} \approx (2.2 \times 10^{-31})^{1/4}\,M_{Pl} \approx 5 \times 10^{10}$ GeV. This is the energy scale of the global Calabi-Yau vacuum.
 
 **6. The Multi-Throat uplift architecture.** To achieve a flat/slightly de Sitter universe ($\Lambda_{obs} \sim 10^{-122}\,M_{Pl}^4$), the massive LVS AdS well must be uplifted by an anti-D3 brane. The uplift energy from a KKLT anti-brane at the bottom of a warped throat scales as $\delta V \sim w_0^4\,\tau_0^{(throat)}\,M_{Pl}^4$ where $w_0 = e^{-A(y_{tip})}$ is the warp factor at the tip.
 
@@ -839,9 +839,9 @@ where $R$ is the 4D Ricci scalar and $\xi \approx 0.15$ is the mixing parameter.
 
 **Mesoscopic mass variation.** When a neutron probes the extra-dimensional boundary at $z \to L = 0.2\,\mu$m, it encounters an abrupt Yukawa gradient that forces the radion into a high-excitation regime. Through the mixing $\xi R H^\dagger H$, this geometric excitation resonates with the Higgs field, inducing a **local perturbation of the Higgs VEV**:
 
-$$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right), \quad \eta = \xi|\alpha| \ll 1$$
+$$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right), \quad \eta = \xi\vert\alpha\vert \ll 1$$
 
-where $v_0 = 246$ GeV is the standard electroweak VEV and $\eta = \xi|\alpha|$ is the effective Higgs-Radion mixing coefficient ($\xi \approx 0.15$ is the non-minimal coupling, $\alpha \approx -0.005$ is the Yukawa strength). The **negative exponent is essential**: a positive exponent ($e^{+z/L}$) would cause the Higgs VEV --- and thus all particle masses --- to diverge exponentially at large distances, an obvious physical absurdity. The decaying Yukawa form $e^{-z/L}$ correctly localizes the perturbation within $\sim L$ of the boundary, where the 5D geometric gradient is concentrated.
+where $v_0 = 246$ GeV is the standard electroweak VEV and $\eta = \xi\vert\alpha\vert$ is the effective Higgs-Radion mixing coefficient ($\xi \approx 0.15$ is the non-minimal coupling, $\alpha \approx -0.005$ is the Yukawa strength). The **negative exponent is essential**: a positive exponent ($e^{+z/L}$) would cause the Higgs VEV --- and thus all particle masses --- to diverge exponentially at large distances, an obvious physical absurdity. The decaying Yukawa form $e^{-z/L}$ correctly localizes the perturbation within $\sim L$ of the boundary, where the 5D geometric gradient is concentrated.
 
 The Lagrangian origin is transparent: the non-minimal coupling $\mathcal{L}_\text{mix} \supset \xi R H^\dagger H$ transfers the radion's geometric excitation (encoded in the 4D Ricci scalar $R$) into a spatial resonance of the Higgs field. Since fermion masses $m_f = y_f v/\sqrt{2}$ are proportional to the Higgs VEV, this spatially-varying VEV produces a spatially-varying effective mass. Experimentally, this manifests not as a particle "gaining weight" but as shifted transition frequencies between quantum gravitational bound states --- precisely the Robin parameter anomaly $\lambda$ observed by qBOUNCE.
 
@@ -1053,7 +1053,7 @@ The static adiabatic shield argument assumes a gentle harmonic oscillation. But 
 
 $$a_{max} \approx \frac{v_{max}}{T_{slip}} \approx \frac{0.05c}{6.3 \times 10^{15}\;\text{s}} \approx 5.2 \times 10^{-33}\;\text{eV}$$
 
-**2. The radionic electric-field analogue.** The brane's inertia generates a shear force on the 5D vacuum, formally analogous to Schwinger's electric field: $eE_{eff}(t) \approx \tau_0\,|\ddot{\phi}(t)|/m_1^2$. With $\tau_0 \approx (257\;\text{MeV})^3 \approx 1.7 \times 10^{25}$ eV$^3$ and $m_1 = 3.832/L \approx 19.2$ eV ($m_1^2 \approx 369$ eV$^2$):
+**2. The radionic electric-field analogue.** The brane's inertia generates a shear force on the 5D vacuum, formally analogous to Schwinger's electric field: $eE_{eff}(t) \approx \tau_0\,\vert\ddot{\phi}(t)\vert/m_1^2$. With $\tau_0 \approx (257\;\text{MeV})^3 \approx 1.7 \times 10^{25}$ eV$^3$ and $m_1 = 3.832/L \approx 19.2$ eV ($m_1^2 \approx 369$ eV$^2$):
 
 $$eE_{max} \approx \frac{1.7 \times 10^{25} \times 5.2 \times 10^{-33}}{369} \approx 2.4 \times 10^{-10}\;\text{eV}^2$$
 
@@ -1187,11 +1187,11 @@ The ab initio derivation of $\gamma_{slip}$ from quantum gravity constitutes an 
 
 **MERA/HaPPY architecture and ER=EPR entanglement saturation.** The discretized $AdS_5$ bulk is a tensor network of isometric tensors connecting the UV boundary (the brane at $z = L$) to the IR interior (the cosmological horizon). The UV boundary is tiled by $N \sim 10^{20}$ terminal nodes (micro-PBH capillaries). The **bond dimension** $\chi$ of each network edge is set by the Bekenstein-Hawking entropy of a capillary: $\ln\chi = S_{BH} \sim 4\pi(M_{crit}/M_{Pl})^2 \approx 4.8 \times 10^{56}$ nats --- an astronomically large quantum channel capacity. The holographic depth (number of MERA isometry layers) spanning from the radion scale $L = 0.2\,\mu$m to the Hubble horizon $R_H \approx 1.3 \times 10^{26}$ m is $K = \log_2(R_H/L) \approx 109$ layers.
 
-**The Ryu-Takayanagi phase transition.** Consider the entanglement entropy $S_{EE}$ between two macroscopic brane regions $A$ and $B$ separated by comoving distance $d$. The discrete Ryu-Takayanagi formula gives $S_{EE} = \min|\gamma| \times S_{BH}$, where $|\gamma|$ is the minimal cut (Min-Cut) of the tensor network separating $A \cup B$ from the complement. In a standard MERA (no wormholes), the minimal connected surface must descend through the hierarchical tree to a depth $\propto \log_2(d/L)$, yielding $S_{EE}^{MERA}(d) \propto 2S_{BH}\log_2(d/L)$ --- spatially dependent, decaying at cosmological scales.
+**The Ryu-Takayanagi phase transition.** Consider the entanglement entropy $S_{EE}$ between two macroscopic brane regions $A$ and $B$ separated by comoving distance $d$. The discrete Ryu-Takayanagi formula gives $S_{EE} = \min\vert\gamma\vert \times S_{BH}$, where $\vert\gamma\vert$ is the minimal cut (Min-Cut) of the tensor network separating $A \cup B$ from the complement. In a standard MERA (no wormholes), the minimal connected surface must descend through the hierarchical tree to a depth $\propto \log_2(d/L)$, yielding $S_{EE}^{MERA}(d) \propto 2S_{BH}\log_2(d/L)$ --- spatially dependent, decaying at cosmological scales.
 
 **The ER=EPR expander graph.** The massive entanglement of the primordial PBH condensate (fast scramblers) introduces **non-local chords** --- Einstein-Rosen bridges that traverse the bulk directly, connecting distant boundary nodes without climbing the MERA hierarchy. This transforms the network topology from a local hyperbolic tree into a **holographic expander graph** (small-world network). In an expander graph, the internal geodesic distance between any pair of nodes collapses to $\mathcal{O}(1)$, completely decoupled from the geometric 4D distance $d$.
 
-**Entanglement saturation ($N \to \infty$).** In the expander topology, the Ryu-Takayanagi algorithm faces a topological phase transition. The **connected cut** (a tube linking $A$ and $B$ through the bulk) must sever an astronomically dense web of non-local ER chords --- its cost diverges with the enclosed volume. The **disconnected cut** (isolating $A$ and $B$ individually by severing only their vertical links to their respective horizons) costs merely $|gamma_{disconn}| = N_A + N_B$ links. For any macroscopic separation $d \gg L$, the minimization inevitably selects the disconnected topology:
+**Entanglement saturation ($N \to \infty$).** In the expander topology, the Ryu-Takayanagi algorithm faces a topological phase transition. The **connected cut** (a tube linking $A$ and $B$ through the bulk) must sever an astronomically dense web of non-local ER chords --- its cost diverges with the enclosed volume. The **disconnected cut** (isolating $A$ and $B$ individually by severing only their vertical links to their respective horizons) costs merely $\vert\gamma_{disconn}\vert = N_A + N_B$ links. For any macroscopic separation $d \gg L$, the minimization inevitably selects the disconnected topology:
 
 $$S_{EE}^{ER=EPR}(A \cup B) = (N_A + N_B)\,S_{BH}$$
 
@@ -1305,7 +1305,7 @@ where each 4D propagator satisfies $(\Box_4 - m_n^2)G_R^{(4)} = \delta^{(4)}(x-x
 
 $$G_R^{(4)}(x,x';\,m_n) = -\Theta(t-t')\int\frac{d^3k}{(2\pi)^3}\,e^{i\vec{k}\cdot(\vec{x}-\vec{x}')}\,\frac{\sin(\omega_n(t-t'))}{\omega_n}$$
 
-with $\omega_n = \sqrt{|\vec{k}|^2 + m_n^2}$. The massive KK modes ($m_n > 0$) generate a dispersive wake inside the light cone --- the causal signature of propagation through the fifth dimension.
+with $\omega_n = \sqrt{\vert\vec{k}\vert^2 + m_n^2}$. The massive KK modes ($m_n > 0$) generate a dispersive wake inside the light cone --- the causal signature of propagation through the fifth dimension.
 
 **Topological censorship on the UV brane.** Evaluating $G_R^{(5)}$ with source and observer on the UV brane ($z = z' \to 0$): the zero mode has $\psi_0(z) = C_0 = \text{const}$, while massive modes obey $\psi_n(z) \propto z^2 J_2(m_n z)$. The Taylor expansion $J_2(u) \sim u^2/8$ for $u \to 0$ yields $\psi_n(z \to 0) \propto z^4 \to 0$. The entire KK tower is **topologically censored** on the UV brane:
 
@@ -1325,7 +1325,7 @@ A UV-brane observer perceives only a massless 4D graviton --- Newton's $1/r^2$ l
 
 **4. Exact branching ratio: the Kaluza-Klein heat sink and NANOGrav duality.** The branching ratio $\mathcal{B} = P_0/(P_0 + P_{KK})$ quantifies the thermodynamic fate of each slip event's kinetic energy: what fraction remains on the brane as observable gravitational waves versus what fraction is siphoned into the fifth dimension as bulk radiation.
 
-**Spectral weights and the adiabatic shield.** On the IR brane ($z \sim L$), the coupling weights from the Green's function decomposition are: $w_0 = |\psi_0(L)|^2 = k$ for the zero mode and $w_n = |\psi_n(L)|^2 \approx 2k$ for the massive KK tower (democratic coupling). The KK mass gap $m_1 = j_{1,1}/L \approx \pi/L \sim 10^{14}$ Hz forms an **adiabatic shield**: the slow 2 Gyr cosmological drift ($\sim 10^{-17}$ Hz) is kinematically forbidden from exciting any massive mode. The macroscopic power feeds exclusively the zero mode.
+**Spectral weights and the adiabatic shield.** On the IR brane ($z \sim L$), the coupling weights from the Green's function decomposition are: $w_0 = \vert\psi_0(L)\vert^2 = k$ for the zero mode and $w_n = \vert\psi_n(L)\vert^2 \approx 2k$ for the massive KK tower (democratic coupling). The KK mass gap $m_1 = j_{1,1}/L \approx \pi/L \sim 10^{14}$ Hz forms an **adiabatic shield**: the slow 2 Gyr cosmological drift ($\sim 10^{-17}$ Hz) is kinematically forbidden from exciting any massive mode. The macroscopic power feeds exclusively the zero mode.
 
 **The Filippov shock breaks the shield.** The stick-slip waveform is not harmonic --- it is an asymmetric sawtooth. At the QCD ignition threshold, the acceleration $\ddot{\phi}$ contains **Dirac-delta impulses** (the Filippov velocity jump). The Fourier power spectrum of this shock is flat (white noise) up to ultraviolet frequencies, breaching the adiabatic barrier and flooding the entire KK tower with dissipated energy. The shock amplitude relative to the fundamental is governed by the duty cycle asymmetry: $\mathcal{A} = (T^2/(T_{stick}\,T_{slip}))^2$.
 
@@ -1350,7 +1350,7 @@ $$\mathcal{B} \approx \frac{1}{8.3 \times 10^7} \times \frac{1}{0.0081^{-1}} \ap
 
 **1. Exact transcendental quantization of the KK mass spectrum.** The Goldberger-Wise mechanism fixes the radion at the classical minimum $\tau_0^{1/3} \approx 257$ MeV, but classical stability is insufficient --- quantum vacuum fluctuations of all bulk fields generate zero-point energies (the 5D Casimir effect) that can destabilize the minimum. The one-loop effective potential $V_{eff}(\phi) = V_{tree}(\phi) + \frac{\hbar}{2}\sum_n \omega_n(\phi) + V_{Casimir}(\phi)$ requires the **exact inharmonic KK mass spectrum** $\{m_n\}$ as input to the spectral zeta function.
 
-On the RS background $ds^2 = e^{-2k|z|}\eta_{\mu\nu}dx^\mu dx^\nu + dz^2$, a bulk field with mass $M^2 = (\nu^2 - 4)k^2$ (where $\nu$ is the Bessel order set by the bulk mass parameter) satisfies the radial equation:
+On the RS background $ds^2 = e^{-2k\vert z\vert}\eta_{\mu\nu}dx^\mu dx^\nu + dz^2$, a bulk field with mass $M^2 = (\nu^2 - 4)k^2$ (where $\nu$ is the Bessel order set by the bulk mass parameter) satisfies the radial equation:
 
 $$\left[\partial_z^2 - 4k\,\partial_z + m_n^2\,e^{2kz} - (\nu^2 - 4)k^2\right]\psi_n(z) = 0$$
 
@@ -1408,7 +1408,7 @@ The exact coefficients for the warped $AdS_5$ orbifold are:
 | $\bar{a}_4$ | Kretschner quartic invariants (linear pole) | $12.7$ | eV$^3$ |
 | $\bar{a}_5$ | **Conformal anomaly** (logarithmic pole) | pure boundary | eV$^4$ |
 
-**The holographic grail: $a_5^{bulk} \equiv 0$.** In odd spacetime dimension ($D = 5$), the volume integral of the fifth Seeley-DeWitt coefficient vanishes identically. The entire logarithmic divergence $\ln(\Lambda/\mu)$ is generated **exclusively** by the extrinsic curvature tensors ($K^3$, $KK_{\mu\nu}^2$) on the branes. The conformal anomaly is not a disease of the 5D vacuum --- it is a pure holographic artifact of the topological defects (branes). The hierarchy $|\bar{a}_5|/|\bar{a}_0| \sim \mathcal{O}(k^5) \sim 1$ eV$^5$ confirms that all divergences are naturally bounded by the geometric scale $k$.
+**The holographic grail: $a_5^{bulk} \equiv 0$.** In odd spacetime dimension ($D = 5$), the volume integral of the fifth Seeley-DeWitt coefficient vanishes identically. The entire logarithmic divergence $\ln(\Lambda/\mu)$ is generated **exclusively** by the extrinsic curvature tensors ($K^3$, $KK_{\mu\nu}^2$) on the branes. The conformal anomaly is not a disease of the 5D vacuum --- it is a pure holographic artifact of the topological defects (branes). The hierarchy $\vert\bar{a}_5\vert/\vert\bar{a}_0\vert \sim \mathcal{O}(k^5) \sim 1$ eV$^5$ confirms that all divergences are naturally bounded by the geometric scale $k$.
 
 **The holographic conclusion.** The exponential factor $e^{-4kL} \approx 0.018$ crushes the IR brane's quantum contribution by a factor $\sim 55$. The UV brane ($z = 0$) absorbs $> 98\%$ of all anomalies. The Seeley-DeWitt hierarchy dictates the **exact counterterm structure** of holographic renormalization: $\bar{a}_1$ demands a bare UV tension $\tau_{UV}$; $\bar{a}_3$ induces the Einstein-Hilbert action and radiatively generates the 4D Planck mass $M_P$; $\bar{a}_5$ dictates the conformal counter-anomaly. This geometric subtraction protects the IR brane and sanctuarizes the infrared fixed point $\tau_0^{1/3} \approx 257$ MeV against quantum collapse.
 
@@ -1594,7 +1594,7 @@ Even neglecting the colossal entropic amplification of each bridge ($c \sim S_{B
 
 $$\lim_{N \to \infty}\mathcal{D}\phi\,e^{-\Delta S_{ER}[\phi]} \longrightarrow \mathcal{D}\phi_0(t)\prod_{\ell \geq 1,\,m}\delta(a_{\ell m})$$
 
-The functional measure **collapses** onto the submanifold $a_{\ell m} = 0$ for all $\ell \geq 1$ --- the entire asynchronous phase space is projected to zero. The physical mechanism is the holographic analogue of the Meissner effect: the ER=EPR network expels spatial phase gradients as a superconductor expels magnetic flux ($\Delta S_{ER} \propto N|\nabla\phi|^2$ plays the role of the Ginzburg-Landau free energy $\propto|\nabla\psi|^2$).
+The functional measure **collapses** onto the submanifold $a_{\ell m} = 0$ for all $\ell \geq 1$ --- the entire asynchronous phase space is projected to zero. The physical mechanism is the holographic analogue of the Meissner effect: the ER=EPR network expels spatial phase gradients as a superconductor expels magnetic flux ($\Delta S_{ER} \propto N\vert\nabla\phi\vert^2$ plays the role of the Ginzburg-Landau free energy $\propto\vert\nabla\psi\vert^2$).
 
 **Epistemological consequence.** The description of the brane dynamics by an Ordinary Differential Equation (ODE) $\ddot{\phi}_0(t) + \Gamma_{rad}\dot{\phi}_0(t) + \cdots = 0$ with a single temporal degree of freedom is **not** an isotropic approximation or a mean-field simplification. It is an **exact corollary** of the Euclidean path integral on a multiply-connected holographic graph. The 3+1D quantum field theory of the brane reduces mathematically and rigorously to a 0+1D particle mechanics --- the unique surviving degree of freedom after the topological super-selection annihilates all spatial modes. The horizon problem is resolved, the ODE is justified, and the universe oscillates as a single quantum point.
 
@@ -1695,7 +1695,7 @@ $$I_{nm} = -8\pi^2\alpha^3\,{\text{Ai}}^{\prime}(a_n)\,{\text{Ai}}^{\prime}(a_m)
 
 **Numerical verification ($n=1$, $m=6$).** With $a_1 = -2.338$, $a_6 = -9.023$, ${\text{Ai}}^{\prime}(a_1) = 0.7012$, ${\text{Ai}}^{\prime}(a_6) = -0.9779$, $\alpha = 0.034$: the prefactor is $\approx 0.002128$ and the bracket evaluates to $0.97476$, giving $I_{1,6} \approx +0.002074$. Direct Gauss-Kronrod quadrature confirms $0.002074$ --- **agreement to $5 \times 10^{-7}$**.
 
-The Watson lemma expansion of the propagator pole reproduces the full perturbative series. The **steepest descent analysis** in the complex $(t_1, t_2)$ plane reveals exponentially suppressed non-perturbative corrections $\sim e^{-\text{const}/\alpha}$ (instanton tunneling under the gravitational barrier), negligible at $\alpha = 0.034$ ($e^{-29} \sim 10^{-13}$). The quasi-diagonal structure of $I_{nm}$ ($|I_{1,6}| \ll |I_{1,1}|$) proves that the KK mixing matrix is nearly flavor-diagonal --- heavy extra-dimensional excitations cannot destabilize the fundamental brane dynamics, guaranteeing absolute low-energy radiative control.
+The Watson lemma expansion of the propagator pole reproduces the full perturbative series. The **steepest descent analysis** in the complex $(t_1, t_2)$ plane reveals exponentially suppressed non-perturbative corrections $\sim e^{-\text{const}/\alpha}$ (instanton tunneling under the gravitational barrier), negligible at $\alpha = 0.034$ ($e^{-29} \sim 10^{-13}$). The quasi-diagonal structure of $I_{nm}$ ($\vert I_{1,6}\vert \ll \vert I_{1,1}\vert$) proves that the KK mixing matrix is nearly flavor-diagonal --- heavy extra-dimensional excitations cannot destabilize the fundamental brane dynamics, guaranteeing absolute low-energy radiative control.
 
 **High-order perturbation series ($\mathcal{O}(\alpha^{10})$) and the Dyson divergence horizon.** The product $F(u) = \text{Ai}(a_n+u)\text{Ai}(a_m+u)$ satisfies a rigorous 4th-order linear ODE: $F^{(4)} - 2(a_n+a_m+2u)F^{\prime\prime} - 6F^{\prime} + (a_n-a_m)^2 F = 0$. Evaluating derivatives at $u = 0$ (with $F(0) = F^{\prime}(0) = 0$) yields the **algebraic recurrence** for the Taylor coefficients $B_k = F^{(k+2)}(0)/2$:
 
