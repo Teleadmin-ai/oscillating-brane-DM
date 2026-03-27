@@ -326,6 +326,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | MOND sinc theorem | Orbital averaging of oscillating a₀(t) | sinc(πt_dyn/T): dwarfs 0.996, spirals 0.981, groups 0.637, clusters 0.000 |
 | ΔBIC forecast | Stick-slip 3-harmonic vs CPL on DESI DR2/Y5 | DR2: ΔBIC≈-3.6 (positive-strong), Y5: ΔBIC≈-17.9 (decisive) |
 | Analytical Fisher 3×3 | DESI+Planck ISW+DES Y6 Jacobian | σ(T)/T=6.7%, σ(L)/L=15%, τ₀-L anti-corr r=-0.76, QCD 0.11σ |
+| KdF 4-branch exact | All 4 Kampé de Fériet tensors to O(N=10) | Δ=0.000044 (6 sig figs), O(α⁴) scaling, shadow peak at z≈2L, Δ_{1,m} non-monotone |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
@@ -450,7 +451,7 @@ python scripts/laplace_demon_hamiltonian.py
 ```
 
 ### OPEN MATHEMATICAL WORK (0 items remaining — ALL COMPLETE)
-All 49 mathematical derivations have been completed and integrated into theory.md (March 2026):
+All 50 mathematical derivations have been completed and integrated into theory.md (March 2026):
 - **33 original derivations** (V8.2 core): Filippov-Banach, Fenichel, Γ_rad ab initio, KK spectrum, spectral zeta, Seeley-DeWitt, Skenderis, MERA/HaPPY, OTOCs, Dirac collapse, Kampé de Fériet, Dyson horizon, KS UV completion, Swiss-Cheese LVS, No-Go isotrope, KKLT tadpole, Fisher Jacobian/forecast, Cobaya module, Robin mapping, Airy-Yukawa series
 - **9 DeepThink refinements** (March 2026): (1) Fourier stick-slip spectrum, (2) exact S₈ ODE + eROSITA non-linear, (3) MOND ab initio from 5D, (4) Seeley-DeWitt numerical evaluation, (5) Dirichlet anomaly 4-branch resolution, (6) full 3D Floquet without adiabatic projection, (7) LVS minimization + multi-throat, (8) dynamical Schwinger invulnerability, (9) finite-N corrections to Dirac collapse
 
