@@ -36,6 +36,8 @@ git commit -m "Regenerate PDF + markdown" && git push
 ```
 **If you forget, the PDF on the site will be stale and inconsistent with the site pages.**
 
+**After ANY theoretical addition or modification, you MUST also update CLAUDE.md** (REQUIRED concepts, BANNED concepts, Key Parameters, Computational Validations, Key References) to reflect the new content BEFORE committing. CLAUDE.md is the authoritative reference for all future conversations.
+
 **Breaking these rules causes data loss and inconsistency between the site and the PDF.**
 
 ## Project Overview
