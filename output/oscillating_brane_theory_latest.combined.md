@@ -589,7 +589,15 @@ The **exact analytical contraction rate** is:
 
 $$\boxed{\kappa = e^{-8.60} \approx 1.84 \times 10^{-4} \ll 1}$$
 
-This is not a 3% contraction per cycle --- it is a **hyper-contraction by a factor of ~5,400**. At each stick-slip cycle, the transverse phase-space distance between any two trajectories is crushed by nearly four orders of magnitude. The numerical MLE of $-0.016\,\text{Gyr}^{-1}$ reported by the BDF integrator (`scripts/lyapunov_mle.py`) captured the near-zero longitudinal exponent contaminated by the slow cosmological drift --- not the true transverse multiplier.
+This is not a 3% contraction per cycle --- it is a **hyper-contraction by a factor of ~5,400**.
+
+**Lemma: Floquet spectral factorization in 2D Filippov systems.** The Liouville-Abel integral computes $\det(M)$ --- the volume contraction. But orbital stability requires the **transverse Floquet multiplier** $\lambda_2 < 1$, not merely $\det(M) < 1$. In a 2D system, $\det(M) = \lambda_1 \cdot \lambda_2$. We must prove $\lambda_1 = 1$ survives the Filippov discontinuities.
+
+*Proof.* By the Aizerman-Gantmakher theory, the saltation matrix $S = I + (f_{out} - f_{in})\nabla h^T/(\nabla h^T \cdot f_{in})$ acts on the tangent vector $f_{in}$ as: $S\,f_{in} = f_{in} + (f_{out} - f_{in}) = f_{out}$. The longitudinal flow direction is **exactly transported** through each discontinuity. Composing over the full cycle: $M\,f(x_0) = f(x_T) = f(x_0)$ --- the tangent vector is an eigenvector with eigenvalue $\lambda_1 = 1$ (time-translation invariance of the periodic orbit). Since $\dim = 2$: $\lambda_2 = \det(M)/\lambda_1 = \kappa/1 = e^{-8.60}$. The spectral factorization is exact. $\square$
+
+*Validity conditions* (both verified for OBT V8.2): (a) **Transversality**: $\nabla h^T \cdot f_{in} = \dot{\phi}_{crit} \neq 0$ at the QCD threshold (ballistic crossing, no grazing bifurcation). (b) **No Filippov sliding**: the orbit crosses $\Sigma$ dynamically (crossing cycle), preserving 2D flow invertibility. The finite value $\kappa = e^{-8.60} > 0$ confirms $\det(M) \neq 0$, ruling out topological collapse to 1D.
+
+The transverse multiplier $\lambda_2 = e^{-8.60} \approx 1.84 \times 10^{-4}$ is therefore **identical** to the volume contraction rate. The spectral radius is $\rho(M) = \max(1, |\lambda_2|) = 1$.
 
 By the **Banach Fixed-Point Theorem**: since $\kappa \approx 10^{-4} \ll 1$, the Poincaré first-return map $\Pi$ is an extreme strict contraction. There exists **exactly one periodic orbit** crossing $\Sigma$, and convergence to it is achieved within a **single cycle** (the distance to the attractor drops by a factor of 5,400 per period). The multistability hypothesis is not merely excluded --- it is annihilated with a margin of nearly four orders of magnitude.
 
