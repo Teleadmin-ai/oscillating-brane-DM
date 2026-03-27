@@ -58,7 +58,7 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane---our four-dimensional reality---is connected through a holographic network of quantum entangled black holes.
 
-**The Cosmic Yoyo V8.2**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor $E_{\mu\nu}$ forcing --- the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally ($\ell$=0 mode) --- the metronome. Conformal symmetry ($T^\mu_\mu$ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda_{QCD}$ = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor (xiRphi) locks the period at T = 2 Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the S$_{8}$ tension (via time-dependent growth suppression), and Planck's CMB anomaly.
+**The Cosmic Yoyo V8.2**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor $E_{\mu\nu}$ forcing --- the muscle. Billions of ER=EPR-entangled **micro-PBHs** synchronize the threshold release globally ($\ell=0$ mode) --- the metronome. Conformal symmetry ($T^\mu_\mu$ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda_{QCD}$ = 257 MeV. Radiative damping via bulk graviton emission caps the amplitude. The dynamical attractor ($\xi R\phi$) locks the period at T = 2 Gyr. It resolves three established cosmological anomalies: DESI's evolving dark energy, the $S_8$ tension (via time-dependent growth suppression), and Planck's CMB anomaly.
 
 
   
@@ -68,8 +68,8 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
 | **Brane tension** | $\tau_0$ = 7.0 x 10$^{19}$ J/m$^{2}$ |
 |---|---|
 | **Oscillation period** | T = 2.0 +/- 0.3 Gyr |
-| **MOND acceleration** | a$_{0}$ = 1.1 x 10$^{-10}$ m/s$^{2}$ |
-| **S$_{8}$ suppression** | 4.79% (exact ODE, S$_{8}$ = 0.796) |
+| **MOND acceleration** | $a_0$ = 1.1 x 10$^{-10}$ m/s$^{2}$ |
+| **$S_8$ suppression** | 4.79% (exact ODE, $S_8$ = 0.796) |
 | **Bayesian evidence** | $\Delta\ln K$ = 4.13 +/- 0.07 |
 
 
@@ -414,7 +414,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 |---------------------|---------------------|-------------------------------|
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric |
-| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.79% during current weakened-gravity phase (S$_{8}$ = 0.796) |
+| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.79% during current weakened-gravity phase ($S_8$ = 0.796) |
 | Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + temporally enhanced gravity + modified Hubble friction |
 | Undetectable Dark Matter | Zero particles in two decades (LZ/XENONnT) | No WIMPs. Dark matter = 5D geometric signature (Weyl tensor) |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr oscillation period ($\Delta\chi^2 = 32.9$) |
@@ -537,7 +537,7 @@ The Universe ceases to be perceived as an inert spacetime matrix in desperate in
 # Chapter 3: Complete Theoretical Framework
 
 
-**V8.2 --- Hybrid Topology**: The stick-slip motor operates at two scales: (1) **macroscopic** --- the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous $E_{\mu\nu}$ forcing; (2) **microscopic** --- the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally ($\ell$=0 mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2pir_s/lambda approximately 0.03 << 1).
+**V8.2 --- Hybrid Topology**: The stick-slip motor operates at two scales: (1) **macroscopic** --- the Cosmic Web's inhomogeneous mass presses the brane toward the bulk via Israel junction conditions, generating continuous $E_{\mu\nu}$ forcing; (2) **microscopic** --- the ER=EPR-entangled network of asteroid-mass PBHs synchronizes the threshold release globally ($\ell=0$ mode). The Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window: PBHs with $r_s < L$ undergo 5D transition, losing their local 4D gravitational singularity. Micro-PBH capillaries are rehabilitated against Subaru-HSC by wave-optics diffraction (Fresnel parameter w_F = 2pir_s/lambda approximately 0.03 << 1).
 
 ## Core Concepts
 
@@ -562,15 +562,15 @@ $$\ddot{\phi} + (3H + \Gamma_{rad})\dot{\phi} + \xi R\phi + \frac{\partial V_{GW
 
 Each term has a distinct physical role:
 
-- **(3H + $\Gamma$_rad)phi̇** --- Hubble friction plus radiative damping. $\Gamma$_rad accounts for energy loss via bulk graviton emission (KK modes) during the violent slip phase. During the slow stick phase, $\Gamma$_rad approximately 0; during slip, $\Gamma$_rad spikes, capping the maximum velocity and preventing runaway amplitudes
-- **xiRphi** --- Non-minimal coupling to the 4D Ricci scalar R = 6($\dot{H}$ + 2H$^{2}$). This term ensures convergence to a dynamical attractor that locks T = 2.0 Gyr despite evolving H(t) and decaying Cosmic Web forcing, resolving the chirp instability
+- **(3H + $\Gamma$_rad)$\dot{\phi}$** --- Hubble friction plus radiative damping. $\Gamma$_rad accounts for energy loss via bulk graviton emission (KK modes) during the violent slip phase. During the slow stick phase, $\Gamma$_rad approximately 0; during slip, $\Gamma$_rad spikes, capping the maximum velocity and preventing runaway amplitudes
+- **$\xi R\phi$** --- Non-minimal coupling to the 4D Ricci scalar R = 6($\dot{H}$ + 2H$^{2}$). This term ensures convergence to a dynamical attractor that locks T = 2.0 Gyr despite evolving H(t) and decaying Cosmic Web forcing, resolving the chirp instability
 - **$\partial$V_GW/$\partial$phi** --- Goldberger-Wise restoring potential (Goldberger & Wise 1999), with minimum at the QCD confinement scale ($\tau_0$^{1/3} = 257 MeV approximately $\Lambda_{QCD}$)
 - **F_web[$E_{\mu\nu}$] x (1 - 3w_eff)** --- **Macroscopic forcing (the Muscle)**: the inhomogeneous Cosmic Web (superclusters, filaments, voids) creates a stress tensor $S_{\mu\nu}$ on the brane. Via Israel junction conditions Delta$K_{\mu\nu}$ = -$\kappa$$_{5}$$^{2}$($S_{\mu\nu}$ - $\frac{1}{3}$S $h_{\mu\nu}$), this generates the projected Weyl tensor $E_{\mu\nu}$, which acts as a continuous 5D tidal force pressing the brane toward the bulk. The trace factor (1-3w) ensures conformal freeze-out during BBN and QCD ignition at $\Lambda_{QCD}$
-- **R_PBH(phi,phi̇)·$\Theta$(|phi| - phi_crit)** --- **Microscopic release (the Metronome)**: when |phi| exceeds the QCD threshold phi_crit, the ER=EPR-entangled network of micro-PBHs allows the brane to release tension simultaneously everywhere in the universe ($\ell$=0 mode). The holographic wormhole network ensures global phase coherence --- the "slip" is quantum-synchronized
+- **R_PBH(phi,$\dot{\phi}$)·$\Theta$(|phi| - phi_crit)** --- **Microscopic release (the Metronome)**: when |phi| exceeds the QCD threshold phi_crit, the ER=EPR-entangled network of micro-PBHs allows the brane to release tension simultaneously everywhere in the universe ($\ell=0$ mode). The holographic wormhole network ensures global phase coherence --- the "slip" is quantum-synchronized
 
 ### Dynamical Attractor and Period Stability
 
-A simple harmonic oscillator would be damped by Hubble friction (3Hphi̇) in a few e-foldings. The stick-slip motor is fundamentally different --- it is a **driven** system with a **dynamical attractor**:
+A simple harmonic oscillator would be damped by Hubble friction ($3H\dot{\phi}$) in a few e-foldings. The stick-slip motor is fundamentally different --- it is a **driven** system with a **dynamical attractor**:
 
 1. **Stick phase**: $E_{\mu\nu}$ geometric forcing slowly charges phi toward phi_crit against the Goldberger-Wise restoring potential
 2. **Slip phase**: When |phi| exceeds phi_crit, the non-linear release R activates, triggering rapid energy discharge. The brane snaps back to equilibrium
@@ -755,7 +755,7 @@ In braneworld effective actions, the radion field phi does not couple to the raw
 
 $$T^\mu_\mu = -\rho + 3\left(\frac{\rho}{3}\right) = 0$$
 
-Because of this perfect conformal symmetry, the coupling factor (1 - 3w_eff) = 0. The radion is **completely blind** to the bulk's geometric forcing. Combined with extreme Hubble friction (3Hphi̇), the brane remains frozen at equilibrium. Standard 4D GR is fully recovered, ensuring pristine primordial light-element abundances.
+Because of this perfect conformal symmetry, the coupling factor (1 - 3w_eff) = 0. The radion is **completely blind** to the bulk's geometric forcing. Combined with extreme Hubble friction ($3H\dot{\phi}$), the brane remains frozen at equilibrium. Standard 4D GR is fully recovered, ensuring pristine primordial light-element abundances.
 
 **2. QCD Ignition (Trace Anomaly):** As the universe cools to the QCD phase transition (T approximately 150-200 MeV), chiral symmetry breaks, quarks confine into hadrons, and matter becomes non-relativistic (w_eff $\to$ 0). The trace becomes non-zero ($T^\mu_\mu$ approximately -rho), and the coupling factor jumps from 0 to 1 --- instantly igniting the stick-slip motor. This fundamentally explains why the membrane's energy scale ($\tau_0$^{1/3} = 257 MeV) is locked to $\Lambda_{QCD}$: the motor can only activate when conformal symmetry breaks at the QCD scale.
 
@@ -911,7 +911,7 @@ where $R$ is the 4D Ricci scalar and $\xi \approx 0.15$ is the mixing parameter.
 **The single-operator unification.** The coupling $\xi R H^\dagger H$ is the same operator appearing in four distinct physical regimes:
 
 1. **QCD ignition** --- During the radiation era, conformal symmetry ($T^\mu_\mu = 0$) decouples the radion from bulk forcing. At the QCD phase transition ($\Lambda_\text{QCD} = 257$ MeV), chiral symmetry breaking generates $T^\mu_\mu \neq 0$, igniting the stick-slip motor through the trace-coupling factor $(1-3w)$
-2. **Time-dependent growth suppression** --- The oscillating radion modulates the effective gravitational coupling $G_\text{eff}(t)$ over the 2 Gyr cycle, producing temporal growth suppression that resolves the S$_{8}$ tension (see below)
+2. **Time-dependent growth suppression** --- The oscillating radion modulates the effective gravitational coupling $G_\text{eff}(t)$ over the 2 Gyr cycle, producing temporal growth suppression that resolves the $S_8$ tension (see below)
 3. **Robin parameter amplification** --- At the qBOUNCE experimental scale, the Yukawa gradient excites the radion, which via $\xi R H^\dagger H$ perturbs the local Higgs VEV, modifying the effective quark masses inside the neutron and producing the observed Robin boundary condition anomaly (see [Laboratory Proofs](/laboratory/))
 4. **5D Geometric Bypass** --- The bulk metric operators (radion channel) commute with 4D gauge operators, enabling non-demolition quantum state readout
 
@@ -991,7 +991,7 @@ By capturing the LRG3 cliff perfectly (drastic $\chi^2$ reduction at $z = 0.93$)
 
 **Falsifiable prediction for DESI Year 5:** The sinusoidal fit and the 3-harmonic stick-slip template will diverge maximally at $z \approx 0.93$ (the cliff). DESI Year 5 data, with improved statistics in this redshift range, will discriminate between the smooth phantom crossing (CPL) and the sharp geometric shock (OBT) at $> 3\sigma$ significance.
 
-### Time-Dependent Growth Suppression (S$_{8}$ Resolution)
+### Time-Dependent Growth Suppression ($S_8$ Resolution)
 
 The brane oscillation modulates the effective gravitational coupling **in time**, not in spatial wavenumber. As the radion $\phi(t)$ oscillates with period $T = 2$ Gyr, the effective Newton constant experienced by structure formation varies as:
 
@@ -999,12 +999,12 @@ $$G_{\text{eff}}(t) = G_N \left(1 + f_\text{osc}\, \sin\!\left(\frac{2\pi t}{T} 
 
 where $f_\text{osc} \approx 0.10$ is the oscillation amplitude. This is the **same mechanism** that produces the eROSITA $\gamma = 1.19$ illusion and the oscillating dark energy $w(z)$.
 
-**Why this resolves S$_{8}$:** The $S_8$ parameter is extracted by comparing structure growth at low redshift ($z < 1$, probed by DES/KiDS weak lensing) against the primordial prediction from the CMB ($z = 1100$, probed by Planck). During the primordial epoch, conformal symmetry ($T^\mu_\mu = 0$) froze the brane --- gravity was exactly Newtonian, and the CMB prediction $S_8 \approx 0.836$ is valid. But the late-Universe structures observed by DES grew during the **current stretched phase** of the oscillation, where $G_\text{eff} < G_N$. Structures formed 4.79% more slowly than the CMB-extrapolated rate, producing $S_8 = 0.796$ --- exactly matching DES Year 6 observations (see exact ODE integration below).
+**Why this resolves $S_8$:** The $S_8$ parameter is extracted by comparing structure growth at low redshift ($z < 1$, probed by DES/KiDS weak lensing) against the primordial prediction from the CMB ($z = 1100$, probed by Planck). During the primordial epoch, conformal symmetry ($T^\mu_\mu = 0$) froze the brane --- gravity was exactly Newtonian, and the CMB prediction $S_8 \approx 0.836$ is valid. But the late-Universe structures observed by DES grew during the **current stretched phase** of the oscillation, where $G_\text{eff} < G_N$. Structures formed 4.79% more slowly than the CMB-extrapolated rate, producing $S_8 = 0.796$ --- exactly matching DES Year 6 observations (see exact ODE integration below).
 
 - **DES** (non-linear, $z < 0.5$): structures grew during weakened-gravity phase $\to$ $S_8 \approx 0.79$
 - **KiDS/CMB** (linear, $z > 1$ extrapolation): gravity was quasi-standard during earlier oscillation phases $\to$ $S_8$ consistent with Planck
 
-The apparent DES/KiDS discrepancy is not a spatial scale effect --- it is a **temporal phase effect**: different surveys weight different redshift ranges, sampling different phases of the gravitational oscillation cycle. This unifies the S$_{8}$ tension with the eROSITA anomaly ($\gamma = 1.19$) under a single temporal mechanism.
+The apparent DES/KiDS discrepancy is not a spatial scale effect --- it is a **temporal phase effect**: different surveys weight different redshift ranges, sampling different phases of the gravitational oscillation cycle. This unifies the $S_8$ tension with the eROSITA anomaly ($\gamma = 1.19$) under a single temporal mechanism.
 
 ### Exact ODE Integration of $D_+(a)$ and the Non-Linear eROSITA Resonance
 
@@ -2682,7 +2682,7 @@ For comparison, $\Lambda$CDM requires 6 free parameters ($H_0$, $\Omega_b$, $\Om
 ### Why Only $\ell$=0 Survives
 
 1. **ER=EPR coherence**: All black holes share quantum entanglement, forcing identical phase
-2. **Damping hierarchy**: Higher modes ($\ell$ >= 2) experience stronger dissipation (Q$_{1}$ < 4 vs Q$_{0}$ > 200)
+2. **Damping hierarchy**: Higher modes ($\ell$ >= 2) experience stronger dissipation ($Q_1$ < 4 vs $Q_0$ > 200)
 3. **Energy cascade**: Non-linear interactions transfer energy to the fundamental mode
 
 ## Key Predictions
@@ -2692,7 +2692,7 @@ For comparison, $\Lambda$CDM requires 6 free parameters ($H_0$, $\Omega_b$, $\Om
 3. **Time-dependent growth suppression** via oscillating G_eff(t) reconciling DES and KiDS
 4. **SKA 21cm reionization modulation**: spatial modulation of 21cm power spectrum during the Epoch of Reionization (definitive future test)
 5. **Hubble anisotropy** mapping cosmic tension variations (Cosmicflows-4)
-6. **Sub-micron gravity** deviations at L = 0.2 mum (testable by qBOUNCE quantum neutrons and levitated nanoscale optomechanics)
+6. **Sub-micron gravity** deviations at L = $0.2\,\mu$m (testable by qBOUNCE quantum neutrons and levitated nanoscale optomechanics)
 
 ## Micro-PBH Anchors: Extended Mass Function
 
@@ -2845,7 +2845,7 @@ The non-minimal coupling $\xi R\phi$ acts as a geometric Phase-Locked Loop, dyna
 ### Current Oscillations
 Today, the brane has reached its stable limit cycle:
 - Fixed tension $\tau_0$ = 7x10<sup>19</sup> J/m$^{2}$ (set by KS geometry, not by cooling)
-- Fundamental period T = 2.0 Gyr (locked by xiRphi attractor)
+- Fundamental period T = 2.0 Gyr (locked by $\xi R\phi$ attractor)
 - ~1% of dark matter mass in PBH capillaries ($f_{PBH} = 0.01$) tensions the membrane
 
 ## The Awakening of Oscillations
@@ -2913,7 +2913,7 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 ```
 2024     DESI detects dark energy evolution (4sigma)
    |
-2025     S$_{8}$ tension resolved (time-dependent growth suppression)
+2025     $S_8$ tension resolved (time-dependent growth suppression)
    |    ⏳ Euclid first data release
    |    ⏳ qBOUNCE / nanoscale optomechanics (sub-micron gravity)
    |
@@ -2932,11 +2932,11 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 
 ** Already Observed:**
 - **DESI 2024-2026**: Dark energy evolves with 4sigma significance --- exactly matching our oscillating w(z) with $\phi_0$ = pi/2
-- **S$_{8}$ tension**: Time-dependent growth suppression via oscillating G_eff(t) bridges DES/KiDS gap
+- **$S_8$ tension**: Time-dependent growth suppression via oscillating G_eff(t) bridges DES/KiDS gap
 
 **⏳ Imminent Tests:**
 - **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >5sigma
-- **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments --- sub-micron gravity test at L = 0.2 mum, bypassing Casimir background
+- **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments --- sub-micron gravity test at L = $0.2\,\mu$m, bypassing Casimir background
 - **CMB Analysis 2026**: Planck's low-$\ell$ anomaly matches our ISW resonance prediction
 
 ## Key Signatures
@@ -2986,7 +2986,7 @@ The brane oscillation modulates the effective gravitational coupling in time:
 
 $$G_{\text{eff}}(t) = G_N \left(1 + f_\text{osc}\, \sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-The current stretched phase ($G_\text{eff} < G_N$) produces 4.79% growth suppression at low redshift (S$_{8}$ = 0.796) (resolving DES S$_{8}$ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). This is the same temporal mechanism explaining the eROSITA $\gamma = 1.19$ anomaly.
+The current stretched phase ($G_\text{eff} < G_N$) produces 4.79% growth suppression at low redshift ($S_8$ = 0.796) (resolving DES $S_8$ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). This is the same temporal mechanism explaining the eROSITA $\gamma = 1.19$ anomaly.
 
 
 *Figure 5: Structure growth suppression in oscillating brane model vs $\Lambda$CDM*
@@ -3007,7 +3007,7 @@ with characteristic amplitude $\Delta T_\text{osc} \sim 1$--$5$ mK at BAO-scale 
 
 ### Hubble Anisotropy (Cosmicflows-4)
 
-Spatial tension variations create directional H$_{0}$ differences:
+Spatial tension variations create directional $H_0$ differences:
 
 $$\frac{\delta H}{H} \sim 10^{-3}$$
 
@@ -3016,8 +3016,8 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 ## Particle Physics Signatures
 
 ### Kaluza-Klein Modes
-- First excitation: m_KK $\simeq$ 1 eV
-- CMB signature: DeltaN_eff ~ 0.01
+- First excitation: $m_{KK} \approx 3.78$ eV
+- CMB signature: $\Delta N_{eff} \sim 0.01$
 
 ### Trans-dimensional Leakage
 - Energy loss rate: 10$^{-11}$ yr$^{-1}$
@@ -3028,10 +3028,10 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 | Observable | $\Lambda$CDM | Oscillating Brane V8.2 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2pit/T + pi/2) | Time-varying, phantom crossing |
-| S$_{8}$ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | 4.79% suppression (S$_{8}$ = 0.796) |
+| $S_8$ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | 4.79% suppression ($S_8$ = 0.796) |
 | CMB Anomaly | None | ISW Resonance (6sigma) | Unique signature |
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
-| H$_{0}$ variation | Isotropic | ~0.1% dipole | Anisotropic |
+| $H_0$ variation | Isotropic | ~0.1% dipole | Anisotropic |
 
 
 ## Gravitational Echoes
@@ -3268,7 +3268,7 @@ $$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right), \quad \eta = \xi|\alpha|
 
 where $v_0 = 246$ GeV is the standard electroweak VEV and $\eta = \xi|\alpha|$ is the effective Higgs-Radion mixing coefficient. The **negative exponent** ensures the perturbation is localized at the boundary and decays to zero at infinity (a positive exponent would cause unphysical mass divergence). Since quark masses inside the neutron are $m_q = y_q v/\sqrt{2}$ (Yukawa couplings $\times$ Higgs VEV), the neutron's effective mass is spatially modulated near the extra-dimensional boundary.
 
-**Step 5 --- Robin parameter as observable.** This mass variation shifts the transition frequencies between quantum gravitational bound states. Experimentalists analyzing the data with standard Newtonian gravity and constant particle masses absorb this 5D Higgs resonance into the only available fitting parameter: the Robin boundary condition $\lambda$. **The Robin anomaly is the direct experimental trace of the Higgs-Radion scalar resonance at 0.2 mum.**
+**Step 5 --- Robin parameter as observable.** This mass variation shifts the transition frequencies between quantum gravitational bound states. Experimentalists analyzing the data with standard Newtonian gravity and constant particle masses absorb this 5D Higgs resonance into the only available fitting parameter: the Robin boundary condition $\lambda$. **The Robin anomaly is the direct experimental trace of the Higgs-Radion scalar resonance at $0.2\,\mu$m.**
 
 At the current qBOUNCE resolution (~1 $\mu$m), the experiment sees only the exponential tail of the Yukawa correction ($e^{-5} \approx 0.007$), which is why the anomaly is "slight". But as resolution improves toward $L = 0.2\,\mu$m, the full Higgs-Radion resonance is exposed and the signal **explodes exponentially**.
 
@@ -3424,7 +3424,7 @@ python scripts/growth_factor.py --exact --redshift 0 1 2
 **Features**:
 - Fast fitting formula or exact ODE integration
 - Comparison between oscillating and $\Lambda$CDM models
-- S$_{8}$ parameter calculation
+- $S_8$ parameter calculation
 
 ### Bayesian Analysis
 **File**: `scripts/bayesian_analysis.py`
@@ -3712,7 +3712,7 @@ with:
 |-----------|-------------------|------|------|
 | **DM Nature** | Geometric effect from extra dimensions | Unknown particles (WIMPs, axions) | No DM, modified gravity |
 | **Theoretical Basis** | String theory/M-theory (RS extension) | Particle physics extensions | Empirical modification |
-| **Free Parameters** | 3 ($\tau_0$, T, L) | 2+ (Omega_c, sigma_v, m_chi) | 1 (a$_{0}$) + relativistic ext. |
+| **Free Parameters** | 3 ($\tau_0$, T, L) | 2+ ($\Omega_c$, $\sigma_v$, $m_\chi$) | 1 ($a_0$) + relativistic ext. |
 | **CMB Fit Quality** | DeltaC_$\ell$/C_$\ell$ < 10$^{-3}$ | $\chi^2$/dof approximately 1.00 | Poor without 2eV neutrinos |
 | **Galaxy Rotations** | v$^{4}$ proportional to M_b automatically | Requires NFW/Einasto profiles | v$^{4}$ proportional to M_b by design |
 | **Tully-Fisher sigma** | ~0.05 dex predicted | ~0.3 dex (with scatter) | ~0.05 dex (built-in) |
@@ -3721,9 +3721,9 @@ with:
 | **Cusp-Core** | Cores ~10 kpc | Cusps (rho proportional to r$^{-1}$) | Cores (by construction) |
 | **Missing Satellites** | Factor 2-3 reduction | Too many by 5-10x | Better match |
 | **Direct Detection** | sigma < 10$^{-48}$ cm$^{2}$ forever | sigma > 10$^{-47}$ cm$^{2}$ expected | No prediction |
-| **S$_{8}$ Tension** | Resolved (4.79%, time-dependent, S$_{8}$=0.796) | 3sigma tension | Not addressed |
-| **H$_{0}$ Tension** | Potential resolution | 5sigma tension | Not addressed |
-| **GW Prediction** | f$_{0}$ = 1.6x10$^{-17}$ Hz | None specific | None |
+| **$S_8$ Tension** | Resolved (4.79%, time-dependent, $S_8$=0.796) | 3sigma tension | Not addressed |
+| **$H_0$ Tension** | Potential resolution | 5sigma tension | Not addressed |
+| **GW Prediction** | $f_0$ = 1.6x10$^{-17}$ Hz | None specific | None |
 | **Falsifiability** | Multiple clear tests | Particle discovery | Limited tests |
 
 ### Advantages Over Competitors
@@ -3747,20 +3747,20 @@ with:
 | Observable | Prediction | Uncertainty | Detection Method | Timeline |
 |------------|------------|-------------|------------------|----------|
 | **Fundamental Parameters** |
-| Brane tension $\tau_0$ | 7.0 x $10^{19}$ J/m$^{2}$ | +/-15% | Indirect via H$_{0}$(z) | Current |
+| Brane tension $\tau_0$ | 7.0 x $10^{19}$ J/m$^{2}$ | +/-15% | Indirect via $H_0$(z) | Current |
 | Oscillation period T | 2.0 Gyr | +/-0.3 Gyr | GW spectrum | 2030+ |
-| Extra dimension L | 0.2 mum | Factor of 2 | KK modes | 2035+ |
+| Extra dimension L | $0.2\,\mu$m | Factor of 2 | KK modes | 2035+ |
 | KK mass $m_{KK}$ | ~3.8 eV | +/-1 eV | Cosmological bounds | Current |
 | **Cosmological Effects** |
-| S$_{8}$ suppression | 4.79% (time-dependent, S$_{8}$=0.796) | +/-0.5% | Weak lensing | Current |
+| $S_8$ suppression | 4.79% (time-dependent, $S_8$=0.796) | +/-0.5% | Weak lensing | Current |
 | w(z) amplitude A_w | 0.003 | +/-0.001 | BAO + SNe | 2025+ |
-| H$_{0}$ anisotropy | 0.01% | +/-0.005% | Precision cosmology | 2030+ |
+| $H_0$ anisotropy | 0.01% | +/-0.005% | Precision cosmology | 2030+ |
 | **Gravitational Signatures** |
-| Fundamental f$_{0}$ | 1.6 x 10$^{-17}$ Hz | +/-10% | ISW in CMB | 2030+ |
+| Fundamental $f_0$ | 1.6 x 10$^{-17}$ Hz | +/-10% | ISW in CMB | 2030+ |
 | Oscillation period | 2.0 Gyr | +/-0.3 Gyr | Large-scale structure | 2028+ |
 | ISW amplitude | ~10$^{-5}$ DeltaT/T | Factor of 2 | CMB-S4 | 2030+ |
 | **Galactic Scale** |
-| MOND a$_{0}$ | 1.1 x 10$^{-10}$ m/s$^{2}$ | +/-5% | Galaxy dynamics | Current |
+| MOND $a_0$ | 1.1 x 10$^{-10}$ m/s$^{2}$ | +/-5% | Galaxy dynamics | Current |
 | Halo core radius | ~10 kpc | +/-3 kpc | Stellar kinematics | 2025+ |
 | Subhalo reduction | Factor 2-3 | +/-50% | Stream gaps | 2028+ |
 | **Particle Physics** |
@@ -3784,7 +3784,7 @@ with:
 
 4. **Spatial Gravity Variations**:
    - $\delta g/g \sim 10^{-8}$ at supercluster boundaries
-   - Directional H$_{0}$ variations ~0.01%
+   - Directional $H_0$ variations ~0.01%
    - Future precision astrometry tests
 
 5. **Baryon-DM Coupling**:
@@ -4226,7 +4226,7 @@ def lookback_time_exact(z, omega_m=0.3, omega_lambda=0.7, H0=70):
 
 #### Self-Consistent Growth Suppression
 
-**Issue**: Exact 4.79% suppression factor (time-dependent, S$_{8}$=0.796).
+**Issue**: Exact 4.79% suppression factor (time-dependent, $S_8$=0.796).
 
 **Implementation**:
 ```python
@@ -4360,7 +4360,7 @@ The Bayesian evidence calculation ($\Delta\ln K = 4.13 \pm 0.07$) relies on spec
 | | f_osc | Uniform | [0.05, 0.20] | - | Left free to verify attractor convergence to ~0.10 |
 | | T | Gaussian | mu=2.0, sigma=0.3 | Gyr | Centered on theoretical prediction |
 | | A_w | Uniform | [0.001, 0.005] | - | Constrained by dark energy observations |
-| $\Lambda$CDM | H$_{0}$ | Uniform | [60, 80] | km/s/Mpc | Wide range covering all measurements |
+| $\Lambda$CDM | $H_0$ | Uniform | [60, 80] | km/s/Mpc | Wide range covering all measurements |
 | | Omega_m | Gaussian | mu=0.31, sigma=0.02 | - | CMB+LSS constraints |
 
 **Prior Sensitivity Analysis**:

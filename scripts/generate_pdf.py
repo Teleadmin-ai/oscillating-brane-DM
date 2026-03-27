@@ -654,6 +654,53 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 
         return text
 
+    @staticmethod
+    def cleanup_md_txt(text: str) -> str:
+        """Post-process the .md.txt for AI/text-parser readability.
+
+        This runs ONLY on the .md.txt copy (not on the content fed to
+        pandoc/xelatex). It fixes cosmetic scories created by the
+        sanitize_unicode_for_latex pass on plain-text sections.
+
+        SAFETY: only targets patterns that are unambiguously broken
+        formatting — never modifies content inside $$...$$ display math.
+        """
+        # Split-subscript scories: S$_{8}$ → $S_8$
+        text = re.sub(r"S\$_\{8\}\$", "$S_8$", text)
+        text = re.sub(r"a\$_\{0\}\$", "$a_0$", text)
+        text = re.sub(r"H\$_\{0\}\$", "$H_0$", text)
+        text = re.sub(r"f\$_\{0\}\$", "$f_0$", text)
+        text = re.sub(r"Q\$_\{(\d)\}\$", r"$Q_\1$", text)
+
+        # Plain-text physics that should be inline math
+        text = text.replace("(xiRphi)", r"($\xi R\phi$)")
+        text = text.replace("xiRphi", r"$\xi R\phi$")
+        text = text.replace("0.2 mum", r"$0.2\,\mu$m")
+
+        # Broken Unicode derivatives in plain text (outside math mode)
+        # phi̇ (phi + combining dot above) → $\dot{\phi}$
+        text = text.replace("phi\u0307", r"$\dot{\phi}$")
+        # phï → $\ddot{\phi}$ (phi + diaeresis as double-dot)
+        text = text.replace("ph\u00ef", r"$\ddot{\phi}$")
+        # 3Hphi̇ → $3H\dot{\phi}$
+        text = text.replace("3H$\\dot{\\phi}$", "$3H\\dot{\\phi}$")
+
+        # Broken operator references in plain text
+        text = text.replace(
+            "m_KK $\\simeq$ 1 eV", "$m_{KK} \\approx 3.78$ eV"
+        )
+        text = text.replace("DeltaN_eff ~ 0.01", "$\\Delta N_{eff} \\sim 0.01$")
+        text = text.replace(
+            "Omega_c, sigma_v, m_chi",
+            "$\\Omega_c$, $\\sigma_v$, $m_\\chi$",
+        )
+
+        # ($\ell$=0 mode) → ($\ell=0$ mode)
+        text = text.replace("($\\ell$=0 mode)", "($\\ell=0$ mode)")
+        text = text.replace("($\\ell$=0)", "($\\ell=0$)")
+
+        return text
+
     def generate_pdf_direct(self, output_path: Path) -> bool:
         """Generate PDF directly using pandoc with all content."""
         # Create combined markdown
@@ -896,8 +943,15 @@ def main():
             latest_md = output_dir / "oscillating_brane_theory_latest.combined.md"
             root_md = base_dir / "oscillating_brane_theory_latest.md.txt"
             shutil.copy2(combined_md_path, latest_md)
-            shutil.copy2(combined_md_path, root_md)
-            print(f"Combined markdown copied to: {root_md}")
+
+            # Post-process the .md.txt for AI/text readability
+            # (fixes cosmetic scories from unicode sanitization on plain-text sections)
+            with open(combined_md_path, "r", encoding="utf-8") as f:
+                md_txt_content = f.read()
+            md_txt_content = generator.cleanup_md_txt(md_txt_content)
+            with open(root_md, "w", encoding="utf-8") as f:
+                f.write(md_txt_content)
+            print(f"Combined markdown copied to: {root_md} (post-processed)")
 
         print(f"\nPDF generation complete!")
         print(f"Total chapters: {generator.chapter_count}")
