@@ -158,7 +158,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Retarded 5D Green's function**: V_eff = 15/(4z²), UV censorship ψ_n(0) ∝ z⁴→0, IR coupling ψ_n(L) ∝ J₂(m_nL) ≠ 0
 - **KK spectrum exact**: Bessel quantization m_n = j_{1,n}/L, graviton m₁ = 3.832/L ≈ 19.2 eV, Sturm-Liouville kinematic pumping
 - **Spectral zeta**: ζ_Δ(s) → Riemann mapping, Weyl-McMahon, meromorphic s=-1/2, Casimir -M₀/12
-- **Seeley-DeWitt a₀-a₅**: exact for AdS₅ orbifold, Gilkey-Branson-Kirsten boundary terms, a₅ = holy grail (log anomaly from branes only). Numerically evaluated: ā₀=0.249 eV⁻¹, ā₁=0.902, ā₂=-2.67 eV, ā₃=4.13 eV² (induces Einstein-Hilbert/M_P), ā₄=12.7 eV³. a₅_bulk≡0 in D=5 (odd dim). UV/IR asymmetry: e⁻⁴ᵏᴸ≈0.018 crushes IR brane ×55.
+- **Seeley-DeWitt a₀-a₅**: exact for AdS₅ orbifold, Gilkey-Branson-Kirsten boundary terms. Numerically evaluated: ā₀=0.249 eV⁻¹, ā₁=0.902, ā₂=-2.67 eV, ā₃=4.13 eV² (induces Einstein-Hilbert/M_P), ā₄=12.7 eV³. **a₅ (The Holographic Grail)**: a₅_bulk≡0 in D=5 (odd dim), entire log anomaly from branes only. Cubic extrinsic invariants (K³=±64k³, KK_μν²=±16k³, K_μνK^νρK_ρ^μ=±4k³) contract to P₅∝k⁴. **ā₅(UV)=2.845 eV⁴, ā₅(IR)=0.0521 eV⁴** (98.2% confined to Planck brane, ×55 crushing via e⁻⁴ᵏᴸ). c_log counterterm (Skenderis) localized exclusively on UV brane → IR sanctuary.
 - **Skenderis holographic renormalization**: Fefferman-Graham inversion, counterterm dictionary c₁(tension), c₂(G_N), c_log(anomaly)
 - **δ/Λ_QCD ≈ 9.4×10⁻³⁹**: inverse hierarchy, IR bulk (1 eV) cannot destabilize UV brane (257 MeV)
 - **MERA/HaPPY**: 109 layers, bond dim ln χ = S_BH ≈ 4.8×10⁵⁶, RT phase transition → expander graph → ∂S_EE/∂d = 0
@@ -314,7 +314,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | S₈ exact ODE | Growth factor D₊(a) with oscillating G_eff | 4.79% suppression, S₈=0.796, φ_eff=4.24 rad |
 | eROSITA non-linear | Press-Schechter with oscillating δ_c(t) | Linear γ_eff≈0.80, non-linear amplification to 1.19 |
 | MOND ab initio | Gibbons-Hawking + Unruh + 5D quadrature | a₀=cH₀/2π, μ(x)=x/√(1+x²), cluster resonance at T=2 Gyr |
-| Seeley-DeWitt numerical | V8.2 parameters (k=0.987 eV, kL=1, N_dof=6) | ā₀-ā₅ table, a₅_bulk≡0, UV/IR asymmetry e⁻⁴≈0.018 |
+| Seeley-DeWitt numerical | V8.2 parameters (k=0.987 eV, kL=1, N_dof=6) | ā₀-ā₅ table, a₅_bulk≡0, **ā₅(UV)=2.845 eV⁴, ā₅(IR)=0.0521 eV⁴** (98.2% UV-confined) |
 | Dirichlet anomaly resolution | 4-branch holographic tensor (Ai=c₁f-c₂g) | Δ=0.000044 (2.1%), O(α⁴), destructive interference exact |
 | LVS explicit minimization | V_LVS(τ_large, τ_small) analytical | τ_s=3.65, W₀=4100, both eigenvalues positive (stable) |
 | Multi-throat architecture | V_min vs QCD uplift energy comparison | 45-order gap proves multi-throat necessity (geometric theorem) |
