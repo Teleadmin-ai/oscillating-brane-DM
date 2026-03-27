@@ -31,8 +31,8 @@ The following .md files compose the PDF and are the SOLE source of truth for the
 **After ANY modification to these 7 files, you MUST regenerate and push the PDF:**
 ```bash
 python3 scripts/generate_pdf.py
-git add oscillating_brane_theory_latest.pdf output/oscillating_brane_theory_latest.pdf
-git commit -m "Regenerate PDF" && git push
+git add oscillating_brane_theory_latest.pdf oscillating_brane_theory_latest.md.txt output/oscillating_brane_theory_latest.pdf output/oscillating_brane_theory_latest.combined.md
+git commit -m "Regenerate PDF + markdown" && git push
 ```
 **If you forget, the PDF on the site will be stale and inconsistent with the site pages.**
 
@@ -137,7 +137,7 @@ git commit -m "Regenerate PDF" && git push
 - **Sugiyama et al. 2026**: 4 PBH candidates at 10⁻⁷ M☉ (above M_crit), zero below — observational validation of perforation hierarchy
 - **GW170817 compatibility**: tensor GW modes (KK zero mode) propagate at c on brane, orthogonal to scalar radion oscillation
 - **Hawking immunity**: T_H ~ 900 K at M_crit, t_evap ~ 10^47 yr, immune to INTEGRAL/Fermi-LAT
-- **QCD Ansatz**: τ₀^{1/3} ≈ 257 MeV is a phenomenological Ansatz, NOT ab initio string derivation
+- **QCD connection**: τ₀^{1/3} ≈ 257 MeV — phenomenological Ansatz bottom-up (period constrains τ₀ independently of QCD), derived ab initio top-down via KS (K=21, M=10 → 257 MeV). Both approaches converge.
 - **Limit cycle uniqueness**: Liouville-Filippov hyper-contraction κ = e^{-8.60} ≈ 1.84×10⁻⁴ (Banach fixed-point, analytical — NOT the numerical MLE of -0.016)
 - **Fenichel-Neishtadt persistence**: spectral gap |λ_trans|/ε = 4.30/0.14 ≈ 30 → NHIC survives non-autonomous drift
 - **Airy-Yukawa ab initio**: ⟨1|δV|6⟩ = -2V₀(L/z₀)³, perturbative series to O(α⁶) with 5 decimal convergence (0.97460)
@@ -201,7 +201,8 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 
 ## ABSOLUTE RULE: Site = PDF symmetry
 **Every scientific page on the site MUST be a chapter in the PDF. No exceptions.**
-Pages excluded from PDF (non-scientific): index.md (Home), about.md, downloads.md, research.md, refutation.md.
+Pages excluded from PDF (non-scientific): about.md, downloads.md, research.md, refutation.md, videos.md.
+Note: index.md IS in the PDF as Chapter 1 (introduction), but is not a theory source file.
 ALL other .md pages with scientific content MUST be in generate_pdf.py doc_order.
 **If you add a new scientific page to the site, add it to the PDF immediately.**
 **If you remove a page from the PDF, you are BREAKING the symmetry. Do NOT do this.**
@@ -209,7 +210,7 @@ ALL other .md pages with scientific content MUST be in generate_pdf.py doc_order
 ## PDF Generation — CRITICAL WORKFLOW
 **The CI does NOT auto-push the PDF.** You MUST regenerate and push it manually after ANY .md file change. If you forget, the site will have a stale PDF.
 
-**After modifying any .md file that is in the PDF (index.md, discoveries.md, theory.md, docs/theoretical_foundations.md, tools.md), ALWAYS do:**
+**After modifying any .md file that is in the PDF (index.md, discoveries.md, theory.md, chronology.md, predictions.md, docs/theoretical_foundations.md, laboratory.md, tools.md), ALWAYS do:**
 ```bash
 python3 scripts/generate_pdf.py
 git add oscillating_brane_theory_latest.pdf oscillating_brane_theory_latest.md.txt output/oscillating_brane_theory_latest.pdf output/oscillating_brane_theory_latest.combined.md
@@ -230,7 +231,7 @@ The script applies a 3-step sanitization pipeline before pandoc:
 
 ### Compression
 PDF pipeline includes Ghostscript post-processing (JPEG/DCT at 200 dpi).
-Reduces ~2 MB → ~1.1 MB without quality loss. Requires `ghostscript` package locally.
+Reduces ~3 MB → ~1.9 MB without quality loss. Requires `ghostscript` package locally.
 
 ### Ghost grep (V8.2 + March 2026 audit):
 ```bash
@@ -259,8 +260,8 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - When editing a site page, the PDF updates automatically via CI
 
 ## Downloads
-1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 6 pages, "Resolving Thirty-One Cosmological Anomalies" (LaTeX source: `paper/cosmic_yoyo_prl.tex`)
-2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~100+ pages, 8 chapters (~1.8 MB compressed)
+1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 7 pages, "Resolving Thirty-One Cosmological Anomalies" (LaTeX source: `paper/cosmic_yoyo_prl.tex`)
+2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~100+ pages, 8 chapters (~1.9 MB compressed)
 3. **Full Theory (Markdown)** (`oscillating_brane_theory_latest.md.txt`) — same content as PDF, AI/text-parser friendly, downloadable from site
 
 ## Computational Validation Results (March 2026)
@@ -427,7 +428,7 @@ All 33 mathematical derivations have been completed and integrated into theory.m
 - **Mobile**: single column, hamburger menu (`.mobile-nav`), video hidden
 - **Section markers**: `<div class="section-marker" data-section="...">` in content triggers video switching via IntersectionObserver
 - **Romain AI toggle**: "Romain AI" button in nav swaps `.video-column` between video carousel and Open WebUI iframe. State persists across page navigation via `sessionStorage` (resets on new tab/visit). Auth state also cached — no re-auth on page change. Iframe URL uses cache-buster (`?_=timestamp`) to avoid stale SvelteKit assets.
-- **Non-PDF pages**: index.md, about.md, downloads.md, research.md, refutation.md, videos.md, agent.md (if created)
+- **Non-PDF pages**: about.md, downloads.md, research.md, refutation.md, videos.md, agent.md (if created). Note: index.md is in the PDF as Ch 1 intro.
 
 ## Agent Infrastructure (Romain AI)
 - **URL**: https://agent.higgs-cosmology.com
