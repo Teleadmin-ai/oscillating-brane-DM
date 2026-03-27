@@ -86,8 +86,8 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Definitive future test**: SKA 21cm reionization modulation (2027+)
 - **Complementary tests**: Vera Rubin/LSST, qBOUNCE/optomechanics, Euclid
 - **Theory is purely tensorial and geometric** — no dependence on astrophysical controversies
-- **Cross-AI audit status (March 2026)**: Math validated 100% by Gemini DeepThink (independent recalculation of τ₀→257 MeV, a₀=cH₀/2π, Fresnel w_F=0.031, Δβ=0.25°, Schwinger 10⁻³¹). Physics validated: trace anomaly ignition, von Neumann self-adjoint extensions, Higgs-Radion mixing, 5D QND bypass, temporal S₈ resolution. Primary peer-review attack vector (chirp stability) addressed via ξRφ PLL attractor.
-- **Audit-driven corrections (March 2026)**: S₈ spatial→temporal, neutron lifetime removed, MOND formula corrected (cH₀/2π), 6 Unicode-in-math formulas fixed
+- **Cross-AI audit status (March 2026)**: Math validated 100% by Gemini DeepThink. Phase 1: independent recalculation (τ₀→257 MeV, a₀=cH₀/2π, Fresnel w_F=0.031, Δβ=0.25°, Schwinger 10⁻³¹). Phase 2: 9 DeepThink prompts (Fourier spectrum, exact S₈ ODE, MOND ab initio, Seeley-DeWitt numerics, Dirichlet anomaly, 3D Floquet, LVS+multi-throat, dynamical Schwinger, finite-N corrections). Physics validated: trace anomaly ignition, von Neumann self-adjoint extensions, Higgs-Radion mixing, 5D QND bypass, temporal S₈ resolution, geometric dephasing, cluster resonance, multi-throat necessity. All peer-review attack vectors addressed.
+- **Audit-driven corrections (March 2026)**: S₈ spatial→temporal (then exact 4.79%), neutron lifetime removed, MOND formula derived ab initio (cH₀/2π from Gibbons-Hawking), 6 Unicode-in-math formulas fixed, τ₀ posterior 19.51→19.85
 
 ### BANNED Concepts (NEVER use):
 - "Point Unique" 0D, Ringermacher, GW doublet/NANOGrav, Bulk-Infinity
@@ -100,7 +100,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **"Complexity=Volume" as the motor** (ok as historical motivation only)
 - **EDGES/CatWISE as confirmations**
 - **Single PBH mass 10⁻¹² M☉** (must use extended mass function)
-- **"global S₈ suppression of 5.2%"** (must be time-dependent, ~5% during current weakened-gravity phase)
+- **"global S₈ suppression of 5.2%"** (must be time-dependent, exact 4.79% via ODE integration, S₈=0.796)
 - **"Scale-Dependent Yukawa Screening" for S₈** (k/k_L ~ 10⁻²⁹ at cosmological scales → no spatial dependence)
 - **Neutron Lifetime Anomaly / Bottle vs Beam** (double counting error + T^μ_μ=0 for EM fields → removed)
 - **"temperature-dependent brane tension" / "τ(T)"** (replaced by conformal symmetry)
@@ -184,7 +184,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Filippov invulnerability**: shock fierce enough for DE harmonics yet 12 orders below Schwinger threshold — thermodynamic masterpiece
 
 ### Key References:
-Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation)
+Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation), Sekino & Susskind 2008 (fast scrambling), Bousso & Polchinski 2000 (flux landscape), Douglas & Kachru 2007 (string landscape review), Alon 1986 / Alon-Boppana (expander graph spectral gap)
 
 ## Key Parameters
 | Parameter | Value |
@@ -281,7 +281,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Validation | Method | Key Result |
 |-----------|--------|------------|
 | w(z) phantom crossing | BDF stiff solver, exact lookback time | w ∈ [-1.003, -0.997], matches DESI DR2 |
-| S₈ tension resolution | Time-dependent G_eff(t) oscillation | ~5% during current weakened-gravity phase |
+| S₈ tension resolution | Exact ODE D₊(a) with oscillating G_eff(t) | 4.79% suppression, S₈=0.796, φ_eff=4.24 rad |
 | Bayesian evidence | dynesty nested sampling, 500 live points | Δln K = 4.13 ± 0.07 (STRONG) |
 | SKA 21cm prediction | Reionization mock, z=6-15 | 5.46 mK peak, SNR = 5.5σ |
 | Lithium-7 problem | BBN conformal tolerance, BDF solver | 3.5× suppression, D/⁴He preserved |
@@ -359,7 +359,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - LaTeX renders correctly on ALL site pages and in the PDF (xelatex handles it natively)
 - **PDF pipeline pre-processor** (`generate_pdf.py`) sanitizes Unicode→LaTeX, converts HTML tables→markdown, strips Jekyll templates, emojis, and fixes indented headers before pandoc
 - The `\vert` workaround for bra-ket notation (`$\vert 1\rangle$` instead of `$|1\rangle$`) is still needed because kramdown confuses `|` with table delimiters
-- **LaTeX prime notation** — NEVER write `\text{Ai}'` or `\operatorname{Ai}'` in .md files — the prime character crashes both pdflatex and xelatex. Use `{\text{Ai}}^{\prime}` in display math or `\partial_x\text{Ai}` in inline math instead.
+- **LaTeX prime notation** — NEVER write `\text{Ai}'` or `\operatorname{Ai}'` in .md files — the prime character crashes both pdflatex and xelatex. Use `{\text{Ai}}^{\prime}` in display math or `\partial_x\text{Ai}` in inline math instead. Also applies to derivatives like `D_+'(a)` — must write `D_+^{\prime}(a)` in display math formulas.
 - **scipy `ai_zeros` return order** — `ai_zeros(N)` returns `(a, ap, ai, aip)` where the normalization constant Ai'(a_n) is in the **4th return** `aip`, NOT the 3rd `ai`. Always unpack as: `a_zeros, _, _, deriv_at_zeros = ai_zeros(N)`.
 
 ## CI / Code Quality
@@ -436,14 +436,16 @@ python scripts/laplace_demon_hamiltonian.py
 ```
 
 ### OPEN MATHEMATICAL WORK (0 items remaining — ALL COMPLETE)
-All 33 mathematical derivations have been completed and integrated into theory.md (March 2026). The Kampé de Fériet coefficients (last item) were evaluated: 21 terms of F_{0:1;1}^{3:0;0} at α=0.034, I_{1,6} = 0.002074 confirmed to 5×10⁻⁷, Dirichlet anomaly ~2% diagnosed.
+All 42 mathematical derivations have been completed and integrated into theory.md (March 2026):
+- **33 original derivations** (V8.2 core): Filippov-Banach, Fenichel, Γ_rad ab initio, KK spectrum, spectral zeta, Seeley-DeWitt, Skenderis, MERA/HaPPY, OTOCs, Dirac collapse, Kampé de Fériet, Dyson horizon, KS UV completion, Swiss-Cheese LVS, No-Go isotrope, KKLT tadpole, Fisher Jacobian/forecast, Cobaya module, Robin mapping, Airy-Yukawa series
+- **9 DeepThink refinements** (March 2026): (1) Fourier stick-slip spectrum, (2) exact S₈ ODE + eROSITA non-linear, (3) MOND ab initio from 5D, (4) Seeley-DeWitt numerical evaluation, (5) Dirichlet anomaly 4-branch resolution, (6) full 3D Floquet without adiabatic projection, (7) LVS minimization + multi-throat, (8) dynamical Schwinger invulnerability, (9) finite-N corrections to Dirac collapse
 
 ### SITE & INFRASTRUCTURE TODO
 - Visual page (visual.md) with PDF embeds — waiting for user's PowerPoint PDF
 - Videos.md expansion to 40 videos — waiting for user's YouTube links
 - Google OAuth: pass from test to production mode (needs Google review)
 - Optimize Romain AI system prompt (ongoing tuning)
-- Update Romain AI knowledge base with latest .md.txt (theory.md is now ~1200 lines)
+- Update Romain AI knowledge base with latest .md.txt (theory.md is now ~1500+ lines after 9 DeepThink prompts)
 - Plot display in chat: works via `files` event + URL serving (NPM `/sandbox-images/`)
 
 ## Site Structure (Jekyll + GitHub Pages)
