@@ -181,7 +181,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **eROSITA falsifiable prediction**: γ(M) is monotonically increasing with mass. Groups ~0.88, massive clusters ~1.19, monsters ~1.47. f(R)/scalar-tensor predict universal γ — OBT predicts a spectrum. Testable by eROSITA DR2 mass-binned analysis
 - **MOND ab initio**: a₀ = cH₀/2π from Gibbons-Hawking + Unruh (2π = Euclidean time circle S¹)
 - **MOND μ(x)**: x/√(1+x²) from 5D Pythagorean quadrature g_5D = √(g²+a₀²) + Gauss cosine projection
-- **Cluster resonance**: t_cross(cluster) ≈ 2 Gyr = T → ⟨a₀(t)⟩ = 0, MOND self-destructs at cluster scales
+- **Cluster resonance (sinc theorem)**: ⟨a₀⟩ = a₀^max × sinc(πt_dyn/T). Dwarfs: sinc≈0.996 (99.6% MOND). Clusters: sinc(π)=0 exactly (topologically protected against waveform asymmetry). Bullet Cluster: sinc≈1 for velocity BUT lensing offset requires collisionless PBH+Weyl fluid. Three-component gravity: g_N + MOND×sinc + Weyl
 - **Dynamical Schwinger**: slip shock at v_max=0.05c collapses static exponent 10³² → 10¹² (20 orders), but exp(-4.8×10¹²) ≡ 0. Full KK tower N_total ≡ 0. Dissipation 100% classical (Γ_rad), 0% quantum.
 - **Filippov invulnerability**: shock fierce enough for DE harmonics yet 12 orders below Schwinger threshold — thermodynamic masterpiece
 - **Kinematic Blockade theorem**: Classical 5D GR gives Γ_rad^{5D-GR} ≡ 0 (m₁T_slip ~ 10³², exp(-10³²) = 0). Continuous Nambu-Goto membrane CANNOT dissipate energy into bulk. Proves discrete PBH network is cosmologically NECESSARY, not optional
@@ -323,6 +323,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | NANOGrav spectral flattening | Tensor TT projection of Filippov shock | φ̈ = Dirac δ → flat spectrum, n_PTA ≈ 10⁹, h_c(16 nHz) ~ 10⁻¹⁵ |
 | φ_eff ab initio | SMS tensor projections + Filippov saltation | φ_eff=(π/2+π)×0.9=1.35π=4.24115 rad, zero free params |
 | Press-Schechter γ(M) | Non-linear spherical collapse + oscillating δ_c | A(M)≈ν²/ln(Ω_m⁻¹), γ(groups)≈0.88, γ(clusters)≈1.19, γ(monsters)≈1.47 |
+| MOND sinc theorem | Orbital averaging of oscillating a₀(t) | sinc(πt_dyn/T): dwarfs 0.996, spirals 0.981, groups 0.637, clusters 0.000 |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
@@ -447,7 +448,7 @@ python scripts/laplace_demon_hamiltonian.py
 ```
 
 ### OPEN MATHEMATICAL WORK (0 items remaining — ALL COMPLETE)
-All 46 mathematical derivations have been completed and integrated into theory.md (March 2026):
+All 47 mathematical derivations have been completed and integrated into theory.md (March 2026):
 - **33 original derivations** (V8.2 core): Filippov-Banach, Fenichel, Γ_rad ab initio, KK spectrum, spectral zeta, Seeley-DeWitt, Skenderis, MERA/HaPPY, OTOCs, Dirac collapse, Kampé de Fériet, Dyson horizon, KS UV completion, Swiss-Cheese LVS, No-Go isotrope, KKLT tadpole, Fisher Jacobian/forecast, Cobaya module, Robin mapping, Airy-Yukawa series
 - **9 DeepThink refinements** (March 2026): (1) Fourier stick-slip spectrum, (2) exact S₈ ODE + eROSITA non-linear, (3) MOND ab initio from 5D, (4) Seeley-DeWitt numerical evaluation, (5) Dirichlet anomaly 4-branch resolution, (6) full 3D Floquet without adiabatic projection, (7) LVS minimization + multi-throat, (8) dynamical Schwinger invulnerability, (9) finite-N corrections to Dirac collapse
 

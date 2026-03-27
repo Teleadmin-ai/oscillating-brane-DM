@@ -1135,24 +1135,70 @@ MOND is not an empirical law --- it is the **trigonometric projection** (the cos
 
 **Quantitative validation (SPARC catalog, 135 galaxies):** The zero-free-parameter prediction ($a_0 = cH_0/2\pi$, $\mu(x) = x/\sqrt{1+x^2}$) was tested against the SPARC galaxy rotation curve catalog (Lelli, McGaugh & Schombert 2016). The emergent MOND formalism reproduces observed flat rotation velocities with an RMS scatter of **29.3 km/s** ($\sigma = 0.0854$ dex). For comparison, the standard NFW dark matter halo profile --- requiring **2 free parameters per galaxy** (concentration $c$ and virial mass $M_{200}$) --- achieves a worse fit with RMS = **35.0 km/s** ($\sigma = 0.101$ dex). A zero-parameter geometric prediction outperforming a 270-parameter fit constitutes powerful evidence for the emergent nature of galactic dark matter dynamics.
 
-**4. The 2 Gyr cluster resonance: why MOND fails at cluster scales.** The geometric tilt derivation assumes a **quasi-static** background acceleration $\vec{a}_0$ --- valid when the dynamical timescale of the system is much shorter than the brane oscillation period $T = 2.0$ Gyr. This condition holds spectacularly for galaxies: the dynamical time of a Milky Way-type galaxy is $t_{dyn} \sim R/v_{rot} \sim 50\;\text{kpc}/220\;\text{km/s} \sim 200$ Myr $\ll T$. The galaxy perceives the oscillating brane as quasi-static over its orbital period, and the geometric tilt applies with full force.
+### Exact Dynamic Averaging Theorem: The MOND Cluster Resonance and the Weyl Fluid Resurrection
 
-**The resonance catastrophe.** A galaxy cluster ($R \sim 2$ Mpc, velocity dispersion $\sigma_v \sim 1000$ km/s) has a crossing time:
+**1. The orbital averaging theorem (the sinc resonance).** The geometric tilt derivation assumes a **quasi-static** background acceleration $\vec{a}_0$ --- valid when the dynamical timescale of the system is much shorter than the brane oscillation period $T = 2.0$ Gyr. For a self-gravitating system with dynamical time $t_{dyn} \approx R/\sigma_v$, the perceived transverse acceleration is not the instantaneous value but the **orbital time-average**:
 
-$$t_{cross} \sim \frac{R}{\sigma_v} \approx \frac{2\;\text{Mpc}}{1000\;\text{km/s}} \approx 2.0\;\text{Gyr}$$
+$$\langle a_0 \rangle_{t_{dyn}} = \frac{1}{t_{dyn}}\int_{-t_{dyn}/2}^{t_{dyn}/2} a_0^{max}\sin\!\left(\frac{2\pi t}{T} + \psi\right)dt$$
 
-The cluster's dynamical timescale enters into **exact resonance** with the stick-slip motor period. Over one orbital period of a galaxy within the cluster, the transverse acceleration vector $\vec{a}_0(t) = a_0\sin(2\pi t/T + \phi_0)\,\hat{z}$ executes a complete oscillation cycle. Its time average vanishes:
+Evaluating the integral:
 
-$$\langle\vec{a}_0(t)\rangle_{t_{cross}} = 0$$
+$$\langle a_0 \rangle_{t_{dyn}} = a_0^{max}\sin(\psi) \times \text{sinc}\!\left(\frac{\pi\,t_{dyn}}{T}\right)$$
 
-The 5D geometric tilt collapses: $\langle\theta\rangle = 0$, $\langle\mu\rangle = 1$. The MOND correction self-destructs at cluster scales, and the Weyl fluid $\mathcal{E}_{00}$ reverts to its fully dynamical role --- a non-local geometric fluid governed by the bulk Einstein equations rather than a simple static tilt.
+where $\text{sinc}(x) = \sin(x)/x$ is the **geometric low-pass filter** (the Boxcar filter response in signal processing). This sinc function dictates the survival fraction of the MOND effect as a function of the ratio $t_{dyn}/T$:
 
-This explains the three historical failures of MOND at cluster scales:
-- **The Bullet Cluster** (1E 0657-56): the mass-lensing offset requires collisionless dark matter. In OBT, the PBH capillary network (collisionless) carries the Weyl projection, while the MOND correction is dynamically averaged out.
-- **Cluster mass-to-light ratios**: MOND under-predicts cluster masses by a factor ~2-3. The dynamical Weyl fluid provides the missing mass without particle dark matter.
-- **Cluster velocity dispersions**: the residual MOND acceleration is washed out by the 2 Gyr resonance, restoring effective Newtonian dynamics plus the Weyl contribution.
+- For $t_{dyn} \ll T$: $\text{sinc}(x) \to 1$. The system perceives the full quasi-static MOND acceleration. The geometric tilt applies with maximum force.
+- For $t_{dyn} = T$ (exact resonance): $\text{sinc}(\pi) = 0$ **exactly**. The transverse acceleration vector executes a complete oscillation cycle over one dynamical time. Its time average vanishes rigorously. The MOND correction self-destructs.
+- For $t_{dyn} > T$: the sinc function oscillates with decreasing amplitude, and $\langle a_0 \rangle$ averages to zero over multiple cycles.
 
-The OBT V8.2 surpasses classical MOND by explaining not only **why** it works for galaxies (quasi-static geometric tilt in 5D) but also **exactly where and why** it breaks down (the 2 Gyr resonance erases the tilt at cluster scales). The transition is not ad hoc --- it is a **dynamical resonance** between the system's orbital period and the cosmic heartbeat.
+**2. Topological protection: the Filippov waveform.** The brane oscillation is not a pure sinusoid --- it is a Filippov stick-slip sawtooth (duty cycle $D = 0.9$, slip time $\tau = T/30$). Does the asymmetry modify the sinc extinction? Expanding $a_0(t)$ in the Fourier series derived above ($a_0(t) \propto \sum_n A_n\sin(2\pi n t/T + \varphi_n)$), the averaged acceleration becomes:
+
+$$\mathcal{W}\!\left(\frac{t_{dyn}}{T}\right) = \sum_{n=1}^{\infty} A_n\,\text{sinc}\!\left(\frac{n\pi\,t_{dyn}}{T}\right)\sin(\varphi_n)$$
+
+At the exact resonance $t_{dyn} = T$: $\text{sinc}(n\pi) = 0$ for **every integer** $n \geq 1$. This is a topological identity: the sinc function has zeros at all non-zero integer multiples of $\pi$, regardless of the amplitudes $A_n$ or phases $\varphi_n$. The extinction of MOND at $t_{dyn} = T$ is **topologically protected** against the stick-slip asymmetry. No waveform deformation --- no duty cycle, no slip sharpness, no harmonic content --- can rescue MOND at the cluster resonance.
+
+Moreover, the factor $n$ in the argument $\text{sinc}(n\pi t_{dyn}/T)$ implies that higher harmonics are filtered more aggressively: the $n$-th overtone's first zero occurs at $t_{dyn} = T/n$. The high-frequency shock content of the Filippov waveform is smoothed out at timescales much shorter than $T$.
+
+**3. The cosmic kinematic hierarchy.** Evaluating the sinc filter across astrophysical systems:
+
+| System | $R$ | $\sigma_v$ | $t_{dyn}$ | $t_{dyn}/T$ | $\text{sinc}(\pi\,t_{dyn}/T)$ | MOND survival |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Dwarf/UFD galaxies | 1 kpc | 10 km/s | 100 Myr | 0.05 | 0.996 | **99.6%** |
+| Massive spirals (MW) | 50 kpc | 220 km/s | 220 Myr | 0.11 | 0.981 | **98.1%** |
+| Giant ellipticals | 100 kpc | 300 km/s | 330 Myr | 0.165 | 0.955 | **95.5%** |
+| Galaxy groups | 500 kpc | 500 km/s | 1.0 Gyr | 0.50 | 0.637 | **63.7%** |
+| Galaxy clusters | 2 Mpc | 1000 km/s | 2.0 Gyr | 1.00 | **0.000** | **0%** |
+
+The MOND phenomenology operates at **full power** ($> 98\%$) for all galaxies ($t_{dyn} < 350$ Myr). The transition begins at group scales ($\sim 1$ Gyr, 36% attenuation). At cluster scales ($t_{dyn} = T = 2$ Gyr), the sinc function strikes its **exact zero** --- total annihilation.
+
+This hierarchy explains every empirical puzzle of modified gravity:
+- **SPARC success** (135 galaxies, RMS = 29.3 km/s): sinc $\approx 0.98$, full MOND
+- **Tully-Fisher deviations for ellipticals**: sinc $\approx 0.95$, the 5% attenuation is detectable
+- **Group mass discrepancies**: sinc $\approx 0.64$, substantial MOND failure $\to$ partial Weyl compensation needed
+- **Cluster mass-to-light catastrophe**: sinc $= 0$, MOND dead $\to$ full Weyl fluid required
+
+**4. The Bullet Cluster paradox ($t_{cross} \sim 0.5$ Gyr).** The Bullet Cluster (1E 0657-56) is the historic execution ground of MOND theories. With a collision velocity of $\approx 4700$ km/s and a sub-cluster radius $R_{sub} \sim 250$ kpc, the sub-cluster crossing time is:
+
+$$t_{cross} \approx \frac{2\,R_{sub}}{v_{rel}} \approx \frac{500\;\text{kpc}}{4700\;\text{km/s}} \approx 0.1\;\text{Gyr}$$
+
+At this ultra-short dynamical timescale: $\text{sinc}(0.05\pi) \approx 0.996$. The MOND correction is essentially **fully active** during the collision. This explains the anomalously high collision velocity (which $\Lambda$CDM struggles to reproduce): the MOND-enhanced gravitational acceleration between the two sub-clusters amplifies their infall velocity beyond the Newtonian prediction.
+
+However --- and this is the critical resolution --- the MOND enhancement amplifies only the **baryonic** gravitational field. It cannot explain the spatial **offset** between the X-ray gas centroid (which decelerates by ram pressure) and the weak lensing mass centroid (which passes through unimpeded). This offset requires a **collisionless** mass component.
+
+In the OBT V8.2, this collisionless component is the **PBH capillary network**. The micro-PBHs ($f_{PBH} = 0.01$) are point-like, collisionless objects that traverse the gas shock balistially --- exactly like hypothetical WIMPs. They carry with them the non-local Weyl tensor projection $\mathcal{E}_{00}$ that anchors the gravitational lensing signal to their positions, not to the shocked gas. The Bullet Cluster offset is simultaneously explained: MOND for the velocity (sinc $\approx 1$), Weyl fluid for the lensing (PBH-anchored, collisionless).
+
+**5. The Weyl fluid resurrection: the true dark matter of clusters.** When the sinc filter annihilates the MOND correction at cluster scales ($\langle a_0 \rangle \to 0$), the effective gravitational acceleration for an $N$-body cluster system becomes:
+
+$$\vec{g}_{eff}(\vec{r}) = \vec{g}_N(\vec{r}) + \underbrace{\Delta\vec{g}_{MOND}(\vec{r}) \times \text{sinc}\!\left(\frac{\pi\,t_{dyn}}{T}\right)}_{\to\,0\;\text{for clusters}} + \Delta\vec{g}_{Weyl}(\vec{r})$$
+
+The Weyl contribution $\Delta\vec{g}_{Weyl}$ is the acceleration sourced by the projected bulk Weyl tensor $\mathcal{E}_{00}$ in the SMS equation $\nabla^2\Phi = 4\pi G_N\rho_b + c^2\mathcal{E}_{00}$. This term is **not** subject to the sinc averaging --- it is a static (or quasi-static) geometric property of the brane's curvature in the fifth dimension, anchored to the PBH capillary network and governed by the bulk Einstein equations. It does not oscillate at frequency $1/T$; it tracks the matter distribution on timescales $\gg T$.
+
+The "dark matter of galaxy clusters" is therefore:
+- **Not MOND** (sinc-killed at $t_{dyn} = T$)
+- **Not WIMPs** (no particles, no cross-section, no direct detection)
+- **The Weyl fluid** $\mathcal{E}_{00}$ --- the elastic deformation of the 5D AdS$_5$ bulk projected onto the brane via SMS, topologically anchored to the collisionless PBH network
+
+The OBT V8.2 achieves the supreme unification: **MOND for galaxies** (5D kinematic tilt, sinc $\approx 1$), **Weyl fluid for clusters** (5D elastic projection, sinc $= 0$), both governed by a single 5D equation --- the Shiromizu-Maeda-Sasaki effective Einstein equations with oscillating Israel junction conditions.
 
 ## Stability
 
