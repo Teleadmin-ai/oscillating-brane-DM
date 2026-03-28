@@ -125,7 +125,7 @@ $$a_0 = \frac{cH_0}{2\pi} \approx 1.1 \times 10^{-10} \text{ m/s}^2$$
 
 Below this threshold, the partial fading of exponential screening softens the inverse-square law, producing smoothed density cores for low-surface-gravity systems. This integrates MOND as an emergent local property derived from a fully relativistic 5D formalism, avoiding MOND's catastrophic failures at galaxy cluster scales and gravitational wave speed constraints (GW170817).
 
-**Quantitative validation (SPARC catalog, 135 galaxies):** The model's zero-free-parameter prediction ($a_0 = cH_0/2\pi$) was tested against the SPARC galaxy rotation curve catalog (Lelli, McGaugh & Schombert 2016). The emergent MOND formalism reproduces observed flat rotation velocities with an RMS scatter of **29.3 km/s** ($\sigma = 0.0854$ dex). For comparison, the standard NFW dark matter halo profile --- which uses **2 free parameters per galaxy** (concentration $c$ and virial mass $M_{200}$) --- achieves a worse fit with RMS = **35.0 km/s** ($\sigma = 0.101$ dex). A zero-parameter geometric prediction outperforming a 270-parameter fit (2 $\times$ 135 galaxies) constitutes powerful evidence for the emergent nature of galactic dark matter dynamics.
+**Epistemological note on SPARC validation:** We explicitly acknowledge that the remarkable success of fitting the SPARC rotation curves with an RMS scatter of **29.3 km/s** ($\sigma = 0.0854$ dex) using $\mu(x) = x/\sqrt{1+x^2}$ is the well-established historical triumph of empirical MOND (Milgrom 1983; Lelli, McGaugh & Schombert 2016). The profound theoretical breakthrough of OBT V8.2 does not lie in discovering this fit, but in **deriving its exact mathematical components from first principles**. By deriving the acceleration scale ($a_0 = cH_0/2\pi$) from cosmic horizon thermodynamics and the interpolation function $\mu(x)$ as the strict trigonometric projection of a 5D kinematic tilt, OBT assimilates MOND's empirical victory at galactic scales without inheriting its theoretical arbitrariness. Furthermore, it formally proves why this law must mathematically self-destruct at cluster scales (via the exact $\text{sinc}$ orbital averaging filter).
 
 ## 4. Emerging Anomalies 2025--2026
 
@@ -309,7 +309,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.79% (exact ODE, S₈ = 0.796) | **T1** |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr ($\Delta\chi^2 = 32.9$, $6\sigma$) | **T1** |
 | eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_\text{eff}(z)$ + Press-Schechter $\gamma(M)$ spectrum | **T1** |
-| Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Emergent MOND ($a_0 = cH_0/2\pi$), SPARC RMS = 29.3 km/s, 0 params | **T1** |
+| Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio derivation of MOND $\mu(x)$, assimilating SPARC success | **T1** |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric | **T2** |
 | Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + temporally enhanced gravity + modified Hubble friction | **T2** |
 | Undetectable Dark Matter | Zero particles in two decades (LZ/XENONnT) | No WIMPs. Dark matter = 5D geometric signature (Weyl tensor) | **T2** |

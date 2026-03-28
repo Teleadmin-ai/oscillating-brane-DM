@@ -238,7 +238,7 @@ $$a_0 = \frac{cH_0}{2\pi} \approx 1.1 \times 10^{-10} \text{ m/s}^2$$
 
 Below this threshold, the partial fading of exponential screening softens the inverse-square law, producing smoothed density cores for low-surface-gravity systems. This integrates MOND as an emergent local property derived from a fully relativistic 5D formalism, avoiding MOND's catastrophic failures at galaxy cluster scales and gravitational wave speed constraints (GW170817).
 
-**Quantitative validation (SPARC catalog, 135 galaxies):** The model's zero-free-parameter prediction ($a_0 = cH_0/2\pi$) was tested against the SPARC galaxy rotation curve catalog (Lelli, McGaugh & Schombert 2016). The emergent MOND formalism reproduces observed flat rotation velocities with an RMS scatter of **29.3 km/s** ($\sigma = 0.0854$ dex). For comparison, the standard NFW dark matter halo profile --- which uses **2 free parameters per galaxy** (concentration $c$ and virial mass $M_{200}$) --- achieves a worse fit with RMS = **35.0 km/s** ($\sigma = 0.101$ dex). A zero-parameter geometric prediction outperforming a 270-parameter fit (2 $\times$ 135 galaxies) constitutes powerful evidence for the emergent nature of galactic dark matter dynamics.
+**Epistemological note on SPARC validation:** We explicitly acknowledge that the remarkable success of fitting the SPARC rotation curves with an RMS scatter of **29.3 km/s** ($\sigma = 0.0854$ dex) using $\mu(x) = x/\sqrt{1+x^2}$ is the well-established historical triumph of empirical MOND (Milgrom 1983; Lelli, McGaugh & Schombert 2016). The profound theoretical breakthrough of OBT V8.2 does not lie in discovering this fit, but in **deriving its exact mathematical components from first principles**. By deriving the acceleration scale ($a_0 = cH_0/2\pi$) from cosmic horizon thermodynamics and the interpolation function $\mu(x)$ as the strict trigonometric projection of a 5D kinematic tilt, OBT assimilates MOND's empirical victory at galactic scales without inheriting its theoretical arbitrariness. Furthermore, it formally proves why this law must mathematically self-destruct at cluster scales (via the exact $\text{sinc}$ orbital averaging filter).
 
 ## Emerging Anomalies 2025--2026
 
@@ -422,7 +422,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.79% (exact ODE, S$_{8}$ = 0.796) | **T1** |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr ($\Delta\chi^2 = 32.9$, $6\sigma$) | **T1** |
 | eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_\text{eff}(z)$ + Press-Schechter $\gamma(M)$ spectrum | **T1** |
-| Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Emergent MOND ($a_0 = cH_0/2\pi$), SPARC RMS = 29.3 km/s, 0 params | **T1** |
+| Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio derivation of MOND $\mu(x)$, assimilating SPARC success | **T1** |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric | **T2** |
 | Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + temporally enhanced gravity + modified Hubble friction | **T2** |
 | Undetectable Dark Matter | Zero particles in two decades (LZ/XENONnT) | No WIMPs. Dark matter = 5D geometric signature (Weyl tensor) | **T2** |
@@ -1433,11 +1433,11 @@ High-resolution weak lensing reconstructions (e.g., via JWST or Euclid) capable 
 
 **The synthesis.** OBT V8.2 systematically outperforms $\Lambda$CDM on the extreme collision velocity (leveraging the un-averaged MOND survival at $\mathrm{sinc} \approx 0.995$), and it systematically outperforms classical MOND on the spatial offset (leveraging the collisionless, PBH-anchored Weyl fluid). The Bullet Cluster is not an anomaly --- it is the spectacular, localized confirmation of 3-component 5D gravity.
 
-### Ab Initio SPARC Rotation Curve Formalism: The Zero-Parameter Prediction
+### Ab Initio Derivation of Empirical MOND: Elevating SPARC Success to a 5D Theorem
 
-The epistemological gold standard of a fundamental physical theory is its capacity to make precise predictions without relying on free fitting parameters (Occam's Razor). In the standard $\Lambda$CDM paradigm, predicting a galaxy's rotation curve requires embedding the visible baryonic matter within an ad hoc dark matter halo (typically an NFW or Einasto profile), fitting at least two free parameters per galaxy: the halo virial mass $M_{200}$ and the concentration parameter $c$. For the high-quality SPARC catalog (135 galaxies), this translates to 270 free parameters --- phenomenological curve-fitting, not ab initio physics.
+The epistemological gold standard of a fundamental physical theory is its capacity to derive successful empirical laws from first principles. For four decades, Modified Newtonian Dynamics (MOND, Milgrom 1983) has achieved unparalleled empirical success in fitting galaxy rotation curves without particle dark matter, using an ad hoc acceleration threshold $a_0$ and a phenomenological interpolation function $\mu(x)$. In the standard $\Lambda$CDM paradigm, matching this success requires embedding the visible baryonic matter within an ad hoc dark matter halo, fitting at least two free parameters per galaxy (virial mass $M_{200}$ and concentration $c$).
 
-OBT V8.2 categorically rejects this particulate curve-fitting. The flat rotation curves of galaxies are not the dynamical trace of a particulate cloud, but the strict geometric projection of the 5D $AdS_5$ bulk kinematics onto the 3-brane. We formulate a zero-parameter prediction that systematically surpasses the heavily parameterized $\Lambda$CDM model.
+We explicitly acknowledge that the zero-parameter fit of the SPARC catalog (135 galaxies) is the historical empirical triumph of MOND. OBT V8.2 does not claim this fit as a new observational discovery. Instead, it categorically rejects particulate curve-fitting by demonstrating that the flat rotation curves of galaxies are the strict geometric projection of the 5D $AdS_5$ bulk kinematics onto the 3-brane. We provide the formal mathematical derivation of Milgrom's empirical law, thereby analytically inheriting its zero-parameter predictive supremacy.
 
 **1. The ab initio formalism (zero free parameters).** The emergent MOND phenomenology is governed by two rigid geometric invariants derived from first principles:
 
@@ -1457,13 +1457,13 @@ By fixing the stellar mass-to-light ratio strictly from stellar population synth
 - **NGC 6946** (standard spiral) and **UGC 2953** (massive spiral): the inner Newtonian peaks ($g_{bar} > a_0$) and the asymptotically flat outer regions are simultaneously reproduced by the $\mu(x)$ trigonometric transition.
 - **NGC 2841** (bulge-dominated early-type): the steep central velocity gradient generated by the dense baryonic bulge is perfectly tracked, confirming that the "dark" component is strictly slaved to the visible matter geometry.
 
-**3. The absolute statistical triumph: 29.3 km/s vs 270 parameters.** Evaluating the global statistical performance of the zero-parameter 5D quadrature over the 135 high-quality SPARC galaxies (quality flag $Q \leq 2$) delivers a devastating blow to particulate dark matter models.
+**3. Assimilating the empirical triumph: 29.3 km/s vs 270 parameters.** Evaluating the global statistical performance of the zero-parameter 5D quadrature over the 135 high-quality SPARC galaxies (quality flag $Q \leq 2$) inherits MOND's well-established empirical success.
 
 The ab initio geometric projection reproduces the thousands of individual data points along the 135 rotation curves with a global root-mean-square (RMS) residual dispersion of **29.3 km/s** ($\sigma \approx 0.085$ dex).
 
 In stark contrast, the $\Lambda$CDM standard model, deploying individual NFW dark matter halos --- thus consuming **270 free parameters** --- hits a systematic floor, yielding a worse global RMS dispersion of **35.0 km/s** ($\sigma \approx 0.101$ dex).
 
-A fundamental geometric law with zero free parameters that systematically outperforms a 270-parameter phenomenological fit eviscerates the necessity of particulate dark matter at galactic scales. The flattening of rotation curves is a topological law of 5D gravity, not a fluid of invisible particles.
+By deriving the exact functional form of $\mu(x)$ and the value of $a_0$ from 5D geometry, OBT formally assimilates this zero-parameter statistical triumph. A derived geometric law that systematically outperforms a 270-parameter phenomenological NFW fit provides compelling evidence that the flattening of rotation curves is an emergent topological projection of 5D gravity, rather than a fluid of invisible particles.
 
 **4. Insignificance of the sinc filter at galactic scales.** To ensure theoretical consistency, we evaluate the impact of the exact orbital time-averaging filter $\mathcal{W}(t_{dyn}/T) = \mathrm{sinc}(\pi\,t_{dyn}/T)$ that annihilates the apparent MOND effect at cluster scales ($t_{dyn} \approx 2.0$ Gyr).
 
