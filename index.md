@@ -42,7 +42,7 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
       </tr>
       <tr>
         <td><strong>Bayesian evidence</strong></td>
-        <td>Δln K = 4.13 ± 0.07</td>
+        <td>Δln K ∈ [2.8, 4.13] (prior-dependent)</td>
       </tr>
     </table>
   </div>
