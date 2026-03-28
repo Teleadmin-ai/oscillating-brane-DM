@@ -64,7 +64,7 @@ git commit -m "Regenerate PDF + markdown" && git push
   - **F_web[E_μν] (the Muscle)**: Macroscopic forcing from the Cosmic Web. Superclusters, filaments, and voids create inhomogeneous stress S_μν on the brane. Via Israel junction conditions ΔK_μν = -κ₅²(S_μν - ⅓S h_μν), this generates the projected Weyl tensor E_μν — a continuous 5D tidal force pressing the brane toward the bulk
   - **R_PBH·Θ (the Metronome)**: Microscopic release orchestrated by the ER=EPR-entangled network of asteroid-mass PBHs. When φ reaches φ_crit, the holographic wormhole network releases tension simultaneously everywhere (ℓ=0 mode) — quantum synchronization
   - **(3H + Γ_rad)φ̇**: Hubble friction + radiative damping via bulk graviton emission (KK modes) during slip phase
-  - **ξRφ**: Non-minimal coupling → dynamical attractor locking T = 2 Gyr
+  - **ξRφ**: Non-minimal coupling → dynamical PLL attractor locking T = 2.000 Gyr (chronodynamic eigenvalue, N=6 mode)
   - **(1-3w)**: Trace coupling. = 0 for radiation (conformal symmetry, BBN safe), = 1 after QCD (trace anomaly, motor ON)
 - **BBN protection**: Via **conformal symmetry** (T^μ_μ = 0 for radiation w=1/3). QCD chiral symmetry breaking ignites motor at Λ_QCD = 257 MeV
 - **5D stability**: **Radiative damping** via bulk graviton emission during slip phase caps amplitude
@@ -126,6 +126,9 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **"φ_eff = exact topological invariant"** or **"geometric dephasing 1.35π"** (replaced by AdS₅ viscoelastic retardation δ_bulk ≈ 1.30 rad, analytically predicted to 4% by dual-damping arctan formula)
 - **"Proof" for QCD connection** (τ₀^{1/3}≈Λ_QCD is a phenomenological Ansatz, not a proof — KS convergence is 0.11σ motivation, not demonstration)
 - **t_evap ~ 10⁴⁷ years** (wrong M³ scaling; correct: ~10³⁷ years at M_crit)
+- **"Israel minus sign" for S₈ suppression** (diagnostic table proved: G_eff=G_N(1-f_osc×W) gives +12.1% ENHANCEMENT, not suppression. The physics is a continuous phase DELAY δ_bulk≈1.30 rad, not a sign flip. Use G_eff=G_N[1+f_osc×W(t/T+δ_bulk/(2π))] with PLUS sign)
+- **"3 free parameters"** (model has 2 free parameters τ₀, L + derived eigenvalue T=2.000 Gyr + topological integer N=6)
+- **T = 2.0 ± 0.3 Gyr** (stale — T is now a derived chronodynamic eigenvalue: T=13.80/6.9=2.000±0.003 Gyr)
 
 ### REQUIRED Concepts (V8.2):
 - **Hybrid motor**: F_web (Cosmic Web macro-forcing) + R_PBH (micro-PBH ER=EPR synchronization)
@@ -204,6 +207,9 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Tier system (epistemological)**: T1 = exact ODE/analytical (DESI, S₈, ISW, eROSITA γ(M), SPARC, qBOUNCE). T2 = analytical framework with quantitative predictions (neutrinos, Li-7, baryogenesis, birefringence, JWST, SMBHs, Λ, NANOGrav, DF2/DF4, Amaterasu, etc). T3 = qualitative mechanistic framework (Hubble tension, dipole, KBC, Dark Flow, Space Roar, ORCs, Methuselah, WD Q-branch, Planet 9, Flyby). T3 sections carry explicit caveat about pending numerical validation
 - **MOND scope note**: MOND phenomenology is Milgrom (1983) — OBT's novelty is (a) ab initio derivation of a₀, (b) μ(x) from 5D geometry, (c) sinc extinction at cluster scales. OBT explains why MOND works AND why it fails at clusters. SPARC fit uses identical formula to existing literature; novelty = zero free parameters from first principles
 - **Bayesian Occam's penalty**: Δln K ∈ [2.8, 4.13] depending on prior volume. Occam's penalty ~1.3 nats for 3 extra DOF vs ΛCDM. Transparent about prior sensitivity — "strong" evidence robust across reasonable priors
+- **Chronological anchoring (Boundary Value Theorem)**: Phase 0.0 at QCD ignition (conformal symmetry breaking, t≈0), Phase 0.9 today (DESI w_max at z=0). Universe completed N+0.9 cycles, ξRφ PLL selects N=6 → T=13.80/6.9=2.000±0.003 Gyr. Adjacent modes N=5→T=2.34, N=7→T=1.75 rejected by attractor. Model reduces from 3 to 2 free parameters (τ₀, L)
+- **Diagnostic table (March 2026)**: Systematic test of ALL sign/coupling combinations in growth ODE with exact stick-slip waveform. Results: Israel MINUS→+12.1% enhancement, PLUS→-11.0% suppression, w(z) in H(a)→negligible (0.002%). Proved: phase delay is continuous (not algebraic sign), leading to discovery of AdS₅ viscoelastic retardation. Credits: Claude Opus (diagnostic), Gemini DeepThink (arctan deduction)
+- **δ_bulk (Bulk Transfer Function)**: viscoelastic retardation of AdS₅ spacetime. Dual-damping arctan: δ_avg = D×arctan(ω/Γ_stick)+(1-D)×arctan(ω/Γ_slip) = 0.9×arctan(π/0.25)+0.1×arctan(π/20.7) = 1.356 rad. Calibrated by DES Y6: δ_bulk=1.30 rad. Agreement 4% (residual: multi-harmonic dispersion). Once calibrated by S₈, SAME G_eff(t) predicts eROSITA γ=1.19 (zero extra tuning)
 - **Exascale NR = verification not necessity**: 5D numerical relativity would provide independent validation but is NOT required for the theory's mathematical consistency (all 60 derivations are analytical/semi-analytical). Current feasibility limited by 10³² scale ratio → IMEX+HMM mandatory
 
 ### Key References:
@@ -233,6 +239,8 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | Branching ratio B | ≈ 9.7×10⁻¹¹ (N_max ≈ 8.3×10⁷ KK modes) |
 | First KK graviton mass | m₁ = j_{1,1}ℏc/L ≈ 3.78 eV flat-space (warped: 1.87 eV) |
 | KS flux integers | K=21, M=10, g_s=0.1 → τ₀^{1/3} = 257 MeV |
+| AdS₅ bulk transfer delay δ_bulk | 1.30 rad (calibrated by DES Y6), analytical prediction 1.356 rad (4% agreement) |
+| Dual-damping parameters | Γ_stick = 3H ≈ 0.25 Gyr⁻¹, Γ_slip = Γ_rad ≈ 20.7 Gyr⁻¹, ω = π ≈ 3.14 Gyr⁻¹ |
 | Robin splitting | Δλ/λ = 3.1% between n=1 and n=6 (smoking gun) |
 
 ## ABSOLUTE RULE: Site = PDF symmetry
@@ -365,7 +373,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Script | Purpose | Output |
 |--------|---------|--------|
 | `scripts/brane_dynamics.py` | Core V8.2 ODE (BDF stiff solver, w(z) oscillation) | `plots/w_z_oscillation.png` |
-| `scripts/growth_factor.py` | Time-dependent S₈ growth suppression | `plots/s8_yukawa_suppression.png` |
+| `scripts/growth_factor.py` | Exact stick-slip S₈ with AdS₅ bulk transfer (Brent calibration of δ_bulk) | `plots/s8_yukawa_suppression.png` |
 | `scripts/bayesian_analysis.py` | Nested sampling Bayesian evidence (dynesty) | `plots/nested_sampling_posteriors.png` |
 | `scripts/ska_21cm_mock.py` | SKA 21cm reionization modulation prediction | `plots/ska_prediction.png` |
 | `scripts/lithium_bbn_solver.py` | Lithium-7 BBN conformal tolerance | `plots/lithium_resolution.png` |
@@ -443,7 +451,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 **Duration**: ~5 min (7 ODE integrations)
 **What it produces**: True sensitivity matrix from Filippov dynamics, SVD, condition number
 **Result already obtained**: T column = 0 (attractor autonomy confirmed). τ₀ and L are the only true DOF.
-**Consequence**: Proves the theory has exactly 2 effective free parameters (not 3), making it even more rigid.
+**Consequence**: Independently confirms the 2-parameter paradigm (now also proven by chronological anchoring: T=13.80/6.9=2.000 Gyr eigenvalue).
 
 ### PRIORITY 3 — Casimir Verification
 **Script**: `python scripts/verify_casimir_regularization.py`
