@@ -10,7 +10,7 @@
 
 ## ⛔ SACRED RULE — READ THIS FIRST ⛔
 The following .md files compose the PDF and are the SOLE source of truth for the theory:
-1. `discoveries.md` — 31 anomalies resolved (22 core + 9 extended phenomenology) + 10 collateral theoretical discoveries
+1. `discoveries.md` — 31 anomalies resolved (5 Tier 1 exact + 15 Tier 2 analytical + 11 Tier 3 qualitative) + 10 collateral theoretical discoveries
 2. `theory.md` — core theoretical framework (motor, ODE, BBN, QCD, stability, PBH, bulk)
 3. `chronology.md` — cosmic chronology, tension calibration, MOND
 4. `predictions.md` — observational predictions, tests, Bayesian evidence
@@ -75,7 +75,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
 
 ### Epistemological Framework:
-- **31 anomalies resolved** (numerically validated, no fine-tuning):
+- **31 anomalies resolved** (tiered: 5 Tier 1 exact ODE + 15 Tier 2 analytical + 11 Tier 3 qualitative framework):
   - 3 core: DESI phantom crossing, S₈ tension (time-dependent growth suppression), Planck ISW (Δχ²=32.9)
   - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND (ab initio: a₀=cH₀/2π from Gibbons-Hawking thermodynamics, μ(x)=x/√(1+x²) from 5D geometric tilt, cluster failure via 2 Gyr resonance; SPARC 135 galaxies: RMS 29.3 km/s, 0 free params vs NFW 35.0 km/s, 270 params), JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
@@ -87,8 +87,8 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Definitive future test**: SKA 21cm reionization modulation (2027+)
 - **Complementary tests**: Vera Rubin/LSST, qBOUNCE/optomechanics, Euclid
 - **Theory is purely tensorial and geometric** — no dependence on astrophysical controversies
-- **Cross-AI audit status (March 2026)**: Math validated 100% by Gemini DeepThink. Phase 1: independent recalculation (τ₀→257 MeV, a₀=cH₀/2π, Fresnel w_F=0.031, Δβ=0.25°, Schwinger 10⁻³¹). Phase 2 (Series 1): 9 DeepThink prompts (Fourier spectrum, exact S₈ ODE, MOND ab initio, Seeley-DeWitt numerics, Dirichlet anomaly, 3D Floquet, LVS+multi-throat, dynamical Schwinger, finite-N corrections). Phase 3 (Series 2): 9 DeepThink prompts (Kinematic Blockade, NANOGrav spectral flattening, φ_eff ab initio, Press-Schechter γ(M), MOND sinc theorem, ΔBIC forecast, Fisher analytical 3×3, KdF 4-branch tensor, Kesten-McKay percolation immunity). All peer-review attack vectors addressed. 51 derivations total.
-- **Audit-driven corrections (March 2026)**: S₈ spatial→temporal (then exact 4.79%), neutron lifetime removed, MOND formula derived ab initio (cH₀/2π from Gibbons-Hawking), 6 Unicode-in-math formulas fixed, τ₀ posterior 19.51→19.85
+- **Cross-AI audit status (March 2026)**: Math validated 100% by Gemini DeepThink. Phase 1: independent recalculation (τ₀→257 MeV, a₀=cH₀/2π, Fresnel w_F=0.031, Δβ=0.25°, Schwinger 10⁻³¹). Phase 2 (Series 1): 9 DeepThink prompts (Fourier spectrum, exact S₈ ODE, MOND ab initio, Seeley-DeWitt numerics, Dirichlet anomaly, 3D Floquet, LVS+multi-throat, dynamical Schwinger, finite-N corrections). Phase 3 (Series 2): 9 DeepThink prompts (Kinematic Blockade, NANOGrav spectral flattening, φ_eff ab initio, Press-Schechter γ(M), MOND sinc theorem, ΔBIC forecast, Fisher analytical 3×3, KdF 4-branch tensor, Kesten-McKay percolation immunity). Phase 4 (Series 3): 9 DeepThink prompts (exact a₅ Seeley-DeWitt, exact spectral zeta, continuous γ(M) exclusion theorem, 3-component Bullet Cluster, ab initio SPARC, multi-harmonic sinc, non-perturbative steepest descent, graph Laplacian determinant, exact RT finite-N). All peer-review attack vectors addressed. 60 derivations total.
+- **Audit-driven corrections (March 2026)**: S₈ spatial→temporal (then exact 4.79%), neutron lifetime removed, MOND formula derived ab initio (cH₀/2π from Gibbons-Hawking), 6 Unicode-in-math formulas fixed, τ₀ posterior 19.51→19.85. **Late March 2026 epistemological hardening**: m₁ 19.2→3.78 eV (ℏc conversion), t_evap 10⁴⁷→10³⁷ yr (M³ scaling), QCD "Proof"→"Phenomenological Coincidence" (Ansatz status), φ_eff "exact invariant"→"semi-analytical heuristic", tier system (T1/T2/T3) for anomaly classification, Bayesian [2.8,4.13] (prior transparency), MOND scope note (Milgrom priority), Schwinger 10¹²→10⁹ (m₁ cascade), superlatifs moderated throughout
 
 ### BANNED Concepts (NEVER use):
 - "Point Unique" 0D, Ringermacher, GW doublet/NANOGrav, Bulk-Infinity
@@ -119,7 +119,11 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Global constant κ_Z4** in AMR (must be AMR-level-indexed scalar field κ_Z4^(ℓ) = 1.4/Δt_ℓ)
 - **Explicit Berger-Oliger for 10³² ratio** (CFL wall: 28 million billion years per step on Frontier → must use IMEX)
 - **Single-throat KKLT uplift** (QCD throat is 45 orders too weak for global LVS uplift → must use multi-throat architecture)
-- **"Classical graviton Bremsstrahlung" for Γ_rad** (continuous 5D GR gives Γ_rad ≡ 0 due to kinematic blockade m₁T_slip ~ 10³¹; Γ_rad is quantum informational viscosity, NOT radiation)
+- **"Classical graviton Bremsstrahlung" for Γ_rad** (continuous 5D GR gives Γ_rad ≡ 0 due to kinematic blockade m₁T_slip ~ 3.6×10³¹; Γ_rad is quantum informational viscosity, NOT radiation)
+- **m₁ = 19.2 eV** (wrong — missing ℏc conversion; correct: m₁ = j_{1,1}ℏc/L ≈ 3.78 eV flat-space, 1.87 eV warped)
+- **"φ_eff = exact topological invariant"** (is a semi-analytical heuristic: each step physically motivated, composition approximate)
+- **"Proof" for QCD connection** (τ₀^{1/3}≈Λ_QCD is a phenomenological Ansatz, not a proof — KS convergence is 0.11σ motivation, not demonstration)
+- **t_evap ~ 10⁴⁷ years** (wrong M³ scaling; correct: ~10³⁷ years at M_crit)
 
 ### REQUIRED Concepts (V8.2):
 - **Hybrid motor**: F_web (Cosmic Web macro-forcing) + R_PBH (micro-PBH ER=EPR synchronization)
@@ -154,7 +158,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **CMPP extraction**: Ψ_ij^(5) = 3×3 STF matrix (5 polarizations), NOT scalar Ψ₄
 - **Billion-step**: κ_Z4^(ℓ) = 1.4/Δt_ℓ (AMR-indexed) + Kreiss-Oliger order 9
 - **IMEX + HMM**: mandatory for 10³² scale ratio (explicit Berger-Oliger physically impossible)
-- **Γ_rad = ln(S_BH)/(2π) ≈ 20.7**: CROWNING DERIVATION — not a free parameter but Bekenstein-Hawking entropy ÷ 2π
+- **Γ_rad = ln(S_BH)/(2π) ≈ 20.7**: Key ab initio result — not a free parameter but Bekenstein-Hawking entropy ÷ 2π
 - **Retarded 5D Green's function**: V_eff = 15/(4z²), UV censorship ψ_n(0) ∝ z⁴→0, IR coupling ψ_n(L) ∝ J₂(m_nL) ≠ 0
 - **KK spectrum exact**: Bessel quantization m_n = j_{1,n}ℏc/L, graviton m₁ = 3.832×0.197/0.2 ≈ 3.78 eV (flat-space; warped: 1.892k ≈ 1.87 eV), Sturm-Liouville kinematic pumping
 - **Spectral zeta**: ζ_Δ(s) → Riemann mapping, Weyl-McMahon baseline -M₀/12 + **exact transcendental correction** from Bessel roots (2.1% inharmonic shift, δE converges O(n⁻³)). Higher poles s=-3/2,-5/2 map bijectively onto Seeley-DeWitt a₂,a₀. **Exact result**: δ_exact/Λ_QCD ≈ 9.5×10⁻³⁹ (confirming 39th-decimal immortality on transcendental Bessel lattice)
@@ -189,12 +193,19 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Holographic viscosity**: Γ_rad is NOT classical Bremsstrahlung but quantum informational viscosity — entropy absorption by PBH scrambling. Two derivations (bottom-up 5D GR vs top-down holographic) deliberately non-convergent: proof that brane is not a continuum
 - **Spectral flattening (NANOGrav)**: tensor TT projection sources from φ̈(t) not φ(t) → Filippov shock = Dirac δ impulses → flat (white noise) acceleration spectrum. f₀ = 1.58×10⁻¹⁷ Hz (16 attoHz), NANOGrav at 16 nHz listens to the n ≈ 10⁹ harmonic. h_c(16 nHz) ~ 10⁻¹⁵ (matches NANOGrav 15yr, zero free params)
 - **f₀ correction**: fundamental brane frequency is 16 attoHertz (NOT 16 nanoHertz). NANOGrav band = billionth overtone
-- **φ_eff ab initio**: geometric dephasing φ_eff = (φ₀+π)×D = (π/2+π)×0.9 = 1.35π ≈ 4.24115 rad. Israel tensorial inversion (+π) × Filippov duty-cycle contraction (×D). NOT a free parameter — exact topological invariant of SMS + Filippov
+- **φ_eff semi-analytical**: geometric dephasing φ_eff = (φ₀+π)×D = (π/2+π)×0.9 = 1.35π ≈ 4.24115 rad. Israel tensorial inversion (+π) × Filippov duty-cycle contraction (×D). NOT a free parameter — semi-analytical heuristic (each step physically motivated, composition approximate pending full numerical Filippov integration)
 - **Kesten-McKay spectrum**: DOS of ER=EPR graph → ρ(λ) = d/(2π(d²-λ²))√(4(d-1)-λ²). Continuum convergence O(1/√N) ~ 10⁻¹⁰. Discrete holographic spacetime = smooth GR manifold to 10 decimal places
 - **Percolation immunity**: site percolation threshold p_c ≈ 1/(d-1) ≈ 2.2% for d=46. Universe survives 98% PBH destruction. Safety hierarchy: N_perc≈46 ≪ N_min≈4500 ≪ N_actual~10²⁰ (19 orders margin). ER=EPR network = most robust quantum error-correcting code physically conceivable
+- **KS landscape statistics**: 2,437 valid flux pairs (1≤M≤30, M<K≤50, g_s∈[0.05,0.2]), f_QCD = 0.49% per throat, P_CY = 1-(1-f_QCD)^50 ≈ 21.8% per manifold. QCD-scale throat is generic (1 in 5 CY manifolds), NOT fine-tuned
+- **ER=EPR ab initio genesis**: PBHs from inflationary squeezed vacuum states (Martin & Vennin 2015). Entanglement from shared Bunch-Davies vacuum. Page's theorem (post-scrambling, t > t_Page) guarantees maximal bipartite entanglement. ER=EPR (Maldacena-Susskind) promotes entanglement to wormhole topology. Expander graph structure MANDATORY (not postulated) from random matrix universality
+- **Scrambling regularization**: Filippov Dirac δ impulse is regularized by scrambling timescale t* ~ 10⁻¹³ s < 1/ν_KK ~ 10⁻¹⁴ Hz. Branching ratio B ~ 10⁻¹⁰ from 5D Hawking emission (not classical KK excitation). Resolves apparent Kinematic Blockade vs Filippov shock contradiction
+- **Tier system (epistemological)**: T1 = exact ODE/analytical (DESI, S₈, ISW, eROSITA γ(M), SPARC, qBOUNCE). T2 = analytical framework with quantitative predictions (neutrinos, Li-7, baryogenesis, birefringence, JWST, SMBHs, Λ, NANOGrav, DF2/DF4, Amaterasu, etc). T3 = qualitative mechanistic framework (Hubble tension, dipole, KBC, Dark Flow, Space Roar, ORCs, Methuselah, WD Q-branch, Planet 9, Flyby). T3 sections carry explicit caveat about pending numerical validation
+- **MOND scope note**: MOND phenomenology is Milgrom (1983) — OBT's novelty is (a) ab initio derivation of a₀, (b) μ(x) from 5D geometry, (c) sinc extinction at cluster scales. OBT explains why MOND works AND why it fails at clusters. SPARC fit uses identical formula to existing literature; novelty = zero free parameters from first principles
+- **Bayesian Occam's penalty**: Δln K ∈ [2.8, 4.13] depending on prior volume. Occam's penalty ~1.3 nats for 3 extra DOF vs ΛCDM. Transparent about prior sensitivity — "strong" evidence robust across reasonable priors
+- **Exascale NR = verification not necessity**: 5D numerical relativity would provide independent validation but is NOT required for the theory's mathematical consistency (all 60 derivations are analytical/semi-analytical). Current feasibility limited by 10³² scale ratio → IMEX+HMM mandatory
 
 ### Key References:
-Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation), Sekino & Susskind 2008 (fast scrambling), Bousso & Polchinski 2000 (flux landscape), Douglas & Kachru 2007 (string landscape review), Alon 1986 / Alon-Boppana (expander graph spectral gap), Kesten 1959 / McKay 1981 (regular graph spectral density), Friedman 2003 (Ramanujan graph proof), Bordenave 2015 (sparse random graph universality)
+Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation), Sekino & Susskind 2008 (fast scrambling), Bousso & Polchinski 2000 (flux landscape), Douglas & Kachru 2007 (string landscape review), Alon 1986 / Alon-Boppana (expander graph spectral gap), Kesten 1959 / McKay 1981 (regular graph spectral density), Friedman 2003 (Ramanujan graph proof), Bordenave 2015 (sparse random graph universality), Martin & Vennin 2015 (inflationary PBH squeezed vacuum genesis), Page 1993 (Page's theorem, maximal entanglement post-scrambling), Milgrom 1983 (MOND empirical phenomenology), Tinker et al. 2008 (halo mass function)
 
 ## Key Parameters
 | Parameter | Value |
@@ -284,7 +295,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 
 ## Downloads
 1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 7 pages, "Resolving Thirty-One Cosmological Anomalies" (LaTeX source: `paper/cosmic_yoyo_prl.tex`)
-2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~100+ pages, 8 chapters (~1.9 MB compressed)
+2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~100+ pages, 7 chapters + Appendix A (~1.9 MB compressed)
 3. **Full Theory (Markdown)** (`oscillating_brane_theory_latest.md.txt`) — same content as PDF, AI/text-parser friendly, downloadable from site
 
 ## Computational Validation Results (March 2026)
@@ -292,7 +303,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 |-----------|--------|------------|
 | w(z) phantom crossing | BDF stiff solver, exact lookback time | w ∈ [-1.003, -0.997], matches DESI DR2 |
 | S₈ tension resolution | Exact ODE D₊(a) with oscillating G_eff(t) | 4.79% suppression, S₈=0.796, φ_eff=1.35π rad (ab initio) |
-| Bayesian evidence | dynesty nested sampling, 500 live points | Δln K = 4.13 ± 0.07 (STRONG) |
+| Bayesian evidence | dynesty nested sampling, 500 live points | Δln K ∈ [2.8, 4.13] (prior-dependent, STRONG; Occam's penalty 1.3 nats for extra DOF) |
 | SKA 21cm prediction | Reionization mock, z=6-15 | 5.46 mK peak, SNR = 5.5σ |
 | Lithium-7 problem | BBN conformal tolerance, BDF solver | 3.5× suppression, D/⁴He preserved |
 | Baryon asymmetry | Spontaneous QCD baryogenesis | η_B = 6.1×10⁻¹⁰, c_QCD = O(1), no fine-tuning |
@@ -324,13 +335,23 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Finite-N Dirac collapse | Expander graph spectra + Cheeger inequality | σ₁/L~10⁻³⁸·⁵, N_min≈4500, ω₀ correction ~10⁻⁷⁶, RT survives |
 | Kinematic Blockade | 5D Bondi flux for continuous membrane | Γ_rad^{5D-GR}≡0, m₁T_slip~3.6×10³¹, exp(-3.6×10³¹)=0. Proves PBH necessity |
 | NANOGrav spectral flattening | Tensor TT projection of Filippov shock | φ̈ = Dirac δ → flat spectrum, n_PTA ≈ 10⁹, h_c(16 nHz) ~ 10⁻¹⁵ |
-| φ_eff ab initio | SMS tensor projections + Filippov saltation | φ_eff=(π/2+π)×0.9=1.35π=4.24115 rad, zero free params |
+| φ_eff semi-analytical | SMS tensor projections + Filippov saltation | φ_eff=(π/2+π)×0.9=1.35π=4.24115 rad, semi-analytical heuristic (each step motivated, composition approximate) |
 | Press-Schechter γ(M) | Non-linear spherical collapse + oscillating δ_c | A(M)≈ν²/ln(Ω_m⁻¹), γ(groups)≈0.88, γ(clusters)≈1.19, γ(monsters)≈1.47 |
 | MOND sinc theorem | Orbital averaging of oscillating a₀(t) | sinc(πt_dyn/T): dwarfs 0.996, spirals 0.981, groups 0.637, clusters 0.000 |
 | ΔBIC forecast | Stick-slip 3-harmonic vs CPL on DESI DR2/Y5 | DR2: ΔBIC≈-3.6 (positive-strong), Y5: ΔBIC≈-17.9 (decisive) |
 | Analytical Fisher 3×3 | DESI+Planck ISW+DES Y6 Jacobian | σ(T)/T=6.7%, σ(L)/L=15%, τ₀-L anti-corr r=-0.76, QCD 0.11σ |
 | KdF 4-branch exact | All 4 Kampé de Fériet tensors to O(N=10) | Δ=0.000044 (6 sig figs), O(α⁴) scaling, shadow peak at z≈2L, Δ_{1,m} non-monotone |
 | Kesten-McKay + percolation | ER=EPR graph spectra + site percolation | Continuum O(1/√N)~10⁻¹⁰, p_c≈2.2%, 98% destruction resilience, 19-order safety margin |
+| KS landscape scan | Monte Carlo flux pair enumeration | 2,437 valid pairs, f_QCD=0.49% per throat, P_CY=21.8% (1 in 5 CY manifolds host QCD throat) |
+| Exact a₅ (S3/P1) | Cubic extrinsic curvature invariants on AdS₅ orbifold | ā₅(UV)=2.845 eV⁴, ā₅(IR)=0.0521 eV⁴, 98.2% UV-confined |
+| Exact spectral zeta (S3/P2) | Transcendental Bessel correction to Weyl-McMahon | 2.1% inharmonic shift, δ_exact/Λ_QCD=9.5×10⁻³⁹ |
+| Continuous γ(M) (S3/P3) | Tinker sensitivity kernel strict monotonicity | f(R)/scalar-tensor exclusion theorem, 4-bin mass grid |
+| 3-component Bullet Cluster (S3/P4) | sinc(0.053π)+Weyl offset+cored Σ | MOND 99.5% + 150 kpc Weyl offset, falsifiable vs NFW |
+| Ab initio SPARC (S3/P5) | Exact RAR from 5D geometry | 29.3 km/s RMS, 0 free params, 135 galaxies |
+| Multi-harmonic sinc (S3/P6) | Fourier averaging with asymmetric waveform | W_exact(1)≡0 (topological), group extinction from n=2 harmonic |
+| Non-perturbative steepest descent (S3/P7) | Instanton action for KS flux transition | S_inst≈2122, tunneling ~10⁻⁹²¹, Borel-summable |
+| Graph Laplacian determinant (S3/P8) | Kirchhoff + Kesten-McKay closed form | I_KM(46)=3.8175, δω/ω₀≈10⁻⁷⁶ |
+| Exact RT finite-N (S3/P9) | Friedman spectral gap + percolation shift | λ₁≈0.708, p_c(N) shift 10⁻⁷, P_fail~10⁻¹⁰²¹ |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)
@@ -370,6 +391,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | `scripts/plot_mcmc_results.py` | GetDist triangle plot from converged chains | `plots/obt_v82_corner_plot.pdf` |
 | `scripts/verify_casimir_regularization.py` | UV catastrophe demo + zeta-regularized Casimir verification | `plots/casimir_regularization.png` |
 | `scripts/laplace_demon_hamiltonian.py` | 5D Geometric Bypass Hamiltonian | `plots/laplace_demon_readout.png` |
+| `scripts/ks_landscape_scan.py` | KS landscape statistics (Monte Carlo 2437 flux pairs) | `plots/ks_landscape_distribution.png` |
 
 ## MathJax — DO NOT TOUCH
 - MathJax 3 is configured in `_layouts/dark.html` with inline math `$...$` and display math `$$...$$`
@@ -452,6 +474,7 @@ python scripts/lyapunov_mle.py
 python scripts/fisher_jacobian.py
 python scripts/fisher_forecast.py
 python scripts/laplace_demon_hamiltonian.py
+python scripts/ks_landscape_scan.py
 ```
 
 ### OPEN MATHEMATICAL WORK (0 items remaining — ALL COMPLETE)
@@ -487,7 +510,7 @@ All 60 mathematical derivations have been completed and integrated into theory.m
 - Videos.md expansion to 40 videos — waiting for user's YouTube links
 - Google OAuth: pass from test to production mode (needs Google review)
 - Optimize Romain AI system prompt (ongoing tuning)
-- Update Romain AI knowledge base with latest .md.txt (theory.md is now ~2275 lines after 27 DeepThink prompts (S1+S2+S3))
+- Update Romain AI knowledge base with latest .md.txt (theory.md is now ~2300+ lines after 27 DeepThink prompts (S1+S2+S3) + epistemological hardening)
 - Plot display in chat: works via `files` event + URL serving (NPM `/sandbox-images/`)
 
 ## Site Structure (Jekyll + GitHub Pages)
