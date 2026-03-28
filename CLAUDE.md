@@ -10,7 +10,7 @@
 
 ## ⛔ SACRED RULE — READ THIS FIRST ⛔
 The following .md files compose the PDF and are the SOLE source of truth for the theory:
-1. `discoveries.md` — 31 anomalies resolved (5 Tier 1 exact + 15 Tier 2 analytical + 11 Tier 3 qualitative) + 10 collateral theoretical discoveries
+1. `discoveries.md` — 31 phenomena addressed (5 Tier 1 exact + 15 Tier 2 analytical + 11 Tier 3 exploratory) + 10 collateral theoretical discoveries
 2. `theory.md` — core theoretical framework (motor, ODE, BBN, QCD, stability, PBH, bulk)
 3. `chronology.md` — cosmic chronology, tension calibration, MOND
 4. `predictions.md` — observational predictions, tests, Bayesian evidence
@@ -43,7 +43,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 **Breaking these rules causes data loss and inconsistency between the site and the PDF.**
 
 ## Project Overview
-**Oscillating Brane Cosmology V8.2 (Hybrid Topology Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic ER=EPR-entangled PBH network for quantum synchronization (the metronome). Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window.
+**Oscillating Brane Cosmology V8.2 (Hybrid Topology Edition)** - The universe is a vibrating 4D membrane in 5D AdS space, driven by a hybrid stick-slip motor: macroscopic Cosmic Web forcing via Israel junction conditions (the muscle) + microscopic thermodynamically mandated PBH network for local energy dissipation (the metronome). ℓ=0 coherence from inflation; ER=EPR as optional topological UV-completion. Gregory-Laflamme instability provides an ab initio derivation of the PBH mass window.
 
 **Author**: Romain Provencal (provencal.romain@teleadmin.net) - Independent conceptual researcher
 **AI Collaborators**: Claude (Anthropic) & Gemini DeepThink (Google) as theoretical co-processors
@@ -58,11 +58,11 @@ git commit -m "Regenerate PDF + markdown" && git push
 
 ### Core Physics — The Hybrid Motor:
 - **Bulk**: Non-local topological state, spacetime is emergent (Van Raamsdonk 2010)
-- **Connectivity**: ER=EPR wormhole network (Maldacena & Susskind 2013)
+- **Connectivity**: PBH network (thermodynamically mandatory via DOS theorem); ER=EPR (Maldacena & Susskind 2013) as optional topological interpretation
 - **Oscillation ODE** (hybrid stick-slip, NOT harmonic):
   `φ̈ + (3H + Γ_rad)φ̇ + ξRφ + ∂V_GW/∂φ = F_web[E_μν]·(1-3w) - R_PBH(φ,φ̇)Θ(|φ|-φ_crit)`
   - **F_web[E_μν] (the Muscle)**: Macroscopic forcing from the Cosmic Web. Superclusters, filaments, and voids create inhomogeneous stress S_μν on the brane. Via Israel junction conditions ΔK_μν = -κ₅²(S_μν - ⅓S h_μν), this generates the projected Weyl tensor E_μν — a continuous 5D tidal force pressing the brane toward the bulk
-  - **R_PBH·Θ (the Metronome)**: Microscopic release orchestrated by the ER=EPR-entangled network of asteroid-mass PBHs. When φ reaches φ_crit, the holographic wormhole network releases tension simultaneously everywhere (ℓ=0 mode) — quantum synchronization
+  - **R_PBH·Θ (the Metronome)**: Microscopic release via the thermodynamically mandated network of asteroid-mass PBHs (exponential DOS theorem). When φ reaches φ_crit, the PBH network absorbs kinetic energy locally (MSS scrambling). ℓ=0 coherence is an inflationary causal fossil (like CMB isotropy)
   - **(3H + Γ_rad)φ̇**: Hubble friction + radiative damping via bulk graviton emission (KK modes) during slip phase
   - **ξRφ**: Non-minimal coupling → dynamical PLL attractor locking T = 2.000 Gyr (chronodynamic eigenvalue, N=6 mode)
   - **(1-3w)**: Trace coupling. = 0 for radiation (conformal symmetry, BBN safe), = 1 after QCD (trace anomaly, motor ON)
@@ -73,11 +73,11 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Dark energy**: w(z) = -1 + Σ A_n sin(2πn t_lb/T + φ_n) — exact Fourier decomposition of stick-slip sawtooth (not just fundamental). A₂/A₁=47.6%, A₃/A₁=29.3%. DESI's "phantom crossing" is aliasing of geometric shock at z≈0.93 (phase 82.8%, just before QCD cliff). ΔBIC ≈ -3.6 vs CPL (DR2), forecast -17.9 (Year 5, decisive).
 - **S₈ suppression**: Exact ODE integration: S₈ = 0.836 × 0.9521 = **0.796** (4.79% suppression). AdS₅ viscoelastic retardation δ_bulk ≈ 1.30 rad between scalar w(z) and tensor G_eff (dual-damping arctan: analytical 1.356 rad, 4% agreement). eROSITA γ=1.19 via non-linear Press-Schechter resonance (not linear growth).
 - **ISW resonance**: CMB ℓ = 10-20, Δχ² = 32.9 (6σ)
-- **Anchors**: Micro-PBHs with **extended log-normal mass function** (10⁻¹⁴ to 10⁻¹⁰ M☉). Dual role: topological capillaries AND quantum synchronization nodes (ER=EPR)
+- **Anchors**: Micro-PBHs with **extended log-normal mass function** (10⁻¹⁴ to 10⁻¹⁰ M☉). Dual role: topological capillaries AND local heat sinks (exponential DOS, MSS scrambling). ER=EPR provides optional geometric interpretation of their entanglement
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
 
 ### Epistemological Framework:
-- **31 anomalies resolved** (tiered: 5 Tier 1 exact ODE + 15 Tier 2 analytical + 11 Tier 3 qualitative framework):
+- **31 phenomena addressed** (tiered: 5 Tier 1 exact resolutions + 15 Tier 2 analytical frameworks + 11 Tier 3 exploratory perspectives):
   - 3 core: DESI phantom crossing, S₈ tension (time-dependent growth suppression), Planck ISW (Δχ²=32.9)
   - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND (ab initio: a₀=cH₀/2π from Gibbons-Hawking thermodynamics, μ(x)=x/√(1+x²) from 5D geometric tilt, cluster failure via 2 Gyr resonance; SPARC 135 galaxies: RMS 29.3 km/s, 0 free params vs NFW 35.0 km/s, 270 params), JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
@@ -135,7 +135,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Claiming a₀=cH₀/2π as "novel OBT discovery"** (prior art: Milgrom 1983, Verlinde 2016, Pazy 2013, McCulloch 2007. OBT novelty is μ(x) from Gauss-Codazzi + sinc extinction, NOT a₀ itself)
 
 ### REQUIRED Concepts (V8.2):
-- **Hybrid motor**: F_web (Cosmic Web macro-forcing) + R_PBH (micro-PBH ER=EPR synchronization)
+- **Hybrid motor**: F_web (Cosmic Web macro-forcing) + R_PBH (micro-PBH local thermodynamic dissipation, MSS scrambling)
 - **Israel junction conditions** ΔK_μν = -κ₅²(S_μν - ⅓S h_μν) for macro-forcing
 - **Projected Weyl tensor E_μν** generated by Cosmic Web inhomogeneity
 - **ER=EPR entangled PBH network** as optional topological UV-completion (NOT load-bearing for Γ_rad or ℓ=0)
@@ -194,12 +194,12 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **eROSITA non-linear**: γ_eff≈0.80 (linear), amplified to 1.19 by Press-Schechter exponential sensitivity to δ_c(t). Exact: A(M)≈ν²/ln(Ω_m⁻¹), mass-dependent γ(M) spectrum: groups 0.88, clusters 1.19, monsters 1.47
 - **eROSITA falsifiable prediction**: γ(M) is monotonically increasing with mass (strict proof via Tinker sensitivity kernel A(ν) = cν² + a/(1+(ν/b)^a)). GR root γ=0.55 unreachable. 4-bin grid: groups 0.88, light clusters 0.99, massive 1.19, monsters 1.47. **Exclusion theorem**: f(R)/scalar-tensor predict universal γ — OBT predicts ascending spectrum. Testable by eROSITA DR2 mass-binned analysis
 - **MOND ab initio**: a₀ = cH₀/2π from Gibbons-Hawking + Unruh (2π = Euclidean time circle S¹)
-- **MOND μ(x)**: x/√(1+x²) from 5D Pythagorean quadrature g_5D = √(g²+a₀²) + Gauss cosine projection
+- **MOND μ(x)**: x/√(1+x²) from 5D Gauss-Codazzi orthogonality theorem (g∈tangent bundle ⊥ a₀∈normal bundle, exact geometric identity) → Pythagorean quadrature g_5D = √(g²+a₀²) → cosine projection
 - **Cluster resonance (sinc theorem)**: ⟨a₀⟩ = a₀^max × sinc(πt_dyn/T). Dwarfs: sinc≈0.996 (99.6% MOND). Clusters: sinc(π)=0 exactly (topologically protected against waveform asymmetry). **Bullet Cluster 3-component resolution**: sinc(0.053π)≈0.995 (MOND survives at 99.5% → 4700 km/s velocity), Weyl fluid decouples ballistically → Δr≈150 kpc offset. Cored Σ_Weyl vs cuspy NFW (falsifiable by JWST/Euclid). Three-component gravity: g_N + MOND×sinc + Weyl
 - **Dynamical Schwinger**: slip shock at v_max=0.05c collapses static exponent 10³¹ → 10⁹ (22 orders), but exp(-7.2×10⁹) ≡ 0. Full KK tower N_total ≡ 0. Dissipation 100% via holographic viscosity (Γ_rad), 0% quantum pair production.
 - **Filippov invulnerability**: shock fierce enough for DE harmonics yet 9 orders below Schwinger threshold — thermodynamic masterpiece
-- **Kinematic Blockade theorem**: Classical 5D GR gives Γ_rad^{5D-GR} ≡ 0 (m₁T_slip ~ 3.6×10³¹, exp(-3.6×10³¹) = 0). Continuous Nambu-Goto membrane CANNOT dissipate energy into bulk. Proves discrete PBH network is cosmologically NECESSARY, not optional
-- **Holographic viscosity**: Γ_rad is NOT classical Bremsstrahlung but quantum informational viscosity — entropy absorption by PBH scrambling. Two derivations (bottom-up 5D GR vs top-down holographic) deliberately non-convergent: proof that brane is not a continuum
+- **Kinematic Blockade theorem**: Classical 5D GR gives Γ_rad^{5D-GR} ≡ 0 (m₁T_slip ~ 3.6×10³¹, exp(-3.6×10³¹) = 0). Continuous Nambu-Goto membrane CANNOT dissipate. Combined with Fermi's Golden Rule + exponential DOS theorem → PBHs thermodynamically MANDATORY (not optional, not ER=EPR-dependent)
+- **Local informational viscosity**: Γ_rad is NOT classical Bremsstrahlung but local quantum informational viscosity — each PBH absorbs brane kinetic energy at its horizon, thermalizes via MSS-saturated fast scrambling, emits via 5D Hawking into KK modes. Entirely local and causal, zero wormhole transmission
 - **Spectral flattening (NANOGrav)**: tensor TT projection sources from φ̈(t) not φ(t) → Filippov shock = Dirac δ impulses → flat (white noise) acceleration spectrum. f₀ = 1.58×10⁻¹⁷ Hz (16 attoHz), NANOGrav at 16 nHz listens to the n ≈ 10⁹ harmonic. h_c(16 nHz) ~ 10⁻¹⁵ (matches NANOGrav 15yr, zero free params)
 - **f₀ correction**: fundamental brane frequency is 16 attoHertz (NOT 16 nanoHertz). NANOGrav band = billionth overtone
 - **AdS₅ viscoelastic retardation**: δ_bulk ≈ 1.30 rad (calibrated by DES Y6 S₈=0.796). Analytical prediction: δ_avg = D×arctan(ω/Γ_stick) + (1-D)×arctan(ω/Γ_slip) = 0.9×1.49 + 0.1×0.15 = 1.356 rad. Agreement to 4% — residual from multi-harmonic dispersion. NOT a free parameter but deterministic 5D spacetime viscosity. G_eff(t) = G_N[1 + f_osc × W(t/T + δ_bulk/(2π))], PLUS sign (delay handles physics, not sign flip)
