@@ -6,7 +6,7 @@ permalink: /refutation/
 
 # Open Scientific Peer Review
 
-The Oscillating Brane Cosmology V8.2 invites rigorous scientific scrutiny. This theory claims to resolve 31 cosmological anomalies — extraordinary claims demand extraordinary evidence, and we welcome challenges.
+The Oscillating Brane Cosmology V8.2 invites rigorous scientific scrutiny. This theory addresses 31 cosmological phenomena — 5 exact mathematical resolutions, 15 formal analytical frameworks, and 11 exploratory mechanistic perspectives — extraordinary claims demand extraordinary evidence, and we welcome challenges.
 
 ## How It Works
 
@@ -94,7 +94,7 @@ All perspectives welcome — skeptics make the best reviewers. The principal inv
 
 ### Why Moderate?
 
-- Your name publicly associated with a theory resolving 31 anomalies
+- Your name publicly associated with a theory addressing 31 cosmological phenomena
 - Direct influence on the theory's scientific governance
 - Co-authorship opportunity on future publications if your contributions are substantial
 - Be part of a new model of open, transparent physics research

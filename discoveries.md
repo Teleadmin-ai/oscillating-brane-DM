@@ -301,7 +301,9 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 
 ## 8. Comparative Synthesis
 
-**Resolution Tier Legend:** **T1** = Exact quantitative (ODE integration, analytical proof). **T2** = Formal analytical framework (closed-form derivation, semi-quantitative). **T3** = Qualitative mechanistic (physical mechanism identified, numerical validation pending).
+**Resolution Tier Legend:** **T1** = Exact quantitative (ODE integration, analytical proof) — the mathematical core of the theory. **T2** = Formal analytical framework (closed-form derivation, semi-quantitative) — rigidly determined by 5D geometry and chronological anchoring, no fitted phase heuristics. **T3** = Exploratory mechanistic perspective (qualitative physical pathway identified, quantitative validation via N-body/MHD simulations pending).
+
+*Epistemological note on Tier 3:* We explicitly do **not** claim these 11 phenomena as mathematically "resolved." They are presented as qualitative mechanistic pathways naturally suggested by the 5D geometric framework. Quantitative validation requires complex numerical simulations (5D-coupled N-body, magnetohydrodynamics, stellar evolution with periodic G_eff) which remain open targets for future computational work. Including them here documents the theory's scope without overclaiming its current reach.
 
 | Cosmological Problem | $\Lambda$CDM Status | Oscillating Brane V8.2 Solution | Tier |
 |---------------------|---------------------|-------------------------------|:---:|
@@ -321,17 +323,17 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | NANOGrav GWB features | Unexplained spectral dips/excesses | Stick-slip spectral flattening ($h_c \sim 10^{-15}$, 0 free params) | **T2** |
 | DM-free galaxies (DF2/DF4) | Defy formation models | Cymatic standing wave nodes (~3.4% of galaxies) | **T2** |
 | Amaterasu 244 EeV | Violates GZK horizon | 5D KK leakage extends attenuation $60\times$ | **T2** |
-| Hubble Tension ($H_0$) | $> 6\sigma$ discrepancy | Oscillating $G_\text{eff}(t)$ biases Cepheid calibration | **T3** |
-| Cosmic Dipole | Tension with cosmological principle | Brane drift velocity in 5th dimension | **T3** |
-| KBC Void (${\sim}\,600$ Mpc) | $> 6\sigma$ tension with $\Lambda$CDM | Cymatic standing wave: $\lambda = c \times T = 613$ Mpc | **T3** |
-| Quasar polarization alignment | No causal mechanism over 1 Gpc | Weyl tensor quadrupolar shear along filaments | **T3** |
-| Dark Flow (600--1000 km/s) | Requires trans-horizon attractor | Brane drift inertial drag in $AdS_5$ | **T3** |
-| Space Roar (ARCADE 2) | $6\times$ excess isotropic radio | Cumulative synchrotron from stick-slip shocks | **T3** |
-| Odd Radio Circles (ORCs) | Energy/symmetry defy MHD models | Topological shock from PBH node relaxation | **T3** |
-| Methuselah star ($14.2$ Gyr) | Older than the universe | $G_\text{eff}$ oscillation accelerates aging ($\times 1.105$) | **T3** |
-| White Dwarf Q-Branch | Cooling stalls 8 Gyr | Thermo-gravitational pumping from $G_\text{eff}(t)$ | **T3** |
-| Planet 9 illusion (ETNOs) | No body detected | Emergent MOND EFE aligns orbits | **T3** |
-| Flyby anomaly ($\Delta V$) | No standard explanation | Brane drift vortex + Lense-Thirring | **T3** |
+| Hubble Tension ($H_0$) | $> 6\sigma$ discrepancy | Oscillating $G_\text{eff}(t)$ biases Cepheid calibration *(qualitative)* | **T3** |
+| Cosmic Dipole | Tension with cosmological principle | Brane drift velocity in 5th dimension *(qualitative)* | **T3** |
+| KBC Void (${\sim}\,600$ Mpc) | $> 6\sigma$ tension with $\Lambda$CDM | Cymatic standing wave: $\lambda = c \times T = 613$ Mpc *(qualitative)* | **T3** |
+| Quasar polarization alignment | No causal mechanism over 1 Gpc | Weyl tensor quadrupolar shear along filaments *(qualitative)* | **T3** |
+| Dark Flow (600--1000 km/s) | Requires trans-horizon attractor | Brane drift inertial drag in $AdS_5$ *(qualitative)* | **T3** |
+| Space Roar (ARCADE 2) | $6\times$ excess isotropic radio | Cumulative synchrotron from stick-slip shocks *(qualitative)* | **T3** |
+| Odd Radio Circles (ORCs) | Energy/symmetry defy MHD models | Topological shock from PBH node relaxation *(qualitative)* | **T3** |
+| Methuselah star ($14.2$ Gyr) | Older than the universe | $G_\text{eff}$ oscillation accelerates aging ($\times 1.105$) *(qualitative)* | **T3** |
+| White Dwarf Q-Branch | Cooling stalls 8 Gyr | Thermo-gravitational pumping from $G_\text{eff}(t)$ *(qualitative)* | **T3** |
+| Planet 9 illusion (ETNOs) | No body detected | Emergent MOND EFE aligns orbits *(qualitative)* | **T3** |
+| Flyby anomaly ($\Delta V$) | No standard explanation | Brane drift vortex + Lense-Thirring *(qualitative)* | **T3** |
 
 ## 9. Collateral Theoretical Discoveries: A Rosetta Stone Across Disciplines
 

@@ -22,7 +22,7 @@ What this means for my research:
 - **Suspected ASD** gives me pattern recognition — I see structural connections between disparate fields (QCD, braneworlds, cosmological data) that specialists trained in a single domain might miss.
 - **HPI** gives me the cognitive horsepower to hold the entire theoretical architecture in working memory simultaneously — but only with AI as a cognitive prosthesis to externalize and structure the chaos.
 
-I have never hidden this. My brain is not a disability for this work — it is the instrument that produced it. The theory's unifying power — resolving 31 anomalies across cosmology, particle physics, and gravitational waves with a single geometric framework — is a direct product of neuroatypical divergent thinking.
+I have never hidden this. My brain is not a disability for this work — it is the instrument that produced it. The theory's unifying power — addressing 31 cosmological phenomena (5 exact resolutions, 15 analytical frameworks, 11 exploratory perspectives) within a single geometric framework — is a direct product of neuroatypical divergent thinking.
 
 ### Professional Career
 
@@ -34,7 +34,7 @@ I have never hidden this. My brain is not a disability for this work — it is t
 | Age 24 | Founded **Teleadmin** | Hosting company, OVH Advanced Partner |
 | Career | National infrastructure | **Qwant** (3 server racks, ZFS NAS, 5 DB servers), **Atout France**, **Euresto**, **Incepto** (100+ hospitals), **GELMAD** Lyon (3 medical imaging centers including Hôpital Mermoz) |
 | Age 50 | AI Research | R-JEPA — adaptation of Yann LeCun's JEPA architecture for text reasoning in the latent space of an LLM |
-| 2026 | **Oscillating Brane Cosmology** | 31 anomalies resolved, V8.2 Hybrid Topology Edition |
+| 2026 | **Oscillating Brane Cosmology** | 31 phenomena addressed (5 exact + 15 analytical + 11 exploratory), V8.2 Hybrid Topology Edition |
 
 **Career trajectory**: Systems administrator → Data Scientist → AI Agent Developer → Independent Cosmological Researcher.
 
@@ -70,13 +70,13 @@ If this theory is right — or even partially right — then it demonstrates som
 
 ### Acknowledgments
 
-This theoretical framework was developed through curiosity-driven research. It builds upon established concepts in brane cosmology (Randall-Sundrum, Shiromizu-Maeda-Sasaki), dark energy observations (DESI 2024-2026), and quantum gravity (Maldacena-Susskind ER=EPR). The specific synthesis — the hybrid stick-slip motor, the 31 anomaly resolutions, and the laboratory predictions — is original work.
+This theoretical framework was developed through curiosity-driven research. It builds upon established concepts in brane cosmology (Randall-Sundrum, Shiromizu-Maeda-Sasaki), dark energy observations (DESI 2024-2026), and quantum gravity (Maldacena-Susskind ER=EPR). The specific synthesis — the hybrid stick-slip motor, the tiered anomaly analysis (5 exact + 15 analytical + 11 exploratory), and the laboratory predictions — is original work.
 
 I thank the DESI, Planck, JWST, and NANOGrav collaborations for transformative open data. I thank the qBOUNCE team (Hartmut Abele, Tobias Jenke) at ILL Grenoble for pioneering the quantum neutron experiments that may validate the extra dimension. And I thank Claude and Gemini for being patient with a brain that thinks in spirals.
 
 ### Intellectual Property
 
-The conceptual architecture of the Oscillating Brane Cosmology V8.2 — including the hybrid stick-slip motor, the 31 anomaly resolutions, the 5D Geometric Bypass, and the 5D Laplace Demon quantum computer architecture — has been registered with the **French National Institute of Industrial Property (INPI)** in March 2026, establishing a dated proof of priority.
+The conceptual architecture of the Oscillating Brane Cosmology V8.2 — including the hybrid stick-slip motor, the tiered cosmological analysis, the 5D Geometric Bypass, and the 5D Laplace Demon quantum computer architecture — has been registered with the **French National Institute of Industrial Property (INPI)** in March 2026, establishing a dated proof of priority.
 
 This registration does not restrict the use of the theory for scientific research. The code, documentation, and computational tools remain open-source under the MIT License. The INPI deposit serves solely as proof of authorship and chronological priority.
 
