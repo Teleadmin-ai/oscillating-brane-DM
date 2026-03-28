@@ -461,6 +461,27 @@ All 60 mathematical derivations have been completed and integrated into theory.m
 - **9 DeepThink Series 2** (March 2026): (1) Kinematic Blockade (Γ_rad^{5D-GR}≡0, PBH necessity proof), (2) NANOGrav spectral flattening (n≈10⁹ overtone, h_c~10⁻¹⁵), (3) φ_eff=1.35π ab initio (Israel inversion + Filippov contraction), (4) Press-Schechter γ(M) spectrum (mass-dependent eROSITA), (5) MOND sinc theorem (orbital averaging, cluster resonance), (6) ΔBIC forecast (DR2: -3.6, Y5: -17.9), (7) Analytical Fisher 3×3 (QCD 0.11σ), (8) KdF 4-branch exact tensor (holographic shadow), (9) Kesten-McKay percolation immunity (98% destruction resilience)
 - **9 DeepThink Series 3** (March 2026 — Mathematical Completion): (1) Exact a₅ Seeley-DeWitt (ā₅(UV)=2.845 eV⁴, ā₅(IR)=0.0521 eV⁴, 98.2% UV-confined), (2) Exact spectral zeta ζ_Δ(-1/2) from transcendental Bessel roots (2.1% inharmonic shift, δ/Λ_QCD=9.5×10⁻³⁹), (3) Continuous γ(M) spectrum (Tinker kernel A(ν)=cν²+a/(1+(ν/b)^a), strict monotonicity, f(R) exclusion theorem), (4) 3-component Bullet Cluster (MOND sinc(0.053π)≈0.995 + Weyl offset 150 kpc + cored Σ profile), (5) Ab initio SPARC rotation curves (29.3 km/s, 0 params, exact RAR formula), (6) Multi-harmonic sinc topological protection (W_exact(1)≡0, group-scale W≈0.54 from n=2 harmonic extinction), (7) Non-perturbative steepest descent (S_inst=1/(12α³)≈2122, tunneling 10⁻⁹²¹, Borel-summable), (8) Graph Laplacian functional determinant (Kirchhoff + Kesten-McKay closed form I_KM(46)=3.8175, δω/ω₀≈10⁻⁷⁶), (9) Exact RT phase boundary at finite-N (Friedman λ₁≈0.708, p_c(N) shift 10⁻⁷, P_fail~10⁻¹⁰²¹)
 
+### DEEPTHINK SERIES 4 TODO — Tier 3 → Tier 2 Promotion (11 prompts)
+**Goal:** Promote the 11 qualitative Tier 3 anomalies to Tier 2 (analytical framework) or Tier 1 (exact) via dedicated DeepThink derivations. No 5D NR simulation needed — all are analytical/semi-analytical calculations.
+
+| # | Anomaly | Current Tier | Calculation needed | Difficulty |
+|---|---------|:---:|---|:---:|
+| P1 | **Hubble tension** | T3 | Cepheid luminosity with oscillating G_eff(t): L∝G⁷M⁵, cumulative δH₀ over 7 cycles | Medium |
+| P2 | **Cosmic dipole** | T3 | 5D drift vector projection onto 4D brane: δH/H = v_drift·n̂/c, angular power spectrum | Medium |
+| P3 | **KBC Void** | T3→T2 | Density profile from cymatic standing wave: δρ/ρ(r) from λ=cT=613 Mpc mode | Easy |
+| P4 | **Quasar alignment** | T3 | Weyl shear tensor E_μν along filaments: quadrupolar torque on BH spin axes | Hard |
+| P5 | **Dark Flow** | T3 | Inertial drag force on clusters from brane drift: F_drag(M, v_bulk) | Medium |
+| P6 | **Space Roar** | T3 | Cumulative synchrotron spectrum from 7 stick-slip shocks: T_radio(ν) power law | Medium |
+| P7 | **ORCs** | T3 | Spherical shock profile from PBH node relaxation: R(t), B-field amplification | Hard |
+| P8 | **Methuselah star** | T3→T2 | Already have ×1.105 factor. Need: stellar evolution with periodic G_eff(t) | Easy |
+| P9 | **WD Q-branch** | T3 | Thermo-gravitational PdV pumping rate: dE/dt in degenerate core with G_eff(t) | Medium |
+| P10 | **Planet 9 illusion** | T3 | MOND-EFE secular torque on ETNOs: orbital integration with a₀ + galactic EFE | Medium |
+| P11 | **Flyby anomaly** | T3 | Hyperbolic trajectory in 5D drift vortex: ΔV(inclination) from Lense-Thirring | Hard |
+
+**Priority order:** P3, P8 (almost done) → P1, P6, P9 (medium, high impact) → P2, P5, P10 (medium) → P4, P7, P11 (hard, lower priority)
+
+**Expected outcome:** 60 + 11 = 71 derivations. Tier breakdown: T1=5, T2=26, T3=0 (all promoted).
+
 ### SITE & INFRASTRUCTURE TODO
 - Visual page (visual.md) with PDF embeds — waiting for user's PowerPoint PDF
 - Videos.md expansion to 40 videos — waiting for user's YouTube links
