@@ -123,7 +123,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 ## Particle Physics Signatures
 
 ### Kaluza-Klein Modes
-- First excitation: m_KK ≃ 1 eV
+- First excitation: $m_{KK} \approx 3.78$ eV
 - CMB signature: ΔN_eff ~ 0.01
 
 ### Trans-dimensional Leakage

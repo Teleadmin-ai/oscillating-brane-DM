@@ -3066,7 +3066,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 ## Particle Physics Signatures
 
 ### Kaluza-Klein Modes
-- First excitation: m_KK $\simeq$ 1 eV
+- First excitation: $m_{KK} \approx 3.78$ eV
 - CMB signature: DeltaN_eff ~ 0.01
 
 ### Trans-dimensional Leakage
@@ -3876,7 +3876,7 @@ This ensures quantum corrections don't destabilize the classical oscillation.
 ### Branon Properties
 
 The quantum excitations of the brane (branons) have:
-- **Mass**: $m_{branon} \approx 1$ eV (set by extra dimension size $L \sim 0.2 \mu$m)
+- **Mass**: $m_{branon} \approx 3.8$ eV (set by extra dimension size $L = 0.2\,\mu$m)
 - **Coupling**: Only gravitational, suppressed by $M_P^{-2}$
 - **Lifetime**: $\tau_{branon} > 10^{30}$ years (cosmologically stable)
 - **Production rate**: Negligible in colliders due to gravitational coupling
