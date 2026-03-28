@@ -349,7 +349,7 @@ The construction of the V8.2 framework through 60 analytical derivations has gen
 
 **Problem solved:** Obtaining closed-form solutions for monodromy matrices and phase shifts in non-smooth (Filippov), non-autonomous (Hubble expansion) differential equations — without adiabatic approximation.
 
-**Discovery:** The dephasing between scalar and tensor cosmological channels is an exact topological constant: $\phi_{eff} = (\pi/2 + \pi) \times D = 1.35\pi \approx 4.24115$ rad, where $+\pi$ arises from the Israel tensorial inversion (trace-free Weyl constraint) and $\times D = 0.9$ from the Filippov saltation matrix duty-cycle contraction. The 3D Floquet monodromy has block-triangular structure protecting the transverse eigenvalue, with persistence margin $\times 30$ and Neishtadt second-order residual $\leq 2\%$.
+**Discovery:** The dephasing between scalar and tensor cosmological channels obeys a powerful phenomenological scaling law: $\phi_{eff} \approx (\pi/2 + \pi) \times D = 1.35\pi \approx 4.241$ rad, where $+\pi$ arises from the Israel tensorial inversion (trace-free Weyl constraint) and $\times D = 0.9$ from the Filippov saltation matrix duty-cycle contraction. The 3D Floquet monodromy has block-triangular structure protecting the transverse eigenvalue, with persistence margin $\times 30$ and Neishtadt second-order residual $\leq 2\%$.
 
 **Impact:** A breakthrough in applied mathematics: exact spectral factorization for piecewise-smooth non-autonomous systems, applicable to any stick-slip mechanical or biological oscillator.
 
