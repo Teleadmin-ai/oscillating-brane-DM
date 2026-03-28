@@ -38,6 +38,8 @@ git commit -m "Regenerate PDF + markdown" && git push
 
 **After ANY theoretical addition or modification, you MUST also update CLAUDE.md** (REQUIRED concepts, BANNED concepts, Key Parameters, Computational Validations, Key References) to reflect the new content BEFORE committing. CLAUDE.md is the authoritative reference for all future conversations.
 
+**When reading theory files, ALWAYS read them COMPLETELY — never use grep/sed/chunks as a substitute for full reading.** The complete theory is ~140k tokens (16% of context budget). With 1M context, there is NO reason to economize. Partial reads cause missed errors and inconsistencies. For theory.md (~2300 lines), use 2 Read calls if needed — but read ALL of it. Science demands completeness, not shortcuts.
+
 **Breaking these rules causes data loss and inconsistency between the site and the PDF.**
 
 ## Project Overview
