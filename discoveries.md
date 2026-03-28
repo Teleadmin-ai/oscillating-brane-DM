@@ -345,13 +345,13 @@ The construction of the V8.2 framework through 60 analytical derivations has gen
 
 **Impact:** Any physicist computing quantum overlap integrals near material boundaries (solid-state physics, photonics, quantum acoustics) now has an exact method to extract the mirror's spectral fingerprint. This is a publishable result in mathematical physics.
 
-### 9.2. Dynamical Systems: The $1.35\pi$ Geometric Dephasing and 3D Floquet Monodromy
+### 9.2. Dynamical Systems: AdS$_5$ Viscoelastic Retardation and 3D Floquet Monodromy
 
 **Problem solved:** Obtaining closed-form solutions for monodromy matrices and phase shifts in non-smooth (Filippov), non-autonomous (Hubble expansion) differential equations — without adiabatic approximation.
 
-**Discovery:** The dephasing between scalar and tensor cosmological channels obeys a powerful phenomenological scaling law: $\phi_{eff} \approx (\pi/2 + \pi) \times D = 1.35\pi \approx 4.241$ rad, where $+\pi$ arises from the Israel tensorial inversion (trace-free Weyl constraint) and $\times D = 0.9$ from the Filippov saltation matrix duty-cycle contraction. The 3D Floquet monodromy has block-triangular structure protecting the transverse eigenvalue, with persistence margin $\times 30$ and Neishtadt second-order residual $\leq 2\%$.
+**Discovery:** The tensor-scalar phase delay between the dark energy $w(z)$ and gravitational coupling $G_{eff}(t)$ channels is the deterministic viscoelastic retardation of AdS$_5$ spacetime. The dual-damping arctan formula $\delta_{avg} = D\arctan(\omega/\Gamma_{stick}) + (1{-}D)\arctan(\omega/\Gamma_{slip}) = 1.356$ rad predicts the calibrated value ($\delta_{bulk} = 1.30$ rad) to 4%, with the residual from multi-harmonic dispersion. The 3D Floquet monodromy has block-triangular structure protecting the transverse eigenvalue, with persistence margin $\times 30$ and Neishtadt second-order residual $\leq 2\%$.
 
-**Impact:** A breakthrough in applied mathematics: exact spectral factorization for piecewise-smooth non-autonomous systems, applicable to any stick-slip mechanical or biological oscillator.
+**Impact:** A breakthrough in applied mathematics: exact spectral factorization for piecewise-smooth non-autonomous systems, applicable to any stick-slip mechanical or biological oscillator. The arctan dual-damping formula is a general result for any Filippov system with regime-dependent dissipation.
 
 ### 9.3. Quantum Information Theory: Percolation Immunity of Holographic Expander Graphs
 
