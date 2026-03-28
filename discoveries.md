@@ -6,7 +6,7 @@ permalink: /discoveries/
 
 # Discovery & Correction of Modern Cosmology
 
-An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies (ranging from exact quantitative resolutions to qualitative mechanistic frameworks) within a single extra-dimensional geometric framework.
+An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies — 5 exact quantitative resolutions with ODE integration or analytical proof (Tier 1), 15 formal analytical frameworks with closed-form derivations (Tier 2), and 11 qualitative mechanistic proposals awaiting numerical validation (Tier 3) — within a single extra-dimensional geometric framework.
 
 ## 1. The Collapse of the Standard Model
 
