@@ -291,7 +291,7 @@ $$\mathcal{P}_{CY} = 1 - (1 - f_{QCD})^{N_{throats}} \approx 1 - (1 - 0.0049)^{5
 ![KS Landscape Distribution](/plots/ks_landscape_distribution.png)
 *Figure: Distribution of emergent energy scales in the Klebanov-Strassler flux landscape (2,437 valid pairs, $10^7$ Monte Carlo samples). The QCD window (red band, 200--300 MeV) captures 0.49% of single-throat vacua. With 50 throats per CY manifold: 21.8% probability. No fine-tuning.*
 
-**5. LARGE Volume Scenario and the origin of $L = 0.2\,\mu$m.** While the Klebanov-Strassler throat fixes the brane tension (particle physics at the IR tip), the "macroscopic" size of the extra dimension $L = 0.2\,\mu$m — corresponding to a KK mass scale of $\sim 1$ eV, far below the Planck scale — requires a separate stabilization mechanism for the global Calabi-Yau volume modulus $\mathcal{V}$. This is provided by the **LARGE Volume Scenario (LVS)** (Balasubramanian, Berglund, Conlon & Quevedo 2005), in which the interplay between perturbative $\alpha^{\prime}$ corrections to the Kähler potential and non-perturbative effects (instantons or gaugino condensation on D7-branes wrapping 4-cycles) stabilizes $\mathcal{V}$ at exponentially large values:
+**5. LARGE Volume Scenario and the origin of $L = 0.2\,\mu$m.** While the Klebanov-Strassler throat fixes the brane tension (particle physics at the IR tip), the "macroscopic" size of the extra dimension $L = 0.2\,\mu$m — corresponding to a KK mass scale of $\sim$ few eV, far below the Planck scale — requires a separate stabilization mechanism for the global Calabi-Yau volume modulus $\mathcal{V}$. This is provided by the **LARGE Volume Scenario (LVS)** (Balasubramanian, Berglund, Conlon & Quevedo 2005), in which the interplay between perturbative $\alpha^{\prime}$ corrections to the Kähler potential and non-perturbative effects (instantons or gaugino condensation on D7-branes wrapping 4-cycles) stabilizes $\mathcal{V}$ at exponentially large values:
 
 $$\mathcal{V} \sim e^{a/g_s} \gg 1 \quad \text{(in string units)}$$
 
@@ -698,7 +698,7 @@ Therefore, the remarkable alignment between the numerical root ($\sim 4.24$ rad)
 
 ### Ab Initio Derivation of Emergent MOND: 5D Holographic Quadrature and the 2 Gyr Cluster Resonance
 
-**Scope note: what is known MOND vs what is new.** The empirical MOND phenomenology — the acceleration scale $a_0 \approx 1.2 \times 10^{-10}$ m/s$^2$ and the interpolation function $\mu(x) = x/\sqrt{1+x^2}$ — has been successfully fitting galaxy rotation curves since Milgrom (1983). The SPARC catalog validation (RMS = 29.3 km/s) is a well-established result of this empirical framework (Lelli, McGaugh & Schombert 2016). **The novel contributions of OBT V8.2 are threefold**: (1) the *ab initio derivation* of $a_0 = cH_0/(2\pi)$ from Gibbons-Hawking horizon thermodynamics (not a postulate); (2) the *geometric derivation* of $\mu(x)$ as the trigonometric projection of 5D Pythagorean quadrature (not an empirical fit); and (3) the *exact sinc extinction mechanism* $\mathcal{W}(t_{dyn}/T)$ that formally explains why MOND succeeds for galaxies yet fails for clusters — a 40-year open problem that neither empirical MOND nor $\Lambda$CDM has resolved.
+**Scope note: what is known MOND vs what is new.** The empirical MOND phenomenology — the acceleration scale $a_0 \approx 1.1$--$1.2 \times 10^{-10}$ m/s$^2$ and the interpolation function $\mu(x) = x/\sqrt{1+x^2}$ — has been successfully fitting galaxy rotation curves since Milgrom (1983). The SPARC catalog validation (RMS = 29.3 km/s) is a well-established result of this empirical framework (Lelli, McGaugh & Schombert 2016). **The novel contributions of OBT V8.2 are threefold**: (1) the *ab initio derivation* of $a_0 = cH_0/(2\pi)$ from Gibbons-Hawking horizon thermodynamics (not a postulate); (2) the *geometric derivation* of $\mu(x)$ as the trigonometric projection of 5D Pythagorean quadrature (not an empirical fit); and (3) the *exact sinc extinction mechanism* $\mathcal{W}(t_{dyn}/T)$ that formally explains why MOND succeeds for galaxies yet fails for clusters — a 40-year open problem that neither empirical MOND nor $\Lambda$CDM has resolved.
 
 **1. The Shiromizu-Maeda-Sasaki equation and the Weyl fluid.** The effective 4D Einstein equations on the brane (Shiromizu, Maeda & Sasaki 2000) are:
 
@@ -953,7 +953,7 @@ The incredibly tight RAR correlation ($\sim 0.13$ dex scatter) observed across 2
 
 ### The Adiabatic Shield
 
-The brane oscillation frequency is ν ~ 1.6 × 10⁻¹⁷ Hz (period 2 Gyr), while the lightest Kaluza-Klein excitations have mass ~1 eV, corresponding to ν_KK ~ 10¹⁴ Hz. The ratio is:
+The brane oscillation frequency is ν ~ 1.6 × 10⁻¹⁷ Hz (period 2 Gyr), while the lightest Kaluza-Klein excitations have mass ~3.78 eV, corresponding to ν_KK ~ 9.1 × 10¹⁴ Hz. The ratio is:
 
 $$\frac{\nu_{\text{brane}}}{\nu_{KK}} \sim 10^{-31}$$
 
@@ -1576,7 +1576,7 @@ $$\lim_{\epsilon \to 0} S_{ren} < \infty \quad \text{and} \quad \epsilon\,\frac{
 
 The quantum effective action is strictly finite and completely independent of the cutoff. Diffeomorphism invariance is preserved.
 
-**The IR brane sanctuary.** Because the warp factor $e^{-4kL}$ exponentially crushes all geometric operators on the IR brane ($z = L$), the entire pathological UV quantum structure — bare tension renormalization ($c_1$), Planck mass running ($c_2$), conformal anomaly ($c_{log}$) — lives and dies exclusively on the Planck brane at $z = 0$. The material brane (our universe) at $z = L$ requires no infinite subtraction. The effective tension $\tau_0^{1/3} \approx 257$ MeV is **finite ab initio** — topologically shielded by the $AdS_5$ throat against the hierarchy problem. The membrane's fundamental scale is a quantum-mechanically protected infrared fixed point: radiatively stable, holographically sanctuarized, and immune to Planck-scale pathologies for all eternity.
+**The IR brane sanctuary.** Because the warp factor $e^{-4kL}$ exponentially crushes all geometric operators on the IR brane ($z = L$), the entire pathological UV quantum structure — bare tension renormalization ($c_1$), Planck mass running ($c_2$), conformal anomaly ($c_{log}$) — lives and dies exclusively on the Planck brane at $z = 0$. The material brane (our universe) at $z = L$ requires no infinite subtraction. The effective tension $\tau_0^{1/3} \approx 257$ MeV is **finite ab initio** — topologically shielded by the $AdS_5$ throat against the hierarchy problem. The membrane's fundamental scale is a quantum-mechanically protected infrared fixed point: radiatively stable and holographically shielded from Planck-scale pathologies.
 
 **5. Exact radiative shift $\delta$ and the inverse hierarchy sanctuary.** After holographic renormalization expurges all Seeley-DeWitt infinities via UV brane counterterms, the residual finite correction $\Delta V_{1-loop}$ on our material brane is the **5D Casimir energy** of the warped cavity. For $N_{dof} = 6$ bosonic bulk degrees of freedom (5 TT graviton polarizations + 1 Goldberger-Wise scalar), the IR-brane vacuum energy density is governed by the warped mass gap $m_{IR} = k\,e^{-kL}$:
 
@@ -1852,7 +1852,7 @@ $$\underbrace{N_{perc} \approx 46}_{\text{graph shatters}} \quad \ll \quad \unde
 
 The margin between the physical population and the percolation threshold is **19 orders of magnitude**. The holographic network would need to lose $> 99.999999999999999\%$ of its nodes before fragmenting. The universe is topologically invulnerable.
 
-**3. The holographic immunity theorem: 98% destruction resilience.** The real astrophysical environment degrades the PBH network through three mechanisms: (a) Hawking evaporation (negligible for $M > 10^{-14}\,M_\odot$: $t_{evap} \sim 10^{47}$ yr), (b) PBH mergers (reduces $N$ but increases $S_{BH}$ per node), and (c) environmental decoherence (plasma interactions that sever individual ER bridges). We model the aggregate effect as **site percolation** with survival probability $p < 1$: each PBH independently survives with probability $p$, and the question is whether the giant connected component retains a non-zero spectral gap.
+**3. The holographic immunity theorem: 98% destruction resilience.** The real astrophysical environment degrades the PBH network through three mechanisms: (a) Hawking evaporation (negligible for $M > 10^{-14}\,M_\odot$: $t_{evap} \sim 10^{37}$ yr), (b) PBH mergers (reduces $N$ but increases $S_{BH}$ per node), and (c) environmental decoherence (plasma interactions that sever individual ER bridges). We model the aggregate effect as **site percolation** with survival probability $p < 1$: each PBH independently survives with probability $p$, and the question is whether the giant connected component retains a non-zero spectral gap.
 
 For a random $d$-regular graph under site percolation, the giant component survives (occupying a fraction $\sim 1 - p_c/p$ of the vertices) if and only if:
 
