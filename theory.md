@@ -775,7 +775,20 @@ The phase lag components are $\delta_{stick} = \arctan(\pi/0.243) \approx 1.494$
 
 Injecting this analytically derived phase lag into the BDF stiff ODE integration (without any optimization or fitting) yields $S_8 = 0.798$, a 4.50% growth suppression. This prediction falls within 0.4$\sigma$ of the DES Year 6 observation ($0.790 \pm 0.018$) and well within the KiDS-1000 constraint ($0.759 \pm 0.024$).
 
-**Epistemological status.** The tensor-scalar phase delay $\delta_{bulk}$ is **not** an additional free parameter: it is analytically derived from the base EFT parameters via the BKM theorem. The $S_8$ prediction ($0.798$) uses no fitted quantity in the growth sector beyond the 4+1 EFT parameters declared in the Parametric Matrix. The **exact same** $G_{eff}(t)$ curve — with the same BKM-derived phase — deterministically predicts the eROSITA $\gamma = 1.19$ anomaly (via non-linear Press-Schechter amplification) without any additional tuning.
+**Structural robustness: the arctan saturation theorem.** A legitimate critique asks whether the BKM phase delay is sensitive to the choice of effective redshift $z_{eff}$ at which $\Gamma_{stick} = 3H(z_{eff})$ is evaluated. The answer is no, due to the mathematical saturation of the arctan function. Because $\omega/\Gamma_{stick} \approx 9$--$15$ for all $z_{eff} \in [0.1, 1.0]$, the dominant stick term $\arctan(\omega/\Gamma_{stick})$ operates at **93--96% of its asymptotic value** $\pi/2$. The phase delay is structurally pinned to a narrow band:
+
+| $z_{eff}$ | $\Gamma_{stick}$ (Gyr$^{-1}$) | $\delta_{BKM}$ (rad) | $S_8$ | Suppression |
+|:---:|:---:|:---:|:---:|:---:|
+| 0.05 | 0.212 | 1.368 | 0.799 | 4.46% |
+| 0.15 | 0.223 | 1.365 | 0.799 | 4.48% |
+| 0.30 | 0.243 | 1.359 | 0.798 | 4.50% |
+| 0.50 | 0.273 | 1.351 | 0.798 | 4.54% |
+| 0.80 | 0.328 | 1.335 | 0.797 | 4.62% |
+| 1.00 | 0.370 | 1.323 | 0.797 | 4.67% |
+
+The total variation across the entire range is $\Delta S_8 < 0.002$ — an order of magnitude below the DES Year 6 observational uncertainty ($\pm 0.018$). Within the physically motivated weak lensing kernel ($z_{eff} \in [0.15, 0.50]$), the variation drops to $\Delta S_8 \approx 0.001$. The BKM phase delay is not a hidden degree of freedom — it is a structurally insensitive derived quantity, pinned by the mathematical saturation of the arctan response function in the weakly-damped regime ($\omega \gg \Gamma_{stick}$).
+
+**Epistemological status.** The tensor-scalar phase delay $\delta_{bulk}$ is **not** an additional free parameter: it is analytically derived from the base EFT parameters via the BKM theorem, and the result is structurally insensitive to the choice of $z_{eff}$. The $S_8$ prediction ($0.798$) uses no fitted quantity in the growth sector beyond the 4+1 EFT parameters declared in the Parametric Matrix. The **exact same** $G_{eff}(t)$ curve — with the same BKM-derived phase — deterministically predicts the eROSITA $\gamma = 1.19$ anomaly (via non-linear Press-Schechter amplification) without any additional tuning.
 
 ### Ab Initio Derivation of Emergent MOND: 5D Holographic Quadrature and the 2 Gyr Cluster Resonance
 
