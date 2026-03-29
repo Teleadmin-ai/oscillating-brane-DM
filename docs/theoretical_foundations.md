@@ -660,9 +660,9 @@ For the complete observational tests timeline, see the [Predictions](/prediction
    - Gravitational wave spectrum
    - Growth factor suppression
 
-### 6.6 Critical Improvements from O3 Analysis
+### 6.6 Critical Methodological Improvements
 
-Based on the comprehensive O3 pro analysis, several critical improvements should be implemented:
+The following improvements address key dimensional, physical, and statistical consistency requirements:
 
 #### 6.6.1 Dimensional Consistency in Numerical Codes
 

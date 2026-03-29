@@ -679,28 +679,28 @@ $$\kappa = \det(M) = \exp\!\left(\int_0^T \nabla \cdot f\,dt\right) = \exp\!\lef
 Substituting the V8.2 EFT parameters:
 
 - **Stick phase**: $C_{stick} = 3H \approx 0.3\,\text{Gyr}^{-1}$ (Hubble drag only)
-- **Slip phase**: $C_{slip} = 3H + \Gamma_{rad} + \gamma_{slip} \approx 0.3 + 20 + 20 = 40.3\,\text{Gyr}^{-1}$
+- **Slip phase**: $C_{slip} = 3H + \gamma_{slip} \approx 0.3 + 20.7 = 21.0\,\text{Gyr}^{-1}$ (Hubble + holographic viscosity). Note: the EFT dissipation coefficient $\gamma_{slip}$ IS the physical manifestation of $\Gamma_{rad} = \ln(S_{BH})/(2\pi) \approx 20.7$ --- they represent the same PBH scrambling mechanism and must not be double-counted
 - **Duty cycle**: $T_{stick}/T_{slip} \approx 9$ (from the attractor kinematics), giving $T_{stick} = 1.8\,\text{Gyr}$, $T_{slip} = 0.2\,\text{Gyr}$
 
 The Liouville exponent evaluates to:
 
-$$-(0.3 \times 1.8) - (40.3 \times 0.2) = -0.54 - 8.06 = -8.60$$
+$$-(0.3 \times 1.8) - (21.0 \times 0.2) = -0.54 - 4.20 = -4.74$$
 
 The **exact analytical contraction rate** is:
 
-$$\boxed{\kappa = e^{-8.60} \approx 1.84 \times 10^{-4} \ll 1}$$
+$$\boxed{\kappa = e^{-4.74} \approx 8.7 \times 10^{-3} \ll 1}$$
 
-This is not a 3% contraction per cycle --- it is a **hyper-contraction by a factor of ~5,400**.
+This is a **contraction by a factor of $\sim 115$ per cycle** --- strong enough to guarantee uniqueness within 2-3 cycles.
 
 **Lemma: Floquet spectral factorization in 2D Filippov systems.** The Liouville-Abel integral computes $\det(M)$ --- the volume contraction. But orbital stability requires the **transverse Floquet multiplier** $\lambda_2 < 1$, not merely $\det(M) < 1$. In a 2D system, $\det(M) = \lambda_1 \cdot \lambda_2$. We must prove $\lambda_1 = 1$ survives the Filippov discontinuities.
 
-*Proof.* By the Aizerman-Gantmakher theory, the saltation matrix $S = I + (f_{out} - f_{in})\nabla h^T/(\nabla h^T \cdot f_{in})$ acts on the tangent vector $f_{in}$ as: $S\,f_{in} = f_{in} + (f_{out} - f_{in}) = f_{out}$. The longitudinal flow direction is **exactly transported** through each discontinuity. Composing over the full cycle: $M\,f(x_0) = f(x_T) = f(x_0)$ --- the tangent vector is an eigenvector with eigenvalue $\lambda_1 = 1$ (time-translation invariance of the periodic orbit). Since $\dim = 2$: $\lambda_2 = \det(M)/\lambda_1 = \kappa/1 = e^{-8.60}$. The spectral factorization is exact. $\square$
+*Proof.* By the Aizerman-Gantmakher theory, the saltation matrix $S = I + (f_{out} - f_{in})\nabla h^T/(\nabla h^T \cdot f_{in})$ acts on the tangent vector $f_{in}$ as: $S\,f_{in} = f_{in} + (f_{out} - f_{in}) = f_{out}$. The longitudinal flow direction is **exactly transported** through each discontinuity. Composing over the full cycle: $M\,f(x_0) = f(x_T) = f(x_0)$ --- the tangent vector is an eigenvector with eigenvalue $\lambda_1 = 1$ (time-translation invariance of the periodic orbit). Since $\dim = 2$: $\lambda_2 = \det(M)/\lambda_1 = \kappa/1 = e^{-4.74}$. The spectral factorization is exact. $\square$
 
-*Validity conditions* (both verified for OBT V8.2): (a) **Transversality**: $\nabla h^T \cdot f_{in} = \dot{\phi}_{crit} \neq 0$ at the QCD threshold (ballistic crossing, no grazing bifurcation). (b) **No Filippov sliding**: the orbit crosses $\Sigma$ dynamically (crossing cycle), preserving 2D flow invertibility. The finite value $\kappa = e^{-8.60} > 0$ confirms $\det(M) \neq 0$, ruling out topological collapse to 1D.
+*Validity conditions* (both verified for OBT V8.2): (a) **Transversality**: $\nabla h^T \cdot f_{in} = \dot{\phi}_{crit} \neq 0$ at the QCD threshold (ballistic crossing, no grazing bifurcation). (b) **No Filippov sliding**: the orbit crosses $\Sigma$ dynamically (crossing cycle), preserving 2D flow invertibility. The finite value $\kappa = e^{-4.74} > 0$ confirms $\det(M) \neq 0$, ruling out topological collapse to 1D.
 
-The transverse multiplier $\lambda_2 = e^{-8.60} \approx 1.84 \times 10^{-4}$ is therefore **identical** to the volume contraction rate. The spectral radius is $\rho(M) = \max(1, \vert\lambda_2\vert) = 1$.
+The transverse multiplier $\lambda_2 = e^{-4.74} \approx 8.7 \times 10^{-3}$ is therefore **identical** to the volume contraction rate. The spectral radius is $\rho(M) = \max(1, \vert\lambda_2\vert) = 1$.
 
-By the **Banach Fixed-Point Theorem**: since $\kappa \approx 10^{-4} \ll 1$, the Poincaré first-return map $\Pi$ is an extreme strict contraction. There exists **exactly one periodic orbit** crossing $\Sigma$, and convergence to it is achieved within a **single cycle** (the distance to the attractor drops by a factor of 5,400 per period). The multistability hypothesis is excluded with a margin of nearly four orders of magnitude.
+By the **Banach Fixed-Point Theorem**: since $\kappa \approx 10^{-2} \ll 1$, the Poincaré first-return map $\Pi$ is a strict contraction. There exists **exactly one periodic orbit** crossing $\Sigma$, and convergence to it is achieved within $\sim 2$--$3$ cycles (the distance to the attractor drops by a factor of $\sim 115$ per period). The multistability hypothesis is excluded with a margin of two orders of magnitude.
 
 **4. Non-autonomous persistence: Fenichel-Neishtadt theory and the normally hyperbolic invariant cylinder.** The proofs above assume the adiabatic limit ($\epsilon = T/t_H \approx 0.14 \to 0$), where cosmological parameters are frozen over each cycle. A rigorous mathematician would object: the real system is non-autonomous --- $H(t)$, $R(t)$, and $\mathcal{F}_{web}(t)$ drift continuously with cosmic expansion. Could this drift disloque the attractor, trigger a chirp instability, or generate chaos over cosmological timescales?
 
@@ -714,11 +714,11 @@ Persistence requires two conditions on the Filippov flow:
 
 **(a) Transversality of crossing (no grazing).** The orbit must cross the switching manifold $\Sigma = \{\vert\phi\vert = \phi_{crit}\}$ with finite velocity: $n^T \cdot f = \dot{\phi}_{crit} \neq 0$. At the QCD ignition threshold, the brane is at the end of the stick phase --- maximum elastic potential energy, maximum kinetic energy --- so $\dot{\phi}$ is strictly non-zero at crossing. This precludes grazing bifurcations (tangential contact with $\Sigma$) and degenerate sliding modes, ensuring that the Poincaré return map remains smooth with respect to the slow parameter $\tau$. **Condition satisfied.**
 
-**(b) Normal hyperbolicity (spectral gap).** The transverse contraction rate toward the cycle must vastly exceed the slow drift rate along the cylinder. The spectral gap condition requires $\vert\lambda_{trans}\vert \gg \epsilon$. From the Liouville-Filippov trace formula: $\lambda_{trans} = \ln(\kappa)/T = -8.60/2.0 = -4.30\,\text{Gyr}^{-1}$. The Hubble drift rate is $\epsilon \approx 0.14\,\text{Gyr}^{-1}$. The ratio:
+**(b) Normal hyperbolicity (spectral gap).** The transverse contraction rate toward the cycle must vastly exceed the slow drift rate along the cylinder. The spectral gap condition requires $\vert\lambda_{trans}\vert \gg \epsilon$. From the Liouville-Filippov trace formula: $\lambda_{trans} = \ln(\kappa)/T = -4.74/2.0 = -2.37\,\text{Gyr}^{-1}$. The Hubble drift rate is $\epsilon \approx 0.14\,\text{Gyr}^{-1}$. The ratio:
 
-$$\frac{|\lambda_{trans}|}{\epsilon} = \frac{4.30}{0.14} \approx 30$$
+$$\frac{|\lambda_{trans}|}{\epsilon} = \frac{2.37}{0.14} \approx 17$$
 
-The system is **violently normally hyperbolic**: the radiative KK damping pulls orbits back to the attractor ~30 times faster than the universe expands. **Condition satisfied with a factor of 30 margin.**
+The system is **strongly normally hyperbolic**: the holographic damping pulls orbits back to the attractor $\sim 17$ times faster than the universe expands. **Condition satisfied with a comfortable factor of 17 margin.**
 
 By the **Fenichel persistence theorem** for normally hyperbolic invariant manifolds (extended to Filippov systems): since both conditions are met, the adiabatic cylinder $\mathcal{M}_0$ deforms into an exact **Normally Hyperbolic Invariant Cylinder (NHIC)** $\mathcal{M}_\epsilon$ that persists for all $0 < \epsilon < \epsilon_0$. The physical trajectory of the brane surfs on this deformed cylinder perpetually.
 
@@ -745,18 +745,18 @@ where $\mathbf{M}_{2D}$ is the $2 \times 2$ Filippov contraction block (with sal
 **Exact Floquet spectrum.** By the fundamental theorem of block-triangular matrices, the eigenvalues of $\mathbf{M}_{3D}$ are exactly the union of the eigenvalues of its diagonal blocks:
 
 - $\lambda_1 = 1$: tangential mode (time-translation invariance along the periodic orbit)
-- $\lambda_2 = \kappa(\tau) + \mathcal{O}(\epsilon) = e^{-8.60} + \mathcal{O}(\epsilon)$: **transverse fast contraction**
+- $\lambda_2 = \kappa(\tau) + \mathcal{O}(\epsilon) = e^{-4.74} + \mathcal{O}(\epsilon)$: **transverse fast contraction**
 - $\lambda_3 = 1 + \mathcal{O}(\epsilon)$: slow longitudinal drift along the cosmological cylinder
 
 The cross-coupling $\mathbf{v}_{cross}$ generates off-diagonal terms but the **spectrum is protected** by the triangular structure. Orbital stability depends entirely on $\vert\lambda_2\vert < 1$.
 
-**Immunity of the transverse contraction.** The $\mathcal{O}(\epsilon)$ correction to $\lambda_2$ cannot invert the contraction. The base contraction is cataclysmic: $\kappa = e^{-8.60} \approx 1.84 \times 10^{-4}$. The linear perturbation from cosmic expansion adds at most $|\delta\lambda_2| \sim \epsilon \times |\partial_\tau \kappa| \sim 0.14 \times \mathcal{O}(1) \sim 0.14$. Even in the worst case: $\vert\lambda_2\vert \leq \kappa + \epsilon \approx 0.00018 + 0.14 = 0.14 < 1$. The inequality $\vert\lambda_2\vert < 1$ is satisfied **exactly** at the physical $\epsilon$, not merely asymptotically.
+**Immunity of the transverse contraction.** The $\mathcal{O}(\epsilon)$ correction to $\lambda_2$ cannot invert the contraction. The base contraction is: $\kappa = e^{-4.74} \approx 8.7 \times 10^{-3}$. The linear perturbation from cosmic expansion adds at most $|\delta\lambda_2| \sim \epsilon \times |\partial_\tau \kappa| \sim 0.14 \times \mathcal{O}(1) \sim 0.14$. Even in the worst case: $\vert\lambda_2\vert \leq \kappa + \epsilon \approx 0.009 + 0.14 = 0.15 < 1$. The inequality $\vert\lambda_2\vert < 1$ is satisfied **exactly** at the physical $\epsilon$, not merely asymptotically.
 
-**The persistence horizon $\epsilon_0$ and safety margin.** The critical expansion rate beyond which the cycle is destroyed requires $\vert\lambda_2\vert = 1$, i.e., the transverse contraction rate $\vert\lambda_{trans}\vert = |\ln(\kappa)|/T = 8.60/2.0 = 4.30\;\text{Gyr}^{-1}$ must equal the drift speed $\epsilon$:
+**The persistence horizon $\epsilon_0$ and safety margin.** The critical expansion rate beyond which the cycle is destroyed requires $\vert\lambda_2\vert = 1$, i.e., the transverse contraction rate $\vert\lambda_{trans}\vert = |\ln(\kappa)|/T = 4.74/2.0 = 2.37\;\text{Gyr}^{-1}$ must equal the drift speed $\epsilon$:
 
-$$\boxed{\epsilon_0 \approx 4.30}$$
+$$\boxed{\epsilon_0 \approx 2.37}$$
 
-Our universe expands with $\epsilon \approx 0.14$, satisfying $\epsilon \ll \epsilon_0$ with a **crushing safety margin of factor 30**. The attractor persists exactly.
+Our universe expands with $\epsilon \approx 0.14$, satisfying $\epsilon \ll \epsilon_0$ with a **comfortable safety margin of factor 17**. The attractor persists exactly.
 
 **Second-order Neishtadt averaging ($\mathcal{O}(\epsilon^2) \approx 2\%$).** The first-order adiabatic error $\mathcal{O}(\epsilon) \approx 14\%$ is pessimistic. The Krylov-Bogoliubov-Neishtadt averaging theorem for slow-fast systems on normally hyperbolic invariant cylinders provides a near-identity coordinate transformation that absorbs the first-order drift:
 
@@ -768,7 +768,7 @@ $$\sup_{0 \leq t \leq 1/\epsilon}\left\|(\phi_{exact}, \dot{\phi}_{exact}) - \ga
 
 For $\epsilon = 0.14$: $\epsilon^2 = 0.0196 \approx 2\%$. The oscillating brane tracks the expanding universe with **98% fidelity**. The chirp instability is not merely bounded --- it is eradicated to second order.
 
-The complete proof chain: Yoshizawa (boundedness) $\to$ Liouville-Filippov-Banach (uniqueness, $\kappa \sim 10^{-4}$) $\to$ Fenichel-Neishtadt (adiabatic persistence, spectral gap $\times 30$) $\to$ **Full 3D Floquet** (exact persistence at $\epsilon = 0.14$, margin $\times 30$, residual $\leq 2\%$). The 2 Gyr oscillation is rigorously stable under all perturbations considered.
+The complete proof chain: Yoshizawa (boundedness) $\to$ Liouville-Filippov-Banach (uniqueness, $\kappa \approx 10^{-2}$) $\to$ Fenichel-Neishtadt (adiabatic persistence, spectral gap $\times 17$) $\to$ **Full 3D Floquet** (exact persistence at $\epsilon = 0.14$, margin $\times 17$, residual $\leq 2\%$). The 2 Gyr oscillation is rigorously stable under all perturbations considered.
 
 ### BBN Protection via Conformal Symmetry and the Trace Anomaly
 
@@ -1270,7 +1270,7 @@ At the stick-to-slip transition, the brane's acceleration undergoes a Dirac-delt
 
 Physically: during the stick phase (90% of the cycle), the gravitational coupling $G_{eff}$ is slowly ramped by the Israel-projected Weyl tensor. During the slip phase (10%), the violent shock resets the phase. The net phase accumulated over one complete cycle is not $\phi_{base}$ but $D \times \phi_{base}$, because the slip shock truncates the integration window.
 
-**The diagnostic table and the discovery of 5D spacetime viscosity.** The preceding algebraic analysis (Israel $+\pi$ inversion, Filippov $\times D$ contraction) suggested that the tensor-scalar dephasing could be captured by a simple sign flip in $G_{eff}$. To test this rigorously, a systematic diagnostic was performed (Claude Opus, March 2026): the exact growth factor ODE was integrated with the chronologically anchored stick-slip waveform under **all possible sign and coupling combinations** --- (i) $G_{eff}$ with Israel minus sign only, (ii) $G_{eff}$ with plus sign only, (iii) $w(z)$ modifying $H(a)$ only, and (iv) the full coupled system. The results were unambiguous and surprising:
+**The diagnostic table and the discovery of 5D spacetime viscosity.** The preceding algebraic analysis (Israel $+\pi$ inversion, Filippov $\times D$ contraction) suggested that the tensor-scalar dephasing could be captured by a simple sign flip in $G_{eff}$. To test this rigorously, a systematic diagnostic was performed: the exact growth factor ODE was integrated with the chronologically anchored stick-slip waveform under **all possible sign and coupling combinations** --- (i) $G_{eff}$ with Israel minus sign only, (ii) $G_{eff}$ with plus sign only, (iii) $w(z)$ modifying $H(a)$ only, and (iv) the full coupled system. The results were unambiguous and surprising:
 
 | Configuration | Growth effect | $S_8$ |
 |---|---|---|
@@ -1281,7 +1281,7 @@ Physically: during the stick phase (90% of the cycle), the gravitational couplin
 
 The Israel minus sign produces **enhancement**, not suppression --- the opposite of what is needed. The plus sign overshoots by a factor of 2.3. No simple algebraic sign reproduces the observed $S_8$. The $w(z)$ modification of $H(a)$ is entirely negligible ($A_w = 0.003$ is too small). This diagnostic conclusively demonstrated that **the tensor-scalar dephasing is not an algebraic sign but a continuous phase delay** --- a temporal retardation of the Weyl tensor response relative to the brane's mechanical oscillation.
 
-The physical resolution was identified by Gemini DeepThink (March 2026): the AdS$_5$ bulk is not an instantaneous mirror but a **viscous, dispersive medium**. The Weyl response $\mathcal{E}_{\mu\nu}$ propagates through a Retarded Green's Function with frequency-dependent phase lag, exactly as in any damped driven oscillator. The Filippov stick-slip motor provides two distinct damping regimes ($\Gamma_{stick} \approx 0.25$ vs $\Gamma_{slip} \approx 20.7$ Gyr$^{-1}$), making the $\arctan(\omega/\Gamma)$ formula for viscous phase retardation directly applicable. This transforms the phase delay from a free parameter into a derived analytical constant --- the BKM Averaging Theorem applied to the Filippov stick-slip system yields $\delta_{BKM} = 1.36$ rad with zero adjustable quantities.
+The physical resolution lies in the fact that the AdS$_5$ bulk is not an instantaneous mirror but a **viscous, dispersive medium**. The Weyl response $\mathcal{E}_{\mu\nu}$ propagates through a Retarded Green's Function with frequency-dependent phase lag, exactly as in any damped driven oscillator. The Filippov stick-slip motor provides two distinct damping regimes ($\Gamma_{stick} \approx 0.25$ vs $\Gamma_{slip} \approx 20.7$ Gyr$^{-1}$), making the $\arctan(\omega/\Gamma)$ formula for viscous phase retardation directly applicable. This transforms the phase delay from a free parameter into a derived analytical constant --- the BKM Averaging Theorem applied to the Filippov stick-slip system yields $\delta_{BKM} = 1.36$ rad with zero adjustable quantities.
 
 **4. The AdS$_5$ viscoelastic retardation ($\delta_{bulk} = 1.36$ rad, BKM Theorem).** The Israel junction conditions provide a baseline phase inversion of $+\pi$ between the scalar ($w(z)$) and tensor ($G_{eff}$) channels. However, this analysis assumes an instantaneous, non-dispersive bulk. In reality, the AdS$_5$ bulk acts as a **highly dissipative, causal medium**: the Weyl tensor response $\mathcal{E}_{\mu\nu}$ to the brane's mechanical oscillation propagates through a retarded Green's function with frequency-dependent phase delay.
 
@@ -1425,17 +1425,9 @@ This hierarchy explains every empirical puzzle of modified gravity:
 - **Group mass discrepancies**: sinc $\approx 0.64$, substantial MOND failure $\to$ partial Weyl compensation needed
 - **Cluster mass-to-light catastrophe**: sinc $= 0$, MOND dead $\to$ full Weyl fluid required
 
-**4. The Bullet Cluster paradox ($t_{cross} \sim 0.5$ Gyr).** The Bullet Cluster (1E 0657-56) is the historic execution ground of MOND theories. With a collision velocity of $\approx 4700$ km/s and a sub-cluster radius $R_{sub} \sim 250$ kpc, the sub-cluster crossing time is:
+*Note: The Bullet Cluster analysis (MOND survival at sinc $\approx 0.995$ + collisionless Weyl fluid offset) is treated in full detail in the dedicated 3-Component Bullet Cluster Resolution section below.*
 
-$$t_{cross} \approx \frac{2\,R_{sub}}{v_{rel}} \approx \frac{500\;\text{kpc}}{4700\;\text{km/s}} \approx 0.1\;\text{Gyr}$$
-
-At this ultra-short dynamical timescale: $\text{sinc}(0.05\pi) \approx 0.996$. The MOND correction is essentially **fully active** during the collision. This explains the anomalously high collision velocity (which $\Lambda$CDM struggles to reproduce): the MOND-enhanced gravitational acceleration between the two sub-clusters amplifies their infall velocity beyond the Newtonian prediction.
-
-However --- and this is the critical resolution --- the MOND enhancement amplifies only the **baryonic** gravitational field. It cannot explain the spatial **offset** between the X-ray gas centroid (which decelerates by ram pressure) and the weak lensing mass centroid (which passes through unimpeded). This offset requires a **collisionless** mass component.
-
-In the OBT V8.2, this collisionless component is the **PBH capillary network**. The micro-PBHs ($f_{PBH} = 0.01$) are point-like, collisionless objects that traverse the gas shock balistially --- exactly like hypothetical WIMPs. They carry with them the non-local Weyl tensor projection $\mathcal{E}_{00}$ that anchors the gravitational lensing signal to their positions, not to the shocked gas. The Bullet Cluster offset is simultaneously explained: MOND for the velocity (sinc $\approx 1$), Weyl fluid for the lensing (PBH-anchored, collisionless).
-
-**5. The Weyl fluid resurrection: the true dark matter of clusters.** When the sinc filter annihilates the MOND correction at cluster scales ($\langle a_0 \rangle \to 0$), the effective gravitational acceleration for an $N$-body cluster system becomes:
+**4. The Weyl fluid resurrection: the true dark matter of clusters.** When the sinc filter annihilates the MOND correction at cluster scales ($\langle a_0 \rangle \to 0$), the effective gravitational acceleration for an $N$-body cluster system becomes:
 
 $$\vec{g}_{eff}(\vec{r}) = \vec{g}_N(\vec{r}) + \underbrace{\Delta\vec{g}_{MOND}(\vec{r}) \times \text{sinc}\!\left(\frac{\pi\,t_{dyn}}{T}\right)}_{\to\,0\;\text{for clusters}} + \Delta\vec{g}_{Weyl}(\vec{r})$$
 
@@ -1768,7 +1760,7 @@ The phenomenological friction parameter is the **pure expression of the Bekenste
 
 $$\boxed{\Gamma_{rad} = \frac{130}{2\pi} = \frac{130}{6.283} \approx 20.7}$$
 
-This is a central result of the Oscillating Brane Theory. The value $\Gamma_{rad} \approx 20$ --- originally postulated in the EFT to reproduce the observed 2 Gyr period and the NANOGrav amplitude, and later shown to generate the hyper-contraction $\kappa = e^{-8.60} \approx 10^{-4}$ of the limit cycle --- is **not a free parameter**. It is the macroscopic translation of the Bekenstein-Hawking entropy of the primordial micro-PBH network: $\Gamma_{rad} = \ln(S_{BH})/(2\pi)$. The number 20 encodes the quantum information capacity of $10^{20}$ asteroid-mass black holes, compressed through the logarithmic inertia of the scrambling time into a single dimensionless cosmological constant. This closes the parameter loop: from the Planck-scale entropy of quantum gravity to the 2 Gyr period, every parameter is derived or constrained.
+This is a central result of the Oscillating Brane Theory. The value $\Gamma_{rad} \approx 20$ --- originally postulated in the EFT to reproduce the observed 2 Gyr period and the NANOGrav amplitude, and later shown to generate the contraction $\kappa = e^{-4.74} \approx 10^{-2}$ of the limit cycle --- is **not a free parameter**. It is the macroscopic translation of the Bekenstein-Hawking entropy of the primordial micro-PBH network: $\Gamma_{rad} = \ln(S_{BH})/(2\pi)$. The number 20 encodes the quantum information capacity of $10^{20}$ asteroid-mass black holes, compressed through the logarithmic inertia of the scrambling time into a single dimensionless cosmological constant. This closes the parameter loop: from the Planck-scale entropy of quantum gravity to the 2 Gyr period, every parameter is derived or constrained.
 
 **4. Quantum chaos and the Maldacena-Shenker-Stanford bound.** The scrambling dynamics of the ER=EPR network during the slip phase must satisfy a second, independent quantum information constraint. The rate at which perturbations to the entanglement pattern spread through the wormhole network is quantified by the **quantum Lyapunov exponent** $\lambda_L$, extracted from out-of-time-order correlators (OTOCs):
 
@@ -1817,7 +1809,7 @@ A smooth Nambu-Goto membrane oscillating in AdS$_5$ is **radiatively inert**. Cl
 - **Top-down (holographic, quantum)**: $\Gamma_{rad} = \ln(S_{BH})/(2\pi) \approx 20.7$
 - **Bottom-up (5D GR, classical)**: $\Gamma_{rad}^{5D\text{-}GR} = 0$
 
-The cosmological attractor (2.0 Gyr period, $\kappa = e^{-8.60}$ hyper-contraction) **requires** $\Gamma_{rad} \approx 20$. Without it, the brane oscillates undamped, amplitudes grow without bound, and the universe self-destructs. The holographic value is not merely preferred --- it is **cosmologically mandatory**.
+The cosmological attractor (2.0 Gyr period, $\kappa = e^{-4.74}$ contraction) **requires** $\Gamma_{rad} \approx 20$. Without it, the brane oscillates undamped, amplitudes grow without bound, and the universe self-destructs. The holographic value is not merely preferred --- it is **cosmologically mandatory**.
 
 This non-convergence is not a failure of the model. It is the **definitive proof** that the brane cannot be a classical continuum. The Nambu-Goto effective field theory --- a smooth elastic membrane described by a continuous action --- is an infrared (IR) approximation that collapses catastrophically when confronted with the ultraviolet (UV) physics of energy dissipation. The KK mass gap ($m_1 \approx 3.78$ eV) creates an impenetrable frequency barrier that no classical, macroscopic brane motion can breach. The continuum description is thermodynamically dead: it predicts zero dissipation, zero damping, and therefore an unstable universe.
 
@@ -2856,15 +2848,6 @@ All other quantities are derived consequences of these parameters:
 3. **Energy cascade**: Non-linear interactions transfer energy to the fundamental mode
 4. **ER=EPR topological protection** (optional): If ER=EPR holds, the expander graph Laplacian provides additional exponential suppression of decoherence ($e^{-10^{74}}$ for dipole modes)
 
-## Key Predictions
-
-1. **Oscillating dark energy** detectable by Euclid and DESI
-2. **ISW resonance** at CMB multipole $\ell$ = 10-20 (the "smoking gun", $\Delta\chi$$^{2}$ = 32.9)
-3. **Time-dependent growth suppression** via oscillating G_eff(t) reconciling DES and KiDS
-4. **SKA 21cm reionization modulation**: spatial modulation of 21cm power spectrum during the Epoch of Reionization (definitive future test)
-5. **Hubble anisotropy** mapping cosmic tension variations (Cosmicflows-4)
-6. **Sub-micron gravity** deviations at L = $0.2\,\mu$m (testable by qBOUNCE quantum neutrons and levitated nanoscale optomechanics)
-
 ## Micro-PBH Anchors: Extended Mass Function
 
 ### Log-Normal Distribution
@@ -2922,17 +2905,14 @@ This is colder than a candle flame. The corresponding evaporation timescale is $
 
 ### Epistemological Defense: Falsifiability of the Discrete Anchor Network
 
-The convergence of three local immunities --- diffraction-blind in optical ($w_F \ll 1$), accretion-dead in X-ray (GL instability destroys $1/r$ potential), and Hawking-cold in gamma-ray ($T_H \approx 900$ K) --- poses a legitimate Popperian challenge: how does one falsify a network of locally cloaked topological anchors? The answer lies in replacing the search for individual geometric resolution with the search for **collective, discrete, and diffractive macroscopic signatures**. Individual invisibility is common in established physics --- confined quarks have never been observed in isolation, yet their existence is irrefutable via jets, hadron spectroscopy, and deep inelastic scattering. The discrete particulate nature of the PBH network fundamentally distinguishes OBT V8.2 from any continuous modified gravity fluid ($f(R)$, scalar-tensor, or smooth Weyl continuum), and this distinction generates four strict, falsifiable macroscopic predictions.
+The convergence of three local immunities --- diffraction-blind in optical ($w_F \ll 1$), accretion-dead in X-ray (GL instability), and Hawking-cold in gamma-ray ($T_H \approx 900$ K) --- poses a legitimate Popperian challenge. The answer: the discrete PBH network is strictly falsifiable through four independent macroscopic signatures that no smooth modified gravity continuum can produce:
 
-**Pillar A: Ballistic Decoupling --- The Kinematic Proof of Discrete Anchors (Bullet Cluster).** In a pure modified gravity theory (MOND, $f(R)$, TeVeS) or a continuous fluid without discrete collisionless masses, the gravitational potential remains strictly coupled to the dominant baryonic mass distribution. During a cluster collision such as 1E 0657-56 (the Bullet Cluster), the intracluster gas --- which constitutes $\sim 85\%$ of the baryonic mass --- halts catastrophically due to ram pressure at the shock front. If the "dark" gravitational component were a smooth modification of gravity sourced by baryons, its potential would decelerate with the gas. The observed $\Delta r \approx 150$ kpc spatial offset between the X-ray gas peak and the weak lensing convergence peak (Clowe et al. 2006) proves that the gravitational source traversed the shock front **ballistically and collisionlessly**. This is the kinematic signature of discrete, massive, non-interacting objects --- exactly what the sub-critical PBH capillary network provides. The Weyl fluid $\mathcal{E}_{00}$, topologically nailed to these discrete anchors ($f_{PBH} = 0.01$), inherits their collisionless kinematics and separates from the baryonic gas. A smooth continuum cannot produce this offset. **Falsification criterion:** if future high-resolution lensing surveys (Euclid, JWST) demonstrate that the dark matter convergence peak in merging clusters is always co-spatial with the X-ray gas (zero offset), the discrete anchor architecture is ruled out.
+- **(A) Ballistic Decoupling** --- collisionless kinematic offset ($\sim 150$ kpc) in merging clusters (Bullet Cluster)
+- **(B) GL Microlensing Cliff** --- abrupt topological cutoff at $M_{crit}$ in microlensing event rates (Roman/HSC)
+- **(C) Femtolensing Fringes** --- wave-optics interference in GRB spectra at 0.1--1 MeV (Fermi/SVOM/AMEGO-X)
+- **(D) Dynamical Heating** --- Poisson granularity heats ultra-faint dwarf galaxies and disrupts wide binaries (Gaia DR4/JWST)
 
-**Pillar B: The Gregory-Laflamme Microlensing Cliff.** The extended log-normal mass function spans *across* the critical mass $M_{crit} \approx 6.8 \times 10^{-11} M_\odot$. The super-critical tail ($M > M_{crit}$) consists of 4D brane-anchored PBHs with $w_F > 2$, fully visible to geometric optics microlensing. The sub-critical bulk ($M < M_{crit}$) consists of 5D capillaries with $w_F \ll 1$, cloaked by wave-optics diffraction. This 5D$\to$4D topological transition at $M_{crit}$ predicts a unique, catastrophic feature in the microlensing event rate as a function of lens mass: an **abrupt cliff** --- not a gradual decline --- at exactly $M_{crit}$. Above the cliff, classical geometric lensing events occur at the rate predicted by the EMF. Below the cliff, the event rate drops to zero (not exponentially, but as a sharp topological cutoff set by the GL instability). The preliminary data from Sugiyama, Takada et al. (2026) --- 4 candidates above $M_{crit}$, zero below --- is consistent with this cliff. **Strict falsifiable prediction for Roman Space Telescope and Subaru-HSC Prime Focus Spectrograph:** high-cadence, high-statistics microlensing surveys toward M31 and the Galactic Bulge must observe a population of classical lensing events exhibiting an abrupt cutoff at $M \approx 10^{-10} M_\odot$, with zero geometric-optics events below $\sim 10^{-11} M_\odot$. **Falsification criterion:** if surveys detect a smooth, continuous distribution of classical microlensing events extending below $10^{-11} M_\odot$ without a cliff, the 5D GL transition does not exist and the OBT PBH architecture is ruled out.
-
-**Pillar C: Femtolensing Interference Fringes --- Wave-Optics Smoking Gun.** While $w_F \ll 1$ destroys geometric magnification for optical photons, the same condition *activates* wave-optics diffraction. The sub-critical PBH acts as a gravitational diffractive screen --- a cosmic Young's double slit. For sufficiently short-wavelength radiation, the Fresnel parameter approaches unity and generates detectable interference fringes. Specifically, for hard gamma-ray photons ($E_\gamma \sim 0.1$--$1$ MeV) from cosmologically distant Gamma-Ray Bursts (GRBs), the wavelength $\lambda_\gamma = hc/E_\gamma \sim 1$--$10$ pm approaches the Schwarzschild radius $r_s \sim 3$ nm of the capillaries, yielding $w_F \sim 1$--$10$. In this regime, the gravitational lensing amplification factor $\vert F(w)\vert^2$ oscillates as a function of photon energy with a characteristic fringe spacing $\Delta E/E \sim 1/w_F$ (Ulmer & Goodman 1995; Matsunaga & Yamamoto 2006). **Strict falsifiable prediction:** the energy spectra of cosmologically distant GRBs ($z > 1$), observed by current and future gamma-ray telescopes (Fermi-GBM, SVOM, AMEGO-X), must exhibit femtolensing oscillations whose fringe spacing encodes the capillary mass $M \sim 10^{-12} M_\odot$ and whose event rate is consistent with $f_{PBH} = 0.01$. **Falsification criterion:** if a statistically complete sample of high-$z$ GRBs shows zero spectral oscillations in the 0.1--1 MeV band (after controlling for intrinsic spectral features), the sub-critical PBH population at the predicted abundance is excluded.
-
-**Pillar D: Dynamical Heating via Topological Granularity.** A smooth continuous modified gravity fluid generates a perfectly smooth gravitational potential. But because the Weyl fluid in OBT V8.2 is topologically anchored to $\sim 10^{20}$ discrete point masses of $M \sim 10^{20}$ kg each ($f_{PBH} = 0.01$), the dark halo is fundamentally **granular**. This granularity generates two-body gravitational scattering (Poisson shot noise) that injects kinetic energy into stellar systems over cosmological timescales --- a process known as dynamical heating (Brandt 2016; Green 2016). The heating rate scales as $\Gamma_{heat} \propto M_{PBH} \times f_{PBH} \times \rho_{DM}$, and for $M \sim 10^{20}$ kg, the characteristic relaxation time in ultra-faint dwarf galaxies (UFDs) is $t_{relax} \sim 10^{10}$--$10^{11}$ yr --- comparable to the Hubble time. This means the inner stellar kinematics of ancient, cold, dispersion-supported systems (UFDs, wide stellar binaries, and globular cluster tidal streams) should exhibit measurable excess velocity dispersion beyond what a smooth potential predicts. **Strict falsifiable prediction:** the half-light radii and velocity dispersions of ultra-faint dwarf galaxies (Segue 1, Tucana II, Reticulum II) measured by Gaia DR4 and JWST-NIRSpec must be consistent with dynamical heating from a granular halo of $M \sim 10^{20}$ kg point masses at $f_{PBH} = 0.01$. Similarly, the separation distribution of wide stellar binaries ($a > 10^3$ AU) in the Gaia catalog must show a characteristic break due to stochastic encounters. **Falsification criterion:** if high-precision stellar kinematics prove that the inner potential of UFDs is perfectly smooth to the precision limit (zero excess dispersion, zero wide-binary disruption beyond tidal estimates), the discrete particulate nature of the dark halo is falsified, and with it the PBH anchor architecture.
-
-**Summary: the four pillars constitute a Popperian shield.** No single observation may resolve an individual sub-critical capillary, but the discrete PBH network is strictly falsifiable through: (A) collisionless kinematic offset in cluster mergers, (B) a topological cliff in the microlensing mass function, (C) femtolensing interference fringes in GRB spectra, and (D) dynamical heating of cold stellar systems. Each pillar is independent, each targets a different wavelength regime (optical lensing, X-ray, gamma-ray, stellar kinematics), and each distinguishes the discrete OBT architecture from any smooth modified gravity continuum. The invisible becomes testable --- not by resolving the individual, but by detecting the statistical, diffractive, and kinematic fingerprint of the collective.
+Each pillar operates in a different wavelength regime and is independent. Detailed derivations and falsification criteria are presented in the [Observational Predictions](/predictions/) chapter.
 
 ## Definitive Future Test
 
@@ -4384,9 +4364,9 @@ For the complete observational tests timeline, see the [Predictions](/prediction
    - Gravitational wave spectrum
    - Growth factor suppression
 
-### Critical Improvements from O3 Analysis
+### Critical Methodological Improvements
 
-Based on the comprehensive O3 pro analysis, several critical improvements should be implemented:
+The following improvements address key dimensional, physical, and statistical consistency requirements:
 
 #### Dimensional Consistency in Numerical Codes
 

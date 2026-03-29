@@ -116,7 +116,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **M_crit formula involving τ₀** (M_crit = Lc²/(2G), purely geometric, τ₀ is NOT in this formula)
 - **"instantaneous synchronization"** (must say "non-local quantum phase coherence" — no superluminal signaling)
 - **"τ₀ cools/relaxes from 10⁵⁰"** (τ₀ is geometrically FIXED by KS flux integers, what relaxes is oscillation AMPLITUDE)
-- **MLE = -0.016 as transverse contraction** (this captures the longitudinal exponent; true transverse κ = e^{-8.60} from Liouville-Filippov)
+- **MLE = -0.016 as transverse contraction** (this captures the longitudinal exponent; true transverse κ = e^{-4.74} from Liouville-Filippov)
 - **Scalar Ψ₄ in 5D** (must use CMPP 3×3 STF matrix Ψ_ij^(5) — SO(3) little group has 5 polarizations)
 - **Global constant κ_Z4** in AMR (must be AMR-level-indexed scalar field κ_Z4^(ℓ) = 1.4/Δt_ℓ)
 - **Explicit Berger-Oliger for 10³² ratio** (CFL wall: 28 million billion years per step on Frontier → must use IMEX)
@@ -157,8 +157,8 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **GW170817 compatibility**: tensor GW modes (KK zero mode) propagate at c on brane, orthogonal to scalar radion oscillation
 - **Hawking immunity**: T_H ~ 900 K at M_crit, t_evap ~ 10^37 yr, immune to INTEGRAL/Fermi-LAT
 - **QCD connection**: τ₀^{1/3} ≈ 257 MeV — phenomenological Ansatz bottom-up (period constrains τ₀ independently of QCD), derived ab initio top-down via KS (K=21, M=10 → 257 MeV). Both approaches converge.
-- **Limit cycle uniqueness**: Liouville-Filippov hyper-contraction κ = e^{-8.60} ≈ 1.84×10⁻⁴ (Banach fixed-point, analytical — NOT the numerical MLE of -0.016)
-- **Fenichel-Neishtadt persistence**: spectral gap |λ_trans|/ε = 4.30/0.14 ≈ 30 → NHIC survives non-autonomous drift
+- **Limit cycle uniqueness**: Liouville-Filippov contraction κ = e^{-4.74} ≈ 8.7×10⁻³ (Banach fixed-point, ×115/cycle — NOT the numerical MLE of -0.016). Note: C_slip = 3H + γ_slip (NOT +Γ_rad+γ_slip, which would double-count the PBH scrambling)
+- **Fenichel-Neishtadt persistence**: spectral gap |λ_trans|/ε = 2.37/0.14 ≈ 17 → NHIC survives non-autonomous drift
 - **Airy-Yukawa ab initio**: ⟨1|δV|6⟩ = -2V₀(L/z₀)³, perturbative series to O(α⁶) with 5 decimal convergence (0.97460)
 - **Yukawa-Robin mapping**: λ_n(L) = (mg/2V₀)(z₀/L)³[1+4ε_n(L/z₀)²], spectroscopic splitting 3.1% (smoking gun)
 - **KS UV completion**: K=21, M=10, g_s=0.1 → τ₀^{1/3} = 257 MeV with zero fine-tuning
@@ -242,8 +242,8 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | ξ (non-minimal coupling) | ~0.15 |
 | Fresnel parameter (PBH) | w_F = 2πr_s/λ ≈ 0.03 ≪ 1 (wave-optics immune) |
 | SPARC rotation curves | RMS = 29.3 km/s (0 params) vs NFW 35.0 km/s (270 params). Exact RAR: g_obs=√((g²_bar+g_bar√(g²_bar+4a₀²))/2). Sinc(0.11π)≈0.98 (1% galactic correction) |
-| Banach contraction κ | e^{-8.60} ≈ 1.84×10⁻⁴ (hyper-contraction ×5400/cycle) |
-| Spectral gap (Fenichel) | \|λ_trans\|/ε = 4.30/0.14 ≈ 30 (NHIC persistence) |
+| Banach contraction κ | e^{-4.74} ≈ 8.7×10⁻³ (contraction ×115/cycle) |
+| Spectral gap (Fenichel) | \|λ_trans\|/ε = 2.37/0.14 ≈ 17 (NHIC persistence) |
 | Branching ratio B | ≈ 9.7×10⁻¹¹ (N_max ≈ 8.3×10⁷ KK modes) |
 | First KK graviton mass | m₁ = j_{1,1}ℏc/L ≈ 3.78 eV flat-space (warped: 1.87 eV) |
 | KS flux integers | K=21, M=10, g_s=0.1 → τ₀^{1/3} = 257 MeV |
@@ -333,8 +333,8 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | 5D Geometric Bypass | Levitated nanosphere + Yukawa Hamiltonian | 0.4% enhancement at r=L, commuting operators bypass Heisenberg |
 | Airy-Yukawa matrix element | Perturbative series O(α⁶) + contour integral | ⟨1\|δV\|6⟩ = -2V₀(L/z₀)³, 5 decimal convergence (0.97460) |
 | Yukawa-Robin mapping | Closed-form λ_n(L) from von Neumann isomorphism | λ_n = (mg/2V₀)(z₀/L)³[1+4ε_n(L/z₀)²], splitting 3.1% |
-| Limit cycle uniqueness | Liouville-Filippov trace formula (analytical) | κ = e^{-8.60} ≈ 1.84×10⁻⁴ (hyper-contraction ×5400) |
-| Non-autonomous persistence | Fenichel-Neishtadt spectral gap | \|λ_trans\|/ε ≈ 30, NHIC survives Hubble drift |
+| Limit cycle uniqueness | Liouville-Filippov trace formula (analytical) | κ = e^{-4.74} ≈ 8.7×10⁻³ (contraction ×115, double-count corrected) |
+| Non-autonomous persistence | Fenichel-Neishtadt spectral gap | \|λ_trans\|/ε ≈ 17, NHIC survives Hubble drift |
 | KK branching ratio | Phase space summation + Filippov shock | B ≈ 9.7×10⁻¹¹ (83M KK modes = AdS₅ heat sink) |
 | KK mass spectrum | Transcendental Bessel quantization (3 sectors) | Graviton: m_n/k = {1.892, 3.692, 5.510...}, gap ≈ 1.87 eV |
 | KS naturalness | Flux integers K=21, M=10, g_s=0.1 | τ₀^{1/3} = M_Pl·e^{-2πK/(3g_sM)} = 257 MeV, zero fine-tuning |
