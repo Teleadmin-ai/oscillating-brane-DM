@@ -71,14 +71,14 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Period stability (anti-chirp)**: ξRφ non-minimal coupling acts as **geometric Phase-Locked Loop**. Three competing decays (Hubble friction ↓, Cosmic Web forcing ↓, curvature feedback ↓) cancel on attractor manifold. |dT/T| < 10⁻³ per Hubble time. Van der Pol oscillator analogy.
 - **PBH wave-optics immunity**: For M ~ 10⁻¹² M☉, r_s ≈ 3 nm ≪ λ_opt ≈ 600 nm. Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1. Subaru-HSC is physically blind (deep wave-optics regime). Micro-PBH capillaries rehabilitated
 - **Dark energy**: w(z) = -1 + Σ A_n sin(2πn t_lb/T + φ_n) — exact Fourier decomposition of stick-slip sawtooth (not just fundamental). A₂/A₁=47.6%, A₃/A₁=29.3%. DESI's "phantom crossing" is aliasing of geometric shock at z≈0.93 (phase 82.8%, just before QCD cliff). ΔBIC ≈ -6.4 vs CPL (DR2, Strong — k=1 vs k=2, Occam rewards OBT), forecast -22 (Year 5, Decisive).
-- **S₈ suppression**: Ab initio ODE integration: S₈ = 0.836 × 0.9550 = **0.798** (4.50% suppression). AdS₅ viscoelastic retardation δ_bulk = 1.36 rad (BKM Averaging Theorem, zero free parameters). eROSITA γ=1.19 via non-linear Press-Schechter resonance (not linear growth).
+- **S₈ suppression**: ODE integration with BKM-derived phase: S₈ = 0.836 × 0.9550 = **0.798** (4.50% suppression). AdS₅ viscoelastic retardation δ_bulk = 1.36 rad (BKM theorem, analytically derived from L and z_eff, zero additional free params beyond global EFT set). eROSITA γ=1.19 via non-linear Press-Schechter (T2, semi-analytic Tinker). Cross-observational rigidity: same f_osc/D that fit w(z) → zero additional DoF for growth sector.
 - **ISW resonance**: CMB ℓ = 10-20, Δχ² = 32.9 (6σ)
 - **Anchors**: Micro-PBHs with **extended log-normal mass function** (10⁻¹⁴ to 10⁻¹⁰ M☉). Dual role: topological capillaries AND local heat sinks (exponential DOS, MSS scrambling). ER=EPR provides optional geometric interpretation of their entanglement
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
 
 ### Epistemological Framework:
 - **31 phenomena addressed** (tiered: 3 Tier 1 exact resolutions + 15 Tier 2 analytical frameworks + 13 Tier 3 exploratory perspectives):
-  - 3 core: DESI phantom crossing, S₈ tension (time-dependent growth suppression), Planck ISW (Δχ²=32.9)
+  - 3 core T1: DESI phantom crossing, S₈ tension (time-dependent growth suppression), emergent MOND (μ(x)+a₀ derivation). ISW (Δχ²=32.9) = T2 (semi-analytic, CLASS/CAMB pending)
   - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND (ab initio: a₀=cH₀/2π from Gibbons-Hawking thermodynamics, μ(x)=x/√(1+x²) from 5D geometric tilt, cluster failure via 2 Gyr resonance; SPARC 135 galaxies: RMS 29.3 km/s, 0 free params vs NFW 35.0 km/s, 270 params), JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
   - 3 astrophysical signatures: Hubble's 43 anomalous objects (ER=EPR topological scarring), dark flow unification (v_bulk=300 km/s), Chladni mega-structures
@@ -90,7 +90,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Complementary tests**: Vera Rubin/LSST, qBOUNCE/optomechanics, Euclid
 - **Theory is purely tensorial and geometric** — no dependence on astrophysical controversies
 - **Cross-AI audit status (March 2026)**: Math validated 100% by Gemini DeepThink. Phase 1: independent recalculation (τ₀→257 MeV, a₀=cH₀/2π, Fresnel w_F=0.031, Δβ=0.25°, Schwinger 10⁻³¹). Phase 2 (Series 1): 9 DeepThink prompts (Fourier spectrum, exact S₈ ODE, MOND ab initio, Seeley-DeWitt numerics, Dirichlet anomaly, 3D Floquet, LVS+multi-throat, dynamical Schwinger, finite-N corrections). Phase 3 (Series 2): 9 DeepThink prompts (Kinematic Blockade, NANOGrav spectral flattening, AdS₅ viscoelastic retardation, Press-Schechter γ(M), MOND sinc theorem, ΔBIC forecast, Fisher analytical 3×3, KdF 4-branch tensor, Kesten-McKay percolation immunity). Phase 4 (Series 3): 9 DeepThink prompts (exact a₅ Seeley-DeWitt, exact spectral zeta, continuous γ(M) exclusion theorem, 3-component Bullet Cluster, ab initio SPARC, multi-harmonic sinc, non-perturbative steepest descent, graph Laplacian determinant, exact RT finite-N). All peer-review attack vectors addressed. 60 derivations total.
-- **Audit-driven corrections (March 2026)**: S₈ spatial→temporal (then ab initio 4.50% via BKM theorem), neutron lifetime removed, MOND formula derived ab initio (cH₀/2π from Gibbons-Hawking), 6 Unicode-in-math formulas fixed, τ₀ posterior 19.51→19.85. **Late March 2026 epistemological hardening**: m₁ 19.2→3.78 eV (ℏc conversion), t_evap 10⁴⁷→10³⁷ yr (M³ scaling), QCD "Proof"→"Phenomenological Coincidence" (Ansatz status), φ_eff "exact invariant"→AdS₅ viscoelastic retardation δ_bulk=1.36 rad (BKM Averaging Theorem, zero free params), T 2.0±0.3→2.000±0.003 (chronodynamic eigenvalue), model → 4 continuous EFT params + 1 integer (transparent parametric matrix), tier system (T1/T2/T3) for anomaly classification, Bayesian [2.8,4.13]→5.8 (Decisive, prior-independent), MOND scope note (Milgrom priority), Schwinger 10¹²→10⁹ (m₁ cascade), superlatifs moderated, 39th decimal→10⁻³⁰ sanctuary (QFT restraint)
+- **Audit-driven corrections (March 2026)**: S₈ spatial→temporal (then ab initio 4.50% via BKM theorem), neutron lifetime removed, MOND formula derived ab initio (cH₀/2π from Gibbons-Hawking), 6 Unicode-in-math formulas fixed, τ₀ posterior 19.51→19.85. **Late March 2026 epistemological hardening**: m₁ 19.2→3.78 eV (ℏc conversion), t_evap 10⁴⁷→10³⁷ yr (M³ scaling), QCD "Proof"→"Phenomenological Coincidence" (Ansatz status), φ_eff "exact invariant"→AdS₅ viscoelastic retardation δ_bulk=1.36 rad (BKM theorem, zero additional free params), T 2.0±0.3→2.000±0.003 (observationally anchored eigenvalue), model → 4 continuous EFT params + 1 integer (transparent parametric matrix), tier system (T1/T2/T3) for anomaly classification, Bayesian [2.8,4.13]→5.8 (Decisive, prior-independent), MOND scope note (Milgrom priority), Schwinger 10¹²→10⁹ (m₁ cascade), superlatifs moderated, 39th decimal→10⁻³⁰ sanctuary (QFT restraint)
 
 ### BANNED Concepts (NEVER use):
 - "Point Unique" 0D, Ringermacher, GW doublet/NANOGrav, Bulk-Infinity
@@ -193,19 +193,19 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **n_σ metrics**: 1.25σ (FLAG MS̄) and 0.11σ (chiral condensate)
 - **Fourier stick-slip spectrum**: A_n/A₁ = {1, 0.476, 0.293, 0.197, 0.138} — locked by bulk topology (D=0.9, τ=1/30), zero extra free params
 - **DESI aliasing**: LRG3 bin z=0.93 at phase 82.8% of cycle — "phantom crossing" is geometric shock aliasing on CPL linear template. ΔBIC ≈ -6.4 (DR2, Strong — k=1 vs CPL k=2, Occam REWARDS OBT), forecast ΔBIC ≈ -22 (Year 5, Decisive). Chronologically anchored stick-slip: k=1 effective param (A_w only, T and phase locked)
-- **S₈ ab initio**: 4.50% suppression, S₈=0.798, AdS₅ viscoelastic retardation δ_bulk=1.36 rad (BKM Averaging Theorem, zero free parameters)
+- **S₈ cross-observational rigidity**: 4.50% suppression, S₈=0.798, δ_bulk=1.36 rad (BKM theorem). Zero additional free params beyond global EFT set (f_osc/D locked by expansion)
 - **eROSITA non-linear**: γ_eff≈0.80 (linear), amplified to 1.19 by Press-Schechter exponential sensitivity to δ_c(t). Exact: A(M)≈ν²/ln(Ω_m⁻¹), mass-dependent γ(M) spectrum: groups 0.88, clusters 1.19, monsters 1.47
 - **eROSITA falsifiable prediction**: γ(M) is monotonically increasing with mass (strict proof via Tinker sensitivity kernel A(ν) = cν² + a/(1+(ν/b)^a)). GR root γ=0.55 unreachable. 4-bin grid: groups 0.88, light clusters 0.99, massive 1.19, monsters 1.47. **Exclusion theorem**: f(R)/scalar-tensor predict universal γ — OBT predicts ascending spectrum. Testable by eROSITA DR2 mass-binned analysis
 - **MOND ab initio**: a₀ = cH₀/2π from Gibbons-Hawking + Unruh (2π = Euclidean time circle S¹)
 - **MOND μ(x)**: x/√(1+x²) from 5D Gauss-Codazzi orthogonality theorem (g∈tangent bundle ⊥ a₀∈normal bundle, exact geometric identity) → Pythagorean quadrature g_5D = √(g²+a₀²) → cosine projection
-- **Cluster resonance (sinc theorem)**: ⟨a₀⟩ = a₀^max × sinc(πt_dyn/T). Dwarfs: sinc≈0.996 (99.6% MOND). Clusters: sinc(π)=0 exactly (topologically protected against waveform asymmetry). **Bullet Cluster 3-component resolution**: sinc(0.053π)≈0.995 (MOND survives at 99.5% → 4700 km/s velocity), Weyl fluid decouples ballistically → Δr≈150 kpc offset. Cored Σ_Weyl vs cuspy NFW (falsifiable by JWST/Euclid). Three-component gravity: g_N + MOND×sinc + Weyl
+- **Cluster resonance (sinc theorem)**: ⟨a₀⟩ = a₀^max × sinc(πt_dyn/T). Dwarfs: sinc≈0.996 (99.6% MOND). Clusters: resonant suppression envelope — sinc(π)=0 at exact t_dyn=T, but physical dispersion t_dyn∈[1.5,2.5] Gyr gives 70-100% attenuation (residual 0-30% insufficient for virial → Weyl fluid mandatory). **Bullet Cluster 3-component resolution**: sinc(0.053π)≈0.995 (MOND survives at 99.5% → 4700 km/s velocity), Weyl fluid decouples ballistically → Δr≈150 kpc offset. Three-component gravity: g_N + MOND×sinc + Weyl
 - **Dynamical Schwinger**: slip shock at v_max=0.05c collapses static exponent 10³¹ → 10⁹ (22 orders), but exp(-7.2×10⁹) ≡ 0. Full KK tower N_total ≡ 0. Dissipation 100% via holographic viscosity (Γ_rad), 0% quantum pair production.
 - **Filippov invulnerability**: shock fierce enough for DE harmonics yet 9 orders below Schwinger threshold — thermodynamic masterpiece
 - **Kinematic Blockade theorem**: Classical 5D GR gives Γ_rad^{5D-GR} ≡ 0 (m₁T_slip ~ 3.6×10³¹, exp(-3.6×10³¹) = 0). Continuous Nambu-Goto membrane CANNOT dissipate. Combined with Fermi's Golden Rule + exponential DOS theorem → PBHs thermodynamically MANDATORY (not optional, not ER=EPR-dependent)
 - **Local informational viscosity**: Γ_rad is NOT classical Bremsstrahlung but local quantum informational viscosity — each PBH absorbs brane kinetic energy at its horizon, thermalizes via MSS-saturated fast scrambling, emits via 5D Hawking into KK modes. Entirely local and causal, zero wormhole transmission
-- **Spectral flattening (NANOGrav)**: tensor TT projection sources from φ̈(t) not φ(t) → Filippov shock = Dirac δ impulses → flat (white noise) acceleration spectrum. f₀ = 1.58×10⁻¹⁷ Hz (16 attoHz), NANOGrav at 16 nHz listens to the n ≈ 10⁹ harmonic. h_c(16 nHz) ~ 10⁻¹⁵ (matches NANOGrav 15yr, zero free params)
+- **Spectral flattening (NANOGrav)**: tensor TT projection sources from φ̈(t) not φ(t) → Filippov shock = Dirac δ impulses → flat (white noise) acceleration spectrum. f₀ = 1.58×10⁻¹⁷ Hz (16 attoHz), NANOGrav at 16 nHz listens to the n ≈ 10⁹ harmonic. h_c(16 nHz) ~ 10⁻¹⁵ (matches NANOGrav 15yr, zero additional free params beyond global EFT set)
 - **f₀ correction**: fundamental brane frequency is 16 attoHertz (NOT 16 nanoHertz). NANOGrav band = billionth overtone
-- **AdS₅ viscoelastic retardation**: δ_bulk = 1.36 rad (derived ab initio from BKM Averaging Theorem: δ_BKM = D×arctan(ω/Γ_stick) + (1-D)×arctan(ω/Γ_slip) = 0.9×1.49 + 0.1×0.15 = 1.36 rad). NOT a free parameter, NOT calibrated — purely derived from known constants (ω, Γ_stick, Γ_slip, D). G_eff(t) = G_N[1 + f_osc × W(t/T + δ_bulk/(2π))], PLUS sign (delay handles physics, not sign flip)
+- **AdS₅ viscoelastic retardation**: δ_bulk = 1.36 rad (BKM Averaging Theorem: δ_BKM = D×arctan(ω/Γ_stick) + (1-D)×arctan(ω/Γ_slip)). Analytically derived from base EFT params (L→Γ_slip via S_BH, z_eff=0.3→Γ_stick via H(z)). NOT an additional free parameter. G_eff(t) = G_N[1 + f_osc × W(t/T + δ_bulk/(2π))], PLUS sign
 - **Kesten-McKay spectrum**: DOS of ER=EPR graph → ρ(λ) = d/(2π(d²-λ²))√(4(d-1)-λ²). Continuum convergence O(1/√N) ~ 10⁻¹⁰. Discrete holographic spacetime = smooth GR manifold to 10 decimal places
 - **Percolation immunity**: site percolation threshold p_c ≈ 1/(d-1) ≈ 2.2% for d=46. Universe survives 98% PBH destruction. Safety hierarchy: N_perc≈46 ≪ N_min≈4500 ≪ N_actual~10²⁰ (19 orders margin). ER=EPR network = most robust quantum error-correcting code physically conceivable
 - **KS landscape statistics**: 2,437 valid flux pairs (1≤M≤30, M<K≤50, g_s∈[0.05,0.2]), f_QCD = 0.49% per throat, P_CY = 1-(1-f_QCD)^50 ≈ 21.8% per manifold. QCD-scale throat is generic (1 in 5 CY manifolds), NOT fine-tuned
@@ -217,9 +217,9 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Exponential Density of States Theorem**: Fermi's Golden Rule + Kinematic Blockade (|M|²~exp(-3.6×10³¹)) proves polynomial DOS QFT cannot dissipate brane. Only exponential DOS (black holes, S_BH~10⁵⁶) opens channel. PBHs are THERMODYNAMICALLY MANDATORY, zero wormhole dependence
 - **ℓ=0 inflationary fossil**: Global phase coherence from inflation homogenizing the radion field (like CMB isotropy). NOT from ER=EPR wormhole synchronization. Standard cosmology, not conjecture
 - **ER=EPR = optional UV-completion**: Provides elegant geometric description of PBH entanglement (squeezed vacuum → expander graph). Adds topological decoherence protection. If ER=EPR is false, ODE + Γ_rad + ℓ=0 all survive intact
-- **Chronological anchoring (Boundary Value Theorem)**: Phase 0.0 at QCD ignition (conformal symmetry breaking, t≈0), Phase 0.9 today (DESI w_max at z=0). Universe completed N+0.9 cycles, ξRφ PLL selects N=6 → T=13.80/6.9=2.000±0.003 Gyr. Adjacent modes N=5→T=2.34, N=7→T=1.75 rejected by attractor. T is derived eigenvalue (0 DoF)
+- **Chronological anchoring (Observationally Anchored)**: Phase 0.0 at QCD ignition (physics-derived), Phase 0.9 today (empirical from DESI w_max at z=0). Universe completed N+0.9 cycles, ξRφ PLL selects N=6 → T=13.80/6.9=2.000±0.003 Gyr. Falsifiable: if DESI Y5 moves w_max to z=0.05, T generalizes to (13.80-t_max)/(N+D)≈1.90 Gyr
 - **Diagnostic table (March 2026)**: Systematic test of ALL sign/coupling combinations in growth ODE with exact stick-slip waveform. Results: Israel MINUS→+12.1% enhancement, PLUS→-11.0% suppression, w(z) in H(a)→negligible (0.002%). Proved: phase delay is continuous (not algebraic sign), leading to discovery of AdS₅ viscoelastic retardation. Credits: Claude Opus (diagnostic), Gemini DeepThink (arctan deduction)
-- **δ_bulk (Bulk Transfer Function)**: viscoelastic retardation of AdS₅ spacetime. BKM Averaging Theorem: δ_BKM = D×arctan(ω/Γ_stick)+(1-D)×arctan(ω/Γ_slip) = 0.9×arctan(π/0.24)+0.1×arctan(π/20.7) = 1.36 rad (ab initio, zero free params). Injected into growth ODE → S₈=0.798 (4.50% suppression). SAME G_eff(t) predicts eROSITA γ=1.19 (zero extra tuning)
+- **δ_bulk (Bulk Transfer Function)**: viscoelastic retardation of AdS₅ spacetime. BKM theorem: δ_BKM = 0.9×arctan(π/0.243)+0.1×arctan(π/20.7) = 1.36 rad. Analytically locked to L (via S_BH→Γ_slip) and z_eff=0.3 (via H(z)→Γ_stick). Zero additional free params. Cross-observational rigidity: same f_osc/D → S₈=0.798 AND eROSITA γ=1.19
 - **Exascale NR = verification not necessity**: 5D numerical relativity would provide independent validation but is NOT required for the theory's mathematical consistency (all 60 derivations are analytical/semi-analytical). Current feasibility limited by 10³² scale ratio → IMEX+HMM mandatory
 
 ### Key References:
@@ -236,7 +236,7 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | φ_crit | ~0.1 L (QCD threshold) |
 | f_osc | 0.10 |
 | A_w | 0.003 |
-| S₈ suppression | 4.50% ab initio (BKM theorem), S₈=0.798, δ_bulk=1.36 rad (zero free params) |
+| S₈ suppression | 4.50% (cross-observational rigidity), S₈=0.798, δ_bulk=1.36 rad (BKM, zero additional free params) |
 | ISW Δχ² | 32.9 (6σ) |
 | Micro-PBH EMF | Log-normal, 10⁻¹⁴ to 10⁻¹⁰ M☉ |
 | f_PBH | 0.01 (1%) — NOT 10% |
@@ -249,7 +249,7 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | Branching ratio B | ≈ 9.7×10⁻¹¹ (N_max ≈ 8.3×10⁷ KK modes) |
 | First KK graviton mass | m₁ = j_{1,1}ℏc/L ≈ 3.78 eV flat-space (warped: 1.87 eV) |
 | KS flux integers | K=21, M=10, g_s=0.1 → τ₀^{1/3} = 257 MeV |
-| AdS₅ bulk transfer delay δ_bulk | 1.36 rad (ab initio, BKM Averaging Theorem, zero free parameters) |
+| AdS₅ bulk transfer delay δ_bulk | 1.36 rad (BKM theorem, analytically derived from L + z_eff, zero additional free params) |
 | Dual-damping parameters | Γ_stick = 3H ≈ 0.25 Gyr⁻¹, Γ_slip = Γ_rad ≈ 20.7 Gyr⁻¹, ω = π ≈ 3.14 Gyr⁻¹ |
 | Robin splitting | Δλ/λ = 3.1% between n=1 and n=6 (smoking gun) |
 
@@ -322,7 +322,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Validation | Method | Key Result |
 |-----------|--------|------------|
 | w(z) phantom crossing | BDF stiff solver, exact lookback time | w ∈ [-1.003, -0.997], matches DESI DR2 |
-| S₈ tension resolution | Ab initio ODE D₊(a) with BKM-derived G_eff(t) | 4.50% suppression, S₈=0.798, δ_bulk=1.36 rad (BKM theorem, zero free params) |
+| S₈ tension resolution | ODE D₊(a) with BKM-derived G_eff(t) | 4.50% suppression, S₈=0.798, δ_bulk=1.36 rad (cross-observational rigidity, zero additional free params) |
 | Bayesian evidence | dynesty nested sampling, 500 live points | Original 3-param: Δln K ∈ [2.8, 4.13]. After T promotion: Δln K ≈ 5.8 (Decisive, prior-independent) |
 | SKA 21cm prediction | Reionization mock, z=6-15 | 5.46 mK peak, SNR = 5.5σ |
 | Lithium-7 problem | BBN conformal tolerance, BDF solver | 3.5× suppression, D/⁴He preserved |
@@ -355,7 +355,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Finite-N Dirac collapse | Expander graph spectra + Cheeger inequality | σ₁/L~10⁻³⁸·⁵, N_min≈4500, ω₀ correction ~10⁻⁷⁶, RT survives |
 | Kinematic Blockade | 5D Bondi flux for continuous membrane | Γ_rad^{5D-GR}≡0, m₁T_slip~3.6×10³¹, exp(-3.6×10³¹)=0. Proves PBH necessity |
 | NANOGrav spectral flattening | Tensor TT projection of Filippov shock | φ̈ = Dirac δ → flat spectrum, n_PTA ≈ 10⁹, h_c(16 nHz) ~ 10⁻¹⁵ |
-| AdS₅ viscoelastic retardation | BKM Averaging Theorem (ab initio) | δ_BKM=1.36 rad (zero free params), S₈=0.798 (0.4σ from DES Y6) |
+| AdS₅ viscoelastic retardation | BKM Averaging Theorem (analytically derived) | δ_BKM=1.36 rad (zero additional free params), S₈=0.798 (0.4σ from DES Y6) |
 | Press-Schechter γ(M) | Non-linear spherical collapse + oscillating δ_c | A(M)≈ν²/ln(Ω_m⁻¹), γ(groups)≈0.88, γ(clusters)≈1.19, γ(monsters)≈1.47 |
 | MOND sinc theorem | Orbital averaging of oscillating a₀(t) | sinc(πt_dyn/T): dwarfs 0.996, spirals 0.981, groups 0.637, clusters 0.000 |
 | ΔBIC (current + forecast) | Anchored stick-slip (k=1) vs CPL (k=2) | DR2: ΔBIC≈-6.4 (Strong), Y5 forecast: ΔBIC≈-22 (Decisive) |
