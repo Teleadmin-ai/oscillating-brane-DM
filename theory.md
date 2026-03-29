@@ -671,8 +671,8 @@ A rigorous counting of degrees of freedom must distinguish between fundamental L
 
 | Parameter | Value | Status |
 |-----------|-------|--------|
-| $D$ (duty cycle) | 0.90 | Encodes the stick/slip asymmetry of the Cosmic Web charging vs KK radiative discharge. Constrained by the DESI $w(z)$ sawtooth shape and the Fourier harmonic ratios ($A_2/A_1 = 0.476$). Not independently derivable from $\tau_0$ and $L$ without a full 5D NR simulation |
-| $f_{osc}$ (oscillation amplitude) | 0.10 | The limit-cycle amplitude $\phi_{max}/L$ set by the attractor balance between Cosmic Web forcing and radiative damping. Constrained by the $S_8$ suppression magnitude and $A_w = 0.003$ |
+| $D$ (duty cycle) | 0.90 | **Free parameter fitted to late-universe data.** Encodes the stick/slip asymmetry. Constrained by the DESI $w(z)$ sawtooth shape and harmonic ratios ($A_2/A_1 = 0.476$). Not derivable from $\tau_0$ and $L$ in the current 4D EFT; awaits ab initio determination from 5D numerical relativity |
+| $f_{osc}$ (oscillation amplitude) | 0.10 | **Free parameter fitted to late-universe data.** The limit-cycle amplitude $\phi_{max}/L$. Constrained by the $S_8$ suppression magnitude and $A_w = 0.003$. Emerges from the attractor dynamics but its exact value requires the full 5D NR forcing balance |
 
 **Topological quantized integer (1)** — discrete, zero prior volume:
 
@@ -688,7 +688,7 @@ A rigorous counting of degrees of freedom must distinguish between fundamental L
 - $M_{crit} = Lc^2/(2G)$ — from $L$ alone
 - $\Gamma_{rad} = \ln(S_{BH})/(2\pi) \approx 20.7$ — Bekenstein-Hawking entropy
 
-**Total: 4 continuous parameters + 1 discrete integer.** For comparison, $\Lambda$CDM requires 6 continuous parameters ($H_0$, $\Omega_b$, $\Omega_c$, $\tau$, $n_s$, $A_s$) to fit the CMB power spectrum alone, then fails to explain DESI, $S_8$, MOND, or eROSITA at any parameter count. Extended models (CPL: $+2$, massive neutrinos: $+1$) push the standard framework to 8--9 parameters. The OBT V8.2 EFT is formally more parsimonious while structurally resolving highly non-linear phenomena that $\Lambda$CDM cannot address.
+**Total: 4 continuous EFT parameters + 1 discrete integer.** OBT V8.2 is a **Dark Sector Unification**: these 4+1 parameters completely replace the phenomenological dark sector and modified gravity ad-hoc constructs — particle dark matter ($\Omega_c$, WIMP mass, cross-section), the cosmological constant ($\Lambda$), dynamical dark energy extensions ($w_0$, $w_a$), NFW halo profiles (2 params/galaxy), and the MOND acceleration scale ($a_0$). The theory inherits the standard baryonic and inflationary initial conditions ($\Omega_b$, $A_s$, $n_s$, $\tau$) which set the primordial universe. The geometric dark sector unifies late-time cosmic acceleration, galactic dynamics, the $S_8$ tension, and the eROSITA anomaly into a single predictive framework — phenomena that the standard dark sector cannot address regardless of its parameter count.
 
 ### AdS$_5$ Viscoelastic Retardation: Ab Initio Derivation of the Tensor-Scalar Phase Delay
 
@@ -2276,6 +2276,18 @@ A common objection asks whether the oscillating $G_\text{eff}(t)$ would disrupt 
 
 **2. Yukawa suppression.** Even if a residual coupling existed, the 5D Yukawa correction to Newtonian gravity scales as $e^{-r/L}$ with $L = 0.2\,\mu$m. At Solar System scales ($r \sim 10^{11}$ m), the suppression factor is $e^{-r/L} \sim e^{-5 \times 10^{17}} = 0$. The extra-dimensional correction is identically zero at any scale larger than a few micrometers. Lunar Laser Ranging, planetary ephemerides, and binary pulsar timing are all consistent with constant $G_N$ to $\dot{G}/G < 10^{-13}$ yr$^{-1}$ — and the theory predicts exactly this null result.
 
+### Analytical Preservation of the CMB: Conformal Protection and Hubble Freeze
+
+OBT V8.2 has not yet been integrated into a full Boltzmann solver (CLASS or CAMB) to explicitly compute the CMB angular power spectrum $C_\ell$ up to $\ell \approx 2500$. This is an open computational milestone. However, the preservation of the high-$\ell$ acoustic peaks is analytically guaranteed by two independent physical locks operating during the formation of the CMB:
+
+**1. Conformal protection ($T^\mu_\mu = 0$).** During the radiation-dominated era and through recombination ($z \approx 1100$), the relativistic plasma (photons, neutrinos, $e^\pm$ pairs) dictates $w_{eff} \approx 1/3$. The trace of the energy-momentum tensor vanishes rigorously: $T^\mu_\mu = -\rho + 3p = 0$. Since the radion couples to the bulk forcing through the trace factor $(1 - 3w)$, this conformal symmetry **strictly decouples** the brane motor from all geometric dynamics during the CMB epoch. The radion is blind to the universe.
+
+**2. Hubble hyper-overdamping ($3H \gg \omega$).** Even without conformal protection, the immense expansion rate at recombination ($H(z_{rec}) \approx 3 \times 10^5$ Gyr$^{-1}$) subjects the radion equation to extreme friction: the damping term $3H\dot{\phi}$ exceeds the motor frequency $\omega \approx \pi$ Gyr$^{-1}$ by a factor of $\sim 10^5$. The brane is in a state of **hyper-overdamping** — frozen at its potential minimum with exponentially suppressed amplitude.
+
+**Consequence:** with both locks engaged simultaneously, the scalar and tensor perturbation equations during the formation of the CMB acoustic peaks map exactly onto those of standard 4D General Relativity. The brane motor "thaws" only at late times ($z < 10$) when Hubble friction drops and matter domination breaks conformal symmetry, manifesting exclusively in: (a) the low-$\ell$ Integrated Sachs-Wolfe effect (matched to the Planck anomaly, $\Delta\chi^2 = 32.9$), (b) late-time structure growth ($S_8$ suppression), and (c) the CMB lensing potential at intermediate $\ell$.
+
+**Roadmap: Modified Boltzmann Solver Integration.** Modifying CLASS to include the fully coupled radion perturbation equations and oscillating $G_{eff}(t)$ is the next mandatory computational milestone. This will: (i) quantitatively confirm the conformal freeze theorem for $\ell > 30$, (ii) predict the exact sub-percent shifts in the late-time CMB lensing potential, and (iii) compute the matter power spectrum $P(k)$ with full brane dynamics. Until this integration is completed, the high-$\ell$ CMB preservation remains an analytically motivated theorem, not a numerical verification.
+
 ### Occam's Razor: Parametric Parsimony, Zero New Particles
 
 The Oscillating Brane Theory addresses 31 cosmological phenomena with **4 continuous EFT parameters** ($\tau_0$, $L$, $D$, $f_{osc}$), one topological integer ($N = 6$), and **zero new particles** (see the full Parametric Matrix above for the epistemological classification of each quantity):
@@ -2293,7 +2305,7 @@ All other quantities are derived consequences of these parameters:
 - $A_w = 0.003$ — output of the ODE integration (not fitted)
 - $\Delta\chi^2_{ISW} = 32.9$ — output of the ISW integral (not fitted)
 
-For comparison, $\Lambda$CDM requires 6 continuous free parameters ($H_0$, $\Omega_b$, $\Omega_c$, $\tau$, $n_s$, $A_s$) to fit the CMB alone — and extended models (CPL: $+2$, massive $\nu$: $+1$) push this to 8--9 parameters. Yet $\Lambda$CDM cannot address DESI, $S_8$, MOND, or eROSITA at any parameter count. The OBT V8.2 EFT is formally more parsimonious while resolving phenomena that lie beyond the reach of the standard model at any complexity.
+**Scope of replacement.** OBT V8.2 does not replace the full $\Lambda$CDM parameter set — it inherits the standard baryonic and inflationary initial conditions ($\Omega_b$, $A_s$, $n_s$, $\tau$). Its 4+1 parameters replace the phenomenological **dark sector**: $\Omega_c$ (particle dark matter) and $\Lambda$ (cosmological constant), along with all ad-hoc extensions needed to address late-universe anomalies (CPL $w_0$/$w_a$, MOND $a_0$, NFW profiles). The power of the framework lies not in a raw parameter count comparison with $\Lambda$CDM, but in the **unification**: a single geometric mechanism (the oscillating brane) simultaneously explains late-time acceleration, galactic dynamics, the $S_8$ tension, and the eROSITA anomaly — phenomena that the standard dark sector cannot address at any complexity.
 
 ### Why Only ℓ=0 Survives
 

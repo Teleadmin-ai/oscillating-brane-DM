@@ -119,11 +119,7 @@ The model must reproduce Planck's precision measurements:
 
 $$\Omega_\text{osc}(z_\text{rec}) = \Omega_\text{CDM} = 0.258 \pm 0.011$$
 
-**Angular Power Spectrum**: Modifications to the standard $C_\ell$:
-
-$$\frac{\Delta C_\ell}{C_\ell} < 10^{-3} \text{ for } \ell < 2000$$
-
-achieved by ensuring adiabatic initial conditions.
+**Angular Power Spectrum**: The high-$\ell$ acoustic peaks of the CMB ($\ell > 30$) are analytically preserved by **conformal protection**: during the radiation era and through recombination ($z \approx 1100$), the relativistic plasma dictates $w_{eff} \approx 1/3$, so $T^\mu_\mu = 0$ and the radion is strictly decoupled. Furthermore, extreme Hubble friction ($3H \gg \omega_{brane}$) hyper-overdamps any residual oscillation. The brane is dynamically frozen; high-$\ell$ physics maps exactly onto standard 4D GR. Explicit quantification via a modified Boltzmann solver (CLASS/CAMB) remains a future milestone (see Roadmap).
 
 **Spectral Index**: No modification to primordial spectrum:
 
@@ -203,7 +199,7 @@ with:
 | **DM Nature** | Geometric effect from extra dimensions | Unknown particles (WIMPs, axions) | No DM, modified gravity |
 | **Theoretical Basis** | String theory/M-theory (RS extension) | Particle physics extensions | Empirical modification |
 | **Free Parameters** | 4+1 (τ₀, L, D, f_osc + N=6) | 2+ (Ω_c, σ_v, m_χ) | 1 (a₀) + relativistic ext. |
-| **CMB Fit Quality** | ΔC_ℓ/C_ℓ < 10⁻³ | χ²/dof ≈ 1.00 | Poor without 2eV neutrinos |
+| **CMB Fit Quality** | Analytically preserved (conformal freeze); CLASS/CAMB integration pending | χ²/dof ≈ 1.00 | Poor without 2eV neutrinos |
 | **Galaxy Rotations** | v⁴ ∝ M_b automatically | Requires NFW/Einasto profiles | v⁴ ∝ M_b by design |
 | **Tully-Fisher σ** | ~0.05 dex predicted | ~0.3 dex (with scatter) | ~0.05 dex (built-in) |
 | **Cluster M/L ratio** | 300-400 (factor 5-6 boost) | 200-500 (varies) | Fails without DM |
