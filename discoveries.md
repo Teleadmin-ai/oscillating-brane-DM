@@ -6,7 +6,7 @@ permalink: /discoveries/
 
 # Discovery & Correction of Modern Cosmology
 
-An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies — 4 exact quantitative resolutions with ODE integration or analytical proof (Tier 1), 16 formal analytical frameworks with closed-form derivations (Tier 2), and 11 qualitative mechanistic proposals awaiting numerical validation (Tier 3) — within a single extra-dimensional geometric framework.
+An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies — 3 exact quantitative resolutions with ODE integration or analytical proof (Tier 1), 15 formal analytical frameworks with closed-form derivations (Tier 2), and 13 qualitative mechanistic proposals awaiting numerical validation (Tier 3) — within a single extra-dimensional geometric framework.
 
 ## 1. The Collapse of the Standard Model
 
@@ -165,10 +165,12 @@ While the simple parametric $w(z)$ oscillation alone does not fully resolve the 
 
 ### 5.2. The Lithium Problem
 
-The irreducible Lithium-7 abundance anomaly (observed deficit of factor 3--4 relative to $\Lambda$CDM predictions) is resolved by an infinitesimal conformal tolerance ($\delta H/H \sim 10^{-3}$) during the narrow thermal window of $^7$Be synthesis ($T \sim 0.03$--$0.05$ MeV). The brane geometric jitter selectively enhances $^7$Be destruction while preserving Helium-4 and Deuterium yields.
+The irreducible Lithium-7 abundance anomaly (observed deficit of factor 3--4 relative to $\Lambda$CDM predictions) can be addressed by an infinitesimal conformal tolerance ($\delta H/H \sim 10^{-3}$) during the narrow thermal window of $^7$Be synthesis ($T \sim 0.03$--$0.05$ MeV). The brane geometric jitter selectively enhances $^7$Be destruction while preserving Helium-4 and Deuterium yields.
 
 ![Lithium-7 Resolution](/plots/lithium_resolution.png)
-*Figure: BBN conformal tolerance resolves the Lithium-7 problem. $^7$Li suppressed by 3.5$\times$ (from $5.6 \times 10^{-10}$ to $1.6 \times 10^{-10}$), matching the Spite plateau. D and $^4$He abundances remain strictly at standard values (0% change). Solver: BDF stiff ODE.*
+*Figure: BBN conformal tolerance addresses the Lithium-7 problem. $^7$Li suppressed by 3.5$\times$ (from $5.6 \times 10^{-10}$ to $1.6 \times 10^{-10}$), matching the Spite plateau. D and $^4$He abundances remain strictly at standard values (0% change). Solver: BDF stiff ODE.*
+
+*Epistemological note (Tier 3):* The freeze-out abundance of $^7$Be is exponentially sensitive to the ratio $\Gamma_d/H$. A geometric jitter in $H(t)$ selectively enhances the destruction integral. However, to elevate this from a scaling argument to a formal quantitative resolution, the oscillating expansion metric must be coupled into a full BBN nuclear reaction network (e.g., AlterBBN or PArthENoPE) to integrate the exact cross-sections dynamically. This remains an exploratory mechanistic perspective.
 
 ### 5.3. Baryon Asymmetry via Kaluza-Klein Leptogenesis
 
@@ -176,6 +178,8 @@ The matter-antimatter imbalance ($\eta_B \approx 6.1 \times 10^{-10}$) finds no 
 
 ![Baryon Asymmetry](/plots/baryon_asymmetry.png)
 *Figure: Spontaneous QCD baryogenesis via radion-driven dynamic $\theta_{QCD}$. The first slip at $\Lambda_{QCD} = 257$ MeV drives the baryon chemical potential, freezing out at $\eta_B = 6.10 \times 10^{-10}$. Coupling $c_{QCD} = 1.0$ (natural O(1), no fine-tuning). No $\varepsilon_{CP}$ needed.*
+
+*Epistemological note (Tier 3):* The dimensional scaling argument ($c_{QCD} = \mathcal{O}(1) \Rightarrow \eta_B \sim 10^{-10}$) demonstrates scale compatibility without fine-tuning. However, rigorous validation requires integrating the dynamic $\dot{\theta}_{eff}(t)$ source term into fully coupled non-equilibrium Boltzmann transport equations alongside sphaleron washout rates during the QCD crossover. This is conservatively classified as a Tier 3 qualitative mechanism.
 
 ### 5.4. The Big Ring and Ultra-Large Structures
 
@@ -310,15 +314,15 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum | **T1** |
 | $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.50% (S₈ = 0.798, cross-observational rigidity) | **T1** |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr ($\Delta\chi^2 = 32.9$, semi-analytic; CLASS/CAMB pending) | **T2** |
-| eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_\text{eff}(z)$ + Press-Schechter $\gamma(M)$ spectrum | **T1** |
-| Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio derivation of MOND $\mu(x)$, assimilating SPARC success | **T1** |
+| eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Press-Schechter/Tinker semi-analytic projection of oscillating $G_{eff}(z)$ | **T2** |
+| Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio geometric derivation of exact laws $\mu(x)$ and $a_0$ (analytically assimilates SPARC fit) | **T1** |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric | **T2** |
 | Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + temporally enhanced gravity + modified Hubble friction | **T2** |
 | Undetectable Dark Matter | Zero particles in two decades (LZ/XENONnT) | No WIMPs. Dark matter = 5D geometric signature (Weyl tensor) | **T2** |
 | Early SMBHs (JWST) | Assembly pathways exhausted | GL hierarchy channeling + heavy PBH seed tail | **T2** |
 | Cosmological Constant | $10^{120}$ orders of magnitude discrepancy | Thermodynamic relaxation of oscillatory amplitude in $AdS_5$ | **T2** |
-| Lithium-7 problem | Factor 3--4 overproduction | BBN conformal tolerance ($\delta H/H \sim 10^{-3}$) | **T2** |
-| Baryon Asymmetry | No SM explanation | Spontaneous QCD baryogenesis ($c_{QCD} = \mathcal{O}(1)$) | **T2** |
+| Lithium-7 problem | Factor 3--4 overproduction | BBN conformal tolerance ($\delta H/H \sim 10^{-3}$) *(qualitative)* | **T3** |
+| Baryon Asymmetry | No SM explanation | Spontaneous QCD baryogenesis via dynamic $\theta_{QCD}$ *(qualitative)* | **T3** |
 | CMB Birefringence | Marginal $0.2°$ rotation | 5D geometric Chern-Simons ($c_{top} = 75$, ab initio) | **T2** |
 | NANOGrav GWB features | Unexplained spectral dips/excesses | Stick-slip spectral flattening ($h_c \sim 10^{-15}$, 0 free params) | **T2** |
 | DM-free galaxies (DF2/DF4) | Defy formation models | Cymatic standing wave nodes (~3.4% of galaxies) | **T2** |

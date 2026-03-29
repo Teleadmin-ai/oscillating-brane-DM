@@ -58,7 +58,7 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
 
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane---our four-dimensional reality---is connected through a holographic network of quantum entangled black holes.
 
-**The Cosmic Yoyo V8.2**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor $E_{\mu\nu}$ forcing --- the muscle. Billions of thermodynamically mandated **micro-PBHs** provide local energy dissipation (MSS-saturated fast scrambling) and global phase coherence (inflationary causal fossil) --- the metronome. Conformal symmetry ($T^\mu_\mu$ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda_{QCD}$ = 257 MeV. Radiative damping caps the amplitude. The dynamical attractor ($\xi R\phi$ PLL) locks the period at T = 2.000 Gyr (derived chronodynamic eigenvalue). With **4 continuous EFT parameters** ($\tau_0$, L, D, f_osc) and 1 topological integer (N=6) --- a unified geometric dark sector --- it addresses 31 cosmological phenomena: 5 exact mathematical resolutions (Tier 1), 15 formal analytical frameworks (Tier 2), and 11 exploratory mechanistic perspectives (Tier 3).
+**The Cosmic Yoyo V8.2**: A **hybrid stick-slip motor** operates at two scales. The macroscopic **Cosmic Web** (superclusters, filaments, voids) presses the brane toward the 5D bulk via Israel junction conditions, generating continuous Weyl tensor $E_{\mu\nu}$ forcing --- the muscle. Billions of thermodynamically mandated **micro-PBHs** provide local energy dissipation (MSS-saturated fast scrambling) and global phase coherence (inflationary causal fossil) --- the metronome. Conformal symmetry ($T^\mu_\mu$ = 0) freezes the motor during the radiation era, protecting BBN; the QCD trace anomaly ignites it at $\Lambda_{QCD}$ = 257 MeV. Radiative damping caps the amplitude. The dynamical attractor ($\xi R\phi$ PLL) locks the period at T = 2.000 Gyr (derived chronodynamic eigenvalue). With **4 continuous EFT parameters** ($\tau_0$, L, D, f_osc) and 1 topological integer (N=6) --- a unified geometric dark sector --- it addresses 31 cosmological phenomena: 3 exact mathematical resolutions (Tier 1), 15 formal analytical frameworks (Tier 2), and 13 exploratory mechanistic perspectives (Tier 3).
 
 
   
@@ -118,7 +118,7 @@ The coming decade will be decisive. Euclid will measure the dark energy equation
 # Chapter 2: Discovery & Correction of Modern Cosmology
 
 
-An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies --- 4 exact quantitative resolutions with ODE integration or analytical proof (Tier 1), 16 formal analytical frameworks with closed-form derivations (Tier 2), and 11 qualitative mechanistic proposals awaiting numerical validation (Tier 3) --- within a single extra-dimensional geometric framework.
+An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies --- 3 exact quantitative resolutions with ODE integration or analytical proof (Tier 1), 15 formal analytical frameworks with closed-form derivations (Tier 2), and 13 qualitative mechanistic proposals awaiting numerical validation (Tier 3) --- within a single extra-dimensional geometric framework.
 
 ## The Collapse of the Standard Model
 
@@ -277,10 +277,12 @@ While the simple parametric $w(z)$ oscillation alone does not fully resolve the 
 
 ### The Lithium Problem
 
-The irreducible Lithium-7 abundance anomaly (observed deficit of factor 3--4 relative to $\Lambda$CDM predictions) is resolved by an infinitesimal conformal tolerance ($\delta H/H \sim 10^{-3}$) during the narrow thermal window of $^7$Be synthesis ($T \sim 0.03$--$0.05$ MeV). The brane geometric jitter selectively enhances $^7$Be destruction while preserving Helium-4 and Deuterium yields.
+The irreducible Lithium-7 abundance anomaly (observed deficit of factor 3--4 relative to $\Lambda$CDM predictions) can be addressed by an infinitesimal conformal tolerance ($\delta H/H \sim 10^{-3}$) during the narrow thermal window of $^7$Be synthesis ($T \sim 0.03$--$0.05$ MeV). The brane geometric jitter selectively enhances $^7$Be destruction while preserving Helium-4 and Deuterium yields.
 
 ![Lithium-7 Resolution](./plots/lithium_resolution.png)
-*Figure: BBN conformal tolerance resolves the Lithium-7 problem. $^7$Li suppressed by 3.5$\times$ (from $5.6 \times 10^{-10}$ to $1.6 \times 10^{-10}$), matching the Spite plateau. D and $^4$He abundances remain strictly at standard values (0% change). Solver: BDF stiff ODE.*
+*Figure: BBN conformal tolerance addresses the Lithium-7 problem. $^7$Li suppressed by 3.5$\times$ (from $5.6 \times 10^{-10}$ to $1.6 \times 10^{-10}$), matching the Spite plateau. D and $^4$He abundances remain strictly at standard values (0% change). Solver: BDF stiff ODE.*
+
+*Epistemological note (Tier 3):* The freeze-out abundance of $^7$Be is exponentially sensitive to the ratio $\Gamma_d/H$. A geometric jitter in $H(t)$ selectively enhances the destruction integral. However, to elevate this from a scaling argument to a formal quantitative resolution, the oscillating expansion metric must be coupled into a full BBN nuclear reaction network (e.g., AlterBBN or PArthENoPE) to integrate the exact cross-sections dynamically. This remains an exploratory mechanistic perspective.
 
 ### Baryon Asymmetry via Kaluza-Klein Leptogenesis
 
@@ -288,6 +290,8 @@ The matter-antimatter imbalance ($\eta_B \approx 6.1 \times 10^{-10}$) finds no 
 
 ![Baryon Asymmetry](./plots/baryon_asymmetry.png)
 *Figure: Spontaneous QCD baryogenesis via radion-driven dynamic $\theta_{QCD}$. The first slip at $\Lambda_{QCD} = 257$ MeV drives the baryon chemical potential, freezing out at $\eta_B = 6.10 \times 10^{-10}$. Coupling $c_{QCD} = 1.0$ (natural O(1), no fine-tuning). No $\varepsilon_{CP}$ needed.*
+
+*Epistemological note (Tier 3):* The dimensional scaling argument ($c_{QCD} = \mathcal{O}(1) \Rightarrow \eta_B \sim 10^{-10}$) demonstrates scale compatibility without fine-tuning. However, rigorous validation requires integrating the dynamic $\dot{\theta}_{eff}(t)$ source term into fully coupled non-equilibrium Boltzmann transport equations alongside sphaleron washout rates during the QCD crossover. This is conservatively classified as a Tier 3 qualitative mechanism.
 
 ### The Big Ring and Ultra-Large Structures
 
@@ -422,15 +426,15 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum | **T1** |
 | $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.50% ($S_8$ = 0.798, cross-observational rigidity) | **T1** |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr ($\Delta\chi^2 = 32.9$, semi-analytic; CLASS/CAMB pending) | **T2** |
-| eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_\text{eff}(z)$ + Press-Schechter $\gamma(M)$ spectrum | **T1** |
-| Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio derivation of MOND $\mu(x)$, assimilating SPARC success | **T1** |
+| eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Press-Schechter/Tinker semi-analytic projection of oscillating $G_{eff}(z)$ | **T2** |
+| Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio geometric derivation of exact laws $\mu(x)$ and $a_0$ (analytically assimilates SPARC fit) | **T1** |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric | **T2** |
 | Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + temporally enhanced gravity + modified Hubble friction | **T2** |
 | Undetectable Dark Matter | Zero particles in two decades (LZ/XENONnT) | No WIMPs. Dark matter = 5D geometric signature (Weyl tensor) | **T2** |
 | Early SMBHs (JWST) | Assembly pathways exhausted | GL hierarchy channeling + heavy PBH seed tail | **T2** |
 | Cosmological Constant | $10^{120}$ orders of magnitude discrepancy | Thermodynamic relaxation of oscillatory amplitude in $AdS_5$ | **T2** |
-| Lithium-7 problem | Factor 3--4 overproduction | BBN conformal tolerance ($\delta H/H \sim 10^{-3}$) | **T2** |
-| Baryon Asymmetry | No SM explanation | Spontaneous QCD baryogenesis ($c_{QCD} = \mathcal{O}(1)$) | **T2** |
+| Lithium-7 problem | Factor 3--4 overproduction | BBN conformal tolerance ($\delta H/H \sim 10^{-3}$) *(qualitative)* | **T3** |
+| Baryon Asymmetry | No SM explanation | Spontaneous QCD baryogenesis via dynamic $\theta_{QCD}$ *(qualitative)* | **T3** |
 | CMB Birefringence | Marginal $0.2°$ rotation | 5D geometric Chern-Simons ($c_{top} = 75$, ab initio) | **T2** |
 | NANOGrav GWB features | Unexplained spectral dips/excesses | Stick-slip spectral flattening ($h_c \sim 10^{-15}$, 0 free params) | **T2** |
 | DM-free galaxies (DF2/DF4) | Defy formation models | Cymatic standing wave nodes (~3.4% of galaxies) | **T2** |
@@ -807,7 +811,7 @@ $$E_\tau = \tau_0^{1/3} = 257 \text{ MeV} \approx \Lambda_{QCD}$$
 
 **1. The phenomenological Ansatz (bottom-up approach).** The identification $\tau_0^{1/3} \approx 257$ MeV $\approx \Lambda_{QCD}$ is introduced as a phenomenological Ansatz, not derived from first principles. The brane tension is constrained empirically by macroscopic observation (the oscillation period $T = 2$ Gyr calibrated from DESI BAO and Planck ISW), and its striking coincidence with the QCD confinement scale provides the physical mechanism (conformal symmetry breaking via $T^\mu_\mu \neq 0$) that explains the motor's ignition. This transparency is deliberate: claiming an ab initio derivation without possessing one would be intellectually dishonest and immediately detectable by any competent reviewer.
 
-**2. The Effective Field Theory paradigm.** The validity of a cosmological model operating in the infrared (IR) regime does not require complete knowledge of the ultraviolet (UV) microscopic physics. The Standard Model of particle physics itself contains 19 free parameters (masses, couplings, mixing angles) that are measured but not derived from a deeper theory --- yet no one questions its predictive power within its domain of validity. Similarly, the Oscillating Brane Theory V8.2 assumes its role as a **powerful effective cosmology**: it operates with 4 continuous EFT parameters ($\tau_0$, $L$, $D$, $f_{osc}$) plus one topological integer ($N = 6$), addresses 31 cosmological phenomena at three tiers of rigor (5 exact, 15 analytical, 11 exploratory), and makes falsifiable predictions --- all without requiring knowledge of the Planck-scale physics that generates these parameters. The EFT approach is not an admission of incompleteness; it is the standard methodology of modern theoretical physics.
+**2. The Effective Field Theory paradigm.** The validity of a cosmological model operating in the infrared (IR) regime does not require complete knowledge of the ultraviolet (UV) microscopic physics. The Standard Model of particle physics itself contains 19 free parameters (masses, couplings, mixing angles) that are measured but not derived from a deeper theory --- yet no one questions its predictive power within its domain of validity. Similarly, the Oscillating Brane Theory V8.2 assumes its role as a **powerful effective cosmology**: it operates with 4 continuous EFT parameters ($\tau_0$, $L$, $D$, $f_{osc}$) plus one topological integer ($N = 6$), addresses 31 cosmological phenomena at three tiers of rigor (3 exact, 15 analytical, 13 exploratory), and makes falsifiable predictions --- all without requiring knowledge of the Planck-scale physics that generates these parameters. The EFT approach is not an admission of incompleteness; it is the standard methodology of modern theoretical physics.
 
 ### String Theory UV Completion: Klebanov-Strassler Throats and LVS Moduli Stabilization
 
@@ -927,7 +931,7 @@ Converting to a gauge energy scale: $\vert V_{min}\vert^{1/4} \approx (2.2 \time
 
 The **multi-throat architecture** is not an ad hoc postulate --- it is the unique topological solution imposed by the 45-order-of-magnitude gap between the LVS vacuum depth and the QCD brane tension. Multi-throat Calabi-Yau geometries are generic in the flux landscape (Bousso & Polchinski 2000, Douglas & Kachru 2007): the vast number of 3-cycles ($b_3 \sim \mathcal{O}(100)$) in typical CY threefolds naturally accommodates multiple warped deformed conifolds at different warp scales.
 
-**The loop is closed.** From Bayesian inference (MCMC) to Bekenstein-Hawking entropy, from the QCD vacuum (257 MeV) to the multi-throat topology of Calabi-Yau manifolds in string theory (flux quantization, tadpole cancellation, multi-throat KKLT uplift, Swiss-Cheese LVS stabilization), the Oscillating Brane Theory V8.2 constitutes a mathematically complete, observationally falsifiable, and string-theoretically consistent framework addressing 31 cosmological phenomena (5 exact + 15 analytical + 11 exploratory) with 4 continuous EFT parameters, 1 topological integer, and zero new particles.
+**The loop is closed.** From Bayesian inference (MCMC) to Bekenstein-Hawking entropy, from the QCD vacuum (257 MeV) to the multi-throat topology of Calabi-Yau manifolds in string theory (flux quantization, tadpole cancellation, multi-throat KKLT uplift, Swiss-Cheese LVS stabilization), the Oscillating Brane Theory V8.2 constitutes a mathematically complete, observationally falsifiable, and string-theoretically consistent framework addressing 31 cosmological phenomena (3 exact + 15 analytical + 13 exploratory) with 4 continuous EFT parameters, 1 topological integer, and zero new particles.
 
 ### Radion-Higgs Hybridization: The Scalar Mixing Mechanism
 
@@ -1139,6 +1143,8 @@ Evaluating at representative mass scales:
 **The strict falsifiable prediction:** If eROSITA DR2 analyzes cluster abundances in mass bins, the extracted growth index must be a **monotonically increasing function of mass**: $d\gamma_{app}/dM > 0$. Galaxy groups ($M \sim 10^{13}\,M_\odot$) should yield $\gamma \approx 0.88$ (near the linear regime); the most massive clusters ($M > 5 \times 10^{14}\,M_\odot$) should yield $\gamma > 1.4$.
 
 Classical modified gravity theories ($f(R)$, scalar-tensor, DGP) predict a **universal** $\gamma$ independent of mass. The OBT V8.2 predicts a **spectrum** $\gamma(M)$. This is an irrefutable, measurable, and imminent discriminant: the next eROSITA data release (expected 2026-2027) can test this prediction directly by splitting the cluster sample into 3-4 mass bins and extracting $\gamma$ independently in each.
+
+**Epistemological disclaimer (Tier 2).** We explicitly classify the non-linear amplification yielding $\gamma = 1.19$ as a Tier 2 semi-analytic result. While the underlying linear growth suppression $D_+(a)$ is an exact ODE integration, extracting the apparent growth index relies on the Tinker multiplicity function --- an empirical statistical fit calibrated against $\Lambda$CDM N-body simulations. Applying it to an oscillating $G_{eff}(t)$ background assumes the universal scaling holds adiabatically under modified gravity. While mathematically rigorous as a first-order analytical projection, extracting the exact non-linear $\gamma(M)$ spectrum from first principles will ultimately require full 5D-coupled N-body cosmological simulations.
 
 ### The Falsifiable $\gamma(M)$ Spectrum: Continuous Amplification Prediction for eROSITA DR2
 
@@ -2841,9 +2847,9 @@ OBT V8.2 has not yet been integrated into a full Boltzmann solver (CLASS or CAMB
 
 A rigorous epistemological evaluation of a cosmological model requires computing its true parametric cost. The Oscillating Brane Theory addresses 31 cosmological phenomena with **4 continuous EFT parameters** ($\tau_0$, $L$, $D$, $f_{osc}$), one topological integer ($N = 6$), and **zero new particles**:
 
-- **4 exact mathematical resolutions (Tier 1)**: DESI $w(z)$, $S_8$ suppression, eROSITA $\gamma(M)$, emergent MOND/SPARC --- derived rigorously via ODE integration or analytical proof
-- **16 formal analytical frameworks (Tier 2)**: ISW resonance ($\Delta\chi^2 = 32.9$, semi-analytic; pending CLASS/CAMB verification), neutrino masses, Lithium-7, baryogenesis, CMB birefringence, JWST, early SMBHs, $\Lambda$, NANOGrav, DF2/DF4, Amaterasu, etc. --- closed-form derivations with quantitative predictions
-- **11 exploratory mechanistic perspectives (Tier 3)**: Hubble tension, cosmic dipole, KBC Void, ORCs, Planet 9, flyby anomaly, etc. --- qualitative pathways requiring future N-body/MHD simulations for validation
+- **3 exact mathematical resolutions (Tier 1)**: DESI $w(z)$ phantom crossing, $S_8$ linear growth suppression, and emergent MOND derivations ($\mu(x)$ and $a_0$) --- derived rigorously via ODE integration or 5D geometrical proof
+- **15 formal analytical frameworks (Tier 2)**: eROSITA $\gamma(M)$ (semi-analytic Tinker mapping), ISW resonance (semi-analytic, CLASS/CAMB pending), neutrino masses, CMB birefringence, JWST, early SMBHs, $\Lambda$, NANOGrav, DF2/DF4, Amaterasu, etc. --- closed-form derivations with quantitative predictions
+- **13 exploratory mechanistic perspectives (Tier 3)**: Lithium-7 (BBN network pending), QCD baryogenesis (Boltzmann transport pending), Hubble tension, cosmic dipole, KBC Void, ORCs, Planet 9, flyby anomaly, etc. --- qualitative pathways requiring future N-body/Boltzmann simulations
 
 All other quantities are derived consequences:
 $T = 2.000$ Gyr (observationally anchored eigenvalue), $\delta_{bulk} = 1.36$ rad (BKM theorem), $a_0 = cH_0/(2\pi)$ (Gibbons-Hawking), $M_{crit} = Lc^2/(2G)$, $A_w = 0.003$ (ODE output).
