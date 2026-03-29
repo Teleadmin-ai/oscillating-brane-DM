@@ -728,7 +728,7 @@ At the stick-to-slip transition, the brane's acceleration undergoes a Dirac-delt
 
 Physically: during the stick phase (90% of the cycle), the gravitational coupling $G_{eff}$ is slowly ramped by the Israel-projected Weyl tensor. During the slip phase (10%), the violent shock resets the phase. The net phase accumulated over one complete cycle is not $\phi_{base}$ but $D \times \phi_{base}$, because the slip shock truncates the integration window.
 
-**The diagnostic table and the discovery of 5D spacetime viscosity.** The preceding algebraic analysis (Israel $+\pi$ inversion, Filippov $\times D$ contraction) suggested that the tensor-scalar dephasing could be captured by a simple sign flip in $G_{eff}$. To test this rigorously, a systematic diagnostic was performed: the exact growth factor ODE was integrated with the chronologically anchored stick-slip waveform under **all possible sign and coupling combinations** — (i) $G_{eff}$ with Israel minus sign only, (ii) $G_{eff}$ with plus sign only, (iii) $w(z)$ modifying $H(a)$ only, and (iv) the full coupled system. The results were unambiguous and surprising:
+**The diagnostic table and the discovery of 5D spacetime viscosity.** The preceding algebraic analysis (Israel $+\pi$ inversion, Filippov $\times D$ contraction) suggested that the tensor-scalar dephasing could be captured by a simple sign flip in $G_{eff}$. To test this rigorously, a systematic diagnostic was performed (R. Provencal with Claude Opus, March 2026): the exact growth factor ODE was integrated with the chronologically anchored stick-slip waveform under **all possible sign and coupling combinations** — (i) $G_{eff}$ with Israel minus sign only, (ii) $G_{eff}$ with plus sign only, (iii) $w(z)$ modifying $H(a)$ only, and (iv) the full coupled system. The results were unambiguous and surprising:
 
 | Configuration | Growth effect | $S_8$ |
 |---|---|---|
@@ -739,7 +739,7 @@ Physically: during the stick phase (90% of the cycle), the gravitational couplin
 
 The Israel minus sign produces **enhancement**, not suppression — the opposite of what is needed. The plus sign overshoots by a factor of 2.3. No simple algebraic sign reproduces the observed $S_8$. The $w(z)$ modification of $H(a)$ is entirely negligible ($A_w = 0.003$ is too small). This diagnostic conclusively demonstrated that **the tensor-scalar dephasing is not an algebraic sign but a continuous phase delay** — a temporal retardation of the Weyl tensor response relative to the brane's mechanical oscillation.
 
-The physical resolution lies in the fact that the AdS$_5$ bulk is not an instantaneous mirror but a **viscous, dispersive medium**. The Weyl response $\mathcal{E}_{\mu\nu}$ propagates through a Retarded Green's Function with frequency-dependent phase lag, exactly as in any damped driven oscillator. The Filippov stick-slip motor provides two distinct damping regimes ($\Gamma_{stick} \approx 0.25$ vs $\Gamma_{slip} \approx 20.7$ Gyr$^{-1}$), making the $\arctan(\omega/\Gamma)$ formula for viscous phase retardation directly applicable. This transforms the phase delay from a free parameter into a derived analytical constant — the BKM Averaging Theorem applied to the Filippov stick-slip system yields $\delta_{BKM} = 1.36$ rad with zero adjustable quantities.
+The physical resolution was identified (R. Provencal with Gemini DeepThink, March 2026): the AdS$_5$ bulk is not an instantaneous mirror but a **viscous, dispersive medium**. The Weyl response $\mathcal{E}_{\mu\nu}$ propagates through a Retarded Green's Function with frequency-dependent phase lag, exactly as in any damped driven oscillator. The Filippov stick-slip motor provides two distinct damping regimes ($\Gamma_{stick} \approx 0.25$ vs $\Gamma_{slip} \approx 20.7$ Gyr$^{-1}$), making the $\arctan(\omega/\Gamma)$ formula for viscous phase retardation directly applicable. This transforms the phase delay from a free parameter into a derived analytical constant — the BKM Averaging Theorem applied to the Filippov stick-slip system yields $\delta_{BKM} = 1.36$ rad with zero adjustable quantities.
 
 **4. The AdS$_5$ viscoelastic retardation ($\delta_{bulk} = 1.36$ rad, BKM Theorem).** The Israel junction conditions provide a baseline phase inversion of $+\pi$ between the scalar ($w(z)$) and tensor ($G_{eff}$) channels. However, this analysis assumes an instantaneous, non-dispersive bulk. In reality, the AdS$_5$ bulk acts as a **highly dissipative, causal medium**: the Weyl tensor response $\mathcal{E}_{\mu\nu}$ to the brane's mechanical oscillation propagates through a retarded Green's function with frequency-dependent phase delay.
 
@@ -1016,7 +1016,7 @@ The incredibly tight RAR correlation ($\sim 0.13$ dex scatter) observed across 2
 
 ### The Adiabatic Shield
 
-The brane oscillation frequency is ν ~ 1.6 × 10⁻¹⁷ Hz (period 2 Gyr), while the lightest Kaluza-Klein excitations have mass ~3.78 eV, corresponding to ν_KK ~ 9.1 × 10¹⁴ Hz. The ratio is:
+The brane oscillation frequency is ν ~ 1.6 × 10⁻¹⁷ Hz (period 2 Gyr), while the lightest Kaluza-Klein excitations have mass ~3.78 eV (flat-space; ~1.87 eV warped), corresponding to ν_KK ~ 9.1 × 10¹⁴ Hz. The ratio is:
 
 $$\frac{\nu_{\text{brane}}}{\nu_{KK}} \sim 10^{-31}$$
 
@@ -1765,9 +1765,7 @@ Since the $\sim 10^{20}$ PBHs formed from the **squeezed vacuum** of inflation (
 
 The following analysis of the holographic phase rigidity quantifies what ER=EPR **would** add if true — an additional topological safeguard against late-time decoherence — but is explicitly not required for the core theory.
 
-**1. The AdS$_5$ propagator and the holographic shortcut (ER=EPR interpretation).** The mathematical formulation of the topological protection reduces to computing the **two-point correlation function** of the radion field between two PBH nodes $A$ and $B$:
-
-**2. The bulk $AdS_5$ propagator and the holographic shortcut.** The mathematical formulation of this problem reduces to computing the **two-point correlation function** of the radion field between two micro-PBH capillaries $A$ and $B$ located at spacelike-separated positions $x_A$ and $x_B$ on the brane:
+**1. The bulk $AdS_5$ propagator and the holographic shortcut.** The mathematical formulation of this problem reduces to computing the **two-point correlation function** of the radion field between two micro-PBH capillaries $A$ and $B$ located at spacelike-separated positions $x_A$ and $x_B$ on the brane:
 
 $$\langle \phi(x_A)\,\phi(x_B) \rangle = \int_{\text{bulk}} \mathcal{D}g_{AB}\;\phi(x_A)\,\phi(x_B)\;e^{iS_{5D}[g]}$$
 
@@ -1893,9 +1891,7 @@ $$\frac{c}{2}\ln N > 1 \quad \Longleftrightarrow \quad N > e^{2/c}$$
 
 For any macroscopic $N$ (and certainly for $N \sim 10^{20}$), the connected cut cost vastly exceeds the disconnected cost. The **disconnected topology remains the global RT minimum**. Entanglement entropy saturates, the effective 5D internal distance between any pair of PBHs is maintained at zero, and the brane vibrates as a single monolithic entity. The continuum approximation is not merely convenient — it is **exact to $10^{-76}$** for the physical PBH population.
 
-### Holographic Network Immunity: Kesten-McKay Spectra and Quantum Percolation Resilience
-
-### Page's Theorem and the Inevitability of the Expander Graph Topology
+### Holographic Network Immunity: Page's Theorem, Kesten-McKay Spectra, and Quantum Percolation Resilience
 
 The most striking feature of the holographic network is the assertion that its entanglement takes the form of an expander graph $\mathcal{G}(N, d)$ with a massive spectral gap, enabling global $\ell = 0$ phase rigidity and extraordinary percolation resilience. Why an expander graph rather than a localized 3D spatial grid?
 
@@ -2219,7 +2215,7 @@ The anomaly is **not monotone**: it rises to a maximum near $m \approx 6$ (where
 
 ### Universal Yukawa-Robin Mapping: Closed-Form $\lambda_n(L)$ and Spectroscopic Splitting
 
-**3. Diagonal matrix elements and spectral shifts.** The formal prediction of the static spectral shift for each gravitational quantum state requires the evaluation of the diagonal matrix elements $\langle n \vert \delta V \vert n \rangle$ of the Yukawa perturbation. The Taylor expansion of the normalized Airy eigenstates near the mirror (where $\partial^2_x\text{Ai}(-\varepsilon_n) = 0$ enforces the absence of the quadratic term) generates a probability density that is quadratic at leading order and quartic at NLO:
+**1. Diagonal matrix elements and spectral shifts.** The formal prediction of the static spectral shift for each gravitational quantum state requires the evaluation of the diagonal matrix elements $\langle n \vert \delta V \vert n \rangle$ of the Yukawa perturbation. The Taylor expansion of the normalized Airy eigenstates near the mirror (where $\partial^2_x\text{Ai}(-\varepsilon_n) = 0$ enforces the absence of the quadratic term) generates a probability density that is quadratic at leading order and quartic at NLO:
 
 $$|\psi_n(z)|^2 \approx \frac{z^2}{z_0^3}\left(1 - \frac{2\varepsilon_n}{3}\,\frac{z^2}{z_0^2} + \cdots\right)$$
 
@@ -2229,7 +2225,7 @@ $$\Delta E_n^{(\text{Yukawa})} = 2\,V_0\left(\frac{L}{z_0}\right)^3\left[1 - 4\,
 
 where $\varepsilon_n$ are the Airy zeros ($\varepsilon_1 = 2.338$, $\varepsilon_2 = 4.088$, $\varepsilon_3 = 5.521$, ..., $\varepsilon_6 = 9.023$). The leading term is state-independent (universal cubic scaling); the NLO correction breaks the degeneracy through the quantum number $\varepsilon_n$.
 
-**4. The von Neumann isomorphism: exact analytical mapping.** The Robin boundary condition $\psi_n^{\prime}(0) + \lambda^{-1}\psi_n(0) = 0$ — the unique self-adjoint extension selected by the 5D Yukawa potential from the $(1,1)$ deficiency index family (Albeverio et al. 2005; Gitman, Tyutin & Voronov 2012) — modifies the Dirichlet energy levels by:
+**2. The von Neumann isomorphism: exact analytical mapping.** The Robin boundary condition $\psi_n^{\prime}(0) + \lambda^{-1}\psi_n(0) = 0$ — the unique self-adjoint extension selected by the 5D Yukawa potential from the $(1,1)$ deficiency index family (Albeverio et al. 2005; Gitman, Tyutin & Voronov 2012) — modifies the Dirichlet energy levels by:
 
 $$\Delta E_n^{(\text{Robin})} = \frac{\hbar^2}{2m_n\,\lambda}\,\vert\psi_n^{\prime}(0)\vert^2$$
 

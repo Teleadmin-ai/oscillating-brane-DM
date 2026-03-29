@@ -901,12 +901,14 @@ For our fiducial parameters (M_PBH = 10⁻¹¹ M_⊙, f_PBH = 1%):
 We implemented a (1+1)D toy model following BraneCode methodology:
 
 **Model Setup**:
-```python
-## Simplified metric
-ds² = -n²(t,y)dt² + a²(t,y)dx² + b²(t,y)dy²
 
-## Parameters (natural units)
-L = 1.0          # Extra dimension size  
+The 5D metric ansatz for the (1+1)D toy model:
+
+$$ds^2 = -n^2(t,y)\,dt^2 + a^2(t,y)\,dx^2 + b^2(t,y)\,dy^2$$
+
+```python
+# Parameters (natural units)
+L = 1.0          # Extra dimension size
 k_ads = 1.0      # AdS curvature
 tau_0 = 3.0      # Brane tension
 m_radion = 0.5   # Radion mass
@@ -990,7 +992,7 @@ While significant theoretical and observational work remains, the framework show
 - Cembranos, J.A.R. et al. (2003) - "Brane-World Dark Matter", Phys. Rev. Lett. 90, 241301 [arXiv:hep-ph/0302041]
 
 ### M-Theory and Brane Dynamics
-- Sethi, S., Strassler, M. & Sundrum, R. (2001) - Referenced in text but citation incomplete
+- Sethi, S., Strassler, M. & Sundrum, R. (2001) - "Comments on the landscape of string vacua", JHEP 0111, 047
 - Horava, P. & Witten, E. (1996) - "Heterotic and Type I string dynamics from eleven dimensions", Nucl. Phys. B 460, 506
 - Lukas, A., Ovrut, B.A. & Waldram, D. (1999) - "The cosmology of M-theory and Type II superstrings", Nucl. Phys. B 540, 230
 

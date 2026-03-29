@@ -61,8 +61,8 @@ Our theory presents a paradigm shift in understanding cosmic dynamics:
 
 <div class="section-marker" data-section="excitation"></div>
 
-## Recent Posts
-
+<div class="recent-posts-section">
+<h2>Recent Posts</h2>
 {% for post in site.posts limit:3 %}
   <article class="post-preview">
     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
@@ -70,6 +70,7 @@ Our theory presents a paradigm shift in understanding cosmic dynamics:
     <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
   </article>
 {% endfor %}
+</div>
 
 <div class="section-marker" data-section="chronology"></div>
 
