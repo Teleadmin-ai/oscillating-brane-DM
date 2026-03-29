@@ -6,7 +6,7 @@ permalink: /discoveries/
 
 # Discovery & Correction of Modern Cosmology
 
-An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies — 5 exact quantitative resolutions with ODE integration or analytical proof (Tier 1), 15 formal analytical frameworks with closed-form derivations (Tier 2), and 11 qualitative mechanistic proposals awaiting numerical validation (Tier 3) — within a single extra-dimensional geometric framework.
+An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 31 contemporary cosmological anomalies — 4 exact quantitative resolutions with ODE integration or analytical proof (Tier 1), 16 formal analytical frameworks with closed-form derivations (Tier 2), and 11 qualitative mechanistic proposals awaiting numerical validation (Tier 3) — within a single extra-dimensional geometric framework.
 
 ## 1. The Collapse of the Standard Model
 
@@ -309,7 +309,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 |---------------------|---------------------|-------------------------------|:---:|
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum | **T1** |
 | $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.50% ab initio (S₈ = 0.798, BKM theorem) | **T1** |
-| Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr ($\Delta\chi^2 = 32.9$, $6\sigma$) | **T1** |
+| Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr ($\Delta\chi^2 = 32.9$, semi-analytic; CLASS/CAMB pending) | **T2** |
 | eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_\text{eff}(z)$ + Press-Schechter $\gamma(M)$ spectrum | **T1** |
 | Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio derivation of MOND $\mu(x)$, assimilating SPARC success | **T1** |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric | **T2** |

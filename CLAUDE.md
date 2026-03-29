@@ -10,7 +10,7 @@
 
 ## ⛔ SACRED RULE — READ THIS FIRST ⛔
 The following .md files compose the PDF and are the SOLE source of truth for the theory:
-1. `discoveries.md` — 31 phenomena addressed (5 Tier 1 exact + 15 Tier 2 analytical + 11 Tier 3 exploratory) + 10 collateral theoretical discoveries
+1. `discoveries.md` — 31 phenomena addressed (4 Tier 1 exact + 16 Tier 2 analytical + 11 Tier 3 exploratory) + 10 collateral theoretical discoveries
 2. `theory.md` — core theoretical framework (motor, ODE, BBN, QCD, stability, PBH, bulk)
 3. `chronology.md` — cosmic chronology, tension calibration, MOND
 4. `predictions.md` — observational predictions, tests, Bayesian evidence
@@ -77,7 +77,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
 
 ### Epistemological Framework:
-- **31 phenomena addressed** (tiered: 5 Tier 1 exact resolutions + 15 Tier 2 analytical frameworks + 11 Tier 3 exploratory perspectives):
+- **31 phenomena addressed** (tiered: 4 Tier 1 exact resolutions + 16 Tier 2 analytical frameworks + 11 Tier 3 exploratory perspectives):
   - 3 core: DESI phantom crossing, S₈ tension (time-dependent growth suppression), Planck ISW (Δχ²=32.9)
   - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND (ab initio: a₀=cH₀/2π from Gibbons-Hawking thermodynamics, μ(x)=x/√(1+x²) from 5D geometric tilt, cluster failure via 2 Gyr resonance; SPARC 135 galaxies: RMS 29.3 km/s, 0 free params vs NFW 35.0 km/s, 270 params), JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
