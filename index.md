@@ -38,7 +38,7 @@ Imagine the universe not as a vast void punctuated by stars, but as the skin of 
       </tr>
       <tr>
         <td><strong>S₈ suppression</strong></td>
-        <td>4.50% ab initio (S₈ = 0.798, BKM theorem)</td>
+        <td>4.50% suppression (S₈ = 0.798, cross-observational rigidity)</td>
       </tr>
       <tr>
         <td><strong>Bayesian evidence</strong></td>

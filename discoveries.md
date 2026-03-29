@@ -93,13 +93,13 @@ The Brane model resolves this through **temporal gravitational oscillation**. As
 
 $$G_\text{eff}(t) = G_N\!\left(1 + f_\text{osc}\;\sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-During the primordial epoch (BBN, CMB), conformal symmetry froze the brane — gravity was exactly Newtonian. But the late-Universe structures probed by DES grew during the **current weakened-gravity phase** of the oscillation cycle, producing 4.50% slower growth (ab initio BKM theorem, zero free parameters). This is the same temporal mechanism that explains the eROSITA $\gamma = 1.19$ anomaly.
+During the primordial epoch (BBN, CMB), conformal symmetry froze the brane — gravity was exactly Newtonian. But the late-Universe structures probed by DES grew during the **current weakened-gravity phase** of the oscillation cycle, producing 4.50% slower growth (BKM theorem phase delay, zero additional free parameters beyond the global EFT set). This is the same temporal mechanism that explains the eROSITA $\gamma = 1.19$ anomaly.
 
 | Survey | Redshift range | Observed $S_8$ | Brane Prediction |
 |--------|-------|----------------|-----------------|
 | Planck / ACT DR6 (CMB) | $z = 1100$ (primordial) | $\approx 0.836$ | Conformal protection: standard gravity |
 | KiDS Legacy | $z \sim 0.1$--$0.9$ (mixed) | Consistent ($< 1\sigma$) | Averages over multiple oscillation phases |
-| DES Year 6 | $z < 0.5$ (late, non-linear) | $\approx 0.79$ (tension $> 2\sigma$) | Current stretched phase: $4.50\%$ growth suppression (ab initio, BKM theorem) |
+| DES Year 6 | $z < 0.5$ (late, non-linear) | $\approx 0.79$ (tension $> 2\sigma$) | Current stretched phase: $4.50\%$ growth suppression (cross-observational rigidity, BKM theorem) |
 
 The apparent inconsistency between surveys is the **confirmatory signature** of the oscillating brane: different surveys weight different redshift ranges, sampling different temporal phases of the gravitational cycle.
 
@@ -308,7 +308,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | Cosmological Problem | $\Lambda$CDM Status | Oscillating Brane V8.2 Solution | Tier |
 |---------------------|---------------------|-------------------------------|:---:|
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum | **T1** |
-| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.50% ab initio (S₈ = 0.798, BKM theorem) | **T1** |
+| $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: 4.50% (S₈ = 0.798, cross-observational rigidity) | **T1** |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr ($\Delta\chi^2 = 32.9$, semi-analytic; CLASS/CAMB pending) | **T2** |
 | eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_\text{eff}(z)$ + Press-Schechter $\gamma(M)$ spectrum | **T1** |
 | Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio derivation of MOND $\mu(x)$, assimilating SPARC success | **T1** |
@@ -351,7 +351,7 @@ The construction of the V8.2 framework through 60 analytical derivations has gen
 
 **Problem solved:** Obtaining closed-form solutions for monodromy matrices and phase shifts in non-smooth (Filippov), non-autonomous (Hubble expansion) differential equations — without adiabatic approximation.
 
-**Discovery:** The tensor-scalar phase delay between the dark energy $w(z)$ and gravitational coupling $G_{eff}(t)$ channels is the deterministic viscoelastic retardation of AdS$_5$ spacetime, formally derived via the **Bogoliubov-Krylov-Mitropolsky (BKM) Averaging Theorem**: $\delta_{BKM} = D\arctan(\omega/\Gamma_{stick}) + (1{-}D)\arctan(\omega/\Gamma_{slip}) = 1.36$ rad (zero free parameters). Injected ab initio into the growth ODE, this yields $S_8 = 0.798$ — resolving the tension from first principles. The 3D Floquet monodromy has block-triangular structure protecting the transverse eigenvalue, with persistence margin $\times 30$ and Neishtadt second-order residual $\leq 2\%$.
+**Discovery:** The tensor-scalar phase delay between the dark energy $w(z)$ and gravitational coupling $G_{eff}(t)$ channels is the deterministic viscoelastic retardation of AdS$_5$ spacetime, formally derived via the **Bogoliubov-Krylov-Mitropolsky (BKM) Averaging Theorem**: $\delta_{BKM} = D\arctan(\omega/\Gamma_{stick}) + (1{-}D)\arctan(\omega/\Gamma_{slip}) = 1.36$ rad (analytically derived from base EFT parameters, zero additional free parameters). Injected into the growth ODE, this yields $S_8 = 0.798$ — resolving the tension via cross-observational rigidity. The 3D Floquet monodromy has block-triangular structure protecting the transverse eigenvalue, with persistence margin $\times 17$ and Neishtadt second-order residual $\leq 2\%$.
 
 **Impact:** A breakthrough in applied mathematics: exact spectral factorization for piecewise-smooth non-autonomous systems, applicable to any stick-slip mechanical or biological oscillator. The arctan dual-damping formula is a general result for any Filippov system with regime-dependent dissipation.
 
@@ -391,7 +391,7 @@ The construction of the V8.2 framework through 60 analytical derivations has gen
 
 **Problem solved:** How can an $f_0 = 16$ attoHertz cosmic oscillation be detected by pulsar timing arrays at $16$ nanoHertz — a gap of $10^9$ harmonics?
 
-**Discovery:** The tensor TT gravitational wave is sourced by the brane's acceleration $\ddot{\phi}(t)$, not its position. The Filippov stick-slip shock generates Dirac-delta acceleration impulses whose Fourier transform is a flat (white noise) spectrum. The $n^2$ boost from position-to-acceleration compensates the $1/n$ sawtooth decay, producing constant power across all harmonics. NANOGrav listens to the **billionth overtone** of the cosmic heartbeat. Combined with the KK branching ratio $\mathcal{B} \approx 10^{-10}$: $h_c(16\;\text{nHz}) \sim 10^{-15}$, matching the NANOGrav 15-year detection with zero free parameters.
+**Discovery:** The tensor TT gravitational wave is sourced by the brane's acceleration $\ddot{\phi}(t)$, not its position. The Filippov stick-slip shock generates Dirac-delta acceleration impulses whose Fourier transform is a flat (white noise) spectrum. The $n^2$ boost from position-to-acceleration compensates the $1/n$ sawtooth decay, producing constant power across all harmonics. NANOGrav listens to the **billionth overtone** of the cosmic heartbeat. Combined with the KK branching ratio $\mathcal{B} \approx 10^{-10}$: $h_c(16\;\text{nHz}) \sim 10^{-15}$, matching the NANOGrav 15-year detection with zero additional free parameters beyond the global EFT set.
 
 ### 9.8. Bayesian Statistics: The Topologically Locked Rigid Template
 
