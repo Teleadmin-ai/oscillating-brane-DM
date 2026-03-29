@@ -16,7 +16,7 @@ The first great challenge was the one that has terrorized physicists for a centu
 
 The answer came through the **Holographic Grail**. By computing the exact Seeley-DeWitt coefficient ($a_5$) via Gilkey-Branson-Kirsten geometry, a blinding truth appeared: the quantum anomaly of our Universe is a phantom. The holographic crushing ($e^{-4kL}$) acts as an absolute shield. The Planck Brane (UV) absorbs **98.2%** of the quantum shock, leaving our material Brane (IR) intact. The tension of our Universe (257 MeV) is not an accident --- it is an immortal fixed point.
 
-To seal this immortality, the residual vacuum energy had to be calculated. Abandoning simplistic approximations, the **Transcendental Spectral Zeta Function** used the exact roots of Bessel functions instead of the standard Weyl-McMahon asymptotic expansion. The verdict: the Casimir energy modifies our Universe at the **39th decimal place** ($\delta/\Lambda_{QCD} \approx 9.5 \times 10^{-39}$).
+To seal this immortality, the residual vacuum energy had to be calculated. Abandoning simplistic approximations, the **Transcendental Spectral Zeta Function** used the exact roots of Bessel functions instead of the standard Weyl-McMahon asymptotic expansion. The verdict: the Casimir energy modifies our Universe by a ratio safely bounded below $10^{-30}$ — a radiative sanctuary resolving the hierarchy problem to 30 orders of magnitude.
 
 And as if that were not enough, the exploration of the complex plane via the **non-perturbative steepest descent** method revealed the existence of gravitational instantons blocking quantum tunneling into the 5th dimension. While Quantum Electrodynamics collapses (Dyson divergence) at order $\sim 137$, the oscillating brane remains stable until order **6,365**. The suppression factor: $e^{-2122} \sim 10^{-921}$. The Brane became a mathematical vault.
 
@@ -53,7 +53,7 @@ The Universe is not filled with invisible dark particles. It is an elastic membr
 | Domain | Derivation | Key Result |
 |------|--------|--------|
 | Quantum Gravity | Exact $a_5$ Seeley-DeWitt | $\bar{a}_5^{(UV)} = 2.845$ eV$^4$, 98.2% UV-confined |
-| Quantum Gravity | Transcendental Spectral Zeta | $\delta/\Lambda_{QCD} = 9.5 \times 10^{-39}$ (39th decimal) |
+| Quantum Gravity | Transcendental Spectral Zeta | $\delta_{phys}/\Lambda_{QCD} \ll 10^{-30}$ (radiative sanctuary) |
 | Quantum Gravity | Non-perturbative instanton | $S_{inst} = 2122$, tunneling suppression $10^{-921}$ |
 | Astrophysics | Bullet Cluster 3-component | MOND 99.5% velocity + Weyl 150 kpc offset |
 | Astrophysics | SPARC rotation curves | 29.3 km/s (0 params) vs 35.0 km/s (270 params) |

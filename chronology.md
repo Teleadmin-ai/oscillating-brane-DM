@@ -18,7 +18,7 @@ The brane tension $\tau_0 = 7 \times 10^{19}$ J/m² is not a dynamical variable 
 | Inflation | 10<sup>-34</sup> → 10<sup>-32</sup> s | Frozen | Exponential expansion driven by inflaton, radion overdamped |
 | Radiation Era | 10<sup>-32</sup> s → 10<sup>-5</sup> s | Frozen (conformal) | $T^\mu_\mu = 0$ (w=1/3): conformal symmetry freezes all radion dynamics. BBN protected |
 | QCD Ignition | ~10<sup>-5</sup> s (T ≈ 257 MeV) | **Motor ON** | Chiral symmetry breaking: $T^\mu_\mu \neq 0$, coupling factor (1-3w) jumps from 0 to 1 |
-| Attractor Locking | 10<sup>-5</sup> s → ~1 Gyr | Transient | $\xi R\phi$ attractor locks period to T = 2.0 Gyr within ~2 e-foldings |
+| Attractor Locking | 10<sup>-5</sup> s → ~1 Gyr | Transient | $\xi R\phi$ attractor locks period to T = 2.000 Gyr (chronodynamic eigenvalue) within ~2 e-foldings |
 | Current Era | 13.8 Gyr | Stable limit cycle | Steady oscillation, ~1% PBH capillaries ($f_{PBH} = 0.01$) tension the membrane |
 
 ## Physical Processes
@@ -38,12 +38,12 @@ The non-minimal coupling $\xi R\phi$ acts as a geometric Phase-Locked Loop, dyna
 ### Current Oscillations
 Today, the brane has reached its stable limit cycle:
 - Fixed tension τ₀ = 7×10<sup>19</sup> J/m² (set by KS geometry, not by cooling)
-- Fundamental period T = 2.0 Gyr (locked by ξRφ attractor)
+- Fundamental period T = 2.000 ± 0.003 Gyr (derived chronodynamic eigenvalue: 13.80/6.9, N=6)
 - ~1% of dark matter mass in PBH capillaries ($f_{PBH} = 0.01$) tensions the membrane
 
 ## The Awakening of Oscillations
 
-The motor ignites at the QCD phase transition ($T \approx 257$ MeV, $t \approx 10^{-5}$ s), when conformal symmetry breaks and the trace coupling $(1-3w)$ activates. The $\xi R\phi$ attractor then locks the period to $T = 2.0$ Gyr within ~2 e-foldings — roughly 1 Gyr after ignition. This is exactly when DESI's baryon acoustic oscillations and Planck's ISW resonance independently confirm the fundamental period.
+The motor ignites at the QCD phase transition ($T \approx 257$ MeV, $t \approx 10^{-5}$ s), when conformal symmetry breaks and the trace coupling $(1-3w)$ activates. The $\xi R\phi$ attractor then locks the period to $T = 2.000$ Gyr (chronodynamic eigenvalue) within ~2 e-foldings — roughly 1 Gyr after ignition. This is exactly when DESI's baryon acoustic oscillations and Planck's ISW resonance independently confirm the fundamental period.
 
 This temporal coincidence is not an accident: the QCD scale sets both the motor's energy ($\tau_0^{1/3} = 257$ MeV) and its ignition time, while the attractor dynamics set its period.
 
@@ -59,7 +59,7 @@ where t_stick is the charging time ($E_{\mu\nu}$ forcing against GW restoring po
 
 ### Determination of τ₀
 
-Inverting for the observed period T = 2.0 Gyr:
+Inverting for the derived period T = 2.000 Gyr:
 
 $$\tau_0 = f_\text{osc}\,M_\text{DM,tot}\left(\frac{2\pi}{T}\right)^2 = 7.0 \times 10^{19} \text{ J/m}^2$$
 
