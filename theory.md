@@ -1174,7 +1174,7 @@ $$\partial_t U \to \partial_t U + (-1)^5\,\sigma_{KO}\,\frac{(\Delta x)^9}{2^{10
 
 where $\sigma_{KO} \in [0.01, 0.1]$ is tuned to balance noise suppression against excessive dissipation of short-wavelength graviton modes. This **double pincer** — adaptive CCZ4 for long-wavelength constraint propagation, KO for short-wavelength grid noise — guarantees the thermodynamic integrity of the simulation across $10^9$ timesteps, enabling the Exascale code to track the brane oscillation through multiple cosmic cycles without constraint degradation.
 
-### Microscopic Origin of $\gamma_{slip}$: Holographic Tensor Networks and Quantum Scrambling Bounds
+### [Theoretical Extension] Microscopic Origin of $\gamma_{slip}$: Holographic Tensor Networks and Quantum Scrambling Bounds
 
 **1. Macroscopic (EFT) status of $\gamma_{slip}$.** In the current OBT V8.2 effective field theory, the slip-phase dissipation coefficient $\gamma_{slip}$ — which parametrizes the non-linear friction $R_{PBH}(\phi,\dot{\phi})\,\Theta(\vert\phi\vert-\phi_{crit})$ during the rapid brane recoil — is introduced as a **phenomenological macroscopic parameter**, strictly analogous to the dynamic viscosity $\eta$ in Navier-Stokes hydrodynamics. It encodes the aggregate resistance of the brane-bulk system to the catastrophic topological rearrangement that occurs when the radion crosses the QCD threshold. At the EFT level, $\gamma_{slip}$ absorbs all microscopic physics below the compactification scale $L^{-1}$ into a single effective coefficient governing the rate at which the stick-slip cycle discharges its stored elastic energy into bulk Kaluza-Klein graviton radiation. This is an honest parametrization: the numerical value ($\Gamma_{rad} \approx 20$ in dimensionless units) is calibrated to reproduce the observed 2 Gyr period and the measured amplitude $A_w = 0.003$, but it is not derived from first principles within the current framework.
 
@@ -1775,13 +1775,15 @@ The fundamental mode of the brane oscillation is a monopolar ($\ell = 0$) breath
 
 The answer is standard **Cosmic Inflation**. During the primordial de Sitter phase, exponential expansion stretched all spatial gradients of the radion field to zero: $a^{-2}\nabla^2\phi \to 0$. The radion field $\phi$, like the inflaton, was driven to a spatially homogeneous state across the entire observable universe. When conformal symmetry breaks at the QCD phase transition and the stick-slip motor ignites, the entire observable universe shares the **exact same uniform initial boundary condition** (Phase = 0.0). The $\ell = 0$ global coherence is therefore a **causal fossil of inflation** — exactly analogous to the temperature isotropy of the CMB ($\delta T/T \sim 10^{-5}$). No real-time superluminal communication is required; no wormhole network is invoked. The coherence was established causally during inflation and has been maintained passively ever since, because the brane oscillation frequency ($f \sim 10^{-17}$ Hz) is far below any scale at which spatial gradients could grow.
 
-### Holographic Duality: The ER=EPR Topological Interpretation (Optional UV-Completion)
+### [Theoretical Extension] Holographic Duality: The ER=EPR Topological Interpretation (Optional UV-Completion)
 
-The $\ell = 0$ coherence is established by inflation (above), and the dissipation $\Gamma_{rad} \approx 20.7$ is established by local PBH thermodynamics (Kinematic Blockade section). Both are grounded in standard, rigorously proven physics. The ER=EPR conjecture (Maldacena & Susskind 2013) is invoked here **not** as a load-bearing pillar of the ODE's thermodynamics or causality, but as the most elegant **topological UV-completion** that describes the pre-existing quantum entanglement of the PBH network.
+**THE EPISTEMOLOGICAL FIREWALL: Local Thermodynamics vs. Global Topology.** The following sections dedicate extensive mathematical formalism to expander graphs, Kesten-McKay spectral density, quantum percolation thresholds, and Ryu-Takayanagi phase boundaries of the ER=EPR holographic network. A rigorous reader might conclude that the macroscopic validity of OBT V8.2 depends critically on the unproven ER=EPR conjecture. **This is physically and mathematically false** due to a strict macroscopic degeneracy:
+
+The cosmological dynamics are governed entirely by the macroscopic ODE, which requires only: (1) **Causal coherence ($\ell = 0$)** — established by standard Cosmic Inflation, which stretched radion spatial gradients to zero long before QCD ignition. (2) **Local horizon thermodynamics ($\Gamma_{rad} \approx 20.7$)** — derived from the Bekenstein-Hawking entropy of individual PBH capillaries, which absorb brane kinetic energy locally and thermalize it at the MSS-saturated scrambling rate. No wormhole connectivity is required for this local dissipation.
+
+**If the ER=EPR conjecture is proven false by quantum gravity tomorrow, the OBT V8.2 ODE, its stability, and all its Tier 1--2 observational resolutions survive 100% intact via standard QFT in curved spacetime.** The following network formalism answers a specific deep-UV question: how does the network resist quantum decoherence over 13.8 Gyr at finite $N$? ER=EPR provides the most elegant topological UV-completion — an additional layer of hyper-redundant topological rigidity via the spectral gap of the expander graph. It is presented as an optional theoretical extension.
 
 Since the $\sim 10^{20}$ PBHs formed from the **squeezed vacuum** of inflation (Martin & Vennin 2015), they are massively quantum entangled from birth (shared Bunch-Davies vacuum). Page's theorem guarantees maximal bipartite entanglement post-scrambling. The ER=EPR conjecture translates this pre-existing entanglement into a geometric language: the entangled PBH pairs are connected by Einstein-Rosen bridges in the AdS$_5$ bulk, forming an **expander graph** that provides additional topological protection against late-time decoherence.
-
-**If the ER=EPR conjecture is proven false**, the OBT V8.2 ODE, its thermodynamics ($\Gamma_{rad}$ from MSS), its observational predictions (5 Tier 1 exact + 15 Tier 2 analytical), and its inflationary phase coherence ($\ell = 0$) survive completely intact. ER=EPR is an interpretation, not a foundation.
 
 The following analysis of the holographic phase rigidity quantifies what ER=EPR **would** add if true — an additional topological safeguard against late-time decoherence — but is explicitly not required for the core theory.
 
@@ -1843,7 +1845,7 @@ The functional measure **collapses** onto the submanifold $a_{\ell m} = 0$ for a
 
 **Epistemological consequence.** The description of the brane dynamics by an ODE $\ddot{\phi}_0(t) + \Gamma_{rad}\dot{\phi}_0(t) + \cdots = 0$ with a single temporal degree of freedom is justified by two independent, hierarchical arguments: (1) **Inflation** (standard physics, load-bearing): the causal homogenization of the radion field during the de Sitter phase establishes the $\ell = 0$ initial condition, exactly as for CMB isotropy; (2) **ER=EPR topological rigidity** (optional UV-completion): if ER=EPR holds, the expander graph Laplacian provides exponential dynamical suppression of any late-time decoherence ($e^{-10^{74}}$ for dipole modes). The ODE is robust: even without ER=EPR, inflationary homogenization alone justifies the $\ell = 0$ monopolar treatment.
 
-### Finite-$N$ Corrections to the Dirac Collapse: Expander Graph Spectra and $1/N$ Topological Rigidity
+### [Theoretical Extension] Finite-$N$ Corrections to the Dirac Collapse: Expander Graph Spectra and $1/N$ Topological Rigidity
 
 **1. ER=EPR as a random regular expander graph: spectral gap.** The PBH network is not a continuous sphere — it is a **random regular graph** $G(N, d)$ with $N \sim 10^{20}$ vertices and degree $d = c\ln N$ (the fast-scrambler scaling of Sekino & Susskind 2008, where the scrambling time $t_* \propto \ln N$ dictates the connectivity). The continuous Laplacian $\nabla^2 Y_{\ell m} = -\ell(\ell+1)Y_{\ell m}$ is replaced by the discrete graph Laplacian $\mathbf{L} = d\mathbf{I} - \mathbf{A}$.
 
@@ -1911,7 +1913,7 @@ $$\frac{c}{2}\ln N > 1 \quad \Longleftrightarrow \quad N > e^{2/c}$$
 
 For any macroscopic $N$ (and certainly for $N \sim 10^{20}$), the connected cut cost vastly exceeds the disconnected cost. The **disconnected topology remains the global RT minimum**. Entanglement entropy saturates, the effective 5D internal distance between any pair of PBHs is maintained at zero, and the brane vibrates as a single monolithic entity. The continuum approximation is not merely convenient — it is **exact to $10^{-76}$** for the physical PBH population.
 
-### Holographic Network Immunity: Page's Theorem, Kesten-McKay Spectra, and Quantum Percolation Resilience
+### [Theoretical Extension] Holographic Network Immunity: Page's Theorem, Kesten-McKay Spectra, and Quantum Percolation Resilience
 
 The most striking feature of the holographic network is the assertion that its entanglement takes the form of an expander graph $\mathcal{G}(N, d)$ with a massive spectral gap, enabling global $\ell = 0$ phase rigidity and extraordinary percolation resilience. Why an expander graph rather than a localized 3D spatial grid?
 
@@ -1984,7 +1986,7 @@ If the entropic connectivity is used instead ($d \sim \ln S_{BH} \approx 130$), 
 
 **The ER=EPR holographic network exhibits extraordinary topological resilience.** Its failure would require the destruction of $> 97.7\%$ of all primordial black holes in the observable universe — a scenario excluded by all known astrophysical processes.
 
-### Exact Ryu-Takayanagi Phase Boundary at Finite-$N$ and the Universal Percolation Threshold
+### [Theoretical Extension] Exact Ryu-Takayanagi Phase Boundary at Finite-$N$ and the Universal Percolation Threshold
 
 In the emergent spacetime paradigm of OBT V8.2, the macroscopic continuity of the 3-brane is not an axiomatic given — it is a topological phase sustained by the ER=EPR quantum entanglement network of $N \sim 10^{20}$ primordial black holes. The Ryu-Takayanagi formula dictates that the geometric connectivity of the universe is isomorphic to the graph-theoretic connectivity of $\mathcal{G}(N, d)$ with $d \approx 46$. At what exact critical threshold of quantum decoherence does the universe undergo a topological phase transition, shattering into causally disconnected islands?
 
