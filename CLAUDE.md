@@ -153,7 +153,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **"Loss of local 4D gravitational singularity"** (NOT "loss of mass") for sub-M_crit PBHs → 5D Schwarzschild-Tangherlini
 - **Double miracle at M_crit**: w_F(M_crit) = 2π×200/600 ≈ 2.09 — GL topological transition AND optical detection threshold coincide at same mass
 - **Sugiyama et al. 2026**: 4 PBH candidates at 10⁻⁷ M☉ (above M_crit), zero below — observational validation of perforation hierarchy
-- **Popperian Falsifiability Shield (4 pillars)**: (A) Ballistic Decoupling — Bullet Cluster 150 kpc offset, (B) GL Microlensing Cliff — abrupt cutoff at M_crit (Roman/HSC), (C) Femtolensing via **Cepstral Stacking** — ensemble Power Cepstrum of GRBs isolates universal geometric time-delay spike (Fermi/SVOM), (D) Dynamical Heating — Poisson granularity heats UFDs (Gaia DR4/JWST). Each pillar independently falsifiable
+- **Popperian Falsifiability Shield (5 pillars)**: (A) Ballistic Decoupling — Bullet Cluster 150 kpc offset, (B) GL Microlensing Cliff — abrupt cutoff at M_crit (Roman/HSC), (C) Femtolensing via **Cepstral Stacking** — ensemble Power Cepstrum of GRBs isolates universal geometric time-delay spike (Fermi/SVOM), (D) Dynamical Heating — Poisson granularity heats UFDs (Gaia DR4/JWST), (E) Astrometric Wrinkling — 5D capillary transits through Solar System: pure astrometric shift without photometric amplification (Gaia DR4/DR5) + softened 5D Weyl tidal signature in planetary ephemerides. Each pillar independently falsifiable
 - **Orthogonal Discriminant Theorem**: null WIMP detection is necessary but insufficient (shared by MOND/Verlinde). OBT uniquely breaks degeneracy via intersection: [null WIMP + qBOUNCE 0.2μm deviation + Bullet Cluster offset + chronodynamics w(z)/S₈/ISW]
 - **ER=EPR Epistemological Firewall**: ODE requires ONLY (1) inflation ℓ=0 + (2) local PBH thermodynamics (MSS scrambling). ER=EPR = optional UV-completion for decoherence protection. If ER=EPR false → all T1/T2 predictions survive 100%. Sections marked [Theoretical Extension]
 - **GW170817 compatibility**: tensor GW modes (KK zero mode) propagate at c on brane, orthogonal to scalar radion oscillation
@@ -373,7 +373,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Non-perturbative steepest descent (S3/P7) | Instanton action for KS flux transition | S_inst≈2122, tunneling ~10⁻⁹²¹, Borel-summable |
 | Graph Laplacian determinant (S3/P8) | Kirchhoff + Kesten-McKay closed form | I_KM(46)=3.8175, δω/ω₀≈10⁻⁷⁶ |
 | Exact RT finite-N (S3/P9) | Friedman spectral gap + percolation shift | λ₁≈0.708, p_c(N) shift 10⁻⁷, P_fail~10⁻¹⁰²¹ |
-| Popperian Falsifiability Shield | 4-pillar epistemological defense of discrete PBH network | (A) Bullet Cluster ballistic offset 150 kpc, (B) GL microlensing cliff at M_crit, (C) femtolensing via Cepstral Stacking (ensemble Power Cepstrum of GRBs), (D) dynamical heating of UFDs via granularity |
+| Popperian Falsifiability Shield | 5-pillar epistemological defense of discrete PBH network | (A) Bullet Cluster ballistic offset 150 kpc, (B) GL microlensing cliff at M_crit, (C) femtolensing via Cepstral Stacking (ensemble Power Cepstrum of GRBs), (D) dynamical heating of UFDs via granularity, (E) astrometric wrinkling — 5D capillary Solar System transits (Gaia DR4/DR5 + ephemerides) |
 
 ## IMPORTANT: Laboratory Chapter Terminology
 - **NEVER say "violating Heisenberg"** — say "Orthogonal Geometric Bypass" (5D metric operators commute with 4D gauge operators)

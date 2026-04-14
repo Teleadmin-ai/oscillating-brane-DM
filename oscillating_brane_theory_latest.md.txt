@@ -3317,7 +3317,7 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 | eROSITA DR2 | Mass-dependent $\gamma(M)$: groups 0.88, clusters 1.19 | Universal $\gamma$ independent of mass |
 | Gaia DR4/JWST | UFD dynamical heating ($M_{PBH} \sim 10^{20}$ kg) | Zero excess dispersion in UFDs |
 
-### Falsifiability of the Discrete PBH Network: Four Independent Tests
+### Falsifiability of the Discrete PBH Network: Five Independent Tests
 
 The triple local immunity of sub-critical capillaries (wave-optics cloaking, GL accretion death, Hawking coldness) is a legitimate epistemological concern. Individual invisibility, however, does not imply collective undetectability. Just as confined quarks are proven via jets and hadron spectra, the discrete PBH anchor network generates four independent macroscopic signatures that no smooth modified gravity continuum can mimic:
 
@@ -3333,7 +3333,18 @@ Because astrophysical noise (Band functions, internal shocks) is spectrally smoo
 
 **D. Dynamical Heating via Topological Granularity.** The $\sim 10^{20}$ discrete PBH anchors ($M \sim 10^{20}$ kg each) create Poisson gravitational noise absent from smooth potentials. Over $\sim 10^{10}$ yr, this stochastic scattering heats ultra-faint dwarf galaxies (Segue 1, Tucana II) and disrupts wide stellar binaries ($a > 10^3$ AU). *Falsification: perfectly smooth inner potential in UFDs and zero wide-binary excess disruption (Gaia DR4, JWST-NIRSpec).*
 
-Each pillar operates in a different wavelength regime (optical, X-ray, gamma-ray, stellar kinematics) and is independent. Together they constitute a complete Popperian shield: the PBH network is strictly falsifiable through collective signatures, even though individual capillaries remain locally cloaked.
+**E. Astrometric 'Wrinkling' and Solar System Transits.** According to the Perforation Hierarchy (Chapter 3), sub-critical PBH capillaries ($M < M_{crit}$) have Schwarzschild radii smaller than the extra dimension $L$. They undergo the Gregory-Laflamme transition, physically piercing the 3-brane to form 5D topological capillaries extending into the bulk, while massive stellar black holes ($M > M_{crit}$) remain 4D-anchored.
+
+*Crucial topological clarification:* While these sub-critical PBHs physically open into the fifth dimension, Standard Model baryonic matter cannot freely 'fall' into the bulk. In braneworld frameworks, matter fields (open strings) are rigorously confined to the 3-brane hypersurface, whereas gravity (closed strings) can explore the bulk. Therefore, the 5D capillary's singularity is displaced into the bulk, and its gravitational potential projected onto the 3-brane lacks a sharp $1/r$ cusp. Instead, it manifests as a smoothed, macroscopic topological 'wrinkle' (the Weyl fluid $\mathcal{E}_{00}$). This softened potential drastically reduces the Bondi-Hoyle accretion cross-section for primordial gas, explaining the strict absence of X-ray accretion disks.
+
+Because the dark matter halo is composed of these discrete $\sim 10^{20}$ kg anchors, millions must routinely transit through the Milky Way disk, and occasionally through our own Solar System. We predict two localized methods to calculate their exact trajectories:
+
+- **Astrometric Deflection (Gaia DR4/DR5):** When a 5D capillary transits the line of sight to a background star, the topological 'wrinkle' deflects the light path without the photometric amplification of standard microlensing (due to wave-optics cloaking). This manifests as a pure astrometric shift---the background star traces an anomalous microscopic ellipse. High-precision astrometric catalogs can be mined to extract local capillary trajectories.
+- **Solar System Ephemeris Anomalies:** If a capillary transits the inner Solar System, its smoothed 5D Weyl potential will perturb planetary orbits and deep-space probes. Unlike a standard asteroid, the perturbation profile will lack a point-mass singularity, exhibiting a softened 5D tidal signature extending far beyond the nominal Schwarzschild radius. Mining planetary ephemerides and legacy spacecraft telemetry (e.g., unresolved flyby anomalies) could triangulate a local capillary.
+
+*Falsification and Future Horizons:* If ultra-precise ephemerides exclude the granular passage of $\sim 10^{20}$ kg topological defects over decades, the local discrete anchor hypothesis is ruled out. Conversely, triangulating a local transit would open the ultimate horizon: directing an interstellar probe to fly through the gravitational wake of a 5D capillary, measuring the exact geometry of the Weyl fluid *in situ* without the catastrophic destruction associated with a 4D black hole singularity.
+
+Each pillar operates in a different regime (optical lensing, X-ray imaging, gamma-ray spectroscopy, stellar kinematics, astrometry/ephemerides) and is independent. Together they constitute a complete Popperian shield: the PBH network is strictly falsifiable through collective signatures, even though individual capillaries remain locally cloaked.
 
 ## The Bayesian Verdict
 
