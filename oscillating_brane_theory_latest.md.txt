@@ -3317,7 +3317,7 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 | eROSITA DR2 | Mass-dependent $\gamma(M)$: groups 0.88, clusters 1.19 | Universal $\gamma$ independent of mass |
 | Gaia DR4/JWST | UFD dynamical heating ($M_{PBH} \sim 10^{20}$ kg) | Zero excess dispersion in UFDs |
 
-### Falsifiability of the Discrete PBH Network: Five Independent Tests
+### Falsifiability of the Discrete PBH Network: Six Independent Tests
 
 The triple local immunity of sub-critical capillaries (wave-optics cloaking, GL accretion death, Hawking coldness) is a legitimate epistemological concern. Individual invisibility, however, does not imply collective undetectability. Just as confined quarks are proven via jets and hadron spectra, the discrete PBH anchor network generates four independent macroscopic signatures that no smooth modified gravity continuum can mimic:
 
@@ -3344,7 +3344,20 @@ Because the dark matter halo is composed of these discrete $\sim 10^{20}$ kg anc
 
 *Falsification and Future Horizons:* If ultra-precise ephemerides exclude the granular passage of $\sim 10^{20}$ kg topological defects over decades, the local discrete anchor hypothesis is ruled out. Conversely, triangulating a local transit would open the ultimate horizon: directing an interstellar probe to fly through the gravitational wake of a 5D capillary, measuring the exact geometry of the Weyl fluid *in situ* without the catastrophic destruction associated with a 4D black hole singularity.
 
-Each pillar operates in a different regime (optical lensing, X-ray imaging, gamma-ray spectroscopy, stellar kinematics, astrometry/ephemerides) and is independent. Together they constitute a complete Popperian shield: the PBH network is strictly falsifiable through collective signatures, even though individual capillaries remain locally cloaked.
+**F. Diffuse Near-Infrared Vacuum Glow (KK Graviton Decay).**
+A fundamental critique of pure gravitational dark matter is its electromagnetic silence. While individual $\sim 10^{20}$ kg capillaries are too light to generate detectable hydrodynamic gas wakes or X-ray accretion in the ISM, the OBT V8.2 framework predicts a striking collective electromagnetic signature arising directly from the 5D bulk thermodynamics.
+
+To maintain stability, the stick-slip motor continually radiates excess geometric strain into the bulk as massive Kaluza-Klein (KK) gravitons. The exact warped mass gap for the first excitation is $m_1 \approx 1.87$ eV (derived analytically via the transcendental Bessel roots of the $AdS_5$ cavity). In generic braneworld scenarios, these massive bulk gravitons populate the galactic halo and possess a suppressed but finite probability of decaying back onto the 3-brane into Standard Model photon pairs ($G_{KK} \to \gamma\gamma$).
+
+Kinematics dictates that a decaying 1.87 eV graviton at rest in the halo produces two photons, each with energy $E_\gamma \approx 0.935$ eV. This corresponds to a strict monochromatic emission line at wavelength:
+
+$$\lambda = \frac{hc}{E_\gamma} \approx \frac{1.24\;\text{eV}\cdot\mu\text{m}}{0.935\;\text{eV}} \approx 1.32\;\mu\text{m}$$
+
+This specific wavelength sits squarely in the Near-Infrared (NIR) J-band.
+
+*Falsifiable Signature:* The theory predicts a faint, diffuse near-infrared glow permeating the galactic dark matter halo, appearing spontaneously from the 'vacuum' without any stellar, dust, or gas progenitor. This pure $1.32\;\mu$m emission line (broadened only by the halo velocity dispersion, $\Delta\lambda/\lambda \sim 10^{-3}$) offers a spectacular, testable physical mechanism for the unexplained excesses currently observed in the Cosmic Infrared Background (CIB) by missions like CIBER and the James Webb Space Telescope (JWST). *Falsification: if future CIB spectral mapping rigorously rules out any anomalous line emission near $1.32\;\mu$m that scales with the dark matter density profile, the KK-decay channel and the $L = 0.2\;\mu$m geometric scale are severely constrained.*
+
+Each pillar operates in a different regime (optical lensing, X-ray imaging, gamma-ray spectroscopy, stellar kinematics, astrometry/ephemerides, near-infrared spectroscopy) and is independent. Together they constitute a complete Popperian shield: the PBH network is strictly falsifiable through collective signatures, even though individual capillaries remain locally cloaked.
 
 ## The Bayesian Verdict
 
