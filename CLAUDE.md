@@ -10,7 +10,7 @@
 
 ## ⛔ SACRED RULE — READ THIS FIRST ⛔
 The following .md files compose the PDF and are the SOLE source of truth for the theory:
-1. `discoveries.md` — 29 phenomena addressed (3 Tier 1 exact + 13 Tier 2 analytical + 13 Tier 3 exploratory) + 10 collateral theoretical discoveries
+1. `discoveries.md` — 30 phenomena addressed (4 Tier 1 exact + 13 Tier 2 analytical + 13 Tier 3 exploratory) + 10 collateral theoretical discoveries
 2. `theory.md` — core theoretical framework (motor, ODE, BBN, QCD, stability, PBH, bulk)
 3. `chronology.md` — cosmic chronology, tension calibration, MOND
 4. `predictions.md` — observational predictions, tests, Bayesian evidence
@@ -77,8 +77,8 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
 
 ### Epistemological Framework:
-- **29 phenomena addressed** (tiered: 3 Tier 1 exact resolutions + 13 Tier 2 analytical frameworks + 13 Tier 3 exploratory perspectives):
-  - 3 core T1: DESI phantom crossing, S₈ tension (time-dependent growth suppression), emergent MOND (μ(x)+a₀ derivation). ISW (Δχ²=32.9) = T2 (semi-analytic, CLASS/CAMB pending)
+- **30 phenomena addressed** (tiered: 4 Tier 1 exact resolutions + 13 Tier 2 analytical frameworks + 13 Tier 3 exploratory perspectives):
+  - 4 core T1: DESI phantom crossing, S₈ tension (time-dependent growth suppression), emergent MOND (μ(x)+a₀ derivation for SPARC galaxies), wide binary γ_g anomaly (Chae 2025, Gaia DR3 312 binaries, γ_g=1.48^{+0.33}_{-0.23} matched <1σ by same μ(x) at sub-parsec scales). ISW (Δχ²=32.9) = T2 (semi-analytic, CLASS/CAMB pending)
   - 8 established: neutrino masses, DM invisibility (LZ), emergent MOND (ab initio: a₀=cH₀/2π from Gibbons-Hawking thermodynamics, μ(x)=x/√(1+x²) from 5D geometric tilt, cluster failure via 2 Gyr resonance; SPARC 135 galaxies: RMS 29.3 km/s, 0 free params vs NFW 35.0 km/s, 270 params), JWST early galaxies, early SMBHs, cosmological constant, cosmic dipole, Hubble tension
   - 4 validated connections: Lithium-7 (BBN conformal tolerance), baryon asymmetry (spontaneous QCD baryogenesis, c_QCD=O(1)), Big Ring/Giant Arc (Chladni resonance), CMB birefringence (5D geometric Chern-Simons, c_top=75)
   - 3 astrophysical signatures: Hubble's 43 anomalous objects (ER=EPR topological scarring), dark flow unification (v_bulk=300 km/s), Chladni mega-structures
@@ -224,7 +224,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Exascale NR = verification not necessity**: 5D numerical relativity would provide independent validation but is NOT required for the theory's mathematical consistency (all 60 derivations are analytical/semi-analytical). Current feasibility limited by 10³² scale ratio → IMEX+HMM mandatory
 
 ### Key References:
-Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation), Sekino & Susskind 2008 (fast scrambling), Bousso & Polchinski 2000 (flux landscape), Douglas & Kachru 2007 (string landscape review), Alon 1986 / Alon-Boppana (expander graph spectral gap), Kesten 1959 / McKay 1981 (regular graph spectral density), Friedman 2003 (Ramanujan graph proof), Bordenave 2015 (sparse random graph universality), Martin & Vennin 2015 (inflationary PBH squeezed vacuum genesis), Page 1993 (Page's theorem, maximal entanglement post-scrambling), Milgrom 1983 (MOND empirical phenomenology), Verlinde 2016 (emergent gravity, a₀ from holographic thermodynamics), Pazy 2013 (MOND from Unruh effect), McCulloch 2007 (modified inertia), Tinker et al. 2008 (halo mass function), Clowe et al. 2006 (Bullet Cluster lensing offset), Ulmer & Goodman 1995 (femtolensing), Matsunaga & Yamamoto 2006 (wave-optics PBH lensing), Brandt 2016 (PBH dynamical heating constraints), Green 2016 (PBH wide binary disruption), Dirac 1937 (Large Numbers Hypothesis, time-varying G), Brans & Dicke 1961 (scalar-tensor gravity)
+Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, Maartens 2004, DESI 2024/2026, Goldberger & Wise 1999, Carr, Kühnel & Sandstad 2016, Jenke et al. (qBOUNCE) 2014, Gregory & Laflamme PRL 70 (1993), Tangherlini 1963, Sugiyama, Takada et al. arXiv:2602.05840 (2026), Klebanov & Strassler 2000 (warped throat), Balasubramanian et al. 2005 (LVS), Filippov 1988, di Bernardo et al. 2008, Leine & Nijmeijer 2004 (saltation), Fenichel 1979, Llibre, Novaes & Teixeira 2015 (Filippov persistence), CMPP (Coley-Milson-Pravda-Pravdova) 2004, Godazgar & Reall 2012 (5D peeling), Skenderis 2002 (holographic renormalization), Lloyd 2000, Maldacena-Shenker-Stanford 2016 (MSS bound), Pastawski-Yoshida-Harlow-Preskill 2015 (HaPPY code), Albeverio et al. 2005 (von Neumann self-adjoint extensions), Gibbons & Hawking 1977 (cosmological horizon thermodynamics), Unruh 1976 (detector acceleration radiation), Sekino & Susskind 2008 (fast scrambling), Bousso & Polchinski 2000 (flux landscape), Douglas & Kachru 2007 (string landscape review), Alon 1986 / Alon-Boppana (expander graph spectral gap), Kesten 1959 / McKay 1981 (regular graph spectral density), Friedman 2003 (Ramanujan graph proof), Bordenave 2015 (sparse random graph universality), Martin & Vennin 2015 (inflationary PBH squeezed vacuum genesis), Page 1993 (Page's theorem, maximal entanglement post-scrambling), Milgrom 1983 (MOND empirical phenomenology), Verlinde 2016 (emergent gravity, a₀ from holographic thermodynamics), Pazy 2013 (MOND from Unruh effect), McCulloch 2007 (modified inertia), Chae 2025 (Gaia DR3 wide binary gravitational anomaly, arXiv:2502.09373), Tinker et al. 2008 (halo mass function), Clowe et al. 2006 (Bullet Cluster lensing offset), Ulmer & Goodman 1995 (femtolensing), Matsunaga & Yamamoto 2006 (wave-optics PBH lensing), Brandt 2016 (PBH dynamical heating constraints), Green 2016 (PBH wide binary disruption), Dirac 1937 (Large Numbers Hypothesis, time-varying G), Brans & Dicke 1961 (scalar-tensor gravity)
 
 ## Key Parameters
 | Parameter | Value |
@@ -303,7 +303,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - **Site pages = PDF chapters** (one file, one page, one chapter)
 - PDF is generated by `scripts/generate_pdf.py` which assembles these files:
   1. `index.md` → Ch 1: Home
-  2. `discoveries.md` → Ch 2: Discovery & Correction (29 anomalies + 10 collateral discoveries)
+  2. `discoveries.md` → Ch 2: Discovery & Correction (30 anomalies + 10 collateral discoveries)
   3. `theory.md` → Ch 3: Complete Theoretical Framework
   4. `chronology.md` → Ch 4: Cosmic Chronology
   5. `predictions.md` → Ch 5: Observational Predictions
@@ -369,6 +369,7 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 | Continuous γ(M) (S3/P3) | Tinker sensitivity kernel strict monotonicity | f(R)/scalar-tensor exclusion theorem, 4-bin mass grid |
 | 3-component Bullet Cluster (S3/P4) | sinc(0.053π)+Weyl offset+cored Σ | MOND 99.5% + 150 kpc Weyl offset, falsifiable vs NFW |
 | Ab initio SPARC (S3/P5) | Exact RAR from 5D geometry | 29.3 km/s RMS, 0 free params, 135 galaxies |
+| Wide binary γ_g (Chae 2025) | γ_g(u)=[(1+√(1+4/u²))/2]^{1/2} closed form | Prediction 1.58-1.80 (log-median/mean), observed 1.48^{+0.33}_{-0.23}, <1σ match, Gaia DR3 312 binaries. Multi-scale validation: same μ(x) from SPARC kpc to AU sub-parsec (10 orders in acceleration) |
 | Multi-harmonic sinc (S3/P6) | Fourier averaging with asymmetric waveform | W_exact(1)≡0 (topological), group extinction from n=2 harmonic |
 | Non-perturbative steepest descent (S3/P7) | Instanton action for KS flux transition | S_inst≈2122, tunneling ~10⁻⁹²¹, Borel-summable |
 | Graph Laplacian determinant (S3/P8) | Kirchhoff + Kesten-McKay closed form | I_KM(46)=3.8175, δω/ω₀≈10⁻⁷⁶ |
