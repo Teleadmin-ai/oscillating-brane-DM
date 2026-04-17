@@ -159,8 +159,8 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 | Test | 2024 Limit | Our Model | Verdict |
 |------|------------|-----------|---------|
 | Newton @ 25 μm | No deviation | $L = 0.2\,\mu$m | ✓ Invisible |
-| PTA 15 years | $h_c < 3\times 10^{-15}$ | $h_c \sim 2\times 10^{-18}$ | ✓ Silent |
-| $H_0$ dipole | < 2% | ~0.01% | ✓ Subtle |
+| NANOGrav 15yr ($f \approx 16$ nHz) | $h_c \approx 2.4 \times 10^{-15}$ (detected) | $h_c \sim 10^{-15}$ (billionth overtone, spectral flattening) | ✓ Matches |
+| $H_0$ bulk flow (Cosmicflows-4) | Consistent with $\sim 10^{-3}$ | $\delta H/H \sim 10^{-3}$ (5D drift) | ✓ Subtle |
 
 ### Predictions for 2026-2030
 

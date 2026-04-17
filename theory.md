@@ -95,14 +95,14 @@ Three crucial properties ensure $\dot{V} < 0$ outside a compact set:
 
 By the **Yoshizawa Theorem**: $\dot{V} < 0$ outside a compact ball guarantees **Global Uniform Ultimate Boundedness**. Divergent runaway of the brane is **analytically prohibited** — not by numerical evidence, but by the mathematical structure of 5D General Relativity coupled to an expanding Universe.
 
-**3. Orbital stability via Maximal Lyapunov Exponent.** The Yoshizawa analysis guarantees topological confinement: all trajectories are trapped in a bounded region. Within this bound, the uniqueness and orbital stability of the limit cycle ($T = 2.0$ Gyr) are quantified by computing the transverse Maximal Lyapunov Exponent (MLE) via BDF stiff integration of perturbed trajectories ($\delta_0 = 10^{-8}$). The MLE converges to $\lambda_{max} = -0.016 < 0$, proving that perturbations decay exponentially — the limit cycle is an **orbitally stable attractor** with no drift or chaotic wandering.
+**3. Numerical cross-check via Lyapunov diagnostics.** The Yoshizawa analysis guarantees topological confinement: all trajectories are trapped in a bounded region. A numerical BDF stiff integration of perturbed trajectories ($\delta_0 = 10^{-8}$) yields a Lyapunov-like exponent $\lambda_{num} \approx -0.016$. **Caveat (important)**: this numerical value captures the **near-zero longitudinal exponent** $\lambda_1 \approx 0$ of the slow cosmological drift along the cycle (combined with smoothing of the Heaviside discontinuity by the BDF solver), **not** the true transverse contraction rate. The true transverse Floquet multiplier is derived exactly analytically in the next section via the Liouville-Filippov trace formula: $\kappa = e^{-4.74} \approx 8.7 \times 10^{-3}$ (contraction factor $\sim 115$ per cycle). The numerical $\lambda_{num} \approx -0.016$ serves only as a qualitative confirmation that no chaotic wandering occurs; the quantitative orbital stability is established by $\kappa$ below.
 
 ![Phase Portrait](/plots/lyapunov_phase_portrait.png)
 *Figure: Left: Phase portrait showing convergence to the stick-slip limit cycle. Right: Phase space divergence $\nabla \cdot \vec{v} < 0$ at all times (Liouville contraction).*
 
 ### Global Uniqueness: Filippov Saltation and Banach Fixed-Point Contraction
 
-**1. The switching manifold and the non-smooth Poincaré map.** The results above — a strictly negative Maximal Lyapunov Exponent ($\lambda_{max} = -0.016$) and the Yoshizawa GUUB proof — establish orbital stability and topological confinement, but not the **global uniqueness** of the attractor. Non-linear dynamical systems admit multistability: coexisting limit cycles nested within the same bounded region, each locally stable but with distinct basins of attraction. Proving that the 2 Gyr cycle is the unique periodic orbit — that no parasitic competing attractor exists — requires a topological argument beyond Lyapunov theory.
+**1. The switching manifold and the non-smooth Poincaré map.** The Yoshizawa GUUB proof establishes topological confinement, and the exact analytical contraction $\kappa = e^{-4.74}$ derived below establishes orbital stability. But neither guarantees the **global uniqueness** of the attractor. Non-linear dynamical systems admit multistability: coexisting limit cycles nested within the same bounded region, each locally stable but with distinct basins of attraction. Proving that the 2 Gyr cycle is the unique periodic orbit — that no parasitic competing attractor exists — requires a topological argument beyond Lyapunov theory.
 
 The classical Levinson-Smith theorem (1942), which guarantees uniqueness for smooth Liénard equations via integral conditions on the damping function, is analytically unstable for our system: the Heaviside activation $\Theta(\vert\phi\vert - \phi_{crit})$ introduces a distributional discontinuity (a Dirac delta upon differentiation) that invalidates the smoothness hypotheses. Attempting to verify growth conditions on a damping function containing step discontinuities — and requiring uniformity across the slow cosmological parameter $\tau$ — is a distributional minefield that a rigorous reviewer would immediately flag.
 
@@ -268,7 +268,7 @@ $$E_\tau = \tau_0^{1/3} = 257 \text{ MeV} \approx \Lambda_{QCD}$$
 
 **1. The phenomenological Ansatz (bottom-up approach).** The identification $\tau_0^{1/3} \approx 257$ MeV $\approx \Lambda_{QCD}$ is introduced as a phenomenological Ansatz, not derived from first principles. The brane tension is constrained empirically by macroscopic observation (the oscillation period $T = 2$ Gyr calibrated from DESI BAO and Planck ISW), and its striking coincidence with the QCD confinement scale provides the physical mechanism (conformal symmetry breaking via $T^\mu_\mu \neq 0$) that explains the motor's ignition. This transparency is deliberate: claiming an ab initio derivation without possessing one would be intellectually dishonest and immediately detectable by any competent reviewer.
 
-**2. The Effective Field Theory paradigm.** The validity of a cosmological model operating in the infrared (IR) regime does not require complete knowledge of the ultraviolet (UV) microscopic physics. The Standard Model of particle physics itself contains 19 free parameters (masses, couplings, mixing angles) that are measured but not derived from a deeper theory — yet no one questions its predictive power within its domain of validity. Similarly, the Oscillating Brane Theory V8.2 assumes its role as a **powerful effective cosmology**: it operates with 4 continuous EFT parameters ($\tau_0$, $L$, $D$, $f_{osc}$) plus one topological integer ($N = 6$), addresses 31 cosmological phenomena at three tiers of rigor (3 exact, 15 analytical, 13 exploratory), and makes falsifiable predictions — all without requiring knowledge of the Planck-scale physics that generates these parameters. The EFT approach is not an admission of incompleteness; it is the standard methodology of modern theoretical physics.
+**2. The Effective Field Theory paradigm.** The validity of a cosmological model operating in the infrared (IR) regime does not require complete knowledge of the ultraviolet (UV) microscopic physics. The Standard Model of particle physics itself contains 19 free parameters (masses, couplings, mixing angles) that are measured but not derived from a deeper theory — yet no one questions its predictive power within its domain of validity. Similarly, the Oscillating Brane Theory V8.2 assumes its role as a **powerful effective cosmology**: it operates with 4 continuous EFT parameters ($\tau_0$, $L$, $D$, $f_{osc}$) plus one topological integer ($N = 6$), addresses 29 cosmological phenomena at three tiers of rigor (3 exact, 13 analytical, 13 exploratory), and makes falsifiable predictions — all without requiring knowledge of the Planck-scale physics that generates these parameters. The EFT approach is not an admission of incompleteness; it is the standard methodology of modern theoretical physics.
 
 ### String Theory UV Completion: Klebanov-Strassler Throats and LVS Moduli Stabilization
 
@@ -336,13 +336,13 @@ $$k = \frac{\Lambda_{IR}}{\mathcal{V}^{2/3}}$$
 
 The 8-order-of-magnitude gap between the QCD scale (MeV) and the radion mass (eV) is **entirely governed by the volume of the internal space**.
 
-**Exact computation.** For $L = 0.2\,\mu$m: $m_1 = \pi\hbar c/L \approx 3.10$ eV, giving $k = m_1/3.832 \approx 0.81$ eV. Inverting: $\mathcal{V}^{2/3} = 257\,\text{MeV}/0.81\,\text{eV} \approx 3.17 \times 10^8$. In the Swiss-Cheese limit ($\mathcal{V} \approx \tau_{large}^{3/2}$): $\tau_{large} \approx 3.17 \times 10^8$ and $\mathcal{V} \approx 5.66 \times 10^{12}$.
+**Exact computation.** For $L = 0.2\,\mu$m and using the exact Bessel quantization $J_1(m_n L) = 0$ with first zero $j_{1,1} = 3.832$: $m_1 = j_{1,1}\hbar c/L \approx 3.78$ eV (flat-space approximation), giving $k = m_1/j_{1,1} \approx 0.987$ eV (equivalently $kL = 1$). Inverting: $\mathcal{V}^{2/3} = 257\,\text{MeV}/0.987\,\text{eV} \approx 2.60 \times 10^8$. In the Swiss-Cheese limit ($\mathcal{V} \approx \tau_{large}^{3/2}$): $\tau_{large} \approx 2.60 \times 10^8$ and $\mathcal{V} \approx 4.20 \times 10^{12}$.
 
 This volume places the OBT V8.2 squarely in the **Intermediate String Scale Scenario**: $M_s \sim M_{Pl}/\sqrt{\mathcal{V}} \sim 10^{12}$ GeV — the "sweet spot" for QCD axion dark matter and right-handed neutrino Majorana masses.
 
 **LVS stabilization without fine-tuning.** Using the Kreuzer-Skarke maximum $\vert\chi\vert = 960$: $\xi = 0.00242 \times 960 \approx 2.32$. The LVS minimum fixes $\tau_{small} = (3\xi)^{2/3} \approx 3.65$ ($> 1$: supergravity valid). The volume stabilization equation $\mathcal{V} = W_0\sqrt{\tau_{small}}/(4\pi)\,e^{2\pi\tau_{small}}$ yields:
 
-$$W_0 \approx \frac{5.66 \times 10^{12}}{0.152 \times 9.11 \times 10^9} \approx 4{,}100$$
+$$W_0 \approx \frac{4.20 \times 10^{12}}{0.152 \times 9.11 \times 10^9} \approx 3{,}030$$
 
 Unlike the KKLT paradigm (which requires pathological fine-tuning $W_0 \sim 10^{-4}$), the Swiss-Cheese geometry stabilizes with a **natural flux superpotential** $W_0 \sim \mathcal{O}(10^3)$ — massively favored in the statistical string landscape. The dark energy scale ($L = 0.2\,\mu$m) is not hand-tuned: it is the **holographic emergence** of a Calabi-Yau vibrating in its ground state.
 
@@ -358,7 +358,7 @@ $$\tau_s \approx (3 \times 2.32)^{2/3} \approx 3.65$$
 
 This validates the supergravity approximation ($\tau_s > 1$) and confirms that the small 4-cycle is topologically frozen at an $\mathcal{O}(1)$ value — no fine-tuning required.
 
-**2. The eradication of KKLT fine-tuning ($W_0 \approx 4100$).** Injecting $\mathcal{V} = 5.66 \times 10^{12}$ and $\tau_s = 3.65$ into the volume stabilization equation $\mathcal{V} = W_0\sqrt{\tau_s}/(4\pi)\,e^{2\pi\tau_s}$ extracts $W_0 \approx 4100$. Unlike KKLT (which collapses without the pathological fine-tuning $W_0 \sim 10^{-4}$), the LVS geometry generates the radion scale $L = 0.2\,\mu$m with a natural, massive flux superpotential of order $\mathcal{O}(10^3)$ — statistically overwhelming in the string landscape.
+**2. The eradication of KKLT fine-tuning ($W_0 \approx 3030$).** Injecting $\mathcal{V} = 4.20 \times 10^{12}$ and $\tau_s = 3.65$ into the volume stabilization equation $\mathcal{V} = W_0\sqrt{\tau_s}/(4\pi)\,e^{2\pi\tau_s}$ extracts $W_0 \approx 3030$. Unlike KKLT (which collapses without the pathological fine-tuning $W_0 \sim 10^{-4}$), the LVS geometry generates the radion scale $L = 0.2\,\mu$m with a natural, massive flux superpotential of order $\mathcal{O}(10^3)$ — statistically overwhelming in the string landscape.
 
 **3. Mass spectrum and stability.** The Hessian $M_{ij} = \partial^2 V/(\partial\tau_i\partial\tau_j)$ at the minimum has two strictly positive eigenvalues, confirming a stable vacuum. The mass spectrum exhibits extreme scale separation:
 
@@ -367,13 +367,13 @@ This validates the supergravity approximation ($\tau_s > 1$) and confirms that t
 
 **Epistemological distinction:** this global LVS volume modulus (the "size" of the compact Calabi-Yau) is fundamentally decoupled and static at our scales. The dynamically oscillating radion of OBT V8.2 is the **local** Goldberger-Wise field at the bottom of the KS throat — a different physical degree of freedom with mass $m_\phi \sim k\,e^{-kL} \sim 0.36$ eV.
 
-**4. String scale and SUSY breaking.** The string scale: $M_s = M_{Pl}/\sqrt{\mathcal{V}} \approx 2.43 \times 10^{18}/\sqrt{5.66 \times 10^{12}} \approx 1.02 \times 10^{12}$ GeV. This is the **Intermediate String Scale** — the phenomenological sweet spot for axion dark matter ($f_a \sim M_s$) and the type-I seesaw mechanism for neutrino masses ($m_\nu \sim v^2/M_s \sim 0.01$ eV).
+**4. String scale and SUSY breaking.** The string scale: $M_s = M_{Pl}/\sqrt{\mathcal{V}} \approx 2.43 \times 10^{18}/\sqrt{4.20 \times 10^{12}} \approx 1.19 \times 10^{12}$ GeV. This is the **Intermediate String Scale** — the phenomenological sweet spot for axion dark matter ($f_a \sim M_s$) and the type-I seesaw mechanism for neutrino masses ($m_\nu \sim v^2/M_s \sim 0.01$ eV).
 
-The gravitino mass: $m_{3/2} = W_0 M_{Pl}/\mathcal{V} \approx 4100 \times 2.43 \times 10^{18}/(5.66 \times 10^{12}) \approx 1.76 \times 10^9$ GeV. Supersymmetry is broken at $\sim 10^9$ GeV — far above the LHC reach ($\sim 10^3$ GeV). **The null results of ATLAS and CMS are a prediction, not a failure.** There are no superpartners at the TeV scale in the OBT V8.2 landscape.
+The gravitino mass: $m_{3/2} = W_0 M_{Pl}/\mathcal{V} \approx 3030 \times 2.43 \times 10^{18}/(4.20 \times 10^{12}) \approx 1.75 \times 10^9$ GeV. Supersymmetry is broken at $\sim 10^9$ GeV — far above the LHC reach ($\sim 10^3$ GeV). **The null results of ATLAS and CMS are a prediction, not a failure.** There are no superpartners at the TeV scale in the OBT V8.2 landscape.
 
 **5. The AdS well depth and the tension gap.** The LVS minimum is deeply Anti-de Sitter:
 
-$$V_{min} \sim -\frac{\xi W_0^2}{\mathcal{V}^3}M_{Pl}^4 \sim -\frac{2.32 \times (4100)^2}{(5.66 \times 10^{12})^3}M_{Pl}^4 \approx -2.2 \times 10^{-31}\,M_{Pl}^4$$
+$$V_{min} \sim -\frac{\xi W_0^2}{\mathcal{V}^3}M_{Pl}^4 \sim -\frac{2.32 \times (3030)^2}{(4.20 \times 10^{12})^3}M_{Pl}^4 \approx -2.9 \times 10^{-31}\,M_{Pl}^4$$
 
 Converting to a gauge energy scale: $\vert V_{min}\vert^{1/4} \approx (2.2 \times 10^{-31})^{1/4}\,M_{Pl} \approx 5 \times 10^{10}$ GeV. This is the energy scale of the global Calabi-Yau vacuum.
 
@@ -388,7 +388,7 @@ Converting to a gauge energy scale: $\vert V_{min}\vert^{1/4} \approx (2.2 \time
 
 The **multi-throat architecture** is not an ad hoc postulate — it is the unique topological solution imposed by the 45-order-of-magnitude gap between the LVS vacuum depth and the QCD brane tension. Multi-throat Calabi-Yau geometries are generic in the flux landscape (Bousso & Polchinski 2000, Douglas & Kachru 2007): the vast number of 3-cycles ($b_3 \sim \mathcal{O}(100)$) in typical CY threefolds naturally accommodates multiple warped deformed conifolds at different warp scales.
 
-**The loop is closed.** From Bayesian inference (MCMC) to Bekenstein-Hawking entropy, from the QCD vacuum (257 MeV) to the multi-throat topology of Calabi-Yau manifolds in string theory (flux quantization, tadpole cancellation, multi-throat KKLT uplift, Swiss-Cheese LVS stabilization), the Oscillating Brane Theory V8.2 constitutes a mathematically complete, observationally falsifiable, and string-theoretically consistent framework addressing 31 cosmological phenomena (3 exact + 15 analytical + 13 exploratory) with 4 continuous EFT parameters, 1 topological integer, and zero new particles.
+**The loop is closed.** From Bayesian inference (MCMC) to Bekenstein-Hawking entropy, from the QCD vacuum (257 MeV) to the multi-throat topology of Calabi-Yau manifolds in string theory (flux quantization, tadpole cancellation, multi-throat KKLT uplift, Swiss-Cheese LVS stabilization), the Oscillating Brane Theory V8.2 constitutes a mathematically complete, observationally falsifiable, and string-theoretically consistent framework addressing 29 cosmological phenomena (3 exact + 13 analytical + 13 exploratory) with 4 continuous EFT parameters, 1 topological integer, and zero new particles.
 
 ### Radion-Higgs Hybridization: The Scalar Mixing Mechanism
 
@@ -1231,7 +1231,7 @@ $$\lambda_L = \frac{2\pi k_B T_H}{\hbar}$$
 
 **Numerical evaluation.** For $M_{crit} \approx 10^{20}$ kg with Hawking temperature $T_H \approx 900$ K: $\lambda_L = 2\pi \times 1.381 \times 10^{-23} \times 900 / (1.055 \times 10^{-34}) \approx 7.40 \times 10^{14}\,\text{s}^{-1}$. The fundamental thermal relaxation time is $\tau_L = 1/\lambda_L \approx 1.35$ femtoseconds.
 
-**The scrambling time.** The scrambling time $t_*$ — the physical duration for a local perturbation to be completely diluted across all $S_{BH}$ degrees of freedom — is $t_* = (1/\lambda_L)\ln S_{BH}$. With $S_{BH} = 4\pi(M_{crit}/M_{Pl})^2 \approx 2.6 \times 10^{56}$ nats ($\ln S_{BH} \approx 130$):
+**The scrambling time.** The scrambling time $t_*$ — the physical duration for a local perturbation to be completely diluted across all $S_{BH}$ degrees of freedom — is $t_* = (1/\lambda_L)\ln S_{BH}$. With $S_{BH} = 4\pi(M_{crit}/M_{Pl})^2 \approx 4.8 \times 10^{56}$ nats ($\ln S_{BH} \approx 130$):
 
 $$t_* \approx 1.35 \times 10^{-15} \times 130 \approx 1.76 \times 10^{-13}\,\text{s} \quad (\sim 0.2\,\text{picoseconds})$$
 
@@ -1257,7 +1257,7 @@ The phenomenological friction parameter is the **pure expression of the Bekenste
 
 **Dimensional scaling to cosmological units.** A common misreading of $\Gamma_{rad} = \ln(S_{BH})/(2\pi) \approx 20.7$ assumes this is a dimensionless number arbitrarily assigned Gyr$^{-1}$ units. The dimensional chain is: $\Gamma_{rad}$ enters the ODE as a rate $[\text{time}]^{-1}$. The physical scrambling time $t_* = (\hbar\ln S_{BH})/(2\pi k_B T_H) \approx 1.76 \times 10^{-13}$ s provides the fundamental timescale. The effective macroscopic friction per Gyr arises from the number of PBH scrambling events within each oscillation cycle, normalized to the brane oscillation timescale: $\gamma_{slip} = 1/(t_* \times N_{eff}) \times T$ in appropriate units. The result $\approx 20.7$ Gyr$^{-1}$ inherits its dimensionality from the physical scrambling frequency, not from the bare entropy.
 
-**Ab initio numerical verification.** For $M_{crit} \approx 10^{20}$ kg: $S_{BH} = 4\pi(M_{crit}/M_{Pl})^2 \approx 2.6 \times 10^{56}$ nats, giving $\ln S_{BH} \approx 130$:
+**Ab initio numerical verification.** For $M_{crit} \approx 1.35 \times 10^{20}$ kg: $S_{BH} = 4\pi(M_{crit}/M_{Pl})^2 \approx 4.8 \times 10^{56}$ nats, giving $\ln S_{BH} \approx 130$:
 
 $$\boxed{\Gamma_{rad} = \frac{130}{2\pi} = \frac{130}{6.283} \approx 20.7\;\text{Gyr}^{-1}}$$
 
@@ -2323,10 +2323,10 @@ OBT V8.2 has not yet been integrated into a full Boltzmann solver (CLASS or CAMB
 
 ### Occam's Razor: Bayesian Dimensionality and the Overdetermined Jacobian
 
-A rigorous epistemological evaluation of a cosmological model requires computing its true parametric cost. The Oscillating Brane Theory addresses 31 cosmological phenomena with **4 continuous EFT parameters** ($\tau_0$, $L$, $D$, $f_{osc}$), one topological integer ($N = 6$), and **zero new particles**:
+A rigorous epistemological evaluation of a cosmological model requires computing its true parametric cost. The Oscillating Brane Theory addresses 29 cosmological phenomena with **4 continuous EFT parameters** ($\tau_0$, $L$, $D$, $f_{osc}$), one topological integer ($N = 6$), and **zero new particles**:
 
 - **3 exact mathematical resolutions (Tier 1)**: DESI $w(z)$ phantom crossing, $S_8$ linear growth suppression, and emergent MOND derivations ($\mu(x)$ and $a_0$) — derived rigorously via ODE integration or 5D geometrical proof
-- **15 formal analytical frameworks (Tier 2)**: eROSITA $\gamma(M)$ (semi-analytic Tinker mapping), ISW resonance (semi-analytic, CLASS/CAMB pending), neutrino masses, CMB birefringence, JWST, early SMBHs, $\Lambda$, NANOGrav, DF2/DF4, Amaterasu, etc. — closed-form derivations with quantitative predictions
+- **13 formal analytical frameworks (Tier 2)**: eROSITA $\gamma(M)$ (semi-analytic Tinker mapping), ISW resonance (semi-analytic, CLASS/CAMB pending), neutrino masses, CMB birefringence, JWST, early SMBHs, $\Lambda$, NANOGrav, DF2/DF4, Amaterasu, Big Ring/Giant Arc, naturalness, DM invisibility — closed-form derivations with quantitative predictions
 - **13 exploratory mechanistic perspectives (Tier 3)**: Lithium-7 (BBN network pending), QCD baryogenesis (Boltzmann transport pending), Hubble tension, cosmic dipole, KBC Void, ORCs, Planet 9, flyby anomaly, etc. — qualitative pathways requiring future N-body/Boltzmann simulations
 
 All other quantities are derived consequences:

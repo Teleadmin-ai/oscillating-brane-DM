@@ -11,7 +11,7 @@ description: |
 
 ## Executive Summary
 
-**Pedagogical scope.** This appendix serves as an accessible introduction to the linearized EFT regime of the Oscillating Brane Theory — a "toy model" entry point using the harmonic approximation ($\tau(t) = \tau_0 + \delta\tau\cos(\omega t)$), 4D effective loop corrections, and classical stability arguments. It is designed to build the reader's physical intuition. The **complete analytical framework** — non-linear Filippov stick-slip ODE, Liouville-Abel hyper-contraction ($\kappa = e^{-8.60}$), Fenichel-Neishtadt persistence, spectral zeta regularization, CMPP 5D extraction, Klebanov-Strassler UV completion, and holographic ER=EPR phase rigidity — is presented in the [Complete Theoretical Framework](/theory/), which supersedes the simplified treatments below wherever they diverge.
+**Pedagogical scope.** This appendix serves as an accessible introduction to the linearized EFT regime of the Oscillating Brane Theory — a "toy model" entry point using the harmonic approximation ($\tau(t) = \tau_0 + \delta\tau\cos(\omega t)$), 4D effective loop corrections, and classical stability arguments. It is designed to build the reader's physical intuition. The **complete analytical framework** — non-linear Filippov stick-slip ODE, Liouville-Abel contraction ($\kappa = e^{-4.74} \approx 8.7 \times 10^{-3}$, factor 115 per cycle, after eliminating the $\Gamma_{rad}$/$\gamma_{slip}$ double-counting), Fenichel-Neishtadt persistence, spectral zeta regularization, CMPP 5D extraction, Klebanov-Strassler UV completion, and holographic ER=EPR phase rigidity — is presented in the [Complete Theoretical Framework](/theory/), which supersedes the simplified treatments below wherever they diverge.
 
 This document provides a rigorous mathematical foundation for the oscillating brane dark matter theory, addressing key criticisms and establishing its viability as a competitive cosmological model. We demonstrate compatibility with general relativity and quantum mechanics, provide detailed observational confrontations, and present testable predictions that distinguish our model from ΛCDM and MOND.
 
@@ -186,9 +186,7 @@ with:
 - $n_t = 2/3$ (phase transition spectrum)
 - $\Omega_0 \sim 10^{-9}$ (compatible with NANOGrav)
 
-**Unique Signature**: Coherent oscillations produce a doublet:
-- Primary: $f_0 = 1/T = 1.6 \times 10^{-17}$ Hz
-- Echo: $2f_0$ from flux reversal
+**Unique Signature**: The V8.2 stick-slip motor sources a stochastic gravitational wave background via tensor TT projection of the Filippov shock acceleration $\ddot{\phi}(t)$ (see [Complete Theoretical Framework](/theory/) — "Spectral Flattening and the NANOGrav Overtone Signature"). The fundamental frequency $f_0 = 1/T \approx 1.6 \times 10^{-17}$ Hz is far below any direct GW detector band, but the Dirac-delta acceleration impulses at each slip event generate a flat Fourier spectrum (white noise) that extends into the PTA nanohertz window. NANOGrav effectively listens to the $n \approx 10^9$ overtone of the cosmic heartbeat, with a predicted characteristic strain $h_c(16\,\text{nHz}) \sim 10^{-15}$ — matching the NANOGrav 15-year common-process signal with zero additional free parameters.
 
 ## 4. Comparative Analysis
 

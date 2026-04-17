@@ -6,7 +6,7 @@ permalink: /discoveries/
 
 # Discovery & Correction of Modern Cosmology
 
-An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 32 contemporary cosmological anomalies — 3 exact quantitative resolutions with ODE integration or analytical proof (Tier 1), 16 formal analytical frameworks with closed-form derivations (Tier 2), and 13 qualitative mechanistic proposals awaiting numerical validation (Tier 3) — within a single extra-dimensional geometric framework.
+An independent analysis demonstrating how the Oscillating Brane Theory (Cosmic Yoyo V8.2) addresses 29 contemporary cosmological anomalies — 3 exact quantitative resolutions with ODE integration or analytical proof (Tier 1), 13 formal analytical frameworks with closed-form derivations (Tier 2), and 13 qualitative mechanistic proposals awaiting numerical validation (Tier 3) — within a single extra-dimensional geometric framework.
 
 ## 1. The Collapse of the Standard Model
 
@@ -352,6 +352,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | NANOGrav GWB features | Unexplained spectral dips/excesses | Stick-slip spectral flattening ($h_c \sim 10^{-15}$, 0 free params) | **T2** |
 | DM-free galaxies (DF2/DF4) | Defy formation models | Cymatic standing wave nodes (~3.4% of galaxies) | **T2** |
 | Amaterasu 244 EeV | Violates GZK horizon | 5D KK leakage extends attenuation $60\times$ | **T2** |
+| Big Ring / Giant Arc (>1 Gly) | Exceed $\Lambda$CDM max clustering (370 Mpc) | Brane transverse resonance: $\lambda_1 \approx 816$ Mpc, $\lambda_2 \approx 2041$ Mpc | **T2** |
 | Hubble Tension ($H_0$) | $> 6\sigma$ discrepancy | Oscillating $G_\text{eff}(t)$ biases Cepheid calibration *(qualitative)* | **T3** |
 | Cosmic Dipole | Tension with cosmological principle | Brane drift velocity in 5th dimension *(qualitative)* | **T3** |
 | KBC Void (${\sim}\,600$ Mpc) | $> 6\sigma$ tension with $\Lambda$CDM | Cymatic standing wave: $\lambda = c \times T = 613$ Mpc *(qualitative)* | **T3** |
@@ -452,7 +453,7 @@ The Oscillating Brane paradigm (Cosmic Yoyo V8.2) does not represent yet another
 
 The hybrid motor architecture --- macroscopic Cosmic Web forcing ($\mathcal{F}_{web}[E_{\mu\nu}]$) providing the muscle via Israel junction conditions, and microscopic ER=EPR-entangled PBH network ($\mathcal{R}_{PBH}$) providing quantum synchronization as the metronome --- resolves the fundamental paradox of global phase coherence across 93 billion light-years.
 
-As the orthodox $\Lambda$CDM system fragments empirically against cutting-edge 2024--2026 instruments, the Universe as an oscillating four-dimensional membrane absorbs, integrates, and decodes the totality of these **31 contemporary anomalies** with unprecedented structural elegance --- from the cosmic microwave background to the orbits of trans-Neptunian objects, from the age of ancient stars to the radio sky, all addressed by 4 continuous EFT parameters ($\tau_0$, $L$, $D$, $f_{osc}$), one topological integer ($N = 6$), and zero new particles — a unified geometric dark sector replacing $\Omega_c$, $\Lambda$, and all modified gravity extensions.
+As the orthodox $\Lambda$CDM system fragments empirically against cutting-edge 2024--2026 instruments, the Universe as an oscillating four-dimensional membrane absorbs, integrates, and decodes the totality of these **29 contemporary anomalies** with unprecedented structural elegance --- from the cosmic microwave background to the orbits of trans-Neptunian objects, from the age of ancient stars to the radio sky, all addressed by 4 continuous EFT parameters ($\tau_0$, $L$, $D$, $f_{osc}$), one topological integer ($N = 6$), and zero new particles — a unified geometric dark sector replacing $\Omega_c$, $\Lambda$, and all modified gravity extensions.
 
 **Confirmation requires the observational tests of the coming decade:**
 - DESI Year 5 and Euclid full oscillation spectrum
