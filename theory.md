@@ -2414,17 +2414,16 @@ The asteroid-mass window at $f_{PBH} = 0.01$ is the **least constrained region**
 
 ### Epistemological Defense: Falsifiability of the Discrete Anchor Network
 
-The convergence of three local immunities — diffraction-blind in optical ($w_F \ll 1$), accretion-dead in X-ray (GL instability), and Hawking-cold in gamma-ray ($T_H \approx 900$ K) — poses a legitimate Popperian challenge. The answer: the discrete PBH network is strictly falsifiable through seven independent macroscopic signatures that no smooth modified gravity continuum can produce:
+The convergence of three local immunities — diffraction-blind in optical ($w_F \ll 1$), accretion-dead in X-ray (GL instability), and Hawking-cold in gamma-ray ($T_H \approx 900$ K) — poses a legitimate Popperian challenge. The answer: the discrete PBH network is strictly falsifiable through six independent macroscopic signatures that no smooth modified gravity continuum can produce:
 
 - **(A) Ballistic Decoupling** — collisionless kinematic offset ($\sim 150$ kpc) in merging clusters (Bullet Cluster)
 - **(B) GL Microlensing Cliff** — abrupt topological cutoff at $M_{crit}$ in microlensing event rates (Roman/HSC)
 - **(C) Femtolensing Fringes via Cepstral Stacking** — universal geometric time-delay spike in ensemble Power Cepstrum of GRBs at 0.1--1 MeV (Fermi-GBM/SVOM)
 - **(D) Dynamical Heating** — Poisson granularity heats ultra-faint dwarf galaxies and disrupts wide binaries (Gaia DR4/JWST)
 - **(E) Astrometric Wrinkling** — pure astrometric shifts and softened 5D Weyl tidal signatures from local Solar-System capillary transits (Gaia DR4/DR5 + planetary ephemerides)
-- **(F) Diffuse NIR Vacuum Glow** — monochromatic $1.32\;\mu$m halo emission from $G_{KK} \to \gamma\gamma$ decay (JWST/CIBER CIB spectral mapping)
-- **(G) Galactic Center 'No-Spike' Theorem** — cored Weyl-fluid profile around Sgr A* (extended mass $\lesssim 1200\;M_\odot$ at S2 apocenter, GRAVITY 2022/2024) topologically forbids Gondolo-Silk adiabatic contraction
+- **(F) Galactic Center 'No-Spike' Theorem** — cored Weyl-fluid profile around Sgr A* (extended mass $\lesssim 1200\;M_\odot$ at S2 apocenter, GRAVITY 2022/2024) topologically forbids Gondolo-Silk adiabatic contraction
 
-Each pillar operates in a different wavelength regime and is independent. Detailed derivations and falsification criteria are presented in the [Observational Predictions](/predictions/) chapter.
+Each pillar operates in a different wavelength regime and is independent. A seventh channel — the diffuse near-infrared glow from $G_{KK} \to \gamma\gamma$ decay — was found by *ab initio* calculation to be Planck-suppressed to $\sim 28$ orders of magnitude below detectability; it is therefore retained not as a falsifiable pillar but as a null-result consistency check (the "electromagnetic silence of the bulk"). Detailed derivations and falsification criteria are presented in the [Observational Predictions](/predictions/) chapter.
 
 ## Definitive Future Test
 

@@ -3042,17 +3042,16 @@ The asteroid-mass window at $f_{PBH} = 0.01$ is the **least constrained region**
 
 ### Epistemological Defense: Falsifiability of the Discrete Anchor Network
 
-The convergence of three local immunities --- diffraction-blind in optical ($w_F \ll 1$), accretion-dead in X-ray (GL instability), and Hawking-cold in gamma-ray ($T_H \approx 900$ K) --- poses a legitimate Popperian challenge. The answer: the discrete PBH network is strictly falsifiable through seven independent macroscopic signatures that no smooth modified gravity continuum can produce:
+The convergence of three local immunities --- diffraction-blind in optical ($w_F \ll 1$), accretion-dead in X-ray (GL instability), and Hawking-cold in gamma-ray ($T_H \approx 900$ K) --- poses a legitimate Popperian challenge. The answer: the discrete PBH network is strictly falsifiable through six independent macroscopic signatures that no smooth modified gravity continuum can produce:
 
 - **(A) Ballistic Decoupling** --- collisionless kinematic offset ($\sim 150$ kpc) in merging clusters (Bullet Cluster)
 - **(B) GL Microlensing Cliff** --- abrupt topological cutoff at $M_{crit}$ in microlensing event rates (Roman/HSC)
 - **(C) Femtolensing Fringes via Cepstral Stacking** --- universal geometric time-delay spike in ensemble Power Cepstrum of GRBs at 0.1--1 MeV (Fermi-GBM/SVOM)
 - **(D) Dynamical Heating** --- Poisson granularity heats ultra-faint dwarf galaxies and disrupts wide binaries (Gaia DR4/JWST)
 - **(E) Astrometric Wrinkling** --- pure astrometric shifts and softened 5D Weyl tidal signatures from local Solar-System capillary transits (Gaia DR4/DR5 + planetary ephemerides)
-- **(F) Diffuse NIR Vacuum Glow** --- monochromatic $1.32\;\mu$m halo emission from $G_{KK} \to \gamma\gamma$ decay (JWST/CIBER CIB spectral mapping)
-- **(G) Galactic Center 'No-Spike' Theorem** --- cored Weyl-fluid profile around Sgr A* (extended mass $\lesssim 1200\;M_\odot$ at S2 apocenter, GRAVITY 2022/2024) topologically forbids Gondolo-Silk adiabatic contraction
+- **(F) Galactic Center 'No-Spike' Theorem** --- cored Weyl-fluid profile around Sgr A* (extended mass $\lesssim 1200\;M_\odot$ at S2 apocenter, GRAVITY 2022/2024) topologically forbids Gondolo-Silk adiabatic contraction
 
-Each pillar operates in a different wavelength regime and is independent. Detailed derivations and falsification criteria are presented in the [Observational Predictions](/predictions/) chapter.
+Each pillar operates in a different wavelength regime and is independent. A seventh channel --- the diffuse near-infrared glow from $G_{KK} \to \gamma\gamma$ decay --- was found by *ab initio* calculation to be Planck-suppressed to $\sim 28$ orders of magnitude below detectability; it is therefore retained not as a falsifiable pillar but as a null-result consistency check (the "electromagnetic silence of the bulk"). Detailed derivations and falsification criteria are presented in the [Observational Predictions](/predictions/) chapter.
 
 ## Definitive Future Test
 
@@ -3378,9 +3377,9 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 | eROSITA DR2 | Mass-dependent $\gamma(M)$: groups 0.88, clusters 1.19 | Universal $\gamma$ independent of mass |
 | Gaia DR4/JWST | UFD dynamical heating ($M_{PBH} \sim 10^{20}$ kg) | Zero excess dispersion in UFDs |
 
-### Falsifiability of the Discrete PBH Network: Seven Independent Tests
+### Falsifiability of the Discrete PBH Network: Six Independent Tests
 
-The triple local immunity of sub-critical capillaries (wave-optics cloaking, GL accretion death, Hawking coldness) is a legitimate epistemological concern. Individual invisibility, however, does not imply collective undetectability. Just as confined quarks are proven via jets and hadron spectra, the discrete PBH anchor network generates seven independent macroscopic signatures that no smooth modified gravity continuum can mimic:
+The triple local immunity of sub-critical capillaries (wave-optics cloaking, GL accretion death, Hawking coldness) is a legitimate epistemological concern. Individual invisibility, however, does not imply collective undetectability. Just as confined quarks are proven via jets and hadron spectra, the discrete PBH anchor network generates six independent macroscopic signatures that no smooth modified gravity continuum can mimic:
 
 **A. Ballistic Decoupling (Bullet Cluster).** In merging clusters, the collisionless PBH network traverses the ram-pressure shock front ballistically, dragging the Weyl fluid $\mathcal{E}_{00}$ with it. The observed $\sim 150$ kpc offset between the X-ray gas and the lensing convergence peak is the kinematic proof of discrete, non-interacting anchors. A smooth gravity modification tied to baryons cannot produce this offset. *Falsification: zero offset in all future merging cluster surveys (Euclid, JWST).*
 
@@ -3405,27 +3404,26 @@ Because the dark matter halo is composed of these discrete $\sim 10^{20}$ kg anc
 
 *Falsification and Future Horizons:* If ultra-precise ephemerides exclude the granular passage of $\sim 10^{20}$ kg topological defects over decades, the local discrete anchor hypothesis is ruled out. Conversely, triangulating a local transit would open the ultimate horizon: directing an interstellar probe to fly through the gravitational wake of a 5D capillary, measuring the exact geometry of the Weyl fluid *in situ* without the catastrophic destruction associated with a 4D black hole singularity.
 
-**F. Diffuse Near-Infrared Vacuum Glow (KK Graviton Decay).**
-A fundamental critique of pure gravitational dark matter is its electromagnetic silence. While individual $\sim 10^{20}$ kg capillaries are too light to generate detectable hydrodynamic gas wakes or X-ray accretion in the ISM, the OBT V8.2 framework predicts a striking collective electromagnetic signature arising directly from the 5D bulk thermodynamics.
-
-To maintain stability, the stick-slip motor continually radiates excess geometric strain into the bulk as massive Kaluza-Klein (KK) gravitons. The exact warped mass gap for the first excitation is $m_1 \approx 1.87$ eV (derived analytically via the transcendental Bessel roots of the $AdS_5$ cavity). In generic braneworld scenarios, these massive bulk gravitons populate the galactic halo and possess a suppressed but finite probability of decaying back onto the 3-brane into Standard Model photon pairs ($G_{KK} \to \gamma\gamma$).
-
-Kinematics dictates that a decaying 1.87 eV graviton at rest in the halo produces two photons, each with energy $E_\gamma \approx 0.935$ eV. This corresponds to a strict monochromatic emission line at wavelength:
-
-$$\lambda = \frac{hc}{E_\gamma} \approx \frac{1.24\;\text{eV}\cdot\mu\text{m}}{0.935\;\text{eV}} \approx 1.32\;\mu\text{m}$$
-
-This specific wavelength sits squarely in the Near-Infrared (NIR) J-band.
-
-*Falsifiable Signature:* The theory predicts a faint, diffuse near-infrared glow permeating the galactic dark matter halo, appearing spontaneously from the 'vacuum' without any stellar, dust, or gas progenitor. This pure $1.32\;\mu$m emission line (broadened only by the halo velocity dispersion, $\Delta\lambda/\lambda \sim 10^{-3}$) offers a spectacular, testable physical mechanism for the unexplained excesses currently observed in the Cosmic Infrared Background (CIB) by missions like CIBER and the James Webb Space Telescope (JWST). *Falsification: if future CIB spectral mapping rigorously rules out any anomalous line emission near $1.32\;\mu$m that scales with the dark matter density profile, the KK-decay channel and the $L = 0.2\;\mu$m geometric scale are severely constrained.*
-
-**G. The Galactic Center 'No-Spike' Theorem (S2 Star Orbit).**
+**F. The Galactic Center 'No-Spike' Theorem (S2 Star Orbit).**
 In standard particulate dark matter models ($\Lambda$CDM), the adiabatic growth of a Supermassive Black Hole (SMBH) like Sagittarius A* must drag WIMPs into an ultra-dense 'Dark Matter Spike' (Gondolo & Silk 1999, $\rho \propto r^{-7/3}$). This extended mass would induce a strong **retrograde** Newtonian precession on the S-stars orbiting the SMBH, in direct opposition to the prograde Schwarzschild precession of General Relativity. However, high-precision astrometric observations by the GRAVITY Collaboration (2022, 2024) of the S2 star orbit ($r_{peri} \approx 120$ AU, $r_{apo} \approx 1942$ AU) rigorously constrain the extended mass within the apocenter to $\lesssim 1200\;M_\odot$ at $1\sigma$, definitively excluding particulate dark matter spikes (the Gondolo-Silk profile $\gamma \geq 0.83$ is rejected at 95% CL; even the dynamically weakened Gnedin-Primack profile $\gamma \approx 1.5$ is excluded by the joint S2/S29/S38/S55 multi-star fit).
 
 In OBT V8.2, this absence of a cusp is an exact derived feature, not a fine-tuning. While the SMBH itself ($M_{Sgr\,A^*} \approx 4 \times 10^6\;M_\odot \gg M_{crit}$) is anchored purely in 4D, the surrounding dark matter is the continuous 5D Weyl fluid $\mathcal{E}_{00}$, topologically anchored to the diffuse PBH capillary network. Because the Weyl projection is governed by the non-local elastic deformation of the $AdS_5$ bulk --- and individual sub-critical capillaries lack point-mass $1/r$ singularities (their potentials are softened topological 'wrinkles' as detailed in Pillar E) --- the collective Weyl distribution is **topologically forbidden** from undergoing adiabatic contraction into a singular central cusp. The result is a naturally cored profile ($\rho \to \text{const}$ as $r \to 0$), perfectly consistent with the GRAVITY constraints. The S2 orbit remains pristine because 5D geometric dark matter cannot undergo Gondolo-Silk adiabatic contraction into a particulate spike.
 
 *Falsifiable Signature:* The S2 orbital precession must remain pristine with no detectable retrograde component beyond the GR Schwarzschild prograde signal. Future GRAVITY+ data on the inner S-star cohort (S29, S38, S55, S62) will tighten the extended-mass limit toward $\sim 100\;M_\odot$. *Falsification: if any future astrometric campaign detects a robust extended mass $\gtrsim 100\;M_\odot$ within the inner 1000 AU exhibiting a steeper-than-cored profile ($\gamma > 0$), the topological no-cusp theorem is severely constrained and the OBT description of dark matter near SMBHs requires revision.*
 
-Each pillar operates in a different regime (optical lensing, X-ray imaging, gamma-ray spectroscopy, stellar kinematics, astrometry/ephemerides, near-infrared spectroscopy, micro-arcsecond stellar interferometry) and is independent. Together they constitute a complete Popperian shield: the PBH network is strictly falsifiable through collective signatures, even though individual capillaries remain locally cloaked.
+Each pillar operates in a different regime (optical lensing, X-ray imaging, gamma-ray spectroscopy, stellar kinematics, astrometry/ephemerides, micro-arcsecond stellar interferometry) and is independent. Together they constitute a complete Popperian shield: the PBH network is strictly falsifiable through collective signatures, even though individual capillaries remain locally cloaked.
+
+## Null-Result Consistency: The Electromagnetic Silence of the Bulk
+
+A common vulnerability of decaying dark matter models (axions, sterile neutrinos) is the stringent constraint imposed by the Cosmic Infrared Background (CIB): such models must fine-tune their decay rate to evade CIBER, AKARI, and JWST limits. OBT V8.2 is immune to this vulnerability by construction.
+
+While the slip-phase motor continually radiates massive Kaluza-Klein gravitons ($m_1 \approx 1.87$ eV, the warped mass gap derived from the transcendental Bessel roots of the $AdS_5$ cavity) into the bulk, their decay back into brane photon pairs ($G_{KK} \to \gamma\gamma$) is strictly Planck-suppressed. With the KK graviton coupling to Standard Model fields set universally by the reduced 4D Planck mass $\bar{M}_{Pl} \approx 2.43 \times 10^{27}$ eV (no local warped enhancement in the macroscopic-$L$ regime), the partial width evaluates *ab initio* to:
+
+$$\Gamma(G_{KK} \to \gamma\gamma) = \frac{m_1^3}{80\pi\,\bar{M}_{Pl}^2} \approx 4.4 \times 10^{-57}\;\text{eV}$$
+
+corresponding to a first-excitation lifetime $\tau_{KK} = \hbar/\Gamma \approx 1.5 \times 10^{41}$ s --- roughly $3.4 \times 10^{23}$ times the age of the universe. A decaying graviton at rest yields two photons of energy $E_\gamma = m_1/2 \approx 0.935$ eV, i.e. a monochromatic line at $\lambda = hc/E_\gamma \approx 1.32\;\mu$m (NIR J-band). Using the cosmological branching fraction $B \approx 10^{-10}$, the predicted halo surface brightness is $I(1.32\;\mu\text{m}) \sim 10^{-27}$ nW m$^{-2}$ sr$^{-1}$ --- **28 orders of magnitude** below the JWST / CIBER / AKARI detection floor ($\sim 10$ nW m$^{-2}$ sr$^{-1}$).
+
+The theory therefore strictly predicts an *electromagnetically dark* halo. This is a genuine structural feature, not a tuned escape: OBT V8.2 passes every CIB constraint flawlessly and without a single adjusted parameter, because its extra-dimensional dark sector is gravitationally --- and only gravitationally --- coupled. The price of this rigidity is stated honestly: the $G_{KK} \to \gamma\gamma$ channel is fundamentally unfalsifiable by any foreseeable instrument, and is therefore presented here as a null-result consistency check rather than as a falsifiable observational pillar.
 
 ## The Bayesian Verdict
 
