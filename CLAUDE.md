@@ -324,6 +324,12 @@ pdftotext oscillating_brane_theory_latest.pdf - | grep -i "Ringermacher\|Point U
 - **No split files** (parts 1-4 merged into theoretical_foundations.md)
 - When editing a site page, the PDF updates automatically via CI
 
+## explorations/ — Out-of-Scope Research Seeds (NOT V8.2)
+The `explorations/` folder (created May 2026) holds heuristic, speculative work **STRICTLY OUTSIDE OBT V8.2**: not in the PDF, not in `generate_pdf.py` doc_order, not in the validation pipeline, not theory content, carrying no academic claim of V8.2. It is a sanctioned exception to the "no new .md files" Sacred Rule — `explorations/README.md` is a folder readme, not a site page or a theory file.
+- **Current content**: `decoherence_riemann.py` (Riemann explicit-formula visualization — a truncated sum over non-trivial zeta zeros reconstructs the discrete Chebyshev ψ(x) prime-power staircase; ~9% residual is the Gibbs phenomenon, the bandwidth-resolution limit ~1/k_max is the Gabor/Heisenberg kernel) + `README.md`.
+- **Purpose**: seeds a possible future V9.0 on holographic quantum gravity. Records the conjectured (unproven) thread: Riemann zeros ↔ Berry-Keating H=xp ↔ Conformal Quantum Mechanics (CQM) ↔ AdS₂ ↔ PBH near-horizon throats (AdS₂×S²). Status: "serious conjecture, not a result" — would require a full AdS₂/CFT₁ holographic derivation that does not exist yet.
+- **Rules**: do NOT pull anything from `explorations/` into the 7 sacred files or the PDF. Do NOT delete the folder. It is deliberately quarantined — V8.2 stays a pure macroscopic phenomenological cosmology paper; V9.0 holographic-QG ideas live here until formally derived.
+
 ## Downloads
 1. **White Paper** (`cosmic_yoyo_v5_holographic.pdf`) — 7 pages, "Resolving Thirty-One Cosmological Anomalies" (LaTeX source: `paper/cosmic_yoyo_prl.tex`)
 2. **Full Theory** (`oscillating_brane_theory_latest.pdf`) — ~100+ pages, 7 chapters + Appendix A (~1.9 MB compressed)
