@@ -43,7 +43,7 @@ Today, the brane has reached its stable limit cycle:
 
 ## The Awakening of Oscillations
 
-The motor ignites at the QCD phase transition ($T \approx 257$ MeV, $t \approx 10^{-5}$ s), when conformal symmetry breaks and the trace coupling $(1-3w)$ activates. The $\xi R\phi$ attractor then locks the period to $T = 2.000$ Gyr (chronodynamic eigenvalue) within ~2 e-foldings — roughly 1 Gyr after ignition. This is exactly when DESI's baryon acoustic oscillations and Planck's ISW resonance independently confirm the fundamental period.
+The motor ignites at the QCD phase transition ($T \approx 257$ MeV, $t \approx 10^{-5}$ s), when conformal symmetry breaks and the trace coupling $(1-3w)$ activates. The $\xi R\phi$ attractor then locks the period to $T = 2.000$ Gyr (chronodynamic eigenvalue) within ~2 e-foldings — roughly 1 Gyr after ignition. This is the epoch DESI's baryon acoustic oscillations probe; the low-$\ell$ ISW provides only a weak (cosmic-variance-limited, $\sim 1\sigma$) consistency check on the same period, not an independent confirmation.
 
 This temporal coincidence is not an accident: the QCD scale sets both the motor's energy ($\tau_0^{1/3} = 257$ MeV) and its ignition time, while the attractor dynamics set its period.
 

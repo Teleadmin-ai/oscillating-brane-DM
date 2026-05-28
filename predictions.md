@@ -17,8 +17,8 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
    |    ⏳ Euclid first data release
    |    ⏳ qBOUNCE / nanoscale optomechanics (sub-micron gravity)
    |
-2026    ⏳ Planck CMB anomaly = ISW resonance
-   |    → Our χ² improvement: 32.9 (6σ)
+2026    ⏳ CMB low-ℓ ISW (consistency check, ~1σ)
+   |    → cosmic-variance-capped; no 6σ claim (see ISW section)
    |
 2027    DESI full survey → power spectrum modulation
    |    SKA-Low → 21cm reionization modulation (DEFINITIVE TEST)
@@ -37,7 +37,7 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 **⏳ Imminent Tests:**
 - **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >5σ
 - **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments — sub-micron gravity test at L = 0.2 μm, bypassing Casimir background
-- **CMB Analysis 2026**: Planck's low-ℓ anomaly matches our ISW resonance prediction
+- **CMB low-ℓ ISW**: OBT predicts a sub-dominant, cosmic-variance-limited ISW modulation — consistent with (deficit-trending) Planck low-ℓ at the ~1σ level, not a falsifiable resonance
 
 ## Key Signatures
 
@@ -55,9 +55,8 @@ The membrane oscillation creates a time-varying equation of state:
 
 The membrane oscillation creates a unique signature in the Cosmic Microwave Background through the Integrated Sachs-Wolfe effect:
 
-- **Resonance peak**: ℓ = 10-20 (angular scale ~12°)
-- **Power suppression**: 16% at resonance
-- **Statistical significance**: χ² improvement of 32.9 (6σ over ΛCDM)
+- **Modulation window**: ℓ = 10-20 (angular scale ~12°)
+- **Honest significance** (audit May 2026): the late-ISW is sub-dominant (~10–20% of low-ℓ power) and cosmic-variance-limited — the maximum Δχ² achievable over ΛCDM at ℓ=10–20 is structurally capped at ~11.5. The previously quoted χ²=32.9 (6σ) was a **covariance-omission artifact** (Sachs-Wolfe cosmic variance omitted), not a data-fit improvement; corrected, the realistic significance is ~1σ. Planck low-ℓ shows no excess (rather a deficit), so OBT is consistent there at ~1σ. T2, CLASS/CAMB pending — a consistency check, not a falsifiable resonance.
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/desi_w_evolution.png" alt="DESI Dark Energy Evolution" style="width: 100%; height: auto;">
@@ -66,7 +65,7 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/isw_cmb_signature.png" alt="ISW CMB Signature" style="width: 100%; height: auto;">
-<p><em>Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-ℓ power deficit. The χ² improvement of 32.9 (6σ significance) proves the oscillating brane model.</em></p>
+<p><em>Figure 2: The 2 Gyr oscillation modulates the low-ℓ ISW. The effect is sub-dominant and cosmic-variance-limited (realistic significance ~1σ); the earlier χ²=32.9 (6σ) figure was a covariance-omission artifact, not a data-fit improvement. Shown as a consistency check, not a smoking gun.</em></p>
 </div>
 
 <div style="max-width: 100%; margin: 20px 0;">
@@ -136,7 +135,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T + π/2) | Time-varying, phantom crossing |
 | S₈ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | ~4–10% suppression (S₈ ≈ 0.79, waveform-dependent) |
-| CMB Anomaly | None | ISW Resonance (6σ) | Unique signature |
+| CMB low-ℓ ISW | ΛCDM-consistent (deficit) | ~1σ ISW modulation (cosmic-variance-capped) | Consistency check, not 6σ |
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
 | H₀ variation | Isotropic | ~0.1% dipole | Anisotropic |
 

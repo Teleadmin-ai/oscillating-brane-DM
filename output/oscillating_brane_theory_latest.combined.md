@@ -219,9 +219,7 @@ The apparent inconsistency between surveys is the **confirmatory signature** of 
 
 ### The Planck ISW Anomaly: Low-Multipole Resonance
 
-The persistent power deficit in the CMB at low multipoles ($\ell \approx 2$--$30$, residual probability LTP $\le 0.33\%$) is converted from a statistical enigma into proof of cosmic acoustics. The 2 Gyr mechanical oscillation creates resonant waves in the gravitational potentials traversed by CMB photons (Integrated Sachs-Wolfe effect), producing a resonance peak at $\ell = 10$--$20$:
-
-$$\Delta\chi^2 = 32.9 \quad (6\sigma \text{ improvement over } \Lambda\text{CDM})$$
+The 2 Gyr mechanical oscillation modulates the gravitational potentials traversed by CMB photons (Integrated Sachs-Wolfe effect), producing a low-multipole signature at $\ell = 10$--$20$. **Honest statistical accounting (audit, May 2026):** the late-ISW is sub-dominant (~10--20% of the low-$\ell$ power; the rest is the primordial Sachs-Wolfe plateau) and cosmic-variance-limited. The maximum $\Delta\chi^2$ any model can gain over $\Lambda$CDM in the $\ell = 10$--$20$ window is structurally capped at $\sim 11.5$ (since $\Lambda$CDM already fits this region with $\chi^2 \approx 11.5$ over its ~341 modes). The previously quoted $\Delta\chi^2 = 32.9$ ($6\sigma$) was a **model-internal artifact** --- the OBT-vs-$\Lambda$CDM ISW spectra compared while omitting the dominant Sachs-Wolfe cosmic variance ($\sim 16$--$25\times$ larger) --- not a data-fit improvement. Corrected for the full covariance, the realistic significance is $\sim 1\sigma$. Planck's low-$\ell$ TT shows **no excess** at $\ell = 10$--$20$ (if anything a deficit), so OBT is *consistent* there at the $\sim 1\sigma$ level --- not a $6\sigma$ resonance. This is a weak consistency check (T2, full CLASS/CAMB computation pending), not a smoking gun.
 
 ### Dark Matter Invisibility: Direct Detection Failures
 
@@ -229,7 +227,7 @@ The LZ experiment holds the world record, excluding spin-independent WIMP-nucleo
 
 In the Brane paradigm, this series of null results is not a disappointment but confirmation of a primordial ontological prediction: **there are no WIMP particles to detect**. The colossal gravitational effects attributed to an invisible particle halo arise from geometric properties --- the coupling between the oscillating $G_\text{eff}(t)$ and the diffuse topological anchoring by the macroscopic PBH network. The PBH anchors, born from the collapse of inflationary squeezed states (ensuring their massive mutual entanglement), constitute only ~1% of the dark matter mass ($f_{PBH} = 0.01$) --- like tent pegs for a vast canopy, a tiny fraction of mass tensions the entire membrane while 99% of gravitational effects arise from the Weyl tensor $E_{\mu\nu}$ geometry. Dark matter is geometric, arising from the 5D Weyl tensor projected via Shiromizu-Maeda-Sasaki junction conditions.
 
-**The Orthogonal Discriminant (breaking the null degeneracy).** We concede that predicting persistent null results in WIMP direct detection is a necessary but insufficient condition: it is shared by the entire equivalence class of non-particulate models (MOND, Verlinde's emergent gravity). The exclusive discriminating power of OBT V8.2 relies on its orthogonal signatures: (1) **Collisionless macroscopic decoupling**: MOND ties modified gravity to baryonic gas, failing on the Bullet Cluster 150 kpc offset; OBT derives it via collisionless PBH-anchored Weyl fluid. (2) **Chronodynamics**: no static modified gravity generates temporal phantom crossing $w(z)$, time-dependent $S_8$ suppression, or ISW resonance. *(A sub-micron Yukawa effect also exists at $L = 0.2\,\mu$m, but at any honest coupling its amplitude is $\delta E/E \lesssim 10^{-6}$ --- far below qBOUNCE's $\sim 10^{-4}$ sensitivity. It is a consistency check, not a falsifiable discriminant; see [Laboratory Proofs](/laboratory/).)* **The absence of WIMPs is a necessary but insufficient condition; the theory's true falsifiability rests on the intersection of [Null WIMPs + Bullet Cluster macroscopic offset + Chronodynamic phantom crossing]. No alternative theory --- neither MOND, nor Verlinde's emergent gravity, nor any particle dark matter model --- occupies this specific phenomenological intersection.**
+**The Orthogonal Discriminant (breaking the null degeneracy).** We concede that predicting persistent null results in WIMP direct detection is a necessary but insufficient condition: it is shared by the entire equivalence class of non-particulate models (MOND, Verlinde's emergent gravity). The exclusive discriminating power of OBT V8.2 relies on its orthogonal signatures: (1) **Collisionless macroscopic decoupling**: MOND ties modified gravity to baryonic gas, failing on the Bullet Cluster 150 kpc offset; OBT derives it via collisionless PBH-anchored Weyl fluid. (2) **Chronodynamics**: no static modified gravity generates temporal phantom crossing $w(z)$, time-dependent $S_8$ suppression, or low-$\ell$ ISW modulation. *(A sub-micron Yukawa effect also exists at $L = 0.2\,\mu$m, but at any honest coupling its amplitude is $\delta E/E \lesssim 10^{-6}$ --- far below qBOUNCE's $\sim 10^{-4}$ sensitivity. It is a consistency check, not a falsifiable discriminant; see [Laboratory Proofs](/laboratory/).)* **The absence of WIMPs is a necessary but insufficient condition; the theory's true falsifiability rests on the intersection of [Null WIMPs + Bullet Cluster macroscopic offset + Chronodynamic phantom crossing]. No alternative theory --- neither MOND, nor Verlinde's emergent gravity, nor any particle dark matter model --- occupies this specific phenomenological intersection.**
 
 ### Small Scales: Emergent MOND Formalism
 
@@ -423,7 +421,7 @@ The Amaterasu cosmic ray (244 EeV) violated the GZK horizon --- it should have b
 
 ## Extended Phenomenology: 9 Additional Anomalies Resolved
 
-**Epistemological Note on Anomaly Resolution.** To maintain analytical rigor, we strictly distinguish between the core anomalies (DESI $w(z)$, $S_8$ suppression, SPARC rotation curves, ISW resonance, eROSITA $\gamma = 1.19$, qBOUNCE) which are resolved through exact quantitative ODE integrations or formal analytical proofs, and the extended anomalies presented below. The latter are proposed as qualitative mechanistic consequences of the 5D framework, acknowledging that their exact numerical validation via complex hydrodynamical and N-body simulations remains an open target for future work.
+**Epistemological Note on Anomaly Resolution.** To maintain analytical rigor, we strictly distinguish between the core anomalies (DESI $w(z)$, $S_8$ suppression, SPARC rotation curves, eROSITA $\gamma$, low-$\ell$ ISW modulation, qBOUNCE) addressed through quantitative ODE integrations or analytical frameworks --- with the honest tier and robustness caveats noted in each section ($S_8$ value is waveform-shape dependent; the ISW is cosmic-variance-limited at $\sim 1\sigma$; qBOUNCE is a consistency check, not a falsifiable test) --- and the extended anomalies presented below. The latter are proposed as qualitative mechanistic consequences of the 5D framework, acknowledging that their exact numerical validation via complex hydrodynamical and N-body simulations remains an open target for future work.
 
 The V8.2 EFT parameters ($\tau_0$, $L$, $D$, $f_{osc}$) plus the derived eigenvalue $T = 2.000$ Gyr were constrained by the three core anomalies (DESI, $S_8$, ISW). The following nine anomalies were **not** used in any fit --- they are pure predictions of the framework applied to independent astrophysical domains.
 
@@ -501,7 +499,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 |---------------------|---------------------|-------------------------------|:---:|
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum | **T1** |
 | $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: order 4--10% (S$_{8}$ approximately 0.79, waveform-dependent; consistent, not precision) | **T2** |
-| Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | ISW resonance at 2 Gyr ($\Delta\chi^2 = 32.9$, semi-analytic; CLASS/CAMB pending) | **T2** |
+| Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | Sub-dominant ISW modulation at 2 Gyr (cosmic-variance-capped, realistic $\sim 1\sigma$; earlier $\Delta\chi^2=32.9$ was a covariance-omission artifact; CLASS/CAMB pending) | **T2** |
 | eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Press-Schechter/Tinker semi-analytic projection of oscillating $G_{eff}(z)$ | **T2** |
 | Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio geometric derivation of exact laws $\mu(x)$ and $a_0$ (analytically assimilates SPARC fit) | **T1** |
 | Wide Binary Gravitational Anomaly (Chae 2025) | Gaia DR3 312 binaries: $\gamma_g = 1.48^{+0.33}_{-0.23}$ at $g_N < 10^{-9.5}$ m/s$^{2}$, ~4$\sigma$ cumulative departure from Newton | OBT predicts $\gamma_g(u) = [(1+\sqrt{1+4/u^2})/2]^{1/2}$ ab initio from Gauss-Codazzi; log-median = 1.58, log-uniform mean = 1.80, agreement at $< 1\sigma$; multi-scale validation of $\mu(x)$ across 10 orders in acceleration | **T1** |
@@ -2914,15 +2912,15 @@ $$\boxed{\lambda_n(L) = \frac{m_n g}{2\,V_0}\left(\frac{z_0}{L}\right)^3\left[1 
 
 This is the exact Yukawa-Robin isomorphism. It replaces the phenomenological exponential fit $\lambda(z) = 2.73\,e^{(1.0-z)/0.2}$ with a **derived law** containing zero adjustable parameters.
 
-**5. Geometric amplification and spectroscopic smoking gun.** The master equation delivers two experimentally decisive predictions for the qBOUNCE collaboration at ILL Grenoble:
+**5. Geometric structure of the qBOUNCE signature (a consistency check, not a smoking gun).** The master equation has a real geometric structure, but --- per the audit (May 2026; see [Laboratory Proofs](/laboratory/)) --- its absolute amplitude is unobservable. Two features, honestly framed:
 
-**(a) Macroscopic convergence: the $\times 55$ amplification.** The dominant term $(z_0/L)^3 \approx (5.87/0.2)^3 \approx 25{,}000$ acts as a colossal geometric amplifier --- the inverse-cubic volume ratio between the neutron's quantum extent and the extra dimension's thickness. Evaluated at the resonance kinematics of the current qBOUNCE apparatus ($z_{res} = 1.0\,\mu$m), this amplification reproduces the factor $\times 55$ of the phenomenological fit ($e^{(1.0-0.2)/0.2} \approx 54.6$) and converges deterministically to the calibration value $\lambda_{ref} = 2.73$. The exponential behavior of the old fit is the asymptotic expression of the inverse-cubic law in the regime $L \ll z_0$: $(z_0/L)^3 \sim e^{3\ln(z_0/L)} \sim e^{z/L}$ when evaluated at the probe scale $z \sim z_0$.
+**(a) The inverse-cubic overlap (NOT a resolution amplification).** The matrix element scales as $(L/z_0)^3 \approx (0.2/5.87)^3 \approx 4\times10^{-5}$: the neutron wavefunction (extent $\sim z_0 \approx 5.87\,\mu$m) barely overlaps a Yukawa of range $L = 0.2\,\mu$m, and vanishes at the mirror ($\psi(0)=0$). **The previously claimed "$\times 55$ amplification with resolution" was a category error** --- substituting the detector resolution $z_{res}$ into $e^{-z/L}$ conflates measurement resolution with the (fixed) wavefunction scale. The physical overlap is fixed at $\sim 2(L/z_0)^3$ regardless of resolution; improving resolution sharpens the *detection* of a fixed shift, it does not amplify it. The resulting fractional level shift is $\delta E/E \sim 10^{-8}$ (nominal $\alpha = -0.005$) to $\sim 10^{-6}$ (maximal natural radion coupling) --- far below the $\sim 10^{-4}$ GRS precision.
 
-**(b) Spectroscopic splitting: the smoking gun.** Unlike a surface impurity or a mirror roughness defect --- which would produce a state-independent Robin parameter (a single $\lambda$ for all $n$) --- the 5D Yukawa potential has spatial extent. Higher quantum states ($n > 1$, larger $\varepsilon_n$) have wavefunctions that extend further from the mirror and sample a weaker Yukawa gradient, producing a systematically larger $\lambda_n$. The NLO correction $+4\varepsilon_n(L/z_0)^2$ predicts a **state-dependent splitting** of the Robin parameter:
+**(b) Spectroscopic splitting: a real shape on an unobservable amplitude.** Higher quantum states sample a weaker Yukawa gradient, giving a state-dependent (rather than state-independent) signature. The NLO correction $+4\varepsilon_n(L/z_0)^2$ predicts a relative splitting:
 
 $$\frac{\lambda_6 - \lambda_1}{\lambda_1} \approx 4(\varepsilon_6 - \varepsilon_1)\left(\frac{L}{z_0}\right)^2 = 4(9.023 - 2.338)(0.034)^2 \approx 3.1\%$$
 
-This 3.1% spectroscopic splitting between the ground state and the sixth excited state is the **irrefutable experimental signature** of a spatially extended 5D perturbation. A surface defect produces $\Delta\lambda/\lambda = 0$ (state-independent); the extra dimension produces $\Delta\lambda/\lambda = 3.1\%$ (state-dependent, growing with $n$). The qBOUNCE-II upgrade targeting sub-micron resolution will be capable of measuring this splitting, providing a direct, model-independent discrimination between the extra dimension hypothesis and all mundane surface-physics explanations.
+This 3.1% is a genuine geometric *shape* feature distinguishing a spatially extended 5D perturbation (state-dependent) from a surface defect (state-independent). **But it rides on an unobservably small absolute amplitude** ($\delta E/E \sim 10^{-6}$--$10^{-8} \ll 10^{-4}$): the shape exists, the signal does not register at qBOUNCE precision. qBOUNCE is therefore a consistency check, not a falsifiable smoking gun (see [Laboratory Proofs](/laboratory/) for the full accounting).
 
 ![Airy-Yukawa Matrix Elements](./plots/qbounce_airy_yukawa.png)
 *Figure: Ab initio Airy-Yukawa matrix element $\langle 1\vert\delta V\vert 6\rangle$ vs extra dimension size $L$. Cyan: exact numerical integration; green dashed: analytical limit $-2V_0(L/z_0)^3$. Red line: $L = 0.2\,\mu$m. Agreement exceeds 97% across the physical range.*
@@ -2947,9 +2945,9 @@ OBT V8.2 has not yet been integrated into a full Boltzmann solver (CLASS or CAMB
 
 **2. Hubble hyper-overdamping ($3H \gg \omega$).** Even without conformal protection, the immense expansion rate at recombination ($H(z_{rec}) \approx 3 \times 10^5$ Gyr$^{-1}$) subjects the radion equation to extreme friction: the damping term $3H\dot{\phi}$ exceeds the motor frequency $\omega \approx \pi$ Gyr$^{-1}$ by a factor of $\sim 10^5$. The brane is in a state of **hyper-overdamping** --- frozen at its potential minimum with exponentially suppressed amplitude.
 
-**Consequence:** with both locks engaged simultaneously, the scalar and tensor perturbation equations during the formation of the CMB acoustic peaks map exactly onto those of standard 4D General Relativity. The brane motor "thaws" only at late times ($z < 10$) when Hubble friction drops and matter domination breaks conformal symmetry, manifesting exclusively in: (a) the low-$\ell$ Integrated Sachs-Wolfe effect (matched to the Planck anomaly, $\Delta\chi^2 = 32.9$), (b) late-time structure growth ($S_8$ suppression), and (c) the CMB lensing potential at intermediate $\ell$.
+**Consequence:** with both locks engaged simultaneously, the scalar and tensor perturbation equations during the formation of the CMB acoustic peaks map exactly onto those of standard 4D General Relativity. The brane motor "thaws" only at late times ($z < 10$) when Hubble friction drops and matter domination breaks conformal symmetry, manifesting in: (a) the low-$\ell$ Integrated Sachs-Wolfe effect (a sub-dominant, cosmic-variance-limited modulation --- see the honest accounting below; the earlier $\Delta\chi^2 = 32.9$ was a covariance-omission artifact, realistic significance $\sim 1\sigma$), (b) late-time structure growth ($S_8$ suppression, order 4--10%), and (c) the CMB lensing potential at intermediate $\ell$.
 
-**Epistemological limitation: the computational Boltzmann horizon.** We explicitly acknowledge that claiming absolute preservation of the high-$\ell$ CMB acoustic peaks, and the semi-analytic $\Delta\chi^2 = 32.9$ fit for the ISW effect, requires full numerical integration within a cosmological Boltzmann code. The current ISW resolution is derived from a semi-analytic line-of-sight integration of the late-time ISW source term $\int e^{-\tau}\dot{\Phi}\,dz$ over the oscillating background metric --- not from a full $C_\ell$ computation. While conformal protection and Hubble hyper-overdamping provide powerful analytical arguments that standard 4D GR is recovered at $z \approx 1100$, formal cosmological validation is pending. Modifying the C++ core of CLASS to natively include the fully coupled radion perturbation equations and oscillating $G_{eff}(t)$ --- and confronting it with Planck legacy data via MCMC --- constitutes the mandatory next computational milestone for this theory.
+**Epistemological limitation: the computational Boltzmann horizon.** Any quantitative ISW significance requires full numerical integration within a cosmological Boltzmann code. The current estimate is a semi-analytic line-of-sight integration of $\int e^{-\tau}\dot{\Phi}\,dz$ over the oscillating background --- not a full $C_\ell$ computation. **Crucially (audit, May 2026): the previously quoted $\Delta\chi^2 = 32.9$ ($6\sigma$) was a covariance-omission artifact** --- it compared the OBT and $\Lambda$CDM ISW spectra using only the ISW variance, omitting the dominant Sachs-Wolfe cosmic variance (which is $\sim 16$--$25\times$ larger). The late-ISW is sub-dominant ($\sim 10$--$20\%$ of low-$\ell$ power), and the maximum $\Delta\chi^2$ achievable over $\Lambda$CDM at $\ell = 10$--$20$ is structurally capped at $\sim 11.5$ by cosmic variance; the realistic significance of the OBT modulation is $\sim 1\sigma$, and Planck low-$\ell$ shows no excess (a deficit). Modifying the C++ core of CLASS to include the coupled radion perturbations and oscillating $G_{eff}(t)$, confronted with Planck legacy data via MCMC, is the mandatory next milestone --- and the only route to a genuine ISW significance.
 
 ### Occam's Razor: Bayesian Dimensionality and the Overdetermined Jacobian
 
@@ -3156,7 +3154,7 @@ Today, the brane has reached its stable limit cycle:
 
 ## The Awakening of Oscillations
 
-The motor ignites at the QCD phase transition ($T \approx 257$ MeV, $t \approx 10^{-5}$ s), when conformal symmetry breaks and the trace coupling $(1-3w)$ activates. The $\xi R\phi$ attractor then locks the period to $T = 2.000$ Gyr (chronodynamic eigenvalue) within ~2 e-foldings --- roughly 1 Gyr after ignition. This is exactly when DESI's baryon acoustic oscillations and Planck's ISW resonance independently confirm the fundamental period.
+The motor ignites at the QCD phase transition ($T \approx 257$ MeV, $t \approx 10^{-5}$ s), when conformal symmetry breaks and the trace coupling $(1-3w)$ activates. The $\xi R\phi$ attractor then locks the period to $T = 2.000$ Gyr (chronodynamic eigenvalue) within ~2 e-foldings --- roughly 1 Gyr after ignition. This is the epoch DESI's baryon acoustic oscillations probe; the low-$\ell$ ISW provides only a weak (cosmic-variance-limited, $\sim 1\sigma$) consistency check on the same period, not an independent confirmation.
 
 This temporal coincidence is not an accident: the QCD scale sets both the motor's energy ($\tau_0^{1/3} = 257$ MeV) and its ignition time, while the attractor dynamics set its period.
 
@@ -3225,8 +3223,8 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
    |    ⏳ Euclid first data release
    |    ⏳ qBOUNCE / nanoscale optomechanics (sub-micron gravity)
    |
-2026    ⏳ Planck CMB anomaly = ISW resonance
-   |    $\to$ Our $\chi^2$ improvement: 32.9 (6sigma)
+2026    ⏳ CMB low-$\ell$ ISW (consistency check, ~1sigma)
+   |    $\to$ cosmic-variance-capped; no 6sigma claim (see ISW section)
    |
 2027    DESI full survey $\to$ power spectrum modulation
    |    SKA-Low $\to$ 21cm reionization modulation (DEFINITIVE TEST)
@@ -3245,7 +3243,7 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 **⏳ Imminent Tests:**
 - **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >5sigma
 - **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments --- sub-micron gravity test at L = 0.2 mum, bypassing Casimir background
-- **CMB Analysis 2026**: Planck's low-$\ell$ anomaly matches our ISW resonance prediction
+- **CMB low-$\ell$ ISW**: OBT predicts a sub-dominant, cosmic-variance-limited ISW modulation --- consistent with (deficit-trending) Planck low-$\ell$ at the ~1sigma level, not a falsifiable resonance
 
 ## Key Signatures
 
@@ -3263,15 +3261,14 @@ The membrane oscillation creates a time-varying equation of state:
 
 The membrane oscillation creates a unique signature in the Cosmic Microwave Background through the Integrated Sachs-Wolfe effect:
 
-- **Resonance peak**: $\ell$ = 10-20 (angular scale ~12°)
-- **Power suppression**: 16% at resonance
-- **Statistical significance**: $\chi^2$ improvement of 32.9 (6sigma over $\Lambda$CDM)
+- **Modulation window**: $\ell$ = 10-20 (angular scale ~12°)
+- **Honest significance** (audit May 2026): the late-ISW is sub-dominant (~10--20% of low-$\ell$ power) and cosmic-variance-limited --- the maximum $\Delta\chi$$^{2}$ achievable over $\Lambda$CDM at $\ell$=10--20 is structurally capped at ~11.5. The previously quoted $\chi^2$=32.9 (6sigma) was a **covariance-omission artifact** (Sachs-Wolfe cosmic variance omitted), not a data-fit improvement; corrected, the realistic significance is ~1sigma. Planck low-$\ell$ shows no excess (rather a deficit), so OBT is consistent there at ~1sigma. T2, CLASS/CAMB pending --- a consistency check, not a falsifiable resonance.
 
 
 *Figure 1: DESI 2024 measurements (yellow star) confirm dark energy evolution, aligning perfectly with the oscillating brane model. The $\Lambda$CDM constant w=-1 is now refuted at 4sigma significance.*
 
 
-*Figure 2: The smoking gun - Our 2 Gyr oscillation creates an ISW resonance that perfectly explains Planck's mysterious low-$\ell$ power deficit. The $\chi^2$ improvement of 32.9 (6sigma significance) proves the oscillating brane model.*
+*Figure 2: The 2 Gyr oscillation modulates the low-$\ell$ ISW. The effect is sub-dominant and cosmic-variance-limited (realistic significance ~1sigma); the earlier $\chi^2$=32.9 (6sigma) figure was a covariance-omission artifact, not a data-fit improvement. Shown as a consistency check, not a smoking gun.*
 
 
 *Figure 3: Theoretical prediction of ISW effect from membrane oscillations.*
@@ -3337,7 +3334,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2pit/T + pi/2) | Time-varying, phantom crossing |
 | S$_{8}$ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | ~4--10% suppression (S$_{8}$ approximately 0.79, waveform-dependent) |
-| CMB Anomaly | None | ISW Resonance (6sigma) | Unique signature |
+| CMB low-$\ell$ ISW | $\Lambda$CDM-consistent (deficit) | ~1sigma ISW modulation (cosmic-variance-capped) | Consistency check, not 6sigma |
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
 | H$_{0}$ variation | Isotropic | ~0.1% dipole | Anisotropic |
 
