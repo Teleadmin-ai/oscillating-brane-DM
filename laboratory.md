@@ -8,13 +8,13 @@ permalink: /laboratory/
 
 The V8.2 Oscillating Brane Theory makes specific, falsifiable predictions for Earth-based experiments. These are not cosmological inferences — they are direct laboratory measurements targeting the extra dimension at $L = 0.2\,\mu$m.
 
-## 1. The qBOUNCE Anomaly: Deriving the Robin Parameter $\lambda$
+## 1. The qBOUNCE Quantum Bouncer: A Sub-Micron Consistency Check
 
 ### The Experiment
 
-The **qBOUNCE experiment** at the **Institut Laue-Langevin (ILL), Grenoble, France** (PI: Hartmut Abele, TU Wien; collaborators at ILL including Tobias Jenke) uses ultra-cold neutrons (UCN) bounced on a perfect mirror to probe gravity at the quantum level. These neutrons don't bounce classically — they form quantum gravitational bound states described by Airy functions (Jenke et al., PRL 112, 151105, 2014). The team observed a slight anomaly in the $\vert 1\rangle \to \vert 6\rangle$ transition, forcing them to introduce a phenomenological "Robin boundary condition" parameter $\lambda$.
+The **qBOUNCE experiment** at the **Institut Laue-Langevin (ILL), Grenoble, France** (PI: Hartmut Abele, TU Wien; collaborators at ILL including Tobias Jenke) uses ultra-cold neutrons (UCN) bounced on a perfect mirror to probe gravity at the quantum level. These neutrons don't bounce classically — they form quantum gravitational bound states described by Airy functions (Nesvizhevsky et al. 2002; Jenke et al., PRL 112, 151105, 2014), with characteristic length $z_0 = (\hbar^2/2m^2g)^{1/3} \approx 5.87\,\mu$m and energy scale $E_0 = mgz_0 \approx 0.602$ peV. Gravity Resonance Spectroscopy (GRS), in its Rabi and Ramsey variants, measures transition frequencies between levels with a fractional precision of $\sim 10^{-4}$ (absolute energy resolution $\Delta E \approx 2.6 \times 10^{-16}$ eV).
 
-The qBOUNCE experiment is uniquely positioned to validate or falsify the extra dimension at $L = 0.2\,\mu$m: its spatial sensitivity is already within one order of magnitude of the predicted scale, and the next-generation upgrade (qBOUNCE-II) aims for sub-micron resolution.
+**All published qBOUNCE results are consistent with standard 4D quantum mechanics and Newtonian gravity** (the Dirichlet boundary condition). The collaboration uses this agreement to set stringent limits on hypothetical fifth forces and on chameleon/symmetron dark-energy fields (Jenke et al. 2014; Cronenberg et al. 2018); **no anomaly requiring new physics has been reported.** The "Robin boundary condition" parameter $\lambda$ discussed below is a *mathematical* self-adjoint-extension freedom (von Neumann), not an observed experimental deviation. As shown quantitatively at the end of this section, the extra dimension's predicted footprint on qBOUNCE is far below the instrument's noise floor — this section is therefore an internal **consistency check**, not a falsifiable test.
 
 ### Why the Robin Condition is Mathematically Necessary (von Neumann Deficiency Indices)
 
@@ -48,23 +48,25 @@ $$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right), \quad \eta = \xi|\alpha|
 
 where $v_0 = 246$ GeV is the standard electroweak VEV and $\eta = \xi|\alpha|$ is the effective Higgs-Radion mixing coefficient. The **negative exponent** ensures the perturbation is localized at the boundary and decays to zero at infinity (a positive exponent would cause unphysical mass divergence). Since quark masses inside the neutron are $m_q = y_q v/\sqrt{2}$ (Yukawa couplings $\times$ Higgs VEV), the neutron's effective mass is spatially modulated near the extra-dimensional boundary.
 
-**Step 5 — Robin parameter as observable.** This mass variation shifts the transition frequencies between quantum gravitational bound states. Experimentalists analyzing the data with standard Newtonian gravity and constant particle masses absorb this 5D Higgs resonance into the only available fitting parameter: the Robin boundary condition $\lambda$. **The Robin anomaly is the direct experimental trace of the Higgs-Radion scalar resonance at 0.2 μm.**
+**Step 5 — In principle, a shifted transition frequency.** This mass variation shifts the transition frequencies between quantum gravitational bound states. Were the effect large enough, experimentalists analyzing the data with standard Newtonian gravity and constant particle masses would absorb this 5D Higgs perturbation into the Robin boundary parameter $\lambda$. **As shown quantitatively below, however, the predicted effect is far too small to register — it is a geometric consistency feature, not a detectable signature.**
 
-At the current qBOUNCE resolution (~1 $\mu$m), the experiment sees only the exponential tail of the Yukawa correction ($e^{-5} \approx 0.007$), which is why the anomaly is "slight". But as resolution improves toward $L = 0.2\,\mu$m, the full Higgs-Radion resonance is exposed and the signal **explodes exponentially**.
+It is tempting to argue that improving the resolution toward $L = 0.2\,\mu$m would "expose" the full Yukawa correction. **This is a category error**: the neutron wavefunction is fixed in spatial extent ($\sim 10$–$30\,\mu$m) regardless of measurement resolution. Improving resolution sharpens the *detection* of a fixed shift; it does not amplify the physical effect. The overlap of the neutron with a 0.2 $\mu$m-range force is a fixed, tiny number.
 
-### Numerical Validation
+### Why It Is a Consistency Check, Not a Falsifiable Test
 
-The matrix element $\langle 1\vert\delta V\vert 6\rangle$ was computed using Airy wavefunctions integrated against the Yukawa potential (BDF solver). The effective Robin parameter $\lambda_\text{OBT}$ was extracted as a function of spatial resolution $z_\text{res}$.
+The decisive question is the *size* of the level shift, and it is intrinsically tiny for a purely geometric reason. The neutron wavefunction spans $\sim 10$–$30\,\mu$m while the Yukawa correction is confined to within $L = 0.2\,\mu$m of the mirror. Worse, the wavefunction *vanishes* at the mirror ($\psi(0) = 0$), so the neutron is maximally absent exactly where the new force is strongest. The overlap integral is cubically suppressed:
 
-![qBOUNCE Lambda Prediction](/plots/qbounce_lambda_prediction.png)
-*Figure: The Robin parameter $\lambda$ as a function of experimental resolution. At current qBOUNCE resolution (1 $\mu$m), $\lambda$ is tiny. As resolution approaches $L = 0.2\,\mu$m, it amplifies by 55$\times$ — a direct detection of the extra dimension.*
+$$\int_0^\infty \vert\psi_n(z)\vert^2\,e^{-z/L}\,dz \approx 2\left(\frac{L}{z_0}\right)^3 \approx 8 \times 10^{-5}$$
 
-**Key results:**
-- At $z_\text{res} = 1.0\,\mu$m (current): $\lambda = 2.73$ (small anomaly — matches observation)
-- At $z_\text{res} = 0.2\,\mu$m (at $L$): $\lambda = 149$ (55$\times$ amplification)
-- At $z_\text{res} = 0.1\,\mu$m (below $L$): $\lambda = 246$ (explosive growth)
+The resulting fractional level shift (via the dominant Higgs-VEV channel, $\eta = \xi\alpha$) is:
 
-**Falsifiable prediction**: Improve qBOUNCE spatial resolution from 1 $\mu$m to 0.2 $\mu$m. If the Robin parameter does not amplify by at least an order of magnitude, the extra dimension at $L = 0.2\,\mu$m is ruled out.
+$$\frac{\delta E}{E} \approx \tfrac{1}{3}\,\xi\alpha\cdot 2\left(\frac{L}{z_0}\right)^3 \approx \begin{cases} 2 \times 10^{-8} & (\alpha \approx -0.005,\ \text{nominal input}) \\ \sim 10^{-6} & (\alpha \sim \mathcal{O}(1),\ \text{maximal natural radion coupling}) \end{cases}$$
+
+Both lie far below the qBOUNCE fractional precision of $\sim 10^{-4}$ — by two to four orders of magnitude. Reaching detectability would require $\alpha \sim 25$, roughly $75\times$ above even the maximal natural radion-Higgs coupling. No first-principles derivation supports such a value, and we decline to assume it: tuning $\alpha$ to the detector threshold would be fine-tuning of exactly the kind the theory otherwise refuses.
+
+The effect does carry a real geometric signature — a $\sim 3\%$ asymmetry in the *shape* of the level shift between the $\vert 1\rangle$ and $\vert 6\rangle$ states (the $n$-dependence of the Yukawa overlap) — but this shape rides on an unobservably small amplitude.
+
+**Status — consistency check, not falsifiable test.** OBT V8.2 predicts a sub-micron Yukawa effect that *exists geometrically* but is *observationally silent* at any honest coupling ($\delta E/E \sim 10^{-6}$ to $10^{-8}$, far below current GRS sensitivity). The extra dimension is compatible with all qBOUNCE data precisely because its predicted footprint sits below the noise floor. A genuinely *localized* probe placed at $r = L$ — e.g. levitated optomechanics (§2) — evades the overlap suppression and remains the more promising, though still demanding, terrestrial avenue.
 
 ## 2. The 5D Geometric Bypass: Non-Demolition Quantum State Readout
 
@@ -135,10 +137,10 @@ This is a collaboration opportunity where cosmological theory meets terrestrial 
 
 | Experiment | Current Status | V8.2 Prediction | Falsification |
 |-----------|---------------|-----------------|---------------|
-| qBOUNCE (ILL) | $\lambda$ = small anomaly at 1 $\mu$m | $\lambda$ amplifies 55$\times$ at 0.2 $\mu$m | Improve resolution to 0.2 $\mu$m |
+| qBOUNCE (ILL) | Consistent with standard QM (sets BSM limits) | Yukawa level shift $\delta E/E \sim 10^{-6}$–$10^{-8}$ (consistency check) | Unobservable: $\ll 10^{-4}$ GRS precision at natural coupling |
 | Levitated optomechanics | Zeptonewton sensitivity achieved | 0.4% Yukawa enhancement at $L$ | Detect sub-$\mu$m gravity deviation |
 | 5D Quantum Bypass | Theoretical blueprint | Non-demolition readout via bulk gravitons | Mesoscopic target + squeezed sensor |
 
 ---
 
-*These laboratory predictions use exclusively parameters already fixed by cosmological data ($\tau_0 = 7 \times 10^{19}$ J/m$^2$, $L = 0.2\,\mu$m, $\alpha = -0.005$). No additional free parameters are introduced. The 5D geometric bypass is grounded in commuting operator algebra (5D metric $\perp$ 4D gauge), the Diósi-Penrose decoherence framework, and state-of-the-art optomechanical engineering.*
+*These laboratory sections use the parameters $\tau_0 = 7 \times 10^{19}$ J/m$^2$ and $L = 0.2\,\mu$m. The Yukawa strength $\alpha$ is **not derived from first principles** in V8.2: the natural radion-Higgs (scalar-trace) coupling is $\mathcal{O}(1)$, while the nominal $\alpha \approx -0.005$ adopted here is a small assumed input. In either case the qBOUNCE level shift is unobservable (§1), so the qBOUNCE section is a consistency check rather than a falsifiable test. The 5D geometric bypass is grounded in commuting operator algebra (5D metric $\perp$ 4D gauge), the Diósi-Penrose decoherence framework, and state-of-the-art optomechanical engineering, and is presented explicitly as a speculative long-term horizon.*

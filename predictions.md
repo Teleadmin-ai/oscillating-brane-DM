@@ -170,7 +170,6 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 | DESI Full | $\Delta P/P = 0.5\%$ at $k_0$ | Smooth spectrum |
 | CMB-S4 | ISW oscillations | No large-scale pattern |
 | SKA-Low | 21cm modulation 1-5 mK | No detection |
-| qBOUNCE | Sub-micron gravity deviation | No signal at $L = 0.2\,\mu$m |
 | Roman/HSC | Microlensing cliff at $M_{crit} \approx 10^{-10} M_\odot$ | Smooth event rate below $10^{-11} M_\odot$ |
 | Fermi/SVOM/AMEGO-X | GRB femtolensing fringes ($M \sim 10^{-12} M_\odot$) | Zero spectral oscillations in 0.1-1 MeV |
 | eROSITA DR2 | Mass-dependent $\gamma(M)$: groups 0.88, clusters 1.19 | Universal $\gamma$ independent of mass |
