@@ -92,7 +92,7 @@ The brane oscillation modulates the effective gravitational coupling in time:
 
 $$G_{\text{eff}}(t) = G_N \left(1 + f_\text{osc}\, \sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-The current stretched phase ($G_\text{eff} < G_N$) produces 4.50% growth suppression at low redshift (S₈ = 0.798) (resolving DES S₈ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). This is the same temporal mechanism explaining the eROSITA $\gamma = 1.19$ anomaly.
+The current stretched phase ($G_\text{eff} < G_N$) produces a growth suppression of order 4–10% at low redshift (S₈ ≈ 0.79, consistent with the DES S₈ tension), while CMB-epoch gravity was exactly Newtonian (conformal protection). The precise value is waveform-shape dependent (see [Theory](/theory/)), not a ±0.002 figure. This is the same temporal mechanism producing the eROSITA $\gamma > 0.55$ anomaly.
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/growth_factor_comparison.png" alt="Growth Factor Suppression" style="width: 100%; height: auto;">
@@ -135,7 +135,7 @@ Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 | Observable | ΛCDM | Oscillating Brane V8.2 | Difference |
 |------------|------|-------------------|------------|
 | w(z) | -1 (constant) | -1 + 0.003 sin(2πt/T + π/2) | Time-varying, phantom crossing |
-| S₈ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | 4.50% suppression (S₈ = 0.798) |
+| S₈ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | ~4–10% suppression (S₈ ≈ 0.79, waveform-dependent) |
 | CMB Anomaly | None | ISW Resonance (6σ) | Unique signature |
 | 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
 | H₀ variation | Isotropic | ~0.1% dipole | Anisotropic |

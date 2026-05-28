@@ -71,7 +71,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Period stability (anti-chirp)**: ξRφ non-minimal coupling acts as **geometric Phase-Locked Loop**. Three competing decays (Hubble friction ↓, Cosmic Web forcing ↓, curvature feedback ↓) cancel on attractor manifold. |dT/T| < 10⁻³ per Hubble time. Van der Pol oscillator analogy.
 - **PBH wave-optics immunity**: For M ~ 10⁻¹² M☉, r_s ≈ 3 nm ≪ λ_opt ≈ 600 nm. Fresnel parameter w_F = 2πr_s/λ ≈ 0.03 ≪ 1. Subaru-HSC is physically blind (deep wave-optics regime). Micro-PBH capillaries rehabilitated
 - **Dark energy**: w(z) = -1 + Σ A_n sin(2πn t_lb/T + φ_n) — exact Fourier decomposition of stick-slip sawtooth (not just fundamental). A₂/A₁=47.6%, A₃/A₁=29.3%. DESI's "phantom crossing" is aliasing of geometric shock at z≈0.93 (phase 82.8%, just before QCD cliff). ΔBIC ≈ -6.4 vs CPL (DR2, Strong — k=1 vs k=2, Occam rewards OBT), forecast -22 (Year 5, Decisive).
-- **S₈ suppression**: ODE integration with BKM-derived phase: S₈ = **0.797 ± 0.002** (4.5 ± 0.2% suppression, waveform EFT uncertainty from k_slip ∈ [3,5]). k_slip = coarse-grained EFT shape parameter (ultra-underdamped radion averages to zero → exponential ansatz is EFT approx, NOT derivable from Γ_rad by simple formula). Exact zero-mean centering MANDATORY (DC bias violates BBN). Cross-observational rigidity: same f_osc/D → zero additional DoF for growth sector. eROSITA γ=1.19 via Press-Schechter (T2).
+- **S₈ suppression**: ODE integration with BKM-derived phase δ_bulk=1.36 rad → growth suppression of **order 4–10%** (S₈ ≈ 0.79), consistent with the S₈ tension. **NOT a ±0.002 precision figure** (audit May 2026): the value depends at the factor-~2 level on the non-derivable slip-waveform shape (exponential ansatz ~4.5%, triangular ~10% at the SAME derived phase, sinusoid even sign-flips). The ±0.002 (k_slip∈[3,5]) is only the WITHIN-ansatz variation, not cross-family. δ_bulk IS genuinely derived (arctan viscoelastic, z_eff-robust via saturation) — that part is solid; the S₈ precision is not. Exact zero-mean centering MANDATORY (DC bias violates BBN). f_osc/D/T anchored to DESI w(z) — itself small (A_w=0.003) → say "consistency" not "rigidity". eROSITA γ>0.55 via Press-Schechter (T2).
 - **ISW resonance**: CMB ℓ = 10-20, Δχ² = 32.9 (6σ)
 - **Anchors**: Micro-PBHs with **extended log-normal mass function** (10⁻¹⁴ to 10⁻¹⁰ M☉). Dual role: topological capillaries AND local heat sinks (exponential DOS, MSS scrambling). ER=EPR provides optional geometric interpretation of their entanglement
 - **Laboratory tests**: qBOUNCE (ultra-cold quantum neutrons, ILL) + levitated nanoscale optomechanics. Bypass Casimir at sub-micron scale
@@ -103,7 +103,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **"Complexity=Volume" as the motor** (ok as historical motivation only)
 - **EDGES/CatWISE as confirmations**
 - **Single PBH mass 10⁻¹² M☉** (must use extended mass function)
-- **"global S₈ suppression of 5.2%"** (must be time-dependent, 4.5±0.2% via BKM theorem, S₈=0.797±0.002)
+- **"global S₈ suppression of 5.2%" / "S₈=0.797±0.002 precision" / "cross-observational rigidity"** (must be time-dependent; honest value is growth suppression of order 4–10%, S₈≈0.79, waveform-shape dependent at factor-~2 — NOT ±0.002. δ_bulk derived but the S₈ value is consistency-with-tension, not a precision prediction; audit May 2026)
 - **"Scale-Dependent Yukawa Screening" for S₈** (k/k_L ~ 10⁻²⁹ at cosmological scales → no spatial dependence)
 - **Neutron Lifetime Anomaly / Bottle vs Beam** (double counting error + T^μ_μ=0 for EM fields → removed)
 - **"temperature-dependent brane tension" / "τ(T)"** (replaced by conformal symmetry)
@@ -203,7 +203,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **n_σ metrics**: 1.25σ (FLAG MS̄) and 0.11σ (chiral condensate)
 - **Fourier stick-slip spectrum**: A_n/A₁ = {1, 0.476, 0.293, 0.197, 0.138} — locked by bulk topology (D=0.9, τ=1/30), zero extra free params
 - **DESI aliasing**: LRG3 bin z=0.93 at phase 82.8% of cycle — "phantom crossing" is geometric shock aliasing on CPL linear template. ΔBIC ≈ -6.4 (DR2, Strong — k=1 vs CPL k=2, Occam REWARDS OBT), forecast ΔBIC ≈ -22 (Year 5, Decisive). Chronologically anchored stick-slip: k=1 effective param (A_w only, T and phase locked)
-- **S₈ cross-observational rigidity**: 4.5±0.2% suppression, S₈=0.797±0.002 (waveform EFT uncertainty k_slip∈[3,5]), δ_bulk=1.36 rad (BKM). Zero additional free params beyond global EFT set
+- **S₈ cross-observational consistency** (NOT "rigidity"): growth suppression order 4–10% (S₈≈0.79), consistent with tension, δ_bulk=1.36 rad (BKM, genuinely derived). NOT ±0.002 — waveform-shape dependent at factor-~2 (audit May 2026). f_osc/D anchored to DESI w(z), itself small (A_w=0.003)
 - **eROSITA non-linear**: γ_eff≈0.80 (linear), amplified to 1.19 by Press-Schechter exponential sensitivity to δ_c(t). Exact: A(M)≈ν²/ln(Ω_m⁻¹), mass-dependent γ(M) spectrum: groups 0.88, clusters 1.19, monsters 1.47
 - **eROSITA falsifiable prediction**: γ(M) is monotonically increasing with mass (strict proof via Tinker sensitivity kernel A(ν) = cν² + a/(1+(ν/b)^a)). GR root γ=0.55 unreachable. 4-bin grid: groups 0.88, light clusters 0.99, massive 1.19, monsters 1.47. **Exclusion theorem**: f(R)/scalar-tensor predict universal γ — OBT predicts ascending spectrum. Testable by eROSITA DR2 mass-binned analysis
 - **MOND ab initio**: a₀ = cH₀/2π from Gibbons-Hawking + Unruh (2π = Euclidean time circle S¹)
@@ -230,7 +230,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **ER=EPR = optional UV-completion**: Provides elegant geometric description of PBH entanglement (squeezed vacuum → expander graph). Adds topological decoherence protection. If ER=EPR is false, ODE + Γ_rad + ℓ=0 all survive intact
 - **Chronological anchoring (Observationally Anchored)**: Phase 0.0 at QCD ignition (physics-derived), Phase 0.9 today (empirical from DESI w_max at z=0). Universe completed N+0.9 cycles, ξRφ PLL selects N=6 → T=13.80/6.9=2.000±0.003 Gyr. Falsifiable: if DESI Y5 moves w_max to z=0.05, T generalizes to (13.80-t_max)/(N+D)≈1.90 Gyr
 - **Diagnostic table (March 2026)**: Systematic test of ALL sign/coupling combinations in growth ODE with exact stick-slip waveform. Results: Israel MINUS→+12.1% enhancement, PLUS→-11.0% suppression, w(z) in H(a)→negligible (0.002%). Proved: phase delay is continuous (not algebraic sign), leading to discovery of AdS₅ viscoelastic retardation. Credits: Claude Opus (diagnostic), Gemini DeepThink (arctan deduction)
-- **δ_bulk (Bulk Transfer Function)**: viscoelastic retardation of AdS₅ spacetime. BKM theorem: δ_BKM = 0.9×arctan(π/0.243)+0.1×arctan(π/20.7) = 1.36 rad. Analytically locked to L (via S_BH→Γ_slip) and z_eff=0.3 (via H(z)→Γ_stick). Zero additional free params. Cross-observational rigidity: same f_osc/D → S₈=0.797±0.002 AND eROSITA γ=1.19
+- **δ_bulk (Bulk Transfer Function)**: viscoelastic retardation of AdS₅. δ_BKM = 0.9×arctan(π/0.243)+0.1×arctan(π/20.7) = 1.36 rad — **GENUINELY DERIVED** (arctan viscoelastic phase lag, z_eff-robust via saturation). This part is solid (unlike α for qBOUNCE which is just posed). BUT the S₈ value it feeds is NOT ±0.002: independent recompute gives ~10% (triangular slip) vs 4.5% (exponential) at the SAME δ_bulk, sinusoid sign-flips → S₈ suppression is order 4–10%, waveform-dependent, consistency-with-tension not precision (audit May 2026)
 - **Exascale NR = verification not necessity**: 5D numerical relativity would provide independent validation but is NOT required for the theory's mathematical consistency (all 60 derivations are analytical/semi-analytical). Current feasibility limited by 10³² scale ratio → IMEX+HMM mandatory
 
 ### Key References:
@@ -247,7 +247,7 @@ Maldacena & Susskind 2013, Van Raamsdonk 2010, Shiromizu, Maeda & Sasaki 2000, M
 | φ_crit | ~0.1 L (QCD threshold) |
 | f_osc | 0.10 |
 | A_w | 0.003 |
-| S₈ suppression | 4.5±0.2% (cross-observational rigidity), S₈=0.797±0.002, δ_bulk=1.36 rad (BKM) |
+| S₈ suppression | order 4–10% (S₈≈0.79), waveform-shape dependent — NOT ±0.002; δ_bulk=1.36 rad (BKM, derived). Consistent with tension, not precision |
 | ISW Δχ² | 32.9 (6σ) |
 | Micro-PBH EMF | Log-normal, 10⁻¹⁴ to 10⁻¹⁰ M☉ |
 | f_PBH | 0.01 (1%) — NOT 10% |
@@ -342,7 +342,7 @@ The `explorations/` folder (created May 2026) holds heuristic, speculative work 
 | Validation | Method | Key Result |
 |-----------|--------|------------|
 | w(z) phantom crossing | BDF stiff solver, exact lookback time | w ∈ [-1.003, -0.997], matches DESI DR2 |
-| S₈ tension resolution | ODE D₊(a) with BKM-derived G_eff(t) | 4.5±0.2% suppression, S₈=0.797±0.002, δ_bulk=1.36 rad (cross-observational rigidity) |
+| S₈ tension (consistency) | ODE D₊(a) with BKM-derived G_eff(t) | order 4–10% suppression (S₈≈0.79), δ_bulk=1.36 rad derived; value waveform-dependent, NOT ±0.002 (audit May 2026) |
 | Bayesian evidence | dynesty nested sampling, 500 live points | Original 3-param: Δln K ∈ [2.8, 4.13]. After T promotion: Δln K ≈ 5.8 (Decisive, prior-independent) |
 | SKA 21cm prediction | Reionization mock, z=6-15 | 5.46 mK peak, SNR = 5.5σ |
 | Lithium-7 problem | BBN conformal tolerance, BDF solver | 3.5× suppression, D/⁴He preserved |
@@ -362,7 +362,7 @@ The `explorations/` folder (created May 2026) holds heuristic, speculative work 
 | KS naturalness | Flux integers K=21, M=10, g_s=0.1 | τ₀^{1/3} = M_Pl·e^{-2πK/(3g_sM)} = 257 MeV, zero fine-tuning |
 | Fourier stick-slip | Analytical integration of asymmetric sawtooth | A₂/A₁=47.6%, A₃/A₁=29.3%, slip low-pass at n≈5 |
 | DESI LRG3 aliasing | Phase mapping of tomographic bins | z=0.93 at phase 82.8% — phantom crossing = geometric shock |
-| S₈ exact ODE | Growth factor D₊(a) with BKM-derived G_eff | 4.5±0.2% suppression, S₈=0.797±0.002, δ_bulk=1.36 rad |
+| S₈ ODE | Growth factor D₊(a) with BKM-derived G_eff | suppression order 4–10% (waveform-dependent), δ_bulk=1.36 rad derived; not a ±0.002 precision figure |
 | eROSITA non-linear | Press-Schechter with oscillating δ_c(t) | Linear γ_eff≈0.80, non-linear amplification to 1.19 |
 | MOND ab initio | Gibbons-Hawking + Unruh + 5D quadrature | a₀=cH₀/2π, μ(x)=x/√(1+x²), cluster resonance at T=2 Gyr |
 | Seeley-DeWitt numerical | V8.2 parameters (k=0.987 eV, kL=1, N_dof=6) | ā₀-ā₅ table, a₅_bulk≡0, **ā₅(UV)=2.845 eV⁴, ā₅(IR)=0.0521 eV⁴** (98.2% UV-confined) |
@@ -375,7 +375,7 @@ The `explorations/` folder (created May 2026) holds heuristic, speculative work 
 | Finite-N Dirac collapse | Expander graph spectra + Cheeger inequality | σ₁/L~10⁻³⁸·⁵, N_min≈4500, ω₀ correction ~10⁻⁷⁶, RT survives |
 | Kinematic Blockade | 5D Bondi flux for continuous membrane | Γ_rad^{5D-GR}≡0, m₁T_slip~3.6×10³¹, exp(-3.6×10³¹)=0. Proves PBH necessity |
 | NANOGrav spectral flattening | Tensor TT projection of Filippov shock | φ̈ = Dirac δ → flat spectrum, n_PTA ≈ 10⁹, h_c(16 nHz) ~ 10⁻¹⁵ |
-| AdS₅ viscoelastic retardation | BKM Averaging Theorem (analytically derived) | δ_BKM=1.36 rad, S₈=0.797±0.002 (0.4σ from DES Y6) |
+| AdS₅ viscoelastic retardation | BKM Averaging Theorem (analytically derived) | δ_BKM=1.36 rad (derived, solid); S₈ suppression order 4–10% (waveform-dependent, not ±0.002) |
 | Press-Schechter γ(M) | Non-linear spherical collapse + oscillating δ_c | A(M)≈ν²/ln(Ω_m⁻¹), γ(groups)≈0.88, γ(clusters)≈1.19, γ(monsters)≈1.47 |
 | MOND sinc theorem | Orbital averaging of oscillating a₀(t) | sinc(πt_dyn/T): dwarfs 0.996, spirals 0.981, groups 0.637, clusters 0.000 |
 | ΔBIC (current + forecast) | Anchored stick-slip (k=1) vs CPL (k=2) | DR2: ΔBIC≈-6.4 (Strong), Y5 forecast: ΔBIC≈-22 (Decisive) |
