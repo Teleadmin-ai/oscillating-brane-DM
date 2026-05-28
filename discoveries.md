@@ -197,7 +197,9 @@ The Brane motor contributes three simultaneous mechanisms for rapid early struct
 
 JWST has identified SMBHs breaking accretion limits: GN-z11 ($z = 10.6$, $10^{6.2}\;M_\odot$), UHZ1 ($> 10^7\;M_\odot$), CANUCS-LRD-z8.6 ($10^8\;M_\odot$). Classical assembly pathways (super-Eddington accretion, direct collapse) are statistically exhausted.
 
-The ER=EPR-entangled PBH mesh creates correlated potential gradients channeling primordial gas along favorable topological symmetry axes. The PBH mass function naturally separates into two regimes at the Gregory-Laflamme critical mass $M_{crit} = Lc^2/(2G) \approx 6.8 \times 10^{-11} M_\odot$: below this threshold, PBHs undergo 5D instability and serve as invisible capillaries (no accretion disk, no X-rays); above it, they remain brane-anchored and can accrete, providing endogenous "heavy seeds" from $10^3$ to $10^5\;M_\odot$ without violating the global $f_{PBH} \sim 0.01$ constraint — and without requiring super-Eddington accretion.
+The ER=EPR-entangled PBH mesh creates correlated potential gradients channeling primordial gas along favorable topological symmetry axes. The PBH mass function naturally separates into two regimes at the Gregory-Laflamme critical mass $M_{crit} = Lc^2/(2G) \approx 6.8 \times 10^{-11} M_\odot$: below this threshold, PBHs are 5D-localized invisible capillaries (X-ray dark — by the standard low-Bondi rate at asteroid mass, $L_{acc} \sim 10^{-28}\,L_\odot$, not by a 5D mechanism; see [Theory: Perforation Hierarchy](/theory/)); above it, they remain brane-anchored and accrete normally.
+
+*Heavy-seed correction (audit May 2026):* the earlier claim that brane-anchored PBH supply $10^3$–$10^5\,M_\odot$ "heavy seeds" by accretion does **not** survive: (i) Bondi growth of a sub-$10\,M_\odot$ object over a Hubble time is bounded to $\sim 1.4\times$ (the growth integral scales linearly with the initial mass), and (ii) those seed masses lie far above the stated EMF ceiling ($10^{-10}\,M_\odot$). The early-SMBH explanation rests instead on the **capillary gas-channeling** mechanism above — the $\sim 10^{20}$ kg anchors seed rapid baryonic agglomeration around topological nodes — not on PBH grown to SMBH mass.
 
 ### 4.3. Cosmological Constant Relaxation
 
@@ -396,7 +398,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric | **T2** |
 | Cosmic Dawn (JWST) | Impossibly rapid stellar assembly ($z > 14$) | PBH seeds + temporally enhanced gravity + modified Hubble friction | **T2** |
 | Undetectable Dark Matter | Zero particles in two decades (LZ/XENONnT) | No WIMPs. Dark matter = 5D geometric signature (Weyl tensor) | **T2** |
-| Early SMBHs (JWST) | Assembly pathways exhausted | GL hierarchy channeling + heavy PBH seed tail | **T2** |
+| Early SMBHs (JWST) | Assembly pathways exhausted | Capillary gas-channeling around topological nodes (not PBH-grown seeds — see §5 correction) | **T2** |
 | Cosmological Constant | $10^{120}$ orders of magnitude discrepancy | Thermodynamic relaxation of oscillatory amplitude in $AdS_5$ | **T2** |
 | Fine-Tuning / Naturalness (Dirac LNH) | Hierarchy problem, anthropic impasse | Dynamical Naturalness: topological + thermodynamic attractors replace static tuning | **T2** |
 | Lithium-7 problem | Factor 3--4 overproduction | BBN conformal tolerance ($\delta H/H \sim 10^{-3}$) *(qualitative)* | **T3** |
