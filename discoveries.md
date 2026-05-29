@@ -95,7 +95,7 @@ The Brane model resolves this through **temporal gravitational oscillation**. As
 
 $$G_\text{eff}(t) = G_N\!\left(1 + f_\text{osc}\;\sin\!\left(\frac{2\pi t}{T} + \phi_0\right)\right)$$
 
-During the primordial epoch (BBN, CMB), conformal symmetry froze the brane — gravity was exactly Newtonian. But the late-Universe structures probed by DES grew during the **current weakened-gravity phase** of the oscillation cycle, producing a growth suppression of order 4–10% (a BKM-derived phase delay; the precise value is waveform-shape dependent and not a $\pm 0.002$ precision figure — see [Theory](/theory/)). This same temporal mechanism produces the eROSITA $\gamma > 0.55$ anomaly.
+During the primordial epoch (BBN, CMB), conformal symmetry froze the brane — gravity was exactly Newtonian. But the late-Universe structures probed by DES grew during the **current weakened-gravity phase** of the oscillation cycle, producing a growth suppression of order 4–10% (a BKM-derived phase delay; the precise value is waveform-shape dependent and not a $\pm 0.002$ precision figure — see [Theory](/theory/)). The same temporal mechanism *could* modulate cluster abundance (the eROSITA $\gamma$ context), though that link is exploratory only — eROSITA's clusters are actually high-$S_8$/abundant, opposite to the deficit a suppression would give (see §6.2 audit).
 
 | Survey | Redshift range | Observed $S_8$ | Brane Prediction |
 |--------|-------|----------------|-----------------|
@@ -213,7 +213,7 @@ The extreme precision required for the Universe's fundamental constants to suppo
 
 The Oscillating Brane Theory V8.2 completely circumvents this dichotomy through the principle of **Dynamical Naturalness**. In this framework, the parameters of the universe are not statically dialed by a cosmic fine-tuner, nor selected by anthropic survivorship bias; they are the deterministic endpoints of topological and thermodynamic attractors.
 
-Most profoundly, this framework realizes one of the most prescient intuitions in 20th-century physics: **Paul Dirac's Large Numbers Hypothesis (1937)**. Troubled by the inexplicable, massive dimensionless ratios between fundamental cosmic scales, Dirac postulated that the gravitational coupling $G$ could not be a static constant, but must vary dynamically with cosmological time. While Dirac lacked the extra-dimensional geometric mechanism to justify this without violating local General Relativity, OBT V8.2 provides its exact mathematical realization. The time-dependent growth suppression ($S_8$ resolution) and the non-linear cluster abundance illusion (eROSITA $\gamma = 1.19$) are driven precisely by a time-varying effective gravity:
+Most profoundly, this framework realizes one of the most prescient intuitions in 20th-century physics: **Paul Dirac's Large Numbers Hypothesis (1937)**. Troubled by the inexplicable, massive dimensionless ratios between fundamental cosmic scales, Dirac postulated that the gravitational coupling $G$ could not be a static constant, but must vary dynamically with cosmological time. While Dirac lacked the extra-dimensional geometric mechanism to justify this without violating local General Relativity, OBT V8.2 provides its exact mathematical realization. The time-dependent growth suppression ($S_8$, shear-side) and a possible cluster-abundance modulation (the eROSITA $\gamma$ context — exploratory, see §6.2) would both stem from a time-varying effective gravity:
 
 $$G_{eff}(t) = G_N\left[1 + f_{osc}\,W\!\left(\frac{t}{T} + \frac{\delta_{bulk}}{2\pi}\right)\right]$$
 
@@ -290,9 +290,11 @@ The NANOGrav 15-year dataset reveals a stochastic gravitational wave background 
 ![NANOGrav Spectrum](/plots/nanograv_spectrum.png)
 *Figure: Stick-slip overtones in the NANOGrav nHz band. The asymmetric sawtooth waveform (left) produces high-frequency harmonics via FFT that match the observed spectral features (right).*
 
-### 6.2. The eROSITA Structure Growth Illusion ($\gamma = 1.19$)
+### 6.2. The eROSITA Structure Growth Index ($\gamma = 1.19$) — exploratory (T3, demoted May 2026)
 
-The eROSITA satellite measured a structure growth index $\gamma = 1.19$, while standard GR predicts $\gamma = 0.55$. In V8.2, $G_\text{eff}(z)$ oscillates with the brane. Our current epoch corresponds to a temporarily weakened gravity phase (brane stretched), causing cluster formation to stall. Fitting a constant-$G$ $\Lambda$CDM model to this oscillating data extracts an artificially inflated $\gamma$ — the "illusion" of modified gravity is actually an artifact of applying a static model to a dynamic universe.
+The eROSITA collaboration measured a structure growth index $\gamma = 1.19 \pm 0.21$ (Artis et al. 2024/2025, eRASS1), a real $\sim 3\sigma$ departure from GR's $\gamma = 0.55$. OBT's oscillating $G_\text{eff}(z)$ mechanism would, in a weakened-gravity phase, stall cluster formation and bias a constant-$G$ fit toward higher $\gamma$.
+
+**Honest audit (May 2026): this is NOT a confirmation of OBT.** (i) The $\gamma = 1.19$ is driven by a *high* $\sigma_8$ at intermediate $z$ (excess early growth), and eROSITA's primary cosmology (Ghirardini et al. 2024) gives $S_8 = 0.86 \pm 0.01$ — cluster-*abundant*, the **opposite** of the deficit OBT's suppression requires. (ii) "$f(R)$ predicts universal $\gamma$" is false ($f(R)$ is scale/mass-dependent), and a mass-dependent $\gamma$ is degenerate with baryonic systematics. (iii) The $S_8$ tension is bifurcated (shear-low vs cluster-high); OBT aligns with shear and is in *tension* with eROSITA clusters. (iv) The growth sign itself is a free bulk boundary condition (closure problem), not a derived prediction. Demoted from T2 to **T3 exploratory mechanism** — not a falsifiable discriminant. See [Theory](/theory/) for the full audit.
 
 ![eROSITA Growth Illusion](/plots/erosita_gamma_illusion.png)
 *Figure: Oscillating $G_\text{eff}(z)$ creates the illusion of $\gamma = 1.19$ when fitted with a constant-$G$ model. The growth rate $f(z)$ deviates from GR's $\Omega_m^{0.55}$ at low redshifts where the brane is currently stretched.*
@@ -392,7 +394,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 | Dynamic Dark Energy (DESI) | $\Lambda$ excluded at $4.2\sigma$ | Mechanical oscillation reproducing CPL phantom spectrum | **T1** |
 | $S_8$ Crisis (DES vs KiDS) | Irreconcilable structural tension | Temporal growth suppression: order 4–10% (S₈ ≈ 0.79, waveform-dependent; consistent, not precision) | **T2** |
 | Low-$\ell$ CMB Deficit (Planck) | Persistent non-Gaussian anomaly | Sub-dominant ISW modulation at 2 Gyr (cosmic-variance-capped, realistic $\sim 1\sigma$; earlier $\Delta\chi^2=32.9$ was a covariance-omission artifact; CLASS/CAMB pending) | **T2** |
-| eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Press-Schechter/Tinker semi-analytic projection of oscillating $G_{eff}(z)$ | **T2** |
+| eROSITA $\gamma = 1.19$ | GR predicts 0.55 | Oscillating $G_{eff}(z)$ *would* modulate cluster abundance — but eROSITA sees high $S_8$ (opposite to needed deficit), $f(R)$ is not universal-$\gamma$, sign is a free bulk BC. Exploratory only *(audit May 2026)* | **T3** |
 | Dwarf Galaxy Dynamics | Cusp-core problem, RAR unexplained | Ab initio geometric derivation of exact laws $\mu(x)$ and $a_0$ (analytically assimilates SPARC fit) | **T1** |
 | Wide Binary Gravitational Anomaly (Chae 2025) | Gaia DR3 312 binaries: $\gamma_g = 1.48^{+0.33}_{-0.23}$ at $g_N < 10^{-9.5}$ m/s², ~4$\sigma$ cumulative departure from Newton | OBT predicts $\gamma_g(u) = [(1+\sqrt{1+4/u^2})/2]^{1/2}$ ab initio from Gauss-Codazzi; log-median = 1.58, log-uniform mean = 1.80, agreement at $< 1\sigma$; multi-scale validation of $\mu(x)$ across 10 orders in acceleration | **T1** |
 | Neutrino Masses | Paradoxical constraints violating particle physics | Relaxed limit ($< 0.16$ eV) via oscillating expansion metric | **T2** |
@@ -466,11 +468,11 @@ The construction of the V8.2 framework through 60 analytical derivations has gen
 
 ### 9.6. Large-Scale Structure Cosmology: The Press-Schechter $\gamma(M)$ Spectrum
 
-**Problem solved:** Explaining eROSITA's anomalous growth index $\gamma = 1.19$ (GR predicts $0.55$).
+**Exploratory mechanism (T3, demoted May 2026 — see [Theory](/theory/) audit):** how an oscillating $G_{eff}$ *would* modulate cluster abundance. NOT a confirmation of eROSITA's $\gamma = 1.19$ (which is real but driven by high cluster $S_8$, the opposite of OBT's needed deficit) nor a falsifiable discriminant ($f(R)$ is not universal-$\gamma$; degenerate with systematics; sign is a free bulk BC).
 
 **Discovery:** The oscillating $G_{eff}(t)$ raises the spherical collapse threshold $\delta_c$ by $\sim 3\%$, which combined with $\sim 4.5\%$ $\sigma$ suppression, exponentially depletes massive clusters via the Press-Schechter mass function. The amplification factor $\mathcal{A}(M) \propto \nu^2 = (\delta_c/\sigma(M))^2$ is mass-dependent, converting $\gamma_{linear} \approx 0.80$ to $\gamma_{app} \approx 1.19$ for massive clusters.
 
-**Falsifiable prediction for eROSITA DR2:** $\gamma(M)$ is a monotonically increasing spectrum — groups ($10^{13}\,M_\odot$): $\gamma \approx 0.88$; massive clusters ($10^{14.5}\,M_\odot$): $\gamma \approx 1.19$; monsters ($5 \times 10^{14}\,M_\odot$): $\gamma \approx 1.47$. Classical modified gravity ($f(R)$, scalar-tensor) predicts universal $\gamma$; OBT predicts a mass-dependent spectrum. Testable imminently.
+**Exploratory expectation (NOT a falsifiable discriminant — audit May 2026):** the mechanism qualitatively suggests a mass-increasing apparent $\gamma(M)$. But this is not unique to OBT: $f(R)$ gravity is itself scale/mass-dependent (it does **not** predict universal $\gamma$ — only DGP does, at $\approx 0.68$), and an apparent $\gamma(M)$ is degenerate with mundane cluster systematics (AGN feedback, miscentering, non-Gaussian mass-observable scatter). Moreover eROSITA's actual cosmology is cluster-abundant (high $S_8$), opposite to the deficit this would produce, and the growth sign is a free bulk boundary condition. T3 exploratory, not "testable imminently" as a discriminant.
 
 ### 9.7. Gravitational Wave Astronomy: Spectral Flattening and the Billionth Overtone
 
