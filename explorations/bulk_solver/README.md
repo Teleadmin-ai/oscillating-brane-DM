@@ -56,9 +56,20 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       whole grid (`run_static` in moving_brane.py). The assembly (bulk diamond
       march + Robin brane boundary via Eq.35, row-by-row, index bookkeeping) is
       validated. No moving boundary yet.
-    - Stage C2 — NEXT: MOVING brane. Off-grid brane nodes need Seahra's aligned-
-      row construction or cubic interpolation. Validate vs MMS (moving z_b(t))
-      or de Sitter Eq. 44. This is the last geometric piece.
+    - **Stage C2a — ATTEMPTED, diagnosed.** Tried a shortcut: constant-velocity
+      brane on a RECTANGULAR grid (h_u=(1-Vb)dt, h_v=(1+Vb)dt) so brane nodes
+      stay on the diagonal (no interpolation). Result: clean order 2 for small
+      Vb, but ERRATIC (oscillatory, non-convergent) for Vb>~0.3. Diagnosed: the
+      asymmetric grid (aspect h_v/h_u=(1+Vb)/(1-Vb)) under-resolves the v
+      direction -> ALIASING with the oscillatory Bessel solution. NOT a physics
+      instability: Eq.35 itself is correct at all velocities (unit test order 3),
+      and the static (square-grid) case is perfect. The shortcut is the culprit.
+    - Stage C2b — NEXT (the proper fix): SQUARE grid (h_u=h_v) + cubic 4-point
+      interpolation for off-grid brane nodes (Seahra's actual method). Keeps both
+      null directions equally resolved -> no aliasing. Validate vs MMS / de Sitter.
+      NOTE: OBT late-time has SMALL brane velocity (small-Vb regime works even
+      with the shortcut); the radiation benchmark (Stage D) has a FAST brane and
+      needs C2b.
     - Stage D: + matter source (scalar Delta) -> radiation amplification (Fig.10
       of 0705.1685). Validates the instrument; then Gate 2/3 -> OBT sign.
 - **Gate 2 — GR recovery.** Late-time, large-scale, low-energy limit must give

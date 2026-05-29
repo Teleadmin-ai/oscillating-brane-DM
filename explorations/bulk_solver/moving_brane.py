@@ -193,3 +193,73 @@ if __name__ == "__main__":
             else:
                 print(f"{N:6d}{e:14.3e}{np.log2(prev / e):8.2f}")
             prev = e
+
+
+# ==========================================================================
+# Stage C2a: FULL evolution with a MOVING brane at CONSTANT velocity.
+# z_b(t)=z0+Vb*(t-t0). With rectangular grid spacings h_u=(1-Vb)dt,
+# h_v=(1+Vb)dt the brane nodes stay aligned on the diagonal (i,i) -> NO
+# interpolation, isolating the moving-boundary physics (alpha with zdot!=0,
+# rectangular cells du!=dv). MMS vs the Bessel oracle.
+# ==========================================================================
+def run_moving(N, Vb=0.3, T=1.0, w=3.0, k=1.0, z0=1.0, t0=1.0):
+    q = np.sqrt(w**2 - k**2)
+    dt = T / N
+    hu, hv = (1.0 - Vb) * dt, (1.0 + Vb) * dt
+    u0, v0 = t0 - z0, t0 + z0
+    u = u0 + hu * np.arange(N + 1)
+    v = v0 + hv * np.arange(N + 1)
+    zb = lambda t: z0 + Vb * (t - t0)  # noqa: E731
+    psi = np.full((N + 1, N + 1), np.nan)
+    for j in range(N + 1):
+        psi[0, j] = _psi_exact(u[0], v[j], w, q)
+
+    def Vf(uu, vv):
+        return k**2 - 1.0 / (vv - uu) ** 2
+
+    def alpha_brane(t):  # moving: zdot=Vb
+        z = zb(t)
+        psi_t = -w * np.sin(w * t) * np.sqrt(z) * j0(q * z)
+        psi_z = np.cos(w * t) * (
+            j0(q * z) / (2 * np.sqrt(z)) - q * np.sqrt(z) * j1(q * z)
+        )
+        psival = np.cos(w * t) * np.sqrt(z) * j0(q * z)
+        return (Vb * psi_t + psi_z) / np.sqrt(1.0 - Vb**2) / psival
+
+    deta = np.sqrt(1.0 - Vb**2) * dt
+    for i in range(1, N + 1):
+        tS, tN = t0 + (i - 1) * dt, t0 + i * dt
+        aS, aN = alpha_brane(tS), alpha_brane(tN)
+        Vs, Vn, Ve = Vf(u[i - 1], v[i - 1]), Vf(u[i], v[i]), Vf(u[i - 1], v[i])
+        den = 12.0 + 6.0 * aN * deta + hu * hv * Vn
+        psi[i, i] = (
+            -(12.0 + 6.0 * aS * deta + hu * hv * Vs) / den * psi[i - 1, i - 1]
+            + (24.0 - hu * hv * Ve) / den * psi[i - 1, i]
+        )
+        for j in range(i + 1, N + 1):
+            E, W, S = psi[i, j - 1], psi[i - 1, j], psi[i - 1, j - 1]
+            Vc = 0.25 * (
+                Vf(u[i - 1], v[j - 1])
+                + Vf(u[i], v[j - 1])
+                + Vf(u[i - 1], v[j])
+                + Vf(u[i], v[j])
+            )
+            psi[i, j] = E + W - S - (hu * hv / 8.0) * Vc * (E + W)
+
+    err = 0.0
+    for i in range(N + 1):
+        for j in range(i, N + 1):
+            err = max(err, abs(psi[i, j] - _psi_exact(u[i], v[j], w, q)))
+    return err
+
+
+if "--stageC2" in __import__("sys").argv:
+    print("Stage C2a: full evolution, MOVING brane (const velocity), vs Bessel oracle")
+    for Vb in [0.0, 0.3, 0.6]:
+        print(f"  Vb = {Vb}:")
+        prev = None
+        for N in [50, 100, 200, 400]:
+            e = run_moving(N, Vb=Vb)
+            tag = "-" if prev is None else f"{np.log2(prev / e):.2f}"
+            print(f"    N={N:4d}  Linf={e:.3e}  order={tag}")
+            prev = e
