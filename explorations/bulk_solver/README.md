@@ -93,10 +93,17 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       evolution MMS vs the Bessel oracle CLEAN order 2.00, robust across several
       trajectories (A,Om varied). No shortcut, no aliasing, ANY trajectory/speed.
       THE moving-boundary machinery is validated for general branes.
-    - Stage D / Gate 2-3 — NEXT: add the matter source (brane Delta ODE coupled
-      to Omega_b; the brane BC gains the inhomogeneous (6 rho a^3/sigma k^2)Delta
-      term) -> Gate 2 (GR recovery) -> Gate 3 (OBT late-time config + regularity
-      BC -> read the growth-modulation SIGN: imposed by regularity, or free?).
+    - **Stage D brick 1 — DONE.** The inhomogeneous brane BC source term
+      (n.D)psi - alpha psi = S validated by MMS: coefficient -6*d_eta*(S_S+S_N)
+      in the generalized Eq.35, order 3 (see GATE1_spec.md). The full solver
+      machinery (bulk + general moving brane + Robin + matter source) is now
+      validated end-to-end.
+    - Stage D brick 2 / Gate 2-3 — NEXT (mostly PHYSICS SETUP, not more
+      machinery): assemble the coupled bulk(psi)+brane-matter(Delta, Gate-1a ODE)
+      system; Gate 2 (GR recovery); Gate 3 = OBT background (radion trajectory)
+      + bulk REGULARITY BC -> read the sign of the induced G_eff / Weyl response
+      (E_00 at the brane): does regularity IMPOSE enhancement/suppression, or
+      leave it free? The regularity BC is the crux (per the closure audit).
     - Stage D: + matter source (scalar Delta) -> radiation amplification (Fig.10
       of 0705.1685). Validates the instrument; then Gate 2/3 -> OBT sign.
 - **Gate 2 — GR recovery.** Late-time, large-scale, low-energy limit must give

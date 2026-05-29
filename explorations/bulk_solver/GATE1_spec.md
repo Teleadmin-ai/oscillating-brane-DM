@@ -102,6 +102,17 @@ domain of dependence handles it; place initial null surface deep in the past).
   (moving worldline boundary ~ moving brane). We instead extend our own
   Gate-0.5-validated marcher (we control + validated it).
 
+## Stage D source term (MMS-validated, May 2026)
+Inhomogeneous brane BC: (n.D)psi - alpha psi = S, with S = matter source
+(for OBT/Cardoso Eq.28, S proportional to the brane density contrast Delta:
+S = -(6 rho a^3/(sigma k^2)) Delta in Omega-variables). The generalized Eq.35
+gains the source term on the RHS:
+    [12 + 6 a_N d_eta + du dv V_N] psi_N
+       = -[12 + 6 a_S d_eta + du dv V_S] psi_S + [24 - du dv V_E] psi_E
+         - 6 d_eta (S_S + S_N)
+The coefficient -6*d_eta was confirmed by MMS (alpha=0, S=(n.D)psi_exact):
+order 3 convergence; +6 and -3 fail. Consistent with the homogeneous 6*alpha*d_eta.
+
 ## Honest caveat carried forward
 Cardoso's amplification is a HIGH-ENERGY (rho>>sigma) effect; OBT's growth-sign
 question is LATE-TIME LOW-ENERGY (rho<<sigma), a different regime. Gate 1 validates
