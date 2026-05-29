@@ -37,10 +37,25 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
     the short-scale amplification is reproduced (Delta pumped by Omega_b,
     monotonic in k: x4e3 at k=1 ... x2e26 at k=32). Qualitative mechanism only;
     magnitude not yet calibrated to their k_crit/normalization.
-  - **Gate 1b — NEXT (hard part).** Couple the Gate-0.5 bulk marcher to the
-    moving brane: bulk Omega on z>z_b(tau), junction BC (Eq. 28) via the
-    high-energy d_n ~ -d_u, regularity at the IR. Reproduce the amplification
-    from the FULL solver. This validates the instrument.
+  - **Gate 1b — IN PROGRESS.** Couple the Gate-0.5 bulk marcher to the moving
+    brane (Seahra hep-th/0602194 scheme; algorithm in GATE1_spec.md).
+    - **Stage A — DONE.** `moving_brane.py`: MMS unit test of Seahra's
+      triangular brane-update (Eq. 35) in flat space (V=0). Reproduces a
+      manufactured exact solution at the correct O(dt^3) per-step order (2.96).
+      NOTE: d_eta (proper brane step) must be 2nd-order (trapezoid) for clean
+      convergence. The Robin moving-boundary update formula is validated.
+    - **Stage B — DONE.** Same MMS unit test with the AdS potential
+      V=k^2-1/(4z^2) and the Gate-0.5 Bessel mode as oracle. Converges at
+      order ~3. KEY RESULT: the FLAT Minkowski normal derivative is the correct
+      convention (no AdS metric factor) -- confirmed by MMS, as expected from
+      the reduced variable psi=z^{-3/2}Omega living in flat (u,v) operators.
+      Both bulk (diamond) and brane (triangular, Eq.35) updates now validated,
+      flat and AdS.
+    - Stage C — NEXT: full evolution (assemble diamonds + triangular updates
+      over a grid, row-by-row, brane as moving boundary) vs an exact moving-
+      brane solution (MMS or de Sitter Eq. 44). This is the assembly step.
+    - Stage D: + matter source (scalar Delta) -> radiation amplification (Fig.10
+      of 0705.1685). Validates the instrument; then Gate 2/3 -> OBT sign.
 - **Gate 2 — GR recovery.** Late-time, large-scale, low-energy limit must give
   `G_eff -> G_N` with the leading correction of order `(kL)^2` (~1e-61 here).
 - **Gate 3 — the OBT sign.** Only after Gates 0–2: dust brane + forcing, sweep

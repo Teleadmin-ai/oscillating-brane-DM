@@ -52,6 +52,56 @@ for ell=0.1mm — cosmologically tiny. Supercritical modes amplified.
   amplification from the FULL solver -> validates the instrument.
 - Only then: Gate 2 (GR recovery, late-time low-energy) -> Gate 3 (OBT sign).
 
+## Gate 1b moving-boundary ALGORITHM (Seahra hep-th/0602194) — verbatim
+
+Grid: null coords u=t-z, v=t+z. Rows bounded by const-u; the brane intersects the
+future boundary of row i at t_i = t_0 + i*Delta. Brane nodes are ALIGNED with the
+grid by construction (no ghost points). Cubic 4-point interpolation only fills
+non-aligned nodes between rows (error O(Delta^4)). Within a triangular cell the
+brane arc is replaced by a straight line (error O(Delta^3); valid if Delta << r_c,
+the brane radius of curvature).
+
+DIAMOND cell update (bulk; = our validated GPP, V at south node):
+    psi_n = -psi_s + (psi_w + psi_e)(1 - delta^2 V_s/8) + O(Delta^4)
+
+TRIANGULAR (brane) cell update, Robin condition  (n.D)psi - alpha psi = 0  applied
+via trapezoid over the brane segment (Eq. 35, verbatim, TENSOR/no-source case):
+    psi_n ~ -[12 + 6 alpha_s d_eta + d_u d_v V_s] / [12 + 6 alpha_n d_eta + d_u d_v V_n] * psi_s
+            + [24 - d_u d_v V_e] / [12 + 6 alpha_n d_eta + d_u d_v V_n] * psi_e + O(Delta^3)
+  d_eta = proper distance along brane between south & north brane nodes;
+  alpha(eta) = -(3/2) sqrt(1+H^2 ell^2)/z_b   (RS tensor modes).
+
+OUR SCALAR generalization: the Robin condition is INHOMOGENEOUS,
+    (n.D)Omega + (1/ell)(1+rho/sigma) Omega + (6 rho a^3/(sigma k^2)) Delta = 0   (Cardoso Eq.28)
+  => alpha = -(1/ell)(1+rho/sigma), plus a SOURCE S = -(6 rho a^3/(sigma k^2)) Delta.
+  The trapezoid integral gains (d_eta/2)(S_n + S_s); add this to the Eq.35 numerator.
+  Potential is the SCALAR one (Gate-0.5 validated): V_psi = k^2 - 1/(4 z^2) for psi
+  (= z^{-3/2} Omega), OR work directly in Omega with V_Omega = k^2 - 1/z^2 and the
+  (3/z) d_z term — but psi-form reuses the validated marcher, preferred.
+
+Convergence: 2nd order (psi_Delta - psi_exact = Delta^2 * eps). Bulk/AdS-infinity:
+finite domain, future null boundary beyond which evolution is not needed (causal
+domain of dependence handles it; place initial null surface deep in the past).
+
+## Gate 1b build/validation stages (each validated before next)
+- 1b-i  DE SITTER ORACLE: inertial (de Sitter) brane has the EXACT solution
+        psi_exact = (z_*/z)^{3/2} Re{ [k eta - i] e^{-i k eta} }  (Seahra Eq. 44).
+        Implement the moving-brane scheme (Eq.35, no matter source, alpha as above)
+        and reproduce this to 2nd order. Validates the moving-boundary machinery.
+- 1b-ii MATTER COUPLING: add the scalar Delta source + evolve Delta (Eq. 33a/38)
+        coupled to Omega_b. 
+- 1b-iii RADIATION-ERA BENCHMARK: reproduce the ~x10 short-scale amplification,
+        Fig. 10 of 0705.1685 (super-horizon -> GR; k>k_crit -> amplified).
+
+## Tooling notes (DeepSearch audit May 2026)
+- NO public moving-brane solver exists (Seahra/Koyama/Cardoso codes unreleased).
+  BRANECODE (gr-qc/0410001) exists but is ADM/BSSN nonlinear, misaligned.
+  CLASS/CAMB/hi_class use PPF, skip the 5D bulk. => build from these equations.
+- Possible accelerator: Black Hole Perturbation Toolkit (bhptoolkit.org) +
+  O'Toole-Ottewill-Wardell (2010.15818) characteristic RW/Zerilli integrators
+  (moving worldline boundary ~ moving brane). We instead extend our own
+  Gate-0.5-validated marcher (we control + validated it).
+
 ## Honest caveat carried forward
 Cardoso's amplification is a HIGH-ENERGY (rho>>sigma) effect; OBT's growth-sign
 question is LATE-TIME LOW-ENERGY (rho<<sigma), a different regime. Gate 1 validates
