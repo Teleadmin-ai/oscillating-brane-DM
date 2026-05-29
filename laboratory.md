@@ -113,6 +113,29 @@ where the dissipator $\mathcal{D}[\phi(t)]$ is fully determined by the radion tr
 ![Laplace Demon Readout](/plots/laplace_demon_readout.png)
 *Figure: Sensor displacement vs target distance. At $r = L = 0.2\,\mu$m, the V8.2 Yukawa correction enhances Newton by 0.4%. The "5D Readout Zone" (green) is where the extra-dimensional signal dominates. Current gap with single atoms acknowledged; mesoscopic targets + squeezed states + Q-accumulation bring SNR within near-term reach.*
 
+### A falsifiable signature: 5D-enhanced gravitational collapse below $L$
+
+The Diósi-Penrose framework yields a genuinely *distinctive* (though demanding) prediction once one recalls that, in OBT, **gravity becomes five-dimensional below $L = 0.2\,\mu$m**. The Penrose-Diósi objective-collapse time of a spatial superposition is $\tau \sim \hbar/E_G$, where $E_G$ is the gravitational self-energy of the difference between the two mass configurations. For a superposed object *smaller* than $L$, that self-energy is sourced at sub-$L$ separations where gravity is 5D and **stronger** — so the collapse proceeds **faster** than the standard 4D Penrose-Diósi prediction.
+
+A Monte-Carlo evaluation of $E_G$ with two bracketing crossover kernels (a sharp 4D$\to$5D match, and a resummed Randall-Sundrum form reproducing the Garriga-Tanaka $(2/3)(L/r)^2$ correction at $r \gg L$ and a $1/r^2$ 5D tail at $r \ll L$) gives a robust, kernel-independent **enhancement of order unity**, growing as the object shrinks below $L$:
+
+| Object size $R$ | $R/L$ | collapse-rate enhancement $\eta = E_G^{5D}/E_G^{4D}$ |
+|:---:|:---:|:---:|
+| 800 nm | 4.0 | $\approx 1.2$ (recovers 4D) |
+| 200 nm | 1.0 | $\approx 2.7$–$3.1$ |
+| 100 nm | 0.5 | $\approx 4.8$–$6.9$ |
+| 50 nm | 0.25 | $\approx 9$–$14$ |
+
+For a realistic levitated silica nanosphere ($R = 100$ nm $\approx 0.5\,L$, mass $\sim 5\times10^9$ amu), the standard 4D collapse time $\tau_{4D} \approx 5.8\times10^3$ s ($\sim$1.6 h, matching Penrose's canonical $10^{-5}$ cm estimate) is **shortened to $\sim 10^3$ s** — a factor of $\sim$5 speed-up. The **falsifiable signature** is the *size-scan*: a collapse-rate that turns up sharply as the superposed object crosses below $R \sim 0.2\,\mu$m, pointing to an extra dimension at precisely the OBT scale $L$.
+
+**Honest caveats (this is a definitive *future* test, not a current one).**
+1. **Conditional on Penrose-Diósi being real.** Objective gravitational collapse is an unconfirmed hypothesis; if gravity does not collapse the wavefunction, there is nothing to enhance.
+2. **Sensitivity gap.** Observing *either* the 4D or the 5D collapse requires holding mesoscopic coherence for $\tau \sim 10^3$ s while suppressing all environmental decoherence (gas, photon, blackbody, vibration) below that rate. Current levitated experiments reach milliseconds to seconds — orders of magnitude short. The 5D enhancement becomes testable only once Penrose-Diósi-level sensitivity is achieved.
+3. **$O(1)$, kernel-dependent factor.** The exact enhancement ($\approx$5 at 100 nm) depends on the unresolved RS crossover at the $\sim$30% level; only its $O(1)$ size and the size-scan *shape* are robust.
+4. **Scale-distinctive, not mechanism-unique.** A turn-up below $L$ tests the *existence of an extra dimension at $0.2\,\mu$m* (OBT's specific scale); the 5D-gravity mechanism itself is generic to braneworlds. It is, however, cleanly distinct from collapse models with no characteristic length at $0.2\,\mu$m.
+
+This re-frames the laboratory program: the static Yukawa level shift (§1) is unobservable ($\delta E/E \sim 10^{-8}$), but the *dynamical* gravitational-collapse channel is an $O(1)$ effect with a distinctive scale — the most promising terrestrial avenue, alongside SKA 21cm among cosmological probes, for a genuinely falsifiable OBT signature once the technology matures.
+
 ### Long-term Theoretical Perspectives: 5D Information Channels
 
 If the extra dimension exists at $L = 0.2\,\mu$m, the operator commutativity $[\hat{g}_{AB}^{(5)},\, \hat{A}_\mu^{(4)}] = 0$ formally opens the theoretical possibility of an orthogonal information channel. However, we explicitly note that translating this fundamental operator algebra into a functional technology bridges an immense engineering chasm. This section is presented as a speculative horizon for fundamental physics, strictly distinct from the imminent and falsifiable qBOUNCE predictions:
