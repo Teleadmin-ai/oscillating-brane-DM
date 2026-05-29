@@ -51,9 +51,14 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       the reduced variable psi=z^{-3/2}Omega living in flat (u,v) operators.
       Both bulk (diamond) and brane (triangular, Eq.35) updates now validated,
       flat and AdS.
-    - Stage C — NEXT: full evolution (assemble diamonds + triangular updates
-      over a grid, row-by-row, brane as moving boundary) vs an exact moving-
-      brane solution (MMS or de Sitter Eq. 44). This is the assembly step.
+    - **Stage C1 — DONE.** Full evolution, STATIC brane (z_b const, aligned to
+      the grid diagonal), MMS vs the Bessel oracle: clean order 2.00 over the
+      whole grid (`run_static` in moving_brane.py). The assembly (bulk diamond
+      march + Robin brane boundary via Eq.35, row-by-row, index bookkeeping) is
+      validated. No moving boundary yet.
+    - Stage C2 — NEXT: MOVING brane. Off-grid brane nodes need Seahra's aligned-
+      row construction or cubic interpolation. Validate vs MMS (moving z_b(t))
+      or de Sitter Eq. 44. This is the last geometric piece.
     - Stage D: + matter source (scalar Delta) -> radiation amplification (Fig.10
       of 0705.1685). Validates the instrument; then Gate 2/3 -> OBT sign.
 - **Gate 2 — GR recovery.** Late-time, large-scale, low-energy limit must give
