@@ -85,11 +85,18 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       validation), and (c) better accuracy (no fat brane cell). The integer-step
       result only confirms the diagnosis (square grid kills the aliasing); it is
       NOT a usable solver for OBT.
-    - Stage C2c — NEXT (the genuine, non-shortcut solver): SQUARE grid + cubic
-      4-point interpolation placing the brane node at its EXACT position each
-      cell, for a GENERAL trajectory z_b(t). Validate via MMS on an ACCELERATING
-      brane (the real test) + ideally the de Sitter Eq.44 oracle. THEN Stage D
-      (matter coupling) -> Gate 2 (GR recovery) -> Gate 3 (OBT sign).
+    - **Stage C2c — DONE (the genuine, non-shortcut solver).**
+      `moving_brane_interp.py`: ray grid launched from the brane points + cubic
+      4-point interpolation to transfer ray i -> ray i+1, for a GENERAL
+      ACCELERATING trajectory z_b(t)=z0+A sin(Om t) (the kind OBT's oscillating
+      radion has). Bricks validated: (1) cubic interpolation order ~4; (2) full
+      evolution MMS vs the Bessel oracle CLEAN order 2.00, robust across several
+      trajectories (A,Om varied). No shortcut, no aliasing, ANY trajectory/speed.
+      THE moving-boundary machinery is validated for general branes.
+    - Stage D / Gate 2-3 — NEXT: add the matter source (brane Delta ODE coupled
+      to Omega_b; the brane BC gains the inhomogeneous (6 rho a^3/sigma k^2)Delta
+      term) -> Gate 2 (GR recovery) -> Gate 3 (OBT late-time config + regularity
+      BC -> read the growth-modulation SIGN: imposed by regularity, or free?).
     - Stage D: + matter source (scalar Delta) -> radiation amplification (Fig.10
       of 0705.1685). Validates the instrument; then Gate 2/3 -> OBT sign.
 - **Gate 2 — GR recovery.** Late-time, large-scale, low-energy limit must give
