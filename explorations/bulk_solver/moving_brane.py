@@ -263,3 +263,76 @@ if "--stageC2" in __import__("sys").argv:
             tag = "-" if prev is None else f"{np.log2(prev / e):.2f}"
             print(f"    N={N:4d}  Linf={e:.3e}  order={tag}")
             prev = e
+
+
+# ==========================================================================
+# Stage C2 (PROPER): MOVING brane on a SQUARE grid (h_u=h_v=h), no shortcut.
+# Brane advances (1, r) integer grid steps per brane step -> stays on grid nodes
+# (a, r*a), velocity Vb=(r-1)/(r+1), cells stay square (no aliasing). du=h, dv=r*h,
+# d_eta=sqrt(r)*h. MMS vs the Bessel oracle.
+# ==========================================================================
+def run_moving_square(Na, r, T=1.0, w=3.0, k=1.0, z0=1.0, t0=1.0):
+    Vb = (r - 1.0) / (r + 1.0)
+    h = 2.0 * T / (Na * (1.0 + r))  # brane covers t in [t0, t0+T]
+    q = np.sqrt(w**2 - k**2)
+    u0, v0 = t0 - z0, t0 + z0
+    Nb = r * Na + Na
+    u = u0 + h * np.arange(Na + 1)
+    v = v0 + h * np.arange(Nb + 1)
+    zb = lambda t: z0 + Vb * (t - t0)  # noqa: E731
+    psi = np.full((Na + 1, Nb + 1), np.nan)
+    for b in range(Nb + 1):
+        psi[0, b] = _psi_exact(u[0], v[b], w, q)
+
+    def Vf(uu, vv):
+        return k**2 - 1.0 / (vv - uu) ** 2
+
+    def ab(t):
+        z = zb(t)
+        pt = -w * np.sin(w * t) * np.sqrt(z) * j0(q * z)
+        pz = np.cos(w * t) * (j0(q * z) / (2 * np.sqrt(z)) - q * np.sqrt(z) * j1(q * z))
+        pv = np.cos(w * t) * np.sqrt(z) * j0(q * z)
+        return (Vb * pt + pz) / np.sqrt(1.0 - Vb**2) / pv
+
+    deta = np.sqrt(r) * h
+    for a in range(1, Na + 1):
+        bN, bS = r * a, r * (a - 1)
+        tS, tN = 0.5 * (u[a - 1] + v[bS]), 0.5 * (u[a] + v[bN])
+        aS, aN = ab(tS), ab(tN)
+        du, dv = h, v[bN] - v[bS]  # dv = r*h
+        Vs, Vn, Ve = Vf(u[a - 1], v[bS]), Vf(u[a], v[bN]), Vf(u[a - 1], v[bN])
+        den = 12.0 + 6.0 * aN * deta + du * dv * Vn
+        psi[a, bN] = (
+            -(12.0 + 6.0 * aS * deta + du * dv * Vs) / den * psi[a - 1, bS]
+            + (24.0 - du * dv * Ve) / den * psi[a - 1, bN]
+        )
+        for b in range(r * a + 1, Nb + 1):
+            E, W, S = psi[a, b - 1], psi[a - 1, b], psi[a - 1, b - 1]
+            Vc = 0.25 * (
+                Vf(u[a - 1], v[b - 1])
+                + Vf(u[a], v[b - 1])
+                + Vf(u[a - 1], v[b])
+                + Vf(u[a], v[b])
+            )
+            psi[a, b] = E + W - S - (h * h / 8.0) * Vc * (E + W)
+
+    err = 0.0
+    for a in range(Na + 1):
+        for b in range(r * a, Nb + 1):
+            err = max(err, abs(psi[a, b] - _psi_exact(u[a], v[b], w, q)))
+    return err, Vb
+
+
+if "--stageC2sq" in __import__("sys").argv:
+    print(
+        "Stage C2 PROPER: moving brane, SQUARE grid, vs Bessel oracle (expect order 2)"
+    )
+    for r in [2, 3, 4]:
+        _, Vb = run_moving_square(20, r)
+        print(f"  r={r} (Vb={Vb:.3f}):")
+        prev = None
+        for Na in [40, 80, 160, 320]:
+            e, _ = run_moving_square(Na, r)
+            o = "-" if prev is None else f"{np.log2(prev / e):.2f}"
+            print(f"    Na={Na:4d}  Linf={e:.3e}  order={o}")
+            prev = e

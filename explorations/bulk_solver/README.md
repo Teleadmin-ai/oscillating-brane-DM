@@ -64,12 +64,23 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       direction -> ALIASING with the oscillatory Bessel solution. NOT a physics
       instability: Eq.35 itself is correct at all velocities (unit test order 3),
       and the static (square-grid) case is perfect. The shortcut is the culprit.
-    - Stage C2b — NEXT (the proper fix): SQUARE grid (h_u=h_v) + cubic 4-point
-      interpolation for off-grid brane nodes (Seahra's actual method). Keeps both
-      null directions equally resolved -> no aliasing. Validate vs MMS / de Sitter.
-      NOTE: OBT late-time has SMALL brane velocity (small-Vb regime works even
-      with the shortcut); the radiation benchmark (Stage D) has a FAST brane and
-      needs C2b.
+    - **Stage C2b — DONE for the regime that matters.** Proper SQUARE grid
+      (h_u=h_v), brane advances (1,r) integer grid steps -> stays on nodes
+      (a, r*a), Vb=(r-1)/(r+1), no shortcut/asymmetry. MMS vs Bessel oracle:
+      CLEAN order 2 for r=2 (Vb=0.333) and r=3 (Vb=0.500). The rectangular-grid
+      aliasing is gone -> diagnosis confirmed, and the proper method was NOT
+      harder (answering "why the shortcut?"). r=4 (Vb=0.600) still mildly
+      erratic: the brane STEP spans dv=4h (fat triangular cell) -> residual
+      aliasing across the brane cell. Fully fixed only by single-cell
+      interpolation (Seahra's real method) -- needed for FAST (radiation-era)
+      branes, NOT for OBT.
+      => MOVING-BRANE SOLVER VALIDATED (MMS, order 2) for Vb<=0.5, i.e. the
+      SLOW-brane regime relevant to the OBT late-time sign. The fast-brane
+      Cardoso radiation benchmark would need the interpolation upgrade, but it
+      is a validation nicety, not the goal: MMS already validates the instrument.
+    - Stage D / Gate 2-3 — NEXT: with the slow-brane solver, do GR recovery
+      (Gate 2) then the OBT late-time setup -> read the growth-modulation SIGN
+      (Gate 3). Interpolation upgrade only if the fast-brane benchmark is wanted.
     - Stage D: + matter source (scalar Delta) -> radiation amplification (Fig.10
       of 0705.1685). Validates the instrument; then Gate 2/3 -> OBT sign.
 - **Gate 2 — GR recovery.** Late-time, large-scale, low-energy limit must give
