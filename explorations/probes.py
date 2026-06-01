@@ -1,0 +1,411 @@
+#!/usr/bin/env python3
+"""
+probes.py — registered ANALYSIS probes for the OBT-Game, invoked ONLY through obt_game.py.
+
+ARCHITECTURE RULE (Romain, 2026-06-01): the tool (obt_game.py) is the SINGLE entry point.
+No side scripts. Any new computation becomes a PROBE here (a function in the registry) and is
+run via `obt_game.py probe <name> [--k v ...]`, so the §0 banner is always shown first.
+Each probe reports FACTS ONLY (numbers); the player (chercheur Claude) judges. Probes never
+mutate game.json — recording a finding goes through `obt_game.py note <id> --text ...`.
+
+Probes belong to the battery for monster [01679552] (the low-acceleration boost): they test
+the SAME OBT prediction (a0=cH0/2pi, mu(x)=x/sqrt(1+x^2), exact RAR) across system types and
+isolate where it holds vs where an external theory must be debunked.
+"""
+import os
+import warnings
+
+import numpy as np
+
+warnings.filterwarnings("ignore")
+
+# --- shared OBT constants (CODATA-consistent with obt_formulas) ---
+A0 = 1.0422e-10                       # OBT a0 = cH0/2pi (m/s^2)
+G = 6.674e-11
+MSUN = 1.989e30
+KPC = 3.0856775814913673e19
+MPC = 1.0e3 * KPC
+KMS = 1.0e3
+V_MW = 220.0 * KMS                    # MW flat circular speed (for external field)
+RSUN_KPC = 8.2
+LOTS = "/DATA/obt_game_cache/lots"
+T1 = "/DATA/obt_game_cache/raw/sparc_table1.mrt"
+
+
+def obt_rar(g_bar, a0=A0):
+    """Exact OBT radial-acceleration relation g_obs(g_bar)."""
+    return np.sqrt((g_bar**2 + g_bar * np.sqrt(g_bar**2 + 4 * a0**2)) / 2.0)
+
+
+def _mu(x):
+    return x / np.sqrt(1 + x**2)
+
+
+def _load_sparc_table1():
+    """Per-galaxy SPARC properties (Lelli 2016c MRT). 19-field rows (incl. undocumented flag/
+    error cols): 0=ID 1=T 2=D 3=eD 4=distflag 5=Inc 6=eInc 7=L36 8=eL36 9=Reff 10=SBeff
+    11=eReff 12=SBdisk 13=MHI 14=eSBdisk 15=Vflat 16=eVflat 17=Q 18=Ref."""
+    import pandas as pd
+    rows = []
+    with open(T1) as f:
+        for ln in f:
+            p = ln.split()
+            if len(p) >= 19 and p[0][0].isalpha():
+                try:
+                    rows.append((p[0], float(p[1]), float(p[7]), float(p[9]), float(p[10]),
+                                 float(p[12]), float(p[13]), float(p[15]), int(float(p[17]))))
+                except (ValueError, IndexError):
+                    continue
+    return pd.DataFrame(rows, columns=["ID", "T", "L36", "Reff", "SBeff", "SBdisk", "MHI",
+                                       "Vflat", "Q"])
+
+
+# ==========================================================================
+# DATA-BUILD probes (wrap the data-layer pipelines; produce the cached lots)
+# ==========================================================================
+def build_sparc(opts):
+    """Build the SPARC per-point RAR lot (sparc_rar.parquet)."""
+    import sparc_pipeline
+    sparc_pipeline.main()
+
+
+def build_wb(opts):
+    """Build the clean wide-binary lot (wb_clean.parquet)."""
+    import wb_pipeline
+    n = int(opts["nmax"]) if opts.get("nmax") else None
+    wb_pipeline.main(n)
+
+
+# ==========================================================================
+# ANALYSIS probes (battery for monster [01679552])
+# ==========================================================================
+def sparc_residuals(opts):
+    """Per-galaxy OBT-RAR residual vs EXTERNAL properties (gas frac, SB, type...) at M/L=0.7,
+    + the gas-domination split that tells M/L-noise from intrinsic scatter."""
+    import pandas as pd
+    from scipy.stats import spearmanr
+    ML = float(opts.get("ml", 0.7))
+    df = pd.read_parquet(f"{LOTS}/sparc_rar.parquet")
+    R = df["R_kpc"].values * KPC
+    Vgas2 = df["Vgas"].values**2
+    Vstar2 = ML * df["Vdisk"].values**2 + ML * df["Vbul"].values**2
+    gbar = (Vgas2 + Vstar2) * KMS**2 / R
+    gobs = (df["Vobs"].values * KMS)**2 / R
+    df = df.assign(logres=np.log10(gobs / obt_rar(gbar)), x_acc=gbar / A0,
+                   fgas_dyn=Vgas2 / np.maximum(Vgas2 + Vstar2, 1e-9))
+    lo = df[df.x_acc < 3]
+    g = lo.groupby("ID")["logres"].median().rename("res_dex").reset_index()
+    npts = lo.groupby("ID").size().rename("npts").reset_index()
+    g = g.merge(npts, on="ID")
+    g = g[g.npts >= 3]
+    t1 = _load_sparc_table1()
+    t1 = t1.assign(fgas=t1["MHI"] / t1["L36"].clip(lower=1e-3))
+    m = g.merge(t1, on="ID")
+    print(f"[sparc_residuals] {len(m)} galaxies (low-acc, >=3 pts), M/L={ML}")
+    print(f"  residual: median={m.res_dex.median():+.3f} dex, scatter(std)={m.res_dex.std():.3f} dex")
+    print("  FACT — Spearman residual vs EXTERNAL properties:")
+    for col, lab in [("T", "Hubble type T"), ("fgas", "gas frac M_HI/L"), ("SBeff", "surf.bright SBeff"),
+                     ("SBdisk", "disk SB0"), ("L36", "luminosity L36"), ("Reff", "eff.radius")]:
+        x = m[col].values
+        y = m.res_dex.values
+        ok = np.isfinite(x) & np.isfinite(y)
+        if ok.sum() > 20:
+            rho, p = spearmanr(x[ok], y[ok])
+            flag = " <== strong" if abs(rho) > 0.4 and p < 1e-3 else (" <- notable" if abs(rho) > 0.25 and p < 0.01 else "")
+            print(f"    {lab:20s}: rho={rho:+.3f}  p={p:.1e}  (N={ok.sum()}){flag}")
+    print("  FACT — gas-domination split (flat scatter => observational, not M/L):")
+    for name, mask in [("gas-DOM fgas>0.7", lo.fgas_dyn > 0.7),
+                       ("mixed 0.3-0.7", (lo.fgas_dyn > 0.3) & (lo.fgas_dyn <= 0.7)),
+                       ("star-DOM fgas<0.3", lo.fgas_dyn <= 0.3)]:
+        s = lo[mask]
+        print(f"    {name:18s}: N={len(s):5d}  med={s.logres.median():+.3f}  std={s.logres.std():.3f}")
+    rho, p = spearmanr(lo.fgas_dyn, lo.logres)
+    print(f"    per-point residual vs gas-share: rho={rho:+.3f} p={p:.1e} N={len(lo)}")
+
+
+def dsph(opts):
+    """Local-Group dwarf spheroidals (pressure-supported): boost & OBT-RAR residual, split by
+    external field x_ext (EFE discriminant). Fetches McConnachie 2012 (cached to dsph.parquet)."""
+    import pandas as pd
+    import pyvo
+    cache = f"{LOTS}/dsph.parquet"
+    if opts.get("refresh") or not os.path.exists(cache):
+        tap = pyvo.dal.TAPService("http://tapvizier.cds.unistra.fr/TAPVizieR/tap")
+        df = tap.search('SELECT * FROM "J/AJ/144/4/catalog"').to_table().to_pandas()
+        df.columns = [c.replace("*", "") for c in df.columns]
+        df = df[["Name", "SubG", "GLON", "GLAT", "D", "VMag", "R1", "sigma", "M_HI"]]
+        df = df.rename(columns={"sigma": "sigma_kms", "R1": "Rh_arcmin", "D": "D_kpc", "M_HI": "MHI"})
+        for c in ["D_kpc", "VMag", "Rh_arcmin", "sigma_kms", "MHI", "GLON", "GLAT"]:
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+        d = df[np.isfinite(df.sigma_kms) & np.isfinite(df.Rh_arcmin) & np.isfinite(df.D_kpc)
+               & (df.sigma_kms > 0) & (df.Rh_arcmin > 0)].copy()
+        PC = KPC / 1e3
+        r_half_pc = d.D_kpc.values * 1e3 * np.tan(np.radians(d.Rh_arcmin.values / 60.0))  # pc
+        r = r_half_pc * PC                                                                # m
+        sig = d.sigma_kms.values * KMS
+        L_V = 10**(-0.4 * (d.VMag.values - 4.83))
+        M_bar = (2.0 * L_V + 1.33 * np.nan_to_num(d.MHI.values)) * MSUN
+        M_dyn = 4.0 * sig**2 * r / G
+        g_bar = G * (M_bar / 2.0) / r**2
+        g_obs = G * (M_dyn / 2.0) / r**2
+        lon = np.radians(d.GLON.values)
+        lat = np.radians(d.GLAT.values)
+        x = d.D_kpc.values * np.cos(lat) * np.cos(lon) - RSUN_KPC
+        y = d.D_kpc.values * np.cos(lat) * np.sin(lon)
+        z = d.D_kpc.values * np.sin(lat)
+        Rgc = np.sqrt(x * x + y * y + z * z) * KPC                                        # kpc -> m
+        g_ext = V_MW**2 / Rgc
+        out = d[["Name", "SubG", "D_kpc", "sigma_kms"]].copy()
+        out["r_half_pc"] = r_half_pc
+        out["M_bar"] = M_bar / MSUN
+        out["M_dyn"] = M_dyn / MSUN
+        out["g_bar"] = g_bar
+        out["g_obs"] = g_obs
+        out["x_acc"] = g_bar / A0
+        out["x_ext"] = g_ext / A0
+        out["boost_obs"] = g_obs / g_bar
+        out["res_obt_dex"] = np.log10(g_obs / obt_rar(g_bar))
+        out = out[np.isfinite(out.res_obt_dex)]
+        out.to_parquet(cache, index=False)
+    out = pd.read_parquet(cache)
+    print(f"[dsph] {len(out)} dwarf spheroidals; median x_acc={out.x_acc.median():.3f} (deep-MOND if <<1)")
+    print(f"  OBT-RAR residual: median={out.res_obt_dex.median():+.3f} dex, scatter={out.res_obt_dex.std():.3f}")
+    print("  FACT — boost & residual split by EXTERNAL FIELD x_ext (EFE discriminant):")
+    for lo_, hi_, lab in [(0, 0.05, "x_ext<0.05"), (0.05, 0.15, "0.05-0.15"), (0.15, 1e9, "x_ext>0.15")]:
+        msk = (out.x_ext >= lo_) & (out.x_ext < hi_)
+        if msk.sum() >= 3:
+            s = out[msk]
+            print(f"    [{lab:11s}] N={msk.sum():3d}  med boost={s.boost_obs.median():6.1f}x  "
+                  f"resid={s.res_obt_dex.median():+.3f} dex")
+    from scipy.stats import spearmanr
+    ok = np.isfinite(out.res_obt_dex) & np.isfinite(out.x_ext)
+    rho, p = spearmanr(out.x_ext[ok], out.res_obt_dex[ok])
+    print(f"  POP EFE TEST: residual vs x_ext rho={rho:+.3f} p={p:.2e} (EFE predicts NEGATIVE)")
+
+
+def udg_btfr(opts):
+    """BTFR slope/normalization from SPARC, + UDGs DF2/DF4 boost (the 'lacking DM' betrayal)."""
+    import pandas as pd
+    d = _load_sparc_table1()
+    d = d[(d.Vflat > 0) & (d.Q < 3)].copy()
+    Mbar = (0.5 * d.L36 * 1e9 + 1.33 * d.MHI * 1e9)
+    d = d.assign(Mbar=Mbar)
+    d = d[d.Mbar > 0]
+    logV = np.log10(d.Vflat.values)
+    logM = np.log10(d.Mbar.values)
+    A = np.vstack([logV, np.ones_like(logV)]).T
+    slope, icpt = np.linalg.lstsq(A, logM, rcond=None)[0]
+    pred_norm = np.log10((1e3)**4 / (G * A0) / MSUN)
+    icpt4 = np.median(logM - 4 * logV)
+    print(f"[btfr] N={len(d)} (Q<3, Vflat>0): free slope={slope:.2f} (OBT predicts 4.0)")
+    print(f"  at slope=4: log10(Mbar/Vflat^4) meas={icpt4:.3f}  OBT 1/(G a0)={pred_norm:.3f}  diff={icpt4 - pred_norm:+.3f} dex")
+    cat = [("NGC1052-DF2", 8.5, 2.2, 2.0e8, 1.0e11, 80.0),
+           ("NGC1052-DF2_T13", 8.5, 1.4, 0.8e8, 1.0e11, 52.0),
+           ("NGC1052-DF4", 4.2, 1.6, 1.5e8, 1.0e11, 200.0)]
+    print("  [udg] DF2/DF4 'lacking DM' (OBT predicts ~6x if g_bar<<a0):")
+    print("    name              x_acc  g_ext/a0  b_obs  b_OBT   verdict")
+    for nm, sig, Re, Ms, Mh, sep in cat:
+        r = Re * KPC
+        g_bar = G * (Ms * MSUN / 2.0) / r**2
+        g_obs = 2.0 * (sig * KMS)**2 / r
+        g_ext = G * Mh * MSUN / (sep * KPC)**2
+        b_obs = g_obs / g_bar
+        b_obt = obt_rar(g_bar) / g_bar
+        verdict = "boost ABSENT" if b_obs < 2 else "present"
+        print(f"    {nm:16s} {g_bar/A0:6.3f}  {g_ext/A0:7.2f}  {b_obs:5.1f}x {b_obt:5.1f}x   {verdict}")
+
+
+def clusters(opts):
+    """Galaxy clusters at ~r500 (literature): where does the boost sit vs the OBT RAR?"""
+    clus = [("A2029", 8.0e14, 1.2e14, 2.00), ("A2142", 1.3e15, 2.0e14, 2.20),
+            ("A1795", 6.0e14, 8.0e13, 1.90), ("A85", 6.0e14, 9.0e13, 1.90),
+            ("Coma", 7.0e14, 1.0e14, 2.00), ("A2199", 4.0e14, 5.0e13, 1.70)]
+    print("[clusters] literature ~r500, M_star ~ 0.15 M_gas:")
+    print("    name     x_acc  b_obs   b_OBT   resid(dex)")
+    res = []
+    for nm, Mtot, Mgas, r500 in clus:
+        r = r500 * MPC
+        Mbar = (Mgas + 0.15 * Mgas) * MSUN
+        g_bar = G * Mbar / r**2
+        g_obs = G * Mtot * MSUN / r**2
+        rdex = np.log10(g_obs / obt_rar(g_bar))
+        res.append(rdex)
+        print(f"    {nm:8s} {g_bar/A0:6.2f}  {g_obs/g_bar:5.1f}x  {obt_rar(g_bar)/g_bar:5.1f}x   {rdex:+.2f}")
+    print(f"  median OBT-RAR residual = {np.median(res):+.2f} dex (factor-2 excess lives in cores, not r500)")
+
+
+def lead_df2_crater(opts):
+    """Pursue the DF2/DF4 betrayal on Crater II & Antlia 2: isolated-OBT boost vs observed vs EFE."""
+    sysl = [("NGC1052-DF2", 8.5, 2.2, 2.0e8, "host", (1.0e11, 80.0)),
+            ("NGC1052-DF4", 4.2, 1.6, 1.5e8, "host", (1.0e11, 200.0)),
+            ("Crater II", 2.7, 1.07, 3.2e5, "MW", (117.0,)),
+            ("Antlia 2", 5.7, 2.9, 7.2e5, "MW", (132.0,))]
+    print("[lead_df2_crater] FACTS (player judges):")
+    print(f"    {'system':14s} {'x_in':>8s} {'b_iso':>8s} {'b_obs':>8s} {'b_obs/b_iso':>11s} {'x_ext':>7s} {'b_efe':>7s}")
+    for nm, sig, Rk, Ms, kind, p in sysl:
+        r = Rk * KPC
+        g_bar = G * (Ms * MSUN / 2.0) / r**2
+        g_obs = 2.0 * (sig * KMS)**2 / r
+        if kind == "MW":
+            g_ext = V_MW**2 / (p[0] * KPC)
+        else:
+            g_ext = G * p[0] * MSUN / (p[1] * KPC)**2
+        b_iso = obt_rar(g_bar) / g_bar
+        b_obs = g_obs / g_bar
+        x_ext = g_ext / A0
+        print(f"    {nm:14s} {g_bar/A0:8.4f} {b_iso:8.1f} {b_obs:8.1f} {b_obs/b_iso:11.2f} "
+              f"{x_ext:7.2f} {1.0/_mu(x_ext):7.1f}")
+    print("  READ: b_obs/b_iso<1 => boost suppressed; if suppression does NOT track x_ext, EFE is not the cause.")
+
+
+def wb_boost(opts):
+    """FIND_WHY maillon for monster [01679552]: is the wide-binary boost REAL or the hidden-triple
+    artifact (Banik/Pittordis-Sutherland, the external theory)? Report the POPULATION median
+    v_ratio=v_sky/v_N vs x=g/a0, CONTROLLED for (a) the positive noise bias (cut on v_snr) and
+    (b) triple contamination (cut on RUWE). FACTS only. The signature of a real OBT/MOND boost:
+    median v_ratio RISES as x falls AND survives tighter v_snr & RUWE cuts; a triple artifact would
+    be a sep-independent inflated tail removed by tighter RUWE."""
+    import pandas as pd
+    df = pd.read_parquet(f"{LOTS}/wb_clean.parquet")
+    bins = [(3, 1e9, "Newton x>3"), (1, 3, "trans 1-3"), (0.3, 1, "0.3-1"), (0, 0.3, "deepMOND x<0.3")]
+    print(f"[wb_boost] {len(df):,} clean binaries. median v_ratio (=v_sky/v_N) vs x, by S/N & RUWE cut:")
+    for snr in [2, 5, 10]:
+        print(f"  -- v_snr>{snr} --")
+        for lo, hi, lab in bins:
+            m = (df.x_acc >= lo) & (df.x_acc < hi) & (df.v_snr > snr)
+            if m.sum() >= 10:
+                print(f"     [{lab:14s}] N={m.sum():6d}  median v_ratio={df.loc[m,'v_ratio'].median():.3f}")
+    print("  -- triple-clean stress test (deep-MOND x<0.3, v_snr>5), tightening RUWE --")
+    base = (df.x_acc < 0.3) & (df.v_snr > 5)
+    for ru in [1.4, 1.2, 1.1, 1.05]:
+        m = base & (df.ruwe1 < ru) & (df.ruwe2 < ru)
+        if m.sum() >= 10:
+            print(f"     RUWE<{ru:<4}: N={m.sum():6d}  median v_ratio={df.loc[m,'v_ratio'].median():.3f}")
+    print("  READ: boost REAL if median v_ratio rises as x falls AND is stable under tighter v_snr/RUWE;")
+    print("  triple-artifact if it collapses toward ~1 when RUWE is tightened. FACTS only — player judges.")
+
+
+def wb_forward(opts):
+    """FIND_WHY PROOF (big-compute) for monster [01679552]: Monte-Carlo forward model of the
+    wide-binary velocity statistic, Newton vs OBT, compared to the DATA. For a population of
+    Keplerian orbits (Opik log-uniform a, thermal eccentricity p(e)=2e, isotropic projection,
+    time-uniform phase) we compute, per simulated binary, the OBSERVABLE v~ = v_sky/sqrt(GM/s_proj)
+    and x = GM/s_proj^2/a0, then the MEDIAN v~(x). NEWTON: exact Kepler speed. OBT: same orbit
+    geometry, speed scaled by sqrt(boost(r)) with boost=obt_rar(g_N)/g_N (mu(x) enhanced gravity;
+    this speed-scaling is the one stated APPROXIMATION). Decisive: does the data's median v~(x)
+    track the OBT curve (boosted) or the Newton curve? FACTS only — player judges the amplitude match.
+    Options: --n SIM (default 400000), --seed-vary i (vary the orbit draw by index, no RNG-time)."""
+    import numpy as np
+    import pandas as pd
+    N = int(opts.get("n", 400000))
+    # deterministic draws (no Math.random ban issue here, but keep reproducible): seeded Generator
+    rng = np.random.default_rng(int(opts.get("seed", 20260601)))
+    data = pd.read_parquet(f"{LOTS}/wb_clean.parquet")
+    AU = 1.495978707e11
+    # population: masses resampled from the DATA; semi-major axis a ~ log-uniform (Opik);
+    # thermal eccentricity p(e)=2e -> e=sqrt(U); time-uniform mean anomaly; isotropic orientation
+    Mtot = rng.choice(data["Mtot"].values, size=N) * MSUN
+    a = 10 ** rng.uniform(np.log10(50.0), np.log10(60000.0), N) * AU       # semi-major axis (m)
+    e = np.sqrt(rng.uniform(0.0, 1.0, N))                                  # thermal
+    Manom = rng.uniform(0.0, 2 * np.pi, N)
+    # solve Kepler M = E - e sinE (vectorized Newton iterations)
+    E = Manom.copy()
+    for _ in range(60):
+        E = E - (E - e * np.sin(E) - Manom) / (1 - e * np.cos(E))
+    cosE, sinE = np.cos(E), np.sin(E)
+    r = a * (1 - e * cosE)                                                 # separation (m)
+    # orbital-plane position & velocity (unit-consistent); speed from vis-viva
+    mu_g = G * Mtot
+    v_N = np.sqrt(mu_g * (2.0 / r - 1.0 / a))                             # Newtonian speed (m/s)
+    # velocity direction in orbital plane (perifocal): vhat ∝ (-sinE, sqrt(1-e^2) cosE)
+    b = np.sqrt(1 - e * e)
+    vx_p = -sinE
+    vy_p = b * cosE
+    vnorm = np.sqrt(vx_p**2 + vy_p**2)
+    vx_p, vy_p = vx_p / vnorm, vy_p / vnorm
+    # position in perifocal frame (for projection)
+    x_p = a * (cosE - e)
+    y_p = a * b * sinE
+    # OBT speed: scale by sqrt(boost(r)), boost = obt_rar(g_N)/g_N at the instantaneous r.
+    # Optional EFE: the MW external field g_ext (~1.8 a0) is added to the total field magnitude,
+    # which SUPPRESSES the boost (single-field AQUAL-like approximation):
+    #   boost_EFE(r) = obt_rar(g_N + g_ext)/(g_N + g_ext)   (recovers isolated boost at g_ext=0)
+    g_Nr = mu_g / r**2
+    g_ext = float(opts.get("efe", 0.0)) * A0                              # --efe in units of a0 (0=off)
+    boost = obt_rar(g_Nr + g_ext) / (g_Nr + g_ext)
+    v_O = v_N * np.sqrt(boost)
+    # isotropic random orientation: rotate perifocal (x,y,0)-plane by random Euler angles,
+    # then project onto sky = first two axes. Random inclination via cos(i) uniform, node Omega,
+    # argument-of-pericenter omega uniform.
+    inc = np.arccos(rng.uniform(-1.0, 1.0, N))
+    Om = rng.uniform(0, 2 * np.pi, N)
+    om = rng.uniform(0, 2 * np.pi, N)
+    cO, sO = np.cos(Om), np.sin(Om)
+    ci, si = np.cos(inc), np.sin(inc)
+    co, so = np.cos(om), np.sin(om)
+    # rotation perifocal->sky (standard 3-1-3); we only need the X,Y (sky) components.
+    # R = Rz(Om) Rx(inc) Rz(om). Apply to perifocal vectors (z_p=0).
+    def to_sky(xp, yp):
+        # after Rz(om): (xp*co - yp*so, xp*so + yp*co, 0)
+        x1 = xp * co - yp * so
+        y1 = xp * so + yp * co
+        # after Rx(inc): (x1, y1*ci, y1*si)
+        x2 = x1
+        y2 = y1 * ci
+        # after Rz(Om): (x2*cO - y2*sO, x2*sO + y2*cO)
+        X = x2 * cO - y2 * sO
+        Y = x2 * sO + y2 * cO
+        return X, Y
+    Xpos, Ypos = to_sky(x_p, y_p)
+    s_proj = np.sqrt(Xpos**2 + Ypos**2)
+    Vx_N, Vy_N = to_sky(vx_p * v_N, vy_p * v_N)
+    vsky_N = np.sqrt(Vx_N**2 + Vy_N**2)
+    Vx_O, Vy_O = to_sky(vx_p * v_O, vy_p * v_O)
+    vsky_O = np.sqrt(Vx_O**2 + Vy_O**2)
+    # observables: v~ = v_sky / sqrt(GM/s_proj), x = GM/s_proj^2/a0
+    vc = np.sqrt(mu_g / s_proj)
+    vt_N = vsky_N / vc
+    vt_O = vsky_O / vc
+    x_obs = (mu_g / s_proj**2) / A0
+    # restrict simulated x to the data's separation regime for a fair comparison
+    sel = (s_proj / AU > 1e3) & (s_proj / AU < 3e4)
+    bins = [(3, 1e9, "Newton x>3"), (1, 3, "trans 1-3"), (0.3, 1, "0.3-1"), (0, 0.3, "deepMOND x<0.3")]
+    print(f"[wb_forward] MC N={N:,} (sep 1-30 kAU). median v~(x): Newton vs OBT vs DATA (v_snr>5):")
+    print(f"    {'bin':16s} {'Newton':>8s} {'OBT':>8s} {'DATA':>8s} {'N_data':>8s}")
+    for lo, hi, lab in bins:
+        mm = sel & (x_obs >= lo) & (x_obs < hi)
+        md = (data.x_acc >= lo) & (data.x_acc < hi) & (data.v_snr > 5)
+        nm = float(np.median(vt_N[mm])) if mm.sum() > 50 else float("nan")
+        om_ = float(np.median(vt_O[mm])) if mm.sum() > 50 else float("nan")
+        dm = float(data.loc[md, "v_ratio"].median()) if md.sum() > 10 else float("nan")
+        print(f"    {lab:16s} {nm:8.3f} {om_:8.3f} {dm:8.3f} {md.sum():8d}")
+    print("  READ: if DATA tracks OBT (boosted) and exceeds Newton at low x -> boost amplitude matches")
+    print("  mu(x) -> the triple-free OBT law is confirmed in wide binaries (the card). APPROX: OBT speed")
+    print("  = Newton x sqrt(boost(r)) (enhanced-gravity); exact OBT orbit would refine amplitudes.")
+
+
+PROBES = {
+    "build_sparc": build_sparc,
+    "build_wb": build_wb,
+    "wb_boost": wb_boost,
+    "wb_forward": wb_forward,
+    "sparc_residuals": sparc_residuals,
+    "dsph": dsph,
+    "udg_btfr": udg_btfr,
+    "clusters": clusters,
+    "lead_df2_crater": lead_df2_crater,
+}
+
+
+def run(name, opts=None):
+    """Run a registered probe by name. opts is a dict of --key value options."""
+    if name not in PROBES:
+        print(f"unknown probe '{name}'. available: {', '.join(sorted(PROBES))}")
+        return False
+    PROBES[name](opts or {})
+    return True
+
+
+def describe():
+    """One-line description per probe (first line of its docstring)."""
+    return {k: (fn.__doc__ or "").strip().split("\n")[0] for k, fn in sorted(PROBES.items())}

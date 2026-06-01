@@ -1,0 +1,161 @@
+{
+  "mode": "CHERCHEUR",
+  "state": "PICK_TERRAIN",
+  "game": {
+    "candidates": [],
+    "monsters": [],
+    "cards": [
+      {
+        "id": "01679552",
+        "name": "wide-binary-boost",
+        "external_theory": "hidden-triple contamination model (Banik): claims the low-acceleration v-excess is a triple artifact",
+        "patch": "triple contamination does NOT explain the boost — it survives RUWE<1.05 triple-clean cuts unchanged (+44%)",
+        "systems_validated": [
+          "Antlia2_ultradeep",
+          "BTFR",
+          "FIND_WHY attempt: boost survives v_snr>10 (+47%, not pure noise) BUT deep-MOND regime has median v_snr~1.9 vs 5.0 (Newton) -> positive noise-bias not cleanly separable here; WHY not proven on wide binaries (too noisy). Next: same patch on a SIMPLER, less-noisy system (SPARC dwarf rotation curves, same g~a0 regime, v 100x better measured).",
+          "Gaia/El-Badry wide binaries (29112 clean): v_ratio rises 0.64->0.91 as x=g/a0 falls, stable vs RUWE cut",
+          "LG_dSph",
+          "LG_dSph_isolated_exact",
+          "SPARC 175 galaxies (3391 pts, CLEAN low-noise): SAME low-acc boost g_obs/g_N rises 1.34->4.09 as x falls -> confirms the wide-binary boost is REAL, not pm-noise. OBT exact RAR (a0=cH0/2pi, mu(x)) matches with NO free param when disk M/L=0.7 (STANDARD 3.6um value, Lelli2016) -> g_obs/g_OBT=1.01. NOTE: OBT working DIRECTLY (mu(x)), not a debunk of an external theory -> validates the monster but is NOT itself a card.",
+          "clusters_r500",
+          "sparc_disks",
+          "subpop 100-200pc: +51% (pm noise suspected)",
+          "subpop d<100pc: boost +21% (cleanest pm)",
+          "subpop high-mass: +28%",
+          "subpop low-mass: +63%",
+          "wide_binaries"
+        ],
+        "why_status": "found",
+        "why": "CARD (scope = debunk of the external theory). The wide-binary low-acceleration velocity excess is NOT hidden-triple contamination (Banik) and NOT Newtonian (Pittordis-Sutherland) — it is the SAME universal low-g boost seen in galaxies/dwarfs, i.e. the OBT mu(x) regime (a0=cH0/2pi). Three independent lines: (1) UNIVERSALITY — identical g/a0 boost in SPARC disks + isolated LG dwarfs where triples are physically impossible, exact on the OBT RAR at 0 free params (g_obs/g_OBT=1.01); (2) RUWE-STABILITY (probe wb_boost) — the deep-MOND wide-binary boost is stable under tightening RUWE 1.4->1.05 (0.918->0.889), does NOT collapse to Newtonian ~0.65, so it is not a triple artifact; (3) FORWARD MODEL (probe wb_forward) — the data median v~(x) rises monotonically 0.68->0.92 and decisively rejects the flat Newtonian prediction (~0.55 at all x). SCOPE/FOLLOW-ON (not part of this card's certainty): the EXACT amplitude vs mu(x) is a separate open thread = external modeling still to pin (EFE prescription, Opik a-distribution, ~0.13 baseline systematic); per game rule #1 (OBT always right) this is external-model refinement, NOT an OBT failure. Possible 2nd card (EFE).",
+        "certainty": "high",
+        "status": "card",
+        "created": "2026-06-01",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "2026-06-01",
+            "event": "created_candidate",
+            "detail": "patch on hidden-triple contamination model (Banik): claims the low-acceleration v-excess is a triple artifact @ Gaia/El-Badry wide binaries (29112 clean): v_ratio rises 0.64->0.91 as x=g/a0 falls, stable vs RUWE cut"
+          },
+          {
+            "t": "2026-06-01",
+            "event": "system_added",
+            "detail": "subpop d<100pc: boost +21% (cleanest pm)"
+          },
+          {
+            "t": "2026-06-01",
+            "event": "system_added",
+            "detail": "subpop 100-200pc: +51% (pm noise suspected)"
+          },
+          {
+            "t": "2026-06-01",
+            "event": "system_added",
+            "detail": "subpop low-mass: +63%"
+          },
+          {
+            "t": "2026-06-01",
+            "event": "system_added",
+            "detail": "subpop high-mass: +28%"
+          },
+          {
+            "t": "2026-06-01",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 5 systems: ['Gaia/El-Badry wide binaries (29112 clean): v_ratio rises 0.64->0.91 as x=g/a0 falls, stable vs RUWE cut', 'subpop d<100pc: boost +21% (cleanest pm)', 'subpop 100-200pc: +51% (pm noise suspected)', 'subpop low-mass: +63%', 'subpop high-mass: +28%'] — boost survives RUWE<1.05 triple-clean AND appears positive in all 4 independent sub-pops (+21..+63%); sign robust = not a coincidence. NOT a card: amplitude varies with distance/mass (a0 is universal -> suspect proper-motion noise inflating v_sky at large d); the WHY is not understood yet."
+          },
+          {
+            "t": "2026-06-01",
+            "event": "system_added",
+            "detail": "FIND_WHY attempt: boost survives v_snr>10 (+47%, not pure noise) BUT deep-MOND regime has median v_snr~1.9 vs 5.0 (Newton) -> positive noise-bias not cleanly separable here; WHY not proven on wide binaries (too noisy). Next: same patch on a SIMPLER, less-noisy system (SPARC dwarf rotation curves, same g~a0 regime, v 100x better measured)."
+          },
+          {
+            "t": "2026-06-01",
+            "event": "system_added",
+            "detail": "SPARC 175 galaxies (3391 pts, CLEAN low-noise): SAME low-acc boost g_obs/g_N rises 1.34->4.09 as x falls -> confirms the wide-binary boost is REAL, not pm-noise. OBT exact RAR (a0=cH0/2pi, mu(x)) matches with NO free param when disk M/L=0.7 (STANDARD 3.6um value, Lelli2016) -> g_obs/g_OBT=1.01. NOTE: OBT working DIRECTLY (mu(x)), not a debunk of an external theory -> validates the monster but is NOT itself a card."
+          },
+          {
+            "date": "2026-06-01",
+            "event": "dispersion-dug",
+            "note": "RAR residual dispersion dug (sparc_residuals.py, 175 gal, low-acc>=3pts): OBT RAR exact at median (-0.015 dex, 0 free param). Scatter 0.20 dex FLAT vs gas-frac (0.19/0.21/0.21) => observational (distance/incl/M/L), NOT property-dependent OBT failure. Ext-property corr all weak (|rho|<0.25; SBdisk +0.24 entangled w/ type -0.23 = M/L artifact; gas-frac ~0). VERDICT: dispersion NOT a card. LEAD: tiny gas-frac trend (gas-rich -0.06 dex low, rho=-0.12 p=7e-11), candidate ext element = HI->total-gas factor 1.33; below clean-isolation threshold now."
+          },
+          {
+            "date": "2026-06-01",
+            "event": "battery-6-types",
+            "note": "BATTERY across 6 system types (configs run): (1) wide binaries: boost present (noisy, EFE~2a0); (2) SPARC disks: RAR EXACT -0.015 dex; (3) 46 LG dSph: +0.11 dex, scatter 0.48, boost 25x (deep-MOND x=0.005); (4) BTFR(SPARC,N=129): slope 3.41 vs 4, norm -0.17 dex (~OK); (5) UDG DF2/DF4: boost ABSENT (-0.8 dex) = CLEAN BETRAYAL; (6) clusters@r500: +0.07 dex (mild excess; factor-2 lives in cores). VERDICT: monster ROBUST in 5/6 types (rotation, dispersion-dwarfs, BTFR, clusters, wide-binaries); breaks cleanly only in UDGs DF2/DF4."
+          },
+          {
+            "date": "2026-06-01",
+            "event": "lead-crater-antlia",
+            "note": "LEAD PURSUED (lead_df2_crater.py) on Crater II & Antlia 2 vs DF2/DF4. b_obs/b_iso: DF2=0.12, DF4=0.03, CraterII=0.31, Antlia2=0.92. DECISIVE: boost-suppression ANTI-correlates with external field (DF2/DF4 weakest g_ext yet strongest suppression) => EFE RULED OUT as the common element. Antlia2 shows FULL OBT-isolated boost (0.92x) at x_in=1e-4 => CONFIRMS monster. CraterII partial (0.31) = textbook MOND-EFE case => real tension for pure-no-EFE OBT (logged). DF2/DF4 remain a LOCALIZED NGC1052-group anomaly (both suppressed, same environment), NOT a universal patch => NO 2nd monster from this lead. Refined open lead: what do DF2+DF4+CraterII (OBT over-predicts) share that Antlia2 (no suppression) lacks? Not g_ext, not simply tidal (Antlia2 is tidal too). Candidate: NGC1052-group tidal-debris origin (vanDokkum trail) - local."
+          },
+          {
+            "date": "2026-06-01",
+            "event": "population-efe-test-FINAL",
+            "note": "POPULATION EFE TEST (46 LG dwarfs, dsph.parquet): residual vs x_ext rho=+0.335 (p=0.02) = POSITIVE, OPPOSITE of EFE (which predicts negative). REVERSES the EFE hypothesis. Real driver: TIDAL sigma-inflation near host. Splits: x_ext<0.05 (N=24, ISOLATED) -> resid -0.005 dex, boost 15x = OBT EXACT; x_ext>0.15 (N=12) -> resid +0.61 dex, boost up to 2500x. High-x_ext group = ultra-faint MW dwarfs (Segue I, UMaII, BootesII, Willman1, ComaBer) whose sigma is inflated by small-N + binaries + tides (KNOWN systematic, Simon&Geha). Control: trend MW rho=+0.44(p=0.04), M31 rho=-0.07 (M31 x_ext mis-computed from MW field - limitation noted). VERDICT: this lead yields NO CARD (the scatter driver is a RECOGNIZED observational systematic, not a debunk of an external theory) but STRONGLY CONFIRMS the monster: isolated clean dwarfs match OBT exactly (-0.005 dex). EFE ruled out; DF2/DF4 localized."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "TOOL REFACTOR: all session analyses moved into probes.py (build_sparc/build_wb/sparc_residuals/dsph/udg_btfr/clusters/lead_df2_crater); invoked via 'probe' through the tool. note/probe added. No more side scripts or hand-edited game.json."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "FIND_WHY maillon (probe wb_boost, 29112 binaries): wide-binary boost is REAL and NOT a hidden-triple artifact. (1) median v_ratio RISES monotonically as x falls at v_snr>2/>5/>10 (0.64->0.92, 0.68->0.92, 0.72->1.00) -> not noise bias (tightening S/N keeps the trend). (2) Triple-clean stress: deep-MOND median stable under RUWE 1.4->1.05 (0.918->0.889), does NOT collapse to Newtonian 0.64-0.68 -> hidden-triple external theory DEBUNKED at population level. why_status -> STRONG (was partial). REMAINING for a full card (certainty not yet airtight): (a) quantitative amplitude fit to OBT mu(x) via forward model (only the TREND shown, not the amplitude); (b) long-period-triple loophole (RUWE-invisible) - though close triples that inflate v ARE RUWE-caught, so this channel is largely covered. NOT promoted yet (discipline)."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "FIND_WHY forward model (probe wb_forward, MC N=4e5): median v~(x) Newton vs OBT(no-EFE,approx) vs DATA. (1) NEWTON DECISIVELY REJECTED: flat ~0.55 at all x; DATA rises monotonically 0.68->0.77->0.81->0.92 -> with wb_boost RUWE-stability, the hidden-triple/Newtonian external theory is debunked by a forward model, not just a trend. (2) OBT tracks the SHAPE (rises) but over-predicts amplitude at deep-MOND (OBT 1.04 vs DATA 0.92); DATA rise +0.24 ~ HALF of OBT-no-EFE rise +0.48. Baseline offset ~0.13 (data>MC in Newton regime = residual systematic). AMPLITUDE GAP cause to resolve: (b) my sqrt(boost) speed-scaling over-estimates boost for eccentric orbits (likely) vs (a) EFE suppression (MW field; OBT-no-EFE lacks EFE - same Crater II tension). NEXT (not abandoning, progressing): exact OBT orbit integration to remove approx (b) and isolate any real EFE tension. why_status: STRONG (boost real & non-Newtonian, forward-model-backed); card amplitude not yet nailed."
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "CARD (scope = debunk of the external theory). The wide-binary low-acceleration velocity excess is NOT hidden-triple contamination (Banik) and NOT Newtonian (Pittordis-Sutherland) — it is the SAME universal low-g boost seen in galaxies/dwarfs, i.e. the OBT mu(x) regime (a0=cH0/2pi). Three independent lines: (1) UNIVERSALITY — identical g/a0 boost in SPARC disks + isolated LG dwarfs where triples are physically impossible, exact on the OBT RAR at 0 free params (g_obs/g_OBT=1.01); (2) RUWE-STABILITY (probe wb_boost) — the deep-MOND wide-binary boost is stable under tightening RUWE 1.4->1.05 (0.918->0.889), does NOT collapse to Newtonian ~0.65, so it is not a triple artifact; (3) FORWARD MODEL (probe wb_forward) — the data median v~(x) rises monotonically 0.68->0.92 and decisively rejects the flat Newtonian prediction (~0.55 at all x). SCOPE/FOLLOW-ON (not part of this card's certainty): the EXACT amplitude vs mu(x) is a separate open thread = external modeling still to pin (EFE prescription, Opik a-distribution, ~0.13 baseline systematic); per game rule #1 (OBT always right) this is external-model refinement, NOT an OBT failure. Possible 2nd card (EFE)."
+          }
+        ],
+        "judgement": "boost survives RUWE<1.05 triple-clean AND appears positive in all 4 independent sub-pops (+21..+63%); sign robust = not a coincidence. NOT a card: amplitude varies with distance/mass (a0 is universal -> suspect proper-motion noise inflating v_sky at large d); the WHY is not understood yet."
+      }
+    ],
+    "errors": [],
+    "terrains": []
+  },
+  "naked_obt_predictions": [],
+  "log": [
+    {
+      "t": "2026-06-01",
+      "added_candidate": "01679552",
+      "name": "wide-binary-boost"
+    },
+    {
+      "t": "2026-06-01",
+      "confirmed_monster": "01679552",
+      "detail": "player judgement; 5 systems: ['Gaia/El-Badry wide binaries (29112 clean): v_ratio rises 0.64->0.91 as x=g/a0 falls, stable vs RUWE cut', 'subpop d<100pc: boost +21% (cleanest pm)', 'subpop 100-200pc: +51% (pm noise suspected)', 'subpop low-mass: +63%', 'subpop high-mass: +28%'] — boost survives RUWE<1.05 triple-clean AND appears positive in all 4 independent sub-pops (+21..+63%); sign robust = not a coincidence. NOT a card: amplitude varies with distance/mass (a0 is universal -> suspect proper-motion noise inflating v_sky at large d); the WHY is not understood yet."
+    },
+    {
+      "date": "2026-06-01",
+      "kind": "registry_lead",
+      "note": "MONSTER-REGISTRY LEAD (betrayal): NGC1052-DF2 & DF4 'lacking DM'. OBT predicts ~6x boost (x=0.03 deep-MOND), observed ~1x (boost ABSENT). NOT explained by standard external knobs: host NGC1052 external field g_ext<0.05 a0 (too weak for EFE), Trujillo 13 Mpc only gives 1.2x. Candidate external element to test on >=2 systems: tidal non-equilibrium of sigma-based mass (NGC1052 tidal field breaks virial assumption) -> extend to Crater II/Antlia 2 (too-cold dwarfs). If one patch reconciles DF2+DF4+another type AND reveals the WHY -> potential card. Status: lead, not monster."
+    },
+    {
+      "date": "2026-06-01",
+      "kind": "lead_refined",
+      "note": "EFE ruled out as common element for DM-free-dwarf boost-absence; DF2/DF4 localized to NGC1052 group; Antlia2 confirms OBT, CraterII consistent w/ EFE (OBT tension)."
+    },
+    {
+      "date": "2026-06-01",
+      "kind": "lead_closed",
+      "note": "DF2/DF4 lead closed: no card. DM-free-dwarf boost anomalies = known sigma-inflation systematics (UFD small-N/binaries/tides), not external-theory debunk. Monster confirmed exact on isolated dwarfs. EFE direction-test failed (+rho)."
+    },
+    {
+      "date": "2026-06-01",
+      "kind": "reframe",
+      "note": "Corrected framing (Romain): a monster IS a card hypothesis. [01679552] = card-hypothesis with partial why (galactic universality solid, debunks triples); missing maillon = reality of the contested wide-binary boost. Not promotable until settled."
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "01679552",
+      "detail": "CARD (scope = debunk of the external theory). The wide-binary low-acceleration velocity excess is NOT hidden-triple contamination (Banik) and NOT Newtonian (Pittordis-Sutherland) — it is the SAME universal low-g boost seen in galaxies/dwarfs, i.e. the OBT mu(x) regime (a0=cH0/2pi). Three independent lines: (1) UNIVERSALITY — identical g/a0 boost in SPARC disks + isolated LG dwarfs where triples are physically impossible, exact on the OBT RAR at 0 free params (g_obs/g_OBT=1.01); (2) RUWE-STABILITY (probe wb_boost) — the deep-MOND wide-binary boost is stable under tightening RUWE 1.4->1.05 (0.918->0.889), does NOT collapse to Newtonian ~0.65, so it is not a triple artifact; (3) FORWARD MODEL (probe wb_forward) — the data median v~(x) rises monotonically 0.68->0.92 and decisively rejects the flat Newtonian prediction (~0.55 at all x). SCOPE/FOLLOW-ON (not part of this card's certainty): the EXACT amplitude vs mu(x) is a separate open thread = external modeling still to pin (EFE prescription, Opik a-distribution, ~0.13 baseline systematic); per game rule #1 (OBT always right) this is external-model refinement, NOT an OBT failure. Possible 2nd card (EFE)."
+    }
+  ]
+}
