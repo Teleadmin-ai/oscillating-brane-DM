@@ -540,6 +540,56 @@
             "detail": "The WHY is the universal RAR evaluated in the COMPACT regime. f_DM(R1/2)=1-g_bar/g_obs; massive high-z disks are small & dense so the INDEPENDENTLY-computed baryonic acceleration g_bar(R1/2) (exp disk + bulge) EXCEEDS a0(z)=cH(z)/2pi for all 6 galaxies (g_bar/a0 = 1.46-4.65). On the universal mu(x)=x/sqrt(1+x^2) RAR, x>1 means the MOND boost is small, so g_obs ~ g_bar -> LOW f_DM is forced, NOT a DM deficit. OBT predicts the observed low & DECLINING f_DM at chi2/N=0.57 (0.21->~0 as z and compactness rise). The 'surprise/tension for LambdaCDM-DM-dominated cores' (Genzel 2017) is therefore the ordinary RAR, debunking the CDM expectation; OBT inherits the MOND-shared mechanism (constant a0 gives the same low f_DM -> not OBT-distinctive). Caveat: g_bar is mass-model dependent (vc_OBT runs ~10-15% above vc_obs for the most compact), but f_DM is robustly low and matches."
           }
         ]
+      },
+      {
+        "id": "22690584",
+        "name": "rotation-curve diversity problem",
+        "external_theory": "LambdaCDM expectation of a tight/uniform inner rotation-curve shape at fixed V_flat (the Oman 2015 'diversity problem')",
+        "patch": "the wide spread of inner V(2 kpc) at fixed V_flat is not a CDM crisis but the LOCAL RAR: V(2 kpc) is set by g_bar(2 kpc), which varies with baryonic surface density at fixed V_flat -> diversity is inherited from baryons",
+        "systems_validated": [
+          "SPARC Vflat 140-200 bin: spread 55 km/s, OBT scat 0.095 dex, Spearman(V_in,SB)=+0.88",
+          "SPARC Vflat 100-140 bin: spread 19 km/s, OBT scat 0.103, Spearman(V_in,SB)=+0.55 (N=28)",
+          "SPARC Vflat 70-100 bin: spread 15 km/s, OBT scat 0.131, Spearman=+0.44 (N=39)",
+          "Global 131 SPARC galaxies: OBT V(2kpc) residual median -0.026 dex, scatter 0.126 dex"
+        ],
+        "why_status": "found",
+        "why": "The WHY is the LOCALITY of the RAR. At fixed V_flat (= fixed enclosed baryonic mass at large R), the INNER acceleration g_bar(2 kpc) still varies strongly because galaxies of the same V_flat have very different central baryonic surface densities (compact HSB vs diffuse LSB). Since the OBT relation g_obs=mu(x)^-1 g_bar is point-local, V(2 kpc)=sqrt(g_obs(2kpc)*R) inherits that spread directly: the observed inner-velocity diversity is the baryonic surface-density diversity passed through mu(x). Demonstrated on SPARC (131 galaxies): (i) the diversity is real — at fixed V_flat the inner V(2 kpc) spreads by 15-55 km/s; (ii) OBT predicts each galaxy's V(2 kpc) from its baryons alone at residual median -0.026 dex, scatter 0.126 dex (= the universal RAR scatter, i.e. no extra diversity is left unexplained); (iii) within each V_flat bin V(2 kpc) correlates with baryonic surface density at Spearman +0.44 -> +0.88 (rising with mass, p<0.005). This debunks the LambdaCDM 'diversity of rotation curves' problem (Oman 2015): the spread that CDM hydro struggles to reproduce at fixed V_max is the natural, baryon-driven consequence of a local acceleration law. MOND-SHARED (RAR locality is MOND's), OBT inherits. Honest caveat: the lowest-mass bin (40-70 km/s) shows weak SB correlation (+0.02) — there the inner point is itself deep-MOND and noisier; the effect is clean in the 70-200 km/s bins.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on LambdaCDM expectation of a tight/uniform inner rotation-curve shape at fixed V_flat (the Oman 2015 'diversity problem') @ SPARC Vflat 140-200 bin: spread 55 km/s, OBT scat 0.095 dex, Spearman(V_in,SB)=+0.88"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "SPARC Vflat 100-140 bin: spread 19 km/s, OBT scat 0.103, Spearman(V_in,SB)=+0.55 (N=28)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "SPARC Vflat 70-100 bin: spread 15 km/s, OBT scat 0.131, Spearman=+0.44 (N=39)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Global 131 SPARC galaxies: OBT V(2kpc) residual median -0.026 dex, scatter 0.126 dex"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 4 systems: ['SPARC Vflat 140-200 bin: spread 55 km/s, OBT scat 0.095 dex, Spearman(V_in,SB)=+0.88', 'SPARC Vflat 100-140 bin: spread 19 km/s, OBT scat 0.103, Spearman(V_in,SB)=+0.55 (N=28)', 'SPARC Vflat 70-100 bin: spread 15 km/s, OBT scat 0.131, Spearman=+0.44 (N=39)', 'Global 131 SPARC galaxies: OBT V(2kpc) residual median -0.026 dex, scatter 0.126 dex']"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The WHY is the LOCALITY of the RAR. At fixed V_flat (= fixed enclosed baryonic mass at large R), the INNER acceleration g_bar(2 kpc) still varies strongly because galaxies of the same V_flat have very different central baryonic surface densities (compact HSB vs diffuse LSB). Since the OBT relation g_obs=mu(x)^-1 g_bar is point-local, V(2 kpc)=sqrt(g_obs(2kpc)*R) inherits that spread directly: the observed inner-velocity diversity is the baryonic surface-density diversity passed through mu(x). Demonstrated on SPARC (131 galaxies): (i) the diversity is real — at fixed V_flat the inner V(2 kpc) spreads by 15-55 km/s; (ii) OBT predicts each galaxy's V(2 kpc) from its baryons alone at residual median -0.026 dex, scatter 0.126 dex (= the universal RAR scatter, i.e. no extra diversity is left unexplained); (iii) within each V_flat bin V(2 kpc) correlates with baryonic surface density at Spearman +0.44 -> +0.88 (rising with mass, p<0.005). This debunks the LambdaCDM 'diversity of rotation curves' problem (Oman 2015): the spread that CDM hydro struggles to reproduce at fixed V_max is the natural, baryon-driven consequence of a local acceleration law. MOND-SHARED (RAR locality is MOND's), OBT inherits. Honest caveat: the lowest-mass bin (40-70 km/s) shows weak SB correlation (+0.02) — there the inner point is itself deep-MOND and noisier; the effect is clean in the 70-200 km/s bins."
+          }
+        ]
       }
     ],
     "errors": [
@@ -793,6 +843,21 @@
       "t": "date-unset",
       "promoted_to_card": "d3d1bb90",
       "detail": "The WHY is the universal RAR evaluated in the COMPACT regime. f_DM(R1/2)=1-g_bar/g_obs; massive high-z disks are small & dense so the INDEPENDENTLY-computed baryonic acceleration g_bar(R1/2) (exp disk + bulge) EXCEEDS a0(z)=cH(z)/2pi for all 6 galaxies (g_bar/a0 = 1.46-4.65). On the universal mu(x)=x/sqrt(1+x^2) RAR, x>1 means the MOND boost is small, so g_obs ~ g_bar -> LOW f_DM is forced, NOT a DM deficit. OBT predicts the observed low & DECLINING f_DM at chi2/N=0.57 (0.21->~0 as z and compactness rise). The 'surprise/tension for LambdaCDM-DM-dominated cores' (Genzel 2017) is therefore the ordinary RAR, debunking the CDM expectation; OBT inherits the MOND-shared mechanism (constant a0 gives the same low f_DM -> not OBT-distinctive). Caveat: g_bar is mass-model dependent (vc_OBT runs ~10-15% above vc_obs for the most compact), but f_DM is robustly low and matches."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "22690584",
+      "name": "rotation-curve diversity problem"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "22690584",
+      "detail": "player judgement; 4 systems: ['SPARC Vflat 140-200 bin: spread 55 km/s, OBT scat 0.095 dex, Spearman(V_in,SB)=+0.88', 'SPARC Vflat 100-140 bin: spread 19 km/s, OBT scat 0.103, Spearman(V_in,SB)=+0.55 (N=28)', 'SPARC Vflat 70-100 bin: spread 15 km/s, OBT scat 0.131, Spearman=+0.44 (N=39)', 'Global 131 SPARC galaxies: OBT V(2kpc) residual median -0.026 dex, scatter 0.126 dex']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "22690584",
+      "detail": "The WHY is the LOCALITY of the RAR. At fixed V_flat (= fixed enclosed baryonic mass at large R), the INNER acceleration g_bar(2 kpc) still varies strongly because galaxies of the same V_flat have very different central baryonic surface densities (compact HSB vs diffuse LSB). Since the OBT relation g_obs=mu(x)^-1 g_bar is point-local, V(2 kpc)=sqrt(g_obs(2kpc)*R) inherits that spread directly: the observed inner-velocity diversity is the baryonic surface-density diversity passed through mu(x). Demonstrated on SPARC (131 galaxies): (i) the diversity is real — at fixed V_flat the inner V(2 kpc) spreads by 15-55 km/s; (ii) OBT predicts each galaxy's V(2 kpc) from its baryons alone at residual median -0.026 dex, scatter 0.126 dex (= the universal RAR scatter, i.e. no extra diversity is left unexplained); (iii) within each V_flat bin V(2 kpc) correlates with baryonic surface density at Spearman +0.44 -> +0.88 (rising with mass, p<0.005). This debunks the LambdaCDM 'diversity of rotation curves' problem (Oman 2015): the spread that CDM hydro struggles to reproduce at fixed V_max is the natural, baryon-driven consequence of a local acceleration law. MOND-SHARED (RAR locality is MOND's), OBT inherits. Honest caveat: the lowest-mass bin (40-70 km/s) shows weak SB correlation (+0.02) — there the inner point is itself deep-MOND and noisier; the effect is clean in the 70-200 km/s bins."
     }
   ]
 }
