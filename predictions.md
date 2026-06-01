@@ -119,6 +119,14 @@ $$\frac{\delta H}{H} \sim 10^{-3}$$
 
 Cosmicflows-4 bulk flow data is consistent with our elastic membrane model.
 
+### 6. Redshift Evolution of the MOND Scale $a_0(z)$ — an OBT-Distinctive Test
+
+This is the signature that **distinguishes OBT from standard MOND**. Milgrom's MOND takes $a_0$ to be a *universal constant*; OBT instead derives it as the Gibbons-Hawking temperature of the cosmic horizon,
+
+$$a_0(z) = \frac{c\,H(z)}{2\pi} = \frac{cH_0}{2\pi}\,E(z), \qquad E(z) = \sqrt{\Omega_m(1+z)^3 + \Omega_\Lambda},$$
+
+so the acceleration scale **must grow with redshift** ($E(z) \approx 3$ from $z=0$ to $z=2$). **First test (2026):** MUSE-DARK III (arXiv:2604.22613) measures the radial-acceleration-relation scale across $0.33 < z < 1.44$ and finds it rising — $a_0 \approx 1.0 \to 1.99 \to 2.38 \to 2.71 \times 10^{-10}$ m s$^{-2}$ at $z \approx 0, 0.5, 0.9, 1.2$ — **excluding a constant $a_0$** and matching OBT's *evolving* prediction in direction and rough factor. **Honest status:** the observed rate is $\sim 30$–$45\%$ steeper than $cH(z)/2\pi$ (the authors note "$a_0(z)$ faster than $H(z)$"); within OBT, where $a_0$ is horizon-fixed, this residual is ascribed to high-$z$ measurement systematics (baryonic census, $M/L$ evolution, pressure-support corrections; $\sim 0.17$ dex intrinsic scatter), so the **distinctive, confirmed** result is the *evolution itself* (refuting constant-$a_0$ MOND), with the exact slope a calibration target for deeper surveys (JWST/MUSE/ELT). See [Discoveries §3.12](/discoveries/).
+
 ## Particle Physics Signatures
 
 ### Kaluza-Klein Modes

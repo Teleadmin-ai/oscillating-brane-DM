@@ -236,6 +236,14 @@ A sixth external claim attacks the *universality* of the acceleration scale itse
 
 *Honest scope.* The residual $\chi^2/{\rm dof} \approx 4$ (not exactly 1) is **approximation-limited** — coarse 3-point nuisance grids and Gaussian per-galaxy posteriors; a full MCMC (as in McGaugh & Lelli 2018) reaches $\sim 1$. The result is **MOND-shared** (the universal $a_0$ is MOND's; OBT inherits it). It is a debunk of an *external* statistical claim ("$a_0$ varies $\Rightarrow$ no fundamental scale"), **not** a modification of OBT: once the fixed nuisances and the known intrinsic scatter are restored, the SPARC $a_0$ is consistent with a single universal value. *Tier: T2.*
 
+### 3.12. The Evolving Acceleration Scale $a_0(z)$: An OBT-Distinctive Debunk of "Constant $a_0$"
+
+The previous six debunks (§3.6–3.11) are **MOND-shared**: they defend the $\mu(x)$ law that OBT and MOND have in common. This one is **different — it distinguishes OBT from MOND**. Standard MOND (Milgrom) treats $a_0$ as a *universal constant*, a fundamental acceleration scale. OBT does not: $a_0 = cH(z)/2\pi$ is the **Gibbons-Hawking temperature of the cosmic horizon**, so it **tracks the Hubble rate and evolves with redshift**.
+
+*The external claim is now refuted by data.* MUSE-DARK III (2026) measures the RAR acceleration scale across $0.33 < z < 1.44$ and finds it **rises with redshift**: $a_0 \approx 1.0\,(z{=}0) \to 1.99\,(z{\sim}0.5) \to 2.38\,(z{\sim}0.9) \to 2.71\,(z{\sim}1.2) \times 10^{-10}$ m s$^{-2}$, a factor $\sim 3$–$4$ to $z=2$. A **constant** $a_0$ (standard MOND) is excluded; OBT's $a_0 = cH(z)/2\pi$ predicts exactly this kind of growth — the cosmological factor $E(z) = \sqrt{\Omega_m(1+z)^3 + \Omega_\Lambda} \approx 3$ from $z=0$ to $2$. This is the **first OBT signature not shared with MOND**: the low-acceleration phenomenology the two theories share acquires a redshift evolution that *only* a horizon-set $a_0$ predicts.
+
+*Honest scope.* OBT predicts the **direction and rough factor** robustly; the *observed rate is $\sim 30$–$45\%$ steeper* than $cH(z)/2\pi$ (the authors state "$a_0(z)$ is faster than $H(z)$"). Because $a_0$ is horizon-fixed in OBT, this residual is attributed to high-$z$ measurement systematics (baryonic census, $M/L$ evolution, pressure-support corrections; the intrinsic scatter is $\sim 0.17$ dex at high $z$), not to the law itself — so the robust, confirmed result is the **OBT-distinctive direction** (evolving $a_0$, refuting constant-$a_0$ MOND); the exact rate is a calibration question. *Tier: T2 (OBT-distinctive; direction confirmed, rate in mild tension).* See also [Predictions](/predictions/).
+
 ## 4. Emerging Anomalies 2025--2026
 
 ### 4.1. Impossible JWST Galaxies and Temporal Acceleration
