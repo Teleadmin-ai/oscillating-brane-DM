@@ -135,7 +135,7 @@ so the acceleration scale **must grow with redshift** ($E(z) \approx 3$ from $z=
 | BTFR zero-point ($M_{\rm bar}$ at fixed $V$) | $a_0^{-1}$ | 0.57 | 0.34 | **confirmed in direction** (Übler 2017, $-0.44$ dex at $z\sim0.9$; §3.13) |
 | $V_{\rm flat}$ at fixed $M_{\rm bar}$ | $a_0^{1/4}$ | 1.15 | 1.31 | high-$z$ TFR velocity offset |
 | Pressure-supported $\sigma$ at fixed $M$ | $(Ma_0)^{1/4}$ | 1.15 | 1.31 | high-$z$ dispersion-supported galaxies |
-| MOND transition radius $r_t = \sqrt{GM/a_0}$ | $a_0^{-1/2}$ | 0.75 | 0.58 | high-$z$ rotation-curve flattening radius |
+| MOND transition radius $r_t = \sqrt{GM/a_0}$ | $a_0^{-1/2}$ | 0.75 | 0.58 | *confounded* — degenerate with high-$z$ structural (compactness/surface-density) evolution; not a clean test |
 | Critical surface density $\Sigma_\dagger = a_0/G$ | $a_0$ | 1.76 | 2.97 | high-$z$ MOND surface-brightness threshold |
 | Deep-MOND boost $\sqrt{a_0/g}$ | $a_0^{1/2}$ | 1.33 | 1.72 | high-$z$ low-$g$ RAR amplitude |
 

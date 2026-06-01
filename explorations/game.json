@@ -482,6 +482,11 @@
             "t": "date-unset",
             "event": "promoted_to_card",
             "detail": "CARD #8 (OBT-distinctive, 2nd independent confirmation of the evolving MOND scale). External theory DEBUNKED: constant/non-evolving BTFR zero-point (standard TFR universality / constant-a0 MOND). OBT WHY: a0=cH(z)/2pi (horizon temperature) => BTFR zero-point M_bar(fixed V) ~ 1/a0 ~ 1/E(z), dropping with z. CONFIRMED by Ubler et al. 2017 (KMOS3D), a method INDEPENDENT of card #7's RAR/MUSE-DARK: high-z galaxies lie BELOW the local BTFR, Delta_BTFR = -0.44 dex at z~0.9 (a0 factor x2.75) -> a constant BTFR is refuted, and the EVOLUTION DIRECTION + the ~doubling of a0 by z~1 match OBT. CROSS-DATASET CONSISTENCY: both the RAR (card #7) and the BTFR (this card) independently find a0 ~doubling by z~1 and ~1.3-1.7x faster than cH(z)/2pi - a robust, method-independent result. HONEST SCOPE: the exact cH(z)/2pi rate is ~1.5x low (seen consistently in both methods - a calibration/refinement question, NOT a constant-MOND vindication; per rule #1 plausibly a common high-z baryonic/V_circ systematic since both use rotation velocities + baryonic masses); the z~2.3 BTFR upturn (-0.27) is the extreme-gas-census regime (external). The robust, OBT-distinctive result is the EVOLUTION (refuting constant a0), now confirmed by TWO independent methods. Does NOT modify OBT."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "INTEGRATED + PUSHED: discoveries.md §3.13 + predictions.md §6 (family row 'confirmed'), CLAUDE.md, PDF, pushed (b092832). Game = OBT + {8 cards}; cards #7+#8 = TWO independent OBT-distinctive confirmations of evolving a0(z) (RAR + BTFR)."
           }
         ],
         "judgement": "BTFR zero-point evolves (M_bar lower at fixed V at high z): Ubler -0.44 dex at z~0.9 refutes constant BTFR/a0; OBT a0=cH(z)/2pi predicts the direction + ~doubling. INDEPENDENT method (TFR) confirming card #7 (RAR), with consistent ~1.5x rate-offset across both datasets. OBT-distinctive (2nd evolving-a0 confirmation)."
@@ -521,6 +526,10 @@
       {
         "t": "date-unset",
         "note": "NAKED OBT PREDICTION TEST (not a game-monster): a0=cH(z)/2pi vs MUSE-DARK III (2026, arXiv:2604.22613) measured RAR a0(z). OBT-DISTINCTIVE: a0 EVOLVES with z (~as H(z)) -> RULES OUT constant-a0 MOND (first real OBT-vs-MOND discriminator, favors OBT). But OBT UNDER-predicts the rate ~30-45%: obs/OBT = 1.46(z0.5), 1.38(z0.9), 1.32(z1.2); factor z=0->2 OBT 2.97 vs observed ~4 (authors: 'a0(z) faster than H(z)'). NOT a card (no external theory to patch; it's OBT's naked prediction). NOT forcing (the high-z a0 is pressure-support-corrected; claiming it's 30% over-estimated to fit OBT = glue). REVIEWER/AUDIT finding: OBT a0(z) confirmed in DIRECTION (huge, MOND-distinctive), mild rate-tension. Candidate for predictions.md as a distinctive test (reviewer decision). Probe: inline a0(z) comparison."
+      },
+      {
+        "t": "date-unset",
+        "note": "FAMILY LINE TESTED — transition radius r_t=sqrt(GM/a0)~E(z)^-1/2: NOT a clean card (confounded). OBT predicts r_t shrinks (11.6->6.7 kpc z=0->2 for 1e11), a DERIVED consequence of the (confirmed) a0(z). But r_t mixes a0(z) with galaxy STRUCTURE: high-z galaxies are compact/high-surface-density -> data largely INSIDE r_t (Newtonian/declining, Genzel 2017), and r_t depends on the mass PROFILE not just total M -> not isolable from the strong z-evolution of structure. Maps the family: CLEAN tests = a0 (card#7, accel scale, structure-independent) + BTFR ZP (card#8, mass-velocity); CONFOUNDED = r_t (structure-heavy). predictions.md §6 row flagged 'confounded'. Not forcing a card."
       }
     ]
   },
@@ -705,6 +714,11 @@
       "t": "date-unset",
       "promoted_to_card": "4cc9d5d0",
       "detail": "CARD #8 (OBT-distinctive, 2nd independent confirmation of the evolving MOND scale). External theory DEBUNKED: constant/non-evolving BTFR zero-point (standard TFR universality / constant-a0 MOND). OBT WHY: a0=cH(z)/2pi (horizon temperature) => BTFR zero-point M_bar(fixed V) ~ 1/a0 ~ 1/E(z), dropping with z. CONFIRMED by Ubler et al. 2017 (KMOS3D), a method INDEPENDENT of card #7's RAR/MUSE-DARK: high-z galaxies lie BELOW the local BTFR, Delta_BTFR = -0.44 dex at z~0.9 (a0 factor x2.75) -> a constant BTFR is refuted, and the EVOLUTION DIRECTION + the ~doubling of a0 by z~1 match OBT. CROSS-DATASET CONSISTENCY: both the RAR (card #7) and the BTFR (this card) independently find a0 ~doubling by z~1 and ~1.3-1.7x faster than cH(z)/2pi - a robust, method-independent result. HONEST SCOPE: the exact cH(z)/2pi rate is ~1.5x low (seen consistently in both methods - a calibration/refinement question, NOT a constant-MOND vindication; per rule #1 plausibly a common high-z baryonic/V_circ systematic since both use rotation velocities + baryonic masses); the z~2.3 BTFR upturn (-0.27) is the extreme-gas-census regime (external). The robust, OBT-distinctive result is the EVOLUTION (refuting constant a0), now confirmed by TWO independent methods. Does NOT modify OBT."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "terrain",
+      "note": "FAMILY LINE TESTED — transition radius r_t=sqrt(GM/a0)~E(z)^-1/2: NOT a clean card (confounded). OBT predicts r_t shrinks (11.6->6.7 kpc z=0->2 for 1e11), a DERIVED consequence of the (confirmed) a0(z). But r_t mixes a0(z) with galaxy STRUCTURE: high-z galaxies are compact/high-surface-density -> data largely INSIDE r_t (Newtonian/declining, Genzel 2017), and r_t depends on the mass PROFILE not just total M -> not isolable from the strong z-evolution of structure. Maps the family: CLEAN tests = a0 (card#7, accel scale, structure-independent) + BTFR ZP (card#8, mass-velocity); CONFOUNDED = r_t (structure-heavy). predictions.md §6 row flagged 'confounded'. Not forcing a card."
     }
   ]
 }
