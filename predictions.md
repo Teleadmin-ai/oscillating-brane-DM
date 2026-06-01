@@ -127,6 +127,20 @@ $$a_0(z) = \frac{c\,H(z)}{2\pi} = \frac{cH_0}{2\pi}\,E(z), \qquad E(z) = \sqrt{\
 
 so the acceleration scale **must grow with redshift** ($E(z) \approx 3$ from $z=0$ to $z=2$). **First test (2026):** MUSE-DARK III (arXiv:2604.22613) measures the radial-acceleration-relation scale across $0.33 < z < 1.44$ and finds it rising — $a_0 \approx 1.0 \to 1.99 \to 2.38 \to 2.71 \times 10^{-10}$ m s$^{-2}$ at $z \approx 0, 0.5, 0.9, 1.2$ — **excluding a constant $a_0$** and matching OBT's *evolving* prediction in direction and rough factor. **Honest status:** the observed rate is $\sim 30$–$45\%$ steeper than $cH(z)/2\pi$ (the authors note "$a_0(z)$ faster than $H(z)$"); within OBT, where $a_0$ is horizon-fixed, this residual is ascribed to high-$z$ measurement systematics (baryonic census, $M/L$ evolution, pressure-support corrections; $\sim 0.17$ dex intrinsic scatter), so the **distinctive, confirmed** result is the *evolution itself* (refuting constant-$a_0$ MOND), with the exact slope a calibration target for deeper surveys (JWST/MUSE/ELT). See [Discoveries §3.12](/discoveries/).
 
+**The OBT-distinctive evolution family.** Because $a_0 = cH(z)/2\pi$ is horizon-set, *every* MOND-scale observable $X \propto a_0^{\,p}$ inherits the same expansion-rate evolution $X(z)/X(0) = E(z)^{\,p}$ — a whole suite of falsifiable signatures that standard (constant-$a_0$) MOND forbids. With $E(1) = 1.76$, $E(2) = 2.97$:
+
+| Observable | $\propto a_0^{\,p}$ | $\times$ at $z=1$ | $\times$ at $z=2$ | Test |
+|---|:---:|:---:|:---:|---|
+| RAR acceleration scale $a_0$ | $a_0$ | 1.76 | 2.97 | **confirmed** (MUSE-DARK 2026, §3.12) |
+| BTFR zero-point ($M_{\rm bar}$ at fixed $V$) | $a_0^{-1}$ | 0.57 | 0.34 | high-$z$ baryonic Tully-Fisher |
+| $V_{\rm flat}$ at fixed $M_{\rm bar}$ | $a_0^{1/4}$ | 1.15 | 1.31 | high-$z$ TFR velocity offset |
+| Pressure-supported $\sigma$ at fixed $M$ | $(Ma_0)^{1/4}$ | 1.15 | 1.31 | high-$z$ dispersion-supported galaxies |
+| MOND transition radius $r_t = \sqrt{GM/a_0}$ | $a_0^{-1/2}$ | 0.75 | 0.58 | high-$z$ rotation-curve flattening radius |
+| Critical surface density $\Sigma_\dagger = a_0/G$ | $a_0$ | 1.76 | 2.97 | high-$z$ MOND surface-brightness threshold |
+| Deep-MOND boost $\sqrt{a_0/g}$ | $a_0^{1/2}$ | 1.33 | 1.72 | high-$z$ low-$g$ RAR amplitude |
+
+Only the first row is so far measured (and confirmed in direction); the rest are concrete forecasts. Crucially, the powers $p$ differ row-to-row, so the set is **internally over-determined**: confirming several with their predicted $E(z)^{\,p}$ scalings would pin the horizon origin of $a_0$ far more tightly than any single measurement — and a *constant* of any of them falsifies OBT's horizon-thermodynamic $a_0$.
+
 ## Particle Physics Signatures
 
 ### Kaluza-Klein Modes

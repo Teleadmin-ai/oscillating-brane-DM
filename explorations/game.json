@@ -432,6 +432,11 @@
             "t": "date-unset",
             "event": "promoted_to_card",
             "detail": "CARD #7 (OBT-DISTINCTIVE external-theory debunk - the first card NOT shared with MOND). External theory DEBUNKED: a0 is a universal CONSTANT (Milgrom's fundamental acceleration scale). OBT's WHY: a0=cH(z)/2pi (Gibbons-Hawking cosmic-horizon temperature; Unruh-Verlinde-thermodynamic origin) -> a0 tracks the Hubble rate -> EVOLVES with redshift. CONFIRMED: MUSE-DARK III (2026) measures the RAR a0 rising from ~1.0 (z=0) to 2.71e-10 (z~1.2), factor ~3-4 to z=2, refuting constant-a0 MOND. OBT predicts the DIRECTION and rough factor (E(z)~3 to z=2); this DISTINGUISHES OBT from standard MOND (constant a0). PROVEN within the game (OBT axiom-true predicts a0=cH(z)/2pi). HONEST SCOPE: observed rate ~30-45% steeper than cH(z)/2pi ('a0 faster than H(z)'); per rule #1 the residual is an external high-z systematic (baryonic census / M/L evolution / pressure support; 0.17 dex intrinsic scatter), not a failure of the horizon-fixed a0 - so the OBT-distinctive DIRECTION is the robust, confirmed result, the exact rate is a calibration question."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "INTEGRATED + PUSHED: discoveries.md §3.12 (card) + predictions.md §6 (distinctive test), CLAUDE.md card-log, PDF regenerated, pushed (b81db21). Game = OBT + {7 cards}; card #7 is the FIRST OBT-DISTINCTIVE card (a0(z) evolution distinguishes OBT from MOND)."
           }
         ],
         "judgement": "a0 EVOLVES with z across 4 MUSE-DARK bins (1->2.7e-10, z=0->1.2) + SPARC z=0 anchor -> constant-a0 MOND REFUTED; OBT a0=cH(z)/2pi predicts the direction+factor (~3 to z=2). OBT-DISTINCTIVE (first non-MOND-shared). Rate ~30% steeper = external high-z systematic (rule #1). Multiple z-bins = systems."

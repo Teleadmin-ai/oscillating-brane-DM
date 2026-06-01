@@ -384,6 +384,34 @@ def wb_forward(opts):
     print("  = Newton x sqrt(boost(r)) (enhanced-gravity); exact OBT orbit would refine amplitudes.")
 
 
+def obt_evolution_family(opts):
+    """EXPLOIT a0(z)=cH(z)/2pi (card #7): every MOND-scale observable inherits H(z) evolution with a
+    fixed power. OBT predicts a FAMILY of redshift-evolving signatures; standard MOND has them ALL
+    constant. We derive each observable's a0-power -> H(z)-power, and tabulate the predicted evolution
+    factor to z=1 and z=2 (E(z)=sqrt(Om(1+z)^3+OL)). FACTS (the distinctive prediction set); player
+    judges which are testable. a0 ~ E(z); X ~ a0^p ~ E(z)^p."""
+    import numpy as np
+    Om = 0.3
+    def E(z): return np.sqrt(Om * (1 + z)**3 + (1 - Om))
+    fam = [
+        ("a0 (RAR transition scale)",          "a0",            +1.0, "RAR a0 vs z (MUSE-DARK 2026, CARD#7)"),
+        ("BTFR zero-point M_bar at fixed V",    "1/a0",          -1.0, "high-z baryonic Tully-Fisher (KMOS/KROSS/Ubler)"),
+        ("BTFR V_flat at fixed M_bar",          "a0^1/4",        +0.25, "high-z TFR velocity offset"),
+        ("pressure-supported sigma at fixed M", "(M a0)^1/4",    +0.25, "high-z dispersion-supported dwarfs/ETGs"),
+        ("MOND transition radius r_t=sqrt(GM/a0)", "a0^-1/2",    -0.5, "high-z rotation-curve flattening radius"),
+        ("critical surface density Sigma_t=a0/G", "a0",          +1.0, "high-z MOND surface-brightness threshold"),
+        ("deep-MOND boost g_obs/g_bar=sqrt(a0/g)", "a0^1/2",     +0.5, "high-z RAR low-g amplitude"),
+    ]
+    print("[obt_evolution_family] OBT-DISTINCTIVE evolving signatures from a0=cH(z)/2pi (MOND: all constant).")
+    print(f"  E(z=1)={E(1):.2f}, E(z=2)={E(2):.2f}.  X ~ a0^p ~ E(z)^p")
+    print(f"  {'observable':40s} {'~a0^p':>9s} {'x@z=1':>7s} {'x@z=2':>7s}  testable with")
+    for name, dep, p, test in fam:
+        print(f"  {name:40s} {dep:>9s} {E(1)**p:7.2f} {E(2)**p:7.2f}  {test}")
+    print("  READ: each row is an OBT prediction (evolution) that standard constant-a0 MOND forbids.")
+    print("  Card #7 confirmed row 1 (a0 rises). The BTFR zero-point (row 2, ~1/E(z)) is the next")
+    print("  most data-accessible cross-check (high-z TFR) -> candidate card #8.")
+
+
 def sparc_a0_fullbudget(opts):
     """CARD #6 (complete the Rodrigues-2018 debunk). Full per-galaxy a0 error budget: marginalize
     M/L (log-normal 0.5,0.11dex), inclination (Inc+/-e_Inc), DISTANCE (D+/-e_D; g_obs ~ 1/D), and add
@@ -1036,6 +1064,7 @@ PROBES = {
     "sparc_a0_universality": sparc_a0_universality,
     "sparc_a0_posteriors": sparc_a0_posteriors,
     "sparc_a0_fullbudget": sparc_a0_fullbudget,
+    "obt_evolution_family": obt_evolution_family,
     "udg_sample": udg_sample,
     "udg_inclination": udg_inclination,
     "dsph_binfloor": dsph_binfloor,
