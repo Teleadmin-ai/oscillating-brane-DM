@@ -312,6 +312,14 @@ A second external claim targets emergent MOND from the opposite direction. Mance
 
 *Honest scope.* The result is **contested** (Mancera Piña defend the higher inclinations), and the boost is **MOND-shared** --- OBT inherits $\mu(x)$/BTFR, so this does not distinguish OBT from MOND. It is partly **independent of OBT**, however: the optical-image inclination consistency and the $V \propto 1/\sin i$ instability of face-on disks are observational facts. This is a debunk of an *external* claim ("UDGs falsify modified gravity"), framed within OBT --- **not** a modification of OBT itself. *Tier: T2* (consistent with one well-argued side of a live controversy).
 
+### Declining "Keplerian" Rotation Curves Do Not Challenge $\mu(x)$ (external-theory debunk)
+
+A third external claim concerns the *shape* of outer rotation curves. Jiao et al. (2023, Gaia DR3) measured a $\sim$Keplerian **decline** in the Milky Way circular-velocity curve ($V_c: 222 \to 176$ km/s over $R = 9.5$--$26.5$ kpc; a flat curve rejected at $3\sigma$), framed as a challenge to dark matter / modified gravity. Within OBT (with the universal $\mu(x)$ law), a declining outer curve is **not** anomalous: it is simply the baryonic curve settling onto the **deep-MOND plateau** $V \to (G\,M_{\rm bar}\,a_0)^{1/4}$. The apparent tension arises only from *expecting flatness* and/or adopting a low baryonic mass.
+
+*This-work test (the debunk).* On the independent SPARC sample, classifying galaxies by their outer rotation-curve slope, **the 20 galaxies with clearly declining outer curves ($\mathrm{d}V/\mathrm{d}R < -1$ km s$^{-1}$ kpc$^{-1}$) lie on the OBT RAR at a median residual of $+0.000$ dex with the *tightest* scatter of any group (0.089 dex, versus 0.19 for flat and 0.22 for rising curves)**. Declining curves obey the same $\mu(x)$ as flat ones --- a declining outer RC is $\mu(x)$-*normal*. For the Milky Way itself, the Jiao decline at $R \gtrsim 18$ kpc is reproduced by OBT $\mu(x)$ ($\chi^2/N \approx 0.9$) for a plausible baryonic mass $M_{\rm bar} \approx 10^{11}\,M_\odot$; the decline is the curve approaching its plateau.
+
+*Honest scope.* The SPARC result is solid and **independent of OBT** (the universality of the RAR across rotation-curve shapes is a data fact). The MW-specific leg carries a real caveat --- the required $M_{\rm bar}$ sits on the high side of standard estimates ($\sim 0.65 \times 10^{11}\,M_\odot$), so the external element is the baryonic-mass model *and/or* the asymmetric-drift kinematic analysis; this leg is consistent, not decisive. The boost is **MOND-shared** (OBT inherits $\mu(x)$), so this does not distinguish OBT from MOND. It is a debunk of an *external* framing ("a declining RC challenges modified gravity"), **not** a modification of OBT. *Tier: T2.*
+
 ## Emerging Anomalies 2025--2026
 
 ### Impossible JWST Galaxies and Temporal Acceleration

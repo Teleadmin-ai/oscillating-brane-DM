@@ -166,15 +166,68 @@
             "t": "date-unset",
             "event": "promoted_to_card",
             "detail": "CARD #2 (external-theory debunk, within OBT+card#1). External claim DEBUNKED: 'gas-rich UDGs lie off the BTFR / are Newtonian -> modified gravity (mu(x)) is falsified' (Mancera-Pina 2019/2022). RECONCILED within OBT by ONE external mechanism: under-estimated OBSERVATIONAL UNCERTAINTIES (inclination and/or distance) in low-surface-brightness face-on disks, which systematically scatter them LEFT of the BTFR. PROOF (my own + independent): probe udg_sample reproduces all 6/6 UDGs returning to the OBT BTFR with lower inclinations i_true~9-23deg (clean for the 4 face-on i_pub<=42; the 2 inclined ones take the distance route); the 2024 A&A reanalysis (arXiv:2408.05269) independently reaches the same conclusion (AGC 114905 i=15deg, consistent with its round optical morphology). HONEST SCOPE: contested by Mancera-Pina (defend higher i); MOND-shared (OBT inherits mu(x)/BTFR, not OBT-distinctive); partly OBT-independent (the optical-image inclination consistency + the face-on V~1/sin(i) instability are observational facts)."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "INTEGRATED + PUSHED (reviewer/webmaster): discoveries.md §3.7 'Gas-Rich UDGs Off the BTFR: inclination/distance debunk', CLAUDE.md card-log updated, PDF regenerated, pushed to main (74bc9e7). External-debunk nature stated, OBT untouched, honest scope (contested/MOND-shared). Game = OBT + {card#1, card#2}."
           }
         ],
         "judgement": "2 UDG systems reconciled with OBT mu(x)/BTFR by the same external mechanism (underestimated i/D uncertainties); independently established by the 2024 A&A reanalysis + my AGC 114905 cross-check. Debunks the external 'gas-rich UDGs falsify BTFR/modified gravity' claim. WHY understood (obs-uncertainty systematic), so close to card-grade; MOND-shared caveat noted."
+      },
+      {
+        "id": "c7b56e9e",
+        "name": "mw-rotation-decline",
+        "external_theory": "Jiao et al. 2023 (Gaia DR3): the MW outer rotation curve shows a ~Keplerian decline (V_c 222->176 km/s, 9.5-26.5 kpc), a flat curve rejected at 3sigma, framed as challenging dark matter / modified gravity — using a LOW baryonic model B2 M_bar=0.616e11.",
+        "patch": "Adopt a higher (debated-but-within-range) MW baryonic mass M_bar~1.0e11 (and/or correct the asymmetric-drift kinematic analysis): OBT mu(x) point-mass then fits the contested OUTER decline (R>=18 kpc) at chi2/N=0.88. The 'Keplerian decline' is just the curve settling onto the deep-MOND plateau (G M_bar a0)^1/4 ~193 km/s. CAVEAT: 1.0e11 is high vs standard ~0.65e11 (McMillan); point-mass underestimates inner V_bar; so external element is baryonic-mass AND/OR analysis. MOND-shared.",
+        "systems_validated": [
+          "Milky Way (Jiao 2023, Gaia DR3)",
+          "SPARC declining-RC subsample (N=20, outer slope<-1 km/s/kpc): median OBT-RAR residual +0.000 dex, scatter 0.089 (tightest of all groups) — declining RCs sit exactly on mu(x). My analysis, probe sparc_decline."
+        ],
+        "why_status": "found",
+        "why": "CARD #3 (external-theory debunk, within OBT+cards). External claim DEBUNKED: 'declining / Keplerian outer rotation curves challenge modified gravity / signal missing or absent dark matter' (Jiao et al. 2023, MW Gaia DR3). RECONCILED within OBT: a declining outer RC is mu(x)-NORMAL — the baryonic curve settling onto the deep-MOND plateau V->(G M_bar a0)^1/4; the 'anomaly' arises only from expecting flatness and/or a low baryonic-mass assumption. PROOF (my own analysis, probe sparc_decline): 20 SPARC galaxies with clearly declining outer RCs (slope<-1 km/s/kpc) lie on the OBT RAR at median residual +0.000 dex with the TIGHTEST scatter of all RC-shape groups (0.089 vs 0.19 flat / 0.22 rising) — declining RCs obey the same mu(x) as flat ones. The MW (Jiao 2023) outer decline is consistent under a plausible baryonic mass (probe mw_rotation: M_bar~1e11 -> chi2/N=0.88 on R>=18 kpc; the decline is the plateau approach). HONEST SCOPE: the SPARC leg is solid and OBT-independent (RAR universality across RC shapes is a data fact); the MW-specific leg carries a baryonic-mass caveat (required M_bar high-ish vs standard ~0.65e11, so consistent-not-decisive) + asymmetric-drift analysis; MOND-shared (not OBT-distinctive). Does NOT modify OBT.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Jiao et al. 2023 (Gaia DR3): the MW outer rotation curve shows a ~Keplerian decline (V_c 222->176 km/s, 9.5-26.5 kpc), a flat curve rejected at 3sigma, framed as challenging dark matter / modified gravity — using a LOW baryonic model B2 M_bar=0.616e11. @ Milky Way (Jiao 2023, Gaia DR3)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "SPARC declining-RC subsample (N=20, outer slope<-1 km/s/kpc): median OBT-RAR residual +0.000 dex, scatter 0.089 (tightest of all groups) — declining RCs sit exactly on mu(x). My analysis, probe sparc_decline."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "PROPAGATION (probe sparc_decline, my analysis): the candidate's CORE claim — a declining outer RC is mu(x)-NORMAL (curve settling onto the deep-MOND plateau), NOT a challenge to modified gravity — validated on 20 SPARC declining-RC galaxies: residual +0.000 dex, scatter 0.089 (vs flat -0.003, rising -0.034). So the Jiao 2023 'MW Keplerian decline challenges gravity' framing is debunked broadly: declining RCs obey the same mu(x) as flat ones. Monster now rests on MW (Jiao, with baryonic-mass patch) + 20 SPARC galaxies (solid, my analysis). The MW-specific baryonic-mass caveat remains, but the GENERAL debunk (declining RC != anomaly) is robust and OBT-independent-ish (it's the RAR being universal)."
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['Milky Way (Jiao 2023, Gaia DR3)', 'SPARC declining-RC subsample (N=20, outer slope<-1 km/s/kpc): median OBT-RAR residual +0.000 dex, scatter 0.089 (tightest of all groups) — declining RCs sit exactly on mu(x). My analysis, probe sparc_decline.'] — Core claim (declining RC = mu(x)-normal, not a modified-gravity challenge) validated on 21 systems: MW (Jiao, baryonic-mass patch, chi2/N=0.88 outer) + 20 SPARC declining-RC galaxies (residual 0.000, scatter 0.089, my analysis). Debunks Jiao 2023 framing. Easy to find valid results across the sample => good monster."
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "CARD #3 (external-theory debunk, within OBT+cards). External claim DEBUNKED: 'declining / Keplerian outer rotation curves challenge modified gravity / signal missing or absent dark matter' (Jiao et al. 2023, MW Gaia DR3). RECONCILED within OBT: a declining outer RC is mu(x)-NORMAL — the baryonic curve settling onto the deep-MOND plateau V->(G M_bar a0)^1/4; the 'anomaly' arises only from expecting flatness and/or a low baryonic-mass assumption. PROOF (my own analysis, probe sparc_decline): 20 SPARC galaxies with clearly declining outer RCs (slope<-1 km/s/kpc) lie on the OBT RAR at median residual +0.000 dex with the TIGHTEST scatter of all RC-shape groups (0.089 vs 0.19 flat / 0.22 rising) — declining RCs obey the same mu(x) as flat ones. The MW (Jiao 2023) outer decline is consistent under a plausible baryonic mass (probe mw_rotation: M_bar~1e11 -> chi2/N=0.88 on R>=18 kpc; the decline is the plateau approach). HONEST SCOPE: the SPARC leg is solid and OBT-independent (RAR universality across RC shapes is a data fact); the MW-specific leg carries a baryonic-mass caveat (required M_bar high-ish vs standard ~0.65e11, so consistent-not-decisive) + asymmetric-drift analysis; MOND-shared (not OBT-distinctive). Does NOT modify OBT."
+          }
+        ],
+        "judgement": "Core claim (declining RC = mu(x)-normal, not a modified-gravity challenge) validated on 21 systems: MW (Jiao, baryonic-mass patch, chi2/N=0.88 outer) + 20 SPARC declining-RC galaxies (residual 0.000, scatter 0.089, my analysis). Debunks Jiao 2023 framing. Easy to find valid results across the sample => good monster."
       }
     ],
     "errors": [
       {
         "t": "date-unset",
         "note": "MONSTER#2 attempt on faint-dwarf over-prediction terrain (game=OBT+card#1): misfit LOCATED (residual vs logM_bar rho=-0.67; BRIGHT dwarfs fit mu(x) at all proximities, only FAINT/NEAR over-predict +0.46). But single-parameter PATCH (constant binary floor sigma_bin on Wolf estimator) FAILS to reconcile the batch: no sigma_bin zeros the faint residual + kills the M_bar correlation without over-correcting bright dwarfs. Cause is multi-source + known (binaries+small-N+tidal in UFDs). NOT a monster. Failed leg, logged; pivot terrain. Probes: dsph_misfit, dsph_binfloor."
+      },
+      {
+        "t": "date-unset",
+        "note": "MONSTER#3 terrain REJECTED by reasoning (not surplace): galaxy clusters off mu(x) by ~factor 2 cannot be patched by the EXTERNAL neutrino-mass parameter — closing the gap needs Sigma m_nu ~2 eV (active)/~11 eV (sterile), but OBT imposes Sigma m_nu<0.16 eV (discoveries §2.1); at 0.1 eV neutrinos add only ~5% of baryonic mass. => cluster residual is OBT-INTERNAL (Weyl fluid, free bulk BC), not a clean external-theory patch. Not a monster terrain. Pivot to MW outer rotation curve (Gaia DR3)."
       }
     ],
     "terrains": []
@@ -235,6 +288,26 @@
       "t": "date-unset",
       "promoted_to_card": "99299c2e",
       "detail": "CARD #2 (external-theory debunk, within OBT+card#1). External claim DEBUNKED: 'gas-rich UDGs lie off the BTFR / are Newtonian -> modified gravity (mu(x)) is falsified' (Mancera-Pina 2019/2022). RECONCILED within OBT by ONE external mechanism: under-estimated OBSERVATIONAL UNCERTAINTIES (inclination and/or distance) in low-surface-brightness face-on disks, which systematically scatter them LEFT of the BTFR. PROOF (my own + independent): probe udg_sample reproduces all 6/6 UDGs returning to the OBT BTFR with lower inclinations i_true~9-23deg (clean for the 4 face-on i_pub<=42; the 2 inclined ones take the distance route); the 2024 A&A reanalysis (arXiv:2408.05269) independently reaches the same conclusion (AGC 114905 i=15deg, consistent with its round optical morphology). HONEST SCOPE: contested by Mancera-Pina (defend higher i); MOND-shared (OBT inherits mu(x)/BTFR, not OBT-distinctive); partly OBT-independent (the optical-image inclination consistency + the face-on V~1/sin(i) instability are observational facts)."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "error",
+      "note": "MONSTER#3 terrain REJECTED by reasoning (not surplace): galaxy clusters off mu(x) by ~factor 2 cannot be patched by the EXTERNAL neutrino-mass parameter — closing the gap needs Sigma m_nu ~2 eV (active)/~11 eV (sterile), but OBT imposes Sigma m_nu<0.16 eV (discoveries §2.1); at 0.1 eV neutrinos add only ~5% of baryonic mass. => cluster residual is OBT-INTERNAL (Weyl fluid, free bulk BC), not a clean external-theory patch. Not a monster terrain. Pivot to MW outer rotation curve (Gaia DR3)."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "c7b56e9e",
+      "name": "mw-rotation-decline"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "c7b56e9e",
+      "detail": "player judgement; 2 systems: ['Milky Way (Jiao 2023, Gaia DR3)', 'SPARC declining-RC subsample (N=20, outer slope<-1 km/s/kpc): median OBT-RAR residual +0.000 dex, scatter 0.089 (tightest of all groups) — declining RCs sit exactly on mu(x). My analysis, probe sparc_decline.'] — Core claim (declining RC = mu(x)-normal, not a modified-gravity challenge) validated on 21 systems: MW (Jiao, baryonic-mass patch, chi2/N=0.88 outer) + 20 SPARC declining-RC galaxies (residual 0.000, scatter 0.089, my analysis). Debunks Jiao 2023 framing. Easy to find valid results across the sample => good monster."
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "c7b56e9e",
+      "detail": "CARD #3 (external-theory debunk, within OBT+cards). External claim DEBUNKED: 'declining / Keplerian outer rotation curves challenge modified gravity / signal missing or absent dark matter' (Jiao et al. 2023, MW Gaia DR3). RECONCILED within OBT: a declining outer RC is mu(x)-NORMAL — the baryonic curve settling onto the deep-MOND plateau V->(G M_bar a0)^1/4; the 'anomaly' arises only from expecting flatness and/or a low baryonic-mass assumption. PROOF (my own analysis, probe sparc_decline): 20 SPARC galaxies with clearly declining outer RCs (slope<-1 km/s/kpc) lie on the OBT RAR at median residual +0.000 dex with the TIGHTEST scatter of all RC-shape groups (0.089 vs 0.19 flat / 0.22 rising) — declining RCs obey the same mu(x) as flat ones. The MW (Jiao 2023) outer decline is consistent under a plausible baryonic mass (probe mw_rotation: M_bar~1e11 -> chi2/N=0.88 on R>=18 kpc; the decline is the plateau approach). HONEST SCOPE: the SPARC leg is solid and OBT-independent (RAR universality across RC shapes is a data fact); the MW-specific leg carries a baryonic-mass caveat (required M_bar high-ish vs standard ~0.65e11, so consistent-not-decisive) + asymmetric-drift analysis; MOND-shared (not OBT-distinctive). Does NOT modify OBT."
     }
   ]
 }

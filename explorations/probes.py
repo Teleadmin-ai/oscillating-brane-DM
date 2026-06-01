@@ -384,6 +384,86 @@ def wb_forward(opts):
     print("  = Newton x sqrt(boost(r)) (enhanced-gravity); exact OBT orbit would refine amplitudes.")
 
 
+def sparc_decline(opts):
+    """MONSTER #3 propagation (candidate mw-rotation-decline). Core claim to propagate: a DECLINING
+    outer rotation curve is NORMAL under OBT mu(x) (the curve settling onto the deep-MOND plateau),
+    NOT a challenge to modified gravity (contra the Jiao 2023 MW framing). Test on the independent
+    SPARC sample: classify each galaxy by its OUTER RC slope (declining vs flat/rising) and compare
+    the OBT-RAR residual log10(g_obs/g_OBT) between groups. If DECLINING-RC galaxies sit on mu(x)
+    just like flat ones (~zero residual), the patch propagates -> monster. FACTS only."""
+    import pandas as pd
+    import numpy as np
+    ML = float(opts.get("ml", 0.7))
+    df = pd.read_parquet(f"{LOTS}/sparc_rar.parquet")
+    R = df["R_kpc"].values * KPC
+    gbar = (df["Vgas"].values**2 + ML*df["Vdisk"].values**2 + ML*df["Vbul"].values**2) * KMS**2 / R
+    gobs = (df["Vobs"].values * KMS)**2 / R
+    df = df.assign(res=np.log10(gobs / obt_rar(gbar)))
+    rows = []
+    for gid, sub in df.groupby("ID"):
+        sub = sub.sort_values("R_kpc")
+        if len(sub) < 5:
+            continue
+        # outer half: linear slope of V_obs vs R over the outer points
+        n = len(sub); outer = sub.iloc[n // 2:]
+        sl = np.polyfit(outer["R_kpc"].values, outer["Vobs"].values, 1)[0]   # km/s per kpc
+        rows.append((gid, sl, sub["res"].median(), n))
+    g = pd.DataFrame(rows, columns=["ID", "slope", "res", "npts"])
+    print(f"[sparc_decline] {len(g)} SPARC galaxies (>=5 pts), M/L={ML}. Outer V_obs slope (km/s/kpc):")
+    for lo, hi, lab in [(-1e9, -1.0, "DECLINING < -1"), (-1.0, 1.0, "flat -1..1"), (1.0, 1e9, "rising > 1")]:
+        m = (g.slope >= lo) & (g.slope < hi)
+        if m.sum():
+            s = g[m]
+            print(f"  [{lab:16s}] N={m.sum():3d}  median OBT-RAR residual={s.res.median():+.3f} dex "
+                  f"(scatter {s.res.std():.3f})")
+    decl = g[g.slope < -1.0]
+    print(f"  => {len(decl)} clearly-declining-RC galaxies; their median residual="
+          f"{decl.res.median():+.3f} dex (0 = on OBT mu(x)).")
+    print("  READ: if declining-RC galaxies sit on mu(x) (~0 residual) like flat ones, a declining")
+    print("  outer RC is mu(x)-normal -> the 'MW decline challenges modified gravity' claim is debunked.")
+
+
+def mw_rotation(opts):
+    """MONSTER #3 hunt (game = OBT + cards). Milky Way outer rotation curve (Jiao et al. 2023,
+    Gaia DR3, Table 3) — a 'Keplerian decline' framed as challenging. Test OBT mu(x): with a
+    point-mass baryonic model (valid at large R), V_OBT(R)=sqrt(obt_rar(G M_bar/R^2)*R). Jiao's
+    B2 model M_bar=0.616e11 Msun gives a deep-MOND plateau (G M_bar a0)^1/4. We report V_OBT vs
+    observed per radius, and scan M_bar to find what (external) baryonic mass best fits the OUTER
+    points (R>=18 kpc, where point-mass is valid). The candidate external patch = the MW baryonic
+    mass model (B2 is a LOW estimate; literature spans 0.6-1.0e11). FACTS only; player judges."""
+    import numpy as np
+    # Jiao et al. 2023 (A&A 678 A208) Table 3: R[kpc], V_c[km/s], sigma[km/s]
+    RC = [(9.5,221.75,3.17),(10.5,223.32,3.02),(11.5,220.72,3.47),(12.5,222.92,3.19),
+          (13.5,224.16,3.48),(14.5,221.60,4.20),(15.5,218.79,4.75),(16.5,216.38,4.96),
+          (17.5,213.48,6.13),(18.5,209.17,4.42),(19.5,206.25,4.63),(20.5,202.54,4.40),
+          (21.5,197.56,4.62),(22.5,197.00,3.81),(23.5,191.62,12.95),(24.5,187.12,8.06),
+          (25.5,181.44,19.58),(26.5,175.68,24.68)]
+    R = np.array([r for r,_,_ in RC]); V = np.array([v for _,v,_ in RC]); S = np.array([s for *_,s in RC])
+    Rm = R * KPC; Vobs = V * KMS
+    def vobt(Mbar_1e11):
+        gbar = G * (Mbar_1e11*1e11*MSUN) / Rm**2
+        return np.sqrt(obt_rar(gbar) * Rm) / KMS
+    Mb0 = float(opts.get("mbar", 0.616))
+    print(f"[mw_rotation] Jiao 2023 MW curve vs OBT mu(x) (point-mass). B2 M_bar={Mb0}e11 Msun.")
+    print(f"  deep-MOND plateau (G M_bar a0)^1/4 = {((G*Mb0*1e11*MSUN*A0)**0.25)/KMS:.1f} km/s (B2)")
+    print(f"  {'R':>5s} {'V_obs':>7s} {'V_OBT(B2)':>9s} {'(obs-OBT)/sig':>13s}")
+    vb = vobt(Mb0)
+    for i in range(len(R)):
+        print(f"  {R[i]:5.1f} {V[i]:7.1f} {vb[i]:9.1f} {(V[i]-vb[i])/S[i]:13.1f}")
+    # scan M_bar to best-fit the OUTER points (R>=18, point-mass valid)
+    out = R >= 18
+    print("  M_bar scan — chi2/N on OUTER points (R>=18 kpc, point-mass valid):")
+    best = None
+    for Mb in [0.6,0.8,1.0,1.2,1.4,1.6,1.8]:
+        vbm = vobt(Mb)
+        chi2 = np.sum(((V[out]-vbm[out])/S[out])**2)/out.sum()
+        print(f"    M_bar={Mb:.1f}e11  chi2/N={chi2:6.2f}  plateau={((G*Mb*1e11*MSUN*A0)**0.25)/KMS:.0f} km/s")
+        if best is None or chi2 < best[1]: best = (Mb, chi2)
+    print(f"  best outer-fit M_bar~{best[0]:.1f}e11 (chi2/N={best[1]:.2f}). READ: if a PLAUSIBLE M_bar "
+          f"(0.6-1.0e11) fits, the patch is the baryonic model; if the DECLINE shape resists any flat-"
+          f"plateau mu(x), the analysis (asymmetric drift) is the external element. Player judges.")
+
+
 def udg_sample(opts):
     """MONSTER #2 -> CARD: my OWN analysis of the full gas-rich UDG sample (Mancera Pina 2019,
     Table 1 — published values). For each UDG, the OBT/MOND deep-limit BTFR target is
@@ -522,6 +602,8 @@ PROBES = {
     "build_wb": build_wb,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
+    "mw_rotation": mw_rotation,
+    "sparc_decline": sparc_decline,
     "udg_sample": udg_sample,
     "udg_inclination": udg_inclination,
     "dsph_binfloor": dsph_binfloor,
