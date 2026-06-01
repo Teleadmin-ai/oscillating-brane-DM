@@ -384,6 +384,42 @@ def wb_forward(opts):
     print("  = Newton x sqrt(boost(r)) (enhanced-gravity); exact OBT orbit would refine amplitudes.")
 
 
+def brouwer_split(opts):
+    """COMPLETE card #5 with Brouwer 2021's ACTUAL morphology-split data (KiDS data release,
+    Fig-8 files). Each RAR file: col0 = g_bar (m/s^2), col1 = ESD_t (Msun/pc^2), col3 = error,
+    col4 = bias. g_obs = 4 G ESD_t/bias. We measure the OBSERVED early/late split
+    log10(g_obs_early/g_obs_late) per g_bar bin (Sersic index AND u-r colour), and compare to my
+    colossus 2-halo prediction with REALISTIC bias (from gc-style halo masses). FACTS only."""
+    import numpy as np
+    from colossus.cosmology import cosmology
+    from colossus.lss import bias as cbias
+    base = "/DATA/obt_game_cache/raw/brouwer2021_rar"
+    PC_m = KPC / 1e3
+    ESD2g = 4 * G * MSUN / PC_m ** 2          # g_obs[m/s^2] = ESD2g * ESD_t[Msun/pc^2]/bias
+
+    def load(fn):
+        a = np.loadtxt(f"{base}/{fn}", comments="#")
+        gbar = a[:, 0]; gobs = ESD2g * a[:, 1] / a[:, 4]; egobs = ESD2g * a[:, 3] / a[:, 4]
+        return gbar, gobs, egobs
+    # realistic 2-halo split prediction (central bias) at the data's g_bar
+    cosmo = cosmology.setCosmology("planck18"); h = cosmo.H0 / 100.0; z = 0.25
+    b_e = float(cbias.haloBias(5e12 * h, z, mdef="200m", model="tinker10"))
+    b_l = float(cbias.haloBias(6e11 * h, z, mdef="200m", model="tinker10"))
+    for proxy, f1, f2 in [("Sersic (1=late,2=early)", "Fig-8_RAR-KiDS-isolated_Sersicbin_1.txt", "Fig-8_RAR-KiDS-isolated_Sersicbin_2.txt"),
+                          ("Colour (1=blue,2=red)", "Fig-8_RAR-KiDS-isolated_Colorbin_1.txt", "Fig-8_RAR-KiDS-isolated_Colorbin_2.txt")]:
+        gb, gL, eL = load(f1); _, gE, eE = load(f2)
+        split = np.log10(gE / gL)
+        esplit = (np.sqrt((eE / gE) ** 2 + (eL / gL) ** 2)) / np.log(10)
+        lowg = gb < 1e-11
+        wmean = np.sum(split[lowg] / esplit[lowg] ** 2) / np.sum(1 / esplit[lowg] ** 2)
+        sig = wmean / np.sqrt(1 / np.sum(1 / esplit[lowg] ** 2))
+        print(f"[brouwer_split] {proxy}: OBSERVED early/late split (g_bar<1e-11, N={lowg.sum()} bins):")
+        print(f"   weighted-mean split = {wmean:+.3f} +/- {np.sqrt(1/np.sum(1/esplit[lowg]**2)):.3f} dex  ({sig:.1f} sigma)")
+    print(f"  MY 2-halo (realistic central bias b_early={b_e:.2f}, b_late={b_l:.2f}): predicts ~0.07-0.11 dex at low g.")
+    print("  READ: compare observed split magnitude+sign to my 2-halo. If observed >> 2-halo, the")
+    print("  remainder needs satellite/group effective bias + baryonic content (card #5 honest scope).")
+
+
 def lensing_2halo(opts):
     """MONSTER #5 validation (candidate lensing-rar-morphology, BRIDGE kinematics->lensing->
     environment). Brouwer 2021 finds the weak-lensing RAR depends on MORPHOLOGY at >=6sigma,
@@ -810,6 +846,7 @@ PROBES = {
     "ngc2419_dispersion": ngc2419_dispersion,
     "gc_jeans": gc_jeans,
     "lensing_2halo": lensing_2halo,
+    "brouwer_split": brouwer_split,
     "udg_sample": udg_sample,
     "udg_inclination": udg_inclination,
     "dsph_binfloor": dsph_binfloor,
