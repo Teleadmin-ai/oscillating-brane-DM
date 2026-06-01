@@ -384,6 +384,192 @@ def wb_forward(opts):
     print("  = Newton x sqrt(boost(r)) (enhanced-gravity); exact OBT orbit would refine amplitudes.")
 
 
+def sparc_a0_fullbudget(opts):
+    """CARD #6 (complete the Rodrigues-2018 debunk). Full per-galaxy a0 error budget: marginalize
+    M/L (log-normal 0.5,0.11dex), inclination (Inc+/-e_Inc), DISTANCE (D+/-e_D; g_obs ~ 1/D), and add
+    the KNOWN RAR intrinsic scatter sigma_int (g-space dex; McGaugh-Lelli ~0.08-0.13 dex, NOT a0
+    variation) in quadrature to the velocity errors. Then test whether the per-galaxy a0 are consistent
+    with a UNIVERSAL value (chi2/dof vs a common a0). NON-CIRCULAR: scan sigma_int and check the value
+    that gives chi2/dof~1 matches the independently-measured RAR intrinsic scatter. FACTS only."""
+    import pandas as pd
+    import numpy as np
+    df = pd.read_parquet(f"{LOTS}/sparc_rar.parquet")
+    inc, dist = {}, {}
+    with open(T1) as f:
+        for ln in f:
+            p = ln.split()
+            if len(p) >= 19 and p[0][0].isalpha():
+                try:
+                    inc[p[0]] = (float(p[5]), max(float(p[6]), 2.0))
+                    dist[p[0]] = (float(p[2]), max(float(p[3]), 0.01 * float(p[2])))   # D, e_D (Mpc)
+                except (ValueError, IndexError):
+                    pass
+    a0g = np.logspace(np.log10(0.3e-10), np.log10(4e-10), 44)
+    mlg = np.linspace(0.2, 1.2, 18)
+    ln_ml = -0.5 * (np.log10(mlg / 0.5) / 0.11) ** 2
+    A0U = 1.0422e-10
+    sig_grid = [float(opts["sint"])] if opts.get("sint") else [0.0, 0.05, 0.08, 0.10, 0.13, 0.16]
+
+    def a0_post(s, i0e, d0e, sdex):
+        R = s.R_kpc.values * KPC
+        Vg2 = s.Vgas.values**2; Vd2 = s.Vdisk.values**2; Vb2 = s.Vbul.values**2
+        Vo0 = s.Vobs.values; eVraw = np.clip(s.eVobs.values, 2.0, None)
+        i0 = i0e[0] if i0e else 90.0
+        incs = (np.clip(i0 + i0e[1] * np.array([-1.4, 0, 1.4]), 15, 90) if i0e else np.array([i0]))
+        ln_i = (-0.5 * ((incs - i0) / i0e[1])**2 if i0e else np.array([0.0]))
+        dfrac = (d0e[1] / d0e[0] if d0e else 0.001)
+        dsc = np.array([-1.4, 0, 1.4]) * dfrac           # delta D / D
+        ln_d = -0.5 * (np.array([-1.4, 0, 1.4]))**2
+        post = np.full(len(a0g), -np.inf)
+        for j, ml in enumerate(mlg):
+            gbar = (Vg2 + ml * Vd2 + 0.7 * Vb2) * KMS**2 / R
+            Vpred = np.array([np.sqrt(obt_rar(gbar, a0) * R) / KMS for a0 in a0g])     # [a0, pt]
+            eV = np.sqrt(eVraw**2 + (1.1513 * sdex * Vpred)**2)                        # +intrinsic (g-dex->V)
+            for iv, li in zip(incs, ln_i):
+                for dd, ld in zip(dsc, ln_d):
+                    Vo = Vo0 * (np.sin(np.radians(i0)) / np.sin(np.radians(iv))) * np.sqrt(1 + dd)  # V_obs deproj; g_obs~1/D folded via R(D)
+                    ll = -0.5 * np.sum(((Vo - Vpred) / eV)**2, axis=1)
+                    post = np.logaddexp(post, ll + ln_ml[j] + li + ld)
+        P = np.exp(post - post.max()); P /= P.sum()
+        mean = np.sum(P * a0g); var = np.sum(P * (a0g - mean)**2)
+        return mean, np.sqrt(var)
+    print(f"[sparc_a0_fullbudget] full error budget (M/L+inclination+distance+intrinsic scatter). "
+          f"Universal a0={A0U:.2e}.")
+    print(f"  {'sigma_int(g,dex)':>16s} {'best a0':>9s} {'chi2/dof':>9s} {'within2sig':>11s} {'med sig_a0':>11s}")
+    for sdex in sig_grid:
+        out = []
+        for gid, s in df.groupby("ID"):
+            if len(s) < 5:
+                continue
+            m, e = a0_post(s, inc.get(gid), dist.get(gid), sdex)
+            out.append((m, max(e, 1e-13)))
+        a = np.array([o[0] for o in out]); e = np.array([o[1] for o in out])
+        au = np.sum(a / e**2) / np.sum(1 / e**2)
+        chi2 = np.sum(((a - au) / e)**2) / (len(a) - 1)
+        frac = np.mean(np.abs(a - au) / e < 2)
+        chimed = np.sum(((a - np.median(a)) / e)**2) / (len(a) - 1)
+        print(f"  {sdex:16.2f} {au:9.2e} {chi2:9.1f} {100*frac:10.0f}% {np.median(e):11.2e}  med_a0={np.median(a):.2e} chi2med/dof={chimed:.1f}")
+    print("  READ: the RAR intrinsic scatter (McGaugh-Lelli ~0.08-0.13 dex in g) is INDEPENDENTLY measured.")
+    print("  If chi2/dof -> ~1 at that sigma_int, the per-galaxy a0 are consistent with a UNIVERSAL value")
+    print("  once the full (Rodrigues-fixed) error budget is restored -> Rodrigues 2018 DEBUNKED (card).")
+
+
+def sparc_a0_posteriors(opts):
+    """MONSTER #6 (rigorous debunk of Rodrigues et al. 2018, 'Absence of a fundamental acceleration
+    scale'). Per galaxy, build the 2D likelihood over (a0, M/L_disk) from the rotation curve, with a
+    log-normal M/L prior (3.6um: 0.5, sigma=0.11 dex), and MARGINALIZE M/L -> the a0 posterior.
+    Rodrigues fixed M/L (narrow a0 errors -> apparent >5sigma a0 variation). McGaugh: marginalizing the
+    a0<->M/L degeneracy widens the a0 posteriors so they become consistent with a UNIVERSAL a0. We
+    compare chi2/dof of the per-galaxy a0 vs a common value, FIXED-M/L vs MARGINALIZED-M/L. FACTS only.
+    chi2/dof ~ 1 (marginalized) => universal a0 holds => Rodrigues debunked as a degeneracy artifact."""
+    import pandas as pd
+    import numpy as np
+    df = pd.read_parquet(f"{LOTS}/sparc_rar.parquet")
+    # inclination Inc +/- e_Inc per galaxy from SPARC table1 (fields 5=Inc, 6=e_Inc)
+    inc = {}
+    with open(T1) as f:
+        for ln in f:
+            p = ln.split()
+            if len(p) >= 19 and p[0][0].isalpha():
+                try:
+                    inc[p[0]] = (float(p[5]), max(float(p[6]), 2.0))
+                except (ValueError, IndexError):
+                    pass
+    a0g = np.logspace(np.log10(0.3e-10), np.log10(4e-10), 48)
+    mlg = np.linspace(0.15, 1.3, 24)
+    ln_ml = -0.5 * (np.log10(mlg / 0.5) / 0.11) ** 2           # log-normal M/L prior (3.6um)
+    A0U = 1.0422e-10
+
+    def a0_post(s, marg, i0e):
+        R = s.R_kpc.values * KPC
+        Vg2 = s.Vgas.values ** 2; Vd2 = s.Vdisk.values ** 2; Vb2 = s.Vbul.values ** 2
+        Vo0 = s.Vobs.values; eV = np.clip(s.eVobs.values, 2.0, None)
+        i0 = i0e[0] if i0e else 90.0
+        if marg and i0e:                                       # inclination grid (V_obs ~ 1/sin i)
+            incs = np.clip(i0 + i0e[1] * np.array([-1.5, -0.75, 0.0, 0.75, 1.5]), 15.0, 90.0)
+            ln_i = -0.5 * (((incs - i0) / i0e[1]) ** 2)
+        else:
+            incs = np.array([i0]); ln_i = np.array([0.0])
+        Vpred_ml = {}
+        post = np.full(len(a0g), -np.inf)
+        for j, ml in enumerate(mlg):
+            if not marg and abs(ml - 0.5) > (mlg[1] - mlg[0]) / 2:
+                continue
+            gbar = (Vg2 + ml * Vd2 + 0.7 * Vb2) * KMS ** 2 / R
+            Vpred = np.array([np.sqrt(obt_rar(gbar, a0) * R) / KMS for a0 in a0g])   # [a0, point]
+            for iv, li in zip(incs, ln_i):
+                Vo = Vo0 * (np.sin(np.radians(i0)) / np.sin(np.radians(iv)))
+                ll = -0.5 * np.sum(((Vo - Vpred) / eV) ** 2, axis=1)
+                post = np.logaddexp(post, ll + (ln_ml[j] + li if marg else 0.0))
+        P = np.exp(post - post.max()); P /= P.sum()
+        mean = np.sum(P * a0g); var = np.sum(P * (a0g - mean) ** 2)
+        return mean, np.sqrt(var)
+    res = {"fixed": [], "marg": []}
+    for gid, s in df.groupby("ID"):
+        if len(s) < 5:
+            continue
+        i0e = inc.get(gid)
+        for k, mg in [("fixed", False), ("marg", True)]:
+            m, e = a0_post(s, mg, i0e)
+            res[k].append((m, max(e, 1e-12)))
+    print(f"[sparc_a0_posteriors] {len(res['marg'])} SPARC galaxies. Per-galaxy a0 posterior; "
+          f"universal a0={A0U:.2e}. Test: are per-galaxy a0 consistent with ONE value?")
+    for k, lab in [("fixed", "M/L FIXED (Rodrigues-like)"), ("marg", "M/L MARGINALIZED (McGaugh)")]:
+        arr = np.array(res[k]); a = arr[:, 0]; e = arr[:, 1]
+        au = np.sum(a / e ** 2) / np.sum(1 / e ** 2)                 # best common a0
+        chi2 = np.sum(((a - au) / e) ** 2) / (len(a) - 1)
+        frac = np.mean(np.abs(a - au) / e < 2)
+        print(f"  {lab:28s}: best a0={au:.2e}  chi2/dof={chi2:6.1f}  frac within 2sigma={100*frac:.0f}%  "
+              f"median sigma_a0={np.median(e):.2e}")
+    print("  READ: FIXED-M/L gives chi2/dof>>1 (apparent 'a0 varies', Rodrigues). If MARGINALIZING M/L")
+    print("  drops chi2/dof toward ~1 (posteriors widen, mostly consistent), the variation is an")
+    print("  a0<->M/L DEGENERACY artifact -> universal a0 holds -> Rodrigues 2018 debunked.")
+
+
+def sparc_a0_universality(opts):
+    """MONSTER #6 hunt (game = OBT + 5 cards). External claim: Rodrigues et al. 2018 ('Absence of a
+    fundamental acceleration scale in galaxies') fit a PER-GALAXY a0 and find it varies at >5sigma ->
+    no universal a0 -> mu(x)/RAR falsified as a universal law. PATCH (artifact, Kroupa/McGaugh 2018):
+    the per-galaxy a0 is only constrained by points that PROBE the low-acceleration (deep-MOND) regime;
+    galaxies whose data stay at high g_bar cannot constrain a0, so their fitted a0 scatters wildly -
+    a selection/coverage artifact, not a physical variation. Test on SPARC: fit a0 per galaxy, and show
+    the a0-scatter COLLAPSES once we keep only galaxies that actually reach deep-MOND. FACTS only."""
+    import pandas as pd
+    import numpy as np
+    ML = float(opts.get("ml", 0.7))
+    df = pd.read_parquet(f"{LOTS}/sparc_rar.parquet")
+    R = df["R_kpc"].values * KPC
+    gbar = (df["Vgas"].values**2 + ML*df["Vdisk"].values**2 + ML*df["Vbul"].values**2) * KMS**2 / R
+    gobs = (df["Vobs"].values * KMS)**2 / R
+    df = df.assign(gbar=gbar, gobs=gobs)
+    a0_grid = np.logspace(np.log10(0.2e-10), np.log10(5e-10), 80)
+    rows = []
+    for gid, s in df.groupby("ID"):
+        gb = s.gbar.values; go = s.gobs.values
+        ok = np.isfinite(gb) & np.isfinite(go) & (gb > 0) & (go > 0)
+        if ok.sum() < 5:
+            continue
+        gb, go = gb[ok], go[ok]
+        chi = [np.sum((np.log10(go) - np.log10(obt_rar(gb, a0))) ** 2) for a0 in a0_grid]
+        a0_fit = a0_grid[int(np.argmin(chi))]
+        xmin = gb.min() / 1.0422e-10
+        rows.append((gid, a0_fit, xmin))
+    g = pd.DataFrame(rows, columns=["ID", "a0", "xmin"])
+    print(f"[sparc_a0_universality] {len(g)} SPARC galaxies, per-galaxy a0 fit (M/L={ML}). Universal a0=1.04e-10.")
+    print("  a0 scatter (dex) vs how deep into MOND the galaxy probes (xmin = min g_bar / a0):")
+    for lo, hi, lab in [(0, 0.3, "deep-MOND xmin<0.3"), (0.3, 1.0, "transition 0.3-1"), (1.0, 1e9, "Newtonian xmin>1")]:
+        m = (g.xmin >= lo) & (g.xmin < hi)
+        if m.sum() >= 3:
+            la = np.log10(g.a0[m])
+            print(f"    [{lab:20s}] N={m.sum():3d}  median a0={g.a0[m].median():.2e}  scatter={la.std():.3f} dex")
+    from scipy.stats import spearmanr
+    rho, p = spearmanr(g.xmin, np.log10(g.a0))
+    print(f"  corr(fitted a0, xmin) rho={rho:+.3f} p={p:.1e}: positive => galaxies that DON'T reach deep-MOND")
+    print("  fit spuriously high a0 (the artifact). Deep-MOND probers converge on the universal a0.")
+    print("  READ: if a0-scatter SHRINKS for deep-MOND probers, the 'a0 varies' claim is a coverage")
+    print("  artifact -> universal a0 holds -> Rodrigues 2018 debunked.")
+
+
 def brouwer_split(opts):
     """COMPLETE card #5 with Brouwer 2021's ACTUAL morphology-split data (KiDS data release,
     Fig-8 files). Each RAR file: col0 = g_bar (m/s^2), col1 = ESD_t (Msun/pc^2), col3 = error,
@@ -847,6 +1033,9 @@ PROBES = {
     "gc_jeans": gc_jeans,
     "lensing_2halo": lensing_2halo,
     "brouwer_split": brouwer_split,
+    "sparc_a0_universality": sparc_a0_universality,
+    "sparc_a0_posteriors": sparc_a0_posteriors,
+    "sparc_a0_fullbudget": sparc_a0_fullbudget,
     "udg_sample": udg_sample,
     "udg_inclination": udg_inclination,
     "dsph_binfloor": dsph_binfloor,

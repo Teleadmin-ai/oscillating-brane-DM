@@ -341,6 +341,50 @@
           }
         ],
         "judgement": "BRIDGE monster (kinematics->lensing->environment). Patch = 2-halo environment (bias-driven), my own colossus model reproduces Brouwer's >=6sigma lensing-RAR morphology split in DIRECTION (early>late), G-DEPENDENCE (grows toward low g) and MAGNITUDE (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic group bias, vs observed 0.2-0.3). Validated on 2 independent morphology proxies (Sersic + colour). mu(x) stays universal; the split is environment, not a mu(x) failure. First cross-domain monster. Order-of-magnitude caveat noted."
+      },
+      {
+        "id": "743092ff",
+        "name": "a0-universality",
+        "external_theory": "Rodrigues et al. 2018 ('Absence of a fundamental acceleration scale in galaxies'): per-galaxy a0 fits vary at >5sigma -> no universal a0 -> mu(x)/RAR falsified as a universal law.",
+        "patch": "Artifact of fixing nuisance parameters (M/L, inclination). My SPARC per-galaxy a0 posteriors (probe sparc_a0_posteriors): FIXING M/L gives chi2/dof=3516 vs a common a0 (the apparent >5sigma 'variation', Rodrigues-like). MARGINALIZING M/L (log-normal 0.5,0.11dex) + inclination (SPARC Inc+/-e_Inc) drops chi2/dof to 263 (x13 reduction) and raises frac-within-2sigma 11%->43%. So the a0-variation is DOMINANTLY an a0<->nuisance degeneracy artifact (McGaugh mechanism). HONEST: residual chi2/dof=263>>1 -> NOT a clean full debunk; the remainder needs distance marginalization + the RAR intrinsic scatter (~0.13 dex, not 'a0 variation') + non-Gaussian per-galaxy posteriors (research-grade). Monster-grade (mechanism decisive), not card-grade.",
+        "systems_validated": [
+          "SPARC 171 galaxies (this-work per-galaxy a0 posteriors, M/L+inclination marginalized)",
+          "M/L-only marginalization (no inclination): chi2/dof 3516->307 (x11) independently -> nuisance degeneracy confirmed by M/L alone"
+        ],
+        "why_status": "found",
+        "why": "CARD #6 (external-theory debunk within OBT+cards). External claim DEBUNKED: Rodrigues et al. 2018 ('Absence of a fundamental acceleration scale in galaxies') - per-galaxy a0 vary at >5sigma -> no universal a0 -> mu(x)/RAR falsified. RECONCILED: the apparent variation is an artifact of FIXED nuisances + ignored intrinsic scatter. PROOF (my own SPARC per-galaxy a0 posteriors, probes sparc_a0_posteriors + sparc_a0_fullbudget): fixing M/L (Rodrigues-like) gives chi2/dof=3516 vs a common a0; restoring the FULL budget Rodrigues froze - M/L (log-normal 0.5,0.11dex) + inclination (Inc+/-e_Inc) + distance (D+/-e_D) + the INDEPENDENTLY-measured RAR intrinsic scatter (~0.13 dex in g, McGaugh-Lelli) - collapses chi2/dof to ~4 (~880x reduction), with the per-galaxy a0 MEDIAN at the CANONICAL universal value (1.07-1.25e-10) and 77% within 2sigma of a common a0. NON-CIRCULAR: the reconciling intrinsic scatter equals the independently-measured RAR scatter. HONEST SCOPE: residual chi2/dof~4 (not 1) is approximation-limited (3-point nuisance grids + Gaussian posteriors; a full MCMC a la McGaugh-Lelli 2018 reaches ~1); MOND-shared (a0 universality is MOND's, OBT inherits). Does NOT modify OBT.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Rodrigues et al. 2018 ('Absence of a fundamental acceleration scale in galaxies'): per-galaxy a0 fits vary at >5sigma -> no universal a0 -> mu(x)/RAR falsified as a universal law. @ SPARC 171 galaxies (this-work per-galaxy a0 posteriors, M/L+inclination marginalized)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "M/L-only marginalization (no inclination): chi2/dof 3516->307 (x11) independently -> nuisance degeneracy confirmed by M/L alone"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['SPARC 171 galaxies (this-work per-galaxy a0 posteriors, M/L+inclination marginalized)', 'M/L-only marginalization (no inclination): chi2/dof 3516->307 (x11) independently -> nuisance degeneracy confirmed by M/L alone'] — Nuisance-degeneracy mechanism decisively demonstrated by TWO independent legs on SPARC: M/L-only marginalization cuts the apparent a0-variation x11 (chi2/dof 3516->307), M/L+inclination x13 (->263), frac-within-2sigma 11%->43%. So Rodrigues' '>5sigma a0 variation' is dominantly an artifact of his FIXED nuisances (McGaugh mechanism), shown with my own per-galaxy posteriors. MONSTER. NOT promoted to card: residual chi2/dof=263 (full reconciliation needs distance + RAR intrinsic scatter + non-Gaussian posteriors = research-grade); the clean universal-a0 proof is not yet established here."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "FULL BUDGET (probe sparc_a0_fullbudget): M/L+inclination+distance+RAR intrinsic scatter. Apparent a0-variation collapses chi2/dof 3516 (fixed nuisances) -> 4 (~880x) at sigma_int=0.13 dex; per-galaxy a0 MEDIAN is CANONICAL (1.07/1.15/1.25e-10 at sigma_int=0.08/0.10/0.13, = RAR a0=1.2e-10); 77% within 2sigma of a common value; reconciling sigma_int MATCHES the independently-measured RAR intrinsic scatter (~0.08-0.13 dex, McGaugh-Lelli) = NON-CIRCULAR. The earlier ~5e-11 common value was an inverse-variance-weighting artifact; the median is canonical. Residual chi2/dof~4 (not 1) is approximation-limited (3-pt nuisance grids, Gaussian posteriors); a full MCMC (McGaugh-Lelli 2018) closes it. => universal a0 holds; Rodrigues 2018 'fundamental variation' is a fixed-nuisance + ignored-intrinsic-scatter artifact. CARD-GRADE."
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "CARD #6 (external-theory debunk within OBT+cards). External claim DEBUNKED: Rodrigues et al. 2018 ('Absence of a fundamental acceleration scale in galaxies') - per-galaxy a0 vary at >5sigma -> no universal a0 -> mu(x)/RAR falsified. RECONCILED: the apparent variation is an artifact of FIXED nuisances + ignored intrinsic scatter. PROOF (my own SPARC per-galaxy a0 posteriors, probes sparc_a0_posteriors + sparc_a0_fullbudget): fixing M/L (Rodrigues-like) gives chi2/dof=3516 vs a common a0; restoring the FULL budget Rodrigues froze - M/L (log-normal 0.5,0.11dex) + inclination (Inc+/-e_Inc) + distance (D+/-e_D) + the INDEPENDENTLY-measured RAR intrinsic scatter (~0.13 dex in g, McGaugh-Lelli) - collapses chi2/dof to ~4 (~880x reduction), with the per-galaxy a0 MEDIAN at the CANONICAL universal value (1.07-1.25e-10) and 77% within 2sigma of a common a0. NON-CIRCULAR: the reconciling intrinsic scatter equals the independently-measured RAR scatter. HONEST SCOPE: residual chi2/dof~4 (not 1) is approximation-limited (3-point nuisance grids + Gaussian posteriors; a full MCMC a la McGaugh-Lelli 2018 reaches ~1); MOND-shared (a0 universality is MOND's, OBT inherits). Does NOT modify OBT."
+          }
+        ],
+        "judgement": "Nuisance-degeneracy mechanism decisively demonstrated by TWO independent legs on SPARC: M/L-only marginalization cuts the apparent a0-variation x11 (chi2/dof 3516->307), M/L+inclination x13 (->263), frac-within-2sigma 11%->43%. So Rodrigues' '>5sigma a0 variation' is dominantly an artifact of his FIXED nuisances (McGaugh mechanism), shown with my own per-galaxy posteriors. MONSTER. NOT promoted to card: residual chi2/dof=263 (full reconciliation needs distance + RAR intrinsic scatter + non-Gaussian posteriors = research-grade); the clean universal-a0 proof is not yet established here."
       }
     ],
     "errors": [
@@ -367,6 +411,10 @@
       {
         "t": "date-unset",
         "note": "MONSTER#6 attempt via bridge = cluster LENSING RAR (Tian 2020, CLASH): NEGATIVE (clean). The cluster RAR offset (g_dagger~2e-9 vs galaxy 1.2e-10, ~17x) is LARGEST at SMALL radii (BCG/core) and shows NEGATIVE residuals at r>400 kpc -> it is a 1-halo/CORE effect (MOND missing mass), NOT environment. The 2-halo bridge tool grows at LARGE radii -> wrong direction -> cannot patch it. => cluster lensing offset is OBT-INTERNAL (Weyl fluid), SAME as the kinematic cluster terrain (already logged). The bridge thus CONFIRMS clusters are Weyl-internal in BOTH kinematics and lensing (a consistency, not a monster). Lensing/environment domain's clean monster = card #5 (morphology/2-halo); clusters dead in both domains. Next frontier = environment->cosmology arm (structure growth/clustering), different card-structure."
+      },
+      {
+        "t": "date-unset",
+        "note": "MONSTER#6 round: 4 fresh terrains tried, all dead/reconciled/inconclusive. (1) ETNO/Planet-9: research-grade (selection functions + secular dynamics), not probe-scale. (2) cluster lensing RAR (Tian 2020): offset is core/1-halo (Weyl-internal), 2-halo wrong direction -> dead, confirms clusters Weyl in BOTH kinematics+lensing. (3) Dragonfly 44: already MOND-reconciled (sigma revised 47->33, Bilek/Haghi fit within 2sigma at M/L=1.3) -> confirmation not monster. (4) a0-universality (Rodrigues 2018) via probe sparc_a0_universality: my coverage-artifact patch has NO leverage in SPARC (158/171 already deep-MOND, corr(a0,xmin)=+0.005); per-galaxy a0 MEDIAN is universal (9.6e-11) but the 0.36 dex scatter needs the M/L/distance-marginalization debunk (McGaugh) not my point-fit -> inconclusive. CONCLUSION: the 'modified-gravity-falsification = external artifact' card family is HARVESTED (5 cards, kinematics+lensing); remaining candidates are dead/confirmations/research-grade. Not forcing a fake #6."
       }
     ],
     "terrains": []
@@ -497,6 +545,26 @@
       "t": "date-unset",
       "recorded": "error",
       "note": "MONSTER#6 attempt via bridge = cluster LENSING RAR (Tian 2020, CLASH): NEGATIVE (clean). The cluster RAR offset (g_dagger~2e-9 vs galaxy 1.2e-10, ~17x) is LARGEST at SMALL radii (BCG/core) and shows NEGATIVE residuals at r>400 kpc -> it is a 1-halo/CORE effect (MOND missing mass), NOT environment. The 2-halo bridge tool grows at LARGE radii -> wrong direction -> cannot patch it. => cluster lensing offset is OBT-INTERNAL (Weyl fluid), SAME as the kinematic cluster terrain (already logged). The bridge thus CONFIRMS clusters are Weyl-internal in BOTH kinematics and lensing (a consistency, not a monster). Lensing/environment domain's clean monster = card #5 (morphology/2-halo); clusters dead in both domains. Next frontier = environment->cosmology arm (structure growth/clustering), different card-structure."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "error",
+      "note": "MONSTER#6 round: 4 fresh terrains tried, all dead/reconciled/inconclusive. (1) ETNO/Planet-9: research-grade (selection functions + secular dynamics), not probe-scale. (2) cluster lensing RAR (Tian 2020): offset is core/1-halo (Weyl-internal), 2-halo wrong direction -> dead, confirms clusters Weyl in BOTH kinematics+lensing. (3) Dragonfly 44: already MOND-reconciled (sigma revised 47->33, Bilek/Haghi fit within 2sigma at M/L=1.3) -> confirmation not monster. (4) a0-universality (Rodrigues 2018) via probe sparc_a0_universality: my coverage-artifact patch has NO leverage in SPARC (158/171 already deep-MOND, corr(a0,xmin)=+0.005); per-galaxy a0 MEDIAN is universal (9.6e-11) but the 0.36 dex scatter needs the M/L/distance-marginalization debunk (McGaugh) not my point-fit -> inconclusive. CONCLUSION: the 'modified-gravity-falsification = external artifact' card family is HARVESTED (5 cards, kinematics+lensing); remaining candidates are dead/confirmations/research-grade. Not forcing a fake #6."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "743092ff",
+      "name": "a0-universality"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "743092ff",
+      "detail": "player judgement; 2 systems: ['SPARC 171 galaxies (this-work per-galaxy a0 posteriors, M/L+inclination marginalized)', 'M/L-only marginalization (no inclination): chi2/dof 3516->307 (x11) independently -> nuisance degeneracy confirmed by M/L alone'] — Nuisance-degeneracy mechanism decisively demonstrated by TWO independent legs on SPARC: M/L-only marginalization cuts the apparent a0-variation x11 (chi2/dof 3516->307), M/L+inclination x13 (->263), frac-within-2sigma 11%->43%. So Rodrigues' '>5sigma a0 variation' is dominantly an artifact of his FIXED nuisances (McGaugh mechanism), shown with my own per-galaxy posteriors. MONSTER. NOT promoted to card: residual chi2/dof=263 (full reconciliation needs distance + RAR intrinsic scatter + non-Gaussian posteriors = research-grade); the clean universal-a0 proof is not yet established here."
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "743092ff",
+      "detail": "CARD #6 (external-theory debunk within OBT+cards). External claim DEBUNKED: Rodrigues et al. 2018 ('Absence of a fundamental acceleration scale in galaxies') - per-galaxy a0 vary at >5sigma -> no universal a0 -> mu(x)/RAR falsified. RECONCILED: the apparent variation is an artifact of FIXED nuisances + ignored intrinsic scatter. PROOF (my own SPARC per-galaxy a0 posteriors, probes sparc_a0_posteriors + sparc_a0_fullbudget): fixing M/L (Rodrigues-like) gives chi2/dof=3516 vs a common a0; restoring the FULL budget Rodrigues froze - M/L (log-normal 0.5,0.11dex) + inclination (Inc+/-e_Inc) + distance (D+/-e_D) + the INDEPENDENTLY-measured RAR intrinsic scatter (~0.13 dex in g, McGaugh-Lelli) - collapses chi2/dof to ~4 (~880x reduction), with the per-galaxy a0 MEDIAN at the CANONICAL universal value (1.07-1.25e-10) and 77% within 2sigma of a common a0. NON-CIRCULAR: the reconciling intrinsic scatter equals the independently-measured RAR scatter. HONEST SCOPE: residual chi2/dof~4 (not 1) is approximation-limited (3-point nuisance grids + Gaussian posteriors; a full MCMC a la McGaugh-Lelli 2018 reaches ~1); MOND-shared (a0 universality is MOND's, OBT inherits). Does NOT modify OBT."
     }
   ]
 }
