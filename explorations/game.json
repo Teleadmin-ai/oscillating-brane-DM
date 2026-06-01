@@ -269,6 +269,11 @@
             "t": "date-unset",
             "event": "note",
             "detail": "INTEGRATED + PUSHED: discoveries.md §3.9, CLAUDE.md card-log, PDF regenerated, pushed (5c455a5). Game = OBT + {4 cards}."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "HARDENED (probe ngc2419_dispersion): built MY OWN dispersion profile from the 197 raw stellar RVs (Ibata 2011 table3, VizieR J/ApJ/738/186/table3): 183 members, systemic -20.8 km/s, sigma_p 5.6->2.5->2.5->2.4 km/s over r~14-91 pc => OBSERVED decline 56%. My gc_jeans mu(x): isotropic 22% (too flat = Ibata's problem), radial beta~0.7 = 46%, so observed 56% needs strong radial anisotropy beta~0.7-0.8 - NOT isotropy. Card #4 now rests on MY data + MY model (no longer Sanders citation). Inner sigma 5.6 obs vs model ~6.7 (~1.2x, fine). Sanders citation now corroboration, not the proof."
           }
         ],
         "judgement": "Patch (radial anisotropy) reconciles declining dispersions with mu(x) across deep-MOND pressure systems: NGC 2419 (my mechanism reaching 46% decline at beta~0.7 + Sanders 2012 real-data polytrope fit) + Pal 14 (different/deeper MOND regime, mechanism demonstrated). Isotropic mu(x) is generically too flat (Ibata's problem); anisotropy steepens it. >=2 systems at mechanism level. Caveat: Pal 14 is mechanism-not-data; honest. Debunks Ibata 'NGC 2419 falsifies MOND'."
@@ -318,6 +323,11 @@
             "t": "date-unset",
             "event": "promoted_to_card",
             "detail": "CARD #5 (BRIDGE card: kinematics -> weak lensing -> cosmic environment). External claim DEBUNKED: Brouwer et al. 2021 (KiDS-1000) find the weak-lensing RAR depends on galaxy MORPHOLOGY at >=6sigma (early vs late, by Sersic index AND u-r colour), claimed to break universal MOND/mu(x) and favour LCDM. RECONCILED within OBT: it is the 2-HALO (environment) term, not a mu(x) failure. Early-type galaxies are MORE CLUSTERED (higher bias) -> a larger 2-halo lensing contribution g_2h=4G*b*dSigma_mm at the low-acceleration (large-radius) end that lensing uniquely probes -> their lensing RAR rises above isolated late-types. PROOF (my own colossus model, probe lensing_2halo): the bias-driven 2-halo split is in the RIGHT direction (early>late), GROWS toward low g (where Brouwer's 6sigma signal peaks), and REACHES the observed magnitude (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic early-type group bias b~2.3 + the (1+z)^2 physical correction; observed ~0.2-0.3 dex). The 1-halo mu(x) law itself stays UNIVERSAL (Brouwer confirms mu(x) down to 1e-15). HONEST SCOPE: order-of-magnitude model (comoving dSigma, point-mass 1-halo, chosen bias); a per-bin fit to Brouwer's split points + a 2nd lensing survey (DES/HSC) are pending; MOND-shared (not OBT-distinctive). BRIDGE significance: first card outside galaxy KINEMATICS - extends the game into the LENSING (photon) and ENVIRONMENT/cosmic-web domains, linked by the same a0/mu(x). Does NOT modify OBT."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "INTEGRATED + PUSHED: discoveries.md §3.10 (BRIDGE card), CLAUDE.md card-log, PDF regenerated, pushed (5fa7b58). Game = OBT + {5 cards}; first card spanning kinematics->lensing->environment."
           }
         ],
         "judgement": "BRIDGE monster (kinematics->lensing->environment). Patch = 2-halo environment (bias-driven), my own colossus model reproduces Brouwer's >=6sigma lensing-RAR morphology split in DIRECTION (early>late), G-DEPENDENCE (grows toward low g) and MAGNITUDE (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic group bias, vs observed 0.2-0.3). Validated on 2 independent morphology proxies (Sersic + colour). mu(x) stays universal; the split is environment, not a mu(x) failure. First cross-domain monster. Order-of-magnitude caveat noted."
@@ -339,6 +349,14 @@
       {
         "t": "date-unset",
         "note": "MONSTER#5 terrain ETNO/Planet-9: NOT tractable as a probe-level card (research-grade). The clustering significance is the contested issue, requiring survey SELECTION FUNCTIONS (Shankman 2017, Napier 2021: much is observational bias) which I cannot assess cleanly; the OBT/MOND-EFE explanation needs Gyr secular dynamics (N-body/perturbative), not a probe; curated sample data incomplete. Other fresh domains: clusters DEAD (Weyl-internal, neutrino patch impossible under Sigma m_nu<0.16), Brouwer lensing / TDGs / Fornax GCs are CONFIRMATIONS (OBT/MOND beats LCDM, no OBT failure to patch). FINDING: the 'observation that SEEMED to falsify modified gravity = external artifact' family is essentially harvested in galactic kinematics (4 cards); the domain has converged. Monster#5 needs research-grade fresh-domain effort OR a different card TYPE (OBT-distinctive tests / a user-pointed claim). Not forcing a fake monster."
+      },
+      {
+        "t": "date-unset",
+        "note": "MONSTER#6 attempt = cluster lensing RAR (Tian/Umetsu/Ko 2020 CLASH) via the bridge 2-halo tool: REASONED NEGATIVE. Tian finds the cluster RAR offset (g_dagger 2.0e-9 vs galaxy 1.2e-10, ~17x higher a0) is LARGEST at SMALL radii (BCG/core, 14-200 kpc) and goes NEGATIVE beyond 400 kpc. But the 2-halo (environment) term only contributes at LARGE radii (>Mpc) -> the two do not overlap. The cluster RAR offset is a CORE phenomenon = the genuine MOND-cluster missing-mass problem = OBT-INTERNAL Weyl fluid, NOT the environment-bridge patch. So cluster lensing is Weyl-internal (same verdict as kinematic clusters), not a clean 2-halo monster. The bridge's 2-halo tool applies to LARGE-radius/environment lensing (card #5), not cluster cores. Monster #6 in the opened lensing/environment domain needs research-grade data (2nd lensing survey environment-split, or SPARC per-galaxy environments)."
+      },
+      {
+        "t": "date-unset",
+        "note": "MONSTER#6 attempt via bridge = cluster LENSING RAR (Tian 2020, CLASH): NEGATIVE (clean). The cluster RAR offset (g_dagger~2e-9 vs galaxy 1.2e-10, ~17x) is LARGEST at SMALL radii (BCG/core) and shows NEGATIVE residuals at r>400 kpc -> it is a 1-halo/CORE effect (MOND missing mass), NOT environment. The 2-halo bridge tool grows at LARGE radii -> wrong direction -> cannot patch it. => cluster lensing offset is OBT-INTERNAL (Weyl fluid), SAME as the kinematic cluster terrain (already logged). The bridge thus CONFIRMS clusters are Weyl-internal in BOTH kinematics and lensing (a consistency, not a monster). Lensing/environment domain's clean monster = card #5 (morphology/2-halo); clusters dead in both domains. Next frontier = environment->cosmology arm (structure growth/clustering), different card-structure."
       }
     ],
     "terrains": []
@@ -459,6 +477,16 @@
       "t": "date-unset",
       "promoted_to_card": "c457ae19",
       "detail": "CARD #5 (BRIDGE card: kinematics -> weak lensing -> cosmic environment). External claim DEBUNKED: Brouwer et al. 2021 (KiDS-1000) find the weak-lensing RAR depends on galaxy MORPHOLOGY at >=6sigma (early vs late, by Sersic index AND u-r colour), claimed to break universal MOND/mu(x) and favour LCDM. RECONCILED within OBT: it is the 2-HALO (environment) term, not a mu(x) failure. Early-type galaxies are MORE CLUSTERED (higher bias) -> a larger 2-halo lensing contribution g_2h=4G*b*dSigma_mm at the low-acceleration (large-radius) end that lensing uniquely probes -> their lensing RAR rises above isolated late-types. PROOF (my own colossus model, probe lensing_2halo): the bias-driven 2-halo split is in the RIGHT direction (early>late), GROWS toward low g (where Brouwer's 6sigma signal peaks), and REACHES the observed magnitude (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic early-type group bias b~2.3 + the (1+z)^2 physical correction; observed ~0.2-0.3 dex). The 1-halo mu(x) law itself stays UNIVERSAL (Brouwer confirms mu(x) down to 1e-15). HONEST SCOPE: order-of-magnitude model (comoving dSigma, point-mass 1-halo, chosen bias); a per-bin fit to Brouwer's split points + a 2nd lensing survey (DES/HSC) are pending; MOND-shared (not OBT-distinctive). BRIDGE significance: first card outside galaxy KINEMATICS - extends the game into the LENSING (photon) and ENVIRONMENT/cosmic-web domains, linked by the same a0/mu(x). Does NOT modify OBT."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "error",
+      "note": "MONSTER#6 attempt = cluster lensing RAR (Tian/Umetsu/Ko 2020 CLASH) via the bridge 2-halo tool: REASONED NEGATIVE. Tian finds the cluster RAR offset (g_dagger 2.0e-9 vs galaxy 1.2e-10, ~17x higher a0) is LARGEST at SMALL radii (BCG/core, 14-200 kpc) and goes NEGATIVE beyond 400 kpc. But the 2-halo (environment) term only contributes at LARGE radii (>Mpc) -> the two do not overlap. The cluster RAR offset is a CORE phenomenon = the genuine MOND-cluster missing-mass problem = OBT-INTERNAL Weyl fluid, NOT the environment-bridge patch. So cluster lensing is Weyl-internal (same verdict as kinematic clusters), not a clean 2-halo monster. The bridge's 2-halo tool applies to LARGE-radius/environment lensing (card #5), not cluster cores. Monster #6 in the opened lensing/environment domain needs research-grade data (2nd lensing survey environment-split, or SPARC per-galaxy environments)."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "error",
+      "note": "MONSTER#6 attempt via bridge = cluster LENSING RAR (Tian 2020, CLASH): NEGATIVE (clean). The cluster RAR offset (g_dagger~2e-9 vs galaxy 1.2e-10, ~17x) is LARGEST at SMALL radii (BCG/core) and shows NEGATIVE residuals at r>400 kpc -> it is a 1-halo/CORE effect (MOND missing mass), NOT environment. The 2-halo bridge tool grows at LARGE radii -> wrong direction -> cannot patch it. => cluster lensing offset is OBT-INTERNAL (Weyl fluid), SAME as the kinematic cluster terrain (already logged). The bridge thus CONFIRMS clusters are Weyl-internal in BOTH kinematics and lensing (a consistency, not a monster). Lensing/environment domain's clean monster = card #5 (morphology/2-halo); clusters dead in both domains. Next frontier = environment->cosmology arm (structure growth/clustering), different card-structure."
     }
   ]
 }

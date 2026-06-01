@@ -436,6 +436,56 @@ def lensing_2halo(opts):
     print("  NOTE: order-of-magnitude (comoving dSigma, point-mass 1-halo); the SPLIT ratio ~b_e/b_l is robust.")
 
 
+def ngc2419_dispersion(opts):
+    """HARDENING of card #4 (NGC 2419): build MY OWN projected velocity-dispersion profile from the
+    raw stellar radial velocities (Ibata 2011, ApJ 738 186 table3, 197 stars), instead of citing
+    Sanders' fit. Sigma-clip members around the systemic velocity, bin by projected radius, and
+    error-deconvolve sigma_p^2 = var(RV) - <e_RV^2>. Then compare the observed DECLINE to my mu(x)
+    anisotropic Jeans model (probe gc_jeans): isotropic mu(x) is too flat, radial anisotropy steepens
+    it. FACTS only. D=87 kpc (1 arcmin = D/3438 pc)."""
+    import pandas as pd
+    import numpy as np
+    import pyvo
+    cache = f"{LOTS}/ngc2419_rv.parquet"
+    if not os.path.exists(cache):
+        tap = pyvo.dal.TAPService("http://tapvizier.cds.unistra.fr/TAPVizieR/tap")
+        d = tap.search('SELECT R, RV, e_RV FROM "J/ApJ/738/186/table3"').to_table().to_pandas()
+        d.to_parquet(cache, index=False)
+    d = pd.read_parquet(cache).dropna(subset=["R", "RV", "e_RV"])
+    d = d[d.e_RV > 0]
+    D_kpc = float(opts.get("D", 87.0))
+    pc_per_arcmin = D_kpc * 1e3 / 3438.0
+    R_pc = d.R.values * pc_per_arcmin
+    rv = d.RV.values; erv = d.e_RV.values
+    # iterative 3-sigma membership clip around the median systemic velocity
+    sel = np.ones(len(rv), bool)
+    for _ in range(10):
+        m, s = np.median(rv[sel]), np.std(rv[sel])
+        new = np.abs(rv - m) < 3 * max(s, 3.0)
+        if new.sum() == sel.sum():
+            break
+        sel = new
+    print(f"[ngc2419_dispersion] {sel.sum()}/{len(rv)} members (systemic={np.median(rv[sel]):.1f} km/s), D={D_kpc} kpc.")
+    Rm, RV, E = R_pc[sel], rv[sel], erv[sel]
+    edges = np.percentile(Rm, [0, 25, 50, 75, 100])
+    print(f"  {'R bin (pc)':>16s} {'N':>4s} {'sigma_p (km/s)':>14s}")
+    prof = []
+    for i in range(4):
+        m = (Rm >= edges[i]) & (Rm <= edges[i + 1] if i == 3 else Rm < edges[i + 1])
+        if m.sum() >= 4:
+            var = np.var(RV[m], ddof=1) - np.mean(E[m] ** 2)
+            sp = np.sqrt(max(var, 0.0))
+            rc = np.median(Rm[m])
+            prof.append((rc, sp))
+            print(f"  {edges[i]:6.0f}-{edges[i+1]:6.0f} (r~{rc:5.0f}) {m.sum():4d} {sp:14.2f}")
+    if len(prof) >= 2:
+        decl = (prof[0][1] - prof[-1][1]) / prof[0][1] * 100
+        print(f"  OBSERVED decline (inner->outer): {decl:.0f}%  (inner sigma={prof[0][1]:.1f}, outer={prof[-1][1]:.1f} km/s)")
+        print("  COMPARE (probe gc_jeans, NGC2419 params): mu(x) ISOTROPIC declines ~22% (too flat);")
+        print("  radial anisotropy beta~0.5-0.7 declines ~39-46%. If the OBSERVED decline matches the")
+        print("  anisotropic (not isotropic) mu(x), my own data+model confirm card #4 (no Sanders needed).")
+
+
 def gc_jeans(opts):
     """MONSTER #4 propagation (candidate ngc2419-anisotropy): MY OWN anisotropic Jeans model in
     mu(x) gravity, to demonstrate the MECHANISM behind the patch. Stellar Plummer density, mass
@@ -751,6 +801,7 @@ PROBES = {
     "mw_rotation": mw_rotation,
     "sparc_decline": sparc_decline,
     "efe_dwarfs": efe_dwarfs,
+    "ngc2419_dispersion": ngc2419_dispersion,
     "gc_jeans": gc_jeans,
     "lensing_2halo": lensing_2halo,
     "udg_sample": udg_sample,
