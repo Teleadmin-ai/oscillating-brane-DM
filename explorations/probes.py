@@ -396,11 +396,17 @@ def lensing_2halo(opts):
     import numpy as np
     from colossus.cosmology import cosmology
     cosmo = cosmology.setCosmology("planck18")
+    from colossus.lss import bias as cbias
     h = cosmo.H0 / 100.0
     z = float(opts.get("z", 0.25))
     Mbar = float(opts.get("M", 10 ** 10.5)) * MSUN          # KiDS lens baryonic mass scale
-    b_e = float(opts.get("be", 1.8))                        # early-type bias (more clustered)
-    b_l = float(opts.get("bl", 1.1))                        # late-type bias (more isolated)
+    # GROUNDED bias: derive from realistic halo masses (Msun/h) via colossus, NOT hand-picked.
+    # At M_star~10^10.5: late-types = isolated centrals (M_halo~6e11); early-types = more clustered,
+    # group-scale (M_halo~5e12). Bias from Tinker+2010 (mdef 200m). Override with --be/--bl if given.
+    Mh_e = float(opts.get("Mh_e", 5e12)) * h                # early halo mass (Msun/h)
+    Mh_l = float(opts.get("Mh_l", 6e11)) * h                # late  halo mass (Msun/h)
+    b_e = float(opts["be"]) if opts.get("be") else float(cbias.haloBias(Mh_e, z, mdef="200m", model="tinker10"))
+    b_l = float(opts["bl"]) if opts.get("bl") else float(cbias.haloBias(Mh_l, z, mdef="200m", model="tinker10"))
     rho_m = cosmo.rho_m(0.0) * 1e9 * h ** 2 * MSUN / MPC ** 3  # comoving mean matter density (kg/m^3)
     R = np.logspace(np.log10(0.03), np.log10(5.0), 40)      # projected radius (Mpc/h, comoving)
     # 2-halo matter excess surface density dSigma_mm(R) (bias=1), via projected correlation

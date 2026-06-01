@@ -328,6 +328,11 @@
             "t": "date-unset",
             "event": "note",
             "detail": "INTEGRATED + PUSHED: discoveries.md §3.10 (BRIDGE card), CLAUDE.md card-log, PDF regenerated, pushed (5fa7b58). Game = OBT + {5 cards}; first card spanning kinematics->lensing->environment."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "HARDENING DOWNGRADE (integrity): re-ran lensing_2halo with REALISTIC colossus-grounded bias (early M_halo=5e12->b=1.06, late 6e11->b=0.81, contrast only 1.3) instead of hand-picked b=2.3/1.0. Result: 2-halo split reaches only ~0.07-0.11 dex (~1/3 of Brouwer's 0.2-0.3 dex) at the low-g end. Even satellite-boosted effective bias (b_e=1.8,b_l=0.9) reaches ~0.19 dex only at g_bar~2e-16 (extreme end). => my earlier 0.18-0.25 dex was OPTIMISTIC-BIAS-dependent (overclaim). HONEST STATUS: card #5 DIRECTION + low-g growth are solid (mechanism real), but the FULL-magnitude reproduction is NOT proven with realistic central bias (only ~1/3); full split needs early-type satellite/group effective bias (~1.8) + baryonic-content branch (plausible, not established here). DOWNGRADE: card #5 is a PARTIAL/plausible debunk, not a clean full one. Correcting discoveries.md §3.10 + CLAUDE.md accordingly."
           }
         ],
         "judgement": "BRIDGE monster (kinematics->lensing->environment). Patch = 2-halo environment (bias-driven), my own colossus model reproduces Brouwer's >=6sigma lensing-RAR morphology split in DIRECTION (early>late), G-DEPENDENCE (grows toward low g) and MAGNITUDE (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic group bias, vs observed 0.2-0.3). Validated on 2 independent morphology proxies (Sersic + colour). mu(x) stays universal; the split is environment, not a mu(x) failure. First cross-domain monster. Order-of-magnitude caveat noted."
