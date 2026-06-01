@@ -112,12 +112,71 @@
             "t": "date-unset",
             "event": "promoted_to_card",
             "detail": "CARD (scope = debunk of the external theory). The wide-binary low-acceleration velocity excess is NOT hidden-triple contamination (Banik) and NOT Newtonian (Pittordis-Sutherland) — it is the SAME universal low-g boost seen in galaxies/dwarfs, i.e. the OBT mu(x) regime (a0=cH0/2pi). Three independent lines: (1) UNIVERSALITY — identical g/a0 boost in SPARC disks + isolated LG dwarfs where triples are physically impossible, exact on the OBT RAR at 0 free params (g_obs/g_OBT=1.01); (2) RUWE-STABILITY (probe wb_boost) — the deep-MOND wide-binary boost is stable under tightening RUWE 1.4->1.05 (0.918->0.889), does NOT collapse to Newtonian ~0.65, so it is not a triple artifact; (3) FORWARD MODEL (probe wb_forward) — the data median v~(x) rises monotonically 0.68->0.92 and decisively rejects the flat Newtonian prediction (~0.55 at all x). SCOPE/FOLLOW-ON (not part of this card's certainty): the EXACT amplitude vs mu(x) is a separate open thread = external modeling still to pin (EFE prescription, Opik a-distribution, ~0.13 baseline systematic); per game rule #1 (OBT always right) this is external-model refinement, NOT an OBT failure. Possible 2nd card (EFE)."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "INTEGRATED into theory (reviewer/webmaster): discoveries.md §3.6 'External-theory debunk (within OBT)' subsection — universality + RUWE-stability cross-check, honestly scoped exploratory, tier fixed T1->T2. CLAUDE.md wide-binary row updated. PDF regenerated, pushed to main (cc04e44). Does NOT modify OBT; external-debunk nature stated explicitly per integration policy."
           }
         ],
         "judgement": "boost survives RUWE<1.05 triple-clean AND appears positive in all 4 independent sub-pops (+21..+63%); sign robust = not a coincidence. NOT a card: amplitude varies with distance/mass (a0 is universal -> suspect proper-motion noise inflating v_sky at large d); the WHY is not understood yet."
+      },
+      {
+        "id": "99299c2e",
+        "name": "udg-inclination",
+        "external_theory": "Mancera-Pina 2022 'Newtonian UDG' claim: AGC 114905 (gas-rich rotation UDG) sits OFF the RAR at published inclination i=32deg, i.e. mu(x)/modified gravity appears FALSIFIED (V_obs ~ V_bar, no boost).",
+        "patch": "Correct ONE external param = the disk inclination. At i_true~11deg (vs 32), V_rot=V_los/sin(i)~64 km/s lands AGC 114905 EXACTLY on OBT mu(x) (residual 0.000). g_bar is ~i-independent (HI flux), only g_obs scales 1/sin^2 i. Matches Banik et al. 2022's independent reanalysis (i~11deg). HONEST: this is MOND-shared (OBT inherits mu(x)), and reproduces Banik - not OBT-distinctive; the card would debunk the external 'Newtonian-UDG-falsifies-modified-gravity' claim.",
+        "systems_validated": [
+          "AGC 114905 (Mancera-Pina 2022)",
+          "AGC 242019 (reconciled via DISTANCE uncertainty; i=72deg well-constrained/unchanged) — Kroupa/Banik 2024 A&A reanalysis"
+        ],
+        "why_status": "found",
+        "why": "CARD #2 (external-theory debunk, within OBT+card#1). External claim DEBUNKED: 'gas-rich UDGs lie off the BTFR / are Newtonian -> modified gravity (mu(x)) is falsified' (Mancera-Pina 2019/2022). RECONCILED within OBT by ONE external mechanism: under-estimated OBSERVATIONAL UNCERTAINTIES (inclination and/or distance) in low-surface-brightness face-on disks, which systematically scatter them LEFT of the BTFR. PROOF (my own + independent): probe udg_sample reproduces all 6/6 UDGs returning to the OBT BTFR with lower inclinations i_true~9-23deg (clean for the 4 face-on i_pub<=42; the 2 inclined ones take the distance route); the 2024 A&A reanalysis (arXiv:2408.05269) independently reaches the same conclusion (AGC 114905 i=15deg, consistent with its round optical morphology). HONEST SCOPE: contested by Mancera-Pina (defend higher i); MOND-shared (OBT inherits mu(x)/BTFR, not OBT-distinctive); partly OBT-independent (the optical-image inclination consistency + the face-on V~1/sin(i) instability are observational facts).",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Mancera-Pina 2022 'Newtonian UDG' claim: AGC 114905 (gas-rich rotation UDG) sits OFF the RAR at published inclination i=32deg, i.e. mu(x)/modified gravity appears FALSIFIED (V_obs ~ V_bar, no boost). @ AGC 114905 (Mancera-Pina 2022)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "AGC 242019 (reconciled via DISTANCE uncertainty; i=72deg well-constrained/unchanged) — Kroupa/Banik 2024 A&A reanalysis"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "PROPAGATION via 2024 A&A reanalysis (arXiv:2408.05269, Kroupa/Banik school). Patch GENERALIZES from 'inclination' to 'underestimated observational uncertainties (i AND/OR D) in face-on/low-quality UDGs that scatter them left of the BTFR'. AGC 114905: i 31->15+-5deg (consistent w/ optical image) -> on mu(x)/BTFR (my probe: ~11deg, within their bar). AGC 242019: i=72 well-constrained, reconciled by DISTANCE instead. ONE mechanism (systematic underestimation of obs uncertainties in hard-to-measure systems), two realizations -> works on >=2 systems. HONEST: published result (I reproduce AGC 114905 + cite); MOND-shared (OBT inherits mu(x)/BTFR), not OBT-distinctive — same caveat as card#1."
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['AGC 114905 (Mancera-Pina 2022)', 'AGC 242019 (reconciled via DISTANCE uncertainty; i=72deg well-constrained/unchanged) — Kroupa/Banik 2024 A&A reanalysis'] — 2 UDG systems reconciled with OBT mu(x)/BTFR by the same external mechanism (underestimated i/D uncertainties); independently established by the 2024 A&A reanalysis + my AGC 114905 cross-check. Debunks the external 'gas-rich UDGs falsify BTFR/modified gravity' claim. WHY understood (obs-uncertainty systematic), so close to card-grade; MOND-shared caveat noted."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "MY OWN analysis (probe udg_sample, Mancera-Pina 2019 Table 1 published values): ALL 6/6 gas-rich UDGs return to OBT BTFR V_BTFR=(G a0 M_bar)^1/4 with a LOWER inclination, i_true in [9,23]deg (median 17). Clean for the 4 face-on (i_pub<=42: 114905->8.6, 122966->17.5, 219533->19.3, 749290->14.1); the 2 more-inclined (248945 66->23, 334315 52->16) need the DISTANCE route instead (large Delta_i implausible) - consistent with the 2024 reanalysis using D for AGC 242019. EASY to find valid results across the sample => good monster. Independent confirmation: 2024 A&A reanalysis (arXiv:2408.05269); AGC 114905 i=15deg matches round optical image. Card-grade."
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "CARD #2 (external-theory debunk, within OBT+card#1). External claim DEBUNKED: 'gas-rich UDGs lie off the BTFR / are Newtonian -> modified gravity (mu(x)) is falsified' (Mancera-Pina 2019/2022). RECONCILED within OBT by ONE external mechanism: under-estimated OBSERVATIONAL UNCERTAINTIES (inclination and/or distance) in low-surface-brightness face-on disks, which systematically scatter them LEFT of the BTFR. PROOF (my own + independent): probe udg_sample reproduces all 6/6 UDGs returning to the OBT BTFR with lower inclinations i_true~9-23deg (clean for the 4 face-on i_pub<=42; the 2 inclined ones take the distance route); the 2024 A&A reanalysis (arXiv:2408.05269) independently reaches the same conclusion (AGC 114905 i=15deg, consistent with its round optical morphology). HONEST SCOPE: contested by Mancera-Pina (defend higher i); MOND-shared (OBT inherits mu(x)/BTFR, not OBT-distinctive); partly OBT-independent (the optical-image inclination consistency + the face-on V~1/sin(i) instability are observational facts)."
+          }
+        ],
+        "judgement": "2 UDG systems reconciled with OBT mu(x)/BTFR by the same external mechanism (underestimated i/D uncertainties); independently established by the 2024 A&A reanalysis + my AGC 114905 cross-check. Debunks the external 'gas-rich UDGs falsify BTFR/modified gravity' claim. WHY understood (obs-uncertainty systematic), so close to card-grade; MOND-shared caveat noted."
       }
     ],
-    "errors": [],
+    "errors": [
+      {
+        "t": "date-unset",
+        "note": "MONSTER#2 attempt on faint-dwarf over-prediction terrain (game=OBT+card#1): misfit LOCATED (residual vs logM_bar rho=-0.67; BRIGHT dwarfs fit mu(x) at all proximities, only FAINT/NEAR over-predict +0.46). But single-parameter PATCH (constant binary floor sigma_bin on Wolf estimator) FAILS to reconcile the batch: no sigma_bin zeros the faint residual + kills the M_bar correlation without over-correcting bright dwarfs. Cause is multi-source + known (binaries+small-N+tidal in UFDs). NOT a monster. Failed leg, logged; pivot terrain. Probes: dsph_misfit, dsph_binfloor."
+      }
+    ],
     "terrains": []
   },
   "naked_obt_predictions": [],
@@ -156,6 +215,26 @@
       "t": "date-unset",
       "promoted_to_card": "01679552",
       "detail": "CARD (scope = debunk of the external theory). The wide-binary low-acceleration velocity excess is NOT hidden-triple contamination (Banik) and NOT Newtonian (Pittordis-Sutherland) — it is the SAME universal low-g boost seen in galaxies/dwarfs, i.e. the OBT mu(x) regime (a0=cH0/2pi). Three independent lines: (1) UNIVERSALITY — identical g/a0 boost in SPARC disks + isolated LG dwarfs where triples are physically impossible, exact on the OBT RAR at 0 free params (g_obs/g_OBT=1.01); (2) RUWE-STABILITY (probe wb_boost) — the deep-MOND wide-binary boost is stable under tightening RUWE 1.4->1.05 (0.918->0.889), does NOT collapse to Newtonian ~0.65, so it is not a triple artifact; (3) FORWARD MODEL (probe wb_forward) — the data median v~(x) rises monotonically 0.68->0.92 and decisively rejects the flat Newtonian prediction (~0.55 at all x). SCOPE/FOLLOW-ON (not part of this card's certainty): the EXACT amplitude vs mu(x) is a separate open thread = external modeling still to pin (EFE prescription, Opik a-distribution, ~0.13 baseline systematic); per game rule #1 (OBT always right) this is external-model refinement, NOT an OBT failure. Possible 2nd card (EFE)."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "error",
+      "note": "MONSTER#2 attempt on faint-dwarf over-prediction terrain (game=OBT+card#1): misfit LOCATED (residual vs logM_bar rho=-0.67; BRIGHT dwarfs fit mu(x) at all proximities, only FAINT/NEAR over-predict +0.46). But single-parameter PATCH (constant binary floor sigma_bin on Wolf estimator) FAILS to reconcile the batch: no sigma_bin zeros the faint residual + kills the M_bar correlation without over-correcting bright dwarfs. Cause is multi-source + known (binaries+small-N+tidal in UFDs). NOT a monster. Failed leg, logged; pivot terrain. Probes: dsph_misfit, dsph_binfloor."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "99299c2e",
+      "name": "udg-inclination"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "99299c2e",
+      "detail": "player judgement; 2 systems: ['AGC 114905 (Mancera-Pina 2022)', 'AGC 242019 (reconciled via DISTANCE uncertainty; i=72deg well-constrained/unchanged) — Kroupa/Banik 2024 A&A reanalysis'] — 2 UDG systems reconciled with OBT mu(x)/BTFR by the same external mechanism (underestimated i/D uncertainties); independently established by the 2024 A&A reanalysis + my AGC 114905 cross-check. Debunks the external 'gas-rich UDGs falsify BTFR/modified gravity' claim. WHY understood (obs-uncertainty systematic), so close to card-grade; MOND-shared caveat noted."
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "99299c2e",
+      "detail": "CARD #2 (external-theory debunk, within OBT+card#1). External claim DEBUNKED: 'gas-rich UDGs lie off the BTFR / are Newtonian -> modified gravity (mu(x)) is falsified' (Mancera-Pina 2019/2022). RECONCILED within OBT by ONE external mechanism: under-estimated OBSERVATIONAL UNCERTAINTIES (inclination and/or distance) in low-surface-brightness face-on disks, which systematically scatter them LEFT of the BTFR. PROOF (my own + independent): probe udg_sample reproduces all 6/6 UDGs returning to the OBT BTFR with lower inclinations i_true~9-23deg (clean for the 4 face-on i_pub<=42; the 2 inclined ones take the distance route); the 2024 A&A reanalysis (arXiv:2408.05269) independently reaches the same conclusion (AGC 114905 i=15deg, consistent with its round optical morphology). HONEST SCOPE: contested by Mancera-Pina (defend higher i); MOND-shared (OBT inherits mu(x)/BTFR, not OBT-distinctive); partly OBT-independent (the optical-image inclination consistency + the face-on V~1/sin(i) instability are observational facts)."
     }
   ]
 }

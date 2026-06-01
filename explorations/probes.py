@@ -384,11 +384,148 @@ def wb_forward(opts):
     print("  = Newton x sqrt(boost(r)) (enhanced-gravity); exact OBT orbit would refine amplitudes.")
 
 
+def udg_sample(opts):
+    """MONSTER #2 -> CARD: my OWN analysis of the full gas-rich UDG sample (Mancera Pina 2019,
+    Table 1 — published values). For each UDG, the OBT/MOND deep-limit BTFR target is
+    V_BTFR = (G a0 M_bar)^(1/4). The published V_circ (at published inclination i_pub) is too low.
+    The inclination patch: V_true = V_circ * sin(i_pub)/sin(i_true), so the i_true that lands it on
+    the BTFR is sin(i_true) = sin(i_pub)*V_circ/V_BTFR. We report, per galaxy, V_BTFR, the required
+    i_true, and Delta_i = i_pub - i_true. If the corrections are SYSTEMATICALLY toward lower i and
+    physically plausible for face-on UDGs, the single external mechanism (under-estimated i in
+    face-on disks) propagates across the sample -> card-grade. FACTS only; player judges."""
+    import numpy as np
+    # Mancera Pina et al. 2019 (ApJL 883 L33), Table 1: name, D[Mpc], i_pub[deg], logMbar, V_circ[km/s]
+    S = [("AGC 114905", 76, 33, 9.21, 19.0),
+         ("AGC 122966", 90, 34, 9.21, 37.0),
+         ("AGC 219533", 96, 42, 9.36, 37.0),
+         ("AGC 248945", 84, 66, 9.05, 27.0),
+         ("AGC 334315", 73, 52, 9.32, 26.0),
+         ("AGC 749290", 97, 39, 9.17, 26.0)]
+    print("[udg_sample] OBT BTFR target V_BTFR=(G a0 M_bar)^1/4; inclination patch to reach it.")
+    print(f"  {'galaxy':12s} {'i_pub':>5s} {'V_circ':>6s} {'V_BTFR':>6s} {'i_true':>6s} {'Δi':>5s} {'plausible?':>10s}")
+    res = []
+    for nm, D, ip, logM, V in S:
+        Mbar = 10 ** logM * MSUN
+        V_btfr = (G * A0 * Mbar) ** 0.25 / KMS          # km/s
+        s_it = np.sin(np.radians(ip)) * V / V_btfr
+        if s_it >= 1.0:
+            it = float("nan"); plaus = "needs D not i"
+        else:
+            it = np.degrees(np.arcsin(s_it))
+            plaus = "yes (lower i)" if it < ip else "NO (higher)"
+        res.append(it)
+        print(f"  {nm:12s} {ip:5d} {V:6.1f} {V_btfr:6.1f} {it:6.1f} {ip-it:5.1f} {plaus:>14s}")
+    good = [x for x in res if x == x and x > 0]
+    print(f"  SUMMARY: {len(good)}/6 reconciled by a LOWER inclination; required i_true range "
+          f"[{min(good):.0f},{max(good):.0f}] deg (median {sorted(good)[len(good)//2]:.0f}).")
+    print("  READ: systematic LOWER i across the sample = one external mechanism (face-on i under-")
+    print("  estimated) propagates -> card. Galaxies needing 'D not i' are the distance-route variant.")
+
+
+def udg_inclination(opts):
+    """MONSTER #2 candidate (game = OBT + card#1) on a CLEAN site: the gas-rich, rotation-supported
+    UDG AGC 114905 (Mancera Pina et al. 2022), reported as 'Newtonian / off the RAR' — i.e. OBT's
+    mu(x) appears to FAIL. The single adjacent EXTERNAL parameter is the disk INCLINATION i:
+    V_rot = V_los/sin(i), so g_obs = (V_los/sin i)^2 / R scales as 1/sin^2 i, while the baryonic
+    g_bar (HI flux + stars) is ~i-independent. We scan the TRUE inclination and report the OBT-RAR
+    residual log10(g_obs/g_OBT); the i that lands it on mu(x) is the patch. FACTS only; the player
+    judges whether that i is within the disputed range (Banik et al. 2022 argue i ~ 11 deg vs the
+    32 deg of Mancera Pina). Literature values for the outermost measured point."""
+    import numpy as np
+    # AGC 114905 outermost point (Mancera Pina 2022, A&A 659 L4): R_out, V_rot@i_pub, i_pub
+    R_kpc = float(opts.get("r", 9.7))
+    V_rot_pub = float(opts.get("v", 23.0))      # km/s at i_pub
+    i_pub = float(opts.get("ipub", 32.0))       # deg
+    R = R_kpc * KPC
+    V_los = V_rot_pub * np.sin(np.radians(i_pub))   # the i-invariant line-of-sight amplitude
+    g_bar = (V_rot_pub * KMS) ** 2 / R              # baryonic ~ Newtonian (their 'no DM' claim: V_bar~V_obs@i_pub)
+    g_OBT = obt_rar(g_bar)
+    print(f"[udg_inclination] AGC 114905 clean site (rotation UDG). R={R_kpc} kpc, V_los={V_los:.2f} km/s")
+    print(f"  g_bar={g_bar:.3e}  x=g_bar/a0={g_bar/A0:.3f} (deep-MOND)  OBT mu(x) target g_OBT={g_OBT:.3e}")
+    print(f"  OBT predicts V_rot={np.sqrt(g_OBT*R)/KMS:.1f} km/s vs published {V_rot_pub} km/s at i={i_pub} deg")
+    print(f"  {'i_true(deg)':>11s} {'V_rot(km/s)':>11s} {'g_obs':>11s} {'resid log10(g_obs/g_OBT)':>26s}")
+    for i_t in [32, 25, 20, 16, 13, 11, 9]:
+        V = V_los / np.sin(np.radians(i_t))
+        g_obs = (V * KMS) ** 2 / R
+        res = np.log10(g_obs / g_OBT)
+        flag = "  <-- on mu(x)" if abs(res) < 0.05 else ""
+        print(f"  {i_t:11d} {V:11.1f} {g_obs:11.3e} {res:26.3f}{flag}")
+    print("  READ: the i_true that zeroes the residual is the inclination patch. If it matches the")
+    print("  disputed Banik value (~11 deg) and propagates to other off-RAR UDGs, it is a monster.")
+
+
+def dsph_binfloor(opts):
+    """MONSTER #2 candidate test (game = OBT + card#1). PATCH ONE external parameter: a binary/
+    small-N velocity floor sigma_bin on the Wolf estimator (sigma_int^2 = sigma_obs^2 - sigma_bin^2).
+    If a SINGLE sigma_bin collapses the FAINT-dwarf over-prediction onto OBT mu(x) AND kills the
+    residual-vs-M_bar correlation across the whole batch, the patch works on many systems (monster).
+    FACTS only: median residual (all / faint) + Spearman(residual, log M_bar) vs sigma_bin."""
+    import pandas as pd
+    import numpy as np
+    from scipy.stats import spearmanr
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet").copy()
+    KMS_ = 1.0e3
+    PC = KPC / 1e3
+    r_m = d["r_half_pc"].values * PC
+    sig = d["sigma_kms"].values * KMS_
+    g_bar = d["g_bar"].values
+    logMbar = np.log10(d["M_bar"].clip(lower=1.0).values)
+    faint = logMbar <= np.median(logMbar)
+    print("[dsph_binfloor] PATCH = binary/small-N velocity floor sigma_bin (km/s) on Wolf estimator.")
+    print(f"  {'sigma_bin':>9s} {'med resid ALL':>14s} {'med resid FAINT':>16s} {'rho(resid,logMbar)':>20s}")
+    for sb in [0.0, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5]:
+        sig_int2 = np.clip(sig**2 - (sb * KMS_) ** 2, (0.3 * KMS_) ** 2, None)
+        g_obs = 2.0 * sig_int2 / r_m                     # = G M_dyn/2 /r^2 with M_dyn=4 sigma^2 r/G
+        res = np.log10(g_obs / obt_rar(g_bar))
+        ok = np.isfinite(res)
+        rho, _ = spearmanr(logMbar[ok], res[ok])
+        print(f"  {sb:9.1f} {np.median(res[ok]):14.3f} {np.median(res[faint & ok]):16.3f} {rho:20.3f}")
+    print("  READ: the sigma_bin that drives BOTH 'med resid FAINT' -> ~0 AND 'rho(resid,logMbar)' -> ~0")
+    print("  is the single-parameter external patch that makes OBT+card#1 fit the whole dwarf batch.")
+
+
+def dsph_misfit(opts):
+    """MONSTER #2 hunt (game = OBT + card#1). Where does OBT+mu(x) STILL fail among LG dwarfs,
+    and which EXTERNAL element drives it? Card#1 (universal mu(x)) already fits ISOLATED dwarfs
+    exactly. Here we locate the residual misfit driver among candidate external theories:
+      (a) tidal proximity  -> x_ext (host field, a tidal-susceptibility proxy)
+      (b) binary/small-N sigma inflation -> M_bar (~ stellar count; faint = few stars = binaries
+          dominate the measured sigma -> Wolf virial mass over-estimated)
+    The Wolf estimator M_dyn=4 sigma^2 r/G assumes VIRIAL EQUILIBRIUM + bound motion; that is the
+    adjacent EXTERNAL theory a monster would patch. FACTS only (correlations + a 2x2 split)."""
+    import pandas as pd
+    import numpy as np
+    from scipy.stats import spearmanr
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet").copy()
+    d["logMbar"] = np.log10(d["M_bar"].clip(lower=1.0))
+    r = d["res_obt_dex"].values
+    print(f"[dsph_misfit] {len(d)} dwarfs. residual = log10(g_obs/g_OBT) under card#1 mu(x).")
+    for col, lab in [("x_ext", "tidal proximity x_ext"), ("logMbar", "log10 M_bar (~Nstars)"),
+                     ("x_acc", "internal accel x_in")]:
+        ok = np.isfinite(d[col]) & np.isfinite(r)
+        rho, p = spearmanr(d[col][ok], r[ok])
+        print(f"  residual vs {lab:22s}: rho={rho:+.3f} p={p:.2e} N={ok.sum()}")
+    # 2x2: split by faint/bright (M_bar) and near/far (x_ext) to see which dominates the misfit
+    medM = d["logMbar"].median(); medX = d["x_ext"].median()
+    print(f"  2x2 median residual (split at logMbar={medM:.2f}, x_ext={medX:.3f}):")
+    for fb, mlab in [(d.logMbar <= medM, "FAINT"), (d.logMbar > medM, "BRIGHT")]:
+        for nf, xlab in [(d.x_ext <= medX, "FAR"), (d.x_ext > medX, "NEAR")]:
+            s = d[fb & nf]
+            if len(s):
+                print(f"    {mlab:6s}/{xlab:4s}: N={len(s):2d}  med residual={s.res_obt_dex.median():+.3f} dex")
+    print("  READ: if residual is driven by FAINT (low M_bar) more than by NEAR (x_ext), the external")
+    print("  element is sigma-inflation in star-poor systems (Wolf virial estimator breaks), not tides.")
+
+
 PROBES = {
     "build_sparc": build_sparc,
     "build_wb": build_wb,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
+    "udg_sample": udg_sample,
+    "udg_inclination": udg_inclination,
+    "dsph_binfloor": dsph_binfloor,
+    "dsph_misfit": dsph_misfit,
     "sparc_residuals": sparc_residuals,
     "dsph": dsph,
     "udg_btfr": udg_btfr,
