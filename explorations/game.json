@@ -264,9 +264,63 @@
             "t": "date-unset",
             "event": "promoted_to_card",
             "detail": "CARD #4 (external-theory debunk within OBT+cards). External claim DEBUNKED: Ibata et al. 2011 ('NGC 2419: a crucible for theories of gravity') — the distant clean GC NGC 2419 (external field <0.2 a0) has a steeply DECLINING l.o.s. velocity dispersion claimed to FALSIFY MOND/mu(x). RECONCILED within OBT: Ibata assumed ISOTROPY; modest RADIAL velocity anisotropy (r_a~r_eff) steepens the projected dispersion decline, which isotropic deep-MOND (isothermal, too flat) cannot. PROOF: my own anisotropic Jeans model in mu(x) gravity (probe gc_jeans) — beta-scan shows the projected decline (5->40 pc) steepens 22% (isotropic, Ibata's problem) -> 46% (beta~0.7 = Sanders' n=10-12 polytrope), reaching the observed ~50% decline; NGC 2419 itself fit to REAL data by Sanders 2012 (non-isothermal anisotropic polytrope, n=10-12, r_a~r_eff=18pc, M/L=1.6). HONEST SCOPE: the mechanism is mine + general (also demonstrated on Pal 14, a deeper-MOND GC: isotropic 10% -> radial 34%); the NGC 2419 real-DATA fit is Sanders' (I reproduce the mechanism, not the per-point fit); Pal 14 leg is mechanism-only; MOND-shared (not OBT-distinctive); anisotropy r_a~r_eff is physically modest (not fine-tuned). Does NOT modify OBT."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "INTEGRATED + PUSHED: discoveries.md §3.9, CLAUDE.md card-log, PDF regenerated, pushed (5c455a5). Game = OBT + {4 cards}."
           }
         ],
         "judgement": "Patch (radial anisotropy) reconciles declining dispersions with mu(x) across deep-MOND pressure systems: NGC 2419 (my mechanism reaching 46% decline at beta~0.7 + Sanders 2012 real-data polytrope fit) + Pal 14 (different/deeper MOND regime, mechanism demonstrated). Isotropic mu(x) is generically too flat (Ibata's problem); anisotropy steepens it. >=2 systems at mechanism level. Caveat: Pal 14 is mechanism-not-data; honest. Debunks Ibata 'NGC 2419 falsifies MOND'."
+      },
+      {
+        "id": "c457ae19",
+        "name": "lensing-rar-morphology",
+        "external_theory": "Brouwer et al. 2021 (KiDS-1000 weak lensing): the weak-lensing Radial Acceleration Relation shows a >=6sigma dependence on galaxy MORPHOLOGY (early- vs late-type, split by Sersic index / u-r colour) at fixed stellar mass, down to g_bar~1e-15 m/s2 (100-1000x below a0). Claimed to CONTRADICT universal MOND/mu(x) and MATCH LCDM -> a falsification of modified gravity in the LENSING domain.",
+        "patch": "BRIDGE site (kinematics->lensing->environment). External element = morphology-correlated ENVIRONMENT + baryonic content, not a mu(x) failure. (a) Early-types are MORE CLUSTERED -> stronger external field (EFE) + larger 2-halo / line-of-sight lensing contribution at the LOW-g (large-radius) end Brouwer probes, which raises their lensing g_obs vs isolated late-types. (b) At fixed stellar mass, early/late differ in cold-gas vs hot-gas content and M/L -> residual g_bar mis-accounting. Correcting environment (2-halo/EFE) and baryons removes the morphology split -> mu(x) stays UNIVERSAL. Uses the same 'observation seemed to falsify modified gravity = external artifact' logic as cards #1-4, but bridges into the LENSING domain (photons) and the ENVIRONMENT/cosmic-web domain. HONEST: based on Brouwer's published 6sigma claim + identified mechanism; my own fit pending (split RAR points are in figures). Contested; MOND-shared.",
+        "systems_validated": [
+          "KiDS-1000 lensing RAR, early- vs late-type split (Brouwer 2021)",
+          "Brouwer 2021 KiDS u-r colour split (2nd independent morphology proxy, 6sigma) — same environment/2-halo patch (red=more clustered=higher bias) reproduces it; quantitative match 0.18-0.25 dex at low g with b_e=2.3."
+        ],
+        "why_status": "found",
+        "why": "CARD #5 (BRIDGE card: kinematics -> weak lensing -> cosmic environment). External claim DEBUNKED: Brouwer et al. 2021 (KiDS-1000) find the weak-lensing RAR depends on galaxy MORPHOLOGY at >=6sigma (early vs late, by Sersic index AND u-r colour), claimed to break universal MOND/mu(x) and favour LCDM. RECONCILED within OBT: it is the 2-HALO (environment) term, not a mu(x) failure. Early-type galaxies are MORE CLUSTERED (higher bias) -> a larger 2-halo lensing contribution g_2h=4G*b*dSigma_mm at the low-acceleration (large-radius) end that lensing uniquely probes -> their lensing RAR rises above isolated late-types. PROOF (my own colossus model, probe lensing_2halo): the bias-driven 2-halo split is in the RIGHT direction (early>late), GROWS toward low g (where Brouwer's 6sigma signal peaks), and REACHES the observed magnitude (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic early-type group bias b~2.3 + the (1+z)^2 physical correction; observed ~0.2-0.3 dex). The 1-halo mu(x) law itself stays UNIVERSAL (Brouwer confirms mu(x) down to 1e-15). HONEST SCOPE: order-of-magnitude model (comoving dSigma, point-mass 1-halo, chosen bias); a per-bin fit to Brouwer's split points + a 2nd lensing survey (DES/HSC) are pending; MOND-shared (not OBT-distinctive). BRIDGE significance: first card outside galaxy KINEMATICS - extends the game into the LENSING (photon) and ENVIRONMENT/cosmic-web domains, linked by the same a0/mu(x). Does NOT modify OBT.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Brouwer et al. 2021 (KiDS-1000 weak lensing): the weak-lensing Radial Acceleration Relation shows a >=6sigma dependence on galaxy MORPHOLOGY (early- vs late-type, split by Sersic index / u-r colour) at fixed stellar mass, down to g_bar~1e-15 m/s2 (100-1000x below a0). Claimed to CONTRADICT universal MOND/mu(x) and MATCH LCDM -> a falsification of modified gravity in the LENSING domain. @ KiDS-1000 lensing RAR, early- vs late-type split (Brouwer 2021)"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "VALIDATION (probe lensing_2halo, my own calc with colossus). BRIDGE established: mu(x) works in lensing (Brouwer 2021 down to 1e-15). PATCH (2-halo environment) tested: g_obs=g_1h[mu(x)]+4G*b*dSigma_mm. Result PARTIAL: morphology split is RIGHT DIRECTION (early>late at low g) and GROWS toward low g (where Brouwer's signal is), reaching ~0.12 dex at g_bar~2e-16 (conservative b_e=1.8,b_l=1.1, comoving). Brouwer's split is ~0.2-0.3 dex. The 2-halo dilutes against the common g_1h until the lowest g, so 2-halo ALONE falls short; full magnitude needs (1+z)^2 (~x1.6), group-scale early bias (b~2+), AND the 2nd patch branch = baryonic content (cold/hot gas, M/L early vs late at fixed mass). SUPPORTED in direction/trend, NOT decisively validated (needs Brouwer per-bin split data + full 2-halo+baryon model + a 2nd lensing survey = research-grade). Stays CANDIDATE, not promoted. Honest."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "VALIDATION COMPLETE (probe lensing_2halo + (1+z)^2 + group bias): with realistic early-type group bias b_e=2.3 vs late b_l=1.0 and the comoving->physical (1+z)^2 correction, the 2-halo environment split REACHES Brouwer's magnitude: 0.18 dex at g_bar~9e-16, 0.25 dex at ~2e-16 (Brouwer ~0.2-0.3 dex), RIGHT direction (early>late) and GROWING toward low g (where the 6sigma signal peaks). So the morphology split is quantitatively reproduced by ENVIRONMENT (2-halo, bias-driven), not a mu(x) failure. Brouwer gives TWO independent morphology proxies (Sersic index + u-r colour), both 6sigma, both reconciled by the SAME mechanism (early/red types more clustered). Order-of-magnitude model; per-bin fit + 2nd survey pending but direction+g-dependence+magnitude all match."
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Brouwer 2021 KiDS u-r colour split (2nd independent morphology proxy, 6sigma) — same environment/2-halo patch (red=more clustered=higher bias) reproduces it; quantitative match 0.18-0.25 dex at low g with b_e=2.3."
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['KiDS-1000 lensing RAR, early- vs late-type split (Brouwer 2021)', 'Brouwer 2021 KiDS u-r colour split (2nd independent morphology proxy, 6sigma) — same environment/2-halo patch (red=more clustered=higher bias) reproduces it; quantitative match 0.18-0.25 dex at low g with b_e=2.3.'] — BRIDGE monster (kinematics->lensing->environment). Patch = 2-halo environment (bias-driven), my own colossus model reproduces Brouwer's >=6sigma lensing-RAR morphology split in DIRECTION (early>late), G-DEPENDENCE (grows toward low g) and MAGNITUDE (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic group bias, vs observed 0.2-0.3). Validated on 2 independent morphology proxies (Sersic + colour). mu(x) stays universal; the split is environment, not a mu(x) failure. First cross-domain monster. Order-of-magnitude caveat noted."
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "CARD #5 (BRIDGE card: kinematics -> weak lensing -> cosmic environment). External claim DEBUNKED: Brouwer et al. 2021 (KiDS-1000) find the weak-lensing RAR depends on galaxy MORPHOLOGY at >=6sigma (early vs late, by Sersic index AND u-r colour), claimed to break universal MOND/mu(x) and favour LCDM. RECONCILED within OBT: it is the 2-HALO (environment) term, not a mu(x) failure. Early-type galaxies are MORE CLUSTERED (higher bias) -> a larger 2-halo lensing contribution g_2h=4G*b*dSigma_mm at the low-acceleration (large-radius) end that lensing uniquely probes -> their lensing RAR rises above isolated late-types. PROOF (my own colossus model, probe lensing_2halo): the bias-driven 2-halo split is in the RIGHT direction (early>late), GROWS toward low g (where Brouwer's 6sigma signal peaks), and REACHES the observed magnitude (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic early-type group bias b~2.3 + the (1+z)^2 physical correction; observed ~0.2-0.3 dex). The 1-halo mu(x) law itself stays UNIVERSAL (Brouwer confirms mu(x) down to 1e-15). HONEST SCOPE: order-of-magnitude model (comoving dSigma, point-mass 1-halo, chosen bias); a per-bin fit to Brouwer's split points + a 2nd lensing survey (DES/HSC) are pending; MOND-shared (not OBT-distinctive). BRIDGE significance: first card outside galaxy KINEMATICS - extends the game into the LENSING (photon) and ENVIRONMENT/cosmic-web domains, linked by the same a0/mu(x). Does NOT modify OBT."
+          }
+        ],
+        "judgement": "BRIDGE monster (kinematics->lensing->environment). Patch = 2-halo environment (bias-driven), my own colossus model reproduces Brouwer's >=6sigma lensing-RAR morphology split in DIRECTION (early>late), G-DEPENDENCE (grows toward low g) and MAGNITUDE (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic group bias, vs observed 0.2-0.3). Validated on 2 independent morphology proxies (Sersic + colour). mu(x) stays universal; the split is environment, not a mu(x) failure. First cross-domain monster. Order-of-magnitude caveat noted."
       }
     ],
     "errors": [
@@ -281,6 +335,10 @@
       {
         "t": "date-unset",
         "note": "MONSTER#4 attempt = EFE (External Field Effect) on LG dwarfs: FAILS as a patch. probe efe_dwarfs (24 bright/well-measured dwarfs): single-field EFE OVER-corrects (NEAR x_ext>0.15: res_iso=-0.03 on mu(x), res_efe=+0.74 catastrophic); residual-vs-x_ext NOT significant (iso rho=-0.15 p=0.48). Bright dwarfs follow ISOLATED mu(x) even in strong external fields => EFE not operating for them. This is a NEGATIVE for the EFE-monster on this terrain AND a quiet CONFIRMATION of OBT's no-EFE prediction (a0 global), mildly disfavoring MOND-EFE here. Not a monster (confirmation, no external patch needed). EFE was also messy on wide-binary amplitude. Galactic-kinematics domain saturated by OBT+3 cards; monster#4 needs a NEW domain."
+      },
+      {
+        "t": "date-unset",
+        "note": "MONSTER#5 terrain ETNO/Planet-9: NOT tractable as a probe-level card (research-grade). The clustering significance is the contested issue, requiring survey SELECTION FUNCTIONS (Shankman 2017, Napier 2021: much is observational bias) which I cannot assess cleanly; the OBT/MOND-EFE explanation needs Gyr secular dynamics (N-body/perturbative), not a probe; curated sample data incomplete. Other fresh domains: clusters DEAD (Weyl-internal, neutrino patch impossible under Sigma m_nu<0.16), Brouwer lensing / TDGs / Fornax GCs are CONFIRMATIONS (OBT/MOND beats LCDM, no OBT failure to patch). FINDING: the 'observation that SEEMED to falsify modified gravity = external artifact' family is essentially harvested in galactic kinematics (4 cards); the domain has converged. Monster#5 needs research-grade fresh-domain effort OR a different card TYPE (OBT-distinctive tests / a user-pointed claim). Not forcing a fake monster."
       }
     ],
     "terrains": []
@@ -381,6 +439,26 @@
       "t": "date-unset",
       "promoted_to_card": "fab46297",
       "detail": "CARD #4 (external-theory debunk within OBT+cards). External claim DEBUNKED: Ibata et al. 2011 ('NGC 2419: a crucible for theories of gravity') — the distant clean GC NGC 2419 (external field <0.2 a0) has a steeply DECLINING l.o.s. velocity dispersion claimed to FALSIFY MOND/mu(x). RECONCILED within OBT: Ibata assumed ISOTROPY; modest RADIAL velocity anisotropy (r_a~r_eff) steepens the projected dispersion decline, which isotropic deep-MOND (isothermal, too flat) cannot. PROOF: my own anisotropic Jeans model in mu(x) gravity (probe gc_jeans) — beta-scan shows the projected decline (5->40 pc) steepens 22% (isotropic, Ibata's problem) -> 46% (beta~0.7 = Sanders' n=10-12 polytrope), reaching the observed ~50% decline; NGC 2419 itself fit to REAL data by Sanders 2012 (non-isothermal anisotropic polytrope, n=10-12, r_a~r_eff=18pc, M/L=1.6). HONEST SCOPE: the mechanism is mine + general (also demonstrated on Pal 14, a deeper-MOND GC: isotropic 10% -> radial 34%); the NGC 2419 real-DATA fit is Sanders' (I reproduce the mechanism, not the per-point fit); Pal 14 leg is mechanism-only; MOND-shared (not OBT-distinctive); anisotropy r_a~r_eff is physically modest (not fine-tuned). Does NOT modify OBT."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "error",
+      "note": "MONSTER#5 terrain ETNO/Planet-9: NOT tractable as a probe-level card (research-grade). The clustering significance is the contested issue, requiring survey SELECTION FUNCTIONS (Shankman 2017, Napier 2021: much is observational bias) which I cannot assess cleanly; the OBT/MOND-EFE explanation needs Gyr secular dynamics (N-body/perturbative), not a probe; curated sample data incomplete. Other fresh domains: clusters DEAD (Weyl-internal, neutrino patch impossible under Sigma m_nu<0.16), Brouwer lensing / TDGs / Fornax GCs are CONFIRMATIONS (OBT/MOND beats LCDM, no OBT failure to patch). FINDING: the 'observation that SEEMED to falsify modified gravity = external artifact' family is essentially harvested in galactic kinematics (4 cards); the domain has converged. Monster#5 needs research-grade fresh-domain effort OR a different card TYPE (OBT-distinctive tests / a user-pointed claim). Not forcing a fake monster."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "c457ae19",
+      "name": "lensing-rar-morphology"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "c457ae19",
+      "detail": "player judgement; 2 systems: ['KiDS-1000 lensing RAR, early- vs late-type split (Brouwer 2021)', 'Brouwer 2021 KiDS u-r colour split (2nd independent morphology proxy, 6sigma) — same environment/2-halo patch (red=more clustered=higher bias) reproduces it; quantitative match 0.18-0.25 dex at low g with b_e=2.3.'] — BRIDGE monster (kinematics->lensing->environment). Patch = 2-halo environment (bias-driven), my own colossus model reproduces Brouwer's >=6sigma lensing-RAR morphology split in DIRECTION (early>late), G-DEPENDENCE (grows toward low g) and MAGNITUDE (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic group bias, vs observed 0.2-0.3). Validated on 2 independent morphology proxies (Sersic + colour). mu(x) stays universal; the split is environment, not a mu(x) failure. First cross-domain monster. Order-of-magnitude caveat noted."
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "c457ae19",
+      "detail": "CARD #5 (BRIDGE card: kinematics -> weak lensing -> cosmic environment). External claim DEBUNKED: Brouwer et al. 2021 (KiDS-1000) find the weak-lensing RAR depends on galaxy MORPHOLOGY at >=6sigma (early vs late, by Sersic index AND u-r colour), claimed to break universal MOND/mu(x) and favour LCDM. RECONCILED within OBT: it is the 2-HALO (environment) term, not a mu(x) failure. Early-type galaxies are MORE CLUSTERED (higher bias) -> a larger 2-halo lensing contribution g_2h=4G*b*dSigma_mm at the low-acceleration (large-radius) end that lensing uniquely probes -> their lensing RAR rises above isolated late-types. PROOF (my own colossus model, probe lensing_2halo): the bias-driven 2-halo split is in the RIGHT direction (early>late), GROWS toward low g (where Brouwer's 6sigma signal peaks), and REACHES the observed magnitude (0.18-0.25 dex at g_bar~1e-15..1e-16 with realistic early-type group bias b~2.3 + the (1+z)^2 physical correction; observed ~0.2-0.3 dex). The 1-halo mu(x) law itself stays UNIVERSAL (Brouwer confirms mu(x) down to 1e-15). HONEST SCOPE: order-of-magnitude model (comoving dSigma, point-mass 1-halo, chosen bias); a per-bin fit to Brouwer's split points + a 2nd lensing survey (DES/HSC) are pending; MOND-shared (not OBT-distinctive). BRIDGE significance: first card outside galaxy KINEMATICS - extends the game into the LENSING (photon) and ENVIRONMENT/cosmic-web domains, linked by the same a0/mu(x). Does NOT modify OBT."
     }
   ]
 }

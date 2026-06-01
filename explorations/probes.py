@@ -384,6 +384,58 @@ def wb_forward(opts):
     print("  = Newton x sqrt(boost(r)) (enhanced-gravity); exact OBT orbit would refine amplitudes.")
 
 
+def lensing_2halo(opts):
+    """MONSTER #5 validation (candidate lensing-rar-morphology, BRIDGE kinematics->lensing->
+    environment). Brouwer 2021 finds the weak-lensing RAR depends on MORPHOLOGY at >=6sigma,
+    claimed to break universal mu(x). PATCH: it is the 2-HALO (environment) term, not a mu(x) failure.
+    At the low-g (large-R) end lensing probes, g_obs = g_1halo[mu(x) on baryons] + g_2halo, where
+    g_2halo = 4 G b dSigma_mm(R) scales with the galaxy BIAS b. Early-types are MORE clustered
+    (b_early~1.8) than late-types (b_late~1.1), so their lensing RAR rises MORE at low g_bar -> the
+    morphology split. We compute g_obs(g_bar) for both with colossus matter correlation, and report
+    the early/late split at the low-g end. FACTS only; player judges if it matches Brouwer's split."""
+    import numpy as np
+    from colossus.cosmology import cosmology
+    cosmo = cosmology.setCosmology("planck18")
+    h = cosmo.H0 / 100.0
+    z = float(opts.get("z", 0.25))
+    Mbar = float(opts.get("M", 10 ** 10.5)) * MSUN          # KiDS lens baryonic mass scale
+    b_e = float(opts.get("be", 1.8))                        # early-type bias (more clustered)
+    b_l = float(opts.get("bl", 1.1))                        # late-type bias (more isolated)
+    rho_m = cosmo.rho_m(0.0) * 1e9 * h ** 2 * MSUN / MPC ** 3  # comoving mean matter density (kg/m^3)
+    R = np.logspace(np.log10(0.03), np.log10(5.0), 40)      # projected radius (Mpc/h, comoving)
+    # 2-halo matter excess surface density dSigma_mm(R) (bias=1), via projected correlation
+    chi = np.logspace(-3, np.log10(60.0), 600)              # l.o.s. (Mpc/h)
+    Sig = np.zeros_like(R)                                   # Sigma_excess(R) [Msun*h/Mpc^2 comoving]
+    rho_m_cmpc = cosmo.rho_m(0.0) * 1e9                      # Msun h^2 / Mpc^3 comoving
+    for i, RR in enumerate(R):
+        xi = cosmo.correlationFunction(np.sqrt(RR ** 2 + chi ** 2), z)
+        Sig[i] = rho_m_cmpc * 2.0 * np.trapezoid(xi, chi)   # Msun h / Mpc^2
+    # mean within R and dSigma = Sigbar(<R) - Sig(R)
+    Sbar = np.array([(2.0 / RR ** 2) * np.trapezoid(Sig[:i + 1] * R[:i + 1], R[:i + 1]) if i else Sig[0]
+                     for i, RR in enumerate(R)])
+    dSig = Sbar - Sig                                        # Msun h / Mpc^2 comoving
+    dSig_SI = dSig * MSUN * h / MPC ** 2 * (1 + z) ** 2      # kg/m^2 physical (comoving->physical *(1+z)^2)
+    Rm = R / h * MPC                                         # physical-ish radius (m); h removed
+    g_bar = G * Mbar / Rm ** 2                               # baryonic accel (point mass at these R)
+    g_1h = obt_rar(g_bar)                                    # mu(x) one-halo
+    g_2h_unit = 4 * G * dSig_SI                              # 2-halo per unit bias
+    print(f"[lensing_2halo] z={z}, M_bar={Mbar/MSUN:.2e}, b_early={b_e}, b_late={b_l}. "
+          f"g_obs = g_1halo[mu(x)] + 4G*b*dSigma_mm.")
+    print(f"  {'g_bar':>10s} {'g_1h(mux)':>10s} {'g_2h(b_e)':>10s} {'g_obs_E':>10s} {'g_obs_L':>10s} {'split dex':>9s}")
+    for i in range(0, len(R), 5):
+        gE = g_1h[i] + b_e * g_2h_unit[i]
+        gL = g_1h[i] + b_l * g_2h_unit[i]
+        print(f"  {g_bar[i]:10.2e} {g_1h[i]:10.2e} {b_e*g_2h_unit[i]:10.2e} {gE:10.2e} {gL:10.2e} {np.log10(gE/gL):9.3f}")
+    # split at the lowest-g end (where 2-halo dominates)
+    gE = g_1h + b_e * g_2h_unit; gL = g_1h + b_l * g_2h_unit
+    lowg = g_bar < 1e-12
+    print(f"  at g_bar<1e-12 (lensing low-g end): median early/late split = "
+          f"{np.median(np.log10(gE[lowg]/gL[lowg])):.3f} dex (Brouwer's morphology split is ~0.2-0.3 dex).")
+    print("  READ: if the bias-driven 2-halo split (early>late at low g) matches Brouwer's 6sigma")
+    print("  morphology split, the split is ENVIRONMENT, not a mu(x) failure -> patch works.")
+    print("  NOTE: order-of-magnitude (comoving dSigma, point-mass 1-halo); the SPLIT ratio ~b_e/b_l is robust.")
+
+
 def gc_jeans(opts):
     """MONSTER #4 propagation (candidate ngc2419-anisotropy): MY OWN anisotropic Jeans model in
     mu(x) gravity, to demonstrate the MECHANISM behind the patch. Stellar Plummer density, mass
@@ -700,6 +752,7 @@ PROBES = {
     "sparc_decline": sparc_decline,
     "efe_dwarfs": efe_dwarfs,
     "gc_jeans": gc_jeans,
+    "lensing_2halo": lensing_2halo,
     "udg_sample": udg_sample,
     "udg_inclination": udg_inclination,
     "dsph_binfloor": dsph_binfloor,
