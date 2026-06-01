@@ -530,6 +530,10 @@
       {
         "t": "date-unset",
         "note": "FAMILY LINE TESTED — transition radius r_t=sqrt(GM/a0)~E(z)^-1/2: NOT a clean card (confounded). OBT predicts r_t shrinks (11.6->6.7 kpc z=0->2 for 1e11), a DERIVED consequence of the (confirmed) a0(z). But r_t mixes a0(z) with galaxy STRUCTURE: high-z galaxies are compact/high-surface-density -> data largely INSIDE r_t (Newtonian/declining, Genzel 2017), and r_t depends on the mass PROFILE not just total M -> not isolable from the strong z-evolution of structure. Maps the family: CLEAN tests = a0 (card#7, accel scale, structure-independent) + BTFR ZP (card#8, mass-velocity); CONFOUNDED = r_t (structure-heavy). predictions.md §6 row flagged 'confounded'. Not forcing a card."
+      },
+      {
+        "t": "date-unset",
+        "note": "FAMILY LINE TESTED — pressure-supported sigma~(M a0)^1/4~E(z)^1/4: NOT a card (data-impossible now). CLEAN in principle: in deep-MOND sigma is SIZE-INDEPENDENT (no compactness confound, unlike r_t). BUT the deep-MOND pressure regime needs faint diffuse dwarfs -> unobservable at high z; the observable high-z pressure systems (massive compact ETGs/'red nuggets') are NEWTONIAN (g>>a0), sigma set by mass+size+Sersic (structural), not a0(z) (confirmed by lit: sigma predicted by M*,size,n). So the clean regime is unobservable and the observable regime is Newtonian/confounded. predictions.md §6 row flagged. COMPLETES the family map: CLEAN+confirmed = a0 (card#7) + BTFR (card#8); degenerate = V_flat/boost; confounded = r_t; data-impossible = sigma-pressure; structure-dependent = Sigma_crit. Robust OBT-distinctive result = a0(z) double-confirmed."
       }
     ]
   },
@@ -719,6 +723,11 @@
       "t": "date-unset",
       "recorded": "terrain",
       "note": "FAMILY LINE TESTED — transition radius r_t=sqrt(GM/a0)~E(z)^-1/2: NOT a clean card (confounded). OBT predicts r_t shrinks (11.6->6.7 kpc z=0->2 for 1e11), a DERIVED consequence of the (confirmed) a0(z). But r_t mixes a0(z) with galaxy STRUCTURE: high-z galaxies are compact/high-surface-density -> data largely INSIDE r_t (Newtonian/declining, Genzel 2017), and r_t depends on the mass PROFILE not just total M -> not isolable from the strong z-evolution of structure. Maps the family: CLEAN tests = a0 (card#7, accel scale, structure-independent) + BTFR ZP (card#8, mass-velocity); CONFOUNDED = r_t (structure-heavy). predictions.md §6 row flagged 'confounded'. Not forcing a card."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "terrain",
+      "note": "FAMILY LINE TESTED — pressure-supported sigma~(M a0)^1/4~E(z)^1/4: NOT a card (data-impossible now). CLEAN in principle: in deep-MOND sigma is SIZE-INDEPENDENT (no compactness confound, unlike r_t). BUT the deep-MOND pressure regime needs faint diffuse dwarfs -> unobservable at high z; the observable high-z pressure systems (massive compact ETGs/'red nuggets') are NEWTONIAN (g>>a0), sigma set by mass+size+Sersic (structural), not a0(z) (confirmed by lit: sigma predicted by M*,size,n). So the clean regime is unobservable and the observable regime is Newtonian/confounded. predictions.md §6 row flagged. COMPLETES the family map: CLEAN+confirmed = a0 (card#7) + BTFR (card#8); degenerate = V_flat/boost; confounded = r_t; data-impossible = sigma-pressure; structure-dependent = Sigma_crit. Robust OBT-distinctive result = a0(z) double-confirmed."
     }
   ]
 }
