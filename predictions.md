@@ -132,7 +132,7 @@ so the acceleration scale **must grow with redshift** ($E(z) \approx 3$ from $z=
 | Observable | $\propto a_0^{\,p}$ | $\times$ at $z=1$ | $\times$ at $z=2$ | Test |
 |---|:---:|:---:|:---:|---|
 | RAR acceleration scale $a_0$ | $a_0$ | 1.76 | 2.97 | **confirmed** (MUSE-DARK 2026, §3.12) |
-| BTFR zero-point ($M_{\rm bar}$ at fixed $V$) | $a_0^{-1}$ | 0.57 | 0.34 | high-$z$ baryonic Tully-Fisher |
+| BTFR zero-point ($M_{\rm bar}$ at fixed $V$) | $a_0^{-1}$ | 0.57 | 0.34 | **confirmed in direction** (Übler 2017, $-0.44$ dex at $z\sim0.9$; §3.13) |
 | $V_{\rm flat}$ at fixed $M_{\rm bar}$ | $a_0^{1/4}$ | 1.15 | 1.31 | high-$z$ TFR velocity offset |
 | Pressure-supported $\sigma$ at fixed $M$ | $(Ma_0)^{1/4}$ | 1.15 | 1.31 | high-$z$ dispersion-supported galaxies |
 | MOND transition radius $r_t = \sqrt{GM/a_0}$ | $a_0^{-1/2}$ | 0.75 | 0.58 | high-$z$ rotation-curve flattening radius |

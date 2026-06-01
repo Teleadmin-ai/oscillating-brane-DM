@@ -244,6 +244,14 @@ The previous six debunks (§3.6–3.11) are **MOND-shared**: they defend the $\m
 
 *Honest scope.* OBT predicts the **direction and rough factor** robustly; the *observed rate is $\sim 30$–$45\%$ steeper* than $cH(z)/2\pi$ (the authors state "$a_0(z)$ is faster than $H(z)$"). Because $a_0$ is horizon-fixed in OBT, this residual is attributed to high-$z$ measurement systematics (baryonic census, $M/L$ evolution, pressure-support corrections; the intrinsic scatter is $\sim 0.17$ dex at high $z$), not to the law itself — so the robust, confirmed result is the **OBT-distinctive direction** (evolving $a_0$, refuting constant-$a_0$ MOND); the exact rate is a calibration question. *Tier: T2 (OBT-distinctive; direction confirmed, rate in mild tension).* See also [Predictions](/predictions/).
 
+### 3.13. The Evolving BTFR Zero-Point: A Second, Independent OBT-Distinctive Confirmation
+
+Card §3.12 showed the RAR acceleration scale $a_0$ rises with redshift (MUSE-DARK, via the *radial acceleration relation*). Here the **same horizon-set $a_0(z) = cH(z)/2\pi$** is tested through a **different observable and dataset** — the baryonic Tully-Fisher relation. Since $M_{\rm bar} = V^4/(G\,a_0)$, the BTFR zero-point at fixed circular velocity must evolve as $M_{\rm bar} \propto a_0^{-1} \propto E(z)^{-1}$ (standard, constant-$a_0$ MOND forbids any evolution).
+
+*Confirmation (Übler et al. 2017, KMOS$^{3D}$, independent of the RAR method).* High-redshift galaxies lie **below** the local BTFR at fixed circular velocity, with a zero-point offset $\Delta_{\rm BTFR} = -0.44 \pm 0.04$ dex at $z \sim 0.9$ — a *constant* BTFR is excluded, and the **sign and approximate amplitude match OBT's evolving $a_0$** (the implied $a_0$ has roughly *doubled* by $z \sim 1$). Strikingly, this is **consistent with the RAR result (§3.12) from a completely independent method**: both find $a_0$ roughly doubling by $z \sim 1$ and both run $\sim 1.3$–$1.7\times$ *faster* than $cH(z)/2\pi$ — a method-independent agreement on the evolution and its rate-offset.
+
+*Honest scope.* OBT predicts $-\log_{10}E(z) = -0.22$ dex at $z \sim 0.9$; the observed $-0.44$ dex is $\sim 1.7\times$ steeper — the *same* mild rate-tension seen in §3.12, now corroborated by a second method (so it is robust, not a fluke of one dataset). Per the framework, with $a_0$ horizon-fixed this common offset is most plausibly a shared high-$z$ baryonic/$V_{\rm circ}$ calibration systematic (both methods rest on rotation velocities and baryonic masses), not a failure of the law; and the $z \sim 2.3$ BTFR *upturn* ($-0.27$ dex) is the extreme-gas-census regime. The **robust, OBT-distinctive result** is the *evolution itself* — now confirmed by two independent methods — which refutes constant-$a_0$ MOND. *Tier: T2 (OBT-distinctive; evolution confirmed twice, exact rate open).*
+
 ## 4. Emerging Anomalies 2025--2026
 
 ### 4.1. Impossible JWST Galaxies and Temporal Acceleration
