@@ -490,6 +490,56 @@
           }
         ],
         "judgement": "BTFR zero-point evolves (M_bar lower at fixed V at high z): Ubler -0.44 dex at z~0.9 refutes constant BTFR/a0; OBT a0=cH(z)/2pi predicts the direction + ~doubling. INDEPENDENT method (TFR) confirming card #7 (RAR), with consistent ~1.5x rate-offset across both datasets. OBT-distinctive (2nd evolving-a0 confirmation)."
+      },
+      {
+        "id": "d3d1bb90",
+        "name": "high-z baryon-dominated disks",
+        "external_theory": "LambdaCDM expectation of dark-matter-dominated cores in massive high-z disks",
+        "patch": "the LOW/declining f_DM(R1/2) is not DM-poverty but the natural RAR consequence of high-z COMPACTNESS: g_bar(R1/2) > a0(z) -> Newtonian regime -> low f_DM under universal mu(x)",
+        "systems_validated": [
+          "Genzel2017 COS4_01351 z=0.85",
+          "GS4_43501 z=1.61 (fDM_obs 0.19 vs OBT 0.11)",
+          "zC_400569 z=2.24 (fDM_obs ~0 <0.07 vs OBT 0.02, g_bar/a0=4.65)",
+          "zC_406690 + D3a_6397 + D3a_15504 (full 6-galaxy Genzel sample, chi2/N=0.57)"
+        ],
+        "why_status": "found",
+        "why": "The WHY is the universal RAR evaluated in the COMPACT regime. f_DM(R1/2)=1-g_bar/g_obs; massive high-z disks are small & dense so the INDEPENDENTLY-computed baryonic acceleration g_bar(R1/2) (exp disk + bulge) EXCEEDS a0(z)=cH(z)/2pi for all 6 galaxies (g_bar/a0 = 1.46-4.65). On the universal mu(x)=x/sqrt(1+x^2) RAR, x>1 means the MOND boost is small, so g_obs ~ g_bar -> LOW f_DM is forced, NOT a DM deficit. OBT predicts the observed low & DECLINING f_DM at chi2/N=0.57 (0.21->~0 as z and compactness rise). The 'surprise/tension for LambdaCDM-DM-dominated cores' (Genzel 2017) is therefore the ordinary RAR, debunking the CDM expectation; OBT inherits the MOND-shared mechanism (constant a0 gives the same low f_DM -> not OBT-distinctive). Caveat: g_bar is mass-model dependent (vc_OBT runs ~10-15% above vc_obs for the most compact), but f_DM is robustly low and matches.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on LambdaCDM expectation of dark-matter-dominated cores in massive high-z disks @ Genzel2017 COS4_01351 z=0.85"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "GS4_43501 z=1.61 (fDM_obs 0.19 vs OBT 0.11)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "zC_400569 z=2.24 (fDM_obs ~0 <0.07 vs OBT 0.02, g_bar/a0=4.65)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "zC_406690 + D3a_6397 + D3a_15504 (full 6-galaxy Genzel sample, chi2/N=0.57)"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 4 systems: ['Genzel2017 COS4_01351 z=0.85', 'GS4_43501 z=1.61 (fDM_obs 0.19 vs OBT 0.11)', 'zC_400569 z=2.24 (fDM_obs ~0 <0.07 vs OBT 0.02, g_bar/a0=4.65)', 'zC_406690 + D3a_6397 + D3a_15504 (full 6-galaxy Genzel sample, chi2/N=0.57)']"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The WHY is the universal RAR evaluated in the COMPACT regime. f_DM(R1/2)=1-g_bar/g_obs; massive high-z disks are small & dense so the INDEPENDENTLY-computed baryonic acceleration g_bar(R1/2) (exp disk + bulge) EXCEEDS a0(z)=cH(z)/2pi for all 6 galaxies (g_bar/a0 = 1.46-4.65). On the universal mu(x)=x/sqrt(1+x^2) RAR, x>1 means the MOND boost is small, so g_obs ~ g_bar -> LOW f_DM is forced, NOT a DM deficit. OBT predicts the observed low & DECLINING f_DM at chi2/N=0.57 (0.21->~0 as z and compactness rise). The 'surprise/tension for LambdaCDM-DM-dominated cores' (Genzel 2017) is therefore the ordinary RAR, debunking the CDM expectation; OBT inherits the MOND-shared mechanism (constant a0 gives the same low f_DM -> not OBT-distinctive). Caveat: g_bar is mass-model dependent (vc_OBT runs ~10-15% above vc_obs for the most compact), but f_DM is robustly low and matches."
+          }
+        ]
       }
     ],
     "errors": [
@@ -728,6 +778,21 @@
       "t": "date-unset",
       "recorded": "terrain",
       "note": "FAMILY LINE TESTED — pressure-supported sigma~(M a0)^1/4~E(z)^1/4: NOT a card (data-impossible now). CLEAN in principle: in deep-MOND sigma is SIZE-INDEPENDENT (no compactness confound, unlike r_t). BUT the deep-MOND pressure regime needs faint diffuse dwarfs -> unobservable at high z; the observable high-z pressure systems (massive compact ETGs/'red nuggets') are NEWTONIAN (g>>a0), sigma set by mass+size+Sersic (structural), not a0(z) (confirmed by lit: sigma predicted by M*,size,n). So the clean regime is unobservable and the observable regime is Newtonian/confounded. predictions.md §6 row flagged. COMPLETES the family map: CLEAN+confirmed = a0 (card#7) + BTFR (card#8); degenerate = V_flat/boost; confounded = r_t; data-impossible = sigma-pressure; structure-dependent = Sigma_crit. Robust OBT-distinctive result = a0(z) double-confirmed."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "d3d1bb90",
+      "name": "high-z baryon-dominated disks"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "d3d1bb90",
+      "detail": "player judgement; 4 systems: ['Genzel2017 COS4_01351 z=0.85', 'GS4_43501 z=1.61 (fDM_obs 0.19 vs OBT 0.11)', 'zC_400569 z=2.24 (fDM_obs ~0 <0.07 vs OBT 0.02, g_bar/a0=4.65)', 'zC_406690 + D3a_6397 + D3a_15504 (full 6-galaxy Genzel sample, chi2/N=0.57)']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "d3d1bb90",
+      "detail": "The WHY is the universal RAR evaluated in the COMPACT regime. f_DM(R1/2)=1-g_bar/g_obs; massive high-z disks are small & dense so the INDEPENDENTLY-computed baryonic acceleration g_bar(R1/2) (exp disk + bulge) EXCEEDS a0(z)=cH(z)/2pi for all 6 galaxies (g_bar/a0 = 1.46-4.65). On the universal mu(x)=x/sqrt(1+x^2) RAR, x>1 means the MOND boost is small, so g_obs ~ g_bar -> LOW f_DM is forced, NOT a DM deficit. OBT predicts the observed low & DECLINING f_DM at chi2/N=0.57 (0.21->~0 as z and compactness rise). The 'surprise/tension for LambdaCDM-DM-dominated cores' (Genzel 2017) is therefore the ordinary RAR, debunking the CDM expectation; OBT inherits the MOND-shared mechanism (constant a0 gives the same low f_DM -> not OBT-distinctive). Caveat: g_bar is mass-model dependent (vc_OBT runs ~10-15% above vc_obs for the most compact), but f_DM is robustly low and matches."
     }
   ]
 }
