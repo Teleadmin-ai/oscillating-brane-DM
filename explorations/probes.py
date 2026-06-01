@@ -384,6 +384,100 @@ def wb_forward(opts):
     print("  = Newton x sqrt(boost(r)) (enhanced-gravity); exact OBT orbit would refine amplitudes.")
 
 
+def gc_jeans(opts):
+    """MONSTER #4 propagation (candidate ngc2419-anisotropy): MY OWN anisotropic Jeans model in
+    mu(x) gravity, to demonstrate the MECHANISM behind the patch. Stellar Plummer density, mass
+    M (M/L-scaled luminous), gravity g(r)=obt_rar(G M(<r)/r^2). Solve the constant-anisotropy
+    Jeans eq nu*sig_r^2(r) = r^-2b * int_r^inf nu g s^2b ds, then project to sigma_los(R) with the
+    (1 - b R^2/r^2) kernel. Compare ISOTROPIC mu(x) (the model Ibata assumed -> too flat) vs RADIAL
+    mu(x) (b>0 -> steeper projected decline). If radial anisotropy reproduces a steeply DECLINING
+    sigma_los(R) that isotropic mu(x) cannot, the patch mechanism is demonstrated. FACTS only.
+    Params (NGC 2419-like, Sanders 2012): M=7.7e5 Msun, r_half~18 pc. opts: --M (1e5), --rh (pc), --beta."""
+    import numpy as np
+    PC = KPC / 1e3
+    M = float(opts.get("M", 7.7)) * 1e5 * MSUN
+    rh = float(opts.get("rh", 18.0))                 # half-light radius (pc)
+    b = rh / 1.305 * PC                              # Plummer scale (r_half=1.305 b)
+    beta = float(opts.get("beta", 0.4))             # radial anisotropy for the patched model
+    r = np.logspace(np.log10(0.3), np.log10(800.0), 1400) * PC
+    nu = (1.0 + (r / b) ** 2) ** (-2.5)             # Plummer tracer density
+    Mr = M * (r / b) ** 3 / (1.0 + (r / b) ** 2) ** 1.5
+    gN = G * Mr / r ** 2
+
+    def sig_los(gfunc, bet):
+        g = gfunc(gN)
+        # nu*sig_r^2 (r) = r^-2bet * int_r^inf nu*g*s^2bet ds   (cumulative-from-outside)
+        integ = nu * g * r ** (2 * bet)
+        # integral from r to inf via reverse cumulative trapezoid
+        I = np.concatenate([[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r))])
+        tail = I[-1] - I
+        nusr2 = tail / r ** (2 * bet)               # = nu*sig_r^2
+        # project: sigma_los^2(R) = [2 int_R^inf (1-bet R^2/r^2) nusr2 r/sqrt(r^2-R^2) dr]/Sigma(R)
+        out = []
+        for R in [5, 10, 20, 40]:
+            Rm = R * PC
+            sel = r > Rm * 1.0001
+            rr = r[sel]
+            num = 2 * np.trapezoid((1 - bet * Rm ** 2 / rr ** 2) * nusr2[sel] * rr / np.sqrt(rr ** 2 - Rm ** 2), rr)
+            den = 2 * np.trapezoid(nu[sel] * rr / np.sqrt(rr ** 2 - Rm ** 2), rr)
+            out.append(np.sqrt(max(num / den, 0)) / KMS)
+        return out
+    newt = sig_los(lambda g: g, 0.0)
+    mond_iso = sig_los(lambda g: obt_rar(g), 0.0)
+    mond_rad = sig_los(lambda g: obt_rar(g), beta)
+    gchar = gN[np.argmin(np.abs(r - rh * PC))]      # Newtonian accel at the half-light radius
+    print(f"[gc_jeans] NGC 2419-like: M={M/MSUN:.2e} Msun, r_half={rh} pc, radial beta={beta}. "
+          f"g_N(r_half)/a0={gchar/A0:.2f} (deep-MOND if <1).")
+    print(f"  sigma_los(R) [km/s] at R = 5,10,20,40 pc:")
+    print(f"    Newton isotropic : {[round(x,2) for x in newt]}")
+    print(f"    mu(x) ISOTROPIC  : {[round(x,2) for x in mond_iso]}  (the model Ibata assumed)")
+    print(f"    mu(x) RADIAL b={beta}: {[round(x,2) for x in mond_rad]}  (the anisotropy patch)")
+    drop_iso = (mond_iso[0]-mond_iso[-1])/mond_iso[0]*100
+    drop_rad = (mond_rad[0]-mond_rad[-1])/mond_rad[0]*100
+    print(f"  outer decline 5->40 pc: mu(x) isotropic {drop_iso:.0f}%  vs  mu(x) radial {drop_rad:.0f}%")
+    print("  READ: if radial anisotropy gives a much STEEPER projected decline than isotropic mu(x),")
+    print("  a declining GC dispersion is mu(x)+anisotropy-normal -> Ibata's 'falsifies MOND' debunked.")
+
+
+def efe_dwarfs(opts):
+    """MONSTER #4 hunt (game = OBT + cards): the External Field Effect (EFE). External claim/
+    assumption patched: 'a dwarf is ISOLATED, so sigma follows isolated mu(x)'. Patch = include the
+    REAL Milky-Way external field g_ext (single-field AQUAL-like): boost_EFE = obt_rar(g_bar+g_ext)/
+    (g_bar+g_ext) (< isolated boost when g_ext is significant). The EFE predicts the boost is
+    SUPPRESSED in strong external fields. The signal is masked in the full LG sample by UFD sigma-
+    inflation (card-territory), so we restrict to WELL-MEASURED (bright, M_bar above median) dwarfs.
+    We compare residual_iso=log10(g_obs/obt_rar(g_bar)) vs residual_EFE=log10(g_obs/(g_bar*boost_EFE)),
+    split by external field x_ext. If EFE pulls the strong-field residual toward 0 (isolated mu(x)
+    over-predicts there), the EFE patch works. FACTS only; player judges."""
+    import pandas as pd
+    import numpy as np
+    from scipy.stats import spearmanr
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet").copy()
+    g_bar = d["g_bar"].values
+    g_obs = d["g_obs"].values
+    g_ext = d["x_ext"].values * A0
+    boost_iso = obt_rar(g_bar) / g_bar
+    boost_efe = obt_rar(g_bar + g_ext) / (g_bar + g_ext)
+    d["res_iso"] = np.log10(g_obs / (g_bar * boost_iso))
+    d["res_efe"] = np.log10(g_obs / (g_bar * boost_efe))
+    bright = d[d["M_bar"] >= d["M_bar"].median()].copy()
+    print(f"[efe_dwarfs] {len(d)} LG dwarfs; {len(bright)} BRIGHT (M_bar>=median, well-measured).")
+    print("  EFE predicts: strong external field x_ext -> isolated mu(x) OVER-predicts (res_iso<0),")
+    print("  and the EFE correction should pull res_efe toward 0.")
+    for lo, hi, lab in [(0, 0.05, "FAR x_ext<0.05"), (0.05, 0.15, "MID 0.05-0.15"), (0.15, 9, "NEAR x_ext>0.15")]:
+        m = (bright.x_ext >= lo) & (bright.x_ext < hi)
+        if m.sum() >= 2:
+            s = bright[m]
+            print(f"  [{lab:16s}] N={m.sum():2d}  res_iso={s.res_iso.median():+.3f}  res_efe={s.res_efe.median():+.3f}")
+    ok = np.isfinite(bright.res_iso) & np.isfinite(bright.x_ext)
+    r_iso, p_iso = spearmanr(bright.x_ext[ok], bright.res_iso[ok])
+    r_efe, p_efe = spearmanr(bright.x_ext[ok], bright.res_efe[ok])
+    print(f"  BRIGHT corr(residual, x_ext): isolated rho={r_iso:+.3f} (p={p_iso:.2f}) -> EFE rho={r_efe:+.3f} (p={p_efe:.2f})")
+    print(f"  BRIGHT median |residual|: isolated {bright.res_iso.abs().median():.3f} -> EFE {bright.res_efe.abs().median():.3f}")
+    print("  READ: if EFE flattens the residual-vs-x_ext trend AND lowers |residual|, the external")
+    print("  field (EFE) is the missing external element -> monster (and propagates across bright dwarfs).")
+
+
 def sparc_decline(opts):
     """MONSTER #3 propagation (candidate mw-rotation-decline). Core claim to propagate: a DECLINING
     outer rotation curve is NORMAL under OBT mu(x) (the curve settling onto the deep-MOND plateau),
@@ -604,6 +698,8 @@ PROBES = {
     "wb_forward": wb_forward,
     "mw_rotation": mw_rotation,
     "sparc_decline": sparc_decline,
+    "efe_dwarfs": efe_dwarfs,
+    "gc_jeans": gc_jeans,
     "udg_sample": udg_sample,
     "udg_inclination": udg_inclination,
     "dsph_binfloor": dsph_binfloor,

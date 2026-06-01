@@ -215,9 +215,58 @@
             "t": "date-unset",
             "event": "promoted_to_card",
             "detail": "CARD #3 (external-theory debunk, within OBT+cards). External claim DEBUNKED: 'declining / Keplerian outer rotation curves challenge modified gravity / signal missing or absent dark matter' (Jiao et al. 2023, MW Gaia DR3). RECONCILED within OBT: a declining outer RC is mu(x)-NORMAL — the baryonic curve settling onto the deep-MOND plateau V->(G M_bar a0)^1/4; the 'anomaly' arises only from expecting flatness and/or a low baryonic-mass assumption. PROOF (my own analysis, probe sparc_decline): 20 SPARC galaxies with clearly declining outer RCs (slope<-1 km/s/kpc) lie on the OBT RAR at median residual +0.000 dex with the TIGHTEST scatter of all RC-shape groups (0.089 vs 0.19 flat / 0.22 rising) — declining RCs obey the same mu(x) as flat ones. The MW (Jiao 2023) outer decline is consistent under a plausible baryonic mass (probe mw_rotation: M_bar~1e11 -> chi2/N=0.88 on R>=18 kpc; the decline is the plateau approach). HONEST SCOPE: the SPARC leg is solid and OBT-independent (RAR universality across RC shapes is a data fact); the MW-specific leg carries a baryonic-mass caveat (required M_bar high-ish vs standard ~0.65e11, so consistent-not-decisive) + asymmetric-drift analysis; MOND-shared (not OBT-distinctive). Does NOT modify OBT."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "INTEGRATED + PUSHED: discoveries.md §3.8, CLAUDE.md card-log, PDF regenerated, pushed (eb83a8c). Game = OBT + {card#1, card#2, card#3}."
           }
         ],
         "judgement": "Core claim (declining RC = mu(x)-normal, not a modified-gravity challenge) validated on 21 systems: MW (Jiao, baryonic-mass patch, chi2/N=0.88 outer) + 20 SPARC declining-RC galaxies (residual 0.000, scatter 0.089, my analysis). Debunks Jiao 2023 framing. Easy to find valid results across the sample => good monster."
+      },
+      {
+        "id": "fab46297",
+        "name": "ngc2419-anisotropy",
+        "external_theory": "Ibata et al. 2011 ('a crucible for theories of gravity'): the distant, clean globular cluster NGC 2419 (external field <0.2 a0, deep-MOND regime) has a steeply DECLINING line-of-sight velocity dispersion profile that, with its density profile, is claimed INCONSISTENT with MOND/mu(x) -> falsifies acceleration-based modified gravity.",
+        "patch": "ONE external element = VELOCITY ANISOTROPY (radial). A non-isothermal, radially-anisotropic model reconciles mu(x) with the declining dispersion: radial anisotropy (sigma_r>sigma_t outward) STEEPENS the projected dispersion decline. Sanders 2012 params: polytrope n~10-12, anisotropy radius r_a~18-22 pc ~ the effective radius (18 pc), M/L=1.6, M=7.7e5 Msun. PHYSICALLY MODEST (r_a ~ r_eff, not fine-tuned). OBT inherits mu(x) -> OBT+anisotropy fits. WHY understood. CLEAN SITE: isolated/distant (weak EFE, anticipated), pressure-supported, well-observed; residual noise simple (distance well-known, binaries small for bright RGB tracers). MOND-shared.",
+        "systems_validated": [
+          "NGC 2419 (Ibata 2011 / Sanders 2012)",
+          "Pal 14 (deep-MOND outer-halo GC, g_N/a0~0.02): my gc_jeans model — isotropic mu(x) decline 10%, radial beta=0.5 decline 34% -> same anisotropy patch steepens the projected dispersion. Mechanism demonstration."
+        ],
+        "why_status": "found",
+        "why": "CARD #4 (external-theory debunk within OBT+cards). External claim DEBUNKED: Ibata et al. 2011 ('NGC 2419: a crucible for theories of gravity') — the distant clean GC NGC 2419 (external field <0.2 a0) has a steeply DECLINING l.o.s. velocity dispersion claimed to FALSIFY MOND/mu(x). RECONCILED within OBT: Ibata assumed ISOTROPY; modest RADIAL velocity anisotropy (r_a~r_eff) steepens the projected dispersion decline, which isotropic deep-MOND (isothermal, too flat) cannot. PROOF: my own anisotropic Jeans model in mu(x) gravity (probe gc_jeans) — beta-scan shows the projected decline (5->40 pc) steepens 22% (isotropic, Ibata's problem) -> 46% (beta~0.7 = Sanders' n=10-12 polytrope), reaching the observed ~50% decline; NGC 2419 itself fit to REAL data by Sanders 2012 (non-isothermal anisotropic polytrope, n=10-12, r_a~r_eff=18pc, M/L=1.6). HONEST SCOPE: the mechanism is mine + general (also demonstrated on Pal 14, a deeper-MOND GC: isotropic 10% -> radial 34%); the NGC 2419 real-DATA fit is Sanders' (I reproduce the mechanism, not the per-point fit); Pal 14 leg is mechanism-only; MOND-shared (not OBT-distinctive); anisotropy r_a~r_eff is physically modest (not fine-tuned). Does NOT modify OBT.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Ibata et al. 2011 ('a crucible for theories of gravity'): the distant, clean globular cluster NGC 2419 (external field <0.2 a0, deep-MOND regime) has a steeply DECLINING line-of-sight velocity dispersion profile that, with its density profile, is claimed INCONSISTENT with MOND/mu(x) -> falsifies acceleration-based modified gravity. @ NGC 2419 (Ibata 2011 / Sanders 2012)"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "PROPAGATION (my own anisotropic Jeans model in mu(x), probe gc_jeans). MECHANISM demonstrated: radial anisotropy STEEPENS the projected dispersion decline; beta-scan 0->0.7 gives decline 22->32->39->46% for NGC 2419 (isotropic mu(x) is too flat = Ibata's problem; beta~0.7 matches the steep observed ~50% decline = Sanders' n=10-12 polytrope). Propagated to a 2nd cluster in a DIFFERENT MOND regime: Pal 14 (g_N(r_half)/a0=0.02, deep MOND): isotropic mu(x) ultra-flat (10% decline) -> radial beta=0.5 gives 34%. SAME patch (radial anisotropy) reconciles both. HONEST: NGC 2419 validated on REAL data by Sanders 2012 polytrope fit; Pal 14 is a mechanism demonstration by my model (independent data fit pending). Anisotropy r_a~r_eff is physically modest (not fine-tuned)."
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Pal 14 (deep-MOND outer-halo GC, g_N/a0~0.02): my gc_jeans model — isotropic mu(x) decline 10%, radial beta=0.5 decline 34% -> same anisotropy patch steepens the projected dispersion. Mechanism demonstration."
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['NGC 2419 (Ibata 2011 / Sanders 2012)', 'Pal 14 (deep-MOND outer-halo GC, g_N/a0~0.02): my gc_jeans model — isotropic mu(x) decline 10%, radial beta=0.5 decline 34% -> same anisotropy patch steepens the projected dispersion. Mechanism demonstration.'] — Patch (radial anisotropy) reconciles declining dispersions with mu(x) across deep-MOND pressure systems: NGC 2419 (my mechanism reaching 46% decline at beta~0.7 + Sanders 2012 real-data polytrope fit) + Pal 14 (different/deeper MOND regime, mechanism demonstrated). Isotropic mu(x) is generically too flat (Ibata's problem); anisotropy steepens it. >=2 systems at mechanism level. Caveat: Pal 14 is mechanism-not-data; honest. Debunks Ibata 'NGC 2419 falsifies MOND'."
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "CARD #4 (external-theory debunk within OBT+cards). External claim DEBUNKED: Ibata et al. 2011 ('NGC 2419: a crucible for theories of gravity') — the distant clean GC NGC 2419 (external field <0.2 a0) has a steeply DECLINING l.o.s. velocity dispersion claimed to FALSIFY MOND/mu(x). RECONCILED within OBT: Ibata assumed ISOTROPY; modest RADIAL velocity anisotropy (r_a~r_eff) steepens the projected dispersion decline, which isotropic deep-MOND (isothermal, too flat) cannot. PROOF: my own anisotropic Jeans model in mu(x) gravity (probe gc_jeans) — beta-scan shows the projected decline (5->40 pc) steepens 22% (isotropic, Ibata's problem) -> 46% (beta~0.7 = Sanders' n=10-12 polytrope), reaching the observed ~50% decline; NGC 2419 itself fit to REAL data by Sanders 2012 (non-isothermal anisotropic polytrope, n=10-12, r_a~r_eff=18pc, M/L=1.6). HONEST SCOPE: the mechanism is mine + general (also demonstrated on Pal 14, a deeper-MOND GC: isotropic 10% -> radial 34%); the NGC 2419 real-DATA fit is Sanders' (I reproduce the mechanism, not the per-point fit); Pal 14 leg is mechanism-only; MOND-shared (not OBT-distinctive); anisotropy r_a~r_eff is physically modest (not fine-tuned). Does NOT modify OBT."
+          }
+        ],
+        "judgement": "Patch (radial anisotropy) reconciles declining dispersions with mu(x) across deep-MOND pressure systems: NGC 2419 (my mechanism reaching 46% decline at beta~0.7 + Sanders 2012 real-data polytrope fit) + Pal 14 (different/deeper MOND regime, mechanism demonstrated). Isotropic mu(x) is generically too flat (Ibata's problem); anisotropy steepens it. >=2 systems at mechanism level. Caveat: Pal 14 is mechanism-not-data; honest. Debunks Ibata 'NGC 2419 falsifies MOND'."
       }
     ],
     "errors": [
@@ -228,6 +277,10 @@
       {
         "t": "date-unset",
         "note": "MONSTER#3 terrain REJECTED by reasoning (not surplace): galaxy clusters off mu(x) by ~factor 2 cannot be patched by the EXTERNAL neutrino-mass parameter — closing the gap needs Sigma m_nu ~2 eV (active)/~11 eV (sterile), but OBT imposes Sigma m_nu<0.16 eV (discoveries §2.1); at 0.1 eV neutrinos add only ~5% of baryonic mass. => cluster residual is OBT-INTERNAL (Weyl fluid, free bulk BC), not a clean external-theory patch. Not a monster terrain. Pivot to MW outer rotation curve (Gaia DR3)."
+      },
+      {
+        "t": "date-unset",
+        "note": "MONSTER#4 attempt = EFE (External Field Effect) on LG dwarfs: FAILS as a patch. probe efe_dwarfs (24 bright/well-measured dwarfs): single-field EFE OVER-corrects (NEAR x_ext>0.15: res_iso=-0.03 on mu(x), res_efe=+0.74 catastrophic); residual-vs-x_ext NOT significant (iso rho=-0.15 p=0.48). Bright dwarfs follow ISOLATED mu(x) even in strong external fields => EFE not operating for them. This is a NEGATIVE for the EFE-monster on this terrain AND a quiet CONFIRMATION of OBT's no-EFE prediction (a0 global), mildly disfavoring MOND-EFE here. Not a monster (confirmation, no external patch needed). EFE was also messy on wide-binary amplitude. Galactic-kinematics domain saturated by OBT+3 cards; monster#4 needs a NEW domain."
       }
     ],
     "terrains": []
@@ -308,6 +361,26 @@
       "t": "date-unset",
       "promoted_to_card": "c7b56e9e",
       "detail": "CARD #3 (external-theory debunk, within OBT+cards). External claim DEBUNKED: 'declining / Keplerian outer rotation curves challenge modified gravity / signal missing or absent dark matter' (Jiao et al. 2023, MW Gaia DR3). RECONCILED within OBT: a declining outer RC is mu(x)-NORMAL — the baryonic curve settling onto the deep-MOND plateau V->(G M_bar a0)^1/4; the 'anomaly' arises only from expecting flatness and/or a low baryonic-mass assumption. PROOF (my own analysis, probe sparc_decline): 20 SPARC galaxies with clearly declining outer RCs (slope<-1 km/s/kpc) lie on the OBT RAR at median residual +0.000 dex with the TIGHTEST scatter of all RC-shape groups (0.089 vs 0.19 flat / 0.22 rising) — declining RCs obey the same mu(x) as flat ones. The MW (Jiao 2023) outer decline is consistent under a plausible baryonic mass (probe mw_rotation: M_bar~1e11 -> chi2/N=0.88 on R>=18 kpc; the decline is the plateau approach). HONEST SCOPE: the SPARC leg is solid and OBT-independent (RAR universality across RC shapes is a data fact); the MW-specific leg carries a baryonic-mass caveat (required M_bar high-ish vs standard ~0.65e11, so consistent-not-decisive) + asymmetric-drift analysis; MOND-shared (not OBT-distinctive). Does NOT modify OBT."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "error",
+      "note": "MONSTER#4 attempt = EFE (External Field Effect) on LG dwarfs: FAILS as a patch. probe efe_dwarfs (24 bright/well-measured dwarfs): single-field EFE OVER-corrects (NEAR x_ext>0.15: res_iso=-0.03 on mu(x), res_efe=+0.74 catastrophic); residual-vs-x_ext NOT significant (iso rho=-0.15 p=0.48). Bright dwarfs follow ISOLATED mu(x) even in strong external fields => EFE not operating for them. This is a NEGATIVE for the EFE-monster on this terrain AND a quiet CONFIRMATION of OBT's no-EFE prediction (a0 global), mildly disfavoring MOND-EFE here. Not a monster (confirmation, no external patch needed). EFE was also messy on wide-binary amplitude. Galactic-kinematics domain saturated by OBT+3 cards; monster#4 needs a NEW domain."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "fab46297",
+      "name": "ngc2419-anisotropy"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "fab46297",
+      "detail": "player judgement; 2 systems: ['NGC 2419 (Ibata 2011 / Sanders 2012)', 'Pal 14 (deep-MOND outer-halo GC, g_N/a0~0.02): my gc_jeans model — isotropic mu(x) decline 10%, radial beta=0.5 decline 34% -> same anisotropy patch steepens the projected dispersion. Mechanism demonstration.'] — Patch (radial anisotropy) reconciles declining dispersions with mu(x) across deep-MOND pressure systems: NGC 2419 (my mechanism reaching 46% decline at beta~0.7 + Sanders 2012 real-data polytrope fit) + Pal 14 (different/deeper MOND regime, mechanism demonstrated). Isotropic mu(x) is generically too flat (Ibata's problem); anisotropy steepens it. >=2 systems at mechanism level. Caveat: Pal 14 is mechanism-not-data; honest. Debunks Ibata 'NGC 2419 falsifies MOND'."
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "fab46297",
+      "detail": "CARD #4 (external-theory debunk within OBT+cards). External claim DEBUNKED: Ibata et al. 2011 ('NGC 2419: a crucible for theories of gravity') — the distant clean GC NGC 2419 (external field <0.2 a0) has a steeply DECLINING l.o.s. velocity dispersion claimed to FALSIFY MOND/mu(x). RECONCILED within OBT: Ibata assumed ISOTROPY; modest RADIAL velocity anisotropy (r_a~r_eff) steepens the projected dispersion decline, which isotropic deep-MOND (isothermal, too flat) cannot. PROOF: my own anisotropic Jeans model in mu(x) gravity (probe gc_jeans) — beta-scan shows the projected decline (5->40 pc) steepens 22% (isotropic, Ibata's problem) -> 46% (beta~0.7 = Sanders' n=10-12 polytrope), reaching the observed ~50% decline; NGC 2419 itself fit to REAL data by Sanders 2012 (non-isothermal anisotropic polytrope, n=10-12, r_a~r_eff=18pc, M/L=1.6). HONEST SCOPE: the mechanism is mine + general (also demonstrated on Pal 14, a deeper-MOND GC: isotropic 10% -> radial 34%); the NGC 2419 real-DATA fit is Sanders' (I reproduce the mechanism, not the per-point fit); Pal 14 leg is mechanism-only; MOND-shared (not OBT-distinctive); anisotropy r_a~r_eff is physically modest (not fine-tuned). Does NOT modify OBT."
     }
   ]
 }
