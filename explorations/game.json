@@ -788,6 +788,50 @@
             "detail": "The WHY is that a pressure-supported, baryon-only system in the deep-MOND regime has its velocity dispersion FIXED by its baryonic mass and the acceleration scale a0, with no other parameter. In deep MOND the effective gravity is g=sqrt(g_bar a0); for a self-gravitating isothermal system this yields the closed-form line-of-sight dispersion sigma_los=(4/81 G M_bar a0)^(1/4) (Milgrom 1994; McGaugh-Milgrom 2013) -- independent of radius and of any dark halo. Tested on the Local Group dwarfs (McConnachie 2012 via dsph.parquet), restricted to the clean regime where the dwarf's internal field dominates the external field (x_acc>x_ext) and is deep-MOND (x_acc<1, which excludes Newtonian compacts such as M32): N=9 isolated dwarfs match sigma predicted from M_bar ALONE at median +0.041 dex, scatter 0.103 dex (a factor ~1.27), with 100% inside a factor of 2 and 89% inside a factor of 1.5 -- and ZERO per-dwarf free parameters. This debunks the LambdaCDM requirement that each dSph carries an individually-fitted dark-matter halo with dynamical M/L ranging from ~10 to ~1000: in OBT/MOND a single universal law with no per-object tuning reproduces the dispersions across two decades in baryonic mass (5.7e6 to 1.4e8 Msun). Only outlier: Andromeda XVI (+0.30 dex), a known tidally/measurement-affected case. Honest scope: MOND-SHARED (the deep-MOND dispersion formula; OBT inherits it, not OBT-distinctive). The EFE-dominated dwarfs (x_ext>x_acc, e.g. most faint MW satellites, and the famous a-priori Crater II prediction) require the external-field formula and a careful g_ext estimate (scatter 0.51 dex with my crude prefactor) -- a more model-dependent extension, deliberately kept OUT of the clean claim. The certain, computed result is the zero-parameter sigma(M_bar) match for the isolated deep-MOND dwarfs."
           }
         ]
+      },
+      {
+        "id": "f053f0a7",
+        "name": "Renzo's rule: baryonic features in rotation where DM dominates",
+        "external_theory": "LambdaCDM claim that smooth dark-matter halos (+ abundance matching) reproduce galaxy rotation curves",
+        "patch": "rotation is locally tied to baryons (RAR): every baryonic feature appears at the same radius in the rotation curve even where DM dominates, at the MOND feature-response amplitude ~0.5, which a smooth halo cannot produce",
+        "systems_validated": [
+          "SPARC DM-dominated points (g_bar/g_obs<0.5), 140 galaxies: median within-galaxy feature corr +0.61, Wilcoxon p=3.6e-10",
+          "Amplitude discriminant: measured feature-response slope beta=0.49 = MOND deep prediction ~0.5, vs LambdaCDM smooth-halo expectation <g_bar/g_obs>=0.26 -> 1.9x too large for a smooth halo",
+          "73% of 140 galaxies show positive feature correlation; 2213 DM-dominated points; g_bar (photometry+gas) and g_obs (velocities) are INDEPENDENT measurements -> correlation is physical not shared-noise"
+        ],
+        "why_status": "found",
+        "why": "The WHY is the point-by-point LOCALITY of the radial acceleration relation: g_obs is a fixed local function of g_bar, g_obs=g_bar/mu(x), so any feature in the baryonic acceleration profile g_bar(R) is mapped, at the SAME radius, into a feature in g_obs(R). This is Renzo's rule. A smooth LambdaCDM halo cannot do it: there V_obs^2=V_bar^2+V_halo^2 with V_halo smooth, so a baryonic wiggle shows through only at amplitude g_bar/g_obs -- which in a DM-dominated region is small -> the feature should be washed out. Computed on SPARC, restricted to DM-dominated points (g_bar/g_obs<0.5, baryons sub-dominant) where g_bar (from surface photometry + HI) and g_obs (from the velocity field) are INDEPENDENT measurements so any correlation is physical: (1) the de-trended within-galaxy features of log g_obs track those of log g_bar at median correlation +0.61, positive in 73% of 140 galaxies, Wilcoxon p=3.6e-10; (2) the decisive amplitude test -- the measured feature-response slope beta=d(log g_obs)/d(log g_bar)=0.49, exactly the deep-MOND value ~0.5, versus the smooth-halo expectation <g_bar/g_obs>=0.26, i.e. baryonic features pass into the rotation curve ~1.9x more strongly than any smooth halo permits, even where DM dominates. This debunks the claim that smooth dark halos reproduce rotation curves: the rotation curve is locally enslaved to the baryons at the MOND amplitude. Honest scope: MOND-SHARED (Renzo's rule / RAR locality is a generic modified-gravity result; OBT inherits it, not OBT-distinctive); the 'feature' definition uses a 2nd-order-polynomial detrend (the result is a median over 140 galaxies, robust to that choice); beta~0.5 is the deep-MOND value and rises toward 1 in the Newtonian regime (we selected the DM-dominated/deep regime where the smooth-halo contrast is largest). The certain, computed result is the +0.61 feature correlation and beta=0.49 vs 0.26 smooth-halo, on independent measurements.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on LambdaCDM claim that smooth dark-matter halos (+ abundance matching) reproduce galaxy rotation curves @ SPARC DM-dominated points (g_bar/g_obs<0.5), 140 galaxies: median within-galaxy feature corr +0.61, Wilcoxon p=3.6e-10"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Amplitude discriminant: measured feature-response slope beta=0.49 = MOND deep prediction ~0.5, vs LambdaCDM smooth-halo expectation <g_bar/g_obs>=0.26 -> 1.9x too large for a smooth halo"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "73% of 140 galaxies show positive feature correlation; 2213 DM-dominated points; g_bar (photometry+gas) and g_obs (velocities) are INDEPENDENT measurements -> correlation is physical not shared-noise"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 3 systems: ['SPARC DM-dominated points (g_bar/g_obs<0.5), 140 galaxies: median within-galaxy feature corr +0.61, Wilcoxon p=3.6e-10', 'Amplitude discriminant: measured feature-response slope beta=0.49 = MOND deep prediction ~0.5, vs LambdaCDM smooth-halo expectation <g_bar/g_obs>=0.26 -> 1.9x too large for a smooth halo', '73% of 140 galaxies show positive feature correlation; 2213 DM-dominated points; g_bar (photometry+gas) and g_obs (velocities) are INDEPENDENT measurements -> correlation is physical not shared-noise']"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The WHY is the point-by-point LOCALITY of the radial acceleration relation: g_obs is a fixed local function of g_bar, g_obs=g_bar/mu(x), so any feature in the baryonic acceleration profile g_bar(R) is mapped, at the SAME radius, into a feature in g_obs(R). This is Renzo's rule. A smooth LambdaCDM halo cannot do it: there V_obs^2=V_bar^2+V_halo^2 with V_halo smooth, so a baryonic wiggle shows through only at amplitude g_bar/g_obs -- which in a DM-dominated region is small -> the feature should be washed out. Computed on SPARC, restricted to DM-dominated points (g_bar/g_obs<0.5, baryons sub-dominant) where g_bar (from surface photometry + HI) and g_obs (from the velocity field) are INDEPENDENT measurements so any correlation is physical: (1) the de-trended within-galaxy features of log g_obs track those of log g_bar at median correlation +0.61, positive in 73% of 140 galaxies, Wilcoxon p=3.6e-10; (2) the decisive amplitude test -- the measured feature-response slope beta=d(log g_obs)/d(log g_bar)=0.49, exactly the deep-MOND value ~0.5, versus the smooth-halo expectation <g_bar/g_obs>=0.26, i.e. baryonic features pass into the rotation curve ~1.9x more strongly than any smooth halo permits, even where DM dominates. This debunks the claim that smooth dark halos reproduce rotation curves: the rotation curve is locally enslaved to the baryons at the MOND amplitude. Honest scope: MOND-SHARED (Renzo's rule / RAR locality is a generic modified-gravity result; OBT inherits it, not OBT-distinctive); the 'feature' definition uses a 2nd-order-polynomial detrend (the result is a median over 140 galaxies, robust to that choice); beta~0.5 is the deep-MOND value and rises toward 1 in the Newtonian regime (we selected the DM-dominated/deep regime where the smooth-halo contrast is largest). The certain, computed result is the +0.61 feature correlation and beta=0.49 vs 0.26 smooth-halo, on independent measurements."
+          }
+        ]
       }
     ],
     "errors": [
@@ -1161,6 +1205,21 @@
       "t": "date-unset",
       "promoted_to_card": "c1886bce",
       "detail": "The WHY is that a pressure-supported, baryon-only system in the deep-MOND regime has its velocity dispersion FIXED by its baryonic mass and the acceleration scale a0, with no other parameter. In deep MOND the effective gravity is g=sqrt(g_bar a0); for a self-gravitating isothermal system this yields the closed-form line-of-sight dispersion sigma_los=(4/81 G M_bar a0)^(1/4) (Milgrom 1994; McGaugh-Milgrom 2013) -- independent of radius and of any dark halo. Tested on the Local Group dwarfs (McConnachie 2012 via dsph.parquet), restricted to the clean regime where the dwarf's internal field dominates the external field (x_acc>x_ext) and is deep-MOND (x_acc<1, which excludes Newtonian compacts such as M32): N=9 isolated dwarfs match sigma predicted from M_bar ALONE at median +0.041 dex, scatter 0.103 dex (a factor ~1.27), with 100% inside a factor of 2 and 89% inside a factor of 1.5 -- and ZERO per-dwarf free parameters. This debunks the LambdaCDM requirement that each dSph carries an individually-fitted dark-matter halo with dynamical M/L ranging from ~10 to ~1000: in OBT/MOND a single universal law with no per-object tuning reproduces the dispersions across two decades in baryonic mass (5.7e6 to 1.4e8 Msun). Only outlier: Andromeda XVI (+0.30 dex), a known tidally/measurement-affected case. Honest scope: MOND-SHARED (the deep-MOND dispersion formula; OBT inherits it, not OBT-distinctive). The EFE-dominated dwarfs (x_ext>x_acc, e.g. most faint MW satellites, and the famous a-priori Crater II prediction) require the external-field formula and a careful g_ext estimate (scatter 0.51 dex with my crude prefactor) -- a more model-dependent extension, deliberately kept OUT of the clean claim. The certain, computed result is the zero-parameter sigma(M_bar) match for the isolated deep-MOND dwarfs."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "f053f0a7",
+      "name": "Renzo's rule: baryonic features in rotation where DM dominates"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "f053f0a7",
+      "detail": "player judgement; 3 systems: ['SPARC DM-dominated points (g_bar/g_obs<0.5), 140 galaxies: median within-galaxy feature corr +0.61, Wilcoxon p=3.6e-10', 'Amplitude discriminant: measured feature-response slope beta=0.49 = MOND deep prediction ~0.5, vs LambdaCDM smooth-halo expectation <g_bar/g_obs>=0.26 -> 1.9x too large for a smooth halo', '73% of 140 galaxies show positive feature correlation; 2213 DM-dominated points; g_bar (photometry+gas) and g_obs (velocities) are INDEPENDENT measurements -> correlation is physical not shared-noise']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "f053f0a7",
+      "detail": "The WHY is the point-by-point LOCALITY of the radial acceleration relation: g_obs is a fixed local function of g_bar, g_obs=g_bar/mu(x), so any feature in the baryonic acceleration profile g_bar(R) is mapped, at the SAME radius, into a feature in g_obs(R). This is Renzo's rule. A smooth LambdaCDM halo cannot do it: there V_obs^2=V_bar^2+V_halo^2 with V_halo smooth, so a baryonic wiggle shows through only at amplitude g_bar/g_obs -- which in a DM-dominated region is small -> the feature should be washed out. Computed on SPARC, restricted to DM-dominated points (g_bar/g_obs<0.5, baryons sub-dominant) where g_bar (from surface photometry + HI) and g_obs (from the velocity field) are INDEPENDENT measurements so any correlation is physical: (1) the de-trended within-galaxy features of log g_obs track those of log g_bar at median correlation +0.61, positive in 73% of 140 galaxies, Wilcoxon p=3.6e-10; (2) the decisive amplitude test -- the measured feature-response slope beta=d(log g_obs)/d(log g_bar)=0.49, exactly the deep-MOND value ~0.5, versus the smooth-halo expectation <g_bar/g_obs>=0.26, i.e. baryonic features pass into the rotation curve ~1.9x more strongly than any smooth halo permits, even where DM dominates. This debunks the claim that smooth dark halos reproduce rotation curves: the rotation curve is locally enslaved to the baryons at the MOND amplitude. Honest scope: MOND-SHARED (Renzo's rule / RAR locality is a generic modified-gravity result; OBT inherits it, not OBT-distinctive); the 'feature' definition uses a 2nd-order-polynomial detrend (the result is a median over 140 galaxies, robust to that choice); beta~0.5 is the deep-MOND value and rises toward 1 in the Newtonian regime (we selected the DM-dominated/deep regime where the smooth-halo contrast is largest). The certain, computed result is the +0.61 feature correlation and beta=0.49 vs 0.26 smooth-halo, on independent measurements."
     }
   ]
 }

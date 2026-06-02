@@ -1052,6 +1052,90 @@ def dsph_sigma(opts):
     )
 
 
+def renzo_rule(opts):
+    """MONSTER #15 candidate. External theory to debunk: 'smooth LambdaCDM dark-matter halos (+
+    abundance matching) reproduce galaxy rotation curves'. Renzo's rule: every feature (bump/wiggle)
+    in the BARYONIC distribution has a corresponding feature at the SAME radius in the rotation
+    curve -- even where dark matter dominates. A smooth halo cannot do this: in a DM-dominated
+    region it should wash baryonic features out. We test on SPARC, restricted to DM-dominated points
+    (g_bar/g_obs<0.5, so baryons are sub-dominant). g_bar (from photometry+gas) and g_obs (from
+    velocities) are INDEPENDENT measurements, so a feature correlation is physical, not shared noise.
+    Two results: (1) within-galaxy correlation of de-trended log g_obs vs log g_bar features; (2) the
+    feature-response amplitude beta = d(log g_obs)/d(log g_bar), which MOND fixes near 0.5 (deep)
+    while a smooth halo allows only ~<g_bar/g_obs> (much smaller). FACTS only."""
+    import numpy as np
+    import pandas as pd
+    from scipy.stats import wilcoxon
+
+    KPC = 3.0856775814913673e19
+    KMS = 1.0e3
+    ML = float(opts.get("ml", 0.5))
+    fmax = float(opts.get("fmax", 0.5))  # DM-dominated selection g_bar/g_obs < fmax
+    df = pd.read_parquet(f"{LOTS}/sparc_rar.parquet")
+
+    def feat(
+        y,
+    ):  # residual after a smooth 2nd-order polynomial trend (defines 'features')
+        n = len(y)
+        return y - np.polyval(np.polyfit(np.arange(n), y, min(2, n - 1)), np.arange(n))
+
+    corr, beta_obs, beta_lcdm = [], [], []
+    ngal = npts = 0
+    for gid, g in df.groupby("ID"):
+        g = g.sort_values("R_kpc")
+        if len(g) < 6:
+            continue
+        R = g.R_kpc.values * KPC
+        gbar = (
+            (g.Vgas.values**2 + ML * g.Vdisk.values**2 + ML * g.Vbul.values**2)
+            * KMS**2
+            / R
+        )
+        gobs = (g.Vobs.values * KMS) ** 2 / R
+        if np.any(gbar <= 0) or np.any(gobs <= 0):
+            continue
+        db, do = feat(np.log10(gbar)), feat(np.log10(gobs))
+        dm = gbar / gobs < fmax
+        if dm.sum() < 4 or np.std(db[dm]) < 1e-3:
+            continue
+        c = np.corrcoef(db[dm], do[dm])[0, 1]
+        if not np.isfinite(c):
+            continue
+        corr.append(c)
+        beta_obs.append(np.polyfit(db[dm], do[dm], 1)[0])
+        beta_lcdm.append(np.median(gbar[dm] / gobs[dm]))
+        ngal += 1
+        npts += int(dm.sum())
+    corr, beta_obs, beta_lcdm = np.array(corr), np.array(beta_obs), np.array(beta_lcdm)
+    print(
+        "[renzo_rule] MONSTER #15: features in baryons appear in the rotation curve even where DM dominates."
+    )
+    print(
+        f"  Debunk target = 'smooth LambdaCDM halos reproduce rotation curves'. SPARC, M/L={ML},"
+    )
+    print(
+        f"  DM-dominated points (g_bar/g_obs<{fmax}): {ngal} galaxies, {npts} points."
+    )
+    print(
+        f"  (1) within-galaxy feature correlation: median corr(feat_obs,feat_bar)={np.median(corr):+.2f},"
+    )
+    print(
+        f"      fraction positive={np.mean(corr>0):.2f}, Wilcoxon p(>0)={wilcoxon(corr).pvalue:.1e}"
+    )
+    print(
+        f"  (2) feature-response amplitude: MEASURED beta={np.median(beta_obs):.2f} (MOND deep~0.5);"
+    )
+    print(
+        f"      LambdaCDM smooth-halo expectation <g_bar/g_obs>={np.median(beta_lcdm):.2f}; ratio={np.median(beta_obs)/np.median(beta_lcdm):.1f}x"
+    )
+    print(
+        "  READ: baryonic features pass into the rotation curve at the MOND amplitude (~0.5), ~2x what"
+    )
+    print(
+        "  a smooth halo permits, even where DM dominates -> debunks smooth-halo RCs. MOND-shared (RAR locality)."
+    )
+
+
 def diversity(opts):
     """MONSTER #10 candidate. External theory to debunk: 'LambdaCDM predicts a tight, ~uniform
     inner rotation-curve shape at fixed outer velocity' -> Oman et al. 2015 (the 'diversity of
@@ -2682,6 +2766,7 @@ PROBES = {
     "m31_corotation": m31_corotation,
     "cena_plane": cena_plane,
     "dsph_sigma": dsph_sigma,
+    "renzo_rule": renzo_rule,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
     "mw_rotation": mw_rotation,
