@@ -738,6 +738,56 @@
             "detail": "The WHY is the ABSENCE of per-satellite dark-matter halos. Empirically (computed by us on 2 independent hosts from public catalogs): (1) the MW classical satellites (M_V<-8, all-sky, McConnachie 2012) form a thin plane, PCA c/a=0.18, thickness 21 kpc, isotropic Monte-Carlo p=0.0008; (2) the Centaurus A satellites (Karachentsev UNGC, MD=NGC5128, TRGB distances+HRV) KINEMATICALLY co-rotate -- best-axis Spearman=-0.77 (p=0.001), axis-reoptimized permutation p=0.02, jackknife-robust (drop-1 |r|=0.62-0.79), 13/15 co-rotating, reproducing Muller 2018 (Science). Both refute the LambdaCDM expectation that satellites are independently-accreted DM subhalos arriving from random directions (-> spatially isotropic AND kinematically incoherent). The mechanism that makes phase-space-correlated planes natural: in OBT/modified-gravity the satellites carry NO individual dark-matter halo, so there is NO Chandrasekhar dynamical friction to drag them in and erase the configuration, and they are naturally born as tidal-dwarf galaxies in a thin, rotating debris plane from a past major encounter (MW-M31; a CenA merger). No friction -> the plane survives; tidal origin -> it is thin and rotation-coherent. This is the established Kroupa-Pawlowski argument; OBT inherits it (MOND-SHARED, not OBT-distinctive). Honest scope: heterogeneous legs -- the MW signal is positional, the CenA signal is kinematic (each host shows the phenomenon via the observable available; MW kinematics need Gaia proper motions, CenA positions alone are marginal). M31's whole-sample positional test was null because the GPoA is a spatial subset (not reproduced here). The certain, computed result is the refutation of LambdaCDM isotropy+incoherence on 2 hosts; the friction-free tidal-dwarf mechanism is the natural modified-gravity explanation."
           }
         ]
+      },
+      {
+        "id": "c1886bce",
+        "name": "dSph sigma from baryons alone",
+        "external_theory": "LambdaCDM requirement that each dwarf spheroidal has an individually-fitted dark-matter halo (dynamical M/L from ~10 to ~1000) to explain its velocity dispersion",
+        "patch": "sigma is set by the baryonic mass alone via the isolated deep-MOND law sigma=(4/81 G M_bar a0)^1/4 with ZERO per-dwarf free parameters; no individual DM halo needed",
+        "systems_validated": [
+          "Leo I (isolated, deep-MOND): M_bar=1.1e7, sigma_obs=9.2, sigma_pred=9.6 km/s (d=-0.02 dex)",
+          "WLM: M_bar=8.2e7, sigma_obs=17.5, sigma_pred=15.9 (d=+0.04)",
+          "NGC147: M_bar=1.2e8, sigma_obs=16.0, sigma_pred=17.5 (d=-0.04)",
+          "Andromeda VI: M_bar=5.7e6, sigma_obs=9.4, sigma_pred=8.2 (d=+0.06); + And I, And VII, Leo A, NGC185 — 9 isolated dwarfs, scatter 0.10 dex, 100% within factor 2"
+        ],
+        "why_status": "found",
+        "why": "The WHY is that a pressure-supported, baryon-only system in the deep-MOND regime has its velocity dispersion FIXED by its baryonic mass and the acceleration scale a0, with no other parameter. In deep MOND the effective gravity is g=sqrt(g_bar a0); for a self-gravitating isothermal system this yields the closed-form line-of-sight dispersion sigma_los=(4/81 G M_bar a0)^(1/4) (Milgrom 1994; McGaugh-Milgrom 2013) -- independent of radius and of any dark halo. Tested on the Local Group dwarfs (McConnachie 2012 via dsph.parquet), restricted to the clean regime where the dwarf's internal field dominates the external field (x_acc>x_ext) and is deep-MOND (x_acc<1, which excludes Newtonian compacts such as M32): N=9 isolated dwarfs match sigma predicted from M_bar ALONE at median +0.041 dex, scatter 0.103 dex (a factor ~1.27), with 100% inside a factor of 2 and 89% inside a factor of 1.5 -- and ZERO per-dwarf free parameters. This debunks the LambdaCDM requirement that each dSph carries an individually-fitted dark-matter halo with dynamical M/L ranging from ~10 to ~1000: in OBT/MOND a single universal law with no per-object tuning reproduces the dispersions across two decades in baryonic mass (5.7e6 to 1.4e8 Msun). Only outlier: Andromeda XVI (+0.30 dex), a known tidally/measurement-affected case. Honest scope: MOND-SHARED (the deep-MOND dispersion formula; OBT inherits it, not OBT-distinctive). The EFE-dominated dwarfs (x_ext>x_acc, e.g. most faint MW satellites, and the famous a-priori Crater II prediction) require the external-field formula and a careful g_ext estimate (scatter 0.51 dex with my crude prefactor) -- a more model-dependent extension, deliberately kept OUT of the clean claim. The certain, computed result is the zero-parameter sigma(M_bar) match for the isolated deep-MOND dwarfs.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on LambdaCDM requirement that each dwarf spheroidal has an individually-fitted dark-matter halo (dynamical M/L from ~10 to ~1000) to explain its velocity dispersion @ Leo I (isolated, deep-MOND): M_bar=1.1e7, sigma_obs=9.2, sigma_pred=9.6 km/s (d=-0.02 dex)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "WLM: M_bar=8.2e7, sigma_obs=17.5, sigma_pred=15.9 (d=+0.04)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "NGC147: M_bar=1.2e8, sigma_obs=16.0, sigma_pred=17.5 (d=-0.04)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Andromeda VI: M_bar=5.7e6, sigma_obs=9.4, sigma_pred=8.2 (d=+0.06); + And I, And VII, Leo A, NGC185 — 9 isolated dwarfs, scatter 0.10 dex, 100% within factor 2"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 4 systems: ['Leo I (isolated, deep-MOND): M_bar=1.1e7, sigma_obs=9.2, sigma_pred=9.6 km/s (d=-0.02 dex)', 'WLM: M_bar=8.2e7, sigma_obs=17.5, sigma_pred=15.9 (d=+0.04)', 'NGC147: M_bar=1.2e8, sigma_obs=16.0, sigma_pred=17.5 (d=-0.04)', 'Andromeda VI: M_bar=5.7e6, sigma_obs=9.4, sigma_pred=8.2 (d=+0.06); + And I, And VII, Leo A, NGC185 — 9 isolated dwarfs, scatter 0.10 dex, 100% within factor 2']"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The WHY is that a pressure-supported, baryon-only system in the deep-MOND regime has its velocity dispersion FIXED by its baryonic mass and the acceleration scale a0, with no other parameter. In deep MOND the effective gravity is g=sqrt(g_bar a0); for a self-gravitating isothermal system this yields the closed-form line-of-sight dispersion sigma_los=(4/81 G M_bar a0)^(1/4) (Milgrom 1994; McGaugh-Milgrom 2013) -- independent of radius and of any dark halo. Tested on the Local Group dwarfs (McConnachie 2012 via dsph.parquet), restricted to the clean regime where the dwarf's internal field dominates the external field (x_acc>x_ext) and is deep-MOND (x_acc<1, which excludes Newtonian compacts such as M32): N=9 isolated dwarfs match sigma predicted from M_bar ALONE at median +0.041 dex, scatter 0.103 dex (a factor ~1.27), with 100% inside a factor of 2 and 89% inside a factor of 1.5 -- and ZERO per-dwarf free parameters. This debunks the LambdaCDM requirement that each dSph carries an individually-fitted dark-matter halo with dynamical M/L ranging from ~10 to ~1000: in OBT/MOND a single universal law with no per-object tuning reproduces the dispersions across two decades in baryonic mass (5.7e6 to 1.4e8 Msun). Only outlier: Andromeda XVI (+0.30 dex), a known tidally/measurement-affected case. Honest scope: MOND-SHARED (the deep-MOND dispersion formula; OBT inherits it, not OBT-distinctive). The EFE-dominated dwarfs (x_ext>x_acc, e.g. most faint MW satellites, and the famous a-priori Crater II prediction) require the external-field formula and a careful g_ext estimate (scatter 0.51 dex with my crude prefactor) -- a more model-dependent extension, deliberately kept OUT of the clean claim. The certain, computed result is the zero-parameter sigma(M_bar) match for the isolated deep-MOND dwarfs."
+          }
+        ]
       }
     ],
     "errors": [
@@ -1096,6 +1146,21 @@
       "t": "date-unset",
       "promoted_to_card": "cf70d437",
       "detail": "The WHY is the ABSENCE of per-satellite dark-matter halos. Empirically (computed by us on 2 independent hosts from public catalogs): (1) the MW classical satellites (M_V<-8, all-sky, McConnachie 2012) form a thin plane, PCA c/a=0.18, thickness 21 kpc, isotropic Monte-Carlo p=0.0008; (2) the Centaurus A satellites (Karachentsev UNGC, MD=NGC5128, TRGB distances+HRV) KINEMATICALLY co-rotate -- best-axis Spearman=-0.77 (p=0.001), axis-reoptimized permutation p=0.02, jackknife-robust (drop-1 |r|=0.62-0.79), 13/15 co-rotating, reproducing Muller 2018 (Science). Both refute the LambdaCDM expectation that satellites are independently-accreted DM subhalos arriving from random directions (-> spatially isotropic AND kinematically incoherent). The mechanism that makes phase-space-correlated planes natural: in OBT/modified-gravity the satellites carry NO individual dark-matter halo, so there is NO Chandrasekhar dynamical friction to drag them in and erase the configuration, and they are naturally born as tidal-dwarf galaxies in a thin, rotating debris plane from a past major encounter (MW-M31; a CenA merger). No friction -> the plane survives; tidal origin -> it is thin and rotation-coherent. This is the established Kroupa-Pawlowski argument; OBT inherits it (MOND-SHARED, not OBT-distinctive). Honest scope: heterogeneous legs -- the MW signal is positional, the CenA signal is kinematic (each host shows the phenomenon via the observable available; MW kinematics need Gaia proper motions, CenA positions alone are marginal). M31's whole-sample positional test was null because the GPoA is a spatial subset (not reproduced here). The certain, computed result is the refutation of LambdaCDM isotropy+incoherence on 2 hosts; the friction-free tidal-dwarf mechanism is the natural modified-gravity explanation."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "c1886bce",
+      "name": "dSph sigma from baryons alone"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "c1886bce",
+      "detail": "player judgement; 4 systems: ['Leo I (isolated, deep-MOND): M_bar=1.1e7, sigma_obs=9.2, sigma_pred=9.6 km/s (d=-0.02 dex)', 'WLM: M_bar=8.2e7, sigma_obs=17.5, sigma_pred=15.9 (d=+0.04)', 'NGC147: M_bar=1.2e8, sigma_obs=16.0, sigma_pred=17.5 (d=-0.04)', 'Andromeda VI: M_bar=5.7e6, sigma_obs=9.4, sigma_pred=8.2 (d=+0.06); + And I, And VII, Leo A, NGC185 — 9 isolated dwarfs, scatter 0.10 dex, 100% within factor 2']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "c1886bce",
+      "detail": "The WHY is that a pressure-supported, baryon-only system in the deep-MOND regime has its velocity dispersion FIXED by its baryonic mass and the acceleration scale a0, with no other parameter. In deep MOND the effective gravity is g=sqrt(g_bar a0); for a self-gravitating isothermal system this yields the closed-form line-of-sight dispersion sigma_los=(4/81 G M_bar a0)^(1/4) (Milgrom 1994; McGaugh-Milgrom 2013) -- independent of radius and of any dark halo. Tested on the Local Group dwarfs (McConnachie 2012 via dsph.parquet), restricted to the clean regime where the dwarf's internal field dominates the external field (x_acc>x_ext) and is deep-MOND (x_acc<1, which excludes Newtonian compacts such as M32): N=9 isolated dwarfs match sigma predicted from M_bar ALONE at median +0.041 dex, scatter 0.103 dex (a factor ~1.27), with 100% inside a factor of 2 and 89% inside a factor of 1.5 -- and ZERO per-dwarf free parameters. This debunks the LambdaCDM requirement that each dSph carries an individually-fitted dark-matter halo with dynamical M/L ranging from ~10 to ~1000: in OBT/MOND a single universal law with no per-object tuning reproduces the dispersions across two decades in baryonic mass (5.7e6 to 1.4e8 Msun). Only outlier: Andromeda XVI (+0.30 dex), a known tidally/measurement-affected case. Honest scope: MOND-SHARED (the deep-MOND dispersion formula; OBT inherits it, not OBT-distinctive). The EFE-dominated dwarfs (x_ext>x_acc, e.g. most faint MW satellites, and the famous a-priori Crater II prediction) require the external-field formula and a careful g_ext estimate (scatter 0.51 dex with my crude prefactor) -- a more model-dependent extension, deliberately kept OUT of the clean claim. The certain, computed result is the zero-parameter sigma(M_bar) match for the isolated deep-MOND dwarfs."
     }
   ]
 }
