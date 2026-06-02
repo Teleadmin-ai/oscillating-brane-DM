@@ -27,6 +27,11 @@
             "t": "date-unset",
             "event": "note",
             "detail": "STATUS: 1 cleanly-computed system (MW), strong. probe satellite_planes (McConnachie 2012 positions, our PCA+isotropic MC): MW all-26 c/a=0.30 p=0.0004; MW classical-12 (M_V<-8, ALL-SKY so not an SDSS-footprint artifact) c/a=0.18 p=0.0008 -> refutes LambdaCDM isotropy. NEEDS a 2nd computed host for monster status. M31: full-sample positions NOT significantly flat (c/a=0.61 p=0.18); the GPoA is a kinematic subset (Ibata 2013, line-of-sight co-rotation) not reproducible from positions alone (have HRV in McConnachie but co-rotation test needs careful non-circular treatment). CenA: literature plane (Muller 2019 rms height 130/semi-major 330 -> c/a~0.39, >99% sig) is REAL but per-satellite TRGB distances scattered across Muller2019 Table3 (~9) + Crnojevic2019 + literature -> not cleanly in hand; refused to build a noisy 9-point plane. To promote: assemble full CenA 3D sample OR do the M31 GPoA kinematic co-rotation test rigorously. MOND-shared (tidal-dwarf planes from past MW-M31 encounter); the computed part is the LambdaCDM-isotropy debunk."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "2nd-system attempt FAILED to reach significance (no card). Probe m31_corotation (our calc from McConnachie HRV+positions): best-axis Pearson(side,v_rel)=+0.32 at PA=30deg, but PERMUTATION p=0.39 (re-optimizing the axis on shuffled velocities), sign-consistency 14/21 -> NOT significant. Reason: the Ibata 2013 GPoA is a SPATIAL SUBSET (15 PAndAS southern in-plane satellites), not all 21 M31 sats; my whole-sample test dilutes the co-rotation, and HRV is line-of-sight only (no proper motions). So I cannot cleanly compute a 2nd host. CANDIDATE stays at 1 clean system (MW, c/a=0.18 p=0.0008, strong). To promote later: (a) replicate Ibata's exact 15-satellite PAndAS in-plane subset, or (b) assemble the full CenA 3D sample (Muller2019 Table3 + Crnojevic2019 TRGB). Discipline: 1 system + a null 2nd-system test = no monster, no card. The MW isotropy-debunk is real but MOND-shared and single-host as computed."
           }
         ]
       }

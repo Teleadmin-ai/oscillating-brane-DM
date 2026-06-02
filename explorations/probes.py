@@ -758,6 +758,103 @@ def satellite_planes(opts):
     )
 
 
+def m31_corotation(opts):
+    """2nd system for the satellite-planes candidate: the M31 GPoA KINEMATIC co-rotation test
+    (Ibata 2013). The M31 satellite plane is seen nearly edge-on from the MW, so a rotating plane
+    shows a velocity-position correlation: satellites on one side of M31's minor axis (in
+    projection) systematically approach, the other side recede, RELATIVE to M31's own velocity.
+    We compute, from McConnachie 2012 (GLON, GLAT, D, HRV), each satellite's line-of-sight
+    velocity relative to M31 and its on-sky position relative to M31's projected minor axis, then
+    test whether the SIGN of the relative velocity correlates with the side (the Ibata co-rotation
+    signature). FACTS only; player judges. Independent 2nd host (kinematic, not positional).
+    """
+    import numpy as np
+
+    base = "/DATA/obt_game_cache/raw/mcconnachie"
+    t1 = open(f"{base}/table1.dat").read().splitlines()
+    t2 = open(f"{base}/table2.dat").read().splitlines()
+    rows = []
+    for a, b in zip(t1, t2):
+        if a[0:4].strip() != "M31":
+            continue
+        name = a[5:34].strip()
+        try:
+            l = float(b[32:37])
+            bb = float(b[38:43])
+            D = float(b[70:74])
+            hrv = float(b[85:91])
+        except ValueError:
+            continue
+        rows.append((name, l, bb, D, hrv))
+    # M31 host
+    host = [r for r in rows if r[0] == "Andromeda"][0]
+    _, lM, bM, DM, vM = host
+    # exclude M31 itself and the two big companions M32/NGC205 (bound, not plane tracers optional-keep)
+    sats = [r for r in rows if r[0] != "Andromeda"]
+
+    def unit(l, b):
+        lr, br = np.radians(l), np.radians(b)
+        return np.array([np.cos(br) * np.cos(lr), np.cos(br) * np.sin(lr), np.sin(br)])
+
+    nM = unit(lM, bM)  # direction to M31
+    zhat = np.array([0, 0, 1.0])
+    east = np.cross(zhat, nM)
+    east /= np.linalg.norm(east)
+    north = np.cross(nM, east)
+    e_off, n_off, vrel = [], [], []
+    for name, l, b, D, hrv in sats:
+        nS = unit(l, b)
+        off = nS - np.dot(nS, nM) * nM  # on-sky tangent offset (rad)
+        e_off.append(np.dot(off, east) * DM)  # kpc
+        n_off.append(np.dot(off, north) * DM)
+        vrel.append(hrv - vM)  # los velocity relative to M31
+    e_off, n_off, vrel = np.array(e_off), np.array(n_off), np.array(vrel)
+    nsat = len(vrel)
+    from scipy.stats import pearsonr
+
+    # co-rotation axis = on-sky PA theta whose side coord s(theta)=cos*east+sin*north best
+    # correlates with v_rel. Choosing theta from data is circular -> calibrate by PERMUTATION:
+    # p = fraction of v_rel shuffles whose OWN best |r| >= the real best |r|.
+    thetas = np.radians(np.arange(0, 180, 2))
+
+    def best_r(v):
+        rs = [
+            abs(pearsonr(np.cos(t) * e_off + np.sin(t) * n_off, v)[0]) for t in thetas
+        ]
+        k = int(np.argmax(rs))
+        return rs[k], thetas[k]
+
+    r_real, t_real = best_r(vrel)
+    rng = np.random.default_rng(20260602)
+    nperm = 2000
+    ge = sum(1 for _ in range(nperm) if best_r(rng.permutation(vrel))[0] >= r_real)
+    p_perm = (ge + 1) / (nperm + 1)
+    s = np.cos(t_real) * e_off + np.sin(t_real) * n_off
+    frac = np.mean(np.sign(s) == np.sign(vrel))
+    print(
+        "[m31_corotation] M31 GPoA kinematic co-rotation test (Ibata 2013), our calc from McConnachie."
+    )
+    print(f"  {nsat} M31 satellites with HRV; v_rel = HRV - vM (vM={vM:.0f} km/s).")
+    print(
+        f"  best-axis Pearson(side, v_rel) = {r_real:+.2f} at on-sky PA={np.degrees(t_real):.0f}deg"
+    )
+    print(
+        f"  permutation p (shuffle v_rel, re-optimize axis) = {p_perm:.4f}  [{nperm} shuffles]"
+    )
+    print(
+        f"  sign-consistency along that axis = {frac:.2f} ({int(round(frac*nsat))}/{nsat})"
+    )
+    print(
+        "  READ: low permutation-p + high sign-consistency = coherent co-rotating/co-moving plane"
+    )
+    print(
+        "  (the Ibata 2013 signature). The permutation guards against the circularity of fitting the"
+    )
+    print(
+        "  axis to the data. Caveat: HRV is heliocentric line-of-sight only (no proper motions)."
+    )
+
+
 def diversity(opts):
     """MONSTER #10 candidate. External theory to debunk: 'LambdaCDM predicts a tight, ~uniform
     inner rotation-curve shape at fixed outer velocity' -> Oman et al. 2015 (the 'diversity of
@@ -2385,6 +2482,7 @@ PROBES = {
     "a0_kges": a0_kges,
     "a0_slacs": a0_slacs,
     "satellite_planes": satellite_planes,
+    "m31_corotation": m31_corotation,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
     "mw_rotation": mw_rotation,
