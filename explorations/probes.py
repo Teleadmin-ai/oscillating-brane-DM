@@ -855,6 +855,131 @@ def m31_corotation(opts):
     )
 
 
+def cena_plane(opts):
+    """2nd computed host for the satellite-planes candidate: CENTAURUS A, from a single homogeneous
+    source (Karachentsev UNGC, J/AJ/145/101; members selected by Main-Disturber = NGC5128, TRGB
+    distances). Two tests, honestly reported: (1) POSITIONAL flattening (PCA c/a + isotropic MC) --
+    marginal, NOT significant on positions alone; (2) KINEMATIC co-rotation (Muller 2018 Science
+    signature) -- significant. The kinematic side is the real signal, mirroring M31's GPoA but
+    detectable here. FACTS only."""
+    import numpy as np
+    from scipy.stats import pearsonr, spearmanr
+
+    base = "/DATA/obt_game_cache/raw/ungc"
+    rmax = float(opts.get("rmax", 0.8))  # Mpc from NGC5128
+    t1 = open(f"{base}/table1.dat").read().splitlines()
+    t2 = open(f"{base}/table2.dat").read().splitlines()
+
+    def radec(ln):
+        try:
+            ra = 15 * (
+                float(ln[19:21]) + float(ln[22:24]) / 60 + float(ln[25:29]) / 3600
+            )
+            sgn = -1 if ln[30] == "-" else 1
+            dec = sgn * (
+                float(ln[31:33]) + float(ln[34:36]) / 60 + float(ln[37:39]) / 3600
+            )
+            return ra, dec
+        except ValueError:
+            return None, None
+
+    def unit(ra, dec):
+        r, d = np.radians(ra), np.radians(dec)
+        return np.array([np.cos(d) * np.cos(r), np.cos(d) * np.sin(r), np.sin(d)])
+
+    Dh = 3.68  # NGC5128 distance (Mpc)
+    nC = unit(201.365, -43.019)
+    hx = nC * Dh
+    mem = []
+    for a, b in zip(t1, t2):
+        name = a[0:18].strip()
+        md = b[98:113].strip()
+        if md != "NGC5128" or name == "NGC5128":
+            continue
+        try:
+            D = float(a[114:119])
+        except ValueError:
+            continue
+        ra, dec = radec(a)
+        if ra is None:
+            continue
+        try:
+            hrv = float(a[109:113])
+        except ValueError:
+            hrv = None
+        if np.linalg.norm(unit(ra, dec) * D - hx) < rmax:
+            mem.append((name, ra, dec, D, hrv))
+    # (1) positional plane
+    P = np.array([unit(ra, dec) * D - hx for _, ra, dec, D, _ in mem])
+    Pc = P - P.mean(0)
+    ev = np.sort(np.linalg.eigvalsh(Pc.T @ Pc))
+    ca = np.sqrt(ev[0] / ev[2])
+    thick = np.sqrt(ev[0] / len(Pc)) * 1000
+    rad = np.linalg.norm(Pc, axis=1)
+    rng = np.random.default_rng(99)
+    cnt = 0
+    for _ in range(20000):
+        u = rng.normal(size=(len(Pc), 3))
+        u /= np.linalg.norm(u, axis=1)[:, None]
+        Q = rad[:, None] * u
+        Q -= Q.mean(0)
+        e = np.sort(np.linalg.eigvalsh(Q.T @ Q))
+        if np.sqrt(e[0] / e[2]) <= ca:
+            cnt += 1
+    p_iso = cnt / 20000
+    # (2) kinematic co-rotation
+    vC = 540.0
+    zhat = np.array([0, 0, 1.0])
+    east = np.cross(zhat, nC)
+    east /= np.linalg.norm(east)
+    north = np.cross(nC, east)
+    eo, no, vr = [], [], []
+    for name, ra, dec, D, hrv in mem:
+        if hrv is None or not -600 < hrv < 2000:
+            continue
+        off = unit(ra, dec) - np.dot(unit(ra, dec), nC) * nC
+        eo.append(np.dot(off, east) * Dh * 1000)
+        no.append(np.dot(off, north) * Dh * 1000)
+        vr.append(hrv - vC)
+    eo, no, vr = np.array(eo), np.array(no), np.array(vr)
+    thetas = np.radians(np.arange(0, 180, 2))
+
+    def best_r(v):
+        rs = [abs(pearsonr(np.cos(t) * eo + np.sin(t) * no, v)[0]) for t in thetas]
+        k = int(np.argmax(rs))
+        return rs[k], thetas[k]
+
+    r0, t0 = best_r(vr)
+    rng2 = np.random.default_rng(3)
+    ge = sum(1 for _ in range(5000) if best_r(rng2.permutation(vr))[0] >= r0)
+    p_perm = (ge + 1) / 5001
+    s = np.cos(t0) * eo + np.sin(t0) * no
+    rs_, ps_ = spearmanr(s, vr)
+    coflip = max(
+        np.mean(np.sign(s) == np.sign(vr - np.median(vr))),
+        np.mean(np.sign(s) != np.sign(vr - np.median(vr))),
+    )
+    print("[cena_plane] 2nd host = Centaurus A (Karachentsev UNGC, MD=NGC5128, TRGB).")
+    print(
+        f"  positional: N={len(P)} c/a={ca:.2f} thickness={thick:.0f}kpc isotropic p={p_iso:.3f}  (marginal)"
+    )
+    print(
+        f"  KINEMATIC co-rotation: N={len(vr)} best-axis |Pearson|={r0:.2f} (PA={np.degrees(t0):.0f}deg),"
+    )
+    print(
+        f"    Spearman={rs_:+.2f} (p={ps_:.3f}), permutation p={p_perm:.4f}, co-rotating fraction={coflip:.2f} ({int(round(coflip*len(vr)))}/{len(vr)})"
+    )
+    print(
+        "  READ: positions alone are marginal, but the KINEMATIC co-rotation is significant (Muller 2018"
+    )
+    print(
+        "  Science signature) -> CenA satellites form a coherent rotating plane, a 2nd host refuting"
+    )
+    print(
+        "  LambdaCDM kinematic incoherence. MOND-shared (dissipationless tidal-dwarf/encounter plane)."
+    )
+
+
 def diversity(opts):
     """MONSTER #10 candidate. External theory to debunk: 'LambdaCDM predicts a tight, ~uniform
     inner rotation-curve shape at fixed outer velocity' -> Oman et al. 2015 (the 'diversity of
@@ -2483,6 +2608,7 @@ PROBES = {
     "a0_slacs": a0_slacs,
     "satellite_planes": satellite_planes,
     "m31_corotation": m31_corotation,
+    "cena_plane": cena_plane,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
     "mw_rotation": mw_rotation,

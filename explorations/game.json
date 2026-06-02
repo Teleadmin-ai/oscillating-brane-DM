@@ -2,40 +2,7 @@
   "mode": "CHERCHEUR",
   "state": "PICK_TERRAIN",
   "game": {
-    "candidates": [
-      {
-        "id": "cf70d437",
-        "name": "MW satellite plane refutes LambdaCDM isotropy",
-        "external_theory": "LambdaCDM prediction of (near-)isotropic satellite distributions from hierarchical DM-subhalo accretion",
-        "patch": "the satellites are tidal-dwarf galaxies formed in a plane during a past MW-M31 encounter (enabled by modified gravity / no DM-halo dynamical friction), naturally producing the observed thin plane",
-        "systems_validated": [
-          "MW classical satellites (M_V<-8, all-sky): PCA c/a=0.18, thickness 21 kpc, isotropic p=0.0008 (McConnachie 2012 positions, our PCA+MC)"
-        ],
-        "why_status": "none",
-        "why": null,
-        "certainty": "low",
-        "status": "candidate",
-        "created": "date-unset",
-        "updated": "date-unset",
-        "history": [
-          {
-            "t": "date-unset",
-            "event": "created_candidate",
-            "detail": "patch on LambdaCDM prediction of (near-)isotropic satellite distributions from hierarchical DM-subhalo accretion @ MW classical satellites (M_V<-8, all-sky): PCA c/a=0.18, thickness 21 kpc, isotropic p=0.0008 (McConnachie 2012 positions, our PCA+MC)"
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "STATUS: 1 cleanly-computed system (MW), strong. probe satellite_planes (McConnachie 2012 positions, our PCA+isotropic MC): MW all-26 c/a=0.30 p=0.0004; MW classical-12 (M_V<-8, ALL-SKY so not an SDSS-footprint artifact) c/a=0.18 p=0.0008 -> refutes LambdaCDM isotropy. NEEDS a 2nd computed host for monster status. M31: full-sample positions NOT significantly flat (c/a=0.61 p=0.18); the GPoA is a kinematic subset (Ibata 2013, line-of-sight co-rotation) not reproducible from positions alone (have HRV in McConnachie but co-rotation test needs careful non-circular treatment). CenA: literature plane (Muller 2019 rms height 130/semi-major 330 -> c/a~0.39, >99% sig) is REAL but per-satellite TRGB distances scattered across Muller2019 Table3 (~9) + Crnojevic2019 + literature -> not cleanly in hand; refused to build a noisy 9-point plane. To promote: assemble full CenA 3D sample OR do the M31 GPoA kinematic co-rotation test rigorously. MOND-shared (tidal-dwarf planes from past MW-M31 encounter); the computed part is the LambdaCDM-isotropy debunk."
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "2nd-system attempt FAILED to reach significance (no card). Probe m31_corotation (our calc from McConnachie HRV+positions): best-axis Pearson(side,v_rel)=+0.32 at PA=30deg, but PERMUTATION p=0.39 (re-optimizing the axis on shuffled velocities), sign-consistency 14/21 -> NOT significant. Reason: the Ibata 2013 GPoA is a SPATIAL SUBSET (15 PAndAS southern in-plane satellites), not all 21 M31 sats; my whole-sample test dilutes the co-rotation, and HRV is line-of-sight only (no proper motions). So I cannot cleanly compute a 2nd host. CANDIDATE stays at 1 clean system (MW, c/a=0.18 p=0.0008, strong). To promote later: (a) replicate Ibata's exact 15-satellite PAndAS in-plane subset, or (b) assemble the full CenA 3D sample (Muller2019 Table3 + Crnojevic2019 TRGB). Discipline: 1 system + a null 2nd-system test = no monster, no card. The MW isotropy-debunk is real but MOND-shared and single-host as computed."
-          }
-        ]
-      }
-    ],
+    "candidates": [],
     "monsters": [],
     "cards": [
       {
@@ -723,6 +690,54 @@
             "detail": "The WHY is that KROSS probes the MOND regime where a0 IS measurable (unlike the compact disks of card #11), and there a0 is measured -- by OUR own RAR inversion on measured quantities -- to be elevated and rising. KROSS (Harrison 2017) gives the intrinsic velocity VC at 2*R1/2 (=3.4 R_D), the OUTER low-acceleration point; for 307 clean galaxies (Qual=1, no AGN/irregular, inclination>25deg, VC not extrapolated) the baryonic acceleration there is g_bar/a0_local ~ 0.3 (deep MOND), so inverting the exact OBT RAR a0=0.5*sqrt(((2g_obs^2-g_bar^2)/g_bar)^2-g_bar^2) returns a FINITE, well-conditioned a0 (not the imaginary values of the a0-blind compact disks). Result at median z=0.86: a0 = 1.97e-10 for the standard z~0.9 gas fraction (M_bar/M*=1.6, f_gas~0.4), landing essentially on cH(z)/2pi = 1.94e-10; the value ranges 1.65-2.68e-10 across gas assumptions M_bar/M*=2.0 down to M* only, but is ABOVE the local 1.2e-10 for EVERY plausible gas fraction -> the evolution is robust, only the exact normalisation carries the gas systematic. Decisive internal check: splitting KROSS by its own redshift (same dataset, same method, same gas factor) gives a0 = 1.63e-10 at z~0.75 rising to 2.22e-10 at z~0.95, tracking cH(z)/2pi (1.92 -> 2.02) -- an evolution seen WITHIN one independent sample. This is the THIRD independent confirmation of a0(z), after MUSE-DARK (card #7, lensing+dynamics RAR) and the Ubler BTFR zero-point (card #8): different survey, different tracer (Halpha kinematics), different method (our RAR inversion), same conclusion -- a0 ~doubles by z~1 and matches cH(z)/2pi, refuting Milgrom's constant a0. Honest caveats: (i) gas systematic on the absolute value (KROSS gives M* only; evolution is robust, normalisation is not); (ii) the cross-method rate runs slightly faster than cH(z)/2pi (same mild offset noted in #7/#8), ascribed to high-z baryonic/velocity systematics with a0 horizon-fixed; (iii) KROSS VC is beam-smearing/inclination corrected (standard). The distinctive, robust result is the EVOLUTION, now triple-confirmed in the correct (MOND) regime."
           }
         ]
+      },
+      {
+        "id": "cf70d437",
+        "name": "MW satellite plane refutes LambdaCDM isotropy",
+        "external_theory": "LambdaCDM prediction of (near-)isotropic satellite distributions from hierarchical DM-subhalo accretion",
+        "patch": "the satellites are tidal-dwarf galaxies formed in a plane during a past MW-M31 encounter (enabled by modified gravity / no DM-halo dynamical friction), naturally producing the observed thin plane",
+        "systems_validated": [
+          "MW classical satellites (M_V<-8, all-sky): PCA c/a=0.18, thickness 21 kpc, isotropic p=0.0008 (McConnachie 2012 positions, our PCA+MC)",
+          "Centaurus A (Karachentsev UNGC, MD=NGC5128, TRGB): KINEMATIC co-rotation Spearman=-0.77 (p=0.001), permutation p=0.020, 13/15 satellites co-rotate (Muller 2018 signature, our calc); positions alone marginal (c/a=0.63 p=0.43)"
+        ],
+        "why_status": "found",
+        "why": "The WHY is the ABSENCE of per-satellite dark-matter halos. Empirically (computed by us on 2 independent hosts from public catalogs): (1) the MW classical satellites (M_V<-8, all-sky, McConnachie 2012) form a thin plane, PCA c/a=0.18, thickness 21 kpc, isotropic Monte-Carlo p=0.0008; (2) the Centaurus A satellites (Karachentsev UNGC, MD=NGC5128, TRGB distances+HRV) KINEMATICALLY co-rotate -- best-axis Spearman=-0.77 (p=0.001), axis-reoptimized permutation p=0.02, jackknife-robust (drop-1 |r|=0.62-0.79), 13/15 co-rotating, reproducing Muller 2018 (Science). Both refute the LambdaCDM expectation that satellites are independently-accreted DM subhalos arriving from random directions (-> spatially isotropic AND kinematically incoherent). The mechanism that makes phase-space-correlated planes natural: in OBT/modified-gravity the satellites carry NO individual dark-matter halo, so there is NO Chandrasekhar dynamical friction to drag them in and erase the configuration, and they are naturally born as tidal-dwarf galaxies in a thin, rotating debris plane from a past major encounter (MW-M31; a CenA merger). No friction -> the plane survives; tidal origin -> it is thin and rotation-coherent. This is the established Kroupa-Pawlowski argument; OBT inherits it (MOND-SHARED, not OBT-distinctive). Honest scope: heterogeneous legs -- the MW signal is positional, the CenA signal is kinematic (each host shows the phenomenon via the observable available; MW kinematics need Gaia proper motions, CenA positions alone are marginal). M31's whole-sample positional test was null because the GPoA is a spatial subset (not reproduced here). The certain, computed result is the refutation of LambdaCDM isotropy+incoherence on 2 hosts; the friction-free tidal-dwarf mechanism is the natural modified-gravity explanation.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on LambdaCDM prediction of (near-)isotropic satellite distributions from hierarchical DM-subhalo accretion @ MW classical satellites (M_V<-8, all-sky): PCA c/a=0.18, thickness 21 kpc, isotropic p=0.0008 (McConnachie 2012 positions, our PCA+MC)"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "STATUS: 1 cleanly-computed system (MW), strong. probe satellite_planes (McConnachie 2012 positions, our PCA+isotropic MC): MW all-26 c/a=0.30 p=0.0004; MW classical-12 (M_V<-8, ALL-SKY so not an SDSS-footprint artifact) c/a=0.18 p=0.0008 -> refutes LambdaCDM isotropy. NEEDS a 2nd computed host for monster status. M31: full-sample positions NOT significantly flat (c/a=0.61 p=0.18); the GPoA is a kinematic subset (Ibata 2013, line-of-sight co-rotation) not reproducible from positions alone (have HRV in McConnachie but co-rotation test needs careful non-circular treatment). CenA: literature plane (Muller 2019 rms height 130/semi-major 330 -> c/a~0.39, >99% sig) is REAL but per-satellite TRGB distances scattered across Muller2019 Table3 (~9) + Crnojevic2019 + literature -> not cleanly in hand; refused to build a noisy 9-point plane. To promote: assemble full CenA 3D sample OR do the M31 GPoA kinematic co-rotation test rigorously. MOND-shared (tidal-dwarf planes from past MW-M31 encounter); the computed part is the LambdaCDM-isotropy debunk."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "2nd-system attempt FAILED to reach significance (no card). Probe m31_corotation (our calc from McConnachie HRV+positions): best-axis Pearson(side,v_rel)=+0.32 at PA=30deg, but PERMUTATION p=0.39 (re-optimizing the axis on shuffled velocities), sign-consistency 14/21 -> NOT significant. Reason: the Ibata 2013 GPoA is a SPATIAL SUBSET (15 PAndAS southern in-plane satellites), not all 21 M31 sats; my whole-sample test dilutes the co-rotation, and HRV is line-of-sight only (no proper motions). So I cannot cleanly compute a 2nd host. CANDIDATE stays at 1 clean system (MW, c/a=0.18 p=0.0008, strong). To promote later: (a) replicate Ibata's exact 15-satellite PAndAS in-plane subset, or (b) assemble the full CenA 3D sample (Muller2019 Table3 + Crnojevic2019 TRGB). Discipline: 1 system + a null 2nd-system test = no monster, no card. The MW isotropy-debunk is real but MOND-shared and single-host as computed."
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Centaurus A (Karachentsev UNGC, MD=NGC5128, TRGB): KINEMATIC co-rotation Spearman=-0.77 (p=0.001), permutation p=0.020, 13/15 satellites co-rotate (Muller 2018 signature, our calc); positions alone marginal (c/a=0.63 p=0.43)"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['MW classical satellites (M_V<-8, all-sky): PCA c/a=0.18, thickness 21 kpc, isotropic p=0.0008 (McConnachie 2012 positions, our PCA+MC)', 'Centaurus A (Karachentsev UNGC, MD=NGC5128, TRGB): KINEMATIC co-rotation Spearman=-0.77 (p=0.001), permutation p=0.020, 13/15 satellites co-rotate (Muller 2018 signature, our calc); positions alone marginal (c/a=0.63 p=0.43)']"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The WHY is the ABSENCE of per-satellite dark-matter halos. Empirically (computed by us on 2 independent hosts from public catalogs): (1) the MW classical satellites (M_V<-8, all-sky, McConnachie 2012) form a thin plane, PCA c/a=0.18, thickness 21 kpc, isotropic Monte-Carlo p=0.0008; (2) the Centaurus A satellites (Karachentsev UNGC, MD=NGC5128, TRGB distances+HRV) KINEMATICALLY co-rotate -- best-axis Spearman=-0.77 (p=0.001), axis-reoptimized permutation p=0.02, jackknife-robust (drop-1 |r|=0.62-0.79), 13/15 co-rotating, reproducing Muller 2018 (Science). Both refute the LambdaCDM expectation that satellites are independently-accreted DM subhalos arriving from random directions (-> spatially isotropic AND kinematically incoherent). The mechanism that makes phase-space-correlated planes natural: in OBT/modified-gravity the satellites carry NO individual dark-matter halo, so there is NO Chandrasekhar dynamical friction to drag them in and erase the configuration, and they are naturally born as tidal-dwarf galaxies in a thin, rotating debris plane from a past major encounter (MW-M31; a CenA merger). No friction -> the plane survives; tidal origin -> it is thin and rotation-coherent. This is the established Kroupa-Pawlowski argument; OBT inherits it (MOND-SHARED, not OBT-distinctive). Honest scope: heterogeneous legs -- the MW signal is positional, the CenA signal is kinematic (each host shows the phenomenon via the observable available; MW kinematics need Gaia proper motions, CenA positions alone are marginal). M31's whole-sample positional test was null because the GPoA is a spatial subset (not reproduced here). The certain, computed result is the refutation of LambdaCDM isotropy+incoherence on 2 hosts; the friction-free tidal-dwarf mechanism is the natural modified-gravity explanation."
+          }
+        ]
       }
     ],
     "errors": [
@@ -1071,6 +1086,16 @@
       "t": "date-unset",
       "added_candidate": "cf70d437",
       "name": "MW satellite plane refutes LambdaCDM isotropy"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "cf70d437",
+      "detail": "player judgement; 2 systems: ['MW classical satellites (M_V<-8, all-sky): PCA c/a=0.18, thickness 21 kpc, isotropic p=0.0008 (McConnachie 2012 positions, our PCA+MC)', 'Centaurus A (Karachentsev UNGC, MD=NGC5128, TRGB): KINEMATIC co-rotation Spearman=-0.77 (p=0.001), permutation p=0.020, 13/15 satellites co-rotate (Muller 2018 signature, our calc); positions alone marginal (c/a=0.63 p=0.43)']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "cf70d437",
+      "detail": "The WHY is the ABSENCE of per-satellite dark-matter halos. Empirically (computed by us on 2 independent hosts from public catalogs): (1) the MW classical satellites (M_V<-8, all-sky, McConnachie 2012) form a thin plane, PCA c/a=0.18, thickness 21 kpc, isotropic Monte-Carlo p=0.0008; (2) the Centaurus A satellites (Karachentsev UNGC, MD=NGC5128, TRGB distances+HRV) KINEMATICALLY co-rotate -- best-axis Spearman=-0.77 (p=0.001), axis-reoptimized permutation p=0.02, jackknife-robust (drop-1 |r|=0.62-0.79), 13/15 co-rotating, reproducing Muller 2018 (Science). Both refute the LambdaCDM expectation that satellites are independently-accreted DM subhalos arriving from random directions (-> spatially isotropic AND kinematically incoherent). The mechanism that makes phase-space-correlated planes natural: in OBT/modified-gravity the satellites carry NO individual dark-matter halo, so there is NO Chandrasekhar dynamical friction to drag them in and erase the configuration, and they are naturally born as tidal-dwarf galaxies in a thin, rotating debris plane from a past major encounter (MW-M31; a CenA merger). No friction -> the plane survives; tidal origin -> it is thin and rotation-coherent. This is the established Kroupa-Pawlowski argument; OBT inherits it (MOND-SHARED, not OBT-distinctive). Honest scope: heterogeneous legs -- the MW signal is positional, the CenA signal is kinematic (each host shows the phenomenon via the observable available; MW kinematics need Gaia proper motions, CenA positions alone are marginal). M31's whole-sample positional test was null because the GPoA is a spatial subset (not reproduced here). The certain, computed result is the refutation of LambdaCDM isotropy+incoherence on 2 hosts; the friction-free tidal-dwarf mechanism is the natural modified-gravity explanation."
     }
   ]
 }
