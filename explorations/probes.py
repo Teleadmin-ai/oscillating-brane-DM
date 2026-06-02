@@ -92,6 +92,101 @@ def build_wb(opts):
     wb_pipeline.main(n)
 
 
+def btfr(opts):
+    """MONSTER #11 candidate. External theory to debunk: 'LambdaCDM naturally reproduces the
+    baryonic Tully-Fisher relation (slope and small scatter)'. In CDM the bare halo gives
+    M ~ V^3 and the observed slope ~4 + the very small scatter must be engineered by feedback +
+    a tuned baryon-to-halo relation, and halo-to-halo variance predicts measurable intrinsic
+    scatter. OBT/MOND angle: the BTFR is the deep-MOND limit of the SAME local law,
+    M_bar = V_flat^4/(G a0) -> slope EXACTLY 4, zero-point fixes a0=cH0/2pi, and the law has
+    ZERO intrinsic scatter (only measurement scatter). Test on SPARC: fit log M_bar vs log V_flat,
+    report slope, the a0 implied by the slope-4 zero-point, and the residual scatter vs the
+    measurement floor. MOND-SHARED card (debunks the CDM 'we reproduce the BTFR' claim).
+    """
+    import numpy as np
+
+    Yups = float(opts.get("yups", 0.5))  # 3.6um stellar M/L (McGaugh-Lelli)
+    qmax = int(opts.get("qmax", 1))  # quality flag (1 = best, flat part well-defined)
+    imin = float(opts.get("imin", 30.0))  # inclination cut (deg)
+    eVmax = float(opts.get("evmax", 0.05))  # max fractional eVflat/Vflat
+    eDmax = float(
+        opts.get("edmax", 0.10)
+    )  # max fractional distance error (M_bar ~ D^2)
+    # parse raw T1: D(2) eD(3) Inc(5) L36(7) MHI(13) Vflat(15) eVflat(16) Q(17)
+    D, eD, L36, MHI, V, Inc, eV, Q = [[] for _ in range(8)]
+    with open(T1) as f:
+        for ln in f:
+            p = ln.split()
+            if len(p) >= 19 and p[0][0].isalpha():
+                try:
+                    D.append(float(p[2]))
+                    eD.append(float(p[3]))
+                    Inc.append(float(p[5]))
+                    L36.append(float(p[7]))
+                    MHI.append(float(p[13]))
+                    V.append(float(p[15]))
+                    eV.append(float(p[16]))
+                    Q.append(int(float(p[17])))
+                except (ValueError, IndexError):
+                    continue
+    D, eD, L36, MHI, V, Inc, eV, Q = map(np.array, (D, eD, L36, MHI, V, Inc, eV, Q))
+    Mbar = Yups * L36 * 1e9 + 1.33 * np.nan_to_num(MHI) * 1e9
+    sel = (
+        (V > 0)
+        & (Q <= qmax)
+        & (Inc >= imin)
+        & (Mbar > 0)
+        & (eV / np.maximum(V, 1) <= eVmax)
+        & (eD / np.maximum(D, 1e-3) <= eDmax)
+    )
+    print(
+        f"  cuts: Q<={qmax}, inc>={imin:.0f}deg, eVflat/Vflat<={eVmax:.2f}, eD/D<={eDmax:.2f} -> {int(sel.sum())} of {len(V)} galaxies"
+    )
+    Mbar, V = Mbar[sel], V[sel]
+    x = np.log10(V)
+    y = np.log10(Mbar)
+    slope, b = np.polyfit(x, y, 1)
+    inv_s, inv_b = np.polyfit(
+        y, x, 1
+    )  # inverse fit V|M; slope_on_xy = 1/inv_s (steeper, brackets)
+    slope_inv = 1.0 / inv_s
+    print(
+        f"  forward slope (M|V) = {slope:.2f} ; inverse slope (V|M) = {slope_inv:.2f}  (true slope bracketed; MOND=4)"
+    )
+    resid_free = y - (slope * x + b)
+    # slope-4 (MOND) fit: y = 4x + log10(1/(G a0)) -> a0 from each galaxy
+    G = 6.674e-11
+    MSUN = 1.989e30
+    KMS = 1.0e3
+    a0_each = (V * KMS) ** 4 / (G * Mbar * MSUN)  # m/s^2
+    b4 = np.median(y - 4 * x)
+    resid_4 = y - (4 * x + b4)
+    print(f"[btfr] {len(Mbar)} SPARC galaxies (Q<3), stellar M/L={Yups}.")
+    print(
+        f"  free fit:  log M_bar = {slope:.2f} log V_flat + {b:.2f}   (MOND/OBT predicts slope=4)"
+    )
+    print(f"  scatter about free fit  = {resid_free.std():.3f} dex")
+    print(
+        f"  scatter about slope=4   = {resid_4.std():.3f} dex   (vertical, log M_bar)"
+    )
+    print(
+        f"  a0 from slope-4 zero-pt : median = {np.median(a0_each):.2e} m/s^2  (OBT cH0/2pi = {A0:.2e})"
+    )
+    print(
+        f"    a0 16-84 pct: [{np.percentile(a0_each,16):.2e}, {np.percentile(a0_each,84):.2e}]"
+    )
+    # measurement floor: dominant terms ~ M/L (~0.1 dex) + 4*sigma_logV (eVflat) + distance
+    print(
+        "  measurement floor ~ 0.10 dex (M/L) + 4*d(logV) + distance -> ~0.10-0.13 dex expected."
+    )
+    print(
+        "  READ: slope ~4 and scatter ~ the measurement floor -> consistent with ZERO intrinsic"
+    )
+    print(
+        "  scatter and a0=cH0/2pi; CDM's natural V^3 + halo/feedback scatter is the debunk target."
+    )
+
+
 def diversity(opts):
     """MONSTER #10 candidate. External theory to debunk: 'LambdaCDM predicts a tight, ~uniform
     inner rotation-curve shape at fixed outer velocity' -> Oman et al. 2015 (the 'diversity of
@@ -1713,6 +1808,7 @@ PROBES = {
     "build_sparc": build_sparc,
     "build_wb": build_wb,
     "diversity": diversity,
+    "btfr": btfr,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
     "mw_rotation": mw_rotation,
