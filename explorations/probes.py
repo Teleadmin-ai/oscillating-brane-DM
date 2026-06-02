@@ -495,6 +495,82 @@ def a0_kross(opts):
     )
 
 
+def a0_kges(opts):
+    """4th-leg ATTEMPT for a0(z) — KGES (Tiley 2021, KMOS Galaxy Evolution Survey, z~1.2-1.8).
+    HONEST NEGATIVE: NOT a clean leg. KGES only tabulates the INNER velocity v2.2c at 1.31*R50
+    (rising part of the rotation curve), not an outer/flat point like KROSS (VC at 2*R1/2), so
+    g_obs is underestimated -> a0 biased LOW; AND at z~1.5 the gas fraction is large/uncertain
+    (f_gas~0.5-0.7, Mbar/M*~2-2.5), which dominates the inverted a0. Result: a0 ranges from ~local
+    (realistic gas) to 2.0e-10 (M*-only upper bound), BELOW cH(z=1.5)/2pi=2.8e-10 -> inconclusive,
+    systematics-dominated. In-game this 'low a0' is plausibly the inner-velocity + gas systematic
+    (external), but UNPROVABLE without the outer velocity KGES lacks -> a MONSTER, not a card. Kept
+    as tooling so the negative is reproducible; do NOT cite as confirmation."""
+    import numpy as np
+
+    G = 6.674e-11
+    MSUN = 1.989e30
+    KPC = 3.0856775814913673e19
+    KMS = 1.0e3
+    Om = 0.3
+    a0L = 1.2e-10
+
+    def aCH(z):
+        return a0L * np.sqrt(Om * (1 + z) ** 3 + (1 - Om))
+
+    def inv(gb, go):
+        inr = ((2 * go**2 - gb**2) / gb) ** 2 - gb**2
+        return 0.5 * np.sqrt(inr) if inr > 0 else np.nan
+
+    rows = []
+    for ln in open("/DATA/obt_game_cache/raw/kges/tablea1.dat"):
+        try:
+            z = float(ln[32:45])
+            AGN = int(ln[50:51])
+            Kin = int(ln[52:53])
+            Ms = float(ln[54:62])
+            R50 = float(ln[63:76])
+            v22 = float(ln[95:112])
+        except (ValueError, IndexError):
+            continue
+        if Kin == 1 and AGN == 0 and Ms > 0 and R50 > 0.3 and v22 > 20:
+            rows.append((z, Ms, R50, v22))
+    print(
+        f"[a0_kges] 4th-leg ATTEMPT (HONEST NEGATIVE): KGES z~1.5, {len(rows)} clean (Kin=1,no AGN)."
+    )
+    print(
+        "  CAVEAT: only INNER velocity (v2.2c at 1.31*R50) available -> a0 biased LOW; large z~1.5 gas."
+    )
+    print(
+        f"  {'gas assumption':34s}{'N(MOND)':>8s}{'med z':>7s}{'med a0':>9s}{'cH/2pi':>9s}"
+    )
+    for fg, lab in [
+        (0.0, "M* only (upper bound)"),
+        (1.0, "Mbar/M*=2.0 (f_gas~0.5)"),
+        (1.5, "Mbar/M*=2.5 (gas-rich)"),
+    ]:
+        a, zz = [], []
+        for z, Ms, R50, v22 in rows:
+            R = 1.31 * R50 * KPC
+            go = (v22 * KMS) ** 2 / R
+            gb = G * Ms * (1 + fg) * MSUN / R**2
+            if gb < a0L:
+                x = inv(gb, go)
+                if x == x and 0 < x < 1e-8:
+                    a.append(x)
+                    zz.append(z)
+        if a:
+            a, zz = np.array(a), np.array(zz)
+            print(
+                f"  {lab:34s}{len(a):8d}{np.median(zz):7.2f}{np.median(a):9.2e}{aCH(np.median(zz)):9.2e}"
+            )
+    print(
+        "  READ: a0 ~local-to-2.0e-10, BELOW cH(z=1.5)/2pi=2.8 -> inconclusive, systematics-dominated"
+    )
+    print(
+        "  (inner-velocity bias + uncertain high-z gas). NOT a clean 4th leg; recorded as a monster."
+    )
+
+
 def diversity(opts):
     """MONSTER #10 candidate. External theory to debunk: 'LambdaCDM predicts a tight, ~uniform
     inner rotation-curve shape at fixed outer velocity' -> Oman et al. 2015 (the 'diversity of
@@ -2119,6 +2195,7 @@ PROBES = {
     "btfr": btfr,
     "a0_regime": a0_regime,
     "a0_kross": a0_kross,
+    "a0_kges": a0_kges,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
     "mw_rotation": mw_rotation,
