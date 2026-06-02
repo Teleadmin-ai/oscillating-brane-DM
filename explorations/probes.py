@@ -647,6 +647,117 @@ def a0_slacs(opts):
     )
 
 
+def satellite_planes(opts):
+    """MONSTER candidate (NEW TERRAIN, outside galaxy kinematics). External theory to debunk:
+    'LambdaCDM predicts ~ISOTROPIC satellite distributions' (random hierarchical accretion of
+    DM-subhalos). Observed: the MW and M31 satellites lie in THIN, flattened planes (Kroupa,
+    Pawlowski, Ibata 2013). In OBT/modified-gravity these are naturally tidal-dwarf galaxies from
+    a past MW-M31 encounter (no DM-halo dynamical friction). We COMPUTE the flattening ourselves
+    from measured positions (McConnachie 2012: GLON, GLAT, heliocentric D) by PCA, and the
+    probability of such flattening under an ISOTROPIC null by Monte-Carlo (fixed radii, random
+    directions). Reports c/a (short/long axis), rms plane thickness, and the isotropy p-value for
+    MW (all + classical M_V<-8) and M31. FACTS only; player judges."""
+    import numpy as np
+
+    base = "/DATA/obt_game_cache/raw/mcconnachie"
+    # match table1 (SubG,Name) + table2 (GLON,GLAT,D) + table3 (VMag) by line index (all 102, same order)
+    t1 = open(f"{base}/table1.dat").read().splitlines()
+    t2 = open(f"{base}/table2.dat").read().splitlines()
+    t3 = open(f"{base}/table3.dat").read().splitlines()
+    gal = []
+    for a, b, c in zip(t1, t2, t3):
+        sub = a[0:4].strip()
+        try:
+            l = float(b[32:37])
+            bb = float(b[38:43])
+            D = float(b[70:74])
+        except ValueError:
+            continue
+        try:
+            MV = float(c[110:115])
+        except ValueError:
+            MV = np.nan
+        gal.append((sub, l, bb, D, MV))
+    Rsun = 8.2
+
+    def helio_xyz(l, b, D):
+        lr, br = np.radians(l), np.radians(b)
+        return np.array(
+            [D * np.cos(br) * np.cos(lr), D * np.cos(br) * np.sin(lr), D * np.sin(br)]
+        )
+
+    # build host-centric position sets
+    M31 = [g for g in gal if g[0] == "M31" and g[3] > 0]
+    # M31 itself is the first M31-subgroup entry at D~785; find the Andromeda host (max-luminosity / smallest D(M31))
+    sun = np.array([-Rsun, 0.0, 0.0])
+    mw_pts, mw_MV = [], []
+    for sub, l, b, D, MV in gal:
+        if (
+            sub == "MW" and 10 < D < 300
+        ):  # exclude the MW host (D~0) and distant interlopers
+            mw_pts.append(sun + helio_xyz(l, b, D))
+            mw_MV.append(MV)
+    mw_pts = np.array(mw_pts)
+    mw_MV = np.array(mw_MV)
+    # M31-centric: subtract M31's heliocentric position (Andromeda: l=121.2,b=-21.6,D=785)
+    m31_helio = helio_xyz(121.2, -21.6, 785.0)
+    m31_pts = []
+    for sub, l, b, D, MV in gal:
+        if sub == "M31" and D > 400:
+            p = helio_xyz(l, b, D) - m31_helio
+            if 10 < np.linalg.norm(p) < 400:
+                m31_pts.append(p)
+    m31_pts = np.array(m31_pts)
+
+    def plane_stats(P, ntrial=20000, seed_off=0):
+        P = P - P.mean(axis=0)
+        evals = np.sort(
+            np.linalg.eigvalsh(P.T @ P)
+        )  # ascending: lambda_min .. lambda_max
+        ca = np.sqrt(evals[0] / evals[2])  # short/long axis ratio
+        thick = np.sqrt(
+            evals[0] / len(P)
+        )  # rms perpendicular distance to best plane (kpc)
+        # isotropic MC at fixed radii, random directions
+        radii = np.linalg.norm(P, axis=1)
+        rng = np.random.default_rng(12345 + seed_off)
+        cnt = 0
+        for _ in range(ntrial):
+            u = rng.normal(size=(len(P), 3))
+            u /= np.linalg.norm(u, axis=1)[:, None]
+            Q = radii[:, None] * u
+            Q = Q - Q.mean(axis=0)
+            ev = np.sort(np.linalg.eigvalsh(Q.T @ Q))
+            if np.sqrt(ev[0] / ev[2]) <= ca:
+                cnt += 1
+        return ca, thick, cnt / ntrial, len(P)
+
+    print(
+        "[satellite_planes] NEW TERRAIN: debunk 'LambdaCDM predicts isotropic satellites'."
+    )
+    print(
+        "  PCA flattening of measured positions (McConnachie 2012) vs isotropic Monte-Carlo null."
+    )
+    print(
+        f"  {'system':22s}{'N':>4s}{'c/a':>7s}{'thick(kpc)':>11s}{'p(isotropic)':>13s}"
+    )
+    ca, th, p, n = plane_stats(mw_pts)
+    print(f"  {'MW (all, 10-300kpc)':22s}{n:4d}{ca:7.2f}{th:11.1f}{p:13.4f}")
+    bright = mw_pts[mw_MV < -8.0]
+    if len(bright) >= 6:
+        ca, th, p, n = plane_stats(bright, seed_off=1)
+        print(f"  {'MW classical (MV<-8)':22s}{n:4d}{ca:7.2f}{th:11.1f}{p:13.4f}")
+    if len(m31_pts) >= 6:
+        ca, th, p, n = plane_stats(m31_pts, seed_off=2)
+        print(f"  {'M31 (10-400kpc)':22s}{n:4d}{ca:7.2f}{th:11.1f}{p:13.4f}")
+    print(
+        "  READ: c/a<<1 + small isotropic p => a flattened plane improbable under LambdaCDM isotropy;"
+    )
+    print(
+        "  in OBT/MOND these are tidal-dwarf planes from a past MW-M31 encounter (MOND-shared mechanism)."
+    )
+
+
 def diversity(opts):
     """MONSTER #10 candidate. External theory to debunk: 'LambdaCDM predicts a tight, ~uniform
     inner rotation-curve shape at fixed outer velocity' -> Oman et al. 2015 (the 'diversity of
@@ -2273,6 +2384,7 @@ PROBES = {
     "a0_kross": a0_kross,
     "a0_kges": a0_kges,
     "a0_slacs": a0_slacs,
+    "satellite_planes": satellite_planes,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
     "mw_rotation": mw_rotation,

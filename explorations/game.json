@@ -2,7 +2,35 @@
   "mode": "CHERCHEUR",
   "state": "PICK_TERRAIN",
   "game": {
-    "candidates": [],
+    "candidates": [
+      {
+        "id": "cf70d437",
+        "name": "MW satellite plane refutes LambdaCDM isotropy",
+        "external_theory": "LambdaCDM prediction of (near-)isotropic satellite distributions from hierarchical DM-subhalo accretion",
+        "patch": "the satellites are tidal-dwarf galaxies formed in a plane during a past MW-M31 encounter (enabled by modified gravity / no DM-halo dynamical friction), naturally producing the observed thin plane",
+        "systems_validated": [
+          "MW classical satellites (M_V<-8, all-sky): PCA c/a=0.18, thickness 21 kpc, isotropic p=0.0008 (McConnachie 2012 positions, our PCA+MC)"
+        ],
+        "why_status": "none",
+        "why": null,
+        "certainty": "low",
+        "status": "candidate",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on LambdaCDM prediction of (near-)isotropic satellite distributions from hierarchical DM-subhalo accretion @ MW classical satellites (M_V<-8, all-sky): PCA c/a=0.18, thickness 21 kpc, isotropic p=0.0008 (McConnachie 2012 positions, our PCA+MC)"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "STATUS: 1 cleanly-computed system (MW), strong. probe satellite_planes (McConnachie 2012 positions, our PCA+isotropic MC): MW all-26 c/a=0.30 p=0.0004; MW classical-12 (M_V<-8, ALL-SKY so not an SDSS-footprint artifact) c/a=0.18 p=0.0008 -> refutes LambdaCDM isotropy. NEEDS a 2nd computed host for monster status. M31: full-sample positions NOT significantly flat (c/a=0.61 p=0.18); the GPoA is a kinematic subset (Ibata 2013, line-of-sight co-rotation) not reproducible from positions alone (have HRV in McConnachie but co-rotation test needs careful non-circular treatment). CenA: literature plane (Muller 2019 rms height 130/semi-major 330 -> c/a~0.39, >99% sig) is REAL but per-satellite TRGB distances scattered across Muller2019 Table3 (~9) + Crnojevic2019 + literature -> not cleanly in hand; refused to build a noisy 9-point plane. To promote: assemble full CenA 3D sample OR do the M31 GPoA kinematic co-rotation test rigorously. MOND-shared (tidal-dwarf planes from past MW-M31 encounter); the computed part is the LambdaCDM-isotropy debunk."
+          }
+        ]
+      }
+    ],
     "monsters": [],
     "cards": [
       {
@@ -1033,6 +1061,11 @@
       "t": "date-unset",
       "recorded": "terrain",
       "note": "4th a0(z) leg ATTEMPT (A) — STRONG LENSING SLACS (Auger 2009, J/ApJ/705/1099): NOT a clean leg (no card). Probe a0_slacs, 70 matched lenses: g_obs=G*M_Ein/R_E^2, g_bar=F_stellar*g_obs (Fc Chabrier/Fs Salpeter), invert OBT RAR. ETGs at the Einstein radius are DEEP NEWTONIAN: median g_obs/a0_local~15, g_bar/a0~6-10 -> at g>>a0 the boost mu(x)->1, so inverted a0 is a regime ARTIFACT (4.0e-9 Chabrier / 1.8e-9 Salpeter, ~15-30x local) with NO z-trend (4.14->3.79 across z). Same a0-blindness as card #11; AND in OBT the residual mass at R_E is Weyl/geometric DM, not a MOND boost, so the inversion is meaningless. Method-independent but regime-disqualified + low z (median 0.19). 3rd honest negative in the 4th-leg hunt (after BTFR, KGES). PATTERN: clean a0(z) needs MOND regime (g~a0) at high z; compact/high-acceleration systems (Genzel disks, KGES inner-v, SLACS ETGs) are all a0-blind. a0(z) stays TRIPLE-confirmed (#7/#8/#12); KROSS is somewhat unique (outer velocities, z~0.9, right regime). A 4th leg would need a future outer-RC MOND-regime sample at high z (or HI/21cm at z>0.3). Probe kept: a0_slacs. Data: /DATA/obt_game_cache/raw/slacs."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "cf70d437",
+      "name": "MW satellite plane refutes LambdaCDM isotropy"
     }
   ]
 }
