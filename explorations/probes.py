@@ -98,39 +98,62 @@ def btfr(opts):
     M ~ V^3 and the observed slope ~4 + the very small scatter must be engineered by feedback +
     a tuned baryon-to-halo relation, and halo-to-halo variance predicts measurable intrinsic
     scatter. OBT/MOND angle: the BTFR is the deep-MOND limit of the SAME local law,
-    M_bar = V_flat^4/(G a0) -> slope EXACTLY 4, zero-point fixes a0=cH0/2pi, and the law has
-    ZERO intrinsic scatter (only measurement scatter). Test on SPARC: fit log M_bar vs log V_flat,
-    report slope, the a0 implied by the slope-4 zero-point, and the residual scatter vs the
-    measurement floor. MOND-SHARED card (debunks the CDM 'we reproduce the BTFR' claim).
-    """
+    M_bar = V_flat^4/(G a0) -> slope EXACTLY 4, the zero-point sets the BTFR-normalisation
+    a0~1.6e-10 (NOT the RAR a0=1.2e-10: V_flat is not exactly the deep-MOND asymptotic speed),
+    and the law has ZERO intrinsic scatter (only measurement scatter). Test on SPARC: fit
+    log M_bar vs log V_flat, report slope (forward+inverse), the a0 zero-point, and decompose the
+    observed scatter into the per-galaxy measurement budget (distance ~D^2, M/L, velocity x4) vs
+    the residual intrinsic scatter (max-likelihood, chi2/dof=1). MOND-SHARED card (debunks the
+    CDM 'we naturally reproduce the BTFR slope and small scatter' claim)."""
     import numpy as np
 
+    G = 6.674e-11
+    MSUN = 1.989e30
+    KMS = 1.0e3
+    ln10 = np.log(10.0)
     Yups = float(opts.get("yups", 0.5))  # 3.6um stellar M/L (McGaugh-Lelli)
-    qmax = int(opts.get("qmax", 1))  # quality flag (1 = best, flat part well-defined)
+    sML = float(opts.get("sml", 0.11))  # dex log-normal M/L uncertainty
+    qmax = int(opts.get("qmax", 2))  # quality flag (1=best, 2=acceptable)
     imin = float(opts.get("imin", 30.0))  # inclination cut (deg)
     eVmax = float(opts.get("evmax", 0.05))  # max fractional eVflat/Vflat
     eDmax = float(
         opts.get("edmax", 0.10)
     )  # max fractional distance error (M_bar ~ D^2)
-    # parse raw T1: D(2) eD(3) Inc(5) L36(7) MHI(13) Vflat(15) eVflat(16) Q(17)
-    D, eD, L36, MHI, V, Inc, eV, Q = [[] for _ in range(8)]
+    # textbook outliers removed: NGC2841 (contested distance, classic MOND problem galaxy),
+    # NGC7814 (bulge-dominated, stellar-M/L sensitive).
+    drop = set((opts.get("drop") or "NGC2841,NGC7814").split(","))
+    # parse raw T1: ID(0) D(2) eD(3) Inc(5) eInc(6) L36(7) MHI(13) Vflat(15) eVflat(16) Q(17)
+    ID, D, eD, Inc, eInc, L36, MHI, V, eV, Q = [[] for _ in range(10)]
     with open(T1) as f:
         for ln in f:
             p = ln.split()
             if len(p) >= 19 and p[0][0].isalpha():
                 try:
-                    D.append(float(p[2]))
-                    eD.append(float(p[3]))
-                    Inc.append(float(p[5]))
-                    L36.append(float(p[7]))
-                    MHI.append(float(p[13]))
-                    V.append(float(p[15]))
-                    eV.append(float(p[16]))
-                    Q.append(int(float(p[17])))
+                    vals = [
+                        p[0],
+                        float(p[2]),
+                        float(p[3]),
+                        float(p[5]),
+                        float(p[6]),
+                        float(p[7]),
+                        float(p[13]),
+                        float(p[15]),
+                        float(p[16]),
+                        int(float(p[17])),
+                    ]
                 except (ValueError, IndexError):
                     continue
-    D, eD, L36, MHI, V, Inc, eV, Q = map(np.array, (D, eD, L36, MHI, V, Inc, eV, Q))
-    Mbar = Yups * L36 * 1e9 + 1.33 * np.nan_to_num(MHI) * 1e9
+                for lst, v in zip((ID, D, eD, Inc, eInc, L36, MHI, V, eV, Q), vals):
+                    lst.append(v)
+    ID = np.array(ID)
+    D, eD, Inc, eInc, L36, MHI, V, eV, Q = map(
+        np.array, (D, eD, Inc, eInc, L36, MHI, V, eV, Q)
+    )
+    Mstar = Yups * L36 * 1e9
+    Mgas = 1.33 * np.nan_to_num(MHI) * 1e9
+    Mbar = Mstar + Mgas
+    fstar = Mstar / np.maximum(Mbar, 1.0)
+    keep = np.array([i not in drop for i in ID])
     sel = (
         (V > 0)
         & (Q <= qmax)
@@ -138,52 +161,73 @@ def btfr(opts):
         & (Mbar > 0)
         & (eV / np.maximum(V, 1) <= eVmax)
         & (eD / np.maximum(D, 1e-3) <= eDmax)
+        & keep
     )
+    print(f"[btfr] SPARC baryonic Tully-Fisher. cuts: Q<={qmax}, inc>={imin:.0f}deg,")
     print(
-        f"  cuts: Q<={qmax}, inc>={imin:.0f}deg, eVflat/Vflat<={eVmax:.2f}, eD/D<={eDmax:.2f} -> {int(sel.sum())} of {len(V)} galaxies"
+        f"  eVflat/V<={eVmax:.2f}, eD/D<={eDmax:.2f}, drop={sorted(drop)} -> {int(sel.sum())} of {len(V)} galaxies."
     )
-    Mbar, V = Mbar[sel], V[sel]
-    x = np.log10(V)
-    y = np.log10(Mbar)
+    Mbar, V, D, eD, Inc, eInc, eV, fstar = (
+        a[sel] for a in (Mbar, V, D, eD, Inc, eInc, eV, fstar)
+    )
+    x, y = np.log10(V), np.log10(Mbar)
     slope, b = np.polyfit(x, y, 1)
-    inv_s, inv_b = np.polyfit(
-        y, x, 1
-    )  # inverse fit V|M; slope_on_xy = 1/inv_s (steeper, brackets)
-    slope_inv = 1.0 / inv_s
-    print(
-        f"  forward slope (M|V) = {slope:.2f} ; inverse slope (V|M) = {slope_inv:.2f}  (true slope bracketed; MOND=4)"
-    )
-    resid_free = y - (slope * x + b)
-    # slope-4 (MOND) fit: y = 4x + log10(1/(G a0)) -> a0 from each galaxy
-    G = 6.674e-11
-    MSUN = 1.989e30
-    KMS = 1.0e3
-    a0_each = (V * KMS) ** 4 / (G * Mbar * MSUN)  # m/s^2
+    slope_inv = 1.0 / np.polyfit(y, x, 1)[0]  # inverse fit brackets the true slope
+    a0_each = (V * KMS) ** 4 / (G * Mbar * MSUN)
     b4 = np.median(y - 4 * x)
-    resid_4 = y - (4 * x + b4)
-    print(f"[btfr] {len(Mbar)} SPARC galaxies (Q<3), stellar M/L={Yups}.")
+    resid = y - (4 * x + b4)  # vertical residual about slope-4
+    sobs = resid.std()
+    # --- per-galaxy MEASUREMENT scatter, propagated into vertical log M_bar at slope 4 ---
+    sD = 2.0 * (eD / np.maximum(D, 1e-3)) / ln10  # M_bar ~ D^2
+    sMLg = sML * fstar  # M/L only acts on the stellar fraction
+    sVfl = (eV / np.maximum(V, 1)) / ln10  # flat-velocity error
+    sVinc = (
+        (eInc * np.pi / 180.0)
+        * np.abs(np.cos(np.radians(Inc)) / np.maximum(np.sin(np.radians(Inc)), 1e-2))
+        / ln10
+    )  # inclination -> V
+    sV = np.sqrt(sVfl**2 + sVinc**2)
+    smeas = np.sqrt(sMLg**2 + sD**2 + (4 * sV) ** 2)
+    smeas_q = np.sqrt(np.mean(smeas**2))
+    chi2_0 = np.sum((resid / smeas) ** 2) / (len(resid) - 1)
+    # max-likelihood intrinsic scatter: the s_int that makes reduced chi2 == 1
+    dof = len(resid) - 1
+    lo, hi = 0.0, 1.0
+    for _ in range(60):
+        mid = 0.5 * (lo + hi)
+        c = np.sum(resid**2 / (smeas**2 + mid**2)) / dof
+        if c > 1.0:
+            lo = mid
+        else:
+            hi = mid
+    sint_ml = 0.5 * (lo + hi)
     print(
-        f"  free fit:  log M_bar = {slope:.2f} log V_flat + {b:.2f}   (MOND/OBT predicts slope=4)"
+        f"  slope: forward (M|V)={slope:.2f}, inverse (V|M)={slope_inv:.2f}  -> brackets MOND/OBT value 4"
     )
-    print(f"  scatter about free fit  = {resid_free.std():.3f} dex")
     print(
-        f"  scatter about slope=4   = {resid_4.std():.3f} dex   (vertical, log M_bar)"
+        f"  a0 from slope-4 zero-point: median={np.median(a0_each):.2e} m/s^2 (BTFR-normalisation a0~1.6e-10)"
+    )
+    print(f"  OBSERVED scatter (vertical, slope-4) = {sobs:.3f} dex")
+    print(
+        f"  MEASUREMENT scatter (quadrature)     = {smeas_q:.3f} dex  [dist {np.sqrt(np.mean(sD**2)):.3f}, M/L {np.sqrt(np.mean(sMLg**2)):.3f}, 4*sV {np.sqrt(np.mean((4*sV)**2)):.3f}]"
     )
     print(
-        f"  a0 from slope-4 zero-pt : median = {np.median(a0_each):.2e} m/s^2  (OBT cH0/2pi = {A0:.2e})"
+        f"  INTRINSIC scatter (max-likelihood, chi2/dof->1) = {sint_ml:.3f} dex   (raw chi2/dof at s_int=0: {chi2_0:.2f})"
     )
     print(
-        f"    a0 16-84 pct: [{np.percentile(a0_each,16):.2e}, {np.percentile(a0_each,84):.2e}]"
-    )
-    # measurement floor: dominant terms ~ M/L (~0.1 dex) + 4*sigma_logV (eVflat) + distance
-    print(
-        "  measurement floor ~ 0.10 dex (M/L) + 4*d(logV) + distance -> ~0.10-0.13 dex expected."
+        "  READ (HONEST): slope~4 is clean but NON-distinctive (CDM+feedback also reaches ~4; implicit"
     )
     print(
-        "  READ: slope ~4 and scatter ~ the measurement floor -> consistent with ZERO intrinsic"
+        f"  in the RAR cards). The max-likelihood INTRINSIC scatter ~{sint_ml:.2f} dex is COMPARABLE to CDM's"
     )
     print(
-        "  scatter and a0=cH0/2pi; CDM's natural V^3 + halo/feedback scatter is the debunk target."
+        "  ~0.15 dex from halo concentration -> with this (formal) error model the BTFR is NOT shown to"
+    )
+    print(
+        "  beat CDM. (RMS-quadrature 's_int~0' is misleading: dominated by a few high-error galaxies; the"
+    )
+    print(
+        "  ML estimate is the honest one. Lelli reaches <=0.1 with a fuller error model.) NOT a clean card."
     )
 
 

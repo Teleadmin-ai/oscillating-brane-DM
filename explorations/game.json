@@ -638,6 +638,10 @@
       {
         "t": "date-unset",
         "note": "MONSTER #11 attempt (BTFR slope+tightness debunk of LambdaCDM) — NOT a card (probe does not cleanly reproduce the distinctive signature). Probe btfr on SPARC (Q<=1, inc>30, eVflat/V<0.05, eD/D<0.10, N=18-67): forward slope 3.76 / inverse slope 3.94 -> BRACKETS 4 (OBT-consistent, good); BUT residual scatter 0.21 dex (2x the Lelli-2016 literature ~0.10) and a0 from slope-4 zero-point ~1.8e-10 (1.6-1.8x the cH0/2pi=1.04e-10). Cause = my crude single-M/L mass model + small accurate-distance subsample inflate scatter the careful per-galaxy Lelli analysis removes; not evidence against OBT, but my own probe can't claim the distinctive TIGHTNESS, and slope-4 alone is non-distinctive (CDM+feedback also reaches ~4) and already implicit in the RAR cards. Discipline: a card REQUIRES certainty -> no card minted. To revisit: per-galaxy M/L + proper error-weighted orthogonal fit on the accurate-distance sample would be needed to reproduce the 0.10-dex tightness. Probe kept as tooling: btfr."
+      },
+      {
+        "t": "date-unset",
+        "note": "MONSTER #11 — BTFR done CAREFULLY (user-chosen path), STILL not a clean card. Probe btfr (SPARC, Q<=2, inc>30, eVflat/V<0.05, eD/D<0.10, drop NGC2841/NGC7814, N=21): slope forward 3.87 / inverse 3.99 (brackets 4, OBT-consistent, CLEAN); a0 zero-point 1.58e-10 = BTFR-normalisation (NOT RAR a0 1.2e-10: V_flat != deep-MOND asymptotic; my earlier 'a0 1.8x high' was a wrong-reference error). BUT the distinctive claim (tightness beats CDM) FAILS: max-likelihood intrinsic scatter (chi2/dof->1) = 0.131 dex, COMPARABLE to CDM's ~0.15 dex from halo concentration. The RMS-quadrature intrinsic 0.011 dex was MISLEADING (dominated by a few high-error galaxies) — caught by re-reading/debug per user request. Lelli reaches <=0.1 with a fuller error model, but I do not claim what my own probe doesn't show. Slope=4 alone is non-distinctive (CDM+feedback reaches it; implicit in RAR cards). VERDICT: no card. Lesson: use ML intrinsic scatter, never RMS-quadrature, for tightness claims. Probe kept as tooling: btfr (now with full error-budget decomposition + ML intrinsic)."
       }
     ]
   },
@@ -867,6 +871,11 @@
       "t": "date-unset",
       "recorded": "terrain",
       "note": "MONSTER #11 attempt (BTFR slope+tightness debunk of LambdaCDM) — NOT a card (probe does not cleanly reproduce the distinctive signature). Probe btfr on SPARC (Q<=1, inc>30, eVflat/V<0.05, eD/D<0.10, N=18-67): forward slope 3.76 / inverse slope 3.94 -> BRACKETS 4 (OBT-consistent, good); BUT residual scatter 0.21 dex (2x the Lelli-2016 literature ~0.10) and a0 from slope-4 zero-point ~1.8e-10 (1.6-1.8x the cH0/2pi=1.04e-10). Cause = my crude single-M/L mass model + small accurate-distance subsample inflate scatter the careful per-galaxy Lelli analysis removes; not evidence against OBT, but my own probe can't claim the distinctive TIGHTNESS, and slope-4 alone is non-distinctive (CDM+feedback also reaches ~4) and already implicit in the RAR cards. Discipline: a card REQUIRES certainty -> no card minted. To revisit: per-galaxy M/L + proper error-weighted orthogonal fit on the accurate-distance sample would be needed to reproduce the 0.10-dex tightness. Probe kept as tooling: btfr."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "terrain",
+      "note": "MONSTER #11 — BTFR done CAREFULLY (user-chosen path), STILL not a clean card. Probe btfr (SPARC, Q<=2, inc>30, eVflat/V<0.05, eD/D<0.10, drop NGC2841/NGC7814, N=21): slope forward 3.87 / inverse 3.99 (brackets 4, OBT-consistent, CLEAN); a0 zero-point 1.58e-10 = BTFR-normalisation (NOT RAR a0 1.2e-10: V_flat != deep-MOND asymptotic; my earlier 'a0 1.8x high' was a wrong-reference error). BUT the distinctive claim (tightness beats CDM) FAILS: max-likelihood intrinsic scatter (chi2/dof->1) = 0.131 dex, COMPARABLE to CDM's ~0.15 dex from halo concentration. The RMS-quadrature intrinsic 0.011 dex was MISLEADING (dominated by a few high-error galaxies) — caught by re-reading/debug per user request. Lelli reaches <=0.1 with a fuller error model, but I do not claim what my own probe doesn't show. Slope=4 alone is non-distinctive (CDM+feedback reaches it; implicit in RAR cards). VERDICT: no card. Lesson: use ML intrinsic scatter, never RMS-quadrature, for tightness claims. Probe kept as tooling: btfr (now with full error-budget decomposition + ML intrinsic)."
     }
   ]
 }
