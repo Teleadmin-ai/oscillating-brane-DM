@@ -571,6 +571,82 @@ def a0_kges(opts):
     )
 
 
+def a0_slacs(opts):
+    """4th-leg ATTEMPT for a0(z) via STRONG LENSING — SLACS (Auger 2009, J/ApJ/705/1099), a
+    method-INDEPENDENT probe (lensing mass of early-type galaxies, not kinematics). HONEST
+    NEGATIVE: NOT a clean leg, for the SAME reason as card #11. Per lens we have, directly: R_E
+    (Einstein radius, kpc), M_Ein (total lensing mass within R_E), and the stellar fraction within
+    R_E (Fc Chabrier / Fs Salpeter). So g_obs = G*M_Ein/R_E^2 and g_bar = F*g_obs, and inverting
+    the OBT RAR gives a0. BUT SLACS ETGs at the Einstein radius are DEEP NEWTONIAN
+    (median g_obs/a0_local ~ 15, g_bar/a0 ~ 6-10): at g >> a0 the boost mu(x)->1, so the inverted
+    a0 is a regime artifact (~4e-9 Chabrier, ~30x local) with NO z-trend -- the well-known
+    'MOND-in-ellipticals' issue, AND in OBT the residual mass at R_E is the Weyl/geometric-DM
+    component, not a MOND boost. So a0 is NOT measurable here. Kept as tooling; not a confirmation.
+    """
+    import numpy as np
+
+    G = 6.674e-11
+    MSUN = 1.989e30
+    KPC = 3.0856775814913673e19
+    Om = 0.3
+    a0L = 1.2e-10
+
+    def aCH(z):
+        return a0L * np.sqrt(Om * (1 + z) ** 3 + (1 - Om))
+
+    def inv(gb, go):
+        inr = ((2 * go**2 - gb**2) / gb) ** 2 - gb**2
+        return 0.5 * np.sqrt(inr) if inr > 0 else np.nan
+
+    base = "/DATA/obt_game_cache/raw/slacs"
+    zl = {}
+    for ln in open(f"{base}/table3.dat"):
+        nm = ln[4:14].strip()
+        try:
+            zl[nm] = float(ln[39:44])
+        except ValueError:
+            pass
+    rows = []
+    for ln in open(f"{base}/table4.dat"):
+        nm = ln[4:14].strip()
+        try:
+            RE = float(ln[15:19])
+            Mein = float(ln[20:25])
+            Fc = float(ln[26:30])
+            Fs = float(ln[36:40])
+        except ValueError:
+            continue
+        if nm in zl and RE > 0 and Mein > 0 and 0 < Fc < 1.2:
+            rows.append((zl[nm], RE, Mein, Fc, Fs))
+    print(
+        f"[a0_slacs] 4th-leg ATTEMPT via STRONG LENSING (HONEST NEGATIVE): {len(rows)} SLACS lenses."
+    )
+    for lab, useFs in [("Chabrier IMF", False), ("Salpeter IMF", True)]:
+        a0s, zs, ga = [], [], []
+        for z, RE, Mein, Fc, Fs in rows:
+            R = RE * KPC
+            gobs = G * 10**Mein * MSUN / R**2
+            f = Fs if useFs else Fc
+            if not 0 < f < 1:
+                continue
+            x = inv(f * gobs, gobs)
+            if x == x and 0 < x < 1e-8:
+                a0s.append(x)
+                zs.append(z)
+                ga.append(gobs / a0L)
+        if a0s:
+            a0s, zs, ga = np.array(a0s), np.array(zs), np.array(ga)
+            print(
+                f"  {lab:14s} N={len(a0s):3d} med z={np.median(zs):.2f} med g_obs/a0={np.median(ga):5.1f} med a0={np.median(a0s):.2e} cH/2pi={aCH(np.median(zs)):.2e}"
+            )
+    print(
+        "  READ: g_obs/a0 ~ 15 -> ETGs at R_E are DEEP NEWTONIAN -> a0 unmeasurable (inverted ~4e-9 is a"
+    )
+    print(
+        "  regime artifact, no z-trend). Residual mass = Weyl/geometric DM, not a MOND boost. NOT a leg."
+    )
+
+
 def diversity(opts):
     """MONSTER #10 candidate. External theory to debunk: 'LambdaCDM predicts a tight, ~uniform
     inner rotation-curve shape at fixed outer velocity' -> Oman et al. 2015 (the 'diversity of
@@ -2196,6 +2272,7 @@ PROBES = {
     "a0_regime": a0_regime,
     "a0_kross": a0_kross,
     "a0_kges": a0_kges,
+    "a0_slacs": a0_slacs,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
     "mw_rotation": mw_rotation,
