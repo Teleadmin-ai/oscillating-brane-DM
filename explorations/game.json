@@ -590,6 +590,56 @@
             "detail": "The WHY is the LOCALITY of the RAR. At fixed V_flat (= fixed enclosed baryonic mass at large R), the INNER acceleration g_bar(2 kpc) still varies strongly because galaxies of the same V_flat have very different central baryonic surface densities (compact HSB vs diffuse LSB). Since the OBT relation g_obs=mu(x)^-1 g_bar is point-local, V(2 kpc)=sqrt(g_obs(2kpc)*R) inherits that spread directly: the observed inner-velocity diversity is the baryonic surface-density diversity passed through mu(x). Demonstrated on SPARC (131 galaxies): (i) the diversity is real — at fixed V_flat the inner V(2 kpc) spreads by 15-55 km/s; (ii) OBT predicts each galaxy's V(2 kpc) from its baryons alone at residual median -0.026 dex, scatter 0.126 dex (= the universal RAR scatter, i.e. no extra diversity is left unexplained); (iii) within each V_flat bin V(2 kpc) correlates with baryonic surface density at Spearman +0.44 -> +0.88 (rising with mass, p<0.005). This debunks the LambdaCDM 'diversity of rotation curves' problem (Oman 2015): the spread that CDM hydro struggles to reproduce at fixed V_max is the natural, baryon-driven consequence of a local acceleration law. MOND-SHARED (RAR locality is MOND's), OBT inherits. Honest caveat: the lowest-mass bin (40-70 km/s) shows weak SB correlation (+0.02) — there the inner point is itself deep-MOND and noisier; the effect is clean in the 70-200 km/s bins."
           }
         ]
+      },
+      {
+        "id": "d28ef65d",
+        "name": "compact high-z disks cannot constrain a0",
+        "external_theory": "the inference that high-z massive compact disks (Genzel 2017 / Nestor-Shachar RC100) measure a0 and show it constant, used to claim a0(z)/OBT excluded",
+        "patch": "those disks are in the Newtonian regime g_bar>>a0, so g_obs~g_bar and a0 drops out: the predicted constant-vs-cH(z) f_DM difference is BELOW the measurement error -> the data are a0-BLIND, their non-evolution is a regime artifact not a constraint",
+        "systems_validated": [
+          "Genzel zC_400569 z=2.24 g_bar/a0=13.9: dfDM(const vs cH)=0.02 < e_fDM=0.07 BLIND, a0-inversion imaginary",
+          "D3a_15504 z=2.38 g_bar/a0=4.6: dfDM=0.12 < e_fDM=0.14 BLIND, a0-inv imaginary",
+          "GS4_43501 z=1.61 g_bar/a0=3.8: dfDM=0.08 < e_fDM=0.09 BLIND",
+          "COS4_01351 z=0.85 (least compact, g_bar/a0=2.6): a0-inv FINITE=1.43e-10 between local 1.2 and cH/2pi 1.75, still blind (dfDM 0.05<e_fDM 0.10) -> 5/6 sample blind"
+        ],
+        "why_status": "found",
+        "why": "The WHY is a REGIME calculation on measured quantities (M_bar, R1/2, v_c, z), not anyone's interpretation. The MOND/OBT relation g_obs = g_bar/mu(x) only depends on a0 when g_bar ~ a0; for g_bar >> a0 it collapses to g_obs -> g_bar and a0 drops out entirely. The high-z massive disks of Genzel 2017 / Nestor-Shachar RC100 have, from their OWN measured baryons and sizes, g_bar(R1/2)/a0 = 2.6 to 13.9 -> deep in the Newtonian regime. Quantitatively: predicting f_DM(R1/2) under constant a0=1.2e-10 vs evolving a0=cH(z)/2pi gives a difference |delta f_DM| = 0.02-0.12, which is SMALLER than the measurement error e_fDM = 0.07-0.21 for 5 of the 6 galaxies; and inverting the exact RAR for the a0 each galaxy imposes returns an IMAGINARY value (g_obs too close to g_bar) for 5 of 6. So these data are physically a0-BLIND: a non-detection of a0 evolution in them is a regime artifact, NOT a measurement that a0 is constant. The external claim 'compact high-z disks show constant a0, therefore a0(z)/OBT is excluded' is thereby debunked with our own numbers. Where the least-compact disk (COS4, g_bar/a0=2.6) does yield a finite inverted a0, it is 1.43e-10 -- between the local 1.2e-10 and cH(z)/2pi=1.75e-10, i.e. consistent with rising, though still inside the blind band. CONSEQUENCE: a0(z) (cards #7/#8) is NOT refuted by these data; it must be tested in the MOND regime (g_bar~a0): MUSE-DARK (card #7), low-surface-brightness systems, or the outer low-g_bar parts of high-z rotation curves. This is a DEFENSIVE debunk-card protecting the OBT-distinctive a0(z) prediction. Honest scope: it removes the objection; it does not itself prove a0(z) (that rests on the MOND-regime measurements).",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on the inference that high-z massive compact disks (Genzel 2017 / Nestor-Shachar RC100) measure a0 and show it constant, used to claim a0(z)/OBT excluded @ Genzel zC_400569 z=2.24 g_bar/a0=13.9: dfDM(const vs cH)=0.02 < e_fDM=0.07 BLIND, a0-inversion imaginary"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "D3a_15504 z=2.38 g_bar/a0=4.6: dfDM=0.12 < e_fDM=0.14 BLIND, a0-inv imaginary"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "GS4_43501 z=1.61 g_bar/a0=3.8: dfDM=0.08 < e_fDM=0.09 BLIND"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "COS4_01351 z=0.85 (least compact, g_bar/a0=2.6): a0-inv FINITE=1.43e-10 between local 1.2 and cH/2pi 1.75, still blind (dfDM 0.05<e_fDM 0.10) -> 5/6 sample blind"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 4 systems: ['Genzel zC_400569 z=2.24 g_bar/a0=13.9: dfDM(const vs cH)=0.02 < e_fDM=0.07 BLIND, a0-inversion imaginary', 'D3a_15504 z=2.38 g_bar/a0=4.6: dfDM=0.12 < e_fDM=0.14 BLIND, a0-inv imaginary', 'GS4_43501 z=1.61 g_bar/a0=3.8: dfDM=0.08 < e_fDM=0.09 BLIND', 'COS4_01351 z=0.85 (least compact, g_bar/a0=2.6): a0-inv FINITE=1.43e-10 between local 1.2 and cH/2pi 1.75, still blind (dfDM 0.05<e_fDM 0.10) -> 5/6 sample blind']"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The WHY is a REGIME calculation on measured quantities (M_bar, R1/2, v_c, z), not anyone's interpretation. The MOND/OBT relation g_obs = g_bar/mu(x) only depends on a0 when g_bar ~ a0; for g_bar >> a0 it collapses to g_obs -> g_bar and a0 drops out entirely. The high-z massive disks of Genzel 2017 / Nestor-Shachar RC100 have, from their OWN measured baryons and sizes, g_bar(R1/2)/a0 = 2.6 to 13.9 -> deep in the Newtonian regime. Quantitatively: predicting f_DM(R1/2) under constant a0=1.2e-10 vs evolving a0=cH(z)/2pi gives a difference |delta f_DM| = 0.02-0.12, which is SMALLER than the measurement error e_fDM = 0.07-0.21 for 5 of the 6 galaxies; and inverting the exact RAR for the a0 each galaxy imposes returns an IMAGINARY value (g_obs too close to g_bar) for 5 of 6. So these data are physically a0-BLIND: a non-detection of a0 evolution in them is a regime artifact, NOT a measurement that a0 is constant. The external claim 'compact high-z disks show constant a0, therefore a0(z)/OBT is excluded' is thereby debunked with our own numbers. Where the least-compact disk (COS4, g_bar/a0=2.6) does yield a finite inverted a0, it is 1.43e-10 -- between the local 1.2e-10 and cH(z)/2pi=1.75e-10, i.e. consistent with rising, though still inside the blind band. CONSEQUENCE: a0(z) (cards #7/#8) is NOT refuted by these data; it must be tested in the MOND regime (g_bar~a0): MUSE-DARK (card #7), low-surface-brightness systems, or the outer low-g_bar parts of high-z rotation curves. This is a DEFENSIVE debunk-card protecting the OBT-distinctive a0(z) prediction. Honest scope: it removes the objection; it does not itself prove a0(z) (that rests on the MOND-regime measurements)."
+          }
+        ]
       }
     ],
     "errors": [
@@ -876,6 +926,21 @@
       "t": "date-unset",
       "recorded": "terrain",
       "note": "MONSTER #11 — BTFR done CAREFULLY (user-chosen path), STILL not a clean card. Probe btfr (SPARC, Q<=2, inc>30, eVflat/V<0.05, eD/D<0.10, drop NGC2841/NGC7814, N=21): slope forward 3.87 / inverse 3.99 (brackets 4, OBT-consistent, CLEAN); a0 zero-point 1.58e-10 = BTFR-normalisation (NOT RAR a0 1.2e-10: V_flat != deep-MOND asymptotic; my earlier 'a0 1.8x high' was a wrong-reference error). BUT the distinctive claim (tightness beats CDM) FAILS: max-likelihood intrinsic scatter (chi2/dof->1) = 0.131 dex, COMPARABLE to CDM's ~0.15 dex from halo concentration. The RMS-quadrature intrinsic 0.011 dex was MISLEADING (dominated by a few high-error galaxies) — caught by re-reading/debug per user request. Lelli reaches <=0.1 with a fuller error model, but I do not claim what my own probe doesn't show. Slope=4 alone is non-distinctive (CDM+feedback reaches it; implicit in RAR cards). VERDICT: no card. Lesson: use ML intrinsic scatter, never RMS-quadrature, for tightness claims. Probe kept as tooling: btfr (now with full error-budget decomposition + ML intrinsic)."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "d28ef65d",
+      "name": "compact high-z disks cannot constrain a0"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "d28ef65d",
+      "detail": "player judgement; 4 systems: ['Genzel zC_400569 z=2.24 g_bar/a0=13.9: dfDM(const vs cH)=0.02 < e_fDM=0.07 BLIND, a0-inversion imaginary', 'D3a_15504 z=2.38 g_bar/a0=4.6: dfDM=0.12 < e_fDM=0.14 BLIND, a0-inv imaginary', 'GS4_43501 z=1.61 g_bar/a0=3.8: dfDM=0.08 < e_fDM=0.09 BLIND', 'COS4_01351 z=0.85 (least compact, g_bar/a0=2.6): a0-inv FINITE=1.43e-10 between local 1.2 and cH/2pi 1.75, still blind (dfDM 0.05<e_fDM 0.10) -> 5/6 sample blind']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "d28ef65d",
+      "detail": "The WHY is a REGIME calculation on measured quantities (M_bar, R1/2, v_c, z), not anyone's interpretation. The MOND/OBT relation g_obs = g_bar/mu(x) only depends on a0 when g_bar ~ a0; for g_bar >> a0 it collapses to g_obs -> g_bar and a0 drops out entirely. The high-z massive disks of Genzel 2017 / Nestor-Shachar RC100 have, from their OWN measured baryons and sizes, g_bar(R1/2)/a0 = 2.6 to 13.9 -> deep in the Newtonian regime. Quantitatively: predicting f_DM(R1/2) under constant a0=1.2e-10 vs evolving a0=cH(z)/2pi gives a difference |delta f_DM| = 0.02-0.12, which is SMALLER than the measurement error e_fDM = 0.07-0.21 for 5 of the 6 galaxies; and inverting the exact RAR for the a0 each galaxy imposes returns an IMAGINARY value (g_obs too close to g_bar) for 5 of 6. So these data are physically a0-BLIND: a non-detection of a0 evolution in them is a regime artifact, NOT a measurement that a0 is constant. The external claim 'compact high-z disks show constant a0, therefore a0(z)/OBT is excluded' is thereby debunked with our own numbers. Where the least-compact disk (COS4, g_bar/a0=2.6) does yield a finite inverted a0, it is 1.43e-10 -- between the local 1.2e-10 and cH(z)/2pi=1.75e-10, i.e. consistent with rising, though still inside the blind band. CONSEQUENCE: a0(z) (cards #7/#8) is NOT refuted by these data; it must be tested in the MOND regime (g_bar~a0): MUSE-DARK (card #7), low-surface-brightness systems, or the outer low-g_bar parts of high-z rotation curves. This is a DEFENSIVE debunk-card protecting the OBT-distinctive a0(z) prediction. Honest scope: it removes the objection; it does not itself prove a0(z) (that rests on the MOND-regime measurements)."
     }
   ]
 }

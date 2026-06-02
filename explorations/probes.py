@@ -92,6 +92,77 @@ def build_wb(opts):
     wb_pipeline.main(n)
 
 
+def a0_implied_z(opts):
+    """REVIEWER audit (calculation, not citation): does the high-z RC100/Genzel data actually
+    EXCLUDE a0(z)=cH(z)/2pi, as is sometimes claimed from 'no BTFR evolution'? Invert the OBT RAR
+    for the a0 the DATA impose at each galaxy: a0 = 0.5*sqrt(((2 gobs^2 - gbar^2)/gbar)^2 - gbar^2),
+    using g_bar from photometry/sizes (exp disk + bulge) and g_obs = vc^2/R1/2. KEY FINDING: the
+    massive high-z disks are COMPACT -> g_bar >> a0 (Newtonian) -> g_obs ~ g_bar (f_DM~0) -> a0 is
+    UNCONSTRAINED (the inversion returns imaginary / undefined). So 'no evolution seen' in these
+    systems is NOT an exclusion of a0(z): they are a0-BLIND. The a0-sensitive regime is the
+    DEEP-MOND part (V_flat asymptotic = BTFR zero-point; outer-RC RAR), where evolution is reported
+    (cards #7 MUSE-DARK, #8 Ubler). Only the least-compact galaxy here can constrain a0.
+    """
+    import numpy as np
+    from scipy.special import i0, i1, k0, k1
+
+    Om = 0.3
+    H0 = 2.268e-18
+    c = 2.998e8
+
+    def a0cH(z):
+        return c * H0 * np.sqrt(Om * (1 + z) ** 3 + (1 - Om)) / (2 * np.pi)
+
+    A0L = 1.2e-10  # local anchor
+    # Genzel 2017 Table 1: name, z, Mbar(1e11), fbulge, R1/2 kpc, vc km/s, sigma0, fDM, efDM
+    gal = [
+        ("COS4_01351", 0.854, 1.7, 0.20, 7.3, 276, 39, 0.21, 0.10),
+        ("D3a_6397", 1.500, 2.3, 0.35, 7.4, 310, 73, 0.17, 0.21),
+        ("GS4_43501", 1.613, 1.0, 0.40, 4.9, 257, 39, 0.19, 0.09),
+        ("zC_406690", 2.196, 1.7, 0.60, 5.5, 301, 74, 0.00, 0.08),
+        ("zC_400569", 2.242, 1.7, 0.37, 3.3, 364, 34, 0.00, 0.07),
+        ("D3a_15504", 2.383, 2.1, 0.15, 6.0, 299, 76, 0.12, 0.14),
+    ]
+    print(
+        "[a0_implied_z] Invert RAR for the a0 the high-z DATA impose (Genzel 2017, 6 galaxies)."
+    )
+    print(
+        f"  {'galaxy':12s}{'z':>5s}{'g_bar/a0L':>10s}{'fDM':>6s}{'a0_data(e-10)':>14s}{'a0_cH(e-10)':>12s}{'constrains a0?':>15s}"
+    )
+    nconstr = 0
+    for nm, z, Mbar, fb, Rh, vc, sig, fdm, efdm in gal:
+        Mb = Mbar * 1e11 * MSUN
+        R = Rh * KPC
+        Md = (1 - fb) * Mb
+        Mbu = fb * Mb
+        Rd = R / 1.678
+        y = R / (2 * Rd)
+        vdisk2 = 2 * G * Md / Rd * y**2 * (i0(y) * k0(y) - i1(y) * k1(y))
+        gbar = (vdisk2 + G * Mbu / R) / R
+        gobs = (vc * KMS) ** 2 / R
+        inner = ((2 * gobs**2 - gbar**2) / gbar) ** 2 - gbar**2
+        a0d = 0.5 * np.sqrt(inner) if inner > 0 else float("nan")
+        ok = "YES" if (inner > 0 and fdm > 0.05) else "no (a0-blind)"
+        if inner > 0 and fdm > 0.05:
+            nconstr += 1
+        a0s = f"{a0d/1e-10:.2f}" if a0d == a0d else "imaginary"
+        print(
+            f"  {nm:12s}{z:5.2f}{gbar/A0L:10.2f}{fdm:6.2f}{a0s:>14s}{a0cH(z)/1e-10:12.2f}{ok:>15s}"
+        )
+    print(
+        f"  local anchor a0 ~ {A0L:.1e}. Galaxies that actually constrain a0: {nconstr} of 6."
+    )
+    print(
+        "  READ: the compact high-z disks are Newtonian (g_bar/a0 = 3-14) -> a0-BLIND. 'No BTFR"
+    )
+    print(
+        "  evolution' from such systems is NOT an exclusion of a0(z). The a0-sensitive regime is"
+    )
+    print(
+        "  deep-MOND (V_flat / BTFR zero-point, outer-RC RAR) -> that is where #7/#8 see evolution."
+    )
+
+
 def btfr(opts):
     """MONSTER #11 candidate. External theory to debunk: 'LambdaCDM naturally reproduces the
     baryonic Tully-Fisher relation (slope and small scatter)'. In CDM the bare halo gives
@@ -228,6 +299,88 @@ def btfr(opts):
     )
     print(
         "  ML estimate is the honest one. Lelli reaches <=0.1 with a fuller error model.) NOT a clean card."
+    )
+
+
+def a0_regime(opts):
+    """MONSTER #11 candidate (DEFENDS a0(z), cards #7/#8). External claim to debunk: 'high-z
+    massive disks (Genzel 2017 / Nestor-Shachar 2023 RC100) show NO a0 evolution -> a0 is
+    constant -> OBT's a0=cH(z)/2pi is excluded'. In-game: OBT's a0(z) is the axiom; the defect is
+    EXTERNAL = the inference that these disks constrain a0 at all. The WHY (by OUR calculation on
+    measured M_bar, R1/2, v_c, z): the disks are COMPACT, g_bar(R1/2) >> a0, i.e. the NEWTONIAN
+    regime, where g_obs ~ g_bar and a0 drops out. Two proofs: (1) DISCRIMINATING POWER -- predict
+    f_DM under constant a0 (=1.2e-10) vs evolving a0=cH(z)/2pi; if |Delta f_DM| < the measurement
+    error e_fDM, the data physically CANNOT tell the two apart -> 'no evolution' is vacuous. (2)
+    INVERSION -- solving the exact RAR for the a0 each galaxy imposes returns imaginary a0 (NaN)
+    whenever g_obs ~ g_bar. Where leverage DOES exist (least-compact disk), a0 sits between local
+    and cH(z)/2pi. Debunks the external 'constant-a0-from-compact-disks' claim with measurements.
+    """
+    import numpy as np
+    from scipy.special import i0, i1, k0, k1
+
+    G = 6.674e-11
+    MSUN = 1.989e30
+    KPC = 3.0856775814913673e19
+    KMS = 1.0e3
+    Om = 0.3
+    H0 = 2.268e-18
+    cc = 2.998e8
+    a0L = 1.2e-10  # local RAR anchor (measured, McGaugh-Lelli)
+
+    def a0_cH(z):
+        return cc * H0 * np.sqrt(Om * (1 + z) ** 3 + (1 - Om)) / (2 * np.pi)
+
+    gal = [
+        ("COS4_01351", 0.854, 1.7, 0.20, 7.3, 276, 0.21, 0.10),
+        ("D3a_6397", 1.500, 2.3, 0.35, 7.4, 310, 0.17, 0.21),
+        ("GS4_43501", 1.613, 1.0, 0.40, 4.9, 257, 0.19, 0.09),
+        ("zC_406690", 2.196, 1.7, 0.60, 5.5, 301, 0.00, 0.08),
+        ("zC_400569", 2.242, 1.7, 0.37, 3.3, 364, 0.00, 0.07),
+        ("D3a_15504", 2.383, 2.1, 0.15, 6.0, 299, 0.12, 0.14),
+    ]
+    print(
+        "[a0_regime] MONSTER #11: do high-z compact disks actually CONSTRAIN a0? (defends cards #7/#8)"
+    )
+    print(
+        "  Debunk target = 'compact high-z disks show constant a0 -> a0(z) excluded'."
+    )
+    print(
+        f"  {'galaxy':12s}{'z':>5s}{'g_bar/a0L':>10s}{'fDM_a0L':>8s}{'fDM_cH':>7s}{'dfDM':>7s}{'e_fDM':>7s}{'a0_inv':>8s}"
+    )
+    nblind = 0
+    for nm, z, Mbar, fb, Rh, vc, fdm, efdm in gal:
+        Mb = Mbar * 1e11 * MSUN
+        R = Rh * KPC
+        Md = (1 - fb) * Mb
+        Mbu = fb * Mb
+        Rd = R / 1.678
+        y = R / (2 * Rd)
+        vbar2 = 2 * G * Md / Rd * y**2 * (i0(y) * k0(y) - i1(y) * k1(y)) + G * Mbu / R
+        gbar = vbar2 / R
+        gobs = (vc * KMS) ** 2 / R
+        fdm_L = 1.0 - gbar / obt_rar(gbar, a0L)
+        fdm_H = 1.0 - gbar / obt_rar(gbar, a0_cH(z))
+        dfdm = fdm_H - fdm_L
+        inner = ((2 * gobs**2 - gbar**2) / gbar) ** 2 - gbar**2
+        a0inv = 0.5 * np.sqrt(inner) / 1e-10 if inner > 0 else np.nan
+        blind = abs(dfdm) < efdm
+        nblind += blind
+        flag = " BLIND" if blind else ""
+        a0s = f"{a0inv:7.2f}" if a0inv == a0inv else "    nan"
+        print(
+            f"  {nm:12s}{z:5.2f}{gbar/a0L:10.2f}{fdm_L:8.2f}{fdm_H:7.2f}{dfdm:+7.2f}{efdm:7.2f}{a0s}{flag}"
+        )
+    print(
+        f"  -> {nblind}/{len(gal)} galaxies are a0-BLIND (|predicted dfDM(const vs cH)| < measurement error)."
+    )
+    print(
+        "  READ: the predicted constant-vs-evolving a0 difference is SMALLER than the error bar for the"
+    )
+    print(
+        "  compact disks -> they cannot discriminate; 'no a0 evolution' from them is a Newtonian-regime"
+    )
+    print(
+        "  artifact. a0(z) must be tested where g_bar~a0 (MOND regime: MUSE-DARK card #7, LSB/outer RCs)."
     )
 
 
@@ -1853,6 +2006,7 @@ PROBES = {
     "build_wb": build_wb,
     "diversity": diversity,
     "btfr": btfr,
+    "a0_regime": a0_regime,
     "wb_boost": wb_boost,
     "wb_forward": wb_forward,
     "mw_rotation": mw_rotation,

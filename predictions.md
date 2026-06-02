@@ -141,6 +141,8 @@ so the acceleration scale **must grow with redshift** ($E(z) \approx 3$ from $z=
 
 Only the first row is so far measured (and confirmed in direction); the rest are concrete forecasts. Crucially, the powers $p$ differ row-to-row, so the set is **internally over-determined**: confirming several with their predicted $E(z)^{\,p}$ scalings would pin the horizon origin of $a_0$ far more tightly than any single measurement — and a *constant* of any of them falsifies OBT's horizon-thermodynamic $a_0$.
 
+**A note on the apparent counter-evidence.** High-$z$ massive disks (Genzel et al. 2017; the RC100 sample of Nestor Shachar et al. 2023) are sometimes cited as showing *no* evolution of the Tully-Fisher/acceleration relations, i.e. constant $a_0$. This is a **regime artifact, not a constraint**: those disks are compact and baryon-dominated, with $g_{\rm bar}(R_{1/2})/a_0 = 2.6$–$13.9$ (deep Newtonian), where $g_{\rm obs} \to g_{\rm bar}$ and $a_0$ drops out of the dynamics. By direct calculation on their own measured masses, sizes and velocities, the predicted constant-vs-$cH(z)$ difference in $f_{\rm DM}$ is *smaller than the measurement error* for five of six galaxies, and inverting the relation for $a_0$ returns imaginary values — i.e. the data are **physically blind to $a_0$** (see [Discoveries §3.16](/discoveries/), probe `a0_regime`). $a_0(z)$ must therefore be tested where the data have leverage ($g_{\rm bar}\sim a_0$): MUSE-DARK, low-surface-brightness systems, or the outer parts of high-$z$ rotation curves — never on compact disks.
+
 ## Particle Physics Signatures
 
 ### Kaluza-Klein Modes
