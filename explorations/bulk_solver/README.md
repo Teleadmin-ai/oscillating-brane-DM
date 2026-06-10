@@ -256,7 +256,34 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       (coupling-sign bit + anchoring + waveform, Gate 4b). The closure freedom
       is not a bulk mystery: it is the PBH microphysics' one unfixed sign.
       Caveats: crude constant-mass GW model, imposed trajectory, unperturbed
-      motor, compressed hierarchy (trend-based extrapolation over k 0.6->0.2). Dust brane (w=0 coefficients of
+      motor, compressed hierarchy (trend-based extrapolation over k 0.6->0.2).
+    - **GATE 6 — the PBH-network microphysics (June 2026): the motor's
+      mechanical layer DERIVED; every computed brane-local G-channel closed;
+      the bit's final address = bulk dark-radiation initial conditions.**
+      `gate6_pbh_micro.py`: [A] THE PEG THEOREM — a brane perforated by a 5D
+      Tangherlini horizon has E(d) = -sigma(4pi/3)(r_h^2-d^2)^{3/2}: stable
+      symmetric anchoring with k_peg = 4 pi sigma r_h (numeric = analytic to
+      7 digits) and a DERIVED detachment threshold d_crit = r_h; with the EMF
+      reaching M_crit (r_h = L), the network's effective threshold is O(0.1 L):
+      OBT's phi_crit ~ 0.1 L derived in order of magnitude from its own mass
+      function. [B] THE SAWTOOTH EMERGES: an overdamped brane + 4000
+      EMF-distributed pegs (detach at r_h, re-pin after a scrambling delay)
+      self-organizes into relaxation oscillations with SLIP DUTY = 0.13 (OBT
+      posits ~0.10 — not tuned) and velocity contrast ~4e7. [C] MAGNITUDE
+      AUDIT of all brane-local G-coupling channels (OBT numbers; inter-peg
+      distance ~0.14 pc): peg strain ~1e-69, inter-peg bowing ~1e-47,
+      compact-bulk Weyl ~1e-90 (Gate 5) — all dead; warp-position ~1e-1 is the
+      right size but LLR-forbidden (the audit's channel 1); and the
+      Z2-symmetric peg sector has NO linear G(d) coupling by parity (its
+      2-omega modulation has derived positive sign but dead magnitude).
+      **FINAL ADDRESS OF THE BIT: no computed channel carries f_osc = 0.1;
+      the surviving carrier is the bulk dark-radiation (mu) sector's
+      COSMOLOGICAL INITIAL perturbations — genuine initial-condition data, at
+      the epistemic level of LambdaCDM's primordial spectrum. The program has
+      walked the S8 freedom from "somewhere in the bulk BCs" down to "the
+      primordial perturbation spectrum of the bulk's dark-radiation content" —
+      while DERIVING, on the way, the motor's springs, threshold, and
+      waveform.** (mu != 0 AdS-Schwarzschild runs = the natural sequel.) Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
