@@ -223,7 +223,40 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       the free incoming-bulk datum sets the sign and size of the growth effect,
       linearly. Together with 4b (coupling-sign/anchoring/waveform inputs), the
       closure freedom is now exhibited explicitly in BOTH channels.
-      **THE GATE PROGRAM (0 -> 4c) IS COMPLETE.** Dust brane (w=0 coefficients of
+      **THE GATE PROGRAM (0 -> 4c) IS COMPLETE.**
+    - **GATE 5 — the compact two-boundary bulk: THE BIT DERIVED, AND ITS
+      CHANNEL COSMOLOGICALLY DEAD (June 2026).** `gate5_compact.py`: rays end
+      at a static second boundary z2 (mirrored Eq.35 far update + non-uniform
+      cubic transfers, MMS-validated to order 2-3 with a MOVING brane). The
+      compact bulk has NO incoming-Weyl freedom (4c's channel closes); the
+      steady response to the radion is unique. Findings, in order:
+      (1) the solver DETECTS the positive-tension far-brane tachyon
+      (alpha2=-5/2z2: surface mode sigma~0.8/z2 = the observed blowup) — the
+      RS slab's negative-tension requirement found dynamically;
+      (2) the UNSTABILIZED scalar cavity is tachyonic at low k and
+      resonance-structured in (z2, k) — the classic RS1 radion-modulus
+      instability, detected ab initio (sign flips/blowups in the first sweeps
+      were THIS, not numerics: damping-robust, convergence-clean);
+      (3) with the Goldberger-Wise gap (m2 in the bulk potential; OBT has
+      m_phi = 0.36 eV) the cavity is stable at all k and the in-phase response
+      sign becomes UNIFORMLY POSITIVE across far-BCs, depths (incl. the
+      ex-anomalous z2off=2.0), GW stiffness, dissipation: inphase
+      +0.087..+0.107, phi ~ +0.03 — **sign(dG_bulk/d z_b) = + is DERIVED** in
+      the stabilized compact model;
+      (4) BUT the fixed-ratio scaling (om = k/2; the S8 scales sit at
+      ck >> om_radion — om = ck only at the 613 Mpc cymatic crossover) kills
+      the channel as ~k^3..k^4 (0.1018 -> 0.0024 over k 0.6 -> 0.2): at
+      cosmological k*ell ~ 1e-30 the derived channel is dead beyond any
+      relevance (stronger than the audit's (kL)^2 estimate).
+      **FINAL SYNTHESIS OF THE WHOLE PROGRAM:** every bulk configuration
+      tested — retarded, dissipative, compact, compact-stabilized — yields the
+      same answer: the bulk's derivable response is positive, elastic,
+      lag-free, and cosmologically negligible; the S8-scale modulation and its
+      sign are irreducibly properties of the brane-local PBH/motor sector
+      (coupling-sign bit + anchoring + waveform, Gate 4b). The closure freedom
+      is not a bulk mystery: it is the PBH microphysics' one unfixed sign.
+      Caveats: crude constant-mass GW model, imposed trajectory, unperturbed
+      motor, compressed hierarchy (trend-based extrapolation over k 0.6->0.2). Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
