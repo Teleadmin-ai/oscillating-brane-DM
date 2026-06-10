@@ -6,6 +6,13 @@ permalink: /research/
 
 # Research Ecosystem
 
+## V9.0 Bulk-Solver Program — complete (June 2026)
+
+A from-scratch characteristic (double-null) solver for scalar perturbations in AdS$_5$ with a moving brane — built and validated through nine strict gates (`explorations/bulk_solver`, quarantined research, not part of the V8.2 theory): exact free-field tests, reproduction of the Cardoso–Hiramatsu–Koyama–Seahra radiation-era amplification, GR recovery at the 2.4% level, and then the question the program was built for: *is the sign of OBT's growth modification derivable from the bulk?*
+
+**Answer, computed:** the 5D bulk-wave sector — conservative or dissipative — supplies neither the S$_8$ phase lag nor a growth sign (lag $\leq 0.16$ rad vs the needed 1.36; zero secular shift within bounds). The PBH-sector relaxational dynamics supplies a real but waveform-dependent lag (1.0–1.5 rad) and an S$_8$-scale effect whose sign is **one input bit** short of a prediction; the only universally derived sign is a small second-order suppression. The closure freedom is now exhibited explicitly in both of its channels (brane-side coupling sign / anchoring / waveform, and the incoming bulk-Weyl datum). The V8.2 epistemic framing of S$_8$ ("consistency with the tension, not a precision prediction") is thereby vindicated *ab initio* — and the open objective is sharp: derive the one remaining bit (compact two-brane bulk / PBH microphysics).
+
+
 The Oscillating Brane Cosmology is part of a broader research program exploring the frontiers of cognition, governance, and physics through human-AI symbiosis.
 
 ## The Teleadmin Research Network
