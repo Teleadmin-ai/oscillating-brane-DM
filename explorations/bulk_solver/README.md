@@ -207,9 +207,23 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       -4..-10% magnitude IS reproducible with its anchored inputs (the odd part
       reaches it), so V8.2's published epistemic framing ("consistency with the
       tension, not a precision prediction"; "sign is an input at the level of
-      LambdaCDM's Omega_c") is VINDICATED ab initio. Optional cross-check left:
-      4c — incoming homogeneous-Weyl injection in the PDE solver (the second
-      input channel); two-brane compact bulk. Dust brane (w=0 coefficients of
+      LambdaCDM's Omega_c") is VINDICATED ab initio. Optional cross-check left: two-brane compact bulk.
+    - **GATE 4c — DONE (June 2026): the incoming-Weyl input channel,
+      demonstrated constructively in the full PDE.** The closure problem's free
+      bulk datum = the initial-null-ray data (left-movers swept by the brane).
+      Injecting a constant-Omega wave-train (k=0.15 < om_v: propagating;
+      sin^2-ramped): (i) the induced dG modulation is PERFECTLY linear
+      (rms/Ain = 5.833 at both test amplitudes; Omega-amplitude ~0.017 already
+      gives dG ~ f_osc = 0.1 — the channel is efficient); (ii) in interference
+      with the radion, the growth shift carries a FIRST-order component exactly
+      antisymmetric in the datum's sign (0.5 ln D(+A)/D(-A) = -2.39e-5 at
+      A=0.002; +2.39e-5 at -A; linearity ratio 2.00) and dependent on the
+      datum's phase (pi/2 doubles it); the pure-injection part is 2nd order
+      (-3e-10, negligible). CONSTRUCTIVE PROOF of the second input channel:
+      the free incoming-bulk datum sets the sign and size of the growth effect,
+      linearly. Together with 4b (coupling-sign/anchoring/waveform inputs), the
+      closure freedom is now exhibited explicitly in BOTH channels.
+      **THE GATE PROGRAM (0 -> 4c) IS COMPLETE.** Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
