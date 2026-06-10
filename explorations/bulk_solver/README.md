@@ -153,7 +153,32 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       single-brane Poincare (continuum KK; OBT has compact bulk -> resonances
       possible), motor perturbations not modeled (= the free Weyl-sourcing
       data), sinusoid not stick-slip, compressed hierarchy (k ell = 0.3-0.6).
-    - **Gate 3b/4 — NEXT.** Dust brane (w=0 coefficients of
+    - **GATE 3b — DONE (June 2026): dissipation does NOT rescue the BKM lag.**
+      Absorptive PBH-impedance boundary term added to the perturbed junction,
+      (n.D)psi = alpha psi + S + b*d_eta psi (integrates EXACTLY in Eq.35:
+      denominator 12(1+b), psi_S coefficient 12(1-b); energy flux -b(psi_t)^2
+      < 0 confirms b>0 absorbs; GR recovery unaffected, scheme stable+converged).
+      Sweep b in [0.02, 2] — the physically-mapped stick->slip bracket
+      (Gamma_eff/om ~ b/(om z_b): b_stick~0.02, b_slip~2): measured lag goes
+      -0.04 -> +0.16 rad, i.e. |lag| <= 0.16 EVERYWHERE, an order of magnitude
+      below delta_bulk = 1.36, and the TREND (lag increasing with absorption,
+      elastic-dominated A/eps ~ 0.13 throughout) is OPPOSITE to the relaxational
+      BKM ansatz arctan(om/Gamma) (which predicts 1.48 at stick -> 0.10 at
+      slip). Secular growth rate stays at the phase-flipping ~6e-7 floor.
+      SHARPENED CONCLUSION (Gates 3a+3b together): the 5D bulk-wave sector —
+      conservative OR boundary-dissipative — supplies NEITHER the S8 phase lag
+      NOR a growth sign of either sign. Both must come from the PBH-sector
+      INTERNAL relaxational dynamics (the first-order-relaxation ansatz for
+      G_eff with rates Gamma_stick/Gamma_slip), which is now the single
+      load-bearing unproven step of the S8 mechanism. Self-consistency note:
+      OBT's own kinematic blockade implies the compact bulk at om*ell ~ 1e-26
+      is gapped/stiffer still -> even smaller bulk lag; the single-brane
+      gapless continuum tested here was the MOST favorable case for a bulk lag.
+    - **Gate 4 / next**: model the PBH-sector internal variable explicitly
+      (a brane-localized relaxational field with Gamma(t) = stick/slip
+      switching, coupled to G_eff) and check whether the BKM phase + a definite
+      growth sign emerge from THAT sector; two-brane compact bulk as a
+      cross-check; stick-slip waveform; longer secular runs. Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data

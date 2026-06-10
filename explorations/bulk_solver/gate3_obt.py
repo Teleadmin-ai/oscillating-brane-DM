@@ -115,6 +115,7 @@ def run_gate3(
     deta_max=0.025,
     c_du=1.0,
     coupling=1.0,
+    babs=0.0,
 ):
     """Dust brane + imposed radion oscillation, coupled retarded bulk.
     Histories: Delta, Omega_b, deltaG_bulk (bulk gravity in Poisson units)."""
@@ -187,11 +188,11 @@ def run_gate3(
         S_S = S_brane(eta[i], D)
         psiS = psir[0]
         psiE = interp_at(psir, dv / delta)
-        den = 12.0 + 6.0 * aN * h + du * dv * Vn
+        den = 12.0 * (1.0 + babs) + 6.0 * aN * h + du * dv * Vn
 
         def eq35(S_N):
             return (
-                -(12.0 + 6.0 * aS * h + du * dv * Vs) / den * psiS
+                -(12.0 * (1.0 - babs) + 6.0 * aS * h + du * dv * Vs) / den * psiS
                 + (24.0 - du * dv * Ve) / den * psiE
                 - 6.0 * h * (S_S + S_N) / den
             )
@@ -337,7 +338,7 @@ def secular_rate(kw, n_cyc=6.0):
     sign flips under ph-shifts expose residual oscillatory leakage instead."""
     r1 = run_gate3(n_cyc=n_cyc, **kw)
     kw0 = {kk: vv for kk, vv in kw.items() if kk not in ("eps", "ph")}
-    r0 = run_gate3(eps=0.0, n_cyc=n_cyc, **kw0)
+    r0 = run_gate3(eps=0.0, n_cyc=n_cyc, **kw0)  # same babs via kw0
     D0 = np.interp(r1["eta"], r0["eta"], r0["Delta"])
     y = np.log(r1["Delta"] / D0)
     om = r1["om"]
@@ -367,7 +368,37 @@ def secular_battery():
         print(f"    {tag}: c1 = {secular_rate(kw):+.3e}")
 
 
+def battery_3b():
+    """GATE 3b — dissipative (PBH-impedance) brane: lag(b) and secular(b).
+    RESULT (June 2026): across the physically-mapped stick->slip bracket
+    b in [0.02, 2] (Gamma_eff/om ~ b/(om z_b): b_stick~0.02, b_slip~2), the
+    measured lag is |lag| <= 0.16 rad, INCREASING with b — the driven-ELASTIC
+    trend, OPPOSITE to the relaxational BKM ansatz arctan(om/Gamma) which
+    predicts 1.48 (stick) -> 0.10 (slip). The bulk response stays elastic-
+    dominated (A/eps ~ 0.13 throughout); the secular rate remains at the
+    phase-flipping ~6e-7 floor with dissipation on. CONCLUSION: the bulk-wave
+    sector (conservative OR boundary-dissipative) cannot supply the 1.36-rad
+    phase or a growth sign; both must live in the PBH-sector internal
+    relaxational dynamics (the first-order-relaxation ansatz for G_eff), which
+    is also consistent with OBT's own kinematic blockade (the compact bulk at
+    om*ell ~ 1e-26 is even stiffer/gapped -> even smaller bulk lag)."""
+    print("[3b-L] lag vs absorption b (k=0.6, om=0.3, eps=0.03):")
+    for b in [0.0, 0.02, 0.1, 0.3, 1.0, 2.0]:
+        r0 = run_gate3(eps=0.0, babs=b)
+        rc = run_gate3(eps=0.03, babs=b)
+        A, phi = diff_lockin(rc, r0, 0.03)
+        print(f"    b={b:4.2f}: A/eps={A:.4f}  lag={-phi:+.3f} rad")
+    print("[3b-S] secular with dissipation (must be drive-phase invariant):")
+    for b in [0.3, 2.0]:
+        for ph, tag in [(0.0, "ph=0   "), (np.pi / 2, "ph=pi/2")]:
+            print(
+                f"    b={b:4.1f} {tag}: c1={secular_rate(dict(eps=0.03, ph=ph, babs=b)):+.3e}"
+            )
+
+
 if __name__ == "__main__":
     battery()
     print()
     secular_battery()
+    print()
+    battery_3b()
