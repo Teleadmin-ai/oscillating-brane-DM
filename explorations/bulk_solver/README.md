@@ -98,14 +98,46 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       in the generalized Eq.35, order 3 (see GATE1_spec.md). The full solver
       machinery (bulk + general moving brane + Robin + matter source) is now
       validated end-to-end.
-    - Stage D brick 2 / Gate 2-3 — NEXT (mostly PHYSICS SETUP, not more
-      machinery): assemble the coupled bulk(psi)+brane-matter(Delta, Gate-1a ODE)
-      system; Gate 2 (GR recovery); Gate 3 = OBT background (radion trajectory)
-      + bulk REGULARITY BC -> read the sign of the induced G_eff / Weyl response
-      (E_00 at the brane): does regularity IMPOSE enhancement/suppression, or
-      leave it free? The regularity BC is the crux (per the closure audit).
-    - Stage D: + matter source (scalar Delta) -> radiation amplification (Fig.10
-      of 0705.1685). Validates the instrument; then Gate 2/3 -> OBT sign.
+    - **Stage D brick 2 — DONE (June 2026). GATE 1b PASSED.** `gate1_full.py`:
+      the full coupled bulk(psi)+brane-matter(Delta) march (generalized Eq.35
+      with the matter source, Heun predictor-corrector coupling, adaptive
+      eta-steps, vectorized ray transfer). Battery: order-2.0 convergence;
+      IC-insensitive (1%); tracks the CHKS Eq.38 high-energy closure to 7.7%
+      during the high-energy era; era-consistent amplification at eta_c
+      monotone in k (1.10/1.25/1.59/1.96 at k=4/8/16/32 vs closure
+      1.10/1.30/1.92/4.43 — full bulk pumps LESS, retardation/radiative leak,
+      as in CHKS full-vs-analytic) and amp=1.02 for subcritical k=1.5.
+      **CRITICAL BUG CAUGHT & FIXED (the session's lesson):** the scalar master
+      reduction is Omega = z^{-3/2} psi (the scalar equation has +(3/z)Omega_z),
+      OPPOSITE to the tensor pattern h = z^{+3/2} psi_T. Pattern-matching the
+      tensor convention gave alpha = -(5/2)gamma/z_b, which has a SPURIOUS
+      tachyonic Robin bound state (sqrt(z)K0 analysis: growth ~0.8/z_b) -> the
+      observed late-time runaway. Correct coefficients (tensor cross-check +
+      stability analysis): **alpha = +gamma/(2 z_b)**, **S = -6(gamma-1)Delta/
+      (k^2 z_b^{7/2})**, Omega_b = z_b^{-3/2} psi_brane. With the fix the late
+      time is bounded (no runaway), all gates pass.
+    - **EXACT RS background — DONE.** `build_exact/run_exact`: rho/sigma=C/a^4
+      exact Friedmann (valid at all energies; a -> sqrt(2C)(eta-eta0) at low
+      energy). Supercritical k=8 through the era transition: BOUNDED post-era
+      oscillation with retained amplification x2.06 in Delta (x4.2 in P(k)) —
+      the CHKS full-solver phenomenology.
+    - **GATE 2 (GR recovery) — ESSENTIALLY PASSED (~11% level).** Subcritical
+      k=1.5 on the exact background follows the EXACT GR radiation two-mode
+      solution (comoving Delta basis D1=(sin x - x cos x)/x, D2=(cos x +
+      x sin x)/x, x=k(eta-eta0)/sqrt(3)): LSQ-matched in x in [2.5,3.5], the
+      prediction over x in [4,7] deviates by max 11% of the envelope (order-2
+      solver at delta=0.01; tightens with resolution). c1/12 = 0.53 vs the
+      pure-GR-history 12 (growing-mode IC = Phi_p=-2) is the PHYSICAL
+      high-energy-era transfer distortion (CHKS-type), not an error.
+    - **Gate 3 — NEXT (the OBT sign).** Dust brane (w=0 coefficients of
+      Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
+      low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
+      retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
+      only on the initial null ray + the brane => the retarded solution; this
+      IS the regularity/causal BC of the closure question). Read out the sign
+      of the cycle-averaged G_eff modulation from the Omega_b feedback in the
+      dust growth equation. Gate 4 = robustness (resolution, initial data,
+      horizon placement / mu != 0).
 - **Gate 2 — GR recovery.** Late-time, large-scale, low-energy limit must give
   `G_eff -> G_N` with the leading correction of order `(kL)^2` (~1e-61 here).
 - **Gate 3 — the OBT sign.** Only after Gates 0–2: dust brane + forcing, sweep

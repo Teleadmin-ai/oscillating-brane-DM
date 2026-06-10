@@ -119,3 +119,19 @@ question is LATE-TIME LOW-ENERGY (rho<<sigma), a different regime. Gate 1 valida
 the instrument; the OBT sign (Gate 3) requires adapting to the low-energy moving
 brane (where, per the closure audit, the sign is a free bulk BC and regularity-
 respecting solves tend to ENHANCEMENT).
+
+
+## DERIVED scalar junction coefficients in psi-variables (June 2026, VALIDATED)
+Reduction (sign-critical): Omega = z^{-3/2} psi (scalar master has +(3/z)Omega_z;
+OPPOSITE to tensors h = z^{+3/2} psi_T). With the flat normal
+(n.D)psi = gamma(zdot psi_t + psi_z) and rho/sigma = gamma-1 (exact, Eq.10):
+    (n.D)psi - [gamma/(2 z_b)] psi = -6 (gamma-1) Delta / (k^2 z_b^{7/2})   (ell=1)
+i.e. alpha = +gamma/(2 z_b),  S = -6(gamma-1)Delta/(k^2 z_b^{7/2});
+Omega_b = z_b^{-3/2} psi_brane;  IC ray profile psi = Omega * z^{3/2}.
+Cross-checks: tensor reduction reproduces Seahra's alpha_T = -(3/2)gamma/z_b;
+stability: alpha=+gamma/(2z) has NO Robin bound state (sqrt(z)K0(kappa z) cannot
+satisfy it), while the wrong-sign -(5/2)gamma/z has kappa z_b ~ 0.8 (tachyonic,
+growth ~0.8/z_b) — the runaway observed before the fix. Numerics: gate1_full.py
+(battery: order 2.0, IC-insens. 1%, HE-tracking 7.7%, era-consistent supercrit.
+amplification; exact background: bounded, k=8 amp x2.06; Gate 2 GR two-mode
+recovery at the 11% envelope level).
