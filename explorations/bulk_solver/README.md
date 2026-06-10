@@ -174,11 +174,42 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       OBT's own kinematic blockade implies the compact bulk at om*ell ~ 1e-26
       is gapped/stiffer still -> even smaller bulk lag; the single-brane
       gapless continuum tested here was the MOST favorable case for a bulk lag.
-    - **Gate 4 / next**: model the PBH-sector internal variable explicitly
-      (a brane-localized relaxational field with Gamma(t) = stick/slip
-      switching, coupled to G_eff) and check whether the BKM phase + a definite
-      growth sign emerge from THAT sector; two-brane compact bulk as a
-      cross-check; stick-slip waveform; longer secular runs. Dust brane (w=0 coefficients of
+    - **GATE 4 — DONE (June 2026): the program's final answer.** `gate4_pbh.py`
+      models the PBH-sector internal variable explicitly: dX/dt = Gamma(t)
+      (W_drive - X) with OBT's stick/slip switching (Gamma_stick=0.243,
+      Gamma_slip=20.7, om=pi, slip 10%), warm-started to its limit cycle,
+      amplitude-normalized, exact zero-mean (BBN rule); growth = EdS matter era
+      to 13.8 Gyr with G_eff = 1 + f_osc X(t), f_osc = 0.10.
+      **4a (BKM check):** the TRUE switched-system lag is 1.477 rad for a
+      sinusoidal drive (stick-dominated; const-Gamma arctan limits 1.485/0.151
+      reproduced exactly) and 1.047 rad for the stick-slip sawtooth, vs BKM's
+      1.359: BKM is a fair estimate but the lag is WAVEFORM-DEPENDENT (1.0-1.5
+      rad), not a universal constant.
+      **4b (the sign):** exact decomposition in the coupling sign f -> -f
+      (scaling checks: EVEN ratio 4.00 = f^2, ODD ratio 2.00 = f):
+        * ODD part (first order): +/- 5-10% = exactly the S8-claimed magnitude,
+          but its SIGN is set by [coupling-sign bit (+/-f)] x [anchoring phase]
+          x [waveform] — the closure INPUTS. Sin and sawtooth both flip with
+          the anchor; the warm start removed an earlier spurious anchor-
+          robustness (cold-transient artifact, caught).
+        * EVEN part (second order): NEGATIVE in ALL configurations tested
+          (waveforms x filters x anchors x t_i) = a genuinely DERIVED,
+          coupling-sign-proof UNIVERSAL SUPPRESSION (growth response is concave
+          in G), but only -0.01%..-0.2% at f=0.1 (grows ~logarithmically as the
+          motor starts earlier; adiabatic-window Jensen effect).
+      **VERDICT (Gates 0-4 complete):** the 5D bulk-wave sector supplies
+      neither phase nor sign (3a/3b); the PBH relaxational sector supplies a
+      real but waveform-dependent lag (1.0-1.5 rad) and an S8-scale growth
+      effect whose SIGN is one INPUT BIT short of a prediction (coupling sign;
+      plus anchoring phase and waveform shape), exactly as the closure audit
+      held — now proven quantitatively; the only universally DERIVED sign is a
+      second-order suppression ~30-100x smaller than the S8 claim. OBT's
+      -4..-10% magnitude IS reproducible with its anchored inputs (the odd part
+      reaches it), so V8.2's published epistemic framing ("consistency with the
+      tension, not a precision prediction"; "sign is an input at the level of
+      LambdaCDM's Omega_c") is VINDICATED ab initio. Optional cross-check left:
+      4c — incoming homogeneous-Weyl injection in the PDE solver (the second
+      input channel); two-brane compact bulk. Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
