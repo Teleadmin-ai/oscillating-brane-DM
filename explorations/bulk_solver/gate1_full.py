@@ -19,7 +19,10 @@ PHYSICS COEFFICIENTS (derived; cross-checked — see also GATE1_spec.md):
   Junction (Eq. 28) converted to psi with the FLAT normal
   (n.D)psi = gamma (zdot psi_t + psi_z)  [Stage-B validated convention]:
       alpha(eta) = +gamma / (2 z_b)
-      S(eta)     = -6 (gamma-1) Delta / (k^2 z_b^{7/2})        (ell = 1)
+      S(eta)     = -6 (gamma-1) Delta / (k^2 z_b^{5/2})        (ell = 1)
+      [generally S = -6 (rho/sigma) a^3 z^{1/2} Delta / k^2: multiply Eq.28
+       by ell*z^{1/2}; a^3 z^{1/2} = z^{-5/2} on a=1/z. An earlier 7/2 was an
+       arithmetic slip (1/2-3 = -5/2), caught by re-deriving for the dust case.]
   Cross-checks: (i) TENSOR reduction h = z^{3/2}psi_T with proper-normal Neumann
   d_n h = 0 gives alpha_T = -(3/2)gamma/z_b = Seahra's RS coefficient (spec) —
   conventions consistent; (ii) STABILITY: with alpha=+gamma/(2 z_b) the static
@@ -93,7 +96,7 @@ def alpha_brane(gam, zb):
 
 
 def source_S(gam, zb, k, Delta):
-    return -6.0 * (gam - 1.0) * Delta / (k * k * zb**3.5)
+    return -6.0 * (gam - 1.0) * Delta / (k * k * zb**2.5)
 
 
 def brack(eta, k):

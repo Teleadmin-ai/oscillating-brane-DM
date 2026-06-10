@@ -129,7 +129,31 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       solver at delta=0.01; tightens with resolution). c1/12 = 0.53 vs the
       pure-GR-history 12 (growing-mode IC = Phi_p=-2) is the PHYSICAL
       high-energy-era transfer distortion (CHKS-type), not an error.
-    - **Gate 3 — NEXT (the OBT sign).** Dust brane (w=0 coefficients of
+    - **GATE 3a — FIRST PROBE DONE (June 2026): the conservative causal bulk
+      imposes lag ~ 0 and secular shift ~ 0.** `gate3_obt.py`: low-energy DUST
+      brane (Eq.33a dust coefficients; the A-term is EXACTLY the 4D Poisson
+      self-gravity, so Omega_b carries only the 5D correction) + IMPOSED radion
+      oscillation z_b = z_s(1+eps sin(om eta)) with adiabatic ramp + matched
+      smooth ICs, retarded bulk. Differential lock-in (eps-run minus smooth run,
+      detrended) gives a CLEAN linear response: A/eps converged and
+      eps-independent (0.1326 at k=0.6, om=0.3), drive-phase invariant to
+      ~0.06 rad. RESULTS: (i) in the OBT-relevant EVANESCENT regime (ck >
+      omega_radion) the bulk gravity responds essentially IN PHASE: lag =
+      0.00 +/- 0.1 rad — NOT the 1.36-rad viscoelastic lag; a genuine lag
+      (+0.35 rad) appears only in the RADIATING regime om > k (not the
+      cosmological one); (ii) the SECULAR growth-rate shift is ZERO within
+      bounds: |c1| <~ 1e-6/eta and sign flips with the drive phase (residual,
+      not signal) — about TWO ORDERS below the magnitude OBT's S8 mechanism
+      needs in matched units (~3e-4/eta). INTERPRETATION (sharpens the closure
+      audit): bulk CAUSALITY alone does NOT supply the S8 phase lag or a growth
+      modification of either sign; delta_bulk must come from the DISSIPATIVE
+      sector (Gamma_rad/PBH stick-slip — consistent with OBT's own BKM
+      derivation from Gamma_slip/Gamma_stick timescales, NOT wave retardation)
+      and/or the compact two-brane bulk. The sign freedom lives there. CAVEATS:
+      single-brane Poincare (continuum KK; OBT has compact bulk -> resonances
+      possible), motor perturbations not modeled (= the free Weyl-sourcing
+      data), sinusoid not stick-slip, compressed hierarchy (k ell = 0.3-0.6).
+    - **Gate 3b/4 — NEXT.** Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
