@@ -401,7 +401,29 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       question, two branches, both numbers ready — the next session's first
       target. The audit did its job: it tried to kill, drew blood twice,
       closed one wound itself, and left the chain with a single named
-      load-bearing question instead of diffuse confidence. Dust brane (w=0 coefficients of
+      load-bearing question instead of diffuse confidence.
+    - **GATE 9 — THE INDICIAL THEOREM (June 2026): F1 RESOLVED; the bit is a
+      theorem of the bulk.** `gate9_f1_theorem.py`. The CHKS Eq. 30 dictionary
+      (fetched verbatim) fixes the physical potentials: Phi_E, Psi_E ~
+      k^2 Omega_b/(ell a^3) — the 1/a^3 is physical, both potentials share it
+      (force-letter convention irrelevant). For a quasi-static configuration
+      Omega ~ z^s swept by the radion, relative to the baryon potential's own
+      kinematic wiggle: c_phys = s + 2. BOTH audit branches were wrong in
+      detail (raw-slope forgot the dictionary 1/a^3; gate-standard +2.5
+      over-counted the source normalization). THE THEOREM: the AdS warp term
+      -1/(4z^2) has DEGENERATE indicial exponents (1/2,1/2) => every solution
+      has psi ~ sqrt(z)(slowly varying) => s in (-2,-1] for every branch
+      (I0: -1.000 exact; K0/log: -1.0..-1.4, bounded log corrections); the
+      sign-flip condition s < -2 would need psi ~ z^{-1/2}, NOT a solution.
+      Hence c_phys = s+2 in (0,1] STRICTLY POSITIVE: the radion-DM coupling
+      sign is +, forced by the warp's indicial structure. CONSEQUENCE (derived
+      sawtooth + OBT chronology anchor + 4a filter + DM share 5/6):
+      **DlnD = -3.5%..-5.6% = S8 SUPPRESSION derived, low end of OBT's
+      -4..-10% window; enhancement excluded by theorem.** Caveats: quasi-static
+      premise (DM abundance remains IC; only the COUPLING is derived); sweep
+      terms neglected; Eq. 30 at leading sub-horizon order; V8.2 promotion
+      requires Romain + external audit. THE GATE PROGRAM (0 -> 9) IS CLOSED —
+      this time by a theorem. Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
