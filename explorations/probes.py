@@ -2957,7 +2957,35 @@ def efe_satellites(opts):
     nue = 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
     s_pred = np.sqrt(nue * G * M / (5.0 * r)) / KMS
     xacc = gN / a0
-    sel = (e > xacc) & (xacc < 1.0)  # EFE-dominated, non-Newtonian
+    # SIMON 2019 (ARA&A Table 1) curated sigmas: multi-epoch/binary-aware.
+    # Pre-specified source-flag rule: upper limits and review-flagged
+    # non-equilibrium / uninformative-error objects are EXCLUDED from the
+    # quantitative residuals (reported separately).
+    S19 = {
+        "Segue (I)": (3.7, "keep (binary-modeled, Simon 2011)"),
+        "Segue II": (None, "UPPER LIMIT <2.2 -> consistent w/ spred, excluded"),
+        "Willman 1": (None, "flagged non-equilibrium -> excluded"),
+        "Bootes II": (None, "sigma 10.5+-7.4 (5 stars) uninformative -> excluded"),
+        "Bootes (I)": (4.6, "Simon19 single-component (was 2.4 two-comp)"),
+        "Ursa Major (I)": (7.0, ""),
+        "Ursa Major II": (5.6, "tidal-disruption candidate"),
+        "Coma Berenices": (4.6, ""),
+        "Canes Venatici II": (4.6, ""),
+        "Hercules": (5.1, "tidal candidate"),
+        "Leo IV": (3.3, "err +-1.7 (broad)"),
+        "Leo V": (2.3, "err +3.2/-1.6 -> consistent within errors"),
+    }
+    keep = np.ones(len(mw), bool)
+    so2 = sobs.copy()
+    for i, nm_ in enumerate(mw.Name.values):
+        if nm_ in S19:
+            v, note = S19[nm_]
+            if v is None:
+                keep[i] = False
+            else:
+                so2[i] = v
+    sobs = so2
+    sel = (e > xacc) & (xacc < 1.0) & keep  # EFE-dominated, curated
     res = np.log10(sobs[sel] / s_pred[sel])
     print(
         "[efe_dwarfs] EFE-dominated MW satellites: sigma from M_bar + EXTERNAL FIELD alone."
