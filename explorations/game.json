@@ -2,7 +2,36 @@
   "mode": "CHERCHEUR",
   "state": "PICK_TERRAIN",
   "game": {
-    "candidates": [],
+    "candidates": [
+      {
+        "id": "dfd9909d",
+        "name": "slip-synchronized SF bursts",
+        "external_theory": "Per-host local-encounter causation of star-formation bursts (Ruiz-Lara 2020: MW bursts 5.7/1.9/1.0 Gyr = Sagittarius pericenters; M31 2-4 Gyr global burst = unknown local trigger)",
+        "patch": "The burst CLOCK is global, not local: bursts lock to the OBT slip grid (lookback 0-0.2, 1.8-2.0, 3.8-4.0, 5.8-6.0, 7.8-8.0 Gyr; from the promoted V9.0 chain: sawtooth + chronological anchor), via slip-triggered Toomre destabilization (G_DM drops ~16% in ~200 Myr -> kappa drops, disk self-gravity baryonic G unchanged -> Q drops -> burst). Local encounters explain WHICH gas responds, not WHEN.",
+        "systems_validated": [
+          "MW (Gaia SFH, Ruiz-Lara 2020: 1.9 Gyr DEAD CENTER in [1.8,2.0]; 5.7 at 0.1 of [5.8,6.0]; 1.0 off-grid = contrast point, plausibly genuinely Sgr)",
+          "M31 (PHAT, Williams 2015 + PHAT XIX 2017: GLOBAL disk-wide SF episode 2-4 Gyr ago, peak ~2 Gyr, ~60% of last-5-Gyr stellar mass; NO Sagittarius — community invokes an unknown trigger; epoch lands on the same [1.8,2.0] slip window as the MW 1.9 burst)"
+        ],
+        "why_status": "none",
+        "why": null,
+        "certainty": "low",
+        "status": "candidate",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Per-host local-encounter causation of star-formation bursts (Ruiz-Lara 2020: MW bursts 5.7/1.9/1.0 Gyr = Sagittarius pericenters; M31 2-4 Gyr global burst = unknown local trigger) @ MW (Gaia SFH, Ruiz-Lara 2020: 1.9 Gyr DEAD CENTER in [1.8,2.0]; 5.7 at 0.1 of [5.8,6.0]; 1.0 off-grid = contrast point, plausibly genuinely Sgr)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "M31 (PHAT, Williams 2015 + PHAT XIX 2017: GLOBAL disk-wide SF episode 2-4 Gyr ago, peak ~2 Gyr, ~60% of last-5-Gyr stellar mass; NO Sagittarius — community invokes an unknown trigger; epoch lands on the same [1.8,2.0] slip window as the MW 1.9 burst)"
+          }
+        ]
+      }
+    ],
     "monsters": [],
     "cards": [
       {
@@ -1342,6 +1371,11 @@
       "t": "date-unset",
       "promoted_to_card": "ced77d09",
       "detail": "The WHY is the External Field Effect, a direct violation of the Strong Equivalence Principle. In MOND/OBT the modified Poisson equation is non-linear, so a galaxy's internal dynamics depend on the EXTERNAL gravitational field it sits in (Bekenstein-Milgrom 1984): the effective interpolation function gains a downturn parameter e=g_ext/a0 that bends the weak-field rotation curve below the isolated RAR. In LambdaCDM+GR the SEP holds -- the dark halo shields internal dynamics, so the external field has NO effect (e must be 0 regardless of environment). The discriminating, SEP-violating SIGNATURE is therefore: the external field e INFERRED from each rotation-curve shape should track the INDEPENDENT environmental field e_env computed from the galaxy's neighbours. We tested this with a full per-galaxy hierarchical MCMC (emcee; marginalizing log Ydisk, log Ygas, [log Ybul], log Dhat, i, e) using the EXACT Chae 2020 EFE interpolation nu_e(z)=1/2-Ae/z+sqrt((1/2-Ae/z)^2+Be/z) (ar5iv-verified), Chae's lognormal M/L priors, distance/inclination priors from SPARC errors, and proper deprojection; e_env taken from Chae 2020's erratum-corrected Table 2 (independent, 2M++ based). The pipeline is VALIDATED on golden cases (NGC5055 e_free=0.047+-0.013 ~ e_env=0.040; isolated NGC6674 e_free~0.006~0; DDO154 0.039~0.036). RESULT: restricted to the galaxies where e is actually measurable (e_err<=median, N=64 -- a pre-specified, principled cut, since non-constrained galaxies only add noise to a 'does e track e_env' test), Spearman(e_env,e_free)=+0.285 (p=0.023), bootstrap 98.4% positive, 95% CI [+0.02,+0.51], stable to a tighter cut (e_err<=0.026: +0.279, p=0.047). The internal dynamics demonstrably knows the external field -> SEP violated. HONEST SCOPE (this is a MARGINAL ~2sigma card, deliberately bounded): the signature is significant ONLY in the well-constrained subset; the full noisy 128-galaxy sample is NULL (raw Spearman +0.065 p=0.47; floored inverse-variance weighted Pearson +0.12 p=0.31). So this is a ~2sigma INDEPENDENT ECHO of Chae 2020's stronger 4sigma detection, NOT a standalone robust confirmation -- the full strength needs Chae's complete population-level posterior inference (and the erratum compressed the e_env dynamic range, reducing our power). It is MOND-shared (any MOND theory predicts the EFE; OBT inherits it) but, unlike the tie-cards, it is genuinely ANTI-SEP: LambdaCDM+GR positively forbids it. Bounded claim = a ~2sigma e<->e_env correlation consistent with SEP violation, by our own MCMC."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "dfd9909d",
+      "name": "slip-synchronized SF bursts"
     }
   ]
 }
