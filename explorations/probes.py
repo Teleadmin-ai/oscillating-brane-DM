@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "xcop_killshot": lambda opts=None: xcop_killshot(opts),
     "xcop_budget": lambda opts=None: xcop_budget(opts),
     "cusp_core_h": lambda opts=None: cusp_core_h(opts),
     "cusp_core_full": lambda opts=None: cusp_core_full(opts),
@@ -3705,3 +3706,151 @@ def xcop_budget(opts):
     print(
         f"  NEXT (the kill shot): X-COP radial M(r) profiles -> R(r) vs W(t_dyn(r)) organization"
     )
+
+
+def xcop_killshot(opts):
+    """THE KILL SHOT (BIG BOSS, candidate 2fcb12a5). X-COP per-bin profiles
+    (SWITCHdrive package, 12 clusters): g_obs from M_NFW(r) (HSE), g_bar from
+    MGAS(r) + Hernquist BCG (M*=1.2e12, a=30 kpc, stated). GLOBAL models on
+    stacked bins (every 5th of 50 smoothed radii ~ independent-ish; 5% error
+    floor on g_obs, stated): (1) MOND pure nu(g_bar/a0) [0 free]; (2) OBT:
+    nu(g_bar/(W(r) a0)) * g_bar + cored self-similar Weyl [2 free: f_W, beta;
+    W(r)=|sinc(pi t_dyn/2Gyr)| DERIVED, nu->1 naturally as W->0]; (3) the
+    Eckert-class double-scale form [4 free]. Pre-stated rule: card-grade if
+    OBT(2p) >= class-4p in BIC with flat residual structure. Units calibrated
+    vs Ettori M500 in-line. FACTS only."""
+    import glob
+
+    import numpy as np
+    from astropy.io import fits as pyfits
+    from scipy.optimize import least_squares
+
+    G, MSUN, KPC = 6.674e-11, 1.989e30, 3.0856775814913673e19
+    a0, TGYR = 1.2e-10, 2.0
+    E19 = {
+        "A85": (1235, 5.65),
+        "A644": (1230, 5.66),
+        "A1644": (1054, 3.48),
+        "A1795": (1153, 4.63),
+        "A2029": (1423, 8.82),
+        "A2142": (1424, 8.95),
+        "A2255": (1196, 5.26),
+        "A2319": (1346, 7.31),
+        "A3158": (1123, 4.26),
+        "A3266": (1430, 8.80),
+        "RXC1825": (1105, 4.08),
+        "ZW1215": (1358, 7.66),
+    }
+    base = "/DATA/obt_game_cache/raw/xcop"
+    rows = []
+    for cl, (r500, m500) in E19.items():
+        f = pyfits.open(f"{base}/{cl}/{cl}_fgas_profile.fits")
+        t = f[1].data
+        f.close()
+        r_kpc = np.array(t["RADIUS"], float)
+        # unit calibration: RADIUS could be kpc or Mpc; M in Msun or scaled
+        if r_kpc.max() < 50:
+            r_kpc = r_kpc * 1000.0
+        M = np.array(t["M_NFW"], float)
+        Mg = np.array(t["MGAS"], float)
+        scale = m500 * 1e14 / np.interp(r500, r_kpc, M)
+        M, Mg = M * scale, Mg * scale  # calibrated to Ettori at R500
+        eM = (
+            scale
+            * (np.array(t["M_NFW_HI"], float) - np.array(t["M_NFW_LO"], float))
+            / 2
+        )
+        sel = (r_kpc > 50) & (r_kpc < 1.05 * r500) & (M > 0) & (Mg > 0)
+        idx = np.where(sel)[0][::5]
+        r_m = r_kpc[idx] * KPC
+        Mstar = 1.2e12 * (r_kpc[idx] / (r_kpc[idx] + 30.0)) ** 2
+        gobs = G * M[idx] * MSUN / r_m**2
+        gbar = G * (Mg[idx] + Mstar) * MSUN / r_m**2
+        sg = np.sqrt((eM[idx] / M[idx]) ** 2 + 0.05**2)
+        td = 2 * np.pi * np.sqrt(r_m**3 / (G * M[idx] * MSUN)) / 3.156e16  # Gyr
+        W = np.abs(np.sinc(td / TGYR))  # np.sinc(x)=sin(pi x)/(pi x)
+        for j in range(len(idx)):
+            rows.append(
+                (gobs[j], gbar[j], sg[j], W[j], r_m[j], r500 * KPC, m500 * 1e14 * MSUN)
+            )
+    A = np.array(rows)
+    gobs, gbar, sg, W, r_m, R5, M5 = A.T
+    lny, slny = np.log(gobs), sg
+    print(
+        f"[xcop_killshot] {len(A)} stacked bins, 12 clusters; g_bar/a0: {np.min(gbar/a0):.3f}-{np.max(gbar/a0):.1f}"
+    )
+
+    def nu(z):
+        return 0.5 + np.sqrt(0.25 + 1.0 / np.clip(z, 1e-8, None))
+
+    def chi2(model_lng, k):
+        c2 = float((((model_lng - lny) / slny) ** 2).sum())
+        return c2, c2 + k * np.log(len(A))
+
+    # (1) pure MOND
+    c_m, b_m = chi2(np.log(nu(gbar / a0) * gbar), 0)
+
+    # (2) OBT: nu with W-extinguished a0 + cored self-similar Weyl
+    def obt_lng(th):
+        fW, lbeta = th
+        beta = np.exp(lbeta)
+        x = r_m / (beta * R5)
+        mW = (x - np.arctan(x)) / (1 / beta - np.arctan(1 / beta))
+        gW = fW * G * M5 * mW / r_m**2
+        gk = nu(gbar / (np.clip(W, 1e-3, None) * a0)) * gbar
+        return np.log(gk + gW)
+
+    best = None
+    for f0 in (0.3, 0.5, 0.7):
+        for b0 in (-1.6, -1.0, -0.5):
+            o = least_squares(
+                lambda th: (obt_lng(th) - lny) / slny,
+                x0=[f0, b0],
+                bounds=([0.0, -3.0], [0.95, 0.7]),
+            )
+            c2 = float((o.fun**2).sum())
+            if best is None or c2 < best[0]:
+                best = (c2, o.x)
+    c_o, b_o = best[0], best[0] + 2 * np.log(len(A))
+    fW, beta = best[1][0], np.exp(best[1][1])
+
+    # (3) Eckert-class double-scale (4 free): g = gbar*(1+(g1/gbar)^a1)*(1+(g2/gbar)^a2)
+    def d4_lng(th):
+        lg1, a1, lg2, a2 = th
+        return (
+            np.log(gbar)
+            + np.log1p((np.exp(lg1) / gbar) ** a1)
+            + np.log1p((np.exp(lg2) / gbar) ** a2)
+        )
+
+    bestd = None
+    for i1 in (-24.0, -23.0):
+        for i2 in (-26.0, -25.0):
+            o = least_squares(
+                lambda th: (d4_lng(th) - lny) / slny,
+                x0=[i1, 0.5, i2, 1.0],
+                bounds=([-30, 0.01, -30, 0.01], [-20, 3, -20, 3]),
+            )
+            c2 = float((o.fun**2).sum())
+            if bestd is None or c2 < bestd[0]:
+                bestd = (c2, o.x)
+    c_d, b_d = bestd[0], bestd[0] + 4 * np.log(len(A))
+    print(f"  MOND pure (k=0): chi2/N = {c_m/len(A):.2f}  BIC = {b_m:.0f}")
+    print(
+        f"  OBT sinc+Weyl (k=2): chi2/N = {c_o/len(A):.2f}  BIC = {b_o:.0f}  [f_W={fW:.2f}, r_c={beta:.2f} R500]"
+    )
+    print(f"  4-param double-scale (k=4): chi2/N = {c_d/len(A):.2f}  BIC = {b_d:.0f}")
+    print(
+        f"  dBIC(4p - OBT) = {b_d - b_o:+.0f}  (>0 favors OBT)   dBIC(MOND - OBT) = {b_m - b_o:+.0f}"
+    )
+    # residual structure of the OBT model across the three regimes
+    res = obt_lng([fW, np.log(beta)]) - lny
+    for tag, m in [
+        ("core g>a0", gbar > a0),
+        ("mid 0.1-1 a0", (gbar > 0.1 * a0) & (gbar <= a0)),
+        ("out <0.1 a0", gbar <= 0.1 * a0),
+    ]:
+        if m.sum():
+            print(
+                f"    OBT residual [{tag:12s}]: median {np.median(res[m]):+.3f} dex-e, N={int(m.sum())}"
+            )
