@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "sfh_sync": lambda args=None: probe_sfh_sync(args),
     "build_sparc": build_sparc,
     "build_wb": build_wb,
     "diversity": diversity,
@@ -2807,3 +2808,66 @@ def describe():
     return {
         k: (fn.__doc__ or "").strip().split("\n")[0] for k, fn in sorted(PROBES.items())
     }
+
+
+def probe_sfh_sync(args=None):
+    """sfh_sync — do published SF-burst epochs cluster on the OBT slip grid?
+    Grid (promoted V9.0 chain, sawtooth + chronological anchor): slip windows at
+    lookback {1.8-2.0, 3.8-4.0, 5.8-6.0, 7.8-8.0} Gyr (centers 1.9/3.9/5.9/7.9;
+    the 0-0.2 window excluded: recent SF ubiquitous, uninformative). Epochs =
+    ALL published sharp/major episodes in [0.8, 9] Gyr from the harvested
+    sources (no cherry-picking; misses count). Hit if |t - nearest center| <=
+    0.1 + sigma_dating. MC null: same N epochs uniform in [0.8, 9], same
+    per-epoch tolerances; p = P(hits >= observed)."""
+    import numpy as np
+
+    # (host, epoch Gyr, sigma_dating, source)
+    eps = [
+        ("MW", 1.9, 0.1, "Ruiz-Lara 2020 (narrow episode)"),
+        ("MW", 5.7, 0.3, "Ruiz-Lara 2020"),
+        ("MW", 1.0, 0.1, "Ruiz-Lara 2020 (off-grid contrast)"),
+        ("M31", 2.0, 0.5, "Williams 2015/PHAT XIX (peak of 2-4 global episode)"),
+        ("LMC", 2.0, 0.4, "Harris-Zaritsky 2009 (peak ~2 Gyr)"),
+        ("LMC+SMC", 2.5, 0.4, "H-Z coincident Clouds peak"),
+        ("Clouds", 5.0, 0.7, "H-Z re-ignition both Clouds ~5 Gyr"),
+    ]
+    centers = np.array([1.9, 3.9, 5.9, 7.9])
+    lo, hi = 0.8, 9.0
+    rng = np.random.default_rng(42)
+
+    def hits(ts, tols):
+        d = np.min(np.abs(ts[:, None] - centers[None, :]), axis=1)
+        return d <= tols
+
+    ts = np.array([e[1] for e in eps])
+    tols = np.array([0.1 + e[2] for e in eps])
+    h = hits(ts, tols)
+    print("  host       epoch  sig   tol   nearest  hit")
+    for (hst, t, s, src), hit in zip(eps, h):
+        near = centers[np.argmin(np.abs(t - centers))]
+        print(
+            f"  {hst:9s} {t:5.1f}  {s:.1f}  {0.1+s:.1f}   {near:.1f}     {'HIT ' if hit else 'miss'}  [{src}]"
+        )
+    n_obs = int(h.sum())
+    nmc = 200000
+    cnt = 0
+    for _ in range(nmc):
+        tr = rng.uniform(lo, hi, len(eps))
+        if hits(tr, tols).sum() >= n_obs:
+            cnt += 1
+    p = cnt / nmc
+    # sharper variant: only epochs with sigma <= 0.3 (the well-dated ones)
+    m = np.array([e[2] for e in eps]) <= 0.3
+    h2 = hits(ts[m], tols[m])
+    n2 = int(h2.sum())
+    cnt2 = 0
+    for _ in range(nmc):
+        tr = rng.uniform(lo, hi, int(m.sum()))
+        if hits(tr, tols[m]).sum() >= n2:
+            cnt2 += 1
+    p2 = cnt2 / nmc
+    print(f"\n  ALL epochs: {n_obs}/{len(eps)} hits, MC p = {p:.3f}")
+    print(f"  SHARP only (sigma<=0.3, N={int(m.sum())}): {n2} hits, MC p = {p2:.3f}")
+    print("  VERDICT: see p-values — candidate-level evidence; monster needs p<~0.01")
+    print("  (more hosts with sigma<=0.3 datings, or per-host SFH reanalysis).")
+    return {"p_all": p, "p_sharp": p2, "hits": n_obs, "n": len(eps)}
