@@ -2,36 +2,7 @@
   "mode": "CHERCHEUR",
   "state": "PICK_TERRAIN",
   "game": {
-    "candidates": [
-      {
-        "id": "12da04b2",
-        "name": "the bulk-flow plateau = brane drift (GA quest)",
-        "external_theory": "LCDM cosmic-flows expectation: the bulk-flow amplitude DECAYS with survey depth (~250 km/s at 50 Mpc -> 60-100 at 250 Mpc) as attractor contributions average out; any large-depth excess is fluke or systematics",
-        "patch": "The non-decaying component is the V8.2 brane drift v_bulk=300 km/s (T3, PRE-REGISTERED years ago from dark flow + CMB birefringence unification) - a kinematic flow WITHOUT a source basin, hence: (a) amplitude plateau at all depths, (b) depth-STABLE direction (no convergence as volumes grow)",
-        "systems_validated": [
-          "CF4 groups (CDS J/ApJ/944/94, N=38004, probe ga_bulkflow, monopole+dipole WLS per sphere): plateau 244->265 km/s from R<50 to R<250 Mpc (no decay; LCDM needs ~60-100 at 250), amplitude within ~12 percent of the pre-registered 300 km/s; direction (l,b)=(297-306, +8..+19) STABLE across all five depths, between Kashlinsky dark flow (~287,+8) and Shapley (306,+30). Watkins+23 CF4 minimum-variance reference ~400 km/s at 200/h confirms the anomaly class independently. CAVEATS (stated): simple estimator (not MV), Malmquist-type log-distance biases uncorrected at large R (though they cannot manufacture the 50-Mpc-out flatness), sigma_v=300 floor, H0=74.6 zero-point absorbed by the monopole. Candidate-grade; the card needs the bias-corrected MV round + mocks",
-          "Round 2 (probe ga_mv): Watkins-Feldman log estimator + shell-balanced weights + 9-param shear co-fit. The dipole SURVIVES shear absorption unchanged (320-332 km/s, plateau, direction 297-301/+15 fixed) - now within ~10 percent of the pre-registered 300; AND the co-fitted shear independently recovers the official astronomy as an internal control (shear grows 637->948 toward the Shapley depth 200-250 Mpc): the flow = real attractor tides PLUS a stable sourceless dipole underneath. Honest: balanced-weights formal errors blow up (sparse far shells, +-500); the robust statement is cross-estimator stability (244-265 simple / 320-332 log-balanced / ~400 Watkins MV - all plateaued, all 250-400); amplitude significance awaits the mock-calibrated MV round"
-        ],
-        "why_status": "none",
-        "why": null,
-        "certainty": "low",
-        "status": "candidate",
-        "created": "date-unset",
-        "updated": "date-unset",
-        "history": [
-          {
-            "t": "date-unset",
-            "event": "created_candidate",
-            "detail": "patch on LCDM cosmic-flows expectation: the bulk-flow amplitude DECAYS with survey depth (~250 km/s at 50 Mpc -> 60-100 at 250 Mpc) as attractor contributions average out; any large-depth excess is fluke or systematics @ CF4 groups (CDS J/ApJ/944/94, N=38004, probe ga_bulkflow, monopole+dipole WLS per sphere): plateau 244->265 km/s from R<50 to R<250 Mpc (no decay; LCDM needs ~60-100 at 250), amplitude within ~12 percent of the pre-registered 300 km/s; direction (l,b)=(297-306, +8..+19) STABLE across all five depths, between Kashlinsky dark flow (~287,+8) and Shapley (306,+30). Watkins+23 CF4 minimum-variance reference ~400 km/s at 200/h confirms the anomaly class independently. CAVEATS (stated): simple estimator (not MV), Malmquist-type log-distance biases uncorrected at large R (though they cannot manufacture the 50-Mpc-out flatness), sigma_v=300 floor, H0=74.6 zero-point absorbed by the monopole. Candidate-grade; the card needs the bias-corrected MV round + mocks"
-          },
-          {
-            "t": "date-unset",
-            "event": "system_added",
-            "detail": "Round 2 (probe ga_mv): Watkins-Feldman log estimator + shell-balanced weights + 9-param shear co-fit. The dipole SURVIVES shear absorption unchanged (320-332 km/s, plateau, direction 297-301/+15 fixed) - now within ~10 percent of the pre-registered 300; AND the co-fitted shear independently recovers the official astronomy as an internal control (shear grows 637->948 toward the Shapley depth 200-250 Mpc): the flow = real attractor tides PLUS a stable sourceless dipole underneath. Honest: balanced-weights formal errors blow up (sparse far shells, +-500); the robust statement is cross-estimator stability (244-265 simple / 320-332 log-balanced / ~400 Watkins MV - all plateaued, all 250-400); amplitude significance awaits the mock-calibrated MV round"
-          }
-        ]
-      }
-    ],
+    "candidates": [],
     "monsters": [
       {
         "id": "dfd9909d",
@@ -74,6 +45,45 @@
             "t": "date-unset",
             "event": "abandoned",
             "detail": "Isolated-judge program 0/3 (NGC 6822 burst at 2.6-2.9 = miss; IC 1613 constant SFH = null; WLM continuous/rising = soft miss). The cleanest discriminant class fails; bracket [0.027,0.15] never cleared p<0.01. The MW/M31/M33 ~1.9-2.0 triple stands recorded (3 big LG DISCS, 3 different local culprits) but cannot be separated from encounter coincidence. RESURRECTION: (a) slip-Toomre mechanism requires a COLD ROTATING DISC (kappa channel) - the dIrr judges are weak rotators, so the proper future test is sharp SFHs of external discs (M81/M101-class, sigma<=0.3 not feasible today); (b) any card sharpening the chronological anchor re-dates the grid; (c) re-test at each new card per la magie."
+          }
+        ]
+      },
+      {
+        "id": "12da04b2",
+        "name": "the bulk-flow plateau = brane drift (GA quest)",
+        "external_theory": "LCDM cosmic-flows expectation: the bulk-flow amplitude DECAYS with survey depth (~250 km/s at 50 Mpc -> 60-100 at 250 Mpc) as attractor contributions average out; any large-depth excess is fluke or systematics",
+        "patch": "The non-decaying component is the V8.2 brane drift v_bulk=300 km/s (T3, PRE-REGISTERED years ago from dark flow + CMB birefringence unification) - a kinematic flow WITHOUT a source basin, hence: (a) amplitude plateau at all depths, (b) depth-STABLE direction (no convergence as volumes grow)",
+        "systems_validated": [
+          "CF4 groups (CDS J/ApJ/944/94, N=38004, probe ga_bulkflow, monopole+dipole WLS per sphere): plateau 244->265 km/s from R<50 to R<250 Mpc (no decay; LCDM needs ~60-100 at 250), amplitude within ~12 percent of the pre-registered 300 km/s; direction (l,b)=(297-306, +8..+19) STABLE across all five depths, between Kashlinsky dark flow (~287,+8) and Shapley (306,+30). Watkins+23 CF4 minimum-variance reference ~400 km/s at 200/h confirms the anomaly class independently. CAVEATS (stated): simple estimator (not MV), Malmquist-type log-distance biases uncorrected at large R (though they cannot manufacture the 50-Mpc-out flatness), sigma_v=300 floor, H0=74.6 zero-point absorbed by the monopole. Candidate-grade; the card needs the bias-corrected MV round + mocks",
+          "Round 2 (probe ga_mv): Watkins-Feldman log estimator + shell-balanced weights + 9-param shear co-fit. The dipole SURVIVES shear absorption unchanged (320-332 km/s, plateau, direction 297-301/+15 fixed) - now within ~10 percent of the pre-registered 300; AND the co-fitted shear independently recovers the official astronomy as an internal control (shear grows 637->948 toward the Shapley depth 200-250 Mpc): the flow = real attractor tides PLUS a stable sourceless dipole underneath. Honest: balanced-weights formal errors blow up (sparse far shells, +-500); the robust statement is cross-estimator stability (244-265 simple / 320-332 log-balanced / ~400 Watkins MV - all plateaued, all 250-400); amplitude significance awaits the mock-calibrated MV round",
+          "Round 3 (probe ga_mocks, 200 mocks on the real CF4 geometry + real lognormal errors): (a) INJECTION CALIBRATION - V_true=300 recovered 305+-14 (R<150) and 301+-12 (R<250), bias +5/+1 = estimator UNBIASED, Malmquist resolved at this level; (b) noise-only null 23+-11 km/s -> observed 265 at p<0.005 (0/200); (c) LCDM null with cosmic-variance anchors (150/110 km/s rms): R<150 p=0.030, R<250 p<0.005 (all 200 LCDM mocks <= 229 vs observed 265) - the deep plateau is LCDM-incompatible by our own mocks, consistent with Watkins+23 p~2e-6"
+        ],
+        "why_status": "none",
+        "why": null,
+        "certainty": "low",
+        "status": "monster",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on LCDM cosmic-flows expectation: the bulk-flow amplitude DECAYS with survey depth (~250 km/s at 50 Mpc -> 60-100 at 250 Mpc) as attractor contributions average out; any large-depth excess is fluke or systematics @ CF4 groups (CDS J/ApJ/944/94, N=38004, probe ga_bulkflow, monopole+dipole WLS per sphere): plateau 244->265 km/s from R<50 to R<250 Mpc (no decay; LCDM needs ~60-100 at 250), amplitude within ~12 percent of the pre-registered 300 km/s; direction (l,b)=(297-306, +8..+19) STABLE across all five depths, between Kashlinsky dark flow (~287,+8) and Shapley (306,+30). Watkins+23 CF4 minimum-variance reference ~400 km/s at 200/h confirms the anomaly class independently. CAVEATS (stated): simple estimator (not MV), Malmquist-type log-distance biases uncorrected at large R (though they cannot manufacture the 50-Mpc-out flatness), sigma_v=300 floor, H0=74.6 zero-point absorbed by the monopole. Candidate-grade; the card needs the bias-corrected MV round + mocks"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Round 2 (probe ga_mv): Watkins-Feldman log estimator + shell-balanced weights + 9-param shear co-fit. The dipole SURVIVES shear absorption unchanged (320-332 km/s, plateau, direction 297-301/+15 fixed) - now within ~10 percent of the pre-registered 300; AND the co-fitted shear independently recovers the official astronomy as an internal control (shear grows 637->948 toward the Shapley depth 200-250 Mpc): the flow = real attractor tides PLUS a stable sourceless dipole underneath. Honest: balanced-weights formal errors blow up (sparse far shells, +-500); the robust statement is cross-estimator stability (244-265 simple / 320-332 log-balanced / ~400 Watkins MV - all plateaued, all 250-400); amplitude significance awaits the mock-calibrated MV round"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Round 3 (probe ga_mocks, 200 mocks on the real CF4 geometry + real lognormal errors): (a) INJECTION CALIBRATION - V_true=300 recovered 305+-14 (R<150) and 301+-12 (R<250), bias +5/+1 = estimator UNBIASED, Malmquist resolved at this level; (b) noise-only null 23+-11 km/s -> observed 265 at p<0.005 (0/200); (c) LCDM null with cosmic-variance anchors (150/110 km/s rms): R<150 p=0.030, R<250 p<0.005 (all 200 LCDM mocks <= 229 vs observed 265) - the deep plateau is LCDM-incompatible by our own mocks, consistent with Watkins+23 p~2e-6"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 3 systems: ['CF4 groups (CDS J/ApJ/944/94, N=38004, probe ga_bulkflow, monopole+dipole WLS per sphere): plateau 244->265 km/s from R<50 to R<250 Mpc (no decay; LCDM needs ~60-100 at 250), amplitude within ~12 percent of the pre-registered 300 km/s; direction (l,b)=(297-306, +8..+19) STABLE across all five depths, between Kashlinsky dark flow (~287,+8) and Shapley (306,+30). Watkins+23 CF4 minimum-variance reference ~400 km/s at 200/h confirms the anomaly class independently. CAVEATS (stated): simple estimator (not MV), Malmquist-type log-distance biases uncorrected at large R (though they cannot manufacture the 50-Mpc-out flatness), sigma_v=300 floor, H0=74.6 zero-point absorbed by the monopole. Candidate-grade; the card needs the bias-corrected MV round + mocks', 'Round 2 (probe ga_mv): Watkins-Feldman log estimator + shell-balanced weights + 9-param shear co-fit. The dipole SURVIVES shear absorption unchanged (320-332 km/s, plateau, direction 297-301/+15 fixed) - now within ~10 percent of the pre-registered 300; AND the co-fitted shear independently recovers the official astronomy as an internal control (shear grows 637->948 toward the Shapley depth 200-250 Mpc): the flow = real attractor tides PLUS a stable sourceless dipole underneath. Honest: balanced-weights formal errors blow up (sparse far shells, +-500); the robust statement is cross-estimator stability (244-265 simple / 320-332 log-balanced / ~400 Watkins MV - all plateaued, all 250-400); amplitude significance awaits the mock-calibrated MV round', 'Round 3 (probe ga_mocks, 200 mocks on the real CF4 geometry + real lognormal errors): (a) INJECTION CALIBRATION - V_true=300 recovered 305+-14 (R<150) and 301+-12 (R<250), bias +5/+1 = estimator UNBIASED, Malmquist resolved at this level; (b) noise-only null 23+-11 km/s -> observed 265 at p<0.005 (0/200); (c) LCDM null with cosmic-variance anchors (150/110 km/s rms): R<150 p=0.030, R<250 p<0.005 (all 200 LCDM mocks <= 229 vs observed 265) - the deep plateau is LCDM-incompatible by our own mocks, consistent with Watkins+23 p~2e-6']"
           }
         ]
       }
@@ -1754,6 +1764,11 @@
       "t": "date-unset",
       "added_candidate": "12da04b2",
       "name": "the bulk-flow plateau = brane drift (GA quest)"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "12da04b2",
+      "detail": "player judgement; 3 systems: ['CF4 groups (CDS J/ApJ/944/94, N=38004, probe ga_bulkflow, monopole+dipole WLS per sphere): plateau 244->265 km/s from R<50 to R<250 Mpc (no decay; LCDM needs ~60-100 at 250), amplitude within ~12 percent of the pre-registered 300 km/s; direction (l,b)=(297-306, +8..+19) STABLE across all five depths, between Kashlinsky dark flow (~287,+8) and Shapley (306,+30). Watkins+23 CF4 minimum-variance reference ~400 km/s at 200/h confirms the anomaly class independently. CAVEATS (stated): simple estimator (not MV), Malmquist-type log-distance biases uncorrected at large R (though they cannot manufacture the 50-Mpc-out flatness), sigma_v=300 floor, H0=74.6 zero-point absorbed by the monopole. Candidate-grade; the card needs the bias-corrected MV round + mocks', 'Round 2 (probe ga_mv): Watkins-Feldman log estimator + shell-balanced weights + 9-param shear co-fit. The dipole SURVIVES shear absorption unchanged (320-332 km/s, plateau, direction 297-301/+15 fixed) - now within ~10 percent of the pre-registered 300; AND the co-fitted shear independently recovers the official astronomy as an internal control (shear grows 637->948 toward the Shapley depth 200-250 Mpc): the flow = real attractor tides PLUS a stable sourceless dipole underneath. Honest: balanced-weights formal errors blow up (sparse far shells, +-500); the robust statement is cross-estimator stability (244-265 simple / 320-332 log-balanced / ~400 Watkins MV - all plateaued, all 250-400); amplitude significance awaits the mock-calibrated MV round', 'Round 3 (probe ga_mocks, 200 mocks on the real CF4 geometry + real lognormal errors): (a) INJECTION CALIBRATION - V_true=300 recovered 305+-14 (R<150) and 301+-12 (R<250), bias +5/+1 = estimator UNBIASED, Malmquist resolved at this level; (b) noise-only null 23+-11 km/s -> observed 265 at p<0.005 (0/200); (c) LCDM null with cosmic-variance anchors (150/110 km/s rms): R<150 p=0.030, R<250 p<0.005 (all 200 LCDM mocks <= 229 vs observed 265) - the deep plateau is LCDM-incompatible by our own mocks, consistent with Watkins+23 p~2e-6']"
     }
   ]
 }

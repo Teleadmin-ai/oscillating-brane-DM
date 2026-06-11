@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "ga_mocks": lambda opts=None: ga_mocks(opts),
     "ga_mv": lambda opts=None: ga_mv(opts),
     "ga_bulkflow": lambda opts=None: ga_bulkflow(opts),
     "xcop_hier": lambda opts=None: xcop_hier(opts),
@@ -4140,3 +4141,82 @@ def ga_mv(opts):
         )
     print("  READ: drift = dipole stable under shear co-fit AND shear@R << dipole;")
     print("  attractor = shear grows toward the source depth (~Shapley 200-250).")
+
+
+def ga_mocks(opts):
+    """GA QUEST round 3 - mock-calibrated verdict. 200 mocks on the REAL CF4
+    geometry (same d, n, e_DM): (a) INJECTION: V_true=300 km/s toward
+    (l,b)=(297,15) + lognormal distance scatter -> estimator bias check;
+    (b) NOISE-ONLY null (sigma_v=300, no drift) -> chance-dipole distribution;
+    (c) LCDM null: cosmic-variance rms anchors 150 km/s @150 Mpc, 110 @250
+    (literature scale), Maxwellian, added to the noise null. FACTS only."""
+    import numpy as np
+
+    H0 = 74.6
+    rows = []
+    for ln in open("/DATA/obt_game_cache/raw/cf4/table3.dat"):
+        try:
+            dm = float(ln[8:14])
+            edm = float(ln[22:27])
+            v = float(ln[28:33])
+            gl = float(ln[52:60])
+            gb = float(ln[61:69])
+        except ValueError:
+            continue
+        if dm <= 0 or v <= 200:
+            continue
+        rows.append((10 ** ((dm - 25.0) / 5.0), edm, v, gl, gb))
+    A = np.array(rows)
+    d, edm, v, gl, gb = A.T
+    glr, gbr = np.radians(gl), np.radians(gb)
+    n = np.vstack([np.cos(gbr) * np.cos(glr), np.cos(gbr) * np.sin(glr), np.sin(gbr)]).T
+    su = np.sqrt((v * 0.4605 * edm) ** 2 + 300.0**2)
+    lt, bt = np.radians(297.0), np.radians(15.0)
+    Vt = 300.0 * np.array(
+        [np.cos(bt) * np.cos(lt), np.cos(bt) * np.sin(lt), np.sin(bt)]
+    )
+    rng = np.random.default_rng(7)
+
+    def dip(u, m):
+        X = np.hstack([np.ones((m.sum(), 1)), n[m]])
+        w = 1.0 / su[m] ** 2
+        p = np.linalg.solve(X.T @ (X * w[:, None]), X.T @ (w * u[m]))
+        return p[1:]
+
+    OBS = {
+        100: 243.0,
+        150: 264.0,
+        200: 267.0,
+        250: 265.0,
+    }  # round-1 simple-estimator values
+    print(f"[ga_mocks] N={len(A)}, 200 mocks on real geometry")
+    for R in (150, 250):
+        m = d < R
+        rec, nul = [], []
+        for _ in range(200):
+            # true peculiar field: injected drift + small-scale noise
+            upec = n @ Vt + rng.normal(0, 300.0, len(d))
+            vz = H0 * d + upec  # true redshift-space velocity
+            dobs = d * 10 ** (rng.normal(0, edm) / 5.0)  # lognormal distance errors
+            u_in = vz - H0 * dobs
+            rec.append(np.linalg.norm(dip(u_in, m)))
+            upec0 = rng.normal(0, 300.0, len(d))
+            u_n0 = (H0 * d + upec0) - H0 * dobs
+            nul.append(np.linalg.norm(dip(u_n0, m)))
+        rec, nul = np.array(rec), np.array(nul)
+        obsv = OBS[R]
+        p_noise = float(np.mean(nul >= obsv))
+        # LCDM null: add Maxwellian cosmic variance (rms anchor) to each mock null vector
+        rms = 150.0 if R == 150 else 110.0
+        Vc = rng.normal(0, rms / np.sqrt(3), (200, 3))
+        nul_l = np.sqrt(nul**2 + (Vc**2).sum(1))  # conservative quadrature proxy
+        p_lcdm = float(np.mean(nul_l >= obsv))
+        print(
+            f"  R<{R}: injection 300 -> recovered {rec.mean():.0f}+-{rec.std():.0f} (bias {rec.mean()-300:+.0f})"
+        )
+        print(
+            f"        noise-null dipole {nul.mean():.0f}+-{nul.std():.0f} -> p(>= {obsv:.0f}) = {p_noise:.3f}"
+        )
+        print(
+            f"        LCDM null (rms {rms}) -> p(>= {obsv:.0f}) = {p_lcdm:.3f}  (max {nul_l.max():.0f})"
+        )
