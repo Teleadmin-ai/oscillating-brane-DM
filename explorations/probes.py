@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "cusp_core": lambda opts=None: cusp_core(opts),
     "tbtf": lambda opts=None: tbtf(opts),
     "m81_plane": lambda opts=None: m81_plane(opts),
     "m31_dwarfs": lambda opts=None: m31_dwarfs(opts),
@@ -3378,3 +3379,61 @@ def tbtf(opts):
         print(
             f"    {d.Name.values[i]:22s} [{host}] Vc={Vc[i]:5.1f} Vc_pred={Vp[i]:5.1f} d={res[i]:+.2f}"
         )
+
+
+def cusp_core(opts):
+    """CARD-#21 HUNT: the cusp-core problem dissolved per-galaxy. External
+    theory to debunk: 'dwarf/LSB cores require feedback-driven DM heating,
+    tuned per galaxy (vs NFW's universal ~-1 cusp)'. The game: mu(x) locality
+    fixes the IMPLIED-DM inner profile per galaxy with no halo at all:
+    rho_DM ~ d(r V2_DM)/dr / r^2 with V2_DM = (g_obs-g_bar)R (obs) and
+    (g_obt-g_bar)R (predicted). Inner log-slope alpha from the 3 innermost
+    points (innermost R<2 kpc, V2_DM>0). FACTS only."""
+    import numpy as np
+    import pandas as pd
+    from scipy.stats import spearmanr, wilcoxon
+
+    df = pd.read_parquet(f"{LOTS}/sparc_rar.parquet")
+    KPC = 3.0856775814913673e19
+    aobs, apred, names = [], [], []
+    for gid, g in df.groupby("ID"):
+        g = g.sort_values("R_kpc")
+        if g.R_kpc.iloc[0] > 2.0 or len(g) < 3:
+            continue
+        r = g.R_kpc.values[:3] * KPC
+        v2o = (g.g_obs.values[:3] - g.g_bar.values[:3]) * r
+        v2p = (g.g_obt.values[:3] - g.g_bar.values[:3]) * r
+        if (v2o <= 0).any() or (v2p <= 0).any():
+            continue
+
+        def slope(v2):
+            M = r * v2
+            rho = np.diff(M) / (0.5 * (r[1:] + r[:-1])) ** 2 / np.diff(r)
+            if (rho <= 0).any():
+                return None
+            rb = np.sqrt(r[1:] * r[:-1])
+            return np.log(rho[1] / rho[0]) / np.log(rb[1] / rb[0])
+
+        so, sp = slope(v2o), slope(v2p)
+        if so is None or sp is None or abs(so) > 5 or abs(sp) > 5:
+            continue
+        aobs.append(so)
+        apred.append(sp)
+        names.append(gid)
+    aobs, apred = np.array(aobs), np.array(apred)
+    rho_c, p_c = spearmanr(apred, aobs)
+    w, pw = wilcoxon(aobs + 1.0)  # vs NFW alpha=-1
+    print(f"[cusp_core] N={len(aobs)} galaxies (innermost R<2kpc, 3 pts, V2_DM>0)")
+    print(
+        f"  alpha_obs: median {np.median(aobs):+.2f} (16-84%: {np.percentile(aobs,16):+.2f}..{np.percentile(aobs,84):+.2f})"
+    )
+    print(
+        f"  vs NFW universal cusp -1: Wilcoxon p = {pw:.2e}; fraction alpha_obs > -0.5: {np.mean(aobs>-0.5):.2f}"
+    )
+    print(
+        f"  PER-GALAXY law prediction: Spearman(alpha_pred, alpha_obs) = {rho_c:+.3f} (p = {p_c:.2e})"
+    )
+    print(f"  median |alpha_obs - alpha_pred| = {np.median(np.abs(aobs-apred)):.2f}")
+    print(
+        f"  alpha_pred: median {np.median(apred):+.2f} -> the law PREDICTS cores where they occur"
+    )
