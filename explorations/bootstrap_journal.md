@@ -289,3 +289,18 @@ refutation (integral constraint biases r>~300 negative; crude Poisson errors, no
 
 ---
 *Last updated: 2026-05-30.*
+
+## V14 — QUÊTE DU GRAND ATTRACTEUR (ouverte juin 2026, design pré-enregistré)
+Faits officiels (vérifiés): le GA n'est PAS un objet compact — concentration étendue
+(Norma/ACO3627 + Norma Wall: Pavo II, Centaurus-Crux, CIZA J1324) cachée derrière la Zone
+d'Évitement; CIZA 2005: masse révisée à ~1/10 de l'estimation originale; le flot CONTINUE
+au-delà vers Shapley; Tully 2014: le GA = point focal du bassin Laniakea; Hoffman 2017:
+le Dipole Repeller (poussée du vide) co-explique le flot; 2024: bassin Shapley ~10x Laniakea.
+LE TERRAIN (futur, lourd): CosmicFlows-4 (EDD, public) — refaire le bilan de masse du
+bassin avec NOS lois corrigées (carte #22: gravité amas = sinc-éteinte + Weyl coré → la
+masse inférée des flots change); prédictions à chercher: (a) déficit/déplacement de la
+masse GA sous les lois corrigées; (b) le v_bulk=300 km/s de la dérive de brane (T3 V8.2)
+comme composante NON-convergente du flot (signature: dipôle résiduel sans bassin source —
+distinguable de toute attraction); (c) structure cymatique 613 Mpc dans l'espacement des
+bassins (Laniakea→Shapley ~600-650 Mpc !? à mesurer proprement). Pilote du pipeline
+automatisé "lois corrigées sur surveys entiers" voulu par Romain.
