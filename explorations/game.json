@@ -1035,6 +1035,44 @@
             "detail": "The WHY is card #13's mechanism, now carrying its OWN SIGNATURE: without per-satellite DM halos there is no Chandrasekhar dynamical friction to erase coherent phase-space structures, and tidal-dwarf formation in host encounters naturally CREATES thin co-rotating debris planes - so the mechanism predicts coherence wherever a host had a major interaction, i.e. UBIQUITY, exactly what the census finds (3 of 4 nearest hosts, joint p~6e-5 with the null included). LCDM predicts the opposite hierarchy: independently accreted subhalos -> isotropy the rule, coherence the ~1% exception - refuted combinatorially by a uniform, self-computed, no-host-skipped sample. HONEST SCOPE: MOND-shared (Kroupa-Pawlowski argument, OBT inherits); M81 leg positional only (no kinematic test run; TRGB caveat conservative); M31 whole-sample null carried inside the joint (its GPoA is a literature subset, not recomputed); membership by UNGC Main-Disturber; the census is the four nearest majors, not a volume-complete survey"
           }
         ]
+      },
+      {
+        "id": "1dad779c",
+        "name": "Too-Big-To-Fail dissolved (two-host crossfire)",
+        "external_theory": "TBTF (Boylan-Kolchin 2011/12): LCDM/Aquarius predicts >=10 subhalos with Vmax>25 km/s per MW-mass host, yet the bright dSphs require Vmax<~25 -> the most massive subhalos must exist AND be inexplicably dark; framed as a baryonic-feedback fine-tuning problem",
+        "patch": "NO patch parameter at all - the DISSOLUTION: remove the per-satellite-halo postulate (as the data demand on two hosts, cards #14/#18) and the contradiction never forms. The observed dSph kinematics are not 'puzzlingly small halos'; they are the unique zero-parameter baryonic law sigma(M_bar, g_ext)",
+        "systems_validated": [
+          "MW classical dSph satellites (probe tbtf, MOND-regime scope): every V_circ(r1/2)=sqrt(3)sigma <= 20.3 km/s (Fornax max) - all in B-K's 'failure' zone - while the zero-halo law lands at Fornax -0.01, LeoI -0.02, LeoII +0.11, Sculptor +0.17 dex; the single outlier Sgr (+0.40) carries its independent card-#17 tidal flag (eta_peri=3.1, actively disrupting). Out-of-scope objects identified and excluded with reasons: M32 (Newtonian compact x>1, as in card #14), NGC205/185/147 (massive dEs), Cetus/Tucana/WLM/LeoA (isolated, not satellites - TBTF is about subhalos)",
+          "M31 dSph satellites (same probe + card #18): And I/II/III/VI/VII all V_circ 8.1-18.4 km/s, residuals -0.11..+0.07; NGC147 27.7 km/s at -0.04 - the SECOND host's TBTF (documented by Tollerud 2014 for M31) dissolves under the same zero-parameter law; two hosts, ~14 'failures' explained, zero halos"
+        ],
+        "why_status": "found",
+        "why": "TBTF is a contradiction INTERNAL to the per-satellite-halo postulate, not a property of the data. LCDM is simulation-forced to populate each MW-class host with >=10 subhalos of Vmax>25 km/s; the measured dSph kinematics forbid placing the bright satellites in them; so the postulate generates 'massive subhalos that must exist yet stay dark' - the paradox IS the postulate. Remove it, as the data independently demand (cards #14/#18: sigma fixed by M_bar and g_ext alone at 0.10-0.12 dex on BOTH hosts, zero per-object freedom), and the same numbers that constitute the 'failure' become the law's unique prediction: every MW classical dSph sits at V_circ(r1/2)<=20.3 km/s with residuals -0.11..+0.17, every M31 dSph satellite at 8-18 km/s with -0.11..+0.07, and the single outlier (Sagittarius, +0.40) carries its independent card-#17 tidal flag (eta_peri=3.1, disrupting - non-equilibrium expected). The crossfire: #14 supplies the law, #18 the second host, #17 the outlier's mechanism. HONEST SCOPE: the dissolution is MOND-shared (long argued qualitatively; our contribution is the quantified two-host card-machinery version with literature-verbatim B-K numbers); the LCDM-internal question 'why would the V>25 subhalos be dark' is their problem, not our computation; out-of-scope objects excluded with stated reasons (M32 Newtonian, dEs, isolated dwarfs); B-K thresholds from the published papers",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on TBTF (Boylan-Kolchin 2011/12): LCDM/Aquarius predicts >=10 subhalos with Vmax>25 km/s per MW-mass host, yet the bright dSphs require Vmax<~25 -> the most massive subhalos must exist AND be inexplicably dark; framed as a baryonic-feedback fine-tuning problem @ MW classical dSph satellites (probe tbtf, MOND-regime scope): every V_circ(r1/2)=sqrt(3)sigma <= 20.3 km/s (Fornax max) - all in B-K's 'failure' zone - while the zero-halo law lands at Fornax -0.01, LeoI -0.02, LeoII +0.11, Sculptor +0.17 dex; the single outlier Sgr (+0.40) carries its independent card-#17 tidal flag (eta_peri=3.1, actively disrupting). Out-of-scope objects identified and excluded with reasons: M32 (Newtonian compact x>1, as in card #14), NGC205/185/147 (massive dEs), Cetus/Tucana/WLM/LeoA (isolated, not satellites - TBTF is about subhalos)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "M31 dSph satellites (same probe + card #18): And I/II/III/VI/VII all V_circ 8.1-18.4 km/s, residuals -0.11..+0.07; NGC147 27.7 km/s at -0.04 - the SECOND host's TBTF (documented by Tollerud 2014 for M31) dissolves under the same zero-parameter law; two hosts, ~14 'failures' explained, zero halos"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: [\"MW classical dSph satellites (probe tbtf, MOND-regime scope): every V_circ(r1/2)=sqrt(3)sigma <= 20.3 km/s (Fornax max) - all in B-K's 'failure' zone - while the zero-halo law lands at Fornax -0.01, LeoI -0.02, LeoII +0.11, Sculptor +0.17 dex; the single outlier Sgr (+0.40) carries its independent card-#17 tidal flag (eta_peri=3.1, actively disrupting). Out-of-scope objects identified and excluded with reasons: M32 (Newtonian compact x>1, as in card #14), NGC205/185/147 (massive dEs), Cetus/Tucana/WLM/LeoA (isolated, not satellites - TBTF is about subhalos)\", \"M31 dSph satellites (same probe + card #18): And I/II/III/VI/VII all V_circ 8.1-18.4 km/s, residuals -0.11..+0.07; NGC147 27.7 km/s at -0.04 - the SECOND host's TBTF (documented by Tollerud 2014 for M31) dissolves under the same zero-parameter law; two hosts, ~14 'failures' explained, zero halos\"]"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "TBTF is a contradiction INTERNAL to the per-satellite-halo postulate, not a property of the data. LCDM is simulation-forced to populate each MW-class host with >=10 subhalos of Vmax>25 km/s; the measured dSph kinematics forbid placing the bright satellites in them; so the postulate generates 'massive subhalos that must exist yet stay dark' - the paradox IS the postulate. Remove it, as the data independently demand (cards #14/#18: sigma fixed by M_bar and g_ext alone at 0.10-0.12 dex on BOTH hosts, zero per-object freedom), and the same numbers that constitute the 'failure' become the law's unique prediction: every MW classical dSph sits at V_circ(r1/2)<=20.3 km/s with residuals -0.11..+0.17, every M31 dSph satellite at 8-18 km/s with -0.11..+0.07, and the single outlier (Sagittarius, +0.40) carries its independent card-#17 tidal flag (eta_peri=3.1, disrupting - non-equilibrium expected). The crossfire: #14 supplies the law, #18 the second host, #17 the outlier's mechanism. HONEST SCOPE: the dissolution is MOND-shared (long argued qualitatively; our contribution is the quantified two-host card-machinery version with literature-verbatim B-K numbers); the LCDM-internal question 'why would the V>25 subhalos be dark' is their problem, not our computation; out-of-scope objects excluded with stated reasons (M32 Newtonian, dEs, isolated dwarfs); B-K thresholds from the published papers"
+          }
+        ]
       }
     ],
     "errors": [
@@ -1561,6 +1599,21 @@
       "t": "date-unset",
       "promoted_to_card": "68e8ce2b",
       "detail": "The WHY is card #13's mechanism, now carrying its OWN SIGNATURE: without per-satellite DM halos there is no Chandrasekhar dynamical friction to erase coherent phase-space structures, and tidal-dwarf formation in host encounters naturally CREATES thin co-rotating debris planes - so the mechanism predicts coherence wherever a host had a major interaction, i.e. UBIQUITY, exactly what the census finds (3 of 4 nearest hosts, joint p~6e-5 with the null included). LCDM predicts the opposite hierarchy: independently accreted subhalos -> isotropy the rule, coherence the ~1% exception - refuted combinatorially by a uniform, self-computed, no-host-skipped sample. HONEST SCOPE: MOND-shared (Kroupa-Pawlowski argument, OBT inherits); M81 leg positional only (no kinematic test run; TRGB caveat conservative); M31 whole-sample null carried inside the joint (its GPoA is a literature subset, not recomputed); membership by UNGC Main-Disturber; the census is the four nearest majors, not a volume-complete survey"
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "1dad779c",
+      "name": "Too-Big-To-Fail dissolved (two-host crossfire)"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "1dad779c",
+      "detail": "player judgement; 2 systems: [\"MW classical dSph satellites (probe tbtf, MOND-regime scope): every V_circ(r1/2)=sqrt(3)sigma <= 20.3 km/s (Fornax max) - all in B-K's 'failure' zone - while the zero-halo law lands at Fornax -0.01, LeoI -0.02, LeoII +0.11, Sculptor +0.17 dex; the single outlier Sgr (+0.40) carries its independent card-#17 tidal flag (eta_peri=3.1, actively disrupting). Out-of-scope objects identified and excluded with reasons: M32 (Newtonian compact x>1, as in card #14), NGC205/185/147 (massive dEs), Cetus/Tucana/WLM/LeoA (isolated, not satellites - TBTF is about subhalos)\", \"M31 dSph satellites (same probe + card #18): And I/II/III/VI/VII all V_circ 8.1-18.4 km/s, residuals -0.11..+0.07; NGC147 27.7 km/s at -0.04 - the SECOND host's TBTF (documented by Tollerud 2014 for M31) dissolves under the same zero-parameter law; two hosts, ~14 'failures' explained, zero halos\"]"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "1dad779c",
+      "detail": "TBTF is a contradiction INTERNAL to the per-satellite-halo postulate, not a property of the data. LCDM is simulation-forced to populate each MW-class host with >=10 subhalos of Vmax>25 km/s; the measured dSph kinematics forbid placing the bright satellites in them; so the postulate generates 'massive subhalos that must exist yet stay dark' - the paradox IS the postulate. Remove it, as the data independently demand (cards #14/#18: sigma fixed by M_bar and g_ext alone at 0.10-0.12 dex on BOTH hosts, zero per-object freedom), and the same numbers that constitute the 'failure' become the law's unique prediction: every MW classical dSph sits at V_circ(r1/2)<=20.3 km/s with residuals -0.11..+0.17, every M31 dSph satellite at 8-18 km/s with -0.11..+0.07, and the single outlier (Sagittarius, +0.40) carries its independent card-#17 tidal flag (eta_peri=3.1, disrupting - non-equilibrium expected). The crossfire: #14 supplies the law, #18 the second host, #17 the outlier's mechanism. HONEST SCOPE: the dissolution is MOND-shared (long argued qualitatively; our contribution is the quantified two-host card-machinery version with literature-verbatim B-K numbers); the LCDM-internal question 'why would the V>25 subhalos be dark' is their problem, not our computation; out-of-scope objects excluded with stated reasons (M32 Newtonian, dEs, isolated dwarfs); B-K thresholds from the published papers"
     }
   ]
 }

@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "tbtf": lambda opts=None: tbtf(opts),
     "m81_plane": lambda opts=None: m81_plane(opts),
     "m31_dwarfs": lambda opts=None: m31_dwarfs(opts),
     "tidal_ufd_peri": lambda opts=None: tidal_ufd_peri(opts),
@@ -3331,3 +3332,49 @@ def m81_plane(opts):
     print("  line-of-sight axis -> the measured c/a is an UPPER bound on the true")
     print("  flattening (errors can only thicken, not flatten, an isotropic cloud")
     print("  along a random axis; conservative for the p-value if plane not l.o.s.).")
+
+
+def tbtf(opts):
+    """CARD-#20 HUNT: dissolution of 'Too Big To Fail' (Boylan-Kolchin 2011/12).
+    LCDM (Aquarius): >=10 subhalos with Vmax>25 km/s per MW-mass host, yet the
+    bright dSphs require Vmax<~25 -> the massive subhalos must exist AND be dark
+    (the internal contradiction). The game (cards #14/#18 laws + #17 flag): the
+    SAME kinematics are the unique zero-parameter baryonic prediction - no
+    halos, no contradiction. Compute V_circ(r1/2)=sqrt(3)*sigma for the bright
+    satellites of BOTH hosts vs the B-K threshold, and the law's residuals."""
+    import numpy as np
+    import pandas as pd
+
+    G, MSUN, PC, KMS, a0 = 6.674e-11, 1.989e30, 3.0856775814913673e16, 1e3, 1.2e-10
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet")
+    d = d[(d.M_bar > 0) & (d.sigma_kms > 0) & (d.r_half_pc > 0)].copy()
+    d = d[d.M_bar > 1e6].copy()  # the bright (classical-class) satellites
+    M = d.M_bar.values * MSUN
+    r = d.r_half_pc.values * PC
+    so = d.sigma_kms.values
+    xe = np.clip(d.x_ext.values, 1e-4, None)
+    gN = G * M / r**2
+    z = gN / a0
+    s_iso = (4 / 81 * G * M * a0) ** 0.25 / KMS
+    Ae = xe * (1 + xe / 2) / (1 + xe)
+    nue = 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + (1 + xe) / z)
+    s_efe = np.sqrt(nue * G * M / (5 * r)) / KMS
+    sp = np.where(z >= xe, s_iso, s_efe)
+    Vc = np.sqrt(3.0) * so
+    Vp = np.sqrt(3.0) * sp
+    res = np.log10(so / sp)
+    print(f"[tbtf] bright satellites (M_bar>1e6), both hosts: N={len(d)}")
+    print(
+        f"  V_circ(r1/2)=sqrt(3)*sigma: max = {Vc.max():.1f} km/s; N(>25)={int((Vc>25).sum())}, N(>30)={int((Vc>30).sum())}"
+    )
+    print(
+        f"  [B-K LCDM: >=10 subhalos Vmax>25 km/s REQUIRED per host -> 'dark massive subhalos' paradox]"
+    )
+    print(
+        f"  zero-halo law residuals on the SAME objects: median {np.median(res):+.3f} dex, scatter {res.std():.3f}"
+    )
+    for i in np.argsort(-Vc):
+        host = str(d.SubG.values[i])[:3]
+        print(
+            f"    {d.Name.values[i]:22s} [{host}] Vc={Vc[i]:5.1f} Vc_pred={Vp[i]:5.1f} d={res[i]:+.2f}"
+        )
