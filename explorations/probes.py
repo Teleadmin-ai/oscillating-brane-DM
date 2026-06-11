@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "ga_mv": lambda opts=None: ga_mv(opts),
     "ga_bulkflow": lambda opts=None: ga_bulkflow(opts),
     "xcop_hier": lambda opts=None: xcop_hier(opts),
     "xcop_killshot": lambda opts=None: xcop_killshot(opts),
@@ -4051,3 +4052,91 @@ def ga_bulkflow(opts):
     print(
         "  dark-flow reference direction (Kashlinsky) l~280-290; Shapley l~306 b~+30."
     )
+
+
+def ga_mv(opts):
+    """GA QUEST round 2: robustness (MV-class fixes) + the NULL-SHEAR test.
+    (a) Watkins-Feldman log-distance estimator u = Vcmb ln(Vcmb/(H0 d))
+    (removes the leading Malmquist-type bias for Gaussian DM errors);
+    (b) shell-balanced weights (equal radial-shell influence, crude geometry
+    fix); (c) monopole+dipole+SHEAR fit (9 params): a DRIFT is uniform
+    (shear ~ 0, dipole unchanged); an ATTRACTOR flow shears increasingly as
+    the survey approaches the source. FACTS only."""
+    import numpy as np
+
+    H0 = 74.6
+    rows = []
+    for ln in open("/DATA/obt_game_cache/raw/cf4/table3.dat"):
+        try:
+            dm = float(ln[8:14])
+            edm = float(ln[22:27])
+            v = float(ln[28:33])
+            gl = float(ln[52:60])
+            gb = float(ln[61:69])
+        except ValueError:
+            continue
+        if dm <= 0 or v <= 200:
+            continue
+        d = 10 ** ((dm - 25.0) / 5.0)
+        rows.append((d, edm, v, gl, gb))
+    A = np.array(rows)
+    d, edm, v, gl, gb = A.T
+    ulog = v * np.log(v / (H0 * d))
+    su = np.sqrt((v * 0.4605 * edm) ** 2 + 300.0**2)
+    glr, gbr = np.radians(gl), np.radians(gb)
+    nx = np.cos(gbr) * np.cos(glr)
+    ny = np.cos(gbr) * np.sin(glr)
+    nz = np.sin(gbr)
+    print(f"[ga_mv] N={len(A)}; log-estimator + shell-balanced weights + shear co-fit")
+    print(
+        f"  {'R':>4s} {'|V|dip':>7s} {'err':>4s} {'l':>4s} {'b':>4s} | {'|V|+shear':>9s} {'shear@R':>8s} {'ratio':>6s}"
+    )
+    for R in (100, 150, 200, 250):
+        m = d < R
+        idx = np.where(m)[0]
+        sh = np.clip((d[idx] / 25.0).astype(int), 0, 20)
+        cnt = np.bincount(sh, minlength=21).astype(float)
+        wgeo = 1.0 / np.clip(cnt[sh], 1, None)
+        w = wgeo / su[idx] ** 2
+        X1 = np.vstack([np.ones(len(idx)), nx[idx], ny[idx], nz[idx]]).T
+        C1 = np.linalg.inv(X1.T @ (X1 * w[:, None]))
+        p1 = C1 @ (X1.T @ (w * ulog[idx]))
+        V1 = p1[1:]
+        Vn1 = np.linalg.norm(V1)
+        eV1 = np.sqrt(np.trace(C1[1:, 1:]) / 3)
+        l1 = np.degrees(np.arctan2(V1[1], V1[0])) % 360
+        b1 = np.degrees(np.arcsin(V1[2] / Vn1))
+        # + shear (symmetric traceless, 5 dof)
+        dx, dy, dz = nx[idx], ny[idx], nz[idx]
+        dd = d[idx]
+        Xs = np.vstack(
+            [
+                np.ones(len(idx)),
+                dx,
+                dy,
+                dz,
+                dd * (dx * dx - dz * dz),
+                dd * (dy * dy - dz * dz),
+                2 * dd * dx * dy,
+                2 * dd * dx * dz,
+                2 * dd * dy * dz,
+            ]
+        ).T
+        Cs = np.linalg.inv(Xs.T @ (Xs * w[:, None]))
+        ps = Cs @ (Xs.T @ (w * ulog[idx]))
+        V2 = ps[1:4]
+        Vn2 = np.linalg.norm(V2)
+        S = np.array(
+            [
+                [ps[4], ps[6], ps[7]],
+                [ps[6], ps[5], ps[8]],
+                [ps[7], ps[8], -ps[4] - ps[5]],
+            ]
+        )
+        lam = np.linalg.eigvalsh(S)
+        shear_at_R = np.sqrt((lam**2).sum()) * R
+        print(
+            f"  {R:4d} {Vn1:7.0f} {eV1:4.0f} {l1:4.0f} {b1:+4.0f} | {Vn2:9.0f} {shear_at_R:8.0f} {shear_at_R/max(Vn2,1):6.2f}"
+        )
+    print("  READ: drift = dipole stable under shear co-fit AND shear@R << dipole;")
+    print("  attractor = shear grows toward the source depth (~Shapley 200-250).")
