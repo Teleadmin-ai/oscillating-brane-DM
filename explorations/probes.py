@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "cusp_core_h": lambda opts=None: cusp_core_h(opts),
     "cusp_core_full": lambda opts=None: cusp_core_full(opts),
     "cusp_core": lambda opts=None: cusp_core(opts),
     "tbtf": lambda opts=None: tbtf(opts),
@@ -3534,4 +3535,107 @@ def cusp_core_full(opts):
     )
     print(
         f"  cusp-core reproduced: fraction chi2red(ISO)<chi2red(NFW): {np.mean(a[:,1]<a[:,0]):.2f}"
+    )
+
+
+def cusp_core_h(opts):
+    """CARD-#21 DEDICATED: cusp-core with the card-#6 hierarchical machinery.
+    Per dwarf/LSB galaxy: nuisance grids Upsilon_disk (lognormal +-0.11 dex, 3pt)
+    x distance (+-10%, 3pt; R->fR, Vcomp->sqrt(f)V) profiled for ALL models;
+    variance-by-hypothesis: halos (NFW cusp / ISO core, 2 free each) use eVobs
+    only (their per-galaxy flexibility IS their scatter mechanism); the
+    zero-param law carries the independently-measured RAR intrinsic scatter
+    (0.12 dex on g_obt) in its error budget. BIC: k=2 halos, k=0 law.
+    PRE-STATED RULE: card needs ISO>>NFW persisting AND the law BIC-competitive.
+    Inclination nuisance unavailable in this cache (noted). FACTS only."""
+    import numpy as np
+    import pandas as pd
+    from scipy.optimize import least_squares
+
+    df = pd.read_parquet(f"{LOTS}/sparc_rar.parquet")
+    KPC = 3.0856775814913673e19
+    a0 = 1.2e-10
+    # calibrate the cached Upsilon convention on no-bulge points
+    nb = df[(df.Vbul == 0) & (df.Vgas != 0)].head(200)
+    num = nb.g_bar.values * nb.R_kpc.values * KPC / 1e6 - nb.Vgas.values**2
+    ups0 = np.median(num / np.clip(nb.Vdisk.values**2, 1e-3, None))
+    rows = []
+    for gid, g in df.groupby("ID"):
+        g = g.sort_values("R_kpc")
+        if g.Vobs.max() > 120 or len(g) < 6:
+            continue
+        best = {}
+        for uf in (10**-0.11, 1.0, 10**0.11):
+            for f in (0.9, 1.0, 1.1):
+                r_kpc = g.R_kpc.values * f
+                r_m = r_kpc * KPC
+                v2bar = f * (
+                    g.Vgas.values**2
+                    + uf * ups0 * g.Vdisk.values**2
+                    + 0.7 * g.Vbul.values**2
+                )
+                gbar = np.clip(v2bar * 1e6 / r_m, 1e-15, None)
+                gobt = np.sqrt((gbar**2 + gbar * np.sqrt(gbar**2 + 4 * a0**2)) / 2)
+                y = g.Vobs.values**2 - v2bar
+                yp = (gobt - gbar) * r_m / 1e6
+                s = 2 * g.Vobs.values * np.clip(g.eVobs.values, 1.0, None)
+                m = y > 0
+                if m.sum() < 6:
+                    continue
+                r, yy, ypp, ss = r_kpc[m], y[m], yp[m], s[m]
+                N = len(r)
+                sint = np.log(10) * 0.12 * gobt[m] * r_m[m] / 1e6
+                c_obt = float(((ypp - yy) ** 2 / (ss**2 + sint**2)).sum())
+
+                def v2nfw(th):
+                    rs, v2s = np.exp(th)
+                    x = r / rs
+                    return v2s * (np.log(1 + x) - x / (1 + x)) / x
+
+                def v2iso(th):
+                    rc, v2c = np.exp(th)
+                    x = r / rc
+                    return v2c * (1 - np.arctan(x) / x)
+
+                def fit(fun):
+                    b = None
+                    for r0 in (1.0, 3.0, 10.0):
+                        try:
+                            o = least_squares(
+                                lambda th: (fun(th) - yy) / ss,
+                                x0=[np.log(r0), np.log(max(yy.max(), 1))],
+                                bounds=([-4, -2], [8, 14]),
+                            )
+                            c2 = float((o.fun**2).sum())
+                            if b is None or c2 < b:
+                                b = c2
+                        except Exception:
+                            pass
+                    return b
+
+                cn, ci = fit(v2nfw), fit(v2iso)
+                if cn is None or ci is None:
+                    continue
+                for key, val, k in (("nfw", cn, 2), ("iso", ci, 2), ("obt", c_obt, 0)):
+                    bic = val + k * np.log(N)
+                    if key not in best or bic < best[key][0]:
+                        best[key] = (bic, val / max(N - k, 1), N)
+        if len(best) == 3:
+            rows.append((gid, best["nfw"], best["iso"], best["obt"]))
+    print(f"[cusp_core_h] N={len(rows)} dwarfs/LSBs; Upsilon0(cache)={ups0:.2f}")
+    cr = np.array([[r[1][1], r[2][1], r[3][1]] for r in rows])
+    bic = np.array([[r[1][0], r[2][0], r[3][0]] for r in rows])
+    w = np.argmin(bic, axis=1)
+    print(
+        f"  median chi2_red: NFW {np.median(cr[:,0]):.2f} | ISO {np.median(cr[:,1]):.2f} | OBT(0p,+sint) {np.median(cr[:,2]):.2f}"
+    )
+    print(
+        f"  BIC wins: NFW {int((w==0).sum())} | ISO {int((w==1).sum())} | OBT {int((w==2).sum())}"
+    )
+    print(
+        f"  median dBIC(ISO-OBT) = {np.median(bic[:,1]-bic[:,2]):+.1f}  (>0 favors OBT)"
+    )
+    print(f"  median dBIC(NFW-OBT) = {np.median(bic[:,0]-bic[:,2]):+.1f}")
+    print(
+        f"  cusp-core persists: frac chi2red(ISO)<chi2red(NFW): {np.mean(cr[:,1]<cr[:,0]):.2f}"
     )

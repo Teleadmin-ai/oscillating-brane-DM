@@ -1073,6 +1073,44 @@
             "detail": "TBTF is a contradiction INTERNAL to the per-satellite-halo postulate, not a property of the data. LCDM is simulation-forced to populate each MW-class host with >=10 subhalos of Vmax>25 km/s; the measured dSph kinematics forbid placing the bright satellites in them; so the postulate generates 'massive subhalos that must exist yet stay dark' - the paradox IS the postulate. Remove it, as the data independently demand (cards #14/#18: sigma fixed by M_bar and g_ext alone at 0.10-0.12 dex on BOTH hosts, zero per-object freedom), and the same numbers that constitute the 'failure' become the law's unique prediction: every MW classical dSph sits at V_circ(r1/2)<=20.3 km/s with residuals -0.11..+0.17, every M31 dSph satellite at 8-18 km/s with -0.11..+0.07, and the single outlier (Sagittarius, +0.40) carries its independent card-#17 tidal flag (eta_peri=3.1, disrupting - non-equilibrium expected). The crossfire: #14 supplies the law, #18 the second host, #17 the outlier's mechanism. HONEST SCOPE: the dissolution is MOND-shared (long argued qualitatively; our contribution is the quantified two-host card-machinery version with literature-verbatim B-K numbers); the LCDM-internal question 'why would the V>25 subhalos be dark' is their problem, not our computation; out-of-scope objects excluded with stated reasons (M32 Newtonian, dEs, isolated dwarfs); B-K thresholds from the published papers"
           }
         ]
+      },
+      {
+        "id": "58c6ab74",
+        "name": "cusp-core dissolved (hierarchical, 0-param BIC win)",
+        "external_theory": "The cusp-core problem requires per-galaxy feedback-tuned DM heating: NFW cusps (LCDM baseline) fail dwarf inner curves, so baryonic feedback must transform each halo individually",
+        "patch": "NO patch parameter: under the card-#6 hierarchical machinery (Upsilon/D nuisances profiled for ALL models; variance-by-hypothesis: halos keep eVobs-only since their 2 per-galaxy params ARE their scatter mechanism, the universal law carries the independently-measured RAR sigma_int=0.12 dex) the zero-parameter mu(x) inner profile wins the BIC against BOTH halo families",
+        "systems_validated": [
+          "SPARC dwarfs/LSBs (probe cusp_core_h, N=94, Vmax<120, full-curve mass modeling, 3x3 nuisance grids, pre-stated decision rule): BIC wins OBT 55 / ISO 34 / NFW 5; median dBIC(ISO-OBT)=+2.1, dBIC(NFW-OBT)=+5.2; chi2red OBT 0.56 (healthy) vs ISO 0.30 (overfit, k-penalized); cusp-core itself reproduced in-house (ISO<NFW in 83%); cache Upsilon convention self-verified (0.50=SPARC standard)",
+          "The four-pillar closure as cross-validation: the same point-local law now dissolves ALL FOUR named small-scale-crisis pillars with the same machinery family - diversity (#10), satellite planes (#13/#19), TBTF (#20), cusp-core (this card) - four independent observables, one postulate removed"
+        ],
+        "why_status": "found",
+        "why": "The WHY is mu(x) POINT-LOCALITY (cards #10/#15's mechanism) carried into the inner-profile domain with the card-#6 hierarchical machinery: the implied 'DM' component V2_DM(r) = V2_obs - V2_bar is, under the law, a deterministic per-galaxy functional of the BARYON distribution alone - (g_obt(g_bar)-g_bar)r with the exact OBT RAR - so diffuse LSB baryons automatically imprint shallow 'cores' and concentrated baryons steeper pseudo-profiles, galaxy by galaxy, with zero freedom. Under the pre-stated decision rule and variance-by-hypothesis design (halos: eVobs-only, their 2 per-galaxy params being their scatter mechanism; the law: eVobs + the independently-measured RAR sigma_int = 0.12 dex, card #6 non-circularity), the zero-parameter law WINS the BIC on 94 SPARC dwarfs/LSBs against both the NFW cusp (dBIC +5.2) and the per-galaxy tuned ISO core (dBIC +2.1; ISO chi2red 0.30 = overfitting, k-penalized), while our own fits reproduce the cusp-core fact (ISO<NFW 83%). Cores are not feedback-heated halos; they are the local law. This closes the FOUR-PILLAR sweep: diversity (#10), planes (#13/#19), TBTF (#20), cusp-core (#21) - four observables, one removed postulate. HONEST SCOPE: MOND-shared (core-prediction is generic to mu(x)); inclination nuisance absent from this cache (Upsilon/D only - card #6 had i as well); nuisances profiled on 3x3 grids (the #6 approximation), not fully marginalized; sigma_int carried by the law only, by design, stated openly; Vmax<120 dwarf/LSB scope",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on The cusp-core problem requires per-galaxy feedback-tuned DM heating: NFW cusps (LCDM baseline) fail dwarf inner curves, so baryonic feedback must transform each halo individually @ SPARC dwarfs/LSBs (probe cusp_core_h, N=94, Vmax<120, full-curve mass modeling, 3x3 nuisance grids, pre-stated decision rule): BIC wins OBT 55 / ISO 34 / NFW 5; median dBIC(ISO-OBT)=+2.1, dBIC(NFW-OBT)=+5.2; chi2red OBT 0.56 (healthy) vs ISO 0.30 (overfit, k-penalized); cusp-core itself reproduced in-house (ISO<NFW in 83%); cache Upsilon convention self-verified (0.50=SPARC standard)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "The four-pillar closure as cross-validation: the same point-local law now dissolves ALL FOUR named small-scale-crisis pillars with the same machinery family - diversity (#10), satellite planes (#13/#19), TBTF (#20), cusp-core (this card) - four independent observables, one postulate removed"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['SPARC dwarfs/LSBs (probe cusp_core_h, N=94, Vmax<120, full-curve mass modeling, 3x3 nuisance grids, pre-stated decision rule): BIC wins OBT 55 / ISO 34 / NFW 5; median dBIC(ISO-OBT)=+2.1, dBIC(NFW-OBT)=+5.2; chi2red OBT 0.56 (healthy) vs ISO 0.30 (overfit, k-penalized); cusp-core itself reproduced in-house (ISO<NFW in 83%); cache Upsilon convention self-verified (0.50=SPARC standard)', 'The four-pillar closure as cross-validation: the same point-local law now dissolves ALL FOUR named small-scale-crisis pillars with the same machinery family - diversity (#10), satellite planes (#13/#19), TBTF (#20), cusp-core (this card) - four independent observables, one postulate removed']"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The WHY is mu(x) POINT-LOCALITY (cards #10/#15's mechanism) carried into the inner-profile domain with the card-#6 hierarchical machinery: the implied 'DM' component V2_DM(r) = V2_obs - V2_bar is, under the law, a deterministic per-galaxy functional of the BARYON distribution alone - (g_obt(g_bar)-g_bar)r with the exact OBT RAR - so diffuse LSB baryons automatically imprint shallow 'cores' and concentrated baryons steeper pseudo-profiles, galaxy by galaxy, with zero freedom. Under the pre-stated decision rule and variance-by-hypothesis design (halos: eVobs-only, their 2 per-galaxy params being their scatter mechanism; the law: eVobs + the independently-measured RAR sigma_int = 0.12 dex, card #6 non-circularity), the zero-parameter law WINS the BIC on 94 SPARC dwarfs/LSBs against both the NFW cusp (dBIC +5.2) and the per-galaxy tuned ISO core (dBIC +2.1; ISO chi2red 0.30 = overfitting, k-penalized), while our own fits reproduce the cusp-core fact (ISO<NFW 83%). Cores are not feedback-heated halos; they are the local law. This closes the FOUR-PILLAR sweep: diversity (#10), planes (#13/#19), TBTF (#20), cusp-core (#21) - four observables, one removed postulate. HONEST SCOPE: MOND-shared (core-prediction is generic to mu(x)); inclination nuisance absent from this cache (Upsilon/D only - card #6 had i as well); nuisances profiled on 3x3 grids (the #6 approximation), not fully marginalized; sigma_int carried by the law only, by design, stated openly; Vmax<120 dwarf/LSB scope"
+          }
+        ]
       }
     ],
     "errors": [
@@ -1614,6 +1652,21 @@
       "t": "date-unset",
       "promoted_to_card": "1dad779c",
       "detail": "TBTF is a contradiction INTERNAL to the per-satellite-halo postulate, not a property of the data. LCDM is simulation-forced to populate each MW-class host with >=10 subhalos of Vmax>25 km/s; the measured dSph kinematics forbid placing the bright satellites in them; so the postulate generates 'massive subhalos that must exist yet stay dark' - the paradox IS the postulate. Remove it, as the data independently demand (cards #14/#18: sigma fixed by M_bar and g_ext alone at 0.10-0.12 dex on BOTH hosts, zero per-object freedom), and the same numbers that constitute the 'failure' become the law's unique prediction: every MW classical dSph sits at V_circ(r1/2)<=20.3 km/s with residuals -0.11..+0.17, every M31 dSph satellite at 8-18 km/s with -0.11..+0.07, and the single outlier (Sagittarius, +0.40) carries its independent card-#17 tidal flag (eta_peri=3.1, disrupting - non-equilibrium expected). The crossfire: #14 supplies the law, #18 the second host, #17 the outlier's mechanism. HONEST SCOPE: the dissolution is MOND-shared (long argued qualitatively; our contribution is the quantified two-host card-machinery version with literature-verbatim B-K numbers); the LCDM-internal question 'why would the V>25 subhalos be dark' is their problem, not our computation; out-of-scope objects excluded with stated reasons (M32 Newtonian, dEs, isolated dwarfs); B-K thresholds from the published papers"
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "58c6ab74",
+      "name": "cusp-core dissolved (hierarchical, 0-param BIC win)"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "58c6ab74",
+      "detail": "player judgement; 2 systems: ['SPARC dwarfs/LSBs (probe cusp_core_h, N=94, Vmax<120, full-curve mass modeling, 3x3 nuisance grids, pre-stated decision rule): BIC wins OBT 55 / ISO 34 / NFW 5; median dBIC(ISO-OBT)=+2.1, dBIC(NFW-OBT)=+5.2; chi2red OBT 0.56 (healthy) vs ISO 0.30 (overfit, k-penalized); cusp-core itself reproduced in-house (ISO<NFW in 83%); cache Upsilon convention self-verified (0.50=SPARC standard)', 'The four-pillar closure as cross-validation: the same point-local law now dissolves ALL FOUR named small-scale-crisis pillars with the same machinery family - diversity (#10), satellite planes (#13/#19), TBTF (#20), cusp-core (this card) - four independent observables, one postulate removed']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "58c6ab74",
+      "detail": "The WHY is mu(x) POINT-LOCALITY (cards #10/#15's mechanism) carried into the inner-profile domain with the card-#6 hierarchical machinery: the implied 'DM' component V2_DM(r) = V2_obs - V2_bar is, under the law, a deterministic per-galaxy functional of the BARYON distribution alone - (g_obt(g_bar)-g_bar)r with the exact OBT RAR - so diffuse LSB baryons automatically imprint shallow 'cores' and concentrated baryons steeper pseudo-profiles, galaxy by galaxy, with zero freedom. Under the pre-stated decision rule and variance-by-hypothesis design (halos: eVobs-only, their 2 per-galaxy params being their scatter mechanism; the law: eVobs + the independently-measured RAR sigma_int = 0.12 dex, card #6 non-circularity), the zero-parameter law WINS the BIC on 94 SPARC dwarfs/LSBs against both the NFW cusp (dBIC +5.2) and the per-galaxy tuned ISO core (dBIC +2.1; ISO chi2red 0.30 = overfitting, k-penalized), while our own fits reproduce the cusp-core fact (ISO<NFW 83%). Cores are not feedback-heated halos; they are the local law. This closes the FOUR-PILLAR sweep: diversity (#10), planes (#13/#19), TBTF (#20), cusp-core (#21) - four observables, one removed postulate. HONEST SCOPE: MOND-shared (core-prediction is generic to mu(x)); inclination nuisance absent from this cache (Upsilon/D only - card #6 had i as well); nuisances profiled on 3x3 grids (the #6 approximation), not fully marginalized; sigma_int carried by the law only, by design, stated openly; Vmax<120 dwarf/LSB scope"
     }
   ]
 }
