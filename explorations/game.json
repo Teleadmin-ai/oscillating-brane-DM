@@ -2,7 +2,30 @@
   "mode": "CHERCHEUR",
   "state": "PICK_TERRAIN",
   "game": {
-    "candidates": [],
+    "candidates": [
+      {
+        "id": "2fcb12a5",
+        "name": "cluster two-scale anatomy = sinc + Weyl core (BIG BOSS)",
+        "external_theory": "Eckert et al. 2022 (X-COP gravitational field): no universal acceleration law works in clusters - the cluster RAR strongly departs from the galaxy RAR, MOND is rejected at high significance, and an ad-hoc TWO-acceleration-scale modified form (g1, g2, alpha1, alpha2) must be fitted",
+        "patch": "The two scales are not ad hoc - they are OBT's OWN derived structure: scale 1 = a0*W(t_dyn(r)) (the sinc extinction running radially: t_dyn ~1.2 Gyr at 0.1 R500 -> W~0.4; 5.6 Gyr at r500 -> W~0) and scale 2 = the cored Weyl-fluid scale (~150-250 kpc). The three observed regimes map verbatim: (i) BCG core follows baryons = Newtonian regime + NO Weyl spike (the V8.2 no-spike/cored-Weyl theorem, a real structural prediction LCDM's contracted NFW does not share); (ii) the x5 maximum deviation at 0.05-0.2 R500 - ABOVE even full MOND's ~3.7 boost, which is why MOND dies - is the Weyl core peak; (iii) outskirts parallel-slope decline = boost extinguished, isothermal-like Weyl tail",
+        "systems_validated": [
+          "X-COP radial anatomy (Eckert 2022 ar5iv-extracted verbatim + our recon xcop_budget R=1.53+-0.09 at r500): three-regime structure with the deviation peak at 0.05-0.2 R500 (g_obs/g_bar ~5, g_bar 0.08-8 a0 probed); MOND max boost there ~3.7 < 5 (their own rejection); t_dyn(r) computed from their g_obs: 0.25 Gyr (BCG) / 1.2 Gyr (deviation zone) / 5.6 Gyr (r500) -> W = 0.99 / ~0.4 / ~0. DATA REQUIREMENT FOR THE KILL (named): the per-bin g_obs(r), g_bar(r) files (hydromass/X-COP products) -> fit [Newton + nu(g_N/(W(r) a0)) + cored Weyl] vs their (g1,g2,a1,a2) form: equal or better likelihood with FEWER free parameters (Weyl core scale+norm only, W(r) DERIVED) = the first OBT-vs-MOND-vs-LCDM cluster card"
+        ],
+        "why_status": "none",
+        "why": null,
+        "certainty": "low",
+        "status": "candidate",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Eckert et al. 2022 (X-COP gravitational field): no universal acceleration law works in clusters - the cluster RAR strongly departs from the galaxy RAR, MOND is rejected at high significance, and an ad-hoc TWO-acceleration-scale modified form (g1, g2, alpha1, alpha2) must be fitted @ X-COP radial anatomy (Eckert 2022 ar5iv-extracted verbatim + our recon xcop_budget R=1.53+-0.09 at r500): three-regime structure with the deviation peak at 0.05-0.2 R500 (g_obs/g_bar ~5, g_bar 0.08-8 a0 probed); MOND max boost there ~3.7 < 5 (their own rejection); t_dyn(r) computed from their g_obs: 0.25 Gyr (BCG) / 1.2 Gyr (deviation zone) / 5.6 Gyr (r500) -> W = 0.99 / ~0.4 / ~0. DATA REQUIREMENT FOR THE KILL (named): the per-bin g_obs(r), g_bar(r) files (hydromass/X-COP products) -> fit [Newton + nu(g_N/(W(r) a0)) + cored Weyl] vs their (g1,g2,a1,a2) form: equal or better likelihood with FEWER free parameters (Weyl core scale+norm only, W(r) DERIVED) = the first OBT-vs-MOND-vs-LCDM cluster card"
+          }
+        ]
+      }
+    ],
     "monsters": [
       {
         "id": "dfd9909d",
@@ -1667,6 +1690,11 @@
       "t": "date-unset",
       "promoted_to_card": "58c6ab74",
       "detail": "The WHY is mu(x) POINT-LOCALITY (cards #10/#15's mechanism) carried into the inner-profile domain with the card-#6 hierarchical machinery: the implied 'DM' component V2_DM(r) = V2_obs - V2_bar is, under the law, a deterministic per-galaxy functional of the BARYON distribution alone - (g_obt(g_bar)-g_bar)r with the exact OBT RAR - so diffuse LSB baryons automatically imprint shallow 'cores' and concentrated baryons steeper pseudo-profiles, galaxy by galaxy, with zero freedom. Under the pre-stated decision rule and variance-by-hypothesis design (halos: eVobs-only, their 2 per-galaxy params being their scatter mechanism; the law: eVobs + the independently-measured RAR sigma_int = 0.12 dex, card #6 non-circularity), the zero-parameter law WINS the BIC on 94 SPARC dwarfs/LSBs against both the NFW cusp (dBIC +5.2) and the per-galaxy tuned ISO core (dBIC +2.1; ISO chi2red 0.30 = overfitting, k-penalized), while our own fits reproduce the cusp-core fact (ISO<NFW 83%). Cores are not feedback-heated halos; they are the local law. This closes the FOUR-PILLAR sweep: diversity (#10), planes (#13/#19), TBTF (#20), cusp-core (#21) - four observables, one removed postulate. HONEST SCOPE: MOND-shared (core-prediction is generic to mu(x)); inclination nuisance absent from this cache (Upsilon/D only - card #6 had i as well); nuisances profiled on 3x3 grids (the #6 approximation), not fully marginalized; sigma_int carried by the law only, by design, stated openly; Vmax<120 dwarf/LSB scope"
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "2fcb12a5",
+      "name": "cluster two-scale anatomy = sinc + Weyl core (BIG BOSS)"
     }
   ]
 }
