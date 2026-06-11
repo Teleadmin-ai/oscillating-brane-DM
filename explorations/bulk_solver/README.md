@@ -309,7 +309,39 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       configuration's 10% radion-locked response = f_osc AND the bit, one
       object, one level below the geometric-DM conjecture). The V9.0 frontier
       is the NONLINEAR bulk solve of the Weyl-DM configuration under the
-      radion. THE GATE PROGRAM (0 -> 7) IS CLOSED. Dust brane (w=0 coefficients of
+      radion. THE GATE PROGRAM (0 -> 7) IS CLOSED.
+    - **GATE 8 — the Weyl-DM radion coupling: THE BIT CLOSED, THE S8 NUMBER
+      DERIVED (June 2026).** `gate8_weyl_dm.py`. Scope resolution: the
+      "nonlinear" Weyl-DM configuration is nonlinear only in the
+      FRW-perturbation sense; at halo densities the BULK treatment of a lump
+      is exactly linear -> the bit lives in the lump's STATIC bulk response,
+      solvable EXACTLY: psi = sqrt(z)[A I0(kappa z) + B K0(kappa z)] with the
+      validated junction + stable far BC (2x2 closed form; validation hook
+      reproduces the dynamic runs' mean dG in sign/order, drift-consistent).
+      PARITY RESOLUTION: a comoving lump has even E(dz) — but the AdS WARP
+      breaks the parity: the coupling c = dln(dG)/dln(z_b) is warp-derived.
+      RESULTS: c = +1.27..+1.59 UNIFORMLY (far-BCs, comoving/fixed z2, GW
+      stiffness, open/compact) and STABLE AS k -> 0 (this channel does NOT die
+      at large scales: halo-internal readout, unlike the cosmological drive);
+      LLR-SAFE (it modulates the DM sector's gravitating mass, not laboratory
+      G). Predicted f_osc = c x (radion 10%, itself Gate-6-derived) x (DM
+      share 5/6) = 0.106..0.133 — OBT's posited 0.10 RECOVERED from geometry.
+      FINAL INTEGRATION (every parameter derived or OBT-chronology-fixed:
+      sawtooth waveform [Gate 6], coupling sign + [warp], f_eff [Gate 8],
+      anchor 0 [13.8/2.0 = 6.9 cycles = phase 0.9 today], 4a filter):
+      **DlnD = -7.2%..-9.0% (headline -7.7%) = SUPPRESSION, inside OBT's
+      claimed -4..-10% S8 window; the wrong sign would give +7.5% enhancement
+      and is EXCLUDED by the warp.** Cross-checks: no-filter -11.9%, sinusoid
+      -3.4% (the audit's waveform factor ~2 persists as modeling residual —
+      but the waveform itself is now derived). ASSUMPTIONS (each named):
+      linear-bulk static lump + gate-standard junction/readout; LLR-safety and
+      halo-readout arguments (stated, not full calcs); EdS growth; W_saw
+      idealization; F_web direction = toward the bulk (+z, per the theory's
+      own wording); relaxational filter ansatz; compressed-hierarchy statics.
+      STATUS: V9.0 model-chain result, NOT promoted into V8.2 (that requires
+      Romain's call + an independent cross-AI audit pass, per tradition).
+      Falsification handle: observations settling on S8 ENHANCEMENT would
+      refute the chain. Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
