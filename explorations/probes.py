@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "ga_monopole": lambda opts=None: ga_monopole(opts),
     "ga_legs": lambda opts=None: ga_legs(opts),
     "ga_mocks": lambda opts=None: ga_mocks(opts),
     "ga_mv": lambda opts=None: ga_mv(opts),
@@ -4303,3 +4304,68 @@ def ga_legs(opts):
     print(
         "  (independent probe class: galaxy distances vs CMB-kSZ; V8.2 v_bulk entry direction)"
     )
+
+
+def ga_monopole(opts):
+    """CARD-#24 HUNT: the local-void outflow profile from CF4 monopoles.
+    External theory: 'a KBC-scale underdensity (~30% out to ~300 Mpc) is
+    LCDM-incompatible / an artifact'. OBT (V8.2 T3): the KBC void is a
+    CYMATIC cell - pre-registered scale: edge at lambda/2 = 613/2 = 306 Mpc.
+    Per-SHELL monopole+dipole fits (dipole absorbs the drift; log estimator):
+    u_mono(R) = mean radial outflow -> dH/H(R). No-void mocks (same geometry,
+    noise+errors only) give the per-shell monopole null. FACTS only."""
+    import numpy as np
+
+    H0 = 74.6
+    rows = []
+    for ln in open("/DATA/obt_game_cache/raw/cf4/table3.dat"):
+        try:
+            dm = float(ln[8:14])
+            edm = float(ln[22:27])
+            v = float(ln[28:33])
+            gl = float(ln[52:60])
+            gb = float(ln[61:69])
+        except ValueError:
+            continue
+        if dm <= 0 or v <= 200:
+            continue
+        rows.append((10 ** ((dm - 25) / 5), edm, v, gl, gb))
+    A = np.array(rows)
+    d, edm, v, gl, gb = A.T
+    glr, gbr = np.radians(gl), np.radians(gb)
+    n = np.vstack([np.cos(gbr) * np.cos(glr), np.cos(gbr) * np.sin(glr), np.sin(gbr)]).T
+    ulog = v * np.log(v / (H0 * d))
+    su = np.sqrt((v * 0.4605 * edm) ** 2 + 300.0**2)
+    rng = np.random.default_rng(11)
+    shells = [(25, 75), (75, 125), (125, 175), (175, 225), (225, 275), (275, 350)]
+    print(f"[ga_monopole] N={len(A)}; per-shell monopole (outflow) profile:")
+    print(
+        f"  {'shell':>10s} {'N':>6s} {'u_mono':>7s} {'err':>4s} {'null68':>6s} {'dH/H %':>7s}"
+    )
+    for lo, hi in shells:
+        m = (d >= lo) & (d < hi)
+        if m.sum() < 150:
+            continue
+        X = np.hstack([np.ones((m.sum(), 1)), n[m]])
+        w = 1.0 / su[m] ** 2
+        C = np.linalg.inv(X.T @ (X * w[:, None]))
+        p = C @ (X.T @ (w * ulog[m]))
+        em = np.sqrt(C[0, 0])
+        # no-void null: same geometry, noise + lognormal distance errors only
+        nulls = []
+        for _ in range(60):
+            dobs = d[m] * 10 ** (rng.normal(0, edm[m]) / 5.0)
+            u0 = (H0 * d[m] + rng.normal(0, 300.0, m.sum())) * 1.0
+            u0 = u0 - H0 * dobs
+            u0 = (H0 * d[m] + rng.normal(0, 300.0, m.sum())) * np.log(
+                (H0 * d[m] + rng.normal(0, 300.0, m.sum())) / (H0 * dobs)
+            )
+            p0 = C @ (X.T @ (w * u0))
+            nulls.append(p0[0])
+        n68 = np.percentile(np.abs(nulls), 68)
+        Rbar = d[m].mean()
+        print(
+            f"  {lo:4d}-{hi:3d} {int(m.sum()):6d} {p[0]:7.0f} {em:4.0f} {n68:6.0f} {100*p[0]/(H0*Rbar):+7.2f}"
+        )
+    print("  READ: KBC/cymatic = positive outflow inside, falling toward the edge;")
+    print("  pre-registered edge scale lambda/2 = 306 Mpc (V8.2: lambda = cT = 613).")
