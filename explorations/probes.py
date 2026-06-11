@@ -2842,6 +2842,12 @@ def probe_sfh_sync(args=None):
         ("Clouds", 5.0, 0.7, "H-Z re-ignition both Clouds ~5 Gyr"),
         ("Fornax", 4.6, 0.4, "Rusakov 2021 HST (sharp burst; well-dated MISS, logged)"),
         ("LeoI", 3.5, 0.5, "Leo I burst ~3-4 Gyr (secondary source)"),
+        (
+            "M33",
+            2.0,
+            0.3,
+            "Bernard 2012 deep fields: strong burst ~2 Gyr (SFRx3, after lull)",
+        ),
     ]
     # Exclusions (pre-specified rule): Carina (sigma>0.5 across studies),
     # Mor 2019 solar neighbourhood (same host as Ruiz-Lara MW = not independent),

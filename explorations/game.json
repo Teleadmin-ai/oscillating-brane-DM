@@ -10,7 +10,8 @@
         "patch": "The burst CLOCK is global, not local: bursts lock to the OBT slip grid (lookback 0-0.2, 1.8-2.0, 3.8-4.0, 5.8-6.0, 7.8-8.0 Gyr; from the promoted V9.0 chain: sawtooth + chronological anchor), via slip-triggered Toomre destabilization (G_DM drops ~16% in ~200 Myr -> kappa drops, disk self-gravity baryonic G unchanged -> Q drops -> burst). Local encounters explain WHICH gas responds, not WHEN.",
         "systems_validated": [
           "MW (Gaia SFH, Ruiz-Lara 2020: 1.9 Gyr DEAD CENTER in [1.8,2.0]; 5.7 at 0.1 of [5.8,6.0]; 1.0 off-grid = contrast point, plausibly genuinely Sgr)",
-          "M31 (PHAT, Williams 2015 + PHAT XIX 2017: GLOBAL disk-wide SF episode 2-4 Gyr ago, peak ~2 Gyr, ~60% of last-5-Gyr stellar mass; NO Sagittarius — community invokes an unknown trigger; epoch lands on the same [1.8,2.0] slip window as the MW 1.9 burst)"
+          "M31 (PHAT, Williams 2015 + PHAT XIX 2017: GLOBAL disk-wide SF episode 2-4 Gyr ago, peak ~2 Gyr, ~60% of last-5-Gyr stellar mass; NO Sagittarius — community invokes an unknown trigger; epoch lands on the same [1.8,2.0] slip window as the MW 1.9 burst)",
+          "M33 (Bernard 2012, deep HST fields 9.1/11.6 kpc: strong burst ~2 Gyr, SFRx3, preceded by a lull; community culprit #4 = the M31-M33 close passage; epoch in the [1.8-2.0] slip window)"
         ],
         "why_status": "none",
         "why": null,
@@ -28,6 +29,11 @@
             "t": "date-unset",
             "event": "system_added",
             "detail": "M31 (PHAT, Williams 2015 + PHAT XIX 2017: GLOBAL disk-wide SF episode 2-4 Gyr ago, peak ~2 Gyr, ~60% of last-5-Gyr stellar mass; NO Sagittarius — community invokes an unknown trigger; epoch lands on the same [1.8,2.0] slip window as the MW 1.9 burst)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "M33 (Bernard 2012, deep HST fields 9.1/11.6 kpc: strong burst ~2 Gyr, SFRx3, preceded by a lull; community culprit #4 = the M31-M33 close passage; epoch in the [1.8-2.0] slip window)"
           }
         ]
       }
