@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "ga_legs": lambda opts=None: ga_legs(opts),
     "ga_mocks": lambda opts=None: ga_mocks(opts),
     "ga_mv": lambda opts=None: ga_mv(opts),
     "ga_bulkflow": lambda opts=None: ga_bulkflow(opts),
@@ -4220,3 +4221,85 @@ def ga_mocks(opts):
         print(
             f"        LCDM null (rms {rms}) -> p(>= {obsv:.0f}) = {p_lcdm:.3f}  (max {nul_l.max():.0f})"
         )
+
+
+def ga_legs(opts):
+    """GA QUEST round 4 - closing the two monster legs. LEG 2 (systematics):
+    method-split dipoles - TF-only / FP-only / SNeIa-only subsamples, each with
+    its OWN distance moduli+errors: a PHYSICAL flow gives the same dipole; a
+    calibration zero-point dipole differs across independent methods. LEG 1
+    (identity): angular separation of our dipole from the INDEPENDENT CMB-kSZ
+    dark-flow direction (Kashlinsky l~287,b~8, a completely different probe),
+    the V8.2 v_bulk entry's own direction. FACTS only."""
+    import numpy as np
+
+    H0 = 74.6
+    cols = {
+        "TF": (133, 139, 140, 145),
+        "FP": (117, 123, 124, 129),
+        "SNIa": (100, 106, 107, 112),
+    }
+    data = {k: [] for k in cols}
+    for ln in open("/DATA/obt_game_cache/raw/cf4/table3.dat"):
+        try:
+            v = float(ln[28:33])
+            gl = float(ln[52:60])
+            gb = float(ln[61:69])
+        except ValueError:
+            continue
+        if v <= 200:
+            continue
+        for k, (a, b, c, e) in cols.items():
+            try:
+                dm = float(ln[a:b])
+                edm = float(ln[c:e])
+            except ValueError:
+                continue
+            if dm > 0:
+                data[k].append((10 ** ((dm - 25) / 5), edm, v, gl, gb))
+    print("[ga_legs] LEG 2 - method-split dipoles (R<150 Mpc, own DMs/errors):")
+    dirs = {}
+    for k, rows in data.items():
+        A = np.array(rows)
+        d, edm, v, gl, gb = A.T
+        m = d < 150
+        if m.sum() < 100:
+            continue
+        glr, gbr = np.radians(gl[m]), np.radians(gb[m])
+        n = np.vstack(
+            [np.cos(gbr) * np.cos(glr), np.cos(gbr) * np.sin(glr), np.sin(gbr)]
+        ).T
+        u = v[m] * np.log(v[m] / (H0 * d[m]))
+        su = np.sqrt((v[m] * 0.4605 * edm[m]) ** 2 + 300.0**2)
+        X = np.hstack([np.ones((m.sum(), 1)), n])
+        w = 1.0 / su**2
+        C = np.linalg.inv(X.T @ (X * w[:, None]))
+        p = C @ (X.T @ (w * u))
+        V = p[1:]
+        Vn = np.linalg.norm(V)
+        eV = np.sqrt(np.trace(C[1:, 1:]) / 3)
+        l1 = np.degrees(np.arctan2(V[1], V[0])) % 360
+        b1 = np.degrees(np.arcsin(V[2] / Vn))
+        dirs[k] = (V / Vn, Vn, eV)
+        print(
+            f"    {k:5s} N={int(m.sum()):5d}  |V|={Vn:4.0f}+-{eV:.0f}  (l,b)=({l1:.0f},{b1:+.0f})"
+        )
+    ks = list(dirs)
+    for i in range(len(ks)):
+        for j in range(i + 1, len(ks)):
+            cosang = float(np.clip(dirs[ks[i]][0] @ dirs[ks[j]][0], -1, 1))
+            print(
+                f"    angle({ks[i]},{ks[j]}) = {np.degrees(np.arccos(cosang)):.0f} deg"
+            )
+    # LEG 1: identity vs the independent kSZ dark-flow direction
+    lo, bo = np.radians(299.0), np.radians(15.0)
+    lk, bk = np.radians(287.0), np.radians(8.0)
+    ang = np.degrees(
+        np.arccos(np.sin(bo) * np.sin(bk) + np.cos(bo) * np.cos(bk) * np.cos(lo - lk))
+    )
+    print(
+        f"  LEG 1 - identity: our dipole (299,+15) vs kSZ dark flow (287,+8): {ang:.0f} deg apart"
+    )
+    print(
+        "  (independent probe class: galaxy distances vs CMB-kSZ; V8.2 v_bulk entry direction)"
+    )
