@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "tidal_ufd": lambda opts=None: tidal_ufd(opts),
     "efe_satellites": lambda opts=None: efe_satellites(opts),
     "sfh_sync": lambda args=None: probe_sfh_sync(args),
     "build_sparc": build_sparc,
@@ -3007,3 +3008,81 @@ def efe_satellites(opts):
         print(
             f"    {nm[i]:22s} M={Mi[i]:.1e} e={ei[i]:5.2f} sobs={si[i]:5.1f} spred={sp[i]:5.1f} d={np.log10(si[i]/sp[i]):+.2f}{tag}"
         )
+
+
+def tidal_ufd(opts):
+    """TIDAL-HEATING HUNT (UMa II / Hercules / Boo I + the whole EFE sample).
+    External theory to debunk: 'UFD sigmas are EQUILIBRIUM tracers (LCDM: of
+    dense DM halos that SHIELD them from tides)'. Patch (one parameter): tidal
+    susceptibility eta = r_half / r_Jacobi with the EFE-effective satellite
+    gravity: r_J = d (nu_e m / (2 M_MW(<d)))^{1/3}, M_MW(<d) = V^2 d / G (flat
+    220). PREDICTION under the tidal reading: the residual log(sobs/spred)
+    RISES with eta; under the LCDM shield it should NOT correlate with the
+    baryon-only eta. (McGaugh-Wolf 2010 logic, reproduced with our machinery.)"""
+    import numpy as np
+    import pandas as pd
+    from scipy.stats import spearmanr
+
+    G, MSUN, PC, KMS, a0 = 6.674e-11, 1.989e30, 3.0856775814913673e16, 1.0e3, 1.2e-10
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet")
+    d = d[(d.M_bar > 0) & (d.sigma_kms > 0) & (d.r_half_pc > 0) & (d.D_kpc > 0)].copy()
+    mw = d[d.SubG.astype(str).str.contains("MW|Milky", case=False, na=True)].copy()
+    if len(mw) < 5:
+        mw = d.copy()
+    S19 = {
+        "Segue (I)": 3.7,
+        "Segue II": None,
+        "Willman 1": None,
+        "Bootes II": None,
+        "Bootes (I)": 4.6,
+        "Ursa Major (I)": 7.0,
+        "Ursa Major II": 5.6,
+        "Coma Berenices": 4.6,
+        "Canes Venatici II": 4.6,
+        "Hercules": 5.1,
+        "Leo IV": 3.3,
+        "Leo V": 2.3,
+    }
+    keep = np.ones(len(mw), bool)
+    sobs = mw.sigma_kms.values.copy()
+    for i, nm_ in enumerate(mw.Name.values):
+        if nm_ in S19:
+            v = S19[nm_]
+            if v is None:
+                keep[i] = False
+            else:
+                sobs[i] = v
+    M = mw.M_bar.values * MSUN
+    r = mw.r_half_pc.values * PC
+    dist = mw.D_kpc.values * 1e3 * PC
+    g_ext = (220.0 * KMS) ** 2 / dist
+    e = g_ext / a0
+    gN = G * M / r**2
+    z = gN / a0
+    Ae = e * (1 + e / 2) / (1 + e)
+    Be = 1 + e
+    nue = 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
+    spred = np.sqrt(nue * G * M / (5 * r)) / KMS
+    MMW = (220.0 * KMS) ** 2 * dist / G
+    rJ = dist * (nue * M / (2 * MMW)) ** (1.0 / 3.0)
+    eta = r / rJ
+    sel = (e > gN / a0) & (gN / a0 < 1.0) & keep
+    res = np.log10(sobs[sel] / spred[sel])
+    le = np.log10(eta[sel])
+    rho, p = spearmanr(le, res)
+    print("[tidal_ufd] residual vs EFE-Jacobi tidal susceptibility (N=%d):" % sel.sum())
+    print(f"  Spearman rho = {rho:+.3f}  (p = {p:.4f})")
+    nm = mw.Name.values[sel]
+    for i in np.argsort(eta[sel])[::-1]:
+        tag = (
+            " <-- literature tidal candidate"
+            if nm[i] in ("Ursa Major II", "Hercules", "Bootes (I)")
+            else ""
+        )
+        print(f"    {nm[i]:22s} eta={eta[sel][i]:5.2f}  resid={res[i]:+.2f}{tag}")
+    print(
+        "  READ: rho>>0 = the most tidally fragile (baryon-only, EFE gravity) are the"
+    )
+    print(
+        "  most sigma-inflated -> tidal reading; LCDM DM-shield predicts NO correlation."
+    )
