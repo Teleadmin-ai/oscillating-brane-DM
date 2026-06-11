@@ -2830,7 +2830,12 @@ def probe_sfh_sync(args=None):
         ("LMC", 2.0, 0.4, "Harris-Zaritsky 2009 (peak ~2 Gyr)"),
         ("LMC+SMC", 2.5, 0.4, "H-Z coincident Clouds peak"),
         ("Clouds", 5.0, 0.7, "H-Z re-ignition both Clouds ~5 Gyr"),
+        ("Fornax", 4.6, 0.4, "Rusakov 2021 HST (sharp burst; well-dated MISS, logged)"),
+        ("LeoI", 3.5, 0.5, "Leo I burst ~3-4 Gyr (secondary source)"),
     ]
+    # Exclusions (pre-specified rule): Carina (sigma>0.5 across studies),
+    # Mor 2019 solar neighbourhood (same host as Ruiz-Lara MW = not independent),
+    # Sculptor (quenched >10 Gyr: null host, no gas to respond - consistent).
     centers = np.array([1.9, 3.9, 5.9, 7.9])
     lo, hi = 0.8, 9.0
     rng = np.random.default_rng(42)
@@ -2870,4 +2875,27 @@ def probe_sfh_sync(args=None):
     print(f"  SHARP only (sigma<=0.3, N={int(m.sum())}): {n2} hits, MC p = {p2:.3f}")
     print("  VERDICT: see p-values — candidate-level evidence; monster needs p<~0.01")
     print("  (more hosts with sigma<=0.3 datings, or per-host SFH reanalysis).")
-    return {"p_all": p, "p_sharp": p2, "hits": n_obs, "n": len(eps)}
+
+    # ---- PIVOT sub-test: the LAST-SLIP coincidence (not the periodic grid).
+    # 3 INDEPENDENT hosts' recent major epochs: MW {1.9,5.7,1.0}, M31 {2.0},
+    # LMC {2.0}. Statistic: minimum spread over all (MW_i, M31, LMC) triples;
+    # observed = max(1.9,2.0,2.0)-min = 0.1. MC null: same epoch counts uniform
+    # in [0.8,9]; p = P(min triple spread <= observed). Look-elsewhere included
+    # (any common epoch would count, all MW epochs tried).
+    mw = np.array([1.9, 5.7, 1.0])
+    obs_spread = min(max(m, 2.0, 2.0) - min(m, 2.0, 2.0) for m in mw)
+    cnt3 = 0
+    for _ in range(nmc):
+        mwr = rng.uniform(lo, hi, 3)
+        m31r = rng.uniform(lo, hi)
+        lmcr = rng.uniform(lo, hi)
+        sp = min(max(m, m31r, lmcr) - min(m, m31r, lmcr) for m in mwr)
+        if sp <= obs_spread:
+            cnt3 += 1
+    p3 = cnt3 / nmc
+    print(f"\n  PIVOT (last-slip coincidence): MW 1.9 / M31 2.0 / LMC 2.0,")
+    print(f"  observed min triple spread = {obs_spread:.2f} Gyr -> MC p = {p3:.4f}")
+    print("  (3 independent hosts, look-elsewhere over all MW epochs included;")
+    print("  CAVEAT: M31/LMC datings are coarse (+-0.4-0.5) - the 0.1 spread of the")
+    print("  central values flatters the true coincidence; treat as indicative.)")
+    return {"p_all": p, "p_sharp": p2, "p_pivot": p3, "hits": n_obs, "n": len(eps)}
