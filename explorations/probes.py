@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "xcop_hier": lambda opts=None: xcop_hier(opts),
     "xcop_killshot": lambda opts=None: xcop_killshot(opts),
     "xcop_budget": lambda opts=None: xcop_budget(opts),
     "cusp_core_h": lambda opts=None: cusp_core_h(opts),
@@ -3853,4 +3854,137 @@ def xcop_killshot(opts):
         if m.sum():
             print(
                 f"    OBT residual [{tag:12s}]: median {np.median(res[m]):+.3f} dex-e, N={int(m.sum())}"
+            )
+
+
+def xcop_hier(opts):
+    """ROUND 4 - the hierarchical kill shot (cards #6/#21 machinery on clusters).
+    Changes vs xcop_killshot (all pre-stated): (1) intrinsic scatter sigma_int
+    added in quadrature to ALL models' ln g_obs budget (hydrostatic bias /
+    asphericity - a property of the measurement, model-independent), CALIBRATED
+    so the most flexible (4-param) model reaches chi2/N=1 = its best case,
+    conservative AGAINST OBT; (2) covariance thinning every 8th bin; (3) BCG
+    zone included (r>15 kpc, Hernquist 1.2e12/30kpc); (4) r_c bound freed to
+    0.01 R500. Card rule unchanged: OBT(2p) >= 4p-class in BIC. FACTS only."""
+    import numpy as np
+    from astropy.io import fits as pyfits
+    from scipy.optimize import least_squares
+
+    G, MSUN, KPC = 6.674e-11, 1.989e30, 3.0856775814913673e19
+    a0, TGYR = 1.2e-10, 2.0
+    E19 = {
+        "A85": (1235, 5.65),
+        "A644": (1230, 5.66),
+        "A1644": (1054, 3.48),
+        "A1795": (1153, 4.63),
+        "A2029": (1423, 8.82),
+        "A2142": (1424, 8.95),
+        "A2255": (1196, 5.26),
+        "A2319": (1346, 7.31),
+        "A3158": (1123, 4.26),
+        "A3266": (1430, 8.80),
+        "RXC1825": (1105, 4.08),
+        "ZW1215": (1358, 7.66),
+    }
+    base = "/DATA/obt_game_cache/raw/xcop"
+    rows = []
+    for cl, (r500, m500) in E19.items():
+        t = pyfits.open(f"{base}/{cl}/{cl}_fgas_profile.fits")[1].data
+        r_kpc = np.array(t["RADIUS"], float)
+        if r_kpc.max() < 50:
+            r_kpc *= 1000.0
+        M = np.array(t["M_NFW"], float)
+        Mg = np.array(t["MGAS"], float)
+        sc = m500 * 1e14 / np.interp(r500, r_kpc, M)
+        M, Mg = M * sc, Mg * sc
+        eM = sc * (np.array(t["M_NFW_HI"], float) - np.array(t["M_NFW_LO"], float)) / 2
+        sel = (r_kpc > 15) & (r_kpc < 1.05 * r500) & (M > 0) & (Mg > 0)
+        idx = np.where(sel)[0][::8]
+        r_m = r_kpc[idx] * KPC
+        Mstar = 1.2e12 * (r_kpc[idx] / (r_kpc[idx] + 30.0)) ** 2
+        gobs = G * M[idx] * MSUN / r_m**2
+        gbar = G * (Mg[idx] + Mstar) * MSUN / r_m**2
+        sg = np.sqrt((eM[idx] / np.clip(M[idx], 1, None)) ** 2 + 0.05**2)
+        td = 2 * np.pi * np.sqrt(r_m**3 / (G * M[idx] * MSUN)) / 3.156e16
+        W = np.abs(np.sinc(td / TGYR))
+        for j in range(len(idx)):
+            rows.append(
+                (gobs[j], gbar[j], sg[j], W[j], r_m[j], r500 * KPC, m500 * 1e14 * MSUN)
+            )
+    A = np.array(rows)
+    gobs, gbar, sg, W, r_m, R5, M5 = A.T
+    lny = np.log(gobs)
+    N = len(A)
+    print(
+        f"[xcop_hier] {N} bins (r>15kpc, 1/8 thinning); g_bar/a0: {np.min(gbar/a0):.3f}-{np.max(gbar/a0):.1f}"
+    )
+
+    def nu(z):
+        return 0.5 + np.sqrt(0.25 + 1.0 / np.clip(z, 1e-8, None))
+
+    def d4_lng(th):
+        lg1, a1, lg2, a2 = th
+        return (
+            np.log(gbar)
+            + np.log1p((np.exp(lg1) / gbar) ** a1)
+            + np.log1p((np.exp(lg2) / gbar) ** a2)
+        )
+
+    def obt_lng(th):
+        fW, lbeta = th
+        beta = np.exp(lbeta)
+        x = r_m / (beta * R5)
+        mW = (x - np.arctan(x)) / (1 / beta - np.arctan(1 / beta))
+        gW = fW * G * M5 * mW / r_m**2
+        return np.log(nu(gbar / (np.clip(W, 1e-3, None) * a0)) * gbar + gW)
+
+    def fit(fun, x0s, bnds, s):
+        best = None
+        for x0 in x0s:
+            try:
+                o = least_squares(lambda th: (fun(th) - lny) / s, x0=x0, bounds=bnds)
+                c2 = float((o.fun**2).sum())
+                if best is None or c2 < best[0]:
+                    best = (c2, o.x)
+            except Exception:
+                pass
+        return best
+
+    d4_x0 = [[-23.0, 0.5, -25.5, 1.0], [-24.0, 1.0, -26.0, 0.5]]
+    d4_b = ([-30, 0.01, -30, 0.01], [-20, 3, -20, 3])
+    obt_x0 = [[0.5, -2.0], [0.7, -3.5], [0.3, -1.0]]
+    obt_b = ([0.0, -4.6], [0.97, 0.7])
+    # calibrate sigma_int on the 4p model (its best case): 3 iterations
+    sint = 0.0
+    for _ in range(3):
+        s = np.sqrt(sg**2 + sint**2)
+        b4 = fit(d4_lng, d4_x0, d4_b, s)
+        resid = d4_lng(b4[1]) - lny
+        sint = np.sqrt(max(np.mean(resid**2) - np.mean(sg**2), 1e-6))
+    s = np.sqrt(sg**2 + sint**2)
+    b4 = fit(d4_lng, d4_x0, d4_b, s)
+    bo = fit(obt_lng, obt_x0, obt_b, s)
+    cm = float((((np.log(nu(gbar / a0) * gbar)) - lny) ** 2 / s**2).sum())
+    B4 = b4[0] + 4 * np.log(N)
+    BO = bo[0] + 2 * np.log(N)
+    BM = cm
+    fW, beta = bo[1][0], np.exp(bo[1][1])
+    print(f"  sigma_int (calibrated on 4p best case) = {sint:.3f} (ln-space)")
+    print(f"  MOND (k=0):   chi2/N = {cm/N:.2f}   BIC = {BM:.1f}")
+    print(
+        f"  OBT  (k=2):   chi2/N = {bo[0]/N:.2f}   BIC = {BO:.1f}   [f_W={fW:.2f}, r_c={beta:.3f} R500]"
+    )
+    print(f"  4p   (k=4):   chi2/N = {b4[0]/N:.2f}   BIC = {B4:.1f}")
+    print(
+        f"  dBIC(4p - OBT) = {B4-BO:+.1f}  (>0 = CARD)   dBIC(MOND - OBT) = {BM-BO:+.0f}"
+    )
+    res = obt_lng(bo[1]) - lny
+    for tag, m in [
+        ("core g>a0", gbar > a0),
+        ("mid 0.1-1a0", (gbar > 0.1 * a0) & (gbar <= a0)),
+        ("out <0.1a0", gbar <= 0.1 * a0),
+    ]:
+        if m.sum():
+            print(
+                f"    OBT resid [{tag:11s}]: median {np.median(res[m]):+.3f}, N={int(m.sum())}"
             )
