@@ -2848,6 +2848,12 @@ def probe_sfh_sync(args=None):
             0.3,
             "Bernard 2012 deep fields: strong burst ~2 Gyr (SFRx3, after lull)",
         ),
+        (
+            "NGC6822",
+            2.75,
+            0.35,
+            "arXiv:2412.05646 burst 2.6-2.9 Gyr (bar/outer) — ISOLATED judge: MISS",
+        ),
     ]
     # Exclusions (pre-specified rule): Carina (sigma>0.5 across studies),
     # Mor 2019 solar neighbourhood (same host as Ruiz-Lara MW = not independent),
