@@ -283,7 +283,33 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       walked the S8 freedom from "somewhere in the bulk BCs" down to "the
       primordial perturbation spectrum of the bulk's dark-radiation content" —
       while DERIVING, on the way, the motor's springs, threshold, and
-      waveform.** (mu != 0 AdS-Schwarzschild runs = the natural sequel.) Dust brane (w=0 coefficients of
+      waveform.**
+    - **GATE 7 — the mu-sector (June 2026): the program's last word.**
+      `gate7_mu.py`: [A] the BBN-max dark-radiation background (rho_E/rho_m =
+      1.5e-5/a) leaves the Gates 0-6 background machinery unchanged (corrections
+      ~1e-2 only at a <= 1e-3). [B] BRACKET THEOREM: for the radion-DRIVEN
+      response, mu only sets the far boundary's nature, which strictly
+      interpolates between the two measured extremes — mu=0 compact = perfect
+      reflector (Gate 5: +0.087..+0.107, dies ~k^3-4) and open Poincare =
+      perfect absorber (Gate 3a: +0.13, same death) — both giving the SAME sign
+      and the same cosmological k-death: the driven channel's verdict is
+      mu-INDEPENDENT. (The verbatim Kodama-Ishibashi scalar potential remains
+      the VERIFY item for a full mu!=0 PDE; the bracket substitutes for the
+      sign question.) [C] THE ROOM: integrating the growth equation with a
+      radion-locked Weyl-radiation drive against the BBN-max background, the
+      S8-scale carriage requires delta_E/<E> ~ 5e2 (early-era carriage,
+      r_E ~ 1e-2 at a ~ 1e-3) up to ~1e4 (late carriage) — the Weyl
+      'perturbation' must exceed its own homogeneous mean by 2.7-4 orders,
+      radion-phase-locked universe-wide: a deeply NONLINEAR mean-zero
+      configuration, which is the SAME object as OBT's geometric dark matter.
+      [D] FINAL SYNTHESIS OF GATES 0-7: every LINEAR channel is now either
+      DERIVED (driven response: sign +, elastic, lag-free, cosmologically dead
+      by k^3-4) or CLOSED (peg-elastic 1e-69/1e-47, warp LLR-forbidden, Z2
+      parity) or QUANTIFIED as initial-condition data (the nonlinear Weyl-DM
+      configuration's 10% radion-locked response = f_osc AND the bit, one
+      object, one level below the geometric-DM conjecture). The V9.0 frontier
+      is the NONLINEAR bulk solve of the Weyl-DM configuration under the
+      radion. THE GATE PROGRAM (0 -> 7) IS CLOSED. Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
