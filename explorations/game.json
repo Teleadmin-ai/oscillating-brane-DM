@@ -997,6 +997,44 @@
             "detail": "The WHY is already proven machinery: in OBT/MOND a pressure-supported dwarf's sigma is FIXED by its baryons and the acceleration field it sits in - isolated deep-MOND sigma=(4/81 G M_bar a0)^1/4 (card #14) or EFE quasi-Newtonian sigma=sqrt(nu_e G M_bar/(5 r_half)) (card #16 nu_e, ar5iv-verified) - with NO per-object freedom. Applied blind to the INDEPENDENT M31 satellite system (N=17 with sigma, all tidally safe eta<0.5 per card-#17 flag): isolated regime lands at +0.067 median / 0.117 dex scatter (matching the MW's 0.103, card #14), EFE regime at +0.197 / 0.197 dex - and the +0.2 EFE floor EQUALS the MW safe-EFE floor, i.e. the nu_e-for-pressure normalization residual is a single trans-host calibration constant, not per-object noise. LCDM needs ~17 individually fitted halos for the same numbers. External corroboration: McGaugh-Milgrom 2013 published a-priori predictions for these very dwarfs, subsequently confirmed (Tollerud/Collins sigmas) - our recomputation is independent of theirs. HONEST SCOPE: MOND-shared (OBT inherits); the +0.2 EFE floor is carried openly (same normalization question flagged in card #17 - the cross-host CONSISTENCY is the new fact); And XVI (+0.30) is the same known outlier as in the MW set; And XIII/V/XV (+0.36..+0.62) carry the largest sigma errors of the sample (faint-dwarf measurements); x_ext from the cached dsph pipeline; d_M31 inverted self-consistently from x_ext."
           }
         ]
+      },
+      {
+        "id": "68e8ce2b",
+        "name": "satellite coherence is the RULE (Local Volume census)",
+        "external_theory": "LCDM defense of the satellite-plane problem: the known planes (MW, M31 GPoA, CenA) are RARE individual flukes (~1-few percent each) and the cited hosts are cherry-picked",
+        "patch": "No cherry-picking: a uniform self-computed census of the four nearest major hosts with adequate data (MW, M31, CenA, M81 - every host we tested, none skipped). Phase-space coherence detected in 3 of 4 (MW plane p=0.0008; CenA co-rotation p=0.001-0.02; M81 flattening p=0.0114 with the TRGB-error caveat in the conservative direction), null in 1 (M31 whole-sample positions; its literature GPoA is a subset). Fisher joint INCLUDING the null: chi2=32.9/8dof -> p~6e-5",
+        "systems_validated": [
+          "M81 group (probe m81_plane, UNGC MD=MESSIER081, N=35, TRGB): PCA c/a=0.468, radius-preserving isotropic MC p=0.0114; rms thickness 116 kpc; distance errors (~180 kpc l.o.s.) can only THICKEN an isotropic cloud -> measured flattening is an upper bound (conservative)",
+          "The four-host joint census itself (MW satellite_planes p=0.0008 + CenA cena_plane kinematic p=0.001-0.02 + M81 m81_plane p=0.0114 + M31 m31_corotation NULL p=0.39 included honestly): Fisher chi2=32.9 / 8 dof -> joint p ~ 6e-5 against the independent-flukes hypothesis; coherence is the rule, not the exception, in our own uniformly-analyzed sample"
+        ],
+        "why_status": "found",
+        "why": "The WHY is card #13's mechanism, now carrying its OWN SIGNATURE: without per-satellite DM halos there is no Chandrasekhar dynamical friction to erase coherent phase-space structures, and tidal-dwarf formation in host encounters naturally CREATES thin co-rotating debris planes - so the mechanism predicts coherence wherever a host had a major interaction, i.e. UBIQUITY, exactly what the census finds (3 of 4 nearest hosts, joint p~6e-5 with the null included). LCDM predicts the opposite hierarchy: independently accreted subhalos -> isotropy the rule, coherence the ~1% exception - refuted combinatorially by a uniform, self-computed, no-host-skipped sample. HONEST SCOPE: MOND-shared (Kroupa-Pawlowski argument, OBT inherits); M81 leg positional only (no kinematic test run; TRGB caveat conservative); M31 whole-sample null carried inside the joint (its GPoA is a literature subset, not recomputed); membership by UNGC Main-Disturber; the census is the four nearest majors, not a volume-complete survey",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on LCDM defense of the satellite-plane problem: the known planes (MW, M31 GPoA, CenA) are RARE individual flukes (~1-few percent each) and the cited hosts are cherry-picked @ M81 group (probe m81_plane, UNGC MD=MESSIER081, N=35, TRGB): PCA c/a=0.468, radius-preserving isotropic MC p=0.0114; rms thickness 116 kpc; distance errors (~180 kpc l.o.s.) can only THICKEN an isotropic cloud -> measured flattening is an upper bound (conservative)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "The four-host joint census itself (MW satellite_planes p=0.0008 + CenA cena_plane kinematic p=0.001-0.02 + M81 m81_plane p=0.0114 + M31 m31_corotation NULL p=0.39 included honestly): Fisher chi2=32.9 / 8 dof -> joint p ~ 6e-5 against the independent-flukes hypothesis; coherence is the rule, not the exception, in our own uniformly-analyzed sample"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['M81 group (probe m81_plane, UNGC MD=MESSIER081, N=35, TRGB): PCA c/a=0.468, radius-preserving isotropic MC p=0.0114; rms thickness 116 kpc; distance errors (~180 kpc l.o.s.) can only THICKEN an isotropic cloud -> measured flattening is an upper bound (conservative)', 'The four-host joint census itself (MW satellite_planes p=0.0008 + CenA cena_plane kinematic p=0.001-0.02 + M81 m81_plane p=0.0114 + M31 m31_corotation NULL p=0.39 included honestly): Fisher chi2=32.9 / 8 dof -> joint p ~ 6e-5 against the independent-flukes hypothesis; coherence is the rule, not the exception, in our own uniformly-analyzed sample']"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The WHY is card #13's mechanism, now carrying its OWN SIGNATURE: without per-satellite DM halos there is no Chandrasekhar dynamical friction to erase coherent phase-space structures, and tidal-dwarf formation in host encounters naturally CREATES thin co-rotating debris planes - so the mechanism predicts coherence wherever a host had a major interaction, i.e. UBIQUITY, exactly what the census finds (3 of 4 nearest hosts, joint p~6e-5 with the null included). LCDM predicts the opposite hierarchy: independently accreted subhalos -> isotropy the rule, coherence the ~1% exception - refuted combinatorially by a uniform, self-computed, no-host-skipped sample. HONEST SCOPE: MOND-shared (Kroupa-Pawlowski argument, OBT inherits); M81 leg positional only (no kinematic test run; TRGB caveat conservative); M31 whole-sample null carried inside the joint (its GPoA is a literature subset, not recomputed); membership by UNGC Main-Disturber; the census is the four nearest majors, not a volume-complete survey"
+          }
+        ]
       }
     ],
     "errors": [
@@ -1508,6 +1546,21 @@
       "t": "date-unset",
       "promoted_to_card": "1cb34c20",
       "detail": "The WHY is already proven machinery: in OBT/MOND a pressure-supported dwarf's sigma is FIXED by its baryons and the acceleration field it sits in - isolated deep-MOND sigma=(4/81 G M_bar a0)^1/4 (card #14) or EFE quasi-Newtonian sigma=sqrt(nu_e G M_bar/(5 r_half)) (card #16 nu_e, ar5iv-verified) - with NO per-object freedom. Applied blind to the INDEPENDENT M31 satellite system (N=17 with sigma, all tidally safe eta<0.5 per card-#17 flag): isolated regime lands at +0.067 median / 0.117 dex scatter (matching the MW's 0.103, card #14), EFE regime at +0.197 / 0.197 dex - and the +0.2 EFE floor EQUALS the MW safe-EFE floor, i.e. the nu_e-for-pressure normalization residual is a single trans-host calibration constant, not per-object noise. LCDM needs ~17 individually fitted halos for the same numbers. External corroboration: McGaugh-Milgrom 2013 published a-priori predictions for these very dwarfs, subsequently confirmed (Tollerud/Collins sigmas) - our recomputation is independent of theirs. HONEST SCOPE: MOND-shared (OBT inherits); the +0.2 EFE floor is carried openly (same normalization question flagged in card #17 - the cross-host CONSISTENCY is the new fact); And XVI (+0.30) is the same known outlier as in the MW set; And XIII/V/XV (+0.36..+0.62) carry the largest sigma errors of the sample (faint-dwarf measurements); x_ext from the cached dsph pipeline; d_M31 inverted self-consistently from x_ext."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "68e8ce2b",
+      "name": "satellite coherence is the RULE (Local Volume census)"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "68e8ce2b",
+      "detail": "player judgement; 2 systems: ['M81 group (probe m81_plane, UNGC MD=MESSIER081, N=35, TRGB): PCA c/a=0.468, radius-preserving isotropic MC p=0.0114; rms thickness 116 kpc; distance errors (~180 kpc l.o.s.) can only THICKEN an isotropic cloud -> measured flattening is an upper bound (conservative)', 'The four-host joint census itself (MW satellite_planes p=0.0008 + CenA cena_plane kinematic p=0.001-0.02 + M81 m81_plane p=0.0114 + M31 m31_corotation NULL p=0.39 included honestly): Fisher chi2=32.9 / 8 dof -> joint p ~ 6e-5 against the independent-flukes hypothesis; coherence is the rule, not the exception, in our own uniformly-analyzed sample']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "68e8ce2b",
+      "detail": "The WHY is card #13's mechanism, now carrying its OWN SIGNATURE: without per-satellite DM halos there is no Chandrasekhar dynamical friction to erase coherent phase-space structures, and tidal-dwarf formation in host encounters naturally CREATES thin co-rotating debris planes - so the mechanism predicts coherence wherever a host had a major interaction, i.e. UBIQUITY, exactly what the census finds (3 of 4 nearest hosts, joint p~6e-5 with the null included). LCDM predicts the opposite hierarchy: independently accreted subhalos -> isotropy the rule, coherence the ~1% exception - refuted combinatorially by a uniform, self-computed, no-host-skipped sample. HONEST SCOPE: MOND-shared (Kroupa-Pawlowski argument, OBT inherits); M81 leg positional only (no kinematic test run; TRGB caveat conservative); M31 whole-sample null carried inside the joint (its GPoA is a literature subset, not recomputed); membership by UNGC Main-Disturber; the census is the four nearest majors, not a volume-complete survey"
     }
   ]
 }

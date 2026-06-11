@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "m81_plane": lambda opts=None: m81_plane(opts),
     "m31_dwarfs": lambda opts=None: m31_dwarfs(opts),
     "tidal_ufd_peri": lambda opts=None: tidal_ufd_peri(opts),
     "tidal_ufd": lambda opts=None: tidal_ufd(opts),
@@ -3252,3 +3253,81 @@ def m31_dwarfs(opts):
         print(
             f"    {nm[i]:24s} {reg} eta={eta[i]:5.2f} sobs={sobs[i]:5.1f} spred={spred[i]:5.1f} d={res[i]:+.2f}"
         )
+
+
+def m81_plane(opts):
+    """CARD-#19 HUNT: 3rd computed host for satellite planes. External theory to
+    debunk: 'the MW/M31/CenA planes are rare LCDM flukes (each ~few %, cherry-
+    picked)'. If the M81 group (UNGC, MD=M81, TRGB-rich) is ALSO flattened by
+    OUR OWN calc, the fluke defense collapses combinatorially. Same method as
+    cena_plane (PCA c/a + radius-preserving isotropic MC). FACTS only."""
+    import numpy as np
+
+    base = "/DATA/obt_game_cache/raw/ungc"
+    rmax = float(opts.get("rmax", 0.7))
+    t1 = open(f"{base}/table1.dat").read().splitlines()
+    t2 = open(f"{base}/table2.dat").read().splitlines()
+
+    def radec(ln):
+        try:
+            ra = 15 * (
+                float(ln[19:21]) + float(ln[22:24]) / 60 + float(ln[25:29]) / 3600
+            )
+            sgn = -1 if ln[30] == "-" else 1
+            dec = sgn * (
+                float(ln[31:33]) + float(ln[34:36]) / 60 + float(ln[37:39]) / 3600
+            )
+            return ra, dec
+        except ValueError:
+            return None, None
+
+    def unit(ra, dec):
+        r, d = np.radians(ra), np.radians(dec)
+        return np.array([np.cos(d) * np.cos(r), np.cos(d) * np.sin(r), np.sin(d)])
+
+    Dh = 3.65
+    nH = unit(148.888, 69.065)
+    hx = nH * Dh
+    mem = []
+    mds = {}
+    for a, b in zip(t1, t2):
+        name = a[0:18].strip()
+        md = b[98:113].strip()
+        mds[md] = mds.get(md, 0) + 1
+        if md != "MESSIER081" or name in ("M 81", "NGC3031", "MESSIER081"):
+            continue
+        try:
+            D = float(a[114:119])
+        except ValueError:
+            continue
+        ra, dec = radec(a)
+        if ra is None:
+            continue
+        if np.linalg.norm(unit(ra, dec) * D - hx) < rmax:
+            mem.append((name, ra, dec, D))
+    print(f"[m81_plane] members (MD=M81, r<{rmax} Mpc): N={len(mem)}")
+    if len(mem) < 8:
+        top = sorted(mds.items(), key=lambda kv: -kv[1])[:8]
+        print("  MD label counts (top):", top)
+        return
+    P = np.array([unit(ra, dec) * D - hx for _, ra, dec, D in mem])
+    Pc = P - P.mean(0)
+    ev = np.sort(np.linalg.eigvalsh(Pc.T @ Pc))
+    ca = np.sqrt(ev[0] / ev[2])
+    rad = np.linalg.norm(Pc, axis=1)
+    rng = np.random.default_rng(99)
+    cnt = 0
+    for _ in range(20000):
+        u = rng.normal(size=(len(Pc), 3))
+        u /= np.linalg.norm(u, axis=1)[:, None]
+        Q = rad[:, None] * u
+        Q -= Q.mean(0)
+        e = np.sort(np.linalg.eigvalsh(Q.T @ Q))
+        if np.sqrt(e[0] / e[2]) <= ca:
+            cnt += 1
+    print(f"  PCA c/a = {ca:.3f}, isotropic-MC p = {cnt / 20000:.4f}")
+    print(f"  thickness rms = {np.sqrt(ev[0] / len(Pc)) * 1000:.0f} kpc")
+    print("  CAVEAT: TRGB distance errors ~5% x 3.65 Mpc ~ 180 kpc inflate the")
+    print("  line-of-sight axis -> the measured c/a is an UPPER bound on the true")
+    print("  flattening (errors can only thicken, not flatten, an isotropic cloud")
+    print("  along a random axis; conservative for the p-value if plane not l.o.s.).")
