@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "tidal_ufd_peri": lambda opts=None: tidal_ufd_peri(opts),
     "tidal_ufd": lambda opts=None: tidal_ufd(opts),
     "efe_satellites": lambda opts=None: efe_satellites(opts),
     "sfh_sync": lambda args=None: probe_sfh_sync(args),
@@ -3086,3 +3087,106 @@ def tidal_ufd(opts):
     print(
         "  most sigma-inflated -> tidal reading; LCDM DM-shield predicts NO correlation."
     )
+
+
+def tidal_ufd_peri(opts):
+    """PERICENTER UPGRADE of tidal_ufd (Battaglia 2022 Gaia-EDR3 orbits, Light
+    MW potential, verbatim; Sgr from Vasiliev 2021). The TRUE tidal variable is
+    eta at PERICENTER. RESULT (June 2026): rho_peri=+0.679 (p=0.0027),
+    construction-null deconfounded p_shuffle=0.0040 (vs 0.011 at current
+    distance) - the correlation SHARPENS with the physical variable. ALL FIVE
+    eta_peri>=1 objects (Sgr 3.1, UMaII 1.36, UMaI 1.14, BooI 1.10, Segue1
+    1.09: r_half beyond Jacobi at peri = guaranteed tidal transformation) are
+    exactly the +0.75..+1.31 residuals; Hercules 0.48->0.94; the safe trio
+    (LeoII/Carina/Sculptor <=0.22) are the cleanest residuals."""
+    import numpy as np
+    import pandas as pd
+    from scipy.stats import spearmanr
+
+    G, MSUN, PC, KMS, a0 = 6.674e-11, 1.989e30, 3.0856775814913673e16, 1e3, 1.2e-10
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet")
+    d = d[(d.M_bar > 0) & (d.sigma_kms > 0) & (d.r_half_pc > 0) & (d.D_kpc > 0)].copy()
+    mw = d[d.SubG.astype(str).str.contains("MW|Milky", case=False, na=True)].copy()
+    if len(mw) < 5:
+        mw = d.copy()
+    S19 = {
+        "Segue (I)": 3.7,
+        "Segue II": None,
+        "Willman 1": None,
+        "Bootes II": None,
+        "Bootes (I)": 4.6,
+        "Ursa Major (I)": 7.0,
+        "Ursa Major II": 5.6,
+        "Coma Berenices": 4.6,
+        "Canes Venatici II": 4.6,
+        "Hercules": 5.1,
+        "Leo IV": 3.3,
+        "Leo V": 2.3,
+    }
+    PERI = {
+        "Sculptor": 63.65,
+        "Leo II": 115.55,
+        "Sextans (I)": 74.45,
+        "Carina": 106.66,
+        "Ursa Minor": 48.85,
+        "Draco": 51.68,
+        "Canes Venatici (I)": 68.09,
+        "Hercules": 64.22,
+        "Bootes (I)": 41.93,
+        "Leo IV": 143.17,
+        "Leo V": 171.65,
+        "Ursa Major (I)": 72.22,
+        "Ursa Major II": 39.60,
+        "Coma Berenices": 45.96,
+        "Segue (I)": 20.18,
+        "Canes Venatici II": 49.44,
+        "Sagittarius dSph": 15.0,
+    }
+    keep = np.ones(len(mw), bool)
+    sobs = mw.sigma_kms.values.copy()
+    peri = np.full(len(mw), np.nan)
+    for i, nm in enumerate(mw.Name.values):
+        if nm in S19:
+            v = S19[nm]
+            if v is None:
+                keep[i] = False
+            else:
+                sobs[i] = v
+        if nm in PERI:
+            peri[i] = PERI[nm] * 1e3 * PC
+    keep &= np.isfinite(peri)
+    M = mw.M_bar.values * MSUN
+    r = mw.r_half_pc.values * PC
+    dist = mw.D_kpc.values * 1e3 * PC
+    gN = G * M / r**2
+
+    def nu_of(gext):
+        e = gext / a0
+        z = gN / a0
+        Ae = e * (1 + e / 2) / (1 + e)
+        Be = 1 + e
+        return 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
+
+    spred = np.sqrt(nu_of((220e3) ** 2 / dist) * G * M / (5 * r)) / KMS
+
+    def eta_at(dd):
+        nu = nu_of((220e3) ** 2 / dd)
+        return r / (dd * (nu * M / (2 * (220e3) ** 2 * dd / G)) ** (1.0 / 3.0))
+
+    sel = ((220e3) ** 2 / dist / a0 > gN / a0) & (gN / a0 < 1) & keep
+    res = np.log10(sobs[sel] / spred[sel])
+    for tag, le in [
+        ("NOW ", np.log10(eta_at(dist)[sel])),
+        ("PERI", np.log10(eta_at(peri)[sel])),
+    ]:
+        rho, p = spearmanr(le, res)
+        rng = np.random.default_rng(5)
+        cnt = 0
+        for _ in range(20000):
+            rh, _ = spearmanr(le, np.log10(rng.permutation(sobs[sel]) / spred[sel]))
+            cnt += rh >= rho
+        print(f"  eta_{tag}: rho={rho:+.3f} (p={p:.4f})  p_shuffle={cnt / 20000:.4f}")
+    nm2 = mw.Name.values[sel]
+    ep = eta_at(peri)[sel]
+    for i in np.argsort(ep)[::-1]:
+        print(f"    {nm2[i]:20s} eta_peri={ep[i]:5.2f}  resid={res[i]:+.2f}")

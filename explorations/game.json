@@ -2,30 +2,7 @@
   "mode": "CHERCHEUR",
   "state": "PICK_TERRAIN",
   "game": {
-    "candidates": [
-      {
-        "id": "3b7bb986",
-        "name": "EFE-tidal reading of UFD sigmas",
-        "external_theory": "UFD velocity dispersions are EQUILIBRIUM tracers of dense dark-matter halos that SHIELD the satellites from MW tides (LCDM reading: Segue 1 = densest DM object known)",
-        "patch": "ONE parameter: the baryon-only EFE-Jacobi tidal susceptibility eta = r_half/r_J, r_J = d(nu_e m/(2 M_MW))^{1/3}. The sigma excess over the EFE prediction is TIDAL INFLATION rising with eta - possible only if there is NO shielding DM cocoon (OBT/MOND fragility). McGaugh-Wolf 2010 logic with our machinery + Simon-2019 curated sigmas.",
-        "systems_validated": [
-          "MW EFE-satellite population (probe tidal_ufd, N=17): raw Spearman rho=+0.662 (p=0.004); CONSTRUCTION-NULL DECONFOUNDED (sigma-shuffle keeps the spred/eta structure): mechanical part +0.479, physical pairing +0.18 above, p_shuffle=0.012. Anchors: eta>1 = geometric non-equilibrium under EFE gravity (UMa II 1.64, Segue 1 0.98 - their sigmas CANNOT be equilibrium tracers regardless of stats); the 3 literature tidal candidates (UMa II/Boo I/Hercules) all in the high-eta tail; the near-OK dwarfs (Sculptor 0.17, Leo II 0.07, Carina 0.22) all tidally safe. UPGRADE PATH: eta at orbital PERICENTER from Gaia proper motions (the true tidal variable; Boo I peri ~30-40 kpc vs current 66) -> sharper test, data exists (Battaglia 2022 orbits)."
-        ],
-        "why_status": "none",
-        "why": null,
-        "certainty": "low",
-        "status": "candidate",
-        "created": "date-unset",
-        "updated": "date-unset",
-        "history": [
-          {
-            "t": "date-unset",
-            "event": "created_candidate",
-            "detail": "patch on UFD velocity dispersions are EQUILIBRIUM tracers of dense dark-matter halos that SHIELD the satellites from MW tides (LCDM reading: Segue 1 = densest DM object known) @ MW EFE-satellite population (probe tidal_ufd, N=17): raw Spearman rho=+0.662 (p=0.004); CONSTRUCTION-NULL DECONFOUNDED (sigma-shuffle keeps the spred/eta structure): mechanical part +0.479, physical pairing +0.18 above, p_shuffle=0.012. Anchors: eta>1 = geometric non-equilibrium under EFE gravity (UMa II 1.64, Segue 1 0.98 - their sigmas CANNOT be equilibrium tracers regardless of stats); the 3 literature tidal candidates (UMa II/Boo I/Hercules) all in the high-eta tail; the near-OK dwarfs (Sculptor 0.17, Leo II 0.07, Carina 0.22) all tidally safe. UPGRADE PATH: eta at orbital PERICENTER from Gaia proper motions (the true tidal variable; Boo I peri ~30-40 kpc vs current 66) -> sharper test, data exists (Battaglia 2022 orbits)."
-          }
-        ]
-      }
-    ],
+    "candidates": [],
     "monsters": [
       {
         "id": "dfd9909d",
@@ -68,6 +45,39 @@
             "t": "date-unset",
             "event": "abandoned",
             "detail": "Isolated-judge program 0/3 (NGC 6822 burst at 2.6-2.9 = miss; IC 1613 constant SFH = null; WLM continuous/rising = soft miss). The cleanest discriminant class fails; bracket [0.027,0.15] never cleared p<0.01. The MW/M31/M33 ~1.9-2.0 triple stands recorded (3 big LG DISCS, 3 different local culprits) but cannot be separated from encounter coincidence. RESURRECTION: (a) slip-Toomre mechanism requires a COLD ROTATING DISC (kappa channel) - the dIrr judges are weak rotators, so the proper future test is sharp SFHs of external discs (M81/M101-class, sigma<=0.3 not feasible today); (b) any card sharpening the chronological anchor re-dates the grid; (c) re-test at each new card per la magie."
+          }
+        ]
+      },
+      {
+        "id": "3b7bb986",
+        "name": "EFE-tidal reading of UFD sigmas",
+        "external_theory": "UFD velocity dispersions are EQUILIBRIUM tracers of dense dark-matter halos that SHIELD the satellites from MW tides (LCDM reading: Segue 1 = densest DM object known)",
+        "patch": "ONE parameter: the baryon-only EFE-Jacobi tidal susceptibility eta = r_half/r_J, r_J = d(nu_e m/(2 M_MW))^{1/3}. The sigma excess over the EFE prediction is TIDAL INFLATION rising with eta - possible only if there is NO shielding DM cocoon (OBT/MOND fragility). McGaugh-Wolf 2010 logic with our machinery + Simon-2019 curated sigmas.",
+        "systems_validated": [
+          "MW EFE-satellite population (probe tidal_ufd, N=17): raw Spearman rho=+0.662 (p=0.004); CONSTRUCTION-NULL DECONFOUNDED (sigma-shuffle keeps the spred/eta structure): mechanical part +0.479, physical pairing +0.18 above, p_shuffle=0.012. Anchors: eta>1 = geometric non-equilibrium under EFE gravity (UMa II 1.64, Segue 1 0.98 - their sigmas CANNOT be equilibrium tracers regardless of stats); the 3 literature tidal candidates (UMa II/Boo I/Hercules) all in the high-eta tail; the near-OK dwarfs (Sculptor 0.17, Leo II 0.07, Carina 0.22) all tidally safe. UPGRADE PATH: eta at orbital PERICENTER from Gaia proper motions (the true tidal variable; Boo I peri ~30-40 kpc vs current 66) -> sharper test, data exists (Battaglia 2022 orbits).",
+          "Gaia-pericenter population test (Battaglia 2022 EDR3 orbits, Light potential): the physically-correct tidal variable eta_PERI sharpens the deconfounded significance (p_shuffle 0.011 -> 0.0040, rho=+0.679); ALL 5 eta_peri>=1 objects (Sgr 3.08, UMa II 1.36, UMa I 1.14, Boo I 1.10, Segue 1 1.09 - r_half beyond Jacobi at peri, equilibrium geometrically impossible) are exactly the largest residuals +0.75..+1.31; Hercules climbs 0.48->0.94 on its eccentric orbit; the tidally safe trio (Leo II 0.13, Carina 0.22, Sculptor 0.22) are the cleanest dwarfs. Probe: tidal_ufd_peri"
+        ],
+        "why_status": "none",
+        "why": null,
+        "certainty": "low",
+        "status": "monster",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on UFD velocity dispersions are EQUILIBRIUM tracers of dense dark-matter halos that SHIELD the satellites from MW tides (LCDM reading: Segue 1 = densest DM object known) @ MW EFE-satellite population (probe tidal_ufd, N=17): raw Spearman rho=+0.662 (p=0.004); CONSTRUCTION-NULL DECONFOUNDED (sigma-shuffle keeps the spred/eta structure): mechanical part +0.479, physical pairing +0.18 above, p_shuffle=0.012. Anchors: eta>1 = geometric non-equilibrium under EFE gravity (UMa II 1.64, Segue 1 0.98 - their sigmas CANNOT be equilibrium tracers regardless of stats); the 3 literature tidal candidates (UMa II/Boo I/Hercules) all in the high-eta tail; the near-OK dwarfs (Sculptor 0.17, Leo II 0.07, Carina 0.22) all tidally safe. UPGRADE PATH: eta at orbital PERICENTER from Gaia proper motions (the true tidal variable; Boo I peri ~30-40 kpc vs current 66) -> sharper test, data exists (Battaglia 2022 orbits)."
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Gaia-pericenter population test (Battaglia 2022 EDR3 orbits, Light potential): the physically-correct tidal variable eta_PERI sharpens the deconfounded significance (p_shuffle 0.011 -> 0.0040, rho=+0.679); ALL 5 eta_peri>=1 objects (Sgr 3.08, UMa II 1.36, UMa I 1.14, Boo I 1.10, Segue 1 1.09 - r_half beyond Jacobi at peri, equilibrium geometrically impossible) are exactly the largest residuals +0.75..+1.31; Hercules climbs 0.48->0.94 on its eccentric orbit; the tidally safe trio (Leo II 0.13, Carina 0.22, Sculptor 0.22) are the cleanest dwarfs. Probe: tidal_ufd_peri"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['MW EFE-satellite population (probe tidal_ufd, N=17): raw Spearman rho=+0.662 (p=0.004); CONSTRUCTION-NULL DECONFOUNDED (sigma-shuffle keeps the spred/eta structure): mechanical part +0.479, physical pairing +0.18 above, p_shuffle=0.012. Anchors: eta>1 = geometric non-equilibrium under EFE gravity (UMa II 1.64, Segue 1 0.98 - their sigmas CANNOT be equilibrium tracers regardless of stats); the 3 literature tidal candidates (UMa II/Boo I/Hercules) all in the high-eta tail; the near-OK dwarfs (Sculptor 0.17, Leo II 0.07, Carina 0.22) all tidally safe. UPGRADE PATH: eta at orbital PERICENTER from Gaia proper motions (the true tidal variable; Boo I peri ~30-40 kpc vs current 66) -> sharper test, data exists (Battaglia 2022 orbits).', 'Gaia-pericenter population test (Battaglia 2022 EDR3 orbits, Light potential): the physically-correct tidal variable eta_PERI sharpens the deconfounded significance (p_shuffle 0.011 -> 0.0040, rho=+0.679); ALL 5 eta_peri>=1 objects (Sgr 3.08, UMa II 1.36, UMa I 1.14, Boo I 1.10, Segue 1 1.09 - r_half beyond Jacobi at peri, equilibrium geometrically impossible) are exactly the largest residuals +0.75..+1.31; Hercules climbs 0.48->0.94 on its eccentric orbit; the tidally safe trio (Leo II 0.13, Carina 0.22, Sculptor 0.22) are the cleanest dwarfs. Probe: tidal_ufd_peri']"
           }
         ]
       }
@@ -1430,6 +1440,11 @@
       "t": "date-unset",
       "added_candidate": "3b7bb986",
       "name": "EFE-tidal reading of UFD sigmas"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "3b7bb986",
+      "detail": "player judgement; 2 systems: ['MW EFE-satellite population (probe tidal_ufd, N=17): raw Spearman rho=+0.662 (p=0.004); CONSTRUCTION-NULL DECONFOUNDED (sigma-shuffle keeps the spred/eta structure): mechanical part +0.479, physical pairing +0.18 above, p_shuffle=0.012. Anchors: eta>1 = geometric non-equilibrium under EFE gravity (UMa II 1.64, Segue 1 0.98 - their sigmas CANNOT be equilibrium tracers regardless of stats); the 3 literature tidal candidates (UMa II/Boo I/Hercules) all in the high-eta tail; the near-OK dwarfs (Sculptor 0.17, Leo II 0.07, Carina 0.22) all tidally safe. UPGRADE PATH: eta at orbital PERICENTER from Gaia proper motions (the true tidal variable; Boo I peri ~30-40 kpc vs current 66) -> sharper test, data exists (Battaglia 2022 orbits).', 'Gaia-pericenter population test (Battaglia 2022 EDR3 orbits, Light potential): the physically-correct tidal variable eta_PERI sharpens the deconfounded significance (p_shuffle 0.011 -> 0.0040, rho=+0.679); ALL 5 eta_peri>=1 objects (Sgr 3.08, UMa II 1.36, UMa I 1.14, Boo I 1.10, Segue 1 1.09 - r_half beyond Jacobi at peri, equilibrium geometrically impossible) are exactly the largest residuals +0.75..+1.31; Hercules climbs 0.48->0.94 on its eccentric orbit; the tidally safe trio (Leo II 0.13, Carina 0.22, Sculptor 0.22) are the cleanest dwarfs. Probe: tidal_ufd_peri']"
     }
   ]
 }
