@@ -341,7 +341,45 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       STATUS: V9.0 model-chain result, NOT promoted into V8.2 (that requires
       Romain's call + an independent cross-AI audit pass, per tradition).
       Falsification handle: observations settling on S8 ENHANCEMENT would
-      refute the chain. Dust brane (w=0 coefficients of
+      refute the chain.
+    - **GATE 8 AUDIT (June 2026, self-audit, adversarial) — TWO FINDINGS;
+      THE -7.7% CLAIM IS DOWNGRADED TO CONDITIONAL.**
+      **[F1 — observable-identification fragility of the sign.]** The coupling
+      decomposes as c(dG) = c(R) + 2.5: the RAW bulk response slope is
+      NEGATIVE (c(R) = -1.14 at k=0.6, -1.00 at k=0.3); the positive sign of c
+      comes entirely from the z_b^{5/2} Poisson-unit conversion exponents.
+      The sign therefore depends on which z_b-powers belong to the physical
+      G-modulation vs background bookkeeping — defensible as defined (the
+      bulk-to-matter gravity ratio) but NOT uniquely forced; a clean
+      derivation needs the actual geodesic force from the full perturbed
+      metric. The 'uniform derived +' is downgraded to 'derived within one
+      defensible observable identification'.
+      **[F2 — the critical gap: linear dressing vs the nonlinear Weyl-DM.]**
+      The Gate-8 dG is the LINEAR bulk dressing of a matter lump = exactly the
+      closure audit's channel 2 — and my own k-scan shows dG ~ k^2 (exponents
+      1.70/1.88/1.97), i.e. dG ~ 5e-53 at physical halo scales: the dressing
+      is DEAD, as channel 2 always was. The claimed f_osc = c x 0.1 conflated
+      the modulation OF THE DRESSING FRACTION with a modulation of total halo
+      gravity. For a DM-dominated halo the gravitating mass is the NONLINEAR
+      IC-assembled Weyl configuration, whose radion coupling depends on its
+      bulk z-PROFILE — which the linear lump calculation does not determine.
+      A quick probe: if the configuration is the quasi-zero-mode (Omega ~ 1/z),
+      the projected-amplitude slope is ~ -1 — OPPOSITE sign. The coupling is
+      PROFILE-DEPENDENT.
+      **POST-AUDIT VERDICT: the bit RE-OPENS, now residing in the nonlinear
+      Weyl-DM configuration's bulk z-profile. The -7.2..-9.0% suppression
+      stands only as a CONDITIONAL: IF the configuration's coupling is
+      c ~ +1.4 (warp-asymmetric, dressing-like profile), THEN the S8 chain
+      closes at -7.7%; the quasi-zero-mode profile would flip it. The genuine
+      next derivation (the recovery path): identify the Weyl-DM with the
+      LONGEST-LIVED quasi-bound mode of the bulk wave operator (anything else
+      decays — a selection principle, not an IC), compute ITS profile slope at
+      the brane -> the coupling becomes derivable with no IC freedom. The
+      Gates 0-7 conclusions are UNAFFECTED (they were structural/negative
+      results); Gate 6's positives stand with stated softness (phi_crit as a
+      bracket; sawtooth duty parameter-soft, emergence robust). The sacred
+      files and the site were never touched by the Gate-8 claim (quarantine
+      held).** Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
