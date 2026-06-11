@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "xcop_budget": lambda opts=None: xcop_budget(opts),
     "cusp_core_h": lambda opts=None: cusp_core_h(opts),
     "cusp_core_full": lambda opts=None: cusp_core_full(opts),
     "cusp_core": lambda opts=None: cusp_core(opts),
@@ -3638,4 +3639,69 @@ def cusp_core_h(opts):
     print(f"  median dBIC(NFW-OBT) = {np.median(bic[:,0]-bic[:,2]):+.1f}")
     print(
         f"  cusp-core persists: frac chi2red(ISO)<chi2red(NFW): {np.mean(cr[:,1]<cr[:,0]):.2f}"
+    )
+
+
+def xcop_budget(opts):
+    """BIG-BOSS RECON (clusters). X-COP 13 clusters (Ettori 2019 Table 1,
+    verbatim M500/R500). Baryon budget: universal X-COP f_gas,500=0.131+-0.020
+    + f_star=0.012 (literature standard) - per-cluster fgas pending (Eckert
+    companion). Compute, in-house: g_bar(r500), the full-MOND boost
+    nu(g_N/a0), and the residual factor R = M500/(M_bar*nu) = the boss's HP
+    bar (MOND's classic factor-~2 cluster failure). KEY STRUCTURAL FACT
+    (caught during the hunt): t_dyn(r500) is UNIVERSAL at fixed overdensity
+    (M500 ~ r500^3) ~ 5.6 Gyr for all - so the OBT sinc discriminant CANNOT
+    run across clusters at r500; it lives in the RADIAL profile (t_dyn(r)
+    grows outward -> the boost dies center-to-edge -> R(r) must RISE with the
+    W(t_dyn(r)) extinction). The kill shot needs the public X-COP M(r)
+    profiles (Zenodo) - named next harvest. FACTS only."""
+    import numpy as np
+
+    G, MSUN, MPC = 6.674e-11, 1.989e30, 3.0856775814913673e22
+    a0 = 1.2e-10
+    # Ettori 2019 Table 1 (verbatim): name, R500 Mpc, M500 1e14
+    T = [
+        ("A85", 1.235, 5.65),
+        ("A644", 1.230, 5.66),
+        ("A1644", 1.054, 3.48),
+        ("A1795", 1.153, 4.63),
+        ("A2029", 1.423, 8.82),
+        ("A2142", 1.424, 8.95),
+        ("A2255", 1.196, 5.26),
+        ("A2319", 1.346, 7.31),
+        ("A3158", 1.123, 4.26),
+        ("A3266", 1.430, 8.80),
+        ("HydraA", 0.904, 2.21),
+        ("RXC1825", 1.105, 4.08),
+        ("ZW1215", 1.358, 7.66),
+    ]
+    fb = 0.131 + 0.012
+    Rs = []
+    print("[xcop_budget] X-COP recon: the MOND cluster shortfall, in-house")
+    for nm, r5, m5 in T:
+        M = m5 * 1e14 * MSUN
+        r = r5 * MPC
+        gobs = G * M / r**2
+        Mb = fb * M
+        gN = G * Mb / r**2
+        z = gN / a0
+        nu = 0.5 + np.sqrt(0.25 + 1.0 / z)
+        R = M / (Mb * nu)
+        Rs.append(R)
+        print(
+            f"  {nm:8s} g_obs/a0={gobs/a0:5.2f}  gN_bar/a0={z:5.2f}  nu={nu:4.2f}  R=M/(Mb*nu)={R:4.2f}"
+        )
+    Rs = np.array(Rs)
+    td = 5.6
+    print(
+        f"  residual factor R: median {np.median(Rs):.2f} +- {Rs.std():.2f} (MOND needs 1.0)"
+    )
+    print(
+        f"  t_dyn(r500) ~ {td} Gyr UNIVERSAL (fixed overdensity) -> sinc test degenerate ACROSS clusters"
+    )
+    print(
+        f"  OBT bookkeeping at r500: W(t_dyn)~0 -> boost dead -> Weyl fraction = 1-1/(R*nu)... per cluster"
+    )
+    print(
+        f"  NEXT (the kill shot): X-COP radial M(r) profiles -> R(r) vs W(t_dyn(r)) organization"
     )
