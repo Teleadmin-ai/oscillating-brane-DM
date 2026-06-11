@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "m31_dwarfs": lambda opts=None: m31_dwarfs(opts),
     "tidal_ufd_peri": lambda opts=None: tidal_ufd_peri(opts),
     "tidal_ufd": lambda opts=None: tidal_ufd(opts),
     "efe_satellites": lambda opts=None: efe_satellites(opts),
@@ -3190,3 +3191,64 @@ def tidal_ufd_peri(opts):
     ep = eta_at(peri)[sel]
     for i in np.argsort(ep)[::-1]:
         print(f"    {nm2[i]:20s} eta_peri={ep[i]:5.2f}  resid={res[i]:+.2f}")
+
+
+def m31_dwarfs(opts):
+    """CARD-#18 HUNT. External theory to debunk: 'each Andromeda dwarf requires
+    an individually fitted DM halo'. The game (cards #14+#16+#17) predicts every
+    And-dwarf sigma from BARYONS + the M31 EXTERNAL FIELD alone: isolated
+    deep-MOND formula where x_acc>x_ext (card #14), EFE quasi-Newton nu_e
+    formula where x_ext>x_acc (card #16 machinery), with the card-#17 tidal
+    flag eta = r_half/r_J(M31) marking non-equilibrium systems (d_M31 inverted
+    self-consistently from the cached x_ext: d = V_M31^2/(x_ext a0), V=230).
+    External corroboration: McGaugh-Milgrom 2013 a-priori And predictions."""
+    import numpy as np
+    import pandas as pd
+
+    G, MSUN, PC, KMS, a0 = 6.674e-11, 1.989e30, 3.0856775814913673e16, 1e3, 1.2e-10
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet")
+    d = d[(d.M_bar > 0) & (d.sigma_kms > 0) & (d.r_half_pc > 0)].copy()
+    m31 = d[d.SubG.astype(str).str.contains("M31|And", case=False, na=False)].copy()
+    print(f"[m31_dwarfs] M31 subgroup: N={len(m31)}")
+    if len(m31) < 3:
+        print("  SubG labels:", d.SubG.astype(str).unique()[:10])
+        return
+    M = m31.M_bar.values * MSUN
+    r = m31.r_half_pc.values * PC
+    sobs = m31.sigma_kms.values
+    xext = m31.x_ext.values
+    gN = G * M / r**2
+    xacc = gN / a0
+    s_iso = (4.0 / 81.0 * G * M * a0) ** 0.25 / KMS
+    e = np.clip(xext, 1e-4, None)
+    z = gN / a0
+    Ae = e * (1 + e / 2) / (1 + e)
+    Be = 1 + e
+    nue = 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
+    s_efe = np.sqrt(nue * G * M / (5 * r)) / KMS
+    dM31 = (230.0 * KMS) ** 2 / (e * a0)
+    rJ = dM31 * (nue * M / (2 * (230.0 * KMS) ** 2 * dM31 / G)) ** (1.0 / 3.0)
+    eta = r / rJ
+    iso = (xacc >= xext) & (xacc < 1)
+    efe = (xext > xacc) & (xacc < 1)
+    spred = np.where(iso, s_iso, s_efe)
+    res = np.log10(sobs / spred)
+    safe = eta < 0.5
+    for tag, m in [
+        ("ISO regime, eta<0.5", iso & safe),
+        ("EFE regime, eta<0.5", efe & safe),
+        ("FRAGILE eta>=0.5 (tidal flag, prediction: inflated)", (iso | efe) & ~safe),
+    ]:
+        if m.sum() > 0:
+            print(
+                f"  {tag}: N={int(m.sum())}, median res={np.median(res[m]):+.3f}, scatter={res[m].std():.3f}"
+            )
+    nm = m31.Name.values
+    order = np.argsort(eta)
+    for i in order:
+        if not (iso[i] or efe[i]):
+            continue
+        reg = "iso" if iso[i] else "efe"
+        print(
+            f"    {nm[i]:24s} {reg} eta={eta[i]:5.2f} sobs={sobs[i]:5.1f} spred={spred[i]:5.1f} d={res[i]:+.2f}"
+        )

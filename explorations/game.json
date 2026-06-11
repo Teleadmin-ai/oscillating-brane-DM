@@ -959,6 +959,44 @@
             "detail": "No DM cocoon -> a satellite's tidal fragility is set by its BARYONS alone under EFE gravity: eta = r_half/r_J(pericenter). Tides then BOTH inflate sigma AND elongate the fragile ones. THREE INDEPENDENT COMPUTED LINES converge: (1) KINEMATIC - sigma excess over the EFE prediction tracks eta_peri (Gaia/Battaglia 2022 orbits): rho=+0.679, construction-null deconfounded p_shuffle=0.0040; (2) GEOMETRIC - all five eta_peri>=1 satellites (Sgr, UMa II [peri 39.6/apo 278], UMa I, Boo I, Segue 1) have r_half at/beyond Jacobi at pericenter = equilibrium impossible, and they are exactly the largest residuals +0.75..+1.31; (3) PHOTOMETRIC (independent of all sigma data) - McConnachie ellipticities correlate with eta_peri: rho=+0.667 p=0.0048; fragile <eps>=0.65 (incl. THE most elongated UFDs: UMa I 0.80, Hercules 0.68) vs safe <eps>=0.38, Mann-Whitney p=0.0088. The LCDM DM-shield (Segue 1 = 'densest DM object') predicts NONE of the three: a dominant halo sets r_J far larger and decouples both sigma and eps from the baryon-only eta. HONEST SCOPE: MOND-shared (McGaugh-Wolf 2010 logic, OBT inherits); ~0.1-0.3 dex residual floor of the SAFE dwarfs may be the nu_e-for-pressure normalization (the TREND is the card, not the floor); Battaglia Light potential; velocity gradients literature-qualitative (not re-verified, kept OUT of the certainty); Boo I eps missing in McConnachie."
           }
         ]
+      },
+      {
+        "id": "1cb34c20",
+        "name": "zero-parameter And-dwarf sigmas (M31 replication)",
+        "external_theory": "Each Andromeda dwarf requires an individually fitted dark-matter halo to explain its velocity dispersion (LCDM: ~17 tuned halos for the M31 satellite system)",
+        "patch": "NO per-object parameter at all: sigma predicted from baryons + the M31 external field alone, using the game's existing laws - isolated deep-MOND (card #14) where x_acc>x_ext, EFE quasi-Newton nu_e (card #16 machinery) where x_ext>x_acc, card-#17 tidal flag eta (all eta<0.5 here = equilibrium expected)",
+        "systems_validated": [
+          "M31 satellite population (probe m31_dwarfs, N=17 with sigma): ISO regime N=6 median +0.067 scatter 0.117 dex (NGC147 -0.04, AndVII -0.06, AndI +0.07; AndXVI +0.30 = the SAME outlier as the MW set); EFE regime N=11 median +0.197 scatter 0.197",
+          "Cross-host structural consistency: the M31 EFE floor (+0.20) equals the MW safe-EFE floor (+0.1..+0.3, card #17 honest scope) - the nu_e-for-pressure normalization residual behaves as a single trans-host calibration constant, not noise; and the isolated-regime scatter (0.117 dex) matches the MW isolated set (0.103 dex, card #14). Two hosts, one law, zero per-object parameters."
+        ],
+        "why_status": "found",
+        "why": "The WHY is already proven machinery: in OBT/MOND a pressure-supported dwarf's sigma is FIXED by its baryons and the acceleration field it sits in - isolated deep-MOND sigma=(4/81 G M_bar a0)^1/4 (card #14) or EFE quasi-Newtonian sigma=sqrt(nu_e G M_bar/(5 r_half)) (card #16 nu_e, ar5iv-verified) - with NO per-object freedom. Applied blind to the INDEPENDENT M31 satellite system (N=17 with sigma, all tidally safe eta<0.5 per card-#17 flag): isolated regime lands at +0.067 median / 0.117 dex scatter (matching the MW's 0.103, card #14), EFE regime at +0.197 / 0.197 dex - and the +0.2 EFE floor EQUALS the MW safe-EFE floor, i.e. the nu_e-for-pressure normalization residual is a single trans-host calibration constant, not per-object noise. LCDM needs ~17 individually fitted halos for the same numbers. External corroboration: McGaugh-Milgrom 2013 published a-priori predictions for these very dwarfs, subsequently confirmed (Tollerud/Collins sigmas) - our recomputation is independent of theirs. HONEST SCOPE: MOND-shared (OBT inherits); the +0.2 EFE floor is carried openly (same normalization question flagged in card #17 - the cross-host CONSISTENCY is the new fact); And XVI (+0.30) is the same known outlier as in the MW set; And XIII/V/XV (+0.36..+0.62) carry the largest sigma errors of the sample (faint-dwarf measurements); x_ext from the cached dsph pipeline; d_M31 inverted self-consistently from x_ext.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Each Andromeda dwarf requires an individually fitted dark-matter halo to explain its velocity dispersion (LCDM: ~17 tuned halos for the M31 satellite system) @ M31 satellite population (probe m31_dwarfs, N=17 with sigma): ISO regime N=6 median +0.067 scatter 0.117 dex (NGC147 -0.04, AndVII -0.06, AndI +0.07; AndXVI +0.30 = the SAME outlier as the MW set); EFE regime N=11 median +0.197 scatter 0.197"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Cross-host structural consistency: the M31 EFE floor (+0.20) equals the MW safe-EFE floor (+0.1..+0.3, card #17 honest scope) - the nu_e-for-pressure normalization residual behaves as a single trans-host calibration constant, not noise; and the isolated-regime scatter (0.117 dex) matches the MW isolated set (0.103 dex, card #14). Two hosts, one law, zero per-object parameters."
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['M31 satellite population (probe m31_dwarfs, N=17 with sigma): ISO regime N=6 median +0.067 scatter 0.117 dex (NGC147 -0.04, AndVII -0.06, AndI +0.07; AndXVI +0.30 = the SAME outlier as the MW set); EFE regime N=11 median +0.197 scatter 0.197', 'Cross-host structural consistency: the M31 EFE floor (+0.20) equals the MW safe-EFE floor (+0.1..+0.3, card #17 honest scope) - the nu_e-for-pressure normalization residual behaves as a single trans-host calibration constant, not noise; and the isolated-regime scatter (0.117 dex) matches the MW isolated set (0.103 dex, card #14). Two hosts, one law, zero per-object parameters.']"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The WHY is already proven machinery: in OBT/MOND a pressure-supported dwarf's sigma is FIXED by its baryons and the acceleration field it sits in - isolated deep-MOND sigma=(4/81 G M_bar a0)^1/4 (card #14) or EFE quasi-Newtonian sigma=sqrt(nu_e G M_bar/(5 r_half)) (card #16 nu_e, ar5iv-verified) - with NO per-object freedom. Applied blind to the INDEPENDENT M31 satellite system (N=17 with sigma, all tidally safe eta<0.5 per card-#17 flag): isolated regime lands at +0.067 median / 0.117 dex scatter (matching the MW's 0.103, card #14), EFE regime at +0.197 / 0.197 dex - and the +0.2 EFE floor EQUALS the MW safe-EFE floor, i.e. the nu_e-for-pressure normalization residual is a single trans-host calibration constant, not per-object noise. LCDM needs ~17 individually fitted halos for the same numbers. External corroboration: McGaugh-Milgrom 2013 published a-priori predictions for these very dwarfs, subsequently confirmed (Tollerud/Collins sigmas) - our recomputation is independent of theirs. HONEST SCOPE: MOND-shared (OBT inherits); the +0.2 EFE floor is carried openly (same normalization question flagged in card #17 - the cross-host CONSISTENCY is the new fact); And XVI (+0.30) is the same known outlier as in the MW set; And XIII/V/XV (+0.36..+0.62) carry the largest sigma errors of the sample (faint-dwarf measurements); x_ext from the cached dsph pipeline; d_M31 inverted self-consistently from x_ext."
+          }
+        ]
       }
     ],
     "errors": [
@@ -1455,6 +1493,21 @@
       "t": "date-unset",
       "promoted_to_card": "3b7bb986",
       "detail": "No DM cocoon -> a satellite's tidal fragility is set by its BARYONS alone under EFE gravity: eta = r_half/r_J(pericenter). Tides then BOTH inflate sigma AND elongate the fragile ones. THREE INDEPENDENT COMPUTED LINES converge: (1) KINEMATIC - sigma excess over the EFE prediction tracks eta_peri (Gaia/Battaglia 2022 orbits): rho=+0.679, construction-null deconfounded p_shuffle=0.0040; (2) GEOMETRIC - all five eta_peri>=1 satellites (Sgr, UMa II [peri 39.6/apo 278], UMa I, Boo I, Segue 1) have r_half at/beyond Jacobi at pericenter = equilibrium impossible, and they are exactly the largest residuals +0.75..+1.31; (3) PHOTOMETRIC (independent of all sigma data) - McConnachie ellipticities correlate with eta_peri: rho=+0.667 p=0.0048; fragile <eps>=0.65 (incl. THE most elongated UFDs: UMa I 0.80, Hercules 0.68) vs safe <eps>=0.38, Mann-Whitney p=0.0088. The LCDM DM-shield (Segue 1 = 'densest DM object') predicts NONE of the three: a dominant halo sets r_J far larger and decouples both sigma and eps from the baryon-only eta. HONEST SCOPE: MOND-shared (McGaugh-Wolf 2010 logic, OBT inherits); ~0.1-0.3 dex residual floor of the SAFE dwarfs may be the nu_e-for-pressure normalization (the TREND is the card, not the floor); Battaglia Light potential; velocity gradients literature-qualitative (not re-verified, kept OUT of the certainty); Boo I eps missing in McConnachie."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "1cb34c20",
+      "name": "zero-parameter And-dwarf sigmas (M31 replication)"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "1cb34c20",
+      "detail": "player judgement; 2 systems: ['M31 satellite population (probe m31_dwarfs, N=17 with sigma): ISO regime N=6 median +0.067 scatter 0.117 dex (NGC147 -0.04, AndVII -0.06, AndI +0.07; AndXVI +0.30 = the SAME outlier as the MW set); EFE regime N=11 median +0.197 scatter 0.197', 'Cross-host structural consistency: the M31 EFE floor (+0.20) equals the MW safe-EFE floor (+0.1..+0.3, card #17 honest scope) - the nu_e-for-pressure normalization residual behaves as a single trans-host calibration constant, not noise; and the isolated-regime scatter (0.117 dex) matches the MW isolated set (0.103 dex, card #14). Two hosts, one law, zero per-object parameters.']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "1cb34c20",
+      "detail": "The WHY is already proven machinery: in OBT/MOND a pressure-supported dwarf's sigma is FIXED by its baryons and the acceleration field it sits in - isolated deep-MOND sigma=(4/81 G M_bar a0)^1/4 (card #14) or EFE quasi-Newtonian sigma=sqrt(nu_e G M_bar/(5 r_half)) (card #16 nu_e, ar5iv-verified) - with NO per-object freedom. Applied blind to the INDEPENDENT M31 satellite system (N=17 with sigma, all tidally safe eta<0.5 per card-#17 flag): isolated regime lands at +0.067 median / 0.117 dex scatter (matching the MW's 0.103, card #14), EFE regime at +0.197 / 0.197 dex - and the +0.2 EFE floor EQUALS the MW safe-EFE floor, i.e. the nu_e-for-pressure normalization residual is a single trans-host calibration constant, not per-object noise. LCDM needs ~17 individually fitted halos for the same numbers. External corroboration: McGaugh-Milgrom 2013 published a-priori predictions for these very dwarfs, subsequently confirmed (Tollerud/Collins sigmas) - our recomputation is independent of theirs. HONEST SCOPE: MOND-shared (OBT inherits); the +0.2 EFE floor is carried openly (same normalization question flagged in card #17 - the cross-host CONSISTENCY is the new fact); And XVI (+0.30) is the same known outlier as in the MW set; And XIII/V/XV (+0.36..+0.62) carry the largest sigma errors of the sample (faint-dwarf measurements); x_ext from the cached dsph pipeline; d_M31 inverted self-consistently from x_ext."
     }
   ]
 }
