@@ -379,7 +379,29 @@ slip-shock cosmology. It runs on a workstation / a few dozen cores.
       results); Gate 6's positives stand with stated softness (phi_crit as a
       bracket; sawtooth duty parameter-soft, emergence robust). The sacred
       files and the site were never touched by the Gate-8 claim (quarantine
-      held).** Dust brane (w=0 coefficients of
+      held).**
+    - **GATE 8 RECOVERY PROBE + AUDIT FINAL STATE (June 2026): the doubt
+      CONCENTRATES into one calculable question.** (1) F2 largely CLOSES: the
+      raw profile slopes of all natural Weyl-DM candidate configurations agree
+      to 0.14 — dressing −1.137, exact zero-mode (psi = sqrt z, Omega = 1/z)
+      −1.000, GW gap-edge mode −1.000 — so under any CONSISTENT observable
+      convention the profile-dependence is mild; the configuration's shape is
+      NOT the blocker. (2) F1 DEEPENS: the conversion-exponent question also
+      touches the DYNAMIC gates' readout — the a^3 factor in dG contributes
+      ~0.21*eps of bookkeeping wiggle vs the ~0.13*eps measured in-phase
+      signal, so the measured '+' in Gates 3a/5 is convention-mixed at O(1)
+      too (the PDE solutions and all structural results stand; only the
+      G_eff-readout DEFINITION is at stake). AUDIT FINAL STATE: the S8 sign
+      hangs on exactly ONE well-defined derivation — express the brane growth
+      equation entirely in physical variables (CHKS formalism, verbatim) and
+      identify unambiguously which z_b-dependences constitute G_eff vs
+      background bookkeeping. Until then: raw-slope convention -> c ~ -1
+      (G_DM weaker toward the IR -> enhancement +6.6% via the 4b table);
+      gate-standard convention -> c ~ +1.4 (suppression -7.7%). ONE sharp
+      question, two branches, both numbers ready — the next session's first
+      target. The audit did its job: it tried to kill, drew blood twice,
+      closed one wound itself, and left the chain with a single named
+      load-bearing question instead of diffuse confidence. Dust brane (w=0 coefficients of
       Eq.33a: friction H_c Delta', A=-1, B=-4, source k^4 Omega_b/(3 a^3)) +
       low-energy OBT radion trajectory (slow drift + 2 Gyr oscillation) +
       retarded/no-incoming bulk (NATURAL in the characteristic scheme: data
