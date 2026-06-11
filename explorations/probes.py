@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "cusp_core_full": lambda opts=None: cusp_core_full(opts),
     "cusp_core": lambda opts=None: cusp_core(opts),
     "tbtf": lambda opts=None: tbtf(opts),
     "m81_plane": lambda opts=None: m81_plane(opts),
@@ -3436,4 +3437,101 @@ def cusp_core(opts):
     print(f"  median |alpha_obs - alpha_pred| = {np.median(np.abs(aobs-apred)):.2f}")
     print(
         f"  alpha_pred: median {np.median(apred):+.2f} -> the law PREDICTS cores where they occur"
+    )
+
+
+def cusp_core_full(opts):
+    """CARD-#21 HUNT, FULL MASS-MODELING version (replaces the powerless
+    finite-difference probe). Per dwarf/LSB galaxy (Vmax<120, >=6 usable pts):
+    fit the implied DM component V2_DM(r)=V2_obs-V2_bar with (a) NFW cusp
+    [2 free params], (b) pseudo-isothermal CORE [2 free], (c) the game's law
+    V2_OBT=(g_obt-g_bar)r [ZERO free]. Errors sigma(V2)=2 Vobs eVobs. Metrics:
+    chi2_red and BIC (k ln N penalty). External facts to reproduce AND dissolve:
+    ISO>>NFW on dwarfs (the cusp-core problem), then 0-param ~ ISO (the
+    dissolution: cores are mu(x), not tuned DM heating). FACTS only."""
+    import numpy as np
+    import pandas as pd
+    from scipy.optimize import least_squares
+
+    df = pd.read_parquet(f"{LOTS}/sparc_rar.parquet")
+    KPC = 3.0856775814913673e19
+    res = []
+    for gid, g in df.groupby("ID"):
+        g = g.sort_values("R_kpc")
+        if g.Vobs.max() > 120 or len(g) < 6:
+            continue
+        r_m = g.R_kpc.values * KPC
+        v2o = (g.g_obs.values - g.g_bar.values) * r_m / 1e6  # km^2/s^2
+        v2p = (g.g_obt.values - g.g_bar.values) * r_m / 1e6
+        sig = 2.0 * g.Vobs.values * np.clip(g.eVobs.values, 1.0, None)
+        m = v2o > 0
+        if m.sum() < 6 or m.mean() < 0.8:
+            continue
+        r = g.R_kpc.values[m]
+        y = v2o[m]
+        yp = v2p[m]
+        s = sig[m]
+        N = len(r)
+
+        def v2nfw(th):
+            rs, v2s = np.exp(th)
+            x = r / rs
+            return v2s * (np.log(1 + x) - x / (1 + x)) / x
+
+        def v2iso(th):
+            rc, v2c = np.exp(th)
+            x = r / rc
+            return v2c * (1 - np.arctan(x) / x)
+
+        def fit(fun):
+            best = None
+            for r0 in (1.0, 3.0, 10.0):
+                try:
+                    o = least_squares(
+                        lambda th: (fun(th) - y) / s,
+                        x0=[np.log(r0), np.log(max(y.max(), 1))],
+                        bounds=([-4, -2], [8, 14]),
+                    )
+                    c2 = float((o.fun**2).sum())
+                    if best is None or c2 < best:
+                        best = c2
+                except Exception:
+                    pass
+            return best
+
+        c_nfw = fit(v2nfw)
+        c_iso = fit(v2iso)
+        c_obt = float((((yp - y) / s) ** 2).sum())
+        if c_nfw is None or c_iso is None:
+            continue
+        lnN = np.log(N)
+        res.append(
+            (
+                gid,
+                N,
+                c_nfw / (N - 2),
+                c_iso / (N - 2),
+                c_obt / N,
+                c_nfw + 2 * lnN,
+                c_iso + 2 * lnN,
+                c_obt,
+            )
+        )
+    a = np.array([x[2:] for x in res])
+    print(
+        f"[cusp_core_full] dwarf/LSB sample (Vmax<120, >=6 pts): N={len(res)} galaxies"
+    )
+    print(
+        f"  median chi2_red: NFW {np.median(a[:,0]):.2f} | ISO core {np.median(a[:,1]):.2f} | OBT(0 free) {np.median(a[:,2]):.2f}"
+    )
+    bic = a[:, 3:6]
+    w = np.argmin(bic, axis=1)
+    print(
+        f"  BIC wins: NFW {int((w==0).sum())} | ISO {int((w==1).sum())} | OBT {int((w==2).sum())}"
+    )
+    print(
+        f"  median dBIC(NFW-OBT) = {np.median(bic[:,0]-bic[:,2]):+.1f}, dBIC(ISO-OBT) = {np.median(bic[:,1]-bic[:,2]):+.1f}"
+    )
+    print(
+        f"  cusp-core reproduced: fraction chi2red(ISO)<chi2red(NFW): {np.mean(a[:,1]<a[:,0]):.2f}"
     )
