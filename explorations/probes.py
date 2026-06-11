@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "efe_satellites": lambda opts=None: efe_satellites(opts),
     "sfh_sync": lambda args=None: probe_sfh_sync(args),
     "build_sparc": build_sparc,
     "build_wb": build_wb,
@@ -2921,3 +2922,60 @@ def probe_sfh_sync(args=None):
     print("  CAVEAT: M31/LMC datings are coarse (+-0.4-0.5) - the 0.1 spread of the")
     print("  central values flatters the true coincidence; treat as indicative.)")
     return {"p_all": p, "p_sharp": p2, "p_pivot": p3, "hits": n_obs, "n": len(eps)}
+
+
+def efe_satellites(opts):
+    """NEW HUNT. External theory to debunk: 'EFE-dominated MW satellites require
+    individually-tuned DM halos or tidal disruption to explain their sigma'.
+    Card #14 deliberately EXCLUDED this regime (crude 1/e prefactor, 0.5 dex).
+    PATCH (one external element): the g_ext prescription — flat MW curve
+    g_ext = V^2/d (V=220 km/s, d=D_kpc ~ galactocentric for MW satellites) +
+    the EXACT Chae-2020 nu_e(z;e) interpolation (card #16 machinery, ar5iv-
+    verified) instead of the crude deep-EFE 1/e, + the Walker-consistent
+    virial zeta=5: sigma_pred = sqrt(nu_e * G M_bar / (5 r_half)).
+    Model note: nu_e is RC-calibrated; applying it to pressure systems is the
+    stated model choice. FACTS only; player judges."""
+    import numpy as np
+    import pandas as pd
+
+    G, MSUN, PC, KMS, a0 = 6.674e-11, 1.989e30, 3.0856775814913673e16, 1.0e3, 1.2e-10
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet")
+    d = d[(d.M_bar > 0) & (d.sigma_kms > 0) & (d.r_half_pc > 0) & (d.D_kpc > 0)].copy()
+    mw = d[d.SubG.astype(str).str.contains("MW|Milky", case=False, na=True)].copy()
+    if len(mw) < 5:
+        mw = d.copy()  # fallback: all (SubG labels unknown)
+    M = mw.M_bar.values * MSUN
+    r = mw.r_half_pc.values * PC
+    dist = mw.D_kpc.values * 1e3 * PC
+    sobs = mw.sigma_kms.values
+    g_ext = (220.0 * KMS) ** 2 / dist  # flat MW curve (the PATCH)
+    e = g_ext / a0
+    gN = G * M / r**2
+    z = gN / a0
+    Ae = e * (1.0 + e / 2.0) / (1.0 + e)
+    Be = 1.0 + e
+    nue = 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
+    s_pred = np.sqrt(nue * G * M / (5.0 * r)) / KMS
+    xacc = gN / a0
+    sel = (e > xacc) & (xacc < 1.0)  # EFE-dominated, non-Newtonian
+    res = np.log10(sobs[sel] / s_pred[sel])
+    print(
+        "[efe_dwarfs] EFE-dominated MW satellites: sigma from M_bar + EXTERNAL FIELD alone."
+    )
+    print(
+        f"  N={int(sel.sum())} (e>x_acc & x_acc<1); patch: flat-curve g_ext + exact nu_e + zeta=5"
+    )
+    print(
+        f"  median log(sobs/spred) = {np.median(res):+.3f} dex, scatter = {res.std():.3f} dex"
+    )
+    print(f"  [card-#14-era crude baseline: 0.5 dex scatter]")
+    print(
+        f"  within factor 1.5: {np.mean(np.abs(res) < np.log10(1.5)):.2f}, factor 2: {np.mean(np.abs(res) < np.log10(2)):.2f}"
+    )
+    nm = mw.Name.values[sel]
+    Mi, si, sp, ei = M[sel] / MSUN, sobs[sel], s_pred[sel], e[sel]
+    for i in np.argsort(Mi)[::-1]:
+        tag = "  <-- Crater II" if "Crater" in nm[i] else ""
+        print(
+            f"    {nm[i]:22s} M={Mi[i]:.1e} e={ei[i]:5.2f} sobs={si[i]:5.1f} spred={sp[i]:5.1f} d={np.log10(si[i]/sp[i]):+.2f}{tag}"
+        )
