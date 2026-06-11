@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "ga_bulkflow": lambda opts=None: ga_bulkflow(opts),
     "xcop_hier": lambda opts=None: xcop_hier(opts),
     "xcop_killshot": lambda opts=None: xcop_killshot(opts),
     "xcop_budget": lambda opts=None: xcop_budget(opts),
@@ -3988,3 +3989,65 @@ def xcop_hier(opts):
             print(
                 f"    OBT resid [{tag:11s}]: median {np.median(res[m]):+.3f}, N={int(m.sum())}"
             )
+
+
+def ga_bulkflow(opts):
+    """GREAT-ATTRACTOR QUEST, shot 1 (journal V14). CF4 groups (CDS J/ApJ/944/94
+    table3, 38053 groups): bulk-flow amplitude vs depth. Monopole+dipole WLS fit
+    per sphere (monopole absorbs the H0 zero-point at first order); weights
+    1/(sigma_u^2+300^2). PRE-REGISTERED OBT NUMBER: the brane-drift v_bulk =
+    300 km/s (V8.2 T3, set years ago from dark flow + birefringence) = a
+    NON-DECAYING large-R plateau with no source basin; LCDM expects decay
+    (~250->60 km/s from 50->250 Mpc); Watkins+23 CF4 reference ~400 at 200/h.
+    Caveats stated: simple estimator (not minimum-variance), Malmquist-type
+    log-distance biases at large R not corrected -> treat the large-R
+    amplitude as indicative; the DECAY-vs-PLATEAU shape is the readout."""
+    import numpy as np
+
+    H0 = 74.6
+    rows = []
+    for ln in open("/DATA/obt_game_cache/raw/cf4/table3.dat"):
+        try:
+            dm = float(ln[8:14])
+            edm = float(ln[22:27])
+            v = float(ln[28:33])
+            gl = float(ln[52:60])
+            gb = float(ln[61:69])
+        except ValueError:
+            continue
+        if dm <= 0 or v <= 0:
+            continue
+        d = 10 ** ((dm - 25.0) / 5.0)
+        rows.append((d, edm, v, gl, gb))
+    A = np.array(rows)
+    d, edm, v, gl, gb = A.T
+    u = v - H0 * d
+    su = np.sqrt((H0 * d * 0.461 * edm) ** 2 + 300.0**2)
+    glr, gbr = np.radians(gl), np.radians(gb)
+    nx = np.cos(gbr) * np.cos(glr)
+    ny = np.cos(gbr) * np.sin(glr)
+    nz = np.sin(gbr)
+    print(f"[ga_bulkflow] CF4 groups usable: {len(A)}")
+    print(
+        f"  {'R<Mpc':>6s} {'N':>6s} {'|V| km/s':>9s} {'err':>5s} {'l_dip':>6s} {'b_dip':>6s}"
+    )
+    for R in (50, 100, 150, 200, 250):
+        m = d < R
+        if m.sum() < 200:
+            continue
+        X = np.vstack([np.ones(m.sum()), nx[m], ny[m], nz[m]]).T
+        w = 1.0 / su[m] ** 2
+        C = np.linalg.inv(X.T @ (X * w[:, None]))
+        p = C @ (X.T @ (w * u[m]))
+        V = p[1:]
+        Vn = np.linalg.norm(V)
+        eV = np.sqrt(np.trace(C[1:, 1:]) / 3.0)
+        ld = np.degrees(np.arctan2(V[1], V[0])) % 360
+        bd = np.degrees(np.arcsin(V[2] / Vn))
+        print(f"  {R:6d} {int(m.sum()):6d} {Vn:9.0f} {eV:5.0f} {ld:6.0f} {bd:+6.0f}")
+    print(
+        "  READ: LCDM = decaying curve; OBT brane drift = plateau ~300 km/s (pre-registered);"
+    )
+    print(
+        "  dark-flow reference direction (Kashlinsky) l~280-290; Shapley l~306 b~+30."
+    )
