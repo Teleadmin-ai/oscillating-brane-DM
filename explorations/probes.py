@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "kbc_phase4": lambda opts=None: kbc_phase4(opts),
     "kbc_phase3": lambda opts=None: kbc_phase3(opts),
     "kbc_phase2": lambda opts=None: kbc_phase2(opts),
     "kbc_zeropoints": lambda opts=None: kbc_zeropoints(opts),
@@ -4796,3 +4797,106 @@ def kbc_phase3(opts):
                 print(
                     f"     {ks[i]}-{ks[j]}: RMS {rmsd:.0f} vs amp {amp:.0f} (ratio {rmsd/max(amp,1):.2f})"
                 )
+
+
+def kbc_phase4(opts):
+    """KBC phase 4 - THE ABSOLUTE ANCHOR. H0_out from SNIa groups at
+    300-500 Mpc (outside the putative void; same per-object posterior bias
+    correction as the shells -> differential bias cancels). Then ABSOLUTE
+    dH/H(R) per shell for SNIa and (drift-corrected) TF, bootstrap errors.
+    PRE-REGISTERED edge: 306 Mpc = lambda_cymatic/2 (V8.2: lambda = cT = 613).
+    Card rule: positive inner excess declining to ~0 at an edge consistent
+    with 306 -> card; else refuse. FACTS only."""
+    import numpy as np
+    from scipy.optimize import least_squares
+
+    H0ref = 74.6
+    cols = {"TF": (133, 139, 140, 145), "SNIa": (100, 106, 107, 112)}
+    drift = {"TF": (-0.170, -0.131), "SNIa": (0.0, 0.0)}
+    data = {k: [] for k in cols}
+    for ln in open("/DATA/obt_game_cache/raw/cf4/table3.dat"):
+        try:
+            v = float(ln[28:33])
+        except ValueError:
+            continue
+        if v <= 200:
+            continue
+        for k, (a, b, c, e) in cols.items():
+            try:
+                dm = float(ln[a:b])
+                edm = float(ln[c:e])
+            except ValueError:
+                continue
+            if dm > 0:
+                dn, df = drift[k]
+                t = np.clip((dm - 33.0) / 3.0, 0, 1)
+                data[k].append(
+                    (10 ** ((dm - (dn + t * (df - dn)) - 25) / 5), max(edm, 0.05), v)
+                )
+    out = {}
+    for k, rows in data.items():
+        A = np.array(rows)
+        d, edm, v = A.T
+        sld = 0.4605 * edm
+        hb = np.linspace(0, 550, 56)
+        cts, _ = np.histogram(d, hb)
+        ctr = 0.5 * (hb[1:] + hb[:-1])
+        m = cts > 0
+
+        def env(th, x):
+            return th[0] * np.log(np.clip(x, 1, None)) - (x / np.exp(th[1])) ** th[2]
+
+        def resid(th):
+            mod = env(th, ctr[m])
+            return (mod - np.log(cts[m])) - np.mean(mod - np.log(cts[m]))
+
+        th = least_squares(
+            resid,
+            x0=[2.0, np.log(150.0), 2.0],
+            bounds=([0, np.log(30), 0.5], [4, np.log(600), 6]),
+        ).x
+        dcor = np.zeros(len(d))
+        for i in range(len(d)):
+            s = sld[i]
+            g = np.linspace(-4 * s, 4 * s, 41)
+            ldt = np.log(d[i]) + g
+            w = np.exp(-(g**2) / (2 * s * s)) * np.exp(env(th, np.exp(ldt)) + ldt)
+            w /= w.sum()
+            dcor[i] = np.exp(float((w * ldt).sum()))
+        out[k] = (dcor, v, sld)
+    # absolute anchor: SNIa 300-500 Mpc
+    d, v, sld = out["SNIa"]
+    ma = (d > 300) & (d < 500)
+    w = 1.0 / (sld[ma] ** 2 + (300.0 / v[ma]) ** 2)
+    H0out = float(np.sum(w * v[ma] / d[ma]) / np.sum(w))
+    print(
+        f"[kbc_phase4] absolute anchor: H0_out(SNIa, 300-500 Mpc, N={int(ma.sum())}) = {H0out:.2f} km/s/Mpc"
+    )
+    shells = [(25, 75), (75, 125), (125, 175), (175, 225), (225, 300), (300, 400)]
+    rng = np.random.default_rng(17)
+    print(f"   {'shell':>9s} {'method':>6s} {'N':>5s} {'dH/H %':>8s} {'err':>5s}")
+    edge = {}
+    for k in ("SNIa", "TF"):
+        d, v, sld = out[k]
+        prof = []
+        for lo, hi in shells:
+            mm = (d >= lo) & (d < hi)
+            if mm.sum() < 25:
+                continue
+            w = 1.0 / (sld[mm] ** 2 + (300.0 / v[mm]) ** 2)
+            r = float(np.sum(w * v[mm] / d[mm]) / np.sum(w)) / H0out - 1.0
+            bs = []
+            idx = np.where(mm)[0]
+            for _ in range(400):
+                jj = rng.choice(idx, len(idx))
+                wj = 1.0 / (sld[jj] ** 2 + (300.0 / v[jj]) ** 2)
+                bs.append(float(np.sum(wj * v[jj] / d[jj]) / np.sum(wj)) / H0out - 1.0)
+            e = float(np.std(bs))
+            prof.append((0.5 * (lo + hi), r, e, int(mm.sum())))
+            print(
+                f"   {lo:4d}-{hi:3d} {k:>6s} {mm.sum():5d} {100*r:+8.2f} {100*e:5.2f}"
+            )
+        edge[k] = prof
+    print(
+        "  READ: KBC = positive inner excess -> ~0 at the edge; pre-registered edge 306 Mpc."
+    )
