@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "df2_sigma": lambda opts=None: df2_sigma(opts),
     "vf_harden": lambda opts=None: vf_harden(opts),
     "vf_alfalfa": lambda opts=None: vf_alfalfa(opts),
     "bars_ordering": lambda opts=None: bars_ordering(opts),
@@ -5493,3 +5494,80 @@ def vf_harden(opts):
     n_obs_def = (wfull[selo] / defl[selo]).sum()
     print(f"\n[3] n(25<V<50) halos = {n_halo:.3f} /Mpc^3 vs observed {n_obs_raw:.3f} (raw) / {n_obs_def:.3f} (deflated)")
     print(f"    -> required DARK fraction of field dwarf halos = {1-n_obs_raw/n_halo:.0%} (raw) to {1-n_obs_def/n_halo:.0%} (deflated)")
+
+
+def df2_sigma(opts):
+    """DF2/DF4 terrain (de-gated by ARA). In-house legs:
+    (1) Bayesian sigma_int posteriors from the RAW GC velocities (vD18 via
+        Martin18 table; vD19 DF4 table) — validation hook: Martin18 got
+        9.5+4.8-3.9 for the 10-GC no-contamination model;
+    (2) our EFE prediction bracket (Chae nu_e, #16 machinery) x ARA window
+        W^(1/4) (W=0.83 DF2, 0.74 DF4), with the 3D-separation bracket;
+    (3) distance-branch audit (20.0 vs 13.7 Mpc).
+    External verbatim banked: vDokkum18 'sigma~20 falsifies alternatives'
+    (isolated, no EFE); Emsellem19: 'broad agreement with the MOND
+    prediction once the EFE is properly taken into account (13.4+4.8-3.7)'."""
+    import numpy as np
+
+    G, a0k = 4.30091e-6, 3703.7  # kpc(km/s)^2/Msun ; a0 in (km/s)^2/kpc
+    W_ARA = {"DF2": 0.83, "DF4": 0.74}
+
+    # raw velocities (v, +err, -err) — vD18b (Martin18 table) and vD19
+    df2 = [(1818, 7, 7), (1799, 16, 15), (1805, 6, 8), (1814, 3, 3),
+           (1804, 6, 6), (1801, 5, 6), (1802, 10, 10), (1789, 6, 7),
+           (1764, 11, 14), (1800, 13, 14)]
+    df4 = [(1441.2, 4.9, 4.8), (1451.0, 3.6, 3.3), (1457.1, 4.6, 5.5),
+           (1445.4, 2.6, 2.3), (1438.4, 4.8, 4.6), (1445.5, 4.0, 4.1),
+           (1445.1, 5.0, 5.2)]
+
+    def posterior(data, smax=35.0):
+        v = np.array([d[0] for d in data], float)
+        ep = np.array([d[1] for d in data], float)
+        em = np.array([d[2] for d in data], float)
+        v0g = np.linspace(v.mean() - 30, v.mean() + 30, 241)
+        sg = np.linspace(0.05, smax, 350)
+        lp = np.zeros((len(v0g), len(sg)))
+        for i, v0 in enumerate(v0g):
+            err = np.where(v < v0, ep, em)  # Martin18 asymmetric-error rule
+            s2 = sg[None, :] ** 2 + err[:, None] ** 2
+            lp[i] = -0.5 * np.sum((v[:, None] - v0) ** 2 / s2 + np.log(s2), axis=0)
+        p = np.exp(lp - lp.max()).sum(axis=0)
+        p /= p.sum()
+        c = np.cumsum(p)
+        q = lambda x: sg[np.searchsorted(c, x)]
+        return q(0.5), q(0.16), q(0.84), q(0.90)
+
+    print("[1] IN-HOUSE sigma_int posteriors (flat priors, asymmetric errors):")
+    for tag, d in [("DF2 (10 GCs)", df2), ("DF2 (drop GC-98)", df2[:8] + df2[9:]),
+                   ("DF4 (7 GCs)", df4)]:
+        m, lo, hi, u90 = posterior(d)
+        print(f"    {tag:18s}: sigma = {m:5.1f} (+{hi-m:.1f}/-{m-lo:.1f}),  90% < {u90:.1f} km/s")
+    print("    [validation hook: Martin18 published 9.5 +4.8/-3.9 for the 10-GC model]")
+
+    # ---------- (2) our EFE prediction bracket ----------
+    def chae_nue(z, e):
+        Ae = e * (1 + e / 2) / (1 + e)
+        Be = 1 + e
+        return 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
+
+    print("\n[2] OUR EFE-MOND prediction (Chae nu_e x ARA window), sigma^2 = nu G M/(5 Re):")
+    for name, M, Re, ebr, Wa in [
+        ("DF2 @20Mpc", 2.0e8, 2.2, (0.054, 0.135), W_ARA["DF2"]),   # NGC1052 d3D 200-80 kpc
+        ("DF4 @20Mpc", 1.66e8, 1.6, (0.065, 0.25), W_ARA["DF4"]),   # NGC1052 165kpc / NGC1035 close
+    ]:
+        gN = G * M / Re**2 / a0k
+        sN = np.sqrt(G * M / (5 * Re))
+        s_iso = (4.0 / 81.0 * 6.674e-11 * M * 1.989e30 * 1.2e-10) ** 0.25 / 1e3
+        preds = [np.sqrt(chae_nue(gN, e) * G * M / (5 * Re)) * Wa**0.25 for e in ebr]
+        print(f"    {name:12s}: z={gN:.3f}; Newton {sN:4.1f}; ISOLATED MOND {s_iso:4.1f} "
+              f"(the vD18 'falsification' number); EFE x ARA bracket "
+              f"[{min(preds):.1f}, {max(preds):.1f}] km/s")
+    print("    [published EFE predictions: Famaey+18 13.4+4.8-3.7; Kroupa+18 ~13.4]")
+
+    # ---------- (3) distance audit ----------
+    M2, Re2 = 2.0e8 * (13.7 / 20.0) ** 2, 2.2 * 13.7 / 20.0
+    s_iso2 = (4.0 / 81.0 * 6.674e-11 * M2 * 1.989e30 * 1.2e-10) ** 0.25 / 1e3
+    sN2 = np.sqrt(G * M2 / (5 * Re2))
+    print(f"\n[3] 13.7-Mpc branch (Trujillo19; disfavored by SBF 22.1+-1.2, Danieli20):")
+    print(f"    DF2: Newton {sN2:.1f} ('anomaly' dissolves in LCDM terms too);"
+          f" isolated MOND {s_iso2:.1f} (DF2 then foreground/quasi-isolated)")
