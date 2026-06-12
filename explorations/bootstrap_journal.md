@@ -380,3 +380,24 @@ and Hickson groups are GATED** until the orbital-averaging derivation specifies 
 for pressure systems (named open theory item). Convention-safe: all compact classical dwarfs (W>=0.94
 under every convention, <=1.6% in sigma) -> cards #14/#18/#25 unaffected; clusters extinguished under
 every convention -> #22 unaffected. No V8.2 value changed — this is a clarification + an honest gate.
+
+## V19 — the tracer-weighted window DERIVED (ARA refinement) → DF2/DF4 DE-GATED (June 2026)
+Reviewer-mode derivation closing V18's open item (theory.md ARA subsection + scripts/sinc_tracer_window.py).
+**The physics**: each tracer is a driven oscillator under the brane's amplitude modulation. ADIABATIC
+regime (internal period T_int < T): the orbit tracks instantaneous a0(t) -> F=1, NO averaging — and the
+galactic anchor a0=cH0/2pi is calibrated on adiabatic systems, so F=1 by normalization. AVERAGING regime
+(T_int > T): the slow orbit averages the fast drive over its own period -> the V8.2 |sinc| boxcar envelope.
+Crossover at T_int=T; resonance band [T/2,2T] keeps the O(1) EFT flag. T_int = T_orb/sqrt(2) (epicyclic)
+for rotation; the radial-period distribution for pressure systems; system filter = light-weighted <F>.
+**Data-mandated**: SPARC 174/175 galaxies sub-crossover (median T_kappa=0.54 Gyr) -> ARA predicts zero
+suppression catalog-wide = what the RAR shows; the raw per-orbit boxcar would crush the outer points of
+the 20 band galaxies by 36-97% — EXCLUDED by card #3's declining-curve residuals (+0.000+-0.089). X-COP
+(#22) preserved on both ends (adiabatic BCG cores W~1; cluster bulk T_r=3-6 Gyr extinct).
+**Windows (Plummer MC, light-weighted)**: DF2 W=0.83 [0.70-1] -> sigma effect <=5-9%; DF4 0.74; CratII
+0.73 [0.52-1] (-8%, subdominant to #17/#25 tides); AntII 0.66 (+non-eq caveat).
+**GATES UPDATED**: DF2/DF4 game terrains OPEN (adiabatic-dominated; OBT prediction = EFE-MOND there, a
+consistency arena, NOT OBT-distinctive); feeble giants usable with stated brackets; groups stay
+band-flagged. **NEW OBT-distinctive future falsifiable minted**: declining MOND boost beyond the epicyclic
+resonance T_orb > sqrt(2) T ~ 2.8 Gyr — ultra-extended HI discs; first candidates UGC 9133 (T_kappa=2.05
+Gyr), NGC 289 / UGC 128 (1.87). Honest: adiabatic+averaging limits derived; band interpolation stays EFT;
+Plummer/isotropy +-10-20% folded into brackets.
