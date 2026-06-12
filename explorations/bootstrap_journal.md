@@ -343,3 +343,26 @@ ABSENT des pipelines CF4 (kbc_phase4, cf4_recon) — +7.8% à z=0.1. Restauré: 
 nu fabrique des pseudo-profils au % au-delà de z~0.03. Leçon de process: le défi de
 Romain ("n'as-tu pas sous-estimé un paramètre?") a corrigé une rétractation juste mais
 mal expliquée — l'audit de l'audit fait partie du jeu.
+
+## V17 — the nu_e-for-pressure floor: derivation attempt #2 → card #26 REFUSED (bounded regime-split budget)
+**June 2026, probe `nu_floor_budget`.** The #17/#18/#25 open question ("why do EFE-regime dispersions sit
++0.1..+0.2 dex above our prediction?") attacked head-on. Finding: **the floor is not one thing — it splits
+by REGIME**, and no single mechanism closes it:
+- **MW EFE set (N=21) is DEEP-EXTERNAL (median z/e = 0.01), floor +0.58 dex under Chae nu_e — but +0.29
+  even under the no-EFE isolated ceiling**: this floor is dominated by the tidally inflated ultrafaints,
+  i.e. it IS card #17 (sigma-excess vs eta_peri, p=0.004). Already explained; not a new card.
+- **M31 EFE set (N=11) is the true TRANSITION regime (z/e = 0.24), floor +0.197**: three bounded smalls —
+  (i) prescription spread capped by the no-EFE ceiling at <= +0.08 (summed-field goes the WRONG way,
+  +0.342); (ii) M/L 2→3 worth <= +0.09 (floor +0.109 at the stellar-pop edge); (iii) residual #17 tides
+  at eta 0.07-0.12 worth ~ +0.05-0.10. Jointly they COVER the floor; individually none closes it; no
+  certainty on the split → **not card material** (golden rule: a card requires certainty).
+- **DEEP-EXTERNAL COROLLARY (the useful new number)**: the exact z→0 limit of Chae's RC-fit,
+  nu_e(0;e) = 1/2 + (B_e−A_e)/(2A_e), sits ~×1.7 BELOW the standard quasi-Newton boost 1/mu(e)
+  (CratII: 5.27 vs 9.06; AntII: 5.76 vs 10.05) = **+0.12 dex of sigma** — explaining most of the
+  "ours vs published" double bookkeeping carried by card #25 (+0.36/+0.11 dex). Our convention is the
+  CONSERVATIVE end of the EFE-prescription family in deep-external; the ordinal statements (the #17
+  trend, #25's AntII>CratII) are convention-robust, the absolute baselines are not.
+Status: the floor question is now CLOSED as "bounded, regime-split, no new physics required" — the
+previous "origin open" (the #18 failed attempt) upgraded to a quantified decomposition. The derivation
+of the true pressure-system EFE normalization (full AQUAL solve for a point mass in an external field)
+remains the one path that could still mint a card here — parked, theory-gated like the dipole.

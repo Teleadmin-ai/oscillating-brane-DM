@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "nu_floor_budget": lambda opts=None: nu_floor_budget(opts),
     "feeble_giants": lambda opts=None: feeble_giants(opts),
     "cf4_recon": lambda opts=None: cf4_recon(opts),
     "pantheon_h0z": lambda opts=None: pantheon_h0z(opts),
@@ -5108,3 +5109,66 @@ def feeble_giants(opts):
     print(
         "  disruption DIRECTLY observed (Ji 2021 velocity gradient). No exotica needed."
     )
+
+
+def nu_floor_budget(opts):
+    """The nu_e-for-pressure FLOOR (#17/#18/#25 open question) — derivation attempt #2.
+    Decompose the EFE-regime sigma floor into its candidate components, per REGIME:
+    transition (z~e: the MW/M31 EFE sets) vs deep-external (z<<e: CratII/AntII).
+    Components: (i) EFE-prescription spread [Chae nu_e RC-fit vs summed nu(z+e) vs
+    the no-EFE ceiling nu(z) vs deep-external quasi-Newton 1/mu(e)];
+    (ii) M/L (2 -> 2.5 -> 3); (iii) residual tides (the #17 trend at the sets' eta)."""
+    import numpy as np, pandas as pd
+    G, MSUN, PC, KMS, a0 = 6.674e-11, 1.989e30, 3.0856775814913673e16, 1e3, 1.2e-10
+    d = pd.read_parquet("/DATA/obt_game_cache/lots/dsph.parquet")
+    d = d[(d.M_bar > 0) & (d.sigma_kms > 0) & (d.r_half_pc > 0)].copy()
+
+    def floors(sub, label):
+        s = d[d.SubG == sub]
+        M = s.M_bar.values * MSUN
+        r = s.r_half_pc.values * PC
+        so = s.sigma_kms.values
+        e = np.clip(s.x_ext.values, 1e-4, None)
+        z = (G * M / r**2) / a0
+        sel = (e > z) & (z < 1)
+        if sel.sum() == 0:
+            return
+        M, r, so, e, z = M[sel], r[sel], so[sel], e[sel], z[sel]
+        Ae = e * (1 + e / 2) / (1 + e)
+        Be = 1 + e
+        nue = 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
+        nus = 0.5 + np.sqrt(0.25 + 1.0 / (z + e))      # summed-field
+        nui = 0.5 + np.sqrt(0.25 + 1.0 / z)            # no-EFE ceiling
+        nuq = np.sqrt(1.0 + e**2) / e                  # deep-ext quasi-Newton 1/mu(e)
+        def med(nu, ups=2.0):
+            sp = np.sqrt(nu * (ups / 2.0) * G * M / (5 * r)) / KMS
+            return np.median(np.log10(so / sp))
+        print(f"  [{label}] N={len(M)}  median z/e = {np.median(z/e):.2f}  (z~e = transition regime)")
+        print(f"    floor | Chae nu_e      : {med(nue):+.3f} dex   (the #14/#18 baseline)")
+        print(f"    floor | summed nu(z+e) : {med(nus):+.3f}")
+        print(f"    floor | no-EFE nu(z)   : {med(nui):+.3f}   <- prescription CEILING (EFE only suppresses)")
+        print(f"    floor | 1/mu(e) quasi-N: {med(nuq):+.3f}   (deep-external form, invalid here if z~e)")
+        print(f"    floor | Chae, M/L=2.5  : {med(nue,2.5):+.3f} ;  M/L=3.0: {med(nue,3.0):+.3f}")
+
+    print("REGIME 1 — the EFE sets (the +0.1..+0.2 floor of #14/#17/#18):")
+    floors("MW", "MW EFE set")
+    floors("M31", "M31 EFE set")
+    print()
+    print("REGIME 2 — deep-external (z<<e): the Chae-limit vs standard quasi-Newton split:")
+    for name, e_, z_ in [("Crater II", 0.111, 3.4e-4), ("Antlia 2", 0.10, 2.0e-4)]:
+        Ae = e_ * (1 + e_ / 2) / (1 + e_)
+        Be = 1 + e_
+        nue0 = 0.5 + (Be - Ae) / (2 * Ae)             # exact z->0 limit of Chae nu_e
+        nuq = np.sqrt(1 + e_**2) / e_
+        print(f"  {name:10s}: nu_e(z->0;e={e_:.3f}) = {nue0:.2f}  vs  1/mu(e) = {nuq:.2f}"
+              f"  -> sigma ratio {np.sqrt(nuq/nue0):.2f} = {0.5*np.log10(nuq/nue0):+.3f} dex")
+    print()
+    print("  BUDGET VERDICT (transition regime, the floor proper):")
+    print("    (i) prescription spread bounded by the no-EFE ceiling: <= +0.08 dex")
+    print("    (ii) M/L 2->3 (stellar-pop edge): <= +0.09 dex")
+    print("    (iii) residual #17 tidal trend at eta ~ 0.07-0.12: ~ +0.05-0.10 dex")
+    print("    -> three bounded smalls jointly COVER the floor; NO single mechanism;")
+    print("       no certainty on the split -> NOT card material.")
+    print("  DEEP-EXTERNAL COROLLARY: our Chae-limit normalization sits ~0.1-0.15 dex")
+    print("    BELOW the standard quasi-Newton form there -> explains most of the")
+    print("    'ours vs published' double bookkeeping of card #25 (+0.36/+0.11).")
