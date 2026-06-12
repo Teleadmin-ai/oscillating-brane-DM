@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "pantheon_h0z": lambda opts=None: pantheon_h0z(opts),
     "kbc_phase4": lambda opts=None: kbc_phase4(opts),
     "kbc_phase3": lambda opts=None: kbc_phase3(opts),
     "kbc_phase2": lambda opts=None: kbc_phase2(opts),
@@ -4900,3 +4901,79 @@ def kbc_phase4(opts):
     print(
         "  READ: KBC = positive inner excess -> ~0 at the edge; pre-registered edge 306 Mpc."
     )
+
+
+def pantheon_h0z(opts):
+    """CARD-#25 HUNT -> turned AUDIT OF CARD #24. Pantheon+SH0ES (public, 1701
+    SNe): fine-binned H0(z) below z=0.4 with FIXED SH0ES calibration
+    (MU_SH0ES), calibrators excluded, computed in BOTH zCMB (raw) and zHD
+    (PV-corrected). RESULT (June 2026): H0(z) RISES 71.3 -> 74.6 from z~0.017
+    to 0.3, identically in zCMB and zHD (PV corrections change <1 km/s) -
+    NO declining void profile in magnitude space; the 'PV-corrections
+    manufacture flatness' escape is closed. This CONTRADICTS card #24's
+    absolute-anchored declining CF4 profile on the same ladder -> the
+    discrepancy localizes to the #24 anchor/posterior machinery (smooth-
+    envelope posterior at the sparse survey edge + H0_out anchor) vs raw
+    magnitudes. Card #24's absolute profile + Hubble-dissolution claim:
+    DOWNGRADED TO CONTESTED pending methodological resolution. The rising
+    shape itself (inverted-void direction) is logged as an open fact."""
+    import numpy as np
+
+    L = open("/DATA/obt_game_cache/raw/pantheon/pantheonplus.dat").read().splitlines()
+    hdr = L[0].split()
+    ix = {
+        k: hdr.index(k)
+        for k in ("zHD", "zCMB", "MU_SH0ES", "MU_SH0ES_ERR_DIAG", "IS_CALIBRATOR")
+    }
+    rows = []
+    for ln in L[1:]:
+        p = ln.split()
+        try:
+            vals = (
+                float(p[ix["zHD"]]),
+                float(p[ix["zCMB"]]),
+                float(p[ix["MU_SH0ES"]]),
+                float(p[ix["MU_SH0ES_ERR_DIAG"]]),
+                int(p[ix["IS_CALIBRATOR"]]),
+            )
+        except (ValueError, IndexError):
+            continue
+        if vals[4] == 1 or vals[1] < 0.008:
+            continue
+        rows.append(vals[:4])
+    A = np.array(rows)
+    zhd, zcmb, mu, emu = A.T
+    c, q0 = 299792.458, -0.55
+
+    def h0bins(z):
+        dl = 10 ** ((mu - 25) / 5)
+        h0 = c * z * (1 + (1 - q0) / 2 * z) / dl
+        s = h0 * np.sqrt((np.log(10) / 5 * emu) ** 2 + (250.0 / (c * z)) ** 2)
+        out = []
+        for lo, hi in [
+            (0.01, 0.023),
+            (0.023, 0.04),
+            (0.04, 0.06),
+            (0.06, 0.08),
+            (0.08, 0.12),
+            (0.12, 0.2),
+            (0.2, 0.4),
+        ]:
+            m = (z >= lo) & (z < hi)
+            w = 1 / s[m] ** 2
+            out.append(
+                (
+                    0.5 * (lo + hi),
+                    float(np.sum(w * h0[m]) / np.sum(w)),
+                    float(1 / np.sqrt(np.sum(w))),
+                    int(m.sum()),
+                )
+            )
+        return out
+
+    print(f"[pantheon_h0z] N={len(A)} (no calibrators, z>0.008)")
+    print(f"{'z':>6s} | {'H0(zCMB)':>9s} {'err':>5s} {'N':>4s} | {'H0(zHD)':>8s}")
+    for (zb, h1, e1, n1), (_, h2, _, _) in zip(h0bins(zcmb), h0bins(zhd)):
+        print(f"{zb:6.3f} | {h1:9.2f} {e1:5.2f} {n1:4d} | {h2:8.2f}")
+    print("  READ: RISING H0(z), zCMB ~ zHD -> no void profile in magnitude space;")
+    print("  contradicts the card-#24 declining profile -> #24 flagged CONTESTED.")
