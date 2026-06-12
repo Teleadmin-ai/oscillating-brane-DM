@@ -401,3 +401,21 @@ band-flagged. **NEW OBT-distinctive future falsifiable minted**: declining MOND 
 resonance T_orb > sqrt(2) T ~ 2.8 Gyr — ultra-extended HI discs; first candidates UGC 9133 (T_kappa=2.05
 Gyr), NGC 289 / UGC 128 (1.87). Honest: adiabatic+averaging limits derived; band interpolation stays EFT;
 Plummer/isotropy +-10-20% folded into brackets.
+
+## V20 — ARA falsifiable: barreau 1 DONE (band data-bounded) + the Malin 1 terrain identified (June 2026)
+**Barreau 1 (reviewer, scripts/sinc_tracer_window.py band-entry stack)**: SPARC outermost-point RAR
+residuals vs T_kappa: 0-0.5 Gyr +0.028+-0.016; 0.5-1 -0.003+-0.011; 1-1.5 -0.048+-0.028; 1.5-2.2
+-0.074+-0.030; combined T_k>1: -0.068+-0.020 (3.4 sigma) -> **W_band > 0.61 (95%)** — the ARA band's
+O(1) EFT flag is squeezed to [0.61,1] by data. The declining entry trend is REAL but DEGENERATE with
+the EFE (both suppress outer residuals; Chae's 4-sigma EFE detection lives in the same zone) -> the
+e-vs-T_kappa cross-regression is the named separating computation (we have the #16 e_env machinery).
+**Barreau 2 (recon)**: the external claim EXISTS — Gentile et al. 2010 (A&A 516, A11): MOND fit of
+Malin 1 requires NEGATIVE outer M/L = constant-a0 OVER-prediction at ultra-extended radii = exactly the
+ARA suppression shape. Terrain identified for a possible OBT-vs-MOND distinctive card (#29 candidate):
+patch = the (already-derived, non-glue) ARA window W(T_kappa) bounded [0.61,1]. CAVEATS pre-logged:
+Malin 1 data quality (i~38 deg, warp — Lelli 2010 reinterpretation; the kappa-model fit shows inclination
+is the soft spot); the EFE degeneracy must be handled in-fit. **Barreau 3 named**: the lensing-vs-dynamics
+split — photons (crossing ~Myr << T) average NOTHING -> lensing keeps the FULL boost at all radii while
+slow dynamical tracers beyond the resonance lose it; MOND predicts both full, LCDM both halo-like ->
+unique OBT scissor. The Brouwer lensing-full-boost leg (card #5 data) is already consistent; the missing
+leg = satellite kinematics around isolated hosts at 50-300 kpc.

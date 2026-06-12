@@ -158,3 +158,63 @@ print()
 print("    READ: W_ARA = adiabatic below T + |sinc| above (the derived central")
 print("    prescription); W_band = conservative band edge (adiabatic only below T/2);")
 print("    W_boxcar = legacy raw boxcar (excluded by the SPARC check, contrast only).")
+
+
+def band_entry_stack(path="/DATA/obt_game_cache/raw/sparc_massmodels.mrt"):
+    """Barreau 1: bound the ARA resonance-band envelope from SPARC itself.
+    Stack RAR residuals of OUTERMOST points in bins of T_kappa: constant-a0
+    MOND predicts 0.00 flat; any band suppression appears as a negative
+    median at T_kappa -> T. The RAR curve absorbs the g_bar dependence."""
+    a0 = 3703.7  # (km/s)^2/kpc
+    gals = {}
+    with open(path) as f:
+        for line in f:
+            p = line.split()
+            if len(p) < 8:
+                continue
+            try:
+                R, V, eV = float(p[2]), float(p[3]), float(p[4])
+                vg, vd, vb = float(p[5]), float(p[6]), float(p[7])
+            except ValueError:
+                continue
+            if R <= 0 or V <= 0:
+                continue
+            gb = (vg * abs(vg) + 0.5 * vd * vd + 0.7 * vb * vb) / R
+            gals.setdefault(p[0], []).append((R, V, eV, gb))
+    res_tk = []
+    for g, pts in gals.items():
+        pts.sort()
+        for R, V, eV, gb in pts[-2:]:  # outermost two points
+            if eV / V > 0.10 or gb <= 0:
+                continue
+            gobs = V * V / R
+            x = gb / a0
+            grar = a0 * np.sqrt((x * x + x * np.sqrt(x * x + 4)) / 2.0)  # exact OBT RAR
+            tk = 2 * np.pi * R / V / np.sqrt(2.0) * KPC_KMS_GYR
+            res_tk.append((tk, np.log10(gobs / grar)))
+    res_tk = np.array(res_tk)
+    print(
+        "\n[3] ARA band-entry bound (SPARC outermost points, RAR residuals vs T_kappa):"
+    )
+    print(f"    {'T_k bin [Gyr]':>14s}{'N':>5s}{'median':>9s}{'+-(boot)':>9s}")
+    rng = np.random.default_rng(11)
+    for lo, hi in [(0.0, 0.5), (0.5, 1.0), (1.0, 1.5), (1.5, 2.2)]:
+        s = res_tk[(res_tk[:, 0] >= lo) & (res_tk[:, 0] < hi), 1]
+        if len(s) < 3:
+            continue
+        boots = [np.median(rng.choice(s, len(s))) for _ in range(4000)]
+        print(
+            f"    {f'{lo:.1f}-{hi:.1f}':>14s}{len(s):5d}{np.median(s):9.3f}{np.std(boots):9.3f}"
+        )
+    s = res_tk[res_tk[:, 0] >= 1.0, 1]
+    med = np.median(s)
+    # envelope bound: residual = 0.5 log10(W) in deep MOND => W > 10^(2*(med-2sig))
+    sig = np.std([np.median(rng.choice(s, len(s))) for _ in range(4000)])
+    print(
+        f"    => combined T_k>1 Gyr: {med:+.3f} +- {sig:.3f} dex"
+        f" -> band envelope bound W > {10**(2*(med-2*sig)):.2f} (95%)"
+    )
+
+
+if __name__ == "__main__" and True:
+    band_entry_stack()
