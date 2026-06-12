@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "band_separator": lambda opts=None: band_separator(opts),
     "malin1_ara": lambda opts=None: malin1_ara(opts),
     "df2_sigma": lambda opts=None: df2_sigma(opts),
     "vf_harden": lambda opts=None: vf_harden(opts),
@@ -5624,3 +5625,84 @@ def malin1_ara(opts):
     print("  -0.074+-0.030 dex (1.5-2.2) in g — the SAME T_kappa zone as Malin 1's outer points;")
     print("  Malin 1 needs ~-0.13 to -0.15 dex(g) vs const-a0: envelope covers ~half centrally,")
     print("  ~all at its 95% lower edge (W=0.61); remainder = HALF the granted warp (i 38->35.5).")
+
+
+def band_separator(opts):
+    """THE SEPARATOR: is the SPARC outer-point deficit organized by e_env (EFE,
+    Chae's published attribution) or by T_kappa (ARA band), or both?
+    Per-galaxy: median RAR residual of the outermost 2 points, max T_kappa,
+    e_env (Chae erratum Table2, cached, INDEPENDENT of the RC). Partial
+    Spearman correlations + low-e/high-e split of the band galaxies."""
+    import json
+
+    import numpy as np
+    from scipy.stats import spearmanr
+
+    a0 = 3703.7
+    EF = json.load(open("/DATA/obt_game_cache/raw/chae_efield.json"))
+    gals = {}
+    for line in open("/DATA/obt_game_cache/raw/sparc_massmodels.mrt"):
+        p = line.split()
+        if len(p) < 8:
+            continue
+        try:
+            R, V, eV = float(p[2]), float(p[3]), float(p[4])
+            vg, vd, vb = float(p[5]), float(p[6]), float(p[7])
+        except ValueError:
+            continue
+        if R <= 0 or V <= 0:
+            continue
+        gals.setdefault(p[0], []).append((R, V, eV, (vg * abs(vg) + 0.5 * vd**2 + 0.7 * vb**2) / R))
+    rows = []
+    for g, pts in gals.items():
+        if g not in EF:
+            continue
+        pts.sort()
+        res, tks = [], []
+        for R, V, eV, gb in pts[-2:]:
+            if eV / V > 0.10 or gb <= 0:
+                continue
+            x = gb / a0
+            grar = a0 * np.sqrt((x * x + x * np.sqrt(x * x + 4)) / 2.0)
+            res.append(np.log10(V * V / R / grar))
+            tks.append(2 * np.pi * R / V / np.sqrt(2.0) * 0.97779)
+        if res:
+            rows.append((g, np.median(res), max(tks), EF[g][1]))
+    arr = np.array([(r, t, e) for _, r, t, e in rows])
+    res, tk, ee = arr[:, 0], arr[:, 1], arr[:, 2]
+    print(f"N galaxies with e_env + clean outer points: {len(arr)}")
+
+    def pcorr(x, y, z):
+        rxy = spearmanr(x, y).statistic
+        rxz = spearmanr(x, z).statistic
+        ryz = spearmanr(y, z).statistic
+        return (rxy - rxz * ryz) / np.sqrt((1 - rxz**2) * (1 - ryz**2))
+
+    rng = np.random.default_rng(5)
+    sel = tk > 0.0
+    r_t = pcorr(res, tk, ee)
+    r_e = pcorr(res, ee, tk)
+    null_t = [pcorr(rng.permutation(res), tk, ee) for _ in range(4000)]
+    null_e = [pcorr(rng.permutation(res), ee, tk) for _ in range(4000)]
+    pt = float(np.mean(np.array(null_t) <= r_t))
+    pe = float(np.mean(np.array(null_e) <= r_e))
+    print(f"\n[1] FULL SAMPLE partial Spearman (residual vs X | other):")
+    print(f"    resid ~ T_kappa | e_env : r = {r_t:+.3f}  p(perm,one-sided neg) = {pt:.4f}")
+    print(f"    resid ~ e_env | T_kappa : r = {r_e:+.3f}  p(perm,one-sided neg) = {pe:.4f}")
+    print(f"    [T_kappa-e_env mutual corr: {spearmanr(tk, ee).statistic:+.3f}]")
+
+    band = tk > 1.0
+    print(f"\n[2] BAND galaxies (T_k>1, N={band.sum()}): the low-e half is the EFE-free test:")
+    me = np.median(ee[band])
+    for tag, m in [("low-e half (e_env<median)", band & (ee < me)),
+                   ("high-e half", band & (ee >= me))]:
+        s = res[m]
+        boots = [np.median(rng.choice(s, len(s))) for _ in range(4000)]
+        print(f"    {tag:28s}: N={m.sum():3d}  median resid = {np.median(s):+.3f} +- {np.std(boots):.3f}")
+    sub = tk < 0.7
+    s = res[sub]
+    print(f"\n[3] SUB-BAND control (T_k<0.7, N={sub.sum()}): median resid = {np.median(s):+.3f}"
+          f" (should be ~0 under both readings)")
+    print("\n  READ: EFE-only (Chae) predicts [1] e-axis carries all, T_k-axis dies at fixed e,")
+    print("  and the low-e band half shows NO deficit. ARA predicts the T_k axis survives at")
+    print("  fixed e and the low-e band half KEEPS the deficit.")
