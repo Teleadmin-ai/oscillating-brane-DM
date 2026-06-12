@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "cf4_recon": lambda opts=None: cf4_recon(opts),
     "pantheon_h0z": lambda opts=None: pantheon_h0z(opts),
     "kbc_phase4": lambda opts=None: kbc_phase4(opts),
     "kbc_phase3": lambda opts=None: kbc_phase3(opts),
@@ -4977,3 +4978,69 @@ def pantheon_h0z(opts):
         print(f"{zb:6.3f} | {h1:9.2f} {e1:5.2f} {n1:4d} | {h2:8.2f}")
     print("  READ: RISING H0(z), zCMB ~ zHD -> no void profile in magnitude space;")
     print("  contradicts the card-#24 declining profile -> #24 flagged CONTESTED.")
+
+
+def cf4_recon(opts):
+    """THE RECONCILIATION (who is wrong: CF4-#24 or Pantheon+?). Smoking-gun
+    internal test: the SAME CF4 SNIa groups (raw DMsnIa, NO posterior), binned
+    BOTH ways - by ESTIMATED DISTANCE (the #24 convention) and by REDSHIFT
+    (the Pantheon+ convention). A REAL void appears in both binnings; an
+    edge-Malmquist artifact appears only in the distance binning (objects
+    scattered OUTWARD populate the far d-shells -> <V/d> biased low there ->
+    a manufactured declining profile). H0 quoted vs the sample's own mean
+    (shape is the readout). FACTS only."""
+    import numpy as np
+
+    rows = []
+    for ln in open("/DATA/obt_game_cache/raw/cf4/table3.dat"):
+        try:
+            v = float(ln[28:33])
+            dm = float(ln[100:106])
+            edm = float(ln[107:112])
+        except ValueError:
+            continue
+        if v <= 600 or dm <= 0:
+            continue
+        rows.append((10 ** ((dm - 25) / 5), max(edm, 0.05), v))
+    A = np.array(rows)
+    d, edm, v = A.T
+    h0 = v / d
+    s = h0 * np.sqrt((0.4605 * edm) ** 2 + (300.0 / v) ** 2)
+    w = 1 / s**2
+    H0m = float(np.sum(w * h0) / np.sum(w))
+    z = v / 299792.458
+    print(
+        f"[cf4_recon] CF4 SNIa groups (raw DMsnIa): N={len(A)}, sample-mean H0={H0m:.2f}"
+    )
+    print("  binned by ESTIMATED DISTANCE (the #24 convention):")
+    for lo, hi in [(25, 75), (75, 125), (125, 175), (175, 225), (225, 300), (300, 500)]:
+        m = (d >= lo) & (d < hi)
+        if m.sum() < 15:
+            continue
+        h = float(np.sum(w[m] * h0[m]) / np.sum(w[m]))
+        e = float(1 / np.sqrt(np.sum(w[m])))
+        print(
+            f"    d {lo:3d}-{hi:3d} Mpc: H0/H0mean-1 = {100*(h/H0m-1):+6.2f}% +-{100*e/H0m:.2f}  (N={int(m.sum())})"
+        )
+    print("  binned by REDSHIFT (the Pantheon+ convention; same objects, same moduli):")
+    for lo, hi in [
+        (0.006, 0.019),
+        (0.019, 0.031),
+        (0.031, 0.044),
+        (0.044, 0.056),
+        (0.056, 0.075),
+        (0.075, 0.125),
+    ]:
+        m = (z >= lo) & (z < hi)
+        if m.sum() < 15:
+            continue
+        h = float(np.sum(w[m] * h0[m]) / np.sum(w[m]))
+        e = float(1 / np.sqrt(np.sum(w[m])))
+        Rb = 0.5 * (lo + hi) * 299792.458 / H0m
+        print(
+            f"    z {lo:.3f}-{hi:.3f} (~{Rb:3.0f} Mpc): H0/H0mean-1 = {100*(h/H0m-1):+6.2f}% +-{100*e/H0m:.2f}  (N={int(m.sum())})"
+        )
+    print(
+        "  READ: real void = declining in BOTH; edge-Malmquist artifact = declining in"
+    )
+    print("  d-bins ONLY (rising/flat in z-bins). The verdict assigns the #24 error.")

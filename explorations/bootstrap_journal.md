@@ -317,3 +317,16 @@ EXIGENCE NOMMÉE (théorie d'abord): dérivation OBT propre de qui ressent la d�
 comptages (le (1-3w) immunise la RADIATION du FORÇAGE, mais le dipôle CMB est notre VITESSE
 — l'analyse de référentiel complète est subtile); tant qu'elle n'existe pas, le terrain est
 fermé aux cartes. La discipline du jeu: pas de glue au dernier acte.
+
+## V16 — RÉTRACTATION DE LA CARTE #24 (juin 2026) + deux règles de méthode frappées
+Le test fumant (cf4_recon): mêmes 943 SNe CF4, modules bruts, binnés deux façons —
+le déclin "vide" n'existe QUE binné par distance estimée (+2.5→−2.4%), disparaît binné
+par redshift (−1.3,+1.7,−0.3,+0.3,+0.6%) = artefact Malmquist-de-bord, amplifié par le
+posterior d'enveloppe. Et H0_out=67.00 ÉLUCIDÉ: la colonne DMsnIa de CF4 porte son propre
+zéro-point (~0.2 mag du système SH0ES; moyenne brute 67.8) — le "67=Planck" était une
+convention de calibration, pas de la cosmologie. RÈGLES FRAPPÉES: (1) JAMAIS binner un
+monopôle de flot par distance estimée (z-binning ou forward modeling); (2) JAMAIS lire
+une convention de zéro-point comme une mesure cosmologique. Survivent: les offsets/dérives
+de points-zéros (phase 1), la règle une-amplitude, la trace méthodologique complète.
+KBC et le bord cymatique 306 Mpc → retour au statut de prédictions pré-enregistrées NON
+testées. NOTE OUTIL: ajouter une commande retract-card (architecture) — session future.
