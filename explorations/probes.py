@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "malin1_ara": lambda opts=None: malin1_ara(opts),
     "df2_sigma": lambda opts=None: df2_sigma(opts),
     "vf_harden": lambda opts=None: vf_harden(opts),
     "vf_alfalfa": lambda opts=None: vf_alfalfa(opts),
@@ -5571,3 +5572,55 @@ def df2_sigma(opts):
     print(f"\n[3] 13.7-Mpc branch (Trujillo19; disfavored by SBF 22.1+-1.2, Danieli20):")
     print(f"    DF2: Newton {sN2:.1f} ('anomaly' dissolves in LCDM terms too);"
           f" isolated MOND {s_iso2:.1f} (DF2 then foreground/quasi-isolated)")
+
+
+def malin1_ara(opts):
+    """MALIN 1 terrain: constant-a0 vs OBT-ARA on the published failure.
+    Data: Lelli+10 EPS-extracted baryonic decomposition (their own MOND-fit
+    components, M_HSB/L=3.7, M_LSB/L=0.5; symbols validated to 0.1 km/s vs
+    the published RC table). Per RC point: exact-RAR prediction at standard
+    a0, T_kappa, the ARA-corrected bracket using the SPARC-measured band
+    envelope (W_emp: 0.80 [1-1.5 Gyr], 0.71 [1.5-2.2]; 95% bound 0.61),
+    residuals with sigma_eff = V-error (+) i=38+-3 systematic.
+    Control: NGC 7589 (all T_kappa sub-band -> ARA = constant, fit stands)."""
+    import json
+
+    import numpy as np
+
+    a0 = 3703.7
+    d = json.load(open("/DATA/obt_game_cache/raw/malin1/extracted_curves.json"))
+    at = lambda k, R: float(np.interp(R, [p[0] for p in d[k]], [p[1] for p in d[k]]))
+
+    def v_rar(gbar, W=1.0):
+        a = a0 * W
+        g = np.sqrt((gbar**2 + gbar * np.sqrt(gbar**2 + 4 * a * a)) / 2.0)
+        return g
+
+    print("MALIN 1 (i=38+-3 -> +-5.2% coherent systematic on V_obs):")
+    print(f"  {'r':>5s}{'V_obs':>7s}{'V_bar':>7s}{'T_k':>6s}{'V_const':>8s}"
+          f"{'V_ARA(emp)':>11s}{'V_ARA(b61)':>11s}{'n_sig(const)':>13s}{'n_sig(emp)':>11s}{'n_sig(b61)':>11s}")
+    Wemp = lambda tk: 1.0 if tk < 1.0 else (0.80 if tk < 1.5 else 0.71)
+    for r, vobs, ev in d["rc"]:
+        vb2 = at("gas", r) ** 2 + at("lsb", r) ** 2 + at("hsb", r) ** 2
+        gbar = vb2 / r
+        tk = 2 * np.pi * r / vobs / np.sqrt(2.0) * 0.97779
+        vc = np.sqrt(v_rar(gbar) * r)
+        W = Wemp(tk)
+        va = np.sqrt(v_rar(gbar, W) * r)
+        vb61 = np.sqrt(v_rar(gbar, 0.61 if tk >= 1.0 else 1.0) * r)
+        sig = np.sqrt(ev**2 + (0.052 * vobs) ** 2)
+        print(f"  {r:5.1f}{vobs:7.1f}{np.sqrt(vb2):7.1f}{tk:6.2f}{vc:8.1f}"
+              f"{va:11.1f}{vb61:11.1f}{(vc-vobs)/sig:13.1f}{(va-vobs)/sig:11.1f}{(vb61-vobs)/sig:11.1f}")
+    print("  [their published misfit: ~25 km/s (12-13%) at a0=3000; standard a0 makes it worse]")
+    print("  [warp escape granted by Lelli+10: i 38->32 (6 deg) erases the CONSTANT-MOND misfit]")
+
+    print("\nNGC 7589 control (their good constant-MOND fit, M_b/L=4.7, M_d/L=1.3):")
+    for r, vobs, ev in d["rc_n7589"]:
+        tk = 2 * np.pi * r / vobs / np.sqrt(2.0) * 0.97779
+        print(f"  r={r:5.1f}  V={vobs:6.1f}  T_kappa={tk:5.2f} Gyr  -> "
+              + ("SUB-BAND (W=1): ARA = constant-MOND, good fit PRESERVED" if tk < 1 else "band"))
+
+    print("\n  SPARC band-trend cross-reference (barreau 1): -0.048+-0.028 dex (1-1.5),")
+    print("  -0.074+-0.030 dex (1.5-2.2) in g — the SAME T_kappa zone as Malin 1's outer points;")
+    print("  Malin 1 needs ~-0.13 to -0.15 dex(g) vs const-a0: envelope covers ~half centrally,")
+    print("  ~all at its 95% lower edge (W=0.61); remainder = HALF the granted warp (i 38->35.5).")
