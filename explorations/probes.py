@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "m31_kin": lambda opts=None: m31_kin(opts),
     "ga_monopole": lambda opts=None: ga_monopole(opts),
     "ga_legs": lambda opts=None: ga_legs(opts),
     "ga_mocks": lambda opts=None: ga_mocks(opts),
@@ -4369,3 +4370,86 @@ def ga_monopole(opts):
         )
     print("  READ: KBC/cymatic = positive outflow inside, falling toward the edge;")
     print("  pre-registered edge scale lambda/2 = 306 Mpc (V8.2: lambda = cT = 613).")
+
+
+def m31_kin(opts):
+    """CARD-#24 HUNT: M31 whole-sample KINEMATIC coherence (the leg cards
+    #13/#19 left open: our positional whole-sample test was null; Ibata 2013's
+    co-rotation is a plane-subset result we never recomputed). UNGC members
+    (MD=MESSIER031, HRV available): project satellites on the sky around M31,
+    find the axis maximizing the correlation of (v_hel - v_M31) with the
+    along-axis coordinate (cena_plane machinery: axis-optimized Spearman +
+    permutation p with re-optimization + drop-1 jackknife). FACTS only."""
+    import numpy as np
+    from scipy.stats import spearmanr
+
+    base = "/DATA/obt_game_cache/raw/ungc"
+    t1 = open(f"{base}/table1.dat").read().splitlines()
+    t2 = open(f"{base}/table2.dat").read().splitlines()
+
+    def radec(ln):
+        try:
+            ra = 15 * (
+                float(ln[19:21]) + float(ln[22:24]) / 60 + float(ln[25:29]) / 3600
+            )
+            sgn = -1 if ln[30] == "-" else 1
+            dec = sgn * (
+                float(ln[31:33]) + float(ln[34:36]) / 60 + float(ln[37:39]) / 3600
+            )
+            return ra, dec
+        except ValueError:
+            return None, None
+
+    raM, decM, vM = 10.685, 41.269, -301.0
+    mem = []
+    for a, b in zip(t1, t2):
+        name = a[0:18].strip()
+        if b[98:113].strip() != "MESSIER031" or "M 31" in name or "MESSIER031" in name:
+            continue
+        ra, dec = radec(a)
+        if ra is None:
+            continue
+        try:
+            hrv = float(a[109:113])
+        except ValueError:
+            continue
+        # sky-plane coords (deg) around M31
+        x = (ra - raM) * np.cos(np.radians(decM))
+        y = dec - decM
+        if np.hypot(x, y) > 12:
+            continue
+        mem.append((name, x, y, hrv - vM))
+    X = np.array([(m[1], m[2], m[3]) for m in mem])
+    print(f"[m31_kin] M31 satellites with HRV (r<12 deg): N={len(X)}")
+    if len(X) < 10:
+        return
+    x, y, dv = X.T
+
+    def best_axis(xx, yy, vv):
+        best = (0, 0)
+        for th in np.linspace(0, np.pi, 90, endpoint=False):
+            s = xx * np.cos(th) + yy * np.sin(th)
+            r, _ = spearmanr(s, vv)
+            if abs(r) > abs(best[0]):
+                best = (r, th)
+        return best
+
+    r0, th0 = best_axis(x, y, dv)
+    rng = np.random.default_rng(13)
+    cnt = 0
+    for _ in range(5000):
+        rp, _ = best_axis(x, y, rng.permutation(dv))
+        if abs(rp) >= abs(r0):
+            cnt += 1
+    p_perm = cnt / 5000
+    jk = []
+    for i in range(len(X)):
+        m = np.ones(len(X), bool)
+        m[i] = False
+        jk.append(best_axis(x[m], y[m], dv[m])[0])
+    co = np.mean(np.sign(x * np.cos(th0) + y * np.sin(th0)) == np.sign(dv))
+    print(f"  best-axis Spearman r = {r0:+.3f} (PA theta={np.degrees(th0):.0f} deg)")
+    print(f"  axis-reoptimized permutation p = {p_perm:.4f}")
+    print(f"  jackknife drop-1 |r| range: {min(np.abs(jk)):.2f}-{max(np.abs(jk)):.2f}")
+    print(f"  co-rotating fraction about the axis: {co:.2f}")
+    print("  [CenA reference (card #13): r=-0.77, p=0.02 reopt, 13/15 co-rotating]")
