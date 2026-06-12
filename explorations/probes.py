@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "kbc_phase3": lambda opts=None: kbc_phase3(opts),
     "kbc_phase2": lambda opts=None: kbc_phase2(opts),
     "kbc_zeropoints": lambda opts=None: kbc_zeropoints(opts),
     "m31_kin": lambda opts=None: m31_kin(opts),
@@ -4686,3 +4687,112 @@ def kbc_phase2(opts):
     print(
         "  CAVEAT: smooth-envelope circularity flagged (local density features preserved)."
     )
+
+
+def kbc_phase3(opts):
+    """KBC UNLOCK phase 3: the measured phase-1 zero-point DRIFTS applied as
+    depth-dependent corrections (SNIa frame: TF -0.170->-0.131 mag, FP
+    -0.298->-0.144, linear in DM between DM=33 and 36), then the phase-2
+    posterior pipeline, then the ONE-AMPLITUDE test (raw and de-meaned).
+    Pre-stated: ratio<=0.5 on the de-meaned structures = unlocked. FACTS."""
+    import numpy as np
+    from scipy.optimize import least_squares
+
+    H0 = 74.6
+    cols = {
+        "TF": (133, 139, 140, 145),
+        "FP": (117, 123, 124, 129),
+        "SNIa": (100, 106, 107, 112),
+    }
+    drift = {"TF": (-0.170, -0.131), "FP": (-0.298, -0.144), "SNIa": (0.0, 0.0)}
+    data = {k: [] for k in cols}
+    for ln in open("/DATA/obt_game_cache/raw/cf4/table3.dat"):
+        try:
+            v = float(ln[28:33])
+            gl = float(ln[52:60])
+            gb = float(ln[61:69])
+        except ValueError:
+            continue
+        if v <= 200:
+            continue
+        for k, (a, b, c, e) in cols.items():
+            try:
+                dm = float(ln[a:b])
+                edm = float(ln[c:e])
+            except ValueError:
+                continue
+            if dm > 0:
+                dn, df = drift[k]
+                t = np.clip((dm - 33.0) / 3.0, 0, 1)
+                dmc = dm - (dn + t * (df - dn))
+                data[k].append((10 ** ((dmc - 25) / 5), max(edm, 0.05), v, gl, gb))
+    shells = [(25, 75), (75, 125), (125, 175), (175, 225), (225, 300)]
+    print("[kbc_phase3] drift-corrected + posterior-corrected monopoles (km/s):")
+    print("   R(Mpc):" + "".join(f" {0.5*(lo+hi):7.0f}" for lo, hi in shells))
+    profs = {}
+    for k, rows in data.items():
+        A = np.array(rows)
+        d, edm, v, gl, gb = A.T
+        sld = 0.4605 * edm
+        hb = np.linspace(0, 350, 36)
+        cts, _ = np.histogram(d, hb)
+        ctr = 0.5 * (hb[1:] + hb[:-1])
+        m = cts > 0
+
+        def env(th, x):
+            return th[0] * np.log(np.clip(x, 1, None)) - (x / np.exp(th[1])) ** th[2]
+
+        def resid(th):
+            mod = env(th, ctr[m])
+            return (mod - np.log(cts[m])) - np.mean(mod - np.log(cts[m]))
+
+        th = least_squares(
+            resid,
+            x0=[2.0, np.log(120.0), 2.0],
+            bounds=([0, np.log(30), 0.5], [4, np.log(400), 6]),
+        ).x
+        bias = np.zeros(len(d))
+        for i in range(len(d)):
+            s = sld[i]
+            g = np.linspace(-4 * s, 4 * s, 41)
+            ldt = np.log(d[i]) + g
+            w = np.exp(-(g**2) / (2 * s * s)) + 0.0
+            w *= np.exp(env(th, np.exp(ldt)) + ldt)
+            w /= w.sum()
+            bias[i] = float((w * g).sum())
+        u_corr = v * (np.log(v / (H0 * d)) - bias)
+        su = np.sqrt((v * sld) ** 2 + 300.0**2)
+        glr, gbr = np.radians(gl), np.radians(gb)
+        n3 = np.vstack(
+            [np.cos(gbr) * np.cos(glr), np.cos(gbr) * np.sin(glr), np.sin(gbr)]
+        ).T
+        ms = []
+        for lo, hi in shells:
+            mm = (d >= lo) & (d < hi)
+            if mm.sum() < 60:
+                ms.append(np.nan)
+                continue
+            X = np.hstack([np.ones((mm.sum(), 1)), n3[mm]])
+            w = 1.0 / su[mm] ** 2
+            p = np.linalg.solve(X.T @ (X * w[:, None]), X.T @ (w * u_corr[mm]))
+            ms.append(p[0])
+        profs[k] = np.array(ms)
+        print(
+            f"   {k:5s} :"
+            + "".join(f" {x:7.0f}" if np.isfinite(x) else "    nan" for x in profs[k])
+        )
+    ks = [k for k in profs if np.isfinite(profs[k]).sum() >= 3]
+    for tag, dem in (("raw", False), ("de-meaned", True)):
+        print(f"   one-amplitude ({tag}):")
+        for i in range(len(ks)):
+            for j in range(i + 1, len(ks)):
+                a, b = profs[ks[i]].copy(), profs[ks[j]].copy()
+                m = np.isfinite(a) & np.isfinite(b)
+                if dem:
+                    a = a - np.nanmean(a[m])
+                    b = b - np.nanmean(b[m])
+                rmsd = np.sqrt(np.mean((a[m] - b[m]) ** 2))
+                amp = 0.5 * (np.std(a[m]) + np.std(b[m]))
+                print(
+                    f"     {ks[i]}-{ks[j]}: RMS {rmsd:.0f} vs amp {amp:.0f} (ratio {rmsd/max(amp,1):.2f})"
+                )
