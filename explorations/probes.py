@@ -2754,6 +2754,8 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "bars_ordering": lambda opts=None: bars_ordering(opts),
+    "fast_bars": lambda opts=None: fast_bars(opts),
     "nu_floor_budget": lambda opts=None: nu_floor_budget(opts),
     "feeble_giants": lambda opts=None: feeble_giants(opts),
     "cf4_recon": lambda opts=None: cf4_recon(opts),
@@ -5172,3 +5174,154 @@ def nu_floor_budget(opts):
     print("  DEEP-EXTERNAL COROLLARY: our Chae-limit normalization sits ~0.1-0.15 dex")
     print("    BELOW the standard quasi-Newton form there -> explains most of the")
     print("    'ours vs published' double bookkeeping of card #25 (+0.36/+0.11).")
+
+
+def fast_bars(opts):
+    """FAST BARS terrain — the 3rd no-friction observable (after satellite planes #13/#19
+    and TBTF #20). External theory: LCDM per-galaxy halo exerts dynamical friction on the
+    stellar bar => R = R_cr/R_bar grows past 1.4 within a few Gyr (in-house tau below).
+    Data: Geron 2023 (MaNGA TW, 225 bars, Zenodo tables) + Cuomo 2020 compilation
+    (arXiv:2003.07455 LaTeX tables: literature 18 + CALIFA + MaNGA 55; final flag).
+    FACTS ONLY: R distributions (MC over asymmetric errors), per-variant; the in-house
+    Chandrasekhar braking bracket for the LCDM side."""
+    import re
+
+    import numpy as np
+    import pandas as pd
+
+    rng = np.random.default_rng(42)
+    base = "/DATA/obt_game_cache/raw/bars"
+
+    # ---------------- Geron 2023 (CSV, 225) ----------------
+    t3 = pd.read_csv(f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table3.csv")
+    t1 = pd.read_csv(f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table1.csv")
+    g = t3.merge(t1[["PLATEIFU", "bar_type"]], on="PLATEIFU", how="left")
+    g = g[(g.R > 0) & np.isfinite(g.R)].copy()
+
+    # ---------------- Cuomo 2020 (LaTeX longtables) ----------------
+    tex = open(f"{base}/cuomo2020/bar_properties.tex").read()
+    val = r"(?:\$?([\d.]+)\$?\^\{\+([\d.]+)\}_\{-([\d.]+)\}|\$([\d.]+)\\pm([\d.]+)\$)"
+    rows = []
+    for line in tex.splitlines():
+        if "&" not in line or r"\\" not in line:
+            continue
+        cols = [c.strip() for c in line.split("&")]
+        if len(cols) != 12:
+            continue
+        flag = cols[11].replace(r"\\", "").strip().lower()
+        if flag not in ("yes", "no"):
+            continue
+        m = re.match(val, cols[8].replace(" ", ""))
+        if not m:
+            continue
+        if m.group(1):
+            R, up, lo = float(m.group(1)), float(m.group(2)), float(m.group(3))
+        else:
+            R = float(m.group(4)); up = lo = float(m.group(5))
+        rows.append(dict(name=cols[0], morph=cols[1], R=R, up=up, lo=lo, final=flag == "yes"))
+    cu = pd.DataFrame(rows)
+
+    def mc_frac(R, up, lo, n=4000):
+        """MC fractions (ultrafast <1 | fast 1-1.4 | slow >1.4) with 2-sided gaussians."""
+        R, up, lo = map(np.asarray, (R, up, lo))
+        draws = np.where(
+            rng.standard_normal((n, len(R))) > 0,
+            R + np.abs(rng.standard_normal((n, len(R)))) * up,
+            R - np.abs(rng.standard_normal((n, len(R)))) * lo,
+        )
+        draws = np.clip(draws, 0.01, None)
+        return [(draws < 1).mean(), ((draws >= 1) & (draws <= 1.4)).mean(), (draws > 1.4).mean()]
+
+    print("FAST BARS — observed R = R_cr/R_bar (MC over asymmetric errors):")
+    print(f"  {'variant':34s}{'N':>4s}{'medR':>7s}{'P(<1)':>8s}{'P(1-1.4)':>9s}{'P(>1.4)':>9s}")
+
+    def show(label, R, up, lo):
+        f = mc_frac(R, up, lo)
+        print(f"  {label:34s}{len(R):4d}{np.median(R):7.2f}{f[0]:8.2f}{f[1]:9.2f}{f[2]:9.2f}")
+
+    show("Geron23 ALL (MaNGA TW)", g.R, g.R_ul - g.R, g.R - g.R_ll)
+    gs = g[g.bar_type.astype(str).str.contains("Strong", case=False, na=False)]
+    gw = g[g.bar_type.astype(str).str.contains("Weak", case=False, na=False)]
+    show("Geron23 STRONG bars", gs.R, gs.R_ul - gs.R, gs.R - gs.R_ll)
+    show("Geron23 WEAK bars", gw.R, gw.R_ul - gw.R, gw.R - gw.R_ll)
+    cf = cu[cu.final]
+    show("Cuomo20 FINAL (trustworthy)", cf.R, cf.up, cf.lo)
+    et = cf[cf.morph.str.contains("SB0|SBa(?!b)|S0", regex=True, na=False)]
+    lt = cf[~cf.index.isin(et.index)]
+    show("Cuomo20 final EARLY (SB0-SBa)", et.R, et.up, et.lo)
+    show("Cuomo20 final LATE (SBab-SBc)", lt.R, lt.up, lt.lo)
+    # precision subset: bars where the slow/fast verdict is individually meaningful
+    prec = g[(g.R - g.R_ll) / g.R < 0.3]
+    show("Geron23 precise (dR/R<0.3)", prec.R, prec.R_ul - prec.R, prec.R - prec.R_ll)
+
+    # ---------------- the LCDM side, IN-HOUSE ----------------
+    print()
+    print("  IN-HOUSE LCDM braking bracket (Chandrasekhar, Binney-Tremaine 8.13):")
+    Gk = 4.30091e-6  # kpc (km/s)^2 / Msun
+    for tag, r, v, Mb, lnL, f in [
+        ("point-mass bound (bar 3e9, 5kpc)", 5.0, 200.0, 3e9, 5.0, 1.0),
+        ("quadrupole-reduced (f_nonax~0.3)", 5.0, 200.0, 3e9, 5.0, 0.3),
+    ]:
+        t = 1.17 * r**2 * v / (Gk * Mb * lnL) * 0.978 / f**2  # Gyr; torque ~ (fM)^2 => t ~ t_pm/f^2
+        print(f"    {tag:36s}: tau_brake ~ {t:5.2f} Gyr  (<< 10 Gyr bar ages)")
+    print("    -> ANY responsive-halo bracket predicts R > 1.4 within a few Gyr,")
+    print("       MOST sharply for gas-poor EARLY types (no gas spin-up defense).")
+
+
+def bars_ordering(opts):
+    """FAST BARS round 2 — the method-split-robust INTERNAL ordering + decomposition.
+    Friction prediction: evolution (weak->strong, late->early) LOWERS Omega and RAISES
+    R (and R_cr at ~flat V_c). Test the ordering + decompose strong-vs-weak into
+    Omega_phys / Rcr_phys / R_bar (all from Geron tables; V_c(R_cr) = Omega*R_cr)."""
+    import re
+
+    import numpy as np
+    import pandas as pd
+    from scipy.stats import mannwhitneyu
+
+    rng = np.random.default_rng(7)
+    base = "/DATA/obt_game_cache/raw/bars"
+    t3 = pd.read_csv(f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table3.csv")
+    t1 = pd.read_csv(f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table1.csv")
+    g = t3.merge(t1, on="PLATEIFU", how="left")
+    g = g[(g.R > 0) & np.isfinite(g.R) & np.isfinite(g.Omega_phys) & np.isfinite(g.Rcr_phys)].copy()
+    S = g.bar_type.astype(str).str.contains("Strong", case=False)
+    W = g.bar_type.astype(str).str.contains("Weak", case=False)
+
+    def boot_med_diff(a, b, n=20000):
+        a, b = np.asarray(a), np.asarray(b)
+        d = np.array([np.median(rng.choice(a, len(a))) - np.median(rng.choice(b, len(b))) for _ in range(n)])
+        return np.median(a) - np.median(b), (d > 0).mean() if np.median(a) - np.median(b) < 0 else (d < 0).mean()
+
+    print("GERON23 strong (N=%d) vs weak (N=%d) — medians + MW p + bootstrap sign-flip prob:" % (S.sum(), W.sum()))
+    for col, label in [("R", "R = Rcr/Rbar"), ("Omega_phys", "Omega [km/s/kpc]"),
+                       ("Rcr_phys", "R_cr [kpc]"), ("R_bar_deproj_kpc", "R_bar [kpc]")]:
+        a, b = g[S][col].dropna(), g[W][col].dropna()
+        mw = mannwhitneyu(a, b).pvalue
+        diff, pflip = boot_med_diff(a, b)
+        print(f"  {label:18s}: strong {np.median(a):6.2f} vs weak {np.median(b):6.2f}"
+              f"  diff {diff:+6.2f}  MW p={mw:.4f}  P(flip)={pflip:.3f}")
+    vc = g.Omega_phys * g.Rcr_phys
+    a, b = vc[S], vc[W]
+    print(f"  {'V_c(Rcr)=Om*Rcr':18s}: strong {np.median(a):6.2f} vs weak {np.median(b):6.2f}"
+          f"  (host-mass proxy; MW p={mannwhitneyu(a,b).pvalue:.4f})")
+
+    # Cuomo early vs late ordering significance (reparse, final sample)
+    tex = open(f"{base}/cuomo2020/bar_properties.tex").read()
+    val = r"(?:\$?([\d.]+)\$?\^\{\+([\d.]+)\}_\{-([\d.]+)\}|\$([\d.]+)\\pm([\d.]+)\$)"
+    rows = []
+    for line in tex.splitlines():
+        if "&" not in line or r"\\" not in line:
+            continue
+        cols = [c.strip() for c in line.split("&")]
+        if len(cols) != 12 or cols[11].replace(r"\\", "").strip().lower() != "yes":
+            continue
+        m = re.match(val, cols[8].replace(" ", ""))
+        if m:
+            rows.append((cols[1], float(m.group(1) or m.group(4))))
+    cu = pd.DataFrame(rows, columns=["morph", "R"])
+    et = cu[cu.morph.str.contains("SB0|SBa(?!b)|S0", regex=True)]
+    lt = cu[~cu.index.isin(et.index)]
+    mw = mannwhitneyu(et.R, lt.R).pvalue
+    print(f"\nCUOMO20 final: EARLY (N={len(et)}) med R={et.R.median():.2f} vs LATE (N={len(lt)}) {lt.R.median():.2f}  MW p={mw:.3f}")
+    print("\n  FRICTION ORDERING PREDICTION: evolved (strong/early) -> HIGHER R, HIGHER Rcr.")

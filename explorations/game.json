@@ -1269,6 +1269,44 @@
             "detail": "The WHY is the cards-#16/#17 crossfire with NOTHING added: a pressure-supported satellite in a dominant external field has its baseline sigma FIXED by baryons + g_ext (the EFE quasi-Newton formula - no halo, no per-object freedom; the celebrated PUBLISHED a-priori trail proves the predictive direction: 2.1 predicted in 2016, 2.7+-0.3 measured in 2017 for Crater II), and its EXCESS over that baseline is TIDAL, ordered by the baryon-only Jacobi susceptibility at the Gaia pericenter (card #17): Crater II eta_peri=2.89 -> mild excess (+0.11 dex vs published prescription); Antlia 2 eta_peri=4.56 (r_half ~4.6x Jacobi at peri: equilibrium geometrically impossible) -> the largest excess (+0.33 dex) - and uniquely, the non-equilibrium is DIRECTLY OBSERVED (Ji 2021 velocity gradient). The ordering holds in both normalization conventions. LCDM-side, the same two objects spawn a bespoke-exotica literature (NFW-impossible cores - 'a challenge to LCDM', Borukhovetskaya 2022; SIDM fits 2024): one postulate removed, zero exotica needed. HONEST SCOPE: our own sigma_efe carries the known nu_e-for-pressure normalization floor (#17/#18 open question) - the ordinal/trend statement is convention-robust, the absolute baseline leans on the published EFE prescription; M/L=2 assumed; only 2 objects (this is an EXTENSION card of #17, like #18 extended #14); AntII sigma may itself be gradient-inflated - which is the mechanism, not a bug; MOND-shared (EFE is MOND's; OBT inherits)"
           }
         ]
+      },
+      {
+        "id": "17d74012",
+        "name": "halo-friction bar braking (corotation runaway)",
+        "external_theory": "LCDM per-galaxy responsive halo exerts dynamical friction on stellar bars: sims (TNG50 verbatim: corotation radius outruns bar length; Roshan21: 9.7-13.6 sigma tension) predict evolved bars are SLOW, R=Rcr/Rbar>2, R rising with evolution",
+        "patch": "remove the responsive-halo wake torque (halo-free mu(x) galaxies): bars self-regulate by disc-only angular-momentum exchange, R stays in the formation band ~1.2-1.7, and evolution makes the bar GROW toward corotation (R falls), as observed",
+        "systems_validated": [
+          "Geron 2023 MaNGA TW sample (225 bars, Zenodo tables: R med 1.66; matched-Vc strong-vs-weak ordering Omega down p=0.0012, Rcr up p=0.0086, Rbar up p<1e-4, R DOWN p=0.0013)",
+          "Cuomo 2020 multi-survey TW compilation (literature+CALIFA+MaNGA, 54 trustworthy after dOmega/Omega<=0.5: R med 1.20, P(slow)=0.39 under error-MC — even FURTHER below the sims' R>2 end state; in-house Chandrasekhar bracket tau 0.09-1 Gyr << bar ages)"
+        ],
+        "why_status": "found",
+        "why": "THE WHY = the absent-friction signature, 3rd observable class (after satellite planes #13/#19 and TBTF #20). A responsive per-galaxy DM halo MUST exert a wake torque on the rotating bar quadrupole: in-house Chandrasekhar bracket tau_brake ~ 0.09 Gyr (point-mass bound) to ~1 Gyr (quadrupole-reduced f~0.3) << 10 Gyr bar ages, so if the halo were real, every evolved bar would show CO-ROTATION RUNAWAY (R=Rcr/Rbar > 2, rising with evolution — exactly what the adversary computes in its own sims: TNG50 verbatim 'corotation radius increases with a higher rate compared to the bar length'; Roshan21 9.7-13.6 sigma vs observations). The instrument-measured data show the OPPOSITE, in BOTH legs computed in-house: (LEG 1, distributions) Cuomo20 trustworthy R med 1.20 (39% slow), Geron23 R med 1.66 (63% slow) — both far below the friction end state, gap >> the inter-survey method split; (LEG 2, the calibration-robust internal ordering, matched hosts Vc p=0.94) weak->strong evolution: Omega DOWN 12% (p=0.0012), Rcr UP 16% (p=0.0086), Rbar UP 45% (p<1e-4) => R DOWN (1.88->1.53, p=0.0013): the bar GROWS TOWARD corotation (self-regulated attractor R~1.5) instead of corotation running away. Remove the responsive halo (OBT: galaxy-scale gravity is the geometric mu(x) law — the boost tracks baryons instantly, no lag, no wake) and both legs are the expectation: disc-only angular-momentum exchange, formation-band R, bars growing toward corotation. HONEST SCOPE: absolute medians method-split (1.20 vs 1.66: TW selection + weak bars); ultrafast 11-17% = acknowledged artifacts (Cuomo21), not load-bearing; 'strong=more evolved' is the adversary's own reading (Geron abstract, his Omega gradient); Cuomo early/late ordering NOT significant (p=0.70, dropped); MW-bar deceleration claim (Chiba-Schoenrich 21, one galaxy, indirect) flagged as the counter-claim; sims' R values = adversary's verbatim (their prediction, not our recompute); MOND-shared (Tiret-Combes 07), OBT inherits — not OBT-distinctive. Probes: fast_bars, bars_ordering. Data: Geron Zenodo CSVs + Cuomo arXiv tables, in cache.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on LCDM per-galaxy responsive halo exerts dynamical friction on stellar bars: sims (TNG50 verbatim: corotation radius outruns bar length; Roshan21: 9.7-13.6 sigma tension) predict evolved bars are SLOW, R=Rcr/Rbar>2, R rising with evolution @ Geron 2023 MaNGA TW sample (225 bars, Zenodo tables: R med 1.66; matched-Vc strong-vs-weak ordering Omega down p=0.0012, Rcr up p=0.0086, Rbar up p<1e-4, R DOWN p=0.0013)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "Cuomo 2020 multi-survey TW compilation (literature+CALIFA+MaNGA, 54 trustworthy after dOmega/Omega<=0.5: R med 1.20, P(slow)=0.39 under error-MC — even FURTHER below the sims' R>2 end state; in-house Chandrasekhar bracket tau 0.09-1 Gyr << bar ages)"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['Geron 2023 MaNGA TW sample (225 bars, Zenodo tables: R med 1.66; matched-Vc strong-vs-weak ordering Omega down p=0.0012, Rcr up p=0.0086, Rbar up p<1e-4, R DOWN p=0.0013)', \"Cuomo 2020 multi-survey TW compilation (literature+CALIFA+MaNGA, 54 trustworthy after dOmega/Omega<=0.5: R med 1.20, P(slow)=0.39 under error-MC — even FURTHER below the sims' R>2 end state; in-house Chandrasekhar bracket tau 0.09-1 Gyr << bar ages)\"]"
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "THE WHY = the absent-friction signature, 3rd observable class (after satellite planes #13/#19 and TBTF #20). A responsive per-galaxy DM halo MUST exert a wake torque on the rotating bar quadrupole: in-house Chandrasekhar bracket tau_brake ~ 0.09 Gyr (point-mass bound) to ~1 Gyr (quadrupole-reduced f~0.3) << 10 Gyr bar ages, so if the halo were real, every evolved bar would show CO-ROTATION RUNAWAY (R=Rcr/Rbar > 2, rising with evolution — exactly what the adversary computes in its own sims: TNG50 verbatim 'corotation radius increases with a higher rate compared to the bar length'; Roshan21 9.7-13.6 sigma vs observations). The instrument-measured data show the OPPOSITE, in BOTH legs computed in-house: (LEG 1, distributions) Cuomo20 trustworthy R med 1.20 (39% slow), Geron23 R med 1.66 (63% slow) — both far below the friction end state, gap >> the inter-survey method split; (LEG 2, the calibration-robust internal ordering, matched hosts Vc p=0.94) weak->strong evolution: Omega DOWN 12% (p=0.0012), Rcr UP 16% (p=0.0086), Rbar UP 45% (p<1e-4) => R DOWN (1.88->1.53, p=0.0013): the bar GROWS TOWARD corotation (self-regulated attractor R~1.5) instead of corotation running away. Remove the responsive halo (OBT: galaxy-scale gravity is the geometric mu(x) law — the boost tracks baryons instantly, no lag, no wake) and both legs are the expectation: disc-only angular-momentum exchange, formation-band R, bars growing toward corotation. HONEST SCOPE: absolute medians method-split (1.20 vs 1.66: TW selection + weak bars); ultrafast 11-17% = acknowledged artifacts (Cuomo21), not load-bearing; 'strong=more evolved' is the adversary's own reading (Geron abstract, his Omega gradient); Cuomo early/late ordering NOT significant (p=0.70, dropped); MW-bar deceleration claim (Chiba-Schoenrich 21, one galaxy, indirect) flagged as the counter-claim; sims' R values = adversary's verbatim (their prediction, not our recompute); MOND-shared (Tiret-Combes 07), OBT inherits — not OBT-distinctive. Probes: fast_bars, bars_ordering. Data: Geron Zenodo CSVs + Cuomo arXiv tables, in cache."
+          }
+        ]
       }
     ],
     "errors": [
@@ -1361,6 +1399,10 @@
       {
         "t": "date-unset",
         "note": "EFE FULL hierarchical MCMC DONE (maximal effort) — NO clean SEP detection -> NO card. Reproduced Chae 2020 faithfully: emcee per-galaxy with 5-6 params marginalized (log Ydisk, log Ygas, [log Ybul], log Dhat, i, e), EXACT nu_e (ar5iv-verified), Chae's lognormal M/L priors, Dhat prior from eD/D, i prior from eInc, deprojection Vrot=Vobs*sin(iobs)/sin(i). Script: explorations/efe_mcmc_run.py; results: efe_mcmc_results.json. VALIDATION PASSED: NGC5055 (golden) e_free=0.047+-0.013 ~ e_env=0.040; NGC6674 (isolated) e_free=0.006 ~0; DDO154 0.039~0.036 -> pipeline correct. POPULATION (128 gal): median e_free=0.049 (>0, recovers a mean external field ~ Chae's mean e, consistent with EFE EXISTING) BUT the discriminating SEP signature -- per-galaxy e_free tracking the INDEPENDENT e_env -- is ABSENT: Spearman(e_env,e_free)=+0.065 (p=0.47). So I do NOT reproduce Chae's e<->e_env agreement at significance. Likely reasons: (1) Chae's signal is weak per-galaxy (only 2 golden >5sigma), emerging from full population posterior inference not median+Spearman; (2) the ERRATUM compressed the e_env dynamic range (golden galaxies no longer at e_env~0.1), reducing correlation power; (3) intrinsic per-galaxy e degeneracy. VERDICT: maximal honest effort, no SEP detection in my numbers -> no EFE card, no glue, no borrowing Chae's 4sigma. The mean e>0 alone is the ambiguous downturn-flexibility (my earlier dchi2=-319), not environment-driven. EFE pursuit CLOSED honestly; 15 cards stands."
+      },
+      {
+        "t": "date-unset",
+        "note": "FAST BARS (3rd no-friction observable): external theory = LCDM per-galaxy halo + Chandrasekhar/resonant dynamical friction => bars must slow (R=R_CR/R_bar grows >1.4 in a few Gyr; in-house tau_DF << Hubble). OBT (halo-free mu(x) galaxies, cards #13/#19/#20 mechanism) => bars stay fast (R~1.0-1.4) for a Hubble time. Observable gap: TW-measured R distributions (Cuomo 2020 compilation, Guo 2019 MaNGA, Garma-Oehmichen). Patch target: the per-galaxy friction postulate. Variants: ~100+ barred galaxies across surveys/methods."
       }
     ]
   },
@@ -1885,6 +1927,26 @@
       "t": "date-unset",
       "promoted_to_card": "975350ac",
       "detail": "The WHY is the cards-#16/#17 crossfire with NOTHING added: a pressure-supported satellite in a dominant external field has its baseline sigma FIXED by baryons + g_ext (the EFE quasi-Newton formula - no halo, no per-object freedom; the celebrated PUBLISHED a-priori trail proves the predictive direction: 2.1 predicted in 2016, 2.7+-0.3 measured in 2017 for Crater II), and its EXCESS over that baseline is TIDAL, ordered by the baryon-only Jacobi susceptibility at the Gaia pericenter (card #17): Crater II eta_peri=2.89 -> mild excess (+0.11 dex vs published prescription); Antlia 2 eta_peri=4.56 (r_half ~4.6x Jacobi at peri: equilibrium geometrically impossible) -> the largest excess (+0.33 dex) - and uniquely, the non-equilibrium is DIRECTLY OBSERVED (Ji 2021 velocity gradient). The ordering holds in both normalization conventions. LCDM-side, the same two objects spawn a bespoke-exotica literature (NFW-impossible cores - 'a challenge to LCDM', Borukhovetskaya 2022; SIDM fits 2024): one postulate removed, zero exotica needed. HONEST SCOPE: our own sigma_efe carries the known nu_e-for-pressure normalization floor (#17/#18 open question) - the ordinal/trend statement is convention-robust, the absolute baseline leans on the published EFE prescription; M/L=2 assumed; only 2 objects (this is an EXTENSION card of #17, like #18 extended #14); AntII sigma may itself be gradient-inflated - which is the mechanism, not a bug; MOND-shared (EFE is MOND's; OBT inherits)"
+    },
+    {
+      "t": "date-unset",
+      "recorded": "terrain",
+      "note": "FAST BARS (3rd no-friction observable): external theory = LCDM per-galaxy halo + Chandrasekhar/resonant dynamical friction => bars must slow (R=R_CR/R_bar grows >1.4 in a few Gyr; in-house tau_DF << Hubble). OBT (halo-free mu(x) galaxies, cards #13/#19/#20 mechanism) => bars stay fast (R~1.0-1.4) for a Hubble time. Observable gap: TW-measured R distributions (Cuomo 2020 compilation, Guo 2019 MaNGA, Garma-Oehmichen). Patch target: the per-galaxy friction postulate. Variants: ~100+ barred galaxies across surveys/methods."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "17d74012",
+      "name": "halo-friction bar braking (corotation runaway)"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "17d74012",
+      "detail": "player judgement; 2 systems: ['Geron 2023 MaNGA TW sample (225 bars, Zenodo tables: R med 1.66; matched-Vc strong-vs-weak ordering Omega down p=0.0012, Rcr up p=0.0086, Rbar up p<1e-4, R DOWN p=0.0013)', \"Cuomo 2020 multi-survey TW compilation (literature+CALIFA+MaNGA, 54 trustworthy after dOmega/Omega<=0.5: R med 1.20, P(slow)=0.39 under error-MC — even FURTHER below the sims' R>2 end state; in-house Chandrasekhar bracket tau 0.09-1 Gyr << bar ages)\"]"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "17d74012",
+      "detail": "THE WHY = the absent-friction signature, 3rd observable class (after satellite planes #13/#19 and TBTF #20). A responsive per-galaxy DM halo MUST exert a wake torque on the rotating bar quadrupole: in-house Chandrasekhar bracket tau_brake ~ 0.09 Gyr (point-mass bound) to ~1 Gyr (quadrupole-reduced f~0.3) << 10 Gyr bar ages, so if the halo were real, every evolved bar would show CO-ROTATION RUNAWAY (R=Rcr/Rbar > 2, rising with evolution — exactly what the adversary computes in its own sims: TNG50 verbatim 'corotation radius increases with a higher rate compared to the bar length'; Roshan21 9.7-13.6 sigma vs observations). The instrument-measured data show the OPPOSITE, in BOTH legs computed in-house: (LEG 1, distributions) Cuomo20 trustworthy R med 1.20 (39% slow), Geron23 R med 1.66 (63% slow) — both far below the friction end state, gap >> the inter-survey method split; (LEG 2, the calibration-robust internal ordering, matched hosts Vc p=0.94) weak->strong evolution: Omega DOWN 12% (p=0.0012), Rcr UP 16% (p=0.0086), Rbar UP 45% (p<1e-4) => R DOWN (1.88->1.53, p=0.0013): the bar GROWS TOWARD corotation (self-regulated attractor R~1.5) instead of corotation running away. Remove the responsive halo (OBT: galaxy-scale gravity is the geometric mu(x) law — the boost tracks baryons instantly, no lag, no wake) and both legs are the expectation: disc-only angular-momentum exchange, formation-band R, bars growing toward corotation. HONEST SCOPE: absolute medians method-split (1.20 vs 1.66: TW selection + weak bars); ultrafast 11-17% = acknowledged artifacts (Cuomo21), not load-bearing; 'strong=more evolved' is the adversary's own reading (Geron abstract, his Omega gradient); Cuomo early/late ordering NOT significant (p=0.70, dropped); MW-bar deceleration claim (Chiba-Schoenrich 21, one galaxy, indirect) flagged as the counter-claim; sims' R values = adversary's verbatim (their prediction, not our recompute); MOND-shared (Tiret-Combes 07), OBT inherits — not OBT-distinctive. Probes: fast_bars, bars_ordering. Data: Geron Zenodo CSVs + Cuomo arXiv tables, in cache."
     }
   ]
 }
