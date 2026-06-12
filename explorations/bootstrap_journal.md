@@ -304,3 +304,16 @@ comme composante NON-convergente du flot (signature: dipôle résiduel sans bass
 distinguable de toute attraction); (c) structure cymatique 613 Mpc dans l'espacement des
 bassins (Laniakea→Shapley ~600-650 Mpc !? à mesurer proprement). Pilote du pipeline
 automatisé "lois corrigées sur surveys entiers" voulu par Romain.
+
+## V15 — TERRAIN DIPÔLE COSMIQUE (recon juin 2026, OUVERT — pas de candidat)
+Faits bankés (Secrest 2021, verbatim): dipôle quasars CatWISE D=0.01554 @ (l,b)=(238.2,28.8),
+27.8° du dipôle CMB, ~2x le cinématique attendu (0.0073), 4.9σ — l'anomalie Ellis-Baldwin.
+Compositions OBT testées avec NOTRE vecteur de dérive mesuré (carte #23: 300 km/s @ (299,+15)):
+(a) soustraction de référentiel (matière partage la dérive) -> v_eff=238 km/s < 370 -> dipôle
+RÉDUIT, contredit; (b) dipôle d'expansion additif (terme de flux x(1+α)β_d=0.0038) -> somme
+0.0105 @ ~(282,+35) -> amplitude sous-prédite ET mauvais côté (observé 238 vs prédit 282).
+VERDICT: le lien naïf dérive->dipôle de comptage ÉCHOUE dans les deux sens calculables.
+EXIGENCE NOMMÉE (théorie d'abord): dérivation OBT propre de qui ressent la dérive dans les
+comptages (le (1-3w) immunise la RADIATION du FORÇAGE, mais le dipôle CMB est notre VITESSE
+— l'analyse de référentiel complète est subtile); tant qu'elle n'existe pas, le terrain est
+fermé aux cartes. La discipline du jeu: pas de glue au dernier acte.
