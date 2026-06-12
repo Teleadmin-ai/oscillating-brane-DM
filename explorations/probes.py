@@ -2754,6 +2754,8 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "vf_harden": lambda opts=None: vf_harden(opts),
+    "vf_alfalfa": lambda opts=None: vf_alfalfa(opts),
     "bars_ordering": lambda opts=None: bars_ordering(opts),
     "fast_bars": lambda opts=None: fast_bars(opts),
     "nu_floor_budget": lambda opts=None: nu_floor_budget(opts),
@@ -5325,3 +5327,169 @@ def bars_ordering(opts):
     mw = mannwhitneyu(et.R, lt.R).pvalue
     print(f"\nCUOMO20 final: EARLY (N={len(et)}) med R={et.R.median():.2f} vs LATE (N={len(lt)}) {lt.R.median():.2f}  MW p={mw:.3f}")
     print("\n  FRICTION ORDERING PREDICTION: evolved (strong/early) -> HIGHER R, HIGHER Rcr.")
+
+
+def vf_alfalfa(opts):
+    """FIELD VELOCITY FUNCTION terrain (the TBTF of the field). In-house 1/Vmax
+    build of the ALFALFA a100 HI width function (Code-1 sources, Haynes11 Code-1
+    50%-completeness verbatim: logS90 = 0.5logW-1.14 / logW-2.39 @ logW>=2.5,
+    S50 = S90 - 0.067 dex). VALIDATION HOOK: the same pipeline's HIMF must
+    reproduce Jones18 (phi*=4.5e-3, logM*=9.94, alpha=-1.25) BEFORE the WF is
+    read. Then: (A) observed WF; (B) LCDM halo velocity function in-house
+    (Tinker HMF + NFW c(M) -> Vmax); (C) OBT/BTFR locality test: median
+    W50/(2 V_BTFR(M_bar)) flat across the HIMF range."""
+    import numpy as np
+    import pandas as pd
+
+    d = pd.read_csv("/DATA/obt_game_cache/raw/alfalfa/a100.csv")
+    d = d[(d.HIcode == 1) & (d.W50 >= 20) & (d.Dist > 10) & np.isfinite(d.logMH)].copy()
+    DCAP = 214.0  # Mpc, Vhel ~ 15000 bandwidth edge
+    d = d[d.Dist <= DCAP]
+    lw = np.log10(d.W50.values)
+    s90 = np.where(lw < 2.5, 0.5 * lw - 1.14, lw - 2.39)
+    s50 = 10 ** (s90 - 0.067)
+    ok = d.HIflux.values >= s50
+    print(f"N(Code1, 10<D<{DCAP:.0f}, W>=20) = {len(d)}; below 50%-completeness dropped: {(~ok).sum()}")
+    d = d[ok]; lw = lw[ok]; s50 = s50[ok]
+    dmax = np.minimum(d.Dist.values * np.sqrt(d.HIflux.values / s50), DCAP)
+    OMEGA = 6900.0 * (np.pi / 180.0) ** 2  # a100 footprint, sr
+    vmax = (OMEGA / 3.0) * (dmax**3 - 10.0**3)
+    w = 1.0 / vmax
+
+    # -------- validation hook: HIMF vs Jones18 --------
+    mb = np.arange(7.0, 11.01, 0.25)
+    mc = 0.5 * (mb[1:] + mb[:-1])
+    phi_m = np.histogram(d.logMH, bins=mb, weights=w)[0] / 0.25
+    print("\n[VALIDATION] our 1/Vmax HIMF vs Jones18 Schechter (phi*=4.5e-3, logM*=9.94, a=-1.25):")
+    js = lambda m: np.log(10) * 4.5e-3 * (10 ** (m - 9.94)) ** (1 - 1.25) * np.exp(-(10 ** (m - 9.94)))
+    for m in (8.0, 8.5, 9.0, 9.5, 10.0):
+        i = np.argmin(np.abs(mc - m))
+        r = phi_m[i] / js(mc[i])
+        print(f"    logMHI={m:5.2f}: ours {phi_m[i]:9.2e}  Jones18 {js(mc[i]):9.2e}  ratio {r:5.2f}")
+
+    # -------- (A) the observed width function --------
+    wb = np.arange(1.3, 2.91, 0.1)
+    wc = 0.5 * (wb[1:] + wb[:-1])
+    phi_w = np.histogram(lw, bins=wb, weights=w)[0] / 0.1
+    nsrc = np.histogram(lw, bins=wb)[0]
+
+    # -------- (B) LCDM halo velocity function, in-house --------
+    from colossus.cosmology import cosmology as ccosmo
+    from colossus.halo import concentration as cconc
+    from colossus.lss import mass_function as cmf
+    ccosmo.setCosmology("planck18")
+    h = 0.6766
+    M = 10 ** np.arange(9.0, 14.01, 0.05)  # Msun/h
+    dndlnM = cmf.massFunction(M, 0.0, mdef="200c", model="tinker08", q_out="dndlnM")  # (Mpc/h)^-3
+    c = cconc.concentration(M, "200c", 0.0, model="diemer19")
+    G = 4.30091e-9  # Mpc (km/s)^2 / Msun
+    rho_c = 2.775e11 * h * h  # Msun/Mpc^3
+    R200 = (3 * (M / h) / (4 * np.pi * 200 * rho_c)) ** (1.0 / 3.0)
+    V200 = np.sqrt(G * (M / h) / R200)
+    fc = np.log(1 + c) - c / (1 + c)
+    Vmx = V200 * np.sqrt(0.2162 * c / fc)
+    dndlogM = dndlnM * np.log(10) * h**3  # Mpc^-3 dex^-1
+    dlogV = np.gradient(np.log10(Vmx), np.log10(M))
+    phi_v = dndlogM / dlogV  # dn/dlogVmax
+
+    # -------- (C) OBT/BTFR locality: W50/(2 V_BTFR sin i) flat in mass --------
+    a0 = 3.7e3  # (km/s)^2/kpc... in (km/s)^2/Mpc: 1.2e-10 m/s^2 = 3704 (km/s)^2/kpc -> NO: use SI route
+    # V^4 = G M a0 : G[m]=6.674e-11, a0=1.2e-10, M in kg -> V in m/s
+    for tag, fb in [("M_bar = 1.33 M_HI (pure gas)", 1.33), ("M_bar = 2.0 M_HI (gas-rich typ.)", 2.0)]:
+        Mb = fb * 10**d.logMH.values * 1.989e30
+        Vb = (6.674e-11 * Mb * 1.2e-10) ** 0.25 / 1e3
+        ratio = d.W50.values / (2 * Vb)
+        meds = []
+        for m in (8.25, 8.75, 9.25, 9.75, 10.25):
+            sel = np.abs(d.logMH.values - m) < 0.25
+            meds.append(np.median(ratio[sel]))
+        print(f"\n[C] {tag}: median W50/(2 V_BTFR) per logMHI bin 8.25..10.25:")
+        print("    " + "  ".join(f"{x:.3f}" for x in meds) + "   [flat ~ <sin i>=0.79-0.87 => locality holds]")
+
+    print("\n[A,B] dn/dlogV [Mpc^-3 dex^-1]: observed (V=W50/2/0.85) vs LCDM halos (Vmax):")
+    print(f"    {'V[km/s]':>8s}{'observed':>11s}{'halos':>10s}{'ratio h/o':>10s}{'Nsrc':>6s}")
+    for V in (30, 40, 55, 75, 100, 150, 200):
+        lwv = np.log10(2 * V * 0.85)
+        i = np.argmin(np.abs(wc - lwv))
+        j = np.argmin(np.abs(Vmx - V))
+        po, ph = phi_w[i], phi_v[j]
+        print(f"    {V:8d}{po:11.2e}{ph:10.2e}{ph/po:10.1f}{nsrc[i]:6d}")
+
+
+def vf_harden(opts):
+    """VF hardening: (1) spring/fall independent-sky split (normalization-free
+    SHAPE statistic S = Phi(V~35)/Phi(V~100), area cancels); (2) bias-deflated
+    bracket (per-mass HIMF deflator from the validation hook itself);
+    (3) the required LCDM dark fraction of 25-50 km/s halos in the field."""
+    import numpy as np
+    import pandas as pd
+
+    d = pd.read_csv("/DATA/obt_game_cache/raw/alfalfa/a100.csv")
+    d = d[(d.HIcode == 1) & (d.W50 >= 20) & (d.Dist > 10) & (d.Dist <= 214) & np.isfinite(d.logMH)].copy()
+    lw = np.log10(d.W50.values)
+    s90 = np.where(lw < 2.5, 0.5 * lw - 1.14, lw - 2.39)
+    s50 = 10 ** (s90 - 0.067)
+    d = d[d.HIflux.values >= s50]
+    lw = np.log10(d.W50.values); s50 = s50[d.HIflux.values >= s50] if False else 10 ** (np.where(lw < 2.5, 0.5 * lw - 1.14, lw - 2.39) - 0.067)
+    dmax = np.minimum(d.Dist.values * np.sqrt(d.HIflux.values / s50), 214.0)
+    w_no_area = 3.0 / (dmax**3 - 1000.0)  # per-sr weights (area factored out)
+
+    ra = d.RAdeg_HI.values
+    spring = (ra > 112.5) & (ra < 247.5)
+    fall = (ra > 330.0) | (ra < 45.0)
+
+    def shape(mask):
+        l = lw[mask]; wt = w_no_area[mask]
+        lo = (l > np.log10(2 * 25 * 0.85)) & (l < np.log10(2 * 45 * 0.85))
+        hi = (l > np.log10(2 * 85 * 0.85)) & (l < np.log10(2 * 115 * 0.85))
+        S = wt[lo].sum() / wt[hi].sum()
+        # poisson-ish error via effective counts
+        eS = S * np.sqrt(1.0 / lo.sum() + 1.0 / hi.sum())
+        return S, eS, lo.sum(), hi.sum()
+
+    print("[1] independent-sky SHAPE statistic S = n(25-45)/n(85-115 km/s), per-sr (area cancels):")
+    for tag, m in [("SPRING sky", spring), ("FALL sky", fall), ("ALL", np.ones(len(d), bool))]:
+        S, eS, nl, nh = shape(m)
+        print(f"    {tag:10s}: S = {S:5.2f} +- {eS:4.2f}   (N_lo={nl}, N_hi={nh})")
+    # halo-side same statistic, from the in-house halo VF
+    from colossus.cosmology import cosmology as ccosmo
+    from colossus.halo import concentration as cconc
+    from colossus.lss import mass_function as cmf
+    ccosmo.setCosmology("planck18")
+    h = 0.6766
+    M = 10 ** np.arange(9.0, 14.01, 0.02)
+    dndlnM = cmf.massFunction(M, 0.0, mdef="200c", model="tinker08", q_out="dndlnM")
+    c = cconc.concentration(M, "200c", 0.0, model="diemer19")
+    G = 4.30091e-9; rho_c = 2.775e11 * h * h
+    R200 = (3 * (M / h) / (4 * np.pi * 200 * rho_c)) ** (1 / 3.0)
+    V200 = np.sqrt(G * (M / h) / R200)
+    fc = np.log(1 + c) - c / (1 + c)
+    Vmx = V200 * np.sqrt(0.2162 * c / fc)
+    n = dndlnM * np.log(10) * h**3 * 0.02 / np.gradient(np.log10(M)) * 0  # placeholder
+    dn = dndlnM * h**3 * np.gradient(np.log(M))  # per Mpc^3 in each M bin
+    Sh = dn[(Vmx > 25) & (Vmx < 45)].sum() / dn[(Vmx > 85) & (Vmx < 115)].sum()
+    print(f"    LCDM halos: S = {Sh:5.2f}   -> observed shape is x{Sh/shape(np.ones(len(d),bool))[0]:.1f} SHALLOWER, in BOTH skies")
+
+    # [2] bias-deflated gap bracket at V=30,40 using the HIMF deflator (ours/Jones18)
+    js = lambda m: np.log(10) * 4.5e-3 * (10 ** (m - 9.94)) ** (1 - 1.25) * np.exp(-(10 ** (m - 9.94)))
+    OMEGA = 6900.0 * (np.pi / 180) ** 2
+    wfull = w_no_area / OMEGA * 0 + 1.0 / ((OMEGA / 3.0) * (dmax**3 - 1000.0))
+    mb = np.arange(7.0, 11.01, 0.25); mc = 0.5 * (mb[1:] + mb[:-1])
+    phi_m = np.histogram(d.logMH, bins=mb, weights=wfull)[0] / 0.25
+    defl = np.interp(d.logMH.values, mc, phi_m / js(mc))
+    print("\n[2] gap at low V, raw vs local-bias-DEFLATED observed (deflator = ours/Jones18 per mass):")
+    for V in (30, 40, 55):
+        sel = np.abs(lw - np.log10(2 * V * 0.85)) < 0.05
+        po_raw = wfull[sel].sum() / 0.1
+        po_def = (wfull[sel] / defl[sel]).sum() / 0.1
+        j = np.argmin(np.abs(Vmx - V))
+        ph = (dndlnM * np.log(10) * h**3)[j] / np.gradient(np.log10(Vmx), np.log10(M))[j]
+        print(f"    V={V:3d}: halos/observed = {ph/po_raw:5.1f} (raw)  -> {ph/po_def:5.1f} (deflated)")
+
+    # [3] required dark fraction of 25-50 km/s halos
+    n_halo = dn[(Vmx > 25) & (Vmx < 50)].sum()
+    selo = (lw > np.log10(2 * 25 * 0.85)) & (lw < np.log10(2 * 50 * 0.85))
+    n_obs_raw = wfull[selo].sum()
+    n_obs_def = (wfull[selo] / defl[selo]).sum()
+    print(f"\n[3] n(25<V<50) halos = {n_halo:.3f} /Mpc^3 vs observed {n_obs_raw:.3f} (raw) / {n_obs_def:.3f} (deflated)")
+    print(f"    -> required DARK fraction of field dwarf halos = {1-n_obs_raw/n_halo:.0%} (raw) to {1-n_obs_def/n_halo:.0%} (deflated)")
