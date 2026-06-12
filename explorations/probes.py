@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "feeble_giants": lambda opts=None: feeble_giants(opts),
     "cf4_recon": lambda opts=None: cf4_recon(opts),
     "pantheon_h0z": lambda opts=None: pantheon_h0z(opts),
     "kbc_phase4": lambda opts=None: kbc_phase4(opts),
@@ -5044,3 +5045,66 @@ def cf4_recon(opts):
         "  READ: real void = declining in BOTH; edge-Malmquist artifact = declining in"
     )
     print("  d-bins ONLY (rising/flat in z-bins). The verdict assigns the #24 error.")
+
+
+def feeble_giants(opts):
+    """NEW-MONSTER HUNT: the 'feeble giants' Crater II & Antlia 2. External
+    theory: 'these objects require exotic/finely-tuned DM halos (ultra-low-
+    concentration cores, SIDM, fuzzy DM; Borukhovetskaya 2022: a challenge to
+    LCDM)'. The game (cards #16/#17 crossfire, ZERO new parameters): baseline
+    sigma from the EFE quasi-Newton formula; the EXCESS over it follows the
+    card-#17 tidal-susceptibility trend (eta at the Gaia pericenter, Battaglia
+    2022: CratII 39.1 kpc, AntII 54.0 kpc); Antlia 2's disruption is directly
+    observed (Ji 2021 velocity gradient). Literature anchors verbatim:
+    McGaugh-2016 a-priori EFE prediction 2.1+0.9-0.6 vs Caldwell-2017 measured
+    2.7+-0.3 (CratII); EFE ~2.8+1.3-0.8 vs S5/Ji measured 5.98+-0.4 (AntII).
+    FACTS only."""
+    import numpy as np
+
+    G, MSUN, PC, KMS, a0 = 6.674e-11, 1.989e30, 3.0856775814913673e16, 1e3, 1.2e-10
+    ML = 2.0
+    objs = [
+        # name, M_V, r_half_pc, D_kpc, peri_kpc, sigma_obs, e_sig, lit_EFE_pred
+        ("Crater II", -8.2, 1066.0, 117.5, 39.08, 2.7, 0.3, 2.1),
+        ("Antlia 2", -9.03, 2900.0, 124.1, 54.02, 5.98, 0.4, 2.8),
+    ]
+    print(
+        "[feeble_giants] zero-new-parameter treatment (cards #16+#17 machinery, M/L=2):"
+    )
+    print(
+        f"  {'object':>10s} {'sig_iso':>7s} {'sig_efe':>7s} {'lit_EFE':>7s} {'sig_obs':>7s} {'excess':>7s} {'eta_now':>7s} {'eta_peri':>8s}"
+    )
+    for nm, MV, rh, D, peri, so, es, lit in objs:
+        L = 10 ** (-0.4 * (MV - 4.83))
+        M = ML * L * MSUN
+        r = rh * PC
+        s_iso = (4 / 81 * G * M * a0) ** 0.25 / KMS
+        for dd, tag in ((D, "now"), (peri, "peri")):
+            d_m = dd * 1e3 * PC
+            e = (220.0 * KMS) ** 2 / d_m / a0
+            gN = G * M / r**2
+            z = gN / a0
+            Ae = e * (1 + e / 2) / (1 + e)
+            nue = 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + (1 + e) / z)
+            if tag == "now":
+                s_efe = np.sqrt(nue * G * M / (5 * r)) / KMS
+                eta_now = r / (
+                    d_m * (nue * M / (2 * (220.0 * KMS) ** 2 * d_m / G)) ** (1 / 3)
+                )
+            else:
+                eta_pe = r / (
+                    d_m * (nue * M / (2 * (220.0 * KMS) ** 2 * d_m / G)) ** (1 / 3)
+                )
+        exc = np.log10(so / s_efe)
+        print(
+            f"  {nm:>10s} {s_iso:7.2f} {s_efe:7.2f} {lit:7.1f} {so:7.2f} {exc:+7.2f} {eta_now:7.2f} {eta_pe:8.2f}"
+        )
+    print("  card-#17 trend reference (17 satellites): excess rises with eta_peri;")
+    print(
+        "  eta>=1 objects = +0.75..+1.31 dex at eta 0.94-3.1 (heavier objects: milder)."
+    )
+    print("  READ: CratII = the celebrated a-priori EFE hit (+0.11 dex mild excess at")
+    print("  eta~few); AntII = x2.1 excess at the registry's highest eta, with the")
+    print(
+        "  disruption DIRECTLY observed (Ji 2021 velocity gradient). No exotica needed."
+    )
