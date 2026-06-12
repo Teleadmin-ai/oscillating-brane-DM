@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "kbc_zeropoints": lambda opts=None: kbc_zeropoints(opts),
     "m31_kin": lambda opts=None: m31_kin(opts),
     "ga_monopole": lambda opts=None: ga_monopole(opts),
     "ga_legs": lambda opts=None: ga_legs(opts),
@@ -4453,3 +4454,117 @@ def m31_kin(opts):
     print(f"  jackknife drop-1 |r| range: {min(np.abs(jk)):.2f}-{max(np.abs(jk)):.2f}")
     print(f"  co-rotating fraction about the axis: {co:.2f}")
     print("  [CenA reference (card #13): r=-0.77, p=0.02 reopt, 13/15 co-rotating]")
+
+
+def kbc_zeropoints(opts):
+    """KBC UNLOCK: per-method zero-points harvested in-house, then the
+    void test on zero-point-marginalized monopole profiles. (1) Pairwise
+    offsets Delta(DM_X - DM_SNIa) in OVERLAP groups (+ depth split: a constant
+    offset is recalibratable, a DEPTH-DEPENDENT one is the systematic);
+    (2) per-method shell monopoles m_X(R), DE-MEANED per method (= zero-point
+    marginalized); (3) cross-method agreement of the radial STRUCTURE -> if
+    concordant, the common profile is physical -> KBC readout (void = positive
+    inside falling to an edge; pre-registered edge lambda/2 = 306 Mpc).
+    FACTS only."""
+    import numpy as np
+
+    H0 = 74.6
+    cols = {
+        "TF": (133, 139, 140, 145),
+        "FP": (117, 123, 124, 129),
+        "SNIa": (100, 106, 107, 112),
+    }
+    G = []
+    for ln in open("/DATA/obt_game_cache/raw/cf4/table3.dat"):
+        try:
+            v = float(ln[28:33])
+            gl = float(ln[52:60])
+            gb = float(ln[61:69])
+        except ValueError:
+            continue
+        if v <= 200:
+            continue
+        rec = {"v": v, "gl": gl, "gb": gb}
+        ok = False
+        for k, (a, b, c, e) in cols.items():
+            try:
+                dm = float(ln[a:b])
+                edm = float(ln[c:e])
+                if dm > 0:
+                    rec[k] = (dm, max(edm, 0.05))
+                    ok = True
+            except ValueError:
+                pass
+        if ok:
+            G.append(rec)
+    print(f"[kbc_zeropoints] groups with >=1 method: {len(G)}")
+    # (1) pairwise zero-points in overlaps, with depth split at DM 33.5 (~50 Mpc... use 34.5 ~ 79 Mpc)
+    for pair in (("TF", "SNIa"), ("FP", "SNIa"), ("TF", "FP")):
+        d_all, d_near, d_far = [], [], []
+        for r in G:
+            if pair[0] in r and pair[1] in r:
+                diff = r[pair[0]][0] - r[pair[1]][0]
+                d_all.append(diff)
+                (d_near if r[pair[1]][0] < 34.5 else d_far).append(diff)
+        if len(d_all) > 5:
+            print(
+                f"  Delta({pair[0]}-{pair[1]}): N={len(d_all)} median={np.median(d_all):+.3f} mag"
+                f" | near={np.median(d_near) if d_near else float('nan'):+.3f} (N={len(d_near)})"
+                f" far={np.median(d_far) if d_far else float('nan'):+.3f} (N={len(d_far)})"
+            )
+    # (2) per-method de-meaned monopole profiles
+    shells = [(25, 75), (75, 125), (125, 175), (175, 225), (225, 300)]
+    prof = {}
+    for k in cols:
+        ms, Rb = [], []
+        for lo, hi in shells:
+            xs, ys, ws = [], [], []
+            for r in G:
+                if k not in r:
+                    continue
+                d = 10 ** ((r[k][0] - 25) / 5.0)
+                if not (lo <= d < hi):
+                    continue
+                glr, gbr = np.radians(r["gl"]), np.radians(r["gb"])
+                n = (np.cos(gbr) * np.cos(glr), np.cos(gbr) * np.sin(glr), np.sin(gbr))
+                u = r["v"] * np.log(r["v"] / (H0 * d))
+                su2 = (r["v"] * 0.4605 * r[k][1]) ** 2 + 300.0**2
+                xs.append((1.0,) + n)
+                ys.append(u)
+                ws.append(1.0 / su2)
+            if len(ys) < 60:
+                ms.append(np.nan)
+                Rb.append(0.5 * (lo + hi))
+                continue
+            X = np.array(xs)
+            y = np.array(ys)
+            w = np.array(ws)
+            p = np.linalg.solve(X.T @ (X * w[:, None]), X.T @ (w * y))
+            ms.append(p[0])
+            Rb.append(0.5 * (lo + hi))
+        m = np.array(ms)
+        good = np.isfinite(m)
+        if good.sum() >= 3:
+            prof[k] = (np.array(Rb), m - np.nanmean(m))
+    print("  de-meaned monopole structure m_X(R) - <m_X> (km/s):")
+    hdr = "   R(Mpc):" + "".join(f" {0.5*(lo+hi):6.0f}" for lo, hi in shells)
+    print(hdr)
+    for k, (Rb, dm) in prof.items():
+        print(
+            f"   {k:5s}  :"
+            + "".join(f" {x:6.0f}" if np.isfinite(x) else "    nan" for x in dm)
+        )
+    ks = list(prof)
+    for i in range(len(ks)):
+        for j in range(i + 1, len(ks)):
+            a, b = prof[ks[i]][1], prof[ks[j]][1]
+            m = np.isfinite(a) & np.isfinite(b)
+            if m.sum() >= 3:
+                cc = np.corrcoef(a[m], b[m])[0, 1]
+                print(f"   structure corr({ks[i]},{ks[j]}) = {cc:+.2f}")
+    print(
+        "  READ: concordant de-meaned structures = physical radial flow -> KBC readout;"
+    )
+    print(
+        "  discordant = still calibration-dominated (depth-dependent ladders), KBC stays blocked."
+    )
