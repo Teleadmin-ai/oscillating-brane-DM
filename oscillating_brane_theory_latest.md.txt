@@ -1694,7 +1694,7 @@ While empirical MOND *postulates* this interpolation function ad-hoc to fit gala
 
 ### Exact Dynamic Averaging Theorem: The MOND Cluster Resonance and the Weyl Fluid Resurrection
 
-**1. The orbital averaging theorem (the sinc resonance).** The geometric tilt derivation assumes a **quasi-static** background acceleration $\vec{a}_0$ --- valid when the dynamical timescale of the system is much shorter than the brane oscillation period $T = 2.0$ Gyr. For a self-gravitating system with dynamical time $t_{dyn} \approx R/\sigma_v$, the perceived transverse acceleration is not the instantaneous value but the **orbital time-average**:
+**1. The orbital averaging theorem (the sinc resonance).** The geometric tilt derivation assumes a **quasi-static** background acceleration $\vec{a}_0$ --- valid when the dynamical timescale of the system is much shorter than the brane oscillation period $T = 2.0$ Gyr. For a self-gravitating system with dynamical time $t_{dyn} \approx R/\sigma_v$ (with $R$ the **outermost tracer radius** of the system, not the half-light radius --- see the pinned convention note after the kinematic hierarchy table below), the perceived transverse acceleration is not the instantaneous value but the **orbital time-average**:
 
 $$\langle a_0 \rangle_{t_{dyn}} = \frac{1}{t_{dyn}}\int_{-t_{dyn}/2}^{t_{dyn}/2} a_0^{max}\sin\!\left(\frac{2\pi t}{T} + \psi\right)dt$$
 
@@ -1755,6 +1755,14 @@ This hierarchy explains every empirical puzzle of modified gravity:
 - **Tully-Fisher deviations for ellipticals**: sinc $\approx 0.95$, the 5% attenuation is detectable
 - **Group mass discrepancies**: sinc $\approx 0.64$, substantial MOND failure $\to$ partial Weyl compensation needed
 - **Cluster mass-to-light catastrophe**: sinc $= 0$, MOND dead $\to$ full Weyl fluid required
+
+**Pinned $t_{dyn}$ convention (June 2026 --- reviewer clarification, no value changed).** The averaging window entering $\mathcal{W} = \vert\mathrm{sinc}(\pi t_{dyn}/T)\vert$ is defined in V8.2 by **two operational forms, each with its domain**, both anchored by the table above:
+
+- **Global hierarchy form (this section):** $t_{dyn} = R/\sigma_v$ with $R$ the **outermost tracer radius** of the system --- the convention that generates every anchor in the table (MW: $R = 50$ kpc *outer disk*, not the half-light radius, giving 220 Myr; clusters: $R = 2$ Mpc giving 2.0 Gyr). This is the form behind all global V8.2 sinc statements (galaxies $> 98\%$, groups $\approx 54$--$64\%$, clusters $\approx 0$).
+- **Radial (resolved-profile) form:** for systems analyzed radially, the local averaging window is the **orbital period** $t_{dyn}(r) = 2\pi r/V_c(r)$ --- the form used in the X-COP cluster anatomy (Discoveries §3.28), where it spans 0.25 Gyr (BCG core, $\mathcal{W} \approx 0.96$: MOND *survives in cluster cores*) to 5.6 Gyr ($r_{500}$), and is empirically validated by the hierarchical fit ($\chi^2/N = 1.04$). The two forms agree on every verdict where they overlap: the global form is the $\sigma$-weighted outer-region average of the radial form, and both extinguish the relaxed-cluster bulk.
+- **Transient events** use the crossing time $t_{cross}$ (Bullet Cluster section below) --- a third, physically distinct window for non-virialized encounters.
+
+**The convention-sensitive zone (honest flag).** For **diffuse pressure-supported systems** --- ultra-diffuse galaxies of the NGC 1052-DF2/DF4 class, the "feeble giants" (Crater II, Antlia 2), and compact groups --- the choice of radius ($r_{half}$ vs outer extent) and form ($R/\sigma_v$ vs $2\pi r/V_c$) moves $t_{dyn}$ by factors of a few **inside the steep part of the filter**: e.g. for Crater II the bracket spans $t_{dyn} \approx 0.4$--$1.4$ Gyr, i.e. $\mathcal{W} \approx 0.94$ down to $\approx 0.35$. In this zone the OBT-side $\sigma$ prediction is **convention-limited**, and no OBT-distinctive claim may be built on $\mathcal{W}$ there until the orbital-averaging derivation is extended to specify the correct tracer-weighted window for pressure systems (open item). Outside the zone the conventions are immaterial: all classical compact dwarfs have $t_{dyn} \leq 0.4$ Gyr under *every* convention ($\mathcal{W} \geq 0.94$, a $\leq 1.6\%$ effect on $\sigma$ --- the dwarf-dynamics results are convention-safe), and clusters are extinguished under every convention.
 
 *Note: The Bullet Cluster analysis (MOND survival at sinc $\approx 0.995$ + collisionless Weyl fluid offset) is treated in full detail in the dedicated 3-Component Bullet Cluster Resolution section below.*
 

@@ -366,3 +366,17 @@ Status: the floor question is now CLOSED as "bounded, regime-split, no new physi
 previous "origin open" (the #18 failed attempt) upgraded to a quantified decomposition. The derivation
 of the true pressure-system EFE normalization (full AQUAL solve for a point mass in an external field)
 remains the one path that could still mint a card here — parked, theory-gated like the dipole.
+
+## V18 — the sinc t_dyn convention PINNED (reviewer-mode item, June 2026)
+Triggered by the DF2 terrain scouting (card #27 hunt): the W(t_dyn) filter's averaging window was
+under-specified for diffuse pressure systems. Full theory.md read + pin (note added after the kinematic
+hierarchy table): **global form t_dyn = R/sigma_v with R = OUTERMOST tracer radius** (the table's anchors:
+MW 50 kpc outer disk -> 220 Myr; clusters 2 Mpc -> 2 Gyr — NEVER r_half), **radial form t_dyn(r) =
+2 pi r / V_c(r)** for resolved profiles (the #22 X-COP form, empirically validated chi2/N=1.04, MOND
+survives in BCG cores W~0.96), t_cross for transients (Bullet). The two forms agree on every overlapping
+verdict. SENSITIVE ZONE flagged in theory.md: diffuse pressure systems (DF2/DF4 UDGs, Crater II/Antlia 2,
+compact groups) are convention-limited (CratII W 0.35-0.94 across conventions) -> **game terrains DF2/DF4
+and Hickson groups are GATED** until the orbital-averaging derivation specifies the tracer-weighted window
+for pressure systems (named open theory item). Convention-safe: all compact classical dwarfs (W>=0.94
+under every convention, <=1.6% in sigma) -> cards #14/#18/#25 unaffected; clusters extinguished under
+every convention -> #22 unaffected. No V8.2 value changed — this is a clarification + an honest gate.
