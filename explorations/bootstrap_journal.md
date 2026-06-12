@@ -330,3 +330,16 @@ une convention de zéro-point comme une mesure cosmologique. Survivent: les offs
 de points-zéros (phase 1), la règle une-amplitude, la trace méthodologique complète.
 KBC et le bord cymatique 306 Mpc → retour au statut de prédictions pré-enregistrées NON
 testées. NOTE OUTIL: ajouter une commande retract-card (architecture) — session future.
+
+## V16-bis — CORRECTION DU MÉCANISME DE RÉTRACTATION (défi de Romain, juin 2026)
+La rétractation #24 TENAIT mais son HISTOIRE était fausse: le cross-match direct 467 paires
+CF4/Pantheon+ mesure +0.055 mag (pas ~0.2) → l'histoire "zéro-point" réfutée. Le paramètre
+sous-estimé (littéralement la question de Romain): le terme de décélération FRW (1−q0)z/2,
+ABSENT des pipelines CF4 (kbc_phase4, cf4_recon) — +7.8% à z=0.1. Restauré: H0_out=70.1
+(pas 67.00 — le "=Planck" était l'omission), profil z-binné PLAT (−3.4,+0.4,−0.8,+0.8,
++2.3,+0.0), déclin lointain disparu. Décomposition finale du mirage #24: omission-q0
+(dominante) + offset de trame réel +0.055 mag + Malmquist-de-bord/posterior (binning-d).
+3e RÈGLE FRAPPÉE: les corrections cinématiques FRW font partie de l'instrument — H0=V/d
+nu fabrique des pseudo-profils au % au-delà de z~0.03. Leçon de process: le défi de
+Romain ("n'as-tu pas sous-estimé un paramètre?") a corrigé une rétractation juste mais
+mal expliquée — l'audit de l'audit fait partie du jeu.
