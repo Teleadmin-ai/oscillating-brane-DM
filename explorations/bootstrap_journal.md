@@ -671,3 +671,27 @@ the unique nonlinear brane term), its super-linear FORM derived and data-confirm
 AMPLITUDE remains the closure/IC datum. "One brane movement" is now precise: the brane's quadratic
 high-energy response to baryonic mass-energy, amplified to observable level by the free bulk Weyl.
 Full derivation (amplitude) = the 5D bulk solve, closure-blocked. Script: gate19_mechanism.py. Quarantined.
+
+## V33 — GATE 20 CONSOLIDATION: mistrust caught a clip bug; the exponent is ~1.2 not 1.5 (June 2026)
+Romain: consolidate prudently, mistrust, re-verify. Did so by trying to BREAK Gates 13-19.
+**BUG CAUGHT (the #24/#12 reflex)**: Gate 18's "M_Weyl ~ M_Gas^1.57" was a CLIP ARTIFACT —
+np.clip(Mweyl,1e11) floors negative/small Weyl values and inflates the log-log slope. CCCP clusters:
+WITH clip q=1.57, WITHOUT clip q=0.79. The clean wide-range exponent (Lagana groups + X-COP clusters,
+hydrostatic, NO clip, N=20, M_bar spanning 12.3-14.5 dex): M_Weyl ~ M_bar^1.19 [1.05,1.34] bootstrap.
+So the real exponent is ~1.2 (MODESTLY super-linear), NOT ~1.5.
+**WHAT HOLDS (robust)**: (1) MASS not depth — M_WL~M_Gas|kT = +0.66 [0.55,0.75], survives controlling
+M_hydro (+0.70), M_WL~kT|M_Gas = -0.24 (depth anti-, weak); Gate 18's CORRELATION is solid (only the
+exponent was bugged). (2) Not the sinc (13). (3) Amplitude = IC/closure (multi-face). (4) Modest
+super-linearity q~1.2 (f_Weyl ~M_bar^0.2: groups 0.15 -> clusters 0.4, consistent).
+**WHAT FALLS/CORRECTED**: Gate 18 exponent 1.57 -> clip artifact (true ~1.2). Gate 19's "quadratic SMS
+p~1.5-2, form derived" -> NOT supported: q=1.19 is much closer to LINEAR(1) than QUADRATIC(2); the
+quadratic pi_munu is still the only nonlinear SMS term but the DATA DO NOT CONFIRM a quadratic exponent,
+so the mechanism's exact form is NOT pinned. Gate 19 local p=1.49 was circular + dM/dr-noisy.
+CAVEAT on 'baryon-specific': M_Gas is also the tightest M_500 proxy and the M_hydro control is
+contaminated by (possibly gas-correlated) hydrostatic bias, so 'baryon-specific vs total-mass' stays
+ambiguous; the robust statement is "mass not depth". 
+NET: SOLID = Weyl tracks baryonic MASS not depth, modest super-linearity q~1.2, IC amplitude, not sinc.
+WITHDRAWN/weakened = exponent ~1.5 and the quadratic-mechanism derivation (Gate 19). DO NOT take the 5D
+bulk-solve last step on a quadratic premise — the data only support weakly-super-linear mass-tracking,
+mechanism-form OPEN. Mistrust before the leap: justified, it saved a false foundation. Script:
+gate20_consolidate.py. Quarantined.
