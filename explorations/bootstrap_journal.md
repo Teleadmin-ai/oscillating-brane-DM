@@ -453,3 +453,22 @@ NO parameter-free prediction until V9.0 specifies the galactic Weyl floor. THE W
 it begins exactly where the internal period crosses ~2T = 4 Gyr. Every deep-radius terrain (dipole,
 growth sign, blade B, MW plateau, groups) is the SAME wall = the bulk's customs zone. The game's
 conquered domain is exactly T_int < 2T; the band [T/2,2T] is mapped and measured; beyond is V9.0 land.
+
+## V23 — GATE 10 OPENED: the holographic route to the Weyl-DM (June 2026, QUARANTINED V9.0)
+The attack toward the bulk, by the one dictionary not yet played: RS/CFT (E_munu = <T_munu>_CFT —
+the closure freedom IS the dual-sector state; CDM-like Weyl-DM requires a CONFINED/COLD dual state).
+**Finding 1 (thermal branch DEAD)**: the 3->2 glueball relic scan at Lambda_dark = 0.4-5 eV under-
+produces by >=15x for any N_eff-allowed xi (needs xi~0.5-1, excluded). [Self-check caught my own
+script's READ line contradicting its own table — fixed before banking. The #24 reflex.]
+**Finding 2 (THE BANKED NUMBER — misalignment branch)**: a coherent radion condensate (fast free
+mode at m_phi = 0.36 eV around the GW minimum, distinct from the slow 2-Gyr forced motor) displaced
+phi_0 at inflation gives Omega h^2 = 0.12 for phi_0 = 0.26 M_s — an O(1) fraction of the DERIVED
+LVS string scale (M_s = 1.19e12 GeV), zero new parameters beyond the axion-angle-class fraction.
+Cold, collisionless (coherent), N_eff-safe, stable (tau ~ Mpl^2/m^3 >> t_U). The closure input
+"Omega_DM ~ 5 Omega_b" acquires its first candidate CALCULATION inside OBT's own derived scales.
+**Finding 3 (THE INTERNAL KILL-TEST = Gate 11's question)**: a 0.36-eV condensate is plain CDM at
+all scales -> it would pile halos onto GALAXIES and destroy OBT's own zero-halo galactic success.
+OBT requires CLUSTER-SELECTIVE clustering (the #22 anatomy). The route lives or dies on a scale-
+selection mechanism for the condensate's gravitating coupling — the nonlinear-bulk question again,
+now sharpened to ONE object (the condensate's effective source term) and ONE banked number (~0.3).
+Script: explorations/bulk_solver/gate10_weyl_cft.py. Status: V9.0 seed, NOT V8.2 content.
