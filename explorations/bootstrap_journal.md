@@ -1000,3 +1000,32 @@ not the signed a0 -> the 'topological protection theorem' / '0% cluster survival
 calculation artifact and should be replaced by a mild W~0.6-0.7 suppression (boost survives), with the Weyl as
 the mass-driven cluster DM. The galaxy results (W~0.98) and DF2/DF4 de-gating (adiabatic, W~1) are unaffected.
 NOT edited -- Romain's call on the sacred files.
+
+## ROOT OF THE ZERO, COMPLETED (June 2026, Romain: re-read the cards #29/#30/#31 context) — it is a DEDUCTION error (#22) + the Jensen integral, refuted by X-COP
+Romain insisted the zero came from a deduction made in the monster->card context, not from theory.md alone, and
+asked to recheck I had not missed a JUSTIFICATION for the zero. Re-read #29/#30/#31 + #22 + journal V7/V8/V21/Gate13.
+FINDINGS:
+ - Cards #29/#30/#31 do NOT contain the zero: they measure/use a MILD empirical band envelope (W=0.80/0.71 at
+   T_k=1.38/1.78 #29; -0.044..-0.13 dex => W~0.55-0.82 #30) -- which already CONTRADICTS the bare sinc (W~0.12
+   at T_k=1.78). The galaxy cards were already at ~0.7, agreeing with the a0^2 correction + the satellites.
+ - The zero lives in CARD #22's DEDUCTION (verbatim): "the boost is EXTINGUISHED, not merely insufficient." THAT
+   is the deduction. It CONFLATES 'extinguished' (W=0, boost absent) with 'insufficient' (boost present but too
+   small = the classic cluster problem). The card's +648 only shows MOND-alone-no-Weyl insufficient; it does NOT
+   test extinguished-vs-(insufficient+Weyl).
+ - OBSERVATION-ANCHORED REFUTATION (X-COP, this-work, 12 clusters, M_FORW hydro + FGAS, exact RAR, W=1 FULL boost):
+   M_hydro/M_MOND-full = 1.30 (median, range 0.89-1.92) at r~2 Mpc -> MOND-full gives 77%, short by 30% =
+   INSUFFICIENT, not extinguished. In the core (r~40 kpc, Gate 13) g>>a0 -> MOND is NEWTONIAN (mu->1, no boost,
+   NOT sinc) and the Weyl provides 5-8x. So NOWHERE is MOND sinc-extinguished: Newtonian in the core, full-but-
+   30%-short at r500; the Weyl (mass-driven, Gate 13, centrally concentrated) carries the DM. Card #22's
+   'extinguished not insufficient' is REFUTED by the X-COP data.
+ - Journal V7 (line 82-84) had ALREADY flagged the degeneracy g ~ 1/t_dyn^2 => 'MOND dies at long t_dyn' (sinc)
+   == 'MOND dies at low acceleration' (standard) -- kinematically indistinguishable -- and the sinc zero/non-
+   monotonicity as 'distinctive but untestable'. The seed of the correction was already in the card context.
+COMPLETE ROOT OF THE ZERO: (1) the DEDUCTION 'extinguished not insufficient' (card #22), conflating insufficiency
+with extinction; (2) the sinc orbital-averaging INTEGRAL (theory.md, the signed-a0 Jensen error) that supplied
+the mathematical W=0 which seemed to confirm (1). Two errors that validated each other. NO observation supports
+the zero: galaxies full MOND, band ~0.7, satellites ~0.7, X-COP clusters insufficient (1.3x at r500, Newtonian+
+Weyl in the core) -- all say insufficient/mild, never zero. Romain was right that the zero is a card-context
+deduction; I had under-attributed it to theory.md's integral alone. The audit conclusion is unchanged and now
+fully sourced: the cluster DM is the mass-driven Weyl (insufficiency-carried), the sinc 'extinction' is the one
+wrong piece (deduction + Jensen calc), no sacred edit done -- Romain's call.
