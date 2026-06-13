@@ -905,3 +905,45 @@ FLAG FOR THE (2) AUDIT (Romain: "le 2 sera aussi a faire par principe"): cards #
 band-flag allows suppression, and (b) the deficit is degenerate with galaxy size. The ARA band-deficit
 attribution is on shakier ground than the cards state -- to be audited together with the theory.md
 "cluster bulk sinc-extinct" tension (the boost saturates ~0.5-0.6, does not extinguish; Gate 13 mass-driven Weyl).
+
+## AUDIT (2) — the sinc-extinction-as-cluster-mechanism (theory.md), by principle (June 2026, reviewer; NO sacred edit)
+Romain: "fais le 2 maintenant, par principe". Audited the sinc/ARA/cluster sections of theory.md (lines 803-1028)
+COMPLETELY, trying to KILL the sinc-cluster claim. Confronted with blade B (satellites + RAR) + Gate 13.
+WHAT IS SOLID (theory.md is largely honest): the mu(x) Gauss-Codazzi derivation; the closure note (line 821:
+DM amount is a bulk BC, not derived, kinematics robust); the ARA adiabatic side is DATA-MANDATED (SPARC 174/175
+sub-crossover -> F=1, RAR demands it); the math identity sin(n pi)=0; line 956 already hedges the band as an
+"EFT envelope, data-bounded, EFE-degenerate". Bullet (t_cross fast, sinc 0.995~1) and DF2/DF4 de-gating UNAFFECTED.
+WHAT IS OVER-STATED (the audit findings, 3 independent lines):
+ (1) ROOT CAUSE -- the orbital-averaging "exact zero" W_exact(1)=0 (lines 871,880,899) rests on a ZERO-MEAN
+     a0(t)=a0_max sin(2pi t/T+psi). Zero-mean -> a0<0 half the cycle = UNPHYSICAL (a0>=0). A physical a0=a0_DC+
+     a0_osc has a DC floor; a deep-averaging tracer feels <a0>=a0_DC, NOT 0. The data REQUIRE a0_DC~0.5-0.7 a0_max
+     (M31 satellites W~0.70, SPARC band W~0.56) -> the boost SATURATES ~0.5-0.7, it does NOT extinguish. The
+     "exact zero / 0% survival / MOND self-destructs" (lines 880,921,923,929) is a measure-zero point of an
+     unphysical model.
+ (2) "relaxed-cluster bulk T_r 3-6 Gyr -> extinction" (lines 934,943) is CONTRADICTED by galaxy satellites at
+     the SAME period (T_kappa 3-6 Gyr -> W~0.3-0.7, not ~0), IF the sinc is universal (theory.md applies it so).
+ (3) Gate 13: the Weyl is HIGH in the deep-Newtonian, sinc-INACTIVE cluster cores (W~0.99, g/a0=360-1090) ->
+     the Weyl is MASS-driven, present where neither MOND nor sinc act -> the causal story "sinc kills MOND ->
+     Weyl resurrects" (line 960, the "Weyl Fluid Resurrection") is wrong/over-stated.
+ + the sinc is NOT load-bearing for "clusters need Weyl": MOND fails clusters even at FULL boost (the classic
+   factor 2-8 cluster problem) -> the Weyl is needed REGARDLESS of the sinc.
+ + band-deficit caveat (956) is INCOMPLETE: flags EFE-degeneracy but MISSES the SIZE degeneracy (at fixed g_bar
+   T_kappa ~ sqrt(R), Spearman 0.92) and the V-CIRCULARITY (resid ~ V^2 and T_kappa ~ 1/V are anti-correlated by
+   construction). Cards #29/#30/#31 control EFE (#30) and non-equilibrium (#31) but NOT size or the circularity.
+ + the scissor "-0.3 to -1 dex orbital suppression" (line 954) is the STRONG ARA, REFUTED by satellites (actual
+   ~0.1-0.25 dex, W~0.5-0.7); the KiDS-isolated lensing +0.13 dex is mostly the two-halo term -> the scissor
+   contrast is much weaker than stated.
+VERDICT: the sinc is NOT the cluster mechanism. It is a galaxy->group band MODULATION that SATURATES (~0.5-0.7),
+not an extinction. The cluster DM is the Weyl fluid, MASS-driven (Gate 13), needed regardless of the sinc, amount
+= closure IC (consistent with line 821). This DOWNGRADES theory.md's novel-contribution (3) ("the exact sinc
+extinction mechanism that formally explains why MOND fails for clusters -- a 40-year problem", line 807) to a
+reinterpretation (cluster DM = Weyl, closure IC), at the SAME epistemic level as the galaxy case. IMPACT: the
+core SURVIVES (mu(x), galaxy MOND, Bullet, DF2/DF4 de-gating, Weyl-for-clusters); the corrections ALIGN theory.md
+with Gate 13-24 + the closure note + the satellites -- OBT's honest framing STRENGTHENS, the over-claims go.
+RECOMMENDED REFRAMING (if Romain approves -- NOT done): (a) downgrade sinc from "cluster extinction mechanism"
+to "galaxy->group band modulation, saturating ~0.5-0.7, not extinguishing"; (b) state cluster DM = Weyl, mass-
+driven, needed regardless of sinc (cite Gate 13), amount = closure IC; (c) fix the zero-mean a0(t) assumption
+(871) -> a0>=0 has a DC floor, average saturates; (d) add the size + V-circularity degeneracy to the band caveat
+(956); (e) soften the scissor (954) to ~0.1-0.25 dex, note lensing +0.13 is mostly two-halo. Ripples: theory.md
+sinc/ARA/Bullet sections, discoveries.md cards #29/#30/#31 + section 3.28, CLAUDE.md sinc/ARA entries. NOT edited
+-- Romain's decision (sacred files).
