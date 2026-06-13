@@ -1040,3 +1040,20 @@ break the T_kappa-size degeneracy via the lensing-vs-dynamics scissor on the SAM
 ESD + satellite/RC dynamics on size-matched isolated hosts. Until then: no blade-B card; the mild ARA suppression
 W~0.7 stays an unconfirmed a0^2-averaging prediction. Reviewer-mode test first when data arrive, CHERCHEUR only if
 it survives. Scripts in hand: explorations/bladeB_satellites.py, bladeB_rar.py, scripts/sinc_tracer_window.py.
+
+## BLADE B FIRST PASS on the unified 438 corpus (June 2026) — NULL by lack of leverage; B confirmed parked
+Romain: "fais le premier passage sur le corpus 438". Corpus = arXiv:2604.13489 (Zenodo 19563417, SPARC+THINGS+
+LITTLE THINGS+WALLABY DR2); JSON master cached at /DATA/obt_game_cache/raw/rc_corpus_v7/corpus_v7.json.
+FINDINGS: (1) radial RCs present for 220 (SPARC 175 + THINGS 19 + LITTLE THINGS 26); WALLABY (203) radial NOT in
+the JSON (ZIP only) and baryon-less. (2) REACH MAP (T_kappa,obs at outermost point): the clean ARA regime is
+essentially UNPOPULATED — max T_kappa: LITTLE THINGS 1.19, THINGS 1.24, SPARC 2.05; only 1 galaxy (UGC 9133)
+exceeds T_kappa>T, ZERO reach the epicyclic crossover T_kappa>2.83. (3) baryons only for SPARC; THINGS/LITTLE
+THINGS are Vobs-only -> the boost (RAR-residual) test cannot extend beyond SPARC. (4) SPARC-in-corpus de-circ
+boost test: resid~T_kappa,pred = +0.167 (positive = OPPOSITE of ARA suppression), with 0 points at T_kappa,pred>T
+-> no leverage in the clean regime; consistent with the earlier null (+0.005). VERDICT: the 438 corpus does NOT
+advance blade B (neither reaches T_kappa>T nor supplies baryons for the deep regime). LITTLE THINGS dwarfs are
+gas-rich but spatially compact (R_max small -> T_kappa modest); reaching T_kappa>T for dwarfs needs ultra-deep HI
+to R~14-37 kpc (<1e18 cm^-2 outskirts) = exactly MHONGOOSE's niche. CONFIRMS B parked: the clean test genuinely
+waits for MHONGOOSE deep RCs WITH baryons (rolling 2025-2027). Micro-target now = the ~4 published MHONGOOSE deep
+RCs (NGC 3621/7424, ESO444-G084, [KKS2000]23) -- anecdotal N~4, not a test. Lensing (light) blade stays ready in
+cache (Brouwer KiDS-dwarfs, clean point at T_kappa~2.6). No card, no sacred edit.
