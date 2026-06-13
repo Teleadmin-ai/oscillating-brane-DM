@@ -438,3 +438,18 @@ The scissor stays a MONSTER under encirclement — blade A in hand, blade B name
 Also pre-logged for blade B: the ARA fourth-root mercy (W=0.1 still gives V_c ~ 100 for the MW —
 the suppression is large in g but gentle in V; the MW outer halo numbers may actually FAVOR ARA over
 constant-MOND's 180-flat: a future hunt of its own, "the missing MOND plateau of the Milky Way").
+
+## V22 — digging around: the band sextet (6/6) + the wall's ADDRESS (June 2026)
+**(1) Replication leg of #29 landed from the cache (probe band_trio)**: all 6 SPARC band-crossers show
+in-band points below their own sub-band points — median internal split -0.103 dex, sign test p=1/64,
+galaxy-level systematics cancel in the split, per-object EFE budgets (e_env 0.024-0.04 -> <=0.04 dex)
+cannot pay it. With Malin 1: SEVEN band-crossers carry the pattern. #29/#30 scope upgraded in place.
+**(2) STRUCTURAL DISCOVERY while pre-assessing the 'missing MW plateau' hunt**: the deep-averaging zone
+(T_int >> 2T) is BULK-GATED. ARA's per-tracer fixed point is ill-defined in the |sinc| oscillating tail
+(nodes), and V8.2's own three-component law says what physically happens: as the sinc kills MOND, the
+WEYL sector takes over — and its amplitude/profile is the closure-problem input (the 5:1, the cored
+f_W~0.7 of #22). So beyond T_int ~ 2T (MW halo 150-300 kpc, scissor blade B, diffuse groups) OBT has
+NO parameter-free prediction until V9.0 specifies the galactic Weyl floor. THE WALL HAS AN ADDRESS:
+it begins exactly where the internal period crosses ~2T = 4 Gyr. Every deep-radius terrain (dipole,
+growth sign, blade B, MW plateau, groups) is the SAME wall = the bulk's customs zone. The game's
+conquered domain is exactly T_int < 2T; the band [T/2,2T] is mapped and measured; beyond is V9.0 land.

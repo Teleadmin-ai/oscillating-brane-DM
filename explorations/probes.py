@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "band_trio": lambda opts=None: band_trio(opts),
     "scissor_lens": lambda opts=None: scissor_lens(opts),
     "band_separator": lambda opts=None: band_separator(opts),
     "malin1_ara": lambda opts=None: malin1_ara(opts),
@@ -5746,3 +5747,58 @@ def scissor_lens(opts):
     print(f"\n  WEIGHTED MEAN residual (g_bar<3e-12, r_eff~100-450 kpc, T_k>>2T): {m:+.3f} +- {em:.3f} dex")
     print("  [dynamics at the same T_kappa would be suppressed by -0.3 to -1+ dex under ARA;")
     print("   the SPARC band entry already measures -0.07 dex at T_k~2. Blade A = photons full.]")
+
+
+def band_trio(opts):
+    """Per-galaxy Malin-1-pattern check on the SPARC band-crossers (cache only):
+    radius-by-radius RAR residual vs T_kappa for the 6 deepest band galaxies.
+    Pattern predicted by ARA: residuals ~0 while T_kappa<1, sagging onto the
+    measured envelope (-0.05/-0.07 dex) as T_kappa crosses into the band.
+    Per-galaxy e_env printed (EFE budget check, card #30 separator logic)."""
+    import json
+
+    import numpy as np
+
+    a0 = 3703.7
+    EF = json.load(open("/DATA/obt_game_cache/raw/chae_efield.json"))
+    want = ["UGC09133", "NGC0289", "UGC00128", "UGC01230", "NGC3769", "NGC5055"]
+    gals = {w: [] for w in want}
+    for line in open("/DATA/obt_game_cache/raw/sparc_massmodels.mrt"):
+        p = line.split()
+        if len(p) < 8 or p[0] not in gals:
+            continue
+        try:
+            R, V, eV = float(p[2]), float(p[3]), float(p[4])
+            vg, vd, vb = float(p[5]), float(p[6]), float(p[7])
+        except ValueError:
+            continue
+        if R > 0 and V > 0:
+            gals[p[0]].append((R, V, eV, (vg * abs(vg) + 0.5 * vd**2 + 0.7 * vb**2) / R))
+    deltas = []
+    for g in want:
+        pts = sorted(gals[g])
+        if not pts:
+            print(f"  {g}: not in cache")
+            continue
+        e = EF.get(g, [None, None])[1]
+        sub, band = [], []
+        for R, V, eV, gb in pts:
+            if gb <= 0 or eV / V > 0.12:
+                continue
+            x = gb / a0
+            grar = a0 * np.sqrt((x * x + x * np.sqrt(x * x + 4)) / 2.0)
+            res = np.log10(V * V / R / grar)
+            tk = 2 * np.pi * R / V / np.sqrt(2.0) * 0.97779
+            (band if tk >= 1.0 else sub).append(res)
+        if sub and band:
+            d = np.median(band) - np.median(sub)
+            deltas.append(d)
+            print(f"  {g:10s}: e_env={e if e is not None else ' n/a'};  N(sub,band)=({len(sub):2d},{len(band):2d})"
+                  f"  med_sub={np.median(sub):+.3f}  med_band={np.median(band):+.3f}  DELTA={d:+.3f}")
+        else:
+            print(f"  {g:10s}: insufficient split (sub={len(sub)}, band={len(band)})")
+    deltas = np.array(deltas)
+    print(f"\n  PATTERN TEST: {np.sum(deltas<0)}/{len(deltas)} galaxies with band-points BELOW their own")
+    print(f"  sub-band points; median DELTA = {np.median(deltas):+.3f} dex (ARA envelope predicts ~-0.05/-0.07;")
+    print(f"  constant-a0 predicts 0; per-galaxy internal split kills galaxy-level systematics: M/L,")
+    print(f"  distance, mean inclination all CANCEL in the delta — only warps/flares survive).")
