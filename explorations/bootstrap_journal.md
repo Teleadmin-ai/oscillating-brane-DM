@@ -973,3 +973,30 @@ deep-averaging residual to be consistent with full MOND, excluding extinction" -
 LESSON (method): never promote a 4th-power-amplified, FAC/Mbar-dependent quantity, or a self-flagged confounded
 number (the SPARC band), to a hard "measured" value. Only sigma_obs and r are observations here; everything else
 is swept. The robust results survive any sweep; the retracted number did not.
+
+## ROOT OF THE ZERO (June 2026, Romain's demand to trace the '0') — it is a CALCULATION error (Jensen / a0^2-vs-signed-a0 inconsistency)
+Romain asked to re-read what led to the cluster ZERO and whether the 'why' is an erroneous calculation or
+observation. TRACED to theory.md line 871: it averages the SIGNED transverse acceleration <a0>=a0_max*sin(psi)*
+sinc(pi t_dyn/T) -> 0 at t_dyn=T (sinc(pi)=0). THAT is the zero.
+THE ERROR (a CALCULATION error, not observational): it is INTERNALLY INCONSISTENT with theory.md's OWN
+Gauss-Codazzi derivation. The boost is g_5D=sqrt(g^2+a0^2) (line 847) -> depends on a0^2 (a positive-definite
+MAGNITUDE); and deep-MOND g_obs=sqrt(g_bar*a0) REQUIRES a0>=0 (else imaginary). So a0 is a positive scale and
+the boost is a CONVEX function of a0. The tracer averages the FORCE (the boost), not a0. By Jensen
+<boost(a0)> != boost(<a0>); theory.md computed boost(<a0>)=boost(0)=0. The 'topological protection theorem'
+W_exact(1)=0 (lines 893-901, sin(n pi)=0) protects the WRONG quantity (the signed Fourier series); <a0^2>=
+a0_max^2/2 regardless of waveform.
+CORRECT AVERAGE (theory.md's OWN waveform a0_max*sin over t_dyn=T): <a0>signed=0.000 (the zero); <|a0|>=0.637;
+sqrt(<a0^2>)=0.707 a0_max. -> cluster boost survives at W ~ 0.64-0.71, NOT 0.
+CLOSES THE LOOP: corrected CALCULATION W~0.7 == M31 satellite OBSERVATION W~0.70. Calculation and observation
+AGREE on ~0.7 (mild suppression), both refuting the zero.
+SUPERSEDES the earlier 'zero-mean a0 is unphysical / DC floor' framing (that was a weaker partial version) and
+RESTORES the W~0.5-0.7 cluster suppression -- now with the CORRECT justification (Jensen/a0^2 averaging +
+confirmed by M31), NOT the loose 'DC floor' nor the confounded SPARC band.
+IMPACT ON AUDIT (2): UNCHANGED and now PRECISELY ROOTED. The sinc cluster EXTINCTION (W->0) is a Jensen
+calculation error; the real cluster suppression is mild (W~0.7); the Weyl (mass-driven, Gate 13) carries the
+cluster DM regardless (MOND fails clusters by factor 2-8 even at FULL boost, so even more at W~0.7). Recommended-
+reframing item (c) SHARPENED: theory.md should average a0^2 (consistent with its own Gauss-Codazzi quadrature),
+not the signed a0 -> the 'topological protection theorem' / '0% cluster survival' / 'MOND self-destructs' is a
+calculation artifact and should be replaced by a mild W~0.6-0.7 suppression (boost survives), with the Weyl as
+the mass-driven cluster DM. The galaxy results (W~0.98) and DF2/DF4 de-gating (adiabatic, W~1) are unaffected.
+NOT edited -- Romain's call on the sacred files.
