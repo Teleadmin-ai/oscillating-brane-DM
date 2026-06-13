@@ -947,3 +947,29 @@ driven, needed regardless of sinc (cite Gate 13), amount = closure IC; (c) fix t
 (956); (e) soften the scissor (954) to ~0.1-0.25 dex, note lensing +0.13 is mostly two-halo. Ripples: theory.md
 sinc/ARA/Bullet sections, discoveries.md cards #29/#30/#31 + section 3.28, CLAUDE.md sinc/ARA entries. NOT edited
 -- Romain's decision (sacred files).
+
+## CORRECTION (June 2026, Romain's triple-check demand) — RETRACT "boost saturates ~0.5-0.7"
+Romain asked to verify where "the boost saturates ~0.5-0.7" came from and not to assert theory-laden numbers
+as observational. Traced + triple-checked (FAC 0.5-0.63, Mbar +-30% sweep). FINDING: the "0.5-0.7" was
+OVER-STATED. It pooled (a) M31 satellites W~0.70 whose bootstrap range [0.38,1.19] INCLUDES full MOND (1.0),
+(b) the SPARC band W~0.56 which I had MYSELF flagged as SIZE-degenerate + V-circularity-contaminated (using it
+was inconsistent), amplified by (c) the 4th-power W=(sigma/(FAC Vplat))^4, and (d) the plane-biased MW (0.24).
+The satellite W is NOT a robust number: it ranges 0.12-1.77 across the FAC+Mbar sweep.
+WHAT IS OBSERVATION-ROBUST (pure sigma_obs + r, references swept):
+  - Newtonian collapse EXCLUDED: MW +3.6 sigma, M31 +4.9 sigma.
+  - sinc EXTINCTION (W~0.1) EXCLUDED by the clean host M31: +2.7 sigma.
+  - full MOND CONSISTENT: M31 obs/MOND = 0.95 (-0.4 sigma).
+CORRECTED STATEMENT (supersedes "saturates 0.5-0.7" and "a0_DC ~ 0.5-0.7" in the blade-B + AUDIT(2) entries
+above): the satellites EXCLUDE the sinc extinction (W->0) AND Newtonian collapse, and are CONSISTENT WITH FULL
+MOND; the suppression value is NOT measured (dominated by FAC/Mbar/N/plane systematics). A mild ARA suppression
+(W~0.5-0.9) remains POSSIBLE but is NOT established; equally, W~1 (no suppression for satellites) is fully
+consistent.
+IMPACT ON AUDIT (2): the CORE is UNCHANGED and STRENGTHENED -- theory.md claims EXTINCTION (W->0) for clusters,
+and extinction IS excluded by the satellites (M31 +2.7 sigma) -> the sinc is not the cluster mechanism; the
+cluster DM is the mass-driven Weyl (Gate 13), needed regardless (MOND fails clusters at full boost). Only the
+over-specific "saturation floor 0.5-0.7 / DC floor" is RETRACTED. The recommended-reframing item (c) is amended:
+the fix to the zero-mean a0(t) is "the orbital average does not reach 0 (a0>=0); the satellites bound the
+deep-averaging residual to be consistent with full MOND, excluding extinction" -- NOT "saturates at 0.5-0.7".
+LESSON (method): never promote a 4th-power-amplified, FAC/Mbar-dependent quantity, or a self-flagged confounded
+number (the SPARC band), to a hard "measured" value. Only sigma_obs and r are observations here; everything else
+is swept. The robust results survive any sweep; the retracted number did not.
