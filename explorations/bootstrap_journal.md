@@ -623,3 +623,27 @@ tracks well depth/size not t_dyn; one continuous law galaxies->clusters; super-l
 centrally concentrated tracing the total potential. All consistent with ONE nonlinear brane-deflection
 mechanism (Romain's picture); the mechanism's derivation + the depth/mass primary remain open, the
 latter now KNOWN to be scaling-degenerate. Scripts: gate17_radial.py. Quarantined.
+
+## V31 — GATE 18: weak lensing BREAKS the degeneracy — Weyl tracks baryonic MASS, not depth (June 2026)
+Romain's instinct (gas-rich vs gas-poor at fixed kT) executed CLEANLY via CCCP (Mahdavi 2013): M_WL
+(weak-lensing mass, hydrostatic-INDEPENDENT) + M_Gas + kT for 50 clusters (kT 3.1-12.1 keV). The
+hydrostatic circularity (Gate 17) is bypassed because M_WL does not use the gas.
+**RESULT — it is baryonic MASS, not well depth (kT)**:
+  TEST 1 (cleanest): at fixed kT, M_WL ~ M_Gas | kT = +0.68 (strong), M_WL ~ kT | M_Gas = -0.14 (null).
+    -> the TOTAL lensing mass follows the baryon content, NOT the depth.
+  TEST 2: M_Weyl,WL = M_WL - nu*M_bar (non-circular): M_Weyl ~ M_Gas|kT = +0.50, ~kT|M_Gas = -0.10,
+    exponent M_Weyl ~ M_Gas^1.57 (super-linear, matches Gate 16's M_bar^1.42).
+**IMPLICATION (refines/corrects the picture)**: the Weyl-DM PRIMARY variable is baryonic MASS (super-
+linear, ~M_bar^1.5), NOT potential-well depth. Gate 14's "well depth V_c" was a CIRCULAR proxy (V_c
+contains M_tot which contains M_Weyl); the clean lensing test shows depth (kT) drops out once mass is
+controlled. Selectivity galaxies/clusters comes from the SUPER-LINEARITY in M_bar (f_Weyl ~ M_bar^0.5:
+small galaxies little Weyl, big clusters lots), not from a depth threshold. Consistent with a nonlinear
+brane DEFLECTION sourced by mass-energy (Israel: the brane bends to S_munu ~ mass), the response
+super-linear -> Romain's one-brane-movement, with the source now pinned to baryonic MASS.
+**HONEST CAVEATS**: kT-M_Gas correlated (+0.82) so leverage is limited (partials handle it, +0.68 vs
+-0.14 is clear); kT is a NOISIER mass proxy than M_Gas, which contributes to the result (so read it as
+"depth alone does not set the total mass; baryon content does"); clusters only (3-12 keV, no groups/
+galaxies in this set); lensing masses noisy (~30%); M_star approximated as 0.15 M_Gas. NET (Gates
+13-18): not sinc(13); Gate14's well-depth was circular; the clean disentangler (18) says BARYONIC MASS,
+super-linear M_bar^1.5; one continuous law(15); centrally concentrated(17). One nonlinear brane
+deflection sourced by baryonic mass-energy. Data: cccp/table1,2.tex. Script: gate18_lensing.py. Quarantined.
