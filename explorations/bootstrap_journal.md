@@ -844,3 +844,34 @@ quantitatively to blade A lensing on matched hosts. If g_lens > g_dyn emerges at
 OBT-distinctive family and the most profound: the direct measure of the brane/bulk frontier. Whether this
 becomes an OBT-Game card (external debunk: "lensing and dynamics must agree" = the implicit MOND/LCDM premise)
 or a reviewer-side prediction is to be decided when we return. NOT launched now per Romain.
+
+## BLADE B — lensing-vs-dynamics SCISSOR, dynamics side: strong ciseau REFUTED, the boost does not extinguish (June 2026, reviewer mode, quarantined)
+Romain: "go la lame B". Executed on the only hosts with resolved satellite orbits at r>>crossover:
+MW + M31 (McConnachie 2012, galactocentric D(MW)/V(MW), D(M31)/V(M31)). Script: explorations/bladeB_satellites.py.
+SETUP: ciseau => light (lensing) keeps the full boost W=1; SLOW tracers (T_orb>T) average -> W=ARA|sinc|<1;
+the STRONG ciseau => distant-satellite dynamics COLLAPSE toward Newtonian while lensing stays full MOND.
+Crossover (T_kappa=T_orb/sqrt2=T) at ~81 kpc (MW), ~102 kpc (M31). sigma_los=FAC*Vcirc, FAC=1/sqrt3
+(isotropic gamma=3), VALIDATED on the MW inner (sigma=98 vs MOND 102, W_inner=0.88 ~ full boost as ARA predicts).
+RESULT (W_dyn = the a0-boost the slow tracers feel; lensing=1; deep-MOND ciseau = -0.25*log10(W_dyn)):
+ - MW  OUTER (N=12, <r>=152 kpc): W_dyn=0.24 [0.10,0.49]. Newton (W=0) excluded +3.5s; -2.2s below full MOND.
+ - M31 OUTER (N=16, <r>=182 kpc, the CLEANER host): W_dyn=0.70 [0.38,1.19] = consistent with FULL MOND (-0.7s);
+   Newton excluded +4.9s. (M31 inner W=0.12 is a corrupted N=5 bin w/ M32 stripped-cE -> ignored.)
+ - bare-sinc ARA predicts W~0.06-0.11 (extinction) at these radii -> DISFAVORED by both hosts.
+VERDICT: the STRONG ciseau (Newtonian collapse) is REFUTED (3.5-4.9 sigma). The MOND boost is RETAINED out to
+150-260 kpc. The MW's lower W~0.24 is most plausibly its co-rotating satellite plane (card #13: tangential beta
+lowers sigma_r), so M31 is the trustworthy host -> ~full MOND -> NO detectable ciseau. Combined robust bound
+W_dyn >~ 0.3 -> any ciseau <= ~0.13 dex. The blade-B "satellite ciseau" delivers NO new distinctive signal;
+it BOUNDS the ciseau to the band-scale.
+DEEPER FINDING: the boost does NOT sinc-extinguish at long period (W~0.3-0.7 at T_kappa~3-6 Gyr, NOT ~0). The
+bare sinc over-predicts the suppression by ~3-7x -> the suppression SATURATES (a0 has a substantial DC floor;
+orbital averaging only strips the small oscillating part).
+IMPLICATION (flagged for Romain, NOT acted on -- touches sacred theory.md): this is in TENSION with the
+ARA/theory.md statement "cluster bulk T_r 3-6 Gyr is sinc-EXTINCT" (the SAME period range where galaxy satellites
+show W~0.3-0.7, not 0), but is CONSISTENT with Gate 13 (the cluster Weyl-DM is MASS/well-depth driven, NOT
+sinc-driven; sinc inactive where Weyl dominates). Coherent picture: sinc = a MILD galaxy-band dip only
+(cards #29/#30, -0.068 dex); the cluster factor-2 is the Weyl (closure IC, Gates 13-24, mass-driven). The
+lensing-vs-dynamics ciseau is real but MODERATE (band-scale ~0.07 dex), not a strong collapse.
+CAVEATS: N~12-16/host, anisotropy systematic (MW plane), 2 hosts only, eccentric-orbit T_int approximate,
+high-velocity members (Leo I; And XII/XIV) only mildly inflate (2.5sig-clip changes nothing). NEXT sharper test
+(if wanted): SPARC circular-orbit dynamics RAR (ARA T_kappa applies cleanly) vs Brouwer lensing RAR at matched
+g_bar -> pin the band ciseau with high statistics.
