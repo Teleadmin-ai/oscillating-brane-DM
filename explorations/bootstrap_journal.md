@@ -695,3 +695,28 @@ WITHDRAWN/weakened = exponent ~1.5 and the quadratic-mechanism derivation (Gate 
 bulk-solve last step on a quadratic premise — the data only support weakly-super-linear mass-tracking,
 mechanism-form OPEN. Mistrust before the leap: justified, it saved a false foundation. Script:
 gate20_consolidate.py. Quarantined.
+
+## V34 — GATE 21: the FORM is a SATURATED TRANSITION (factor-2 plateau), not a power law (June 2026)
+Constraining the mechanism's form over the widest available lever (no new harvest needed): combined
+SPARC galaxies (f_Weyl~0 anchor) + Lagana groups + X-COP & CCCP clusters, same definition f_Weyl =
+1 - g_MOND/g_obs (full MOND, W=1) at the characteristic radius, M_bar spanning 7.7-14.5 dex (6.8 decades).
+**RESULT — saturated transition (sigmoid)**: f_Weyl ~ 0 for galaxies (logM_bar < 12, median ~0 across
+4 decades 8.5-12), rises through groups (12-13.4), PLATEAUS at ~0.45 for clusters (logM 13.4-14.8:
+0.458 then 0.441 — flat over 1.4 decades). So NOT a single power law and NOT quadratic (which would
+diverge): the Weyl SATURATES at f_Weyl~0.45, i.e. M_tot/M_MOND ~ 1.8 = the classic universal MOND
+cluster factor-~2 (Sanders), here reproduced and shown mass-INDEPENDENT in the cluster plateau.
+Transition center ~M_bar 5e12-1e13 (kT~2-3 keV, V_c~500-700). 
+**IMPLICATION for the mechanism**: Gate 20's q~1.2 was the LOCAL slope of the RISE, not a global law;
+the quadratic SMS reading (Gate 19) is further excluded by the PLATEAU (a rho^2 response would not
+saturate). The mechanism is a THRESHOLD-and-SATURATE: the brane nonlinear response turns on around
+M_bar~1e13 and saturates at the factor-2 level for all clusters. This is a genuine FORM constraint:
+the 5D bulk solve must reproduce (a) zero Weyl for galaxies, (b) a rise at group scales, (c) a
+mass-independent factor-2 plateau for clusters.
+**CAVEATS**: the transition zone (logM 12-13.4) is SPARSE (only ~13 systems: Lagana groups + a few) ->
+the RISE shape (sharp threshold vs gradual) is NOT yet pinned; mixed methods (RAR galaxies, hydrostatic
+groups, hydro+lensing clusters) carry cross-systematics that could shift levels; the galaxy bins are
+noisy (median ~0 with +-0.25 scatter). To pin the rise (and thus the mechanism's turn-on), still need
+more GROUPS at logM_bar 11.5-13.5 (Sun 2009 / Lovisari 2015, arXiv rate-limited this session).
+NET: the FORM is a saturated transition (0 -> rise -> factor-2 plateau), reproducing the universal MOND
+cluster factor-2; power-law and quadratic are excluded; the rise shape awaits more groups. Script:
+gate21_form.py. Quarantined.
