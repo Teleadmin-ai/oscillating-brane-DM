@@ -579,3 +579,22 @@ derived. **NET**: a single continuous f_Weyl(well depth) law galaxies->groups->c
 unified one-brane-movement picture; the cluster Weyl amplitude is a graded function of well depth (not a
 free per-cluster constant). Geometric, baryon-determined, zero particles. V9.0 target: derive the
 nonlinear brane-deflection mechanism. Data: lagana13.csv. Scripts: gate15_threshold.py. Quarantined.
+
+## V29 — GATE 16: the clean clue — Weyl ~ M_bar^1.42 (super-linear = nonlinearity) (June 2026)
+Accumulating clues on the brane-deflection mechanism, simplest first: the exponent + primary variable
+of the Weyl law. CIRCULARITY CAUGHT FIRST (the re-check reflex): V_c, |Phi|, M_tot are ALL derived from
+M_tot, which CONTAINS M_Weyl -> their high "tightness" (Spearman 0.94-0.98) is inflated/circular, DISCARDED.
+The only variables INDEPENDENT of M_Weyl are M_bar (observed gas+stars) and kT (X-ray, groups).
+**CLEAN CLUE (21 systems, M_bar independent)**: M_Weyl ~ M_bar^1.42 (scatter 0.81 dex, Spearman +0.86)
+-> Weyl/baryon ratio ~ M_bar^0.42 = SUPER-LINEAR: the deficit grows faster than baryons (groups f_Weyl
+0.15 -> clusters 0.29). Super-linearity (q>1) IS the signature of nonlinearity/selectivity: if the brane
+response were linear in mass (q=1) there'd be no selectivity (constant Weyl/baryon); q=1.42 means bigger/
+deeper systems get proportionally MORE Weyl -> consistent with Romain's linear(galaxies)->nonlinear
+(clusters) one-brane-movement picture, the exponent sitting between 1 (linear/baryons) and 2 (quadratic/
+deflection). DEPTH(kT) vs MASS(M_bar): NOT separable at N=9 groups (partial Spearman +0.07 vs +0.17, both
+weak, kT-M_bar correlated). HONEST: modest incremental clue; scatter 0.8 dex; circular V_c/|Phi| discarded;
+the depth-vs-mass primary-variable question needs a bigger clean sample (more groups with measured kT).
+NET accumulated so far (Gates 13-16): selectivity is NOT the sinc (13); tracks well depth/size not t_dyn
+(14); is ONE continuous law galaxies->groups->clusters (15); scales super-linearly M_bar^1.42 =
+nonlinear/selective (16). All consistent with one nonlinear brane-deflection mechanism; the mechanism
+itself + depth-vs-mass disentangling remain open. Scripts: gate16_exponent.py. Quarantined.
