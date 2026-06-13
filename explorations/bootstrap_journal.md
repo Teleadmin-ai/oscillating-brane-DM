@@ -720,3 +720,20 @@ more GROUPS at logM_bar 11.5-13.5 (Sun 2009 / Lovisari 2015, arXiv rate-limited 
 NET: the FORM is a saturated transition (0 -> rise -> factor-2 plateau), reproducing the universal MOND
 cluster factor-2; power-law and quadratic are excluded; the rise shape awaits more groups. Script:
 gate21_form.py. Quarantined.
+
+## V35 — GATE 22: rise densified (Sun09) — a MODERATELY SHARP transition at M_bar~4e12 (June 2026)
+Densified the transition zone with 23 Sun09 groups (ar5iv T12: T500/r500/M500/fgas500, units verified
+NGC1550 1keV/465kpc/3.18e13/0.097) -> 32 groups total in the rise (was ~9). f_Weyl(M_bar): ~0 for
+galaxies (logM<11.8, 3 flat decades), turns on at logM_bar~12.2 (0.09), rises through 12.6-13.0 (0.29),
+PLATEAUS ~0.45 for clusters (logM 13.4-14.6: 0.46/0.46/0.44). The transition is MODERATELY SHARP,
+centred at M_bar ~ 4e12 (kT~1.5 keV, V_c~450), going 0 -> factor-2 plateau over ~1-1.5 decade. NEITHER
+a discontinuous threshold (no 0->0.45 jump) NOR a soft power law (saturates; rise steeper than a power
+law) => a REGIME CHANGE of the brane response at a soft mass threshold ~4e12 Msun(bar).
+THE 5D BULK SOLVE MUST REPRODUCE (now three pinned features): (1) zero Weyl for galaxies (M_bar<~1e12);
+(2) a moderately sharp turn-on centred at M_bar~4e12 over ~1 decade; (3) a mass-independent factor-2
+(f_Weyl~0.45) cluster plateau. CAVEATS: M_star per-catalog inconsistency (Sun09 0.5*M_gas estimate,
+Lagana/X-COP real, CCCP 0.15*M_gas) shifts group placement ~0.1 dex; mixed mass methods (RAR/hydro/
+lensing); group scatter real (Spearman +0.43); Lovisari15 not added (ar5iv longtable not parseable;
+32 groups already define the rise). NET: the FORM is now well-constrained = saturated regime-change
+transition (galaxies 0 / turn-on ~4e12 / factor-2 plateau). Data: sun09 ar5iv T12. Script: gate22_rise.py.
+Quarantined. NEXT: this 3-feature form is the target spec for the 5D solve (the last step).
