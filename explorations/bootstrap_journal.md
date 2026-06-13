@@ -875,3 +875,33 @@ CAVEATS: N~12-16/host, anisotropy systematic (MW plane), 2 hosts only, eccentric
 high-velocity members (Leo I; And XII/XIV) only mildly inflate (2.5sig-clip changes nothing). NEXT sharper test
 (if wanted): SPARC circular-orbit dynamics RAR (ARA T_kappa applies cleanly) vs Brouwer lensing RAR at matched
 g_bar -> pin the band ciseau with high statistics.
+
+## BLADE B (1) — the sharp lensing-vs-dynamics RAR at matched g_bar: moderate ciseau, but CONFOUNDED (June 2026, reviewer, quarantined)
+Romain: "le 1" (the sharper high-stat test). Script: explorations/bladeB_rar.py. Lensing = Brouwer 2021 KiDS-isolated
+RAR (g_obs=4G ESD/bias, card#5 conversion); dynamics = SPARC (V^2/R), both residuals vs the exact OBT RAR, matched
+in g_bar (overlap 7e-13..4e-12 m/s^2), SPARC split by T_kappa.
+NUMBERS (zero-point-free WITHIN-SPARC): fast tracers (T_k<1, adiabatic) resid +0.032 (W~1.16, full boost);
+slow tracers (T_k>=1) resid -0.096 (W~0.64) -> band-minus-fast deficit = -0.127 +- 0.020 dex (6.4 sigma).
+Lensing over the same overlap: +0.044 +- 0.021 (>=0 = full boost; +2-halo UPPER bound) -> light sits ABOVE the
+slow-matter band by ~0.12 dex. Implied W_slow ~ 0.6, CONSISTENT with the satellites (W~0.3-0.7).
+THE KILL TESTS (why it is NOT a clean ARA confirmation):
+ (i) the deficit lives ENTIRELY at T_kappa in [1,2] (SPARC has ~1 point at T_k>2 in the overlap) -- that is the
+     ARA "resonance-band" AMBIGUOUS zone; the ARA CENTRAL prescription says F=1 (no deficit) below T_k=T=2.
+ (ii) SIZE DEGENERACY: at fixed g_bar, T_kappa proxies galaxy size (Spearman(T_k,R)=+0.92). The resid-vs-T_k
+     partial is CIRCULARITY-contaminated (residual ~ V^2 and T_k ~ 1/V are anti-correlated by construction),
+     so it CANNOT separate "slow orbits feel less boost" (ARA) from "large galaxies sag on the RAR" (a size/SB
+     systematic = the known low-acceleration RAR behavior).
+ (iii) the lensing cross-check (light full-boost > slow-matter band) WOULD favor the ciseau, but is 2-halo-
+     inflated (card#5: ~half the low-g excess) and cross-sample M/L-zero-point uncontrolled (Brouwer isolated
+     has no high-g anchor, g_bar max 3.9e-12) and not size-matched.
+COMBINED BLADE-B VERDICT (satellites + RAR): the STRONG ciseau (Newtonian collapse) is REFUTED (satellites,
+3.5-4.9 sigma). A MODERATE ciseau-like pattern IS present (slow/large tracers W~0.6, light/fast W~1, ~0.10-0.13
+dex), consistent across SPARC band + satellites + lensing -- BUT its ARA interpretation is CONFOUNDED (size
+degeneracy + ARA-ambiguous T_k zone + lensing confounds). So blade B BOUNDS the ciseau (moderate, <=0.13 dex,
+no collapse) and does NOT deliver a clean, distinctive 5th OBT pillar. The clean ARA regime (T_k>2) is reached
+only by satellites (no collapse) and the rare band-crossers (Malin 1, card #29).
+FLAG FOR THE (2) AUDIT (Romain: "le 2 sera aussi a faire par principe"): cards #29/#30/#31 attribute the SPARC
+[1,2] band deficit to the ARA, but (a) that zone is ARA-CENTRAL-ambiguous (F=1) and only the conservative
+band-flag allows suppression, and (b) the deficit is degenerate with galaxy size. The ARA band-deficit
+attribution is on shakier ground than the cards state -- to be audited together with the theory.md
+"cluster bulk sinc-extinct" tension (the boost saturates ~0.5-0.6, does not extinguish; Gate 13 mass-driven Weyl).
