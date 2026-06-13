@@ -517,3 +517,22 @@ abundance) had a x13 bug that, fixed, beautifies the picture (phi_0 = M_s). The 
 scale identity remains real (dimensional). The #24 reflex — re-checking even our own audit — paid off
 in BOTH directions: confirmed the audit, caught a separate bug. Scripts: gate12_minicluster.py (first
 pass) + gate12_recheck.py (the validated re-verification).
+
+## V26 — GATE 13: the cluster Weyl-DM is NOT sinc-sourced — the closure wall, confirmed empirically (June 2026)
+Attacked the V9.0 frontier (the non-linear cluster-selective Weyl-DM response). Hypothesis (from Gate 11):
+"the cluster Weyl-DM is sourced where the MOND boost dies (sinc extinction)" -> its radial profile should
+track (1-W(r)). Tested on the 12 X-COP clusters (hydrostatic M(r) + gas + REAL stellar mass), zero
+per-object params: f_Weyl(r) = [g_obs - g_N - Dg_MOND*W]/g_obs vs (1-W(r)).
+**RESULT — REFUTED (a clean negative)**: global Spearman(1-W, f_Weyl) = -0.63; f_Weyl is HIGH at the
+CORE, not the edge. Verified with the real BCG stellar mass (not a proxy): M_tot/M_bar = 5-8 at r~40 kpc,
+where g_N/a0 = 360-1090 (deep Newtonian -> MOND boost mu->1 is ZERO) AND W~0.99 (sinc inactive). The
+Weyl-DM dominates exactly where NEITHER the sinc NOR MOND act. So the sinc is NOT the cluster-selectivity
+mechanism; it remains valid only for tracer dynamics / the cluster periphery (ARA, cards #29-31).
+**THE WALL, reached from the cluster face**: the AMPLITUDE/selectivity of E_00 (cluster ~0.85, galaxy ~0)
+is the irreducible closure input (Koyama-Maartens) — now CONFIRMED empirically on 12 clusters. The classic
+MOND "cluster problem" (residual factor 2-8 even at g>>a0) IS that input. What stays derivable: the FORM
+(self-similar cored, card #22, chi2/N=1.04) via bulk regularity. Form constrained, amplitude IC — EXACTLY
+parallel to cosmological gates 0-9. The non-linear solve does NOT crack the selectivity; the bulk keeps
+the dark-matter amplitude as its own datum. Gate 11's "RESPONSE sourced where the boost dies" framing is
+CORRECTED: the periphery is sinc-shaped, but the core/amplitude is pure closure input. Script:
+gate13_weyl_response.py. Quarantined; sacred files untouched.
