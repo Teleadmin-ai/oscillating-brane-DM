@@ -775,3 +775,30 @@ closure/IC datum, not derivable on the brane alone. The 5D solve's job is to tes
 regularity condition PROMOTES the amplitude from IC to derived -- the single open question. Further
 data-side consolidation would need a homogeneous lensing+gas+stars groups->clusters sample (not in
 hand). READY for the 5D solve attempt. Quarantined.
+
+## V38 — GATE 24: THE 5D SOLVE (the last step) — closure CONFIRMED, amplitude is the bulk's datum (June 2026)
+Romain: go, multiple passes, self-check + re-verify after each. Done (4 passes, gate24_solve5d.py).
+PASS 1: static master equation psi''=(k^2-1/4z^2)psi, solution sqrt(z)[A I0+B K0], ODE verified to 1e-5;
+  two modes: K0 regular/normalizable (RS2), I0 irregular (= the free Weyl charge).
+PASS 2: REGULAR RS2 mode (K0) + Israel source -> Garriga-Tanaka Yukawa f_Weyl=2L^2/3r^2 ~ 1e-56..1e-59
+  at cluster radii (cross-check (kL)^2=4.2e-59). The baryonic mass does NOT source cluster dark matter
+  on the brane via the normalizable mode. SOLID (established RS2 result).
+PASS 3: the FREE mode (I0 / Weyl charge / dark radiation) carries the factor-2. Poisson projection
+  (EXACT: E_00 = k^2 Phi_Weyl) + self-similar clusters -> f_Weyl ~ A/R^2 ~ A*M^(-2/3) at fixed A.
+  OBSERVED f_Weyl ~ 0.45 MASS-INDEPENDENT -> requires the Weyl charge to scale A ~ M^(2/3). The brane
+  eqs + regularity do NOT fix A (closure: A = bulk integration constant) -> neither the amplitude (0.46)
+  NOR its mass-scaling (mass-independence) is derived; only the radial mode STRUCTURE is fixed.
+PASS 4 / VERDICT: the regularity condition does NOT promote the amplitude. The cluster Weyl-DM IS the
+  free bulk Weyl mode (geometry, not particles); its amplitude, mass-scaling (-> mass-independence),
+  and turn-on are all closure/IC. CLOSURE CONFIRMED from the static-cluster face, consistent with the
+  cosmological Gates 0-9 and the sacred-file framing (geometric DM at LCDM's Omega_c epistemic level).
+SELF-AUDIT + RE-VERIFY: PASS1/2 solid; PASS3's f_Weyl~k^2 is exact (Poisson Laplacian), conclusion
+  robust; numbers re-checked consistent. HONEST CAVEAT: this is an ANALYTIC/MODE solve (regular vs free
+  mode + Poisson projection), NOT a full numerical 5D solve of a realistic extended cluster; but the
+  closure result is a THEOREM (Koyama-Maartens) the mode solve confirms -- a numerical solve would not
+  overturn 'amplitude = bulk integration constant'. The 'derived profile' is qualitative (mode structure).
+**END OF THE GATE PROGRAM 0-24 on the Weyl-DM**: the brane DERIVES THE FORM (a0=cH/2pi, mu(x), the sinc
+filter, mass-tracking not depth, the saturated transition, the radial mode structure); the BULK HOLDS
+THE AMOUNT (the factor-2, the 5:1, the abundance) as its closure/IC datum. OBT reinterprets dark matter
+as geometry and derives its laws; it does not derive its amount. Spirit (laws) is derived; body (amount)
+is the bulk's own. The frontier is now completely mapped from every face. Quarantined; V8.2 unchanged.
