@@ -598,3 +598,28 @@ NET accumulated so far (Gates 13-16): selectivity is NOT the sinc (13); tracks w
 (14); is ONE continuous law galaxies->groups->clusters (15); scales super-linearly M_bar^1.42 =
 nonlinear/selective (16). All consistent with one nonlinear brane-deflection mechanism; the mechanism
 itself + depth-vs-mass disentangling remain open. Scripts: gate16_exponent.py. Quarantined.
+
+## V30 — GATE 17: depth-vs-mass is DEGENERATE; the Weyl is centrally concentrated (June 2026)
+Romain asked for more groups to disentangle depth(kT/|Phi|) vs mass(M_bar). FIRST FINDING (decisive,
+no harvest needed): whole-system points CANNOT disentangle them — kT and M_bar lie on a TIGHT 1D
+scaling sequence (Spearman 0.93, M_bar~kT^1.26, scatter only 0.10 dex). Depth and baryonic mass are
+degenerate on it; more groups just add points to the same line. This is physics (virial scaling
+relations), not a statistics shortfall.
+SECOND: the only shape-different disentangler is the RADIAL profile within clusters (rho_bar steep vs
+|Phi| flat). Gate 17 (X-COP, 12 clusters, full-MOND M_Weyl, local densities via dM/dr): rho_Weyl/rho_bar
+= 11.7 (inner third) -> 2.5 (outer), log-slope gamma_Weyl=-2.89 vs gamma_bar=-1.72. So the Weyl density
+is MORE concentrated/steeper than the gas -> it does NOT track the local baryon density; it tracks the
+total dynamical mass / potential (centrally peaked, BCG+cusp). BUT this is near-tautological (M_Weyl is
+the majority of M_tot at the core, factor 5-8, so rho_Weyl ~ rho_tot by construction) AND contaminated
+by gas thermodynamics (cool cores / feedback shape rho_bar independently). So the radial test is NOT a
+clean depth-vs-mass disentangler either.
+NET (the honest limit): depth and baryonic mass are INTRINSICALLY degenerate in equilibrium clusters
+(1D for whole systems; Weyl~rho_tot + gas-contaminated radially). "More groups" does not break it. Weak
+indication: the Weyl is centrally concentrated and traces the total potential/dynamical mass (halo-like),
+consistent with a deflection sourced by the well. DEFINITIVE disentangling is theory-gated OR needs data
+that breaks the scaling relation: (a) gas-rich vs gas-poor systems at FIXED kT (same depth, different
+M_bar), or (b) weak-lensing masses (hydrostatic-independent). Accumulated picture Gates 13-17: not sinc;
+tracks well depth/size not t_dyn; one continuous law galaxies->clusters; super-linear M_bar^1.42;
+centrally concentrated tracing the total potential. All consistent with ONE nonlinear brane-deflection
+mechanism (Romain's picture); the mechanism's derivation + the depth/mass primary remain open, the
+latter now KNOWN to be scaling-degenerate. Scripts: gate17_radial.py. Quarantined.
