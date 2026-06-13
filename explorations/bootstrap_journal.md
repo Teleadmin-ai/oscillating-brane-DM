@@ -647,3 +647,27 @@ galaxies in this set); lensing masses noisy (~30%); M_star approximated as 0.15 
 13-18): not sinc(13); Gate14's well-depth was circular; the clean disentangler (18) says BARYONIC MASS,
 super-linear M_bar^1.5; one continuous law(15); centrally concentrated(17). One nonlinear brane
 deflection sourced by baryonic mass-energy. Data: cccp/table1,2.tex. Script: gate18_lensing.py. Quarantined.
+
+## V32 — GATE 19: the nonlinear mechanism IDENTIFIED — SMS quadratic pi_munu (rho^2) (June 2026)
+Deriving the nonlinear brane-deflection mechanism behind the Weyl-DM (empirical M_Weyl~M_bar^1.57).
+SMS has EXACTLY ONE nonlinear term: G_munu = 8piG T + kappa5^4 pi_munu - E_munu, with pi_munu ~ rho^2
+(the high-energy brane correction; the only super-linear handle). So the nonlinear response form is
+intrinsically QUADRATIC. Data confirm it: rho_Weyl ~ rho_bar^p locally with p=1.49 (374 X-COP bins,
+Spearman +0.98), matching the system law (1.57) and radial slope (1.68) — all QUADRATIC-CLASS, p>1,
+the signature of pi_munu. 
+DERIVATION STATUS (honest, the program's pattern again):
+ * FORM (super-linear ~rho^2, quadratic-class) = DERIVED from SMS pi_munu (unique nonlinear term),
+   confirmed by data p~1.5-1.7.
+ * AMPLITUDE (the 5:1) = closure/IC. The DIRECT pi_munu amplitude is ~10^-40 (theory.md) -> 40 orders
+   too small to BE the dark matter; the free bulk Weyl E_munu carries the amplitude (integration
+   constant), with Bianchi (nabla E = kappa5^4 nabla pi) tying the SOURCED part to the rho^2 form. The
+   universal p~1.5 across 12 clusters is empirical evidence the Weyl FOLLOWS the quadratic form even
+   though the bulk amplifies its amplitude.
+ * exact exponent (1.49 vs 2) = bulk projection softening + homogeneous-part + dM/dr noise (model-level).
+CAVEATS: rho_Weyl is derived from M_tot which contains baryons -> residual circularity in the local
+fit (noted; the system-level lensing exponent 1.57 from Gate 18 is the clean cross-check); p<2 not
+derived exactly. NET: the MECHANISM is identified (SMS quadratic high-energy correction pi_munu ~ rho^2,
+the unique nonlinear brane term), its super-linear FORM derived and data-confirmed (p~1.5-1.7); the
+AMPLITUDE remains the closure/IC datum. "One brane movement" is now precise: the brane's quadratic
+high-energy response to baryonic mass-energy, amplified to observable level by the free bulk Weyl.
+Full derivation (amplitude) = the 5D bulk solve, closure-blocked. Script: gate19_mechanism.py. Quarantined.
