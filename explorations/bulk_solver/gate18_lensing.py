@@ -63,7 +63,8 @@ print("     if reversed: total mass follows DEPTH (kT)")
 print("\nTEST 2: the Weyl residual M_Weyl,WL = M_WL - MOND(baryons), non-circular:")
 print(f"  M_Weyl ~ M_Gas | kT = {partial(Mg, Mweyl, T):+.2f}")
 print(f"  M_Weyl ~ kT   | M_Gas = {partial(T, Mweyl, Mg):+.2f}")
-q1,_=np.polyfit(np.log10(Mg),np.log10(np.clip(Mweyl,1e11,None)),1)
+# [BUG, Gate 20]: the clip(...,1e11) below INFLATES the exponent to 1.57 (artifact); clean value ~1.2 (no clip). Kept only as the documented bug.
+    q1,_=np.polyfit(np.log10(Mg),np.log10(np.clip(Mweyl,1e11,None)),1)
 print(f"  exponent M_Weyl ~ M_Gas^{q1:.2f}")
 
 print("\nTEST 3 (direct gas-rich vs gas-poor): split by f_gas residual at fixed kT.")

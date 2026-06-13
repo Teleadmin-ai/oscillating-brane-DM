@@ -756,3 +756,22 @@ NET: consolidation STRENGTHENED the mass-independence (2 independent methods) an
 mass-independence. The spec is now as tight as the data allow. Remaining caveats (mixed methods, M_star,
 hydro bias not isolated) are the floor; further consolidation would need a single homogeneous
 lensing+gas+stars sample over groups->clusters (not in hand). Script: gate23_stress.py. Quarantined.
+
+## V37 — CONSOLIDATION CLOSED: final script audit clean; the 5D-solve spec is locked (June 2026)
+Last consolidation pass (no new data possible): audited ALL gate13-23 scripts for hidden bugs (the #24
+reflex applied systematically). FINDINGS: (a) a0 convention is CLEAN everywhere (3.702e6/Mpc, 3702/kpc)
+-- the x1000 bug was fully fixed; (b) the only consequential clip bug is Gate 18's clip(Mweyl,1e11)
+(caught by Gate 20, now marked in-place); (c) other clips are inoffensive (Gate 13's +-0.2/1.2 only
+bounds Spearman ranks; Gate 21's 0.03 floor acts below an already-excluded threshold; Gate 16's 1e9
+floor is below all real masses). No further systematic bug. 
+**CONSOLIDATION IS EXHAUSTED** with the data in hand. The locked, stress-tested 5D-SOLVE TARGET SPEC:
+  F1. zero Weyl for galaxies (M_bar < ~1e12) -- MOND-complete suffices, robust.
+  F2. a moderately sharp turn-on at kT ~ 1.5-1.7 keV (M_tot ~ 5-8e13), M_star-robust, over ~1 decade.
+  F3. a MASS-INDEPENDENT f_Weyl(r500) ~ 0.46 (lensing/true mass; factor ~1.85), rising inward
+      (centrally concentrated), confirmed mass-independent by TWO independent methods.
+And the established epistemic frame (Gates 0-23): the brane DERIVES the FORM (mass-tracking not depth,
+saturated transition, mass-independent plateau); the AMPLITUDE (the factor ~2 / the 5:1) is the
+closure/IC datum, not derivable on the brane alone. The 5D solve's job is to test whether a bulk
+regularity condition PROMOTES the amplitude from IC to derived -- the single open question. Further
+data-side consolidation would need a homogeneous lensing+gas+stars groups->clusters sample (not in
+hand). READY for the 5D solve attempt. Quarantined.
