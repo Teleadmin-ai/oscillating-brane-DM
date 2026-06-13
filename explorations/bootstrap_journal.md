@@ -737,3 +737,22 @@ lensing); group scatter real (Spearman +0.43); Lovisari15 not added (ar5iv longt
 32 groups already define the rise). NET: the FORM is now well-constrained = saturated regime-change
 transition (galaxies 0 / turn-on ~4e12 / factor-2 plateau). Data: sun09 ar5iv T12. Script: gate22_rise.py.
 Quarantined. NEXT: this 3-feature form is the target spec for the 5D solve (the last step).
+
+## V36 — GATE 23: final consolidation — features refined, mass-independence confirmed by 2 methods (June 2026)
+Stress-tested the 3 pinned features before the 5D solve. F1 (zero Weyl for galaxies): robust.
+F2 (turn-on): M_bar turn-on shifts ~0.5 dex with M_star (Sun09 logM_bar 12.6->13.1 gas-only->+gas), but
+is STABLE in M_tot/kT (logM_tot~13.7-13.9, kT~1.5-1.7 keV) -> specify the threshold in OBSERVABLES
+(kT~1.5-1.7 keV / M_tot~5-8e13), not M_bar. F3 (factor-2 plateau): NUANCED but its core HOLDS:
+ - MASS-INDEPENDENT confirmed by BOTH methods (slope -0.07/dex flat, N=61) -- the key claim.
+ - METHOD-dependent VALUE: X-COP hydro 0.29 vs CCCP lensing 0.46; the clean true-mass value is the
+   LENSING 0.46 (factor ~1.85); hydro lower = standard hydrostatic-bias direction (clean numerical
+   demo not done -- rayon/M_star also differ between the two sets, honest caveat).
+ - RADIUS-dependent: f_Weyl rises inward (X-COP 0.59 at 0.4 r_last -> 0.29 at r_last) -> the plateau is
+   an r500 value, not radius-universal; the Weyl is centrally concentrated (consistent Gates 13/17).
+REFINED 5D-SOLVE TARGET SPEC: (1) zero Weyl for galaxies; (2) turn-on at kT~1.5-1.7 keV (M_tot~5-8e13),
+M_star-robust; (3) mass-independent f_Weyl(r500)~0.46 (true/lensing mass), rising inward.
+NET: consolidation STRENGTHENED the mass-independence (2 independent methods) and the threshold
+(kT-robust), and correctly DOWNGRADED 'universal 0.45' to a method/radius-dependent value with robust
+mass-independence. The spec is now as tight as the data allow. Remaining caveats (mixed methods, M_star,
+hydro bias not isolated) are the floor; further consolidation would need a single homogeneous
+lensing+gas+stars sample over groups->clusters (not in hand). Script: gate23_stress.py. Quarantined.
