@@ -802,3 +802,45 @@ filter, mass-tracking not depth, the saturated transition, the radial mode struc
 THE AMOUNT (the factor-2, the 5:1, the abundance) as its closure/IC datum. OBT reinterprets dark matter
 as geometry and derives its laws; it does not derive its amount. Spirit (laws) is derived; body (amount)
 is the bulk's own. The frontier is now completely mapped from every face. Quarantined; V8.2 unchanged.
+
+## EXPLOITATION DU CISEAU LUMIÈRE-MATIÈRE — how to read the brane/bulk frontier (June 2026, Romain: "B, note these reflections, on y revient ensuite")
+CONTEXT: Gate program 0-24 closed (brane derives the FORM, bulk holds the AMOUNT as its closure/IC datum).
+Romain's intuition: light escapes the brane's TIME (zero proper time; under ARA the photon channel has W=1, it
+does NOT average the 2 Gyr oscillation, unlike slowly-orbiting matter which has W<1 beyond the resonance band).
+The lensing-vs-dynamics SCISSOR is the observable of the time(brane)/timeless(bulk) frontier. Question Romain
+asked: how to exploit this CONCRETELY.
+
+THE PRINCIPLE: the scissor (light un-averaged vs matter time-averaged) IS the instrument. Their DIFFERENCE is
+the signal -- the only observable separating the time-regime (matter, which lives the oscillation) from the
+timeless-regime (light, the channel closest to the timeless bulk).
+
+EXPLOITATION A -- THE DISTINCTIVE TEST (concrete, doable now). On the same host, at radii where T_orb > T=2 Gyr
+(~50-300 kpc): g_lens (light, full boost = blade A, ALREADY measured: Brouwer/KiDS +0.13 dex) vs g_dyn
+(satellites/halo stars, time-averaged boost). OBT predicts g_lens > g_dyn. NEITHER MOND-constant (both full)
+NOR LCDM (both follow the halo) gives this gap -> the signature no continuum can mimic. THE MISSING MEASUREMENT
+= BLADE B: satellite-kinematics stacks (SDSS/DESI) around isolated hosts vs lensing stacks (KiDS) on matched
+hosts. <<< ROMAIN CHOSE THIS ("B"), the next hunt, to RETURN TO LATER (not launched now).
+
+EXPLOITATION B -- THE LENSING "WEYL-METER". The bulk holds the amplitude (factor-2, 5:1) as its IC datum
+(Gate 24). Lensing, not averaging, measures the FULL Weyl -> lensing IS the direct readout of the bulk's
+closure datum (the amount the brane cannot derive). Already done unnamed (Gate 18, CCCP).
+
+EXPLOITATION C -- THE BRANE "PHASE-METER" (cosmic clock). Lens sees instantaneous, dynamics sees
+retarded/averaged -> the scissor RATIO encodes the oscillation phase phi(t). Mapping scissor vs redshift
+(Euclid lensing + DESI dynamics) = an independent dating of the brane. Harder (needs varied z), concrete in
+principle.
+
+UNIFIED VISION -- BULK TOMOGRAPHY BY PHOTONS. Photons are the timeless readout channel. OBT ALREADY has three
+photon-observables, each reading a facet of the bulk: birefringence (beta=0.34 deg, Chern-Simons 5D -> v_bulk
+drift/MOTION, card #23), the lensing scissor (Weyl AMPLITUDE), dark flow (brane INERTIA, card #23). Combining
+them = a tomography of the bulk (its drift AND its Weyl) from the channels that escape the brane's time.
+
+BORDERS (honest, not to overclaim): NOT "see the future" -- light escapes the AVERAGING, not time itself; NOT a
+tabletop gadget -- gravitational, macroscopic, the "Weyl-meter" is a telescope. The only LOCAL avenue OBT offers
+(5D Geometric Bypass + Penrose-Diosi collapse at 0.2 um, laboratory.md) is a SEPARATE story at scale L.
+
+NEXT STEP WHEN WE RETURN = BLADE B: harvest satellite-kinematics stacks (SDSS/DESI) at 50-300 kpc, confront
+quantitatively to blade A lensing on matched hosts. If g_lens > g_dyn emerges at large radii -> the 5th
+OBT-distinctive family and the most profound: the direct measure of the brane/bulk frontier. Whether this
+becomes an OBT-Game card (external debunk: "lensing and dynamics must agree" = the implicit MOND/LCDM premise)
+or a reviewer-side prediction is to be decided when we return. NOT launched now per Romain.
