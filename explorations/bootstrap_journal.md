@@ -494,3 +494,26 @@ inflationary spike), the log-normal EMF = the minicluster mass function (computa
 known mechanism -> the cluster-scale Weyl-DM must be scale-selected by its RESPONSE/FORMATION physics
 (sourced where the boost dies — the sinc anatomy), not by its nature. THE V9.0 OBJECT IS A RESPONSE,
 NOT A GAS. Script: gate10_weyl_cft.py + gate11_selectivity.py. Quarantined.
+
+## V25 — GATE 12 RE-VERIFIED (Romain: "tu pourrais t'etre trompe") — audit holds, Gate 10 bug found (June 2026)
+Romain pushed me to recompute and re-check. Done by THREE independent methods + the decisive test
+my first Gate-12 pass had skipped: CALIBRATION on the QCD axion (known M_mc).
+**RESULT 1 — Gate 12 (the audit) CONFIRMED**: the formula M_mc=(4pi/3) rho_comp,0/k_osc^3 reproduces
+the QCD-axion minicluster mass at 4e-12..4e-11 Msun (T_osc~1-2 GeV) = squarely in the literature band
+(Kolb-Tkachev 1994, Eggemeier 2020, 1e-14..1e-10). So the formula is trustworthy. Applied to the
+radion (m=0.36 eV, onset H=m at T_osc~16 TeV): M_mc = 5e-25 Msun (~1e5 kg), ~15 orders BELOW the EMF
+window. Gate 11's "PBH genesis / EMF ceiling derived" stays RETRACTED — the error was confusing the
+TOTAL horizon mass (Mpl^2/m) with the DM-grain mass (= horizon x rho_phi/rho_tot ~ 1e-17). Physical
+reason: the radion oscillates EARLY (m fixed, large) -> tiny horizon -> tiny grain; the QCD axion
+oscillates LATE (1 GeV, thermal mass) -> big grain. Double-constraint (right abundance AND grain in
+EMF) is unsatisfiable within OBT's derived m -> condensate and PBH pegs are SEPARATE sectors.
+**RESULT 2 — a real BUG found, but in GATE 10 not Gate 12**: the relic-abundance normalization used
+S0_RHOC = 3.6e9 GeV^-1; the correct s0/(rhoc/h^2) = 2891.2/1.0537e-5 = 2.74e8 GeV^-1 -> Gate 10 was
+x13.1 too big. Corrected, the radion condensate carries the FULL dark matter at phi_0 = M_s EXACTLY
+(the derived LVS string scale, the most natural O(1) displacement) — cleaner than Gate 10's 0.26 M_s.
+(All-DM still killed by Gate 11's galactic halo test -> the condensate is sub-dominant.)
+**NET**: main conclusion (Gate 12) survives the killer test (QCD axion); an auxiliary number (Gate 10
+abundance) had a x13 bug that, fixed, beautifies the picture (phi_0 = M_s). The M_Kaup~M_crit~Mpl^2/m
+scale identity remains real (dimensional). The #24 reflex — re-checking even our own audit — paid off
+in BOTH directions: confirmed the audit, caught a separate bug. Scripts: gate12_minicluster.py (first
+pass) + gate12_recheck.py (the validated re-verification).
