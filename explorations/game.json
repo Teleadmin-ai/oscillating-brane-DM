@@ -1475,6 +1475,51 @@
           }
         ],
         "judgement": "Three systems, axes mutually uncorrelated (-0.087) so the partials are clean; the strongest leg (p=0.0015 over 124 galaxies) is better-powered than card #16's own 2-sigma echo; the claim is calibrated (attribution INCOMPLETE, not EFE refuted — #16 stands, Chae's full-RC hierarchical signal is a different, finer measurement). This also discharges card #29's named caveat."
+      },
+      {
+        "id": "35525eeb",
+        "name": "the TDG equilibrium test (Lelli+15 'challenging test for MOND')",
+        "external_theory": "TDGs as a decisive MOND-family test: six bona-fide TDGs under-rotate vs MOND+EFE by 27-86% (their own V_EFE table; joint 3.6 sigma assuming equilibrium) -> 'challenging test for alternative theories'",
+        "patch": "the test's own kinematic table voids its premise: t_merg/t_orb = 0.2-0.8 for ALL SIX — no object has completed one orbit since formation; equilibrium inference inapplicable (their verbatim: 'it remains unclear whether this would still hold in MOND'); the under-rotation direction is the partial-circularization signature; and 5/6 are ARA band objects (T_k=0.49-2.12) whose equilibrium prediction is itself reduced (joint 3.6->3.1 sigma after the pre-measured envelope)",
+        "systems_validated": [
+          "NGC 5291 trio (N/S/SW: orbits done 0.5/0.2/0.3; deficits 1.27/1.40/1.54)",
+          "NGC 7252 pair (E/NW: orbits done 0.3/0.2; deficits 1.56/1.86 — the worst object is the least-orbited AND deepest-band T_k=2.12)",
+          "VCC 2062 (third independent host NGC 4694: orbits done 0.4-0.8, deficit 1.56; the most-orbited objects N5291N/VCC2062 are among the LEAST discrepant)"
+        ],
+        "why_status": "found",
+        "why": "THE WHY = the test assumed what its own table refutes: equilibrium. Every one of the six TDGs has completed 0.2-0.8 ORBITS since formation (t_merg/t_orb, Lelli+15 Table their own column) — a disc that has executed a fifth of a turn is not an equilibrium rotator, and gas placed on new orbits under-rotates until it circularizes (~1 orbit-time): the observed 27-86% under-rotation has exactly the direction and the magnitude ordering of partial circularization, and the authors concede the decisive sims do not exist ('it remains unclear whether this would still hold in MOND', verbatim). SECOND LAYER (OBT-distinctive bonus): their tiny rotation velocities make 5/6 TDGs ARA BAND OBJECTS (T_kappa = 0.49-2.12 Gyr) — even at equilibrium the boost law predicts LESS than constant-MOND there (the pre-measured SPARC envelope shaves the joint discrepancy 3.6 -> 3.1 sigma with zero per-object freedom), and the worst object (N7252NW) is simultaneously the least-orbited AND the deepest in the band — the two suppressions stack on the same object. The deficit~t_orb organization (+0.60, p=0.21 at n=6) is the suggestive fingerprint both effects share. SETTLES the registry's logged tension ('MOND+EFE over-predicts ~30-40%, plausibly non-equilibrium' -> now audited: the real spread is 27-86%, the premise is void by the test's own numbers, the band accounts for a further measured share). FUTURE DISCRIMINANT NAMED: OLD tidal dwarfs (several orbits completed) in the band — ARA predicts their equilibrium deficit PERSISTS (~5-15% in V per the envelope), pure non-equilibrium predicts it vanishes; a clean OBT-vs-MOND test when deep samples arrive. HONEST SCOPE: dissolution card (premise removal), NOT a positive fit — assuming equilibrium, a 3.1 sigma residual would remain after ARA; n=6, the non-equilibrium and band effects are degenerate on this sample (both axes = t_orb); MOND-shared dissolution (Kroupa 2012, Ploeckinger-class non-equilibrium arguments have priority; our additions = the verbatim orbit-count audit across all six, the band identification, the envelope-corrected ledger, the old-TDG discriminant). T2. Probe: tdg_books. Data: Lelli+15 tables verbatim in cache.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on TDGs as a decisive MOND-family test: six bona-fide TDGs under-rotate vs MOND+EFE by 27-86% (their own V_EFE table; joint 3.6 sigma assuming equilibrium) -> 'challenging test for alternative theories' @ NGC 5291 trio (N/S/SW: orbits done 0.5/0.2/0.3; deficits 1.27/1.40/1.54)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "NGC 7252 pair (E/NW: orbits done 0.3/0.2; deficits 1.56/1.86 — the worst object is the least-orbited AND deepest-band T_k=2.12)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "VCC 2062 (third independent host NGC 4694: orbits done 0.4-0.8, deficit 1.56; the most-orbited objects N5291N/VCC2062 are among the LEAST discrepant)"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 3 systems: ['NGC 5291 trio (N/S/SW: orbits done 0.5/0.2/0.3; deficits 1.27/1.40/1.54)', 'NGC 7252 pair (E/NW: orbits done 0.3/0.2; deficits 1.56/1.86 — the worst object is the least-orbited AND deepest-band T_k=2.12)', 'VCC 2062 (third independent host NGC 4694: orbits done 0.4-0.8, deficit 1.56; the most-orbited objects N5291N/VCC2062 are among the LEAST discrepant)'] — Three independent host systems; the premise-void leg is verbatim from the test's own table and own caveat; the ARA band identification of 5/6 is computed; the deficit~t_orb organization (+0.60) is suggestive only at n=6 and carried as such. The claim is calibrated as dissolution, not as positive fit."
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "THE WHY = the test assumed what its own table refutes: equilibrium. Every one of the six TDGs has completed 0.2-0.8 ORBITS since formation (t_merg/t_orb, Lelli+15 Table their own column) — a disc that has executed a fifth of a turn is not an equilibrium rotator, and gas placed on new orbits under-rotates until it circularizes (~1 orbit-time): the observed 27-86% under-rotation has exactly the direction and the magnitude ordering of partial circularization, and the authors concede the decisive sims do not exist ('it remains unclear whether this would still hold in MOND', verbatim). SECOND LAYER (OBT-distinctive bonus): their tiny rotation velocities make 5/6 TDGs ARA BAND OBJECTS (T_kappa = 0.49-2.12 Gyr) — even at equilibrium the boost law predicts LESS than constant-MOND there (the pre-measured SPARC envelope shaves the joint discrepancy 3.6 -> 3.1 sigma with zero per-object freedom), and the worst object (N7252NW) is simultaneously the least-orbited AND the deepest in the band — the two suppressions stack on the same object. The deficit~t_orb organization (+0.60, p=0.21 at n=6) is the suggestive fingerprint both effects share. SETTLES the registry's logged tension ('MOND+EFE over-predicts ~30-40%, plausibly non-equilibrium' -> now audited: the real spread is 27-86%, the premise is void by the test's own numbers, the band accounts for a further measured share). FUTURE DISCRIMINANT NAMED: OLD tidal dwarfs (several orbits completed) in the band — ARA predicts their equilibrium deficit PERSISTS (~5-15% in V per the envelope), pure non-equilibrium predicts it vanishes; a clean OBT-vs-MOND test when deep samples arrive. HONEST SCOPE: dissolution card (premise removal), NOT a positive fit — assuming equilibrium, a 3.1 sigma residual would remain after ARA; n=6, the non-equilibrium and band effects are degenerate on this sample (both axes = t_orb); MOND-shared dissolution (Kroupa 2012, Ploeckinger-class non-equilibrium arguments have priority; our additions = the verbatim orbit-count audit across all six, the band identification, the envelope-corrected ledger, the old-TDG discriminant). T2. Probe: tdg_books. Data: Lelli+15 tables verbatim in cache."
+          }
+        ],
+        "judgement": "Three independent host systems; the premise-void leg is verbatim from the test's own table and own caveat; the ARA band identification of 5/6 is computed; the deficit~t_orb organization (+0.60) is suggestive only at n=6 and carried as such. The claim is calibrated as dissolution, not as positive fit."
       }
     ],
     "errors": [
@@ -2202,6 +2247,21 @@
       "t": "date-unset",
       "recorded": "terrain",
       "note": "THE SCISSOR (barreau 3): external theories = BOTH constant-MOND ('lensing AND dynamics show full boost at all radii') AND LCDM ('both follow the same NFW halo'). OBT-ARA alone predicts the SPLIT: photons (crossing ~Myr << T) see the instantaneous full tilt -> lensing RAR full at 50-300 kpc; slow orbiting tracers (T_orb >> 2T) average the oscillation -> dynamical boost suppressed (W~0.1-0.3 -> sigma factor 0.56-0.74). Blade A: cached Brouwer ESD (isolated stacks, the #5 machinery). Blade B: LV satellite kinematics 50-300 kpc (cached McConnachie/UNGC, the #13/#19 data). Confound pre-logged: anisotropy beta (the Klypin-Prada vs Angus fight) -> bracket beta in [-0.5,+0.5]."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "35525eeb",
+      "name": "the TDG equilibrium test (Lelli+15 'challenging test for MOND')"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "35525eeb",
+      "detail": "player judgement; 3 systems: ['NGC 5291 trio (N/S/SW: orbits done 0.5/0.2/0.3; deficits 1.27/1.40/1.54)', 'NGC 7252 pair (E/NW: orbits done 0.3/0.2; deficits 1.56/1.86 — the worst object is the least-orbited AND deepest-band T_k=2.12)', 'VCC 2062 (third independent host NGC 4694: orbits done 0.4-0.8, deficit 1.56; the most-orbited objects N5291N/VCC2062 are among the LEAST discrepant)'] — Three independent host systems; the premise-void leg is verbatim from the test's own table and own caveat; the ARA band identification of 5/6 is computed; the deficit~t_orb organization (+0.60) is suggestive only at n=6 and carried as such. The claim is calibrated as dissolution, not as positive fit."
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "35525eeb",
+      "detail": "THE WHY = the test assumed what its own table refutes: equilibrium. Every one of the six TDGs has completed 0.2-0.8 ORBITS since formation (t_merg/t_orb, Lelli+15 Table their own column) — a disc that has executed a fifth of a turn is not an equilibrium rotator, and gas placed on new orbits under-rotates until it circularizes (~1 orbit-time): the observed 27-86% under-rotation has exactly the direction and the magnitude ordering of partial circularization, and the authors concede the decisive sims do not exist ('it remains unclear whether this would still hold in MOND', verbatim). SECOND LAYER (OBT-distinctive bonus): their tiny rotation velocities make 5/6 TDGs ARA BAND OBJECTS (T_kappa = 0.49-2.12 Gyr) — even at equilibrium the boost law predicts LESS than constant-MOND there (the pre-measured SPARC envelope shaves the joint discrepancy 3.6 -> 3.1 sigma with zero per-object freedom), and the worst object (N7252NW) is simultaneously the least-orbited AND the deepest in the band — the two suppressions stack on the same object. The deficit~t_orb organization (+0.60, p=0.21 at n=6) is the suggestive fingerprint both effects share. SETTLES the registry's logged tension ('MOND+EFE over-predicts ~30-40%, plausibly non-equilibrium' -> now audited: the real spread is 27-86%, the premise is void by the test's own numbers, the band accounts for a further measured share). FUTURE DISCRIMINANT NAMED: OLD tidal dwarfs (several orbits completed) in the band — ARA predicts their equilibrium deficit PERSISTS (~5-15% in V per the envelope), pure non-equilibrium predicts it vanishes; a clean OBT-vs-MOND test when deep samples arrive. HONEST SCOPE: dissolution card (premise removal), NOT a positive fit — assuming equilibrium, a 3.1 sigma residual would remain after ARA; n=6, the non-equilibrium and band effects are degenerate on this sample (both axes = t_orb); MOND-shared dissolution (Kroupa 2012, Ploeckinger-class non-equilibrium arguments have priority; our additions = the verbatim orbit-count audit across all six, the band identification, the envelope-corrected ledger, the old-TDG discriminant). T2. Probe: tdg_books. Data: Lelli+15 tables verbatim in cache."
     }
   ]
 }

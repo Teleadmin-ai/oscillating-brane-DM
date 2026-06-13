@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "tdg_books": lambda opts=None: tdg_books(opts),
     "band_trio": lambda opts=None: band_trio(opts),
     "scissor_lens": lambda opts=None: scissor_lens(opts),
     "band_separator": lambda opts=None: band_separator(opts),
@@ -5802,3 +5803,40 @@ def band_trio(opts):
     print(f"  sub-band points; median DELTA = {np.median(deltas):+.3f} dex (ARA envelope predicts ~-0.05/-0.07;")
     print(f"  constant-a0 predicts 0; per-galaxy internal split kills galaxy-level systematics: M/L,")
     print(f"  distance, mean inclination all CANCEL in the delta — only warps/flares survive).")
+
+
+def tdg_books(opts):
+    """TDG logged-tension settlement (Lelli+15 tables verbatim). Deficits
+    V_EFE(2)/V_circ, T_kappa, ARA band correction, and the premise check:
+    t_merg/t_orb (orbits completed since formation) for all six."""
+    import numpy as np
+    from scipy.stats import spearmanr
+
+    # name, V_EFE2, eEFE, V_circ, eVc, t_orb, et, f_orb(=t_merg/t_orb)
+    T = [("N5291N", 57, 7, 45, 9, 0.7, 0.2, 0.5),
+         ("N5291S", 49, 8, 35, 6, 2.2, 0.7, 0.2),
+         ("N5291SW", 43, 7, 28, 7, 1.3, 0.4, 0.3),
+         ("N7252E", 28, 5, 18, 5, 2.5, 1.6, 0.3),
+         ("N7252NW", 39, 6, 21, 6, 3.0, 1.2, 0.2),
+         ("VCC2062", 25, 5, 16, 7, 1.2, 0.5, 0.6)]
+    Wemp = lambda tk: 1.0 if tk < 1.0 else (0.80 if tk < 1.5 else (0.71 if tk < 2.2 else 0.5))
+    print("TDG ledger (Lelli+15 verbatim; V_EFE2 = their own MOND+EFE branch):")
+    print(f"  {'TDG':9s}{'t_orb':>6s}{'T_k':>6s}{'orbits':>7s}{'V_EFE':>6s}{'V_ARA':>6s}{'V_circ':>7s}"
+          f"{'n_sig(EFE)':>11s}{'n_sig(ARA)':>11s}")
+    defs, torbs, fobs, nsA = [], [], [], []
+    for n, ve, ee, vc, ec, to, eto, fo in T:
+        tk = to / np.sqrt(2.0)
+        va = ve * Wemp(tk) ** 0.25
+        sig = np.sqrt(ec**2 + ee**2)
+        print(f"  {n:9s}{to:6.1f}{tk:6.2f}{fo:7.1f}{ve:6.0f}{va:6.0f}{vc:7.0f}"
+              f"{(ve-vc)/sig:11.1f}{(va-vc)/sig:11.1f}")
+        defs.append(ve / vc); torbs.append(to); fobs.append(fo); nsA.append((va - vc) / sig)
+    r1 = spearmanr(torbs, defs)
+    r2 = spearmanr(fobs, defs)
+    print(f"\n  deficit ~ t_orb     : Spearman {r1.statistic:+.2f} (p={r1.pvalue:.2f})  [ARA + non-eq BOTH predict +]")
+    print(f"  deficit ~ orbits done: Spearman {r2.statistic:+.2f} (p={r2.pvalue:.2f})  [spin-up predicts -]")
+    print(f"  joint n_sigma after ARA band correction: {np.sqrt(np.sum(np.array(nsA)**2)):.1f}"
+          f" (was {np.sqrt(np.sum([( (ve-vc)/np.sqrt(ec**2+ee**2) )**2 for _,ve,ee,vc,ec,_,_,_ in T])):.1f} pre-ARA)")
+    print("\n  PREMISE CHECK: orbits completed since formation = 0.2-0.8 for ALL SIX —")
+    print("  no object has finished ONE orbit; equilibrium inference void by their own table;")
+    print("  their own caveat verbatim: 'it remains unclear whether this would still hold in MOND'.")
