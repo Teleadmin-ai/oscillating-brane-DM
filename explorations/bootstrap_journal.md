@@ -558,3 +558,24 @@ reducing the closure freedom from "arbitrary amplitude" to "one universal functi
 derive". But it is NOT yet "the oscillation": galaxies = tilt (oscillation/horizon a0); clusters = brane
 flexure (well depth) — two distinct brane effects, both matter-free. NEXT: groups (CLoGS/Lovisari) at
 V_c~400-700 + recompute with global |Phi|. Scripts: gate13 (a0-fixed), gate14_welldepth.py. Quarantined.
+
+## V28 — GATE 15: the groups bridge the gap — f_Weyl(well depth) is ONE continuous law (June 2026)
+Harvested X-ray GROUPS (Lagana 2013, J/A+A/555/A66: r500/kT/Mgas/Mtot/Mstar resolved, ReadMe-confirmed
+units kpc/1e12/1e13/1e12, f_bar=0.08-0.13 physical) to fill the galaxy/cluster gap and test Romain's
+unification (tilt + Weyl = ONE brane movement, a local variant). Test: f_Weyl = 1 - g_MOND/g_obs with the
+FULL MOND boost (W=1, isolating well depth from the sinc), at the characteristic radius, vs global V_c.
+**RESULT — unification SUPPORTED**: f_Weyl is ONE continuous, monotone curve of V_c, smoothly bridged by
+the groups: galaxies V_c~110 f_Weyl=-0.01 (MOND works, pure tilt, no Weyl); GROUPS V_c~489 f_Weyl=+0.15;
+clusters V_c~1563 f_Weyl=+0.29 at r500 (~0.67 at core). Spearman +0.51, N=160. The group regime is now
+POPULATED -> the transition is MEASURED to be CONTINUOUS, not a two-population jump. Tilt (linear,
+galaxies) and Weyl (nonlinear, clusters) are endpoints of a single f_Weyl(|Phi|) relation = "one brane
+movement, a local variant", as conjectured.
+**HONEST CAVEATS**: (1) the rise is GRADUAL, not a sharp buckling threshold (smeared over V_c~200-1500) ->
+"graded nonlinearity with well depth", not a clean |Phi|_crit; (2) amplitude is sinc-dependent (full-boost
+residual at r500 ~0.29 vs ~0.82 with sinc-killed periphery+core) -> Weyl has TWO contributions, well-depth
+residual (this gate) AND sinc extinction (Gate 13/14), both ending up tracking depth (core=deepest |Phi|);
+(3) only 9 groups, empirical, mechanism (nonlinear brane deflection coupling to |Phi|) is a candidate not
+derived. **NET**: a single continuous f_Weyl(well depth) law galaxies->groups->clusters supports the
+unified one-brane-movement picture; the cluster Weyl amplitude is a graded function of well depth (not a
+free per-cluster constant). Geometric, baryon-determined, zero particles. V9.0 target: derive the
+nonlinear brane-deflection mechanism. Data: lagana13.csv. Scripts: gate15_threshold.py. Quarantined.
