@@ -1579,6 +1579,10 @@
       {
         "t": "date-unset",
         "note": "MALIN 1 (ARA flagship -> terrain): external theory = constant-a0 MOND — Gentile 2010 published that its fit of Malin 1's ultra-extended disc requires NEGATIVE outer M/L (over-prediction). Patch (non-glue, pre-derived): the ARA window W(T_kappa) — Malin 1's outer points live at T_kappa~1.2-2.1 Gyr (inside the band, envelope data-bounded [0.61,1] -> V suppression 0-12%). Test: does the W(T_kappa(r))-corrected OBT fit restore physical M/L? Variants: radius-by-radius profile; NGC 7589 control (fits constant MOND, T_kappa shorter — must REMAIN good under ARA). Caveats pre-logged: inclination/warp (Lelli 2010), EFE small (isolated)."
+      },
+      {
+        "t": "date-unset",
+        "note": "THE SCISSOR (barreau 3): external theories = BOTH constant-MOND ('lensing AND dynamics show full boost at all radii') AND LCDM ('both follow the same NFW halo'). OBT-ARA alone predicts the SPLIT: photons (crossing ~Myr << T) see the instantaneous full tilt -> lensing RAR full at 50-300 kpc; slow orbiting tracers (T_orb >> 2T) average the oscillation -> dynamical boost suppressed (W~0.1-0.3 -> sigma factor 0.56-0.74). Blade A: cached Brouwer ESD (isolated stacks, the #5 machinery). Blade B: LV satellite kinematics 50-300 kpc (cached McConnachie/UNGC, the #13/#19 data). Confound pre-logged: anisotropy beta (the Klypin-Prada vs Angus fight) -> bracket beta in [-0.5,+0.5]."
       }
     ]
   },
@@ -2193,6 +2197,11 @@
       "t": "date-unset",
       "promoted_to_card": "82b7673b",
       "detail": "THE WHY = ARA: the boost deficit at large radii has TWO physical sources with different axes — the environment (EFE, e_env: a property of WHERE the galaxy lives, already carded #16) and the tracer's internal period (T_kappa: a property of HOW SLOWLY its orbits turn — the resonance-band averaging of the oscillating tilt, derived June 2026, envelope pre-measured). Constant-a0+EFE possesses ONLY the first axis: at fixed environment it predicts zero internal-period dependence. The data show the opposite hierarchy in the outer-point regime: the T_kappa partial survives at p=0.0015 (r=-0.261, 124 galaxies, e_env held) while the e partial is weak there (p=0.14), the two axes are mutually uncorrelated (-0.087 — no collinearity escape), the low-e band half keeps its deficit, the sub-band control is clean zero (+0.007), and the isolated band-crosser Malin 1 carries the largest deficit with NO environmental budget for it. The published EFE-only attribution of outer declines is therefore INCOMPLETE — a second, internal axis exists, and it is OBT's: no constant-a0 framework (with or without EFE) can organize residuals by internal period at fixed acceleration and fixed environment. RETRO-EFFECT: discharges the EFE-degeneracy caveat carried by card #29 and by the barreau-1 band envelope. HONEST SCOPE: the EFE itself is NOT refuted — card #16 stands (Chae's full-RC hierarchical detection is a finer instrument than outermost-point medians; both effects are real, this card ranks their OUTER-POINT projections); e_env is crude (~0.5 dex class uncertainties) and covers 124/175 galaxies; the band split is small-N (6/7); the e-axis weakness here is regime-specific, not global. MOND-shared: NO — this card is OBT-DISTINCTIVE (4th OBT-vs-MOND discriminant: a0(z) family, #22, #23, #29+#30 the ARA family). T2. Probe: band_separator. Data: massmodels + chae_efield.json in cache."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "terrain",
+      "note": "THE SCISSOR (barreau 3): external theories = BOTH constant-MOND ('lensing AND dynamics show full boost at all radii') AND LCDM ('both follow the same NFW halo'). OBT-ARA alone predicts the SPLIT: photons (crossing ~Myr << T) see the instantaneous full tilt -> lensing RAR full at 50-300 kpc; slow orbiting tracers (T_orb >> 2T) average the oscillation -> dynamical boost suppressed (W~0.1-0.3 -> sigma factor 0.56-0.74). Blade A: cached Brouwer ESD (isolated stacks, the #5 machinery). Blade B: LV satellite kinematics 50-300 kpc (cached McConnachie/UNGC, the #13/#19 data). Confound pre-logged: anisotropy beta (the Klypin-Prada vs Angus fight) -> bracket beta in [-0.5,+0.5]."
     }
   ]
 }

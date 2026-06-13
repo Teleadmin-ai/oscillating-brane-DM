@@ -2754,6 +2754,7 @@ def dsph_misfit(opts):
 
 
 PROBES = {
+    "scissor_lens": lambda opts=None: scissor_lens(opts),
     "band_separator": lambda opts=None: band_separator(opts),
     "malin1_ara": lambda opts=None: malin1_ara(opts),
     "df2_sigma": lambda opts=None: df2_sigma(opts),
@@ -5706,3 +5707,42 @@ def band_separator(opts):
     print("\n  READ: EFE-only (Chae) predicts [1] e-axis carries all, T_k-axis dies at fixed e,")
     print("  and the low-e band half shows NO deficit. ARA predicts the T_k axis survives at")
     print("  fixed e and the low-e band half KEEPS the deficit.")
+
+
+def scissor_lens(opts):
+    """SCISSOR blade A (the SIMPLE half, per the circling rule): does the
+    LENSING channel keep the full boost at radii where every orbiting tracer
+    is deep post-band? KiDS-isolated RAR (Brouwer cache, #5 conversion
+    g_obs = 4 G ESD_t / bias): residuals vs the exact OBT RAR per g_bar bin,
+    with the effective stack radius and T_kappa of a would-be orbiting tracer."""
+    import numpy as np
+
+    G = 6.674e-11
+    a0 = 1.2e-10
+    rows = np.loadtxt("/DATA/obt_game_cache/raw/brouwer2021_rar/Fig-4-5-C1_RAR-KiDS-isolated_Nobins.txt")
+    gbar, esd, err, bias = rows[:, 0], rows[:, 1], rows[:, 3], rows[:, 4]
+    PC = 3.0857e16
+    gobs = 4 * G * esd * 1.989e30 / PC**2 / bias
+    egобs = 4 * G * err * 1.989e30 / PC**2 / bias if False else None
+    eg = 4 * G * err * 1.989e30 / PC**2 / bias
+    grar = np.sqrt((gbar**2 + gbar * np.sqrt(gbar**2 + 4 * a0**2)) / 2.0)
+    Mstar = 10**10.5 * 1.989e30  # median isolated-stack host (Brouwer)
+    print("SCISSOR BLADE A — KiDS-isolated lensing RAR vs exact OBT RAR:")
+    print(f"  {'g_bar':>9s}{'r_eff':>7s}{'T_k':>6s}{'resid(dex)':>11s}{'+-':>6s}")
+    for i in range(len(gbar)):
+        if gbar[i] > 3e-12:
+            continue
+        r = np.sqrt(G * Mstar / gbar[i])
+        V = np.sqrt(grar[i] * r)
+        tk = 2 * np.pi * r / V / np.sqrt(2.0) / 3.156e16  # Gyr
+        res = np.log10(gobs[i] / grar[i])
+        sig = eg[i] / gobs[i] / np.log(10)
+        print(f"  {gbar[i]:9.1e}{r/3.0857e19:7.0f}{tk:6.1f}{res:11.3f}{sig:6.3f}")
+    sel = gbar < 3e-12
+    w = 1.0 / (eg[sel] / gobs[sel] / np.log(10)) ** 2
+    res = np.log10(gobs[sel] / grar[sel])
+    m = np.sum(w * res) / np.sum(w)
+    em = 1.0 / np.sqrt(np.sum(w))
+    print(f"\n  WEIGHTED MEAN residual (g_bar<3e-12, r_eff~100-450 kpc, T_k>>2T): {m:+.3f} +- {em:.3f} dex")
+    print("  [dynamics at the same T_kappa would be suppressed by -0.3 to -1+ dex under ARA;")
+    print("   the SPARC band entry already measures -0.07 dex at T_k~2. Blade A = photons full.]")

@@ -419,3 +419,22 @@ split — photons (crossing ~Myr << T) average NOTHING -> lensing keeps the FULL
 slow dynamical tracers beyond the resonance lose it; MOND predicts both full, LCDM both halo-like ->
 unique OBT scissor. The Brouwer lensing-full-boost leg (card #5 data) is already consistent; the missing
 leg = satellite kinematics around isolated hosts at 50-300 kpc.
+
+## V21 — THE SCISSOR, blade A closed (the simple half); blade B deferred by design (June 2026)
+Romain's mid-session rule applied: "mieux vaut commencer par simple... mais je me mefie" -> ONLY the
+cheap blade today. **Blade A (probe scissor_lens, cached Brouwer KiDS-isolated ESD, #5 conversion)**:
+at r_eff ~ 100-450 kpc — where ANY orbiting tracer sits at T_kappa = 3-30 Gyr, deep post-band — the
+LENSING channel shows +0.129 +- 0.010 dex vs the exact OBT RAR: at or ABOVE full boost, with the +0.13
+attributable to the known 2-halo term (the #5 nuisance, modeled there). NO trace of the -0.3 to -1 dex
+suppression the ORBITAL channel would carry under ARA at the same T_kappa. The scissor's discriminating
+gap (0.4-1+ dex) dwarfs the 2-halo nuisance -> the photon-instantaneous half of the OBT prediction
+stands. **Blade B (the swamp, DEFERRED)**: satellite-kinematics at 50-300 kpc is the Klypin-Prada
+battlefield — the anisotropy bracket (beta in [-0.5,0.5]) swings the inferred V_c by ~25%, likely
+swallowing the discriminant at LV-cache sample sizes (pre-assessed: MW sigma_GSR ~95 -> V_c 134-165
+vs MOND-full 180 vs ARA ~85-105: inconclusive zone). DECISIVE DATA NAMED: (a) SDSS/DESI satellite-
+kinematics stacks (hundreds of hosts; anisotropy constrained by profile shape); (b) MW V_c(50-120 kpc)
+from Gaia stream modeling; (c) M31 mass profile from its satellite system with proper Jeans brackets.
+The scissor stays a MONSTER under encirclement — blade A in hand, blade B named, no card attempted.
+Also pre-logged for blade B: the ARA fourth-root mercy (W=0.1 still gives V_c ~ 100 for the MW —
+the suppression is large in g but gentle in V; the MW outer halo numbers may actually FAVOR ARA over
+constant-MOND's 180-flat: a future hunt of its own, "the missing MOND plateau of the Milky Way").
