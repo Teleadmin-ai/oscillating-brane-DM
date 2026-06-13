@@ -536,3 +536,25 @@ parallel to cosmological gates 0-9. The non-linear solve does NOT crack the sele
 the dark-matter amplitude as its own datum. Gate 11's "RESPONSE sourced where the boost dies" framing is
 CORRECTED: the periphery is sinc-shaped, but the core/amplitude is pure closure input. Script:
 gate13_weyl_response.py. Quarantined; sacred files untouched.
+
+## V27 — GATE 14: the Weyl-DM selectivity variable is WELL DEPTH, not the sinc (June 2026)
+Searched for the OTHER oscillation/brane mechanism for clusters after Gate 13 killed the sinc. A bug
+caught first (the #24/#12 reflex): a0 was x1000 wrong in BOTH gate13 and gate14 (3703.7 vs the correct
+3.702e6 (km/s)^2/Mpc; 3.70 vs 3702 per kpc) — flagged by galaxies giving f_Weyl=0.64 (must be ~0). FIXED.
+**With correct a0**: the selectivity-variable comparison is decisive —
+  f_Weyl vs (1-W) [sinc/t_dyn] : Spearman -0.05  -> NOT the organizer (Gate 13 conclusion holds, sharpened)
+  f_Weyl vs V_c   [well depth] : Spearman +0.61  -> THE organizer
+Galaxies (shallow): f_Weyl~0.12+/-0.25 (compatible with 0, MOND works, no halo). Clusters (deep): ~0.82.
+So the cluster Weyl-DM is organized by POTENTIAL-WELL DEPTH, not dynamical time. Mechanism candidate:
+brane FLEXURE by mass via the Israel junction (buckling above a critical |Phi|) — a geometric brane
+effect, baryon-determined, zero particles.
+**HONEST CAVEATS**: (1) the transition V_c~400-700 is a DATA GAP (0 whole systems, only cluster cores
+rising) -> GROUPS are the missing decisive test; (2) SPARC (max 383) OVERLAPS X-COP cores (min 311) yet
+f_Weyl differs at equal LOCAL V_c -> the true variable is GLOBAL |Phi| (cluster cores sit in deep global
+wells), not local V_c; (3) empirical correlation, the flexure mechanism + threshold + link-to-oscillation
+are NOT derived. **NET PROGRESS toward Romain's "no dark matter"**: the cluster Weyl amplitude is no
+longer a free per-cluster constant — it is a universal function f_Weyl(|Phi|) of baryonic well depth,
+reducing the closure freedom from "arbitrary amplitude" to "one universal function + a threshold to
+derive". But it is NOT yet "the oscillation": galaxies = tilt (oscillation/horizon a0); clusters = brane
+flexure (well depth) — two distinct brane effects, both matter-free. NEXT: groups (CLoGS/Lovisari) at
+V_c~400-700 + recompute with global |Phi|. Scripts: gate13 (a0-fixed), gate14_welldepth.py. Quarantined.

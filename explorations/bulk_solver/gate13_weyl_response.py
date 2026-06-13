@@ -26,7 +26,7 @@ from astropy.io import fits
 G = 4.300917e-9  # Mpc (km/s)^2 / Msun
 A0 = 3.7e3 / (3.0857e19)  # a0 in (km/s)^2 / Mpc? -> convert: a0=1.2e-10 m/s^2
 # a0 in (km/s)^2/Mpc: 1.2e-10 m/s^2 * Mpc/(km/s)^2 = 1.2e-10 * 3.0857e22 / 1e6 = 3703.7
-A0 = 3703.7
+A0 = 3.702e6  # CORRECTED x1000
 KMS_MPC_GYR = 1.0227e-3  # 1 (km/s)/Mpc in 1/Gyr ... t in Gyr = (2 pi r[Mpc]/V[km/s]) * (Mpc/(km/s) in Gyr)
 MPC_KMS_TO_GYR = 977.79  # 1 Mpc/(km/s) = 977.79 Gyr
 T_BRANE = 2.0
