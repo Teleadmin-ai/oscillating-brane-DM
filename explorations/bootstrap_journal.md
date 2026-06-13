@@ -472,3 +472,25 @@ OBT requires CLUSTER-SELECTIVE clustering (the #22 anatomy). The route lives or 
 selection mechanism for the condensate's gravitating coupling — the nonlinear-bulk question again,
 now sharpened to ONE object (the condensate's effective source term) and ONE banked number (~0.3).
 Script: explorations/bulk_solver/gate10_weyl_cft.py. Status: V9.0 seed, NOT V8.2 content.
+
+## V24 — GATE 11: the kill-test executed; the condensate transmutes into the PEG GENESIS (June 2026, V9.0)
+Methodical mechanism inventory FIRST (M1 slip-adiabaticity dead 1e30; M2 invented couplings refused as
+glue; M5 bulk-depth um-vs-kpc dead; M6 sinc inapplicable — condensate <rho> is static; R2 'condensate
+mimics mu(x)' FORBIDDEN BY OUR OWN 31 CARDS). Then the numbers:
+**1. KILL CONFIRMED**: all-DM condensate adds +0.43 dex to deep-MOND RAR points — dead by x25; the
+RAR scatter bounds any galactic condensate fraction to f < ~4%. Gate 10's prettiest reading is killed
+by OBT's own galactic success. (phi_0 = 0.26 M_s reading retired.)
+**2. THE CONSISTENCY THEOREM (the transmutation)**: M_Kaup = 0.633 Mpl^2/m vs M_crit = L Mpl^2/2 ->
+M_K/M_crit = 1.27/(mL) ~ O(1) AUTOMATICALLY because the GW radion has m ~ 1/L. Numbers: M_K(m_phi) =
+3.5 M_crit; M_K(m_1) = 0.67 M_crit; birth granularity (horizon mass at H=m) = 2.7 M_crit. The
+condensate is born grainy at the peg scale and its lumps cap at the perforation threshold — both
+structural in L, zero tuning.
+**3. SURVIVING BRANCH**: condensate = the PEG-PROGENITOR sector (Omega_cond = 1% Omega_DM at
+phi_0 = 0.026 M_s, natural few-% displacement): galactic kill passed trivially (+0.004 dex);
+**PBH GENESIS DERIVED** (super-Kaup minicluster collapse -> sub-GL 5D capillaries = the pegs), the
+**EMF CEILING DERIVED** (M_K ~ 1e-10 Msun from Mpl, m_phi alone — V8.2 had it as input via the
+inflationary spike), the log-normal EMF = the minicluster mass function (computable next).
+**4. SHARPENED NEGATIVE for the 99%**: no cold bulk-resident SUBSTANCE can avoid galaxies by any
+known mechanism -> the cluster-scale Weyl-DM must be scale-selected by its RESPONSE/FORMATION physics
+(sourced where the boost dies — the sinc anatomy), not by its nature. THE V9.0 OBJECT IS A RESPONSE,
+NOT A GAS. Script: gate10_weyl_cft.py + gate11_selectivity.py. Quarantined.
