@@ -1029,3 +1029,14 @@ Weyl in the core) -- all say insufficient/mild, never zero. Romain was right tha
 deduction; I had under-attributed it to theory.md's integral alone. The audit conclusion is unchanged and now
 fully sourced: the cluster DM is the mass-driven Weyl (insufficiency-carried), the sinc 'extinction' is the one
 wrong piece (deduction + Jensen calc), no sacred edit done -- Romain's call.
+
+## B PARKED (June 2026) — "missing MOND plateau" / blade-B on hold pending size-matched MHONGOOSE/WALLABY
+Romain: "mets B en attente jusqu'aux données appariées MHONGOOSE/WALLABY". After the A reframe (sinc-extinction
+corrected; cards #29/#30 retracted as velocity-circularity artifacts; #31 trimmed; #22 mechanism corrected; PDF
+pushed 3984fdb), blade B's foundation is weakened: the SPARC band evidence is gone, satellites tolerate full MOND,
+so B is now a genuine open test (possibly null), not a sure card. PARKED. Resume trigger: size-matched data that
+break the T_kappa-size degeneracy via the lensing-vs-dynamics scissor on the SAME hosts at the SAME radius
+(size common-mode) — ultra-extended HI discs (MHONGOOSE/WALLABY) with resolved outer dynamics, ideally lensing
+ESD + satellite/RC dynamics on size-matched isolated hosts. Until then: no blade-B card; the mild ARA suppression
+W~0.7 stays an unconfirmed a0^2-averaging prediction. Reviewer-mode test first when data arrive, CHERCHEUR only if
+it survives. Scripts in hand: explorations/bladeB_satellites.py, bladeB_rar.py, scripts/sinc_tracer_window.py.
