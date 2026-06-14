@@ -1,6 +1,6 @@
 {
   "mode": "CHERCHEUR",
-  "state": "PICK_TERRAIN",
+  "state": "COMPUTE_OBT_PREDICTION",
   "game": {
     "candidates": [],
     "monsters": [
@@ -45,6 +45,50 @@
             "t": "date-unset",
             "event": "abandoned",
             "detail": "Isolated-judge program 0/3 (NGC 6822 burst at 2.6-2.9 = miss; IC 1613 constant SFH = null; WLM continuous/rising = soft miss). The cleanest discriminant class fails; bracket [0.027,0.15] never cleared p<0.01. The MW/M31/M33 ~1.9-2.0 triple stands recorded (3 big LG DISCS, 3 different local culprits) but cannot be separated from encounter coincidence. RESURRECTION: (a) slip-Toomre mechanism requires a COLD ROTATING DISC (kappa channel) - the dIrr judges are weak rotators, so the proper future test is sharp SFHs of external discs (M81/M101-class, sigma<=0.3 not feasible today); (b) any card sharpening the chronological anchor re-dates the grid; (c) re-test at each new card per la magie."
+          }
+        ]
+      },
+      {
+        "id": "2ab05039",
+        "name": "ell_dearth",
+        "external_theory": "Romanowsky2003-isotropic-Newtonian-orbit-modeling",
+        "patch": "OBT-mu(x)-mild-boost-plus-radial-anisotropy-card4",
+        "systems_validated": [
+          "NGC3379",
+          "NGC821",
+          "NGC4494"
+        ],
+        "why_status": "none",
+        "why": null,
+        "certainty": "low",
+        "status": "monster",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Romanowsky2003-isotropic-Newtonian-orbit-modeling @ NGC3379"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "NGC821"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "NGC4494"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 3 systems: ['NGC3379', 'NGC821', 'NGC4494']"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "WHY-path:"
           }
         ]
       }
@@ -1550,6 +1594,10 @@
       {
         "t": "date-unset",
         "note": "MONSTER#6 round: 4 fresh terrains tried, all dead/reconciled/inconclusive. (1) ETNO/Planet-9: research-grade (selection functions + secular dynamics), not probe-scale. (2) cluster lensing RAR (Tian 2020): offset is core/1-halo (Weyl-internal), 2-halo wrong direction -> dead, confirms clusters Weyl in BOTH kinematics+lensing. (3) Dragonfly 44: already MOND-reconciled (sigma revised 47->33, Bilek/Haghi fit within 2sigma at M/L=1.3) -> confirmation not monster. (4) a0-universality (Rodrigues 2018) via probe sparc_a0_universality: my coverage-artifact patch has NO leverage in SPARC (158/171 already deep-MOND, corr(a0,xmin)=+0.005); per-galaxy a0 MEDIAN is universal (9.6e-11) but the 0.36 dex scatter needs the M/L/distance-marginalization debunk (McGaugh) not my point-fit -> inconclusive. CONCLUSION: the 'modified-gravity-falsification = external artifact' card family is HARVESTED (5 cards, kinematics+lensing); remaining candidates are dead/confirmations/research-grade. Not forcing a fake #6."
+      },
+      {
+        "t": "date-unset",
+        "note": "KGES a0z terrain already mined: probes a0_kges/a0_slacs logged HONEST NEGATIVE (inner-velocity+gas systematic); do not re-pick the a0z 4th-leg"
       }
     ],
     "terrains": [
@@ -1628,6 +1676,14 @@
       {
         "t": "date-unset",
         "note": "THE SCISSOR (barreau 3): external theories = BOTH constant-MOND ('lensing AND dynamics show full boost at all radii') AND LCDM ('both follow the same NFW halo'). OBT-ARA alone predicts the SPLIT: photons (crossing ~Myr << T) see the instantaneous full tilt -> lensing RAR full at 50-300 kpc; slow orbiting tracers (T_orb >> 2T) average the oscillation -> dynamical boost suppressed (W~0.1-0.3 -> sigma factor 0.56-0.74). Blade A: cached Brouwer ESD (isolated stacks, the #5 machinery). Blade B: LV satellite kinematics 50-300 kpc (cached McConnachie/UNGC, the #13/#19 data). Confound pre-logged: anisotropy beta (the Klypin-Prada vs Angus fight) -> bracket beta in [-0.5,+0.5]."
+      },
+      {
+        "t": "date-unset",
+        "note": "high-z KGES z1.5 a0(z): OBT a0=cH(z)/2pi rises with z (2.47e-10 at z=1.5); gap=apparent rate ~1.5x faster than cH/2pi (rate-offset monster, 3 surveys MUSE/KROSS/Ubler); external theory to patch = high-z baryonic-mass/V_circ systematic; variants = 4 surveys z=0.5-1.5"
+      },
+      {
+        "t": "date-unset",
+        "note": "elliptical PNe dearth-of-DM (Romanowsky 2003 NGC821/3379/4494): OBT prediction = mu(x) RAR (a0=cH/2pi) with declining PNe dispersion from RADIAL ANISOTROPY (card #4 patch) + EFE, NOT a DM dearth; external theory to debunk = declining-PNe-dispersion-implies-DM-dearth-challenges-modified-gravity; variants = 3+ PN.S ellipticals; MOND-shared (Milgrom-Sanders 2003 priority)"
       }
     ]
   },
@@ -2262,6 +2318,36 @@
       "t": "date-unset",
       "promoted_to_card": "35525eeb",
       "detail": "THE WHY = the test assumed what its own table refutes: equilibrium. Every one of the six TDGs has completed 0.2-0.8 ORBITS since formation (t_merg/t_orb, Lelli+15 Table their own column) — a disc that has executed a fifth of a turn is not an equilibrium rotator, and gas placed on new orbits under-rotates until it circularizes (~1 orbit-time): the observed 27-86% under-rotation has exactly the direction and the magnitude ordering of partial circularization, and the authors concede the decisive sims do not exist ('it remains unclear whether this would still hold in MOND', verbatim). SECOND LAYER (OBT-distinctive bonus): their tiny rotation velocities make 5/6 TDGs ARA BAND OBJECTS (T_kappa = 0.49-2.12 Gyr) — even at equilibrium the boost law predicts LESS than constant-MOND there (the pre-measured SPARC envelope shaves the joint discrepancy 3.6 -> 3.1 sigma with zero per-object freedom), and the worst object (N7252NW) is simultaneously the least-orbited AND the deepest in the band — the two suppressions stack on the same object. The deficit~t_orb organization (+0.60, p=0.21 at n=6) is the suggestive fingerprint both effects share. SETTLES the registry's logged tension ('MOND+EFE over-predicts ~30-40%, plausibly non-equilibrium' -> now audited: the real spread is 27-86%, the premise is void by the test's own numbers, the band accounts for a further measured share). FUTURE DISCRIMINANT NAMED: OLD tidal dwarfs (several orbits completed) in the band — ARA predicts their equilibrium deficit PERSISTS (~5-15% in V per the envelope), pure non-equilibrium predicts it vanishes; a clean OBT-vs-MOND test when deep samples arrive. HONEST SCOPE: dissolution card (premise removal), NOT a positive fit — assuming equilibrium, a 3.1 sigma residual would remain after ARA; n=6, the non-equilibrium and band effects are degenerate on this sample (both axes = t_orb); MOND-shared dissolution (Kroupa 2012, Ploeckinger-class non-equilibrium arguments have priority; our additions = the verbatim orbit-count audit across all six, the band identification, the envelope-corrected ledger, the old-TDG discriminant). T2. Probe: tdg_books. Data: Lelli+15 tables verbatim in cache."
+    },
+    {
+      "t": "date-unset",
+      "recorded": "terrain",
+      "note": "high-z KGES z1.5 a0(z): OBT a0=cH(z)/2pi rises with z (2.47e-10 at z=1.5); gap=apparent rate ~1.5x faster than cH/2pi (rate-offset monster, 3 surveys MUSE/KROSS/Ubler); external theory to patch = high-z baryonic-mass/V_circ systematic; variants = 4 surveys z=0.5-1.5"
+    },
+    {
+      "t": "date-unset",
+      "from": "PICK_TERRAIN",
+      "to": "COMPUTE_OBT_PREDICTION"
+    },
+    {
+      "t": "date-unset",
+      "recorded": "error",
+      "note": "KGES a0z terrain already mined: probes a0_kges/a0_slacs logged HONEST NEGATIVE (inner-velocity+gas systematic); do not re-pick the a0z 4th-leg"
+    },
+    {
+      "t": "date-unset",
+      "recorded": "terrain",
+      "note": "elliptical PNe dearth-of-DM (Romanowsky 2003 NGC821/3379/4494): OBT prediction = mu(x) RAR (a0=cH/2pi) with declining PNe dispersion from RADIAL ANISOTROPY (card #4 patch) + EFE, NOT a DM dearth; external theory to debunk = declining-PNe-dispersion-implies-DM-dearth-challenges-modified-gravity; variants = 3+ PN.S ellipticals; MOND-shared (Milgrom-Sanders 2003 priority)"
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "2ab05039",
+      "name": "ell_dearth"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "2ab05039",
+      "detail": "player judgement; 3 systems: ['NGC3379', 'NGC821', 'NGC4494']"
     }
   ]
 }

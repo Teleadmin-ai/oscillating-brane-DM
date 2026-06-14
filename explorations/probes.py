@@ -2753,7 +2753,44 @@ def dsph_misfit(opts):
     )
 
 
+def ell_pne(opts=None):
+    """CANDIDATE -- elliptical 'dearth of dark matter' (Romanowsky 2003, NGC 821/3379/4494 PNe).
+    External theory to debunk: 'declining PNe velocity dispersions out to 4-6 Re imply little dark
+    matter -> a challenge to the dark-matter/MOND paradigm'. OBT/MOND debunk (MOND-shared; priority
+    Milgrom & Sanders 2003; Tian & Ko 2016 reproduce 7 ellipticals in MOND with a0=1.21e-10): at the
+    outer PNe radii these HIGH-surface-brightness ellipticals sit in the MILD-MOND regime
+    (g_bar/a0 ~ 0.2-0.5), where the modest mu(x) boost PLUS radial orbital anisotropy (the card-#4
+    patch) reproduces the declining dispersion -- the Newtonian 'dearth' (DM factor xi~3-6, far below
+    a CDM halo ~10-20) IS the OBT prediction, not a dearth. This probe = the regime check (first
+    system); MY-OWN anisotropic Jeans on sigma_p(R) is the monster->card step."""
+    import numpy as np
+
+    G = 4.30091e-6  # kpc (km/s)^2 / Msun
+    a0 = 3703.7  # (km/s)^2/kpc (=1.2e-10 m/s^2)
+
+    def nu(x):  # RAR boost g_obs/g_bar at g_bar/a0 = x
+        return np.sqrt(0.5 + 0.5 * np.sqrt(1 + 4 / x**2))
+
+    gal = {
+        "NGC3379": dict(Re=2.2, LB=1.4e10, ML=5.0, nRe=6, xi=5.7),
+        "NGC821": dict(Re=5.0, LB=2.0e10, ML=5.0, nRe=5, xi=3.6),
+        "NGC4494": dict(Re=3.8, LB=2.7e10, ML=4.0, nRe=7, xi=3.4),
+    }
+    print("[ell_pne] Romanowsky-2003 elliptical PNe 'dearth of DM' -- regime at the outer PNe radius:")
+    print(f"  {'galaxy':9s}{'Mbar':>9s}{'Rout(kpc)':>10s}{'gbar/a0':>9s}{'MONDboost':>10s}{'xi_Newt':>9s}")
+    for g, p in gal.items():
+        Mbar = p["ML"] * p["LB"]
+        Rout = p["nRe"] * p["Re"]
+        x = G * Mbar / Rout**2 / a0
+        print(f"  {g:9s}{Mbar:9.1e}{Rout:10.1f}{x:9.2f}{nu(x):10.2f}{p['xi']:9.1f}")
+    print("  READ: g_bar/a0 ~ 0.2-0.5 (mild MOND) at the outer PNe radii -> modest mu(x) boost + radial")
+    print("  anisotropy (card #4) reproduces the declining dispersion (Tian-Ko 2016, 7 ellipticals;")
+    print("  Milgrom-Sanders 2003). The Newtonian 'dearth' = MOND's mild boost, NOT a challenge.")
+    print("  MOND-shared; connects to cards #4 (anisotropy), #9/#11 (high-SB/compact -> low f_DM = the RAR).")
+
+
 PROBES = {
+    "ell_pne": lambda opts=None: ell_pne(opts),
     "tdg_books": lambda opts=None: tdg_books(opts),
     "band_trio": lambda opts=None: band_trio(opts),
     "scissor_lens": lambda opts=None: scissor_lens(opts),
