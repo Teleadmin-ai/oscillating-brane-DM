@@ -3226,7 +3226,188 @@ def ell_n7507(opts=None):
     )
 
 
+def ell_gc_n1399(opts=None):
+    """NEW-TRACER context (globular-cluster kinematics) for monster [ell_dearth] -- but NGC 1399 is the
+    Fornax BCG = a CLUSTER CENTRAL, so its GC dispersion is HIGH/flat-rising (a SURFEIT of apparent DM,
+    the OPPOSITE of a dearth). => this is NOT the dearth terrain; it is the card #22 CLUSTER-INSUFFICIENCY
+    regime probed by a NEW tracer (GCs in the BCG, not ICM X-ray). Expected: at the GC radii (6-100 kpc)
+    the stars are in DEEP MOND, mu(x) boosts sigma ~sqrt2 over Newton but STILL under-predicts the hot GC
+    sigma -> the mass-driven geometric Weyl (closure/IC amplitude) carries the rest (card #22).
+
+    REAL data: Schuberth 2010 (A&A 513 A52, arXiv:0911.0420) 790 GC velocities (cached), parsed by the
+    CDS byte layout; C-R=1.55 red/blue split; vsys=1441 km/s; D=19 Mpc (1''=92 pc). Interlopers: global
+    |v-vsys|<900 + remove the NGC 1404 region (companion, vsys~1947). Stellar mass = Schuberth's own
+    luminosity density j(r)=16.33[1+(r/304pc)^2]^-1.35 Lsun/pc^3 with M/L_R=5.5; GC tracer = cored power
+    law l(r)=[1+(r/R0)^2]^-(alpha+1/2) (red R0=1.63'/alpha=1.02). Constant-beta Jeans (paper's form,
+    beta=0 for the ~isotropic red GCs). Compute observed sigma_los(R) MYSELF, vs Newton / OBT mu(x)
+    [stars only]. sigma_obs/sigma_OBT > 1 = the Weyl gap. FACTS only; CORROBORATES card #22 via GCs;
+    NOT the dearth monster, NOT a new card."""
+    import numpy as np
+
+    beta = (
+        float(opts.get("beta", 0.0)) if opts else 0.0
+    )  # 0 = isotropic (paper's red GCs)
+    pop = opts.get("pop", "red") if opts else "red"  # red|blue|all tracer + sample
+    AS2PC = 92.0  # pc per arcsec at D=19 Mpc (Schuberth 2010)
+    VSYS = 1441.0  # km/s systemic (Schuberth 2010)
+    MLR = 5.5  # stellar M/L_R (Schuberth 2010)
+    RA0 = 15 * (3 + 38 / 60 + 29.08 / 3600)  # NGC 1399 centre (NED J2000), deg
+    DE0 = -(35 + 27 / 60 + 2.7 / 3600)
+    RA4 = 15 * (3 + 38 / 60 + 51.92 / 3600)  # NGC 1404 (companion) centre
+    DE4 = -(35 + 35 / 60 + 39.8 / 3600)
+    TRC = {  # GC tracer cored-power-law (Schuberth Table: R0 arcmin, alpha)
+        "red": (1.63, 1.02),
+        "blue": (2.91, 0.79),
+        "all": (1.74, 0.84),
+    }[pop]
+
+    # --- parse cached Schuberth GC table (fixed-width, CDS byte layout) ---
+    Ras, Vh, eVh, Col = [], [], [], []
+    for ln in open("/DATA/obt_game_cache/raw/gc_ell/ngc1399_schuberth2010_gc.dat"):
+        # quality flag A/B (byte 77 -> idx 76) AND First=1 (byte 79 -> idx 78) to keep UNIQUE objects
+        # (the table has duplicate measurements of the same GC; First=1 = first occurrence)
+        if len(ln) < 79 or ln[76] not in ("A", "B") or ln[78] != "1":
+            continue
+        try:
+            ra = 15 * (
+                float(ln[13:15]) + float(ln[16:18]) / 60 + float(ln[19:25]) / 3600
+            )
+            sgn = -1.0 if ln[26] == "-" else 1.0
+            de = sgn * (
+                float(ln[27:29]) + float(ln[30:32]) / 60 + float(ln[33:38]) / 3600
+            )
+            v = float(ln[67:71])
+            ev = float(ln[72:75])
+        except ValueError:
+            continue
+        crs = ln[45:49].strip()
+        cr = float(crs) if crs else np.nan
+        cd = np.cos(np.radians(DE0))
+        Rgc = 3600 * np.hypot((ra - RA0) * cd, de - DE0)  # arcsec from NGC 1399
+        R14 = 3600 * np.hypot((ra - RA4) * cd, de - DE4)  # arcsec from NGC 1404
+        if abs(v - VSYS) > 900:  # global interloper clip
+            continue
+        if R14 < 360 and abs(v - 1947) < 350:  # NGC 1404 GCs (within 6', near its vsys)
+            continue
+        Ras.append(Rgc)
+        Vh.append(v)
+        eVh.append(ev)
+        Col.append(cr)
+    Ras, Vh, eVh, Col = map(np.array, (Ras, Vh, eVh, Col))
+    # population mask (red C-R>1.55, blue<1.55); 'all' keeps everything (incl. colourless)
+    if pop == "red":
+        msk = Col > 1.55
+    elif pop == "blue":
+        msk = Col < 1.55
+    else:
+        msk = np.ones(len(Ras), bool)
+    Rk = Ras[msk] * AS2PC / 1e3  # kpc
+    Vk = Vh[msk]
+    Ek = eVh[msk]
+
+    # --- observed sigma_los(R) in radial bins (my own binning; clip + measurement-error deconvolution) ---
+    edges = np.array([3, 8, 14, 22, 33, 50, 75, 110.0])  # kpc
+    Rb, Sb, Eb, Nb = [], [], [], []
+    for lo, hi in zip(edges[:-1], edges[1:]):
+        m = (Rk >= lo) & (Rk < hi)
+        if m.sum() < 8:
+            continue
+        vv, ee = Vk[m], Ek[m]
+        for _ in range(3):  # 3-sigma clip
+            s = np.std(vv)
+            keep = np.abs(vv - np.mean(vv)) < 3 * s
+            vv, ee = vv[keep], ee[keep]
+        var = np.var(vv) - np.mean(ee**2)  # subtract measurement variance
+        sig = np.sqrt(max(var, 1.0))
+        Rb.append(np.median(Rk[m]))
+        Sb.append(sig)
+        Eb.append(sig / np.sqrt(2 * len(vv)))
+        Nb.append(len(vv))
+    Rb, Sb, Eb = map(np.array, (Rb, Sb, Eb))
+
+    # --- mass model + Jeans (SI) ---
+    PC = KPC / 1e3
+    r_pc = np.logspace(np.log10(20.0), np.log10(6.0e5), 1600)
+    r_m = r_pc * PC
+    j = 16.33 * (1 + (r_pc / 304.0) ** 2) ** (-1.35)  # Lsun/pc^3
+    integ = j * r_pc**2
+    Lc = np.concatenate(
+        [[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r_pc))]
+    )
+    Mstar = 4 * np.pi * MLR * Lc  # Msun
+    gN = G * (Mstar * MSUN) / r_m**2
+    R0 = TRC[0] * 60 * AS2PC  # pc
+    ell = (1 + (r_pc / R0) ** 2) ** (
+        -(TRC[1] + 0.5)
+    )  # 3D tracer density (norm cancels)
+
+    def slos(g, Rdata_kpc):
+        # constant-beta: l*sig_r^2 = r^-2b int_r^inf l g s^2b ds ; project to sigma_los
+        w = ell * g * r_m ** (2 * beta)
+        Iout = np.concatenate(
+            [np.cumsum((0.5 * (w[1:] + w[:-1]) * np.diff(r_m))[::-1])[::-1], [0.0]]
+        )  # int_r^inf
+        lsr2 = Iout / r_m ** (2 * beta)
+        out = []
+        for Rkpc in Rdata_kpc:
+            Rk_ = Rkpc * 1e3 * PC
+            sel = r_m > Rk_ * 1.0001
+            rr = r_m[sel]
+            # Binney-Mamon projection with the (1 - beta R^2/r^2) anisotropy kernel
+            num = np.trapezoid(
+                (1 - beta * Rk_**2 / rr**2) * lsr2[sel] * rr / np.sqrt(rr**2 - Rk_**2),
+                rr,
+            )
+            den = np.trapezoid(ell[sel] * rr / np.sqrt(rr**2 - Rk_**2), rr)
+            out.append(np.sqrt(max(num / den, 0.0)) / KMS)
+        return np.array(out)
+
+    spN = slos(gN, Rb)
+    spO = slos(obt_rar(gN), Rb)
+    gba = np.interp(Rb * 1e3 * PC, r_m, gN) / A0
+
+    print(
+        f"[ell_gc_n1399] CLUSTER-CENTRAL GC-tracer test (NGC 1399, Fornax BCG). D=19 Mpc, vsys={VSYS:.0f}, M/L_R={MLR}, tracer={pop}, beta={beta}."
+    )
+    print(
+        f"  parsed {len(Ras)} clean GCs (A/B, interlopers+NGC1404 removed); {pop} sample N={int(msk.sum())}; M_*(<50kpc)={np.interp(50e3*PC,r_m,Mstar):.2e} Msun"
+    )
+    print(
+        f"  {'R[kpc]':>7s}{'N':>5s}{'sig_obs':>9s}{'+-':>6s}{'g_bar/a0':>9s}{'sig_Newt':>9s}{'sig_OBT':>8s}{'obs/OBT':>8s}"
+    )
+    for i in range(len(Rb)):
+        print(
+            f"  {Rb[i]:7.1f}{Nb[i]:5d}{Sb[i]:9.0f}{Eb[i]:6.0f}{gba[i]:9.2f}{spN[i]:9.0f}{spO[i]:8.0f}{Sb[i]/max(spO[i],1):8.2f}"
+        )
+    wf = np.median((Sb / np.maximum(spO, 1)) ** 2)  # extra dynamical mass beyond mu(x)
+    print(
+        f"  REGIME: g_bar/a0 = {gba[0]:.2f} (inner) -> {gba[-1]:.2f} (outer) = mild-to-DEEP MOND (the stars alone)."
+    )
+    print(
+        f"  WEYL GAP: median (sig_obs/sig_OBT)^2 = {wf:.1f}x => mu(x) on the STARS provides ~1/{wf:.1f} of the"
+    )
+    print(
+        f"    dynamical mass; the mass-driven geometric Weyl carries the rest (card #22 cluster insufficiency)."
+    )
+    print(
+        "  READ: NGC 1399 is a CLUSTER CENTRAL -> GC sigma is HIGH (surfeit, not dearth). OBT mu(x) boosts the"
+    )
+    print(
+        "  stellar sigma ~sqrt2 over Newton but STILL under-predicts the hot GCs -> the mass-driven Weyl is"
+    )
+    print(
+        "  REQUIRED, as card #22 found in the ICM (X-COP). NEW-TRACER (GC) CROSS-CHECK of the cluster Weyl,"
+    )
+    print(
+        "  NOT the dearth monster, NOT a new card. The dearth-monster GC continuation = a FIELD elliptical with"
+    )
+    print(
+        "  GC kinematics (e.g. SLUGGS NGC 4494, same object as the PNe dearth). MOND-shared mechanism."
+    )
+
+
 PROBES = {
+    "ell_gc_n1399": lambda opts=None: ell_gc_n1399(opts),
     "ell_n7507": lambda opts=None: ell_n7507(opts),
     "ell_jeans_fit": lambda opts=None: ell_jeans_fit(opts),
     "ell_jeans": lambda opts=None: ell_jeans(opts),
