@@ -1057,3 +1057,43 @@ to R~14-37 kpc (<1e18 cm^-2 outskirts) = exactly MHONGOOSE's niche. CONFIRMS B p
 waits for MHONGOOSE deep RCs WITH baryons (rolling 2025-2027). Micro-target now = the ~4 published MHONGOOSE deep
 RCs (NGC 3621/7424, ESO444-G084, [KKS2000]23) -- anecdotal N~4, not a test. Lensing (light) blade stays ready in
 cache (Brouwer KiDS-dwarfs, clean point at T_kappa~2.6). No card, no sacred edit.
+
+## CHERCHEUR HUNT (June 2026) — ELLIPTICAL "DEARTH OF DARK MATTER" → MONSTER [2ab05039], not minted
+After parking B, relaunched obt_game (CHERCHEUR). a0(z) 4th-leg terrain already mined (a0_kges/a0_slacs honest
+negatives) → pivoted to a fresh classic terrain: Romanowsky et al. 2003 (Science 301,1696) — declining PNe
+velocity dispersions to 4-6 Re in NGC 3379/821/4494 → "little dark matter" → billed as a challenge to the
+DM/MOND paradigm. Debunk (MOND-shared; priority Milgrom-Sanders 2003; Tian-Ko 2016 reproduce 7 ellipticals in
+MOND at a0=1.21e-10).
+
+PROBES (all in probes.py, run via obt_game `probe <name>`):
+- ell_pne: the 3 Romanowsky ellipticals sit in MILD-MOND (g_bar/a0 ~ 0.2-0.5) at the outer PNe radii → the
+  Newtonian "dearth" (xi = M_dyn/M_bar ~ 3-6, far below a CDM halo ~10-20) IS the OBT prediction there, not a
+  dearth. Registered candidate → confirmed MONSTER [2ab05039] (3 systems).
+- ell_jeans: MY-OWN constant-beta spherical Jeans in mu(x), Hernquist light as both mass and PNe tracer
+  (baryons only, no DM), projected to sigma_p(R). ISOLATED constant-beta mu(x) UNDER-declines (10-30% vs
+  observed 46-63%) — the MOND boost flattens the outer dispersion = the REAL MOND-elliptical tension (the data
+  look Newtonian, which is why Romanowsky read "dearth"). Adding the EFE (card #16, g_ext from the KNOWN group
+  environment, NOT tuned to sigma) caps the boost at large r → quasi-Newtonian outer → steepens the decline to
+  27-43%: matches NGC4494 (43 vs 46 obs), close NGC3379 (43 vs 54), under NGC821 (27 vs 63; most isolated,
+  poorest stats).
+- ell_jeans_fit: the CARD-grade attempt — Osipkov-Merritt anisotropic mu(x)+EFE Jeans, joint M/L + r_a fit by
+  chi2 on the REAL Coccato 2009 PN.S sigma_p(R) (table6). NGC3379 SHAPE reproduced (214→63 km/s vs obs 201→68)
+  BUT chi2/N = 70-1200, M/L railed to 2, r_a railed to 0.2 Re.
+
+VERDICT — MECHANISM DEMONSTRATED, CARD *NOT* MINTED (méfiance): baryons + mu(x) + EFE + radial anisotropy
+(no dark matter) reproduces the declining dispersion in principle, but my simple model fully matches only 1/3
+and the inner sigma_p is ~20% low → proof not airtight. Structural blockers: Hernquist≠Sérsic light,
+spherical≠E6-flattened (NGC821), inner-stellar chi2 domination, NGC4374 Virgo-contaminated. The rigorous full
+fit belongs to the literature (Tian-Ko 2016, 7 ellipticals; Milgrom-Sanders 2003). The monster stays a monster.
+Quarantined probe + game state; no sacred edit, no card minted. Game state: cards=31, monsters=2, errors=8.
+
+THE MONSTER CONTINUES (Romain: "je voit pas pourquoi tu ne continu pas avec ce monstre en cherchant un autre
+contexte pour le debunk") — battery-of-configurations rule. Queued NEXT CONTEXTS to find the WHY cleanly:
+ (1) simplest-first: round + isolated ellipticals (NGC3379 E1 is already the best; EFE≈off) → isolates the
+     anisotropy mechanism free of flattening/EFE = the "system that reveals the why";
+ (2) round-vs-flattened/Virgo COMPARISON (3379 works vs 821-E6 / 4374-Virgo fail) → the comparison itself
+     reveals the mechanism (the failures are flattening + EFE + contamination, not a DM dearth);
+ (3) NEW TRACER context = globular-cluster-system kinematics in ellipticals (SLUGGS: NGC1399, M87/NGC4486,
+     NGC4472) — same declining/flat outer dispersion, a tracer independent of PNe;
+ (4) the other Tian-Ko ellipticals already cached (Coccato 2009 table6 also has NGC4697/5846/1344 sigma_p(R)).
+Cache: /DATA/obt_game_cache/raw/pne_ell/coccato_table6.dat (+ coccato_ReadMe).
