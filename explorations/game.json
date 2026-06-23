@@ -94,6 +94,11 @@
             "t": "date-unset",
             "event": "note",
             "detail": "ell_jeans"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "ell_jeans_fit"
           }
         ]
       }

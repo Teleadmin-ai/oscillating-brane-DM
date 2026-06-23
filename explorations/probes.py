@@ -2862,7 +2862,112 @@ def ell_jeans(opts=None):
     print("  realistic g_ext, the mechanism is proven; if it needs a tuned g_ext, it stays a monster (no glue).")
 
 
+def ell_jeans_fit(opts=None):
+    """CARD-grade fit for monster [ell_dearth]: MY-OWN Osipkov-Merritt anisotropic Jeans in mu(x)
+    (+ optional EFE) fit to the REAL PN.S sigma_p(R) profiles (Coccato 2009 table6, cached), BARYONS
+    ONLY (no dark matter). Per elliptical: Hernquist light (M_bar = ML x L_B from M_B; a = R_e/1.8153)
+    as both mass and tracer; OM anisotropy beta(r)=r^2/(r^2+r_a^2) (-> radial outward); gravity
+    g(r)=obt_rar(g_N) [isolated] or EFE-capped by g_ext. Bin the data by |Dist|, then JOINTLY fit
+    M/L (stellar prior 2-8) and the OM anisotropy radius r_a by chi^2 (g_ext from environment via
+    --gext). Good fits with realistic M/L (3-6) + r_a (no glue) PROVE the declining dispersion =
+    mu(x)+anisotropy, not a DM dearth. CAVEATS: Hernquist light (not the true Sersic) limits the
+    INNER-stellar match; NGC 4374 (Virgo) has intracluster-contaminated outer PNe. opts: --gext
+    (a0 units; 0=isolated)."""
+    import collections
+
+    import numpy as np
+
+    gext = (float(opts.get("gext", 0.0)) if opts else 0.0) * A0
+    MBsun = 5.48
+    gal = {  # Tian-Ko 2016 Table 1: D[Mpc], Reff[arcsec], M_B ; env = environment for the EFE
+        "0821": dict(D=23.4, Re=39.8, MB=-20.81, env="field"),
+        "1344": dict(D=18.4, Re=46.0, MB=-19.66, env="group"),
+        "3379": dict(D=10.3, Re=39.8, MB=-20.67, env="LeoI-grp"),
+        "4374": dict(D=18.5, Re=52.5, MB=-21.21, env="VIRGO*"),
+        "4494": dict(D=16.6, Re=50.0, MB=-21.12, env="group"),
+    }
+    raw = collections.defaultdict(list)
+    for ln in open("/DATA/obt_game_cache/raw/pne_ell/coccato_table6.dat"):
+        try:
+            ngc = ln[0:4].strip()
+            dist = float(ln[9:16])
+            sig = float(ln[29:34])
+            esig = float(ln[35:39])
+        except (ValueError, IndexError):
+            continue
+        if ngc in gal and sig > 0 and esig > 0:
+            raw[ngc].append((abs(dist), sig, esig))
+    print(f"[ell_jeans_fit] OM-anisotropic mu(x) Jeans fit to PN.S sigma_p(R), BARYONS ONLY (M/L fitted 2-8, gext={gext/A0:.2f}a0):")
+    for ng, p in gal.items():
+        D = p["D"]
+        Re = p["Re"] * D * 4.848e-3 * KPC
+        a = Re / 1.8153
+        LB = 10 ** (-0.4 * (p["MB"] - MBsun))
+        pts = sorted(raw[ng])
+        Rk = np.array([x[0] for x in pts]) * D * 4.848e-3
+        sg = np.array([x[1] for x in pts])
+        es = np.array([x[2] for x in pts])
+        edges = np.geomspace(max(Rk.min(), 0.1), Rk.max() * 1.01, 9)
+        Rb, Sb, Eb = [], [], []
+        for lo, hi in zip(edges[:-1], edges[1:]):
+            m = (Rk >= lo) & (Rk < hi)
+            if m.sum() >= 2:
+                w = 1 / es[m] ** 2
+                Rb.append(np.sum(w * Rk[m]) / np.sum(w))
+                Sb.append(np.sum(w * sg[m]) / np.sum(w))  # error-weighted mean sigma
+                Eb.append(1 / np.sqrt(np.sum(w)))
+        if len(Rb) < 4:
+            print(f"  {ng}: too few bins ({len(Rb)})")
+            continue
+        Rb = np.array(Rb) * KPC
+        Sb = np.array(Sb)
+        Eb = np.maximum(np.array(Eb), 3.0)
+        r = np.logspace(np.log10(0.02 * Re / KPC), np.log10(60 * Re / KPC), 1500) * KPC
+        nu = a / (2 * np.pi * r * (r + a) ** 3)
+        M_r = r**2 / (r + a) ** 2  # Hernquist M(<r)/M shape
+
+        def model_sp(ml, ra):
+            M = ml * LB * MSUN
+            gN = G * M * M_r / r**2
+            if gext > 0:
+                geff = np.sqrt(gN**2 + gext**2)
+                g = gN * obt_rar(geff) / geff
+            else:
+                g = obt_rar(gN)
+            f = r**2 + ra**2
+            integ = f * nu * g
+            I = np.concatenate([[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r))])
+            nusr2 = (I[-1] - I) / f
+            beta = r**2 / (r**2 + ra**2)
+            out = []
+            for R in Rb:
+                sel = r > R * 1.0001
+                rr = r[sel]
+                num = 2 * np.trapezoid(
+                    (1 - beta[sel] * R**2 / rr**2) * nusr2[sel] * rr / np.sqrt(rr**2 - R**2), rr
+                )
+                den = 2 * np.trapezoid(nu[sel] * rr / np.sqrt(rr**2 - R**2), rr)
+                out.append(np.sqrt(max(num / den, 0)) / KMS)
+            return np.array(out)
+
+        best = None
+        for ml in np.linspace(2.0, 8.0, 13):
+            for ra_re in np.geomspace(0.2, 12, 26):
+                sp = model_sp(ml, ra_re * Re)
+                chi2 = np.sum(((sp - Sb) / Eb) ** 2) / len(Rb)
+                if best is None or chi2 < best[1]:
+                    best = (ml, ra_re, chi2, sp)
+        ml, ra_re, chi2, sp = best
+        flag = "  <-VIRGO outer contaminated" if ng == "4374" else ""
+        print(f"  {ng:6s} env={p['env']:9s} Re={Re/KPC:4.1f}kpc N={len(Rb)}  M/L={ml:.1f} r_a/Re={ra_re:4.1f}  chi2/N={chi2:6.1f}  sp_in {sp[0]:3.0f}/{Sb[0]:3.0f} sp_out {sp[-1]:4.0f}/{Sb[-1]:3.0f}{flag}")
+    print("  READ: clean fit = chi2/N ~ 1-3 with realistic M/L (3-6) + r_a (~0.5-3 Re), BARYONS ONLY ->")
+    print("  the declining sigma_p(R) is mu(x)+anisotropy, NOT a DM dearth. CAVEATS: inner chi2 inflated by the")
+    print("  Hernquist-vs-real-Sersic light mismatch (not the dearth question); NGC 4374 (Virgo) intracluster-")
+    print("  contaminated outer PNe. --gext adds the EFE for group members. FACTS only; MOND-shared.")
+
+
 PROBES = {
+    "ell_jeans_fit": lambda opts=None: ell_jeans_fit(opts),
     "ell_jeans": lambda opts=None: ell_jeans(opts),
     "ell_pne": lambda opts=None: ell_pne(opts),
     "tdg_books": lambda opts=None: tdg_books(opts),
