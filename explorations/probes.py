@@ -2776,17 +2776,29 @@ def ell_pne(opts=None):
         "NGC821": dict(Re=5.0, LB=2.0e10, ML=5.0, nRe=5, xi=3.6),
         "NGC4494": dict(Re=3.8, LB=2.7e10, ML=4.0, nRe=7, xi=3.4),
     }
-    print("[ell_pne] Romanowsky-2003 elliptical PNe 'dearth of DM' -- regime at the outer PNe radius:")
-    print(f"  {'galaxy':9s}{'Mbar':>9s}{'Rout(kpc)':>10s}{'gbar/a0':>9s}{'MONDboost':>10s}{'xi_Newt':>9s}")
+    print(
+        "[ell_pne] Romanowsky-2003 elliptical PNe 'dearth of DM' -- regime at the outer PNe radius:"
+    )
+    print(
+        f"  {'galaxy':9s}{'Mbar':>9s}{'Rout(kpc)':>10s}{'gbar/a0':>9s}{'MONDboost':>10s}{'xi_Newt':>9s}"
+    )
     for g, p in gal.items():
         Mbar = p["ML"] * p["LB"]
         Rout = p["nRe"] * p["Re"]
         x = G * Mbar / Rout**2 / a0
         print(f"  {g:9s}{Mbar:9.1e}{Rout:10.1f}{x:9.2f}{nu(x):10.2f}{p['xi']:9.1f}")
-    print("  READ: g_bar/a0 ~ 0.2-0.5 (mild MOND) at the outer PNe radii -> modest mu(x) boost + radial")
-    print("  anisotropy (card #4) reproduces the declining dispersion (Tian-Ko 2016, 7 ellipticals;")
-    print("  Milgrom-Sanders 2003). The Newtonian 'dearth' = MOND's mild boost, NOT a challenge.")
-    print("  MOND-shared; connects to cards #4 (anisotropy), #9/#11 (high-SB/compact -> low f_DM = the RAR).")
+    print(
+        "  READ: g_bar/a0 ~ 0.2-0.5 (mild MOND) at the outer PNe radii -> modest mu(x) boost + radial"
+    )
+    print(
+        "  anisotropy (card #4) reproduces the declining dispersion (Tian-Ko 2016, 7 ellipticals;"
+    )
+    print(
+        "  Milgrom-Sanders 2003). The Newtonian 'dearth' = MOND's mild boost, NOT a challenge."
+    )
+    print(
+        "  MOND-shared; connects to cards #4 (anisotropy), #9/#11 (high-SB/compact -> low f_DM = the RAR)."
+    )
 
 
 def ell_jeans(opts=None):
@@ -2798,32 +2810,47 @@ def ell_jeans(opts=None):
     nu*sig_r^2 = r^-2b int_r^inf nu*g*s^2b ds, projected to sigma_p(R) with the (1 - b R^2/r^2) kernel.
     Compare Newton-iso / mu(x)-iso / mu(x)-radial to the observed inner->outer decline (Douglas 2007;
     Coccato 2009; Napolitano 2009). Isotropic mu(x) declines too little; radial mu(x) (beta~0.5)
-    matches -> mechanism proven, the 'dearth' is mu(x)+anisotropy. FACTS only; MOND-shared."""
+    matches -> mechanism proven, the 'dearth' is mu(x)+anisotropy. FACTS only; MOND-shared.
+    """
     import numpy as np
 
     beta = float(opts.get("beta", 0.5)) if opts else 0.5
     # g_ext in units of a0, from the KNOWN environment (Leo I group for NGC3379; looser for the
     # more-isolated NGC821). NOT tuned to the dispersion -- set from the host's group membership.
     gal = {
-        "NGC3379": dict(Re=2.2, LB=1.4e10, ML=5.0, s_in=130, s_out=60, nRe=6.0, gext=0.5),
-        "NGC821": dict(Re=5.0, LB=2.0e10, ML=5.0, s_in=190, s_out=70, nRe=4.5, gext=0.15),
-        "NGC4494": dict(Re=3.8, LB=2.7e10, ML=4.0, s_in=130, s_out=70, nRe=7.0, gext=0.3),
+        "NGC3379": dict(
+            Re=2.2, LB=1.4e10, ML=5.0, s_in=130, s_out=60, nRe=6.0, gext=0.5
+        ),
+        "NGC821": dict(
+            Re=5.0, LB=2.0e10, ML=5.0, s_in=190, s_out=70, nRe=4.5, gext=0.15
+        ),
+        "NGC4494": dict(
+            Re=3.8, LB=2.7e10, ML=4.0, s_in=130, s_out=70, nRe=7.0, gext=0.3
+        ),
     }
-    print(f"[ell_jeans] anisotropic Jeans in mu(x), BARYONS ONLY, on the Romanowsky ellipticals (radial beta={beta}):")
-    print(f"  {'galaxy':9s}{'gN(Re)/a0':>9s}{'gext/a0':>7s}{'sp(1Re)':>8s}{'sp(nRe)':>8s}   decline%: obs|Nwt|iso|rad|rad+EFE")
+    print(
+        f"[ell_jeans] anisotropic Jeans in mu(x), BARYONS ONLY, on the Romanowsky ellipticals (radial beta={beta}):"
+    )
+    print(
+        f"  {'galaxy':9s}{'gN(Re)/a0':>9s}{'gext/a0':>7s}{'sp(1Re)':>8s}{'sp(nRe)':>8s}   decline%: obs|Nwt|iso|rad|rad+EFE"
+    )
     for gname, p in gal.items():
         Re = p["Re"] * KPC
         a = Re / 1.8153
         M = p["ML"] * p["LB"] * MSUN
         r = np.logspace(np.log10(0.04 * p["Re"]), np.log10(40 * p["Re"]), 1800) * KPC
-        nu = a / (2 * np.pi * r * (r + a) ** 3)  # Hernquist tracer density (PNe ~ light)
+        nu = a / (
+            2 * np.pi * r * (r + a) ** 3
+        )  # Hernquist tracer density (PNe ~ light)
         Mr = M * r**2 / (r + a) ** 2  # Hernquist enclosed mass
         gN = G * Mr / r**2
 
         def slos(gfunc, bet):
             g_ = gfunc(gN)
             integ = nu * g_ * r ** (2 * bet)
-            I = np.concatenate([[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r))])
+            I = np.concatenate(
+                [[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r))]
+            )
             nusr2 = (I[-1] - I) / r ** (2 * bet)
             out = []
             for Rk in [1.0, p["nRe"]]:
@@ -2831,7 +2858,11 @@ def ell_jeans(opts=None):
                 sel = r > Rm * 1.0001
                 rr = r[sel]
                 num = 2 * np.trapezoid(
-                    (1 - bet * Rm**2 / rr**2) * nusr2[sel] * rr / np.sqrt(rr**2 - Rm**2), rr
+                    (1 - bet * Rm**2 / rr**2)
+                    * nusr2[sel]
+                    * rr
+                    / np.sqrt(rr**2 - Rm**2),
+                    rr,
                 )
                 den = 2 * np.trapezoid(nu[sel] * rr / np.sqrt(rr**2 - Rm**2), rr)
                 out.append(np.sqrt(max(num / den, 0)) / KMS)
@@ -2842,7 +2873,8 @@ def ell_jeans(opts=None):
         di = slos(lambda g: obt_rar(g), 0.0)
         dr = slos(lambda g: obt_rar(g), beta)
         de = slos(
-            lambda g: g * obt_rar(np.sqrt(g**2 + gext**2)) / np.sqrt(g**2 + gext**2), beta
+            lambda g: g * obt_rar(np.sqrt(g**2 + gext**2)) / np.sqrt(g**2 + gext**2),
+            beta,
         )  # EFE: boost set by the TOTAL field (g_N, g_ext), radial anisotropy
         pN = (dN[0] - dN[1]) / dN[0] * 100
         pi = (di[0] - di[1]) / di[0] * 100
@@ -2853,13 +2885,27 @@ def ell_jeans(opts=None):
         print(
             f"  {gname:9s}{gchar/A0:9.2f}{p['gext']:7.2f}{de[0]:8.0f}{de[1]:8.0f}    {pobs:4.0f}|{pN:3.0f}|{pi:4.0f}|{pr:4.0f}|{pe:5.0f}"
         )
-    print("  (s_p from the EFE+radial model; decline %: obs | Newton | mu-iso | mu-rad | mu-rad+EFE)")
-    print("  READ: ISOLATED constant-beta mu(x) UNDER-declines (mu-iso/mu-rad 10-30% << obs 46-63%): the")
-    print("  MOND boost flattens the outer dispersion -> the famous MOND-elliptical tension. Adding the EFE")
-    print("  (card #16; g_ext from the KNOWN group environment, NOT tuned to sigma) caps the boost at large r")
-    print("  -> quasi-Newtonian outer -> STEEP decline matching the obs. The 'dearth of DM' = baryons + mu(x)")
-    print("  + EFE + radial anisotropy (cards #4+#16), NOT a dark-matter dearth. If mu-rad+EFE ~ obs with a")
-    print("  realistic g_ext, the mechanism is proven; if it needs a tuned g_ext, it stays a monster (no glue).")
+    print(
+        "  (s_p from the EFE+radial model; decline %: obs | Newton | mu-iso | mu-rad | mu-rad+EFE)"
+    )
+    print(
+        "  READ: ISOLATED constant-beta mu(x) UNDER-declines (mu-iso/mu-rad 10-30% << obs 46-63%): the"
+    )
+    print(
+        "  MOND boost flattens the outer dispersion -> the famous MOND-elliptical tension. Adding the EFE"
+    )
+    print(
+        "  (card #16; g_ext from the KNOWN group environment, NOT tuned to sigma) caps the boost at large r"
+    )
+    print(
+        "  -> quasi-Newtonian outer -> STEEP decline matching the obs. The 'dearth of DM' = baryons + mu(x)"
+    )
+    print(
+        "  + EFE + radial anisotropy (cards #4+#16), NOT a dark-matter dearth. If mu-rad+EFE ~ obs with a"
+    )
+    print(
+        "  realistic g_ext, the mechanism is proven; if it needs a tuned g_ext, it stays a monster (no glue)."
+    )
 
 
 def ell_jeans_fit(opts=None):
@@ -2897,7 +2943,9 @@ def ell_jeans_fit(opts=None):
             continue
         if ngc in gal and sig > 0 and esig > 0:
             raw[ngc].append((abs(dist), sig, esig))
-    print(f"[ell_jeans_fit] OM-anisotropic mu(x) Jeans fit to PN.S sigma_p(R), BARYONS ONLY (M/L fitted 2-8, gext={gext/A0:.2f}a0):")
+    print(
+        f"[ell_jeans_fit] OM-anisotropic mu(x) Jeans fit to PN.S sigma_p(R), BARYONS ONLY (M/L fitted 2-8, gext={gext/A0:.2f}a0):"
+    )
     for ng, p in gal.items():
         D = p["D"]
         Re = p["Re"] * D * 4.848e-3 * KPC
@@ -2936,7 +2984,9 @@ def ell_jeans_fit(opts=None):
                 g = obt_rar(gN)
             f = r**2 + ra**2
             integ = f * nu * g
-            I = np.concatenate([[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r))])
+            I = np.concatenate(
+                [[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r))]
+            )
             nusr2 = (I[-1] - I) / f
             beta = r**2 / (r**2 + ra**2)
             out = []
@@ -2944,7 +2994,11 @@ def ell_jeans_fit(opts=None):
                 sel = r > R * 1.0001
                 rr = r[sel]
                 num = 2 * np.trapezoid(
-                    (1 - beta[sel] * R**2 / rr**2) * nusr2[sel] * rr / np.sqrt(rr**2 - R**2), rr
+                    (1 - beta[sel] * R**2 / rr**2)
+                    * nusr2[sel]
+                    * rr
+                    / np.sqrt(rr**2 - R**2),
+                    rr,
                 )
                 den = 2 * np.trapezoid(nu[sel] * rr / np.sqrt(rr**2 - R**2), rr)
                 out.append(np.sqrt(max(num / den, 0)) / KMS)
@@ -2959,14 +3013,221 @@ def ell_jeans_fit(opts=None):
                     best = (ml, ra_re, chi2, sp)
         ml, ra_re, chi2, sp = best
         flag = "  <-VIRGO outer contaminated" if ng == "4374" else ""
-        print(f"  {ng:6s} env={p['env']:9s} Re={Re/KPC:4.1f}kpc N={len(Rb)}  M/L={ml:.1f} r_a/Re={ra_re:4.1f}  chi2/N={chi2:6.1f}  sp_in {sp[0]:3.0f}/{Sb[0]:3.0f} sp_out {sp[-1]:4.0f}/{Sb[-1]:3.0f}{flag}")
-    print("  READ: clean fit = chi2/N ~ 1-3 with realistic M/L (3-6) + r_a (~0.5-3 Re), BARYONS ONLY ->")
-    print("  the declining sigma_p(R) is mu(x)+anisotropy, NOT a DM dearth. CAVEATS: inner chi2 inflated by the")
-    print("  Hernquist-vs-real-Sersic light mismatch (not the dearth question); NGC 4374 (Virgo) intracluster-")
-    print("  contaminated outer PNe. --gext adds the EFE for group members. FACTS only; MOND-shared.")
+        print(
+            f"  {ng:6s} env={p['env']:9s} Re={Re/KPC:4.1f}kpc N={len(Rb)}  M/L={ml:.1f} r_a/Re={ra_re:4.1f}  chi2/N={chi2:6.1f}  sp_in {sp[0]:3.0f}/{Sb[0]:3.0f} sp_out {sp[-1]:4.0f}/{Sb[-1]:3.0f}{flag}"
+        )
+    print(
+        "  READ: clean fit = chi2/N ~ 1-3 with realistic M/L (3-6) + r_a (~0.5-3 Re), BARYONS ONLY ->"
+    )
+    print(
+        "  the declining sigma_p(R) is mu(x)+anisotropy, NOT a DM dearth. CAVEATS: inner chi2 inflated by the"
+    )
+    print(
+        "  Hernquist-vs-real-Sersic light mismatch (not the dearth question); NGC 4374 (Virgo) intracluster-"
+    )
+    print(
+        "  contaminated outer PNe. --gext adds the EFE for group members. FACTS only; MOND-shared."
+    )
+
+
+def ell_n7507(opts=None):
+    """CLEAN ROUND+ISOLATED context for monster [ell_dearth]: NGC 7507 (E0, field/isolated elliptical),
+    the canonical 'dark-matter-deprived' round elliptical. Salinas 2012 + Lane 2015 BOTH conclude MOND
+    OVER-predicts the outer sigma_p and FAILS, while Newton-stars-only (beta=0, M/L_R~3.1) fits. In
+    CHERCHEUR mode this 'MOND fails' is a misfit to debunk via an EXTERNAL element (never OBT). The
+    external element tested here: the INTERPOLATION FUNCTION. Lane used the 'simple' Famaey05 nu
+    (g=g_N[1/2+sqrt(1/4+a0/g_N)]) + a0=1.35e-10, which OVER-boosts at g~a0; OBT's geometric
+    mu(x)=x/sqrt(1+x^2) (the 'standard' form) boosts LESS in mild-MOND. Since NGC 7507's data only reach
+    ~1.8 Re (g_bar/a0 ~ 0.7-2 = mild-MOND-to-Newtonian), the over-prediction is modest for OBT mu(x).
+
+    Faithful mass model (NO Hernquist): the REAL double-Sersic R-band light (Salinas 2012, arXiv:1111.1581
+    n7507_R1.tex): inner I0=1.90e6 Lsun/pc^2, a_s=0.0677 pc, m=4.8; outer I0=15.77, a_s=15832 pc, m=1.05;
+    M_sun,R=4.42; D=23.22 Mpc (SBF); Re=75''; M/L_R~3.1. Deprojected to nu(r) by the cosh-substitution Abel
+    integral nu(r)=-(1/pi) int_0^inf I'(r cosh t) dt (no singularity); M(<r)=Y_R int 4 pi nu s^2 ds. Data:
+    Salinas adopted sigma(R) (cached ngc7507_salinas2012_sigma.dat) + Lane OUTER points (>85'', past Salinas;
+    the 67-72'' merger-relic bump is auto-excluded by the cut). OM anisotropy beta(r)=r^2/(r^2+r_a^2); EFE
+    OFF (isolated). For each model fit M/L in [2,4] x r_a by chi^2 to the joint Salinas+Lane sigma(R).
+    VALIDATION: the simple-nu model must reproduce Lane's 'MOND over-predicts' verdict (else my pipeline is
+    wrong). FACTS only; MOND-shared mechanism."""
+    import numpy as np
+
+    PC = KPC / 1e3  # m per pc
+    MLR = (
+        float(opts.get("ml", 0.0)) if opts else 0.0
+    )  # 0 => fit M/L over a stellar prior
+    D = 23.22  # Mpc, SBF (Salinas 2012)
+    Re_as = 75.0  # arcsec (double-Sersic effective radius)
+    as2kpc = D * 4.848e-3  # kpc per arcsec at D
+    Re_m = Re_as * as2kpc * KPC  # effective radius in metres
+    # REAL double-Sersic R-band light I(R)=I0 exp(-(R/a_s)^(1/m)) [Lsun/pc^2], R in pc (Salinas 2012)
+    SER = [(1.90e6, 0.0677, 4.8), (15.77, 15832.0, 1.05)]  # (I0, a_s[pc], m)
+
+    def I_R(R):
+        return sum(I0 * np.exp(-((R / a) ** (1.0 / m))) for (I0, a, m) in SER)
+
+    def Ip_R(
+        R,
+    ):  # dI/dR = -(1/(m R)) (R/a)^(1/m) I_c , summed over components [Lsun/pc^3]
+        s = 0.0
+        for I0, a, m in SER:
+            Ic = I0 * np.exp(-((R / a) ** (1.0 / m)))
+            s = s - (1.0 / (m * R)) * (R / a) ** (1.0 / m) * Ic
+        return s
+
+    # deproject I(R) -> nu(r) [Lsun/pc^3] via the cosh-substitution Abel integral (no singularity):
+    #   nu(r) = -(1/pi) int_r^inf I'(R)/sqrt(R^2-r^2) dR = -(1/pi) int_0^inf I'(r cosh t) dt
+    r_pc = np.logspace(np.log10(5.0), np.log10(2.0e6), 1400)  # 5 pc -> 2 Mpc
+    t = np.linspace(
+        0.0, 11.0, 700
+    )  # cosh(11)~3e4 -> covers the slow m=1.05 outer falloff
+    nu = -(1.0 / np.pi) * np.trapezoid(Ip_R(np.outer(r_pc, np.cosh(t))), t, axis=1)
+    nu = np.maximum(nu, 0.0)  # absolute norm cancels in sigma_p num/den
+    # enclosed luminosity L(<r)=4 pi int nu s^2 ds [Lsun]; cross-check vs the projected total
+    integ = 4 * np.pi * nu * r_pc**2
+    Lcum = np.concatenate(
+        [[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r_pc))]
+    )
+    Rp = np.logspace(np.log10(5.0), np.log10(2.0e6), 4000)
+    Lproj = 2 * np.pi * np.trapezoid(I_R(Rp) * Rp, Rp)
+    Ltot = Lcum[-1]
+    r_m = r_pc * PC  # metres (for SI gravity + Jeans)
+
+    def gN_of(ML):  # Newtonian g from stars alone [m/s^2]
+        return G * (ML * Lcum * MSUN) / r_m**2
+
+    def rar_simple(
+        gN, a0=1.35e-10
+    ):  # Famaey05 'simple' nu (Lane's choice), a0=1.35e-10
+        # guard gN=0 (Lcum[0]=0): keep the sqrt finite so the leading gN factor gives 0, not 0*inf=nan
+        return gN * (0.5 + np.sqrt(0.25 + a0 / np.maximum(gN, 1e-300)))
+
+    def sigma_p(g, ra_m, Rk_m):
+        # constant-norm OM Jeans, ALL lengths in metres: nu*sig_r^2 = (1/f) int_r^inf f nu g ds,
+        # f = r^2 + r_a^2 ; project with the (1 - beta R^2/r^2) Binney-Mamon kernel
+        f = r_m**2 + ra_m**2
+        integ2 = f * nu * g
+        Icum = np.concatenate(
+            [[0.0], np.cumsum(0.5 * (integ2[1:] + integ2[:-1]) * np.diff(r_m))]
+        )
+        nusr2 = (Icum[-1] - Icum) / f
+        beta = r_m**2 / f
+        out = []
+        for Rk in Rk_m:
+            sel = r_m > Rk * 1.0001
+            rr = r_m[sel]
+            num = 2 * np.trapezoid(
+                (1 - beta[sel] * Rk**2 / rr**2)
+                * nusr2[sel]
+                * rr
+                / np.sqrt(rr**2 - Rk**2),
+                rr,
+            )
+            den = 2 * np.trapezoid(nu[sel] * rr / np.sqrt(rr**2 - Rk**2), rr)
+            out.append(np.sqrt(max(num / den, 0.0)) / KMS)
+        return np.array(out)
+
+    def load(fn):
+        R, s, e = [], [], []
+        for ln in open(f"/DATA/obt_game_cache/raw/pne_ell/{fn}"):
+            if ln.startswith("#") or not ln.strip():
+                continue
+            p = ln.split()
+            R.append(float(p[0]))
+            s.append(float(p[1]))
+            e.append(float(p[2]))
+        return np.array(R), np.array(s), np.array(e)
+
+    Rs_as, Ss, Es = load("ngc7507_salinas2012_sigma.dat")
+    Rl_as, Sl, El = load("ngc7507_lane2015_sigma.dat")
+    # fit data = Salinas (clean, to 85'') + Lane OUTER (>85'', past Salinas) EXCLUDING the 67-72'' merger bump
+    mlane = Rl_as > 85.5
+    Rfit_as = np.concatenate([Rs_as, Rl_as[mlane]])
+    Sfit = np.concatenate([Ss, Sl[mlane]])
+    # error budget: formal error with a 4% systematic floor (de-weights the over-precise central
+    # sigma=2 km/s points whose residual is dominated by deprojection/seeing, not the dearth question)
+    Efit = np.maximum(np.concatenate([Es, El[mlane]]), 0.04 * Sfit)
+    Rfit_m = Rfit_as * as2kpc * KPC
+    gN31 = gN_of(3.1)
+    gba_52 = np.interp(52 * as2kpc * KPC, r_m, gN31) / A0
+    gba_out = np.interp(Rfit_m[-1], r_m, gN31) / A0
+
+    print(
+        f"[ell_n7507] CLEAN round+isolated test (NGC 7507, E0 field elliptical). D={D} Mpc, Re=75''={Re_m/KPC:.1f} kpc."
+    )
+    print(
+        f"  light deprojection check: L_deproj/L_proj = {Ltot/Lproj:.3f} (target ~1.00); L_R={Ltot:.2e} Lsun -> M_bar(M/L=3.1)={3.1*Ltot:.2e} Msun"
+    )
+    print(
+        f"  REGIME (M/L=3.1): g_bar/a0 = {gba_52:.2f} at 52'' (0.7Re) -> {gba_out:.2f} at {Rfit_as[-1]:.0f}'' ({Rfit_as[-1]/Re_as:.1f}Re) = mild-MOND/Newtonian (boost modest)"
+    )
+    print(
+        f"  observed: sigma {Ss[0]:.0f} (0.5'') -> {Ss[-1]:.0f} (85'', Salinas) -> ~{Sl[mlane][-3:].mean():.0f} ({Rfit_as[-1]:.0f}'', Lane) = steep Keplerian decline"
+    )
+    print()
+    print(
+        f"  fits to Salinas+Lane sigma(R), N={len(Sfit)} [M/L fitted 2-4, r_a fitted; EFE OFF, isolated]:"
+    )
+    print(
+        f"    {'model':22s}{'M/L':>5s}{'r_a/Re':>8s}{'chi2/N':>8s}{'sp_in':>7s}{'sp_out(obs)':>13s}"
+    )
+    mls = np.array([MLR]) if MLR > 0 else np.linspace(2.0, 4.0, 11)
+    ras = (
+        np.geomspace(0.15, 15.0, 30) * Re_m
+    )  # r_a grid in metres (small r_a = strongly radial)
+    RA_ISO = 1.0e6 * Re_m  # effectively isotropic (beta->0; the f cancels)
+
+    def fit(g_of_ml, label, allow_aniso=True):
+        best = None
+        ragrid = ras if allow_aniso else np.array([RA_ISO])
+        for ml in mls:
+            g = g_of_ml(ml)
+            for ra in ragrid:
+                sp = sigma_p(g, ra, Rfit_m)
+                chi2 = np.sum(((sp - Sfit) / Efit) ** 2) / len(Sfit)
+                if best is None or chi2 < best[2]:
+                    best = (ml, ra, chi2, sp)
+        ml, ra, chi2, sp = best
+        rstr = f"{ra/Re_m:7.2f}" if allow_aniso else "    iso"
+        print(
+            f"    {label:22s}{ml:5.1f}{rstr:>8s}{chi2:8.1f}{sp[0]:7.0f}{sp[-1]:7.0f}({Sfit[-1]:.0f})"
+        )
+        return chi2
+
+    cN = fit(lambda ml: gN_of(ml), "Newton stars-only", allow_aniso=False)
+    cOi = fit(lambda ml: obt_rar(gN_of(ml)), "OBT mu(x) isotropic", allow_aniso=False)
+    cOr = fit(lambda ml: obt_rar(gN_of(ml)), "OBT mu(x) + OM-radial", allow_aniso=True)
+    cSr = fit(
+        lambda ml: rar_simple(gN_of(ml)), "simple-nu + OM-radial", allow_aniso=True
+    )
+    print()
+    print(
+        f"  VALIDATION (pipeline vs literature): simple-nu+radial chi2/N={cSr:.1f} -- if >> Newton's {cN:.1f},"
+    )
+    print(
+        "    my pipeline REPRODUCES the Lane/Salinas 'MOND(simple-nu) over-predicts & fails' verdict."
+    )
+    print(
+        f"  RESULT: OBT mu(x)+OM-radial chi2/N={cOr:.1f} vs OBT-iso {cOi:.1f} vs Newton {cN:.1f}."
+    )
+    print(
+        "  READ: NGC 7507 only reaches ~1.7 Re (mild-MOND), where OBT's mu(x)=x/sqrt(1+x^2) boosts far less"
+    )
+    print(
+        "  than the simple-nu Lane used -> if OBT mu(x)+modest radial anisotropy ~ Newton's chi2, the 'MOND"
+    )
+    print(
+        "  fails on the isolated round elliptical' verdict is an INTERPOLATION-FUNCTION artifact (external),"
+    )
+    print(
+        "  not a DM dearth and not an OBT failure. If OBT mu(x) STILL over-predicts like simple-nu, the monster"
+    )
+    print(
+        "  does NOT cleanly extend to the truly-isolated round case -> honest boundary, NO card (no glue)."
+    )
 
 
 PROBES = {
+    "ell_n7507": lambda opts=None: ell_n7507(opts),
     "ell_jeans_fit": lambda opts=None: ell_jeans_fit(opts),
     "ell_jeans": lambda opts=None: ell_jeans(opts),
     "ell_pne": lambda opts=None: ell_pne(opts),
@@ -5344,7 +5605,9 @@ def nu_floor_budget(opts):
     Components: (i) EFE-prescription spread [Chae nu_e RC-fit vs summed nu(z+e) vs
     the no-EFE ceiling nu(z) vs deep-external quasi-Newton 1/mu(e)];
     (ii) M/L (2 -> 2.5 -> 3); (iii) residual tides (the #17 trend at the sets' eta)."""
-    import numpy as np, pandas as pd
+    import numpy as np
+    import pandas as pd
+
     G, MSUN, PC, KMS, a0 = 6.674e-11, 1.989e30, 3.0856775814913673e16, 1e3, 1.2e-10
     d = pd.read_parquet("/DATA/obt_game_cache/lots/dsph.parquet")
     d = d[(d.M_bar > 0) & (d.sigma_kms > 0) & (d.r_half_pc > 0)].copy()
@@ -5363,31 +5626,47 @@ def nu_floor_budget(opts):
         Ae = e * (1 + e / 2) / (1 + e)
         Be = 1 + e
         nue = 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
-        nus = 0.5 + np.sqrt(0.25 + 1.0 / (z + e))      # summed-field
-        nui = 0.5 + np.sqrt(0.25 + 1.0 / z)            # no-EFE ceiling
-        nuq = np.sqrt(1.0 + e**2) / e                  # deep-ext quasi-Newton 1/mu(e)
+        nus = 0.5 + np.sqrt(0.25 + 1.0 / (z + e))  # summed-field
+        nui = 0.5 + np.sqrt(0.25 + 1.0 / z)  # no-EFE ceiling
+        nuq = np.sqrt(1.0 + e**2) / e  # deep-ext quasi-Newton 1/mu(e)
+
         def med(nu, ups=2.0):
             sp = np.sqrt(nu * (ups / 2.0) * G * M / (5 * r)) / KMS
             return np.median(np.log10(so / sp))
-        print(f"  [{label}] N={len(M)}  median z/e = {np.median(z/e):.2f}  (z~e = transition regime)")
-        print(f"    floor | Chae nu_e      : {med(nue):+.3f} dex   (the #14/#18 baseline)")
+
+        print(
+            f"  [{label}] N={len(M)}  median z/e = {np.median(z/e):.2f}  (z~e = transition regime)"
+        )
+        print(
+            f"    floor | Chae nu_e      : {med(nue):+.3f} dex   (the #14/#18 baseline)"
+        )
         print(f"    floor | summed nu(z+e) : {med(nus):+.3f}")
-        print(f"    floor | no-EFE nu(z)   : {med(nui):+.3f}   <- prescription CEILING (EFE only suppresses)")
-        print(f"    floor | 1/mu(e) quasi-N: {med(nuq):+.3f}   (deep-external form, invalid here if z~e)")
-        print(f"    floor | Chae, M/L=2.5  : {med(nue,2.5):+.3f} ;  M/L=3.0: {med(nue,3.0):+.3f}")
+        print(
+            f"    floor | no-EFE nu(z)   : {med(nui):+.3f}   <- prescription CEILING (EFE only suppresses)"
+        )
+        print(
+            f"    floor | 1/mu(e) quasi-N: {med(nuq):+.3f}   (deep-external form, invalid here if z~e)"
+        )
+        print(
+            f"    floor | Chae, M/L=2.5  : {med(nue,2.5):+.3f} ;  M/L=3.0: {med(nue,3.0):+.3f}"
+        )
 
     print("REGIME 1 — the EFE sets (the +0.1..+0.2 floor of #14/#17/#18):")
     floors("MW", "MW EFE set")
     floors("M31", "M31 EFE set")
     print()
-    print("REGIME 2 — deep-external (z<<e): the Chae-limit vs standard quasi-Newton split:")
+    print(
+        "REGIME 2 — deep-external (z<<e): the Chae-limit vs standard quasi-Newton split:"
+    )
     for name, e_, z_ in [("Crater II", 0.111, 3.4e-4), ("Antlia 2", 0.10, 2.0e-4)]:
         Ae = e_ * (1 + e_ / 2) / (1 + e_)
         Be = 1 + e_
-        nue0 = 0.5 + (Be - Ae) / (2 * Ae)             # exact z->0 limit of Chae nu_e
+        nue0 = 0.5 + (Be - Ae) / (2 * Ae)  # exact z->0 limit of Chae nu_e
         nuq = np.sqrt(1 + e_**2) / e_
-        print(f"  {name:10s}: nu_e(z->0;e={e_:.3f}) = {nue0:.2f}  vs  1/mu(e) = {nuq:.2f}"
-              f"  -> sigma ratio {np.sqrt(nuq/nue0):.2f} = {0.5*np.log10(nuq/nue0):+.3f} dex")
+        print(
+            f"  {name:10s}: nu_e(z->0;e={e_:.3f}) = {nue0:.2f}  vs  1/mu(e) = {nuq:.2f}"
+            f"  -> sigma ratio {np.sqrt(nuq/nue0):.2f} = {0.5*np.log10(nuq/nue0):+.3f} dex"
+        )
     print()
     print("  BUDGET VERDICT (transition regime, the floor proper):")
     print("    (i) prescription spread bounded by the no-EFE ceiling: <= +0.08 dex")
@@ -5417,8 +5696,12 @@ def fast_bars(opts):
     base = "/DATA/obt_game_cache/raw/bars"
 
     # ---------------- Geron 2023 (CSV, 225) ----------------
-    t3 = pd.read_csv(f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table3.csv")
-    t1 = pd.read_csv(f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table1.csv")
+    t3 = pd.read_csv(
+        f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table3.csv"
+    )
+    t1 = pd.read_csv(
+        f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table1.csv"
+    )
     g = t3.merge(t1[["PLATEIFU", "bar_type"]], on="PLATEIFU", how="left")
     g = g[(g.R > 0) & np.isfinite(g.R)].copy()
 
@@ -5441,8 +5724,11 @@ def fast_bars(opts):
         if m.group(1):
             R, up, lo = float(m.group(1)), float(m.group(2)), float(m.group(3))
         else:
-            R = float(m.group(4)); up = lo = float(m.group(5))
-        rows.append(dict(name=cols[0], morph=cols[1], R=R, up=up, lo=lo, final=flag == "yes"))
+            R = float(m.group(4))
+            up = lo = float(m.group(5))
+        rows.append(
+            dict(name=cols[0], morph=cols[1], R=R, up=up, lo=lo, final=flag == "yes")
+        )
     cu = pd.DataFrame(rows)
 
     def mc_frac(R, up, lo, n=4000):
@@ -5454,14 +5740,22 @@ def fast_bars(opts):
             R - np.abs(rng.standard_normal((n, len(R)))) * lo,
         )
         draws = np.clip(draws, 0.01, None)
-        return [(draws < 1).mean(), ((draws >= 1) & (draws <= 1.4)).mean(), (draws > 1.4).mean()]
+        return [
+            (draws < 1).mean(),
+            ((draws >= 1) & (draws <= 1.4)).mean(),
+            (draws > 1.4).mean(),
+        ]
 
     print("FAST BARS — observed R = R_cr/R_bar (MC over asymmetric errors):")
-    print(f"  {'variant':34s}{'N':>4s}{'medR':>7s}{'P(<1)':>8s}{'P(1-1.4)':>9s}{'P(>1.4)':>9s}")
+    print(
+        f"  {'variant':34s}{'N':>4s}{'medR':>7s}{'P(<1)':>8s}{'P(1-1.4)':>9s}{'P(>1.4)':>9s}"
+    )
 
     def show(label, R, up, lo):
         f = mc_frac(R, up, lo)
-        print(f"  {label:34s}{len(R):4d}{np.median(R):7.2f}{f[0]:8.2f}{f[1]:9.2f}{f[2]:9.2f}")
+        print(
+            f"  {label:34s}{len(R):4d}{np.median(R):7.2f}{f[0]:8.2f}{f[1]:9.2f}{f[2]:9.2f}"
+        )
 
     show("Geron23 ALL (MaNGA TW)", g.R, g.R_ul - g.R, g.R - g.R_ll)
     gs = g[g.bar_type.astype(str).str.contains("Strong", case=False, na=False)]
@@ -5486,7 +5780,9 @@ def fast_bars(opts):
         ("point-mass bound (bar 3e9, 5kpc)", 5.0, 200.0, 3e9, 5.0, 1.0),
         ("quadrupole-reduced (f_nonax~0.3)", 5.0, 200.0, 3e9, 5.0, 0.3),
     ]:
-        t = 1.17 * r**2 * v / (Gk * Mb * lnL) * 0.978 / f**2  # Gyr; torque ~ (fM)^2 => t ~ t_pm/f^2
+        t = (
+            1.17 * r**2 * v / (Gk * Mb * lnL) * 0.978 / f**2
+        )  # Gyr; torque ~ (fM)^2 => t ~ t_pm/f^2
         print(f"    {tag:36s}: tau_brake ~ {t:5.2f} Gyr  (<< 10 Gyr bar ages)")
     print("    -> ANY responsive-halo bracket predicts R > 1.4 within a few Gyr,")
     print("       MOST sharply for gas-poor EARLY types (no gas spin-up defense).")
@@ -5505,30 +5801,57 @@ def bars_ordering(opts):
 
     rng = np.random.default_rng(7)
     base = "/DATA/obt_game_cache/raw/bars"
-    t3 = pd.read_csv(f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table3.csv")
-    t1 = pd.read_csv(f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table1.csv")
+    t3 = pd.read_csv(
+        f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table3.csv"
+    )
+    t1 = pd.read_csv(
+        f"{base}/tobiasgeron-Tremaine_Weinberg-09adc7f/tables_geron2022/Table1.csv"
+    )
     g = t3.merge(t1, on="PLATEIFU", how="left")
-    g = g[(g.R > 0) & np.isfinite(g.R) & np.isfinite(g.Omega_phys) & np.isfinite(g.Rcr_phys)].copy()
+    g = g[
+        (g.R > 0)
+        & np.isfinite(g.R)
+        & np.isfinite(g.Omega_phys)
+        & np.isfinite(g.Rcr_phys)
+    ].copy()
     S = g.bar_type.astype(str).str.contains("Strong", case=False)
     W = g.bar_type.astype(str).str.contains("Weak", case=False)
 
     def boot_med_diff(a, b, n=20000):
         a, b = np.asarray(a), np.asarray(b)
-        d = np.array([np.median(rng.choice(a, len(a))) - np.median(rng.choice(b, len(b))) for _ in range(n)])
-        return np.median(a) - np.median(b), (d > 0).mean() if np.median(a) - np.median(b) < 0 else (d < 0).mean()
+        d = np.array(
+            [
+                np.median(rng.choice(a, len(a))) - np.median(rng.choice(b, len(b)))
+                for _ in range(n)
+            ]
+        )
+        return np.median(a) - np.median(b), (
+            (d > 0).mean() if np.median(a) - np.median(b) < 0 else (d < 0).mean()
+        )
 
-    print("GERON23 strong (N=%d) vs weak (N=%d) — medians + MW p + bootstrap sign-flip prob:" % (S.sum(), W.sum()))
-    for col, label in [("R", "R = Rcr/Rbar"), ("Omega_phys", "Omega [km/s/kpc]"),
-                       ("Rcr_phys", "R_cr [kpc]"), ("R_bar_deproj_kpc", "R_bar [kpc]")]:
+    print(
+        "GERON23 strong (N=%d) vs weak (N=%d) — medians + MW p + bootstrap sign-flip prob:"
+        % (S.sum(), W.sum())
+    )
+    for col, label in [
+        ("R", "R = Rcr/Rbar"),
+        ("Omega_phys", "Omega [km/s/kpc]"),
+        ("Rcr_phys", "R_cr [kpc]"),
+        ("R_bar_deproj_kpc", "R_bar [kpc]"),
+    ]:
         a, b = g[S][col].dropna(), g[W][col].dropna()
         mw = mannwhitneyu(a, b).pvalue
         diff, pflip = boot_med_diff(a, b)
-        print(f"  {label:18s}: strong {np.median(a):6.2f} vs weak {np.median(b):6.2f}"
-              f"  diff {diff:+6.2f}  MW p={mw:.4f}  P(flip)={pflip:.3f}")
+        print(
+            f"  {label:18s}: strong {np.median(a):6.2f} vs weak {np.median(b):6.2f}"
+            f"  diff {diff:+6.2f}  MW p={mw:.4f}  P(flip)={pflip:.3f}"
+        )
     vc = g.Omega_phys * g.Rcr_phys
     a, b = vc[S], vc[W]
-    print(f"  {'V_c(Rcr)=Om*Rcr':18s}: strong {np.median(a):6.2f} vs weak {np.median(b):6.2f}"
-          f"  (host-mass proxy; MW p={mannwhitneyu(a,b).pvalue:.4f})")
+    print(
+        f"  {'V_c(Rcr)=Om*Rcr':18s}: strong {np.median(a):6.2f} vs weak {np.median(b):6.2f}"
+        f"  (host-mass proxy; MW p={mannwhitneyu(a,b).pvalue:.4f})"
+    )
 
     # Cuomo early vs late ordering significance (reparse, final sample)
     tex = open(f"{base}/cuomo2020/bar_properties.tex").read()
@@ -5547,8 +5870,12 @@ def bars_ordering(opts):
     et = cu[cu.morph.str.contains("SB0|SBa(?!b)|S0", regex=True)]
     lt = cu[~cu.index.isin(et.index)]
     mw = mannwhitneyu(et.R, lt.R).pvalue
-    print(f"\nCUOMO20 final: EARLY (N={len(et)}) med R={et.R.median():.2f} vs LATE (N={len(lt)}) {lt.R.median():.2f}  MW p={mw:.3f}")
-    print("\n  FRICTION ORDERING PREDICTION: evolved (strong/early) -> HIGHER R, HIGHER Rcr.")
+    print(
+        f"\nCUOMO20 final: EARLY (N={len(et)}) med R={et.R.median():.2f} vs LATE (N={len(lt)}) {lt.R.median():.2f}  MW p={mw:.3f}"
+    )
+    print(
+        "\n  FRICTION ORDERING PREDICTION: evolved (strong/early) -> HIGHER R, HIGHER Rcr."
+    )
 
 
 def vf_alfalfa(opts):
@@ -5571,8 +5898,12 @@ def vf_alfalfa(opts):
     s90 = np.where(lw < 2.5, 0.5 * lw - 1.14, lw - 2.39)
     s50 = 10 ** (s90 - 0.067)
     ok = d.HIflux.values >= s50
-    print(f"N(Code1, 10<D<{DCAP:.0f}, W>=20) = {len(d)}; below 50%-completeness dropped: {(~ok).sum()}")
-    d = d[ok]; lw = lw[ok]; s50 = s50[ok]
+    print(
+        f"N(Code1, 10<D<{DCAP:.0f}, W>=20) = {len(d)}; below 50%-completeness dropped: {(~ok).sum()}"
+    )
+    d = d[ok]
+    lw = lw[ok]
+    s50 = s50[ok]
     dmax = np.minimum(d.Dist.values * np.sqrt(d.HIflux.values / s50), DCAP)
     OMEGA = 6900.0 * (np.pi / 180.0) ** 2  # a100 footprint, sr
     vmax = (OMEGA / 3.0) * (dmax**3 - 10.0**3)
@@ -5582,12 +5913,21 @@ def vf_alfalfa(opts):
     mb = np.arange(7.0, 11.01, 0.25)
     mc = 0.5 * (mb[1:] + mb[:-1])
     phi_m = np.histogram(d.logMH, bins=mb, weights=w)[0] / 0.25
-    print("\n[VALIDATION] our 1/Vmax HIMF vs Jones18 Schechter (phi*=4.5e-3, logM*=9.94, a=-1.25):")
-    js = lambda m: np.log(10) * 4.5e-3 * (10 ** (m - 9.94)) ** (1 - 1.25) * np.exp(-(10 ** (m - 9.94)))
+    print(
+        "\n[VALIDATION] our 1/Vmax HIMF vs Jones18 Schechter (phi*=4.5e-3, logM*=9.94, a=-1.25):"
+    )
+    js = (
+        lambda m: np.log(10)
+        * 4.5e-3
+        * (10 ** (m - 9.94)) ** (1 - 1.25)
+        * np.exp(-(10 ** (m - 9.94)))
+    )
     for m in (8.0, 8.5, 9.0, 9.5, 10.0):
         i = np.argmin(np.abs(mc - m))
         r = phi_m[i] / js(mc[i])
-        print(f"    logMHI={m:5.2f}: ours {phi_m[i]:9.2e}  Jones18 {js(mc[i]):9.2e}  ratio {r:5.2f}")
+        print(
+            f"    logMHI={m:5.2f}: ours {phi_m[i]:9.2e}  Jones18 {js(mc[i]):9.2e}  ratio {r:5.2f}"
+        )
 
     # -------- (A) the observed width function --------
     wb = np.arange(1.3, 2.91, 0.1)
@@ -5599,10 +5939,13 @@ def vf_alfalfa(opts):
     from colossus.cosmology import cosmology as ccosmo
     from colossus.halo import concentration as cconc
     from colossus.lss import mass_function as cmf
+
     ccosmo.setCosmology("planck18")
     h = 0.6766
     M = 10 ** np.arange(9.0, 14.01, 0.05)  # Msun/h
-    dndlnM = cmf.massFunction(M, 0.0, mdef="200c", model="tinker08", q_out="dndlnM")  # (Mpc/h)^-3
+    dndlnM = cmf.massFunction(
+        M, 0.0, mdef="200c", model="tinker08", q_out="dndlnM"
+    )  # (Mpc/h)^-3
     c = cconc.concentration(M, "200c", 0.0, model="diemer19")
     G = 4.30091e-9  # Mpc (km/s)^2 / Msun
     rho_c = 2.775e11 * h * h  # Msun/Mpc^3
@@ -5617,7 +5960,10 @@ def vf_alfalfa(opts):
     # -------- (C) OBT/BTFR locality: W50/(2 V_BTFR sin i) flat in mass --------
     a0 = 3.7e3  # (km/s)^2/kpc... in (km/s)^2/Mpc: 1.2e-10 m/s^2 = 3704 (km/s)^2/kpc -> NO: use SI route
     # V^4 = G M a0 : G[m]=6.674e-11, a0=1.2e-10, M in kg -> V in m/s
-    for tag, fb in [("M_bar = 1.33 M_HI (pure gas)", 1.33), ("M_bar = 2.0 M_HI (gas-rich typ.)", 2.0)]:
+    for tag, fb in [
+        ("M_bar = 1.33 M_HI (pure gas)", 1.33),
+        ("M_bar = 2.0 M_HI (gas-rich typ.)", 2.0),
+    ]:
         Mb = fb * 10**d.logMH.values * 1.989e30
         Vb = (6.674e-11 * Mb * 1.2e-10) ** 0.25 / 1e3
         ratio = d.W50.values / (2 * Vb)
@@ -5626,10 +5972,18 @@ def vf_alfalfa(opts):
             sel = np.abs(d.logMH.values - m) < 0.25
             meds.append(np.median(ratio[sel]))
         print(f"\n[C] {tag}: median W50/(2 V_BTFR) per logMHI bin 8.25..10.25:")
-        print("    " + "  ".join(f"{x:.3f}" for x in meds) + "   [flat ~ <sin i>=0.79-0.87 => locality holds]")
+        print(
+            "    "
+            + "  ".join(f"{x:.3f}" for x in meds)
+            + "   [flat ~ <sin i>=0.79-0.87 => locality holds]"
+        )
 
-    print("\n[A,B] dn/dlogV [Mpc^-3 dex^-1]: observed (V=W50/2/0.85) vs LCDM halos (Vmax):")
-    print(f"    {'V[km/s]':>8s}{'observed':>11s}{'halos':>10s}{'ratio h/o':>10s}{'Nsrc':>6s}")
+    print(
+        "\n[A,B] dn/dlogV [Mpc^-3 dex^-1]: observed (V=W50/2/0.85) vs LCDM halos (Vmax):"
+    )
+    print(
+        f"    {'V[km/s]':>8s}{'observed':>11s}{'halos':>10s}{'ratio h/o':>10s}{'Nsrc':>6s}"
+    )
     for V in (30, 40, 55, 75, 100, 150, 200):
         lwv = np.log10(2 * V * 0.85)
         i = np.argmin(np.abs(wc - lwv))
@@ -5647,12 +6001,23 @@ def vf_harden(opts):
     import pandas as pd
 
     d = pd.read_csv("/DATA/obt_game_cache/raw/alfalfa/a100.csv")
-    d = d[(d.HIcode == 1) & (d.W50 >= 20) & (d.Dist > 10) & (d.Dist <= 214) & np.isfinite(d.logMH)].copy()
+    d = d[
+        (d.HIcode == 1)
+        & (d.W50 >= 20)
+        & (d.Dist > 10)
+        & (d.Dist <= 214)
+        & np.isfinite(d.logMH)
+    ].copy()
     lw = np.log10(d.W50.values)
     s90 = np.where(lw < 2.5, 0.5 * lw - 1.14, lw - 2.39)
     s50 = 10 ** (s90 - 0.067)
     d = d[d.HIflux.values >= s50]
-    lw = np.log10(d.W50.values); s50 = s50[d.HIflux.values >= s50] if False else 10 ** (np.where(lw < 2.5, 0.5 * lw - 1.14, lw - 2.39) - 0.067)
+    lw = np.log10(d.W50.values)
+    s50 = (
+        s50[d.HIflux.values >= s50]
+        if False
+        else 10 ** (np.where(lw < 2.5, 0.5 * lw - 1.14, lw - 2.39) - 0.067)
+    )
     dmax = np.minimum(d.Dist.values * np.sqrt(d.HIflux.values / s50), 214.0)
     w_no_area = 3.0 / (dmax**3 - 1000.0)  # per-sr weights (area factored out)
 
@@ -5661,7 +6026,8 @@ def vf_harden(opts):
     fall = (ra > 330.0) | (ra < 45.0)
 
     def shape(mask):
-        l = lw[mask]; wt = w_no_area[mask]
+        l = lw[mask]
+        wt = w_no_area[mask]
         lo = (l > np.log10(2 * 25 * 0.85)) & (l < np.log10(2 * 45 * 0.85))
         hi = (l > np.log10(2 * 85 * 0.85)) & (l < np.log10(2 * 115 * 0.85))
         S = wt[lo].sum() / wt[hi].sum()
@@ -5669,20 +6035,28 @@ def vf_harden(opts):
         eS = S * np.sqrt(1.0 / lo.sum() + 1.0 / hi.sum())
         return S, eS, lo.sum(), hi.sum()
 
-    print("[1] independent-sky SHAPE statistic S = n(25-45)/n(85-115 km/s), per-sr (area cancels):")
-    for tag, m in [("SPRING sky", spring), ("FALL sky", fall), ("ALL", np.ones(len(d), bool))]:
+    print(
+        "[1] independent-sky SHAPE statistic S = n(25-45)/n(85-115 km/s), per-sr (area cancels):"
+    )
+    for tag, m in [
+        ("SPRING sky", spring),
+        ("FALL sky", fall),
+        ("ALL", np.ones(len(d), bool)),
+    ]:
         S, eS, nl, nh = shape(m)
         print(f"    {tag:10s}: S = {S:5.2f} +- {eS:4.2f}   (N_lo={nl}, N_hi={nh})")
     # halo-side same statistic, from the in-house halo VF
     from colossus.cosmology import cosmology as ccosmo
     from colossus.halo import concentration as cconc
     from colossus.lss import mass_function as cmf
+
     ccosmo.setCosmology("planck18")
     h = 0.6766
     M = 10 ** np.arange(9.0, 14.01, 0.02)
     dndlnM = cmf.massFunction(M, 0.0, mdef="200c", model="tinker08", q_out="dndlnM")
     c = cconc.concentration(M, "200c", 0.0, model="diemer19")
-    G = 4.30091e-9; rho_c = 2.775e11 * h * h
+    G = 4.30091e-9
+    rho_c = 2.775e11 * h * h
     R200 = (3 * (M / h) / (4 * np.pi * 200 * rho_c)) ** (1 / 3.0)
     V200 = np.sqrt(G * (M / h) / R200)
     fc = np.log(1 + c) - c / (1 + c)
@@ -5690,31 +6064,49 @@ def vf_harden(opts):
     n = dndlnM * np.log(10) * h**3 * 0.02 / np.gradient(np.log10(M)) * 0  # placeholder
     dn = dndlnM * h**3 * np.gradient(np.log(M))  # per Mpc^3 in each M bin
     Sh = dn[(Vmx > 25) & (Vmx < 45)].sum() / dn[(Vmx > 85) & (Vmx < 115)].sum()
-    print(f"    LCDM halos: S = {Sh:5.2f}   -> observed shape is x{Sh/shape(np.ones(len(d),bool))[0]:.1f} SHALLOWER, in BOTH skies")
+    print(
+        f"    LCDM halos: S = {Sh:5.2f}   -> observed shape is x{Sh/shape(np.ones(len(d),bool))[0]:.1f} SHALLOWER, in BOTH skies"
+    )
 
     # [2] bias-deflated gap bracket at V=30,40 using the HIMF deflator (ours/Jones18)
-    js = lambda m: np.log(10) * 4.5e-3 * (10 ** (m - 9.94)) ** (1 - 1.25) * np.exp(-(10 ** (m - 9.94)))
+    js = (
+        lambda m: np.log(10)
+        * 4.5e-3
+        * (10 ** (m - 9.94)) ** (1 - 1.25)
+        * np.exp(-(10 ** (m - 9.94)))
+    )
     OMEGA = 6900.0 * (np.pi / 180) ** 2
     wfull = w_no_area / OMEGA * 0 + 1.0 / ((OMEGA / 3.0) * (dmax**3 - 1000.0))
-    mb = np.arange(7.0, 11.01, 0.25); mc = 0.5 * (mb[1:] + mb[:-1])
+    mb = np.arange(7.0, 11.01, 0.25)
+    mc = 0.5 * (mb[1:] + mb[:-1])
     phi_m = np.histogram(d.logMH, bins=mb, weights=wfull)[0] / 0.25
     defl = np.interp(d.logMH.values, mc, phi_m / js(mc))
-    print("\n[2] gap at low V, raw vs local-bias-DEFLATED observed (deflator = ours/Jones18 per mass):")
+    print(
+        "\n[2] gap at low V, raw vs local-bias-DEFLATED observed (deflator = ours/Jones18 per mass):"
+    )
     for V in (30, 40, 55):
         sel = np.abs(lw - np.log10(2 * V * 0.85)) < 0.05
         po_raw = wfull[sel].sum() / 0.1
         po_def = (wfull[sel] / defl[sel]).sum() / 0.1
         j = np.argmin(np.abs(Vmx - V))
-        ph = (dndlnM * np.log(10) * h**3)[j] / np.gradient(np.log10(Vmx), np.log10(M))[j]
-        print(f"    V={V:3d}: halos/observed = {ph/po_raw:5.1f} (raw)  -> {ph/po_def:5.1f} (deflated)")
+        ph = (dndlnM * np.log(10) * h**3)[j] / np.gradient(
+            np.log10(Vmx), np.log10(M)
+        )[j]
+        print(
+            f"    V={V:3d}: halos/observed = {ph/po_raw:5.1f} (raw)  -> {ph/po_def:5.1f} (deflated)"
+        )
 
     # [3] required dark fraction of 25-50 km/s halos
     n_halo = dn[(Vmx > 25) & (Vmx < 50)].sum()
     selo = (lw > np.log10(2 * 25 * 0.85)) & (lw < np.log10(2 * 50 * 0.85))
     n_obs_raw = wfull[selo].sum()
     n_obs_def = (wfull[selo] / defl[selo]).sum()
-    print(f"\n[3] n(25<V<50) halos = {n_halo:.3f} /Mpc^3 vs observed {n_obs_raw:.3f} (raw) / {n_obs_def:.3f} (deflated)")
-    print(f"    -> required DARK fraction of field dwarf halos = {1-n_obs_raw/n_halo:.0%} (raw) to {1-n_obs_def/n_halo:.0%} (deflated)")
+    print(
+        f"\n[3] n(25<V<50) halos = {n_halo:.3f} /Mpc^3 vs observed {n_obs_raw:.3f} (raw) / {n_obs_def:.3f} (deflated)"
+    )
+    print(
+        f"    -> required DARK fraction of field dwarf halos = {1-n_obs_raw/n_halo:.0%} (raw) to {1-n_obs_def/n_halo:.0%} (deflated)"
+    )
 
 
 def df2_sigma(opts):
@@ -5734,12 +6126,27 @@ def df2_sigma(opts):
     W_ARA = {"DF2": 0.83, "DF4": 0.74}
 
     # raw velocities (v, +err, -err) — vD18b (Martin18 table) and vD19
-    df2 = [(1818, 7, 7), (1799, 16, 15), (1805, 6, 8), (1814, 3, 3),
-           (1804, 6, 6), (1801, 5, 6), (1802, 10, 10), (1789, 6, 7),
-           (1764, 11, 14), (1800, 13, 14)]
-    df4 = [(1441.2, 4.9, 4.8), (1451.0, 3.6, 3.3), (1457.1, 4.6, 5.5),
-           (1445.4, 2.6, 2.3), (1438.4, 4.8, 4.6), (1445.5, 4.0, 4.1),
-           (1445.1, 5.0, 5.2)]
+    df2 = [
+        (1818, 7, 7),
+        (1799, 16, 15),
+        (1805, 6, 8),
+        (1814, 3, 3),
+        (1804, 6, 6),
+        (1801, 5, 6),
+        (1802, 10, 10),
+        (1789, 6, 7),
+        (1764, 11, 14),
+        (1800, 13, 14),
+    ]
+    df4 = [
+        (1441.2, 4.9, 4.8),
+        (1451.0, 3.6, 3.3),
+        (1457.1, 4.6, 5.5),
+        (1445.4, 2.6, 2.3),
+        (1438.4, 4.8, 4.6),
+        (1445.5, 4.0, 4.1),
+        (1445.1, 5.0, 5.2),
+    ]
 
     def posterior(data, smax=35.0):
         v = np.array([d[0] for d in data], float)
@@ -5759,10 +6166,15 @@ def df2_sigma(opts):
         return q(0.5), q(0.16), q(0.84), q(0.90)
 
     print("[1] IN-HOUSE sigma_int posteriors (flat priors, asymmetric errors):")
-    for tag, d in [("DF2 (10 GCs)", df2), ("DF2 (drop GC-98)", df2[:8] + df2[9:]),
-                   ("DF4 (7 GCs)", df4)]:
+    for tag, d in [
+        ("DF2 (10 GCs)", df2),
+        ("DF2 (drop GC-98)", df2[:8] + df2[9:]),
+        ("DF4 (7 GCs)", df4),
+    ]:
         m, lo, hi, u90 = posterior(d)
-        print(f"    {tag:18s}: sigma = {m:5.1f} (+{hi-m:.1f}/-{m-lo:.1f}),  90% < {u90:.1f} km/s")
+        print(
+            f"    {tag:18s}: sigma = {m:5.1f} (+{hi-m:.1f}/-{m-lo:.1f}),  90% < {u90:.1f} km/s"
+        )
     print("    [validation hook: Martin18 published 9.5 +4.8/-3.9 for the 10-GC model]")
 
     # ---------- (2) our EFE prediction bracket ----------
@@ -5771,27 +6183,47 @@ def df2_sigma(opts):
         Be = 1 + e
         return 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
 
-    print("\n[2] OUR EFE-MOND prediction (Chae nu_e x ARA window), sigma^2 = nu G M/(5 Re):")
+    print(
+        "\n[2] OUR EFE-MOND prediction (Chae nu_e x ARA window), sigma^2 = nu G M/(5 Re):"
+    )
     for name, M, Re, ebr, Wa in [
-        ("DF2 @20Mpc", 2.0e8, 2.2, (0.054, 0.135), W_ARA["DF2"]),   # NGC1052 d3D 200-80 kpc
-        ("DF4 @20Mpc", 1.66e8, 1.6, (0.065, 0.25), W_ARA["DF4"]),   # NGC1052 165kpc / NGC1035 close
+        (
+            "DF2 @20Mpc",
+            2.0e8,
+            2.2,
+            (0.054, 0.135),
+            W_ARA["DF2"],
+        ),  # NGC1052 d3D 200-80 kpc
+        (
+            "DF4 @20Mpc",
+            1.66e8,
+            1.6,
+            (0.065, 0.25),
+            W_ARA["DF4"],
+        ),  # NGC1052 165kpc / NGC1035 close
     ]:
         gN = G * M / Re**2 / a0k
         sN = np.sqrt(G * M / (5 * Re))
         s_iso = (4.0 / 81.0 * 6.674e-11 * M * 1.989e30 * 1.2e-10) ** 0.25 / 1e3
         preds = [np.sqrt(chae_nue(gN, e) * G * M / (5 * Re)) * Wa**0.25 for e in ebr]
-        print(f"    {name:12s}: z={gN:.3f}; Newton {sN:4.1f}; ISOLATED MOND {s_iso:4.1f} "
-              f"(the vD18 'falsification' number); EFE x ARA bracket "
-              f"[{min(preds):.1f}, {max(preds):.1f}] km/s")
+        print(
+            f"    {name:12s}: z={gN:.3f}; Newton {sN:4.1f}; ISOLATED MOND {s_iso:4.1f} "
+            f"(the vD18 'falsification' number); EFE x ARA bracket "
+            f"[{min(preds):.1f}, {max(preds):.1f}] km/s"
+        )
     print("    [published EFE predictions: Famaey+18 13.4+4.8-3.7; Kroupa+18 ~13.4]")
 
     # ---------- (3) distance audit ----------
     M2, Re2 = 2.0e8 * (13.7 / 20.0) ** 2, 2.2 * 13.7 / 20.0
     s_iso2 = (4.0 / 81.0 * 6.674e-11 * M2 * 1.989e30 * 1.2e-10) ** 0.25 / 1e3
     sN2 = np.sqrt(G * M2 / (5 * Re2))
-    print(f"\n[3] 13.7-Mpc branch (Trujillo19; disfavored by SBF 22.1+-1.2, Danieli20):")
-    print(f"    DF2: Newton {sN2:.1f} ('anomaly' dissolves in LCDM terms too);"
-          f" isolated MOND {s_iso2:.1f} (DF2 then foreground/quasi-isolated)")
+    print(
+        f"\n[3] 13.7-Mpc branch (Trujillo19; disfavored by SBF 22.1+-1.2, Danieli20):"
+    )
+    print(
+        f"    DF2: Newton {sN2:.1f} ('anomaly' dissolves in LCDM terms too);"
+        f" isolated MOND {s_iso2:.1f} (DF2 then foreground/quasi-isolated)"
+    )
 
 
 def malin1_ara(opts):
@@ -5817,8 +6249,10 @@ def malin1_ara(opts):
         return g
 
     print("MALIN 1 (i=38+-3 -> +-5.2% coherent systematic on V_obs):")
-    print(f"  {'r':>5s}{'V_obs':>7s}{'V_bar':>7s}{'T_k':>6s}{'V_const':>8s}"
-          f"{'V_ARA(emp)':>11s}{'V_ARA(b61)':>11s}{'n_sig(const)':>13s}{'n_sig(emp)':>11s}{'n_sig(b61)':>11s}")
+    print(
+        f"  {'r':>5s}{'V_obs':>7s}{'V_bar':>7s}{'T_k':>6s}{'V_const':>8s}"
+        f"{'V_ARA(emp)':>11s}{'V_ARA(b61)':>11s}{'n_sig(const)':>13s}{'n_sig(emp)':>11s}{'n_sig(b61)':>11s}"
+    )
     Wemp = lambda tk: 1.0 if tk < 1.0 else (0.80 if tk < 1.5 else 0.71)
     for r, vobs, ev in d["rc"]:
         vb2 = at("gas", r) ** 2 + at("lsb", r) ** 2 + at("hsb", r) ** 2
@@ -5829,21 +6263,41 @@ def malin1_ara(opts):
         va = np.sqrt(v_rar(gbar, W) * r)
         vb61 = np.sqrt(v_rar(gbar, 0.61 if tk >= 1.0 else 1.0) * r)
         sig = np.sqrt(ev**2 + (0.052 * vobs) ** 2)
-        print(f"  {r:5.1f}{vobs:7.1f}{np.sqrt(vb2):7.1f}{tk:6.2f}{vc:8.1f}"
-              f"{va:11.1f}{vb61:11.1f}{(vc-vobs)/sig:13.1f}{(va-vobs)/sig:11.1f}{(vb61-vobs)/sig:11.1f}")
-    print("  [their published misfit: ~25 km/s (12-13%) at a0=3000; standard a0 makes it worse]")
-    print("  [warp escape granted by Lelli+10: i 38->32 (6 deg) erases the CONSTANT-MOND misfit]")
+        print(
+            f"  {r:5.1f}{vobs:7.1f}{np.sqrt(vb2):7.1f}{tk:6.2f}{vc:8.1f}"
+            f"{va:11.1f}{vb61:11.1f}{(vc-vobs)/sig:13.1f}{(va-vobs)/sig:11.1f}{(vb61-vobs)/sig:11.1f}"
+        )
+    print(
+        "  [their published misfit: ~25 km/s (12-13%) at a0=3000; standard a0 makes it worse]"
+    )
+    print(
+        "  [warp escape granted by Lelli+10: i 38->32 (6 deg) erases the CONSTANT-MOND misfit]"
+    )
 
     print("\nNGC 7589 control (their good constant-MOND fit, M_b/L=4.7, M_d/L=1.3):")
     for r, vobs, ev in d["rc_n7589"]:
         tk = 2 * np.pi * r / vobs / np.sqrt(2.0) * 0.97779
-        print(f"  r={r:5.1f}  V={vobs:6.1f}  T_kappa={tk:5.2f} Gyr  -> "
-              + ("SUB-BAND (W=1): ARA = constant-MOND, good fit PRESERVED" if tk < 1 else "band"))
+        print(
+            f"  r={r:5.1f}  V={vobs:6.1f}  T_kappa={tk:5.2f} Gyr  -> "
+            + (
+                "SUB-BAND (W=1): ARA = constant-MOND, good fit PRESERVED"
+                if tk < 1
+                else "band"
+            )
+        )
 
-    print("\n  SPARC band-trend cross-reference (barreau 1): -0.048+-0.028 dex (1-1.5),")
-    print("  -0.074+-0.030 dex (1.5-2.2) in g — the SAME T_kappa zone as Malin 1's outer points;")
-    print("  Malin 1 needs ~-0.13 to -0.15 dex(g) vs const-a0: envelope covers ~half centrally,")
-    print("  ~all at its 95% lower edge (W=0.61); remainder = HALF the granted warp (i 38->35.5).")
+    print(
+        "\n  SPARC band-trend cross-reference (barreau 1): -0.048+-0.028 dex (1-1.5),"
+    )
+    print(
+        "  -0.074+-0.030 dex (1.5-2.2) in g — the SAME T_kappa zone as Malin 1's outer points;"
+    )
+    print(
+        "  Malin 1 needs ~-0.13 to -0.15 dex(g) vs const-a0: envelope covers ~half centrally,"
+    )
+    print(
+        "  ~all at its 95% lower edge (W=0.61); remainder = HALF the granted warp (i 38->35.5)."
+    )
 
 
 def band_separator(opts):
@@ -5871,7 +6325,9 @@ def band_separator(opts):
             continue
         if R <= 0 or V <= 0:
             continue
-        gals.setdefault(p[0], []).append((R, V, eV, (vg * abs(vg) + 0.5 * vd**2 + 0.7 * vb**2) / R))
+        gals.setdefault(p[0], []).append(
+            (R, V, eV, (vg * abs(vg) + 0.5 * vd**2 + 0.7 * vb**2) / R)
+        )
     rows = []
     for g, pts in gals.items():
         if g not in EF:
@@ -5906,24 +6362,40 @@ def band_separator(opts):
     pt = float(np.mean(np.array(null_t) <= r_t))
     pe = float(np.mean(np.array(null_e) <= r_e))
     print(f"\n[1] FULL SAMPLE partial Spearman (residual vs X | other):")
-    print(f"    resid ~ T_kappa | e_env : r = {r_t:+.3f}  p(perm,one-sided neg) = {pt:.4f}")
-    print(f"    resid ~ e_env | T_kappa : r = {r_e:+.3f}  p(perm,one-sided neg) = {pe:.4f}")
+    print(
+        f"    resid ~ T_kappa | e_env : r = {r_t:+.3f}  p(perm,one-sided neg) = {pt:.4f}"
+    )
+    print(
+        f"    resid ~ e_env | T_kappa : r = {r_e:+.3f}  p(perm,one-sided neg) = {pe:.4f}"
+    )
     print(f"    [T_kappa-e_env mutual corr: {spearmanr(tk, ee).statistic:+.3f}]")
 
     band = tk > 1.0
-    print(f"\n[2] BAND galaxies (T_k>1, N={band.sum()}): the low-e half is the EFE-free test:")
+    print(
+        f"\n[2] BAND galaxies (T_k>1, N={band.sum()}): the low-e half is the EFE-free test:"
+    )
     me = np.median(ee[band])
-    for tag, m in [("low-e half (e_env<median)", band & (ee < me)),
-                   ("high-e half", band & (ee >= me))]:
+    for tag, m in [
+        ("low-e half (e_env<median)", band & (ee < me)),
+        ("high-e half", band & (ee >= me)),
+    ]:
         s = res[m]
         boots = [np.median(rng.choice(s, len(s))) for _ in range(4000)]
-        print(f"    {tag:28s}: N={m.sum():3d}  median resid = {np.median(s):+.3f} +- {np.std(boots):.3f}")
+        print(
+            f"    {tag:28s}: N={m.sum():3d}  median resid = {np.median(s):+.3f} +- {np.std(boots):.3f}"
+        )
     sub = tk < 0.7
     s = res[sub]
-    print(f"\n[3] SUB-BAND control (T_k<0.7, N={sub.sum()}): median resid = {np.median(s):+.3f}"
-          f" (should be ~0 under both readings)")
-    print("\n  READ: EFE-only (Chae) predicts [1] e-axis carries all, T_k-axis dies at fixed e,")
-    print("  and the low-e band half shows NO deficit. ARA predicts the T_k axis survives at")
+    print(
+        f"\n[3] SUB-BAND control (T_k<0.7, N={sub.sum()}): median resid = {np.median(s):+.3f}"
+        f" (should be ~0 under both readings)"
+    )
+    print(
+        "\n  READ: EFE-only (Chae) predicts [1] e-axis carries all, T_k-axis dies at fixed e,"
+    )
+    print(
+        "  and the low-e band half shows NO deficit. ARA predicts the T_k axis survives at"
+    )
     print("  fixed e and the low-e band half KEEPS the deficit.")
 
 
@@ -5937,7 +6409,9 @@ def scissor_lens(opts):
 
     G = 6.674e-11
     a0 = 1.2e-10
-    rows = np.loadtxt("/DATA/obt_game_cache/raw/brouwer2021_rar/Fig-4-5-C1_RAR-KiDS-isolated_Nobins.txt")
+    rows = np.loadtxt(
+        "/DATA/obt_game_cache/raw/brouwer2021_rar/Fig-4-5-C1_RAR-KiDS-isolated_Nobins.txt"
+    )
     gbar, esd, err, bias = rows[:, 0], rows[:, 1], rows[:, 3], rows[:, 4]
     PC = 3.0857e16
     gobs = 4 * G * esd * 1.989e30 / PC**2 / bias
@@ -5961,9 +6435,15 @@ def scissor_lens(opts):
     res = np.log10(gobs[sel] / grar[sel])
     m = np.sum(w * res) / np.sum(w)
     em = 1.0 / np.sqrt(np.sum(w))
-    print(f"\n  WEIGHTED MEAN residual (g_bar<3e-12, r_eff~100-450 kpc, T_k>>2T): {m:+.3f} +- {em:.3f} dex")
-    print("  [dynamics at the same T_kappa would be suppressed by -0.3 to -1+ dex under ARA;")
-    print("   the SPARC band entry already measures -0.07 dex at T_k~2. Blade A = photons full.]")
+    print(
+        f"\n  WEIGHTED MEAN residual (g_bar<3e-12, r_eff~100-450 kpc, T_k>>2T): {m:+.3f} +- {em:.3f} dex"
+    )
+    print(
+        "  [dynamics at the same T_kappa would be suppressed by -0.3 to -1+ dex under ARA;"
+    )
+    print(
+        "   the SPARC band entry already measures -0.07 dex at T_k~2. Blade A = photons full.]"
+    )
 
 
 def band_trio(opts):
@@ -5990,7 +6470,9 @@ def band_trio(opts):
         except ValueError:
             continue
         if R > 0 and V > 0:
-            gals[p[0]].append((R, V, eV, (vg * abs(vg) + 0.5 * vd**2 + 0.7 * vb**2) / R))
+            gals[p[0]].append(
+                (R, V, eV, (vg * abs(vg) + 0.5 * vd**2 + 0.7 * vb**2) / R)
+            )
     deltas = []
     for g in want:
         pts = sorted(gals[g])
@@ -6010,15 +6492,25 @@ def band_trio(opts):
         if sub and band:
             d = np.median(band) - np.median(sub)
             deltas.append(d)
-            print(f"  {g:10s}: e_env={e if e is not None else ' n/a'};  N(sub,band)=({len(sub):2d},{len(band):2d})"
-                  f"  med_sub={np.median(sub):+.3f}  med_band={np.median(band):+.3f}  DELTA={d:+.3f}")
+            print(
+                f"  {g:10s}: e_env={e if e is not None else ' n/a'};  N(sub,band)=({len(sub):2d},{len(band):2d})"
+                f"  med_sub={np.median(sub):+.3f}  med_band={np.median(band):+.3f}  DELTA={d:+.3f}"
+            )
         else:
             print(f"  {g:10s}: insufficient split (sub={len(sub)}, band={len(band)})")
     deltas = np.array(deltas)
-    print(f"\n  PATTERN TEST: {np.sum(deltas<0)}/{len(deltas)} galaxies with band-points BELOW their own")
-    print(f"  sub-band points; median DELTA = {np.median(deltas):+.3f} dex (ARA envelope predicts ~-0.05/-0.07;")
-    print(f"  constant-a0 predicts 0; per-galaxy internal split kills galaxy-level systematics: M/L,")
-    print(f"  distance, mean inclination all CANCEL in the delta — only warps/flares survive).")
+    print(
+        f"\n  PATTERN TEST: {np.sum(deltas<0)}/{len(deltas)} galaxies with band-points BELOW their own"
+    )
+    print(
+        f"  sub-band points; median DELTA = {np.median(deltas):+.3f} dex (ARA envelope predicts ~-0.05/-0.07;"
+    )
+    print(
+        f"  constant-a0 predicts 0; per-galaxy internal split kills galaxy-level systematics: M/L,"
+    )
+    print(
+        f"  distance, mean inclination all CANCEL in the delta — only warps/flares survive)."
+    )
 
 
 def tdg_books(opts):
@@ -6029,30 +6521,51 @@ def tdg_books(opts):
     from scipy.stats import spearmanr
 
     # name, V_EFE2, eEFE, V_circ, eVc, t_orb, et, f_orb(=t_merg/t_orb)
-    T = [("N5291N", 57, 7, 45, 9, 0.7, 0.2, 0.5),
-         ("N5291S", 49, 8, 35, 6, 2.2, 0.7, 0.2),
-         ("N5291SW", 43, 7, 28, 7, 1.3, 0.4, 0.3),
-         ("N7252E", 28, 5, 18, 5, 2.5, 1.6, 0.3),
-         ("N7252NW", 39, 6, 21, 6, 3.0, 1.2, 0.2),
-         ("VCC2062", 25, 5, 16, 7, 1.2, 0.5, 0.6)]
-    Wemp = lambda tk: 1.0 if tk < 1.0 else (0.80 if tk < 1.5 else (0.71 if tk < 2.2 else 0.5))
+    T = [
+        ("N5291N", 57, 7, 45, 9, 0.7, 0.2, 0.5),
+        ("N5291S", 49, 8, 35, 6, 2.2, 0.7, 0.2),
+        ("N5291SW", 43, 7, 28, 7, 1.3, 0.4, 0.3),
+        ("N7252E", 28, 5, 18, 5, 2.5, 1.6, 0.3),
+        ("N7252NW", 39, 6, 21, 6, 3.0, 1.2, 0.2),
+        ("VCC2062", 25, 5, 16, 7, 1.2, 0.5, 0.6),
+    ]
+    Wemp = lambda tk: (
+        1.0 if tk < 1.0 else (0.80 if tk < 1.5 else (0.71 if tk < 2.2 else 0.5))
+    )
     print("TDG ledger (Lelli+15 verbatim; V_EFE2 = their own MOND+EFE branch):")
-    print(f"  {'TDG':9s}{'t_orb':>6s}{'T_k':>6s}{'orbits':>7s}{'V_EFE':>6s}{'V_ARA':>6s}{'V_circ':>7s}"
-          f"{'n_sig(EFE)':>11s}{'n_sig(ARA)':>11s}")
+    print(
+        f"  {'TDG':9s}{'t_orb':>6s}{'T_k':>6s}{'orbits':>7s}{'V_EFE':>6s}{'V_ARA':>6s}{'V_circ':>7s}"
+        f"{'n_sig(EFE)':>11s}{'n_sig(ARA)':>11s}"
+    )
     defs, torbs, fobs, nsA = [], [], [], []
     for n, ve, ee, vc, ec, to, eto, fo in T:
         tk = to / np.sqrt(2.0)
         va = ve * Wemp(tk) ** 0.25
         sig = np.sqrt(ec**2 + ee**2)
-        print(f"  {n:9s}{to:6.1f}{tk:6.2f}{fo:7.1f}{ve:6.0f}{va:6.0f}{vc:7.0f}"
-              f"{(ve-vc)/sig:11.1f}{(va-vc)/sig:11.1f}")
-        defs.append(ve / vc); torbs.append(to); fobs.append(fo); nsA.append((va - vc) / sig)
+        print(
+            f"  {n:9s}{to:6.1f}{tk:6.2f}{fo:7.1f}{ve:6.0f}{va:6.0f}{vc:7.0f}"
+            f"{(ve-vc)/sig:11.1f}{(va-vc)/sig:11.1f}"
+        )
+        defs.append(ve / vc)
+        torbs.append(to)
+        fobs.append(fo)
+        nsA.append((va - vc) / sig)
     r1 = spearmanr(torbs, defs)
     r2 = spearmanr(fobs, defs)
-    print(f"\n  deficit ~ t_orb     : Spearman {r1.statistic:+.2f} (p={r1.pvalue:.2f})  [ARA + non-eq BOTH predict +]")
-    print(f"  deficit ~ orbits done: Spearman {r2.statistic:+.2f} (p={r2.pvalue:.2f})  [spin-up predicts -]")
-    print(f"  joint n_sigma after ARA band correction: {np.sqrt(np.sum(np.array(nsA)**2)):.1f}"
-          f" (was {np.sqrt(np.sum([( (ve-vc)/np.sqrt(ec**2+ee**2) )**2 for _,ve,ee,vc,ec,_,_,_ in T])):.1f} pre-ARA)")
+    print(
+        f"\n  deficit ~ t_orb     : Spearman {r1.statistic:+.2f} (p={r1.pvalue:.2f})  [ARA + non-eq BOTH predict +]"
+    )
+    print(
+        f"  deficit ~ orbits done: Spearman {r2.statistic:+.2f} (p={r2.pvalue:.2f})  [spin-up predicts -]"
+    )
+    print(
+        f"  joint n_sigma after ARA band correction: {np.sqrt(np.sum(np.array(nsA)**2)):.1f}"
+        f" (was {np.sqrt(np.sum([( (ve-vc)/np.sqrt(ec**2+ee**2) )**2 for _,ve,ee,vc,ec,_,_,_ in T])):.1f} pre-ARA)"
+    )
     print("\n  PREMISE CHECK: orbits completed since formation = 0.2-0.8 for ALL SIX —")
-    print("  no object has finished ONE orbit; equilibrium inference void by their own table;")
-    print("  their own caveat verbatim: 'it remains unclear whether this would still hold in MOND'.")
+    print(
+        "  no object has finished ONE orbit; equilibrium inference void by their own table;"
+    )
+    print(
+        "  their own caveat verbatim: 'it remains unclear whether this would still hold in MOND'."
+    )
