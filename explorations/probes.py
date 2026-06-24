@@ -3406,7 +3406,243 @@ def ell_gc_n1399(opts=None):
     )
 
 
+def ell_n4494(opts=None):
+    """CARD attempt for monster [ell_dearth] on the GROUP elliptical NGC 4494 (E1-2, round), THE canonical
+    'dearth of dark matter' elliptical (Napolitano 2009), with TWO INDEPENDENT TRACERS -- PNe (Napolitano
+    2009) AND globular clusters (SLUGGS Foster 2011). This is the convergence of Romain's (A) GC-tracer
+    continuation and (B) the card path (a group elliptical where the EFE is the clean 'why'). THE TEST:
+    does ONE baryons-only model -- mu(x) + EFE (from the group) on the stellar mass, NO dark matter --
+    simultaneously reproduce BOTH the PNe and the GC line-of-sight RMS velocity profiles, each with its
+    own tracer density + anisotropy but a SHARED stellar M/L and g_ext? If yes (chi^2/N~1, realistic
+    M/L+anisotropy) -> the dearth is mu(x)+EFE+anisotropy on TWO tracers = a CARD. If not -> stays a monster.
+
+    REAL data (all cached): stellar light = Napolitano 2009 Sersic I(R)=I0 exp(-(R/a_S)^(1/m)), a_S=0.115''
+    (=9.26 pc), m=3.30, total L_V=2.64e10 Lsun, Re=49.5''; deprojected (cosh-Abel) -> nu_*(r), M_*(r)=
+    (M/L_V) L(<r). PNe: Napolitano table3 (267, indiv. velocities). GCs: Foster 2011 tablea2 (117, indiv.
+    velocities). sigma_los(R) computed MYSELF as the RMS of (v-vsys) in radial bins (folds rotation +
+    dispersion = the proper dynamical tracer; NGC 4494 is a mild rotator). D=16.6 Mpc (1''=80.5 pc),
+    vsys=1344. GC tracer density = power law fit to the GC projected radii. Gravity: g = g_N*nu_e with the
+    EFE g_ext (--gext in a0, default 0.3 from the group; 0 = isolated). Constant-OM anisotropy fit per
+    tracer; M/L shared (stellar prior 2-6). FACTS only; MOND-shared mechanism."""
+    import numpy as np
+
+    PC = KPC / 1e3
+    gext = (float(opts.get("gext", 0.3)) if opts else 0.3) * A0
+    D = 16.6  # Mpc (SBF); regime is D-independent
+    AS2PC = D * 4.848  # pc per arcsec
+    VSYS = 1344.0
+    LV = 2.64e10  # total V-band luminosity (Napolitano 2009)
+    aS_pc = 0.115 * AS2PC  # Sersic scale length in pc
+    mS = 3.30  # Sersic index (exp-form)
+    RA0 = 15 * (12 + 31 / 60 + 24.0 / 3600)  # NGC 4494 centre (NED J2000)
+    DE0 = 25 + 46 / 60 + 30.0 / 3600
+    cd = np.cos(np.radians(DE0))
+
+    # --- deproject stellar Sersic -> nu_*(r) (shape), enclosed L (cosh-Abel, no singularity) ---
+    r_pc = np.logspace(np.log10(3.0), np.log10(5.0e5), 1500)
+    r_m = r_pc * PC
+    t = np.linspace(0.0, 11.0, 650)
+
+    def Ip(R):  # dI/dR for I=exp(-(R/a)^(1/m))
+        return (
+            -(1.0 / (mS * R))
+            * (R / aS_pc) ** (1.0 / mS)
+            * np.exp(-((R / aS_pc) ** (1.0 / mS)))
+        )
+
+    nu = np.maximum(
+        -(1.0 / np.pi) * np.trapezoid(Ip(np.outer(r_pc, np.cosh(t))), t, axis=1), 0.0
+    )
+    integ = nu * r_pc**2
+    Lc = np.concatenate(
+        [[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r_pc))]
+    )
+    Lcum = LV * Lc / Lc[-1]  # enclosed V-band luminosity normalised to the real total
+    # deprojection self-check: 4pi int nu r^2 dr  vs  2pi int I(R) R dR (shape units, should be ~1)
+    Rp_ = np.logspace(np.log10(3.0), np.log10(5.0e5), 3000)
+    Iproj = np.exp(-((Rp_ / aS_pc) ** (1.0 / mS)))
+    deproj_check = (4 * np.pi * Lc[-1]) / (2 * np.pi * np.trapezoid(Iproj * Rp_, Rp_))
+
+    def gN_of(ml):
+        return G * (ml * Lcum * MSUN) / r_m**2
+
+    def g_efe(
+        gN,
+    ):  # OBT mu(x) with the External Field Effect: boost set by the TOTAL field
+        if gext <= 0:
+            return obt_rar(gN)
+        gt = np.sqrt(gN**2 + gext**2)
+        return gN * obt_rar(gt) / gt
+
+    # --- tracer 1: PNe (Napolitano table3) -> projected R, velocity ---
+    Rp, Vp = [], []
+    for ln in open("/DATA/obt_game_cache/raw/pne_ell/ngc4494_napolitano2009_pne.dat"):
+        if len(ln) < 55:
+            continue
+        try:
+            ra = 15 * (
+                float(ln[20:22]) + float(ln[23:25]) / 60 + float(ln[26:31]) / 3600
+            )
+            sg = -1.0 if ln[32] == "-" else 1.0
+            de = sg * (
+                float(ln[33:35]) + float(ln[36:38]) / 60 + float(ln[39:43]) / 3600
+            )
+            v = float(ln[51:55])
+        except ValueError:
+            continue
+        Rp.append(3600 * np.hypot((ra - RA0) * cd, de - DE0))
+        Vp.append(v)
+    Rp = np.array(Rp) * AS2PC / 1e3  # kpc
+    Vp = np.array(Vp)
+
+    # --- tracer 2: GCs (Foster tablea2) -> projected R, velocity (col Vobs[72:76], may be blank) ---
+    Rg, Vg = [], []
+    for ln in open("/DATA/obt_game_cache/raw/gc_ell/ngc4494_foster2011_gc.dat"):
+        if len(ln) < 76:
+            continue
+        vs = ln[72:76].strip()
+        if not vs or vs == "---":
+            continue
+        try:
+            ra = 15 * (float(ln[6:8]) + float(ln[9:11]) / 60 + float(ln[12:18]) / 3600)
+            sg = -1.0 if ln[19] == "-" else 1.0
+            de = sg * (
+                float(ln[20:22]) + float(ln[23:25]) / 60 + float(ln[26:31]) / 3600
+            )
+            v = float(vs)
+        except ValueError:
+            continue
+        Rg.append(3600 * np.hypot((ra - RA0) * cd, de - DE0))
+        Vg.append(v)
+    Rg = np.array(Rg) * AS2PC / 1e3  # kpc
+    Vg = np.array(Vg)
+
+    def binsig(R, V, edges, merr):
+        # sigma_los(R) = RMS of (v - vsys) per radial bin (folds rotation + dispersion), 3-sigma clipped
+        Rb, Sb, Eb, Nb = [], [], [], []
+        for lo, hi in zip(edges[:-1], edges[1:]):
+            m = (R >= lo) & (R < hi)
+            if m.sum() < 6:
+                continue
+            vv = V[m]
+            for _ in range(3):
+                keep = np.abs(vv - np.median(vv)) < 3 * max(np.std(vv), 1.0)
+                vv = vv[keep]
+            sig = np.sqrt(max(np.var(vv) - merr**2, 1.0))
+            Rb.append(np.median(R[m]))
+            Sb.append(sig)
+            Eb.append(sig / np.sqrt(2 * len(vv)))
+            Nb.append(len(vv))
+        return np.array(Rb), np.array(Sb), np.array(Eb), Nb
+
+    RpB, SpB, EpB, NpB = binsig(Rp, Vp, np.array([0.5, 2, 4, 7, 11, 16, 26.0]), 20.0)
+    RgB, SgB, EgB, NgB = binsig(Rg, Vg, np.array([2, 8, 16, 26, 40.0]), 15.0)
+
+    # GC tracer density slope: fit Sigma_GC(R) ~ R^-Gamma to the GC projected radii (my own number)
+    cnt, ed = np.histogram(Rg, bins=np.geomspace(max(Rg.min(), 1.0), Rg.max(), 7))
+    Rc = np.sqrt(ed[:-1] * ed[1:])
+    area = np.pi * (ed[1:] ** 2 - ed[:-1] ** 2)
+    okc = cnt > 0
+    Gam = -np.polyfit(np.log(Rc[okc]), np.log(cnt[okc] / area[okc]), 1)[0]
+    ell_pne = nu / nu.max()  # PNe trace the stellar light (Napolitano 2009)
+    ell_gc = (r_pc) ** (-(Gam + 1.0))  # deprojected GC number density (power law)
+
+    def slos(g, ell, ra_m, Rdata):
+        # constant-OM-anisotropy spherical Jeans (beta=r^2/(r^2+r_a^2)) + Binney-Mamon projection, SI
+        f = r_m**2 + ra_m**2
+        wI = ell * g * f
+        Iout = np.concatenate(
+            [np.cumsum((0.5 * (wI[1:] + wI[:-1]) * np.diff(r_m))[::-1])[::-1], [0.0]]
+        )
+        lsr2 = Iout / f
+        bet = r_m**2 / f
+        out = []
+        for Rk in Rdata * 1e3 * PC:
+            sel = r_m > Rk * 1.0001
+            rr = r_m[sel]
+            num = np.trapezoid(
+                (1 - bet[sel] * Rk**2 / rr**2)
+                * lsr2[sel]
+                * rr
+                / np.sqrt(rr**2 - Rk**2),
+                rr,
+            )
+            den = np.trapezoid(ell[sel] * rr / np.sqrt(rr**2 - Rk**2), rr)
+            out.append(np.sqrt(max(num / den, 0.0)) / KMS)
+        return np.array(out)
+
+    Re_kpc = 49.5 * AS2PC / 1e3
+    mls = np.linspace(2.0, 6.0, 17)
+    ras = np.geomspace(0.2, 12.0, 22) * (Re_kpc * 1e3 * PC)
+
+    # JOINT: shared stellar M/L minimising the SUM of the two tracers' chi2 (each its own r_a), with EFE
+    def gfun(ml):
+        return g_efe(gN_of(ml))
+
+    bestj = None
+    for ml in mls:
+        g = gfun(ml)
+        # per-tracer best r_a at this shared ml
+        cp = min(
+            ((np.sum(((slos(g, ell_pne, ra, RpB) - SpB) / EpB) ** 2) / len(SpB)), ra)
+            for ra in ras
+        )
+        cg = min(
+            ((np.sum(((slos(g, ell_gc, ra, RgB) - SgB) / EgB) ** 2) / len(SgB)), ra)
+            for ra in ras
+        )
+        tot = cp[0] + cg[0]
+        if bestj is None or tot < bestj[0]:
+            bestj = (tot, ml, cp, cg)
+    tot, mlj, cp, cg = bestj
+    spp = slos(gfun(mlj), ell_pne, cp[1], RpB)
+    spg = slos(gfun(mlj), ell_gc, cg[1], RgB)
+    gba_p = np.interp(RpB[-1] * 1e3 * PC, r_m, gN_of(mlj)) / A0
+    # isotropic diagnostic at the joint M/L: is anisotropy load-bearing or marginal?
+    ra_iso = 1.0e6 * Re_kpc * 1e3 * PC
+    cpi = np.sum(((slos(gfun(mlj), ell_pne, ra_iso, RpB) - SpB) / EpB) ** 2) / len(SpB)
+    cgi = np.sum(((slos(gfun(mlj), ell_gc, ra_iso, RgB) - SgB) / EgB) ** 2) / len(SgB)
+
+    print(
+        f"[ell_n4494] CARD attempt: NGC 4494 (round group E1-2 dearth), PNe + GC, baryons-only mu(x)+EFE. D={D} Mpc, vsys={VSYS:.0f}, g_ext={gext/A0:.2f}a0."
+    )
+    Mstar5 = mlj * np.interp(5 * Re_kpc * 1e3 * PC, r_m, Lcum)
+    print(
+        f"  Sersic deproj self-check (4pi int nu r^2 / 2pi int I R)={deproj_check:.3f} (target ~1.0); M_*(<5Re)={Mstar5:.2e} Msun; PNe N={len(Rp)}, GC N={len(Rg)} (Gamma_GC={Gam:.2f})"
+    )
+    print(
+        f"  SHARED stellar M/L_V = {mlj:.2f}  (joint best; PNe r_a/Re={cp[1]/(Re_kpc*1e3*PC):.1f}, GC r_a/Re={cg[1]/(Re_kpc*1e3*PC):.1f})"
+    )
+    print(
+        f"  g_bar/a0 at the outermost PNe ({RpB[-1]:.1f} kpc) = {gba_p:.2f} (mild-MOND)"
+    )
+    print(
+        f"  ANISOTROPY load-bearing? isotropic-mu(x)+EFE chi2/N at this M/L: PNe={cpi:.2f}, GC={cgi:.2f} (vs best-aniso {cp[0]:.2f}, {cg[0]:.2f})"
+    )
+    print(f"  --- PNe tracer ---   chi2/N={cp[0]:.2f}")
+    print(f"    {'R[kpc]':>7s}{'N':>4s}{'sig_obs':>9s}{'+-':>5s}{'sig_mod':>9s}")
+    for i in range(len(RpB)):
+        print(f"    {RpB[i]:7.1f}{NpB[i]:4d}{SpB[i]:9.0f}{EpB[i]:5.0f}{spp[i]:9.0f}")
+    print(f"  --- GC tracer ---    chi2/N={cg[0]:.2f}")
+    print(f"    {'R[kpc]':>7s}{'N':>4s}{'sig_obs':>9s}{'+-':>5s}{'sig_mod':>9s}")
+    for i in range(len(RgB)):
+        print(f"    {RgB[i]:7.1f}{NgB[i]:4d}{SgB[i]:9.0f}{EgB[i]:5.0f}{spg[i]:9.0f}")
+    print(
+        f"  VERDICT: ONE baryons-only mu(x)+EFE (M/L_V={mlj:.1f}, g_ext={gext/A0:.2f}a0) fits PNe chi2/N={cp[0]:.1f} AND GC chi2/N={cg[0]:.1f}."
+    )
+    print(
+        "  If BOTH ~1-3 with realistic M/L (3-5) + modest anisotropy -> the 'dearth' = mu(x)+EFE+anisotropy on"
+    )
+    print(
+        "  TWO independent tracers, NO dark matter = CARD-grade. If a tracer needs extreme params or chi2 is"
+    )
+    print(
+        "  poor -> stays a MONSTER (no glue). MOND-shared; EFE g_ext from the group, not tuned to sigma."
+    )
+
+
 PROBES = {
+    "ell_n4494": lambda opts=None: ell_n4494(opts),
     "ell_gc_n1399": lambda opts=None: ell_gc_n1399(opts),
     "ell_n7507": lambda opts=None: ell_n7507(opts),
     "ell_jeans_fit": lambda opts=None: ell_jeans_fit(opts),
