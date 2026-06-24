@@ -3641,7 +3641,254 @@ def ell_n4494(opts=None):
     )
 
 
+def ell_n3379(opts=None):
+    """CARD attempt for monster [ell_dearth] on NGC 3379 (M105, E1, round) -- the GROUP elliptical where
+    the EFE is GENUINELY ENVIRONMENTAL (the close companion NGC 3384 at ~7'=20 kpc), the route NGC 7507
+    (isolated) and NGC 4494 (field, g_ext~0.01) could not take. STRONGEST possible dearth test because BOTH
+    the mass and the environment are FIXED, not fitted:
+      - stellar M/L_B = 7.3 (Cappellari 2006 stellar-population value, Douglas 2007 eq. stellarML) -> FIXED;
+      - g_ext computed IN-CODE from NGC 3384 (mass + projected distance, MOND-amplified) -> FIXED, NOT tuned.
+    Only the orbital anisotropy is fit. If baryons-only mu(x) + this environmental EFE reproduces the
+    declining PNe dispersion at chi^2/N~1 with a REASONABLE anisotropy (beta<~0.5) -> the 'dearth' is
+    mu(x)+EFE on a system with ZERO free mass/environment parameters = a CLEAN CARD. If it needs g_ext above
+    the environmental value or extreme anisotropy -> stays a monster (no glue).
+
+    REAL data (cached): OUTER sigma(R) = Douglas 2007 PNe (table3, 214, individual velocities to ~7 Re =
+    THE dearth region) RMS-binned; INNER anchor = Coccato table6 long-slit (R<2.5 kpc). Stellar light =
+    Douglas 2007 Sersic I=I0 exp(-(R/a_S)^(1/m)), a_S=0.0013''
+    (=0.062 pc), m=4.74, M_B=-19.8 -> L_B=1.29e10; deprojected (cosh-Abel). D=9.8 Mpc (1''=47.5 pc),
+    vsys=911 (slow rotator -> sigma~=V_rms; V folded in quadrature anyway). opts: --ml (default 7.3 fixed;
+    >0 fixes, 0 fits 5-9), --m3384 (NGC 3384 stellar mass, default 3e10), --gext (override a0 units; default
+    0 = compute environmental). FACTS only; MOND-shared mechanism."""
+    import numpy as np
+
+    PC = KPC / 1e3
+    MLfix = (
+        float(opts.get("ml", 7.3)) if opts else 7.3
+    )  # stellar M/L_B (Cappellari 2006); >0 fixes it
+    M3384 = (
+        float(opts.get("m3384", 3.0e10)) if opts else 3.0e10
+    )  # NGC 3384 stellar mass [Msun]
+    gext_ovr = (
+        float(opts.get("gext", 0.0)) if opts else 0.0
+    )  # >0 overrides the environmental g_ext
+    D = 9.8  # Mpc (Jensen 2003, Douglas 2007)
+    AS2PC = D * 4.848
+    VSYS = 911.0
+    LB = 10 ** (
+        -0.4 * (-19.8 - 5.48)
+    )  # B-band luminosity from M_B=-19.8 (M_sun,B=5.48)
+    aS_pc = 0.0013 * AS2PC
+    mS = 4.74
+
+    # --- environmental EFE from NGC 3384 (close companion, ~7' = 20 kpc projected), MOND-amplified ---
+    d3384_kpc = 7.0 * 60 * AS2PC / 1e3  # 7 arcmin -> kpc
+    gbar_3384 = G * M3384 * MSUN / (d3384_kpc * KPC) ** 2
+    gext_env = (
+        np.sqrt(gbar_3384 * A0) if gbar_3384 < A0 else gbar_3384
+    )  # MOND-amplified external field
+    gext = gext_ovr * A0 if gext_ovr > 0 else gext_env
+
+    # --- deproject stellar Sersic -> nu(r), enclosed L (cosh-Abel) ---
+    r_pc = np.logspace(np.log10(2.0), np.log10(5.0e5), 1500)
+    r_m = r_pc * PC
+    t = np.linspace(0.0, 11.0, 650)
+
+    def Ip(R):
+        return (
+            -(1.0 / (mS * R))
+            * (R / aS_pc) ** (1.0 / mS)
+            * np.exp(-((R / aS_pc) ** (1.0 / mS)))
+        )
+
+    nu = np.maximum(
+        -(1.0 / np.pi) * np.trapezoid(Ip(np.outer(r_pc, np.cosh(t))), t, axis=1), 0.0
+    )
+    integ = nu * r_pc**2
+    Lc = np.concatenate(
+        [[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r_pc))]
+    )
+    Lcum = LB * Lc / Lc[-1]
+    Rp_ = np.logspace(np.log10(2.0), np.log10(5.0e5), 3000)
+    deproj_check = (4 * np.pi * Lc[-1]) / (
+        2 * np.pi * np.trapezoid(np.exp(-((Rp_ / aS_pc) ** (1.0 / mS))) * Rp_, Rp_)
+    )
+
+    def gN_of(ml):
+        return G * (ml * Lcum * MSUN) / r_m**2
+
+    def g_efe(gN):
+        if gext <= 0:
+            return obt_rar(gN)
+        gt = np.sqrt(gN**2 + gext**2)
+        return gN * obt_rar(gt) / gt
+
+    # --- sigma(R): inner long-slit (Coccato table6) + OUTER PNe to ~7 Re (Douglas 2007 = the dearth tracer) ---
+    RA0 = 15 * (10 + 47 / 60 + 49.6 / 3600)  # NGC 3379 centre (NED J2000)
+    DE0 = 12 + 34 / 60 + 54.0 / 3600
+    cdec = np.cos(np.radians(DE0))
+    # inner: Coccato long-slit V_rms=sqrt(V^2+sigma^2) points (R<2.5 kpc), to anchor the centre
+    Rin, Sin, Ein = [], [], []
+    for ln in open("/DATA/obt_game_cache/raw/pne_ell/coccato_table6.dat"):
+        p = ln.split()
+        if len(p) < 8 or p[0] != "3379" or p[7] != "1":
+            continue
+        try:
+            Rk = float(p[2]) * AS2PC / 1e3
+            vr = np.hypot(float(p[3]), float(p[5]))
+            er = max(float(p[6]), 3.0)
+            sg = float(p[5])
+        except ValueError:
+            continue
+        if sg > 0 and Rk < 2.5:
+            Rin.append(Rk)
+            Sin.append(vr)
+            Ein.append(er)
+    Rin, Sin, Ein = np.array(Rin), np.array(Sin), np.array(Ein)
+    # outer: Douglas 2007 PNe individual velocities -> RMS sigma in bins (folds rotation; vsys-clipped)
+    Rpne, Vpne = [], []
+    for ln in open("/DATA/obt_game_cache/raw/pne_ell/ngc3379_douglas2007_pne.dat"):
+        if len(ln) < 54:
+            continue
+        try:
+            ra = 15 * (
+                float(ln[20:22]) + float(ln[23:25]) / 60 + float(ln[26:31]) / 3600
+            )
+            de = float(ln[32:34]) + float(ln[35:37]) / 60 + float(ln[38:42]) / 3600
+            v = float(ln[50:54])
+        except ValueError:
+            continue
+        if (
+            abs(v - VSYS) > 600
+        ):  # interloper clip (NGC 3384 vsys=704 unresolvable by velocity, see Douglas)
+            continue
+        Rpne.append(3600 * np.hypot((ra - RA0) * cdec, de - DE0) * AS2PC / 1e3)
+        Vpne.append(v)
+    Rpne, Vpne = np.array(Rpne), np.array(Vpne)
+    # combined profile: inner bins from long-slit, outer bins from PNe RMS
+    RB, SB, EB, NB = [], [], [], []
+    for lo, hi in [(0.2, 1.0), (1.0, 2.5)]:  # inner long-slit
+        m = (Rin >= lo) & (Rin < hi)
+        if m.sum() < 2:
+            continue
+        w = 1 / Ein[m] ** 2
+        RB.append(np.sum(w * Rin[m]) / np.sum(w))
+        SB.append(np.sum(w * Sin[m]) / np.sum(w))
+        EB.append(1 / np.sqrt(np.sum(w)))
+        NB.append(int(m.sum()))
+    for lo, hi in [
+        (2.5, 5.0),
+        (5.0, 7.5),
+        (7.5, 11.0),
+        (11.0, 17.0),
+    ]:  # outer PNe (the dearth region)
+        m = (Rpne >= lo) & (Rpne < hi)
+        if m.sum() < 5:
+            continue
+        vv = Vpne[m]
+        for _ in range(3):  # 3-sigma clip
+            keep = np.abs(vv - np.median(vv)) < 3 * max(np.std(vv), 1.0)
+            vv = vv[keep]
+        sig = np.sqrt(max(np.var(vv) - 20.0**2, 1.0))  # 20 km/s PN.S measurement error
+        RB.append(np.median(Rpne[m]))
+        SB.append(sig)
+        EB.append(sig / np.sqrt(2 * len(vv)))
+        NB.append(len(vv))
+    RB, SB, EB = np.array(RB), np.array(SB), np.maximum(np.array(EB), 3.0)
+
+    Re_kpc = 47.0 * AS2PC / 1e3
+    ell = nu / nu.max()  # PNe trace the stellar light
+
+    def slos(g, ra_m, Rdata):
+        f = r_m**2 + ra_m**2
+        wI = ell * g * f
+        Iout = np.concatenate(
+            [np.cumsum((0.5 * (wI[1:] + wI[:-1]) * np.diff(r_m))[::-1])[::-1], [0.0]]
+        )
+        lsr2 = Iout / f
+        bet = r_m**2 / f
+        out = []
+        for Rk in Rdata * 1e3 * PC:
+            sel = r_m > Rk * 1.0001
+            rr = r_m[sel]
+            num = np.trapezoid(
+                (1 - bet[sel] * Rk**2 / rr**2)
+                * lsr2[sel]
+                * rr
+                / np.sqrt(rr**2 - Rk**2),
+                rr,
+            )
+            den = np.trapezoid(ell[sel] * rr / np.sqrt(rr**2 - Rk**2), rr)
+            out.append(np.sqrt(max(num / den, 0.0)) / KMS)
+        return np.array(out)
+
+    ras = np.geomspace(0.2, 15.0, 28) * (Re_kpc * 1e3 * PC)
+    ra_iso = 1.0e6 * Re_kpc * 1e3 * PC
+    mls = [MLfix] if MLfix > 0 else list(np.linspace(5.0, 9.0, 17))
+
+    def best_fit(g):
+        b = None
+        for ra in ras:
+            sp = slos(g, ra, RB)
+            chi2 = np.sum(((sp - SB) / EB) ** 2) / len(SB)
+            if b is None or chi2 < b[1]:
+                b = (ra, chi2, sp)
+        return b
+
+    bestov = None
+    for ml in mls:
+        g = g_efe(gN_of(ml))
+        ra, chi2, sp = best_fit(g)
+        if bestov is None or chi2 < bestov[2]:
+            bestov = (ml, ra, chi2, sp)
+    mlb, rab, chi2b, spb = bestov
+    spi = slos(g_efe(gN_of(mlb)), ra_iso, RB)
+    chi2i = np.sum(((spi - SB) / EB) ** 2) / len(SB)
+    # split: inner long-slit (<2.5 kpc, Sersic-deproj-limited per Douglas) vs OUTER PNe (the dearth region)
+    nin = int(np.sum(RB < 2.5))
+    chi2_in = np.sum(((spb[:nin] - SB[:nin]) / EB[:nin]) ** 2) / max(nin, 1)
+    chi2_out = np.sum(((spb[nin:] - SB[nin:]) / EB[nin:]) ** 2) / max(len(SB) - nin, 1)
+    gba = np.interp(RB[-1] * 1e3 * PC, r_m, gN_of(mlb)) / A0
+    betab = (RB[-1] * 1e3 * PC) ** 2 / ((RB[-1] * 1e3 * PC) ** 2 + rab**2)
+
+    print(
+        f"[ell_n3379] CARD attempt: NGC 3379 (E1 round, GROUP/M96), PNe dearth, baryons-only mu(x)+ENVIRONMENTAL EFE. D={D} Mpc."
+    )
+    print(
+        f"  ENVIRONMENTAL g_ext from NGC 3384 (M_*={M3384:.1e} Msun at {d3384_kpc:.0f} kpc): g_bar={gbar_3384/A0:.3f}a0 -> MOND-amplified g_ext={gext_env/A0:.2f}a0 {'(OVERRIDDEN to %.2f)'%(gext/A0) if gext_ovr>0 else '(USED, not tuned)'}"
+    )
+    print(
+        f"  Sersic deproj self-check={deproj_check:.3f}; L_B={LB:.2e}; M/L_B={'FIXED '+format(mlb,'.1f')+' (Cappellari06)' if MLfix>0 else 'fitted '+format(mlb,'.1f')}; M_*={mlb*LB:.2e} Msun; inner long-slit N={len(Rin)}, outer PNe N={len(Rpne)}"
+    )
+    print(
+        f"  outermost PNe bin {RB[-1]:.1f} kpc = {RB[-1]/Re_kpc:.1f} Re; g_bar/a0={gba:.2f} (mild-MOND); best r_a/Re={rab/(Re_kpc*1e3*PC):.1f} -> beta(outer)={betab:.2f}"
+    )
+    print(
+        f"  {'R[kpc]':>7s}{'R/Re':>6s}{'N':>4s}{'sig_obs':>9s}{'+-':>5s}{'sig_mod':>9s}"
+    )
+    for i in range(len(RB)):
+        print(
+            f"  {RB[i]:7.1f}{RB[i]/Re_kpc:6.1f}{NB[i]:4d}{SB[i]:9.0f}{EB[i]:5.0f}{spb[i]:9.0f}"
+        )
+    print(
+        f"  VERDICT: M/L_B={mlb:.1f} (stellar, FIXED) + ENVIRONMENTAL g_ext={gext/A0:.2f}a0 (from NGC 3384, NOT tuned) + anisotropy:"
+    )
+    print(
+        f"    chi2/N = {chi2b:.2f} total ({chi2i:.2f} isotropic).  SPLIT: inner long-slit={chi2_in:.2f} (Sersic-deproj-limited), OUTER PNe DEARTH={chi2_out:.2f}.  beta(outer)={betab:.2f}."
+    )
+    print(
+        "  If chi2/N~1-3 with REASONABLE beta (<~0.5) at the FIXED stellar M/L + ENVIRONMENTAL g_ext -> the dearth"
+    )
+    print(
+        "  = mu(x)+EFE with ZERO free mass/environment params = CLEAN CARD. If beta is extreme (>~0.8) or chi2 poor,"
+    )
+    print(
+        "  or it needs g_ext above the environmental value -> stays a MONSTER (no glue). MOND-shared mechanism."
+    )
+
+
 PROBES = {
+    "ell_n3379": lambda opts=None: ell_n3379(opts),
     "ell_n4494": lambda opts=None: ell_n4494(opts),
     "ell_gc_n1399": lambda opts=None: ell_gc_n1399(opts),
     "ell_n7507": lambda opts=None: ell_n7507(opts),
