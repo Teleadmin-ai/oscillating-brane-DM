@@ -652,6 +652,8 @@ def _bestiary_action(action, args):
         ok, msg = bestiary.kill(st2, obj_id, opts.get("reason", "no reason given"))
     elif action == "abandon":
         ok, msg = bestiary.abandon(st2, obj_id, opts.get("reason", "no reason given"))
+    elif action == "demote":
+        ok, msg = bestiary.demote(st2, obj_id, opts.get("reason", "no reason given"))
     else:
         ok, msg = False, "unknown action"
     # bestiary already prefixes its own CARD/REFUSED messages; only add a prefix when it didn't.
@@ -781,6 +783,8 @@ COMMAND_HELP = {
                        "it'd be a card. Optional --judgement \"...\" records your reasoning.",
     "promote": "LEVEL 3 — monster -> CARD. Requires the mechanistic WHY (ideally found on a SIMPLE "
                "system) + certainty >= high. Refused otherwise. A card is added to OBT.",
+    "demote": "RETRACT a card -> back to monster (an audit found residual doubt). `demote <id> --reason ...`. "
+              "Use when a card fails the certainty bar; nothing in the sacred files is touched.",
     "kill": "Mark a candidate/monster an ERROR (refuted patch / coincidence).",
     "abandon": "Shelve a monster (kept for re-test as cards accumulate — 'the magic').",
     "list": "List objects by bucket: candidates|monsters|cards|errors|all.",
@@ -836,7 +840,7 @@ def _dispatch(st, cmd, rest):
         cmd_bestiary_list(st, rest)
     elif cmd == "magic":
         cmd_magic(st)
-    elif cmd in ("promote", "kill", "abandon", "confirm-monster", "add-system"):
+    elif cmd in ("promote", "demote", "kill", "abandon", "confirm-monster", "add-system"):
         _bestiary_action(cmd, rest)
     elif cmd == "agent":
         cmd_agent(st, rest)

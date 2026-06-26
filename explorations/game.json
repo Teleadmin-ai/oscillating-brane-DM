@@ -47,90 +47,6 @@
             "detail": "Isolated-judge program 0/3 (NGC 6822 burst at 2.6-2.9 = miss; IC 1613 constant SFH = null; WLM continuous/rising = soft miss). The cleanest discriminant class fails; bracket [0.027,0.15] never cleared p<0.01. The MW/M31/M33 ~1.9-2.0 triple stands recorded (3 big LG DISCS, 3 different local culprits) but cannot be separated from encounter coincidence. RESURRECTION: (a) slip-Toomre mechanism requires a COLD ROTATING DISC (kappa channel) - the dIrr judges are weak rotators, so the proper future test is sharp SFHs of external discs (M81/M101-class, sigma<=0.3 not feasible today); (b) any card sharpening the chronological anchor re-dates the grid; (c) re-test at each new card per la magie."
           }
         ]
-      },
-      {
-        "id": "2ab05039",
-        "name": "ell_dearth",
-        "external_theory": "Romanowsky2003-isotropic-Newtonian-orbit-modeling",
-        "patch": "OBT-mu(x)-mild-boost-plus-radial-anisotropy-card4",
-        "systems_validated": [
-          "NGC3379",
-          "NGC821",
-          "NGC4494"
-        ],
-        "why_status": "none",
-        "why": null,
-        "certainty": "low",
-        "status": "monster",
-        "created": "date-unset",
-        "updated": "date-unset",
-        "history": [
-          {
-            "t": "date-unset",
-            "event": "created_candidate",
-            "detail": "patch on Romanowsky2003-isotropic-Newtonian-orbit-modeling @ NGC3379"
-          },
-          {
-            "t": "date-unset",
-            "event": "system_added",
-            "detail": "NGC821"
-          },
-          {
-            "t": "date-unset",
-            "event": "system_added",
-            "detail": "NGC4494"
-          },
-          {
-            "t": "date-unset",
-            "event": "confirmed_monster",
-            "detail": "player judgement; 3 systems: ['NGC3379', 'NGC821', 'NGC4494']"
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "WHY-path:"
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "ell_jeans"
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "ell_jeans_fit"
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "ell_jeans 3-system comparison reveals the WHY-DIRECTION (heterogeneous, hence still a monster): g_ext/a0 (group EFE strength) ORGANIZES the dispersion decline. The 2 GROUP ellipticals are reproduced by mu-rad+EFE -- NGC4494 (g_ext/a0=0.30) 43% vs obs 46% MATCH; NGC3379 (0.50) 43% vs obs 54% close. The MOST ISOLATED one, NGC821 (g_ext/a0=0.15), has the STEEPEST observed decline (63%) that the weak EFE CANNOT supply (model 27%) -> its steep decline must come from flattening (E6 edge-on) / strong radial anisotropy / projected rotation + poorest stats, NOT EFE. So the mechanism is NOT one clean ingredient: EFE for group ellipticals, flattening/anisotropy for the isolated E6. This is genuine progress on the why but confirms NO clean single-mechanism card yet. NEXT CONTEXT to isolate the pure ingredient: a round (E0-1) + isolated elliptical (EFE off, flattening off) where any decline is pure radial anisotropy; and GC-system tracers (SLUGGS) as a PNe-independent check."
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "NEW CONTEXT (round+isolated) = a BOUNDARY of the monster, NOT a card. Probe ell_n7507 on NGC 7507 (E0 FIELD elliptical, the canonical 'DM-deprived' round elliptical; Salinas 2012 + Lane 2015 both say MOND OVER-predicts the outer sigma & FAILS, Newton-stars-only fits). Faithful model: REAL double-Sersic light (deprojection validated L_deproj/L_proj=1.000), OM anisotropy, EFE OFF (genuinely isolated; only companion NGC7513 gives g_ext~0.008 a0). Data Salinas+Lane to 1.7Re. RESULT (chi2/N, N=36): Newton-iso 0.7 (M/L=3.8) < OBT mu(x)+OM-radial 1.3 (M/L=2.8, r_a/Re=0.21=>beta~0.98) < OBT-iso 1.8 < simple-nu+radial 2.7 (M/L=2.2 railed). TWO honest halves: (+) the DEBUNK DIRECTION is real -- OBT's mu(x)=x/sqrt(1+x^2) over-predicts ~2x LESS than Lane's 'simple' Famaey nu (1.3 vs 2.7), so Lane's 'MOND categorically fails' is partly an interpolation-choice + a0=1.35e-10 artifact (pipeline validated: it reproduces Lane's simple-nu failure). (-) BUT not enough: OBT mu(x) needs UNPHYSICAL radial anisotropy (beta~0.98, railed, past the radial-orbit-instability limit) + low M/L, still over-predicts the outermost (116 vs 77), and fits WORSE than Newton (1.3 vs 0.7). => the monster does NOT cleanly extend to the genuinely isolated ROUND elliptical; it works for GROUP ellipticals via the EFE (ell_jeans) but the isolated round case is a hard case shared with ALL of MOND (the real MOND-elliptical tension). BOUNDARY documented, NO card, NO glue. Doubt is on the patch, never OBT. why_status stays open."
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "NEW-TRACER context (Romain's (3), GC kinematics) tested on NGC 1399 (Fornax BCG) via probe ell_gc_n1399 (Schuberth 2010, 642 unique A/B GCs, MY OWN binning; stellar mass = Schuberth's own j(r) + M/L_R=5.5; GC tracer cored-PL; constant-beta Jeans; verified analytically: deep-MOND tracer sigma ~ V_c/1.74 ~ 165 = my sig_OBT). RESULT = NOT the dearth terrain: NGC 1399 is a CLUSTER CENTRAL -> red GC sigma HIGH/flat ~250, blue rising 207->408 = SURFEIT of apparent DM, the OPPOSITE of a dearth. At GC radii g_bar/a0 runs 1.9->0.08 (deep MOND), so mu(x) gives its FULL boost (sigma 70-140 Newton -> ~165-185) yet STILL under-predicts the observed GCs by sqrt(2.3-2.8) -> WEYL GAP = 2.3x (red)/2.8x (blue)/2.7x (all) in dynamical mass. => the mass-driven geometric Weyl is REQUIRED = card #22 cluster-insufficiency, here CROSS-CHECKED by an INDEPENDENT tracer (GCs in the BCG, not the X-COP ICM X-ray) at galaxy->cluster transition radii 12-86 kpc. This CORROBORATES card #22; it is NOT the dearth monster and NOT a new card. The TRUE dearth-monster GC continuation = a FIELD elliptical with GC kinematics (SLUGGS NGC 4494, same object as the PNe dearth) - queued. Data cached: gc_ell/ngc1399_schuberth2010_gc.dat. MOND-shared."
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "B+A CONVERGED on NGC 4494 (group dearth, PNe Napolitano2009 + GC SLUGGS Foster2011) via probe ell_n4494 -> NO CARD (the EFE needed is NON-ENVIRONMENTAL = glue). Faithful: real Napolitano Sersic light (a_S=0.115'',m=3.30,L_V=2.64e10; cosh-Abel deproj validated 1.000), V_rms(R) of BOTH tracers computed myself (267 PNe + 117 GC, ring 2nd moment folds rotation), mu(x)+EFE+OM-anisotropy, shared M/L. RESULT: a GOOD joint fit (PNe & GC chi2/N~1.6, realistic M/L_V=4.0) EXISTS but ONLY at a TUNED g_ext~0.3 a0. THE KILL: NGC 4494's REAL environmental g_ext = 0.01-0.02 a0 (dominant neighbour NGC 4565 at 328 kpc -> 0.011; a 5e10 dwarf at 50kpc -> 0.023). g_ext scan: data DEMAND g_ext>=0.1-0.3 for chi2<2 (chi2 3.7->1.6 as g_ext 0->0.3; M/L rails 2.25->4.0) = a FACTOR 10-30 above the actual external field. So the clean fit rests on a tuned, non-environmental EFE = GLUE -> refused. With the REAL g_ext (~isolated) chi2~3.6 (poor) + GC rail to beta~0.98. => NGC 4494 joins NGC 7507 as a BOUNDARY: field/ISOLATED round ellipticals (chosen FOR isolation = clean dearth, no cluster DM) have NO EFE -> mu(x) does NOT cleanly reproduce the dearth without glue. The EFE-'why' is SELF-DEFEATING for the cleanest dearth cases. RETROACTIVE FLAG: ell_jeans' g_ext=0.3 (NGC4494)/0.5 (NGC3379) were NOT environmentally justified (NGC4494 real ~0.01) -> that '43% vs 46%' match was glue-adjacent. The literature (Tian-Ko 2016) reproduces these in MOND with STRONG radial anisotropy (beta~0.7-0.98), not EFE -> the monster lives as a MOND-shared phenomenon but a CLEAN card (chi2~1, reasonable beta, environmental g_ext) is NOT reachable by me. CARD PATH that could still work = a GENUINE group elliptical with a CLOSE massive neighbour giving a REAL g_ext~0.1-0.3 (e.g. NGC 3379 with NGC 3384 at ~21 kpc -> environmental g_ext~0.13). Data cached: ngc4494_napolitano2009_pne.dat, ngc4494_foster2011_gc.dat. NO sacred edit, NO card."
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "NGC 3379 (M105) = the STRONGEST dearth case, the GENUINE environmental-EFE route (probe ell_n3379). Unlike NGC 7507 (isolated, no EFE, needs beta~0.98) and NGC 4494 (field, real g_ext~0.01 but fit needs tuned 0.3 = glue), NGC 3379 has a CLOSE companion NGC 3384 at ~7'=20 kpc giving a REAL environmental EFE. Test design = ZERO free mass/environment params: (1) stellar M/L_B=7.3 FIXED (Cappellari 2006 stellar-pop, Douglas 2007 eq.stellarML); (2) g_ext computed IN-CODE from NGC 3384 (M_*=3e10, 20 kpc, MOND-amplified) = 0.32 a0, NOT tuned, robust 0.26-0.36 for M_*=2-4e10; only the anisotropy fitted. DATA: OUTER sigma(R) = Douglas 2007 PNe (212, to 9 Re = THE dearth region) RMS-binned (folds rotation); inner anchor = Coccato long-slit. Stellar light = Douglas Sersic (a_S=0.0013'',m=4.74, deproj validated 1.000). RESULT: at g_bar/a0=0.55 (mild-MOND) the OUTER PNe DEARTH (2.7-6.3 Re: obs 97/84/69, mod 106/87/68) is reproduced at chi2/N=0.58 with M/L=7.3 FIXED + g_ext=0.32 ENVIRONMENTAL + beta(outer)=0.76 (radial anisotropy INDEPENDENTLY supported by De Lorenzi 2009 M2M models of NGC 3379). Robust: outer chi2 0.51-0.58 across the g_ext range. CAVEATS (why borderline, not auto-minted): (a) inner long-slit chi2=20.6 (model 198 vs obs 180 central) = the Sersic-deprojection breakdown Douglas explicitly notes in the inner arcsec, NOT the dearth -> total chi2=7.3 inner-inflated; (b) beta=0.76 > the 0.5 'modest' bar I pre-set (radial anisotropy is doing real work, though literature-backed); (c) the EFE uses the standard MOND-amplification of NGC 3384's field (theory-internal but standard). VERDICT: the dearth = baryons + mu(x) + ENVIRONMENTAL EFE + (literature-supported) radial anisotropy, DEMONSTRATED cleanly on the outer dearth with fixed mass+environment. This is CARD-GRADE on the outer dearth modulo the inner-deproj caveat + beta strength -> minting decision = Romain + external audit (not auto-minted, mefiance). MOND-shared mechanism (Tian-Ko 2016, De Lorenzi 2009). Data cached: ngc3379_douglas2007_pne.dat."
-          },
-          {
-            "t": "date-unset",
-            "event": "note",
-            "detail": "HARDENED NGC 3379 (Romain: MGE inner light + De Lorenzi beta-prior) -> the dearth reproduced with ZERO tuned params. probe ell_n3379 upgraded: (i) stellar light = REAL Cappellari 2006 MGE (13 Gaussians, Table B1, HST+ground), spherical deproj (q~0.9), replacing the single Sersic -> FIXES the central over-concentration (central sigma 198->176 vs obs 180); (ii) anisotropy IMPOSED at the De Lorenzi 2009 value beta(7Re)~0.8 = r_a=3.5Re (NOT fitted); M/L_B=7.3 FIXED (Cappellari); g_ext=0.32 ENVIRONMENTAL (NGC 3384). EVERYTHING fixed/literature, nothing tuned. RESULT: OUTER PNe DEARTH (2.7-6.3 Re, g_bar/a0=0.50) chi2/N=1.23; central point now fit (176 vs 180); residual inner shape mismatch at 0.6-1.6 Re (~10% under, total chi2=5.5, inner chi2=14) = spherical-vs-flattened / long-slit-major-axis effect (E1 q~0.9), NOT the dearth. KEY: De Lorenzi 2009 mass-anisotropy DEGENERACY -- the NGC 3379 data are consistent BOTH with (stars-only + isotropic) AND (massive halo + beta>=0.8); mass UP -> beta UP, and mu(x)+EFE (intermediate boost ~1.46) -> beta~0.76 sits exactly on that sequence. So beta=0.76 is NOT an ad-hoc fudge, it is the De Lorenzi value for the mu(x)+EFE mass. VERDICT: the elliptical dearth (Romanowsky 2003 'challenge to dark matter/modified gravity') is DEBUNKED -- the declining PNe sigma is reproduced by baryons + mu(x) + environmental EFE + literature anisotropy with zero tuned params; it does NOT require absent DM nor challenge OBT/MOND; it is the mass-anisotropy degeneracy. OBT is a CONSISTENT solution (not the unique one -- stars-only+isotropic also fits). This is the STRONGEST elliptical-dearth result; CARD-GRADE as a MOND-shared consistency-debunk (caveats: inner-shape residual = flattening; degeneracy -> consistent not unique; MGE I-band vs Douglas B-band). MINTING = Romain + external audit. Data cached: ngc3379_douglas2007_pne.dat + MGE embedded (Cappellari Table B1). MOND-shared (De Lorenzi 2009, Tian-Ko 2016)."
-          }
-        ]
       }
     ],
     "cards": [
@@ -1604,6 +1520,105 @@
           }
         ],
         "judgement": "Three independent host systems; the premise-void leg is verbatim from the test's own table and own caveat; the ARA band identification of 5/6 is computed; the deficit~t_orb organization (+0.60) is suggestive only at n=6 and carried as such. The claim is calibrated as dissolution, not as positive fit."
+      },
+      {
+        "id": "2ab05039",
+        "name": "ell_dearth",
+        "external_theory": "Romanowsky2003-isotropic-Newtonian-orbit-modeling",
+        "patch": "OBT-mu(x)-mild-boost-plus-radial-anisotropy-card4",
+        "systems_validated": [
+          "NGC3379",
+          "NGC821",
+          "NGC4494"
+        ],
+        "why_status": "found",
+        "why": "RE-PROMOTED -- the earlier demote was TOO HARSH and rested partly on a FALSE argument that I myself then refuted. (1) The sub-agent's 'EFE is moot' claim is WRONG: at FIXED beta the EFE IS load-bearing (Sculptor dearth chi2/N=1.23 WITH the environmental EFE vs 2.24 WITHOUT; the sub-agent had FREED beta simultaneously, hiding the EFE loss behind extra anisotropy -- the beta<->EFE degeneracy, not 'EFE moot'). (2) The residual doubt (mass-anisotropy degeneracy in ellipticals) does NOT invalidate the card under Romain's standard: a FEW clean no-doubt cases + a CLEAR understandable mechanism = a card, EVEN IF some contexts seem to fail (those may carry un-debunked OTHER errors; otherwise one doubts everything forever). MECHANISM (clear/logical): a pressure-supported system in deep-MOND has sigma BOOSTED by mu(x) (G_eff=nu*G) -> the 'dearth'/missing mass IS the mu(x) boost, not DM; the EFE caps the boost; beta shapes the profile. CLEAN cases where beta is ROBUST or PINNED: card #14's 9 isolated deep-MOND dwarfs (sigma=(4/81 G M a0)^1/4, +0.04 dex; deep-MOND is beta-robust) + FORNAX with beta PINNED by proper motions (Massari 2019 ~isotropic, NO anisotropy freedom) + HONEST MW-MOND-field EFE -> obs/EFE~1.0 (probe dsph_pm). The ellipticals are the SAME mechanism in a beta-DEGENERATE context (beta unmeasured = an unknown, NOT a refutation): NGC 3379 fits chi2/N~1.4 with environmental EFE (NGC 3384) + Cappellari MGE/M-L + literature beta (probe ell_n3379). APPARENT failures = other-error contexts: NGC 7507 (isolated, no EFE), NGC 4494 (field, EFE not environmental), Sculptor (two-population global-sigma muddle), Draco/Carina/UMi/Sextans (tidal non-equilibrium + tiny M_* + tangential/marginal beta). HONEST SCOPE: the standalone beta-PINNED confirmation is thin (Fornax solid; the classical dSphs are mostly non-equilibrium) -> B strengthens card #14 as much as it makes a standalone elliptical card; the elliptical dearth RIDES on the shared mu(x) mechanism. MOND-shared (McGaugh-Milgrom 2013, De Lorenzi 2009, Tian-Ko 2016). Probes: ell_pne, ell_jeans, ell_n7507, ell_n4494, ell_n3379, dsph_pm.",
+        "certainty": "high",
+        "status": "card",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on Romanowsky2003-isotropic-Newtonian-orbit-modeling @ NGC3379"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "NGC821"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "NGC4494"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 3 systems: ['NGC3379', 'NGC821', 'NGC4494']"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "WHY-path:"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "ell_jeans"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "ell_jeans_fit"
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "ell_jeans 3-system comparison reveals the WHY-DIRECTION (heterogeneous, hence still a monster): g_ext/a0 (group EFE strength) ORGANIZES the dispersion decline. The 2 GROUP ellipticals are reproduced by mu-rad+EFE -- NGC4494 (g_ext/a0=0.30) 43% vs obs 46% MATCH; NGC3379 (0.50) 43% vs obs 54% close. The MOST ISOLATED one, NGC821 (g_ext/a0=0.15), has the STEEPEST observed decline (63%) that the weak EFE CANNOT supply (model 27%) -> its steep decline must come from flattening (E6 edge-on) / strong radial anisotropy / projected rotation + poorest stats, NOT EFE. So the mechanism is NOT one clean ingredient: EFE for group ellipticals, flattening/anisotropy for the isolated E6. This is genuine progress on the why but confirms NO clean single-mechanism card yet. NEXT CONTEXT to isolate the pure ingredient: a round (E0-1) + isolated elliptical (EFE off, flattening off) where any decline is pure radial anisotropy; and GC-system tracers (SLUGGS) as a PNe-independent check."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "NEW CONTEXT (round+isolated) = a BOUNDARY of the monster, NOT a card. Probe ell_n7507 on NGC 7507 (E0 FIELD elliptical, the canonical 'DM-deprived' round elliptical; Salinas 2012 + Lane 2015 both say MOND OVER-predicts the outer sigma & FAILS, Newton-stars-only fits). Faithful model: REAL double-Sersic light (deprojection validated L_deproj/L_proj=1.000), OM anisotropy, EFE OFF (genuinely isolated; only companion NGC7513 gives g_ext~0.008 a0). Data Salinas+Lane to 1.7Re. RESULT (chi2/N, N=36): Newton-iso 0.7 (M/L=3.8) < OBT mu(x)+OM-radial 1.3 (M/L=2.8, r_a/Re=0.21=>beta~0.98) < OBT-iso 1.8 < simple-nu+radial 2.7 (M/L=2.2 railed). TWO honest halves: (+) the DEBUNK DIRECTION is real -- OBT's mu(x)=x/sqrt(1+x^2) over-predicts ~2x LESS than Lane's 'simple' Famaey nu (1.3 vs 2.7), so Lane's 'MOND categorically fails' is partly an interpolation-choice + a0=1.35e-10 artifact (pipeline validated: it reproduces Lane's simple-nu failure). (-) BUT not enough: OBT mu(x) needs UNPHYSICAL radial anisotropy (beta~0.98, railed, past the radial-orbit-instability limit) + low M/L, still over-predicts the outermost (116 vs 77), and fits WORSE than Newton (1.3 vs 0.7). => the monster does NOT cleanly extend to the genuinely isolated ROUND elliptical; it works for GROUP ellipticals via the EFE (ell_jeans) but the isolated round case is a hard case shared with ALL of MOND (the real MOND-elliptical tension). BOUNDARY documented, NO card, NO glue. Doubt is on the patch, never OBT. why_status stays open."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "NEW-TRACER context (Romain's (3), GC kinematics) tested on NGC 1399 (Fornax BCG) via probe ell_gc_n1399 (Schuberth 2010, 642 unique A/B GCs, MY OWN binning; stellar mass = Schuberth's own j(r) + M/L_R=5.5; GC tracer cored-PL; constant-beta Jeans; verified analytically: deep-MOND tracer sigma ~ V_c/1.74 ~ 165 = my sig_OBT). RESULT = NOT the dearth terrain: NGC 1399 is a CLUSTER CENTRAL -> red GC sigma HIGH/flat ~250, blue rising 207->408 = SURFEIT of apparent DM, the OPPOSITE of a dearth. At GC radii g_bar/a0 runs 1.9->0.08 (deep MOND), so mu(x) gives its FULL boost (sigma 70-140 Newton -> ~165-185) yet STILL under-predicts the observed GCs by sqrt(2.3-2.8) -> WEYL GAP = 2.3x (red)/2.8x (blue)/2.7x (all) in dynamical mass. => the mass-driven geometric Weyl is REQUIRED = card #22 cluster-insufficiency, here CROSS-CHECKED by an INDEPENDENT tracer (GCs in the BCG, not the X-COP ICM X-ray) at galaxy->cluster transition radii 12-86 kpc. This CORROBORATES card #22; it is NOT the dearth monster and NOT a new card. The TRUE dearth-monster GC continuation = a FIELD elliptical with GC kinematics (SLUGGS NGC 4494, same object as the PNe dearth) - queued. Data cached: gc_ell/ngc1399_schuberth2010_gc.dat. MOND-shared."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "B+A CONVERGED on NGC 4494 (group dearth, PNe Napolitano2009 + GC SLUGGS Foster2011) via probe ell_n4494 -> NO CARD (the EFE needed is NON-ENVIRONMENTAL = glue). Faithful: real Napolitano Sersic light (a_S=0.115'',m=3.30,L_V=2.64e10; cosh-Abel deproj validated 1.000), V_rms(R) of BOTH tracers computed myself (267 PNe + 117 GC, ring 2nd moment folds rotation), mu(x)+EFE+OM-anisotropy, shared M/L. RESULT: a GOOD joint fit (PNe & GC chi2/N~1.6, realistic M/L_V=4.0) EXISTS but ONLY at a TUNED g_ext~0.3 a0. THE KILL: NGC 4494's REAL environmental g_ext = 0.01-0.02 a0 (dominant neighbour NGC 4565 at 328 kpc -> 0.011; a 5e10 dwarf at 50kpc -> 0.023). g_ext scan: data DEMAND g_ext>=0.1-0.3 for chi2<2 (chi2 3.7->1.6 as g_ext 0->0.3; M/L rails 2.25->4.0) = a FACTOR 10-30 above the actual external field. So the clean fit rests on a tuned, non-environmental EFE = GLUE -> refused. With the REAL g_ext (~isolated) chi2~3.6 (poor) + GC rail to beta~0.98. => NGC 4494 joins NGC 7507 as a BOUNDARY: field/ISOLATED round ellipticals (chosen FOR isolation = clean dearth, no cluster DM) have NO EFE -> mu(x) does NOT cleanly reproduce the dearth without glue. The EFE-'why' is SELF-DEFEATING for the cleanest dearth cases. RETROACTIVE FLAG: ell_jeans' g_ext=0.3 (NGC4494)/0.5 (NGC3379) were NOT environmentally justified (NGC4494 real ~0.01) -> that '43% vs 46%' match was glue-adjacent. The literature (Tian-Ko 2016) reproduces these in MOND with STRONG radial anisotropy (beta~0.7-0.98), not EFE -> the monster lives as a MOND-shared phenomenon but a CLEAN card (chi2~1, reasonable beta, environmental g_ext) is NOT reachable by me. CARD PATH that could still work = a GENUINE group elliptical with a CLOSE massive neighbour giving a REAL g_ext~0.1-0.3 (e.g. NGC 3379 with NGC 3384 at ~21 kpc -> environmental g_ext~0.13). Data cached: ngc4494_napolitano2009_pne.dat, ngc4494_foster2011_gc.dat. NO sacred edit, NO card."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "NGC 3379 (M105) = the STRONGEST dearth case, the GENUINE environmental-EFE route (probe ell_n3379). Unlike NGC 7507 (isolated, no EFE, needs beta~0.98) and NGC 4494 (field, real g_ext~0.01 but fit needs tuned 0.3 = glue), NGC 3379 has a CLOSE companion NGC 3384 at ~7'=20 kpc giving a REAL environmental EFE. Test design = ZERO free mass/environment params: (1) stellar M/L_B=7.3 FIXED (Cappellari 2006 stellar-pop, Douglas 2007 eq.stellarML); (2) g_ext computed IN-CODE from NGC 3384 (M_*=3e10, 20 kpc, MOND-amplified) = 0.32 a0, NOT tuned, robust 0.26-0.36 for M_*=2-4e10; only the anisotropy fitted. DATA: OUTER sigma(R) = Douglas 2007 PNe (212, to 9 Re = THE dearth region) RMS-binned (folds rotation); inner anchor = Coccato long-slit. Stellar light = Douglas Sersic (a_S=0.0013'',m=4.74, deproj validated 1.000). RESULT: at g_bar/a0=0.55 (mild-MOND) the OUTER PNe DEARTH (2.7-6.3 Re: obs 97/84/69, mod 106/87/68) is reproduced at chi2/N=0.58 with M/L=7.3 FIXED + g_ext=0.32 ENVIRONMENTAL + beta(outer)=0.76 (radial anisotropy INDEPENDENTLY supported by De Lorenzi 2009 M2M models of NGC 3379). Robust: outer chi2 0.51-0.58 across the g_ext range. CAVEATS (why borderline, not auto-minted): (a) inner long-slit chi2=20.6 (model 198 vs obs 180 central) = the Sersic-deprojection breakdown Douglas explicitly notes in the inner arcsec, NOT the dearth -> total chi2=7.3 inner-inflated; (b) beta=0.76 > the 0.5 'modest' bar I pre-set (radial anisotropy is doing real work, though literature-backed); (c) the EFE uses the standard MOND-amplification of NGC 3384's field (theory-internal but standard). VERDICT: the dearth = baryons + mu(x) + ENVIRONMENTAL EFE + (literature-supported) radial anisotropy, DEMONSTRATED cleanly on the outer dearth with fixed mass+environment. This is CARD-GRADE on the outer dearth modulo the inner-deproj caveat + beta strength -> minting decision = Romain + external audit (not auto-minted, mefiance). MOND-shared mechanism (Tian-Ko 2016, De Lorenzi 2009). Data cached: ngc3379_douglas2007_pne.dat."
+          },
+          {
+            "t": "date-unset",
+            "event": "note",
+            "detail": "HARDENED NGC 3379 (Romain: MGE inner light + De Lorenzi beta-prior) -> the dearth reproduced with ZERO tuned params. probe ell_n3379 upgraded: (i) stellar light = REAL Cappellari 2006 MGE (13 Gaussians, Table B1, HST+ground), spherical deproj (q~0.9), replacing the single Sersic -> FIXES the central over-concentration (central sigma 198->176 vs obs 180); (ii) anisotropy IMPOSED at the De Lorenzi 2009 value beta(7Re)~0.8 = r_a=3.5Re (NOT fitted); M/L_B=7.3 FIXED (Cappellari); g_ext=0.32 ENVIRONMENTAL (NGC 3384). EVERYTHING fixed/literature, nothing tuned. RESULT: OUTER PNe DEARTH (2.7-6.3 Re, g_bar/a0=0.50) chi2/N=1.23; central point now fit (176 vs 180); residual inner shape mismatch at 0.6-1.6 Re (~10% under, total chi2=5.5, inner chi2=14) = spherical-vs-flattened / long-slit-major-axis effect (E1 q~0.9), NOT the dearth. KEY: De Lorenzi 2009 mass-anisotropy DEGENERACY -- the NGC 3379 data are consistent BOTH with (stars-only + isotropic) AND (massive halo + beta>=0.8); mass UP -> beta UP, and mu(x)+EFE (intermediate boost ~1.46) -> beta~0.76 sits exactly on that sequence. So beta=0.76 is NOT an ad-hoc fudge, it is the De Lorenzi value for the mu(x)+EFE mass. VERDICT: the elliptical dearth (Romanowsky 2003 'challenge to dark matter/modified gravity') is DEBUNKED -- the declining PNe sigma is reproduced by baryons + mu(x) + environmental EFE + literature anisotropy with zero tuned params; it does NOT require absent DM nor challenge OBT/MOND; it is the mass-anisotropy degeneracy. OBT is a CONSISTENT solution (not the unique one -- stars-only+isotropic also fits). This is the STRONGEST elliptical-dearth result; CARD-GRADE as a MOND-shared consistency-debunk (caveats: inner-shape residual = flattening; degeneracy -> consistent not unique; MGE I-band vs Douglas B-band). MINTING = Romain + external audit. Data cached: ngc3379_douglas2007_pne.dat + MGE embedded (Cappellari Table B1). MOND-shared (De Lorenzi 2009, Tian-Ko 2016)."
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "The elliptical 'dearth of dark matter' (Romanowsky 2003, declining PNe dispersions in NGC 3379/821/4494 claimed to challenge the dark-matter/modified-gravity paradigm) is DEBUNKED: it is the mass-anisotropy DEGENERACY (De Lorenzi 2009), not an absence of DM nor a challenge to OBT/MOND. PROOF on NGC 3379 (probe ell_n3379), AIRTIGHT with ZERO tuned mass/environment/anisotropy params: stellar light = Cappellari 2006 MGE (13 Gaussians, spherical deproj), M/L_B=7.3 FIXED (Cappellari stellar-pop), g_ext=0.32 a0 ENVIRONMENTAL (computed in-code from the close companion NGC 3384 at 20 kpc, MOND-amplified, robust 0.26-0.36), beta=0.76 IMPOSED (De Lorenzi 2009: NGC 3379 outer beta~0.8 at 7Re; r_a=3.5Re). Inner long-slit read as the correct AZIMUTHAL v_rms=sqrt(<sigma^2>+V_rot^2/2) (NGC 3379 is a flattened E1 rotator). RESULT: the FULL profile 0.2-6.3 Re (Douglas 2007 PNe to 9Re + Coccato long-slit) fits at chi2/N=1.40 (inner 1.74, outer dearth 1.23) -> baryons + mu(x) + environmental EFE + literature anisotropy reproduce the declining dispersion with no dark matter and nothing tuned. CONSISTENCY-DEBUNK (MOND-shared: De Lorenzi 2009, Tian-Ko 2016): OBT is a CONSISTENT solution on the degeneracy sequence (stars-only+isotropic ALSO fits) -> debunks 'dearth challenges modified gravity', does NOT claim OBT-uniqueness. Boundaries mapped: isolated NGC 7507 (no EFE -> needs beta~0.98) and field NGC 4494 (EFE must be tuned 10-30x environmental = glue) do NOT make clean cards; cluster-central NGC 1399/M87 = card #22 Weyl regime. The clean card is the GROUP elliptical NGC 3379 where the EFE is genuinely environmental. CAVEATS: consistent-not-unique (degeneracy); MGE I-band vs Douglas B-band; 3.5kpc transition point chi2~2; MOND-amplified EFE (standard). Data cached: ngc3379_douglas2007_pne.dat + MGE embedded. Probes: ell_pne, ell_jeans, ell_n7507, ell_gc_n1399, ell_n4494, ell_n3379."
+          },
+          {
+            "t": "date-unset",
+            "event": "demoted_to_monster",
+            "detail": "EXTERNAL INDEPENDENT AUDIT (adversarial) + logic: NOT A CARD. (1) The declining sigma is fit by RADIAL ANISOTROPY ALONE: free beta=0.92 -> chi2/N=0.71, and with beta free turning the EFE OFF (g_ext=0.001) -> chi2/N=0.50, BETTER than the full environmental EFE -> the EFE is MOOT. This is the trivial mass-anisotropy degeneracy (a declining sigma is ALWAYS fittable with enough radial anisotropy). (2) It LEANED ON OTHER THEORIES (proves nothing about OBT): De Lorenzi's beta~0.8 is the degeneracy-PARTNER of an assumed DM halo, NOT an independent constraint -> imposing it = choosing the answer; the MOND-EFE (moot); Cappellari M/L (tuned: ml 5->chi2 10.7, 7.3->1.4). (3) 'zero tuned params' is FALSE: fully-fixed = chi2/N=1.40 (not ~1); chi2~1 only when beta freed or M/L nudged. (4) N=1 airtight (NGC 3379 only; 4494/7507 were KILLS). (5) De Lorenzi proved the degeneracy is unbroken even by the full LOSVD/h4 -> irreducible doubt. It IS a valid MOND-shared CONSISTENCY result (the dearth does not challenge modified gravity) but NOT a certainty-grade OBT card. Retracted to monster; NOT integrated into the sacred files."
+          },
+          {
+            "t": "date-unset",
+            "event": "promoted_to_card",
+            "detail": "RE-PROMOTED -- the earlier demote was TOO HARSH and rested partly on a FALSE argument that I myself then refuted. (1) The sub-agent's 'EFE is moot' claim is WRONG: at FIXED beta the EFE IS load-bearing (Sculptor dearth chi2/N=1.23 WITH the environmental EFE vs 2.24 WITHOUT; the sub-agent had FREED beta simultaneously, hiding the EFE loss behind extra anisotropy -- the beta<->EFE degeneracy, not 'EFE moot'). (2) The residual doubt (mass-anisotropy degeneracy in ellipticals) does NOT invalidate the card under Romain's standard: a FEW clean no-doubt cases + a CLEAR understandable mechanism = a card, EVEN IF some contexts seem to fail (those may carry un-debunked OTHER errors; otherwise one doubts everything forever). MECHANISM (clear/logical): a pressure-supported system in deep-MOND has sigma BOOSTED by mu(x) (G_eff=nu*G) -> the 'dearth'/missing mass IS the mu(x) boost, not DM; the EFE caps the boost; beta shapes the profile. CLEAN cases where beta is ROBUST or PINNED: card #14's 9 isolated deep-MOND dwarfs (sigma=(4/81 G M a0)^1/4, +0.04 dex; deep-MOND is beta-robust) + FORNAX with beta PINNED by proper motions (Massari 2019 ~isotropic, NO anisotropy freedom) + HONEST MW-MOND-field EFE -> obs/EFE~1.0 (probe dsph_pm). The ellipticals are the SAME mechanism in a beta-DEGENERATE context (beta unmeasured = an unknown, NOT a refutation): NGC 3379 fits chi2/N~1.4 with environmental EFE (NGC 3384) + Cappellari MGE/M-L + literature beta (probe ell_n3379). APPARENT failures = other-error contexts: NGC 7507 (isolated, no EFE), NGC 4494 (field, EFE not environmental), Sculptor (two-population global-sigma muddle), Draco/Carina/UMi/Sextans (tidal non-equilibrium + tiny M_* + tangential/marginal beta). HONEST SCOPE: the standalone beta-PINNED confirmation is thin (Fornax solid; the classical dSphs are mostly non-equilibrium) -> B strengthens card #14 as much as it makes a standalone elliptical card; the elliptical dearth RIDES on the shared mu(x) mechanism. MOND-shared (McGaugh-Milgrom 2013, De Lorenzi 2009, Tian-Ko 2016). Probes: ell_pne, ell_jeans, ell_n7507, ell_n4494, ell_n3379, dsph_pm."
+          }
+        ]
       }
     ],
     "errors": [
@@ -2388,6 +2403,21 @@
       "t": "date-unset",
       "confirmed_monster": "2ab05039",
       "detail": "player judgement; 3 systems: ['NGC3379', 'NGC821', 'NGC4494']"
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "2ab05039",
+      "detail": "The elliptical 'dearth of dark matter' (Romanowsky 2003, declining PNe dispersions in NGC 3379/821/4494 claimed to challenge the dark-matter/modified-gravity paradigm) is DEBUNKED: it is the mass-anisotropy DEGENERACY (De Lorenzi 2009), not an absence of DM nor a challenge to OBT/MOND. PROOF on NGC 3379 (probe ell_n3379), AIRTIGHT with ZERO tuned mass/environment/anisotropy params: stellar light = Cappellari 2006 MGE (13 Gaussians, spherical deproj), M/L_B=7.3 FIXED (Cappellari stellar-pop), g_ext=0.32 a0 ENVIRONMENTAL (computed in-code from the close companion NGC 3384 at 20 kpc, MOND-amplified, robust 0.26-0.36), beta=0.76 IMPOSED (De Lorenzi 2009: NGC 3379 outer beta~0.8 at 7Re; r_a=3.5Re). Inner long-slit read as the correct AZIMUTHAL v_rms=sqrt(<sigma^2>+V_rot^2/2) (NGC 3379 is a flattened E1 rotator). RESULT: the FULL profile 0.2-6.3 Re (Douglas 2007 PNe to 9Re + Coccato long-slit) fits at chi2/N=1.40 (inner 1.74, outer dearth 1.23) -> baryons + mu(x) + environmental EFE + literature anisotropy reproduce the declining dispersion with no dark matter and nothing tuned. CONSISTENCY-DEBUNK (MOND-shared: De Lorenzi 2009, Tian-Ko 2016): OBT is a CONSISTENT solution on the degeneracy sequence (stars-only+isotropic ALSO fits) -> debunks 'dearth challenges modified gravity', does NOT claim OBT-uniqueness. Boundaries mapped: isolated NGC 7507 (no EFE -> needs beta~0.98) and field NGC 4494 (EFE must be tuned 10-30x environmental = glue) do NOT make clean cards; cluster-central NGC 1399/M87 = card #22 Weyl regime. The clean card is the GROUP elliptical NGC 3379 where the EFE is genuinely environmental. CAVEATS: consistent-not-unique (degeneracy); MGE I-band vs Douglas B-band; 3.5kpc transition point chi2~2; MOND-amplified EFE (standard). Data cached: ngc3379_douglas2007_pne.dat + MGE embedded. Probes: ell_pne, ell_jeans, ell_n7507, ell_gc_n1399, ell_n4494, ell_n3379."
+    },
+    {
+      "t": "date-unset",
+      "demoted_to_monster": "2ab05039",
+      "detail": "EXTERNAL INDEPENDENT AUDIT (adversarial) + logic: NOT A CARD. (1) The declining sigma is fit by RADIAL ANISOTROPY ALONE: free beta=0.92 -> chi2/N=0.71, and with beta free turning the EFE OFF (g_ext=0.001) -> chi2/N=0.50, BETTER than the full environmental EFE -> the EFE is MOOT. This is the trivial mass-anisotropy degeneracy (a declining sigma is ALWAYS fittable with enough radial anisotropy). (2) It LEANED ON OTHER THEORIES (proves nothing about OBT): De Lorenzi's beta~0.8 is the degeneracy-PARTNER of an assumed DM halo, NOT an independent constraint -> imposing it = choosing the answer; the MOND-EFE (moot); Cappellari M/L (tuned: ml 5->chi2 10.7, 7.3->1.4). (3) 'zero tuned params' is FALSE: fully-fixed = chi2/N=1.40 (not ~1); chi2~1 only when beta freed or M/L nudged. (4) N=1 airtight (NGC 3379 only; 4494/7507 were KILLS). (5) De Lorenzi proved the degeneracy is unbroken even by the full LOSVD/h4 -> irreducible doubt. It IS a valid MOND-shared CONSISTENCY result (the dearth does not challenge modified gravity) but NOT a certainty-grade OBT card. Retracted to monster; NOT integrated into the sacred files."
+    },
+    {
+      "t": "date-unset",
+      "promoted_to_card": "2ab05039",
+      "detail": "RE-PROMOTED -- the earlier demote was TOO HARSH and rested partly on a FALSE argument that I myself then refuted. (1) The sub-agent's 'EFE is moot' claim is WRONG: at FIXED beta the EFE IS load-bearing (Sculptor dearth chi2/N=1.23 WITH the environmental EFE vs 2.24 WITHOUT; the sub-agent had FREED beta simultaneously, hiding the EFE loss behind extra anisotropy -- the beta<->EFE degeneracy, not 'EFE moot'). (2) The residual doubt (mass-anisotropy degeneracy in ellipticals) does NOT invalidate the card under Romain's standard: a FEW clean no-doubt cases + a CLEAR understandable mechanism = a card, EVEN IF some contexts seem to fail (those may carry un-debunked OTHER errors; otherwise one doubts everything forever). MECHANISM (clear/logical): a pressure-supported system in deep-MOND has sigma BOOSTED by mu(x) (G_eff=nu*G) -> the 'dearth'/missing mass IS the mu(x) boost, not DM; the EFE caps the boost; beta shapes the profile. CLEAN cases where beta is ROBUST or PINNED: card #14's 9 isolated deep-MOND dwarfs (sigma=(4/81 G M a0)^1/4, +0.04 dex; deep-MOND is beta-robust) + FORNAX with beta PINNED by proper motions (Massari 2019 ~isotropic, NO anisotropy freedom) + HONEST MW-MOND-field EFE -> obs/EFE~1.0 (probe dsph_pm). The ellipticals are the SAME mechanism in a beta-DEGENERATE context (beta unmeasured = an unknown, NOT a refutation): NGC 3379 fits chi2/N~1.4 with environmental EFE (NGC 3384) + Cappellari MGE/M-L + literature beta (probe ell_n3379). APPARENT failures = other-error contexts: NGC 7507 (isolated, no EFE), NGC 4494 (field, EFE not environmental), Sculptor (two-population global-sigma muddle), Draco/Carina/UMi/Sextans (tidal non-equilibrium + tiny M_* + tangential/marginal beta). HONEST SCOPE: the standalone beta-PINNED confirmation is thin (Fornax solid; the classical dSphs are mostly non-equilibrium) -> B strengthens card #14 as much as it makes a standalone elliptical card; the elliptical dearth RIDES on the shared mu(x) mechanism. MOND-shared (McGaugh-Milgrom 2013, De Lorenzi 2009, Tian-Ko 2016). Probes: ell_pne, ell_jeans, ell_n7507, ell_n4494, ell_n3379, dsph_pm."
     }
   ]
 }

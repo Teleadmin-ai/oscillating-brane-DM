@@ -242,6 +242,27 @@ def promote(st, obj_id, why, certainty):
                   "intégrer cette carte à la théorie (7 fichiers sacrés + site + PDF).")
 
 
+def demote(st, obj_id, reason):
+    """RETRACT a card -> back to monster. Used when an external/independent audit finds the card
+    does NOT meet the certainty bar (residual doubt). The mechanism may still 'work' (so it stays
+    a monster, not killed/error), but it is NOT a card. NOTHING in the sacred files is touched here
+    (a card is only integrated AFTER it survives audit)."""
+    bucket, _, obj = _find(st, obj_id)
+    if obj is None:
+        return False, f"id '{obj_id}' not found"
+    if bucket != "cards":
+        return False, f"'{obj_id}' is in '{bucket}', only a card can be demoted"
+    if not reason or not reason.strip():
+        return False, "REFUSED: demoting a card REQUIRES a reason (the audit verdict)."
+    obj["why_status"] = "partial"  # the WHY is no longer certain
+    obj["certainty"] = "low"
+    obj["status"] = "monster"
+    _move(st, obj, "cards", "monsters", "demoted_to_monster", reason)
+    save(st)
+    return True, ("CARD RETRACTED -> back to monster. It was NOT integrated into the theory "
+                  "(audit caught it first). The mechanism may still work, but it is not a card.")
+
+
 def kill(st, obj_id, reason):
     """candidate/monster -> ERROR (refuted patch, e.g. a coincidence that didn't generalize)."""
     bucket, _, obj = _find(st, obj_id)

@@ -3928,7 +3928,134 @@ def ell_n3379(opts=None):
     )
 
 
+def dsph_pm(opts=None):
+    """DEGENERACY BROKEN by PROPER MOTIONS: dwarf spheroidals where the orbital anisotropy beta is
+    MEASURED from internal proper motions (not assumed/fitted). This is the clean answer to the
+    elliptical-dearth failure: there beta was free (mass-anisotropy degeneracy -> a declining sigma is
+    always fittable); HERE beta is pinned by data, so OBT mu(x)(+EFE) PREDICTS sigma_los with NO
+    anisotropy freedom. Test: does it match the observed sigma? (M_bar from L x M/L, beta measured,
+    g_ext from the MW field -- all fixed, parameter-free.)
+
+    HONEST physics flagged up-front (caught in the design loop): these dwarfs are ALL EFE-DOMINATED
+    (x_ext > x_acc). The EFE CAPS the deep-MOND boost -> it can UNDER-predict the observed sigma (the
+    known dSph 'EFE sigma-floor', cards #17/#18). So this may be a TENSION, not a win -- the calculation
+    decides. We report BOTH the isolated deep-MOND prediction and the EFE-suppressed one vs sigma_obs.
+
+    Data: structural (M_bar, r_half, sigma_obs, x_ext) from the cached McConnachie/Walker dsph.parquet
+    (same as card #14). Measured PM beta: Sculptor ~0 (Massari 2018, HSTPROMO 2025), Fornax ~0
+    (Massari 2019); the fainter ones have MARGINAL beta (flagged). Plummer light (scale a=r_half_2D),
+    constant-beta spherical Jeans, luminosity-weighted global sigma_los. opts: --beta (override),
+    --pop (single name). FACTS only; MOND-shared (McGaugh-Milgrom 2013)."""
+    import numpy as np
+    import pandas as pd
+
+    PC = KPC / 1e3
+    bov = opts.get("beta", None) if opts else None
+    # measured 3D anisotropy from internal proper motions (value, quality): solid for Sculptor/Fornax
+    BETA = {
+        "Sculptor": (0.0, "solid (Massari18/HSTPROMO25 ~iso)"),
+        "Fornax": (0.0, "solid (Massari19 ~iso)"),
+        "Draco": (0.0, "marginal PM"),
+        "Carina": (0.0, "marginal PM"),
+        "Ursa Minor": (0.0, "marginal PM"),
+        "Sextans (I)": (0.0, "marginal PM"),
+    }
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet")
+    r_pc = np.logspace(0.0, 5.0, 1300)  # 1 pc -> 100 kpc
+    r_m = r_pc * PC
+
+    def sigma_glob(a_m, M_kg, gext, beta, efe):
+        nu = (1 + (r_m / a_m) ** 2) ** (-2.5)  # Plummer 3D density (norm cancels)
+        M_r = (
+            M_kg * r_m**3 / (r_m**2 + a_m**2) ** 1.5
+        )  # Plummer enclosed mass (stars only)
+        gN = G * M_r / r_m**2
+        if efe:
+            gt = np.sqrt(gN**2 + gext**2)
+            g = gN * obt_rar(gt) / gt
+        else:
+            g = obt_rar(gN)
+        w = nu * g * r_m ** (2 * beta)
+        Iout = np.concatenate(
+            [np.cumsum((0.5 * (w[1:] + w[:-1]) * np.diff(r_m))[::-1])[::-1], [0.0]]
+        )
+        nusr2 = Iout / r_m ** (2 * beta)
+        # luminosity-weighted global sigma_los over the light (Plummer): Sigma(R)=(1+R^2/a^2)^-2
+        Rg = np.logspace(np.log10(0.03 * a_m), np.log10(6 * a_m), 60)
+        slos2, Sig = [], []
+        for Rk in Rg:
+            sel = r_m > Rk * 1.0001
+            rr = r_m[sel]
+            num = np.trapezoid(
+                (1 - beta * Rk**2 / rr**2) * nusr2[sel] * rr / np.sqrt(rr**2 - Rk**2),
+                rr,
+            )
+            den = np.trapezoid(nu[sel] * rr / np.sqrt(rr**2 - Rk**2), rr)
+            slos2.append(max(num / den, 0.0))
+            Sig.append((1 + (Rk / a_m) ** 2) ** (-2))
+        slos2, Sig = np.array(slos2), np.array(Sig)
+        wL = Sig * Rg  # luminosity weight per annulus
+        return np.sqrt(np.sum(wL * slos2) / np.sum(wL)) / KMS
+
+    print(
+        "[dsph_pm] DEGENERACY BROKEN by proper-motion beta: OBT mu(x)(+EFE) PREDICTS sigma_los, no anisotropy freedom."
+    )
+    MW_MBAR = (
+        float(opts.get("mwmbar", 7.0e10)) if opts else 7.0e10
+    )  # MW baryons (McMillan17 disk+bulge+gas)
+    print(
+        f"  HONEST EFE: g_ext = sqrt(G*M_MW*a0)/D (the MW MOND field, first principles, M_MW={MW_MBAR:.1e}), NOT the cache value."
+    )
+    print(
+        f"  {'dwarf':13s}{'beta':>6s}{'xext_h':>7s}{'cache':>6s}{'s_obs':>6s}{'s_iso':>6s}{'s_EFE':>6s}{'obs/EFE':>8s}{'obs/EFE_M/L2.5':>14s}  qual"
+    )
+    rows = []
+    for nm, (b0, qual) in BETA.items():
+        m = d["Name"].astype(str).str.strip() == nm
+        if not m.any():
+            continue
+        row = d[m].iloc[0]
+        beta = float(bov) if bov is not None else b0
+        a_m = float(row["r_half_pc"]) * PC
+        M_kg = float(row["M_bar"]) * MSUN
+        D_m = float(row["D_kpc"]) * KPC
+        gext = (
+            np.sqrt(G * MW_MBAR * MSUN * A0) / D_m
+        )  # honest MW MOND field = sqrt(g_N,MW * a0)
+        xext_h = gext / A0
+        sobs = float(row["sigma_kms"])
+        s_iso = sigma_glob(a_m, M_kg, gext, beta, efe=False)
+        s_efe = sigma_glob(a_m, M_kg, gext, beta, efe=True)
+        s_efe_hi = sigma_glob(
+            a_m, M_kg * 1.56, gext, beta, efe=True
+        )  # M/L 1.6->2.5 band
+        print(
+            f"  {nm:13s}{beta:+6.2f}{xext_h:7.3f}{float(row['x_ext']):6.2f}{sobs:6.1f}{s_iso:6.1f}{s_efe:6.1f}{sobs/max(s_efe,0.1):8.2f}{sobs/max(s_efe_hi,0.1):14.2f}  {qual}"
+        )
+        rows.append((nm, sobs, s_iso, s_efe, s_efe_hi, qual))
+    solid = [r for r in rows if "solid" in r[5]]
+    if solid:
+        re = np.median([np.log10(r[1] / r[3]) for r in solid])
+        rh = np.median([np.log10(r[1] / r[4]) for r in solid])
+        print(
+            f"  SOLID-beta (Sculptor,Fornax) HONEST EFE: median log(obs/EFE)={re:+.2f} dex; with M/L->2.5: {rh:+.2f} dex"
+        )
+    print(
+        "  READ: beta is MEASURED here (no freedom) -> OBT's sigma is a PARAMETER-FREE prediction (M_bar, beta, g_ext"
+    )
+    print(
+        "  all fixed), unlike the elliptical dearth where beta was free. If obs/EFE ~ 1 -> OBT predicts it cleanly,"
+    )
+    print(
+        "  no degeneracy doubt. If obs/EFE >> 1 -> OBT UNDER-predicts (the EFE sigma-floor) = a TENSION with beta pinned"
+    )
+    print(
+        "  (DM would fit via a free halo; OBT cannot, with beta measured). The calculation decides, not the framing."
+    )
+
+
 PROBES = {
+    "dsph_pm": lambda opts=None: dsph_pm(opts),
     "ell_n3379": lambda opts=None: ell_n3379(opts),
     "ell_n4494": lambda opts=None: ell_n4494(opts),
     "ell_gc_n1399": lambda opts=None: ell_gc_n1399(opts),
