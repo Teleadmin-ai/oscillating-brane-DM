@@ -3747,24 +3747,30 @@ def ell_n3379(opts=None):
     RA0 = 15 * (10 + 47 / 60 + 49.6 / 3600)  # NGC 3379 centre (NED J2000)
     DE0 = 12 + 34 / 60 + 54.0 / 3600
     cdec = np.cos(np.radians(DE0))
-    # inner: Coccato long-slit V_rms=sqrt(V^2+sigma^2) points (R<2.5 kpc), to anchor the centre
-    Rin, Sin, Ein = [], [], []
+    # inner: Coccato long-slit, store (R, PA, V, sigma, e_sigma) for the AZIMUTHAL v_rms (R<2.5 kpc).
+    # NGC 3379 (E1, q~0.9) is flattened+rotating: the major axis (PA70, V->67) reads higher than the
+    # spherical azimuthal average; the minor (PA160, V~0) lower. The spherical-model-comparable observable
+    # is v_rms^2 = <sigma^2>_azimuthal + V_rot^2/2 (NOT the major-axis sqrt(V^2+sigma^2), which over-reads).
+    Rin, PAin, Vin, Sigin, Ein = [], [], [], [], []
     for ln in open("/DATA/obt_game_cache/raw/pne_ell/coccato_table6.dat"):
         p = ln.split()
         if len(p) < 8 or p[0] != "3379" or p[7] != "1":
             continue
         try:
             Rk = float(p[2]) * AS2PC / 1e3
-            vr = np.hypot(float(p[3]), float(p[5]))
-            er = max(float(p[6]), 3.0)
+            pa = float(p[1])
+            V = float(p[3])
             sg = float(p[5])
+            er = max(float(p[6]), 3.0)
         except ValueError:
             continue
         if sg > 0 and Rk < 2.5:
             Rin.append(Rk)
-            Sin.append(vr)
+            PAin.append(pa)
+            Vin.append(V)
+            Sigin.append(sg)
             Ein.append(er)
-    Rin, Sin, Ein = np.array(Rin), np.array(Sin), np.array(Ein)
+    Rin, PAin, Vin, Sigin, Ein = map(np.array, (Rin, PAin, Vin, Sigin, Ein))
     # outer: Douglas 2007 PNe individual velocities -> RMS sigma in bins (folds rotation; vsys-clipped)
     Rpne, Vpne = [], []
     for ln in open("/DATA/obt_game_cache/raw/pne_ell/ngc3379_douglas2007_pne.dat"):
@@ -3787,14 +3793,22 @@ def ell_n3379(opts=None):
     Rpne, Vpne = np.array(Rpne), np.array(Vpne)
     # combined profile: inner bins from long-slit, outer bins from PNe RMS
     RB, SB, EB, NB = [], [], [], []
-    for lo, hi in [(0.2, 1.0), (1.0, 2.5)]:  # inner long-slit
+    for lo, hi in [(0.2, 1.0), (1.0, 2.5)]:  # inner long-slit: AZIMUTHAL v_rms
         m = (Rin >= lo) & (Rin < hi)
         if m.sum() < 2:
             continue
-        w = 1 / Ein[m] ** 2
-        RB.append(np.sum(w * Rin[m]) / np.sum(w))
-        SB.append(np.sum(w * Sin[m]) / np.sum(w))
-        EB.append(1 / np.sqrt(np.sum(w)))
+        sig2 = np.mean(Sigin[m] ** 2)  # azimuthal (all-PA) dispersion^2
+        # V_rot = the major-axis rotation = the PA with the largest mean|V| in this bin
+        vrot = max(
+            (np.mean(np.abs(Vin[m & (PAin == pa)])) for pa in np.unique(PAin[m])),
+            default=0.0,
+        )
+        vrms = np.sqrt(
+            sig2 + 0.5 * vrot**2
+        )  # spherical-comparable: <sigma^2> + V_rot^2/2
+        RB.append(np.median(Rin[m]))
+        SB.append(vrms)
+        EB.append(np.mean(Ein[m]) / np.sqrt(m.sum()))
         NB.append(int(m.sum()))
     for lo, hi in [
         (2.5, 5.0),
@@ -3814,7 +3828,9 @@ def ell_n3379(opts=None):
         SB.append(sig)
         EB.append(sig / np.sqrt(2 * len(vv)))
         NB.append(len(vv))
-    RB, SB, EB = np.array(RB), np.array(SB), np.maximum(np.array(EB), 3.0)
+    # 4% systematic floor (deprojection / flattening / M-L modeling) on top of the formal errors
+    RB, SB = np.array(RB), np.array(SB)
+    EB = np.maximum(np.array(EB), 0.04 * SB)
 
     Re_kpc = 47.0 * AS2PC / 1e3
     ell = nu / nu.max()  # PNe trace the stellar light
