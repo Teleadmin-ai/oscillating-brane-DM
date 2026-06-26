@@ -4054,6 +4054,148 @@ def dsph_pm(opts=None):
     )
 
 
+def dsph_newmonster(opts=None):
+    """HUNT the monster the card-#32 tensions MASK (Romain). Play card #32 (mu(x)+EFE) on the EFE-dominated
+    dwarfs; ask what the RESIDUAL (sigma_obs/sigma_pred) correlates with. DECISIVE test: vs card #17's tidal
+    eta_peri (Jacobi at pericenter, Battaglia 2022 Gaia orbits).
+      - if resid <-> eta_peri strongly: the 'new monster' is card #17 RESOLVING #32's residual = the game's
+        MAGIC (two cards combine: #32 -> clean/bright dwarfs, #17 -> tidally-inflated faint ones). Not new.
+      - if NOT: a genuinely new monster (NOT the cluster Weyl -- that is mass-driven=more for BIGGER, the
+        opposite of the more-for-fainter residual motif).
+    Computes BOTH card #32's residual (Plummer-Jeans mu(x)+EFE, honest MW-MOND-field g_ext, beta=0) AND card
+    #17's M/(5r) estimator residual; correlates each vs log(eta_peri), log(M_bar), x_ext. Same EFE-dominated
+    deep-MOND regime as #17. FACTS only."""
+    import numpy as np
+    import pandas as pd
+    from scipy.stats import spearmanr
+
+    PC = KPC / 1e3
+    V_MW = 220e3
+    MW_MBAR = 7.0e10
+    d = pd.read_parquet(f"{LOTS}/dsph.parquet")
+    d = d[(d.M_bar > 0) & (d.sigma_kms > 0) & (d.r_half_pc > 0) & (d.D_kpc > 0)].copy()
+    mw = d[d.SubG.astype(str).str.contains("MW|Milky", case=False, na=True)].copy()
+    S19 = {  # UFD sigma overrides (km/s), verbatim from card #17 tidal_ufd_peri
+        "Segue (I)": 3.7,
+        "Segue II": None,
+        "Willman 1": None,
+        "Bootes II": None,
+        "Bootes (I)": 4.6,
+        "Ursa Major (I)": 7.0,
+        "Ursa Major II": 5.6,
+        "Coma Berenices": 4.6,
+        "Canes Venatici II": 4.6,
+        "Hercules": 5.1,
+        "Leo IV": 3.3,
+        "Leo V": 2.3,
+    }
+    PERI = {  # pericenter distance (kpc), verbatim from card #17 (Battaglia 2022 Gaia, Light MW)
+        "Sculptor": 63.65,
+        "Leo II": 115.55,
+        "Sextans (I)": 74.45,
+        "Carina": 106.66,
+        "Ursa Minor": 48.85,
+        "Draco": 51.68,
+        "Canes Venatici (I)": 68.09,
+        "Hercules": 64.22,
+        "Bootes (I)": 41.93,
+        "Leo IV": 143.17,
+        "Leo V": 171.65,
+        "Ursa Major (I)": 72.22,
+        "Ursa Major II": 39.60,
+        "Coma Berenices": 45.96,
+        "Segue (I)": 20.18,
+        "Canes Venatici II": 49.44,
+        "Sagittarius dSph": 15.0,
+    }
+    r_m = np.logspace(0.0, 5.0, 1000) * PC
+
+    def nu_of(gext, gN):  # Chae EFE nu_e factor (card #16/#17)
+        e, z = gext / A0, gN / A0
+        Ae, Be = e * (1 + e / 2) / (1 + e), 1 + e
+        return 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
+
+    def sig32(
+        M_kg, a_tr, gext
+    ):  # card #32 prediction: Plummer-Jeans mu(x)+EFE, beta=0, lum-weighted global
+        nu = (1 + (r_m / a_tr) ** 2) ** (-2.5)
+        gN = G * M_kg * r_m / (r_m**2 + a_tr**2) ** 1.5
+        gt = np.sqrt(gN**2 + gext**2)
+        g = gN * obt_rar(gt) / gt
+        w = nu * g
+        nusr2 = np.concatenate(
+            [np.cumsum((0.5 * (w[1:] + w[:-1]) * np.diff(r_m))[::-1])[::-1], [0.0]]
+        )
+        Rg = np.logspace(np.log10(0.03 * a_tr), np.log10(6 * a_tr), 50)
+        slos2, Sig = [], []
+        for Rk in Rg:
+            s = r_m > Rk * 1.0001
+            rr = r_m[s]
+            num = np.trapezoid(nusr2[s] * rr / np.sqrt(rr**2 - Rk**2), rr)
+            den = np.trapezoid(nu[s] * rr / np.sqrt(rr**2 - Rk**2), rr)
+            slos2.append(max(num / den, 0.0))
+            Sig.append((1 + (Rk / a_tr) ** 2) ** (-2))
+        slos2, Sig = np.array(slos2), np.array(Sig)
+        return np.sqrt(np.sum(Sig * Rg * slos2) / np.sum(Sig * Rg)) / KMS
+
+    rows = []
+    for _, row in mw.iterrows():
+        nm = row.Name
+        if nm not in PERI:
+            continue
+        sobs = S19[nm] if nm in S19 else row.sigma_kms
+        if sobs is None:
+            continue
+        M, rh, D = row.M_bar * MSUN, row.r_half_pc * PC, row.D_kpc * 1e3 * PC
+        gN = G * M / rh**2
+        gext17 = V_MW**2 / D  # card #17 MW field
+        if not (
+            gext17 / A0 > gN / A0 and gN / A0 < 1
+        ):  # EFE-dominated deep-MOND regime (#17 sel)
+            continue
+        gext32 = np.sqrt(G * MW_MBAR * MSUN * A0) / D  # card #32 honest MOND field
+        s32 = sig32(M, rh, gext32)
+        s17 = np.sqrt(nu_of(gext17, gN) * G * M / (5 * rh)) / KMS
+        peri = PERI[nm] * 1e3 * PC
+        nu_p = nu_of(V_MW**2 / peri, gN)
+        eta = rh / (peri * (nu_p * M / (2 * V_MW**2 * peri / G)) ** (1.0 / 3.0))
+        rows.append((nm, sobs, s32, s17, eta, M / MSUN, gext17 / A0))
+
+    nm = [r[0] for r in rows]
+    sobs = np.array([r[1] for r in rows])
+    s32 = np.array([r[2] for r in rows])
+    s17 = np.array([r[3] for r in rows])
+    eta = np.array([r[4] for r in rows])
+    Mb = np.array([r[5] for r in rows])
+    xe = np.array([r[6] for r in rows])
+    res32, res17 = np.log10(sobs / s32), np.log10(sobs / s17)
+    print(
+        f"[dsph_newmonster] EFE-dominated MW dwarfs with Gaia pericenters (N={len(rows)}). Residual = log10(sigma_obs / mu(x)+EFE)."
+    )
+    print(
+        "  DECISIVE: does card #32's residual correlate with card #17's tidal eta_peri? (YES=magic #32+#17, NO=new monster)"
+    )
+    r_eM = spearmanr(np.log10(eta), np.log10(Mb))[0]
+    for label, res in [("#32 Plummer-Jeans", res32), ("#17 M/5r est.", res17)]:
+        r1, p1 = spearmanr(res, np.log10(eta))
+        r2, p2 = spearmanr(res, np.log10(Mb))
+        r3, p3 = spearmanr(res, xe)
+        p_rM = (r2 - r1 * r_eM) / np.sqrt(max((1 - r1**2) * (1 - r_eM**2), 1e-9))
+        p_re = (r1 - r2 * r_eM) / np.sqrt(max((1 - r2**2) * (1 - r_eM**2), 1e-9))
+        print(
+            f"  resid[{label:18s}] vs log eta_peri: rho={r1:+.3f} (p={p1:.4f}) | vs log M_bar: {r2:+.3f} ({p2:.3f}) | vs x_ext: {r3:+.3f} ({p3:.3f})"
+        )
+        print(
+            f"        PARTIAL (eta<->M_bar confound rho={r_eM:+.3f}): resid|M_bar.eta={p_rM:+.3f}   resid|eta.M_bar={p_re:+.3f}"
+        )
+    print("  per dwarf (sorted by eta_peri):")
+    for i in np.argsort(eta)[::-1]:
+        flag = " <- tidal eta>1" if eta[i] >= 1 else ""
+        print(
+            f"    {nm[i]:20s} eta_peri={eta[i]:5.2f}  M_bar={Mb[i]:.1e}  resid32={res32[i]:+.2f}  resid17={res17[i]:+.2f}{flag}"
+        )
+
+
 def dsph_2pop(opts=None):
     """THICKEN the beta-pinned card: Sculptor's TWO stellar populations as 2 tracers in the SAME mu(x)+EFE
     potential -> turns the single muddied global-sigma into a 2-point test AND breaks the mass-anisotropy
@@ -4146,6 +4288,7 @@ def dsph_2pop(opts=None):
 
 
 PROBES = {
+    "dsph_newmonster": lambda opts=None: dsph_newmonster(opts),
     "dsph_2pop": lambda opts=None: dsph_2pop(opts),
     "dsph_pm": lambda opts=None: dsph_pm(opts),
     "ell_n3379": lambda opts=None: ell_n3379(opts),
