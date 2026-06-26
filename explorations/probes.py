@@ -4155,11 +4155,12 @@ def dsph_newmonster(opts=None):
             continue
         gext32 = np.sqrt(G * MW_MBAR * MSUN * A0) / D  # card #32 honest MOND field
         s32 = sig32(M, rh, gext32)
+        s32iso = sig32(M, rh, 0.0)  # ISOLATED mu(x) (no EFE) -- the companion test
         s17 = np.sqrt(nu_of(gext17, gN) * G * M / (5 * rh)) / KMS
         peri = PERI[nm] * 1e3 * PC
         nu_p = nu_of(V_MW**2 / peri, gN)
         eta = rh / (peri * (nu_p * M / (2 * V_MW**2 * peri / G)) ** (1.0 / 3.0))
-        rows.append((nm, sobs, s32, s17, eta, M / MSUN, gext17 / A0))
+        rows.append((nm, sobs, s32, s17, eta, M / MSUN, gext17 / A0, s32iso))
 
     nm = [r[0] for r in rows]
     sobs = np.array([r[1] for r in rows])
@@ -4168,6 +4169,7 @@ def dsph_newmonster(opts=None):
     eta = np.array([r[4] for r in rows])
     Mb = np.array([r[5] for r in rows])
     xe = np.array([r[6] for r in rows])
+    s32iso = np.array([r[7] for r in rows])
     res32, res17 = np.log10(sobs / s32), np.log10(sobs / s17)
     print(
         f"[dsph_newmonster] EFE-dominated MW dwarfs with Gaia pericenters (N={len(rows)}). Residual = log10(sigma_obs / mu(x)+EFE)."
@@ -4188,6 +4190,33 @@ def dsph_newmonster(opts=None):
         print(
             f"        PARTIAL (eta<->M_bar confound rho={r_eM:+.3f}): resid|M_bar.eta={p_rM:+.3f}   resid|eta.M_bar={p_re:+.3f}"
         )
+    # --- BINARY ROUND: split the M_bar axis. Does binary-correction or removing the EFE collapse it? ---
+    sbin = (
+        float(opts.get("sbin", 2.0)) if opts else 2.0
+    )  # binary velocity variance ~2 km/s (Minor 2010)
+    scorr = np.sqrt(np.maximum(sobs**2 - sbin**2, 0.01))  # binary-corrected sigma
+    res_efe_bin = np.log10(scorr / s32)
+    res_iso = np.log10(sobs / s32iso)
+    res_iso_bin = np.log10(scorr / s32iso)
+    print(
+        f"  --- BINARY ROUND (sigma_bin={sbin} km/s) + ISOLATED-mu(x) test: which collapses the M_bar axis (raw rho=-0.80)? ---"
+    )
+    for label, res in [
+        ("EFE, raw sigma   ", res32),
+        ("EFE, binary-corr ", res_efe_bin),
+        ("ISOLATED, raw    ", res_iso),
+        ("ISOLATED, bin-corr", res_iso_bin),
+    ]:
+        rM, pM = spearmanr(res, np.log10(Mb))
+        print(
+            f"    resid[{label}] median={np.median(res):+.2f} dex  vs log M_bar: rho={rM:+.3f} (p={pM:.4f})"
+        )
+    print(
+        "    READ: if a correction drives the median ~0 AND kills the M_bar trend -> it WAS the monster. If the"
+    )
+    print(
+        "    M_bar trend + a big median survive all four -> a REAL mass need (Weyl puzzle: more-for-fainter)."
+    )
     print("  per dwarf (sorted by eta_peri):")
     for i in np.argsort(eta)[::-1]:
         flag = " <- tidal eta>1" if eta[i] >= 1 else ""
