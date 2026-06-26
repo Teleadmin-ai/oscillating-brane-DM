@@ -4116,12 +4116,24 @@ def dsph_newmonster(opts=None):
         return 0.5 - Ae / z + np.sqrt((0.5 - Ae / z) ** 2 + Be / z)
 
     def sig32(
-        M_kg, a_tr, gext
+        M_kg, a_tr, gext, mode="quad"
     ):  # card #32 prediction: Plummer-Jeans mu(x)+EFE, beta=0, lum-weighted global
         nu = (1 + (r_m / a_tr) ** 2) ** (-2.5)
         gN = G * M_kg * r_m / (r_m**2 + a_tr**2) ** 1.5
-        gt = np.sqrt(gN**2 + gext**2)
-        g = gN * obt_rar(gt) / gt
+        if (
+            mode == "quad"
+        ):  # quadrature: g_tot=sqrt(gN^2+gext^2) then RAR (current dsph_pm/newmonster)
+            gt = np.sqrt(gN**2 + gext**2)
+            g = gN * obt_rar(gt) / gt
+        elif mode == "chae":  # Chae nu_e algebraic EFE (card #16)
+            g = gN * nu_of(gext, gN)
+        elif (
+            mode == "mu"
+        ):  # standard MOND EFE: Newtonized with G_eff=1/mu(x_ext) (deep-EFE form)
+            xe = gext / A0
+            g = gN / (xe / np.sqrt(1 + xe**2))
+        else:  # iso: isolated mu(x), no EFE
+            g = obt_rar(gN)
         w = nu * g
         nusr2 = np.concatenate(
             [np.cumsum((0.5 * (w[1:] + w[:-1]) * np.diff(r_m))[::-1])[::-1], [0.0]]
@@ -4154,13 +4166,19 @@ def dsph_newmonster(opts=None):
         ):  # EFE-dominated deep-MOND regime (#17 sel)
             continue
         gext32 = np.sqrt(G * MW_MBAR * MSUN * A0) / D  # card #32 honest MOND field
-        s32 = sig32(M, rh, gext32)
-        s32iso = sig32(M, rh, 0.0)  # ISOLATED mu(x) (no EFE) -- the companion test
+        s32 = sig32(M, rh, gext32, "quad")  # the prescription I used (quadrature)
+        s_chae = sig32(M, rh, gext32, "chae")  # Chae nu_e EFE (card #16)
+        s_mu = sig32(M, rh, gext32, "mu")  # standard MOND EFE 1/mu(x_ext)
+        s32iso = sig32(
+            M, rh, gext32, "iso"
+        )  # ISOLATED mu(x) (no EFE) -- companion test
         s17 = np.sqrt(nu_of(gext17, gN) * G * M / (5 * rh)) / KMS
         peri = PERI[nm] * 1e3 * PC
         nu_p = nu_of(V_MW**2 / peri, gN)
         eta = rh / (peri * (nu_p * M / (2 * V_MW**2 * peri / G)) ** (1.0 / 3.0))
-        rows.append((nm, sobs, s32, s17, eta, M / MSUN, gext17 / A0, s32iso))
+        rows.append(
+            (nm, sobs, s32, s17, eta, M / MSUN, gext17 / A0, s32iso, s_chae, s_mu)
+        )
 
     nm = [r[0] for r in rows]
     sobs = np.array([r[1] for r in rows])
@@ -4170,9 +4188,31 @@ def dsph_newmonster(opts=None):
     Mb = np.array([r[5] for r in rows])
     xe = np.array([r[6] for r in rows])
     s32iso = np.array([r[7] for r in rows])
+    s_chae = np.array([r[8] for r in rows])
+    s_mu = np.array([r[9] for r in rows])
     res32, res17 = np.log10(sobs / s32), np.log10(sobs / s17)
     print(
         f"[dsph_newmonster] EFE-dominated MW dwarfs with Gaia pericenters (N={len(rows)}). Residual = log10(sigma_obs / mu(x)+EFE)."
+    )
+    print(
+        "  --- EFE PRESCRIPTION TEST: how much of the residual is MY quadrature vs real EFE suppression? ---"
+    )
+    for label, sp in [
+        ("quadrature (used)", s32),
+        ("Chae nu_e (#16)  ", s_chae),
+        ("MOND 1/mu(x_ext) ", s_mu),
+        ("ISOLATED (no EFE)", s32iso),
+    ]:
+        res = np.log10(sobs / sp)
+        rM, pM = spearmanr(res, np.log10(Mb))
+        print(
+            f"    [{label}] median resid={np.median(res):+.2f} dex  vs log M_bar: rho={rM:+.3f} (p={pM:.4f})"
+        )
+    print(
+        "    READ: if Chae/1-mu medians << quadrature -> my prescription over-suppressed (fixable, clears #32)."
+    )
+    print(
+        "    If all EFE prescriptions stay high vs ISOLATED -> the EFE suppression is real physics, not my formula."
     )
     print(
         "  DECISIVE: does card #32's residual correlate with card #17's tidal eta_peri? (YES=magic #32+#17, NO=new monster)"
