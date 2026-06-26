@@ -2,30 +2,7 @@
   "mode": "CHERCHEUR",
   "state": "COMPUTE_OBT_PREDICTION",
   "game": {
-    "candidates": [
-      {
-        "id": "27d27bb1",
-        "name": "stream_baryonic",
-        "external_theory": "stellar-stream gaps/density-variations require DM subhalo impacts (Bonaca 2019 GD-1 gap+spur; the stream-gap subhalo-mass-function program)",
-        "patch": "the impulse kick is NATURE-BLIND (Dv=2GM/(b v) depends only on perturber mass, not DM-vs-baryon) + baryonic perturbers (GMCs for disk-crossing streams, the Galactic bar, GCs, LMC) of the inferred mass (1e6-1e8) EXIST and DOMINATE -> no DM subhalo required",
-        "systems_validated": [
-          "Pal 5 (disk-crossing): in-house GMC vs subhalo encounter budget = 11-28x GMC-dominated; +bar (Pearson 2017)"
-        ],
-        "why_status": "none",
-        "why": null,
-        "certainty": "low",
-        "status": "candidate",
-        "created": "date-unset",
-        "updated": "date-unset",
-        "history": [
-          {
-            "t": "date-unset",
-            "event": "created_candidate",
-            "detail": "patch on stellar-stream gaps/density-variations require DM subhalo impacts (Bonaca 2019 GD-1 gap+spur; the stream-gap subhalo-mass-function program) @ Pal 5 (disk-crossing): in-house GMC vs subhalo encounter budget = 11-28x GMC-dominated; +bar (Pearson 2017)"
-          }
-        ]
-      }
-    ],
+    "candidates": [],
     "monsters": [
       {
         "id": "dfd9909d",
@@ -70,6 +47,40 @@
             "detail": "Isolated-judge program 0/3 (NGC 6822 burst at 2.6-2.9 = miss; IC 1613 constant SFH = null; WLM continuous/rising = soft miss). The cleanest discriminant class fails; bracket [0.027,0.15] never cleared p<0.01. The MW/M31/M33 ~1.9-2.0 triple stands recorded (3 big LG DISCS, 3 different local culprits) but cannot be separated from encounter coincidence. RESURRECTION: (a) slip-Toomre mechanism requires a COLD ROTATING DISC (kappa channel) - the dIrr judges are weak rotators, so the proper future test is sharp SFHs of external discs (M81/M101-class, sigma<=0.3 not feasible today); (b) any card sharpening the chronological anchor re-dates the grid; (c) re-test at each new card per la magie."
           }
         ]
+      },
+      {
+        "id": "27d27bb1",
+        "name": "stream_baryonic",
+        "external_theory": "stellar-stream gaps/density-variations require DM subhalo impacts (Bonaca 2019 GD-1 gap+spur; the stream-gap subhalo-mass-function program)",
+        "patch": "the impulse kick is NATURE-BLIND (Dv=2GM/(b v) depends only on perturber mass, not DM-vs-baryon) + baryonic perturbers (GMCs for disk-crossing streams, the Galactic bar, GCs, LMC) of the inferred mass (1e6-1e8) EXIST and DOMINATE -> no DM subhalo required",
+        "systems_validated": [
+          "Pal 5 (disk-crossing): in-house GMC vs subhalo encounter budget = 11-28x GMC-dominated; +bar (Pearson 2017)",
+          "GD-1 (Bonaca 2019 gap+spur): perturber DENSITY ~130-1300x a CDM subhalo, GC-like -> density-favors a compact baryonic GC; mass 1e6-1e7 overlaps massive GCs. Leans baryonic; residual doubt = mass degeneracy to 1e8 + no known GC on the inferred orbit (weak)"
+        ],
+        "why_status": "none",
+        "why": null,
+        "certainty": "low",
+        "status": "monster",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on stellar-stream gaps/density-variations require DM subhalo impacts (Bonaca 2019 GD-1 gap+spur; the stream-gap subhalo-mass-function program) @ Pal 5 (disk-crossing): in-house GMC vs subhalo encounter budget = 11-28x GMC-dominated; +bar (Pearson 2017)"
+          },
+          {
+            "t": "date-unset",
+            "event": "system_added",
+            "detail": "GD-1 (Bonaca 2019 gap+spur): perturber DENSITY ~130-1300x a CDM subhalo, GC-like -> density-favors a compact baryonic GC; mass 1e6-1e7 overlaps massive GCs. Leans baryonic; residual doubt = mass degeneracy to 1e8 + no known GC on the inferred orbit (weak)"
+          },
+          {
+            "t": "date-unset",
+            "event": "confirmed_monster",
+            "detail": "player judgement; 2 systems: ['Pal 5 (disk-crossing): in-house GMC vs subhalo encounter budget = 11-28x GMC-dominated; +bar (Pearson 2017)', 'GD-1 (Bonaca 2019 gap+spur): perturber DENSITY ~130-1300x a CDM subhalo, GC-like -> density-favors a compact baryonic GC; mass 1e6-1e7 overlaps massive GCs. Leans baryonic; residual doubt = mass degeneracy to 1e8 + no known GC on the inferred orbit (weak)'] — 2 systems support the baryonic-perturber debunk: Pal 5 (clean -- disk-crossing GMC budget dominates DM subhalos 11-28x + the bar Pearson 2017) + GD-1 (GC-compatible -- perturber density ~1000x a CDM subhalo, GC-like, density-favored baryonic). Clear mechanism: P1 the impulse kick Dv=2GM/(b v) is NATURE-BLIND (a gap infers mass not nature) + baryonic perturbers (GMC/GC/bar) of the inferred mass exist and dominate. MONSTER not yet CARD: GD-1 carries residual doubt (mass degenerate to 1e8 + no known GC on the inferred orbit) and the Pal5 budget is order-of-magnitude. Path to card: harden Pal 5 (full GMC encounter + bar), resolve GD-1's orbit (search disrupted/plunging GCs), add a 3rd disk-crossing stream. MOND-shared; extends the absent-DM-substructure theme #13/#19/#20/#26/#27"
+          }
+        ],
+        "judgement": "2 systems support the baryonic-perturber debunk: Pal 5 (clean -- disk-crossing GMC budget dominates DM subhalos 11-28x + the bar Pearson 2017) + GD-1 (GC-compatible -- perturber density ~1000x a CDM subhalo, GC-like, density-favored baryonic). Clear mechanism: P1 the impulse kick Dv=2GM/(b v) is NATURE-BLIND (a gap infers mass not nature) + baryonic perturbers (GMC/GC/bar) of the inferred mass exist and dominate. MONSTER not yet CARD: GD-1 carries residual doubt (mass degenerate to 1e8 + no known GC on the inferred orbit) and the Pal5 budget is order-of-magnitude. Path to card: harden Pal 5 (full GMC encounter + bar), resolve GD-1's orbit (search disrupted/plunging GCs), add a 3rd disk-crossing stream. MOND-shared; extends the absent-DM-substructure theme #13/#19/#20/#26/#27"
       }
     ],
     "cards": [
@@ -2471,6 +2482,11 @@
       "t": "date-unset",
       "added_candidate": "27d27bb1",
       "name": "stream_baryonic"
+    },
+    {
+      "t": "date-unset",
+      "confirmed_monster": "27d27bb1",
+      "detail": "player judgement; 2 systems: ['Pal 5 (disk-crossing): in-house GMC vs subhalo encounter budget = 11-28x GMC-dominated; +bar (Pearson 2017)', 'GD-1 (Bonaca 2019 gap+spur): perturber DENSITY ~130-1300x a CDM subhalo, GC-like -> density-favors a compact baryonic GC; mass 1e6-1e7 overlaps massive GCs. Leans baryonic; residual doubt = mass degeneracy to 1e8 + no known GC on the inferred orbit (weak)'] — 2 systems support the baryonic-perturber debunk: Pal 5 (clean -- disk-crossing GMC budget dominates DM subhalos 11-28x + the bar Pearson 2017) + GD-1 (GC-compatible -- perturber density ~1000x a CDM subhalo, GC-like, density-favored baryonic). Clear mechanism: P1 the impulse kick Dv=2GM/(b v) is NATURE-BLIND (a gap infers mass not nature) + baryonic perturbers (GMC/GC/bar) of the inferred mass exist and dominate. MONSTER not yet CARD: GD-1 carries residual doubt (mass degenerate to 1e8 + no known GC on the inferred orbit) and the Pal5 budget is order-of-magnitude. Path to card: harden Pal 5 (full GMC encounter + bar), resolve GD-1's orbit (search disrupted/plunging GCs), add a 3rd disk-crossing stream. MOND-shared; extends the absent-DM-substructure theme #13/#19/#20/#26/#27"
     }
   ]
 }
