@@ -4214,6 +4214,32 @@ def dsph_newmonster(opts=None):
     print(
         "    If all EFE prescriptions stay high vs ISOLATED -> the EFE suppression is real physics, not my formula."
     )
+    # --- WEYL-DWARF DIG (Romain): the residual REAL mass-need, with my quadrature artifact AND tidal removed ---
+    # proper EFE (Chae nu_e, the established-cards prescription) + EQUILIBRIUM (low-eta) subset (best M_bar, non-tidal).
+    res_chae = np.log10(sobs / s_chae)
+    eq = eta < 0.5
+    print(
+        "  --- WEYL-DWARF DIG: equilibrium (eta<0.5) dwarfs, proper EFE (Chae nu_e) -> is a REAL mass-need left? ---"
+    )
+    if eq.sum() >= 3:
+        rM, pM = spearmanr(res_chae[eq], np.log10(Mb[eq]))
+        print(
+            f"    equilibrium N={int(eq.sum())}: median residual={np.median(res_chae[eq]):+.2f} dex, vs log M_bar rho={rM:+.3f} (p={pM:.4f})"
+        )
+        order = [i for i in np.argsort(Mb)[::-1] if eq[i]]
+        for i in order:
+            print(
+                f"      {nm[i]:18s} M_bar={Mb[i]:.1e}  eta={eta[i]:.2f}  f_resid={res_chae[i]:+.2f} dex (x{10**res_chae[i]:.1f} in sigma)"
+            )
+    print(
+        "    U-SHAPE check: galaxies (SPARC) f_Weyl~0 (MOND works, cards #10-21); groups ~0.15, clusters ~0.45"
+    )
+    print(
+        "    (card #22 / Gates 13-24, more-for-BIGGER). If equilibrium dwarfs need real extra mass more-for-FAINTER"
+    )
+    print(
+        "    -> f_Weyl is U-shaped (Weyl at BOTH ends, MOND in the galaxy valley). CAVEAT: dwarf M_bar uncertain."
+    )
     print(
         "  DECISIVE: does card #32's residual correlate with card #17's tidal eta_peri? (YES=magic #32+#17, NO=new monster)"
     )
