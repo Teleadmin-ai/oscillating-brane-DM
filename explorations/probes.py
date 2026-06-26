@@ -4054,7 +4054,99 @@ def dsph_pm(opts=None):
     )
 
 
+def dsph_2pop(opts=None):
+    """THICKEN the beta-pinned card: Sculptor's TWO stellar populations as 2 tracers in the SAME mu(x)+EFE
+    potential -> turns the single muddied global-sigma into a 2-point test AND breaks the mass-anisotropy
+    degeneracy a second way (Walker-Penarrubia 2011 method). The metal-rich (MR, concentrated) and
+    metal-poor (MP, extended) orbit the SAME stellar mass; mu(x)+EFE must predict BOTH sigmas with ONE mass.
+    The robust discriminant is the RATIO sigma_MP/sigma_MR (the MP at larger r probes a different point of
+    the potential) -- parameter-free given the structural data.
+
+    DATA (Battaglia 2008 / Amorisco-Evans 2012 / Walker-Penarrubia 2011): MR R_h=230 pc, MP R_h=350 pc;
+    observed global sigma ~ MR 6.5, MP 10.5 (central sigma_0 8.7 / 10.9 -- model-dependent, both shown).
+    beta: MR ~0 (isotropic), MP ~ -0.2 (tangential). Total stellar mass M_*=4.71e6 (Sculptor), split f_MR
+    between the two Plummer components. g_ext = honest MW MOND field at 86 kpc. Plummer light, constant-beta
+    Jeans, luminosity-weighted global sigma_los per pop. opts: --fmr (default 0.5), --sigma0 (use 8.7/10.9).
+    """
+    import numpy as np
+
+    PC = KPC / 1e3
+    fmr = float(opts.get("fmr", 0.5)) if opts else 0.5
+    use0 = bool(opts.get("sigma0", False)) if opts else False
+    M_tot = 4.71e6 * MSUN
+    a_mr, a_mp = 230.0 * PC, 350.0 * PC  # Plummer scales = projected R_h
+    s_mr_obs, s_mp_obs = (8.7, 10.9) if use0 else (6.5, 10.5)
+    b_mr, b_mp = 0.0, -0.2
+    D_m = 86.0 * KPC
+    MW_MBAR = 7.0e10
+    gext = np.sqrt(G * MW_MBAR * MSUN * A0) / D_m  # honest MW MOND field
+
+    r_pc = np.logspace(0.0, 5.0, 1300)
+    r_m = r_pc * PC
+
+    def Mstar(
+        r,
+    ):  # two-Plummer total stellar enclosed mass (the gravitating mass; no DM)
+        return M_tot * (
+            fmr * r**3 / (r**2 + a_mr**2) ** 1.5
+            + (1 - fmr) * r**3 / (r**2 + a_mp**2) ** 1.5
+        )
+
+    def sig_pop(a_tr, beta, efe):
+        nu = (1 + (r_m / a_tr) ** 2) ** (-2.5)  # tracer Plummer density (norm cancels)
+        gN = G * Mstar(r_m) / r_m**2
+        if efe:
+            gt = np.sqrt(gN**2 + gext**2)
+            g = gN * obt_rar(gt) / gt
+        else:
+            g = obt_rar(gN)
+        w = nu * g * r_m ** (2 * beta)
+        Iout = np.concatenate(
+            [np.cumsum((0.5 * (w[1:] + w[:-1]) * np.diff(r_m))[::-1])[::-1], [0.0]]
+        )
+        nusr2 = Iout / r_m ** (2 * beta)
+        Rg = np.logspace(np.log10(0.03 * a_tr), np.log10(6 * a_tr), 60)
+        slos2, Sig = [], []
+        for Rk in Rg:
+            sel = r_m > Rk * 1.0001
+            rr = r_m[sel]
+            num = np.trapezoid(
+                (1 - beta * Rk**2 / rr**2) * nusr2[sel] * rr / np.sqrt(rr**2 - Rk**2),
+                rr,
+            )
+            den = np.trapezoid(nu[sel] * rr / np.sqrt(rr**2 - Rk**2), rr)
+            slos2.append(max(num / den, 0.0))
+            Sig.append((1 + (Rk / a_tr) ** 2) ** (-2))
+        slos2, Sig = np.array(slos2), np.array(Sig)
+        return np.sqrt(np.sum(Sig * Rg * slos2) / np.sum(Sig * Rg)) / KMS
+
+    s_mr_e = sig_pop(a_mr, b_mr, True)
+    s_mp_e = sig_pop(a_mp, b_mp, True)
+    print(
+        f"[dsph_2pop] Sculptor TWO populations in ONE mu(x)+EFE potential (M_*={M_tot/MSUN:.2e}, f_MR={fmr}, g_ext={gext/A0:.3f}a0 honest)."
+    )
+    print(
+        f"  obs sigma: MR={s_mr_obs:.1f}  MP={s_mp_obs:.1f}  ({'central sigma0' if use0 else 'global'}); ratio MP/MR = {s_mp_obs/s_mr_obs:.2f}"
+    )
+    print(
+        f"  OBT mu(x)+EFE pred: MR(R_h=230,b=0)={s_mr_e:.1f}  MP(R_h=350,b=-0.2)={s_mp_e:.1f};  ratio MP/MR = {s_mp_e/max(s_mr_e,0.1):.2f}"
+    )
+    print(
+        f"  obs/pred: MR={s_mr_obs/max(s_mr_e,0.1):.2f}  MP={s_mp_obs/max(s_mp_e,0.1):.2f}"
+    )
+    print(
+        "  READ: ONE stellar mass must give BOTH sigmas. Predicted RATIO ~ obs (MP>MR) + magnitudes ~obs ->"
+    )
+    print(
+        "  clean 2-point test (degeneracy broken by the 2 pops) -> Sculptor a clean case, thickens the card."
+    )
+    print(
+        "  If mu(x) gives MR~MP but obs MP>>MR -> the rising M_dyn(<r) the 2 pops demand is unmatched = tension."
+    )
+
+
 PROBES = {
+    "dsph_2pop": lambda opts=None: dsph_2pop(opts),
     "dsph_pm": lambda opts=None: dsph_pm(opts),
     "ell_n3379": lambda opts=None: ell_n3379(opts),
     "ell_n4494": lambda opts=None: ell_n4494(opts),
