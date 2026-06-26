@@ -1122,3 +1122,27 @@ clean beta-PINNED terrain is thin (classical dSphs mostly non-equilibrium). NOT 
 sacred files (separate audited step). Added a 'demote' command to bestiary/obt_game for the round-trip.
 NEXT (Romain): play the Sculptor TWO-POPULATION test (MR+MP as 2 tracers in the same mu(x) potential) to
 turn the Sculptor caveat into clean tests + thicken beyond Fornax. Memory: feedback_card_standard.
+
+## SESSION CHECKPOINT (June 2026) — card #32 saga + streams monster + a0(z) consolidation
+Giga-session arc (all committed; memory chercheur-memory updated per terrain):
+1. CARD #32 (ell_dearth): demote was TOO HARSH (on a sub-agent's false 'EFE moot') -> RE-PROMOTED; then
+   PARTIALLY blanchi: the EFE-prescription test found my QUADRATURE EFE over-suppressed by ~0.29 dex
+   (proper EFE 1/mu(x_ext) or Chae nu_e recovers it) -> the residual +0.44 dex is real MOND-shared
+   (EFE-dwarf problem). WEYL-DWARF DIG: equilibrium (eta<0.5)+proper-EFE residual survives (median +0.48,
+   rho(M_bar)=-0.83 more-for-fainter) -> f_Weyl(M_bar) is U-SHAPED (Weyl at faint-dwarf + cluster ends,
+   mu(x) in the galaxy valley) -> hits the CLOSURE WALL (amplitude = IC datum). Clean cases (Fornax+#14
+   isolated) prescription-robust -> card stands. Probes: dsph_pm, dsph_newmonster (P1-P5 + Weyl dig), dsph_2pop.
+2. QUBIT/HOLOGRAPHY V9.0 consigned (explorations/bulk_solver/QUBIT_HOLOGRAPHY_NOTE.md + memory
+   project_qubit_holography_v9): braneworld holography E_munu<->T_CFT RELOCATES (not dissolves) closure;
+   the one new thread = inflation-entanglement fixing the boundary datum (input->prediction). PARKED.
+3. STREAMS: CONFIRMED MONSTER stream_baryonic [27d27bb1] (Pal 5 clean + GD-1 GC-compatible by DENSITY,
+   ~130-1300x denser than a CDM subhalo). Mechanism no-doubt: P1 nature-blind kick + P3 GMC dominance
+   (ratio robust ~10-50x). Pal 5 hardened (P5): ratio robust, ABSOLUTE count needs N-body -> NOT a card
+   yet (no over-mint). Path to card: N-body absolute + 3rd disk-crossing stream + GD-1 orbit. Probe: stream_gaps.
+4. a0(z) TERRAIN: RATE confirmed (MUSE-DARK III a0(z)/E(z) FLAT +4% = cH(z)/2pi; constant-a0 refuted 16sig;
+   'steeper rate' was a linear-extrap-to-z=0 artifact). CROSS-OBSERVABLE over-determination: 3 observables
+   (KROSS 1.19, MUSE 1.44, BTFR 1.99 in a0/E) all confirm rising = constant refuted; rate scatter x1.5
+   (systematics). Sigma_dagger/r_t are a0 RE-EXPRESSED (not independent). The 'a1=4.47' 4th-leg = phantom
+   (search artifact) -> DISCARDED. Probe: a0_zfit.
+RESUMPTION (deepening 'c'): streams = N-body for the absolute gap count (-> card); a0(z) = a genuinely-new
+observable (lensing-a0(z) or surface-brightness Sigma_dagger), NOT re-expressing a0. qubit = V9.0 parked.
