@@ -2,7 +2,30 @@
   "mode": "CHERCHEUR",
   "state": "COMPUTE_OBT_PREDICTION",
   "game": {
-    "candidates": [],
+    "candidates": [
+      {
+        "id": "27d27bb1",
+        "name": "stream_baryonic",
+        "external_theory": "stellar-stream gaps/density-variations require DM subhalo impacts (Bonaca 2019 GD-1 gap+spur; the stream-gap subhalo-mass-function program)",
+        "patch": "the impulse kick is NATURE-BLIND (Dv=2GM/(b v) depends only on perturber mass, not DM-vs-baryon) + baryonic perturbers (GMCs for disk-crossing streams, the Galactic bar, GCs, LMC) of the inferred mass (1e6-1e8) EXIST and DOMINATE -> no DM subhalo required",
+        "systems_validated": [
+          "Pal 5 (disk-crossing): in-house GMC vs subhalo encounter budget = 11-28x GMC-dominated; +bar (Pearson 2017)"
+        ],
+        "why_status": "none",
+        "why": null,
+        "certainty": "low",
+        "status": "candidate",
+        "created": "date-unset",
+        "updated": "date-unset",
+        "history": [
+          {
+            "t": "date-unset",
+            "event": "created_candidate",
+            "detail": "patch on stellar-stream gaps/density-variations require DM subhalo impacts (Bonaca 2019 GD-1 gap+spur; the stream-gap subhalo-mass-function program) @ Pal 5 (disk-crossing): in-house GMC vs subhalo encounter budget = 11-28x GMC-dominated; +bar (Pearson 2017)"
+          }
+        ]
+      }
+    ],
     "monsters": [
       {
         "id": "dfd9909d",
@@ -2443,6 +2466,11 @@
       "t": "date-unset",
       "promoted_to_card": "2ab05039",
       "detail": "RE-PROMOTED -- the earlier demote was TOO HARSH and rested partly on a FALSE argument that I myself then refuted. (1) The sub-agent's 'EFE is moot' claim is WRONG: at FIXED beta the EFE IS load-bearing (Sculptor dearth chi2/N=1.23 WITH the environmental EFE vs 2.24 WITHOUT; the sub-agent had FREED beta simultaneously, hiding the EFE loss behind extra anisotropy -- the beta<->EFE degeneracy, not 'EFE moot'). (2) The residual doubt (mass-anisotropy degeneracy in ellipticals) does NOT invalidate the card under Romain's standard: a FEW clean no-doubt cases + a CLEAR understandable mechanism = a card, EVEN IF some contexts seem to fail (those may carry un-debunked OTHER errors; otherwise one doubts everything forever). MECHANISM (clear/logical): a pressure-supported system in deep-MOND has sigma BOOSTED by mu(x) (G_eff=nu*G) -> the 'dearth'/missing mass IS the mu(x) boost, not DM; the EFE caps the boost; beta shapes the profile. CLEAN cases where beta is ROBUST or PINNED: card #14's 9 isolated deep-MOND dwarfs (sigma=(4/81 G M a0)^1/4, +0.04 dex; deep-MOND is beta-robust) + FORNAX with beta PINNED by proper motions (Massari 2019 ~isotropic, NO anisotropy freedom) + HONEST MW-MOND-field EFE -> obs/EFE~1.0 (probe dsph_pm). The ellipticals are the SAME mechanism in a beta-DEGENERATE context (beta unmeasured = an unknown, NOT a refutation): NGC 3379 fits chi2/N~1.4 with environmental EFE (NGC 3384) + Cappellari MGE/M-L + literature beta (probe ell_n3379). APPARENT failures = other-error contexts: NGC 7507 (isolated, no EFE), NGC 4494 (field, EFE not environmental), Sculptor (two-population global-sigma muddle), Draco/Carina/UMi/Sextans (tidal non-equilibrium + tiny M_* + tangential/marginal beta). HONEST SCOPE: the standalone beta-PINNED confirmation is thin (Fornax solid; the classical dSphs are mostly non-equilibrium) -> B strengthens card #14 as much as it makes a standalone elliptical card; the elliptical dearth RIDES on the shared mu(x) mechanism. MOND-shared (McGaugh-Milgrom 2013, De Lorenzi 2009, Tian-Ko 2016). Probes: ell_pne, ell_jeans, ell_n7507, ell_n4494, ell_n3379, dsph_pm."
+    },
+    {
+      "t": "date-unset",
+      "added_candidate": "27d27bb1",
+      "name": "stream_baryonic"
     }
   ]
 }
