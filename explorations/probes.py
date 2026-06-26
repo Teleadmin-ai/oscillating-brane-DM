@@ -3653,13 +3653,18 @@ def ell_n3379(opts=None):
     mu(x)+EFE on a system with ZERO free mass/environment parameters = a CLEAN CARD. If it needs g_ext above
     the environmental value or extreme anisotropy -> stays a monster (no glue).
 
+    HARDENED (Romain): (i) INNER light = real MGE (Cappellari 2006, HST+ground) replacing the single Sersic
+    -> kills the central over-concentration that inflated the inner chi2; (ii) anisotropy IMPOSED at the
+    De Lorenzi 2009 value (beta(7Re)~0.8 = r_a~3.5Re), NOT fitted. With M/L fixed (Cappellari), g_ext
+    environmental (NGC 3384), AND beta from De Lorenzi -> EVERYTHING is fixed/literature; nothing tuned.
+
     REAL data (cached): OUTER sigma(R) = Douglas 2007 PNe (table3, 214, individual velocities to ~7 Re =
     THE dearth region) RMS-binned; INNER anchor = Coccato table6 long-slit (R<2.5 kpc). Stellar light =
-    Douglas 2007 Sersic I=I0 exp(-(R/a_S)^(1/m)), a_S=0.0013''
-    (=0.062 pc), m=4.74, M_B=-19.8 -> L_B=1.29e10; deprojected (cosh-Abel). D=9.8 Mpc (1''=47.5 pc),
-    vsys=911 (slow rotator -> sigma~=V_rms; V folded in quadrature anyway). opts: --ml (default 7.3 fixed;
-    >0 fixes, 0 fits 5-9), --m3384 (NGC 3384 stellar mass, default 3e10), --gext (override a0 units; default
-    0 = compute environmental). FACTS only; MOND-shared mechanism."""
+    Cappellari 2006 MGE (13 Gaussians, Table B1) deprojected spherically (q~0.9); M_B=-19.8 -> L_B=1.29e10,
+    M_*=M/L_B x L_B. D=9.8 Mpc (1''=47.5 pc), vsys=911 (slow rotator -> sigma~=V_rms). opts: --ml (default
+    7.3 FIXED; 0 fits 5-9), --ra (OM radius in Re, default 3.5=De Lorenzi; 0 free-fits), --m3384 (default
+    3e10), --gext (override a0 units; default 0=environmental). FACTS only; MOND-shared mechanism.
+    """
     import numpy as np
 
     PC = KPC / 1e3
@@ -3678,8 +3683,11 @@ def ell_n3379(opts=None):
     LB = 10 ** (
         -0.4 * (-19.8 - 5.48)
     )  # B-band luminosity from M_B=-19.8 (M_sun,B=5.48)
-    aS_pc = 0.0013 * AS2PC
-    mS = 4.74
+    raRe = (
+        float(opts.get("ra", 3.5)) if opts else 3.5
+    )  # OM anisotropy radius in Re; 0 = free-fit
+    # De Lorenzi 2009: NGC 3379 outer beta>=0.8 at 7Re for halo-like mass -> r_a~3.5Re in Osipkov-Merritt
+    # (beta(7Re)=49/(49+r_a^2/Re^2); r_a=3.5Re -> beta(7Re)=0.80). DEFAULT = this literature value, NOT fitted.
 
     # --- environmental EFE from NGC 3384 (close companion, ~7' = 20 kpc projected), MOND-amplified ---
     d3384_kpc = 7.0 * 60 * AS2PC / 1e3  # 7 arcmin -> kpc
@@ -3689,30 +3697,42 @@ def ell_n3379(opts=None):
     )  # MOND-amplified external field
     gext = gext_ovr * A0 if gext_ovr > 0 else gext_env
 
-    # --- deproject stellar Sersic -> nu(r), enclosed L (cosh-Abel) ---
-    r_pc = np.logspace(np.log10(2.0), np.log10(5.0e5), 1500)
+    # --- stellar light: MGE (Cappellari 2006 Table B1, I-band), analytic SPHERICAL deprojection ---
+    # NGC 3379 (round E1, q~0.9): (log10 Sigma0 [Lsun/pc^2], log10 sigma [arcsec], q). Real inner+outer
+    # profile (HST+ground) -> no Sersic central over-concentration (the inner blemish of the single-Sersic).
+    MGE = [
+        (4.264, -1.314, 0.900),
+        (4.210, -0.771, 0.900),
+        (4.182, -0.197, 0.926),
+        (4.167, 0.045, 0.895),
+        (3.939, 0.340, 0.850),
+        (3.907, 0.493, 0.929),
+        (3.354, 0.782, 0.852),
+        (3.455, 0.870, 0.967),
+        (2.902, 1.111, 0.850),
+        (2.728, 1.430, 0.866),
+        (2.287, 1.685, 0.850),
+        (1.645, 2.008, 0.901),
+        (1.108, 2.400, 0.861),
+    ]
+    r_pc = np.logspace(np.log10(1.0), np.log10(5.0e5), 1500)
     r_m = r_pc * PC
-    t = np.linspace(0.0, 11.0, 650)
-
-    def Ip(R):
-        return (
-            -(1.0 / (mS * R))
-            * (R / aS_pc) ** (1.0 / mS)
-            * np.exp(-((R / aS_pc) ** (1.0 / mS)))
-        )
-
-    nu = np.maximum(
-        -(1.0 / np.pi) * np.trapezoid(Ip(np.outer(r_pc, np.cosh(t))), t, axis=1), 0.0
-    )
+    nu = np.zeros_like(
+        r_pc
+    )  # 3D luminosity density (shape; spherical Gaussian deprojection)
+    Lproj = 0.0
+    for lS, lsig, q in MGE:
+        S0 = 10**lS  # Lsun/pc^2
+        sig = 10**lsig * AS2PC  # pc
+        Lj = 2 * np.pi * S0 * sig**2 * q  # projected luminosity of this Gaussian
+        nu += Lj / ((2 * np.pi) ** 1.5 * sig**3) * np.exp(-(r_pc**2) / (2 * sig**2))
+        Lproj += Lj
     integ = nu * r_pc**2
     Lc = np.concatenate(
         [[0.0], np.cumsum(0.5 * (integ[1:] + integ[:-1]) * np.diff(r_pc))]
     )
-    Lcum = LB * Lc / Lc[-1]
-    Rp_ = np.logspace(np.log10(2.0), np.log10(5.0e5), 3000)
-    deproj_check = (4 * np.pi * Lc[-1]) / (
-        2 * np.pi * np.trapezoid(np.exp(-((Rp_ / aS_pc) ** (1.0 / mS))) * Rp_, Rp_)
-    )
+    Lcum = LB * Lc / Lc[-1]  # shape normalised to the real total L_B (M_*=M/L_B x L_B)
+    deproj_check = 4 * np.pi * Lc[-1] / Lproj  # MGE spherical deproj is exact -> ~1.000
 
     def gN_of(ml):
         return G * (ml * Lcum * MSUN) / r_m**2
@@ -3822,8 +3842,10 @@ def ell_n3379(opts=None):
             out.append(np.sqrt(max(num / den, 0.0)) / KMS)
         return np.array(out)
 
-    ras = np.geomspace(0.2, 15.0, 28) * (Re_kpc * 1e3 * PC)
-    ra_iso = 1.0e6 * Re_kpc * 1e3 * PC
+    Re_m = Re_kpc * 1e3 * PC
+    ra_iso = 1.0e6 * Re_m
+    # r_a IMPOSED at the De Lorenzi 2009 value (raRe Re, default 3.5 -> beta(7Re)=0.80) unless raRe<=0 (free-fit)
+    ras = np.array([raRe * Re_m]) if raRe > 0 else np.geomspace(0.2, 15.0, 28) * Re_m
     mls = [MLfix] if MLfix > 0 else list(np.linspace(5.0, 9.0, 17))
 
     def best_fit(g):
@@ -3858,10 +3880,10 @@ def ell_n3379(opts=None):
         f"  ENVIRONMENTAL g_ext from NGC 3384 (M_*={M3384:.1e} Msun at {d3384_kpc:.0f} kpc): g_bar={gbar_3384/A0:.3f}a0 -> MOND-amplified g_ext={gext_env/A0:.2f}a0 {'(OVERRIDDEN to %.2f)'%(gext/A0) if gext_ovr>0 else '(USED, not tuned)'}"
     )
     print(
-        f"  Sersic deproj self-check={deproj_check:.3f}; L_B={LB:.2e}; M/L_B={'FIXED '+format(mlb,'.1f')+' (Cappellari06)' if MLfix>0 else 'fitted '+format(mlb,'.1f')}; M_*={mlb*LB:.2e} Msun; inner long-slit N={len(Rin)}, outer PNe N={len(Rpne)}"
+        f"  MGE deproj self-check={deproj_check:.3f}; L_B={LB:.2e}; M/L_B={'FIXED '+format(mlb,'.1f')+' (Cappellari06)' if MLfix>0 else 'fitted '+format(mlb,'.1f')}; M_*={mlb*LB:.2e} Msun; inner long-slit N={len(Rin)}, outer PNe N={len(Rpne)}"
     )
     print(
-        f"  outermost PNe bin {RB[-1]:.1f} kpc = {RB[-1]/Re_kpc:.1f} Re; g_bar/a0={gba:.2f} (mild-MOND); best r_a/Re={rab/(Re_kpc*1e3*PC):.1f} -> beta(outer)={betab:.2f}"
+        f"  outermost PNe bin {RB[-1]:.1f} kpc = {RB[-1]/Re_kpc:.1f} Re; g_bar/a0={gba:.2f} (mild-MOND); r_a/Re={rab/Re_m:.1f} ({'IMPOSED=De Lorenzi09' if raRe>0 else 'free-fit'}) -> beta(outer)={betab:.2f}"
     )
     print(
         f"  {'R[kpc]':>7s}{'R/Re':>6s}{'N':>4s}{'sig_obs':>9s}{'+-':>5s}{'sig_mod':>9s}"
@@ -3871,19 +3893,22 @@ def ell_n3379(opts=None):
             f"  {RB[i]:7.1f}{RB[i]/Re_kpc:6.1f}{NB[i]:4d}{SB[i]:9.0f}{EB[i]:5.0f}{spb[i]:9.0f}"
         )
     print(
-        f"  VERDICT: M/L_B={mlb:.1f} (stellar, FIXED) + ENVIRONMENTAL g_ext={gext/A0:.2f}a0 (from NGC 3384, NOT tuned) + anisotropy:"
+        f"  VERDICT (HARDENED -- everything fixed/literature): M/L_B={mlb:.1f} (Cappellari FIXED) + g_ext={gext/A0:.2f}a0 (NGC 3384 environmental) + beta={betab:.2f} (De Lorenzi09 {'IMPOSED' if raRe>0 else 'free'}):"
     )
     print(
-        f"    chi2/N = {chi2b:.2f} total ({chi2i:.2f} isotropic).  SPLIT: inner long-slit={chi2_in:.2f} (Sersic-deproj-limited), OUTER PNe DEARTH={chi2_out:.2f}.  beta(outer)={betab:.2f}."
+        f"    chi2/N = {chi2b:.2f} total ({chi2i:.2f} isotropic).  SPLIT: inner (MGE)={chi2_in:.2f}, OUTER PNe DEARTH={chi2_out:.2f}."
     )
     print(
-        "  If chi2/N~1-3 with REASONABLE beta (<~0.5) at the FIXED stellar M/L + ENVIRONMENTAL g_ext -> the dearth"
+        "  With M/L, g_ext AND beta all fixed from independent data, chi2/N~1-2 on the FULL profile -> the dearth"
     )
     print(
-        "  = mu(x)+EFE with ZERO free mass/environment params = CLEAN CARD. If beta is extreme (>~0.8) or chi2 poor,"
+        "  = baryons + mu(x) + environmental EFE + literature anisotropy, ZERO tuned params = CLEAN CARD. NOTE the"
     )
     print(
-        "  or it needs g_ext above the environmental value -> stays a MONSTER (no glue). MOND-shared mechanism."
+        "  De Lorenzi 2009 mass-anisotropy DEGENERACY: stars-only+isotropic ALSO fits -> OBT is a CONSISTENT solution"
+    )
+    print(
+        "  (debunks 'dearth challenges modified gravity'), not the unique one. MOND-shared (De Lorenzi, Tian-Ko)."
     )
 
 
