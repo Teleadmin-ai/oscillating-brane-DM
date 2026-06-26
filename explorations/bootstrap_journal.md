@@ -1097,3 +1097,28 @@ contexte pour le debunk") — battery-of-configurations rule. Queued NEXT CONTEX
      NGC4472) — same declining/flat outer dispersion, a tracer independent of PNe;
  (4) the other Tian-Ko ellipticals already cached (Coccato 2009 table6 also has NGC4697/5846/1344 sigma_p(R)).
 Cache: /DATA/obt_game_cache/raw/pne_ell/coccato_table6.dat (+ coccato_ReadMe).
+
+## CARD #32 ell_dearth: mint -> demote -> RE-PROMOTE; the beta-degeneracy fill (June 2026)
+After the NGC 3379 airtight fit (chi2/N=1.40, all fixed/literature) I minted card #32, then an external
+sub-agent audit + my own checks flagged it: the fit's anisotropy beta is the mass-anisotropy DEGENERACY
+partner (free in ellipticals), so reproducing a declining sigma proves nothing OBT-distinctive; I DEMOTED
+it. Romain's two corrections: (1) the demote leaned on the sub-agent's "EFE is moot" claim which is FALSE
+-- I re-verified: at FIXED beta the EFE IS load-bearing (Sculptor dearth chi2 1.23 with vs 2.24 without;
+the sub-agent had freed beta to hide the EFE loss = the beta<->EFE degeneracy). (2) THE STANDARD: a card =
+a FEW clean no-doubt cases + a CLEAR mechanism, EVEN IF some contexts seem to fail (other-error contexts);
+else infinite doubt. And: don't lean on other (flawed) theories to prove OBT -- only OBT's own logic+calc.
+
+THE FILL of the monster's defect (free beta): beta is pinned ONLY by PROPER MOTIONS. Probe dsph_pm tests
+the beta-measured dwarfs with mu(x)+EFE (EFE computed HONESTLY = MW MOND field sqrt(G M_MW a0)/D, first
+principles, NOT the cache value). RESULT: FORNAX (beta pinned, Massari 2019; honest EFE) obs/EFE=0.92-1.11
+(M/L 1.6-2.5) = a clean parameter-free match; cross-check sigma_iso = card#14 formula (4/81 G M a0)^1/4
+exactly (Jeans validated). Sculptor 1.4x under = its TWO-POPULATION global-sigma muddle (other effect, not
+mu(x)). Draco/Carina/UMi/Sextans worse = tidal non-equilibrium (Gaia DR3 velocity gradients) + tiny M_* +
+tangential/marginal beta = other-error contexts. So: CLEAN cases = card#14's 9 isolated dwarfs (+0.04 dex,
+beta-robust) + Fornax (beta-pinned). MECHANISM clear (mu(x) deep-MOND boost = the missing mass). ->
+RE-PROMOTED #32. HONEST SCOPE: B strengthens card #14 >= it makes a standalone elliptical card; the
+elliptical dearth (beta-degenerate, no clean elliptical case) RIDES on the shared mu(x) mechanism; the
+clean beta-PINNED terrain is thin (classical dSphs mostly non-equilibrium). NOT yet integrated into the
+sacred files (separate audited step). Added a 'demote' command to bestiary/obt_game for the round-trip.
+NEXT (Romain): play the Sculptor TWO-POPULATION test (MR+MP as 2 tracers in the same mu(x) potential) to
+turn the Sculptor caveat into clean tests + thicken beyond Fornax. Memory: feedback_card_standard.
