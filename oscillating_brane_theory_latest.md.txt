@@ -1824,7 +1824,7 @@ The "dark matter of galaxy clusters" is therefore:
 - **Not WIMPs** (no particles, no cross-section, no direct detection)
 - **The Weyl fluid** $\mathcal{E}_{00}$ --- the elastic deformation of the 5D AdS$_5$ bulk projected onto the brane via SMS, topologically anchored to the collisionless PBH network
 
-The OBT V8.2 provides a unified framework: **MOND for galaxies** (5D kinematic tilt, sinc $\approx 1$), **Weyl fluid for clusters** (5D elastic projection, sinc $= 0$), both governed by a single 5D equation --- the Shiromizu-Maeda-Sasaki effective Einstein equations with oscillating Israel junction conditions.
+The OBT V8.2 provides a unified framework: **MOND for galaxies** (5D kinematic tilt, sinc $\approx 1$), **Weyl fluid for clusters** (5D elastic projection, sinc $= 0$ --- *audit June 2026: read as the corrected mild suppression $\mathcal{W}\sim0.7$, not literal extinction; the cluster dark matter is the mass-driven Weyl carrying MOND's insufficiency, see the Dynamic Averaging audit preamble above*), both governed by a single 5D equation --- the Shiromizu-Maeda-Sasaki effective Einstein equations with oscillating Israel junction conditions.
 
 ### The 3-Component Bullet Cluster Resolution: MOND Survival and Weyl Fluid Lensing Offset
 
@@ -1844,7 +1844,7 @@ where $\Sigma_{cr}$ is the critical lensing surface density. The three physical 
 - **The kinematic MOND phantom** ($\kappa_{MOND}$): geometric amplification from the 5D Pythagorean tilt ($a_0 = cH_0/2\pi$). Because this tilt acts on the local baryonic gradient, its spatial profile strictly tracks $\Sigma_{baryon}(\vec{x})$. Its amplitude is modulated by the orbital time-averaging sinc filter.
 - **The 5D Weyl fluid** ($\int \mathcal{E}_{00}\,dz$): the "dark radiation" term representing the elastic deformation of the $AdS_5$ bulk projected onto the brane, topologically anchored to the micro-PBH capillary network ($f_{PBH} = 0.01$).
 
-**2. Anomalous infall velocity and MOND tilt survival ($t_{cross} \approx 0.1$ Gyr).** In OBT V8.2, the MOND effect is naturally extinguished at relaxed cluster scales because the dynamical timescale $t_{dyn} \approx 2.0$ Gyr matches the brane oscillation period $T$, yielding the topological resonance $\mathrm{sinc}(\pi) = 0$.
+**2. Anomalous infall velocity and MOND tilt survival ($t_{cross} \approx 0.1$ Gyr).** In OBT V8.2, the MOND effect is naturally extinguished at relaxed cluster scales because the dynamical timescale $t_{dyn} \approx 2.0$ Gyr matches the brane oscillation period $T$, yielding the topological resonance $\mathrm{sinc}(\pi) = 0$. *(Audit June 2026: read "extinguished / $\mathrm{sinc}(\pi) = 0$" here in the corrected sense of the Dynamic Averaging audit preamble --- the physical boost depends on $a_0^2$, so the relaxed-cluster suppression is mild ($\mathcal{W}\sim0.7$), not literal extinction, with the mass-driven Weyl carrying the cluster dark matter. The Bullet contrast that follows is unaffected: it hinges only on the **transient** $\mathrm{sinc}(\pi t_{cross}/T) \approx 0.995$ keeping MOND fully alive during the fast collision.)*
 
 However, the Bullet Cluster is not a relaxed, virialized system --- it is a transient, highly non-equilibrated ballistic event. With a sub-cluster core radius of $R_{sub} \sim 250$ kpc crossing the main cluster at 4700 km/s, the interaction timescale is exceedingly brief:
 
@@ -1915,7 +1915,7 @@ In stark contrast, the $\Lambda$CDM standard model, deploying individual NFW dar
 
 By deriving the exact functional form of $\mu(x)$ and the value of $a_0$ from 5D geometry, OBT formally assimilates this zero-parameter statistical triumph. A derived geometric law that systematically outperforms a 270-parameter phenomenological NFW fit provides compelling evidence that the flattening of rotation curves is an emergent topological projection of 5D gravity, rather than a fluid of invisible particles.
 
-**4. Insignificance of the sinc filter at galactic scales.** To ensure theoretical consistency, we evaluate the impact of the exact orbital time-averaging filter $\mathcal{W}(t_{dyn}/T) = \mathrm{sinc}(\pi\,t_{dyn}/T)$ that annihilates the apparent MOND effect at cluster scales ($t_{dyn} \approx 2.0$ Gyr).
+**4. Insignificance of the sinc filter at galactic scales.** To ensure theoretical consistency, we evaluate the impact of the exact orbital time-averaging filter $\mathcal{W}(t_{dyn}/T) = \mathrm{sinc}(\pi\,t_{dyn}/T)$ that annihilates the apparent MOND effect at cluster scales ($t_{dyn} \approx 2.0$ Gyr) *(audit June 2026: "annihilates" is corrected to the mild suppression $\mathcal{W}\sim0.7$ --- see the conclusion of this subsection just below and the Dynamic Averaging audit preamble; the cluster dark matter is the mass-driven Weyl, not a sinc-extinguished MOND)*.
 
 For a massive spiral galaxy (outer disk $r \sim 50$ kpc, $v \sim 220$ km/s), the dynamical orbital time is $t_{dyn} \approx 220$ Myr. The temporal ratio is $t_{dyn}/T \approx 0.11$. The attenuation filter evaluates to:
 
