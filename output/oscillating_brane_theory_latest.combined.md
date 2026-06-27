@@ -2749,7 +2749,7 @@ Even neglecting the colossal entropic amplification of each bridge ($c \sim S_{B
 - **Quadrupole** ($\ell = 2$, cigar): $f(2) = 6 \implies \mathcal{P} \propto e^{-6 \times 10^{20}}$
 - **Octupole** ($\ell = 3$, pear): $f(3) = 12 \implies \mathcal{P} \propto e^{-1.2 \times 10^{21}}$
 
-**The Dirac collapse theorem.** In the holographic thermodynamic limit $N \to \infty$, the Gaussian representation of the delta function $\lim_{\alpha \to \infty}\sqrt{\alpha/\pi}\,e^{-\alpha x^2} = \delta(x)$ applies to every asynchronous mode simultaneously:
+**The Dirac collapse theorem.** In the holographic network's thermodynamic ($N \to \infty$) limit, the Gaussian representation of the delta function $\lim_{\alpha \to \infty}\sqrt{\alpha/\pi}\,e^{-\alpha x^2} = \delta(x)$ applies to every asynchronous mode simultaneously:
 
 $$\lim_{N \to \infty}\mathcal{D}\phi\,e^{-\Delta S_{ER}[\phi]} \longrightarrow \mathcal{D}\phi_0(t)\prod_{\ell \geq 1,\,m}\delta(a_{\ell m})$$
 
