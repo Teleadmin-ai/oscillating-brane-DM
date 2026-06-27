@@ -513,6 +513,8 @@ The sixteen external-theory debunks above share a single thread: every one is a 
 
 **Verdict.** On its home terrain --- halo-free dynamics from galaxies and ellipticals to streams and groups --- the consilience is real, strong, and computed; the OBT-distinctive lever ($a_0(z)$) is alive on three independent legs; and the closure of the paradigm requires exactly what these cards cannot reach: the cosmological derivation (dark-matter amount, growth sign, clusters), which is the active bulk-solver program.
 
+*Closure-map update (June 2026, this work; the bulk-solver exploration in `explorations/bulk_solver/`, quarantined --- logged here for **provenance**, so nothing is lost if a better resolution later emerges). That program was pushed to a thorough map of this frontier. The **growth-sign** piece is closed within the linear-bulk chain (the warp Indicial Theorem $\to$ suppression; theory.md). The dark-matter **amount** and the **CMB background** remain closure inputs, now sharpened: the CMB acoustic-peak background needs a homogeneous $a^{-3}$ matter component (to set matter-radiation equality) that the traceless projected Weyl cannot supply (it is only $a^{-4}$ dark radiation), and no existing OBT field (Weyl, the massive radion, KK modes, string axions, the brane DBI) realises the required **halo-free** $a^{-3}$ --- so reproducing the CMB background would need an added scalar-tensor gravity sector beyond OBT's present content (the resolution is **not** derived: the warp budget closes the warped-DBI route, and the holographic/qubit route hits the same wall). OBT's dark-matter claim is therefore, honestly, the galaxy/cluster phenomenology of these cards; the cosmological amount and the CMB background are the **open frontier** --- carried with a standing intuition that an essential ingredient is still missing, logged as the place to resume, not a closed verdict.*
+
 ## Emerging Anomalies 2025--2026
 
 ### Impossible JWST Galaxies and Temporal Acceleration
@@ -847,7 +849,7 @@ As the orthodox $\Lambda$CDM system fragments empirically against cutting-edge 2
 **Confirmation requires the observational tests of the coming decade:**
 - DESI Year 5 and Euclid full oscillation spectrum
 - Formal identification of the neutrino mass hierarchy (normal ordering)
-- The crucial SKA challenge: detecting the 2 Gyr spatial modulation of the 21 cm power spectrum during the Epoch of Reionization
+- The SKA 21cm probe: a 2 Gyr *temporal* modulation of the reionization history (a plausible order-of-magnitude test --- its amplitude is theory-unpinned, so possibly undetectable; it is *not* a scale-dependent spatial power-spectrum signal --- corrected June 2026, see Predictions §4). The OBT-distinctive imminent test is instead the evolving MOND scale $a_0(z)$ (Euclid/LSST)
 - Sub-micron gravity tests via qBOUNCE quantum neutrons and levitated nanoscale optomechanics
 
 The Universe ceases to be perceived as an inert spacetime matrix in desperate inflation, revealing itself as a colossal topological resonance entity, beating to the rhythm of a perfect physical symphony.
@@ -3312,11 +3314,11 @@ The convergence of three local immunities --- diffraction-blind in optical ($w_F
 - **(E) Astrometric Wrinkling** --- Solar-System capillary transits (Gaia / ephemerides). *Unobservable ($\sim 10^{-7}\,\mu$as, eight orders below Gaia) and non-distinctive (gravitationally = asteroid).*
 - **(F) Galactic Center 'No-Spike' Theorem** --- cored Weyl profile around Sgr A* (GRAVITY 2022/2024). *Consistency check (constrains the Weyl profile, not the PBH network; "no spike" shared with many scenarios).*
 
-A seventh channel --- the diffuse near-infrared glow from $G_{KK} \to \gamma\gamma$ decay --- was found by *ab initio* calculation to be Planck-suppressed to $\sim 28$ orders below detectability; it is retained not as a falsifiable pillar but as a null-result consistency check (the "electromagnetic silence of the bulk"). Full per-pillar verdicts and the honest synthesis are in the [Observational Predictions](/predictions/) chapter. The PBH network's distinctive, currently-testable falsifiability rests essentially on **(B)**; the strongest distinctive OBT prediction overall --- the eROSITA ascending $\gamma(M)$ spectrum --- lies **outside** this shield.
+A seventh channel --- the diffuse near-infrared glow from $G_{KK} \to \gamma\gamma$ decay --- was found by *ab initio* calculation to be Planck-suppressed to $\sim 28$ orders below detectability; it is retained not as a falsifiable pillar but as a null-result consistency check (the "electromagnetic silence of the bulk"). Full per-pillar verdicts and the honest synthesis are in the [Observational Predictions](/predictions/) chapter. The PBH network's distinctive, currently-testable falsifiability rests essentially on **(B)**. *(Note, audit May 2026: the eROSITA ascending $\gamma(M)$ spectrum --- once billed here as the strongest distinctive prediction outside this shield --- has itself been **demoted to T3 exploratory**: it is not a clean discriminant ($f(R)$ is not universal-$\gamma$, $\gamma(M)$ degenerate with systematics, and eROSITA's clusters are high-$S_8$, opposite to the needed deficit; see §6.2 of [Discoveries](/discoveries/)). The genuinely distinctive **imminent** lever is instead the evolving MOND scale $a_0(z) = cH(z)/2\pi$, see [Predictions](/predictions/).)*
 
 ## Definitive Future Test
 
-The definitive future test involves the spatial modulation of the 21cm power spectrum during the Epoch of Reionization by SKA-Low (2027+), with a predicted detection SNR of $5.5\sigma$. Detailed predictions, numerical validation, and complementary tests (Vera Rubin, qBOUNCE, Euclid) are presented in the [Observational Predictions](/predictions/) chapter.
+A *plausible order-of-magnitude* future test is the SKA 21cm reionization signal (SKA-Low, 2027+): a 2 Gyr **temporal** modulation of the reionization *history* via the scale-independent $G_\text{eff}(t)$ --- **not** a scale-dependent spatial power-spectrum signal --- with peak $|\Delta T_b| \sim 0.5$--$8$ mK. Its amplitude is theory-unpinned (the reionization epoch is within the first oscillation cycle after QCD ignition), so it is **possibly undetectable** and is **not** a "definitive $5.5\sigma$" detection (the earlier 5.46 mK / $5.5\sigma$ mock used a now-discredited scale-dependent-Yukawa $G_\text{eff}(k)$ mechanism --- superseded; corrected June 2026). The **OBT-distinctive imminent** test is instead the evolving MOND scale $a_0(z) = cH(z)/2\pi$ (Euclid/LSST). Detailed predictions and complementary tests (Vera Rubin, qBOUNCE, Euclid) are presented in the [Observational Predictions](/predictions/) chapter.
 
 ## Nature of the Bulk: Non-Local Topological State
 
@@ -3475,7 +3477,7 @@ The brane paradigm unifies inflation, dark matter, and dark energy into a single
 # Chapter 5: Observational Predictions
 
 
-The oscillating brane theory V8.2 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the definitive future test is SKA's 21cm reionization modulation.
+The oscillating brane theory V8.2 makes specific, testable predictions that distinguish it from standard cosmology. Three established anomalies are resolved; the OBT-distinctive imminent test is the redshift evolution of the MOND scale $a_0(z) = cH(z)/2\pi$ (Euclid/LSST, §6), with the SKA 21cm reionization signal a plausible order-of-magnitude probe (§4, amplitude theory-unpinned).
 
 ## Timeline of Discovery
 
@@ -3490,7 +3492,7 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
    |    $\to$ cosmic-variance-capped; no 6sigma claim (see ISW section)
    |
 2027    DESI full survey $\to$ power spectrum modulation
-   |    SKA-Low $\to$ 21cm reionization modulation (DEFINITIVE TEST)
+   |    SKA-Low $\to$ 21cm reionization-history modulation (plausible, amplitude-uncertain)
    |
 2030    CMB-S4 $\to$ definitive ISW signature
    |    Vera Rubin/LSST $\to$ large-scale structural anisotropies
@@ -3619,7 +3621,7 @@ Only the first row is so far measured (and confirmed in direction); the rest are
 | w(z) | -1 (constant) | -1 + 0.003 sin(2pit/T + pi/2) | Time-varying, phantom crossing |
 | S$_{8}$ | 0.83 (tension) | Time-dependent G_eff(t) oscillation | ~4--10% suppression (S$_{8}$ approximately 0.79, waveform-dependent) |
 | CMB low-$\ell$ ISW | $\Lambda$CDM-consistent (deficit) | ~1sigma ISW modulation (cosmic-variance-capped) | Consistency check, not 6sigma |
-| 21cm Reionization | Smooth power spectrum | 2 Gyr spatial modulation | SKA-detectable |
+| 21cm Reionization | Smooth history | 2 Gyr temporal modulation of reionization | plausible (~0.5--8 mK, amplitude-uncertain) |
 | H$_{0}$ variation | Isotropic | ~0.1% dipole | Anisotropic |
 
 
@@ -3651,7 +3653,7 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 | Euclid | $w(z)$ sinusoidal $A \geq 3\times 10^{-3}$ | Signal $< 5\sigma$ |
 | DESI Full | $\Delta P/P = 0.5\%$ at $k_0$ | Smooth spectrum |
 | CMB-S4 | ISW oscillations | No large-scale pattern |
-| SKA-Low | 21cm modulation 1-5 mK | No detection |
+| SKA-Low | 21cm reionization signal ~0.5--8 mK (amplitude-unpinned) | No imprint at the ignition-pinned amplitude |
 | Roman/HSC | Microlensing cliff at $M_{crit} \approx 10^{-10} M_\odot$ | Smooth event rate below $10^{-11} M_\odot$ |
 | Fermi/SVOM/AMEGO-X | GRB femtolensing fringes ($M \sim 10^{-12} M_\odot$) *(contested: finite-source washout --- see Pillar C)* | Zero spectral oscillations in 0.1-1 MeV |
 | eROSITA DR2 | *(exploratory T3 --- NOT a discriminant: f(R) is not universal-gamma, gamma(M) degenerate with systematics, eROSITA clusters are high-S$_{8}$; see [Theory](/theory/) audit)* | --- |
@@ -3705,7 +3707,7 @@ In OBT V8.2, this absence of a cusp is an exact derived feature, not a fine-tuni
 
 *Honest verdict (audit May 2026): a **consistency check**, not an OBT-distinctive test. It constrains the macroscopic Weyl-fluid profile (cored), not the discrete PBH network; and "no central spike" is shared with many scenarios (baryonic scouring, self-interacting or fuzzy dark matter, stellar/feedback heating), while the Gondolo-Silk spike is itself fragile. OBT is consistent with GRAVITY --- but consistency with a constraint that many models satisfy is not a unique prediction.*
 
-**Honest synthesis (audit, May 2026).** The six channels are **not** a uniform "complete Popperian shield." Of the six: **one is genuinely distinctive and currently testable** (B, the microlensing mass-function edge --- with the wave-optics degeneracy caveat); **two are consistency requirements** shared with $\Lambda$CDM (A Bullet offset, F no-spike); and **three are suppressed below observability or rest on contested techniques** at OBT's own parameters (C femtolensing source-washout, D heating $10^{13}$ below threshold, E astrometry eight orders below Gaia). The recurring reason is structural: the parameters that make the capillaries locally invisible ($f_{PBH} = 0.01$, asteroid mass) also suppress most collective signatures. The PBH network's distinctive, currently-testable falsifiability therefore rests essentially on the microlensing edge (B), with the wave-optics degeneracy caveat. *(Note, audit May 2026: the eROSITA ascending $\gamma(M)$ spectrum, previously billed as the strongest distinctive prediction outside this shield, has itself been demoted to T3 exploratory --- it is not a clean discriminant; see [Theory](/theory/). The genuinely distinctive future test is the SKA 21cm reionization modulation; among current data, the microlensing edge (B) is the main distinctive handle, degeneracy noted.)* We state this plainly rather than claim a uniform shield the parameters cannot support.
+**Honest synthesis (audit, May 2026).** The six channels are **not** a uniform "complete Popperian shield." Of the six: **one is genuinely distinctive and currently testable** (B, the microlensing mass-function edge --- with the wave-optics degeneracy caveat); **two are consistency requirements** shared with $\Lambda$CDM (A Bullet offset, F no-spike); and **three are suppressed below observability or rest on contested techniques** at OBT's own parameters (C femtolensing source-washout, D heating $10^{13}$ below threshold, E astrometry eight orders below Gaia). The recurring reason is structural: the parameters that make the capillaries locally invisible ($f_{PBH} = 0.01$, asteroid mass) also suppress most collective signatures. The PBH network's distinctive, currently-testable falsifiability therefore rests essentially on the microlensing edge (B), with the wave-optics degeneracy caveat. *(Note, audit May 2026: the eROSITA ascending $\gamma(M)$ spectrum, previously billed as the strongest distinctive prediction outside this shield, has itself been demoted to T3 exploratory --- it is not a clean discriminant; see [Theory](/theory/). The genuinely distinctive imminent test is the evolving MOND scale $a_0(z)$ (Euclid/LSST, §6); the SKA 21cm reionization signal is a plausible but amplitude-uncertain order-of-magnitude probe (§4, downgraded June 2026); among current data, the microlensing edge (B) is the main distinctive handle, degeneracy noted.)* We state this plainly rather than claim a uniform shield the parameters cannot support.
 
 ## Null-Result Consistency: The Electromagnetic Silence of the Bulk
 
@@ -3833,7 +3835,7 @@ The strong **anti-correlation** $r(\tau_0, L) = -0.76$ has a transparent physica
 **3. The degeneracy breaker: PTA and SKA.** The $\tau_0$-$L$ ellipse can be sheared by observables with **orthogonal geometric projections**:
 
 - **Pulsar Timing Arrays (PTA/NANOGrav)**: the SGWB amplitude $h_c \propto \mathcal{B}(\tau_0, L) \times \tau_0$ depends on the KK branching ratio $\mathcal{B} \propto L^{-1}\tau_0^{-1/3}$ --- a completely different functional form than $S_8(\tau_0, L)$, providing a transverse cut through the degeneracy ellipse.
-- **SKA 21cm reionization**: the spatial modulation amplitude $\Delta T_{21cm}$ depends on the growth history at $z = 6$--$15$, where the oscillation phase differs from the low-$z$ DES window --- breaking the temporal aliasing.
+- **SKA 21cm reionization**: the reionization-history modulation (temporal, scale-independent $G_\text{eff}(t)$ --- *not* a spatial/$k$-dependent signal) depends on the growth at $z = 6$--$15$, where the oscillation phase differs from the low-$z$ DES window --- breaking the temporal aliasing. *(Its weight in this joint forecast is amplitude-dependent: the reionization-epoch amplitude is theory-unpinned, so SKA's degeneracy-breaking power is a best case, not guaranteed --- §4.)*
 
 The joint Euclid + SKA + PTA Fisher matrix contracts the confidence ellipsoid to: $\sigma(\tau_0)/\tau_0 \approx 12\%$, $\sigma(T)/T \approx 4\%$, $\sigma(L)/L \approx 8\%$ --- entering the precision cosmology regime.
 
@@ -3876,7 +3878,7 @@ Our final vision: the cosmos is not an inert theater but a living organism:
 
 ## Epilogue: The Promise of Revelation
 
-Version 8.2 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the definitive test is SKA's 21cm reionization modulation.
+Version 8.2 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the OBT-distinctive imminent test is the evolving MOND scale $a_0(z)$ --- with the SKA 21cm reionization signal a plausible order-of-magnitude probe.
 
 In the coming years, the universe will answer us. Giant telescopes and pulsar networks will listen to the deep whisper of the cosmos, seeking the two-billion-year melody. They will find either confirmation of a revolutionary vision or the silence that sends us back to our equations.
 

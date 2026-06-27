@@ -401,6 +401,8 @@ The sixteen external-theory debunks above share a single thread: every one is a 
 
 **Verdict.** On its home terrain — halo-free dynamics from galaxies and ellipticals to streams and groups — the consilience is real, strong, and computed; the OBT-distinctive lever ($a_0(z)$) is alive on three independent legs; and the closure of the paradigm requires exactly what these cards cannot reach: the cosmological derivation (dark-matter amount, growth sign, clusters), which is the active bulk-solver program.
 
+*Closure-map update (June 2026, this work; the bulk-solver exploration in `explorations/bulk_solver/`, quarantined — logged here for **provenance**, so nothing is lost if a better resolution later emerges). That program was pushed to a thorough map of this frontier. The **growth-sign** piece is closed within the linear-bulk chain (the warp Indicial Theorem → suppression; theory.md). The dark-matter **amount** and the **CMB background** remain closure inputs, now sharpened: the CMB acoustic-peak background needs a homogeneous $a^{-3}$ matter component (to set matter-radiation equality) that the traceless projected Weyl cannot supply (it is only $a^{-4}$ dark radiation), and no existing OBT field (Weyl, the massive radion, KK modes, string axions, the brane DBI) realises the required **halo-free** $a^{-3}$ — so reproducing the CMB background would need an added scalar-tensor gravity sector beyond OBT's present content (the resolution is **not** derived: the warp budget closes the warped-DBI route, and the holographic/qubit route hits the same wall). OBT's dark-matter claim is therefore, honestly, the galaxy/cluster phenomenology of these cards; the cosmological amount and the CMB background are the **open frontier** — carried with a standing intuition that an essential ingredient is still missing, logged as the place to resume, not a closed verdict.*
+
 ## 4. Emerging Anomalies 2025--2026
 
 ### 4.1. Impossible JWST Galaxies and Temporal Acceleration
@@ -735,7 +737,7 @@ As the orthodox $\Lambda$CDM system fragments empirically against cutting-edge 2
 **Confirmation requires the observational tests of the coming decade:**
 - DESI Year 5 and Euclid full oscillation spectrum
 - Formal identification of the neutrino mass hierarchy (normal ordering)
-- The crucial SKA challenge: detecting the 2 Gyr spatial modulation of the 21 cm power spectrum during the Epoch of Reionization
+- The SKA 21cm probe: a 2 Gyr *temporal* modulation of the reionization history (a plausible order-of-magnitude test — its amplitude is theory-unpinned, so possibly undetectable; it is *not* a scale-dependent spatial power-spectrum signal — corrected June 2026, see Predictions §4). The OBT-distinctive imminent test is instead the evolving MOND scale $a_0(z)$ (Euclid/LSST)
 - Sub-micron gravity tests via qBOUNCE quantum neutrons and levitated nanoscale optomechanics
 
 The Universe ceases to be perceived as an inert spacetime matrix in desperate inflation, revealing itself as a colossal topological resonance entity, beating to the rhythm of a perfect physical symphony.
