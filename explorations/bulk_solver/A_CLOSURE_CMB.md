@@ -89,3 +89,28 @@ geometric wins — a₀=cH/2π, μ(x), sinc, Bullet 150 kpc, the cluster two-sca
 **plus an added homogeneous a⁻³ sector for the CMB** that its native fields do not supply. "DM is purely
 geometric" holds up to cluster scales, not at the CMB. *(Loop discipline: two clean re-read passes + a
 re-run; a √Ω_DM refinement to Horn B and a kpc→nm units bug were caught on re-read.)*
+
+## Verification of the escapes (Romain: "cherche la vérité"; web-confirmed June 2026, `a_verify_options.py`)
+Before accepting the hybrid, the dismissed escapes were **verified, not asserted**:
+- **FACT 1 (web): modified gravity ALONE fails the CMB.** TeVeS / relativistic MOND without a
+  dark-matter-like component cannot fit the CMB third acoustic peak (over-enhanced ISW; *"acceptable fits to
+  the CMB in TeVeS still need to appeal to non-baryonic mass"*). ⇒ OBT's geometric MOND (a⁻⁴ Weyl) would fail
+  the same way → the homogeneous a⁻³ dust is genuinely required. *(physicsworld; astroweb ssm/mond/CMB6)*
+- **FACT 2 (web): the resolution is a FIELD, not a particle.** AeST (Skordis-Złošnik 2021): *"the
+  time-dependent term behaves like gravitating dust, allowing AeST to reproduce the CMB ... while retaining a
+  MOND limit"*. So the added a⁻³ dust can be a scalar-tensor **gravity-sector** field. *(aanda AeST; MNRAS 531/272)*
+- **FACT 3 (web+calc): a natural string/fuzzy axion is NOT halo-free.** Fuzzy DM *"produces flat halo cores"*
+  → it clusters. To be all the DM it needs m_a > ~10⁻²¹ eV (Lyman-α); at that mass its de Broglie core is
+  ~10 pc ≪ galaxy → it makes galaxy halos → double-counts with the MOND phantom → breaks the zero-halo
+  galaxies. Halo-free needs m_a < ~10⁻²⁴ eV — ~3 orders below the all-DM floor → no overlap. *(ar5iv 1609.09414)*
+
+**Escape table — every natural OBT field fails as the CMB a⁻³ dust:** Weyl (a⁻⁴), massive radion (clusters),
+rolling radion (varies G, ~350× LLR), KK gravitons (massive→cluster), string/fuzzy axion (cored halos /
+ruled out). **⇒ the hybrid is CONFIRMED by verification, not a lazy default.**
+
+**The verified nuance (and it is good for OBT):** because the AeST dust is a gravity-sector FIELD (not a
+WIMP), **"DM is gravitational/geometric" (no particle dark matter) survives** — OBT only needs a V9.0
+extension (a new AeST-class gravity scalar) that its V8.2 fields do not supply, while the galaxy/cluster
+geometric wins are untouched. A's honest end-state: OBT's galaxy/cluster DM is the geometric Weyl + the MOND
+phantom (its strength), and its CMB needs an added gravity-sector a⁻³ field — a precise, verified scope, not
+a defeat.
