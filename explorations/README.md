@@ -141,14 +141,27 @@ gravitational collapse** at sub-0.2 μm (the os, already in `laboratory.md`).
 5. **The os bar.** A real seed only if it yields a *falsifiable number or a sharper experiment*,
    never a prettier story. `scripts/penrose_diosi_5d.py` (the collapse-rate size-scan) is the bone.
 
-**First concrete step.** Write OBT's ER=EPR / HaPPY network as an *explicit* stabilizer/QEC code
-(the expander-graph + RT-transition ingredients already exist in the framework) and identify the
-**logical subspace that stays coupled to the Penrose-Diósi channel** — the protected-yet-sensitive
-subspace of gate 1. That is the smallest computable handle that turns the seed from architecture
-into physics.
+**First concrete step — DONE (June 2026, `qubit_sensor/er_epr_stabilizer.py`).** The explicit
+atom of the ER=EPR code is written + verified: the **[[5,1,3]] perfect (HaPPY) stabilizer code**
+(5 physical = a PBH node + its 4 ER=EPR neighbours; 1 logical = a germe d.o.f.; distance 3), in
+the binary symplectic formalism, **injection-tested** against its known properties (k=1, d=3,
+perfect: the 15 weight-1 errors fill all 15 nonzero syndromes; logical Z_L, X_L anticommute,
+min-weight rep 3). **Gate 1 made concrete — the protected-yet-sensitive subspace:** a weight-1
+(local) decoherence event has a *nonzero* syndrome → corrected → the logical qubit is untouched
+(DEAF to local noise); a weight-3 *collective* operator in the logical class has *zero* syndrome
+→ invisible to the code's checks, **not** "corrected away", yet it rotates the encoded qubit
+(SENSITIVE). The separator is **operator weight** (local vs collective), set by the distance. So a
+Penrose-Diósi collapse — collective, coupling to the whole mass distribution — can land in the
+logical subspace while thermal/local noise is corrected: *stable by construction, yet able to hear
+the demon.*
 
-**Status.** Architectural conjecture; no new numeric claim yet (the cited results are established,
-not OBT computations). os = Penrose-Diósi; chair = the Laplace-demon / quantum-reader vision.
+**Status.** First step DONE: the explicit [[5,1,3]] atom + the protected-yet-sensitive subspace,
+verified by `er_epr_stabilizer.py` (the only *new* numeric content is the code's own QEC
+properties — standard for the [[5,1,3]], here recomputed + injection-tested; no OBT physics claim
+is added). **Still open (the gates):** that OBT's actual gravitational channel maps to a
+logical-class collective operator and not a correctable one (gate 1 physics); the scale-up (tile
+the atom on OBT's expander graph → distance ↑, erasure threshold → percolation p_c ~ 2.2%); the
+mass-vs-coherence BMV wall. os = Penrose-Diósi; chair = the Laplace-demon / quantum-reader vision.
 See memories `project_holographic_choice_penrose_diosi`, `project_qubit_holography_v9`.
 
 ---
