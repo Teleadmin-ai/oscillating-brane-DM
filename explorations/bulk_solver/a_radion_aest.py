@@ -2,9 +2,9 @@
 
 Task: the CMB-DM resolution exists (Skordis-Zlosnik 2021, AeST: a^-3 dust + MOND + halo-free, fits Planck).
 Can OBT INHERIT it? AeST's halo-free a^-3 dust comes from a MASSLESS, SHIFT-SYMMETRIC scalar: the "dust"
-is the conserved shift-charge density (J^0 ~ a^-3), NOT a massive-particle condensate -> it does not cluster
-into galaxy halos (it is a screened modified-gravity field). The decisive question is whether OBT has such a
-mode.
+is the conserved shift-charge density (J^0 ~ a^-3), NOT a massive-particle condensate: it is CDM-like on
+large scales (sources the CMB/LSS) but in GALAXIES gives the MOND force (screened by the K(Y) MOND function),
+NOT a clustered particle halo. The decisive question is whether OBT has such a mode.
 
 OBT's light sector: (i) the radion -- MASSIVE (Goldberger-Wise, m_phi = 0.36 eV, required to stabilize the
 extra dimension and set the KK spectrum); (ii) the projected Weyl -- a^-4 (traceless); (iii) KK gravitons --
@@ -13,8 +13,9 @@ Gate-10 condensate) is an AXION-LIKE massive condensate -> it CLUSTERS (Gate 11)
 
 This script quantifies the decisive obstruction: a 0.36 eV scalar clusters on all scales far below a galaxy
 (its de Broglie / fuzzy-Jeans scale is microscopic), so it forms halos -- it cannot be AeST's halo-free dust.
-A halo-free (fuzzy) a^-3 component needs m ~ 1e-22 eV; the radion is ~22 orders too heavy. The radion MASS
-(stabilization) is structurally incompatible with the AeST SHIFT SYMMETRY (halo-free dust).
+A halo-free (fuzzy) a^-3 component needs m ~ 1e-23 eV (de Broglie at v~200 km/s for ~kpc; the canonical
+fuzzy-DM soliton value is ~1e-22 eV at dwarf velocities) -- the radion is ~22-23 orders too heavy. The radion
+MASS (stabilization) is structurally incompatible with the AeST SHIFT SYMMETRY (halo-free dust).
 """
 
 import numpy as np
