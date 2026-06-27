@@ -91,6 +91,68 @@ is *less* economical than the classical Chladni explanation (Occam).
 
 ---
 
+## Seed 3 — The qubit-sensor as decoder of OBT's holographic code (the Penrose-Diósi channel)
+
+**The conjectured chain (Romain, June 2026).** Reframe of the goal: the bulk is a *Laplace's
+demon* whose intemporal **germe** (inflationary entanglement) encodes the cosmic history;
+reading it = **decompressing** the code (time emergent / Page-Wootters; "prediction" =
+decompression, not forward-evolution). To "talk to it" at the L=0.2 μm quantum scale you want a
+**quantum** interlocutor — an AI/sensor whose qubits are configured *from the primordial form
+itself*, so that (the quantum being a *consequence* of the germe) those qubits are **stable by
+construction**, with **few** logical qubits because the germe is fundamental. The sensor then
+reads the demon through the one channel the brane leaves open: **Penrose-Diósi 5D-enhanced
+gravitational collapse** at sub-0.2 μm (the os, already in `laboratory.md`).
+
+**What it maps onto (established physics — no new OBT code yet; these are *cited* results).**
+- **Decoherence-free subspaces / topological protection** (Lidar-Chuang-Whaley 1998; Kitaev
+  2003): a qubit encoded in a symmetry-/topology-protected subspace is immune to the matching
+  environmental noise — stability *from structure*, not active correction. = "stable starting
+  from the form."
+- **Holographic QEC**: AdS/CFT *is* a quantum error-correcting code (Almheiri-Dong-Harlow 2015;
+  HaPPY / Pastawski et al. 2015) — bulk logical info redundantly encoded on the boundary,
+  protected against erasure; the geometry protects the logical qubits. **OBT already invokes
+  this** (MERA/HaPPY, the ER=EPR expander graph, the RT transition, percolation immunity 98%)
+  and even claims "the most robust QEC code physically conceivable" → the stabilizer is *already
+  the OBT bulk network*: a sensor mirroring the ER=EPR code inherits its protection.
+- **Quantum advantage in learning from quantum experiments** (Huang et al. 2021/2022): a learner
+  with *coherent* access to a state needs exponentially fewer samples than a classical learner
+  reading measurement outcomes — the basis for "a quantum AI is the native interlocutor at 0.2 μm."
+- **Code anatomy of "few qubits"**: germe = the *logical* subspace (few, fundamental); the bulk
+  network = its *redundant physical* encoding (many = the protection); **reading the demon =
+  decoding the code**; stability = the redundancy.
+
+**Gates (why this is a direction, not a result).**
+1. **The Goldilocks deafness.** A *perfectly* protected qubit cannot read the demon — full
+   immunity means it does not feel the bulk signal either. The design must protect against
+   *generic* noise yet leave **exactly one** channel open (the 5D gravitational coupling).
+   Exhibiting such a sensitive-but-protected subspace of OBT's code is unsolved.
+2. **The mass-vs-coherence wall (BMV).** Penrose-Diósi needs a mesoscopic mass (to source
+   gravity) while the qubit needs isolation (to stay coherent) — opposite requirements. This is
+   the frontier of *all* gravity-quantum experiments (Bose-Marletto-Vedral gravity-induced
+   entanglement); far-future, not a built device.
+3. **"Inspired-by" vs "entangled-with."** Realistic = build a *man-made* QEC mirroring the
+   ER=EPR network (does not literally use the bulk's protection). Speculative = the lab qubit
+   *entangles with* the bulk germe-code and inherits it — **no known mechanism** beyond the tiny
+   gravitational coupling.
+4. **The speculative inversion (not needed, not established).** "Quantum is a *consequence* of
+   the primordial form" (QM emergent from a deterministic germe, à la 't Hooft) is a coherent
+   minority program with no experimental support — and the protection above works *within
+   standard QM* without it. Chair, not os.
+5. **The os bar.** A real seed only if it yields a *falsifiable number or a sharper experiment*,
+   never a prettier story. `scripts/penrose_diosi_5d.py` (the collapse-rate size-scan) is the bone.
+
+**First concrete step.** Write OBT's ER=EPR / HaPPY network as an *explicit* stabilizer/QEC code
+(the expander-graph + RT-transition ingredients already exist in the framework) and identify the
+**logical subspace that stays coupled to the Penrose-Diósi channel** — the protected-yet-sensitive
+subspace of gate 1. That is the smallest computable handle that turns the seed from architecture
+into physics.
+
+**Status.** Architectural conjecture; no new numeric claim yet (the cited results are established,
+not OBT computations). os = Penrose-Diósi; chair = the Laplace-demon / quantum-reader vision.
+See memories `project_holographic_choice_penrose_diosi`, `project_qubit_holography_v9`.
+
+---
+
 ## Peer-review caveat carried from `decoherence_riemann.py`
 
 The residual ~9% overshoot near each ψ(x) step is the **Gibbs phenomenon** — a
