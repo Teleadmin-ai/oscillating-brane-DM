@@ -105,6 +105,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **Single PBH mass 10⁻¹² M☉** (must use extended mass function)
 - **"global S₈ suppression of 5.2%" / "S₈=0.797±0.002 precision" / "cross-observational rigidity"** (must be time-dependent; honest value is growth suppression of order 4–10%, S₈≈0.79, waveform-shape dependent at factor-~2 — NOT ±0.002. δ_bulk derived but the S₈ value is consistency-with-tension, not a precision prediction; audit May 2026)
 - **"Scale-Dependent Yukawa Screening" for S₈** (k/k_L ~ 10⁻²⁹ at cosmological scales → no spatial dependence)
+- **"SKA 21cm 5.46 mK / 5.5σ definitive test" / a scale-dependent G_eff(k) for the 21cm modulation** (B-phase triple-check, June 2026: the old `ska_21cm_mock.py` modulated the 21cm signal with the BANNED scale-dependent-Yukawa G_eff(k) + ad-hoc growth/noise → the 5.46 mK/5.5σ is an ARTIFACT. The CORRECT mechanism is the TEMPORAL scale-independent G_eff(t) → growth → reionization Q(z) → T_b(z) (`ska_21cm_forecast.py`): peak ΔT_b ~0.5–8 mK, ∝ the reionization-epoch oscillation amplitude — which is theory-UNPINNED both ways (first-cycle QCD-kick vs weak early F_web), so possibly <<1 mK = UNDETECTABLE; SNR 0.1–1.6σ foreground-realistic. SKA is a plausible order-of-magnitude test, NOT "definitive". Say "order-of-magnitude, amplitude-uncertain", never "definitive 5.5σ")
 - **Neutron Lifetime Anomaly / Bottle vs Beam** (double counting error + T^μ_μ=0 for EM fields → removed)
 - **"temperature-dependent brane tension" / "τ(T)"** (replaced by conformal symmetry)
 - **"MORRIS" experiment** (operates at 1 mm, blinded by Casimir)
@@ -158,7 +159,7 @@ git commit -m "Regenerate PDF + markdown" && git push
 - **ξRφ non-minimal coupling** as dynamical attractor
 - **Extended mass function (EMF)** log-normal for PBHs
 - **Time-dependent G_eff(t)** for S₈ suppression (same mechanism as eROSITA)
-- **SKA 21cm** as definitive future test
+- **SKA 21cm** as a plausible order-of-magnitude future test (amplitude theory-unpinned at reionization → possibly undetectable; DOWNGRADED from "definitive 5.5σ" June 2026, see Computational Validations + BANNED). The imminent OBT-distinctive lever is **a0(z) via Euclid/LSST** (decisive for evolution-vs-constant)
 - **qBOUNCE + optomechanics** for sub-micron lab tests
 - **Gregory-Laflamme instability** as ab initio derivation of the upper PBH mass bound
 - **M_crit = Lc²/(2G) ≈ 6.77 × 10⁻¹¹ M☉** (perforation hierarchy threshold, from r_s = L)
@@ -355,7 +356,7 @@ The `explorations/` folder (created May 2026) holds heuristic, speculative work 
 | w(z) phantom crossing | BDF stiff solver, exact lookback time | w ∈ [-1.003, -0.997], matches DESI DR2 |
 | S₈ tension (consistency) | ODE D₊(a) with BKM-derived G_eff(t) | order 4–10% suppression (S₈≈0.79), δ_bulk=1.36 rad derived; value waveform-dependent, NOT ±0.002 (audit May 2026) |
 | Bayesian evidence | dynesty nested sampling, 500 live points | Original 3-param: Δln K ∈ [2.8, 4.13]. After T promotion: Δln K ≈ 5.8 (Decisive, prior-independent) |
-| SKA 21cm prediction | Reionization mock, z=6-15 | 5.46 mK peak, SNR = 5.5σ |
+| SKA 21cm (CORRECTED + triple-checked, B-phase June 2026) | Temporal SCALE-INDEPENDENT G_eff(t)→growth D(z)→collapsed fraction→reionization Q(z)→T_b(z); `scripts/ska_21cm_forecast.py` | peak ΔT_b ~0.5–8 mK (∝ amplitude; amplitude theory-UNPINNED both ways: first-cycle/QCD-kick vs weak early F_web before structure forms z≲3), SNR 0.1–1.6σ (foreground-realistic 5 mK) → **plausible order-of-magnitude, possibly undetectable, NOT 'definitive 5.5σ'**. The OLD `ska_21cm_mock.py` (5.46 mK/5.5σ) used the BANNED scale-dependent-Yukawa G_eff(k) + ad-hoc factors = ARTIFACT, SUPERSEDED. predictions.md §4 downgraded |
 | Lithium-7 problem | BBN conformal tolerance, BDF solver | 3.5× suppression, D/⁴He preserved |
 | Baryon asymmetry | Spontaneous QCD baryogenesis | η_B = 6.1×10⁻¹⁰, c_QCD = O(1), no fine-tuning |
 | Big Ring / Giant Arc | Chladni resonance nodes | Peaks at ~816 Mpc and ~2041 Mpc (> ΛCDM 370 Mpc) |
@@ -419,7 +420,8 @@ The `explorations/` folder (created May 2026) holds heuristic, speculative work 
 | `scripts/brane_dynamics.py` | Core V8.2 ODE (BDF stiff solver, w(z) oscillation) | `plots/w_z_oscillation.png` |
 | `scripts/growth_factor.py` | Ab initio S₈ with BKM-derived δ_bulk (zero calibration) | `plots/s8_yukawa_suppression.png` |
 | `scripts/bayesian_analysis.py` | Nested sampling Bayesian evidence (dynesty) | `plots/nested_sampling_posteriors.png` |
-| `scripts/ska_21cm_mock.py` | SKA 21cm reionization modulation prediction | `plots/ska_prediction.png` |
+| `scripts/ska_21cm_forecast.py` | SKA 21cm forecast (CORRECTED, B-phase): temporal scale-INDEP G_eff(t)→reionization Q(z)→T_b(z); peak ΔT_b ~0.5–8 mK (amplitude-unpinned), SNR 0.1–1.6σ → order-of-magnitude, NOT definitive. Verified vs MUSE-context | N/A (forecast, stdout) |
+| `scripts/ska_21cm_mock.py` | ⚠️ SUPERSEDED/FLAWED (banned scale-dependent-Yukawa G_eff(k) artifact; 5.46 mK/5.5σ is wrong) — kept as record only, use ska_21cm_forecast.py | `plots/ska_prediction.png` (flawed) |
 | `scripts/lithium_bbn_solver.py` | Lithium-7 BBN conformal tolerance | `plots/lithium_resolution.png` |
 | `scripts/spontaneous_baryogenesis.py` | QCD baryogenesis (radion = dynamic θ_QCD) | `plots/baryon_asymmetry.png` |
 | `scripts/ultra_large_structures.py` | Big Ring / Giant Arc resonance | `plots/big_ring_resonance.png` |
@@ -510,7 +512,7 @@ Run all scripts to regenerate plots for the latest version:
 python scripts/brane_dynamics.py
 python scripts/growth_factor.py
 python scripts/bayesian_analysis.py
-python scripts/ska_21cm_mock.py
+python scripts/ska_21cm_forecast.py  # CORRECTED (ska_21cm_mock.py is superseded/flawed)
 python scripts/lithium_bbn_solver.py
 python scripts/spontaneous_baryogenesis.py
 python scripts/ultra_large_structures.py

@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
-SKA 21cm Reionization Modulation — The Definitive Test
+SKA 21cm Reionization Modulation — ⚠️ SUPERSEDED (FLAWED), June 2026.
 
-Computes the theoretical spatial modulation ΔT_b(k,z) ≈ 1-5 mK
-induced by the oscillating G_eff(k) on the 21cm brightness temperature
-during the Epoch of Reionization (z=6 to 15).
+DO NOT USE for the prediction. This script is kept only as a record. It modulates the 21cm signal with a
+SCALE-DEPENDENT G_eff(k) built from the Yukawa coupling (the BANNED "scale-dependent Yukawa screening":
+k/k_L ~ 1e-29 at cosmological scales => no scale dependence), never uses the real temporal f_osc, and adds
+ad-hoc growth_boost and noise factors. Its "5.46 mK / 5.5σ" peak/SNR is therefore an ARTIFACT.
 
-Generates a template for SKA-Low detection.
+The CORRECT, scale-INDEPENDENT forecast (temporal G_eff(t) -> growth -> reionization history -> T_b(z),
+with the honest first-cycle amplitude + foreground caveats) is in scripts/ska_21cm_forecast.py.
 """
 
 import matplotlib

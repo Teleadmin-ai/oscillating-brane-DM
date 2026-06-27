@@ -98,18 +98,13 @@ The current stretched phase ($G_\text{eff} < G_N$) produces a growth suppression
 <p><em>Figure 5: Structure growth suppression in oscillating brane model vs ΛCDM</em></p>
 </div>
 
-### 4. SKA 21cm Reionization Modulation (Definitive Future Test)
+### 4. SKA 21cm Reionization Modulation (a plausible order-of-magnitude future test)
 
-The model's primary falsifiable prediction targets the 21cm power spectrum during the Epoch of Reionization (6 ≲ z ≲ 15). The oscillating G_eff(k,t) imprints a spatial modulation on the 21cm brightness temperature:
+The 2 Gyr brane oscillation modulates the reionization history through the **temporal, scale-independent** effective gravitational coupling $G_\text{eff}(t) = G_N\!\left[1 + f_\text{osc}\,W\!\left(t/T + \delta_\text{bulk}/2\pi\right)\right]$ — the *same* mechanism as the $S_8$ suppression (§3.2), **not** a scale-dependent $G_\text{eff}(k)$ (a scale-dependent Yukawa is excluded: $k/k_L \sim 10^{-29}$ at cosmological scales). The oscillating $G_\text{eff}(t)$ modulates the linear growth $D(z)$, hence the collapsed fraction of ionizing sources (exponentially sensitive through the Press-Schechter tail), hence the reionization history $Q(z)$ and the 21cm global brightness temperature $T_b(z)$ over $6 \lesssim z \lesssim 15$.
 
-$$\delta T_b(\vec{k}, z) \supset \Delta T_{osc}(k)\, \sin\left(\frac{2\pi t(z)}{T} + \phi_0\right)$$
+**Honest forecast (`scripts/ska_21cm_forecast.py`, triple-checked June 2026).** A single-zone reionization model with the growth integrated under $G_\text{eff}(t)$ gives a peak global-signal modulation $|\Delta T_b|$ that scales roughly *linearly* with the oscillation amplitude at reionization — and that amplitude is **theory-unpinned in both directions**. Reionization ($z \sim 6$–15, cosmic time $\sim 0.3$–0.9 Gyr) falls within the **first oscillation cycle** after QCD ignition, before the limit cycle converges: the relevant amplitude is set by the competition between the QCD ignition kick (which could exceed the converged $f_\text{osc} = 0.10$) and the cosmic-web forcing $F_\text{web}$ that *sustains* the limit cycle — which is weak before large-scale structure forms ($z \lesssim 3$), so the amplitude could lie well *below* 0.10. Consequently $|\Delta T_b|$ spans $\sim 0.5$ mK ($f_\text{osc,reion} = 0.02$, undetectable) through $\sim 3$ mK (nominal 0.10) to $\sim 8$ mK (0.20), robust to phase at the $\times 1.3$ level.
 
-with characteristic amplitude $\Delta T_\text{osc} \sim 1$--$5$ mK at BAO-scale wavenumbers. **SKA-Low (2027+)** has the sensitivity and k-range to detect or exclude this modulation at $>3\sigma$, constituting the definitive test of the brane oscillation.
-
-![SKA 21cm Prediction](/plots/ska_prediction.png)
-*Figure: SKA 21cm reionization modulation prediction. Peak signal 5.46 mK (SNR = 5.5σ detectable by SKA-Low). The 2D map shows the modulation ΔT_b(k,z) over the Epoch of Reionization.*
-
-**Numerical validation (21cm mock, exact lookback time):** The brane-induced modulation reaches a **peak amplitude of 5.46 mK** at high redshift. At BAO scales ($k \sim 0.1$ Mpc$^{-1}$), the modulation is 0.70 mK. Against SKA-Low thermal noise (~1 mK per mode for ~1000h integration), this yields a **detection SNR of 5.5$\sigma$** — well above the $3\sigma$ discovery threshold. If SKA-Low observes no $2$ Gyr spatial modulation in the 21cm power spectrum, the oscillating brane theory is ruled out.
+**Detectability is foreground-limited and genuinely uncertain.** Against realistic residual-foreground noise ($\sim 5$ mK) the global-signal SNR is only $\sim 0.1$–1.6$\sigma$; it reaches $\sim 1$–8$\sigma$ only under deep foreground cleaning ($\sim 1$ mK) *and* a near-limit-cycle amplitude. This is therefore a **plausible order-of-magnitude test — possibly detectable, possibly not — not a precise "definitive $5.5\sigma$" detection.** *(An earlier mock quoting 5.46 mK / $5.5\sigma$ used a now-discredited scale-dependent-Yukawa $G_\text{eff}(k)$ with ad-hoc growth and noise factors — superseded.)* A robust number requires a full reionization simulation (21cmFAST-class), the first-cycle amplitude from the ignition ODE (with the early $F_\text{web}$), and an SKA foreground/noise pipeline. The qualitative, falsifiable prediction stands: a 2 Gyr-periodic imprint on the reionization history.
 
 ### 5. Hubble Anisotropy (Cosmicflows-4)
 
