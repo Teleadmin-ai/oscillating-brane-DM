@@ -174,3 +174,25 @@ k-essence Khronon-class gravity field). The one door left: can a **warped brane/
 low-(∂φ)² MOND k-essence? **Probably not** — its non-canonical scale is the (warped) brane tension, ~32+ orders
 above a₀∼H₀ — but the rigorous warped-DBI calculation is the honest next deep step (it would reformulate OBT's
 geometric MOND as a k-essence). That is the true V9.0 frontier; everything cheaper has been excluded.
+
+## STEP-BACK before the full calc (Romain: is the estimate far off? + the qubit link; `a_warp_qubit_stepback.py`)
+Before grinding the warped-DBI EoS, the warp BUDGET decides it. OBT's warp is **~46 e-folds** (the KS throat
+M_Pl→257 MeV is kL≈45; the L=0.2μm extra-dim is only kL≈0.7). Bringing the DBI scale down to a₀∼H₀ needs
+kL≈**140** e-folds — **~94 more than OBT has**. The warp STOPS at 257 MeV; the warped-DBI scale sits **~41
+orders above a₀**. So the ~32-order estimate was **not far off** (actually ~41), and the full warped-DBI EoS
+is **MOOT — the door is closed by the warp magnitude**, not "probably not".
+
+**The qubit link (Romain's intuition — real):** every holographic route links but hits the same wall —
+E_μν=⟨T_μν⟩_CFT (conformal→a⁻⁴); holographic-RG/TTbar (DBI, high-(∂φ)²); entanglement→emergent gravity
+(a₀=cH/2π — *already* OBT's MOND, galaxies not CMB); the CFT's only massless mode is the stress-tensor →
+graviton/Weyl (a⁻⁴, not a scalar); CFT scalar operators = the lifted radion/moduli; the confining KS-throat IR
+= massive glueballs/KK. **No massless a⁻³ Khronon emerges from the bulk entanglement.**
+
+**The "quantum witnesses" (state-dependent projection):** this IS a real OBT mechanism — it is the geometric-DM
+*response* (E_μν responding to the brane matter → the inhomogeneous Weyl = galaxy/cluster DM). But that is the
+*response* (galaxies/clusters, OBT's win), not the homogeneous CMB a⁻³ *background*.
+
+**⇒ The hybrid stands at the deepest level** (classical warped-DBI moot + the qubit walled). Romain's
+intuitions were right — the qubit links, the projection is state-dependent — and, chased to the end, they
+**confirm** the wall rather than break it. The a⁻³ halo-free Khronon is genuinely absent from OBT, classically
+AND quantumly. No faux facile: the truth is the hybrid (an added k-essence Khronon-class field for the CMB).
