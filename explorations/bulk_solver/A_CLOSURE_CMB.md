@@ -131,3 +131,28 @@ Could the CMB sector be a *free* inheritance from OBT's existing fields? No.
 named: a **new ~massless (~H₀-scale) shift-symmetric khronon scalar** (a gravity-sector field — no aether
 needed), NOT the radion (32 orders too heavy) and NOT the spacelike normal. This confirms the
 hybrid/added-gravity-scalar conclusion from the field-content side, and pins exactly what V9.0 must build.
+
+## CORRECTION (Romain's qubit/bulk intuition, `a_bulk_matter_escape.py`): the wall is ESCAPABLE — A reopened
+Romain asked whether the qubit/holographic bulk view omitted an interaction with the CMB-dust question.
+**It did, and it corrects this note.** My "OBT structurally has no homogeneous a⁻³ (the Weyl is traceless →
+a⁻⁴)" counted **only the pure-gravity Weyl E_μν** and **ignored the bulk-MATTER projection F_μν**
+(Shiromizu-Maartens, present whenever there are bulk fields beyond gravity). F_μν is **not** traceless
+(F^μ_μ = 2κ₅²T_nn, the normal-normal bulk stress) → its effective w is free → the dark sector **can be a⁻³**.
+Web-confirmed holographically (exactly the qubit angle): a conformal CFT gives a⁻⁴ (the wall), but *"if there
+are non-zero bulk fields other than the gravitational field, the dual theory is not conformal and the EoS of
+the generalized dark radiation can deviate significantly from pure radiation"* (hep-th/0509182). **OBT HAS
+bulk matter** (KS fluxes, GW scalar, form fields) → F_μν ≠ 0 → the homogeneous dark sector is E_μν (a⁻⁴)
+**+ F_μν (can be a⁻³)**.
+
+**Consequences (calibrated both ways):**
+- The z_eq/CMB-background wall is **NOT absolute** — escapable via the bulk-matter projection. My earlier
+  "no homogeneous a⁻³" was over-stated.
+- The a⁻³ is necessary but not sufficient: it must also be **halo-free** in galaxies (the MOND-CMB tension /
+  the Khronon structure). A normal a⁻³ bulk matter still clusters into galaxy halos.
+- **The open V9.0 question shrinks and becomes more natural:** does OBT's *bulk matter* F_μν realize a
+  halo-free a⁻³ (Khronon-class)? — a bulk solve with the KS/GW matter, **intrinsic** to OBT, not an added 4D
+  field (this is the route the radion/normal of the (1)-deep section could not provide — a *different*,
+  bulk-matter route). **A is REOPENED**, not closed at the hybrid.
+- Not established (needs the actual bulk-matter EoS + perturbations), but the dark sector is richer than the
+  traceless Weyl alone, and the qubit/holographic view was the key that revealed it — Romain's intuition was
+  right.
