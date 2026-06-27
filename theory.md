@@ -824,15 +824,13 @@ The projected Weyl tensor $\mathcal{E}_{00}$ acts as a **geometric fluid**: gala
 
 $$T_H = \frac{\hbar c}{2\pi k_B R_H} = \frac{\hbar H_0}{2\pi k_B}$$
 
-By the equivalence principle (Unruh effect), an observer at rest on the brane experiences a background kinematic acceleration associated with this thermal bath. The Unruh relation $T = \hbar a/(2\pi c k_B)$ inverted gives:
+By the equivalence principle, the MOND scale is identified with the acceleration whose associated Rindler frequency $a_0/c$ equals the **de Sitter thermal frequency** of the horizon, $\nu_{GH} = k_B T_H/\hbar = H_0/(2\pi)$:
 
-$$a_0 = \frac{2\pi c k_B T_H}{\hbar}$$
+$$\boxed{a_0 = c\,\nu_{GH} = \frac{c\,k_B T_H}{\hbar} = \frac{c H_0}{2\pi} \approx 1.04 \times 10^{-10}\;\text{m/s}^2}$$
 
-Substituting $T_H$, the quantum constants cancel exactly, yielding the **pure geometric macroscopic constant**:
+The $2\pi$ enters through $T_H$ — the Euclidean-time (Matsubara) circumference $\beta = 2\pi/H_0$ of the de Sitter thermal cylinder.
 
-$$\boxed{a_0 = \frac{c H_0}{2\pi} \approx 1.1 \times 10^{-10}\;\text{m/s}^2}$$
-
-The factor $2\pi$ is not a numerological coincidence — it is the **exact topological circumference** of the Euclidean time circle $S^1$ in the Matsubara formalism. The Gibbons-Hawking temperature maps the cosmological horizon to a thermal cylinder of circumference $\beta = 2\pi/H_0$ in imaginary time; the $2\pi$ is the geometric period of this cylinder. The MOND acceleration scale is a **holographic thermodynamic invariant** of the cosmological horizon, derived ab initio from the Unruh-Gibbons-Hawking correspondence in 5D.
+**Honest scope of the coefficient (audit, June 2026).** This is a *frequency*-matching argument. Matching *temperatures* instead — setting the Unruh temperature of $a_0$, $T = \hbar a_0/(2\pi c k_B)$, equal to $T_H$, which gives $a_0 = 2\pi c k_B T_H/\hbar = c H_0$ — would be larger by $2\pi$ ($\sim 5\times$ the measured value). So the robust, **derived** content is the *form* $a_0 \propto H_0$ (a thermodynamic horizon scale); the O(1) **coefficient** ($1/2\pi$ here) is a coincidence-level choice, **not** a sub-15% prediction, and the earlier "$2\pi$ exact / derived ab initio" framing is withdrawn. Numerically $cH_0/2\pi = 1.04$ ($H_0 = 67.4$) to $1.13$ ($H_0 = 73$) $\times 10^{-10}$, against the measured $a_0 = 1.20 \pm 0.02_{\rm rand} \pm 0.24_{\rm syst}$ (McGaugh, Lelli & Schombert 2016; the systematic is $\Upsilon_*$-dominated): a $\le 0.7\sigma$ agreement, *within the systematic*. This is the same prior-art status as Milgrom (1983), Verlinde (2016) and McCulloch (2007); OBT does **not** claim to pin the $a_0$ coefficient — its genuine novelty is the $\mu(x)$ Gauss-Codazzi derivation (next) and the $a_0(z)$ horizon *evolution* (see [Predictions](/predictions/) §6).
 
 **3. The 5D geometric tilt and the emergence of the interpolation function $\mu(x)$: a Gauss-Codazzi theorem.** The derivation of MOND's interpolation function proceeds from rigorous 5D differential geometry, not visual intuition. Two acceleration vectors are involved:
 
