@@ -156,3 +156,21 @@ bulk matter** (KS fluxes, GW scalar, form fields) → F_μν ≠ 0 → the homog
 - Not established (needs the actual bulk-matter EoS + perturbations), but the dark sector is richer than the
   traceless Weyl alone, and the qubit/holographic view was the key that revealed it — Romain's intuition was
   right.
+
+## DEEP SOLVE (no faux facile, `a_bulk_matter_eos.py`): OBT's *actual* bulk matter still can't give a halo-free a⁻³
+Reopening is not solving. Deep check: does OBT's actual bulk matter give a **halo-free** a⁻³? The projected
+F_μν EoS is fixed by the bulk scalar's **Lagrangian type**: (A) potential minimum → w=−1 → Λ (a⁰); (B) massive
+coherent oscillation → a⁻³ but **clusters** (de Broglie < galaxy for m ≫ 10⁻²⁴ eV → halos); (C) **shift-
+symmetric k-essence** (non-canonical at LOW (∂φ)² = the MOND function) → a⁻³ **and** halo-free (the Khronon) —
+the only one the CMB needs. Mapping: GW scalar (canonical) → (A)/(B); KS fluxes → (A) Λ; moduli/axions
+(canonical) → (B) clustering; **brane DBI** → non-canonical but at **HIGH** (∂φ)², ~canonical at the
+low-acceleration MOND regime (the *wrong* non-canonical); OBT's MOND is **geometric** (Gauss-Codazzi), not a
+k-essence. **No OBT field is the type-(C) low-(∂φ)² MOND k-essence Khronon.**
+
+**⇒ Calibrated final A state:** F_μν makes the wall **non-absolute** (a⁻³ IS possible — Romain's correction
+stands), but OBT's *existing* fields **cannot** supply the **halo-free** a⁻³ (canonical scalars cluster; the
+DBI is high-(∂φ)²; the MOND is geometric). So the **hybrid stands, thoroughly checked** (an added/reformulated
+k-essence Khronon-class gravity field). The one door left: can a **warped brane/flux DBI** be coaxed into a
+low-(∂φ)² MOND k-essence? **Probably not** — its non-canonical scale is the (warped) brane tension, ~32+ orders
+above a₀∼H₀ — but the rigorous warped-DBI calculation is the honest next deep step (it would reformulate OBT's
+geometric MOND as a k-essence). That is the true V9.0 frontier; everything cheaper has been excluded.
