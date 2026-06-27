@@ -41,10 +41,16 @@ DM (a⁻⁴); the only open problem is finding a halo-free a⁻³ sector — whi
   brane-bending mode that is a⁻³ dust cosmologically AND MOND/halo-free galactically.** The massive 0.36 eV
   condensate is *not* it (clusters, Gate 11); the Weyl is *not* it (a⁻⁴). OBT already gets a₀=cH/2π + μ(x)
   from the radion/bulk MOND sector — the question is whether that same sector carries an AeST-class dust mode.
-  Mapping unestablished = the V9.0 work.
-- **Honest fallback:** if no such mode exists, OBT's position is a **hybrid** (geometric Weyl for
-  galaxies/clusters + a homogeneous sector for the CMB) — to be stated openly, at the cost of "DM is purely
-  geometric".
+  **Mapping now DONE (`a_radion_aest.py`): it FAILS.** AeST's halo-free a⁻³ dust is the conserved charge of a
+  *massless, shift-symmetric* scalar. OBT has no such mode: the radion is **massive** (0.36 eV, Goldberger-Wise
+  — required for extra-dim stabilization + the KK spectrum), so its a⁻³ is an axion-like condensate that
+  **clusters** (de Broglie ≈ 0.8 mm ≪ kpc; ~22-23 orders above the fuzzy ~10⁻²³ eV threshold) = the Gate-11
+  galaxy-halo result; the Weyl is a⁻⁴; the KK are massive. The radion **mass** is structurally incompatible
+  with the AeST **shift symmetry**. **⇒ OBT does NOT inherit AeST's CMB fit.**
+- **Honest fallback — now the DEFAULT (the mapping failed):** OBT's position is a **hybrid** (geometric Weyl for
+  galaxies/clusters + a homogeneous, ~shift-symmetric/screened sector for the CMB background) — to be stated
+  openly, at the cost of "DM is purely geometric". The geometric win stays at galaxy/cluster scales (where OBT
+  is strong); the CMB needs an added homogeneous sector that OBT's current field content does not supply.
 
 ## How this relates to the qubit thread
 The qubit/inflation-entanglement thread addresses the **perturbation spectrum** (clustering, Gate 7). It is
@@ -53,10 +59,14 @@ orthogonal to (and moot until) the **background** question here is settled: ther
 ordering is: **first settle the AeST-mode mapping (this note), then the inflation perturbation chain.**
 
 ## Next steps
-1. **The AeST mapping (the make-or-break, conceptual→analytic):** does OBT's radion/brane-bending MOND
-   sector admit a shift-symmetric a⁻³-dust mode à la Skordis-Złošnik? Compare the OBT bulk action to the
-   AeST Lagrangian (the K(Y) MOND function + the dust-producing kinetic term). If yes → OBT inherits AeST's
-   CMB fit; if no → hybrid.
-2. **Quantitative confirmation (task 2):** an MG-CMB Boltzmann solve (CLASS/CAMB + brane + the a⁻³ sector)
-   to turn z_eq into an actual peak prediction — only worthwhile once step 1 picks the sector.
-3. The inflation-entanglement perturbation chain — **after** 1.
+1. ~~The AeST mapping (the make-or-break)~~ **DONE (`a_radion_aest.py`): the mapping FAILS** — OBT has no
+   massless shift-symmetric scalar (the radion is massive → its a⁻³ condensate clusters; the Weyl is a⁻⁴).
+   So OBT does **not** inherit AeST's CMB fit → the **hybrid** is the honest default. *Open sub-question for a
+   future turn:* can a shift-symmetric brane-bending Goldstone survive with MOND-screening *instead of* a hard
+   Goldberger-Wise mass (so it is halo-free a⁻³ dust)? This conflicts with the KK spectrum + stabilization as
+   currently built — likely a major reformulation, not a free inheritance.
+2. **Quantitative confirmation (task 2):** an MG-CMB Boltzmann solve (CLASS/CAMB + brane + a homogeneous a⁻³
+   sector) to turn z_eq into an actual peak prediction — now framed for the *hybrid* (the added sector), since
+   OBT's native fields do not supply it.
+3. The inflation-entanglement perturbation chain — **moot** for the background; still relevant for the
+   clustering spectrum *if* the hybrid's homogeneous sector is fixed.
