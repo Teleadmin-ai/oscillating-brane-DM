@@ -439,6 +439,7 @@ The `explorations/` folder (created May 2026) holds heuristic, speculative work 
 | `scripts/fisher_jacobian.py` | Numerical Jacobian (mock ODE), SVD, Fisher proxy | `plots/fisher_jacobian.png` |
 | `scripts/fisher_jacobian_real.py` | Numerical Jacobian (REAL ODE via lyapunov_mle), find_peaks | `plots/fisher_jacobian_real.png` |
 | `scripts/fisher_forecast.py` | Multi-probe Fisher forecast (Planck+DESI+Euclid+SKA+PTA) | `plots/fisher_forecast.png` |
+| `scripts/a0z_forecast.py` | a0(z) survey discriminating power (B-phase): Euclid/LSST vs constant-MOND (decisive) + the cH(z)/2π form test (α=1 vs 1.5× faster, systematics-limited <~10%/bin) + E(z)-vs-(1+z) near-degeneracy caveat; verified vs MUSE-DARK 16σ. Integrated in predictions.md §6 | N/A (forecast, stdout) |
 | `scripts/obt_v82_likelihood.py` | Cobaya MCMC likelihood (BDF stiff ODE at each step) | N/A (inference engine) |
 | `scripts/obt_v82_mcmc.yaml` | Cobaya YAML config (mock data, priors, R-1<0.01) | `chains/obt_v82` |
 | `scripts/obt_desi_planck.yaml` | PRODUCTION Cobaya (DESI DR2 + Planck ISW + DES Y6) | `chains_real/obt_v82_production` |
