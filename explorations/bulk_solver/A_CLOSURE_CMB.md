@@ -70,3 +70,22 @@ ordering is: **first settle the AeST-mode mapping (this note), then the inflatio
    OBT's native fields do not supply it.
 3. The inflation-entanglement perturbation chain — **moot** for the background; still relevant for the
    clustering spectrum *if* the hybrid's homogeneous sector is fixed.
+
+## Task (1) result (`a_radion_reformulation.py`): the Goldstone-screened reformulation FAILS too
+The only escape from the hybrid would be to make the radion *itself* the AeST field (massless,
+shift-symmetric, halo-free a⁻³ dust) instead of a massive Goldberger-Wise radion. It fails on both horns,
+because the radion is the extra-dimension **modulus** (it sets G + the masses via the warp):
+- **Stabilized** (massive, the actual radion): its a⁻³ condensate **clusters** (de Broglie ≈ 0.8 mm ≪ kpc)
+  → galaxy halos (Gate 11) → not halo-free.
+- **Rolling** (massless, AeST-like): carrying Ω_DM as dust needs Δφ ~ √Ω_DM·M_Pl ~ 0.5 M_Pl over a Hubble
+  time → Δ(lnG) ~ 0.5 → **Ġ/G ~ 0.5 H₀ ~ 3.5×10⁻¹¹/yr, ~350× the LLR bound** (10⁻¹³/yr) → ruled out (only
+  worse for a warp-enhanced coupling).
+- **Structural root:** OBT's MOND is **geometric** (a₀=cH/2π horizon + Weyl a⁻⁴), not a scalar field (a⁻³
+  dust). The geometric origin — OBT's distinctive a₀=cH/2π — is *exactly* why it cannot do AeST's one-field
+  (MOND + a⁻³ dust) trick.
+
+**⇒ The hybrid is confirmed as the honest default.** OBT is modified-gravity-for-galaxies/clusters (its
+geometric wins — a₀=cH/2π, μ(x), sinc, Bullet 150 kpc, the cluster two-scale anatomy — all UNAFFECTED)
+**plus an added homogeneous a⁻³ sector for the CMB** that its native fields do not supply. "DM is purely
+geometric" holds up to cluster scales, not at the CMB. *(Loop discipline: two clean re-read passes + a
+re-run; a √Ω_DM refinement to Horn B and a kpc→nm units bug were caught on re-read.)*
