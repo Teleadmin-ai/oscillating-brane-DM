@@ -133,7 +133,6 @@ def main():
     print("=" * 78)
 
     # [1] the explicit code -----------------------------------------------------
-    G = np.array(GENS)
     rank = gf2_rank([g.copy() for g in GENS])
     k = N - rank
     commute = all(symp(GENS[i], GENS[j]) == 0 for i in range(4) for j in range(4))
@@ -201,7 +200,9 @@ def main():
     print(
         "      -> nonzero syndrome -> DETECTED + CORRECTED -> logical qubit UNTOUCHED"
     )
-    print("      => the codespace is DEAF to local decoherence (protected).")
+    print(
+        "      => the codespace is DEAF to local (single-qubit) noise (corrected -> protected)."
+    )
     L_coll = min_weight_logical_rep(X_L)  # a COLLECTIVE, logical-class operator
     s_coll = syndrome(L_coll)
     print(
@@ -239,7 +240,8 @@ def main():
     print(
         "    * SCALE-UP: tile this [[5,1,3]] atom on OBT's expander graph (HaPPY) -> the"
         "\n      distance grows with the network; the erasure threshold -> a percolation"
-        "\n      threshold ~ OBT's claimed p_c ~ 2.2% (d=46). Quantum LDPC / expander codes"
+        "\n      threshold ~ OBT's claimed p_c ~ 2.2% (network degree 46, NOT the code"
+        "\n      distance d=3). Quantum LDPC / expander codes"
         "\n      (Tillich-Zemor) are the 'most robust' family OBT's wording points at."
     )
     print("\n  ALL INJECTION TESTS PASSED (k=1, d=3, perfect, anticommuting logicals).")
