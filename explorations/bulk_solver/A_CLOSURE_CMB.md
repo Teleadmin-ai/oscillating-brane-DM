@@ -114,3 +114,20 @@ extension (a new AeST-class gravity scalar) that its V8.2 fields do not supply, 
 geometric wins are untouched. A's honest end-state: OBT's galaxy/cluster DM is the geometric Weyl + the MOND
 phantom (its strength), and its CMB needs an added gravity-sector a⁻³ field — a precise, verified scope, not
 a defeat.
+
+## (1)-deep: does OBT's bulk NATURALLY contain the AeST/Khronon fields? (`a_obt_aest_content.py`)
+Could the CMB sector be a *free* inheritance from OBT's existing fields? No.
+- **Aether (unit-timelike vector):** OBT's natural vector is the brane normal n^μ, which is **spacelike**
+  (the extra dimension), not timelike → not the aether. *But* the **Khronon route** (Blanchet-Marsat 2011;
+  Blanchet 2024, JCAP11(2024)040) gets MOND + the CMB with a **scalar foliation alone, no aether vector** —
+  so the aether is not the obstacle.
+- **Khronon (preferred-time scalar):** OBT's radion ∂_μφ *does* define a preferred time → structurally a
+  khronon candidate. But the khronon/MOND scalar is **~massless** (its scale is the cosmological/MOND scale
+  ~H₀ ~ 10⁻³³ eV, via the shift-symmetric k-essence function, not a mass), whereas OBT's radion is a **hard
+  0.36 eV** Goldberger-Wise modulus — **~32 orders too heavy**, and the GW mass breaks the shift symmetry the
+  khronon needs. The radion is the right *type* (a preferred-time scalar) but the wrong *field*.
+
+**⇒ OBT does NOT naturally contain the AeST/Khronon structure**, so the V9.0 extension is now precisely
+named: a **new ~massless (~H₀-scale) shift-symmetric khronon scalar** (a gravity-sector field — no aether
+needed), NOT the radion (32 orders too heavy) and NOT the spacelike normal. This confirms the
+hybrid/added-gravity-scalar conclusion from the field-content side, and pins exactly what V9.0 must build.
