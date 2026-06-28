@@ -424,6 +424,18 @@ ingredient may still be missing", now located at the linear-CMB-CDM ↔ nonlinea
 A-phase synthesis: the CMB is a CDM-equivalent consistency check (passed); the distinctiveness + the galaxy
 unification are the open frontier.
 
+**THE 𝒬-𝒴 CROSS-COUPLING — the seam mechanism (`a_phase_crosscoupling.py`, Romain's "fait le couplage
+croisé"):** the full AeST acoustic structure for OBT's μ(x), sympy-computed + verified vs the standard
+scalar (c_s²=1). Effective metric G^tt=−ℱ_𝒬𝒬, G^xx=−(2ℱ_𝒴+4𝒴ℱ_𝒴𝒴), G^tx=−2√𝒴ℱ_𝒴𝒬. **(A)** the dust sound
+speed **c_s²=N(x)/\|ℱ_𝒬𝒬\|** is POSITIVE (no clumping) for any FINITE dust stiffness — only the
+rigid-mimetic \|ℱ_𝒬𝒬\|→∞ corner clumps. **(B)** OBT DERIVES the numerator **N(x)=2x(x²+2)/(x²+1)^{3/2}**
+(N(1)=2.12, N(∞)=2, ~0 deep-MOND) — the dust-stiffening turns ON at the MOND transition g~a₀. **(C)** the
+cross-coupling **ℱ_𝒴𝒬 leaves c_s² unchanged + increases the discriminant → STABLE for any ℱ_𝒴𝒬** (cannot
+trigger the over-clumping). **NET: the seam's acoustic structure is COMPUTED + STABLE + OBT-derived; the
+over-clumping is NOT a generic break (only the rigid-mimetic corner OBT needn't take); the one open input
+is \|ℱ_𝒬𝒬\| (the AeST 𝒬-function, inherited — not a new free function).** So the cross-regime's "unproven
+nonlinear seam" is sharpened: acoustically stable + OBT-derived where it can be.
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.

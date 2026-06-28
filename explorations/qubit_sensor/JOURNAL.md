@@ -513,6 +513,29 @@ This IS V8.2's "an essential ingredient may still be missing" — now LOCATED: t
 nonlinear-galaxy-MOND seam.** The A-phase's honest synthesis: the CMB is a CDM-equivalent consistency check
 (passed), the distinctiveness + the galaxy unification are the open frontier. 28 scripts.
 
+**THE 𝒬-𝒴 CROSS-COUPLING — does the a⁻³ dust over-clump at galaxies? (`a_phase_crosscoupling.py`, Romain's
+"fait le couplage croisé"):** the genuine mechanism the cross-regime test flagged. The a⁻³ dust (𝒬-sector,
+c_s²=0) clusters like CDM UNLESS stiffened when the MOND sector (𝒴) turns on at g~a₀ — and that stiffening
+runs through the COUPLED acoustic structure ℱ(𝒴,𝒬). COMPUTED in full (sympy, no premature simplification,
+verified vs the standard scalar c_s²=1): the **effective acoustic metric** G^tt=−ℱ_𝒬𝒬, G^xx=−(2ℱ_𝒴+4𝒴ℱ_𝒴𝒴),
+**G^tx=−2√𝒴ℱ_𝒴𝒬** (the cross-coupling). **THREE RIGOROUS RESULTS:** **(A)** the dust sound speed
+**c_s²=N(x)/\|ℱ_𝒬𝒬\| = (OBT MOND numerator)/(AeST dust stiffness)** — POSITIVE (no clumping) for any FINITE
+dust stiffness; only the rigid-mimetic \|ℱ_𝒬𝒬\|→∞ corner gives c_s²→0 (clumps), which OBT need not take.
+**(B)** OBT DERIVES the numerator **N(x)=2ℱ_𝒴+4𝒴ℱ_𝒴𝒴 = 2x(x²+2)/(x²+1)^{3/2}** (sympy-factored): N(0)=0,
+N(1)=3√2/2≈2.12, N(∞)=2 → the dust-stiffening **TURNS ON exactly at the MOND transition g~a₀** (peak 2.12),
+~0 deep-MOND (honest feature). **(C)** the cross-coupling **ℱ_𝒴𝒬 leaves c_s² (the product v₊v₋) UNCHANGED,
+adds an asymmetric advection, and INCREASES the discriminant → the modes stay REAL (stable) for ANY ℱ_𝒴𝒬**
+→ the cross-coupling CANNOT trigger the over-clumping. OBT's factorized ansatz has ℱ_𝒴𝒬=0; the a₀(θ)
+coupling is 𝒴-θ(aether), not 𝒴-𝒬(field); the aether sector itself is stable (a_phase_aest_sectors).
+**VERDICT (credible, not minimized): the seam's acoustic structure is COMPUTED + STABLE; OBT derives the
+dust-stiffening N(x) that turns on at g~a₀; the cross-coupling provably cannot destabilize; the dust does
+NOT clump into an NFW halo for any finite (smooth) dust stiffness — the over-clumping is NOT a generic
+break, only the rigid-mimetic corner. The ONE open input is the VALUE of \|ℱ_𝒬𝒬\| (the AeST 𝒬-function,
+inherited — NOT a new free function), which sets the c_s² magnitude + the deep-MOND behaviour.** So the
+"unproven nonlinear seam" (cross-regime) is SHARPENED: the galaxy-MOND↔CMB-CDM acoustic structure is
+stable + OBT-derived where it can be; the residual is one AeST input, not a missing mechanism. The RAR/BTFR
+holds in parallel. 29 scripts.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -547,3 +570,4 @@ nonlinear-galaxy-MOND seam.** The A-phase's honest synthesis: the CMB is a CDM-e
 | `a_phase_mcmc_fisher.py` | **the MCMC re-fit (Fisher) — it ABSORBS the rest**: 7×7 Fisher (6 ΛCDM + A_dyn), dynamical-aether CLASS, Knox TT/TE/EE. Δχ²_fixed(A=1)=259 (✓~235) → after marginalizing the 6 params **Δχ²_marg=6.6=2.6σ** (absorbs 97%, degeneracy 39; χ-lensing ↔ A_s/n_s/H0). **VERDICT: OBT-AeST PLANCK-CONSISTENT after the proper re-fit (2.6σ residual = future discriminator); the A-phase CLOSES positively.** Residual = full cobaya+plik + exact c_s² |
 | `a_phase_cobaya_analysis.py` + `cobaya_obt_aest.yaml` + `cobaya_obt_corner.png` | **the FULL non-Gaussian cobaya+plik MCMC — DONE (gold-standard, real Planck data)**: made OBT_AEST_DYN a CLASS input param; cobaya 3.6.2 + dynamical-aether classy + real plik_lite TTTEEE + τ prior, sampling A_dyn + 6 ΛCDM + A_planck (3481 samples, R-1=0.36). **A_dyn = −0.02 ± 0.44 → 0.1σ from 0 (ΛCDM-consistent); A_dyn=1 at 2.3σ.** ΛCDM at Planck values. **CONFIRMS the Fisher (σ 0.44 vs 0.39, A=1 2.3σ vs 2.6σ). OBT-AeST PLANCK-CONSISTENT, real-data gold-standard — the A-phase is CLOSED.** |
 | `a_phase_crossregime.py` | **the CROSS-REGIME seam (CMB a⁻³ ↔ galaxy RAR)**: not a contradiction (calc exact), CMB fit TRUE — but **"OBT-AeST fits the CMB" = "a CDM-EQUIVALENT fits the CMB"** (my CLASS MOND trigger is scale-based, off ~7 orders from the real acceleration g/a₀ at galaxies; at A_dyn≈0 the field is CDM-equivalent at galaxy linear scales). The galaxy RAR is the separate NONLINEAR acceleration regime, linked only analytically by a₀=cH/2π. **The unification is UNPROVEN (closure-adjacent nonlinear seam); FALSIFIABLE (over-clump → break RAR).** relire pass-1 caught a real bug (χ suppresses small-scale P(k), not zero) |
+| `a_phase_crosscoupling.py` | **the 𝒬-𝒴 cross-coupling (the seam mechanism)**: the full AeST acoustic structure (sympy, verified vs c_s²=1). Dust sound speed **c_s²=N(x)/\|ℱ_𝒬𝒬\|** (POSITIVE → no clumping, for any finite dust stiffness; only rigid-mimetic clumps). OBT DERIVES **N(x)=2x(x²+2)/(x²+1)^{3/2}** (turns the stiffening ON at g~a₀, peak 2.12). The **cross-coupling ℱ_𝒴𝒬 leaves c_s² unchanged + increases the discriminant → STABLE for any ℱ_𝒴𝒬** (cannot trigger over-clumping). **The seam's acoustic structure is COMPUTED + STABLE + OBT-derived; the one input = \|ℱ_𝒬𝒬\| (AeST 𝒬-function, inherited). NOT a generic break.** |
