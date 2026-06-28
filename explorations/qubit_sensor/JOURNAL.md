@@ -357,6 +357,23 @@ field's MOND response (not a second DM). The 𝒬-sector (the a⁻³ dust) is th
 function), the unit-constraint vector sector, the photon-coupled full CMB. The MOND-sector free function
 is derived, not reconstructed.
 
+**THE LAST TWO SECTORS, BOTH TESTED (`a_phase_aest_sectors.py`, Romain's "on est obligé de tester les
+deux ... on peut pas en laisser passer un à ce stade"):** after the MOND-sector ℱ(𝒴) was derived, the
+residual was (b) the 𝒬-sector dust + (c) the unit-constraint vector sector. **[A] 𝒬-SECTOR = the MIMETIC
+mechanism:** 𝒬=A^μ∂_μφ=1 (the mimetic constraint (∂φ)²=−1, the brane proper-time clock a_phase_aest
+invoked) → the Chamseddine-Mukhanov dust: ρ=ρ_0/a³ (a⁻³ verified by conservation, w=0, c_s²=0 → clusters
+as CDM → drives the peaks); the amount ρ_0 = INTEGRATION CONSTANT (the closure input, consistent with the
+Gate program; the a⁻³ FORM is derived from the constraint). AeST's derived ℱ(𝒴) gradient term HEALS the
+pure-mimetic c_s²=0 linear strong-coupling → the dust + MOND sectors are one healthy field. **[B] VECTOR
+SECTOR = the unit-timelike aether A²=−1:** the Einstein-aether wave speeds (Jacobson 2008); the AeST-type
+point (c₁=0.1,c₂=0.1,c₃=−c₁,c₄=0; c₁₃=0→cGW=c, GW170817) gives s₂²=1 (graviton at c), s₁²=1 (vector),
+s₀²=0.83 (scalar) — all stable (no-ghost, s²≥0); a (c₁,c₄) stability scan shows a genuine NON-TRIVIAL
+stable subset (767 stable / 133 UNSTABLE — the no-ghost c₁₄>0 bites), AeST inside it; the spin-1 vector
+DECOUPLES from the scalar density (different SO(3) reps → CMB-density-inert). **NET: both remaining
+sectors tested — neither slips.** The a⁻³ dust (mimetic) + the stable unit-constraint aether are both
+validated. HONEST residual (the LAST piece): the mixed ℱ(𝒴,𝒬) cross-couplings (the exact 2-variable
+Skordis-Złośnik function) + the photon-coupled full CMB (the exact-spectra match against the private code).
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -383,3 +400,4 @@ is derived, not reconstructed.
 | `a_phase_class_aest.py` + `aest_class.patch` | **AeST implemented IN CLASS** (modified the C source, gcc): OBT's quasi-static G_eff μ(k,a)=1+A·dev_eff(2πk/k_H) on ψ; null test A=0=ΛCDM to 1e-9; A>0 propagates to low-ℓ ISW + lensing self-consistently; peaks Planck-robust (a_H/a₀=2π in a FULL Boltzmann). Quasi-static limit; exact aether hierarchy = private code |
 | `a_phase_aether_hierarchy.py` | **the FULL aether hierarchy**: the EXPLICIT propagating spin-0 aether mode χ (own EOM, matter-sourced) + dust + metric, per k. Validated vs 6 limits (a⁻³; ΛCDM rate f=Ω_m^0.55; super- AND sub-horizon decouple; horizon-localized +0.5%; stable). KEY: dynamical aether MORE conservative than quasi-static μ (~600× smaller super-horizon) → reinforces within-Planck. EOM reconstructed, limit-validated; exact ℱ + spectra = residual |
 | `a_phase_aest_function.py` | **the exact AeST free function ℱ(𝒴) DERIVED from μ(x)** (residual a): ℱ_𝒴=μ(√𝒴/a₀)=√𝒴/√(a₀²+𝒴) → ℱ(𝒴)=√𝒴√(a₀²+𝒴)−a₀²ln(...) closed form. Verified ℱ′=ℱ_𝒴; deep-MOND (2/3)𝒴^{3/2}/a₀; Newtonian 𝒴; μ recovery; AQUAL→RAR (1.0000). Closes a_phase_aest's candidate mapping into a derived function; mixed ℱ(𝒴,𝒬)+vector+photon-CMB = residual |
+| `a_phase_aest_sectors.py` | **the last two sectors, BOTH tested** (residuals b+c): [A] 𝒬-sector = the mimetic dust (𝒬=1→ρ∝a⁻³, w=0, c_s²=0=CDM; amount=IC; ℱ(𝒴) heals the mimetic strong-coupling); [B] vector sector = unit-constraint aether, Einstein-aether speeds (s₂²=1 cGW=c, s₁²=1, s₀²=0.83 stable), non-trivial stable scan 767/133, spin-1 decouples from density. Residual now = mixed ℱ(𝒴,𝒬) + photon-coupled CMB |

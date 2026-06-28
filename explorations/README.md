@@ -314,6 +314,20 @@ second DM). The 𝒬-sector (a⁻³ dust) = the verified oscillating radion. Hon
 cross-couplings (the exact 2-variable Skordis-Złośnik function), the unit-constraint vector sector, the
 photon-coupled full CMB. The MOND-sector free function is derived, not reconstructed.
 
+**THE LAST TWO SECTORS, BOTH TESTED (`a_phase_aest_sectors.py`, "on peut pas en laisser passer un à ce
+stade"):** [A] the **𝒬-sector** = the MIMETIC dust — 𝒬=A^μ∂_μφ=1 (the constraint (∂φ)²=−1 = the brane
+proper-time clock a_phase_aest invoked) → Chamseddine-Mukhanov: ρ=ρ_0/a³ (a⁻³ verified by conservation,
+w=0, c_s²=0 → clusters as CDM → drives the peaks); ρ_0 = INTEGRATION CONSTANT (the amount = a closure
+input; the a⁻³ FORM is derived); the derived ℱ(𝒴) gradient term heals the pure-mimetic c_s²=0 linear
+strong-coupling. [B] the **vector sector** = the unit-timelike aether A²=−1 — Einstein-aether wave speeds
+(Jacobson 2008); the AeST-type point (c₁₃=0 → cGW=c, GW170817) gives s₂²=1 (graviton at c), s₁²=1
+(vector), s₀²=0.83 (scalar), all stable (no-ghost, s²≥0); a (c₁,c₄) scan shows a genuine NON-TRIVIAL
+stable subset (767 stable / 133 UNSTABLE — the no-ghost c₁₄>0 bites), AeST inside it; the spin-1 vector
+DECOUPLES from the scalar density (different SO(3) reps → CMB-density-inert). **NET: both remaining
+sectors tested — neither slips.** Honest residual (the LAST piece): the mixed ℱ(𝒴,𝒬) cross-couplings (the
+exact 2-variable Skordis-Złośnik function) + the photon-coupled full CMB (the exact-spectra match against
+the private code).
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
