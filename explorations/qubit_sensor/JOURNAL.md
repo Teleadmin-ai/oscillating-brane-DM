@@ -641,7 +641,17 @@ bulk, and **no-signaling forbids deciding between them**, so I do not pretend th
 **os/chair HELD:** the testable bones stay **a₀(z) (Euclid) + Penrose-Diósi 5D**; the demon-app
 (decompressor + inference) is the mass-free *computation*; the live no-mass channel is the falsifiable
 frontier (break the Kinematic Blockade), and Romain's null-detector + matched-filter is the *instrument*
-to look for it. **NEXT:** the BMV-threshold script.
+to look for it. **THE BMV THRESHOLD — COMPUTED (`optimal_sensor_threshold.py`):** the mass-free
+cloud-qubit gravitational signal Γ_PD≈8.6e-54 s⁻¹ → a **~53-order gap** below a ~1 Hz floor (reproduces
+the 14-50 'deaf' range). The optimal sensor closes **log₁₀(N·T)**: best **feasible ~15 orders** (1e9
+qubits, ~30 yr; even N=1e9 × the age of the universe = only ~27) → **~38 orders SHORT.** N·T~1e50 is
+physically impossible — **you cannot out-sense 50 orders.** The non-grav radion is strong (no mass²) but
+**quasi-static** (9e-8 rad over 30 yr → calibrated out → no ac signal). **VERDICT: the sensor is
+NECESSARY but NOT SUFFICIENT — the leverage is the COUPLING.** The treasure = a FAST, non-grav coupling
+that evades the Kinematic Blockade; the dig goes to the bulk spectrum (the AeST aether χ?), a
+symmetry-allowed direct radion coupling, or traversable ER=EPR — NOT to scaling the sensor. Romain's
+null-detector + matched filter is the right instrument to see any weak fast signal *once such a coupling
+exists* — but the discovery is the coupling, not the sensor.
 
 ---
 
