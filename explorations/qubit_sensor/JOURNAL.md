@@ -184,6 +184,18 @@ germe), not only detectable (Penrose-Diósi). The remaining wall is THEORY (pin 
 bulk solver + a qubit work — not a mesoscopic-mass lab. (Cross-checks: T_osc~20 TeV = Gate 12; the
 abundance = Gate 10's radion-misalignment candidate; the sign = Gate 9.)
 
+**Pushing one rung further — "is φ₀=M_s forced?" (`germe_inflation.py`, Romain's "cherche"):** φ₀ is
+NOT free — a LIGHT field random-walks during inflation to φ₀~(H_inf/2π)√N_e, so the germe value is set
+by **the INFLATION SCALE**. Matching Ω_DM fixes **H_inf~1.14 M_s** (O(1)) → inflation at the string
+scale gives φ₀~M_s "for free"; the closure freedom MOVES φ₀(arbitrary)→H_inf(one scale ~M_s).
+**Consilience:** Ω_DM~φ₀²~H_inf² and the CMB tensor ratio r~H_inf² → the DM abundance PREDICTS
+**r~3e-5** (definite, below CMB-S4, but falsifiable-in-principle: r≫3e-5 breaks the radion-DM chain).
+**Verdict:** φ₀=M_s is NOT forced to precision (deriving it exactly = the wavefunction of the universe
+= quantum cosmology, open) BUT φ₀~M_s is NATURAL (O(1) radion displacement in string units); the exact
+~1.4 is an O(1) coefficient = **EXACTLY the a₀=cH₀/2π status** (scale derived, O(1) natural). The
+germe-proof lands at OBT's one universal wall — no worse. Caveats: radion light during inflation
+(model-dependent); φ₀ is the RMS of a stochastic distribution (patch-dependent, environmental).
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -200,3 +212,4 @@ abundance = Gate 10's radion-misalignment candidate; the sign = Gate 9.)
 | `qiskit_asymmetric_code.py` | gate (a) fix DONE: an asymmetric code (d_X=3, d_Z=1) hears the Z-signal at order 1 (cos 3θ) + corrects local X-noise |
 | `penrose_logical_coupling.py` | the real question: coupling IS logical-level but gravitational → cloud 14–50 orders deaf, nanosphere the frontier; online escape = non-grav 5D (beyond V8.2) |
 | `germe_decompression.py` | the upstream prize, MASS-FREE: the DM 5:1 = germe ⟨φ²⟩ (Ω~0.06 from OBT scales, no fit) + the S8 sign = warp indicial theorem (Gate 9) |
+| `germe_inflation.py` | is φ₀=M_s forced? reduces φ₀→H_inf~1.14 M_s (natural, not forced); consilience Ω_DM↔r~3e-5; the precise 5:1 = one O(1) coefficient (a₀-status) |

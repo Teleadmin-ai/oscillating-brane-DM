@@ -225,6 +225,12 @@ the germe (from OBT's derived scales m_φ=0.36 eV, φ₀~M_s, the standard radia
 mass-free) + the **S8 sign** = the AdS-warp **indicial theorem** (Gate 9: degenerate (½,½) → c_phys>0 →
 suppression). The artifact: the demon's ledger is **computable** (decompress the germe), not only
 detectable; the wall moves from MASS to **specifying the germe** (theory, the bulk solver's frontier).
+**Pushing further (`germe_inflation.py`, "is φ₀=M_s forced?"):** φ₀ is set by the inflation scale (a
+light field random-walks to φ₀~(H_inf/2π)√N_e) → matching Ω_DM gives H_inf~1.14 M_s (O(1) = inflation
+at the string scale → φ₀~M_s natural); the **consilience Ω_DM↔r** (both ∝H_inf²) predicts a CMB tensor
+ratio **r~3e-5**. Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
+quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
+a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
 
 **Status.** Steps 1–2 + Gate (a) DONE: the [[5,1,3]] atom + protected-yet-sensitive subspace, the
 concatenation scale-up (noise/erasure thresholds, widening window), and the Penrose-Diósi
