@@ -301,6 +301,19 @@ sourced wave field + the MOND coupling), validated against LIMITS — not agains
 spectra (residual: the exact ℱ(𝒴,𝒬) couplings, the unit-constraint vector sector, the photon-coupled full
 CMB). The dynamical aether mode is coded + limit-validated; the exact-code match is the frontier.
 
+**THE EXACT AeST FREE FUNCTION ℱ(𝒴) DERIVED FROM μ(x) (`a_phase_aest_function.py`, "continu"):** the
+A-phase residual (a) — turning a_phase_aest's "candidate mapping" (𝒦'↔μ, "a derivative relation, not a
+proof") into a DERIVED closed form. AeST is fixed by one free function ℱ(𝒴,𝒬); the MOND sector is ℱ(𝒴):
+the AQUAL eq div[ℱ_𝒴∇φ]=4πGρ means **ℱ_𝒴(𝒴) IS the MOND interpolation** at x=√𝒴/a₀, which OBT derives
+geometrically as μ(x)=x/√(1+x²). So **ℱ_𝒴(𝒴)=μ(√𝒴/a₀)=√𝒴/√(a₀²+𝒴) → ℱ(𝒴)=√𝒴·√(a₀²+𝒴)−a₀²ln((√𝒴+
+√(a₀²+𝒴))/a₀)** (closed form). Verified: ℱ′=ℱ_𝒴 exact; deep-MOND ℱ→(2/3)𝒴^{3/2}/a₀ (the canonical AeST
+MOND term, sets a₀); Newtonian ℱ→𝒴 (canonical → GR); ℱ_𝒴 recovers μ(x); the AQUAL from ℱ reproduces the
+RAR (ratio 1.0000 over 6 decades). So **OBT's geometric μ(x) IS the AeST free function ℱ_𝒴** — the
+candidate mapping is now a DERIVED function, the geometric-Weyl is this AeST field's MOND response (not a
+second DM). The 𝒬-sector (a⁻³ dust) = the verified oscillating radion. Honest residual: the mixed ℱ(𝒴,𝒬)
+cross-couplings (the exact 2-variable Skordis-Złośnik function), the unit-constraint vector sector, the
+photon-coupled full CMB. The MOND-sector free function is derived, not reconstructed.
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
