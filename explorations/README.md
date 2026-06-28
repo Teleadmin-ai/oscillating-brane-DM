@@ -258,7 +258,16 @@ AeST field is **CDM at recombination** → the CAMB TT peaks match Planck (**ℓ
 220.0/537.5/810.8, <0.5%**; 1st-peak 5732 μK² vs ~5700). **The A-phase's CORE requirement — an a⁻³
 component that fits the acoustic peaks — is MET; the CMB-peak objection to OBT's geometric DM is
 answered** (the radion supplies the a⁻³; the evolving a₀ keeps it CDM where it must be). Residual
-frontier: the low-ℓ ISW (super-horizon, μ→MOND) + the full AeST Boltzmann module (Skordis-Złośnik 2021). Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
+frontier: the low-ℓ ISW (super-horizon, μ→MOND) + the full AeST Boltzmann module (Skordis-Złośnik 2021).
+**Low-ℓ ISW COMPUTED (`a_phase_isw_full.py`, "attaque le monstre pleinement"):** a real line-of-sight
+ISW (CAMB Weyl transfer + Bessel j_ℓ) with the potentials evolved by the **modified growth** (k-dependent
+μ_MG=1±A·(1−μ)μ² with a GR super-horizon cutoff; a WRONG static-rescale attempt recorded honestly — it
+cancels) → OBT's late-ISW shift is **WITHIN cosmic variance** (max shift/CV=0.0004, both signs; a control
+A=5 propagates). So the low-ℓ is now computed within CV — with the peaks, the **OBT-AeST TT is consistent
+with Planck across ℓ (peaks AND low-ℓ)**; the exact μ-Σ + polarization + lensing remain for the
+hi_class-AeST module.
+
+Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
 

@@ -270,6 +270,26 @@ is what makes the fit work). **Residual frontier (honest):** the LOW-ℓ (ISW, s
 Skordis-Złośnik 2021); OBT's μ(x)+evolving-a₀ is the residual check. The PEAKS are done; the low-ℓ
 module is the residual frontier.
 
+**The low-ℓ residual COMPUTED — line-of-sight ISW via the MODIFIED GROWTH (`a_phase_isw_full.py`,
+Romain's "attaque le monstre pleinement, pas de simplification" + "relire en boucle"):** the full AeST
+Boltzmann module (the aether+scalar hierarchy, hi_class) is a research code (no Fortran compiler here),
+so for the late-ISW we do a GENUINE line-of-sight ISW with the potentials evolved by the MODIFIED GROWTH
+— not a magnitude estimate, not a static rescale. Solve the k-dependent growth ODE
+D″+(2−3⁄2Ω_m)D′−3⁄2Ω_m·μ_MG(k,a)·D=0 with μ_MG=1±A·dev_eff(x), dev_eff=(1−μ)μ² (MOND deviation + a **GR
+super-horizon cutoff**), x=2πk/k_H; g(k,z)=D_OBT/D_GR multiplies CAMB's real Weyl transfer →
+Δ_ℓ(k)=−2∫dz(dW/dz)j_ℓ(kχ), C_ℓ=∫dk/k·k^{ns−1}Δ_ℓ². **A WRONG first attempt, recorded honestly** (static
+W_OBT=R·W_GR) FAILED — the ISW source dW/dz makes R·W′+W·R′ partially cancel (even A=20 didn't move it);
+the right physics is the modified EVOLUTION (the bug was caught by relire-en-boucle: a control that
+*should* move but didn't). **Result:** ΛCDM late-ISW shape-sane (rises to low ℓ); OBT's bracket (A=0.5,1,
+both signs) → late-ISW C_ℓ ratio ∈ [0.9988, 1.0012] (sign-correct), **max(low-ℓ shift / cosmic
+variance)=0.0004 → WITHIN CV**; a control (A=5) MOVES it (0.6%, no blowup) → the modified growth
+propagates. **WHY:** a_H/a₀=2π keeps the Newton/MOND transition AT the horizon → the observable ℓ≥2 probe
+sub-horizon (x≥20, Newtonian, g≈1); the big modification (dev_eff peaks ~0.15 at x~1, k~k_H/2π → ℓ<1) is
+j_ℓ-suppressed → the CMB doesn't probe it. **So the low-ℓ is now COMPUTED (within CV), not argued — with
+the peak fit, the OBT-AeST TT is consistent with Planck across ℓ.** Honest residual: the EXACT AeST μ-Σ +
+polarization + lensing need the hi_class-AeST module; here the growth + line-of-sight are REAL, the μ-Σ
+input bracketed.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -292,3 +312,4 @@ module is the residual frontier.
 | `a_phase_cmb.py` | the A-phase (decisive open front): the CMB needs a⁻³ DM, the Weyl is a⁻⁴; the a⁻³ source exists (radion, ⟨w⟩~0 verified) but needs the AeST structure (a⁻³ + MOND); OBT hope = brane-induced AeST |
 | `a_phase_aest.py` | the brane→AeST solve attempt: a concrete mapping (radion=a⁻³ dust + μ(x)=the AeST 𝒦, verified RAR limits + foliation=aether); IF it holds, the radion-vs-Weyl redundancy dissolves; open = exact derivation + CAMB + stability |
 | `a_phase_camb_fit.py` | the CAMB fit (real Boltzmann): a_H/a₀=2π (evolving a₀) → sub-horizon=CDM → the TT peaks match Planck (ℓ=220/536/813 vs 220/537.5/810.8, <0.5%); the A-phase CORE requirement MET; low-ℓ ISW = residual frontier |
+| `a_phase_isw_full.py` | the low-ℓ residual COMPUTED: real line-of-sight ISW via the MODIFIED GROWTH (k-dep μ_MG + GR cutoff, CAMB Weyl + Bessel) → late-ISW shift/CV=0.0004 WITHIN CV (both signs); control propagates; a wrong static-rescale attempt recorded |
