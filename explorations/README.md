@@ -328,6 +328,19 @@ sectors tested — neither slips.** Honest residual (the LAST piece): the mixed 
 exact 2-variable Skordis-Złośnik function) + the photon-coupled full CMB (the exact-spectra match against
 the private code).
 
+**THE MIXED COUPLING ℱ(𝒴,𝒬) = OBT's a₀(z) (`a_phase_aest_coupling.py`, "vas y fait le couplage"):** the
+last function residual — and it carries OBT's crown jewel. Standard AeST: a₀=const; OBT ties the MOND
+scale to the cosmological horizon (Gibbons-Hawking) = the **aether expansion θ=∇·A=3H** → **a₀=c·θ/(6π)=
+cH/2π** (a₀ EVOLVES). Verified: a₀(0)=1.04e-10 m/s²=cH₀/2π (0.87× the measured MOND scale, within Υ*);
+**a_H/a₀=2π EXACTLY at all z** (z=0,1,10,1100) → the Newton/MOND boundary tracks the horizon → sub-horizon
+=CDM at recombination (the peaks); a₀(rec) 20500× larger → acoustic μ→1 (CDM); **dF_Y/dθ≠0** → ℱ does NOT
+factorize (genuine cross-coupling; θ=∇·A=3H is DISTINCT from the mimetic 𝒬=A^μ∂_μφ=1 of the dust);
+**OBT-DISTINCTIVE: a₀(z)/a₀(0)=E(z) EXACTLY** (constant-a₀ AeST excluded) → the a₀(z) pépite,
+Euclid-testable. **NET: the coupling is NOT a free 2-variable function — OBT FIXES it to the Gibbons-
+Hawking horizon = the falsifiable a₀(z).** Residual (the very last): the EXACT placement in the Skordis-
+Złośnik action (which term carries the θ-coupling) + the photon-coupled full-CMB spectra match against
+the private code.
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.

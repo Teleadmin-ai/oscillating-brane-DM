@@ -374,6 +374,22 @@ sectors tested — neither slips.** The a⁻³ dust (mimetic) + the stable unit-
 validated. HONEST residual (the LAST piece): the mixed ℱ(𝒴,𝒬) cross-couplings (the exact 2-variable
 Skordis-Złośnik function) + the photon-coupled full CMB (the exact-spectra match against the private code).
 
+**THE MIXED COUPLING ℱ(𝒴,𝒬) = OBT's a₀(z) (`a_phase_aest_coupling.py`, Romain's "vas y fait le
+couplage"):** the last function residual — the cross-coupling between the MOND-𝒴 term and the
+cosmic-temporal sector. And it carries OBT's crown jewel: standard AeST has a₀=const; OBT ties the MOND
+scale to the cosmological horizon (Gibbons-Hawking) = the **aether expansion θ=∇·A=3H** → **a₀=c·θ/(6π)=
+cH/2π** → a₀ EVOLVES. Verified: (1) a₀(0)=1.04e-10 m/s² = cH₀/2π (ratio 0.87 to the measured MOND scale,
+within the Υ* systematic); (2) **a_H/a₀=2π EXACTLY at all z** (z=0,1,10,1100) — the Newton/MOND boundary
+tracks the horizon → sub-horizon=CDM at recombination (the peaks); (3) at recombination a₀ is 20500×
+larger → every acoustic scale deep-Newtonian (μ→1, CDM); (4) **dF_Y/dθ≠0** — the MOND scale depends on
+the aether expansion → ℱ does NOT factorize (genuine cross-coupling; θ=∇·A=3H is DISTINCT from the
+mimetic 𝒬=A^μ∂_μφ=1 of the dust sector); (5) **OBT-DISTINCTIVE: a₀(z)/a₀(0)=E(z) EXACTLY** (constant-a₀
+AeST excluded) → the a₀(z) pépite, Euclid-testable (MUSE/KROSS/BTFR already see a₀ rising ~E(z); the
+lensing-a₀(z) cross-lever is the decisive test). **NET: the mixed coupling is not a free 2-variable
+function — OBT FIXES it to the Gibbons-Hawking horizon, which IS the falsifiable a₀(z) prediction.**
+HONEST residual (the very last): the EXACT placement in the Skordis-Złośnik action (which term carries
+the θ-coupling) + the photon-coupled full-CMB spectra match against the private code.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -401,3 +417,4 @@ Skordis-Złośnik function) + the photon-coupled full CMB (the exact-spectra mat
 | `a_phase_aether_hierarchy.py` | **the FULL aether hierarchy**: the EXPLICIT propagating spin-0 aether mode χ (own EOM, matter-sourced) + dust + metric, per k. Validated vs 6 limits (a⁻³; ΛCDM rate f=Ω_m^0.55; super- AND sub-horizon decouple; horizon-localized +0.5%; stable). KEY: dynamical aether MORE conservative than quasi-static μ (~600× smaller super-horizon) → reinforces within-Planck. EOM reconstructed, limit-validated; exact ℱ + spectra = residual |
 | `a_phase_aest_function.py` | **the exact AeST free function ℱ(𝒴) DERIVED from μ(x)** (residual a): ℱ_𝒴=μ(√𝒴/a₀)=√𝒴/√(a₀²+𝒴) → ℱ(𝒴)=√𝒴√(a₀²+𝒴)−a₀²ln(...) closed form. Verified ℱ′=ℱ_𝒴; deep-MOND (2/3)𝒴^{3/2}/a₀; Newtonian 𝒴; μ recovery; AQUAL→RAR (1.0000). Closes a_phase_aest's candidate mapping into a derived function; mixed ℱ(𝒴,𝒬)+vector+photon-CMB = residual |
 | `a_phase_aest_sectors.py` | **the last two sectors, BOTH tested** (residuals b+c): [A] 𝒬-sector = the mimetic dust (𝒬=1→ρ∝a⁻³, w=0, c_s²=0=CDM; amount=IC; ℱ(𝒴) heals the mimetic strong-coupling); [B] vector sector = unit-constraint aether, Einstein-aether speeds (s₂²=1 cGW=c, s₁²=1, s₀²=0.83 stable), non-trivial stable scan 767/133, spin-1 decouples from density. Residual now = mixed ℱ(𝒴,𝒬) + photon-coupled CMB |
+| `a_phase_aest_coupling.py` | **the mixed coupling ℱ(𝒴,𝒬) = OBT's a₀(z)**: a₀ tied to the aether expansion θ=∇·A=3H → a₀=c·θ/6π=cH/2π (Gibbons-Hawking). Verified a₀(0)=1.04e-10 (0.87× measured), a_H/a₀=2π at all z (sub-horizon=CDM at recomb), dF_Y/dθ≠0 (no factorize; θ≠mimetic 𝒬=1), a₀(z)=E(z) (OBT-distinctive, constant-a₀ AeST excluded, Euclid-testable). Residual now = exact action placement + photon-CMB |
