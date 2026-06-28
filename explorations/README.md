@@ -408,6 +408,22 @@ A-phase is CLOSED.** A_dyn=1 = a mild 2.3σ future discriminator. The full A-pha
 low-ℓ ISW (CLASS) → μ in CLASS → aether hierarchy → ℱ(𝒴) → 𝒬-dust + vector → a₀(z) coupling → action →
 full TT/TE/EE → dynamical aether in CLASS → Fisher re-fit → cobaya+plik real-data MCMC.
 
+**THE CROSS-REGIME TEST — the seam between the CMB leg and the galaxy RAR (`a_phase_crossregime.py`):** the
+sharp reviewer question (Romain: "est-ce contradictoire et si oui est-ce vrai ?") — the SAME a⁻³ field that
+fits the CMB must give the galaxy RAR without an independent halo, else it over-clumps and breaks the crown
+jewel. RESULT (relire-en-boucle, pass-1 caught a real bug): **NOT a contradiction (every calc exact), the
+CMB fit is TRUE, but the unified field is NOT shown.** Three reconstruction-independent findings: (i) my
+CMB CLASS used a horizon-**SCALE** MOND trigger, which equals the real **acceleration** trigger g/a₀ at the
+CMB (a_H/a₀=2π) but is **off ~7 orders at z=0 galaxies** → my CLASS holds NO galaxy MOND; (ii) at the
+cobaya-preferred A_dyn≈0 the field is **CDM-EQUIVALENT at galaxy linear scales** → **"OBT-AeST fits the CMB"
+= "a CDM-equivalent fits the CMB"**, not OBT's distinctive geometry; (iii) the galaxy RAR (no halo) is the
+separate **NONLINEAR acceleration** μ(g/a₀) regime, linked to the CMB leg only ANALYTICALLY by a₀=cH/2π.
+**VERDICT: the unification is leg-by-leg + analytic, NOT one numerical field; the no-halo RAR rests on the
+UNPROVEN nonlinear MOND reorganization (FALSIFIABLE: over-clump → break RAR). This IS V8.2's "an essential
+ingredient may still be missing", now located at the linear-CMB-CDM ↔ nonlinear-galaxy-MOND seam.** The
+A-phase synthesis: the CMB is a CDM-equivalent consistency check (passed); the distinctiveness + the galaxy
+unification are the open frontier.
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.

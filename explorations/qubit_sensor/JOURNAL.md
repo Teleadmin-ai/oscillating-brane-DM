@@ -491,6 +491,28 @@ MCMC, A_dyn=−0.02±0.44).** Residual = the exact aether c_s² (the A_dyn=1 dis
 the lowℓ EE (here a τ prior) + R-1 to 0.2 (the headline is stable). The Laplace-demon's a⁻³ germe passes the
 real Planck data — the monster is consistent, gold-standard.
 
+**THE CROSS-REGIME TEST — the seam between the CMB leg and the galaxy RAR (`a_phase_crossregime.py`, Romain's
+"est-ce contradictoire et si oui est-ce vrai ?"):** the sharp reviewer question — the SAME a⁻³ field that
+fits the CMB must give the galaxy RAR without an independent halo, else it over-clumps and breaks OBT's
+crown jewel. RESULT (relire-en-boucle, pass-1 caught a real bug): **NOT a contradiction (every calc exact),
+the CMB fit is TRUE, but the unified field is NOT shown.** Three rigorous, reconstruction-independent
+findings: **(i)** my CMB CLASS used a horizon-**SCALE** MOND trigger x_H=2πk/k_H, which equals the real
+**acceleration** trigger g/a₀ at the CMB (a_H/a₀=2π) but is **off by ~7 orders at z=0 galaxies** (x_H~1e6
+[CDM] vs g/a₀~0.35 [MOND]) → my CLASS holds NO galaxy MOND; **(ii)** at the cobaya-preferred A_dyn≈0 the
+field is **CDM-EQUIVALENT at galaxy linear scales** (P(k)≈ΛCDM) → so **"OBT-AeST fits the CMB" = "a
+CDM-equivalent fits the CMB"**, NOT OBT's distinctive geometry; **(iii)** the galaxy RAR (no halo) is the
+separate **NONLINEAR, acceleration-based** μ(g/a₀) regime, linked to the CMB leg only ANALYTICALLY by
+a₀=cH/2π, not by one numerical field. **PASS-1 CATCH (relire):** the naive "dev_eff→0 sub-horizon → no
+galaxy effect" is WRONG — dev_eff·k²→const at high k → the dynamical χ SUPPRESSES small-scale P(k) (−71% at
+k~9 for A_dyn=1); a SUGGESTIVE tension follows (the suppression that could prevent galaxy halos is exactly
+what the CMB disfavors, A_dyn≈0) but it's hedged (the linear χ amplitude isn't rigorously the nonlinear
+μ(x) lever). **VERDICT: TRUE + NOT contradictory, but the unification is leg-by-leg + analytic; the no-halo
+RAR rests entirely on the UNPROVEN nonlinear MOND reorganization (AeST does it in principle; for OBT's μ(x)
+NOT demonstrated). FALSIFIABLE: if it doesn't reorganize, OBT-AeST over-clumps galaxies and breaks the RAR.
+This IS V8.2's "an essential ingredient may still be missing" — now LOCATED: the linear-CMB-CDM ↔
+nonlinear-galaxy-MOND seam.** The A-phase's honest synthesis: the CMB is a CDM-equivalent consistency check
+(passed), the distinctiveness + the galaxy unification are the open frontier. 28 scripts.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -524,3 +546,4 @@ real Planck data — the monster is consistent, gold-standard.
 | `a_phase_class_dynamical.py` + `aest_class.patch` | **the DYNAMICAL aether in CLASS**: explicit propagating χ mode as a real CLASS d.o.f. (null=ΛCDM, ∝A², peaks intact). Pip-cache bug caught (χ inert → false Δχ²=0; --force-reinstall fixes). HONEST: more conservative on σ8 (−1.6% vs −4.9%) but TT Δχ² NOT smaller (~235 vs 151, propagating χ imprints features) → **full-spectra constraint HOLDS, dynamical doesn't rescue OBT** (A<~0.2 fixed; peaks still fit). Revises "fits across ℓ" |
 | `a_phase_mcmc_fisher.py` | **the MCMC re-fit (Fisher) — it ABSORBS the rest**: 7×7 Fisher (6 ΛCDM + A_dyn), dynamical-aether CLASS, Knox TT/TE/EE. Δχ²_fixed(A=1)=259 (✓~235) → after marginalizing the 6 params **Δχ²_marg=6.6=2.6σ** (absorbs 97%, degeneracy 39; χ-lensing ↔ A_s/n_s/H0). **VERDICT: OBT-AeST PLANCK-CONSISTENT after the proper re-fit (2.6σ residual = future discriminator); the A-phase CLOSES positively.** Residual = full cobaya+plik + exact c_s² |
 | `a_phase_cobaya_analysis.py` + `cobaya_obt_aest.yaml` + `cobaya_obt_corner.png` | **the FULL non-Gaussian cobaya+plik MCMC — DONE (gold-standard, real Planck data)**: made OBT_AEST_DYN a CLASS input param; cobaya 3.6.2 + dynamical-aether classy + real plik_lite TTTEEE + τ prior, sampling A_dyn + 6 ΛCDM + A_planck (3481 samples, R-1=0.36). **A_dyn = −0.02 ± 0.44 → 0.1σ from 0 (ΛCDM-consistent); A_dyn=1 at 2.3σ.** ΛCDM at Planck values. **CONFIRMS the Fisher (σ 0.44 vs 0.39, A=1 2.3σ vs 2.6σ). OBT-AeST PLANCK-CONSISTENT, real-data gold-standard — the A-phase is CLOSED.** |
+| `a_phase_crossregime.py` | **the CROSS-REGIME seam (CMB a⁻³ ↔ galaxy RAR)**: not a contradiction (calc exact), CMB fit TRUE — but **"OBT-AeST fits the CMB" = "a CDM-EQUIVALENT fits the CMB"** (my CLASS MOND trigger is scale-based, off ~7 orders from the real acceleration g/a₀ at galaxies; at A_dyn≈0 the field is CDM-equivalent at galaxy linear scales). The galaxy RAR is the separate NONLINEAR acceleration regime, linked only analytically by a₀=cH/2π. **The unification is UNPROVEN (closure-adjacent nonlinear seam); FALSIFIABLE (over-clump → break RAR).** relire pass-1 caught a real bug (χ suppresses small-scale P(k), not zero) |
