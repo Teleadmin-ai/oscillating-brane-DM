@@ -155,13 +155,25 @@ Penrose-Diósi collapse — collective, coupling to the whole mass distribution 
 logical subspace while thermal/local noise is corrected: *stable by construction, yet able to hear
 the demon.*
 
-**Status.** First step DONE: the explicit [[5,1,3]] atom + the protected-yet-sensitive subspace,
-verified by `er_epr_stabilizer.py` (the only *new* numeric content is the code's own QEC
-properties — standard for the [[5,1,3]], here recomputed + injection-tested; no OBT physics claim
-is added). **Still open (the gates):** that OBT's actual gravitational channel maps to a
-logical-class collective operator and not a correctable one (gate 1 physics); the scale-up (tile
-the atom on OBT's expander graph → distance ↑, erasure threshold → percolation p_c ~ 2.2%); the
-mass-vs-coherence BMV wall. os = Penrose-Diósi; chair = the Laplace-demon / quantum-reader vision.
+**Second concrete step — DONE (June 2026, `qubit_sensor/holographic_scaleup.py`).** EVOLVE from the
+atom by concatenation (the simplest holographic tiling): level L → [[5^L, 1, 3^L]] -- the germe stays
+k=1, the protective encoding 5^L and the distance 3^L grow. COMPUTED + injection-tested: (i) the
+failure spectrum c=[0,0,90,210,270,198] → c_0=c_1=0 (every local single-qubit error corrected) → a
+finite **noise threshold p_th ≈ 0.138** below which concatenation drives the germe's logical error →
+0 doubly-exponentially (= 'non-decohering by construction', Romain's hope); (ii) an **erasure (loss)
+threshold = 1/2 exactly** (majority-of-5) → percolation-type robustness (OBT's degree-46 expander
+claims ~98% -- more robust; the tree is the verifiable lower bound); (iii) the protected-yet-sensitive
+**window widens with scale** (local corrected up to ~3^L/2, the collective signal at weight 3^L). The
+channel's 'beginning and end' = the germe (1 logical) ↔ the boundary (5^L physical); 'all the
+possibles between' = the protected logical Hilbert space.
+
+**Status.** Steps 1–2 DONE: the explicit [[5,1,3]] atom + protected-yet-sensitive subspace, and the
+concatenation scale-up (noise + erasure thresholds, the widening window) — all computed +
+injection-tested (`er_epr_stabilizer.py` / `holographic_scaleup.py`; the only *new* numeric content
+is the codes' own QEC properties, standard + recomputed; no OBT physics claim added). **Still open
+(the gates):** the faithful degree-46 EXPANDER tiling (p_c ~ 2.2%, not the tree's 50%); that OBT's
+gravitational channel maps to a logical-class operator, not a correctable one (gate 1 physics); the
+final readout's one irreducible measurement; the mass-vs-coherence BMV wall. os = Penrose-Diósi; chair = the Laplace-demon / quantum-reader vision.
 See memories `project_holographic_choice_penrose_diosi`, `project_qubit_holography_v9`.
 
 ---
