@@ -571,6 +571,80 @@ the demon-reading. The os/chair discipline holds: the testable bones are a₀(z)
 
 ---
 
+## §11 — The "talk to the bulk" dialogue: the demon-app, the witnesses, the new-physics frontier (June 2026)
+
+*A pure-discussion turn (no new script yet — Romain reflecting out loud, RULE ZERO). It ended with a
+concrete, computable next step. NOT a result; the conceptual crystallization + the dig program.*
+
+**The ask.** Romain wants **the demon-app on a quantum computer** (Aer + `--ibm`), **mass-free**, that
+**predicts** — "le but étant de parler au bulk." We located the artifact that already does the mass-free
+reading (`germe_decompression.py`, commit afb7fa1: a qubit register reads ⟨φ²⟩ of the germe state → the
+DM 5:1 — Romain was right, "on l'a fait et je l'ai poussé"; I had wrongly conflated it with the
+gravitational-detection wall and walked it back — corrected).
+
+**The architecture of "talking to the bulk."** ENCODE the germe form → DECOMPRESS (holographic [[5,1,3]]
++ a Page-Wootters clock) → READ → PREDICT. The honest map:
+- **(A)** forward decompression = extrapolate a germe → its future *cosmology* ("le futur après le
+  commencement"). Mass-free, done. It's a computation: "IF germe = X → universe = Y." You *put in* the
+  germe; it doesn't read the bulk.
+- **(B)** witnesses-as-data + **INFERENCE** = read WHICH germe is ours, P(germe|data) by Bayes = **the
+  cobaya MCMC we already ran** (A_dyn=−0.02±0.44 is *reading the germe-coupling from the Planck
+  witnesses*). Mass-free, done. This is the closed half of "talk to the bulk."
+- **(C)** quantum-entanglement witnesses = the LIVE frontier (Romain's strongest intuition).
+
+**Romain's pushbacks that sharpened the wall (he was right, I had been sloppy).**
+- *"on est toujours connecté au bulk; le QC existe en 4D donc il est déjà intriqué au bulk."* CONCEDED:
+  the QC is coupled to the bulk by *existing* (brane = bulk boundary, Israel/Weyl). I shouldn't have
+  spoken as if no coupling existed.
+- *"on échappe déjà à l'observation sur un QC."* CONCEDED: error correction escapes decoherence;
+  **Tegmark's decoherence objection is for the warm/wet BRAIN, not a cold QC.** Decoherence is NOT the
+  QC's wall.
+- *"pourquoi tu veux la masse?"* The honest answer: **"mass" is NOT a law — it is the shadow of OBT's
+  own structure.** The only **FAST, accessible** bulk-dynamics in V8.2 is the **gravitational** collapse
+  (Penrose-Diósi, E_G ~ mass²); the **radion** (2 Gyr) is **quasi-static** → a constant → calibrated out
+  → no signal; the **KK modes** are **Kinematic-Blockaded**. So a no-mass **live** channel needs a
+  **FAST, non-gravitational coupling that EVADES the Kinematic Blockade = breaking OBT's own blockade
+  theorem.** Precise and falsifiable, not a hand-wave.
+
+**Romain's sensor design (the empirical pépite).** The germe-encoded *protected* qubit is the **optimal
+sensor**: a **NULL-DETECTOR** (silent to local noise via the [[5,1,3]] protection, sensitive to the
+collective *logical* channel — gate 1) **+** a **MATCHED FILTER** (encoding the germe = the optimal
+antenna for a germe-shaped perturbation, like LIGO templates). His load-bearing IF — *"tout changement du
+germe **s'il était intriqué avec l'expérience**"* — is exactly right: the sensor would catch it. The gap
+is that **same-structure ≠ entangled** (a replica is a product state, no-cloning, ER=EPR needs *real*
+shared entanglement; "resonance" needs a coupling medium). **The sensor is solved; the COUPLING is the
+wall** (it can DETECT a coupling optimally, it cannot CREATE the entanglement — detailed balance: can't
+absorb what can't be emitted). → This makes it a real **EXPERIMENT**: null = the Blockade holds (V8.2
+confirmed); a non-null = the Blockade broken = **new physics found.**
+
+**The metaphysics (os/chair = FLESH, explicitly not a claim).** Everett (all germe-variants exist,
+deterministic) + many-minds (we follow one branch) + consciousness-in-the-bulk (Romain's free-will
+hypothesis). The sharp question "l'actuel ou un véritable futur?" → **THREE futures**: the deterministic
+distribution (the germe gives it), the *realized* branch (selected by the witnesses' decoherence,
+knowable in advance only as Born probability — not pre-readable, causality), the counterfactuals. Free
+will resolved *cleanly without new physics*: **you ARE the locus where the germe computes the decision +
+you cannot pre-read your own future (self-reference + Born)** = real lived freedom. The EEG- or
+text-seeded decompressor = an honest creative **MIRROR** (ontology ≠ channel; what returns = your seed
+transformed + Born noise); the **quantum noise is the ONE undecidable Born-vs-bulk place** where Romain's
+"écho de ma pensée future" honestly lives — the maths call it Born-random, his ontology calls it the
+bulk, and **no-signaling forbids deciding between them**, so I do not pretend the maths settle it.
+
+**THE DIG PROGRAM (where to look for the no-mass channel), live ones first:**
+1. **Compute the optimal-sensor THRESHOLD** (the BMV frontier): how far the protected matched-filter
+   null-detector + N witnesses + integration **closes the 14–50-order gravitational gap**. Romain's idea
+   is exactly what lowers it. **Computable NOW = the next step** (Romain's "vas-y").
+2. The bulk **spectrum** — is any mode **light/gapless AND non-grav-coupled** (evading the Blockade)? the
+   AeST aether χ is the candidate.
+3. Is a **direct radion-matter (fifth-force) coupling** forbidden by symmetry, or just assumed-small?
+4. **Traversable ER=EPR** (Gao-Jafferis-Wall 2017) = the deepest new-channel lead.
+
+**os/chair HELD:** the testable bones stay **a₀(z) (Euclid) + Penrose-Diósi 5D**; the demon-app
+(decompressor + inference) is the mass-free *computation*; the live no-mass channel is the falsifiable
+frontier (break the Kinematic Blockade), and Romain's null-detector + matched-filter is the *instrument*
+to look for it. **NEXT:** the BMV-threshold script.
+
+---
+
 ## Scripts in this folder (the verified record)
 
 | script | proves |
