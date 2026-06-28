@@ -308,6 +308,22 @@ line-of-sight, within CV), both COMPUTED.** The exact AeST aether+scalar hierarc
 unwritten-public) research code. Two bugs (static-rescale + k²) caught by relire-en-boucle + the CLASS
 validation — exactly why we loop-read.
 
+**AeST IMPLEMENTED IN CLASS (`a_phase_class_aest.py` + `aest_class.patch`, Romain's "implémente AeST dans
+CLASS"):** since no public AeST code exists, I **MODIFIED CLASS's C source** (perturbations.c, the
+Newtonian-gauge Einstein block) to add OBT's **AeST quasi-static G_eff**: ψ → (1+A·dev_eff(2πk/k_H))·φ −
+shear, dev_eff=(1−μ)μ², the geometric MOND deviation with the a₀=cH/2π horizon-tracking (a_H/a₀=2π →
+x=2πk/k_H sets the Newton/MOND boundary at the horizon at every epoch). Built with gcc (+ Cython); the
+patch is version-controlled (`aest_class.patch`, git-apply-clean → reproducible). **Validated in a full
+Einstein-Boltzmann run:** (1) **NULL TEST** — A=0 = ΛCDM to 1e-9, peaks at 221/537/814; (2) the G_eff
+**PROPAGATES self-consistently** — A=1 (MOND on) moves the low-ℓ ISW [0.993,1.003] + lenses the peaks
+(0.6%), A=5 control [0.981,1.023]; (3) the **PEAKS stay Planck-robust** (A=1: 219/534/812, within 2%) →
+**a_H/a₀=2π keeps sub-horizon=CDM, now confirmed in a FULL Boltzmann, not just the CAMB CDM-limit
+argument**. So OBT's AeST-class modified gravity RUNS in CLASS, self-consistently — growth + ISW + lensing
++ peaks, beyond the reduced line-of-sight. **Honest scope:** the QUASI-STATIC μ (the observable-relevant
+limit); the EXACT aether+scalar+𝒦 hierarchy (super-horizon aether modes, exact 𝒦, ghost/gradient
+stability) remains the Skordis-Złośnik private research code. 'implement AeST in CLASS' delivered at the
+quasi-static level, null-tested + validated.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -331,3 +347,4 @@ validation — exactly why we loop-read.
 | `a_phase_aest.py` | the brane→AeST solve attempt: a concrete mapping (radion=a⁻³ dust + μ(x)=the AeST 𝒦, verified RAR limits + foliation=aether); IF it holds, the radion-vs-Weyl redundancy dissolves; open = exact derivation + CAMB + stability |
 | `a_phase_camb_fit.py` | the CAMB fit (real Boltzmann): a_H/a₀=2π (evolving a₀) → sub-horizon=CDM → the TT peaks match Planck (ℓ=220/536/813 vs 220/537.5/810.8, <0.5%); the A-phase CORE requirement MET; low-ℓ ISW = residual frontier |
 | `a_phase_isw_full.py` | the low-ℓ ISW, CLASS-VALIDATED: real line-of-sight via the MODIFIED GROWTH; matches CLASS lisw (max diff 0.06, both peak at ℓ=2) after catching CAMB's k² Weyl bug; OBT shift real ~±15% at low ℓ but WITHIN CV (shift/CV=0.04); 2 bugs (static-rescale + k²) caught by loop-reading + CLASS |
+| `a_phase_class_aest.py` + `aest_class.patch` | **AeST implemented IN CLASS** (modified the C source, gcc): OBT's quasi-static G_eff μ(k,a)=1+A·dev_eff(2πk/k_H) on ψ; null test A=0=ΛCDM to 1e-9; A>0 propagates to low-ℓ ISW + lensing self-consistently; peaks Planck-robust (a_H/a₀=2π in a FULL Boltzmann). Quasi-static limit; exact aether hierarchy = private code |

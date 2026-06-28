@@ -272,6 +272,19 @@ prediction within current CV (ISW-LSS cross-correlation testable), not a null (a
 both computed.** Residual = the exact AeST aether+scalar hierarchy (the private/unwritten-public code).
 gcc + classy v3.3.4 (CLASS) compiled in the venv.
 
+**AeST IMPLEMENTED IN CLASS (`a_phase_class_aest.py` + `aest_class.patch`, "implémente AeST dans CLASS"):**
+since no public AeST code exists, I **MODIFIED CLASS's C source** (perturbations.c, the Newtonian-gauge
+Einstein block) to add OBT's **AeST quasi-static G_eff**: ψ→(1+A·dev_eff(2πk/k_H))·φ−shear, dev_eff=(1−μ)μ²
+(a₀=cH/2π → a_H/a₀=2π → x=2πk/k_H sets the Newton/MOND boundary at the horizon every epoch). Built with
+gcc+Cython; the patch is git-apply-clean (reproducible). **Validated in a full Einstein-Boltzmann run:**
+(1) NULL TEST A=0=ΛCDM to 1e-9 (peaks 221/537/814); (2) the G_eff PROPAGATES self-consistently (A=1 moves
+the low-ℓ ISW [0.993,1.003] + lenses the peaks; A=5 control [0.981,1.023]); (3) PEAKS Planck-robust (A=1:
+219/534/812, <2%) → **a_H/a₀=2π keeps sub-horizon=CDM, confirmed in a FULL Boltzmann** (not just the CAMB
+CDM-limit argument). So OBT's AeST-class modified gravity RUNS in CLASS, self-consistently (growth + ISW +
+lensing + peaks). Honest scope: the QUASI-STATIC μ (the observable-relevant limit); the EXACT
+aether+scalar+𝒦 hierarchy (super-horizon aether modes, exact 𝒦, ghost/gradient stability) remains the
+Skordis-Złośnik private research code. "AeST in CLASS" delivered at the quasi-static level, null-tested.
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
