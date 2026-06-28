@@ -651,7 +651,20 @@ NECESSARY but NOT SUFFICIENT — the leverage is the COUPLING.** The treasure = 
 that evades the Kinematic Blockade; the dig goes to the bulk spectrum (the AeST aether χ?), a
 symmetry-allowed direct radion coupling, or traversable ER=EPR — NOT to scaling the sensor. Romain's
 null-detector + matched filter is the right instrument to see any weak fast signal *once such a coupling
-exists* — but the discovery is the coupling, not the sensor.
+exists* — but the discovery is the coupling, not the sensor. **THE χ DIG — DOES IT BREAK THE BLOCKADE? (`chi_blockade.py`,
+Romain's "creuse le χ, vois s'il casse le Blocage"): YES, χ EVADES the Kinematic Blockade.** χ is GAPLESS
+(massless, no mass term in its EOM, protected by the AeST scalar's SHIFT SYMMETRY); the blockade factor
+exp(−m/ℏω_brane) is 0 for the KK (1.87 eV) but **1 for χ (m=0)** → χ is the FIRST mode that beats the
+Blockade. **But the Blockade was NOT the binding wall — the COUPLING is:** χ's actual AeST coupling is
+GRAVITATIONAL (modifies the MOND potential → ∝ mass → the same ~53-order gap), and a direct *static*
+coupling to a massless χ = a long-range fifth force → tightly bounded (g<~1e-5). **The escape (elegant):
+the SAME shift symmetry forces a DERIVATIVE coupling** (axion/ALP-like, (g/F)∂χ·J) → no static force
+(evades the fifth-force bound) + couples to ∂χ (the fast dynamics, not mass-suppressed). **→ the no-mass
+channel has a concrete form: a qubit detecting the light shift-symmetric scalar χ, axion/dark-matter-
+detection-style (a REAL active field, Dixit+ 2021). χ is the FIRST genuinely positive lead — it breaks
+the Blockade AND points to a testable channel.** Honest gates (candidate, not solved): the coupling is
+beyond AeST/V8.2 (AeST couples the scalar only via gravity), bounded by ALP/DM searches (a live space),
+and needs χ to be a real lab-frequency field. **NEXT:** the qubit-detector sensitivity vs the ALP bounds.
 
 ---
 
