@@ -237,7 +237,14 @@ geometric-vs-particle DM discriminator — the LATE leg (RAR) **already decided 
 +0.43 dex ≈ 44σ over SPARC DEAD, f<4%, Gate 11); the B-mode CONFIRMS across a new epoch; the CMB a⁻³
 acoustic DM (the Weyl is a⁻⁴ dark radiation → can't seed it → an added scalar-tensor sector) is the
 **open A-phase front**. So the B-mode discriminator is genuine but SECONDARY to the RAR; the decisive
-open front is the CMB a⁻³ sector. Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
+open front is the CMB a⁻³ sector.
+**A-phase dug (`a_phase_cmb.py`):** the CMB peaks need a⁻³ CDM (~5.4× baryons); the geometric-Weyl is
+a⁻⁴ (traceless dark radiation) → the **universal relativistic-MOND CMB problem**. The a⁻³ source EXISTS
+(radion V=½m²φ² → ρ∝a⁻³, EOM-verified ⟨w⟩≈0) but a plain radion = CDM/NFW → breaks the RAR (≤4%, Gate
+11) → the fix is an **AeST-class field** (a⁻³ background + MOND perturbations; Skordis-Złośnik 2021 fits
+Planck). OBT-distinctive hope = **brane-induced AeST** (the geometry shapes the radion's K(Y) → one
+sector). VERDICT: the A-phase is OBT's **deepest unsolved problem — the one that DECIDES the CMB** (the
+B-mode only confirms); open work = the brane-induced-AeST derivation + a CLASS/CAMB peak fit. Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
 

@@ -218,6 +218,29 @@ multi-epoch structure whose late leg already points home.
 
 ---
 
+## 9. The A-phase — the decisive open front: the CMB a⁻³ DM (`a_phase_cmb.py`, Romain's "creuse l'A-phase")
+
+§8 located OBT's genuinely decisive open front: the **CMB acoustic-peak DM**. Dug:
+- **The problem is robust:** the peaks need a⁻³ gravitating matter (~5.4× baryons) at z~1100; OBT's
+  geometric-Weyl is **traceless → a⁻⁴ dark radiation** (≲10⁻¹¹ of ρ_DM by recombination) → it acts as
+  ΔN_eff RADIATION, not the a⁻³ CDM. Pure geometric-MOND + baryons fails the peaks. This is the
+  **universal relativistic-MOND CMB problem** (not an OBT-specific bug).
+- **The a⁻³ SOURCE exists** (verified, [2]): an oscillating scalar (radion, V=½m²φ²) gives ρ∝a⁻³ —
+  integrated the EOM: ⟨w⟩=−0.01 (matter), ρa³ drift=1.000 (perfect a⁻³). So the a⁻³ source is NOT it.
+- **The catch:** a PLAIN a⁻³ scalar is ordinary CDM (NFW) → breaks the RAR → ≤4% (Gate 11). The fix
+  (every relativistic MOND theory): an **AeST-class field** (Skordis-Złośnik 2021) — a⁻³ background
+  (drives the peaks) + MOND-shaped perturbations (no NFW). AeST fits the Planck peaks.
+- **The OBT-distinctive hope (V9.0 synthesis):** the brane geometry (Weyl/extrinsic curvature) PROVIDES
+  the AeST kinetic K(Y) on the radion → radion = the a⁻³ matter, geometric-Weyl = the MOND function →
+  ONE sector, DERIVING AeST from the brane rather than bolting it on. Unproven = the frontier.
+
+**VERDICT:** the A-phase is OBT's **deepest unsolved problem — the one that DECIDES the CMB** (the
+B-mode only confirms). The a⁻³ source exists (radion); the open work = (i) the brane-induced-AeST
+derivation, (ii) a CLASS/CAMB fit of the resulting a⁻³-and-MOND field to the Planck peaks. (Original
+finding: `../bulk_solver/A_CLOSURE_CMB.md`; this dig confirms + scopes it + verifies the a⁻³ source.)
+
+---
+
 ## Scripts in this folder (the verified record)
 
 | script | proves |
@@ -235,3 +258,4 @@ multi-epoch structure whose late leg already points home.
 | `germe_inflation.py` | is φ₀=M_s forced? reduces φ₀→H_inf~1.14 M_s (natural, not forced); the precise 5:1 = one O(1) coefficient (a₀-status). [its naive Ω_DM↔r~3e-5 superseded ↓] |
 | `germe_isocurvature.py` | DIGGING Ω_DM↔r: the naive r~3e-5 BREAKS (random-walk φ₀ → isocurvature, Planck-excluded ~9 orders); the FLIP — radion-DM ⟹ r UNDETECTABLE, a B-mode detection excludes it + discriminates the two DM pictures |
 | `dm_discriminator.py` | the B-mode is the PRIMORDIAL leg of a 3-epoch geometric-vs-particle DM discriminator: RAR (late) already decided geometric (radion DEAD, f<4%); B-mode confirms; CMB a⁻³ (A-phase) is the open front |
+| `a_phase_cmb.py` | the A-phase (decisive open front): the CMB needs a⁻³ DM, the Weyl is a⁻⁴; the a⁻³ source exists (radion, ⟨w⟩~0 verified) but needs the AeST structure (a⁻³ + MOND); OBT hope = brane-induced AeST |
