@@ -203,7 +203,12 @@ protected entanglement (the unbounded lever), never by amplifying the φ^N coupl
 (|0011⟩+|1100⟩) inside the collective DFS keeps the **2× super-resolution** (cos 2θ, −1 at θ=π/2)
 **AND is immune** to collective drift (std 0.006), where the bare 4-qubit GHZ washes out (std 0.71).
 The witnesses that protect the qubit are exactly what let the entanglement deliver its Heisenberg
-gain under noise — the seed's qubit-sensor in miniature.
+gain under noise — the seed's qubit-sensor in miniature. `qiskit_asymmetric_code.py` adds the
+**coupling side** (gate (a)'s fix): an asymmetric code (bit-flip archetype, d_X=3 / d_Z=1) hears the
+Z-signal at **order 1** (⟨X_L⟩=cos 3θ, strong even at θ=0.1) while still correcting local X-noise —
+vs the symmetric [[5,1,3]]'s order-φ^5 deafness. Both Gate-IN halves (coupling + detection) are now
+demonstrated; the program's aim is to **minimize the physical signal required** (hear the demon at
+order 1, the smallest coupling), not to need a lab.
 
 **Status.** Steps 1–2 + Gate (a) DONE: the [[5,1,3]] atom + protected-yet-sensitive subspace, the
 concatenation scale-up (noise/erasure thresholds, widening window), and the Penrose-Diósi

@@ -122,8 +122,11 @@ gate (a) is reframed from "near-deaf" (qualitative) to **"an SNR / quantum-sensi
 
 ## 6. Next directions (a/b/c — open)
 
-- **(a)** the **asymmetric sensor-code** — the coupling side of gate (a): a code whose logical
-  direction is gravitationally exposed yet whose local-noise distance stays high.
+- **(a) — DONE** (`qiskit_asymmetric_code.py`): the coupling-side fix. An ASYMMETRIC code (the
+  bit-flip archetype, d_X=3 / d_Z=1) hears the Z-signal at **order 1** (⟨X_L⟩=cos 3θ, strong even at
+  θ=0.1) while still correcting local X-noise — vs the symmetric [[5,1,3]]'s order-φ^5 deafness. The
+  signal axis is exposed, the noise axis protected. (Romain: stop saying "needs a lab" — the program's
+  job is to MINIMISE the physical requirement; this is the coupling half of that.)
 - **(b) — DONE** (`qiskit_protected_ghz.py`, "vas y code ;)"): the protected entangled probe
   (|0011⟩+|1100⟩, inside the collective DFS) **keeps the 2× super-resolution** (⟨Z⟩=cos 2θ, reaches
   −1 at θ=π/2) **AND is immune** to collective drift (std 0.006), where the bare 4-qubit GHZ washes
@@ -143,3 +146,4 @@ gate (a) is reframed from "near-deaf" (qualitative) to **"an SNR / quantum-sensi
 | `qiskit_weak_signal_detection.py` | twinned-pair/DFS common-mode rejection + GHZ super-resolution/fragility |
 | `qiskit_multiwitness.py` | several witnesses: √M reference + immunity + protect-then-entangle |
 | `qiskit_protected_ghz.py` | protect-then-entangle DONE: an entangled probe in the collective DFS keeps 2× super-resolution + immunity (bare GHZ washes out) |
+| `qiskit_asymmetric_code.py` | gate (a) fix DONE: an asymmetric code (d_X=3, d_Z=1) hears the Z-signal at order 1 (cos 3θ) + corrects local X-noise |
