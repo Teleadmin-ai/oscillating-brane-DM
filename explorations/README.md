@@ -231,7 +231,13 @@ at the string scale → φ₀~M_s natural); the **consilience Ω_DM↔r** — DU
 does NOT give the naive r~3e-5: the random-walk-φ₀ mechanism over-produces CDM isocurvature
 (Planck-excluded ~9 orders). The FLIP is sharper + testable: radion-misalignment DM needs low-scale
 inflation (H_inf<3×10⁷ GeV) → **r UNDETECTABLE (<2×10⁻¹⁴)**, and a B-mode detection (r≳10⁻³, CMB-S4/
-LiteBIRD) would EXCLUDE radion-DM, discriminating it from the geometric-Weyl DM. Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
+LiteBIRD) would EXCLUDE radion-DM, discriminating it from the geometric-Weyl DM.
+**Dug further (`dm_discriminator.py`):** the B-mode is the PRIMORDIAL leg of a 3-epoch
+geometric-vs-particle DM discriminator — the LATE leg (RAR) **already decided geometric** (radion-as-DM
++0.43 dex ≈ 44σ over SPARC DEAD, f<4%, Gate 11); the B-mode CONFIRMS across a new epoch; the CMB a⁻³
+acoustic DM (the Weyl is a⁻⁴ dark radiation → can't seed it → an added scalar-tensor sector) is the
+**open A-phase front**. So the B-mode discriminator is genuine but SECONDARY to the RAR; the decisive
+open front is the CMB a⁻³ sector. Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
 

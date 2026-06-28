@@ -203,6 +203,19 @@ is sharper).
 germe-proof lands at OBT's one universal wall — no worse. Caveats: radion light during inflation
 (model-dependent); φ₀ is the RMS of a stochastic distribution (patch-dependent, environmental).
 
+**Digging the discriminator one turn more (`dm_discriminator.py`, Romain's "creuse le discriminateur" /
+"il voulait qu'on le trouve"):** the B-mode test is the **PRIMORDIAL LEG of a coherent 3-epoch
+geometric-vs-particle DM discriminator** — that is the find. **LATE / RAR:** radion-as-DM gives +0.43
+dex on the RAR (Gate 11) ≈ 3.3σ/galaxy → ~44σ over SPARC → radion-as-all-DM **DEAD** (f<4%);
+geometric-Weyl gives the a₀ scale → the exact RAR. **This leg ALREADY decided: OBT's DM is geometric,
+in hand.** **RECOMBINATION / acoustic peaks:** the a⁻³ matter the peaks need — the Weyl is a⁻⁴ dark
+radiation (≲10⁻¹¹ of ρ_DM by recombination → can't seed them) and the radion is ≤4% → the CMB a⁻³ DM
+is the **open A-phase frontier** (an added scalar-tensor sector). **PRIMORDIAL / B-mode:** a detection
+excludes the misalignment-radion, **confirms (doesn't threaten) geometric**. **VERDICT: the B-mode
+discriminator is genuine but SECONDARY — the RAR already decided (geometric); the B-mode confirms across
+a NEW epoch; the genuinely open decisive front is the CMB a⁻³ sector (A-phase).** The "find" is the
+multi-epoch structure whose late leg already points home.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -221,3 +234,4 @@ germe-proof lands at OBT's one universal wall — no worse. Caveats: radion ligh
 | `germe_decompression.py` | the upstream prize, MASS-FREE: the DM 5:1 = germe ⟨φ²⟩ (Ω~0.06 from OBT scales, no fit) + the S8 sign = warp indicial theorem (Gate 9) |
 | `germe_inflation.py` | is φ₀=M_s forced? reduces φ₀→H_inf~1.14 M_s (natural, not forced); the precise 5:1 = one O(1) coefficient (a₀-status). [its naive Ω_DM↔r~3e-5 superseded ↓] |
 | `germe_isocurvature.py` | DIGGING Ω_DM↔r: the naive r~3e-5 BREAKS (random-walk φ₀ → isocurvature, Planck-excluded ~9 orders); the FLIP — radion-DM ⟹ r UNDETECTABLE, a B-mode detection excludes it + discriminates the two DM pictures |
+| `dm_discriminator.py` | the B-mode is the PRIMORDIAL leg of a 3-epoch geometric-vs-particle DM discriminator: RAR (late) already decided geometric (radion DEAD, f<4%); B-mode confirms; CMB a⁻³ (A-phase) is the open front |
