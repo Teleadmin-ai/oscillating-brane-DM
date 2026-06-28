@@ -285,6 +285,22 @@ lensing + peaks). Honest scope: the QUASI-STATIC μ (the observable-relevant lim
 aether+scalar+𝒦 hierarchy (super-horizon aether modes, exact 𝒦, ghost/gradient stability) remains the
 Skordis-Złośnik private research code. "AeST in CLASS" delivered at the quasi-static level, null-tested.
 
+**THE FULL AETHER HIERARCHY (`a_phase_aether_hierarchy.py`, "code la hierarchie aether complete" + "relit
+en boucle"):** beyond the quasi-static μ (which put G_eff BY HAND) — evolves the **EXPLICIT propagating
+spin-0 aether mode χ** with its own EOM (χ″+2ℋχ′+c_s²k²χ = A·dev_eff(x)·k²Φ, **matter-sourced** by
+k²Φ=density) + the dust (δ,θ) + the metric (Φ, Ψ=Φ+χ), per k. **Validated against 6 limits** (relire-en-
+boucle, 2 clean passes; indicial p²+p−6=0→p=2 confirms δ∝a): (1) a⁻³ dust; (2) MOND-off → ΛCDM growth
+RATE f=Ω_m^0.55 (0.522 vs 0.525, <1%); (3) super-horizon **DECOUPLES** (source k²Φ→0 — no local tidal
+field on a homogeneous patch → no MOND); (4) deep sub-horizon Newtonian; (5) the modification **LOCALIZES
+at horizon-crossing** (k~ℋ ↔ the observable low-ℓ ℓ~2, +0.5% at A=1); (6) **STABLE** (χ bounded, c_s²>0
+no ghost/gradient). **KEY FINDING:** the dynamical aether is MORE conservative than the quasi-static μ —
+it suppresses the super-horizon modification the by-hand μ over-estimated (~1.13 at k=0.1 vs 1.0002, ~600×
+smaller) because the aether cannot respond on a homogeneous super-horizon patch → CONFIRMS + REFINES the
+patch, reinforces 'within Planck'. Honest: the EOM are RECONSTRUCTED from the AeST structure (a stable
+sourced wave field + the MOND coupling), validated against LIMITS — not against Skordis-Złośnik's exact
+spectra (residual: the exact ℱ(𝒴,𝒬) couplings, the unit-constraint vector sector, the photon-coupled full
+CMB). The dynamical aether mode is coded + limit-validated; the exact-code match is the frontier.
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.

@@ -324,6 +324,24 @@ limit); the EXACT aether+scalar+𝒦 hierarchy (super-horizon aether modes, exac
 stability) remains the Skordis-Złośnik private research code. 'implement AeST in CLASS' delivered at the
 quasi-static level, null-tested + validated.
 
+**THE FULL AETHER HIERARCHY (`a_phase_aether_hierarchy.py`, Romain's "code la hierarchie aether complete"
++ "relit en boucle"):** beyond the quasi-static-μ patch (which put G_eff BY HAND), this evolves the
+EXPLICIT propagating spin-0 aether mode χ with its own EOM — χ″+2ℋχ′+c_s²k²χ = A·dev_eff(x)·k²Φ, **sourced
+by the matter** (k²Φ = the density via Poisson) — coupled to the dust (δ,θ) + the metric (Φ, Ψ=Φ+χ), per
+k. **Validated against 6 limits** (relire-en-boucle, 2 clean passes; the indicial roots p²+p−6=0→p=2
+confirm δ∝a): (1) a⁻³ dust; (2) MOND-off → ΛCDM growth RATE f=Ω_m^0.55 (0.522 vs 0.525, <1%); (3)
+super-horizon **DECOUPLES** (the source k²Φ→0 — no local tidal field on a homogeneous patch → no MOND);
+(4) deep sub-horizon Newtonian (dev_eff→0); (5) the modification **LOCALIZES at horizon-crossing** (peaks
+at k~ℋ ↔ the observable low-ℓ ℓ~2, +0.5% at A=1); (6) **STABLE** (χ bounded, c_s²>0 no ghost/gradient).
+**KEY FINDING:** the dynamical aether is MORE conservative than the quasi-static μ — it SUPPRESSES the
+super-horizon modification the by-hand μ over-estimated (μ_qs would give ~1.13 at k=0.1; the dynamical
+aether gives 1.0002, ~600× smaller) because the aether cannot respond super-horizon (no local gradients).
+So the full hierarchy CONFIRMS + REFINES the patch (consistent ~0.5% at the observable low-ℓ) and
+reinforces 'within Planck'. **HONEST:** the EOM are RECONSTRUCTED from the AeST structure (a stable
+sourced wave field + the MOND coupling), validated against LIMITS — not against Skordis-Złośnik's exact
+spectra (residual: the exact ℱ(𝒴,𝒬) couplings, the unit-constraint vector sector, the photon-coupled full
+CMB). The dynamical aether mode is coded + limit-validated; the exact-code match is the frontier.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -348,3 +366,4 @@ quasi-static level, null-tested + validated.
 | `a_phase_camb_fit.py` | the CAMB fit (real Boltzmann): a_H/a₀=2π (evolving a₀) → sub-horizon=CDM → the TT peaks match Planck (ℓ=220/536/813 vs 220/537.5/810.8, <0.5%); the A-phase CORE requirement MET; low-ℓ ISW = residual frontier |
 | `a_phase_isw_full.py` | the low-ℓ ISW, CLASS-VALIDATED: real line-of-sight via the MODIFIED GROWTH; matches CLASS lisw (max diff 0.06, both peak at ℓ=2) after catching CAMB's k² Weyl bug; OBT shift real ~±15% at low ℓ but WITHIN CV (shift/CV=0.04); 2 bugs (static-rescale + k²) caught by loop-reading + CLASS |
 | `a_phase_class_aest.py` + `aest_class.patch` | **AeST implemented IN CLASS** (modified the C source, gcc): OBT's quasi-static G_eff μ(k,a)=1+A·dev_eff(2πk/k_H) on ψ; null test A=0=ΛCDM to 1e-9; A>0 propagates to low-ℓ ISW + lensing self-consistently; peaks Planck-robust (a_H/a₀=2π in a FULL Boltzmann). Quasi-static limit; exact aether hierarchy = private code |
+| `a_phase_aether_hierarchy.py` | **the FULL aether hierarchy**: the EXPLICIT propagating spin-0 aether mode χ (own EOM, matter-sourced) + dust + metric, per k. Validated vs 6 limits (a⁻³; ΛCDM rate f=Ω_m^0.55; super- AND sub-horizon decouple; horizon-localized +0.5%; stable). KEY: dynamical aether MORE conservative than quasi-static μ (~600× smaller super-horizon) → reinforces within-Planck. EOM reconstructed, limit-validated; exact ℱ + spectra = residual |
