@@ -390,6 +390,23 @@ function — OBT FIXES it to the Gibbons-Hawking horizon, which IS the falsifiab
 HONEST residual (the very last): the EXACT placement in the Skordis-Złośnik action (which term carries
 the θ-coupling) + the photon-coupled full-CMB spectra match against the private code.
 
+**THE EXACT PLACEMENT IN THE ACTION — the capstone (`a_phase_aest_action.py`, Romain's "implémente le
+placement exact dans l'action"):** assemble the full OBT-AeST Lagrangian, every piece placed, and verify
+each term's role by VARYING the action (sympy). The action: S=(1/16πG)∫√−g[R − (K_B/2)F² + λ(A²+1) −
+ℱ(𝒴,𝒬)] + S_m, with ℱ(𝒴,𝒬)=ℱ_MOND(𝒴;a₀(θ)) + ℱ_dust(𝒬). **THE PLACEMENT (the answer to "which term"):**
+the a₀(z) lives in the MOND term ℱ_MOND — a₀ is NOT a free constant but **a₀=c·θ̄/(6π)**, θ̄=∇·A the
+background aether expansion (=3H → a₀=cH/2π). sympy-verified: (1) the MOND-term coefficient is **4π/c**
+(ℱ_MOND=(4π/c)𝒴^{3/2}/θ → a₀=cθ/6π); (2) the full ℱ_𝒴 simplifies to √𝒴/√(a₀²+𝒴)=μ(√𝒴/a₀) (the derived
+MOND function); (3) a₀(0)=1.04e-10=cH₀/2π, a₀(z)=E(z); (4) **varying wrt φ gives ONE scalar EOM**
+∇_μ(2ℱ_𝒴 q^{μν}∂_νφ + ℱ_𝒬 A^μ)=0 that SPLITS into the AQUAL (spatial 𝒴 → MOND, ℱ_𝒴=μ) + the dust
+(temporal 𝒬 → a⁻³) — both placed in the single ℱ (the spatial current J_space = A1·F_Q + 2 F_Y·(q·p),
+shown explicitly); (5) the aether (−K_B/2·F² + λ-constraint → unit-timelike, cGW=c, stable) + R (the
+GW/tensor). **NET: the full OBT-AeST action is written down with each piece placed** (the MOND function
+derived from μ(x), the a₀(z) from the aether expansion, the mimetic dust, the stable aether) — the THEORY
+is complete. HONEST residual (the very last): ONLY the numerical photon-coupled CMB spectra fit against
+the private Skordis-Złośnik code (the standard AeST kinetic coefficients K_B etc. are cited from SZ 2021;
+OBT's a₀-from-θ placement is the new verified piece). **The action placement — the thing asked — is done.**
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -418,3 +435,4 @@ the θ-coupling) + the photon-coupled full-CMB spectra match against the private
 | `a_phase_aest_function.py` | **the exact AeST free function ℱ(𝒴) DERIVED from μ(x)** (residual a): ℱ_𝒴=μ(√𝒴/a₀)=√𝒴/√(a₀²+𝒴) → ℱ(𝒴)=√𝒴√(a₀²+𝒴)−a₀²ln(...) closed form. Verified ℱ′=ℱ_𝒴; deep-MOND (2/3)𝒴^{3/2}/a₀; Newtonian 𝒴; μ recovery; AQUAL→RAR (1.0000). Closes a_phase_aest's candidate mapping into a derived function; mixed ℱ(𝒴,𝒬)+vector+photon-CMB = residual |
 | `a_phase_aest_sectors.py` | **the last two sectors, BOTH tested** (residuals b+c): [A] 𝒬-sector = the mimetic dust (𝒬=1→ρ∝a⁻³, w=0, c_s²=0=CDM; amount=IC; ℱ(𝒴) heals the mimetic strong-coupling); [B] vector sector = unit-constraint aether, Einstein-aether speeds (s₂²=1 cGW=c, s₁²=1, s₀²=0.83 stable), non-trivial stable scan 767/133, spin-1 decouples from density. Residual now = mixed ℱ(𝒴,𝒬) + photon-coupled CMB |
 | `a_phase_aest_coupling.py` | **the mixed coupling ℱ(𝒴,𝒬) = OBT's a₀(z)**: a₀ tied to the aether expansion θ=∇·A=3H → a₀=c·θ/6π=cH/2π (Gibbons-Hawking). Verified a₀(0)=1.04e-10 (0.87× measured), a_H/a₀=2π at all z (sub-horizon=CDM at recomb), dF_Y/dθ≠0 (no factorize; θ≠mimetic 𝒬=1), a₀(z)=E(z) (OBT-distinctive, constant-a₀ AeST excluded, Euclid-testable). Residual now = exact action placement + photon-CMB |
+| `a_phase_aest_action.py` | **the exact placement in the action (capstone)**: the full OBT-AeST Lagrangian assembled [R − K_B/2·F² + λ(A²+1) − ℱ(𝒴,𝒬)], each term placed + role verified by varying the action (sympy). The a₀(z) lives in ℱ_MOND with a₀=c·θ̄/6π=cH/2π (coefficient 4π/c verified, ℱ_𝒴=μ); the scalar EOM splits MOND(𝒴)+dust(𝒬); aether cGW=c. THEORY complete; residual = ONLY the numerical photon-coupled spectra fit (private code) |
