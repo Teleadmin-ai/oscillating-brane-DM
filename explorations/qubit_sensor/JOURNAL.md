@@ -536,6 +536,39 @@ inherited — NOT a new free function), which sets the c_s² magnitude + the dee
 stable + OBT-derived where it can be; the residual is one AeST input, not a missing mechanism. The RAR/BTFR
 holds in parallel. 29 scripts.
 
+## §10 — SYNTHESIS: the demon is READ (mass-free); the germe's FUNCTION is DERIVED
+
+(Romain's "acte ça" — the clean reading of the whole germe→A-phase arc, replacing the stale "specifying the
+germe is the bulk-solver's frontier" framing. The recurring error to AVOID: re-introducing the mass-wall,
+or calling the IC-AMOUNT a "germe to specify".)
+
+The program delivered a coherent result. In one block:
+
+1. **The germe's FUNCTION ℱ(𝒴,𝒬) is DERIVED from OBT geometry — zero input in the FORM.**
+   - ℱ_𝒴 = μ(√𝒴/a₀), with μ(x)=x/√(1+x²) the Gauss-Codazzi MOND interpolation (a_phase_aest_function).
+   - a₀(z) = cH/2π, tied to the aether expansion θ=∇·A=3H (a_phase_aest_coupling).
+   - N(x) = 2x(x²+2)/(x²+1)^{3/2}, the dust-stiffening (a_phase_crosscoupling).
+   - The full action S=(1/16πG)∫√−g[R−(K_B/2)F²+λ(A²+1)−ℱ(𝒴,𝒬)]+S_m assembled (a_phase_aest_action).
+
+2. **The MASS is DODGED — Route B (decompression).** We do NOT detect the demon (which needs the BMV
+   mesoscopic mass); we DECOMPRESS the germe's observables (mass-free computation) and test them against the
+   universe we already observe (germe_decompression). The "reading" is computation + comparison-to-data.
+
+3. **The decompression is TESTED + CONSISTENT.** Planck: the cobaya+plik real-data MCMC gives A_dyn =
+   −0.02 ± 0.44 (Planck-consistent). SPARC: the RAR (μ(x), 0 free params). The germe's observables match.
+
+4. **The QUANTITY is the IC — by design, not a missing germe.** The 5:1 DM amplitude + the |ℱ_𝒬𝒬|
+   dust-stiffness magnitude are the closure data, at the SAME epistemic level as ΛCDM's Ω_c (the established
+   "brane derives the FORM, bulk holds the AMOUNT", Gates 0-24). An IC, exactly as intended.
+
+**VERDICT: "specifying the germe" is NOT an open wall. The FUNCTION is derived; the AMOUNT is the IC (always
+was). The demon is READ, mass-free, and consistent with the data.** The quantum computer's role, when used,
+is the DECOMPRESSOR — run the germe's code (the ER=EPR holographic QEC, the [[5,1,3]] protocol) to compute
+the observables — NOT a mass-sensor. The ONLY place a mass appears is the SEPARATE falsifiable lab bone
+(Penrose-Diósi 5D optomechanics, scripts/penrose_diosi_5d.py), a lab test of one prediction, distinct from
+the demon-reading. The os/chair discipline holds: the testable bones are a₀(z) (Euclid) + Penrose-Diósi 5D
+(optomechanics); the germe's function + its mass-free reading are the V9.0 theoretical result.
+
 ---
 
 ## Scripts in this folder (the verified record)
