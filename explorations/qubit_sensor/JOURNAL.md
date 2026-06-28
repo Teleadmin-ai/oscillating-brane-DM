@@ -462,6 +462,19 @@ real tension — the MCMC absorbs it. So the honest two-step: fixed-param LOOKS 
 marginalized fit is CONSISTENT (2.6σ). Residual: the full non-Gaussian cobaya+plik run + the exact aether
 c_s² (the 2.6σ depends on c_s²=1). **This is the genuine end of the A-phase: OBT-AeST is Planck-consistent.**
 
+**THE FULL non-Gaussian cobaya+plik MCMC — LAUNCHED (`cobaya_obt_aest.yaml`, Romain's "fait le MCMC
+non-gaussien complet avec cobaya+plik"):** to go beyond the Fisher (the Gaussian approximation) — the REAL
+Planck likelihood + the non-Gaussian posterior. Setup: **made OBT_AEST_DYN a CLASS input parameter** (4
+edits in input.c + perturbations.h — struct field, input default, the always-reached read by the gauge,
+the deriv uses ppt->obt_aest_dyn with the env-var as override for the standalone scripts; verified the
+param moves σ8 like the env var). Then cobaya 3.6.2 + the modified classy (ignore_obsolete) + **the real
+Planck high-ℓ plik_lite TTTEEE_lite_native** (cobaya-installed) + a Gaussian τ prior (standing in for the
+low-ℓ EE), sampling **A_dyn jointly with the 6 ΛCDM params + A_planck** (the plik calibration nuisance).
+`cobaya-run --test` PASSED (classy loaded, one eval, all params incl OBT_AEST_DYN). **RUNNING in the
+background** (~1.3 s/eval; ~1–2 h to R-1<0.2). **The Fisher predicts σ(A_dyn)~0.39, A=1 at 2.6σ → expect
+the posterior to confirm A_dyn consistent with ΛCDM (mild).** The converged non-Gaussian posterior on
+A_dyn (+ the corner plot) follows on convergence — the gold-standard real-data verdict for OBT-AeST.
+
 ---
 
 ## Scripts in this folder (the verified record)

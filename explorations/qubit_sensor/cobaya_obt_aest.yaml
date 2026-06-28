@@ -1,0 +1,35 @@
+# Seed 3 (V9.0, quarantined) — the full non-Gaussian cobaya+plik MCMC for OBT-AeST (Romain: 'fait le
+# MCMC non-gaussien complet avec cobaya+plik'). Samples the dynamical-aether amplitude OBT_AEST_DYN
+# jointly with the 6 LambdaCDM params against the REAL Planck high-l plik_lite TTTEEE likelihood
+# (+ a Gaussian tau prior standing in for the low-l EE). The theory is the modified classy (the chi
+# d.o.f.; OBT_AEST_DYN is now a CLASS input param). NOT V8.2. Not in the PDF.
+# Run:  cobaya-run --packages-path <pkgs> explorations/qubit_sensor/cobaya_obt_aest.yaml
+theory:
+  classy:
+    ignore_obsolete: true     # modified CLASS (the chi d.o.f.); cobaya's version check is for stock CLASS
+    extra_args:
+      gauge: newtonian          # REQUIRED: the chi d.o.f. lives in the Newtonian-gauge block
+      non_linear: halofit
+      output: tCl,pCl,lCl
+      lensing: 'yes'
+      l_max_scalars: 2700
+      N_ur: 2.0328
+      N_ncdm: 1
+      m_ncdm: 0.06
+likelihood:
+  planck_2018_highl_plik.TTTEEE_lite_native: null
+params:
+  H0:        {prior: {min: 60, max: 80},        ref: 67.36,  proposal: 0.5,    latex: H_0}
+  omega_b:   {prior: {min: 0.019, max: 0.025},  ref: 0.02237,proposal: 0.0002, latex: '\omega_b'}
+  omega_cdm: {prior: {min: 0.10, max: 0.14},    ref: 0.120,  proposal: 0.002,  latex: '\omega_c'}
+  logA:      {prior: {min: 2.9, max: 3.2},      ref: 3.044,  proposal: 0.01,   latex: '\ln(10^{10}A_s)', drop: True}
+  A_s:       {value: 'lambda logA: 1e-10*np.exp(logA)', latex: A_s}
+  n_s:       {prior: {min: 0.92, max: 1.0},     ref: 0.9649, proposal: 0.004,  latex: n_s}
+  tau_reio:  {prior: {dist: norm, loc: 0.0544, scale: 0.0073}, ref: 0.0544, proposal: 0.005, latex: '\tau'}
+  OBT_AEST_DYN: {prior: {min: -1.0, max: 2.0},  ref: 0.0,    proposal: 0.2,    latex: 'A_\mathrm{AeST}'}
+sampler:
+  mcmc:
+    Rminus1_stop: 0.2
+    max_tries: 2000
+    learn_proposal: true
+output: /root/.claude/jobs/cc526717/tmp/cobaya_chains/obt_aest

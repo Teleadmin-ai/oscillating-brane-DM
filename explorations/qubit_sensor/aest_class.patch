@@ -1,8 +1,17 @@
 diff --git a/include/perturbations.h b/include/perturbations.h
-index 74b3a2a..9373384 100644
+index 74b3a2a..b192cc3 100644
 --- a/include/perturbations.h
 +++ b/include/perturbations.h
-@@ -508,6 +508,8 @@ struct perturbations_vector
+@@ -198,6 +198,8 @@ struct perturbations
+ 
+   enum possible_gauges gauge; /**< gauge in which to perform this calculation */
+ 
++  double obt_aest_dyn; /**< OBT: dynamical AeST aether amplitude (V9.0; 0 = LambdaCDM; input param for cobaya) */
++
+   short has_matter_source_in_current_gauge; /**< whether to keep matter and baryon+CDM sources in current gauge, instead of automatic conversion to gauge-invariant variables */
+ 
+   short get_perturbations_in_current_gauge; /**< whether to keep the output table of perturbations (controlled by 'store_perturbations' and 'k_output_values') in current gauge, instead of automatic conversion to Newtonian gauge */
+@@ -508,6 +510,8 @@ struct perturbations_vector
    int* q_size_ncdm;	/**< number of discrete momenta (for each ncdm species) */
  
    int index_pt_eta;       /**< synchronous gauge metric perturbation eta*/
@@ -11,8 +20,29 @@ index 74b3a2a..9373384 100644
    int index_pt_phi;	      /**< newtonian gauge metric perturbation phi */
    int index_pt_hv_prime;  /**< vector metric perturbation h_v' in synchronous gauge */
    int index_pt_V;         /**< vector metric perturbation V in Newtonian gauge */
+diff --git a/source/input.c b/source/input.c
+index 933e586..ee05b21 100644
+--- a/source/input.c
++++ b/source/input.c
+@@ -2085,6 +2085,8 @@ int input_read_parameters_general(struct file_content * pfc,
+     }
+   }
+ 
++  class_read_double("OBT_AEST_DYN",ppt->obt_aest_dyn); /* OBT: dynamical AeST amplitude (read always with the gauge; cobaya param) */
++
+   /** 4.b) Do we want density and velocity transfer functions in Nbody gauge? */
+   if ((ppt->has_density_transfers == _TRUE_) || (ppt->has_velocity_transfers == _TRUE_)){
+ 
+@@ -5712,6 +5714,7 @@ int input_default_params(struct background *pba,
+   ppt->switch_pol = 1;
+   /** 1.a.1) Split value of redshift z at which the isw is considered as late or early */
+   ppt->eisw_lisw_split_z = 120;
++  ppt->obt_aest_dyn = 0.; /* OBT: dynamical AeST amplitude default (LambdaCDM) */
+   /** 1.b) 'nCl' (or 'dCl') case */
+   ppt->has_nc_density = _FALSE_;
+   ppt->has_nc_rsd = _FALSE_;
 diff --git a/source/perturbations.c b/source/perturbations.c
-index c78fe43..79c456b 100644
+index c78fe43..ae99501 100644
 --- a/source/perturbations.c
 +++ b/source/perturbations.c
 @@ -4025,6 +4025,8 @@ int perturbations_vector_init(
@@ -70,7 +100,7 @@ index c78fe43..79c456b 100644
  
        /* equation for phi' */
        ppw->pvecmetric[ppw->index_mt_phi_prime] = -a_prime_over_a * ppw->pvecmetric[ppw->index_mt_psi] + 1.5 * (a2/k2) * ppw->rho_plus_p_theta;
-@@ -9638,6 +9659,22 @@ int perturbations_derivs(double tau,
+@@ -9638,6 +9659,23 @@ int perturbations_derivs(double tau,
  
        dy[pv->index_pt_phi] = pvecmetric[ppw->index_mt_phi_prime];
  
@@ -80,8 +110,9 @@ index c78fe43..79c456b 100644
 +         (= the quasi-static mu); super-horizon -> source k^2 phi -> 0 -> chi frozen (GR). */
 +      dy[pv->index_pt_chi] = y[pv->index_pt_chi_prime];
 +      {
-+        const char *obt_dyn = getenv("OBT_AEST_DYN");
-+        double obt_Ad = (obt_dyn != NULL) ? atof(obt_dyn) : 0.0;
++        double obt_Ad = ppt->obt_aest_dyn; /* OBT: AeST amplitude (CLASS input param, e.g. cobaya) */
++        const char *obt_dyn = getenv("OBT_AEST_DYN"); /* env-var override (the standalone scripts) */
++        if (obt_dyn != NULL) obt_Ad = atof(obt_dyn);
 +        double obt_xd = 2.0 * _PI_ * k / a_prime_over_a;
 +        double obt_md = obt_xd / sqrt(1.0 + obt_xd * obt_xd);
 +        double obt_devd = (1.0 - obt_md) * obt_md * obt_md;
