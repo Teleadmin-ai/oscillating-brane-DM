@@ -425,6 +425,27 @@ full-spectra Planck verdict needs the dynamical-aether spectra in CLASS + an MCM
 sharpened the residual to the peak lensing, partly re-fittable) — honest reviewer-mode, the test bit.
 hi_class + classy compiled in the venv this session.
 
+**THE DYNAMICAL AETHER SPECTRA IN CLASS (`a_phase_class_dynamical.py` + `aest_class.patch`, Romain's
+"implémente les spectres de l'aether dynamique dans CLASS"):** beyond the quasi-static μ — added the
+EXPLICIT propagating aether mode χ as a NEW dynamical d.o.f. in CLASS's perturbation vector (6 edits:
+struct + index + IC χ=χ′=0 + approx-switch copy + the EOM in perturbations_derivs + the ψ=φ−shear+χ
+coupling). EOM: χ″+2ℋχ′+c_s²k²χ=A·dev_eff(x)·k²φ (A=OBT_AEST_DYN; the propagating field whose response IS
+the μ, vs putting μ by hand). **A BUG WORTH RECORDING (Romain's "oublie pas de relire" + a σ8/P(k)
+verification caught it):** pip caches classy BY VERSION → after editing the C, `pip install .` does NOT
+rebuild → the new χ was inert (EXACTLY ΛCDM) and I almost reported a FALSE "dynamical Δχ²=0, fits!". The
+σ8 guard (χ must move σ8 if live) is the relire catch; the fix is `--force-reinstall` (+ rm -rf build).
+**THE HONEST RESULT (it does NOT rescue OBT — reviewer-mode):** validated (null DYN=0=ΛCDM, ∝A², peaks
+intact). The dynamical χ is MORE conservative than the quasi-static μ on the GROWTH (**σ8 −1.6% vs −4.9%**:
+the propagating χ can't fully respond during the fast horizon-crossing). BUT the full-spectra **TT Δχ² is
+NOT smaller (~235 vs the quasi-static ~151)** — the propagating χ imprints oscillatory features on the
+potentials (ISW/lensing). So **the full-spectra Planck constraint HOLDS**: the dynamical treatment does
+NOT evade it. OBT-AeST's PERTURBATION-level MOND is genuinely constrained (**A<~0.2 fixed-param**, ∝A²,
+~56% A_s/τ-re-fittable); the peak POSITIONS still fit (a₀=cH/2π→a⁻³ CDM) — it is the lensing + the
+propagating-mode features Planck constrains. Residual: the exact aether c_s² + the ℱ(𝒴,𝒬) couplings set
+the exact Δχ² (the χ oscillations depend on c_s²=1); + the full MCMC re-fit. **The dynamical spectra are
+now REAL (in CLASS); the honest verdict = constrained, not a free pass.** This REVISES the earlier rosy
+"OBT-AeST fits across ℓ": the peaks fit, but the perturbation-level MOND is Planck-constrained.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -455,3 +476,4 @@ hi_class + classy compiled in the venv this session.
 | `a_phase_aest_coupling.py` | **the mixed coupling ℱ(𝒴,𝒬) = OBT's a₀(z)**: a₀ tied to the aether expansion θ=∇·A=3H → a₀=c·θ/6π=cH/2π (Gibbons-Hawking). Verified a₀(0)=1.04e-10 (0.87× measured), a_H/a₀=2π at all z (sub-horizon=CDM at recomb), dF_Y/dθ≠0 (no factorize; θ≠mimetic 𝒬=1), a₀(z)=E(z) (OBT-distinctive, constant-a₀ AeST excluded, Euclid-testable). Residual now = exact action placement + photon-CMB |
 | `a_phase_aest_action.py` | **the exact placement in the action (capstone)**: the full OBT-AeST Lagrangian assembled [R − K_B/2·F² + λ(A²+1) − ℱ(𝒴,𝒬)], each term placed + role verified by varying the action (sympy). The a₀(z) lives in ℱ_MOND with a₀=c·θ̄/6π=cH/2π (coefficient 4π/c verified, ℱ_𝒴=μ); the scalar EOM splits MOND(𝒴)+dust(𝒬); aether cGW=c. THEORY complete; residual = ONLY the numerical photon-coupled spectra fit (private code) |
 | `a_phase_full_spectra.py` | **the full TT/TE/EE fit + hi_class compiled**: hi_class (Horndeski fork) built (gcc) + ΛCDM cross-check vs my CLASS = ratio 1.0000. The fit (Knox Planck errors): Δχ²(A=1)=255 ∝A², **dominated ENTIRELY by the peak LENSING** (modified growth, ~0.6% smoothing; low-ℓ a₀-MOND ~0, CV-drowned) → full spectra constrain A<0.19 (fixed-param 3σ). Mitigations: quasi-static=upper bound + ~56% A_s/τ-re-fittable. Clean verdict needs dynamical spectra + MCMC |
+| `a_phase_class_dynamical.py` + `aest_class.patch` | **the DYNAMICAL aether in CLASS**: explicit propagating χ mode as a real CLASS d.o.f. (null=ΛCDM, ∝A², peaks intact). Pip-cache bug caught (χ inert → false Δχ²=0; --force-reinstall fixes). HONEST: more conservative on σ8 (−1.6% vs −4.9%) but TT Δχ² NOT smaller (~235 vs 151, propagating χ imprints features) → **full-spectra constraint HOLDS, dynamical doesn't rescue OBT** (A<~0.2 fixed; peaks still fit). Revises "fits across ℓ" |

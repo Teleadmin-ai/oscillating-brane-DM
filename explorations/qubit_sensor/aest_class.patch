@@ -1,8 +1,53 @@
+diff --git a/include/perturbations.h b/include/perturbations.h
+index 74b3a2a..9373384 100644
+--- a/include/perturbations.h
++++ b/include/perturbations.h
+@@ -508,6 +508,8 @@ struct perturbations_vector
+   int* q_size_ncdm;	/**< number of discrete momenta (for each ncdm species) */
+ 
+   int index_pt_eta;       /**< synchronous gauge metric perturbation eta*/
++  int index_pt_chi;       /**< OBT: dynamical AeST aether scalar mode chi (V9.0) */
++  int index_pt_chi_prime; /**< OBT: dynamical AeST aether scalar velocity chi' (V9.0) */
+   int index_pt_phi;	      /**< newtonian gauge metric perturbation phi */
+   int index_pt_hv_prime;  /**< vector metric perturbation h_v' in synchronous gauge */
+   int index_pt_V;         /**< vector metric perturbation V in Newtonian gauge */
 diff --git a/source/perturbations.c b/source/perturbations.c
-index c78fe43..96b3bb4 100644
+index c78fe43..79c456b 100644
 --- a/source/perturbations.c
 +++ b/source/perturbations.c
-@@ -6580,7 +6580,21 @@ int perturbations_einstein(
+@@ -4025,6 +4025,8 @@ int perturbations_vector_init(
+        integration is numerically more stable if we actually evolve
+        phi) */
+     class_define_index(ppv->index_pt_phi,ppt->gauge == newtonian,index_pt,1);
++    class_define_index(ppv->index_pt_chi,ppt->gauge == newtonian,index_pt,1); /* OBT dynamical aether chi */
++    class_define_index(ppv->index_pt_chi_prime,ppt->gauge == newtonian,index_pt,1); /* OBT dynamical aether chi' */
+ 
+   }
+ 
+@@ -4427,9 +4429,12 @@ int perturbations_vector_init(
+         ppv->y[ppv->index_pt_eta] =
+           ppw->pv->y[ppw->pv->index_pt_eta];
+ 
+-      if (ppt->gauge == newtonian)
++      if (ppt->gauge == newtonian) {
+         ppv->y[ppv->index_pt_phi] =
+           ppw->pv->y[ppw->pv->index_pt_phi];
++        ppv->y[ppv->index_pt_chi] = ppw->pv->y[ppw->pv->index_pt_chi]; /* OBT */
++        ppv->y[ppv->index_pt_chi_prime] = ppw->pv->y[ppw->pv->index_pt_chi_prime]; /* OBT */
++      }
+ 
+       /* -- case of switching off tight coupling
+          approximation. Provide correct initial conditions to new set
+@@ -5718,6 +5723,8 @@ int perturbations_initial_conditions(struct precision * ppr,
+       alpha = (eta + 3./2.*a_prime_over_a*a_prime_over_a/k/k/s2_squared*(delta_tot + 3.*a_prime_over_a/k/k*velocity_tot))/a_prime_over_a;
+ 
+       ppw->pv->y[ppw->pv->index_pt_phi] = eta - a_prime_over_a*alpha;
++      ppw->pv->y[ppw->pv->index_pt_chi] = 0.;       /* OBT: aether mode starts unsourced */
++      ppw->pv->y[ppw->pv->index_pt_chi_prime] = 0.; /* OBT */
+ 
+       ppw->pv->y[ppw->pv->index_pt_delta_g] -= 4.*a_prime_over_a*alpha;
+       ppw->pv->y[ppw->pv->index_pt_theta_g] += k*k*alpha;
+@@ -6580,7 +6587,21 @@ int perturbations_einstein(
           second equation below (credits to Guido Walter Pettinari). */
  
        /* equation for psi */
@@ -21,7 +66,30 @@ index c78fe43..96b3bb4 100644
 +          obt_mu_aest = 1.0 + obt_A*(1.0-obt_m)*obt_m*obt_m; /* dev_eff = (1-mu)mu^2 */
 +        }
 +      }
-+      ppw->pvecmetric[ppw->index_mt_psi] = obt_mu_aest * y[ppw->pv->index_pt_phi] - 4.5 * (a2/k2) * ppw->rho_plus_p_shear;
++      ppw->pvecmetric[ppw->index_mt_psi] = obt_mu_aest * y[ppw->pv->index_pt_phi] - 4.5 * (a2/k2) * ppw->rho_plus_p_shear + y[ppw->pv->index_pt_chi]; /* OBT: + dynamical aether mode chi (OBT_AEST_DYN) */
  
        /* equation for phi' */
        ppw->pvecmetric[ppw->index_mt_phi_prime] = -a_prime_over_a * ppw->pvecmetric[ppw->index_mt_psi] + 1.5 * (a2/k2) * ppw->rho_plus_p_theta;
+@@ -9638,6 +9659,22 @@ int perturbations_derivs(double tau,
+ 
+       dy[pv->index_pt_phi] = pvecmetric[ppw->index_mt_phi_prime];
+ 
++      /* OBT: the dynamical AeST aether scalar mode chi (V9.0, OBT_AEST_DYN; 0/unset = LambdaCDM).
++         EOM: chi'' + 2 H chi' + cs2 k^2 chi = A*dev_eff(x) k^2 phi  (cs2=1; x=2pi k/k_H, k_H=aH=H_conf);
++         dev_eff=(1-mu)mu^2 (MOND deviation + GR super-horizon cutoff). Sub-horizon -> chi=A*dev_eff*phi
++         (= the quasi-static mu); super-horizon -> source k^2 phi -> 0 -> chi frozen (GR). */
++      dy[pv->index_pt_chi] = y[pv->index_pt_chi_prime];
++      {
++        const char *obt_dyn = getenv("OBT_AEST_DYN");
++        double obt_Ad = (obt_dyn != NULL) ? atof(obt_dyn) : 0.0;
++        double obt_xd = 2.0 * _PI_ * k / a_prime_over_a;
++        double obt_md = obt_xd / sqrt(1.0 + obt_xd * obt_xd);
++        double obt_devd = (1.0 - obt_md) * obt_md * obt_md;
++        dy[pv->index_pt_chi_prime] = -2.0 * a_prime_over_a * y[pv->index_pt_chi_prime]
++          - k2 * y[pv->index_pt_chi]
++          + obt_Ad * obt_devd * k2 * y[pv->index_pt_phi];
++      }
++
+     }
+ 
+   }

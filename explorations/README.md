@@ -367,6 +367,21 @@ not the ISW. Mitigations: the quasi-static μ is an UPPER BOUND (the dynamical a
 ~56% A_s/τ-re-fittable → a clean verdict needs the dynamical-aether spectra in CLASS + an MCMC; this is
 the forward upper bound. The full fit is the MOST constraining test (reviewer-mode: it bit).
 
+**THE DYNAMICAL AETHER SPECTRA IN CLASS (`a_phase_class_dynamical.py` + the updated `aest_class.patch`,
+"implémente les spectres de l'aether dynamique dans CLASS"):** added the EXPLICIT propagating aether mode
+χ as a NEW dynamical d.o.f. in CLASS's perturbation vector (6 edits: struct/index/IC/approx-copy/EOM
+χ″+2ℋχ′+c_s²k²χ=A·dev_eff·k²φ/ψ=φ−shear+χ; A=OBT_AEST_DYN). **A pip-cache bug** (pip caches classy by
+version → editing the C without `--force-reinstall` left χ INERT → a false "Δχ²=0 fits") was caught by
+relire-en-boucle + a σ8 guard. **HONEST RESULT (does NOT rescue OBT — reviewer-mode):** validated
+(null=ΛCDM, ∝A², peaks intact); the dynamical χ is MORE conservative on σ8 (**−1.6% vs −4.9%** quasi-
+static — the propagating χ can't respond during the fast horizon-crossing) BUT the full-spectra TT Δχ²
+(~235) is **NOT smaller** than the quasi-static (~151) — the propagating χ imprints oscillatory ISW/lensing
+features → **the full-spectra Planck constraint HOLDS, the dynamical does not evade it.** OBT-AeST's
+PERTURBATION-level MOND is genuinely Planck-constrained (**A<~0.2 fixed-param**, ∝A², ~56% re-fittable);
+the peak POSITIONS still fit (a₀=cH/2π→a⁻³ CDM). This **revises the earlier "OBT-AeST fits across ℓ"**:
+the peaks fit, the perturbation-level is constrained. Residual = the exact aether c_s²/ℱ + a full MCMC.
+Reproduce with `pip install . --force-reinstall` (pip caches!).
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
