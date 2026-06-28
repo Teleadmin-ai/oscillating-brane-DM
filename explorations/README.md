@@ -167,13 +167,31 @@ claims ~98% -- more robust; the tree is the verifiable lower bound); (iii) the p
 channel's 'beginning and end' = the germe (1 logical) ↔ the boundary (5^L physical); 'all the
 possibles between' = the protected logical Hilbert space.
 
-**Status.** Steps 1–2 DONE: the explicit [[5,1,3]] atom + protected-yet-sensitive subspace, and the
-concatenation scale-up (noise + erasure thresholds, the widening window) — all computed +
-injection-tested (`er_epr_stabilizer.py` / `holographic_scaleup.py`; the only *new* numeric content
-is the codes' own QEC properties, standard + recomputed; no OBT physics claim added). **Still open
-(the gates):** the faithful degree-46 EXPANDER tiling (p_c ~ 2.2%, not the tree's 50%); that OBT's
-gravitational channel maps to a logical-class operator, not a correctable one (gate 1 physics); the
-final readout's one irreducible measurement; the mass-vs-coherence BMV wall. os = Penrose-Diósi; chair = the Laplace-demon / quantum-reader vision.
+**Gate (a) — DONE (June 2026, `qubit_sensor/penrose_logical_projection.py`).** Does Penrose-Diósi
+actually land in the sensitive (logical) class, or is it corrected away (deaf)? Model the 5D
+collapse as collective dephasing in the mass-pointer (Z) basis and classify every pure-Z operator
+on the atom: **only ZZZZZ = Z_L (weight 5) is a pure-Z logical**; all 30 lower-weight pure-Z
+operators are correctable (every single-qubit Z_j has a nonzero syndrome → corrected). So the
+logical projection is **nonzero** — the demon CAN be heard, not a dead end — but for a UNIFORM
+physical-qubit coupling the signal appears only at **order φ^N** (the fully-correlated Z_L term):
+the EC-optimal [[5,1,3]] is a *near-deaf* dephasing sensor = the Goldilocks deafness, quantified
+(computed d_Z = d_X = N = 5; the weight-3 logicals are mixed-Pauli, unreachable by pure dephasing).
+**The design knob (dichotomy):** the demon is heard at order 1 only if gravity couples to the
+LOGICAL observable — the codewords |0_L>,|1_L> must be gravitationally distinct (different mass
+distributions). **Link to the scale-up:** concatenation raises protection AND (generically) d_Z →
+more scale = more deaf; the two Gate-IN tasks pull oppositely → a tailored ASYMMETRIC code (audible
+signal direction, high local-noise distance) is the real sensor-design target.
+
+**Status.** Steps 1–2 + Gate (a) DONE: the [[5,1,3]] atom + protected-yet-sensitive subspace, the
+concatenation scale-up (noise/erasure thresholds, widening window), and the Penrose-Diósi
+logical-projection (only Z_L heard, at order φ^N) — all computed + injection-tested
+(`er_epr_stabilizer.py` / `holographic_scaleup.py` / `penrose_logical_projection.py`; the only
+*new* numeric content is the codes' own QEC properties, standard + recomputed; no OBT physics
+claim added). **Still open (the gates):** the faithful degree-46 EXPANDER tiling (p_c ~ 2.2%); a
+tailored ASYMMETRIC sensor-code (the EC-optimal atom is order-N deaf to uniform dephasing);
+whether OBT's 5D collapse couples logical-level (heard) or physical-level (deaf) — the encoding /
+mass-distribution question, entangled with the mass-vs-coherence BMV wall; the one irreducible
+final measurement. os = Penrose-Diósi; chair = the Laplace-demon / quantum-reader vision.
 See memories `project_holographic_choice_penrose_diosi`, `project_qubit_holography_v9`.
 
 ---
