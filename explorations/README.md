@@ -244,7 +244,14 @@ a⁻⁴ (traceless dark radiation) → the **universal relativistic-MOND CMB pro
 11) → the fix is an **AeST-class field** (a⁻³ background + MOND perturbations; Skordis-Złośnik 2021 fits
 Planck). OBT-distinctive hope = **brane-induced AeST** (the geometry shapes the radion's K(Y) → one
 sector). VERDICT: the A-phase is OBT's **deepest unsolved problem — the one that DECIDES the CMB** (the
-B-mode only confirms); open work = the brane-induced-AeST derivation + a CLASS/CAMB peak fit. Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
+B-mode only confirms); open work = the brane-induced-AeST derivation + a CLASS/CAMB peak fit.
+**Brane→AeST solve attempt (`a_phase_aest.py`, effort max):** a concrete OBT→AeST mapping — the radion
+= the a⁻³ dust (T_osc~21 TeV ≫ T_rec → a⁻³ by recombination); OBT's geometric **μ(x)=x/√(1+x²) = the
+AeST function 𝒦** (verified to give both RAR limits; 𝒦'↔μ); the brane's cosmological foliation = the
+aether (mimetic clock \|∂φ\|=1). IF the mapping holds, ONE brane-derived AeST field gives a⁻³ (CMB) +
+MOND (galaxies) → the **radion-vs-geometric-Weyl redundancy DISSOLVES** (the geometric μ(x) FIXES the 𝒦,
+not two DM sectors) and the a⁻³ CMB DM is DERIVED, not bolted on. Open = the exact brane-action
+derivation + a CAMB perturbation fit + stability. A mapping with verified legs, not yet a solve. Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
 

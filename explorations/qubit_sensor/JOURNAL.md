@@ -239,6 +239,22 @@ B-mode only confirms). The a⁻³ source exists (radion); the open work = (i) th
 derivation, (ii) a CLASS/CAMB fit of the resulting a⁻³-and-MOND field to the Planck peaks. (Original
 finding: `../bulk_solver/A_CLOSURE_CMB.md`; this dig confirms + scopes it + verifies the a⁻³ source.)
 
+**The solve ATTEMPT — does the brane INDUCE AeST? (`a_phase_aest.py`, effort max):** the OBT-distinctive
+question (does the brane GIVE AeST, or bolt it on?). A concrete mapping OBT→AeST: **(a) the a⁻³ dust** =
+the radion (T_osc~21 TeV ≫ T_rec → a⁻³ by recombination, ~14 decades; the BACKGROUND is already solved);
+**(b) the MOND function 𝒦** = OBT's geometric μ(x)=x/√(1+x²) (Gauss-Codazzi) — verified to give BOTH RAR
+limits (Newtonian g_obs→g_bar; deep-MOND g_obs→√(g_bar·a₀)); 𝒦'↔μ in the quasi-static limit (a
+derivative relation, not identity); **(c) the aether** = the brane's cosmological foliation (radion =
+cosmic-time slicing / the mimetic clock, \|∂φ\|=1 = brane proper-time). **IF the mapping holds:** ONE
+brane-derived AeST field gives a⁻³ (CMB) + MOND (galaxies) → the radion-vs-geometric-Weyl **redundancy
+DISSOLVES** (the geometric μ(x) FIXES the 𝒦; one sector, not two), and the a⁻³ CMB DM is DERIVED, not
+bolted on. **OPEN (the frontier):** (i) derive the AeST functions from the brane action exactly (the
+mimetic constraint + μ=𝒦 are a candidate, not a proof); (ii) a CLASS/CAMB perturbation fit (AeST's 𝒦
+fits Planck; OBT's μ(x)-as-𝒦 must be shown to too); (iii) stability (mimetic/AeST caustics/ghosts; AeST
+is built stable). **VERDICT: the A-phase now has a CONCRETE OBT-distinctive candidate** — the radion as
+a brane-induced AeST field; the redundancy is resolved, the derivation is the open prize. A mapping with
+verified legs, not yet a solve.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -259,3 +275,4 @@ finding: `../bulk_solver/A_CLOSURE_CMB.md`; this dig confirms + scopes it + veri
 | `germe_isocurvature.py` | DIGGING Ω_DM↔r: the naive r~3e-5 BREAKS (random-walk φ₀ → isocurvature, Planck-excluded ~9 orders); the FLIP — radion-DM ⟹ r UNDETECTABLE, a B-mode detection excludes it + discriminates the two DM pictures |
 | `dm_discriminator.py` | the B-mode is the PRIMORDIAL leg of a 3-epoch geometric-vs-particle DM discriminator: RAR (late) already decided geometric (radion DEAD, f<4%); B-mode confirms; CMB a⁻³ (A-phase) is the open front |
 | `a_phase_cmb.py` | the A-phase (decisive open front): the CMB needs a⁻³ DM, the Weyl is a⁻⁴; the a⁻³ source exists (radion, ⟨w⟩~0 verified) but needs the AeST structure (a⁻³ + MOND); OBT hope = brane-induced AeST |
+| `a_phase_aest.py` | the brane→AeST solve attempt: a concrete mapping (radion=a⁻³ dust + μ(x)=the AeST 𝒦, verified RAR limits + foliation=aether); IF it holds, the radion-vs-Weyl redundancy dissolves; open = exact derivation + CAMB + stability |
