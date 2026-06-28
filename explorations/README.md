@@ -355,6 +355,18 @@ residual (the very last): ONLY the numerical photon-coupled CMB spectra fit agai
 (the standard AeST kinetic coefficients K_B etc. are cited from SZ 2021; OBT's a₀-from-θ placement is the
 new verified piece). The action placement — the thing asked — is done.
 
+**THE FULL CMB SPECTRA FIT + hi_class (`a_phase_full_spectra.py`, "compile hi_class avec le fit spectres
+complet"):** **hi_class (the Horndeski CLASS fork) COMPILED** (gcc binary) + cross-checked (its ΛCDM TT ==
+my modified-CLASS A=0 ΛCDM TT to ratio **1.0000**, ℓ=220–2000 → my AeST patch is a clean no-op, validated
+vs an independent code). **THE FIT (honest — a real constraint, not a pass):** the WHOLE TT/TE/EE
+(+lensing) at Planck precision (Knox errors) → Δχ²(OBT A=1 vs ΛCDM, fixed params)=**255 ∝A²**, **dominated
+ENTIRELY by the peak LENSING** (the modified growth smooths the acoustic peaks ~0.6% → Δχ²_TT≈151 across
+the ~2000 well-measured peak ℓ; the **low-ℓ a₀(z) MOND is ~0**, drowned in low-ℓ CV). So the full spectra
+constrain OBT MORE than peaks/low-ℓ alone (fixed-param **A<0.19 at 3σ**) — the constraint is the LENSING,
+not the ISW. Mitigations: the quasi-static μ is an UPPER BOUND (the dynamical aether suppresses it) +
+~56% A_s/τ-re-fittable → a clean verdict needs the dynamical-aether spectra in CLASS + an MCMC; this is
+the forward upper bound. The full fit is the MOST constraining test (reviewer-mode: it bit).
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.

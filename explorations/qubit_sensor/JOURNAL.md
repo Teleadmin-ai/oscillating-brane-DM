@@ -407,6 +407,24 @@ is complete. HONEST residual (the very last): ONLY the numerical photon-coupled 
 the private Skordis-Złośnik code (the standard AeST kinetic coefficients K_B etc. are cited from SZ 2021;
 OBT's a₀-from-θ placement is the new verified piece). **The action placement — the thing asked — is done.**
 
+**THE FULL CMB SPECTRA FIT + hi_class (`a_phase_full_spectra.py`, Romain's "compile hi_class avec le fit
+spectres complet"):** the WHOLE TT/TE/EE (+lensing) at Planck precision (Knox errors), not the peaks/low-ℓ
+in isolation. **hi_class (the Horndeski CLASS fork) COMPILED** (gcc, the binary) + cross-checked: its
+ΛCDM TT == my modified-CLASS (A=0) ΛCDM TT to **ratio 1.0000** across ℓ=220–2000 → my AeST patch is a
+clean no-op at A=0, validated against an INDEPENDENT code. **THE FIT (honest — a real constraint, NOT a
+pass):** Δχ²(OBT A=1 vs ΛCDM, fixed params) = **255** over TT+TE+EE (per-mode 0.034, tiny but cumulative),
+**∝A²** (A=0.3→23, A=1→255, A=5→6409). **WHERE — the key finding:** the residual is **ENTIRELY the peak
+LENSING** (the modified growth smooths the acoustic peaks by ~0.6%, accumulating across the ~2000
+well-measured peak multipoles to Δχ²_TT≈151); the **low-ℓ a₀(z) MOND is ~0.0** (drowned in the huge low-ℓ
+cosmic variance). So the full spectra constrain OBT MORE than the peaks/low-ℓ alone (fixed-param A<0.19 at
+3σ) — and the constraint is the LENSING, not the ISW. **TWO honest mitigations:** (i) the quasi-static μ
+is an UPPER BOUND (the dynamical aether SUPPRESSES it → smaller effective A); (ii) ~56% of the lensing
+residual is amplitude (A_s e^{−2τ})-degenerate → a proper MCMC re-fit absorbs it. **NET: a clean
+full-spectra Planck verdict needs the dynamical-aether spectra in CLASS + an MCMC; this is the forward
+(fixed-param, quasi-static) UPPER BOUND on the tension.** The full fit is the MOST constraining test (it
+sharpened the residual to the peak lensing, partly re-fittable) — honest reviewer-mode, the test bit.
+hi_class + classy compiled in the venv this session.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -436,3 +454,4 @@ OBT's a₀-from-θ placement is the new verified piece). **The action placement 
 | `a_phase_aest_sectors.py` | **the last two sectors, BOTH tested** (residuals b+c): [A] 𝒬-sector = the mimetic dust (𝒬=1→ρ∝a⁻³, w=0, c_s²=0=CDM; amount=IC; ℱ(𝒴) heals the mimetic strong-coupling); [B] vector sector = unit-constraint aether, Einstein-aether speeds (s₂²=1 cGW=c, s₁²=1, s₀²=0.83 stable), non-trivial stable scan 767/133, spin-1 decouples from density. Residual now = mixed ℱ(𝒴,𝒬) + photon-coupled CMB |
 | `a_phase_aest_coupling.py` | **the mixed coupling ℱ(𝒴,𝒬) = OBT's a₀(z)**: a₀ tied to the aether expansion θ=∇·A=3H → a₀=c·θ/6π=cH/2π (Gibbons-Hawking). Verified a₀(0)=1.04e-10 (0.87× measured), a_H/a₀=2π at all z (sub-horizon=CDM at recomb), dF_Y/dθ≠0 (no factorize; θ≠mimetic 𝒬=1), a₀(z)=E(z) (OBT-distinctive, constant-a₀ AeST excluded, Euclid-testable). Residual now = exact action placement + photon-CMB |
 | `a_phase_aest_action.py` | **the exact placement in the action (capstone)**: the full OBT-AeST Lagrangian assembled [R − K_B/2·F² + λ(A²+1) − ℱ(𝒴,𝒬)], each term placed + role verified by varying the action (sympy). The a₀(z) lives in ℱ_MOND with a₀=c·θ̄/6π=cH/2π (coefficient 4π/c verified, ℱ_𝒴=μ); the scalar EOM splits MOND(𝒴)+dust(𝒬); aether cGW=c. THEORY complete; residual = ONLY the numerical photon-coupled spectra fit (private code) |
+| `a_phase_full_spectra.py` | **the full TT/TE/EE fit + hi_class compiled**: hi_class (Horndeski fork) built (gcc) + ΛCDM cross-check vs my CLASS = ratio 1.0000. The fit (Knox Planck errors): Δχ²(A=1)=255 ∝A², **dominated ENTIRELY by the peak LENSING** (modified growth, ~0.6% smoothing; low-ℓ a₀-MOND ~0, CV-drowned) → full spectra constrain A<0.19 (fixed-param 3σ). Mitigations: quasi-static=upper bound + ~56% A_s/τ-re-fittable. Clean verdict needs dynamical spectra + MCMC |
