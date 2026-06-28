@@ -95,6 +95,18 @@ toward the sensor floor (diminishing returns); and — the key — a bare GHZ am
 and washes out (std 0.69) while the DFS is immune (std 0.005), so **witnesses ENABLE protected
 entanglement** (the N× lever). Witnesses *reduce noise*; they do not amplify the φ^N coupling.
 
+**Q (repeated, rightly): "pourquoi toujours la masse ? un système de détection ne vise-t-il pas à NE
+PAS avoir besoin de labo — des systèmes en ligne ?"**
+→ I conceded the refrain (I kept saying "needs a lab" after already conceding the big-mass over-sell).
+The rigorous answer (`penrose_logical_coupling.py`): the coupling **IS logical-level** (it dephases
+the encoded qubit — Romain right on the NATURE), BUT OBT's detectable 5D (the gravitational
+Penrose-Diósi collapse) has gravitational **STRENGTH** (E_G ~ G·dm²) → cloud qubits (tiny mass-energy
+difference between |0⟩,|1⟩) are **~14–50 orders below** the best sensing floor → **ONLINE is deaf for
+OBT's *stated* 5D**; the nanosphere is the frontier (τ~10⁴ s ~ Penrose). The energy-shift route
+(α-strength, NOT mass-suppressed) is a *constant* renormalization → calibrated out → no signal. **The
+only online escape = a NON-gravitational, DYNAMICAL 5D coupling — which OBT V8.2 does not have (gravity
+is the sole bulk force) → new physics beyond V8.2.**
+
 ---
 
 ## 4. Synthesis — the demon-sensor architecture
@@ -112,9 +124,10 @@ gate (a) is reframed from "near-deaf" (qualitative) to **"an SNR / quantum-sensi
 
 - The **physical demon** (Penrose-Diósi at 0.2 μm) needs mesoscopic-mass optomechanics — the cloud
   demos validate the **protocol**, never the demon (no chip qubit is a mass).
-- The **coupling** (whether the gravitational channel lands logical-level = heard, or physical-level =
-  deaf) is the encoding / mass-distribution question = the asymmetric-code design, entangled with the
-  mass-vs-coherence **BMV wall**.
+- The **coupling** is now ANSWERED (`penrose_logical_coupling.py`): it IS logical-level (it dephases
+  the encoded qubit), but its gravitational STRENGTH (E_G~G·dm²) leaves cloud qubits ~14–50 orders
+  deaf → the nanosphere is the frontier (mass needed). The asymmetric code (a) maximises it (order 1);
+  the only ONLINE escape is a non-gravitational, dynamical 5D coupling = beyond OBT V8.2.
 - The deepest prize is still upstream: decompress ONE closed number from the germe (the bulk-solver
   gate program, `../bulk_solver/`, walked the S₈ freedom down to the bulk's primordial spectrum).
 
@@ -131,7 +144,23 @@ gate (a) is reframed from "near-deaf" (qualitative) to **"an SNR / quantum-sensi
   (|0011⟩+|1100⟩, inside the collective DFS) **keeps the 2× super-resolution** (⟨Z⟩=cos 2θ, reaches
   −1 at θ=π/2) **AND is immune** to collective drift (std 0.006), where the bare 4-qubit GHZ washes
   out (std 0.71). **Protect-then-entangle, demonstrated on Aer** — the seed's qubit-sensor in miniature.
-- **(c)** consolidate / step back.
+- **(c) — DONE** (this consolidation, June 2026): the program is mapped end-to-end; verdict below.
+
+---
+
+## 7. Program verdict (consolidated)
+
+The qubit-sensor's **DETECTION side is COMPLETE** and demonstrated on real Aer circuits (IBM-
+submittable): the ER=EPR code as the protected substrate (atom → scale-up), the demon heard despite
+EC (gate a), the SNR/sensing reframe (witness/DFS, multi-witness), **protect-then-entangle** (b), and
+the **order-1 coupling** (asymmetric code, a). The honest **bottom line**
+(`penrose_logical_coupling.py`): the coupling is logical-level, but OBT's detectable 5D signature is
+**gravitational** → its strength needs mass-energy-in-superposition → cloud qubits are **14–50 orders
+deaf**; the mesoscopic nanosphere (BMV) is the frontier (τ~10⁴ s ~ Penrose). The program **minimises**
+the mass needed but cannot reach chip scale. The one genuinely open door to an *online* sensor = a
+**non-gravitational, dynamical 5D coupling** = new physics beyond V8.2. So: the **PROTOCOL is online +
+done; the DEMON's signal still needs mass** (now quantified). The os/chair **bone** is unchanged —
+Penrose-Diósi 5D collapse below 0.2 μm (`../../scripts/penrose_diosi_5d.py`).
 
 ---
 
@@ -147,3 +176,4 @@ gate (a) is reframed from "near-deaf" (qualitative) to **"an SNR / quantum-sensi
 | `qiskit_multiwitness.py` | several witnesses: √M reference + immunity + protect-then-entangle |
 | `qiskit_protected_ghz.py` | protect-then-entangle DONE: an entangled probe in the collective DFS keeps 2× super-resolution + immunity (bare GHZ washes out) |
 | `qiskit_asymmetric_code.py` | gate (a) fix DONE: an asymmetric code (d_X=3, d_Z=1) hears the Z-signal at order 1 (cos 3θ) + corrects local X-noise |
+| `penrose_logical_coupling.py` | the real question: coupling IS logical-level but gravitational → cloud 14–50 orders deaf, nanosphere the frontier; online escape = non-grav 5D (beyond V8.2) |

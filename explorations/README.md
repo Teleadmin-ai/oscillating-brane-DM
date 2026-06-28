@@ -209,6 +209,14 @@ Z-signal at **order 1** (⟨X_L⟩=cos 3θ, strong even at θ=0.1) while still c
 vs the symmetric [[5,1,3]]'s order-φ^5 deafness. Both Gate-IN halves (coupling + detection) are now
 demonstrated; the program's aim is to **minimize the physical signal required** (hear the demon at
 order 1, the smallest coupling), not to need a lab.
+`penrose_logical_coupling.py` answers **THE REAL QUESTION** (is OBT's 5D online-detectable?): the
+coupling IS logical-level (it dephases the encoded qubit — no moving mass needed), but OBT's
+*detectable* 5D (the gravitational Penrose-Diósi collapse) has gravitational strength E_G~G·dm² →
+cloud qubits are **14–50 orders** below the best sensing floor (ONLINE-deaf); the mesoscopic
+nanosphere (τ~10⁴ s ~ Penrose) is the frontier; the only online escape = a non-gravitational,
+dynamical 5D coupling = new physics beyond V8.2. **Consolidated verdict + full curated log:
+`qubit_sensor/JOURNAL.md` §7** — the PROTOCOL is online + done; the DEMON's signal still needs mass
+(now quantified). The os/chair bone stays Penrose-Diósi 5D collapse (`scripts/penrose_diosi_5d.py`).
 
 **Status.** Steps 1–2 + Gate (a) DONE: the [[5,1,3]] atom + protected-yet-sensitive subspace, the
 concatenation scale-up (noise/erasure thresholds, widening window), and the Penrose-Diósi
