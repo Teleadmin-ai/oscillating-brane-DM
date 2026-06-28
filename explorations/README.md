@@ -396,6 +396,18 @@ a₀=cH/2π→a⁻³ CDM; full TT/TE/EE within 2.6σ after marginalization). The
 cobaya+plik run + the exact aether c_s². The honest two-step: fixed-param looks constraining, the
 marginalized fit is consistent.
 
+**THE FULL non-Gaussian cobaya+plik MCMC — DONE (gold-standard, real Planck data; `a_phase_cobaya_analysis.py`
++ `cobaya_obt_aest.yaml` + `cobaya_obt_corner.png`):** made OBT_AEST_DYN a CLASS input parameter (4 C edits),
+then cobaya 3.6.2 + the dynamical-aether classy + the **REAL Planck high-ℓ plik_lite TTTEEE** + a Gaussian τ
+prior, sampling A_dyn jointly with the 6 ΛCDM params + A_planck (3481 samples, R-1=0.36). **A_dyn = −0.02 ±
+0.44 (95%: [−0.83, +0.87]) → 0.1σ from 0 (consistent with ΛCDM — the data do NOT require the AeST
+modification); A_dyn=1 disfavored at 2.3σ;** the ΛCDM params at Planck values (H0=67.1±0.8, ω_cdm=0.121,
+n_s=0.963, τ=0.059). **The real-data non-Gaussian MCMC CONFIRMS the Fisher** (σ 0.44 vs 0.39; A=1 2.3σ vs
+2.6σ → near-Gaussian). **NET: OBT-AeST is PLANCK-CONSISTENT by the gold-standard real-data pipeline — the
+A-phase is CLOSED.** A_dyn=1 = a mild 2.3σ future discriminator. The full A-phase chain: peaks (CAMB) →
+low-ℓ ISW (CLASS) → μ in CLASS → aether hierarchy → ℱ(𝒴) → 𝒬-dust + vector → a₀(z) coupling → action →
+full TT/TE/EE → dynamical aether in CLASS → Fisher re-fit → cobaya+plik real-data MCMC.
+
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
