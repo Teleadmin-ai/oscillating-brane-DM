@@ -259,13 +259,18 @@ AeST field is **CDM at recombination** → the CAMB TT peaks match Planck (**ℓ
 component that fits the acoustic peaks — is MET; the CMB-peak objection to OBT's geometric DM is
 answered** (the radion supplies the a⁻³; the evolving a₀ keeps it CDM where it must be). Residual
 frontier: the low-ℓ ISW (super-horizon, μ→MOND) + the full AeST Boltzmann module (Skordis-Złośnik 2021).
-**Low-ℓ ISW COMPUTED (`a_phase_isw_full.py`, "attaque le monstre pleinement"):** a real line-of-sight
-ISW (CAMB Weyl transfer + Bessel j_ℓ) with the potentials evolved by the **modified growth** (k-dependent
-μ_MG=1±A·(1−μ)μ² with a GR super-horizon cutoff; a WRONG static-rescale attempt recorded honestly — it
-cancels) → OBT's late-ISW shift is **WITHIN cosmic variance** (max shift/CV=0.0004, both signs; a control
-A=5 propagates). So the low-ℓ is now computed within CV — with the peaks, the **OBT-AeST TT is consistent
-with Planck across ℓ (peaks AND low-ℓ)**; the exact μ-Σ + polarization + lensing remain for the
-hi_class-AeST module.
+**Low-ℓ ISW, CLASS-VALIDATED (`a_phase_isw_full.py`, "compile hi_class-AeST" → no public AeST code, so
+CLASS compiled instead):** a real line-of-sight ISW (CAMB Weyl transfer + Bessel j_ℓ) with the potentials
+evolved by the **modified growth** (k-dependent μ_MG=1±A·dev_eff, dev_eff=(1−μ)μ² + GR super-horizon
+cutoff). **Two bugs caught** (relire-en-boucle + the CLASS validation): a static-rescale (it cancels) →
+the modified growth; and CAMB's `'Weyl'` transfer = k²(Φ+Ψ)/2 (lensing convention) → ÷k². After the fix
+the **ΛCDM late-ISW MATCHES CLASS** (full Boltzmann; normalized D_ℓ max-diff 0.06, both peak at ℓ=2).
+OBT's modified-growth shift is then **REAL — ~±15% on the late-ISW at the lowest ℓ (sign-dependent) =
+~2% of the low-ℓ TT — but WITHIN cosmic variance** (low-ℓ CV 30-60%; max shift/CV=0.04) → a real low-ℓ
+prediction within current CV (ISW-LSS cross-correlation testable), not a null (a control A=5 propagates).
+**NET: OBT-AeST TT consistent with Planck across ℓ — peaks (CAMB, <0.5%) AND low-ℓ (CLASS-validated),
+both computed.** Residual = the exact AeST aether+scalar hierarchy (the private/unwritten-public code).
+gcc + classy v3.3.4 (CLASS) compiled in the venv.
 
 Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the

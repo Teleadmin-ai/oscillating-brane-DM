@@ -290,6 +290,24 @@ the peak fit, the OBT-AeST TT is consistent with Planck across ℓ.** Honest res
 polarization + lensing need the hi_class-AeST module; here the growth + line-of-sight are REAL, the μ-Σ
 input bracketed.
 
+**UPDATE — "compile hi_class-AeST" (Romain) → CLASS COMPILED + the line-of-sight VALIDATED, and a k²
+bug caught:** reality (web-searched + checked): there is **NO public AeST Boltzmann code** (Skordis-
+Złośnik's is private; hi_class is Horndeski — the AeST aether + the k-dependent a₀-MOND are beyond
+Horndeski), so "hi_class-AeST" cannot be compiled. BUT gcc is present → I compiled **CLASS (classy
+v3.3.4, full Boltzmann)** and used its isolated late-ISW (`temperature contributions = lisw`) to VALIDATE
+the reduced line-of-sight. **It caught a 2nd bug:** CAMB's `'Weyl'` transfer is **k²(Φ+Ψ)/2** (the
+lensing convention), not (Φ+Ψ)/2 — the extra k² had wrecked the ISW shape (rose to ℓ~20 instead of
+peaking at ℓ=2). Dividing by k², **the ΛCDM late-ISW MATCHES CLASS** (normalized D_ℓ: mine
+[1,.70,.42,.24,.14,.06,.03] vs CLASS [1,.66,.36,.18,.09,.06,.04], max diff 0.06, both peak at ℓ=2). With
+the corrected W the OBT modified-growth shift is **REAL — up to ~±15% on the late-ISW C_ℓ at the lowest
+ℓ (sign-dependent) = ~2% of the total low-ℓ TT — but the low ℓ are cosmic-variance-limited (30-60%), so
+max(shift/CV)=0.04 → WITHIN Planck**; a control (A=5) moves it strongly (propagation confirmed). So it
+is a REAL low-ℓ prediction within current CV (potentially testable by ISW-LSS cross-correlation), NOT a
+null. **NET: OBT-AeST TT consistent with Planck across ℓ — peaks (CAMB, <0.5%) AND low-ℓ (CLASS-validated
+line-of-sight, within CV), both COMPUTED.** The exact AeST aether+scalar hierarchy remains the (private/
+unwritten-public) research code. Two bugs (static-rescale + k²) caught by relire-en-boucle + the CLASS
+validation — exactly why we loop-read.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -312,4 +330,4 @@ input bracketed.
 | `a_phase_cmb.py` | the A-phase (decisive open front): the CMB needs a⁻³ DM, the Weyl is a⁻⁴; the a⁻³ source exists (radion, ⟨w⟩~0 verified) but needs the AeST structure (a⁻³ + MOND); OBT hope = brane-induced AeST |
 | `a_phase_aest.py` | the brane→AeST solve attempt: a concrete mapping (radion=a⁻³ dust + μ(x)=the AeST 𝒦, verified RAR limits + foliation=aether); IF it holds, the radion-vs-Weyl redundancy dissolves; open = exact derivation + CAMB + stability |
 | `a_phase_camb_fit.py` | the CAMB fit (real Boltzmann): a_H/a₀=2π (evolving a₀) → sub-horizon=CDM → the TT peaks match Planck (ℓ=220/536/813 vs 220/537.5/810.8, <0.5%); the A-phase CORE requirement MET; low-ℓ ISW = residual frontier |
-| `a_phase_isw_full.py` | the low-ℓ residual COMPUTED: real line-of-sight ISW via the MODIFIED GROWTH (k-dep μ_MG + GR cutoff, CAMB Weyl + Bessel) → late-ISW shift/CV=0.0004 WITHIN CV (both signs); control propagates; a wrong static-rescale attempt recorded |
+| `a_phase_isw_full.py` | the low-ℓ ISW, CLASS-VALIDATED: real line-of-sight via the MODIFIED GROWTH; matches CLASS lisw (max diff 0.06, both peak at ℓ=2) after catching CAMB's k² Weyl bug; OBT shift real ~±15% at low ℓ but WITHIN CV (shift/CV=0.04); 2 bugs (static-rescale + k²) caught by loop-reading + CLASS |

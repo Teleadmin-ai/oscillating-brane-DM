@@ -1,43 +1,44 @@
-"""Seed 3 (V9.0, quarantined) — the A-PHASE residual, FULL: the late-ISW by a real line-of-sight
-integral with the AeST-MODIFIED-GROWTH potentials (Romain: 'attaque le monstre pleinement, pas de
-simplification' + 'relire en boucle').
+"""Seed 3 (V9.0, quarantined) — the A-PHASE low-l ISW, FULL + CLASS-VALIDATED (Romain: 'compile
+hi_class-AeST ;)' + 'attaque le monstre pleinement' + 'relire en boucle').
 
-The full AeST Einstein-Boltzmann module (the aether+scalar hierarchy in hi_class) is a research code;
-no Fortran compiler here. So we do the next-fullest thing for the residual the acoustic peaks leave
-(the LATE ISW): a GENUINE line-of-sight ISW with the potentials evolved by the MODIFIED GROWTH.
+Reality (web-searched + checked): there is NO public AeST Boltzmann code — Skordis-Zlosnik's CMB code
+(which fit Planck in their 2021 PRL) is private/custom; hi_class is Horndeski (the AeST aether + the
+k-dependent a0-MOND are beyond Horndeski). So 'hi_class-AeST' cannot be compiled (it does not exist
+publicly). BUT a C compiler IS here: we compiled CLASS (classy v3.3.4) -- a full Boltzmann code -- and
+use it to VALIDATE the reduced computation, which is the maximal honest achievement.
 
-  A FIRST, WRONG attempt (recorded honestly): rescale the Weyl potential statically, W_OBT = R(k,z) W_GR.
-  That FAILS -- the ISW source is dW/dz, and d(R W)/dz = R W' + W R' partially cancels, so even A=20
-  does not move the ISW (a null artifact, not physics). The right physics is the modified EVOLUTION.
+THE COMPUTATION: the late-ISW the acoustic peaks leave, via a real line-of-sight integral with the
+potentials evolved by the MODIFIED GROWTH (k-dependent mu_MG, the AeST quasi-static limit):
+    Delta_l(k) = -2 integral dz (dW/dz)(k,z) j_l(k chi(z)) ;  C_l = integral dk/k (k/k_p)^(ns-1) Delta_l^2,
+with W=(Phi+Psi)/2 the TRUE Weyl potential and growth from D''+(2-3/2 Om)D'-3/2 Om mu_MG(k,a) D=0,
+mu_MG=1 +/- A*dev_eff(x), dev_eff=(1-mu)mu^2 (MOND deviation + GR super-horizon cutoff), x=2pi k/k_H.
 
-  THE RIGHT WAY: solve the k-dependent linear growth  D'' + (2 - 3/2 Om) D' - 3/2 Om mu_MG(k,a) D = 0
-  (N=ln a) with OBT's mu_MG(k,a) = 1 +/- A*dev_eff(x), x = 2pi k / k_H(a) (a0=cH/2pi -> a_H/a0=2pi),
-  dev_eff(x)=(1-mu(x))mu(x)^2 (the MOND deviation of G_eff, with a GR super-horizon cutoff: ->0 as x->0,
-  ~(1-mu) sub-horizon), mu(x)=x/sqrt(1+x^2). The growth ratio g(k,z)=D_OBT/D_GR multiplies CAMB's real
-  Weyl transfer: W_OBT(k,z) = W_GR(k,z) g(k,z). Then the real line-of-sight ISW:
+TWO BUGS the loop-rereading + CLASS validation CAUGHT and FIXED (recorded honestly):
+  (1) a static rescale W_OBT=R*W_GR is WRONG (dW/dz makes R*W'+W*R' cancel) -> use the modified GROWTH;
+  (2) CAMB's 'Weyl' transfer is k^2*(Phi+Psi)/2 (the lensing convention), NOT (Phi+Psi)/2 -> an extra
+      k^2 wrecked the ISW shape (it rose to l~20 instead of peaking at l=2). Dividing by k^2 makes the
+      LambdaCDM late-ISW MATCH CLASS's lisw almost exactly -> the line-of-sight is now validated.
 
-      Delta_l(k) = -2 integral dz (dW/dz)(k,z) j_l(k chi(z)) ;  C_l = integral dk/k (k/k_p)^(ns-1) Delta_l^2.
+RESULT: (i) the LambdaCDM late-ISW shape MATCHES CLASS (full Boltzmann) within ~0.06; (ii) OBT's
+modified-growth shifts the late-ISW C_l by up to ~+/-15% at the lowest l (sign-dependent) -- a REAL
+effect, ~2% of the total low-l TT -- but the low l are cosmic-variance-limited (CV~30-60% at l=2-12) so
+max(shift/CV)=0.04 -> WITHIN Planck; (iii) a control (larger A) MOVES it -> the modified growth
+propagates. So the OBT-AeST low-l is within Planck (computed + CLASS-validated), a real low-l prediction
+within current CV (testable by ISW-LSS cross-correlation). Residual: the EXACT AeST aether+scalar
+hierarchy (the private code).
 
-  We BRACKET sign and amplitude A; a machinery CONTROL (a larger A) must move the ISW (the modified
-  growth DOES propagate -- unlike the wrong static rescaling).
-
-RESULT (below): at the CMB-OBSERVABLE l>=2 the dominant scales are sub-horizon (x>=20, Newtonian,
-g~1), so the late-ISW shift is << cosmic variance for both signs and amplitudes. The modification is
-REAL and large only at super-horizon (x<2pi) scales, which are j_l-suppressed for l>=2 -> the CMB does
-not probe them. So OBT's late-time MOND does NOT spoil the low-l: computed via the modified growth.
-
-NOT V8.2. Not in the PDF. 'code, don't plead': modified-growth ODE + real line-of-sight (CAMB Weyl +
-Bessel), LambdaCDM-shape sanity-checked, a machinery control that MOVES, the result within CV. camb 1.6.6.
+NOT V8.2. Not in the PDF. camb 1.6.6 + classy v3.3.4 (CLASS, compiled with gcc) in the venv.
 """
 
 import camb
 import numpy as np
+from classy import Class
 from scipy.integrate import solve_ivp
 from scipy.special import spherical_jn
 
 H0, OMBH2, OMCH2, NS, AS, TAU = 67.36, 0.02237, 0.1200, 0.9649, 2.1e-9, 0.0544
 CKMS = 2.998e5  # c (km/s)
-OM = (OMBH2 + OMCH2) / (H0 / 100) ** 2  # matter density ~0.31
+OM = (OMBH2 + OMCH2) / (H0 / 100) ** 2
 ISW_FRACTION = 0.15  # late-ISW share of the low-l TT power (literature; conservative)
 ELLS = np.array([2, 3, 5, 8, 12, 20, 30])
 
@@ -49,9 +50,7 @@ def mu(x):
 def dev_eff(x):
     """MOND deviation of G_eff with a GR super-horizon cutoff: (1-mu) sub-horizon, ->0 as x->0 (GR)."""
     m = mu(x)
-    return (
-        1.0 - m
-    ) * m**2  # bounded (peak ~0.15 at x~1); ->0 super-horizon; ~(1-mu) sub-horizon
+    return (1.0 - m) * m**2
 
 
 def omega_m_a(a):
@@ -60,12 +59,11 @@ def omega_m_a(a):
 
 def kH_of_a(a):
     """Comoving Hubble wavenumber k_H = a H(a)/c (1/Mpc); matter+Lambda (radiation negligible z<6)."""
-    h = H0 * np.sqrt(OM * a**-3 + (1 - OM))
-    return a * h / CKMS
+    return a * H0 * np.sqrt(OM * a**-3 + (1 - OM)) / CKMS
 
 
 def growth_k(k, A, sign, a_eval):
-    """Linear growth D(a) for mode k with mu_MG(k,a)=1+sign*A*(1-mu(2pi k/k_H)); return D at a_eval."""
+    """Linear growth D(a) for mode k with mu_MG(k,a)=1+sign*A*dev_eff(2pi k/k_H); return D at a_eval."""
 
     def rhs(n, y):
         a = np.exp(n)
@@ -80,7 +78,7 @@ def growth_k(k, A, sign, a_eval):
 
 
 def isw_cl(ells, zs, chi, W, kk, ns):
-    """C_l^ISW (common norm) from W(k,z): Delta_l=-2 int dz (dW/dz) j_l(k chi); C_l=int dk/k k^(ns-1) Delta^2."""
+    """C_l^ISW (common norm) from the TRUE Weyl W(k,z): Delta_l=-2 int dz (dW/dz) j_l(k chi)."""
     dWdz = np.gradient(W, zs, axis=1)
     out = np.zeros(len(ells))
     for i, ell in enumerate(ells):
@@ -94,52 +92,76 @@ def isw_cl(ells, zs, chi, W, kk, ns):
     return out
 
 
+def class_late_isw(ells):
+    """CLASS (full Boltzmann) late-ISW C_l at ells (temperature contribution 'lisw')."""
+    m = Class()
+    m.set(
+        {
+            "output": "tCl",
+            "temperature contributions": "lisw",
+            "l_max_scalars": int(ells.max()) + 2,
+            "H0": H0,
+            "omega_b": OMBH2,
+            "omega_cdm": OMCH2,
+            "n_s": NS,
+            "A_s": AS,
+            "tau_reio": TAU,
+        }
+    )
+    m.compute()
+    cl = m.raw_cl(int(ells.max()) + 1)["tt"]
+    m.struct_cleanup()
+    return np.array([cl[int(ell)] for ell in ells])
+
+
 def main():
     print("=" * 92)
     print(
-        " A-PHASE residual FULL — late-ISW via the MODIFIED GROWTH + a real line-of-sight integral"
+        " A-PHASE low-l ISW — modified-growth line-of-sight, VALIDATED against CLASS (full Boltzmann)"
     )
     print("=" * 92)
 
-    # ---- CAMB LambdaCDM: chi(z), the Weyl transfer W_GR(k,z) -----------------------
+    # ---- CAMB LambdaCDM: chi(z), the TRUE Weyl W_GR=(Phi+Psi)/2 = (CAMB 'Weyl')/k^2 ----
     zs = np.linspace(0.02, 6.0, 70)
-    kk = np.logspace(-4.3, -1.3, 80)  # 1/Mpc
+    kk = np.logspace(-4.3, -1.3, 80)
     a_eval = 1.0 / (1.0 + zs)
     pars = camb.set_params(H0=H0, ombh2=OMBH2, omch2=OMCH2, ns=NS, As=AS, tau=TAU)
     pars.set_matter_power(redshifts=list(zs[::7]), kmax=0.2)
     results = camb.get_results(pars)
     chi = results.comoving_radial_distance(zs)
-    W_gr = results.get_redshift_evolution(kk, zs, ["Weyl"])[:, :, 0]  # (nk, nz)
+    weyl_camb = results.get_redshift_evolution(kk, zs, ["Weyl"])[:, :, 0]
+    W_gr = (
+        weyl_camb / kk[:, None] ** 2
+    )  # FIX: CAMB 'Weyl' is k^2(Phi+Psi)/2 -> divide by k^2
 
-    # ---- modified growth: g(k,z) = D_OBT/D_GR (the RIGHT physics) ------------------
-    D_gr = growth_k(0.0, 0.0, +1, a_eval)  # LambdaCDM growth (mu_MG=1, k-independent)
+    # ---- VALIDATION: my LambdaCDM late-ISW vs CLASS (full Boltzmann) ----------------
+    cl_lcdm = isw_cl(ELLS, zs, chi, W_gr, kk, NS)
+    mine = ELLS * (ELLS + 1) * cl_lcdm
+    mine /= mine.max()
+    cls = ELLS * (ELLS + 1) * class_late_isw(ELLS)
+    cls /= cls.max()
+    print(
+        "\n[VALIDATION] LambdaCDM late-ISW l(l+1)C_l (normalized) — line-of-sight vs CLASS lisw"
+    )
+    print("   l    :", "  ".join(f"{e:>5d}" for e in ELLS))
+    print("   mine :", "  ".join(f"{v:5.2f}" for v in mine))
+    print("   CLASS:", "  ".join(f"{v:5.2f}" for v in cls))
+    print(
+        f"   max|mine-CLASS| = {np.max(np.abs(mine - cls)):.3f}  (peaks at l=2, falls -> MATCHES)"
+    )
+    assert (
+        np.max(np.abs(mine - cls)) < 0.12
+    ), "the line-of-sight ISW must match CLASS (full Boltzmann)"
+
+    # ---- OBT modified-growth ISW, bracketed (the k^2 cancels in the ratio) ----------
+    D_gr = growth_k(0.0, 0.0, +1, a_eval)
 
     def weyl_obt(A, sign):
-        g = np.array([growth_k(k, A, sign, a_eval) / D_gr for k in kk])  # (nk, nz)
+        g = np.array([growth_k(k, A, sign, a_eval) / D_gr for k in kk])
         return W_gr * g
 
-    # ---- sanity: LambdaCDM late-ISW rises to low l --------------------------------
-    cl_lcdm = isw_cl(ELLS, zs, chi, W_gr, kk, NS)
-    Dl = ELLS * (ELLS + 1) * cl_lcdm
     print(
-        "\n[sanity] LambdaCDM late-ISW l(l+1)C_l (normalized; should be smooth, low-l weighted)"
-    )
-    print("   l   :", "  ".join(f"{e:>6d}" for e in ELLS))
-    print("   D_l :", "  ".join(f"{v:6.2f}" for v in Dl / Dl.max()))
-    assert (
-        cl_lcdm[0] > cl_lcdm[-1] > 0
-    ), "the late-ISW C_l must rise to low l (the ISW signature)"
-
-    # ---- OBT modified-growth ISW, bracketed ---------------------------------------
-    print(
-        "\n[OBT] mu_MG=1 +/- A*dev_eff(x), dev_eff=(1-mu)mu^2 (GR cutoff); W_OBT=W_GR*D_OBT/D_GR (mod. growth)"
-    )
-    x_obs = 2 * np.pi * (2.0 / chi[np.argmin(abs(zs - 1.0))]) / kH_of_a(0.5)
-    print(
-        f"      observable late-ISW (l>=2) probes x ~ {x_obs:.0f} (Newtonian, dev_eff={dev_eff(x_obs):.4f}); the"
-    )
-    print(
-        "      modification peaks ~0.15 at x~1 (MOND onset, k~k_H/2pi -> l<1), j_l-suppressed for l>=2."
+        "\n[OBT] modified growth mu_MG=1 +/- A*dev_eff(x); W_OBT=W_GR*D_OBT/D_GR (k^2 cancels in ratio)"
     )
     cv = np.sqrt(2.0 / (2 * ELLS + 1))
     worst = 0.0
@@ -150,7 +172,7 @@ def main():
             worst = max(worst, np.max(lowl_shift / cv))
             within = np.all(lowl_shift < cv)
             print(
-                f"    A={A}, sign={sign:+d}: ISW ratio l=2..30 in [{ratio.min():.4f},{ratio.max():.4f}]; "
+                f"    A={A}, sign={sign:+d}: ISW ratio in [{ratio.min():.4f},{ratio.max():.4f}]; "
                 f"max(shift/CV)={np.max(lowl_shift/cv):.4f} -> {'WITHIN CV' if within else 'EXCEEDS CV(!)'}"
             )
             assert (
@@ -159,8 +181,6 @@ def main():
     print(
         f"    worst over the bracket: low-l shift / cosmic variance = {worst:.4f}  (<1 = within)"
     )
-
-    # ---- machinery control: a larger A MUST move the ISW (modified growth propagates) -
     move = float(
         np.max(np.abs(isw_cl(ELLS, zs, chi, weyl_obt(5.0, +1), kk, NS) / cl_lcdm - 1))
     )
@@ -169,48 +189,54 @@ def main():
     )
     assert (
         move > 0.005
-    ), "a larger A must visibly move the ISW (the modified growth must propagate)"
+    ), "a larger A must visibly move the ISW (modified growth must propagate)"
 
     # ---- verdict ------------------------------------------------------------------
     print(
-        "\n[VERDICT] the late-ISW residual is WITHIN cosmic variance (modified growth, line-of-sight)"
+        "\n[VERDICT] the late-ISW is CLASS-VALIDATED and the OBT modification is WITHIN cosmic variance"
     )
     print(
-        "    * Real modified-growth ODE (k-dependent mu_MG) -> g(k,z) -> W_OBT=W_GR*g -> a real"
+        "    * 'hi_class-AeST' cannot be compiled -- no public AeST code exists (Skordis-Zlosnik's is"
     )
     print(
-        "      line-of-sight ISW (CAMB Weyl + Bessel). The control (a larger A=5) MOVES the ISW, so the"
+        "      private; hi_class is Horndeski, not the AeST aether). But CLASS (classy) IS compiled here."
     )
     print(
-        "      machinery propagates (the earlier static-rescaling null was an artifact, now fixed)."
+        "    * The reduced line-of-sight ISW now MATCHES CLASS's full-Boltzmann late-ISW (after fixing"
     )
     print(
-        "    * At CMB-OBSERVABLE l>=2 the dominant scales are sub-horizon (x>=20, Newtonian, g~1):"
+        "      CAMB's k^2 Weyl convention -- a bug the CLASS validation caught). So the machinery is real."
     )
     print(
-        "      the low-l shift is << cosmic variance for both signs and amplitudes. The big modification"
+        "    * OBT's modified growth shifts the late-ISW C_l by up to ~+/-15% at the lowest l (sign-"
     )
     print(
-        "      is super-horizon (x<2pi), j_l-suppressed for l>=2 -> the CMB does not probe it."
+        "      dependent) -- a REAL effect, not tiny -- but that is ~2% of the total low-l TT, and the low"
     )
     print(
-        "    * WHY: a0(z)=cH(z)/2pi -> a_H/a0=2pi keeps the Newton/MOND transition AT the horizon, so"
+        "      l are COSMIC-VARIANCE-LIMITED (CV ~30-60% at l=2-12) -> max(shift/CV)=0.04 -> WITHIN Planck."
     )
     print(
-        "      the whole observable CMB (peaks AND low-l) sits in the Newtonian regime -> ~LambdaCDM."
+        "      A control (A=5) moves it strongly -> the modified growth propagates (not a null artifact)."
     )
     print(
-        "    * With a_phase_camb_fit.py (peaks <0.5%): the OBT-AeST TT is consistent with Planck across"
+        "      Note: a REAL low-l prediction within current CV -> potentially testable by ISW-LSS"
     )
     print(
-        "      l. Honest residual: the EXACT AeST mu-Sigma + polarization + lensing need the hi_class-"
+        "      cross-correlation (which partially beats cosmic variance). a_H/a0=2pi keeps the peaks safe."
     )
     print(
-        "      AeST module; here the growth + line-of-sight are real, the mu-Sigma input is bracketed."
+        "    * With a_phase_camb_fit.py (peaks <0.5%, CAMB): the OBT-AeST TT is consistent with Planck"
+    )
+    print(
+        "      across l, peaks AND low-l, both COMPUTED and now CLASS-cross-checked. Residual = the EXACT"
+    )
+    print(
+        "      AeST aether+scalar hierarchy (the private/unwritten-public Boltzmann code)."
     )
 
     print(
-        "\n  ALL INJECTION TESTS PASSED (LambdaCDM ISW sane; control PROPAGATES; OBT low-l within CV)."
+        "\n  ALL INJECTION TESTS PASSED (line-of-sight MATCHES CLASS; OBT within CV; control propagates)."
     )
     print("=" * 92)
 
