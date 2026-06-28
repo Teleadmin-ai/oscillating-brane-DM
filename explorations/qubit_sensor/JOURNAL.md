@@ -124,8 +124,10 @@ gate (a) is reframed from "near-deaf" (qualitative) to **"an SNR / quantum-sensi
 
 - **(a)** the **asymmetric sensor-code** — the coupling side of gate (a): a code whose logical
   direction is gravitationally exposed yet whose local-noise distance stays high.
-- **(b)** a **logical GHZ over DFS-protected qubits** — protected entanglement that keeps the N×
-  super-resolution under noise where bare GHZ collapses (the 4-qubit demonstration).
+- **(b) — DONE** (`qiskit_protected_ghz.py`, "vas y code ;)"): the protected entangled probe
+  (|0011⟩+|1100⟩, inside the collective DFS) **keeps the 2× super-resolution** (⟨Z⟩=cos 2θ, reaches
+  −1 at θ=π/2) **AND is immune** to collective drift (std 0.006), where the bare 4-qubit GHZ washes
+  out (std 0.71). **Protect-then-entangle, demonstrated on Aer** — the seed's qubit-sensor in miniature.
 - **(c)** consolidate / step back.
 
 ---
@@ -140,3 +142,4 @@ gate (a) is reframed from "near-deaf" (qualitative) to **"an SNR / quantum-sensi
 | `qiskit_five_qubit_demo.py` | the code on real Aer/IBM circuits: Z_j detected, Z_L invisible-but-heard |
 | `qiskit_weak_signal_detection.py` | twinned-pair/DFS common-mode rejection + GHZ super-resolution/fragility |
 | `qiskit_multiwitness.py` | several witnesses: √M reference + immunity + protect-then-entangle |
+| `qiskit_protected_ghz.py` | protect-then-entangle DONE: an entangled probe in the collective DFS keeps 2× super-resolution + immunity (bare GHZ washes out) |

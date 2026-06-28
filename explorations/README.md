@@ -199,6 +199,11 @@ the sensor floor (diminishing returns), and — the key — a bare GHZ AMPLIFIES
 out (std 0.69) while the DFS pair is immune (std 0.005), so **protection is what lets entanglement keep
 its N× gain (protect-then-entangle)**. Net: witnesses help via reference (√M) + immunity + ENABLING
 protected entanglement (the unbounded lever), never by amplifying the φ^N coupling.
+`qiskit_protected_ghz.py` closes the arc — **protect-then-entangle DONE**: an entangled probe
+(|0011⟩+|1100⟩) inside the collective DFS keeps the **2× super-resolution** (cos 2θ, −1 at θ=π/2)
+**AND is immune** to collective drift (std 0.006), where the bare 4-qubit GHZ washes out (std 0.71).
+The witnesses that protect the qubit are exactly what let the entanglement deliver its Heisenberg
+gain under noise — the seed's qubit-sensor in miniature.
 
 **Status.** Steps 1–2 + Gate (a) DONE: the [[5,1,3]] atom + protected-yet-sensitive subspace, the
 concatenation scale-up (noise/erasure thresholds, widening window), and the Penrose-Diósi
