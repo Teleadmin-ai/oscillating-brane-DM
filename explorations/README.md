@@ -182,6 +182,18 @@ distributions). **Link to the scale-up:** concatenation raises protection AND (g
 more scale = more deaf; the two Gate-IN tasks pull oppositely → a tailored ASYMMETRIC code (audible
 signal direction, high local-noise distance) is the real sensor-design target.
 
+**On real qubits + the DETECTION side — DONE (June 2026; qiskit 2.4.2 / Aer in the venv, IBM-submittable).**
+`qiskit_five_qubit_demo.py` puts gate 1 + gate (a) on actual circuits: codeword verified; single-Z_j →
+nonzero syndrome (DETECTED, gate 1); Z_L → zero syndrome yet flips ⟨X_L⟩ (invisible-but-HEARD, gate a) —
+every Aer outcome asserted against qiskit's Pauli algebra. `qiskit_weak_signal_detection.py` answers
+Romain's correction that gate (a)'s φ^N is a **sensitivity problem, not a deafness**: (A) a **twinned pair /
+witness** in the DFS {|01⟩,|10⟩} rejects common-mode drift (⟨X_L⟩ = cos θ, std 0.004 over 12 drifts vs a lone
+qubit's 0.71) — a weak differential signal extracted; (B) **GHZ** gives N× phase super-resolution (√N
+Heisenberg precision) but is noise-fragile ((1−2p)^N) → needs protection (the DFS/QEC). **Reframe:** gate (a) is
+an SNR/quantum-sensing problem, and the right geometry is **two twinned (entangled) masses read differentially**
+(the Bose-Marletto-Vedral picture), which **lowers the detectable-mass threshold** — no single big mass; the
+limit is the demon's E_G above the irreducible differential noise, not a fixed 'mesoscopic' mass.
+
 **Status.** Steps 1–2 + Gate (a) DONE: the [[5,1,3]] atom + protected-yet-sensitive subspace, the
 concatenation scale-up (noise/erasure thresholds, widening window), and the Penrose-Diósi
 logical-projection (only Z_L heard, at order φ^N) — all computed + injection-tested
