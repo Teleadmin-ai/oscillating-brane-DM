@@ -255,6 +255,21 @@ is built stable). **VERDICT: the A-phase now has a CONCRETE OBT-distinctive cand
 a brane-induced AeST field; the redundancy is resolved, the derivation is the open prize. A mapping with
 verified legs, not yet a solve.
 
+**The CAMB FIT — the acoustic peaks MATCH Planck (`a_phase_camb_fit.py`, Romain's "le fit CAMB", a real
+Boltzmann run; camb 1.6.6 installed in the venv):** the decisive computational check. **The enabling
+physics (OBT-specific):** because a₀(z)=cH(z)/2π EVOLVES, **a_H/a₀=2π is CONSTANT** → every SUB-HORIZON
+scale has x>2π → μ→1 → the AeST field is NEWTONIAN = CDM. At the 1st acoustic scale (sub-horizon,
+R_H~210 Mpc / r_s~145 Mpc) **x~29 → μ=0.9994 → deep CDM**. So the field is CDM at recombination, and the
+TT peaks = the ΛCDM peaks. **The CAMB run** (the a⁻³ DM = the radion-AeST density, CDM at recombination)
+gives the first three TT peaks at **ℓ=220/536/813 vs Planck 220.0/537.5/810.8 (<0.5%)**, 1st-peak height
+5732 μK² (Planck ~5700). **The acoustic-peak fit — the A-phase's CORE requirement — is MET.** The
+CMB-peak objection to OBT's geometric DM is answered: the radion supplies the a⁻³, and the EVOLVING a₀
+keeps it CDM where it must be (a CONSTANT a₀ would not separate sub-horizon=CDM cleanly — the evolving a₀
+is what makes the fit work). **Residual frontier (honest):** the LOW-ℓ (ISW, super-horizon, where
+μ→MOND) + the full polarization need the dedicated AeST Boltzmann module (AeST fit Planck fully;
+Skordis-Złośnik 2021); OBT's μ(x)+evolving-a₀ is the residual check. The PEAKS are done; the low-ℓ
+module is the residual frontier.
+
 ---
 
 ## Scripts in this folder (the verified record)
@@ -276,3 +291,4 @@ verified legs, not yet a solve.
 | `dm_discriminator.py` | the B-mode is the PRIMORDIAL leg of a 3-epoch geometric-vs-particle DM discriminator: RAR (late) already decided geometric (radion DEAD, f<4%); B-mode confirms; CMB a⁻³ (A-phase) is the open front |
 | `a_phase_cmb.py` | the A-phase (decisive open front): the CMB needs a⁻³ DM, the Weyl is a⁻⁴; the a⁻³ source exists (radion, ⟨w⟩~0 verified) but needs the AeST structure (a⁻³ + MOND); OBT hope = brane-induced AeST |
 | `a_phase_aest.py` | the brane→AeST solve attempt: a concrete mapping (radion=a⁻³ dust + μ(x)=the AeST 𝒦, verified RAR limits + foliation=aether); IF it holds, the radion-vs-Weyl redundancy dissolves; open = exact derivation + CAMB + stability |
+| `a_phase_camb_fit.py` | the CAMB fit (real Boltzmann): a_H/a₀=2π (evolving a₀) → sub-horizon=CDM → the TT peaks match Planck (ℓ=220/536/813 vs 220/537.5/810.8, <0.5%); the A-phase CORE requirement MET; low-ℓ ISW = residual frontier |

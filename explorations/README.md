@@ -251,7 +251,14 @@ AeST function 𝒦** (verified to give both RAR limits; 𝒦'↔μ); the brane's
 aether (mimetic clock \|∂φ\|=1). IF the mapping holds, ONE brane-derived AeST field gives a⁻³ (CMB) +
 MOND (galaxies) → the **radion-vs-geometric-Weyl redundancy DISSOLVES** (the geometric μ(x) FIXES the 𝒦,
 not two DM sectors) and the a⁻³ CMB DM is DERIVED, not bolted on. Open = the exact brane-action
-derivation + a CAMB perturbation fit + stability. A mapping with verified legs, not yet a solve. Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
+derivation + a CAMB perturbation fit + stability. A mapping with verified legs, not yet a solve.
+**CAMB fit DONE (`a_phase_camb_fit.py`, a real Boltzmann run):** because a₀(z)=cH(z)/2π **evolves**,
+a_H/a₀=2π is **constant** → every sub-horizon scale is Newtonian (1st acoustic x~29 → μ=0.9994) → the
+AeST field is **CDM at recombination** → the CAMB TT peaks match Planck (**ℓ=220/536/813 vs
+220.0/537.5/810.8, <0.5%**; 1st-peak 5732 μK² vs ~5700). **The A-phase's CORE requirement — an a⁻³
+component that fits the acoustic peaks — is MET; the CMB-peak objection to OBT's geometric DM is
+answered** (the radion supplies the a⁻³; the evolving a₀ keeps it CDM where it must be). Residual
+frontier: the low-ℓ ISW (super-horizon, μ→MOND) + the full AeST Boltzmann module (Skordis-Złośnik 2021). Verdict: φ₀=M_s is NOT forced to precision (= the wavefunction of the universe,
 quantum cosmology) but NATURAL (O(1)) — the exact 5:1 is one O(1) coefficient = the same status as the
 a₀=cH₀/2π coefficient (scale derived, O(1) natural). The germe-proof lands at OBT's one universal wall.
 
