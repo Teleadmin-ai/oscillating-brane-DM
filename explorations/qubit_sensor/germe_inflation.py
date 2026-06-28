@@ -15,7 +15,9 @@ THREE results (each with its caveat — this is a SEARCH, not a proof):
      to precision. CAVEAT: the radion must be light (m << H_inf) during inflation (model-dependent).
  [2] CONSILIENCE: Omega_DM ~ phi0^2 ~ H_inf^2, and the CMB tensor ratio r ~ H_inf^2 too -> Omega_DM
      and r are LINKED. From the measured Omega_DM, r ~ 3e-5 is PREDICTED (definite, though below
-     near-term CMB-S4 ~1e-3). A falsifiable-in-principle bridge: r >> 3e-5 would break the chain.
+     near-term CMB-S4 ~1e-3). [SUPERSEDED by
+     germe_isocurvature.py: the random-walk route giving this link is EXCLUDED by CMB isocurvature
+     (~9 orders) -> r~3e-5 does NOT survive; viable radion-DM requires r UNDETECTABLE. Trail kept.]
  [3] VERDICT: 'phi0 = M_s forced?' NO (that is the wavefunction of the universe). BUT phi0 ~ M_s is
      NATURAL (an O(1) radion displacement in string units); the exact coefficient (~1.4) is O(1),
      EXACTLY the epistemic status of the a0 = cH0/2pi coefficient (scale derived, O(1) not pinned).
@@ -98,8 +100,16 @@ def main():
     print(
         "\n[2] CONSILIENCE — Omega_DM ~ phi0^2 ~ H_inf^2, and r ~ H_inf^2 too -> Omega_DM predicts r"
     )
+    print(
+        "    [SUPERSEDED: germe_isocurvature.py shows the random-walk route is CMB-isocurvature-"
+    )
+    print(
+        "     excluded (~9 orders) -> r~3e-5 does NOT survive; radion-DM actually => r UNDETECTABLE.]"
+    )
     r = tensor_ratio(h_inf)
-    print(f"    H_inf = {h_inf:.2e} GeV => tensor-to-scalar r = {r:.1e}")
+    print(
+        f"    H_inf = {h_inf:.2e} GeV => tensor-to-scalar r = {r:.1e}  (naive, now superseded)"
+    )
     print(
         "    cross-check: r from H_inf via the standard single-field relation r = 2H^2/(pi^2 A_s M_pl^2)"
     )
