@@ -217,6 +217,14 @@ nanosphere (τ~10⁴ s ~ Penrose) is the frontier; the only online escape = a no
 dynamical 5D coupling = new physics beyond V8.2. **Consolidated verdict + full curated log:
 `qubit_sensor/JOURNAL.md` §7** — the PROTOCOL is online + done; the DEMON's signal still needs mass
 (now quantified). The os/chair bone stays Penrose-Diósi 5D collapse (`scripts/penrose_diosi_5d.py`).
+**The upstream prize (mass-free decompression):** `germe_decompression.py` takes Romain's
+detection→decompression reframe — don't DETECT the demon (mass), COMPUTE the germe's observables and
+test against EXISTING cosmology. Two closure numbers: the **DM 5:1** = the radion-misalignment ⟨φ²⟩ of
+the germe (from OBT's derived scales m_φ=0.36 eV, φ₀~M_s, the standard radiation-era misalignment gives
+**Ω_DM h²≈0.06 = no-fit cosmological order, ~½ of 0.12**; exact 5:1 at φ₀=1.40 M_s; a qubit reads ⟨φ²⟩,
+mass-free) + the **S8 sign** = the AdS-warp **indicial theorem** (Gate 9: degenerate (½,½) → c_phys>0 →
+suppression). The artifact: the demon's ledger is **computable** (decompress the germe), not only
+detectable; the wall moves from MASS to **specifying the germe** (theory, the bulk solver's frontier).
 
 **Status.** Steps 1–2 + Gate (a) DONE: the [[5,1,3]] atom + protected-yet-sensitive subspace, the
 concatenation scale-up (noise/erasure thresholds, widening window), and the Penrose-Diósi

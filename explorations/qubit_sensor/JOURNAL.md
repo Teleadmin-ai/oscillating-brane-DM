@@ -164,6 +164,28 @@ Penrose-Diósi 5D collapse below 0.2 μm (`../../scripts/penrose_diosi_5d.py`).
 
 ---
 
+## 8. The upstream prize — mass-free DECOMPRESSION (June 2026)
+
+Romain's reframe: don't DETECT the demon (needs mass) — **COMPUTE what it encodes** (decompress the
+germe's observables) and test against EXISTING cosmology. The detection route was always the only one
+needing mass; the **decompression route is mass-free** (it is a calculation). `germe_decompression.py`
+attacks two closure numbers:
+- **the DM 5:1** = the radion-condensate misalignment abundance = **⟨φ²⟩ of the germe field state** (a
+  "qubit-inside" observable). From OBT's OWN derived scales (m_φ=0.36 eV Goldberger-Wise; φ₀~M_s=
+  1.19e12 GeV LVS) the standard radiation-era misalignment gives **Ω_DM h²≈0.06 (2.7:1) = cosmological
+  order, a NO-FIT hit ~½ the measured 0.12**; the exact 5:1 needs φ₀=1.40 M_s. A qubit reads ⟨φ²⟩
+  (mass-free). WALL: is φ₀ pinned to ~M_s? (germe-spec, theory frontier; factor-~2 norm, Gate-12 flag).
+- **the S₈ sign** = a theorem of the bulk geometry (Gate 9): the AdS warp's −1/(4z²) has DEGENERATE
+  indicial exponents (½,½) → c_phys=s+2∈(0,1]>0 → **suppression** (enhancement excluded), within the
+  linear-bulk/quasi-static premises. No germe state, no mass.
+
+**The "other artifact" that bypasses the mass:** the demon's ledger is COMPUTABLE (decompress the
+germe), not only detectable (Penrose-Diósi). The remaining wall is THEORY (pin the germe), where the
+bulk solver + a qubit work — not a mesoscopic-mass lab. (Cross-checks: T_osc~20 TeV = Gate 12; the
+abundance = Gate 10's radion-misalignment candidate; the sign = Gate 9.)
+
+---
+
 ## Scripts in this folder (the verified record)
 
 | script | proves |
@@ -177,3 +199,4 @@ Penrose-Diósi 5D collapse below 0.2 μm (`../../scripts/penrose_diosi_5d.py`).
 | `qiskit_protected_ghz.py` | protect-then-entangle DONE: an entangled probe in the collective DFS keeps 2× super-resolution + immunity (bare GHZ washes out) |
 | `qiskit_asymmetric_code.py` | gate (a) fix DONE: an asymmetric code (d_X=3, d_Z=1) hears the Z-signal at order 1 (cos 3θ) + corrects local X-noise |
 | `penrose_logical_coupling.py` | the real question: coupling IS logical-level but gravitational → cloud 14–50 orders deaf, nanosphere the frontier; online escape = non-grav 5D (beyond V8.2) |
+| `germe_decompression.py` | the upstream prize, MASS-FREE: the DM 5:1 = germe ⟨φ²⟩ (Ω~0.06 from OBT scales, no fit) + the S8 sign = warp indicial theorem (Gate 9) |
