@@ -193,6 +193,12 @@ Heisenberg precision) but is noise-fragile ((1−2p)^N) → needs protection (th
 an SNR/quantum-sensing problem, and the right geometry is **two twinned (entangled) masses read differentially**
 (the Bose-Marletto-Vedral picture), which **lowers the detectable-mass threshold** — no single big mass; the
 limit is the demon's E_G above the irreducible differential noise, not a fixed 'mesoscopic' mass.
+`qiskit_multiwitness.py` answers Romain's 'do several witnesses help?' (seeded Aer Monte-Carlo):
+0→1 witness RESCUES the signal (std 1.8→0.06 rad), 1→M REFINES the common-mode reference ~1/√M toward
+the sensor floor (diminishing returns), and — the key — a bare GHZ AMPLIFIES collective drift and washes
+out (std 0.69) while the DFS pair is immune (std 0.005), so **protection is what lets entanglement keep
+its N× gain (protect-then-entangle)**. Net: witnesses help via reference (√M) + immunity + ENABLING
+protected entanglement (the unbounded lever), never by amplifying the φ^N coupling.
 
 **Status.** Steps 1–2 + Gate (a) DONE: the [[5,1,3]] atom + protected-yet-sensitive subspace, the
 concatenation scale-up (noise/erasure thresholds, widening window), and the Penrose-Diósi
