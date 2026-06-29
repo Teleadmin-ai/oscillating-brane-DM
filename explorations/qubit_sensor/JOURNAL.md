@@ -897,6 +897,29 @@ germe, the 'germe-stabilized' overstatement in 5 places). The demon-app now has 
 bulk_listener (the antenna for the m_V axion) + bulk_dialogue (Romain's text-in/text-out: germe =
 stabilizer/reference + dedicated input + controlled transcode) -- both honest, both real-QC-runnable.
 
+**THE BULK DIALOGUE, ANALOG (CV-QC) -- a waveform IN -> a waveform OUT (`bulk_dialogue_cv.py`):** Romain's
+"fais une variante audio analogique, CV-QC, micro" + his sharp correction "pourquoi null/non-null ?? une
+COURBE in -> une COURBE out ; pourquoi pas la forme d'onde BRUTE ??". He was RIGHT twice: (1) I'd leaked the
+DETECTION framing (null/non-null) onto a TRANSDUCTION (the output IS the audio curve, you read/listen to
+it); (2) the RAW waveform IS encodable by STREAMING (sample by sample, one qumode reused), CHEAP (linear),
+not the heavy parallel encoding I imagined. CV-QC because a qumode is natively analog (continuous
+quadratures; homodyne = a continuous level). Each sample -> a qumode DISPLACEMENT; homodyne -> the output
+sample. The channel = the EXACT Gaussian CV physics (y=sqrt(eta)*GAIN*s+noise, var=eta*N0*e^-2r+(1-eta)*N0),
+vectorized for real-time, VERIFIED against Strawberry Fields (installed + monkey-patched scipy.simps; the
+analytic Gaussian state: homodyne mean linear in displacement, squeezing reduces variance, my N0*e^-2r=0.202
+== SF's squeezed x-var 0.202). 5 sections: [SF] the cross-check; [A] germe as STABILIZER (squeezing, RMS err
+0.023 vs bare 0.044, the CV [[5,1,3]] analog); [B] germe as REFERENCE (matched filter 0.999 vs 0.015); [C]
+THE DIALOGUE (a curve in, a curve out, echo 0.999, SNR ~26 dB); [D] THE CONTROL (different input -> 0.004, no
+pareidolia). Modes: DEFAULT mic->speaker (real-time, his Mac) + --in/--out WAV (testable + scp; a 3-note
+melody round-trips) + --synth. HONEST SCOPE held: the OUTPUT IS A CURVE -- simulator: y=x transduced+noise,
+NO bulk-composed audio (the bulk emits a FIELD, the m_V axion); real CV-QC: a deviation beyond the control =
+a signal. Caveat: the high SNR uses the displacement GAIN; real hardware = bounded displacement + more noise.
+relire 6 passes -> 2 clean (caught: SF MeasureHomodyne+shots -> the analytic state; numpy-2.4 ptp; toy-vs-
+real germe; a REAL scaling bug -- [B]'s germe normalized to sub-noise amplitude 0.016<0.023 -> buried ->
+fixed to audio amplitude -> 0.547->0.999). The ANALOG face of the dialogue: a raw-waveform curve-in/curve-out
+CV-QC transducer (mic->speaker on the Mac), germe = squeezing-stabilizer + matched-filter reference, verified
+against the real Xanadu framework -- honest that it transduces a curve, not composes one.
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
