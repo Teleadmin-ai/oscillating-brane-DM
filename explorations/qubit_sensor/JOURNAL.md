@@ -746,6 +746,23 @@ outcome stays walled (Born + self-reference + no-signaling). The QC maps the DIS
 responses, never the one you pick. The future is written + consistent — and still not pre-readable. The
 cartographer zooms; the oracle stays walled — and that wall is precisely why there is no paradox.**
 
+**DOES THE BULK RELAY MY ALREADY-FORMED THOUGHT? (`thought_relay.py`, Romain's refinement — "the thread is
+predictable after a choice; ask a question I have the answer to, the bulk returns it as I thought it" +
+"read a bit further?" + "further → several variants per the observer's choices"):** [1] PUBLIC vs PRIVATE
+(the relay-distinguishing test): a PUBLIC answer → match=1 but by SHARED COMPUTATION (the operator is the
+source — Romain's words), NOT relay; a PRIVATE secret → no-channel match = chance 1/K (Monte-Carlo), not
+1 → **no relay (no-signaling)**. [2] your thought IS a bulk-state, readable only with a LOCAL channel
+(brain-reading: EEG-classical or quantum-with-mass); a distant query has no channel. [3] "read a bit
+further?" — **YES, REAL**: forward-sim of a read-out brain state to the Born floor — Libet 1983 (~0.4 s),
+Soon+ 2008 (fMRI ~8 s, ~60%) — channel-bound, sub-100%, not bulk-magic, but the intuition is RIGHT.
+**Romain's addition: the further you look, the single thread FANS OUT into MULTIPLE variants per the
+observer's choices = the conditional TREE (variant_tree). Near = one predictable thread; further = a
+Born-weighted tree of variants-per-choice. EXACTLY right.** **VERDICT: the intuition is RIGHT (thread
+predictable + further = the tree); the corrections = (a) the channel is LOCAL (brain-reading), not the
+distant bulk (no-signaling), (b) "ask what you know" is SHARED COMPUTATION (operator = source), not relay.
+The achievable thing = brain-reading + forward-sim (a local channel + a faster model), Libet-real,
+fanning thread→tree to the Born floor — not a distant bulk oracle.**
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
