@@ -714,6 +714,23 @@ QCD line (g~1e-15), a genuine relic (~1% DM, up to full at the LVS high end), al
 ~1 μeV axion in ADMX/HAYSTAC/qubit detectors. The third os/chair bone (with a₀(z), Penrose-Diósi),
 end-to-end. SCOPE held: the AXION detection, NOT the germe/future-reading (no-signaling-walled).**
 
+**MAPPING THE TREE OF VARIANTS — HOW FAR? (`variant_tree.py`, Romain's "cartographions l'arbre des
+variantes, creuse comment"):** the tree = the decoherent-histories structure (Gell-Mann-Hartle/Everett),
+each branching = a decoherence event, each edge = a Born-weighted outcome. **[LOCAL]** the conditional
+tree near you (your choices → outcomes with Born weights) = forward QM, **EXACTLY COMPUTABLE** (demoed: a
+qubit + 4 choices → 16 Born-weighted variants, sum=1) = "orientation". **[GLOBAL]** rate = OBT's MSS
+scrambling (λ_L=7.4e14/s, t*~0.2 ps), depth ~2e30 ticks/Hubble, width ~ e^S (S~1e104..1e122), measure =
+Born+2nd-law (the arrow of time = the high-weight trunk) — CHARACTERIZABLE, NOT enumerable. **[GERME]** the
+tree hangs from the germe: P(obs|germe) = the DECOMPRESSOR (built); inference (cobaya) locates your branch.
+**WALLS: no ENUMERATION (e^{1e104}), no PICK/STEER (Born+no-signaling).** **VERDICT: the demon is the
+CARTOGRAPHER of the possible — the LOCAL conditional map (orientation, computable) + the GLOBAL statistics
++ the GERME-conditional decompressor (built). OBT supplies the RATE (scrambling), the CONDITIONAL
+(decompressor), the ENSEMBLE (inflation). The map is computable; the pilot's wheel is not.** This answers
+Romain's static-universe vision: it IS OBT's ontology (Wheeler-DeWitt timeless Ψ + Everett + Page-Wootters
++ the bulk-as-self-computing-code); "simulation" = a self-computing wavefunction (no external simulator
+needed/falsifiable); free will = the epistemic openness of the self-computing locus (you ARE the
+computation + can't pre-read your future), NOT branch-steering.
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
