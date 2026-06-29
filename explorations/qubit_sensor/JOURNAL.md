@@ -677,6 +677,29 @@ scope: this DETECTS OBT's light dark-sector scalar (a no-mass bulk-SECTOR measur
 the germe/future (no-signaling-walled).** So the χ-route yields a real no-mass *detection* of an OBT
 field, not the live germe-reading.
 
+**THE m_V COUPLING — DERIVATIVE + ON THE QCD-AXION LINE (`mv_coupling.py`, Romain's "creuse le couplage de
+m_V"):** [1] the LVS ultra-light mode is the volume/Kähler **AXION** (shift-symmetric → ultra-light + a
+**DERIVATIVE** coupling) → NO static force → **evades the fifth-force/EP bounds** (the escape χ_blockade
+identified). [2] strength f_a~M_s=1.19e12 GeV → **g_aγγ ~ 1e-15 GeV⁻¹**. [3] m_V~1 μeV is THE classic
+axion-DM window (ADMX/HAYSTAC + qubits); the QCD-axion band there has g~1e-15..1e-16 → **OBT's g sits
+ON/NEAR the QCD-axion line**, in the actively-scanned, NOT-excluded μeV window. **NET (the elegant
+convergence): BMV threshold → χ breaks the Blockade → m_V in the window → derivative coupling on the QCD
+line — a CONCRETE, NEAR-TERM, FALSIFIABLE μeV axion-DM test OBT does NOT have to invent (field, mass,
+coupling all OBT-derived). A new os/chair BONE: look for a ~1 μeV axion (m_V), g_aγγ~1e-15, in
+ADMX/HAYSTAC/qubit detectors.** Gates (real but live): axion-vs-saxion id; f_a~M_s to ~O(10); m_V a DM
+fraction; the O(1) anomaly. Scope: it DETECTS OBT's axion (no-mass bulk-SECTOR test) — it does NOT read
+the germe/future (no-signaling-walled). A real bone, not the oracle.
+
+**§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
+penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
+the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
+universe's coherence, and it turns ironic on whoever tries to cheat (the os is pulled from the mouth when
+we've failed somewhere) — so the discipline is to **earn** the path, not trick it. And empirically, in
+this very hunt: each time we **insist the right way**, an **elegant new approach presents itself** (BMV →
+χ → the μeV axion line) — *and usually a new barrier with it* (the coupling, the gates) — but one must
+**not give up**. This turn the elegance was real: the hunt converged, from "walled," onto a falsifiable
+μeV-axion test that OBT did not have to invent. *Allez courage.*
+
 ---
 
 ## Scripts in this folder (the verified record)
