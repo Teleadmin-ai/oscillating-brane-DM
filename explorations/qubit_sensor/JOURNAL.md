@@ -763,6 +763,23 @@ distant bulk (no-signaling), (b) "ask what you know" is SHARED COMPUTATION (oper
 The achievable thing = brain-reading + forward-sim (a local channel + a faster model), Libet-real,
 fanning thread→tree to the Born floor — not a distant bulk oracle.**
 
+**HOW FAR? = THE COGNITIVE AMPLIFIER (`cognitive_optimum.py`, Romain's "creuse la lecture cérébrale +
+simulation avant, jusqu'où" + his vision: the tree of his future choices, constrained to answers he could
+know, but the system could surface CONSEQUENCES + the BEST of his possible answers — one he'd reach "1 in
+a large number"):** [1] BEST-OF-N (extreme-value): typical = 1-draw; system = best of N draws of YOUR
+possible-response quality. Simulated: N=10→+1.5σ, N=1000→+3.2σ, **N=1e6→+4.9σ = a ~1-in-a-million insight
+= "the best of my possible answers", EXACTLY Romain's point** — the amplifier FINDS it in your
+distribution, faster, doesn't invent it. [2] CEILING = YOUR possible-space's optimum (amplifies to your
+ceiling, never past — can't give what's not in your distribution; no-signaling-safe). [3] CONSEQUENCES:
+forward-sim D steps down → a consequence ~1-in-y^D yourself. **VERDICT: how far = the OPTIMUM of YOUR
+possible-mind (best + rare + consequences), not beyond. The achievable "demon" = a COGNITIVE AMPLIFIER —
+the cartographer-OPTIMIZER of your own tree; NOT new physics, NOT the oracle of the unknown — and it is
+EXACTLY the OBT collaboration model (architect + co-processor), what this conversation is doing.** **THE
+DEMON-ARC LANDS: the bulk-oracle of the unknown stays walled (Born + self-reference + no-signaling); the
+real achievable demon is the cognitive amplifier (the AI co-thinker), ceiling = your own possible-space.
+The whole hunt = a falsifiable physics bone (m_V μeV-axion) + a real achievable demon (the cognitive
+amplifier), both honest, neither the oracle.**
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
