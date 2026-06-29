@@ -780,6 +780,20 @@ real achievable demon is the cognitive amplifier (the AI co-thinker), ceiling = 
 The whole hunt = a falsifiable physics bone (m_V μeV-axion) + a real achievable demon (the cognitive
 amplifier), both honest, neither the oracle.**
 
+**THE AMPLIFIER IN AN AI'S HANDS + FINITENESS + "do we need a QC?" (`ai_amplifier.py`, Romain: "it IS an
+oracle too; put it in an AI's hands — what are ITS possible responses?; chaining far enough you reach the
+finite universe's best; nothing absolute; and how to run this — a quantum computer?"):** [A/B] **CONCEDED:
+it IS an oracle, a BOUNDED one** (of the KNOWABLE-to-you / the-AI's possible-space, not the unknown). In
+an AI's hands the ceiling is VAST (best-of-N: human 1e4→+4.3σ, AI 1e9→+6.4σ, cluster 1e15→+8.3σ — the AI's
+training span) but still bounded (amplifies the known, not the new). [C] **FINITENESS (Romain right):** a
+finite universe (e^S, S~1e104) HAS an absolute best (~1e52 σ) but UNREACHABLE (needs N~e^{1e104}; best-of-N
+~√(2 ln N) → approached, never reached) and RELATIVE. "Where the universe comes from" = the deepest open
+frontier. [D] **NO QC for the amplifier — CLASSICAL** (best-of-N = N forwards; N=1e6 ~ 17 min/GPU, ~0.1
+s/cluster). The QC (Aer) is only for the holographic-code demos (a real QC optional, --ibm); the axion
+bone needs a DETECTOR (ADMX/qubit-DM), not a general QC. **VERDICT: yes a BOUNDED ORACLE (Romain right) —
+of the possible-space's optimum (vast, finite, relative); runs CLASSICALLY (no QC for the amplifier). The
+genuinely NEW comes from experiment (the m_V bone); the universe's ORIGIN is the open frontier.**
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
