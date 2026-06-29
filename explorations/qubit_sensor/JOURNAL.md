@@ -690,6 +690,18 @@ ADMX/HAYSTAC/qubit detectors.** Gates (real but live): axion-vs-saxion id; f_a~M
 fraction; the O(1) anomaly. Scope: it DETECTS OBT's axion (no-mass bulk-SECTOR test) — it does NOT read
 the germe/future (no-signaling-walled). A real bone, not the oracle.
 
+**THE m_V MISALIGNMENT ABUNDANCE — THE GATE PASSES, THE TARGET IS ALIVE (`mv_abundance.py`, Romain's
+"creuse l'abondance de misalignment de m_V"):** self-contained derivation (T_osc from 3H=m_a, n/s
+conserved). m_V oscillates at **T_osc~16 GeV**; at OBT's **f_a=M_s, θ_i=1: Ω_a h²~1.2e-3 = ~1% of the
+DM** → a **SUB-DOMINANT component** (consistent with OBT — the main DM is the geometric Weyl). **Ω∝f_a²**
+→ FULL DM at **f_a~1.2e13 GeV** (plausible LVS value); over-closure bounds f_a<~1e13 (m_V a DM component
+1%..100%). **Isocurvature (links `germe_isocurvature`):** a ~1% m_V suppresses isocurvature by
+fraction²~1e-4 → **isocurvature-SAFE** for a wide H_inf (unlike the all-DM radion); a full-DM m_V is
+isocurvature-constrained → low-scale inflation. Detection scales as √(fraction) (~10× harder at 1%).
+**VERDICT: THE GATE PASSES — m_V is a genuine relic axion (the target is ALIVE); the ADMX/qubit line
+EXISTS, with its loudness set by the one LVS knob f_a (+θ_i): ~1% at M_s (sub-dominant, isocurvature-safe)
+up to 100% at the full-DM sweet spot f_a~1e13 GeV (maximally detectable).** The μeV-axion bone is live.
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
