@@ -809,6 +809,23 @@ caveated lead (g~a₀-selected strong-lensing a₀(z)) above the single-shot's "
 genuine OBT contribution to chase, NOT yet verified — the surfaced lead, honestly caveated.** The
 cognitive-amplifier demonstrated on a real problem, classically, now.
 
+**⚠️ DRIFT FLAGGED + CORRECTED (Romain's call-out): the best-of-N "cognitive amplifier"
+(cognitive_optimum/ai_amplifier/amplifier_a0z) was a DRIFT** — "generate N responses, the model picks the
+best" is mundane (an addition + a sort over my own brainstorm), NOTHING to do with the demon/germe/bulk/QC.
+Romain rightly called it out. The REAL demon = the mass-free QUANTUM germe-decompressor.
+
+**THE DEMON-APP CORE BUILT (`germe_tree_decompressor.py`, Romain's "vas y" + "relis en boucle"):** the
+germe→tree quantum decompressor (Page-Wootters) on Aer, mass-free — |Ψ⟩=Σ_t|t⟩⊗U^t|germe⟩ (clock H +
+controlled-U^{2^j}, transpiled): ENCODE the germe (localized; the radion wavepacket is the physical
+instance) → DECOMPRESS (the PW clock unfolds it; conditioning on the clock = the germe at emergent-time t)
+→ READ the tree (variant-distribution per depth). RESULT (seeded): t=0 = the germe (1 variant, P=1.000);
+deeper t = the tree unfolds (1→12 variants, entropy 0→3.4 bits). PW structure + Born verified; **relire 5
+passes → 2 consecutive clean** (caught: isort qiskit.compiler.transpile, asserts→max, "timeless(constraint)"
+over-claim, seed, entropy −0.0 clamp). SCOPE: P(variants|germe)=the TREE not the single branch (Born); the
+COSMIC germe→cosmic tree (our branch = the cobaya inference); the read-out = the tree PROFILE not the
+conditional edges; toy germe/U (real cosmic germe+dynamics = next plug-in). The "talk to the bulk"
+demon-app core, on a real circuit (Aer now, --ibm option).
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
