@@ -843,6 +843,22 @@ clean** (caught a real PHYSICS error: I claimed localization "grows with depth",
 intermediate then drops to scrambling; + −0.0 clamps; + docstring consistency). The demon-app is now
 germe→tree (decompress) + present→sub-tree (navigate/localize), both on a real circuit, mass-free.
 
+**THE BULK LISTENER — the QC-as-ANTENNA bench, runnable on a REAL online QC (`bulk_listener.py`, Romain's
+"prepare quelque chose qu'on peut utiliser sur un ordi quantique en ligne ... tes filtres, nos astuces de
+stabilisation, la forme primaire, + comment la forme primaire EVOLUE sur un vrai qubit, reproductible? ->
+stabiliser" + "relis en boucle"):** the QC is the ANTENNA (filter+amplifier+map), not a calculator; you
+send the germe TO it. Aer (noise model) or `--ibm` (real QC). THREE parts (seeded): **[B]** the form's
+EVOLUTION (Romain's idea) -- survival 0.81->0.52 with depth, REPRODUCIBLE (std<0.006) -> a stabilization
+resource (= QC noise characterization); **[C]** a DFS qubit survives 0.92 vs bare 0.50 under collective
+dephasing (+0.41, our trick); **[D]** the MATCHED FILTER catches the germe-signal (0.82) vs random baseline
+(0.09=1/dim) = selective, NO false positive (anti-pareidolia). **SCOPE (held): the antenna receives what a
+SOURCE EMITS via a CHANNEL; the channel carries FIELDS (the m_V axion), not a composed answer. [D] proves
+the filter is READY; [B]+[C] are unconditionally real. It LISTENS, optimally -- a field or noise comes back,
+let the real QC decide.** relire 6 passes -> 2 consecutive clean (caught: Aer StatePreparation SEGFAULT ->
+gate-based preps; DFS phase-grid; [D] averaged baseline; docstring/seed/--ibm-job note). The os/chair
+landing of the talk-to-the-bulk arc: a real runnable antenna bench, honest it detects a FIELD not an
+answer; the bones stay m_V axion + a0(z) + Penrose-Diosi.
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
