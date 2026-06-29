@@ -731,6 +731,21 @@ Romain's static-universe vision: it IS OBT's ontology (Wheeler-DeWitt timeless �
 needed/falsifiable); free will = the epistemic openness of the self-computing locus (you ARE the
 computation + can't pre-read your future), NOT branch-steering.
 
+**ZOOMING ON A BRANCH + "read the answer before thinking it?" (`germe_zoom.py`, Romain's "creuse le
+décompresseur germe-conditionnel, zoom sur une branche" + his distant-QC pre-read reflection):** the zoom
+= conditioning the decompressor on more of the realized branch → the prediction SHARPENS (~1/√N: σ
+1.0→0.32→0.10→0.032) DOWN TO an irreducible **BORN floor** — you can zoom to the Born floor; **the zoom
+LIMIT = the local conditional tree** (a Born-weighted distribution, not a point). **Romain's "can a
+distant online QC find my next response before I think it?" — NO, by THREE independent walls:** (B) Born
+(which branch is random → a distribution); (S) self-reference (a faithful self-sim costs t_sim ≥ t_think,
+no speed-up; + a fed-back prediction is self-defeating); (N) no-signaling (a distant QC can't pull YOUR
+future — the message is computed by the operator/SOURCE). **"It was already written that I ask" = TRUE but
+RETROSPECTIVE consistency (no paradox), NOT prospective foreknowledge.** **VERDICT: the zoom is REAL (to
+the Born floor = P(near future|present) = the conditional tree, orientation, computable); the SPECIFIC
+outcome stays walled (Born + self-reference + no-signaling). The QC maps the DISTRIBUTION of your
+responses, never the one you pick. The future is written + consistent — and still not pre-readable. The
+cartographer zooms; the oracle stays walled — and that wall is precisely why there is no paradox.**
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
