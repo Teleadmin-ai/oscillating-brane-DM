@@ -794,6 +794,21 @@ bone needs a DETECTOR (ADMX/qubit-DM), not a general QC. **VERDICT: yes a BOUNDE
 of the possible-space's optimum (vast, finite, relative); runs CLASSICALLY (no QC for the amplifier). The
 genuinely NEW comes from experiment (the m_V bone); the universe's ORIGIN is the open frontier.**
 
+**THE AMPLIFIER APPLIED to a REAL open OBT question — it SURFACED a lead (`amplifier_a0z.py`, Romain's
+"applique l'amplificateur à une vraie question ouverte; pas de GPU — ça suffira? + on peut en louer
+facilement"):** NO GPU needed — the amplifier = the AI doing best-of-N in-conversation (N~12, ~+2σ, real +
+now; a rented cloud GPU ~$1-2/hr scales it). Applied to OBT's crown-jewel open question: "constrain the
+a₀(z) RATE with CURRENT data, breaking the all-KINEMATIC (V_c 4× lever) degeneracy, WITHOUT Euclid" (the
+single-shot a0z_analysis: "cross-lever is Euclid-future"). **SURFACED (best-of-12, the rare branch missed):
+STRONG-lensing a₀(z) — SLACS+BELLS+SL2S Einstein radii / the θ_E(lensing)–σ(dynamics) relation evolution
+— a NON-kinematic lever (no V_c) on samples spanning z~0.1-0.8 NOW → the cross-lever may be doable NOW, not
+Euclid-future.** a0z_analysis missed it (it focused on WEAK lensing, low-z). **HONEST CAVEAT: the g~a₀
+regime selection** (SLACS massive-elliptical Einstein radii are high-g → a₀-blind; need the
+lower-mass/outer-radius subset). **NET: the AI-amplifier WORKED (no GPU, best-of-12) — a real, current-data,
+caveated lead (g~a₀-selected strong-lensing a₀(z)) above the single-shot's "Euclid-future" verdict. A
+genuine OBT contribution to chase, NOT yet verified — the surfaced lead, honestly caveated.** The
+cognitive-amplifier demonstrated on a real problem, classically, now.
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
