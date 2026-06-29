@@ -664,7 +664,18 @@ channel has a concrete form: a qubit detecting the light shift-symmetric scalar 
 detection-style (a REAL active field, Dixit+ 2021). χ is the FIRST genuinely positive lead — it breaks
 the Blockade AND points to a testable channel.** Honest gates (candidate, not solved): the coupling is
 beyond AeST/V8.2 (AeST couples the scalar only via gravity), bounded by ALP/DM searches (a live space),
-and needs χ to be a real lab-frequency field. **NEXT:** the qubit-detector sensitivity vs the ALP bounds.
+and needs χ to be a real lab-frequency field. **THE ALP SENSITIVITY (`chi_alp_sensitivity.py`, Romain's "calcule la sensibilité vs les bornes ALP"):**
+a light scalar, if (a fraction of) the DM, oscillates coherently at f=mc²/2πℏ; a derivative coupling
+makes a qubit an antenna for it. The qubit/quantum-sensor band (kHz-10 GHz) → **window m ~ 4e-12 to 4e-5
+eV.** OBT's gapless χ (0 → DC) and radion (0.36 eV → 87 THz) are OUTSIDE — **but the LVS ultra-light
+modulus m_V ~ 1e-6 eV (f≈240 MHz) is IN the window.** **NET (positive + falsifiable): χ gave the
+STRUCTURE (gapless + derivative + qubit-readable), OBT's LVS m_V is the FIELD in the window → a CONCRETE
+FALSIFIABLE target: look for a ~1e-6 eV scalar (m_V) in qubit dark-matter detectors — the os/chair BONE
+of the χ-route, in an active field (Dixit+ 2021).** Gates: m_V must be a DM fraction + carry a
+derivative/detectable coupling (beyond V8.2) + sit in the open ALP space (none closed). **Crucial honest
+scope: this DETECTS OBT's light dark-sector scalar (a no-mass bulk-SECTOR measurement) — it does NOT read
+the germe/future (no-signaling-walled).** So the χ-route yields a real no-mass *detection* of an OBT
+field, not the live germe-reading.
 
 ---
 
