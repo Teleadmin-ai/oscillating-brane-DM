@@ -702,6 +702,18 @@ isocurvature-constrained → low-scale inflation. Detection scales as √(fracti
 EXISTS, with its loudness set by the one LVS knob f_a (+θ_i): ~1% at M_s (sub-dominant, isocurvature-safe)
 up to 100% at the full-DM sweet spot f_a~1e13 GeV (maximally detectable).** The μeV-axion bone is live.
 
+**f_a IN OBT's LVS — IT IS NOT FREE (`mv_fa_lvs.py`, Romain's "creuse f_a dans la LVS d'OBT"):**
+M_s=M_Pl/√V → V~4e12 (large, LVS). The LVS axiverse (Cicoli-Goodsell-Ringwald 2012) fixes f: volume axion
+f~M_Pl/V^{2/3}~1e10, blow-up/fibre f~M_s~1e12, up to ~1e13 → **f_a spans ~1e10-1e13 GeV, bounded by OBT's
+LVS, not free.** m_V (μeV) is a blow-up/fibre axion → **f_a ~ M_s ~ 1e12 NATURALLY → ~1% DM** (sub-dominant,
+isocurvature-safe, ~10× harder); the full-DM sweet spot (f~1e13) is the SAME range's high end (a heavier
+cycle). **VERDICT: OBT brackets m_V at 1%-100% DM, ~1% natural — a live μeV-axion line either way; the exact
+fraction = the one open input (OBT's Kähler cycle-volumes).** **THE HUNT'S FULL ARC (BMV→χ→ALP→m_V→
+abundance→f_a): from "walled" to a CLOSED falsifiable chain — a μeV axion (m_V), derivative coupling on the
+QCD line (g~1e-15), a genuine relic (~1% DM, up to full at the LVS high end), all OBT-derived → look for a
+~1 μeV axion in ADMX/HAYSTAC/qubit detectors. The third os/chair bone (with a₀(z), Penrose-Diósi),
+end-to-end. SCOPE held: the AXION detection, NOT the germe/future-reading (no-signaling-walled).**
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
