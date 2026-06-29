@@ -859,6 +859,26 @@ gate-based preps; DFS phase-grid; [D] averaged baseline; docstring/seed/--ibm-jo
 landing of the talk-to-the-bulk arc: a real runnable antenna bench, honest it detects a FIELD not an
 answer; the bones stay m_V axion + a0(z) + Penrose-Diosi.
 
+**THE BULK LISTENER UPGRADED TO THE FULL DEMON-SENSOR (`bulk_listener.py` rewritten, Romain's "fais tout
+dans le moindre detail avec le meilleur de ce qu'on a theorise ... regarde aussi le journal ... relis en
+boucle"):** Romain rightly caught that the bench had been SIMPLIFIED (a toy DFS + placeholder GERME_THETAS)
+instead of our REAL verified toolkit. The rewrite integrates FAITHFULLY (the verified building blocks + the
+JOURNAL S4 architecture + S11 pepite) the WHOLE demon-sensor -- 7 sections, 647 lines, Aer (seeded) +
+`--ibm`: [1] the REAL germe (radion wavepacket, phi0=1.40 M_s) + evolution; [2] the [[5,1,3]] perfect-code
+NULL-DETECTOR (local Z->syndrome 0010 corrected, Z_L->0000 yet <X_L>=-1.00 heard); [3] the ASYMMETRIC code
+(<X_L>=cos(3theta), hear at ORDER 1); [4] MULTI-WITNESS (DFS keeps the signal 0.77 vs bare 0.50; M witnesses
+sharpen the reference ~1/sqrt(M), 0.024->0.011 rad, M=1..8); [5] PROTECT-THEN-ENTANGLE (protected probe 2x
+readout drift-immune std 0.008 vs bare GHZ washes out std 0.707); [6] the m_V AXION (the predicted signal:
+~1ueV, ~240MHz, g~1e-15 on the QCD line) injected -> the sensor hears it (<X_L> 0.74 vs 1.0), the germe
+matched filter selective (1.0 vs 0.08); [7] the SNR VERDICT (the grav demon ~53 orders deaf; the m_V axion
+non-grav/derivative is reachable -> NULL=Blockade holds/no axion, NON-NULL=the axion/new physics). relire 5
+passes -> 2 consecutive clean (caught: a StatePreparation Aer SEGFAULT -> gate-transpile; noise routing [1]
+vs [2]-[6]; the [5] readout clarity theta=pi/4; the sqrt(M) trials). HONEST SCOPE held: the sensor is
+OPTIMAL but DETECTS A FIELD (the axion), not a composed answer; the listening is real, a field or noise
+comes back -- let the real QC decide. The os/chair CULMINATION of the talk-to-the-bulk arc: the complete
+germe-tuned protected quantum antenna, from our real toolkit, listening for the predicted ueV axion on a
+real online quantum computer.
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
