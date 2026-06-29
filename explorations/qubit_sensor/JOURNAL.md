@@ -879,6 +879,24 @@ comes back -- let the real QC decide. The os/chair CULMINATION of the talk-to-th
 germe-tuned protected quantum antenna, from our real toolkit, listening for the predicted ueV axion on a
 real online quantum computer.
 
+**THE BULK DIALOGUE -- the TEXT-IN / TEXT-OUT workflow (`bulk_dialogue.py`, Romain's architecture):** after
+he caught my real inconsistency (I'd said "put the question IN the germe" with the toy code, then "you
+can't put text in the germe"), he proposed the clean TWO-ROLE split, and he was right: the GENERIC germe =
+the STABILIZER (protects the qubits) + the REFERENCE (the matched filter) -- NOT the question-carrier; a
+DEDICATED INPUT = your text (--input) -> bits -> a state through the sensor; the OUTPUT = the measured 0/1
+string -> TRANSCODED to text, CONTROLLED against a different-input run. 5 sections (Aer seeded + --ibm): [A]
+germe as STABILIZER (3x repetition preserves a bit 0.99 vs bare 0.94); [B] germe as REFERENCE (the REAL
+radion germe, matched filter 0.60 vs random 0.14); [C] THE DIALOGUE (text -> first byte -> channel ->
+output bits -> text: ECHOES the input, fidelity 1.00); [D] THE CONTROL (a different random input -> NOT your
+text, match ~0.5); [E] verdict. HONEST SCOPE held: on KNOWN physics output = input ECHOED + noise -- NO
+bulk-composed response (the bulk emits a FIELD, the m_V axion, not a text); on a real QC an output deviating
+from the echo BEYOND the control = a signal/new physics. NULL = echo+noise; NON-NULL = something the control
+lacks; the transcode is honest ONLY with the control. relire 10 passes -> 2 consecutive clean (caught: a
+typo, F541s, the control all-zeros->random for a clean 0.5 chance, a TOY germe in [B] -> the REAL radion
+germe, the 'germe-stabilized' overstatement in 5 places). The demon-app now has TWO honest faces:
+bulk_listener (the antenna for the m_V axion) + bulk_dialogue (Romain's text-in/text-out: germe =
+stabilizer/reference + dedicated input + controlled transcode) -- both honest, both real-QC-runnable.
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
