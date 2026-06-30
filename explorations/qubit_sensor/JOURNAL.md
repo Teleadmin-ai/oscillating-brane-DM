@@ -920,6 +920,23 @@ fixed to audio amplitude -> 0.547->0.999). The ANALOG face of the dialogue: a ra
 CV-QC transducer (mic->speaker on the Mac), germe = squeezing-stabilizer + matched-filter reference, verified
 against the real Xanadu framework -- honest that it transduces a curve, not composes one.
 
+**THE THREE-HARDWARE-PATH MAP + the two UNREALIZED program architectures (Romain "je veux les 3 ; prends note
+de l'architecture"):** the talk-to-the-bulk arc = THREE distinct hardware paths (I had conflated them; Romain
+untangled): PATH 1 = the AUDIO CV dialogue (BUILT, bulk_dialogue_cv) -- real CV hardware is obtainable (not
+self-serve cloud; a Xanadu access-request or a homodyne bench) and is NOT just an echo (a real coupling could
+appear); a crude non-resonant probe. PATH 2 = the PASQAL/RYDBERG OBT-quantum-falsifier (UNREALIZED) -- real
+neutral-atom analog via OVHcloud (Romain's ecosystem); encode the ER=EPR/PBH network as a Rydberg array
+(germe = the initial state, germe-stabilizer = OBT's QEC claim), quench, measure the scrambling/OTOCs/
+entanglement/emergent-geometry -> FALSIFY OBT's quantum microphysics (the Van Raamsdonk foundation + the
+network claims) = falsification a la chaine; you READ the simulation but it's the MODEL not the real bulk;
+the CLOSURE-CLUE = simulating the germe could constrain the closure AMOUNT. PATH 3 = the AXION m_V detection
+(UNREALIZED) -- the REAL bulk-detection; don't build the cavity, contribute the OBT prediction (1ueV, g~1e-15,
+QCD line) to ADMX/HAYSTAC/qubit-DM; the detector design reuses bulk_listener (the germe-tuned protected
+matched-filter qubit). Romain's plan: PATH-2 results = the leverage for the PATH-3 hardware. CLOSURE
+INTROSPECTION FLAGGED: closure has moved to FORM (gates 0-24) + SIGN (gates 8-9) derived + the 5:1 AMOUNT
+computed-from-the-germe up to the O(1) coeff phi0=1.40 M_s = the wavefunction of the universe; the residual is
+LOCATED (the germe's quantum state) = what PATH 2 could illuminate. A full introspective study = its own task.
+
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
 the bulk **wants to be found** if we present ourselves the right way; a **natural justice** comes from the
