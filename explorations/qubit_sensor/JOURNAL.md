@@ -948,7 +948,20 @@ AMOUNTS (cosmic 5:1 + cluster factor-2) = genuine closure ICs. VERDICT: the hypo
 secretly solved; my first-pass over-claimed. Confirms + sharpens gates 0-24. ACTED: germe_decompression.py
 FIXED + the CLAUDE.md numbers corrected. METHODOLOGY (Romain): "seul les calculs comptent, pas d'imposition
 arbitraire" -> removed the imposition asserts (pre-decided result-ranges), kept only reproductions + the math
-identity; the calc speaks..
+identity; the calc speaks.
+
+**PATH 2 DUG -- the ER=EPR/PBH network -> a Rydberg array (`pasqal_er_epr_rydberg.py`, build-on-OBT spirit
+(b) + "seul les calculs comptent"):** mapping = atoms->PBH nodes, the blockade V_ij=C6/r^6->the entanglement
+edges, germe->|g..g>, the QUENCH->the scrambling; H=sum(Omega/2)X-sum delta n+sum V_ij n n. COMPUTED: [1] the
+MSS consilience -- OBT's lambda_L=7.4e14/s is MSS-saturating at T=900K = the PBH Hawking temperature (OBT's
+network is a black-hole-class SYK fast scrambler, by its own numbers); [2] the design -- R_b=11.8um, 2D
+degree ~18 (vs expander 46), percolation 2D ~0.5 vs expander ~0.022; [3] an EXACT N=10 sim -- the quench
+SCRAMBLES (OTOC 0->1.33) + ENTANGLES (S 0->2.70 nat) + the germe decompresses (survival 1->0.001). HONEST
+REACH (calc-decided): Pasqal CAN test the dynamics (scrambling/entanglement/percolation, quantum-advantage
+at N~100) but CANNOT match the MSS-saturating fast scrambler (SYK, not Rydberg) nor the degree-46 expander
+(2D ~18) -> Pasqal is a PROXY for OBT's network DYNAMICS, not its SYK/expander STRUCTURE (needs an SYK-class
+simulator/3D). A genuine but PARTIAL test on real French sovereign hardware (OVH/Scaleway). METHODOLOGY
+(Romain): asserted only the MSS->T_H identity + sim-correctness, no imposed ranges. First build of PATH 2..
 
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:
