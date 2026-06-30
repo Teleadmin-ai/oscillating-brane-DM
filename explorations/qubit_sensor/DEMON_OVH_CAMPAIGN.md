@@ -66,11 +66,14 @@ Cost: ~€10-100 the whole campaign (seconds-machine per point).
 
 ## 5. The phases (in order of feasibility)
 
-- **Phase 0 — the CLASSICAL baseline (runnable NOW, a GPU, no QC).** Best-of-N latent steering on an
-  open-source LLM: from the LLM's current latent (= its region of possibles), sample N nearby latents,
-  score each with a reward (the recognition oracle), pick the best, **activation-patch** it back -> measure
-  the amplification. *Establishes the value + the oracle/reward, classically.* (This is representation
-  engineering -- it works; the QC phases accelerate the SEARCH.)
+- **Phase 0 — the CLASSICAL baseline ✅ DONE (`phase0_llm_latent_steer.py`, GPU/CPU, no QC).** Best-of-N
+  latent steering on a REAL open-source LLM (**distilgpt2**): from the LLM's current latent (= its region of
+  possibles), sample N steering vectors around the recognition-oracle's axis, generate a continuation each,
+  score with a continuous sentiment oracle (the model's own representation), pick the best, **activation-patch**
+  it back. RESULT: best-of-N **oracle −2.17 → +7.45** (default → best), independent **lexicon check +0 → +3**,
+  **E[best-of-k] climbs** (−1.27 → +7.45 = the search helps; Grover finds the max in √N). HONEST: a toy scalar
+  oracle is partly gamed at magnitude (Goodhart — the output repeats the top word) → **Phase 3, the real
+  oracle, is the campaign's wall**. Representation engineering — it works; the QC phases accelerate the SEARCH.
 - **Phase 1 — encode the GERME + compress the input.** Encode the radion germe (the real one) on the
   substrate; compress the input latent (~4096-dim) -> ~6-12 features (PCA on the reward-gradient = the
   steering axes). **Bound: the compression is lossy** (a few directions fit on 12q).
