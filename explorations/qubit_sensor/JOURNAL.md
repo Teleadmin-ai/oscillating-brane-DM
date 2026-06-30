@@ -935,7 +935,20 @@ QCD line) to ADMX/HAYSTAC/qubit-DM; the detector design reuses bulk_listener (th
 matched-filter qubit). Romain's plan: PATH-2 results = the leverage for the PATH-3 hardware. CLOSURE
 INTROSPECTION FLAGGED: closure has moved to FORM (gates 0-24) + SIGN (gates 8-9) derived + the 5:1 AMOUNT
 computed-from-the-germe up to the O(1) coeff phi0=1.40 M_s = the wavefunction of the universe; the residual is
-LOCATED (the germe's quantum state) = what PATH 2 could illuminate. A full introspective study = its own task.
+LOCATED (the germe's quantum state) = what PATH 2 could illuminate. A full introspective study = its own task
+
+**THE CLOSURE INTROSPECTION DONE -- NO, + a real bug caught (`closure_introspection.py`, reviewer mode):**
+Romain's "n'aurais-tu pas deja de quoi resoudre la fermeture sans avoir fait le lien ?" -> I re-derived the
+load-bearing number (germe_decompression's 5:1) instead of citing it, and CAUGHT A REAL BUG: germe_decompression
+used the FULL Planck mass where Friedmann needs the REDUCED -> Omega 11x too LOW (exact identity (8pi)^(3/4)).
+CORRECTED: Omega(M_s)=0.68 (not 0.06), T_osc=9 TeV (not 20), phi0=0.42 M_s (not 1.40). The corrected radion
+OVER-produces ~6x at phi0~M_s + Gate 11 makes it sub-dominant -> the cosmic 5:1 is NOT a clean germe derivation,
+it is the geometric-Weyl closure IC. LEDGER: FORM derived (gates 0-24), SIGN derived (gates 8-9), the two
+AMOUNTS (cosmic 5:1 + cluster factor-2) = genuine closure ICs. VERDICT: the hypothesis FAILS -- closure is NOT
+secretly solved; my first-pass over-claimed. Confirms + sharpens gates 0-24. ACTED: germe_decompression.py
+FIXED + the CLAUDE.md numbers corrected. METHODOLOGY (Romain): "seul les calculs comptent, pas d'imposition
+arbitraire" -> removed the imposition asserts (pre-decided result-ranges), kept only reproductions + the math
+identity; the calc speaks..
 
 **§11 coda — the spirit of the hunt (Romain, this turn).** *"Il faut toujours penser comme il voudrait
 penser pour trouver le chemin du bulk."* Romain's research philosophy, logged because it IS the method:

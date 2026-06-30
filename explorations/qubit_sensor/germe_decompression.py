@@ -4,14 +4,15 @@ what it encodes (the germe's observables) and test against EXISTING cosmology.
 
 Two closure numbers, two mass-free routes (both are calculations, not measurements):
 
-  PART A — the DM 5:1 (the jewel). The geometric-DM amplitude is the radion-condensate MISALIGNMENT
-    abundance (Gate 10): Omega_DM proportional to <phi^2> of the germe field state. So the abundance is
-    a SECOND MOMENT of the germe's quantum state — a 'qubit-inside' observable. Computed from OBT's OWN
-    derived scales (m_phi = 0.36 eV Goldberger-Wise; phi0 ~ M_s = 1.19e12 GeV the LVS string scale) the
-    standard radiation-era misalignment gives Omega_DM h^2 ~ 0.06 — i.e. cosmological order, within a
-    factor ~2 of the measured 0.12 (-> Omega_DM/Omega_b ~ 5:1). A qubit register reads <phi^2> of the
-    germe state (mass-free). WALL: is phi0 pinned to ~M_s? (the germe-specification wall, the theory
-    frontier — Gate 10 candidate, not a proof; normalization carries a factor-~2 / Gate-12 flag.)
+  PART A — the DM 5:1 (the candidate). The radion-condensate MISALIGNMENT abundance (Gate 10): Omega_DM
+    proportional to <phi^2> of the germe field state — a SECOND MOMENT of the germe's quantum state, a
+    'qubit-inside' observable. From OBT's OWN derived scales (m_phi = 0.36 eV Goldberger-Wise; phi0 ~ M_s
+    = 1.19e12 GeV the LVS string scale) the radiation-era misalignment gives Omega_DM h^2 ~ 0.68 at
+    phi0=M_s -- i.e. it OVER-produces ~6x (CORRECTED from a x11-low full-vs-reduced-Planck-mass bug, caught
+    by closure_introspection: T_osc ~ 9 TeV, not 20). The right amount needs phi0 ~ 0.42 M_s; OR (Gate 11:
+    a 0.36-eV condensate as ALL the DM halos galaxies, f<4%) the radion is SUB-DOMINANT and the cosmic 5:1
+    is the geometric-Weyl IC. So the AMOUNT is a genuine closure IC (NOT a clean germe derivation) -- the
+    qubit reads <phi^2> mass-free, but the AMPLITUDE is the bulk's closure datum (closure_introspection).
 
   PART B — the S8 sign (the bit). The growth-modulation sign is a THEOREM of the bulk geometry
     (Gate 9): the AdS warp's reduced potential -1/(4 z^2) has DEGENERATE indicial exponents (1/2,1/2)
@@ -23,8 +24,8 @@ NET: both numbers are read by COMPUTATION (a germe-state observable / a bulk-geo
 against the sky we already have (Omega_DM, the S8 suppression) — NO mass, NO new experiment. That is
 the 'other artifact' that bypasses the mass: the demon's ledger is computable, not only detectable.
 
-NOT V8.2. Not in the PDF. 'code, don't plead': the abundance is a real cosmology calc (cross-checked
-to T_osc ~ 20 TeV, Gate 12), <phi^2> is an Aer measurement, the indicial roots are exact — all asserted.
+NOT V8.2. Not in the PDF. 'code, don't plead': the abundance is a real cosmology calc (T_osc ~ 9 TeV,
+reduced Planck mass), <phi^2> is an Aer measurement, the indicial roots are exact — all asserted.
 """
 
 import numpy as np
@@ -35,7 +36,8 @@ BACKEND = AerSimulator()
 SHOTS = 8192
 
 # cosmology constants (eV)
-M_PL = 1.22e28  # full Planck mass
+M_PL = 2.435e27  # REDUCED Planck mass (8piG)^-1/2 in eV -- the Friedmann H=sqrt(pi^2 g_*/90)T^2/M_Pl uses
+# the REDUCED mass (was wrongly the FULL 1.22e28 -> T_osc 2.24x too big -> Omega 11x too LOW; closure_introspection)
 T0 = 2.35e-4  # CMB temperature today
 GS0, GSTAR = 3.91, 106.75  # entropy dof today / at oscillation onset
 RHO_C = 8.1e-11  # rho_c,0 / h^2 in eV^4
@@ -96,11 +98,12 @@ def main():
     )
     print(
         f"    => Omega_DM h^2(phi0=M_s) = {omega_Ms:.3f} (ratio {omega_Ms/OMEGA_B_H2:.1f}:1);"
-        " measured 0.120 (5.4:1); cosmological order, ~x2 = a NO-FIT order-of-magnitude hit"
+        " measured 0.120 (5.4:1); cosmological order -- OVER-produces ~6x (corrected; was a x11-low bug)"
     )
+    # sanity check (NOT an imposed value): the misalignment lands at cosmological order, not absurd
     assert (
-        0.01 < omega_Ms < 0.5
-    ), "misalignment at phi0=M_s must land at cosmological order"
+        0.01 < omega_Ms < 10
+    ), "misalignment at phi0=M_s lands at cosmological order (sanity, not imposed)"
     assert (
         5e12 < t_osc < 1e14
     ), "T_osc must be ~tens of TeV (early oscillation, Gate 12)"
@@ -129,12 +132,17 @@ def main():
         "    -> the DM amplitude is a COMPUTABLE observable of the germe's quantum state (its <phi^2>),"
     )
     print(
-        "       read on a qubit WITHOUT mass. OBT's derived scales already land Omega~0.06 (~half, ~2.7:1);"
+        "       read on a qubit WITHOUT mass. OBT's derived scales land Omega~0.68 (OVER-produces ~6x at"
     )
     print(
-        "       the exact 5:1 needs phi0=1.40 M_s. WALL: is phi0 pinned to ~M_s? (germe-spec, theory"
+        "       phi0=M_s, corrected from a x11-low bug); the right amount needs phi0~0.42 M_s -- OR the radion"
     )
-    print("       frontier; factor-~2 normalization, Gate-12 flag).")
+    print(
+        "       is SUB-DOMINANT (Gate 11: a 0.36-eV condensate as all the DM halos galaxies, f<4%) and the"
+    )
+    print(
+        "       5:1 is the geometric-Weyl IC. WALL: the amount is a genuine closure IC (closure_introspection)."
+    )
 
     # ===== PART B: the S8 sign as a bulk-geometry theorem (the bit) ==================
     print(
@@ -173,9 +181,12 @@ def main():
     # ===== synthesis ================================================================
     print("\n[C] SYNTHESIS — the artifact that bypasses the mass")
     print(
-        "    * The DM 5:1 is a germe-STATE observable (<phi^2>, qubit-readable); its AMPLITUDE rides"
+        "    * The DM 5:1: <phi^2> is qubit-readable, but the CORRECTED misalignment OVER-produces ~6x at"
     )
-    print("      on phi0 ~ M_s (the germe-spec wall, theory).")
+    print(
+        "      phi0~M_s -> the AMOUNT is a genuine closure IC (the geometric-Weyl amplitude), NOT a clean"
+    )
+    print("      germe derivation (closure_introspection).")
     print(
         "    * The S8 SIGN is a bulk-GEOMETRY theorem (the warp indicials), derived within Gate 9's"
     )
@@ -195,7 +206,7 @@ def main():
     print("      where the bulk solver + a qubit work — not a mesoscopic-mass lab.")
 
     print(
-        "\n  ALL INJECTION TESTS PASSED (Omega(M_s)~0.06 -> 5:1 via germe <phi^2>; warp degenerate -> S8 suppression)."
+        "\n  PASSED: corrected Omega(M_s)~0.68 (OVER-produces -> the AMOUNT is a closure IC); warp degenerate -> S8 suppression."
     )
     print("=" * 86)
 
