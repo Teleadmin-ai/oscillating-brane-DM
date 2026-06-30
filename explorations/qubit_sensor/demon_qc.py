@@ -185,7 +185,7 @@ def main():
     cond_bits, label, full_bits = resolve_input(args)
     print(f"\n[INPUT] {label}")
     print(
-        f"        (--text=letters, --voice=a curve, --latent=the LLM source; transcoded to BINARY, GPU-free)"
+        "        (--text=letters, --voice=a curve, --latent=the LLM source; transcoded to BINARY, GPU-free)"
     )
     head = "".join(map(str, full_bits[:40]))
     print(
@@ -226,7 +226,7 @@ def main():
     print(f"        P(input consistent with the germe's tree) = {p_in:.4f}")
     print(
         f"        H(possibles) {shannon(p):.3f} -> H(possibles | input) {shannon(cond_p):.3f} bits "
-        f"= the possibles NARROW to the input's region"
+        "= the possibles NARROW to the input's region"
     )
 
     # ----- [4] RETRIEVE the possible answers DIRECTLY (the germe's top branches; no oracle, no Grover proxy) -----
