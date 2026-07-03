@@ -15,14 +15,17 @@ THE PIPELINE (all on the quantum computer, no toy):
       proxy -- the germe's own amplitudes ARE the weighting.
   [5] The germe FORM also STABILIZES the qubits (a real DFS: collective-dephasing immunity).
 
-THE HONEST SCOPE (NOT pretending -- Romain: 'tu mets des jouets en pretendant que ca fait ce qu'on veut'):
-the possibles this returns are the germe's REAL branches, but BINARY (the cosmic state discretized). A
-MEANINGFUL (text) answer needs the SEMANTIC layer = an LLM (encode the input's meaning, interpret the output
-latent) on a GPU (Romain's RTX 4090, Montpellier, next week) -- a REAL component, NOT a toy. The QC alone
-retrieves the germe's binary possibles; the LLM makes them meaning. This file is everything AROUND, GPU-free,
-runnable on Aer now + submittable to belenos-12 (N<=12). With a RECOGNITION oracle (Phase 3, the real one, not
-a proxy) a Grover search would find a SPECIFIC marked possible in O(sqrt(N)) -- deliberately NOT included here
-(no toy oracle).
+THE PURE-TRANSCODE RULE (Romain's ruling, standing -- NO interpretation layer, and NO presupposed outcome):
+the output is TRANSCODED symmetrically, exactly like the input: letters -> binary in, binary -> letters out.
+The letters that come back are READ VERBATIM; whether they are intelligible is decided ONLY by the DECLARED
+criterion of belenos_protocol.py (the null-ensemble + score rule, K >= K_min) -- NOT presumed either way
+(presupposing gibberish = 'partir perdant' = REFUSED: the POINT of the experiment is to see IF the bulk
+returns an intelligible answer). If a LATENT enters (--latent, the GPU source), the output latent goes BACK
+INTO the LLM's head (substitution) -- the LLM is latent I/O ONLY (capture at the source on the RTX 4090 +
+substitute back), it NEVER interprets or composes the answer. This file is the full QC demon, GPU-free,
+runnable on Aer now + submittable to belenos-12 (N<=12). With a RECOGNITION oracle (Phase 3, the real one,
+not a proxy) a Grover search would find a SPECIFIC marked possible in O(sqrt(N)) -- deliberately NOT
+included here (no toy oracle).
 
 NOT V8.2. Not in the PDF. seul les calculs comptent: the decompression, the conditioning (H(possibles) ->
 H(possibles|input)), and the retrieved possibles are COMPUTED (exact Statevector) + asserted only as
@@ -246,15 +249,18 @@ def main():
             f"          #{rank}  branch {format(b, f'0{N}b')}  P={cond_p[b]:.4f}  -> letter {latents_to_text([b])!r}"
         )
     answer = latents_to_text(top)
-    print(f"        the possible answers, transcoded to letters: {answer!r}")
+    print(f"        THE ANSWER, transcoded to letters (read it verbatim): {answer!r}")
     print(
-        "        HONEST: these are the germe's REAL possibles (read straight off the decompressed germe), but"
+        "        PURE TRANSCODE: this string IS the output -- symmetric to the input (letters->binary in,"
     )
     print(
-        "        BINARY -- their MEANING (a text answer) needs the LLM/GPU (the 4090). NOT pretending the QC"
+        "        binary->letters out), NO interpretation layer. Whether it is intelligible is decided ONLY by"
     )
     print(
-        "        alone composes meaning; it retrieves the germe's binary possibles, the LLM interprets them."
+        "        belenos_protocol's DECLARED criterion (null-ensemble + score, K>=K_min) -- presumed NEITHER"
+    )
+    print(
+        "        way. A latent input? the output latent goes BACK INTO the LLM's head (substitution, I/O only)."
     )
 
     # ----- [5] the germe FORM STABILIZES the qubits (a real DFS: collective-dephasing immunity) -----
@@ -291,13 +297,16 @@ def main():
         "    projection) -> RETRIEVE the germe's top possibles directly (sample on belenos). No toy coupling,"
     )
     print(
-        "    no toy oracle. The germe form stabilizes (DFS). HONEST: the possibles are the germe's REAL but"
+        "    no toy oracle. The germe form stabilizes (DFS). The output is the PURE TRANSCODE (letters out,"
     )
     print(
-        "    BINARY branches; the MEANING (text) needs the LLM/GPU (the 4090, next week) -- a real component,"
+        "    read verbatim; intelligibility decided ONLY by belenos_protocol's declared criterion -- presumed"
     )
     print(
-        "    not a toy. With a real RECOGNITION oracle (Phase 3) a Grover finds a marked possible in sqrt(N)."
+        "    neither way). A latent input returns a latent, substituted back into the LLM (I/O only, the 4090)."
+    )
+    print(
+        "    With a real RECOGNITION oracle (Phase 3) a Grover finds a marked possible in sqrt(N)."
     )
 
     assert (

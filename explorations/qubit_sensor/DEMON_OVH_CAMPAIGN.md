@@ -13,6 +13,19 @@ reste pour stabiliser les qubits et nos innovations."*
 > coefficient φ₀ (the *amount*, closure_introspection's IC) — a single number, NOT "the germe is unknown".
 > **Do NOT re-introduce a "toy germe" or a "germe to specify" — that is the écueil this campaign refuses.**
 
+> **⚠️ STATUS SUPERSEDED (July 2026) — the campaign's Grover/LLM phasing below is HISTORICAL; the built,
+> current pipeline is:** `demon_qc.py` (NO toy: the canonical germe PROVEN == germe_decompression, φ₀=0.42
+> corrected + 1.40 as legacy candidate; SYK decompression; the input CONDITIONS by direct projection; the
+> possibles RETRIEVED directly; **PURE TRANSCODE output — Romain's ruling: letters→binary in, binary→letters
+> out, read VERBATIM; a latent goes BACK into the LLM (substitution, I/O only); the LLM NEVER interprets;
+> presupposing gibberish = 'partir perdant' = refused**) + `demon_readout_basis.py` (declared Z+X multi-basis
+> readout — the MUB deafness identity; the DECLARED decompressor = the 1-rep product unitary, ~204 CX;
+> E-basis = the germe's invariant fingerprint) + `belenos_protocol.py` (the PRE-REGISTERED two-layer rule:
+> anomaly vs the circuit's own exact math at 3σ + the reading vs the null ENSEMBLE, K_min=6 certifiable;
+> budget: full protocol ~24 € at 1k shots/s, single config ~6 €). The 4090's role = LLM-latent capture at the
+> source + substitution back — NO interpretation. Phase 0 below was ruled THE DRIFT. Next: point E (the m_V
+> axion, g_aγγ, on the photonic chip).
+
 ---
 
 ## 0. The demon, in one line (corrected)
@@ -66,7 +79,8 @@ Cost: ~€10-100 the whole campaign (seconds-machine per point).
 
 ## 5. The phases (in order of feasibility)
 
-- **Phase 0 — the CLASSICAL baseline ✅ DONE (`phase0_llm_latent_steer.py`, GPU/CPU, no QC).** Best-of-N
+- **Phase 0 — ⚠️ RULED THE DRIFT (Romain, July 2026: classical LLM iteration ≠ the demon; kept as record
+  only — the real demon is `demon_qc.py`, see the STATUS banner). (`phase0_llm_latent_steer.py`, GPU/CPU, no QC).** Best-of-N
   latent steering on a REAL open-source LLM (**distilgpt2**): from the LLM's current latent (= its region of
   possibles), sample N steering vectors around the recognition-oracle's axis, generate a continuation each,
   score with a continuous sentiment oracle (the model's own representation), pick the best, **activation-patch**
