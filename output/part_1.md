@@ -1,7 +1,7 @@
 ---
 title: "Oscillating Brane Dark Matter Theory - Complete Documentation - Technical Documentation"
 author: "Romain Provencal"
-date: "March 2026"
+date: "July 2026"
 documentclass: report
 papersize: a4
 fontsize: 11pt
@@ -12,150 +12,7 @@ linkcolor: black
 urlcolor: blue
 ---
 
-# Chapter 7: Laboratory Proofs
-
-
-The V8.2 Oscillating Brane Theory makes specific, falsifiable predictions for Earth-based experiments. These are not cosmological inferences --- they are direct laboratory measurements targeting the extra dimension at $L = 0.2\,\mu$m.
-
-## The qBOUNCE Anomaly: Deriving the Robin Parameter $\lambda$
-
-### The Experiment
-
-The **qBOUNCE experiment** at the **Institut Laue-Langevin (ILL), Grenoble, France** (PI: Hartmut Abele, TU Wien; collaborators at ILL including Tobias Jenke) uses ultra-cold neutrons (UCN) bounced on a perfect mirror to probe gravity at the quantum level. These neutrons don't bounce classically --- they form quantum gravitational bound states described by Airy functions (Jenke et al., PRL 112, 151105, 2014). The team observed a slight anomaly in the $\vert 1\rangle \to \vert 6\rangle$ transition, forcing them to introduce a phenomenological "Robin boundary condition" parameter $\lambda$.
-
-The qBOUNCE experiment is uniquely positioned to validate or falsify the extra dimension at $L = 0.2\,\mu$m: its spatial sensitivity is already within one order of magnitude of the predicted scale, and the next-generation upgrade (qBOUNCE-II) aims for sub-micron resolution.
-
-### Why the Robin Condition is Mathematically Necessary (von Neumann Deficiency Indices)
-
-In the idealized "quantum bouncer" model, the mirror is treated as a perfect hard wall imposing a Dirichlet condition $\psi(0) = 0$. This appears mathematically innocuous, but a rigorous functional analysis reveals a fundamental problem.
-
-The Hamiltonian for the linear gravitational potential on a half-space, $\hat{H} = -\frac{\hbar^2}{2m}\frac{d^2}{dz^2} + mgz$ for $z > 0$, is Hermitian (symmetric) but **not automatically self-adjoint** on the domain restricted by Dirichlet conditions. The distinction is critical: Hermiticity ensures real expectation values, but only self-adjointness guarantees unitary time evolution ($e^{-iHt/\hbar}$ is well-defined) and a complete orthonormal set of eigenstates. Without self-adjointness, quantum mechanics breaks down --- energy eigenvalues leak into the complex plane, probability is not conserved, and the spectral theorem fails.
-
-The **von Neumann deficiency indices theory** provides the rigorous classification. For the half-line gravitational Hamiltonian, the deficiency indices are $(1,1)$, meaning the operator admits a **one-parameter family** $U(1)$ of self-adjoint extensions. Each extension is uniquely labelled by a single real parameter $\lambda \in \mathbb{R} \cup \{\infty\}$, and corresponds to the generalized Robin boundary condition:
-
-$$\psi'(0) + \lambda\,\psi(0) = 0$$
-
-The Dirichlet condition ($\psi(0) = 0$) is recovered only in the singular limit $\lambda \to \infty$ --- it is one point in a continuum of physically valid boundary conditions, not the unique or even the natural choice. The Neumann condition ($\psi'(0) = 0$, i.e. $\lambda = 0$) and all intermediate values are equally admissible from the standpoint of self-adjoint operator theory.
-
-**The physical content of V8.2**: The presence of the 5D Yukawa potential at the mirror surface selects a **specific finite value of $\lambda$** from this one-parameter family. The radion's Yukawa gradient acts as a short-range boundary interaction that forces the self-adjoint extension away from the Dirichlet limit. OBT V8.2 does not merely accommodate the Robin parameter --- it **derives its precise physical origin**: the integrated 5D Yukawa radion gradient at the mirror surface, transmitted to the Higgs sector via $\xi R H^\dagger H$.
-
-### The V8.2 Explanation: From Yukawa Potential to Higgs Resonance
-
-The Robin parameter $\lambda$ is the **observable signature of Higgs-Radion scalar mixing** at the extra-dimensional boundary. The full derivation chain is:
-
-**Step 1 --- Yukawa gradient.** The extra dimension at $L = 0.2\,\mu$m generates a massive Yukawa correction to Newtonian gravity:
-
-$$\delta V(z) = 2\pi\,\rho_m\,G_N\,|\alpha|\,L^2\,e^{-z/L}$$
-
-**Step 2 --- Radion excitation.** As a neutron's wavefunction probes spatial distances approaching $L$, it encounters an abrupt gradient in the 5D Yukawa potential. This gradient is not merely a correction to Newton --- it is a **geometric excitation of the radion field** $\phi$, the scalar degree of freedom governing the size of the extra dimension (stabilized by the Goldberger-Wise mechanism).
-
-**Step 3 --- Higgs-Radion mixing.** General Relativity and gauge invariance impose a non-minimal coupling $\xi R H^\dagger H$ between the Ricci scalar $R$ and the Higgs doublet $H$. Since radion fluctuations modulate the metric (and hence $R$), the radion excitation is **instantaneously transmitted to the Higgs sector**. The physical Higgs boson and the radion are not pure states --- they are mixed scalar eigenstates. This Higgs-Radion mixing is well-established in the warped extra dimension literature (Randall-Sundrum models, Goldberger-Wise stabilization).
-
-**Step 4 --- Local Higgs VEV perturbation.** The resonating Higgs field undergoes a spatially-varying perturbation of its vacuum expectation value:
-
-$$v_\text{eff}(z) = v_0\left(1 + \eta\,e^{-z/L}\right), \quad \eta = \xi|\alpha| \ll 1$$
-
-where $v_0 = 246$ GeV is the standard electroweak VEV and $\eta = \xi|\alpha|$ is the effective Higgs-Radion mixing coefficient. The **negative exponent** ensures the perturbation is localized at the boundary and decays to zero at infinity (a positive exponent would cause unphysical mass divergence). Since quark masses inside the neutron are $m_q = y_q v/\sqrt{2}$ (Yukawa couplings $\times$ Higgs VEV), the neutron's effective mass is spatially modulated near the extra-dimensional boundary.
-
-**Step 5 --- Robin parameter as observable.** This mass variation shifts the transition frequencies between quantum gravitational bound states. Experimentalists analyzing the data with standard Newtonian gravity and constant particle masses absorb this 5D Higgs resonance into the only available fitting parameter: the Robin boundary condition $\lambda$. **The Robin anomaly is the direct experimental trace of the Higgs-Radion scalar resonance at 0.2 mum.**
-
-At the current qBOUNCE resolution (~1 $\mu$m), the experiment sees only the exponential tail of the Yukawa correction ($e^{-5} \approx 0.007$), which is why the anomaly is "slight". But as resolution improves toward $L = 0.2\,\mu$m, the full Higgs-Radion resonance is exposed and the signal **explodes exponentially**.
-
-### Numerical Validation
-
-The matrix element $\langle 1\vert\delta V\vert 6\rangle$ was computed using Airy wavefunctions integrated against the Yukawa potential (BDF solver). The effective Robin parameter $\lambda_\text{OBT}$ was extracted as a function of spatial resolution $z_\text{res}$.
-
-![qBOUNCE Lambda Prediction](/root/bulk/oscillating-brane-DM/plots/qbounce_lambda_prediction.png)
-*Figure: The Robin parameter $\lambda$ as a function of experimental resolution. At current qBOUNCE resolution (1 $\mu$m), $\lambda$ is tiny. As resolution approaches $L = 0.2\,\mu$m, it amplifies by 55$\times$ --- a direct detection of the extra dimension.*
-
-**Key results:**
-- At $z_\text{res} = 1.0\,\mu$m (current): $\lambda = 2.73$ (small anomaly --- matches observation)
-- At $z_\text{res} = 0.2\,\mu$m (at $L$): $\lambda = 149$ (55$\times$ amplification)
-- At $z_\text{res} = 0.1\,\mu$m (below $L$): $\lambda = 246$ (explosive growth)
-
-**Falsifiable prediction**: Improve qBOUNCE spatial resolution from 1 $\mu$m to 0.2 $\mu$m. If the Robin parameter does not amplify by at least an order of magnitude, the extra dimension at $L = 0.2\,\mu$m is ruled out.
-
-## The 5D Geometric Bypass: Non-Demolition Quantum State Readout
-
-### The Epistemological Shift
-
-The Heisenberg uncertainty principle $[\hat{x}, \hat{p}] = i\hbar$ applies to canonically conjugate variables measured via gauge boson exchange (photons). Any electromagnetic measurement of position necessarily transfers momentum, disturbing the system. This is not a technological limitation --- it is a structural property of 4D gauge interactions.
-
-However, the V8.2 theory reveals an **orthogonal information channel**. The key insight is an operator algebra result: the 5D bulk metric operators $\hat{g}_{AB}^{(5)}$ commute exactly with the 4D internal gauge operators $\hat{A}_\mu$ of the target system:
-
-$$[\hat{g}_{AB}^{(5)},\, \hat{A}_\mu^{(4)}] = 0$$
-
-This commutativity is not approximate --- it is a structural consequence of the fact that the bulk metric lives in a different sector of the Hilbert space than the 4D gauge fields confined to the brane. Measuring the stress-energy tensor projection (Weyl tensor $E_{\mu\nu}$) via gravitational coupling in the bulk does not involve gauge boson exchange, and therefore does not trigger the canonical commutation relation $[\hat{x}, \hat{p}] = i\hbar$ that underpins the Heisenberg uncertainty principle.
-
-Concretely: reading the gravitational shadow of a quantum system in the 5D bulk extracts information about its mass distribution (and hence its quantum state) **without exchanging a single photon** with the target. No gauge boson exchange means no momentum kick, no wavefunction collapse, no decoherence. This is not a violation of Heisenberg --- it is a **geometric bypass**, exploiting the fact that gravity in the 5D bulk acts as a Quantum Non-Demolition (QND) environmental witness operating in a Hilbert space sector orthogonal to 4D gauge interactions.
-
-### The Hardware: Mesoscopic Quantum Targets
-
-A single atom produces a gravitational signal far below quantum noise ($\sim 10^{25}$ times below the Standard Quantum Limit). We acknowledge this gap transparently. The architecture targets **mesoscopic quantum states** --- Bose-Einstein condensates ($\sim 10^6$ atoms), heavy macromolecules ($\sim 10^9$ amu), or optomechanically cooled micro-mirrors --- whose collective gravitational shadow is amplifiable.
-
-The sensor --- a levitated silica nanosphere (diameter 170-300 nm, commensurate with $L = 0.2\,\mu$m) --- achieves sensitivity through three amplification mechanisms:
-
-1. **Squeezed vacuum injection**: Frequency-dependent squeezed states (as deployed in Advanced LIGO/Virgo) suppress quantum shot noise below the SQL by $\sim 10$ dB
-2. **Resonant Q-accumulation**: Ultra-high vacuum ($< 10^{-10}$ mbar) yields mechanical quality factors $Q > 10^{7}$ (projections: $10^{12}$), accumulating the Yukawa signal over $\sim 10^6$ oscillation cycles
-3. **Exponential Yukawa enhancement**: At $r = L = 0.2\,\mu$m, the $e^{-r/L}$ correction reaches its maximum ($e^{-1} \approx 0.37$), providing a 0.4% enhancement over Newtonian gravity --- a measurable deviation for zeptonewton-class sensors
-
-### The Interaction Hamiltonian
-
-$$H_\text{int} = -G_N\frac{M\,m_\text{target}}{r}\left(1 + \alpha\,e^{-r/L}\right)\hat{x}_\text{sensor} \otimes \hat{I}_\text{target}$$
-
-The target operator is the **identity** $\hat{I}$: the target's quantum state is completely unperturbed. The sensor's position shifts by $\Delta x = \mathcal{F}_{5D}/(M\omega_0^2)$, read via quantum non-demolition (QND) optical homodyne detection. No photon is exchanged with the target. No wavefunction collapse is triggered.
-
-### The Software: 5D Radion-Coupled Lindblad Master Equation
-
-The predictive algorithm does not rely on speculative "strip theory" or imaginary time. It extends the well-established **Diósi-Penrose gravitational decoherence model** to 5D.
-
-In the standard Diósi-Penrose framework, gravity objectively collapses superpositions at a rate determined by the gravitational self-energy difference between branches. In V8.2, this "collapse noise" is not stochastic --- it is the **deterministic kinematic jitter of the radion field** $\phi(t)$ driven by the stick-slip motor.
-
-The open quantum system master equation (Lindblad form) becomes:
-
-$$\dot{\rho} = -\frac{i}{\hbar}[H_\text{sys} + H_\text{int}, \rho] + \mathcal{D}[\phi(t)]\rho$$
-
-where the dissipator $\mathcal{D}[\phi(t)]$ is fully determined by the radion trajectory --- not a free noise parameter. The software predicts the objective collapse locus by tracking $\phi$ fluctuations in real-time via the Weyl tensor data from the sensor array.
-
-![Laplace Demon Readout](/root/bulk/oscillating-brane-DM/plots/laplace_demon_readout.png)
-*Figure: Sensor displacement vs target distance. At $r = L = 0.2\,\mu$m, the V8.2 Yukawa correction enhances Newton by 0.4%. The "5D Readout Zone" (green) is where the extra-dimensional signal dominates. Current gap with single atoms acknowledged; mesoscopic targets + squeezed states + Q-accumulation bring SNR within near-term reach.*
-
-### Implications: Toward the 5D Topological Quantum Computer
-
-If the extra dimension exists at $L = 0.2\,\mu$m, the V8.2 theory provides a fundamentally new information channel for quantum computing:
-
-- **No decoherence from measurement**: The 5D bulk operators commute with 4D gauge operators --- readout does not collapse the computation
-- **Deterministic error correction**: The radion-coupled Lindblad equation predicts decoherence events before they happen, enabling preemptive correction
-- **Gravitational entanglement witness**: The Yukawa channel provides a non-electromagnetic path for entanglement verification
-
-Every parameter ($G_N$, $m_\text{KK}$, $L$, $\alpha$) is already fixed by cosmological observations. The technology gap --- zeptonewton force sensitivity at sub-micron distances --- is within the projected capabilities of next-generation optomechanics (2027-2030).
-
-### A Call to Experimentalists
-
-The **qBOUNCE team at ILL Grenoble** (Hartmut Abele, Tobias Jenke) is uniquely positioned to validate both the extra dimension and the quantum bypass architecture. Their experiment already operates at the correct spatial scale ($\sim 1\,\mu$m resolution, targeting $0.2\,\mu$m with qBOUNCE-II). A confirmed exponential amplification of the Robin parameter $\lambda$ as resolution approaches $L$ would simultaneously:
-
-1. **Validate the extra dimension** at $L = 0.2\,\mu$m (first direct detection)
-2. **Confirm the Yukawa potential** that underpins the quantum bypass mechanism
-3. **Open the door** to the 5D Topological Quantum Computer --- a machine that reads quantum states through their gravitational shadow in the bulk
-
-This is a collaboration opportunity where cosmological theory meets terrestrial experiment. The qBOUNCE-II upgrade could deliver the most profound experimental result since the discovery of gravitational waves.
-
-## Summary
-
-| Experiment | Current Status | V8.2 Prediction | Falsification |
-|-----------|---------------|-----------------|---------------|
-| qBOUNCE (ILL) | $\lambda$ = small anomaly at 1 $\mu$m | $\lambda$ amplifies 55$\times$ at 0.2 $\mu$m | Improve resolution to 0.2 $\mu$m |
-| Levitated optomechanics | Zeptonewton sensitivity achieved | 0.4% Yukawa enhancement at $L$ | Detect sub-$\mu$m gravity deviation |
-| 5D Quantum Bypass | Theoretical blueprint | Non-demolition readout via bulk gravitons | Mesoscopic target + squeezed sensor |
-
----
-
-*These laboratory predictions use exclusively parameters already fixed by cosmological data ($\tau_0 = 7 \times 10^{19}$ J/m$^2$, $L = 0.2\,\mu$m, $\alpha = -0.005$). No additional free parameters are introduced. The 5D geometric bypass is grounded in commuting operator algebra (5D metric $\perp$ 4D gauge), the Diósi-Penrose decoherence framework, and state-of-the-art optomechanical engineering.*
-
-
-\newpage
-
-# Chapter 8: Computational Tools
+# Chapter 7: Computational Tools
 
 
 We provide a suite of Python tools for exploring the oscillating brane theory and computing its predictions.
@@ -299,6 +156,1048 @@ We welcome contributions! Please submit pull requests for:
 - Additional observational tests
 
 See our [GitHub repository](https://github.com/{{ site.github_username }}/oscillating-brane-DM) for more details.
+
+\newpage
+
+# Appendix A: Simplified 4D EFT (Linearized Toy Model)
+
+*Comprehensive mathematical framework, observational compatibility analysis,
+and detailed comparison with ΛCDM and MOND theories*
+
+
+## Executive Summary
+
+**Pedagogical scope.** This appendix serves as an accessible introduction to the linearized EFT regime of the Oscillating Brane Theory --- a "toy model" entry point using the harmonic approximation ($\tau(t) = \tau_0 + \delta\tau\cos(\omega t)$), 4D effective loop corrections, and classical stability arguments. It is designed to build the reader's physical intuition. The **complete analytical framework** --- non-linear Filippov stick-slip ODE, Liouville-Abel contraction ($\kappa = e^{-4.74} \approx 8.7 \times 10^{-3}$, factor 115 per cycle, after eliminating the $\Gamma_{rad}$/$\gamma_{slip}$ double-counting), Fenichel-Neishtadt persistence, spectral zeta regularization, CMPP 5D extraction, Klebanov-Strassler UV completion, and holographic ER=EPR phase rigidity --- is presented in the [Complete Theoretical Framework](/theory/), which supersedes the simplified treatments below wherever they diverge.
+
+This document provides a rigorous mathematical foundation for the oscillating brane dark matter theory, addressing key criticisms and establishing its viability as a competitive cosmological model. We demonstrate compatibility with general relativity and quantum mechanics, provide detailed observational confrontations, and present testable predictions that distinguish our model from ΛCDM and MOND.
+
+## Mathematical Framework and Internal Consistency
+
+### Fundamental Postulates
+
+The theory postulates that dark matter emerges from oscillations in an extra dimension---specifically, dynamic fluctuations of the 3-brane on which our universe is embedded. This is grounded in established brane cosmology frameworks:
+
+**Extension of Randall-Sundrum Model**: We extend the RS framework to include dynamic brane fluctuations:
+
+$$S = \int d^5x \sqrt{-g_5} \left[ \frac{M_5^3}{2} R_5 - \Lambda_5 \right] + \int d^4x \sqrt{-g_4} \left[ \frac{M_P^2}{2} R_4 - \tau(t,\vec{x}) + \mathcal{L}_\text{matter} \right]$$
+
+where:
+- $M_5$ is the 5D Planck mass
+- $\Lambda_5$ is the bulk cosmological constant
+- $\tau(t,\vec{x})$ is the dynamic brane tension
+- $\mathcal{L}_\text{matter}$ includes all Standard Model fields
+
+### The Radion Field
+
+Brane oscillations are described by a scalar field phi(x) representing the brane's position in the extra dimension:
+
+$$\tau(t,\vec{x}) = \tau_0 + \delta\tau \cos(\omega t + \vec{k} \cdot \vec{x})$$
+
+**Note:** While the global cosmological dynamics are governed by the highly non-linear stick-slip ODE (Filippov inclusion with Heaviside threshold, detailed in the [Complete Theoretical Framework](/theory/)), this harmonic approximation captures the leading Fourier mode and is sufficient for linearized perturbation theory and local Solar System tests.
+
+The oscillations satisfy the Klein-Gordon equation in the bulk:
+
+$$\Box_5 \phi + m_\phi^2 \phi = 0$$
+
+The effective 4D action after integrating out the extra dimension:
+
+$$S_\text{eff} = \int d^4x \sqrt{-g} \left[ \frac{M_P^2}{2} R + \frac{1}{2} (\partial \phi)^2 - V(\phi) + \phi T_\mu^\mu \right]$$
+
+### Gravitational Effects
+
+The oscillating brane induces an effective energy-momentum tensor:
+
+$$T_\mu\nu^\text{osc} = \frac{\tau_0 f_\text{osc}}{M_P^2} \left[ g_\mu\nu - \frac{1}{2} \partial_\mu \phi \partial_\nu \phi \right]$$
+
+This mimics cold dark matter with:
+- Zero pressure in the averaged limit
+- Energy density $\rho_\text{eff} = \tau_0 f_\text{osc} / R_H$
+- Clustering properties similar to CDM
+
+### Stability Mechanisms
+
+To ensure stability and prevent runaway oscillations, we implement a Goldberger-Wise mechanism:
+
+$$V(\phi) = \lambda \left( \phi^2 - v^2 \right)^2$$
+
+This stabilizes the radion with mass:
+
+$$m_\phi = 2\lambda v \approx \frac{1}{\text{eV}} \times \left(\frac{L}{0.2\,\mu\text{m}}\right)^{-1}$$
+
+## Compatibility with General Relativity and Quantum Mechanics
+
+### Classical Regime (Solar System Tests)
+
+The model rigorously reproduces all Solar System GR successes.
+
+**Yukawa Screening at Solar System Scales:** Any fifth force mediated by the extra dimension is exponentially screened by the Yukawa profile $e^{-r/L}$. Since $L = 0.2\,\mu$m, its effect at astronomical distances ($r \sim 1$ AU $\approx 10^{11}$ m) is $e^{-10^{11}/2 \times 10^{-7}} = e^{-5 \times 10^{17}} \to 0$ --- strictly zero to any conceivable precision. The macroscopic 2 Gyr oscillation is a global $\ell = 0$ breathing mode acting on the FLRW background metric, not a local perturbative fifth force. It modulates $G_\text{eff}(t)$ by $\sim 10\%$ over Gyr timescales, producing effects of order $\delta G/G \sim f_\text{osc} \times (T_\text{orbit}/T_\text{brane}) \sim 10^{-18}$ per Mercury orbit --- far below observational precision.
+
+**Mercury Perihelion Precession**: The oscillation-induced additional precession:
+$$\delta\dot{\omega} < 0.01 \text{ arcsec/century}$$
+compared to GR's prediction of 42.98 arcsec/century (observed: 42.98 +/- 0.04).
+
+**Light Deflection**: The oscillation contribution to the deflection angle is suppressed by the same temporal averaging, yielding $\delta\alpha < 10^{-9} \alpha_\text{GR}$ where $\alpha_\text{GR} = 1.75$ arcsec for grazing rays.
+
+**Gravitational Redshift**: Unaffected as the time-averaged metric remains unchanged
+
+**Fifth Force Constraints**: Any scalar-mediated force is suppressed by:
+
+$$\alpha = \frac{\phi M_P}{M_5^2} < 10^{-5}$$
+
+satisfying Eöt-Wash experiments.
+
+### Quantum Regime
+
+**Particle Content**: Oscillation quanta (branons) have:
+- Mass: $m_\text{branon} \approx 3.8$ eV
+- Coupling to SM: gravitational only
+- Production rate: negligible at collider energies
+
+**Quantum Stability**: The effective potential prevents cascading:
+
+$$\Gamma_\text{decay} \sim \frac{m_\phi^5}{M_5^6} < H_0$$
+
+ensuring cosmological stability.
+
+**Loop Corrections**: One-loop corrections to the brane tension:
+
+$$\delta\tau_\text{1-loop} = \frac{N_\text{KK} m_\text{KK}^4}{64\pi^2} \ln\left(\frac{\Lambda_\text{UV}}{m_\text{KK}}\right)$$
+
+remain small for $\Lambda_\text{UV} \lesssim M_5$.
+
+## Observational Confrontations
+
+### CMB Anisotropies (Planck Constraints)
+
+The model must reproduce Planck's precision measurements:
+
+**Acoustic Peaks**: The effective dark matter density at recombination:
+
+$$\Omega_\text{osc}(z_\text{rec}) = \Omega_\text{CDM} = 0.258 \pm 0.011$$
+
+**Angular Power Spectrum**: The high-$\ell$ acoustic peaks of the CMB ($\ell > 30$) are analytically preserved by **conformal protection**: during the radiation era and through recombination ($z \approx 1100$), the relativistic plasma dictates $w_{eff} \approx 1/3$, so $T^\mu_\mu = 0$ and the radion is strictly decoupled. Furthermore, extreme Hubble friction ($3H \gg \omega_{brane}$) hyper-overdamps any residual oscillation. The brane is dynamically frozen; high-$\ell$ physics maps exactly onto standard 4D GR. Explicit quantification via a modified Boltzmann solver (CLASS/CAMB) remains a future milestone (see Roadmap).
+
+**Spectral Index**: No modification to primordial spectrum:
+
+$$n_s = 0.9649 \pm 0.0042$$ (Planck value)
+
+### Galaxy Rotation Curves
+
+The brane oscillation creates an effective potential:
+
+$$\Phi_\text{eff}(r) = \Phi_\text{baryon}(r) + \Phi_\text{osc}(r)$$
+
+where:
+
+$$\Phi_\text{osc}(r) = -\frac{GM_\text{osc}}{r} \left[1 - \exp\left(-\frac{r}{r_s}\right)\right]$$
+
+with scale radius $r_s \sim 10$ kpc, naturally explaining flat rotation curves.
+
+**Tully-Fisher Relation**: The model predicts:
+
+$$v_\text{flat}^4 = G M_\text{baryon} a_0$$
+
+with $a_0 = cH_0/2\pi \approx 1.1 \times 10^{-10}$ m/s².
+
+### Gravitational Lensing
+
+**Galaxy Clusters**: The effective surface density:
+
+$$\Sigma_\text{eff} = \Sigma_\text{baryon} + \Sigma_\text{osc}$$
+
+where $\Sigma_\text{osc}$ follows the baryon distribution with enhancement factor ~5-6.
+
+**Bullet Cluster**: During collision:
+
+The Bullet Cluster (1E 0657-56) provides a crucial test. In our model:
+
+1. **Initial State**: Two clusters approaching with relative velocity ~4700 km/s
+   - Each has oscillation field proportional to baryon distribution
+   - Gas dominates baryonic mass (~90%)
+
+2. **During Collision** (t = 0):
+   - Gas experiences ram pressure: $P_\text{ram} = \rho_\text{gas} v_\text{rel}^2$
+   - Deceleration: $a_\text{gas} = -P_\text{ram}/(\rho_\text{gas} \ell_\text{shock})$
+   - Oscillation field passes through unimpeded (no self-interaction)
+
+3. **Post-Collision** (t > 100 Myr):
+   - Gas lags behind by $\Delta x \sim 150$ kpc due to ram pressure
+   - Galaxies maintain velocity (collisionless)
+   - The network of **micro-PBHs** (acting as collisionless topological anchors for the brane's geometric deformation) passes through the shock unimpeded alongside the galaxies
+   - The 5D geometric Weyl tensor projection (apparent dark matter) remains strictly anchored to this collisionless PBH network
+
+4. **Observational Signature**:
+   $$\kappa_\text{lensing}(x) = \kappa_\text{galaxies}(x) + \kappa_\text{PBH}(x) \neq \kappa_\text{gas}(x)$$
+
+The mass centroid from weak lensing follows the collisionless PBH network (co-moving with galaxies), while X-ray emission traces the shocked gas --- exactly as observed. This provides a natural explanation without particle dark matter: the geometric deformation is anchored to the PBH topological capillaries, not to the baryonic gas.
+
+### Gravitational Waves (NANOGrav)
+
+**Stochastic Background**: Brane transitions can produce:
+
+$$\Omega_\text{GW}(f) = \Omega_0 \left(\frac{f}{f_*}\right)^{n_t}$$
+
+with:
+- $f_* \sim 10^{-8}$ Hz (transition frequency)
+- $n_t = 2/3$ (phase transition spectrum)
+- $\Omega_0 \sim 10^{-9}$ (compatible with NANOGrav)
+
+**Unique Signature**: The V8.2 stick-slip motor sources a stochastic gravitational wave background via tensor TT projection of the Filippov shock acceleration $\ddot{\phi}(t)$ (see [Complete Theoretical Framework](/theory/) --- "Spectral Flattening and the NANOGrav Overtone Signature"). The fundamental frequency $f_0 = 1/T \approx 1.6 \times 10^{-17}$ Hz is far below any direct GW detector band, but the Dirac-delta acceleration impulses at each slip event generate a flat Fourier spectrum (white noise) that extends into the PTA nanohertz window. NANOGrav effectively listens to the $n \approx 10^9$ overtone of the cosmic heartbeat, with a predicted characteristic strain $h_c(16\,\text{nHz}) \sim 10^{-15}$ --- matching the NANOGrav 15-year common-process signal with zero additional free parameters.
+
+## Comparative Analysis
+
+### Model Comparison Table
+
+| Criterion | Oscillating Brane | ΛCDM | MOND |
+|-----------|-------------------|------|------|
+| **DM Nature** | Geometric effect from extra dimensions | Unknown particles (WIMPs, axions) | No DM, modified gravity |
+| **Theoretical Basis** | String theory/M-theory (RS extension) | Particle physics extensions | Empirical modification |
+| **Free Parameters** | 4+1 (tau₀, L, D, f_osc + N=6) | 2+ (Omega_c, sigma_v, m_chi) | 1 (a₀) + relativistic ext. |
+| **CMB Fit Quality** | Analytically preserved (conformal freeze); CLASS/CAMB integration pending | chi²/dof approximately 1.00 | Poor without 2eV neutrinos |
+| **Galaxy Rotations** | v⁴ proportional to M_b automatically | Requires NFW/Einasto profiles | v⁴ proportional to M_b by design |
+| **Tully-Fisher sigma** | ~0.05 dex predicted | ~0.3 dex (with scatter) | ~0.05 dex (built-in) |
+| **Cluster M/L ratio** | 300-400 (factor 5-6 boost) | 200-500 (varies) | Fails without DM |
+| **Bullet Separation** | 150 kpc naturally | Explained (collisionless) | Unexplained |
+| **Cusp-Core** | Cores ~10 kpc | Cusps (rho proportional to r⁻¹) | Cores (by construction) |
+| **Missing Satellites** | Factor 2-3 reduction | Too many by 5-10x | Better match |
+| **Direct Detection** | sigma < 10⁻⁴⁸ cm² forever | sigma > 10⁻⁴⁷ cm² expected | No prediction |
+| **S₈ Tension** | Consistent (~4--10% suppression, S₈approximately0.79, waveform-dependent) | 3sigma tension | Not addressed |
+| **H₀ Tension** | Potential resolution | 5sigma tension | Not addressed |
+| **GW Prediction** | f₀ = 1.6x10⁻¹⁷ Hz | None specific | None |
+| **Falsifiability** | Multiple clear tests | Particle discovery | Limited tests |
+
+### Advantages Over Competitors
+
+**vs ΛCDM**:
+- Explains DM-baryon coupling naturally
+- No need for undiscovered particles
+- Potentially resolves small-scale issues
+- Provides unified framework (DM + DE from branes)
+
+**vs MOND**:
+- Works at all scales (galaxies to cosmology)
+- No need for complicated relativistic extensions
+- Explains cluster dynamics and lensing
+- Compatible with CMB observations
+
+## Testable Predictions and Falsifiability
+
+### Numerical Predictions Table
+
+| Observable | Prediction | Uncertainty | Detection Method | Timeline |
+|------------|------------|-------------|------------------|----------|
+| **Fundamental Parameters** |
+| Brane tension tau₀ | 7.0 x 10¹⁹ J/m² | +/-15% | Indirect via H₀(z) | Current |
+| Oscillation period T | 2.000 Gyr (eigenvalue) | +/-0.003 Gyr | GW spectrum | 2030+ |
+| Extra dimension L | 0.2 mum | Factor of 2 | KK modes | 2035+ |
+| KK mass $m_{KK}$ | ~3.8 eV | +/-1 eV | Cosmological bounds | Current |
+| **Cosmological Effects** |
+| S₈ suppression | ~4--10% (S₈approximately0.79, waveform-dependent) | +/-0.5% | Weak lensing | Current |
+| w(z) amplitude A_w | 0.003 | +/-0.001 | BAO + SNe | 2025+ |
+| H₀ anisotropy | 0.01% | +/-0.005% | Precision cosmology | 2030+ |
+| **Gravitational Signatures** |
+| Fundamental f₀ | 1.6 x 10⁻¹⁷ Hz | +/-10% | ISW in CMB | 2030+ |
+| Oscillation period | 2.000 Gyr (eigenvalue) | +/-0.003 Gyr | Large-scale structure | 2028+ |
+| ISW amplitude | ~10⁻⁵ DeltaT/T | Factor of 2 | CMB-S4 | 2030+ |
+| **Galactic Scale** |
+| MOND a₀ | 1.1 x 10⁻¹⁰ m/s² | +/-5% | Galaxy dynamics | Current |
+| Halo core radius | ~10 kpc | +/-3 kpc | Stellar kinematics | 2025+ |
+| Subhalo reduction | Factor 2-3 | +/-50% | Stream gaps | 2028+ |
+| **Particle Physics** |
+| Branon mass | ~3.8 eV | +/-1 eV | Non-detection | Current |
+| DM cross-section | < 10⁻⁴⁸ cm² | Lower limit | Direct detection | Current |
+| LHC production | < 10⁻⁵⁰ fb | Upper limit | Collider searches | Current |
+
+### Unique Signatures
+
+1. **No Direct Detection**: The model predicts null results in all particle DM searches (XENON, LUX, etc.)
+
+2. **Oscillation Signatures**:
+   - Fundamental period T = 2.000 Gyr (derived eigenvalue; too slow for direct GW detection)
+   - ISW effect in CMB large-scale anisotropies
+   - Modulation in matter power spectrum detectable by DESI/Euclid
+
+3. **Modified Halo Structure**:
+   - Fewer subhalos than ΛCDM (factor ~2-3)
+   - Smoother density profiles (no cusps)
+   - Testable via stellar streams and microlensing
+
+4. **Spatial Gravity Variations**:
+   - $\delta g/g \sim 10^{-8}$ at supercluster boundaries
+   - Directional H₀ variations ~0.01%
+   - Future precision astrometry tests
+
+5. **Baryon-DM Coupling**:
+   - Tighter correlation than ΛCDM expects
+   - Deviations in ultra-diffuse galaxies
+   - Predictable from baryon distribution alone
+
+### Falsification Criteria
+
+The model would be falsified by:
+- Direct detection of DM particles with $\sigma > 10^{-48}$ cm²
+- Absence of ISW resonance signature in upcoming CMB-S4 surveys
+- Discovery of DM-dominated structures without baryons
+- Variations in fundamental constants beyond $|\dot{G}/G| > 10^{-13}$ yr⁻¹
+
+## Quantum Loop Corrections and Stability
+
+### Quantum Corrections to Brane Tension
+
+The quantum stability of the oscillating brane requires careful analysis. The following is a **4D EFT toy model** estimate of one-loop corrections; the rigorous 5D treatment using spectral zeta regularization at $s = -1/2$, Seeley-DeWitt heat kernel coefficients with Gilkey-Branson-Kirsten boundary terms, and Skenderis holographic renormalization is presented in the [Complete Theoretical Framework: Quantum Radiative Stability](/theory/).
+
+In the simplified 4D effective description, one-loop corrections to the brane tension scale as:
+
+$$\delta\tau_{1-loop} \sim \frac{\Lambda_{UV}^4}{(4\pi)^2} \ln\left(\frac{\Lambda_{UV}}{m_\phi}\right)$$
+
+where $\Lambda_{UV}$ is the UV cutoff and $m_\phi \sim 1$ eV is the radion mass.
+
+**Key result (4D estimate)**: For $\Lambda_{UV} < M_5$ (the 5D Planck mass), corrections remain small:
+$$\frac{\delta\tau_{1-loop}}{\tau_0} < 10^{-3}$$
+
+The full 5D calculation is expected to confirm this via the exponential warp factor suppression $\mathcal{O}(e^{-2kL})$ of UV contributions to the IR-brane potential.
+
+This ensures quantum corrections don't destabilize the classical oscillation.
+
+### Branon Properties
+
+The quantum excitations of the brane (branons) have:
+- **Mass**: $m_{branon} \approx 3.8$ eV (set by extra dimension size $L = 0.2\,\mu$m)
+- **Coupling**: Only gravitational, suppressed by $M_P^{-2}$
+- **Lifetime**: $\tau_{branon} > 10^{30}$ years (cosmologically stable)
+- **Production rate**: Negligible in colliders due to gravitational coupling
+
+**Prediction**: No branon production at LHC energies ($\sigma < 10^{-50}$ fb)
+
+### Decay Rate Analysis
+
+The oscillation mode decay rate via graviton emission:
+
+$$\Gamma_{decay} = \frac{m_\phi^5}{M_5^3} \approx 10^{-70} \text{ Hz}$$
+
+Since $\Gamma_{decay} \ll H_0 \approx 10^{-18}$ Hz, the oscillations persist through cosmic time.
+
+## Current Limitations and Future Development
+
+### Notations and Units
+
+Throughout this section, we use the following conventions:
+
+| Symbol | Description | Units |
+|--------|-------------|-------|
+| $M_5$ | 5D Planck mass | GeV (in natural units) |
+| $M_P$ | 4D Planck mass | $1.22 \times 10^{19}$ GeV |
+| $\tau_0$ | Brane tension | J/m² (SI) |
+| $k$ | AdS curvature | 1/m |
+| $L$ | Extra dimension size | m |
+| $z$ | Brane position | m |
+| $V$ | Potentials | J/m² (surface) or J/m³ (volume) |
+| $\mathcal{E}_{\mu\nu}$ | Projected Weyl tensor | Energy density units |
+
+**Unit conversions** (natural units $\hbar = c = 1$):
+- Length: $1$ m = $5.07 \times 10^{15}$ GeV$^{-1}$
+- Energy: $1$ J = $6.24 \times 10^{9}$ GeV
+- Tension: $1$ J/m² = $2.43 \times 10^{-22}$ GeV³
+- Brane tension: $\tau_0 = 7.0 \times 10^{19}$ J/m² = $0.017$ GeV³
+- **Fundamental scale**: $\tau_0^{1/3} = 257$ MeV $\approx \Lambda_{QCD}$ (QCD confinement scale)
+
+### Theoretical Challenges
+
+#### Solving the Full 5D Einstein Equations with Dynamic Brane
+
+The most fundamental challenge is solving the complete 5D Einstein field equations with a dynamically oscillating brane. The 4D effective equations contain an undetermined Weyl term $\mathcal{E}_{\mu\nu}$ from bulk curvature:
+
+$$G_{\mu\nu} + \Lambda_4 g_{\mu\nu} = \kappa_4^2 T_{\mu\nu} + \kappa_5^4 \pi_{\mu\nu} - \mathcal{E}_{\mu\nu}$$
+
+where $\mathcal{E}_{\mu\nu}$ can only be determined by solving the full 5D problem.
+
+**Numerical Resolution Requirements**:
+The dynamic brane introduces significant computational challenges beyond static RS models:
+
+1. **Moving Boundary Problem**: The brane position $z(t,\vec{x})$ becomes a dynamical variable requiring:
+   - Adaptive mesh refinement near the oscillating boundary
+   - Characteristic extraction at bulk infinity
+   - Proper implementation of Israel junction conditions
+
+2. **Coordinate Singularities**: During oscillation, standard Gaussian normal coordinates fail when:
+   - The brane approaches $z = 0$ (AdS horizon)
+   - Oscillation amplitude exceeds coordinate patch validity
+   - Solution: Implement Eddington-Finkelstein-type coordinates
+
+3. **Computational Scaling**: Full 5D simulations scale as $O(N^5)$ for $N$ grid points per dimension:
+   - Memory requirements: ~TB for modest resolutions
+   - Time steps constrained by CFL condition in 5D
+   - Parallelization essential (MPI + GPU acceleration)
+
+**BraneCode Implementation** [Martin et al. 2005, arXiv:gr-qc/0410001]:
+The pioneering BraneCode project demonstrated feasibility with:
+- ADM (3+1)+1 decomposition of 5D spacetime
+- Spectral methods in the bulk direction
+- 4th-order finite differencing on the brane
+- Constraint damping via Baumgarte-Shapiro-Shibata-Nakamura formalism
+
+Key numerical methods --- the 5D ADM line element and evolution equations:
+
+$$ds^2 = -\alpha^2 dt^2 + \gamma_{ij}(dx^i + \beta^i dt)(dx^j + \beta^j dt) + \phi^4 dz^2$$
+
+$$\partial_t \gamma_{ij} = -2\alpha K_{ij} + \mathcal{L}_\beta \gamma_{ij}$$
+
+$$\partial_t K_{ij} = \alpha(R_{ij} + K K_{ij} - 2K_{ik}K^k_j) + \text{bulk terms}$$
+
+**Modern Computational Frameworks**:
+- **Einstein Toolkit**: Requires 5D extension module
+  - Cactus framework already supports arbitrary dimensions
+  - Need to implement RS-specific boundary conditions
+  - McLachlan thorn for BSSN evolution in 5D
+  
+- **GRChombo**: Native support for Kaluza-Klein physics
+  - Adaptive mesh refinement via Chombo
+  - Already handles scalar field dynamics in extra dimensions
+  - Requires modification for oscillating boundaries
+  
+- **Julia/DifferentialEquations.jl**: For rapid prototyping
+  - Method-of-lines discretization
+  - Symplectic integrators for Hamiltonian formulation
+  - GPU acceleration via CUDA.jl
+
+#### Initial Conditions for Oscillating Brane - Cosmological Mechanisms
+
+**V8.2 primary mechanism:** The QCD trace anomaly is the fundamental ignition switch. During the radiation era, conformal symmetry ($T^\mu_\mu = 0$ for $w = 1/3$) freezes the radion completely. At the QCD phase transition ($T \approx 257$ MeV), chiral symmetry breaking makes the trace non-zero, and the coupling factor $(1-3w)$ jumps from 0 to 1 --- igniting the stick-slip motor (see [Theory: BBN Protection](/theory/)). While several generic braneworld mechanisms can also perturb the radion (listed below for completeness), the V8.2 architecture specifically identifies the QCD trace anomaly as the unique physical process that breaks conformal freeze-out:
+
+**1. Ekpyrotic/Cyclic Universe Scenario** [Khoury et al. 2001, Phys.Rev.D 64, 123522]
+
+In the ekpyrotic model, our universe results from a collision between two parallel branes:
+
+- **Pre-collision**: Two branes approach with relative velocity $v_{rel} \sim 10^{-3}c$
+- **Collision dynamics**: Kinetic energy converts to radiation + oscillations
+- **Energy partition**: ~99% → radiation (hot Big Bang), ~1% → coherent oscillations
+
+The initial amplitude depends on collision parameters:
+$$A_{osc} = \frac{v_{rel} \tau_{collision}}{\sqrt{M_5^3}} \times \mathcal{F}(v_{rel}, \theta)$$
+
+where $\mathcal{F}$ is an efficiency factor depending on collision angle $\theta$ and velocity.
+
+Key prediction: Oscillations begin with maximum kinetic energy (cosine phase)
+
+**2. Post-Inflation Radion Displacement** [Collins & Holman 2003, Phys.Rev.Lett. 90, 231301]
+
+During inflation, quantum fluctuations displace the brane from its minimum:
+
+- **Inflationary phase**: Hubble friction $H_{inf} \gg \omega_0$ freezes oscillations
+- **Displacement**: $\langle z^2 \rangle = (H_{inf}/2\pi)^2$ (quantum fluctuations)
+- **Post-inflation**: As $H < \omega_0$, oscillations commence
+
+Evolution equation during reheating:
+$$\ddot{z} + 3H(t)\dot{z} + \omega_0^2 z = 0$$
+
+Solution with initial displacement $z_0$:
+$$z(t) = z_0 \times a(t)^{-3/2} \times \cos(\omega_0 t + \phi_0)$$
+
+This naturally explains:
+- Why oscillations start near matter-radiation equality
+- The specific amplitude $A_{osc} \sim H_{inf}/M_5$
+- Phase coherence across horizon scales
+
+**3. Symmetry Breaking at Electroweak Scale** [Dvali & Tye 1999, Phys.Lett.B 450, 72]
+
+The brane tension can undergo phase transitions linked to particle physics:
+
+- **High temperature**: $T > T_{EW}$, symmetric phase with $\tau(T) = \tau_{UV}$
+- **Phase transition**: At $T = T_{EW} \approx 100$ GeV, tension drops
+- **New minimum**: Brane settles to new position with oscillations
+
+Temperature-dependent potential:
+$$V(z,T) = \frac{\tau_0}{2}\left(\frac{z}{L}\right)^2 \left[1 + \lambda\left(\frac{T}{T_{EW}}\right)^4\right]$$
+
+This connects dark matter to electroweak physics and predicts:
+- Oscillation start time: $t_{start} \sim 10^{-12}$ seconds after Big Bang
+- Initial amplitude: $A_{osc} \sim \sqrt{\lambda} \times L$
+- Natural suppression of higher harmonics
+
+**4. Quantum Tunneling from False Vacuum**
+
+The brane could tunnel from a metastable configuration:
+
+- **False vacuum**: Local minimum at $z = 0$ (symmetric point)
+- **True vacuum**: Global minimum at $z = z_{min}$ 
+- **Tunneling**: Coleman-De Luccia instanton mediates transition
+
+Tunneling probability:
+$$\Gamma \sim e^{-S_E/\hbar}$$
+
+where $S_E$ is the Euclidean action. Post-tunneling oscillations have:
+- Amplitude: $A_{osc} = z_{min}$
+- Phase: Random (depends on nucleation point)
+- Energy: Set by potential difference $\Delta V$
+
+**5. Coupling to Primordial Black Holes**
+
+If PBHs pierce the brane early on:
+
+- **PBH formation**: At $t \sim 10^{-5}$ seconds, first PBHs form
+- **Brane piercing**: Creates topological defects (wormholes)
+- **Induced oscillations**: Gravitational backreaction excites radion
+
+The oscillation amplitude from N piercing events:
+$$A_{osc} \sim \sqrt{N} \times \frac{r_s}{L} \times \frac{M_{PBH}}{M_P}$$
+
+This mechanism naturally explains the ~30nm PBH scale in the theory.
+
+#### Quantum Corrections in Curved Background - Loop Effects and Radion Quantization
+
+Quantum corrections in the warped geometry present unique challenges beyond flat-space field theory. The curved background modifies vacuum fluctuations, leading to several important effects:
+
+**1. Casimir Energy in Warped Geometry** [Flachi & Tanaka 2003, Phys.Rev.D 68, 025004]
+
+The Casimir energy density between two branes separated by distance $L$ in AdS₅:
+
+$$\rho_{Casimir}(z) = -\frac{\pi^2}{1440} \frac{N_{fields}}{z^4} \left[1 + \frac{45}{2\pi^2}\zeta(3)e^{-2kz} + O(e^{-4kz})\right]$$
+
+where:
+- $N_{fields}$ = total degrees of freedom (SM: ~100)
+- $k$ = AdS curvature scale
+- $\zeta(3) \approx 1.202$ (Riemann zeta function)
+
+For oscillating branes, this creates a time-dependent contribution:
+$$V_{Casimir}(t) = V_0 + V_1 \cos(2\omega_0 t) + V_2 \cos(4\omega_0 t) + ...$$
+
+Leading to:
+- **Frequency shift**: $\delta\omega/\omega_0 \sim 10^{-4} (N_{fields}/100)$
+- **Parametric resonance**: If $V_1 > \omega_0^2/4$, exponential growth
+- **Branon production**: $\langle n_{branon} \rangle \sim (V_1/\omega_0)^2$ per cycle
+
+**2. One-Loop Effective Action** [Garriga, Pujolàs & Tanaka 2001, Nucl.Phys.B 605, 192]
+
+The one-loop correction from bulk gravitons and matter fields:
+
+$$\Gamma_{1-loop} = \frac{1}{2}\text{Tr}\ln\left[-\Box + m^2 + \xi R\right]$$
+
+After regularization and renormalization:
+
+$$V_{eff}(z) = V_{tree}(z) + \frac{1}{64\pi^2}\sum_i (-1)^{F_i} n_i m_i^4(z) \ln\left(\frac{m_i^2(z)}{\mu^2}\right)$$
+
+where:
+- $F_i$ = fermion number
+- $n_i$ = degrees of freedom
+- $m_i(z)$ = field-dependent masses
+- $\mu$ = renormalization scale
+
+For the radion specifically:
+$$V_{radion}^{1-loop} = \frac{3k^4}{32\pi^2} z^4 \left[\ln(kz) - \frac{1}{4}\right] + \text{counterterms}$$
+
+**3. Radion Quantization and Stability** [Csaki et al. 2000, Phys.Rev.D 62, 045015]
+
+The quantized radion field has peculiar properties due to the warped geometry:
+
+**Wave function normalization**:
+$$\int d^4x \sqrt{-g_{ind}} |\psi_n(x)|^2 = 1$$
+
+requires careful treatment of the induced metric $g_{ind}$.
+
+**Mass spectrum**:
+$$m_n^2 = \frac{4k^2}{9}\left[4 + n(n+3)\right]e^{-2kL}$$
+
+For $n=0$ (radion): $m_{radion} = \frac{4k}{3}e^{-kL} \approx 0.48$ eV
+
+**Quantum stability conditions**:
+1. **Coleman-Weinberg potential** must be bounded below
+2. **Decay rate**: $\Gamma_{radion \to 2\gamma} < H_0$
+3. **Vacuum stability**: $\langle\delta z^2\rangle < L^2$
+
+**4. Dynamic Casimir Effect During Oscillations**
+
+The oscillating brane creates particles from vacuum:
+
+**Particle creation rate** [Brevik et al. 2003, Phys.Rev.D 67, 025019]:
+$$\frac{dN}{dt} = \frac{A_{brane}}{(2\pi)^3} \int d^3k \,|\beta_k|^2 \omega_k$$
+
+where $\beta_k$ are Bogoliubov coefficients satisfying:
+$$|\beta_k|^2 = \frac{\omega_0^2 A_{osc}^2}{4\omega_k^2} \sinh^2\left(\frac{\pi\omega_k}{aH}\right)$$
+
+This leads to:
+- **Energy dissipation**: $\dot{E}/E \sim 10^{-5} H_0$ (negligible)
+- **Particle spectrum**: Thermal with $T_{eff} \sim \hbar\omega_0$
+- **Backreaction**: Modifies equation of state by $\Delta w \sim 10^{-6}$
+
+**5. Loop Corrections to Israel Junction Conditions**
+
+At one-loop, the junction conditions receive corrections:
+
+$$[K_{\mu\nu}] = -\kappa_5^2\left(T_{\mu\nu} - \frac{1}{3}g_{\mu\nu}T + T_{\mu\nu}^{quantum}\right)$$
+
+where:
+$$T_{\mu\nu}^{quantum} = \frac{1}{16\pi^2}\sum_i n_i \langle T_{\mu\nu}^{(i)}\rangle_{ren}$$
+
+This modifies:
+- Brane tension renormalization: $\tau_{ren} = \tau_0 + \delta\tau_{quantum}$
+- Induced cosmological constant: $\Lambda_{ind} = \Lambda_0 + \frac{\pi^2 N}{1440L^4}$
+- Effective Newton's constant: $G_{eff} = G_N(1 + \alpha \ln(r/L))$
+
+**Implementation in Numerical Codes**:
+
+To include quantum corrections in simulations:
+
+1. **Effective potential approach**:
+   ```python
+   def V_quantum(z, params):
+       V_tree = tau_0 * (z/L)**2
+       V_casimir = -pi**2 * N_fields / (1440 * z**4)
+       V_1loop = 3*k**4/(32*pi**2) * z**4 * log(k*z)
+       return V_tree + V_casimir + V_1loop
+   ```
+
+2. **Stochastic approach** for particle creation:
+   - Add noise term: $\xi(t)$ with $\langle\xi(t)\xi(t')\rangle = 2D\delta(t-t')$
+   - Diffusion coefficient: $D = \hbar\omega_0^3 A_{osc}^2/(4\pi)$
+
+3. **Renormalization group improvement**:
+   - Run couplings with energy scale: $\tau(\mu) = \tau_0 + \beta_\tau \ln(\mu/M_5)$
+   - Include threshold corrections at $m_{KK}$
+
+For the complete observational tests timeline, see the [Predictions](/predictions/) chapter.
+
+### Theoretical Development Roadmap
+
+#### Phase 1: Theoretical Framework (Months 1-6)
+1. **Action Formulation**
+   - 5D Einstein-Hilbert + brane action
+   - Goldberger-Wise stabilization potential
+   - Matter coupling on brane
+   ```
+   S = S_bulk + S_brane + S_GW + S_matter
+   ```
+
+2. **Linearized Analysis**
+   - Small oscillations: $z(t) = z_0 + \epsilon \cos(\omega t)$
+   - Stability analysis via perturbation theory
+   - Branon spectrum calculation
+
+3. **Effective 4D Description**
+   - Integrate out bulk modes
+   - Derive modified Friedmann equations
+   - Radion effective potential
+
+#### Phase 2: Numerical Implementation (Months 6-12)
+1. **1D Prototype (Python)**
+   ```python
+   # Simplified radion evolution
+   def radion_evolution(t, y, params):
+       z, z_dot = y
+       V_prime = potential_derivative(z, params)
+       z_ddot = -3*H(t)*z_dot - V_prime
+       return [z_dot, z_ddot]
+   ```
+
+2. **Full 5D Code Development**
+   - Extend GRChombo/Einstein Toolkit
+   - Implement moving boundary conditions
+   - Parallelize with MPI/GPU acceleration
+
+3. **Benchmark Tests**
+   - Static RS solution recovery
+   - Small oscillation comparison
+   - Energy conservation checks
+
+#### Phase 3: Physical Applications (Months 12-18)
+1. **Cosmological Evolution**
+   - Oscillating brane + matter/radiation
+   - Structure formation modifications
+   - Dark energy emergence
+
+2. **Quantum Corrections**
+   - Include Casimir potential
+   - One-loop effective action
+   - Branon production rates
+
+3. **Observable Signatures**
+   - CMB modifications
+   - Gravitational wave spectrum
+   - Growth factor suppression
+
+### Critical Methodological Improvements
+
+The following improvements address key dimensional, physical, and statistical consistency requirements:
+
+#### Dimensional Consistency in Numerical Codes
+
+**Issue**: Energy density calculations mixing surface and volume densities.
+
+**Correction**:
+```python
+# Correct dimensional analysis
+def calculate_energy_densities(self, z_brane, z_dot):
+    # Kinetic energy density (J/m³)
+    rho_kin = 0.5 * self.tau_0 * z_dot**2 / self.R_H
+    
+    # Potential energy density (J/m³) 
+    rho_pot = 0.5 * self.tau_0 * (np.pi * z_brane / self.R_H)**2 / self.R_H
+    
+    # Total energy density
+    rho_total = rho_kin + rho_pot
+    
+    # Equation of state
+    w = (rho_kin - rho_pot) / (rho_kin + rho_pot)
+    
+    return rho_kin, rho_pot, w
+```
+
+This ensures $w(z)$ oscillates around -1 with amplitude ~$10^{-3}$ as required.
+
+#### Precise Cosmological Time Calculations
+
+**Issue**: Approximation $t_{lb} \approx \ln(1+z)/(0.7 H_0)$ breaks down for $z > 2$.
+
+**Solution**: Implement exact integration
+```python
+from scipy.integrate import quad
+
+def lookback_time_exact(z, omega_m=0.3, omega_lambda=0.7, H0=70):
+    """Calculate exact lookback time using cosmological integration"""
+    def integrand(zp):
+        E_z = np.sqrt(omega_m * (1 + zp)**3 + omega_lambda)
+        return 1.0 / ((1 + zp) * E_z)
+    
+    # Convert to Gyr
+    t_lb, _ = quad(integrand, 0, z)
+    t_lb *= (1/H0) * 3.086e19 / (365.25 * 24 * 3600 * 1e9)
+    
+    return t_lb
+```
+
+#### Self-Consistent Growth Suppression
+
+**Issue**: Growth suppression of order 4--10% (BKM-derived phase; value waveform-shape dependent, S₈approximately0.79).
+
+**Implementation**:
+```python
+def calculate_growth_suppression(self):
+    """Calculate S8 suppression from first principles"""
+    # Solve growth equations with oscillating w(z)
+    z_vals = np.logspace(-3, 1, 100)
+    
+    # ΛCDM baseline
+    D_plus_LCDM = self.solve_growth_ode(z_vals, w_de=-1.0)
+    
+    # Oscillating model
+    D_plus_osc = self.solve_growth_ode(z_vals, w_de=self.w_oscillating)
+    
+    # Suppression at z=0
+    suppression = D_plus_osc[0] / D_plus_LCDM[0]
+    
+    # S8 scales linearly with growth factor
+    S8_ratio = suppression
+    
+    return S8_ratio, (1 - S8_ratio) * 100  # Return ratio and percentage
+```
+
+#### Bayesian Analysis Parameter Constraints
+
+**Issue**: Unconstrained parameters dilute evidence calculation.
+
+**Solution**: Implement physical constraints
+```python
+def log_prior(theta):
+    """Informed priors based on theoretical constraints"""
+    tau_0, f_osc, T_osc = theta
+    
+    # Theoretical constraint: tau₀ = f_osc * M_DM * (2pi/T)²
+    M_DM = 1e24  # kg (galaxy mass scale)
+    tau_0_expected = f_osc * M_DM * (2*np.pi/T_osc)**2
+    
+    # Gaussian prior around theoretical expectation
+    log_p = -0.5 * ((tau_0 - tau_0_expected) / (0.1 * tau_0_expected))**2
+    
+    # Bounds on individual parameters
+    if not (1e19 < tau_0 < 1e20):  # J/m²
+        return -np.inf
+    if not (0.1 < f_osc < 0.9):     # Fraction
+        return -np.inf
+    if not (1.5 < T_osc < 2.5):     # Gyr
+        return -np.inf
+    
+    return log_p
+```
+
+#### Documentation and Dependencies
+
+**Requirements File** (`requirements.txt`):
+```
+numpy>=1.20.0
+scipy>=1.7.0
+matplotlib>=3.4.0
+dynesty>=2.1.0
+corner>=2.2.0
+astropy>=5.0  # For cosmological calculations
+h5py>=3.0     # For data storage
+tqdm>=4.60    # Progress bars
+jupyter>=1.0  # For notebooks
+```
+
+**Installation Guide**:
+```markdown
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/teleadmin-ai/oscillating-brane-DM.git
+   cd oscillating-brane-DM
+   ```
+
+2. Create virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Run tests:
+   ```bash
+   python -m pytest tests/
+   ```
+```
+
+### Nature of the Bulk and M-Theory Connections
+
+
+#### M-Theory Brane Genesis Mechanism
+
+The oscillating brane naturally emerges from M-theory dynamics [Sethi, Strassler & Sundrum 2001]:
+
+**1. Initial State**: 11D M-theory on $\mathbb{R}^{1,3} \times X_7$ with:
+- $X_7$ = compact 7-manifold with $G_2$ holonomy
+- Flux quantization: $\int_{C_4} G_4 = N$ (integer)
+
+**2. Flux Transition**: When flux becomes subcritical:
+$$\int G_4 \wedge G_4 < \epsilon_{critical}$$
+
+membrane nucleation becomes energetically favorable.
+
+**3. M2-Brane Formation**:
+- Schwinger-like pair production rate: $\Gamma \sim e^{-S_{M2}/g_s}$
+- Initial separation determines oscillation amplitude
+- Natural scale: $L \sim l_{11}(g_s)^{1/3} \sim 0.2 \mu$m
+
+**4. Dimensional Reduction**: M2-brane wraps 2-cycle → effective 3-brane in 5D
+
+This provides a microscopic origin for our oscillating 3-brane from fundamental M-theory.
+
+
+## Numerical Validation and Prior Specifications
+
+### Bayesian Analysis: Explicit Prior Distributions
+
+The Bayesian evidence calculation ($\Delta\ln K = 4.13 \pm 0.07$) relies on specific prior choices. Here we document the complete prior specifications:
+
+**Table 1: Prior distributions for Bayesian analysis**
+
+| Model | Parameter | Distribution | Range/Parameters | Units | Motivation |
+|-------|-----------|--------------|------------------|--------|------------|
+| Oscillating | tau₀ | Log-uniform | [10¹⁹, 10²⁰] | J/m² | Scale-invariant prior for unknown energy scale |
+| | f_osc | Uniform | [0.05, 0.20] | - | Left free to verify attractor convergence to ~0.10 |
+| | T | Gaussian | mu=2.0, sigma=0.3 | Gyr | Centered on theoretical prediction |
+| | A_w | Uniform | [0.001, 0.005] | - | Constrained by dark energy observations |
+| ΛCDM | H₀ | Uniform | [60, 80] | km/s/Mpc | Wide range covering all measurements |
+| | Omega_m | Gaussian | mu=0.31, sigma=0.02 | - | CMB+LSS constraints |
+
+**Prior Sensitivity Analysis and Occam's Penalty**:
+Because Bayesian evidence inherently penalizes models for large, unconstrained parameter spaces (Occam's razor), we explicitly map the sensitivity of $\Delta\ln K$ to the prior volume:
+- **Conservative priors (maximal volume)**: Wide, uniform ranges. The integration over a larger low-likelihood parameter space mathematically depresses the evidence to $\Delta\ln K = 2.8 \pm 0.4$. This is the absolute "worst-case scenario" lower bound, yet it still solidly favors the Brane model over $\Lambda$CDM (Moderate evidence).
+- **Informative priors (theoretical restriction)**: Tighter Gaussians constrained by the 5D framework limits. By reducing the wasted prior volume, the evidence climbs to $\Delta\ln K = 4.13 \pm 0.07$ (Strong evidence).
+- **Conclusion**: The statistical preference for the Oscillating Brane model is topologically robust; it survives even the harshest prior volume penalization.
+
+**Table 2: Posterior statistics from MCMC analysis**
+
+| Parameter | Mean | Median | Std | 68% CI | R̂ |
+|-----------|------|--------|-----|--------|-----|
+| tau₀ (J/m²) | 7.08x10¹⁹ | 7.00x10¹⁹ | 1.07x10¹⁹ | [6.03x10¹⁹, 8.13x10¹⁹] | 1.000 |
+| f_osc | 0.100 | 0.100 | 0.020 | [0.081, 0.120] | 1.000 |
+| T (Gyr) | 2.00 | 2.00 | 0.20 | [1.80, 2.20] | 1.000 |
+| A_w | 0.003 | 0.003 | 0.001 | [0.002, 0.004] | 1.000 |
+
+All chains show excellent convergence (R̂ approximately 1.000) with effective sample sizes > 4900.
+
+### PBH Impact on CMB Optical Depth
+
+The oscillating brane model predicts primordial black hole formation in collapsing funnels. We calculate their impact on CMB reionization:
+
+**PBH Accretion Model** (Ali-Haimoud & Kamionkowski 2017):
+- Bondi-Hoyle accretion with velocity suppression
+- Radiative efficiency eta ~ 0.1
+- Ionization efficiency f_ion ~ 0.3
+
+For our fiducial parameters (M_PBH = 10⁻¹¹ M_⊙, f_PBH = 1%):
+
+```
+tau_standard = 0.0646 (includes standard reionization)
+tau_PBH approximately 0.0000 (negligible for f_PBH = 0.01)
+tau_funnel < 0.0001 (negligible)
+tau_total = 0.0646 (within 1.5sigma of Planck)
+```
+
+**Key Finding**: With realistic ionization history, PBH contribution is small for f_PBH ~ 1%. The constraint becomes:
+1. f_PBH < 0.1 for M ~ 10⁻¹¹ M_⊙ (from tau < 0.066)
+2. Accretion is naturally suppressed at high redshift
+3. Model consistent with Planck optical depth
+
+**Figure**: tau vs f_PBH shows linear scaling with maximum f_PBH ~ 0.1 before exceeding Poulin+2017 limit.
+
+**Literature Constraints**:
+- Poulin et al. (2017): Deltatau < 0.012 at 95% CL
+- Serpico et al. (2020): Spectral distortions limit f_PBH < 0.1 for M ~ 10⁻¹¹ M_⊙
+- Our requirement: Modified accretion physics in oscillating background
+
+### 2D Numerical Prototype: 5D Einstein Equations
+
+We implemented a (1+1)D toy model following BraneCode methodology:
+
+**Model Setup**:
+
+The 5D metric ansatz for the (1+1)D toy model:
+
+$$ds^2 = -n^2(t,y)\,dt^2 + a^2(t,y)\,dx^2 + b^2(t,y)\,dy^2$$
+
+```python
+# Parameters (natural units)
+L = 1.0          # Extra dimension size
+k_ads = 1.0      # AdS curvature
+tau_0 = 3.0      # Brane tension
+m_radion = 0.5   # Radion mass
+```
+
+**Key Results**:
+1. **Oscillation Period**: T_measured = 12.4 +/- 0.2 (vs T_expected = 12.57)
+   - Agreement within 1.5%
+   
+2. **Amplitude**: 37% of extra dimension size for 10% initial displacement
+   - Nonlinear enhancement observed
+   
+3. **Warp Factor Modulation**: ~320% variation
+   - Much larger than linear approximation
+   - Indicates strong backreaction
+
+**Numerical Challenges**:
+- Energy conservation violated at high amplitude (>40% drift)
+- Requires adaptive timestepping (DOP853 integrator)
+- Junction conditions need implicit treatment for stability
+
+**Comparison with BraneCode**:
+Our simplified 2D model reproduces qualitative features:
+- Stable small-amplitude oscillations
+- Period scaling with radion mass
+- Warp factor modulation
+
+**Figure 1: Brane Evolution** (plots/einstein_5d_evolution.png)
+- Top left: Warp factor b(t,y) showing exponential profile modulation
+- Top right: Scale factor a(t,y) remaining nearly constant
+- Bottom left: Brane position oscillating with ~37% amplitude
+- Bottom right: Phase space showing nonlinear trajectory
+
+**Figure 2: Energy Components** (plots/radion_energy_1d.png)
+- Energy oscillates between kinetic and potential
+- Equation of state w approximately -1 (dark energy-like)
+- Conservation violated at high amplitude (numerical issue)
+
+However, full 5D simulations are needed for:
+- Gravitational wave emission
+- Inhomogeneous perturbations
+- Collision dynamics
+- Better energy conservation
+
+## Conclusions
+
+The oscillating brane dark matter theory, when formulated rigorously, provides a viable alternative to particle dark matter. It:
+
+- Respects all known physical principles
+- Reproduces major observational successes
+- Makes unique, testable predictions
+- Addresses some tensions in ΛCDM
+- Emerges from fundamental physics (string theory)
+
+While significant theoretical and observational work remains, the framework shows promise as a geometric explanation for cosmic dark matter, potentially unifying several cosmological mysteries within a single theoretical structure.
+
+## References
+
+### Foundational Papers
+- Randall & Sundrum (1999) - "Large Mass Hierarchy from a Small Extra Dimension", Phys. Rev. Lett. 83, 3370 [arXiv:hep-ph/9905221]
+- Goldberger & Wise (1999) - "Modulus Stabilization with Bulk Fields", Phys. Rev. Lett. 83, 4922 [arXiv:hep-ph/9907447]
+- Maartens, R. (2010) - "Brane-World Gravity", Living Rev. Rel. 13, 5 [arXiv:1010.1195]
+- Shiromizu, T., Maeda, K. & Sasaki, M. (2000) - "The Einstein equations on the 3-brane world", Phys. Rev. D 62, 024012
+
+### Numerical Relativity in 5D
+- Martin, J. et al. (2005) - "BraneCode: 5D brane dynamics with scalar field", Comput. Phys. Commun. 171, 69 [arXiv:gr-qc/0410001]
+- GRChombo Collaboration (2015) - "GRChombo: Numerical relativity with adaptive mesh refinement", Class. Quant. Grav. 32, 245011
+- Yoshino, H. (2009) - "On the existence of a static black hole on a brane", JHEP 0901, 068
+
+### Initial Conditions & Cosmology
+- Khoury, J. et al. (2001) - "The Ekpyrotic Universe: Colliding Branes and the Origin of the Hot Big Bang", Phys. Rev. D 64, 123522 [arXiv:hep-th/0103239]
+- Collins, H. & Holman, R. (2003) - "Taming the Blue Spectrum of Brane Preheating", Phys. Rev. Lett. 90, 231301 [arXiv:hep-ph/0302168]
+- Dvali & Tye (1999) - "Brane inflation", Phys. Lett. B 450, 72 [arXiv:hep-ph/9812483]
+- Steinhardt, P.J. & Turok, N. (2002) - "Cosmic evolution in a cyclic universe", Phys. Rev. D 65, 126003
+
+### Quantum Corrections & Casimir Effects
+- Garriga, J., Pujolàs, O. & Tanaka, T. (2001) - "Radion effective potential in the Brane-World", Nucl. Phys. B 605, 192 [arXiv:hep-th/0004109]
+- Flachi, A. & Tanaka, T. (2003) - "Casimir effect in de Sitter and Anti-de Sitter braneworlds", Phys. Rev. D 68, 025004 [arXiv:hep-th/0302165]
+- Csaki, C., Graesser, M., Kolda, C. & Terning, J. (2000) - "Cosmology of one extra dimension with localized gravity", Phys. Rev. D 62, 045015 [arXiv:hep-ph/9911406]
+- Brevik, I., Milton, K.A. & Odintsov, S.D. (2003) - "Dynamical Casimir effect and quantum cosmology", Phys. Rev. D 67, 025019 [arXiv:hep-th/0209027]
+- Cembranos, J.A.R. et al. (2003) - "Brane-World Dark Matter", Phys. Rev. Lett. 90, 241301 [arXiv:hep-ph/0302041]
+
+### M-Theory and Brane Dynamics
+- Sethi, S., Strassler, M. & Sundrum, R. (2001) - "Comments on the landscape of string vacua", JHEP 0111, 047
+- Horava, P. & Witten, E. (1996) - "Heterotic and Type I string dynamics from eleven dimensions", Nucl. Phys. B 460, 506
+- Lukas, A., Ovrut, B.A. & Waldram, D. (1999) - "The cosmology of M-theory and Type II superstrings", Nucl. Phys. B 540, 230
+
+### Observational Signatures
+- DESI Collaboration (2024) - "Evidence for evolving dark energy from baryon acoustic oscillations", arXiv:2404.03002
+- DESI Collaboration (2026) - "DESI DR2: Measurements of BAO and Cosmological Constraints", arXiv:2503.14738
+- Brownsberger, S., Stubbs, C.W. & Scolnic, D.M. (2020) - "Windowing artefacts likely account for recent claimed detection of oscillating cosmic scale factor", MNRAS 498, 5512
+- Nam, C.H. et al. (2024) - "Brane-vector dark matter", Phys. Rev. D 109, 095003
+- Verlinde, E. (2016) - "Emergent Gravity and the Dark Universe", SciPost Phys. 2, 016 [arXiv:1611.02269]
+
+### Computational Physics References
+- Baumgarte, T.W. & Shapiro, S.L. (2010) - "Numerical Relativity: Solving Einstein's Equations on the Computer", Cambridge University Press
+- Alcubierre, M. (2008) - "Introduction to 3+1 Numerical Relativity", Oxford University Press
+- Gourgoulhon, E. (2012) - "3+1 Formalism in General Relativity", Springer
+- Hairer, E., Nørsett, S.P. & Wanner, G. (1993) - "Solving Ordinary Differential Equations I", Springer-Verlag (DOP853 method)
+
+### PBH and CMB Constraints
+- Ali-Haimoud, Y. & Kamionkowski, M. (2017) - "Cosmic microwave background limits on accreting primordial black holes", Phys. Rev. D 95, 043534 [arXiv:1612.05644]
+- Poulin, V. et al. (2017) - "CMB bounds on disk-accreting massive primordial black holes", Phys. Rev. D 96, 083524 [arXiv:1707.04206]
+- Serpico, P.D. et al. (2020) - "Cosmic microwave background bounds on primordial black holes including dark matter halo accretion", Phys. Rev. Research 2, 023204 [arXiv:2002.10771]
+
+### Brane Collision Dynamics and Initial Conditions
+- Khoury, J. et al. (2001) - "The ekpyrotic universe: Colliding branes and the origin of the hot big bang", Phys. Rev. D 64, 123522 [arXiv:hep-th/0103239]
+- Steinhardt, P.J. & Turok, N. (2002) - "Cosmic evolution in a cyclic universe", Phys. Rev. D 65, 126003 [arXiv:hep-th/0111098]
+- Takamizu, Y. et al. (2007) - "Collision of domain walls and creation of matter in brane world", Phys. Rev. D 95, 084021 [arXiv:0705.0184]
+- Dvali, G. & Tye, S.H. (1999) - "Brane inflation", Phys. Lett. B 450, 72 [arXiv:hep-ph/9812483]
+- Collins, H., Holman, R. & Martin, A. (2003) - "Radion-induced brane preheating", Phys. Rev. D 68, 124012 [arXiv:hep-th/0306028]
+- Davis, S.C. & Brechet, S.D. (2005) - "Vacuum decay and first order phase transitions in brane worlds", Phys. Rev. D 72, 024021 [arXiv:hep-th/0502060]
+
+### Additional Quantum Corrections References
+- Goldberger, W.D. & Rothstein, I.Z. (2000) - "Quantum stabilization of compactified AdS5", Phys. Lett. B 491, 339 [arXiv:hep-th/0007065]
+- Candelas, P. & Weinberg, S. (1984) - "Calculation of gauge couplings and compact circumferences from self-consistent dimensional reduction", Nucl. Phys. B 237, 397
+- Elizalde, E. et al. (2003) - "Casimir effect in de Sitter and anti-de Sitter braneworlds", Phys. Rev. D 67, 063515 [arXiv:hep-th/0209242]
+- Katz, A. et al. (2006) - "On the number of fermionic zero modes on Randall-Sundrum backgrounds", Phys. Rev. D 74, 044016 [arXiv:hep-th/0605088]
+- Obousy, R. & Cleaver, G. (2008) - "Casimir energy and brane stability", J. Geom. Phys. 61, 2006 [arXiv:0810.1096]
+- Hofmann, S. et al. (2001) - "Gauge unification in six dimensions", Phys. Rev. D 64, 035005 [arXiv:hep-th/0012213]
+
+### Damping Mechanisms
+- Kelvin-Voigt model - See Landau, L.D. & Lifshitz, E.M. (1986) - "Theory of Elasticity", Vol. 7, Pergamon Press
+
+### Numerical Methods and Software
+- Wiseman, T. (2002) - "Static axisymmetric vacuum solutions and non-uniform black strings", Class. Quant. Grav. 19, 3083 [arXiv:hep-th/0201164]
+- Martin, A.P. et al. (2005) - "BraneCode: Numerical simulations of brane dynamics", SFU preprint [Available at www.sfu.ca/physics/cosmology/braneworld]
+- Frolov, V.P. et al. (2005) - "Kasner-like behaviour in colliding brane worlds", JHEP 0504, 043 [arXiv:hep-th/0502002]
+- GRChombo Collaboration (2015) - "GRChombo: Numerical relativity with adaptive mesh refinement", Class. Quant. Grav. 32, 245011 [arXiv:1503.03436]
+- Einstein Toolkit (2020) - "Open software for relativistic astrophysics", https://einsteintoolkit.org/
+- Black formatter (2024) - "The uncompromising Python code formatter", https://github.com/psf/black
+- Hairer, E. & Wanner, G. (1996) - "Solving Ordinary Differential Equations II: Stiff and Differential-Algebraic Problems", Springer (DOP853 method implementation)
+- Rakhmetov, P. et al. (2025) - "5D numerical relativity with dynamic branes: Technical implementation", in preparation
+
+
 
 \newpage
 

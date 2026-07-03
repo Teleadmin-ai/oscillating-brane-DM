@@ -491,6 +491,7 @@ The `explorations/` folder (created May 2026) holds heuristic, speculative work 
 - **PDF pipeline pre-processor** (`generate_pdf.py`) sanitizes Unicode→LaTeX, converts HTML tables→markdown, strips Jekyll templates, emojis, and fixes indented headers before pandoc
 - The `\vert` workaround applies to ALL absolute values and norms in inline math, not just bra-kets. kramdown interprets `|` as table pipe in inline `$...$`. ALWAYS use `$\vert x\vert$` instead of `$|x|$` for any variable (φ, λ, χ, ψ, etc.). Display math `$$...$$` is safe.
 - **LaTeX prime notation** — NEVER write `\text{Ai}'` or `\operatorname{Ai}'` in .md files — the prime character crashes both pdflatex and xelatex. Use `{\text{Ai}}^{\prime}` in display math or `\partial_x\text{Ai}` in inline math instead. Also applies to derivatives like `D_+'(a)` — must write `D_+^{\prime}(a)` in display math formulas.
+- **Unbraced macro subscripts crash xelatex/unicode-math** — NEVER write `$X_\mathcal{Y}$` (or `_\mathrm{..}`, `_\text{..}`) with the subscripted MACRO unbraced in .md math: pandoc→xelatex dies with `Missing { inserted \__um_group_begin:` (exit 43). ALWAYS brace it: `$X_{\mathcal{Y}}$`. (Caught July 2026: `$\mathcal{F}_\mathcal{Y}$` in the discoveries.md closure-map note killed the whole PDF build.)
 - **scipy `ai_zeros` return order** — `ai_zeros(N)` returns `(a, ap, ai, aip)` where the normalization constant Ai'(a_n) is in the **4th return** `aip`, NOT the 3rd `ai`. Always unpack as: `a_zeros, _, _, deriv_at_zeros = ai_zeros(N)`.
 
 ## CI / Code Quality

@@ -710,9 +710,7 @@ The theory proposes that dark matter effects emerge from membrane oscillations e
         text = text.replace("0.2 microns", "$0.2\\,\\mu$m")
 
         # ── 5. Leftover 1 eV vestiges ──
-        text = text.replace(
-            "m_KK $\\simeq$ 1 eV", "$m_{KK} \\approx 3.78$ eV"
-        )
+        text = text.replace("m_KK $\\simeq$ 1 eV", "$m_{KK} \\approx 3.78$ eV")
         text = text.replace("DeltaN_eff ~ 0.01", "$\\Delta N_{eff} \\sim 0.01$")
         text = text.replace(
             "Omega_c, sigma_v, m_chi",
