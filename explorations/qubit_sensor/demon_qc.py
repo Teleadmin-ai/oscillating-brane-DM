@@ -44,7 +44,8 @@ warnings.filterwarnings(
 
 N = 10  # the germe's tree register (2^10 = 1024 possible branches); <= belenos-12's 12
 N_IN = 4  # the input conditions this many qubits (which possibles are consistent with the input)
-PHI0 = 1.40  # the germe's radion displacement (germe_decompression's phi0; the closure IC, an O(1) number)
+PHI0 = 0.42  # phi0/M_s -- THE IC knob. 0.42 = the CORRECTED Omega_DM match (closure_introspection's x11
+# Planck-mass fix); 1.40 was the STALE pre-fix value (do not revert). Candidates via germe_state(n, phi0=...)
 SYK_T = (
     6.0  # the decompression depth (the SYK quench unfolds the germe into its possibles)
 )
@@ -111,14 +112,17 @@ def resolve_input(args):
 
 
 # ============================== THE REAL GERME (radion) + THE SYK DECOMPRESSOR (no toy) ==============================
-def germe_state(n):
+def germe_state(n, phi0=None):
     """THE REAL GERME: germe_decompression.py's EXACT radion wavepacket -- IDENTICAL formula, not a re-toyed
     one: k0 = phi0/2.5*(dim-1), spread=1, amp = exp(-(i-k0)^2 / (2*spread^2)) (germe_decompression line 63-64).
     OBT DERIVES this form (m_phi=0.36 eV Goldberger-Wise, phi0~M_s LVS); we HAVE it. The only IC is the O(1)
-    coefficient phi0 (closure_introspection). NO widening, NO toy -- the canonical germe.
+    coefficient phi0 (closure_introspection: 0.42 = corrected match, 1.40 = stale) -- an explicit knob so
+    germe-CANDIDATES are runnable (the forward-decompressor role). NO widening, NO toy -- the canonical germe.
     """
     dim = 2**n
-    k0 = PHI0 / 2.5 * (dim - 1)  # == germe_decompression line 63
+    if phi0 is None:
+        phi0 = PHI0
+    k0 = phi0 / 2.5 * (dim - 1)  # == germe_decompression line 63
     amp = np.exp(
         -((np.arange(dim) - k0) ** 2) / 2.0
     )  # == germe_decompression line 64 (spread=1)
