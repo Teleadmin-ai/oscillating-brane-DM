@@ -94,11 +94,60 @@ mentioned only because it is your field; offered as-is.
 
 ---
 
-## Adaptation for the remaining recipients (swap ONE sentence of Email 1)
+## Email 3 — ADMX / next-generation cavity groups (full tailored draft)
 
-- **ADMX / next-generation cavity groups:** replace the first paragraph's FLASH-specific clause
-  with: "the upper wing of the bracket (1.5–3 μeV, 360–725 MHz) sits in cavity territory, where
-  reaching the floor means DFSZ/2 to DFSZ/5 depth."
+**To:** the ADMX collaboration — corresponding authors of PRL 127, 261803 / the collaboration
+page (G. Rybka, U. Washington, et al.); take addresses from the papers/collab page, do not guess.
+**Attach:** `mv_axion_note.pdf`.
+
+---
+
+**Subject:** A pre-registered axion benchmark at 1.5–3 μeV: a flat g_eff ≈ 1×10⁻¹⁶ GeV⁻¹,
+a factor 2–5 below DFSZ — untouched by the existing exclusions
+
+Dear ADMX colleagues,
+
+A concrete target sits partly inside territory you know better than anyone: a string ALP in the
+~0.3–3 μeV decade whose density-weighted coupling is FLAT — pinned at
+g_eff ≈ 1.0×10⁻¹⁶ GeV⁻¹ across the decade, one depth rather than a model band. In the overlap
+with your published DFSZ-depth exclusions (2.7–4.2 μeV), those limits sit a factor ~4 ABOVE the
+floor: the coordinate is untouched even in the band you have already scanned — and that factor
+names, in advance, exactly the upgrade class that would decide it. Because the floor is
+mass-independent while DFSZ scales with m, the required depth relative to DFSZ eases toward
+lower masses (the floor crosses DFSZ at 0.64 μeV); the cavity wing of the bracket is
+1.5–3 μeV (360–725 MHz), at DFSZ/2 to DFSZ/5.
+
+I state the provenance plainly: the target comes from a speculative, not-peer-reviewed
+braneworld cosmology I develop as an independent researcher, with AI theoretical co-processors
+(fully disclosed in the note). You can price the framework however you like — the coordinate is
+cheap to keep as a benchmark, and every number is reproduced by short runnable scripts in the
+public repository.
+
+Why it is one number: within the standard misalignment chain, an ALP whose mass is
+instanton-set (f_a-independent) has Ω_a ∝ f_a² cancel g ∝ 1/f_a in g_eff = g·√(Ω_a/Ω_DM). The
+attached 5-page note gives the full chain, every open assumption, and the falsification
+condition declared in advance: excluding the μeV decade at g_eff ≲ 1×10⁻¹⁷ GeV⁻¹ kills the
+chain at O(1) angles.
+
+We are aware of what the ask costs: post-DFSZ depth is a 4–25× power/integration step (exactly
+what the quantum-enhanced readout programs are for), and 360–460 MHz means larger or multi-cell
+cavities. The flat floor at least makes the required depth explicit before any data. For
+transparency: the 100–300 MHz core of the bracket has been offered to FLASH, and the
+single-photon-counting angle to the qubit-DM groups, as the same benchmark.
+
+Nothing is asked beyond, if useful, keeping the coordinate as a benchmark in your run planning
+and treating a future crossing of the 1×10⁻¹⁶ line at these masses as decisive for it either
+way. Criticism of any step of the chain would be genuinely valued.
+
+Best regards,
+Romain Provencal
+Independent researcher — provencal.romain@teleadmin.net
+https://github.com/Teleadmin-ai/oscillating-brane-DM · https://higgs-cosmology.com/
+
+---
+
+## Adaptation for the remaining recipient class (swap ONE sentence of Email 1)
+
 - **DM-Radio-class / lumped-element groups:** "the lower wing of the bracket (0.3–0.5 μeV,
   73–120 MHz) sits in lumped-element territory at the same flat floor g_eff ≈ 1×10⁻¹⁶ GeV⁻¹."
 
@@ -114,4 +163,8 @@ mentioned only because it is your field; offered as-is.
   front is part of the anti-crank signature.
 - Email 2 keeps ONE restrained P.S. on our qubit-sensing protocols (their field, one line, no
   elaboration) — the honest bridge, not a scope creep.
-- Cross-transparency: each email discloses that the other community got the same benchmark.
+- Cross-transparency: each email discloses that the other communities got the same benchmark.
+- Email 3's depth ratios computed before drafting (DFSZ/floor = 2.3 at 1.5 μeV, 4.2 at 2.7,
+  4.7 at 3.0; the 'untouched even where scanned' claim is robust to 4.2 μeV where the ratio is
+  6.5); its honesty hook = naming what the ask COSTS them (post-DFSZ power step, sub-460 MHz
+  cavity size) before they do.
