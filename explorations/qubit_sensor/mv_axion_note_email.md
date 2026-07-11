@@ -146,10 +146,58 @@ https://github.com/Teleadmin-ai/oscillating-brane-DM · https://higgs-cosmology.
 
 ---
 
-## Adaptation for the remaining recipient class (swap ONE sentence of Email 1)
+## Email 4 — DMRadio / lumped-element groups (full tailored draft)
 
-- **DM-Radio-class / lumped-element groups:** "the lower wing of the bracket (0.3–0.5 μeV,
-  73–120 MHz) sits in lumped-element territory at the same flat floor g_eff ≈ 1×10⁻¹⁶ GeV⁻¹."
+**To:** the DMRadio collaboration — corresponding authors of the DMRadio-m³ sensitivity paper
+(L. Brouwer et al., PRD 106, 103008 (2022) / arXiv:2204.13781) and the collaboration page
+(K. Irwin lab, Stanford/SLAC); take addresses from the paper/lab pages, do not guess.
+**Attach:** `mv_axion_note.pdf`.
+
+---
+
+**Subject:** A pre-registered benchmark inside the DMRadio-m³ DFSZ region: a flat
+g_eff ≈ 1×10⁻¹⁶ GeV⁻¹ that your declared science goal already crosses over 73–155 MHz
+
+Dear DMRadio colleagues,
+
+A concrete target lands in the softest place your program could hope for: a string ALP in the
+~0.3–3 μeV decade whose density-weighted coupling is FLAT — pinned at
+g_eff ≈ 1.0×10⁻¹⁶ GeV⁻¹, one depth rather than a model band. Its lower wing sits inside your
+declared DFSZ science-goal region (m_a > 120 neV): over 73–155 MHz (0.30–0.64 μeV) the floor
+lies BETWEEN KSVZ and DFSZ — ×2.1 above DFSZ at 0.30 μeV, crossing DFSZ at 0.64 μeV — so
+**your declared DFSZ reach already crosses the target with margin there**, and comes within
+×1.3 of it up to your 200 MHz edge. No upgrade beyond your stated goal is needed to decide
+this part of the coordinate.
+
+I state the provenance plainly: the target comes from a speculative, not-peer-reviewed
+braneworld cosmology I develop as an independent researcher, with AI theoretical co-processors
+(fully disclosed in the note). You can price the framework however you like — the coordinate is
+cheap to keep as a benchmark, and every number is reproduced by short runnable scripts in the
+public repository.
+
+Why it is one number: within the standard misalignment chain, an ALP whose mass is
+instanton-set (f_a-independent) has Ω_a ∝ f_a² cancel g ∝ 1/f_a in g_eff = g·√(Ω_a/Ω_DM) —
+and because the floor is mass-independent while the QCD band scales g ∝ m, your low-mass
+territory is precisely where the target is easiest relative to the QCD benchmarks you already
+plan to reach. The attached 5-page note gives the full chain, every open assumption, and the
+falsification condition declared in advance: excluding the μeV decade at
+g_eff ≲ 1×10⁻¹⁷ GeV⁻¹ kills the chain at O(1) angles — and your band alone, scanned at your
+DFSZ goal, decides the 73–155 MHz slice either way.
+
+We are aware of what DFSZ depth costs at these frequencies (years-scale scans even with
+quantum-limited readout); the flat floor's value is that most of your overlap needs LESS than
+DFSZ, and the required depth is explicit before any data. For transparency: the 100–300 MHz
+core has been offered to FLASH, the 1.5–3 μeV cavity wing to ADMX, and the counting angle to
+the qubit-DM groups — yours is the band where the floor sits softest relative to a declared
+program.
+
+Nothing is asked beyond, if useful, keeping the coordinate as a benchmark in your scan
+planning. Criticism of any step of the chain would be genuinely valued.
+
+Best regards,
+Romain Provencal
+Independent researcher — provencal.romain@teleadmin.net
+https://github.com/Teleadmin-ai/oscillating-brane-DM · https://higgs-cosmology.com/
 
 ## Discipline notes (for us)
 
@@ -168,3 +216,12 @@ https://github.com/Teleadmin-ai/oscillating-brane-DM · https://higgs-cosmology.
   4.7 at 3.0; the 'untouched even where scanned' claim is robust to 4.2 μeV where the ratio is
   6.5); its honesty hook = naming what the ask COSTS them (post-DFSZ power step, sub-460 MHz
   cavity size) before they do.
+- Email 4's coverage claims web-verified (DMRadio-m³ = 5–200 MHz, DFSZ goal above 120 neV,
+  KSVZ secondary to 40 neV; arXiv:2204.13781) and ratios computed (floor/DFSZ = 2.15 at
+  0.30 μeV, 1.28 at 0.50, crossing at 0.64, 0.77 at the 200 MHz edge): the hook = their
+  DECLARED goal already crosses the floor over 73–155 MHz — the softest slice of the bracket;
+  each of the four emails leads with the fact that is strongest FOR ITS recipient (FLASH:
+  in-band grazing; qubit: scan-rate economics; ADMX: untouched-where-scanned; DMRadio:
+  goal-already-crosses).
+- All four recipient classes now have FULL tailored drafts — the one-sentence adaptation
+  section is retired.
