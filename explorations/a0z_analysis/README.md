@@ -40,3 +40,12 @@ down. BTFR has the *same* V/M_bar levers as the kinematic RAR → the two are sy
    caveats that would strengthen the section's "que ce soit vrai."
 
 Run: `for s in hardened_forecast systematics_dissection overdetermination; do python explorations/a0z_analysis/$s.py; done`
+
+## Step 4 (July 2026) — the strong-lensing lever, computed and CLOSED (`slacs_a0z.py` + `step4_strong_lensing.md`)
+The amplifier-surfaced "SLACS strong-lensing a0(z), doable NOW" lead is refuted by calculation: (i) THEOREM —
+g(R_E) = pi*G*Sigma_cr is a constant of the (z_l,z_s) geometry, floor x_E~2.8-3.3, SLACS sits at ~15: the g~a0
+subset cannot exist at theta_E; (ii) the lead's kernel WAS right — projection resurrects the outer deep-MOND
+phantom (~7% of M_E, d ln M_E/d ln a0 = 0.067 = x16 the naive local); (iii) but the a0(z)-vs-const signal is
+0.025 dex/z = 0.23 sigma in SLACS (dead now), with the coherent IMF/M*-L drift class (0.05-0.1 dex/z) a factor
+2-4 above it — at Euclid-N statistics heal (~28 sigma) but the wall stays: an IMF-systematics RACE, not a clean
+lever. The decisive cross-lever remains the WEAK-lensing RAR a0(z) (euclid_case.md), exactly as step 2 concluded.
