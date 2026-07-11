@@ -6,6 +6,16 @@ author: Romain Provencal (with Gemini DeepThink & Claude)
 tags: [observations, dark-energy, DESI, JWST]
 ---
 
+> **⚠️ Archive note (March 2026 post — two headline claims were later retracted by our own audits).**
+> (1) The "Planck ISW Anomaly (6σ improvement)" was **disproven in May 2026**: the Δχ² = 32.9 came from
+> an omitted cosmic-variance term; the realistic ISW significance is **~1σ** — a weak consistency check,
+> not a confirmation. (2) The "definitive SKA 21cm **spatial** modulation" rested on a scale-dependent
+> screening mechanism that was **retracted** (June 2026); the corrected forecast is a **temporal**
+> G_eff(t) effect of ~0.5–8 mK — an order-of-magnitude, amplitude-uncertain test, possibly undetectable.
+> The theory's distinctive near-term test is now **a₀(z) = cH(z)/2π** (Euclid/Rubin). S₈ suppression:
+> ~4–10 % (waveform-dependent). The DESI w(z) alignment stands (ΔBIC = −6.4, Strong).
+> Current text: [Predictions](/predictions/), [Discoveries](/discoveries/).
+
 The Standard Model of cosmology (ΛCDM) is experiencing its most severe crisis. Multiple independent observations from 2024-2026 have shattered the foundations of constant dark energy, while aligning spectacularly with our oscillating brane predictions.
 
 ## 1. DESI Proves Dark Energy Evolves (2024-2025)

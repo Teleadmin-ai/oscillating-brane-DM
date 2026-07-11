@@ -6,6 +6,16 @@ author: Romain Provencal
 tags: [cosmology, dark-matter, brane-theory]
 ---
 
+> **⚠️ Archive note (July 2025 post — read with the 2026 audits in mind).** This early snapshot predates
+> the V8.2 hardening. Superseded since: the period is now a **derived eigenvalue T = 2.000 ± 0.003 Gyr**
+> (not 2.0 ± 0.3); the PBH network is **thermodynamically mandated** and ER=EPR is an *optional*
+> UV-completion — the ℓ=0 coherence is an inflationary causal fossil, not "quantum synchronization";
+> S₈ suppression is **~4–10 % (waveform-dependent)**, not 5 %; the Bayesian evidence headline is
+> **Δln K ≈ 5.8 (Decisive)** after the period's promotion; the "definitive SKA test" was **downgraded**
+> to an order-of-magnitude check — the distinctive near-term test is now **a₀(z) = cH(z)/2π**
+> (Euclid/Rubin); the ISW is a weak ~1σ consistency check. Current text: [Theory](/theory/),
+> [Predictions](/predictions/).
+
 Imagine the universe not as a vast void punctuated by stars, but as the skin of an infinitely extended cosmic drum. This elastic membrane—our four-dimensional reality—is connected through a holographic network of quantum entangled black holes. Black holes are not destructive chasms but quantum gateways, connected via Einstein-Rosen bridges in the Anti-de Sitter bulk where distance itself ceases to exist. And dark matter? The ER=EPR-entangled PBH network maintains perfect quantum coherence across the brane, creating a two-billion-year pulsation (calibrated from DESI/Planck data) where each beat shapes space, time, and gravity itself.
 
 ## A Paradigm Shift

@@ -6,6 +6,14 @@ author: Romain Provencal
 tags: [predictions, experiments, observations]
 ---
 
+> **⚠️ Archive note (July 2025 post — several numbers superseded).** Since this snapshot: the Bayesian
+> headline is **Δln K ≈ 5.8 (Decisive)** (4.13 was the original 3-parameter analysis); S₈ suppression is
+> **~4–10 % (waveform-dependent)**, not a 0.948 precision figure; the first KK mass is **m₁ = 3.78 eV
+> (flat) / 1.87 eV (warped)** — the "≈ 1 eV" here missed the ℏc conversion; the H₀ dipole from the bulk
+> drift is **~0.1 %** (v_bulk ≈ 300 km/s), not 1.5 %; the ISW rows are a weak **~1σ consistency check**,
+> not a discovery channel — the distinctive near-term test is now **a₀(z) = cH(z)/2π** (Euclid/Rubin).
+> Current text: [Predictions](/predictions/).
+
 The oscillating brane theory makes specific, quantitative predictions across multiple observational channels. The coming decade will either confirm a revolutionary new understanding of cosmic dynamics or definitively rule it out.
 
 ## Current Constraints (2024)

@@ -6,6 +6,14 @@ author: Romain Provencal
 tags: [stick-slip, cosmic-web, brane-oscillation, ER-EPR]
 ---
 
+> **⚠️ Archive note (July 2025 post — the ER=EPR framing was reorganized).** V8.2's *epistemological
+> firewall* (March 2026) supersedes the "topological necessity" story told below: the ℓ=0 phase
+> coherence is an **inflationary causal fossil** (like CMB isotropy), the PBH network is
+> **thermodynamically mandatory** (exponential density-of-states theorem — no wormholes needed), and
+> **ER=EPR is an optional topological UV-completion**, not load-bearing; "instantaneous" should read
+> **non-local quantum phase coherence** (no signaling). If ER=EPR were false, the dynamics would
+> survive intact. Current text: [Theory](/theory/).
+
 But how, concretely, does the Cosmic Web excite this gigantic membrane? The answer is a **hybrid stick-slip motor** combining macroscopic forcing and quantum synchronization.
 
 ## The Hybrid Stick-Slip Motor (V8.2)

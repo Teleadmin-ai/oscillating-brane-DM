@@ -6,6 +6,16 @@ author: Romain Provencal (with Gemini DeepThink & Claude)
 tags: [mathematics, quantum-gravity, completion]
 ---
 
+> **⚠️ Archive note (March 2026 post — two of these results were later demoted by our own audits).**
+> (1) The **eROSITA γ(M) "trap"** was demoted to an exploratory perspective (Tier 3, May 2026):
+> eROSITA's own cosmology (S₈ ≈ 0.86, cluster-abundant) is in tension with the suppression the mechanism
+> needs, and the "f(R) predicts universal γ" premise is false. (2) The **"Multi-Harmonic Sinc Extinction
+> Theorem" (W ≡ 0)** was corrected in June 2026: the exact zero is a signed-a₀ Jensen artifact — the
+> boost depends on a₀², giving a **mild suppression W ~ 0.7**; the cluster dark matter is carried by the
+> mass-driven geometric Weyl component (MOND *insufficiency*, not extinction). The SPARC zero-parameter
+> rotation curves, the Bullet-Cluster 3-component resolution, and the quantum-stability results remain
+> current. Current text: [Theory](/theory/), [Discoveries](/discoveries/).
+
 History will record that the true fall of the standard model ($\Lambda$CDM) was not decided in a particle accelerator, nor at the bottom of a mine housing a dark matter detector, but on the battlefield of pure mathematical physics.
 
 The Oscillating Brane Theory began as a bold conceptual framework. But in fundamental physics, a beautiful idea does not survive without an absolute analytical armor. It was necessary to descend into the arena of quantum infinities, confront the most violent astrophysical paradoxes, and probe the very topology of spacetime. This is what the March 2026 mathematical offensive accomplished in three acts.

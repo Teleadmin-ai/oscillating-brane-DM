@@ -6,6 +6,16 @@ author: Romain Provencal
 tags: [cosmology, evolution, big-bang, inflation]
 ---
 
+> **⚠️ Archive note (July 2025 post — superseded chronology).** The "quasi-Planckian tension that
+> relaxes" narrative told here was **retired in V8.2**: the tension τ₀ is **geometrically fixed** at the
+> QCD scale by the Klebanov–Strassler flux integers — it never cools or relaxes; what evolves is the
+> oscillation **amplitude** and the **motor state** (frozen by conformal symmetry through the radiation
+> era, ignited at the QCD transition at t ~ 10⁻⁵ s, period locked by the ξRφ attractor within ~2
+> e-foldings). The ξ ≈ 1.05 "informational" factor in a₀ is **no longer part of the theory** (what is
+> derived is the form a₀ ∝ H₀; the 1/2π coefficient is O(1) prior art — Milgrom, Verlinde); there is
+> **no "Planck ISW resonance"** (the ISW is a ~1σ consistency check); the harmonic period formula gives
+> only the order of magnitude (the real cycle is stick-slip). Current text: [Chronology](/chronology/).
+
 In our framework, the cosmic membrane has evolved dramatically from its violent birth to its current gentle oscillation. This chronology reveals how the universe tuned itself to play its fundamental melody.
 
 ## The Violent Birth
