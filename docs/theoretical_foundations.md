@@ -88,7 +88,11 @@ compared to GR's prediction of 42.98 arcsec/century (observed: 42.98 ± 0.04).
 
 $$\alpha = \frac{\phi M_P}{M_5^2} < 10^{-5}$$
 
-satisfying Eöt-Wash experiments.
+satisfying Eöt-Wash experiments. *(Note: the qBOUNCE consistency check in the [Complete Theoretical
+Framework](/theory/) nominally quotes a much larger $\alpha \sim 5\times10^{-3}$; that value is an
+unmotivated input, not a derivation — see the qBOUNCE audit note there — and the predicted level shift
+is unobservable ($\delta E/E \sim 10^{-8}$–$10^{-6}$) under either value, so nothing testable hinges on
+the discrepancy. We flag it for transparency.)*
 
 ### 2.2 Quantum Regime
 
@@ -240,9 +244,9 @@ with:
 | w(z) amplitude A_w | 0.003 | ±0.001 | BAO + SNe | 2025+ |
 | H₀ anisotropy | 0.01% | ±0.005% | Precision cosmology | 2030+ |
 | **Gravitational Signatures** |
-| Fundamental f₀ | 1.6 × 10⁻¹⁷ Hz | ±10% | ISW in CMB | 2030+ |
+| Fundamental f₀ | 1.6 × 10⁻¹⁷ Hz | ±10% | ISW in CMB (weak, ~1σ consistency level) | 2030+ |
 | Oscillation period | 2.000 Gyr (eigenvalue) | ±0.003 Gyr | Large-scale structure | 2028+ |
-| ISW amplitude | ~10⁻⁵ ΔT/T | Factor of 2 | CMB-S4 | 2030+ |
+| ISW amplitude | ~10⁻⁵ ΔT/T | Factor of 2 | CMB-S4 (consistency check, cosmic-variance-limited) | 2030+ |
 | **Galactic Scale** |
 | MOND a₀ | 1.1 × 10⁻¹⁰ m/s² | ±5% | Galaxy dynamics | Current |
 | Halo core radius | ~10 kpc | ±3 kpc | Stellar kinematics | 2025+ |
@@ -258,7 +262,8 @@ with:
 
 2. **Oscillation Signatures**:
    - Fundamental period T = 2.000 Gyr (derived eigenvalue; too slow for direct GW detection)
-   - ISW effect in CMB large-scale anisotropies
+   - A weak (~1σ, cosmic-variance-limited) ISW-level imprint in CMB large-scale anisotropies — a
+     consistency check, not a discovery channel
    - Modulation in matter power spectrum detectable by DESI/Euclid
 
 3. **Modified Halo Structure**:
@@ -280,9 +285,16 @@ with:
 
 The model would be falsified by:
 - Direct detection of DM particles with $\sigma > 10^{-48}$ cm²
-- Absence of ISW resonance signature in upcoming CMB-S4 surveys
+- A clean failure of the anchored stick-slip $w(z)$ template against DESI Year-5 BAO (the forecast is
+  ΔBIC ≈ −22 in the model's favor; the opposite verdict would refute the chronodynamic anchoring)
+- A constant MOND scale: the model requires $a_0(z) = cH(z)/2\pi$ to evolve — Euclid/Rubin lensing and
+  kinematics finding a non-evolving $a_0$ would refute it
 - Discovery of DM-dominated structures without baryons
-- Variations in fundamental constants beyond $|\dot{G}/G| > 10^{-13}$ yr⁻¹
+- Variations in fundamental constants beyond $|\dot{G}/G| > 10^{-13}$ yr⁻¹ at Solar System scales
+
+*(The low-$\ell$ ISW signature, once listed here, is **not** a falsification criterion: it is
+cosmic-variance-limited to a ~1σ consistency check — see the ISW audit note in
+[Predictions](/predictions/).)*
 
 ## 5.3 Quantum Loop Corrections and Stability
 
@@ -444,7 +456,10 @@ This naturally explains:
 
 **3. Symmetry Breaking at Electroweak Scale** [Dvali & Tye 1999, Phys.Lett.B 450, 72]
 
-The brane tension can undergo phase transitions linked to particle physics:
+*(External scenario, listed for completeness only: V8.2 does **not** use a temperature-dependent
+tension — $\tau_0$ is flux-fixed and the BBN protection is conformal symmetry + QCD ignition, see
+[Chronology](/chronology/).)* The brane tension can undergo phase transitions linked to particle
+physics:
 
 - **High temperature**: $T > T_{EW}$, symmetric phase with $\tau(T) = \tau_{UV}$
 - **Phase transition**: At $T = T_{EW} \approx 100$ GeV, tension drops
@@ -834,7 +849,14 @@ This provides a microscopic origin for our oscillating 3-brane from fundamental 
 
 ### 6.6.1 Bayesian Analysis: Explicit Prior Distributions
 
-The Bayesian evidence calculation ($\Delta\ln K = 4.13 \pm 0.07$) relies on specific prior choices. Here we document the complete prior specifications:
+The Bayesian evidence calculation documented here is the **original 3-parameter analysis**
+($\Delta\ln K = 4.13 \pm 0.07$, with the conservative-prior lower bound 2.8). It is kept as the
+archival record of that computation — including its pre-eigenvalue Gaussian prior on $T$
+($\mu = 2.0$, $\sigma = 0.3$ Gyr). Since the promotion of $T$ to a **derived chronodynamic
+eigenvalue** ($T = 13.80/6.9 = 2.000$ Gyr, which refunds that prior volume), the current headline
+evidence is $\Delta\ln K \approx 5.8$ (Decisive, prior-independent) — see the Bayesian section of the
+[Complete Theoretical Framework](/theory/). Here we document the complete original prior
+specifications:
 
 **Table 1: Prior distributions for Bayesian analysis**
 
