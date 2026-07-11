@@ -79,4 +79,11 @@ exclude:
   - output/
   - romain.md
   - pandoc-3.1.11/
+  - test_sections.md
+  - o3_pro_analysis.md
+  - docs/observational_tests.md
+  - docs/o3_pro_theoretical_challenges.md
+  - docs/o3_pro_audit_response.md
+  - explorations/
+  - CLAUDE.md
   - pandoc.tar.gz
