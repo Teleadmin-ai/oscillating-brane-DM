@@ -93,23 +93,23 @@ Our theory presents a paradigm shift in understanding cosmic dynamics:
 
 ## Cosmic Evolution
 
-The universe began with a violent birth, the brane appearing with quasi-Planckian tension. Through phases of inflation, reheating, and slow stabilization, it found its natural frequency and began its two-billion-year oscillation.
+The brane's tension is not a relic that cooled down --- it is geometrically fixed at the QCD scale by the string-flux compactification. The motor stays frozen through inflation and the whole radiation era (conformal protection), ignites at the QCD transition, and the $\xi R\phi$ attractor locks the two-billion-year period.
 
 
 ## The Oscillating Universe
 
-Every two billion years, the cosmic membrane completes one full cycle. This oscillation creates the dark energy we observe, modulates structure formation, and leaves its fingerprint in the cosmic microwave background.
+Every two billion years, the cosmic membrane completes one full cycle. This oscillation creates the dark energy we observe, modulates structure formation, and subtly imprints cosmological observables.
 
 
 ## Future Tests
 
-The coming decade will be decisive. Euclid will measure the dark energy equation of state with unprecedented precision. DESI will map the power spectrum modulation. CMB large-scale analysis will reveal the ISW imprints of our fundamental oscillation.
+The coming decade will be decisive. DESI and Euclid will measure the dark-energy equation of state with unprecedented precision --- the anchored stick-slip template forecasts a Decisive DeltaBIC by Year 5 --- and the theory's distinctive signature, the evolving MOND scale $a_0$(z) = cH(z)/2pi, will be decided by Euclid/Rubin lensing and kinematics. (The low-$\ell$ ISW remains a weak, cosmic-variance-limited ~1sigma consistency check.)
 
 
 ## Download the Theory
 
 - **[White Paper (7 pages)](/cosmic_yoyo_v5_holographic.pdf)** --- V8.2 Hybrid Topology Edition
-- **[Full Theory (~100+ pages)](/oscillating_brane_theory_latest.pdf)** --- Complete documentation with computational validation
+- **[Full Theory (~230 pages)](/oscillating_brane_theory_latest.pdf)** --- Complete documentation with computational validation
 - **[All Downloads](/downloads/)** --- Scripts, data, and additional resources
 
 
@@ -128,7 +128,7 @@ The $\Lambda$CDM concordance model is experiencing the most severe empirical cri
 
 Classical parametric extensions (Early Dark Energy, self-interacting dark matter) increasingly resemble desperate mathematical epicycles. The true resolution lies not in adding phantom particles or ad-hoc scalar fields, but in a fundamental revision of the spacetime topology of the Universe.
 
-The **Oscillating Brane Theory V8.2** proposes this paradigm shift: the Universe is a 4D membrane oscillating in a 5D Anti-de Sitter bulk ($AdS_5$), driven by a hybrid stick-slip motor coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
+The **Oscillating Brane Theory V8.2** proposes this paradigm shift: the Universe is a 4D membrane oscillating in a 5D Anti-de Sitter bulk ($AdS_5$), driven by a hybrid stick-slip motor coupling macroscopic Cosmic Web forcing to microscopic, thermodynamically mandated PBH dissipation (the $\ell$=0 coherence being an inflationary causal fossil; ER=EPR an optional topological interpretation).
 
 ## Mathematical Foundations and Phenomenological Alignments
 
@@ -556,7 +556,7 @@ where $W$ is the exact centered stick-slip waveform, $T = 2.000$ Gyr (the derive
 Furthermore, OBT V8.2 structurally eradicates 'miracles' across the entire dark sector:
 - The **cosmological constant $\Lambda$** is not a finely-tuned vacuum energy, but the relaxed thermodynamic baseline of the brane's oscillation in the $AdS_5$ well.
 - The **2.000 Gyr period** is not a random draw, but the chronodynamic eigenvalue locked by the $\xi R\phi$ Phase-Locked Loop (PLL).
-- The **MOND acceleration $a_0$** is the exact Gibbons-Hawking thermodynamic temperature of the cosmic horizon: $a_0 = cH_0/2\pi$.
+- The **MOND acceleration $a_0$** tracks the Gibbons-Hawking horizon scale: $a_0 = cH_0/2\pi$ (the *form* $a_0 \propto H_0$ is derived; the $O(1)$ coefficient $1/2\pi$ has prior art --- see the MOND scope note in [Theory](/theory/)).
 - The **baryon asymmetry** ($\eta_B \approx 6.1 \times 10^{-10}$) is dynamically frozen by the radion acting as a dynamic $\theta_{QCD}$ angle during the first violent slip phase.
 
 By replacing static parameters with dynamic extra-dimensional variables, OBT V8.2 demonstrates that the 'unreasonable effectiveness of mathematics' in cosmology does not require an external fine-tuner, but emerges naturally from the macroscopic mechanical and thermodynamic relaxation of a quantum membrane vibrating in a 5D bulk.
@@ -721,7 +721,7 @@ In V8.2, the brane drift through the $AdS_5$ bulk (the same mechanism explaining
 
 **Epistemological warning on Tier 3 (the overfitting narrative risk).** We explicitly acknowledge that the 13 Tier 3 phenomena are qualitative narratives, not constrained predictions. Each invokes a different aspect of the 5D geometric framework (brane drift, cymatic resonance, stick-slip shock, MOND-EFE) in a manner that is not numerically validated. A sufficiently flexible geometric framework *could* generate post-hoc explanations for almost any anomaly --- and a reader would be justified in viewing the T3 entries as potential overfitting. We include them not to inflate the anomaly count, but to transparently document the *scope* of the framework's mechanistic reach. The scientific weight of OBT V8.2 rests entirely on the 3 Tier 1 exact resolutions and the 15 Tier 2 analytical frameworks. The Tier 3 entries are a research roadmap --- they identify where future computational work (5D-coupled N-body, MHD, stellar evolution with periodic $G_{eff}$) should be directed. If any T3 mechanism fails quantitative validation, it is the mechanism that is discarded, not the core ODE or its Tier 1/2 predictions. All 13 T3 entries derive from the same underlying 5D oscillating geometry (not 13 independent ad-hoc mechanisms), but we do not claim this structural unity constitutes proof.
 
-*Epistemological note on Tier 3:* We explicitly do **not** claim these 11 phenomena as mathematically "resolved." They are presented as qualitative mechanistic pathways naturally suggested by the 5D geometric framework. Quantitative validation requires complex numerical simulations (5D-coupled N-body, magnetohydrodynamics, stellar evolution with periodic G_eff) which remain open targets for future computational work. Including them here documents the theory's scope without overclaiming its current reach.
+*Epistemological note on Tier 3:* We explicitly do **not** claim these 13 phenomena as mathematically "resolved." They are presented as qualitative mechanistic pathways naturally suggested by the 5D geometric framework. Quantitative validation requires complex numerical simulations (5D-coupled N-body, magnetohydrodynamics, stellar evolution with periodic G_eff) which remain open targets for future computational work. Including them here documents the theory's scope without overclaiming its current reach.
 
 | Cosmological Problem | $\Lambda$CDM Status | Oscillating Brane V8.2 Solution | Tier |
 |---------------------|---------------------|-------------------------------|:---:|
@@ -840,9 +840,9 @@ The construction of the V8.2 framework through 60 analytical derivations has gen
 
 ## Conclusions and Decisive Perspectives
 
-The Oscillating Brane paradigm (Cosmic Yoyo V8.2) does not represent yet another statistical adjustment at the margins of a faltering Standard Model. It emerges as a unified extra-dimensional matrix founded on clear, interconnected mathematical deductions. Its effectiveness stems from a simple topological redefinition limiting the number of tuning parameters to just **two** --- the brane tension $\tau_0$ (whose cube root yields $\Lambda_{QCD} = 257$ MeV) and the extra-dimension size $L = 0.2\;\mu$m --- with the oscillation period $T = 2.000$ Gyr emerging as a derived chronodynamic eigenvalue (N=6 mode selected by the $\xi R\phi$ PLL attractor).
+The Oscillating Brane paradigm (Cosmic Yoyo V8.2) does not represent yet another statistical adjustment at the margins of a faltering Standard Model. It emerges as a unified extra-dimensional matrix founded on clear, interconnected mathematical deductions. Its effectiveness stems from a simple topological redefinition with a compact, honest parametric matrix --- **4 continuous EFT parameters** ($\tau_0$ and $L$ fundamental, whose cube root and size yield $\Lambda_{QCD} = 257$ MeV and $0.2\;\mu$m; $D$ and $f_{osc}$ effective macroscopic) plus one topological integer ($N = 6$) --- with the oscillation period $T = 2.000$ Gyr emerging as a derived chronodynamic eigenvalue (the $\xi R\phi$ PLL attractor).
 
-The hybrid motor architecture --- macroscopic Cosmic Web forcing ($\mathcal{F}_{web}[E_{\mu\nu}]$) providing the muscle via Israel junction conditions, and microscopic ER=EPR-entangled PBH network ($\mathcal{R}_{PBH}$) providing quantum synchronization as the metronome --- resolves the fundamental paradox of global phase coherence across 93 billion light-years.
+The hybrid motor architecture --- macroscopic Cosmic Web forcing ($\mathcal{F}_{web}[E_{\mu\nu}]$) providing the muscle via Israel junction conditions, and the thermodynamically mandated micro-PBH network ($\mathcal{R}_{PBH}$) providing local dissipation as the metronome --- resolves the global phase-coherence question without any signaling: the $\ell = 0$ coherence is an inflationary causal fossil (like CMB isotropy), with ER=EPR an optional topological interpretation of the PBH entanglement.
 
 As the orthodox $\Lambda$CDM system fragments empirically against cutting-edge 2024--2026 instruments, the Universe as an oscillating four-dimensional membrane absorbs, integrates, and decodes the totality of these **30 contemporary anomalies** with unprecedented structural elegance --- from the cosmic microwave background to the orbits of trans-Neptunian objects, from the age of ancient stars to the radio sky, all addressed by 4 continuous EFT parameters ($\tau_0$, $L$, $D$, $f_{osc}$), one topological integer ($N = 6$), and zero new particles --- a unified geometric dark sector replacing $\Omega_c$, $\Lambda$, and all modified gravity extensions.
 
@@ -889,7 +889,7 @@ The entire universe vibrates as a single entity with a derived period T = 2.000 
 
 ### The V8.2 Hybrid Stick-Slip Motor Equation
 
-The formal framework for oscillating p-branes in Anti-de Sitter space was established by Clark, Love, Nitta, ter Veldhuis & Xiong (Phys. Rev. D 76, 105014, 2007), who constructed the $SO(2,p+N)$ invariant Nambu-Goto action for a 3-brane with codimension $N=1$. We extend this formalism with a non-linear stick-slip driving mechanism coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
+The formal framework for oscillating p-branes in Anti-de Sitter space was established by Clark, Love, Nitta, ter Veldhuis & Xiong (Phys. Rev. D 76, 105014, 2007), who constructed the $SO(2,p+N)$ invariant Nambu-Goto action for a 3-brane with codimension $N=1$. We extend this formalism with a non-linear stick-slip driving mechanism coupling macroscopic Cosmic Web forcing to microscopic, thermodynamically mandated PBH dissipation (the $\ell$=0 coherence being an inflationary causal fossil; ER=EPR an optional topological interpretation --- see the Epistemological Firewall below).
 
 The brane position (radion field $\phi$) obeys the hybrid stick-slip ODE coupling macro and micro scales:
 
@@ -2609,7 +2609,7 @@ The formal one-loop ratio is $\sim 10^{-38}$; incorporating the QFT error budget
 
 ### Precision Cosmology Forecasts: Multi-Probe Fisher Matrix and Lattice QCD Tension Metrics
 
-**1. Sensitivity analysis and the dynamical system Jacobian.** The claim that $\tau_0^{1/3} \approx 257$ MeV --- within $\sim 2\%$ of the lattice QCD confinement scale --- must be elevated from a qualitative assertion to a quantitative metrological statement. This requires a formal **sensitivity analysis** of the V8.2 ODE: how do uncertainties in the fundamental parameters propagate into the observable predictions? The parameter triplet $\boldsymbol{\theta} = (\tau_0, T, L)$ --- two free parameters plus the derived eigenvalue $T$ --- determine, through the non-linear stick-slip dynamics, a vector of observables $\boldsymbol{\mathcal{O}} = (T_{att}, A_w, \Delta\chi^2_{ISW}, \Omega_{GW}(f_0), \sigma_8^{supp}, a_0)$ --- the attractor period, the dark energy oscillation amplitude, the ISW resonance significance, the SGWB spectral density, the $S_8$ suppression factor, and the emergent MOND acceleration scale. The **Jacobian matrix** of the parameter-to-observable map:
+**1. Sensitivity analysis and the dynamical system Jacobian.** The claim that $\tau_0^{1/3} \approx 257$ MeV --- within $\sim 2\%$ of the lattice QCD confinement scale --- must be elevated from a qualitative assertion to a quantitative metrological statement. This requires a formal **sensitivity analysis** of the V8.2 ODE: how do uncertainties in the fundamental parameters propagate into the observable predictions? The parameter triplet $\boldsymbol{\theta} = (\tau_0, T, L)$ --- the two fundamental parameters of the 4-continuous-EFT matrix plus the derived eigenvalue $T$ --- determine, through the non-linear stick-slip dynamics, a vector of observables $\boldsymbol{\mathcal{O}} = (T_{att}, A_w, \Delta\chi^2_{ISW}, \Omega_{GW}(f_0), \sigma_8^{supp}, a_0)$ --- the attractor period, the dark energy oscillation amplitude, the ISW modulation significance, the SGWB spectral density, the $S_8$ suppression factor, and the emergent MOND acceleration scale. The **Jacobian matrix** of the parameter-to-observable map:
 
 $$\mathcal{J}_{ij} = \frac{\partial \mathcal{O}_i}{\partial \theta_j}\bigg\vert_{\boldsymbol{\theta}_0}$$
 
@@ -3215,8 +3215,8 @@ OBT V8.2 has not yet been integrated into a full Boltzmann solver (CLASS or CAMB
 A rigorous epistemological evaluation of a cosmological model requires computing its true parametric cost. The Oscillating Brane Theory addresses 30 cosmological phenomena with **4 continuous EFT parameters** ($\tau_0$, $L$, $D$, $f_{osc}$), one topological integer ($N = 6$), and **zero new particles**:
 
 - **Tier 1 --- exact derivations**: the emergent-MOND geometric derivations --- $\mu(x) = x/\sqrt{1+x^2}$ from the Gauss-Codazzi quadrature (verified) and $a_0 = cH_0/2\pi$ (prior art: Milgrom/Verlinde) --- for galaxy rotation curves (SPARC RMS 29.3 km/s, $\mu(x)$ form rigorously derived). NOTE (audit May 2026): the DESI $w(z)$, $S_8$, and wide-binary (Chae 2025) entries previously listed here are DEMOTED --- $w(z)$/$S_8$ to T2 (waveform/amplitude-dependent, growth sign a free bulk BC), wide binaries to T2 (the anomaly is observationally CONTESTED --- Pittordis-Sutherland/Banik find Newtonian --- and the $\gamma_g(u)$ boost is MOND's, not OBT-distinctive)
-- **13 formal analytical frameworks (Tier 2)**: eROSITA $\gamma(M)$ (semi-analytic Tinker mapping), ISW resonance (semi-analytic, CLASS/CAMB pending), neutrino masses, CMB birefringence, JWST, early SMBHs, $\Lambda$, NANOGrav, DF2/DF4, Amaterasu, Big Ring/Giant Arc, naturalness, DM invisibility --- closed-form derivations with quantitative predictions
-- **13 exploratory mechanistic perspectives (Tier 3)**: Lithium-7 (BBN network pending), QCD baryogenesis (Boltzmann transport pending), Hubble tension, cosmic dipole, KBC Void, ORCs, Planet 9, flyby anomaly, etc. --- qualitative pathways requiring future N-body/Boltzmann simulations
+- **Formal analytical frameworks (Tier 2)**: ISW modulation (semi-analytic, CLASS/CAMB pending), neutrino masses, CMB birefringence, JWST, early SMBHs, $\Lambda$, NANOGrav, DF2/DF4, Amaterasu, Big Ring/Giant Arc, naturalness, DM invisibility --- closed-form derivations with quantitative predictions
+- **Exploratory mechanistic perspectives (Tier 3)**: eROSITA $\gamma(M)$ (semi-analytic Tinker mapping --- demoted from T2, audit May 2026: not a discriminant), Lithium-7 (BBN network pending), QCD baryogenesis (Boltzmann transport pending), Hubble tension, cosmic dipole, KBC Void, ORCs, Planet 9, flyby anomaly, etc. --- qualitative pathways requiring future N-body/Boltzmann simulations
 
 All other quantities are derived consequences:
 $T = 2.000$ Gyr (observationally anchored eigenvalue), $\delta_{bulk} = 1.36$ rad (BKM theorem), $a_0 = cH_0/(2\pi)$ (Gibbons-Hawking), $M_{crit} = Lc^2/(2G)$, $A_w = 0.003$ (ODE output).
@@ -3256,7 +3256,7 @@ The asteroid-mass PBH window (10$^{-14}$ to 10$^{-10}$ MSun) is often claimed to
 
 **3. Brane-proximal clustering:** PBHs serving as topological capillaries are structurally coupled to the brane, not distributed as an isotropic gas following a smooth NFW profile. Their clustering reduces the effective lensing optical depth compared to standard assumptions.
 
-These micro-PBHs (~1% of dark matter by mass, $f_{PBH} = 0.01$) act as **topological capillaries** and **quantum synchronization nodes** (ER=EPR). Like tent pegs anchoring a vast canopy, 1% of the mass as PBHs suffices to tension the entire membrane, with the remaining 99% of gravitational effects arising from the projected Weyl tensor $E_{\mu\nu}$ --- the geometry of the brane, not particles.
+These micro-PBHs (~1% of dark matter by mass, $f_{PBH} = 0.01$) act as **topological capillaries** and **local thermodynamic dissipation nodes** (their mutual entanglement admitting the optional ER=EPR topological interpretation). Like tent pegs anchoring a vast canopy, 1% of the mass as PBHs suffices to tension the entire membrane, with the remaining 99% of gravitational effects arising from the projected Weyl tensor $E_{\mu\nu}$ --- the geometry of the brane, not particles.
 
 ### Perforation Hierarchy: Gregory-Laflamme Instability and the Critical Mass
 
@@ -3447,7 +3447,7 @@ Beyond masses, in vast cosmic voids, spacetime becomes "lazy"---it resists movem
 
 $$a_0 = \frac{cH_0}{2\pi} \approx 1.1 \times 10^{-10} \text{ m/s}^2$$
 
-This is the standard holographic acceleration scale --- it emerges naturally from the brane's elastic coupling to the Hubble horizon, without any free parameter.
+What the framework derives is the **form** $a_0 \propto H_0$ --- the brane's elastic coupling to the Hubble horizon (the Gibbons-Hawking frequency scale); the $O(1)$ coefficient $1/2\pi$ is coincidence-level and has prior art (Milgrom 1983; Verlinde 2016; McCulloch 2007) --- see the MOND scope note in [Theory](/theory/). OBT's genuine novelty is the geometric derivation of the interpolating function $\mu(x)=x/\sqrt{1+x^2}$ and the **evolving** scale $a_0(z) = cH(z)/2\pi$, the distinctive near-term test (Euclid/Rubin).
 
 ### Local Anisotropies: Mapping Tension
 
@@ -3464,7 +3464,7 @@ Note: this $\sim 10^{-4}$ signal is **distinct from** the global $\sim 10^{-3}$ 
 Our framework preserves all successful predictions of $\Lambda$CDM while adding:
 1. Natural explanation for dark energy timing (QCD ignition)
 2. Mechanism for MOND-like effects at galactic scales (holographic acceleration $a_0 = cH_0/2\pi$)
-3. Testable oscillations in cosmological observables ($w(z)$, ISW, 21cm)
+3. Testable oscillations in cosmological observables ($w(z)$ --- the anchored stick-slip template; the low-$\ell$ ISW and 21 cm are weaker, consistency-level checks: $\sim 1\sigma$ and order-of-magnitude respectively)
 4. Time-dependent structure growth reconciling DES and KiDS
 
 The brane paradigm unifies inflation, dark matter, and dark energy into a single geometric framework.
@@ -3484,17 +3484,17 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 ```
 2024     DESI detects dark energy evolution ($4\sigma$)
    |
-2025     $S_8$ tension resolved (time-dependent growth suppression)
+2025     $S_8$ tension addressed (time-dependent suppression ~4--10%, shear-low side)
    |    ⏳ Euclid first data release
    |    ⏳ qBOUNCE / nanoscale optomechanics (sub-micron gravity)
    |
 2026    ⏳ CMB low-$\ell$ ISW (consistency check, ~1sigma)
    |    $\to$ cosmic-variance-capped; no $6\sigma$ claim (see ISW section)
    |
-2027    DESI full survey $\to$ power spectrum modulation
+2027    DESI full survey $\to$ anchored w(z) template test (DeltaBIC)
    |    SKA-Low $\to$ 21cm reionization-history modulation (plausible, amplitude-uncertain)
    |
-2030    CMB-S4 $\to$ definitive ISW signature
+2030    CMB-S4 $\to$ ISW consistency check (~1sigma ceiling, not definitive)
    |    Vera Rubin/LSST $\to$ large-scale structural anisotropies
    ↓
 ```
@@ -3503,10 +3503,10 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 
 ** Already Observed:**
 - **DESI 2024-2026**: Dark energy evolves with $4\sigma$ significance --- exactly matching our oscillating w(z) with $\phi_0$ = pi/2
-- **$S_8$ tension**: Time-dependent growth suppression via oscillating G_eff(t) bridges DES/KiDS gap
+- **$S_8$ tension**: Time-dependent growth suppression via oscillating G_eff(t), aligned with the cosmic-shear (DES/KiDS) side of the bifurcated tension
 
 **⏳ Imminent Tests:**
-- **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >$5\sigma$
+- **Euclid 2025+**: sharpens w(z); combined with DESI Year 5 the anchored stick-slip template forecast reaches Decisive (DeltaBIC approximately −22) --- a template-level discrimination, not a per-bin $5\sigma$ amplitude detection
 - **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments --- sub-micron gravity test at L = $0.2\,\mu$m, bypassing Casimir background
 - **CMB low-$\ell$ ISW**: OBT predicts a sub-dominant, cosmic-variance-limited ISW modulation --- consistent with (deficit-trending) Planck low-$\ell$ at the ~1sigma level, not a falsifiable resonance
 
@@ -3520,9 +3520,9 @@ The membrane oscillation creates a time-varying equation of state:
 - **Period**: T = 2.000 +/- 0.003 Gyr (chronodynamic eigenvalue, N=6 mode)
 - **Phase**: Maxima at $z = 0$ (today), $z \approx 0.16$, $z \approx 0.36$ (periodic)
 
-**Detection**: Euclid will measure w(z) to 3% precision, sufficient to detect our predicted oscillations at >$5\sigma$ significance.
+**Detection**: template-level --- the chronologically anchored stick-slip w(z) (k = 1) is preferred over CPL at DeltaBIC = −6.4 on DESI DR2 *today*, with the Year-5 forecast DeltaBIC approximately −22 (Decisive). The amplitude A_w = 0.003 itself is far below any per-bin $5\sigma$ detection; the discriminating power lives in the locked template.
 
-### ISW Resonance in the CMB
+### ISW Modulation in the CMB (a ~1sigma consistency check)
 
 The membrane oscillation creates a unique signature in the Cosmic Microwave Background through the Integrated Sachs-Wolfe effect:
 
@@ -3540,16 +3540,16 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 
 
 **Detection Method**: Our 2 Gyr membrane oscillation (1.6 x 10$^{-17}$ Hz) manifests through:
-- **ISW effect**: Creates resonance in CMB large-scale anisotropies at $\ell$ = 10-20 (shown above)
+- **ISW effect**: a weak modulation of the CMB large-scale anisotropies at $\ell$ = 10-20 (~1sigma, cosmic-variance-capped; shown above)
 - **Matter power spectrum**: Periodic modulation detectable by galaxy surveys
 - **Growth history**: Time-varying structure formation rate measurable by weak lensing
 
-The oscillation's imprint appears in the CMB through the Integrated Sachs-Wolfe (ISW) effect, creating the exact pattern observed by Planck. DESI and Euclid measure the corresponding modulation in the matter power spectrum.
+The oscillation's ISW imprint is *consistent with* the (deficit-trending) Planck low-$\ell$ sky at the ~1sigma level --- a consistency check, not a detected pattern. DESI and Euclid probe the corresponding expansion-history template.
 
 ### Structure Growth Suppression (Time-Dependent Gravitational Oscillation)
 
 
-*Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (4.50% slower, exact ODE); CMB/KiDS extrapolations from earlier phases remain quasi-standard.*
+*Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (~4--10% slower, waveform-dependent); CMB/KiDS extrapolations from earlier phases remain quasi-standard.*
 
 
 The brane oscillation modulates the effective gravitational coupling in time:
@@ -3636,7 +3636,7 @@ When the membrane reaches maximum extension, the brane oscillation reverses. Thi
 - **Main peak**: $f_0 = 1/T \approx 1.6 \times 10^{-17}$ Hz
 - **Echo**: $2f_0$ (reversal harmonic)
 
-This 2 Gyr oscillation is far too slow for direct gravitational wave detection. Instead, its imprints appear in the CMB large-scale anisotropies through the Integrated Sachs-Wolfe (ISW) effect --- a cosmic fingerprint of our universe-membrane.
+This 2 Gyr oscillation is far too slow for direct gravitational wave detection. Instead, a weak (~1sigma, cosmic-variance-limited) imprint appears in the CMB large-scale anisotropies through the ISW effect (§2).
 
 ## Experimental Tests
 
@@ -3652,9 +3652,8 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 
 | Mission | Target Signature | Refutation Threshold |
 |---------|-----------------|---------------------|
-| Euclid | $w(z)$ sinusoidal $A \geq 3\times 10^{-3}$ | Signal $< 5\sigma$ |
-| DESI Full | $\Delta P/P = 0.5\%$ at $k_0$ | Smooth spectrum |
-| CMB-S4 | ISW oscillations | No large-scale pattern |
+| Euclid + DESI Y5 | anchored stick-slip $w(z)$ template ($k=1$) vs CPL | forecast DeltaBIC approximately −22 in OBT's favor; an opposite-sign verdict refutes the anchoring |
+| CMB-S4 | ISW consistency check (~1sigma ceiling) | --- (not a falsification channel; audit May 2026) |
 | SKA-Low | 21cm reionization signal ~0.5--8 mK (amplitude-unpinned) | No imprint at the ignition-pinned amplitude |
 | Roman/HSC | Microlensing cliff at $M_{crit} \approx 10^{-10} M_\odot$ | Smooth event rate below $10^{-11} M_\odot$ |
 | Fermi/SVOM/AMEGO-X | GRB femtolensing fringes ($M \sim 10^{-12} M_\odot$) *(contested: finite-source washout --- see Pillar C)* | Zero spectral oscillations in 0.1-1 MeV |
@@ -3802,7 +3801,7 @@ $$w(z) \approx -1 + 0.003\left(\frac{\tau_0}{7 \times 10^{19}}\right)\sin\!\left
 
 The Jacobian elements: $\partial w/\partial\tau_0 \propto A_w/\tau_0^{fid}$ (amplitude scaling --- how hard the brane swings), $\partial w/\partial T \propto -A_w \times (2\pi t_{lb}/T^2)\cos(\cdots)$ (phase chrono --- extreme sensitivity at the LRG3 cliff where the cosine changes sign), $\partial w/\partial L \approx 0$ (dark energy is insensitive to the extra dimension size at leading order).
 
-**(b) ISW resonance** (Planck, compressed likelihood):
+**(b) ISW modulation** (Planck, compressed likelihood --- the *pre-audit* weight; post-audit the realistic ISW significance is ~1sigma (§2), and the headline $T$ constraint below is DESI-dominated, so it stands):
 
 $$\Delta\chi^2_{ISW} \approx -15.4\left(\frac{\tau_0}{7 \times 10^{19}}\right)\left(\frac{A_w}{3 \times 10^{-3}}\right), \quad \sigma_{\Delta\chi^2} = 4.5$$
 
@@ -3872,15 +3871,15 @@ The universe has been singing its two-billion-year song all along. Finally, we'r
 
 Our final vision: the cosmos is not an inert theater but a living organism:
 
-- **Birth**: Big Bang, maximum tension, first breath
-- **Childhood**: Relaxation, frequency tuning (0-1 Gyr)
+- **Birth**: Big Bang --- the tension already flux-fixed, the motor conformally frozen (first breath held)
+- **Childhood**: QCD ignition and attractor locking of the period (first ~1 Gyr)
 - **Maturity**: Established oscillations (1-50 Gyr, we are here)
 - **Old age**: Progressive damping (50-100 Gyr)
 - **Silence**: The strings relax, space forgets distance (>100 Gyr)
 
 ## Epilogue: The Promise of Revelation
 
-Version 8.2 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the OBT-distinctive imminent test is the evolving MOND scale $a_0(z)$ --- with the SKA 21cm reionization signal a plausible order-of-magnitude probe.
+Version 8.2 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the thermodynamically mandated micro-PBH network provides local dissipation (the metronome) --- the $\ell$=0 coherence being an inflationary causal fossil, with ER=EPR an optional topological interpretation. Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the OBT-distinctive imminent test is the evolving MOND scale $a_0(z)$ --- with the SKA 21cm reionization signal a plausible order-of-magnitude probe.
 
 In the coming years, the universe will answer us. Giant telescopes and pulsar networks will listen to the deep whisper of the cosmos, seeking the two-billion-year melody. They will find either confirmation of a revolutionary vision or the silence that sends us back to our equations.
 
@@ -4021,7 +4020,7 @@ For a realistic levitated silica nanosphere ($R = 100$ nm $\approx 0.5\,L$, mass
 3. **$O(1)$ factor --- kernel- *and* displacement-dependent.** The exact enhancement ($\approx$5 at 100 nm) depends on the unresolved RS crossover at the $\sim$30% level *and* on the superposition displacement $\Delta x$: scanning $\eta$ vs $\Delta x$ at $R = 0.5\,L$ gives $\eta \approx 3$--7 across $\Delta x = 0.1$--$2R$ (always $>1$, a factor-$\sim$2 spread). Only the $O(1)$ *size* and the size-scan *shape* (the turn-up below $L$) are robust --- not the exact factor.
 4. **Scale-distinctive, not mechanism-unique.** A turn-up below $L$ tests the *existence of an extra dimension at $0.2\,\mu$m* (OBT's specific scale); the 5D-gravity mechanism itself is generic to braneworlds. It is, however, cleanly distinct from collapse models with no characteristic length at $0.2\,\mu$m.
 
-This re-frames the laboratory program: the static Yukawa level shift (§1) is unobservable ($\delta E/E \sim 10^{-8}$), but the *dynamical* gravitational-collapse channel is an $O(1)$ effect with a distinctive scale --- the most promising terrestrial avenue, alongside SKA 21cm among cosmological probes, for a genuinely falsifiable OBT signature once the technology matures.
+This re-frames the laboratory program: the static Yukawa level shift (§1) is unobservable ($\delta E/E \sim 10^{-8}$), but the *dynamical* gravitational-collapse channel is an $O(1)$ effect with a distinctive scale --- the most promising terrestrial avenue, alongside the evolving MOND scale $a_0(z) = cH(z)/2\pi$ (Euclid/Rubin) among cosmological probes, for a genuinely falsifiable OBT signature once the technology matures.
 
 ### Long-term Theoretical Perspectives: 5D Information Channels
 
@@ -4035,13 +4034,13 @@ Every parameter ($G_N$, $m_\text{KK}$, $L$, $\alpha$) is already fixed by cosmol
 
 ### A Call to Experimentalists
 
-The **qBOUNCE team at ILL Grenoble** (Hartmut Abele, Tobias Jenke) is uniquely positioned to validate both the extra dimension and the quantum bypass architecture. Their experiment already operates at the correct spatial scale ($\sim 1\,\mu$m resolution, targeting $0.2\,\mu$m with qBOUNCE-II). A confirmed exponential amplification of the Robin parameter $\lambda$ as resolution approaches $L$ would simultaneously:
+The **qBOUNCE team at ILL Grenoble** (Hartmut Abele, Tobias Jenke) and the levitated-optomechanics community are natural partners for physics at exactly this spatial scale. Honesty about the division of labor (§1): improving qBOUNCE's *resolution* does **not** amplify the sub-micron Yukawa footprint --- the overlap is geometrically fixed (the category-error note above) --- so the GRS program's role is precision consistency limits, not discovery. The discovery-class opportunity is the *dynamical* channel of §2: a **size-scan of gravitational-collapse rates across $R \sim L$** in levitated optomechanics, where OBT predicts an $O(1)$, scale-pinned enhancement. A confirmed turn-up of the collapse rate below $R \approx 0.2\,\mu$m would:
 
-1. **Validate the extra dimension** at $L = 0.2\,\mu$m (first direct detection)
-2. **Confirm the Yukawa potential** that underpins the quantum bypass mechanism
-3. **Open the door** to the 5D Topological Quantum Computer --- a machine that reads quantum states through their gravitational shadow in the bulk
+1. **Point to an extra dimension** at OBT's scale $L$ (with the braneworld-generic caveat of §2)
+2. **Confirm objective gravitational collapse** (Penrose-Diósi) in the same stroke
+3. **Open** the long-term 5D readout horizon sketched above
 
-This is a collaboration opportunity where cosmological theory meets terrestrial experiment. The qBOUNCE-II upgrade could deliver the most profound experimental result since the discovery of gravitational waves.
+This is a collaboration opportunity where cosmological theory meets terrestrial experiment --- stated with the honest sensitivities (§2, caveat 2) rather than promised amplifications.
 
 ## Summary
 
@@ -4290,7 +4289,11 @@ compared to GR's prediction of 42.98 arcsec/century (observed: 42.98 +/- 0.04).
 
 $$\alpha = \frac{\phi M_P}{M_5^2} < 10^{-5}$$
 
-satisfying Eöt-Wash experiments.
+satisfying Eöt-Wash experiments. *(Note: the qBOUNCE consistency check in the [Complete Theoretical
+Framework](/theory/) nominally quotes a much larger $\alpha \sim 5\times10^{-3}$; that value is an
+unmotivated input, not a derivation --- see the qBOUNCE audit note there --- and the predicted level shift
+is unobservable ($\delta E/E \sim 10^{-8}$--$10^{-6}$) under either value, so nothing testable hinges on
+the discrepancy. We flag it for transparency.)*
 
 ### Quantum Regime
 
@@ -4442,9 +4445,9 @@ with:
 | w(z) amplitude A_w | 0.003 | +/-0.001 | BAO + SNe | 2025+ |
 | $H_0$ anisotropy | 0.01% | +/-0.005% | Precision cosmology | 2030+ |
 | **Gravitational Signatures** |
-| Fundamental $f_0$ | 1.6 x 10$^{-17}$ Hz | +/-10% | ISW in CMB | 2030+ |
+| Fundamental $f_0$ | 1.6 x 10$^{-17}$ Hz | +/-10% | ISW in CMB (weak, ~1sigma consistency level) | 2030+ |
 | Oscillation period | 2.000 Gyr (eigenvalue) | +/-0.003 Gyr | Large-scale structure | 2028+ |
-| ISW amplitude | ~10$^{-5}$ DeltaT/T | Factor of 2 | CMB-S4 | 2030+ |
+| ISW amplitude | ~10$^{-5}$ DeltaT/T | Factor of 2 | CMB-S4 (consistency check, cosmic-variance-limited) | 2030+ |
 | **Galactic Scale** |
 | MOND $a_0$ | 1.1 x 10$^{-10}$ m/s$^{2}$ | +/-5% | Galaxy dynamics | Current |
 | Halo core radius | ~10 kpc | +/-3 kpc | Stellar kinematics | 2025+ |
@@ -4460,7 +4463,8 @@ with:
 
 2. **Oscillation Signatures**:
    - Fundamental period T = 2.000 Gyr (derived eigenvalue; too slow for direct GW detection)
-   - ISW effect in CMB large-scale anisotropies
+   - A weak (~1sigma, cosmic-variance-limited) ISW-level imprint in CMB large-scale anisotropies --- a
+     consistency check, not a discovery channel
    - Modulation in matter power spectrum detectable by DESI/Euclid
 
 3. **Modified Halo Structure**:
@@ -4482,9 +4486,16 @@ with:
 
 The model would be falsified by:
 - Direct detection of DM particles with $\sigma > 10^{-48}$ cm$^{2}$
-- Absence of ISW resonance signature in upcoming CMB-S4 surveys
+- A clean failure of the anchored stick-slip $w(z)$ template against DESI Year-5 BAO (the forecast is
+  DeltaBIC approximately −22 in the model's favor; the opposite verdict would refute the chronodynamic anchoring)
+- A constant MOND scale: the model requires $a_0(z) = cH(z)/2\pi$ to evolve --- Euclid/Rubin lensing and
+  kinematics finding a non-evolving $a_0$ would refute it
 - Discovery of DM-dominated structures without baryons
-- Variations in fundamental constants beyond $|\dot{G}/G| > 10^{-13}$ yr$^{-1}$
+- Variations in fundamental constants beyond $|\dot{G}/G| > 10^{-13}$ yr$^{-1}$ at Solar System scales
+
+*(The low-$\ell$ ISW signature, once listed here, is **not** a falsification criterion: it is
+cosmic-variance-limited to a ~1sigma consistency check --- see the ISW audit note in
+[Predictions](/predictions/).)*
 
 ## Quantum Loop Corrections and Stability
 
@@ -4646,7 +4657,10 @@ This naturally explains:
 
 **3. Symmetry Breaking at Electroweak Scale** [Dvali & Tye 1999, Phys.Lett.B 450, 72]
 
-The brane tension can undergo phase transitions linked to particle physics:
+*(External scenario, listed for completeness only: V8.2 does **not** use a temperature-dependent
+tension --- $\tau_0$ is flux-fixed and the BBN protection is conformal symmetry + QCD ignition, see
+[Chronology](/chronology/).)* The brane tension can undergo phase transitions linked to particle
+physics:
 
 - **High temperature**: $T > T_{EW}$, symmetric phase with $\tau(T) = \tau_{UV}$
 - **Phase transition**: At $T = T_{EW} \approx 100$ GeV, tension drops
@@ -5036,7 +5050,14 @@ This provides a microscopic origin for our oscillating 3-brane from fundamental 
 
 ### Bayesian Analysis: Explicit Prior Distributions
 
-The Bayesian evidence calculation ($\Delta\ln K = 4.13 \pm 0.07$) relies on specific prior choices. Here we document the complete prior specifications:
+The Bayesian evidence calculation documented here is the **original 3-parameter analysis**
+($\Delta\ln K = 4.13 \pm 0.07$, with the conservative-prior lower bound 2.8). It is kept as the
+archival record of that computation --- including its pre-eigenvalue Gaussian prior on $T$
+($\mu = 2.0$, $\sigma = 0.3$ Gyr). Since the promotion of $T$ to a **derived chronodynamic
+eigenvalue** ($T = 13.80/6.9 = 2.000$ Gyr, which refunds that prior volume), the current headline
+evidence is $\Delta\ln K \approx 5.8$ (Decisive, prior-independent) --- see the Bayesian section of the
+[Complete Theoretical Framework](/theory/). Here we document the complete original prior
+specifications:
 
 **Table 1: Prior distributions for Bayesian analysis**
 
