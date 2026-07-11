@@ -5,6 +5,8 @@ Romain Provencal (independent researcher, provencal.romain@teleadmin.net), with 
 co-processors (Claude/Anthropic, Gemini DeepThink/Google) — radically transparent collaboration model.
 July 2026. Repository: https://github.com/Teleadmin-ai/oscillating-brane-DM (all supporting calculations
 are runnable scripts, referenced inline).
+**PDF/arXiv-style version: [`mv_axion_note.pdf`](mv_axion_note.pdf) (source `mv_axion_note.tex`, pdflatex;
+kept in sync with this file — edit both or regenerate).**
 
 ---
 

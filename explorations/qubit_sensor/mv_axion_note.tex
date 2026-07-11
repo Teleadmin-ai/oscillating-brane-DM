@@ -1,0 +1,254 @@
+% mv_axion_note.tex — arXiv-style version of mv_axion_note.md (kept in sync manually).
+% Compile: pdflatex mv_axion_note.tex (x2). Quarantined V9.0 deliverable; NOT the theory PDF pipeline.
+\documentclass[11pt]{article}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+\usepackage{xcolor}
+
+\newcommand{\geff}{g_{\mathrm{eff}}}
+\newcommand{\gagg}{g_{a\gamma\gamma}}
+\newcommand{\ueV}{\mu\mathrm{eV}}
+\newcommand{\GeV}{\mathrm{GeV}}
+
+\title{\bfseries A $\boldsymbol{\mu}$eV string-axion target with an $\boldsymbol{f_a}$-invariant
+effective coupling, inside the FLASH band}
+\author{Romain Provencal\thanks{Independent researcher;
+\href{mailto:provencal.romain@teleadmin.net}{provencal.romain@teleadmin.net}. All supporting
+calculations are runnable scripts in the public repository,
+\url{https://github.com/Teleadmin-ai/oscillating-brane-DM} (directory
+\texttt{explorations/qubit\_sensor/}); theory documents at \url{https://higgs-cosmology.com/}.}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent We present one concrete, falsifiable coordinate for the axion dark-matter program, derived
+within an independent braneworld cosmology (Oscillating Brane Theory, OBT) whose type-IIB LVS
+completion fixes the string scale $M_s = 1.19\times10^{12}\,\GeV$ and contains an ultra-light
+K\"ahler-axion mode at the $\ueV$ scale ($\nu \simeq 242$~MHz central; order-of-magnitude bracket
+$\sim 0.3\text{--}3~\ueV$). The photon coupling is $\gagg = (\alpha/2\pi)\,C/f_a$ with
+$f_a \sim M_s$ natural, and the standard misalignment relic gives
+$\Omega_a h^2 \simeq 1.2\times10^{-3} (f_a/M_s)^2\theta_i^2$ --- 1\% of the dark matter at the natural
+point, 100\% at $f_a \simeq 1.2\times10^{13}\,\GeV$. Our main result is that this decay-constant
+uncertainty does not propagate to the experiment: because the string-ALP mass is instanton-set
+(independent of $f_a$, unlike the QCD axion), the density-weighted haloscope coupling is exactly
+$f_a$-invariant below saturation,
+$\geff \equiv g\sqrt{\Omega_a/\Omega_{\rm DM}} = (\alpha/2\pi)\,C\theta_i/f_{a,\rm DM}
+= 9.8\times10^{-17}\,C\theta_i\;\GeV^{-1}$.
+The flat floor crosses the QCD band inside the target decade and sits five orders of magnitude below
+the CAST bound. The proposed FLASH haloscope (100--300~MHz) contains the central target: its declared
+phase-1 sensitivity grazes the floor ($0.98\times$), and its phase-2 goal cuts a factor $\sim$5 below
+it --- decisive for the entire bracket at $C,\theta_i = \mathcal{O}(1)$. We state the falsification
+condition in advance: excluding the $\ueV$ decade at $\geff \lesssim 1\times10^{-17}\,\GeV^{-1}$ kills
+the whole misalignment chain at $\mathcal{O}(1)$ angles.
+\end{abstract}
+
+\section{Status and provenance (read first)}
+This note comes from \emph{Oscillating Brane Theory} (OBT), an independent-researcher braneworld
+cosmology (the universe as a 4D membrane oscillating in a 5D AdS bulk; not peer-reviewed; the full
+document and validation suite are public at the repository above). The axion chain below belongs to
+its \emph{quarantined exploration layer} (internally labeled V9.0): it is not claimed with the
+confidence of the framework's core phenomenology, and the epistemic posture of this note is
+deliberately modest. \textbf{We present one concrete, falsifiable coordinate in open parameter space,
+with its complete derivation chain and every assumption listed.} The community can price the theory
+however it likes; the coordinate is cheap to test, and the falsification statement is clean either
+way.
+
+\medskip
+\noindent\textbf{The target in one line:} a string ALP at the $\ueV$ scale ($\nu\simeq 242$~MHz
+central; order-of-magnitude bracket $\sim0.3$--$3~\ueV$) whose density-weighted haloscope coupling is
+pinned, \emph{independently of its decay constant}, at
+$\geff \simeq 1.0\times10^{-16}\,C\theta_i\;\GeV^{-1}$ --- grazing the declared FLASH phase-1
+sensitivity and a factor $\sim$5 above its phase-2 goal.
+
+\section{The derivation chain}
+Each step corresponds to a runnable script in the repository (Sec.~\ref{sec:scripts}).
+
+\begin{enumerate}
+\item \textbf{The scale.} OBT's UV completion is a Klebanov--Strassler / LVS type-IIB
+compactification whose flux integers ($K=21$, $M=10$, $g_s=0.1$) reproduce, top-down and with no
+fine-tuning, the brane tension $\tau_0^{1/3} = 257$~MeV~$\approx \Lambda_{\rm QCD}$ that the
+cosmological fit independently requires (a bottom-up/top-down convergence). The resulting LVS
+spectrum contains the string scale $M_s = M_{\rm Pl}/\sqrt{\mathcal V} = 1.19\times10^{12}\,\GeV$
+(volume $\mathcal V \approx 4\times10^{12}$) and an ultra-light modulus at
+$m_V \sim 10^{-6}$~eV (order of magnitude). This $\ueV$ scale predates the axion chain; it was not
+tuned toward any experiment.
+\item \textbf{The identification} (\texttt{mv\_coupling.py}). The $\ueV$ mode is identified as the
+imaginary (axion) partner of a blow-up/fibre K\"ahler modulus: the shift symmetry makes it
+ultra-light with \emph{derivative couplings only} (no static fifth force, evading E\"otv\"os/Cassini
+bounds), and the photon coupling is
+\begin{equation}
+\gagg \;=\; \frac{\alpha}{2\pi}\,\frac{C}{f_a},
+\qquad C = \mathcal{O}(1)\ \text{(unknown anomaly coefficient).}
+\end{equation}
+\item \textbf{The decay constant is not free} (\texttt{mv\_fa\_lvs.py}). The LVS axiverse
+\cite{CGR2012} brackets $f_a \in [\sim\!10^{10}, \sim\!10^{13}]\,\GeV$; a blow-up/fibre axion sits
+naturally at $f_a \sim M_s \approx 1.2\times10^{12}\,\GeV$, giving
+$\gagg \approx 9.8\times10^{-16}\,C\;\GeV^{-1}$.
+\item \textbf{The relic abundance} (\texttt{mv\_abundance.py}; standard misalignment
+\cite{PWW1983}). The field oscillates early ($T_{\rm osc} \approx 16$~GeV, above the QCD scale),
+giving
+\begin{equation}
+\Omega_a h^2 \;\simeq\; 1.2\times10^{-3}\,\Big(\frac{f_a}{M_s}\Big)^{2}\theta_i^{2},
+\end{equation}
+i.e.\ $\sim$1\% of the dark matter at the natural point, rising to 100\% at
+$f_a \simeq 1.2\times10^{13}\,\GeV$ (the LVS high end; over-closure forbids larger $f_a$ at
+$\theta_i\sim1$). In OBT the \emph{dominant} dark matter is geometric (a projected-Weyl braneworld
+effect), so a sub-dominant axion is internally consistent, and the $\sim$1\% fraction suppresses
+axion-CDM isocurvature by $\sim\!10^{-4}$ --- safe for a wide range of inflation scales (the full-DM
+corner instead pushes toward low-scale inflation).
+\end{enumerate}
+
+\section{Main result: the $f_a$-invariant effective coupling}
+\label{sec:invariance}
+A haloscope measures the power $g^2\rho_a$, i.e.\ the effective coupling
+$\geff = g\sqrt{\Omega_a/\Omega_{\rm DM}}$ (assuming the axion fraction clusters like the bulk dark
+matter). In this chain $g \propto 1/f_a$ while $\Omega_a \propto f_a^2$ --- because the string-ALP
+mass is instanton-set, \emph{independent of $f_a$} (unlike the QCD axion) --- so the $f_a$ dependence
+cancels exactly below saturation:
+\begin{equation}
+\boxed{\;\geff \;=\; \frac{\alpha}{2\pi}\,\frac{C\,\theta_i}{f_{a,\rm DM}}
+\;=\; 9.8\times10^{-17}\; C\,\theta_i\ \GeV^{-1},\qquad
+f_{a,\rm DM} = 1.2\times10^{13}\,\GeV,\;}
+\label{eq:inv}
+\end{equation}
+verified numerically to $10^{-9}$ across the three-decade LVS bracket
+(\texttt{mv\_effective\_coupling.py}). \textbf{The apparent $f_a$ uncertainty (a 1\%--100\%
+dark-matter fraction) does not propagate to the experiment: every point of the bracket presents the
+same haloscope target.} The residual theory spread is the honest $\mathcal{O}(1)$ pair $C\theta_i$
+and the order of magnitude on the $\ueV$ mass itself.
+
+\section{Where the target sits}
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccccc}
+\toprule
+$m_a$ ($\ueV$) & $\nu$ (MHz) & $g_{\rm KSVZ}$ ($\GeV^{-1}$) & $g_{\rm DFSZ}$ ($\GeV^{-1}$) &
+OBT $\geff$ ($C\theta_i{=}1$) \\
+\midrule
+0.30 & 73  & $1.2\times10^{-16}$ & $4.6\times10^{-17}$ & $9.8\times10^{-17}$ \\
+0.64 & 155 & $2.5\times10^{-16}$ & $9.8\times10^{-17}$ & $9.8\times10^{-17}$ \\
+1.00 & 242 & $3.9\times10^{-16}$ & $1.5\times10^{-16}$ & $9.8\times10^{-17}$ \\
+1.49 & 360 & $5.8\times10^{-16}$ & $2.3\times10^{-16}$ & $9.8\times10^{-17}$ \\
+3.00 & 725 & $1.2\times10^{-15}$ & $4.6\times10^{-16}$ & $9.8\times10^{-17}$ \\
+\bottomrule
+\end{tabular}
+\caption{The flat OBT floor vs.\ the QCD band ($m_a = 5.70~\ueV \times 10^{12}\,\GeV/f_a$
+\cite{GV2019}; KSVZ $|C_\gamma|=1.92$, DFSZ $|C_\gamma|=0.75$).}
+\label{tab:band}
+\end{table}
+
+\begin{itemize}
+\item The flat floor \textbf{crosses the QCD band inside the target decade} (above DFSZ below
+$0.64~\ueV$, above KSVZ below $0.25~\ueV$). It is a \emph{string ALP near, not on, the QCD relation}:
+the QCD-axion mass at $f_a = M_s$ would be $4.8~\ueV$, within $\sim$5$\times$ of $m_V$.
+\item \textbf{Helioscopes/astrophysics:} CAST ($6.6\times10^{-11}\,\GeV^{-1}$ \cite{CAST2017})
+constrains $g$, not $\geff$; the \emph{entire} bracket sits $\geq 2.8$ orders below it (the natural
+corner 4.8 orders). The window is genuinely open.
+\item \textbf{Quantum-hardware aside:} we computed (\texttt{axion\_photonic\_chip.py}) that
+photonic-chip-class quantum processors \emph{cannot} see this field (16--18 orders short; the
+optical-cavity storage-time cap gains only $\sim$60$\times$); $\ueV$ axions are resonant
+microwave-cavity + magnet territory --- this note's target is for haloscopes.
+\end{itemize}
+
+\section{The experimental match: FLASH and the $\mu$eV-decade program}
+The proposed \textbf{FLASH} haloscope (FINUDA magnet, Frascati \cite{FLASH2023}) is declared for
+100--300~MHz (QCD-axion masses 0.49--1.49~$\ueV$) --- the OBT central target (242~MHz) sits
+\emph{inside} that band:
+\begin{itemize}
+\item FLASH \textbf{phase 1} (microstrip SQUID, DFSZ-class $\sim\!1\times10^{-16}\,\GeV^{-1}$): the
+OBT floor is $0.98\times$ that depth --- phase 1 \emph{grazes the whole target}.
+\item FLASH \textbf{phase 2} (100~mK, $\sim\!2\times10^{-17}\,\GeV^{-1}$): cuts a factor $\sim$5
+below the floor --- decisive for the entire $f_a$ bracket at $C\theta_i = \mathcal{O}(1)$.
+\item The wings of the mass bracket (0.3--0.5 and 1.5--3~$\ueV$, i.e.\ 73--120 and 360--725~MHz)
+fall to the neighboring programs (lumped-element / DM-Radio-class below; the historic and
+next-generation cavity program above \cite{ADMX2018,ADMX2021}, where reaching the floor means
+DFSZ/2 to DFSZ/5 depth). Qubit single-photon counting \cite{Dixit2021} is the readout class that
+accelerates such scans.
+\end{itemize}
+
+\section{Falsifiability (declared before any data)}
+\begin{itemize}
+\item \textbf{Exclusion:} a scan of the $\sim$0.3--3~$\ueV$ decade at
+$\geff \lesssim 1\times10^{-17}\,\GeV^{-1}$ ($\approx$ floor/10) \textbf{kills the entire
+misalignment chain at $\mathcal{O}(1)$ angles} --- the OBT axion bone dies cleanly (the theory's
+core is separate; this falsifies its one derived direct-detection channel). FLASH phase 2 alone
+already bites the central half-decade at floor/5.
+\item \textbf{Detection:} a signal at $\ueV$ masses with $\geff$ within $\sim$$\times$3 of
+$10^{-16}\,\GeV^{-1}$ matches the chain; the OBT-vs-QCD-axion discriminant is then the $(m, g)$
+position relative to the QCD relation (the flat floor is mass-independent; the QCD band scales
+$g \propto m$ --- distinguishable away from the 0.25--0.64~$\ueV$ crossings). A detection \emph{on}
+the QCD relation would remain ambiguous --- we state this plainly.
+\item \textbf{What we will not do:} claim support from a null that only grazes the floor, or dress an
+anomaly elsewhere as this field. (Our own quantum-hardware protocol pre-registers the same
+discipline.)
+\end{itemize}
+
+\section{Open assumptions (all stated)}
+\begin{enumerate}
+\item \textbf{Axion-vs-saxion identification} of the $\ueV$ LVS mode (the chain's weakest link; the
+saxion partner is heavier, but the identification is an assumption, not a derivation).
+\item \textbf{The $\ueV$ mass itself is order-of-magnitude} (an LVS spectrum scale, not a sharp
+prediction) --- hence the decade-wide mass bracket.
+\item $C$ and $\theta_i$ are $\mathcal{O}(1)$ unknowns (the floor scales linearly in each).
+\item \textbf{Invariance assumptions:} $m_a$ independent of $f_a$ (string ALP); standard
+misalignment with no post-$T_{\rm osc}$ entropy injection; below over-closure saturation; local
+axion fraction proportional to the bulk fraction.
+\item $f_a \sim M_s$ natural within a factor $\sim\mathcal{O}(10)$ ($2\pi$'s, volume suppressions)
+--- \emph{absorbed} by the invariance for $\geff$, but relevant to the raw $g$ if a
+density-independent probe is used.
+\end{enumerate}
+
+\section{Supporting calculations}
+\label{sec:scripts}
+All in \texttt{explorations/qubit\_sensor/} of the repository, runnable as-is:
+\texttt{mv\_coupling.py} (identification + $g$), \texttt{mv\_abundance.py} ($T_{\rm osc}$,
+$\Omega_a h^2$, the isocurvature trade-off), \texttt{mv\_fa\_lvs.py} (the LVS $f_a$ bracket),
+\texttt{mv\_effective\_coupling.py} (the $f_a$-invariance, QCD-band crossings, FLASH/CAST margins),
+\texttt{chi\_alp\_sensitivity.py} (why the quantum-sensor mass window selects this mode),
+\texttt{axion\_photonic\_chip.py} (why photonic chips cannot see it). Core-framework scales ($M_s$,
+the LVS spectrum): \texttt{theory.md} on the repository.
+
+\medskip
+\noindent\emph{Scope note: this proposal detects (or excludes) a light bulk-sector field of the
+theory. It is one of OBT's three falsifiable near-term ``bones'' (with the evolving MOND scale
+$a_0(z) = cH(z)/2\pi$ for Euclid/Rubin, and a 5D-enhanced Penrose--Di\'osi collapse size-scan for
+levitated optomechanics).}
+
+\section*{Acknowledgments}
+Radically transparent collaboration model: the theoretical development was carried out with AI
+co-processors (Claude, Anthropic; Gemini DeepThink, Google) acting as mathematical/computational
+collaborators under the author's direction; every quantitative claim in this note is reproduced by
+the referenced runnable scripts.
+
+\begin{thebibliography}{9}
+\bibitem{LVS2005} V.~Balasubramanian, P.~Berglund, J.~P.~Conlon, F.~Quevedo,
+``Systematics of moduli stabilisation in Calabi-Yau flux compactifications,''
+\emph{JHEP} \textbf{03} (2005) 007.
+\bibitem{CGR2012} M.~Cicoli, M.~D.~Goodsell, A.~Ringwald,
+``The type IIB string axiverse and its low-energy phenomenology,''
+\emph{JHEP} \textbf{10} (2012) 146.
+\bibitem{PWW1983} J.~Preskill, M.~B.~Wise, F.~Wilczek, \emph{Phys.\ Lett.\ B} \textbf{120} (1983)
+127; L.~F.~Abbott, P.~Sikivie, \emph{ibid.}\ 133; M.~Dine, W.~Fischler, \emph{ibid.}\ 137.
+\bibitem{Sikivie1983} P.~Sikivie, ``Experimental tests of the `invisible' axion,''
+\emph{Phys.\ Rev.\ Lett.} \textbf{51} (1983) 1415.
+\bibitem{GV2019} M.~Gorghetto, G.~Villadoro,
+``Topological susceptibility and QCD axion mass: QED and NNLO corrections,''
+\emph{JHEP} \textbf{03} (2019) 033.
+\bibitem{FLASH2023} D.~Alesini \emph{et al.},
+``The future search for low-frequency axions and new physics with the FLASH resonant cavity
+experiment at Frascati National Laboratories,'' arXiv:2309.00351.
+\bibitem{ADMX2018} ADMX Collaboration, \emph{Phys.\ Rev.\ Lett.} \textbf{120} (2018) 151301.
+\bibitem{ADMX2021} ADMX Collaboration, \emph{Phys.\ Rev.\ Lett.} \textbf{127} (2021) 261803.
+\bibitem{Dixit2021} A.~V.~Dixit \emph{et al.},
+``Searching for dark matter with a superconducting qubit,''
+\emph{Phys.\ Rev.\ Lett.} \textbf{126} (2021) 141302.
+\bibitem{CAST2017} CAST Collaboration, ``New CAST limit on the axion-photon interaction,''
+\emph{Nature Physics} \textbf{13} (2017) 584.
+\end{thebibliography}
+
+\end{document}
