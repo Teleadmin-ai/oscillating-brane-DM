@@ -16,7 +16,8 @@ THE DECLARED INSTANCE (the same code path as demon_qc/demon_readout_basis -- imp
                  BOTH candidates phi0 = 0.42 (corrected) and 1.40 (legacy).
   decompressor = the 1-rep Lie-Trotter product of the n=3 sparse-SYK (demon_qc.sparse_syk, the declared seed),
                  validated == drb.manual_product_state (identity).
-  readout      = Z and X (X = H^(x3) FOLDED into the run unitary -- free on modes), 4 configs total.
+  readout      = Z and X (X = H^(x3) FOLDED into the run unitary -- free on modes), 4 main configs
+                 (+ the A1 hardware-reference config = 5 total).
   input        = 'talk to the bulk' -> 1 conditioning bit at this size (N_IN=1, declared reduced).
   rules        = the two-layer belenos_protocol rules, RECOMPUTED exactly for this instance (thresholds,
                  power, null-ensemble reading bands), written to belenos_job_spec.json = the pre-registration.
@@ -25,6 +26,23 @@ SCOPE (honest): the 8-branch instance carries LAYER 1 (anomaly vs our own exact 
 germe candidates) end-to-end on real hardware + a REDUCED reading (3-bit branches -> the first-8-chars
 codec); the FULL 64-branch reading (K_min=6 chars) needs dim=64 modes or a CX-feasible gate route -- future.
 The interpretive corollary (axion_photonic_chip) holds: an anomaly here CANNOT be the m_V axion (16+ orders).
+
+AMENDMENTS (July 2026, committed BEFORE any run -- the 'pertinence' recul):
+  A1 (the hardware floor): on a real Clements mesh the layer-1 G-test vs the IDEAL null is EXPECTED to
+     reject for mundane reasons (fabrication/phase error ~% level) -- that rejection is NOT an anomaly. A
+     5th DECLARED config is added, the HARDWARE REFERENCE (canonical germe x the product unitary of the
+     DISTINCT declared seed 20260711, Z basis): same circuit class, its only role = measure the mundane
+     G-inflation. ESCALATION RULE (declared): a main config's rejection counts as 'layer-1 anomaly
+     (unmodeled)' ONLY if its G/dof >= R_ESC = 3.0 x the reference's; otherwise 'hardware-consistent'.
+     Honest: n=1 reference = an order-of-magnitude floor (mesh error is config-dependent); this extends
+     the anti-pareidolia philosophy from the reading layer to the anomaly layer.
+  A2 (the declared interpretation): OBT itself predicts the NULL here -- the priced channel inventory is
+     closed (gravitational ~53 orders [optimal_sensor_threshold]; m_V axion 16-18 orders [point E]; radion
+     quasi-static -> calibrated out; KK blockaded; chi-derivative = the m_V class), and encoding the
+     germe's FORM creates a REPLICA, not an entanglement (same-structure != entangled; no interaction
+     Hamiltonian beyond the priced channels). So the run tests [hardware fidelity to the declared unitary]
+     + [UNMODELED physics]; it does NOT test OBT: a null is NOT 'OBT survived a test', an anomaly is NOT
+     attributable to OBT's bulk (nor to m_V). Both declared before any token is spent.
 
 RUN:  python belenos_job.py                        -> builds + validates + local SLOS dry-run + writes the spec
       python belenos_job.py --token T [--platform qpu:belenos] [--shots 20000]   -> SUBMITS to the real QPU
@@ -53,6 +71,8 @@ INPUT_TEXT = "talk to the bulk"
 PHI0S = [0.42, 1.40]  # the corrected candidate + the legacy candidate
 ALPHA_3SIG = 0.00135
 M_REF = 400  # declared reading depth (post-selected events) for the null-ensemble bands
+SEED_REF = 20260711  # amendment A1: the hardware-reference's DISTINCT declared seed (the amendment date)
+R_ESC = 3.0  # amendment A1: escalation factor -- anomaly only if G/dof >= R_ESC x the reference's
 EUR_PER_S = 0.28
 SPEC_PATH = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "belenos_job_spec.json"
@@ -169,6 +189,26 @@ def main():
                 f"      config phi0={phi0} basis={basis}: H(null) = {shannon(p_null):.3f} bits"
             )
 
+    # AMENDMENT A1 -- the HARDWARE REFERENCE config (declared): same construction class, DISTINCT seed;
+    # its ONLY role = measure the hardware's mundane G-inflation (the layer-1 floor). NOT a germe candidate.
+    h_ref = demon_qc.sparse_syk(N_JOB, 2 * N_JOB, np.random.default_rng(SEED_REF))
+    u_prod_ref = product_unitary(h_ref, drb.T, reps=1)
+    assert np.allclose(
+        u_prod_ref @ u_prod_ref.conj().T, np.eye(DIM), atol=1e-9
+    ), "the reference product unitary is unitary"
+    u_ref = u_prod_ref @ prep_unitary(g042)  # canonical germe, Z basis
+    p_ref = np.abs(u_ref[:, 0]) ** 2
+    assert np.allclose(
+        p_ref, np.abs(u_prod_ref @ g042) ** 2, atol=1e-12
+    ), "reference mode distribution == its qubit-path null (the construction identity)"
+    ref_key = f"REF_seed={SEED_REF}_basis=Z"
+    configs[ref_key] = {"u": u_ref, "p": p_ref}
+    tv_ref = 0.5 * float(np.abs(p_ref - configs["phi0=0.42_basis=Z"]["p"]).sum())
+    print(
+        f"      config {ref_key} (A1 HARDWARE FLOOR): H(null) = {shannon(p_ref):.3f} bits;"
+        f" TV to the primary null = {tv_ref:.3f} (reported, not asserted)"
+    )
+
     # ===== [2] the gate-route feasibility (computed -- why mode-native) =====
     weights = [sum(1 for ch in str(lbl) if ch != "I") for lbl in h.paulis]
     cx = sum(2 * (w - 1) for w in weights)
@@ -234,6 +274,29 @@ def main():
             f"      => eps={eps:.2f}: {s if s else '>20000'} shots for 90% power at 3 sigma"
         )
 
+    # ===== [3b] the hardware floor -- amendment A1 (declared escalation rule) =====
+    print(
+        "\n[3b] THE HARDWARE FLOOR (amendment A1, declared): on real hardware the ideal-null G-test is"
+    )
+    print(
+        "      EXPECTED to reject for mundane reasons (Clements mesh fabrication/phase error ~% level);"
+    )
+    print(
+        f"      such a rejection is NOT an anomaly. The reference config ({ref_key}) measures that mundane"
+    )
+    print(
+        "      G-inflation on the SAME circuit class. ESCALATION RULE: 'layer-1 anomaly (unmodeled)' ONLY"
+    )
+    print(
+        f"      if a main config's G/dof >= {R_ESC:.1f} x the reference's G/dof; else 'hardware-consistent'."
+    )
+    print(
+        "      (n=1 reference sample -> an order-of-magnitude floor, mesh error is config-dependent; the"
+    )
+    print(
+        "      anti-pareidolia philosophy extended from the reading layer to the anomaly layer.)"
+    )
+
     # ===== [4] the reduced reading (declared) =====
     print(
         f"\n[4] THE REDUCED READING — P(input bit) = {p_in:.3f}; conditional over {int(mask.sum())} branches"
@@ -265,9 +328,10 @@ def main():
     # ===== [5] write the pre-registration spec =====
     # the declared layer-1 target at this instance: eps=0.05 if the grid reached it, else eps=0.10 (computed)
     l1 = shots_needed.get(0.05) or shots_needed.get(0.10) or 20000
-    total = 4 * max(
-        l1, int(M_REF / p_in)
-    )  # 4 configs, each covering layer1 + the reading
+    per_config = max(l1, int(M_REF / p_in))
+    total = (
+        len(configs) * per_config
+    )  # 5 configs (4 mains + the A1 hardware reference), layer1 + reading each
     spec = {
         "instance": {
             "n_qubits": N_JOB,
@@ -283,6 +347,12 @@ def main():
                 "test": "G vs the exact null, MC 3-sigma",
                 "thresholds_by_shots": thresholds,
                 "shots_for_90pct_power": {str(k): v for k, v in shots_needed.items()},
+                "hardware_floor_escalation": (
+                    "a main config's rejection counts as 'layer-1 anomaly (unmodeled)' ONLY if its G/dof"
+                    f" >= {R_ESC} x the reference config's G/dof ({ref_key}, at matched shots); otherwise"
+                    " it is classified 'hardware-consistent' (expected: ideal-null rejection from ~% mesh"
+                    " error is mundane)"
+                ),
             },
             "layer2": {
                 "M_ref": M_REF,
@@ -291,6 +361,53 @@ def main():
             },
             "corollary": "an anomaly CANNOT be attributed to the m_V axion (axion_photonic_chip: 16+ orders)",
         },
+        "layer1_hardware_floor": {
+            "reference_config": ref_key,
+            "reference_seed": SEED_REF,
+            "r_esc": R_ESC,
+            "role": (
+                "measure the hardware's mundane G-inflation on the same circuit class; n=1 reference ="
+                " an order-of-magnitude floor (mesh error is config-dependent), declared honestly"
+            ),
+        },
+        "declared_interpretation": {
+            "obt_prediction": (
+                "OBT itself predicts the NULL on this run: the priced channel inventory is closed"
+                " (gravitational ~53 orders below floor [optimal_sensor_threshold]; m_V axion 16-18 orders"
+                " [axion_photonic_chip]; radion quasi-static -> calibrated out; KK blockaded;"
+                " chi-derivative = the m_V class, no resonance/magnet). Encoding the germe's FORM creates"
+                " a REPLICA, not an entanglement (same-structure != entangled; no interaction Hamiltonian"
+                " beyond the priced channels)."
+            ),
+            "what_this_run_tests": (
+                "hardware fidelity to the declared unitary + unmodeled physics; it does NOT test OBT"
+            ),
+            "forbidden_readings": [
+                "a NULL is not 'OBT survived a test'",
+                "an anomaly is not attributable to OBT's bulk",
+                "an anomaly is not attributable to the m_V axion (the point-E corollary)",
+            ],
+        },
+        "amendments": [
+            {
+                "id": "A1",
+                "date": "2026-07-11",
+                "before_any_run": True,
+                "summary": (
+                    "hardware-reference config added (distinct declared seed, same circuit class);"
+                    " layer-1 escalation requires G/dof >= R_ESC x the reference's G/dof"
+                ),
+            },
+            {
+                "id": "A2",
+                "date": "2026-07-11",
+                "before_any_run": True,
+                "summary": (
+                    "declared interpretation: OBT predicts the null; the run tests hardware + unmodeled"
+                    " physics, NOT OBT; forbidden readings listed"
+                ),
+            },
+        ],
         "configs": {
             k: {
                 "unitary_re": v["u"].real.tolist(),
@@ -301,7 +418,8 @@ def main():
             for k, v in configs.items()
         },
         "budget": {
-            "shots_per_config": max(l1, int(M_REF / p_in)),
+            "shots_per_config": per_config,
+            "n_configs": len(configs),
             "total_shots": total,
             "eur_per_s": EUR_PER_S,
             "cost_eur_at_rate": {
@@ -316,10 +434,11 @@ def main():
     with open(SPEC_PATH, "w") as f:
         json.dump(spec, f)
     print(
-        f"\n[5] PRE-REGISTRATION WRITTEN -> {SPEC_PATH} (unitaries + nulls + rules + budget; the job IS this file)"
+        f"\n[5] PRE-REGISTRATION WRITTEN -> {SPEC_PATH} (unitaries + nulls + rules + A1/A2 amendments +"
+        " budget; the job IS this file)"
     )
     print(
-        f"      budget: {total:,} shots total (4 configs x {max(l1, int(M_REF/p_in)):,}); cost "
+        f"      budget: {total:,} shots total ({len(configs)} configs x {per_config:,}); cost "
         + ", ".join(
             f"{v} EUR @{k}/s" for k, v in spec["budget"]["cost_eur_at_rate"].items()
         )
@@ -345,7 +464,8 @@ def main():
                 p_sim, cfg["p"], atol=1e-9
             ), f"SLOS dry-run == the exact null ({name})"
         print(
-            "      local SLOS dry-run: ALL 4 configs reproduce the exact nulls (identity holds) ✓"
+            f"      local SLOS dry-run: ALL {len(configs)} configs (4 mains + the A1 reference) reproduce"
+            " the exact nulls (identity holds) ✓"
         )
         if args.token:
             print(f"      SUBMITTING to {args.platform} ({args.shots} shots/config)...")
@@ -375,10 +495,16 @@ def main():
         print("      perceval-quandela and re-run for the dry-run + submission).")
 
     print(
-        "\n[VERDICT] the belenos job is READY: 4 folded 8x8 unitaries (both germe candidates x Z/X), ONE"
+        "\n[VERDICT] the belenos job is READY: 5 folded 8x8 unitaries (both germe candidates x Z/X + the"
     )
     print(
-        "    photon, deterministic mode-native mesh; the exact nulls + 3-sigma rules + reading bands are"
+        "    A1 hardware-reference floor), ONE photon, deterministic mode-native mesh; exact nulls,"
+    )
+    print(
+        "    3-sigma rules, reading bands, the A1 escalation rule and the A2 declared interpretation"
+    )
+    print(
+        "    (OBT itself predicts the null -- the run tests hardware + unmodeled physics, NOT OBT) are"
     )
     print(
         "    pre-registered in the spec file; the gate route is quantitatively dead (why mode-native);"
