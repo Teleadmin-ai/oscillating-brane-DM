@@ -76,19 +76,19 @@ Our theory presents a paradigm shift in understanding cosmic dynamics:
 
 ## Cosmic Evolution
 
-The universe began with a violent birth, the brane appearing with quasi-Planckian tension. Through phases of inflation, reheating, and slow stabilization, it found its natural frequency and began its two-billion-year oscillation.
+The brane's tension is not a relic that cooled down — it is geometrically fixed at the QCD scale by the string-flux compactification. The motor stays frozen through inflation and the whole radiation era (conformal protection), ignites at the QCD transition, and the ξRφ attractor locks the two-billion-year period.
 
 <div class="section-marker" data-section="oscillations"></div>
 
 ## The Oscillating Universe
 
-Every two billion years, the cosmic membrane completes one full cycle. This oscillation creates the dark energy we observe, modulates structure formation, and leaves its fingerprint in the cosmic microwave background.
+Every two billion years, the cosmic membrane completes one full cycle. This oscillation creates the dark energy we observe, modulates structure formation, and subtly imprints cosmological observables.
 
 <div class="section-marker" data-section="predictions"></div>
 
 ## Future Tests
 
-The coming decade will be decisive. Euclid will measure the dark energy equation of state with unprecedented precision. DESI will map the power spectrum modulation. CMB large-scale analysis will reveal the ISW imprints of our fundamental oscillation.
+The coming decade will be decisive. DESI and Euclid will measure the dark-energy equation of state with unprecedented precision — the anchored stick-slip template forecasts a Decisive ΔBIC by Year 5 — and the theory's distinctive signature, the evolving MOND scale a₀(z) = cH(z)/2π, will be decided by Euclid/Rubin lensing and kinematics. (The low-ℓ ISW remains a weak, cosmic-variance-limited ~1σ consistency check.)
 
 <div class="section-marker" data-section="download"></div>
 

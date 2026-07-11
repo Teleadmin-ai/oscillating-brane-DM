@@ -71,7 +71,7 @@ Beyond masses, in vast cosmic voids, spacetime becomes "lazy"—it resists movem
 
 $$a_0 = \frac{cH_0}{2\pi} \approx 1.1 \times 10^{-10} \text{ m/s}^2$$
 
-This is the standard holographic acceleration scale — it emerges naturally from the brane's elastic coupling to the Hubble horizon, without any free parameter.
+What the framework derives is the **form** $a_0 \propto H_0$ — the brane's elastic coupling to the Hubble horizon (the Gibbons-Hawking frequency scale); the $O(1)$ coefficient $1/2\pi$ is coincidence-level and has prior art (Milgrom 1983; Verlinde 2016; McCulloch 2007) — see the MOND scope note in [Theory](/theory/). OBT's genuine novelty is the geometric derivation of the interpolating function $\mu(x)=x/\sqrt{1+x^2}$ and the **evolving** scale $a_0(z) = cH(z)/2\pi$, the distinctive near-term test (Euclid/Rubin).
 
 ### Local Anisotropies: Mapping Tension
 
@@ -88,7 +88,7 @@ Note: this $\sim 10^{-4}$ signal is **distinct from** the global $\sim 10^{-3}$ 
 Our framework preserves all successful predictions of $\Lambda$CDM while adding:
 1. Natural explanation for dark energy timing (QCD ignition)
 2. Mechanism for MOND-like effects at galactic scales (holographic acceleration $a_0 = cH_0/2\pi$)
-3. Testable oscillations in cosmological observables ($w(z)$, ISW, 21cm)
+3. Testable oscillations in cosmological observables ($w(z)$ — the anchored stick-slip template; the low-$\ell$ ISW and 21 cm are weaker, consistency-level checks: $\sim 1\sigma$ and order-of-magnitude respectively)
 4. Time-dependent structure growth reconciling DES and KiDS
 
 The brane paradigm unifies inflation, dark matter, and dark energy into a single geometric framework.
