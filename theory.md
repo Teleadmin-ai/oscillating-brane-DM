@@ -35,7 +35,7 @@ The entire universe vibrates as a single entity with a derived period T = 2.000 
 
 ### The V8.2 Hybrid Stick-Slip Motor Equation
 
-The formal framework for oscillating p-branes in Anti-de Sitter space was established by Clark, Love, Nitta, ter Veldhuis & Xiong (Phys. Rev. D 76, 105014, 2007), who constructed the $SO(2,p+N)$ invariant Nambu-Goto action for a 3-brane with codimension $N=1$. We extend this formalism with a non-linear stick-slip driving mechanism coupling macroscopic Cosmic Web forcing to microscopic ER=EPR quantum synchronization.
+The formal framework for oscillating p-branes in Anti-de Sitter space was established by Clark, Love, Nitta, ter Veldhuis & Xiong (Phys. Rev. D 76, 105014, 2007), who constructed the $SO(2,p+N)$ invariant Nambu-Goto action for a 3-brane with codimension $N=1$. We extend this formalism with a non-linear stick-slip driving mechanism coupling macroscopic Cosmic Web forcing to microscopic, thermodynamically mandated PBH dissipation (the ℓ=0 coherence being an inflationary causal fossil; ER=EPR an optional topological interpretation — see the Epistemological Firewall below).
 
 The brane position (radion field $\phi$) obeys the hybrid stick-slip ODE coupling macro and micro scales:
 
@@ -1755,7 +1755,7 @@ The formal one-loop ratio is $\sim 10^{-38}$; incorporating the QFT error budget
 
 ### Precision Cosmology Forecasts: Multi-Probe Fisher Matrix and Lattice QCD Tension Metrics
 
-**1. Sensitivity analysis and the dynamical system Jacobian.** The claim that $\tau_0^{1/3} \approx 257$ MeV — within $\sim 2\%$ of the lattice QCD confinement scale — must be elevated from a qualitative assertion to a quantitative metrological statement. This requires a formal **sensitivity analysis** of the V8.2 ODE: how do uncertainties in the fundamental parameters propagate into the observable predictions? The parameter triplet $\boldsymbol{\theta} = (\tau_0, T, L)$ — two free parameters plus the derived eigenvalue $T$ — determine, through the non-linear stick-slip dynamics, a vector of observables $\boldsymbol{\mathcal{O}} = (T_{att}, A_w, \Delta\chi^2_{ISW}, \Omega_{GW}(f_0), \sigma_8^{supp}, a_0)$ — the attractor period, the dark energy oscillation amplitude, the ISW resonance significance, the SGWB spectral density, the $S_8$ suppression factor, and the emergent MOND acceleration scale. The **Jacobian matrix** of the parameter-to-observable map:
+**1. Sensitivity analysis and the dynamical system Jacobian.** The claim that $\tau_0^{1/3} \approx 257$ MeV — within $\sim 2\%$ of the lattice QCD confinement scale — must be elevated from a qualitative assertion to a quantitative metrological statement. This requires a formal **sensitivity analysis** of the V8.2 ODE: how do uncertainties in the fundamental parameters propagate into the observable predictions? The parameter triplet $\boldsymbol{\theta} = (\tau_0, T, L)$ — the two fundamental parameters of the 4-continuous-EFT matrix plus the derived eigenvalue $T$ — determine, through the non-linear stick-slip dynamics, a vector of observables $\boldsymbol{\mathcal{O}} = (T_{att}, A_w, \Delta\chi^2_{ISW}, \Omega_{GW}(f_0), \sigma_8^{supp}, a_0)$ — the attractor period, the dark energy oscillation amplitude, the ISW modulation significance, the SGWB spectral density, the $S_8$ suppression factor, and the emergent MOND acceleration scale. The **Jacobian matrix** of the parameter-to-observable map:
 
 $$\mathcal{J}_{ij} = \frac{\partial \mathcal{O}_i}{\partial \theta_j}\bigg\vert_{\boldsymbol{\theta}_0}$$
 
@@ -2361,8 +2361,8 @@ OBT V8.2 has not yet been integrated into a full Boltzmann solver (CLASS or CAMB
 A rigorous epistemological evaluation of a cosmological model requires computing its true parametric cost. The Oscillating Brane Theory addresses 30 cosmological phenomena with **4 continuous EFT parameters** ($\tau_0$, $L$, $D$, $f_{osc}$), one topological integer ($N = 6$), and **zero new particles**:
 
 - **Tier 1 — exact derivations**: the emergent-MOND geometric derivations — $\mu(x) = x/\sqrt{1+x^2}$ from the Gauss-Codazzi quadrature (verified) and $a_0 = cH_0/2\pi$ (prior art: Milgrom/Verlinde) — for galaxy rotation curves (SPARC RMS 29.3 km/s, $\mu(x)$ form rigorously derived). NOTE (audit May 2026): the DESI $w(z)$, $S_8$, and wide-binary (Chae 2025) entries previously listed here are DEMOTED — $w(z)$/$S_8$ to T2 (waveform/amplitude-dependent, growth sign a free bulk BC), wide binaries to T2 (the anomaly is observationally CONTESTED — Pittordis-Sutherland/Banik find Newtonian — and the $\gamma_g(u)$ boost is MOND's, not OBT-distinctive)
-- **13 formal analytical frameworks (Tier 2)**: eROSITA $\gamma(M)$ (semi-analytic Tinker mapping), ISW resonance (semi-analytic, CLASS/CAMB pending), neutrino masses, CMB birefringence, JWST, early SMBHs, $\Lambda$, NANOGrav, DF2/DF4, Amaterasu, Big Ring/Giant Arc, naturalness, DM invisibility — closed-form derivations with quantitative predictions
-- **13 exploratory mechanistic perspectives (Tier 3)**: Lithium-7 (BBN network pending), QCD baryogenesis (Boltzmann transport pending), Hubble tension, cosmic dipole, KBC Void, ORCs, Planet 9, flyby anomaly, etc. — qualitative pathways requiring future N-body/Boltzmann simulations
+- **Formal analytical frameworks (Tier 2)**: ISW modulation (semi-analytic, CLASS/CAMB pending), neutrino masses, CMB birefringence, JWST, early SMBHs, $\Lambda$, NANOGrav, DF2/DF4, Amaterasu, Big Ring/Giant Arc, naturalness, DM invisibility — closed-form derivations with quantitative predictions
+- **Exploratory mechanistic perspectives (Tier 3)**: eROSITA $\gamma(M)$ (semi-analytic Tinker mapping — demoted from T2, audit May 2026: not a discriminant), Lithium-7 (BBN network pending), QCD baryogenesis (Boltzmann transport pending), Hubble tension, cosmic dipole, KBC Void, ORCs, Planet 9, flyby anomaly, etc. — qualitative pathways requiring future N-body/Boltzmann simulations
 
 All other quantities are derived consequences:
 $T = 2.000$ Gyr (observationally anchored eigenvalue), $\delta_{bulk} = 1.36$ rad (BKM theorem), $a_0 = cH_0/(2\pi)$ (Gibbons-Hawking), $M_{crit} = Lc^2/(2G)$, $A_w = 0.003$ (ODE output).
@@ -2402,7 +2402,7 @@ The asteroid-mass PBH window (10⁻¹⁴ to 10⁻¹⁰ M☉) is often claimed to
 
 **3. Brane-proximal clustering:** PBHs serving as topological capillaries are structurally coupled to the brane, not distributed as an isotropic gas following a smooth NFW profile. Their clustering reduces the effective lensing optical depth compared to standard assumptions.
 
-These micro-PBHs (~1% of dark matter by mass, $f_{PBH} = 0.01$) act as **topological capillaries** and **quantum synchronization nodes** (ER=EPR). Like tent pegs anchoring a vast canopy, 1% of the mass as PBHs suffices to tension the entire membrane, with the remaining 99% of gravitational effects arising from the projected Weyl tensor $E_{\mu\nu}$ — the geometry of the brane, not particles.
+These micro-PBHs (~1% of dark matter by mass, $f_{PBH} = 0.01$) act as **topological capillaries** and **local thermodynamic dissipation nodes** (their mutual entanglement admitting the optional ER=EPR topological interpretation). Like tent pegs anchoring a vast canopy, 1% of the mass as PBHs suffices to tension the entire membrane, with the remaining 99% of gravitational effects arising from the projected Weyl tensor $E_{\mu\nu}$ — the geometry of the brane, not particles.
 
 ### Perforation Hierarchy: Gregory-Laflamme Instability and the Critical Mass
 
