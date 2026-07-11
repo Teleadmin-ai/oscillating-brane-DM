@@ -14,7 +14,7 @@ I am a neuroatypical entrepreneur who has been building technology for 26 years.
 
 ### My Neurodivergent Brain
 
-After 50 years of compensating without understanding why, I self-identified in 2025 a complex neurodevelopmental profile: **ADHD + ASD Level 1 + HPI** (High Intellectual Potential) — a condition known as "Triple Exceptionality" where each trait masks the others. In 2026 the self-identification was confirmed: I was **formally diagnosed AuDHD** (autism + ADHD) abroad, and the diagnosis was subsequently **recognized by a psychiatrist in Paris** — after the multi-year waiting lists and systemic under-diagnosis of high-functioning adult profiles that make neurodevelopmental evaluation in France notoriously difficult.
+After 50 years of compensating without understanding why, I self-identified in 2025 a complex neurodevelopmental profile: **ADHD + ASD Level 1 + HPI** (High Intellectual Potential) — a condition known as "Triple Exceptionality" where each trait masks the others. In 2026 the self-identification was confirmed: I was **formally diagnosed AuDHD** (autism + ADHD) by **Dr. Paats** (Paraguay), and the diagnosis was subsequently **recognized by the psychiatrist Dr. Lenormand in Paris** — after the multi-year waiting lists and systemic under-diagnosis of high-functioning adult profiles that make neurodevelopmental evaluation in France notoriously difficult.
 
 What this means for my research:
 
