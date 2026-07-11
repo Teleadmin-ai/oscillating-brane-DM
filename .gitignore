@@ -33,6 +33,7 @@ build/
 *.pdf
 !oscillating_brane_theory_latest.pdf
 !oscillating_brane_theory_*.pdf
+!explorations/qubit_sensor/mv_axion_note.pdf
 
 # IDEs
 .vscode/
