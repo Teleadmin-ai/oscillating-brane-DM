@@ -6,7 +6,7 @@ permalink: /refutation/
 
 # Open Scientific Peer Review
 
-The Oscillating Brane Cosmology V8.2 invites rigorous scientific scrutiny. This theory addresses 30 cosmological phenomena — 4 exact mathematical resolutions (Tier 1), 13 formal analytical frameworks (Tier 2), and 13 exploratory mechanistic perspectives (Tier 3) — extraordinary claims demand extraordinary evidence, and we welcome challenges.
+The Oscillating Brane Cosmology V8.2 invites rigorous scientific scrutiny. This theory addresses 30 cosmological phenomena — 2 exact mathematical resolutions (Tier 1), 14 formal analytical frameworks (Tier 2), and 14 exploratory mechanistic perspectives (Tier 3) — extraordinary claims demand extraordinary evidence, and we welcome challenges.
 
 ## How It Works
 

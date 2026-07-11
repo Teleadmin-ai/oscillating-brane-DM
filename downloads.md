@@ -8,7 +8,7 @@ permalink: /downloads/
 
 ## White Paper V8.2 (7 pages)
 
-Mathematically rigorous edition with Israel junction conditions, dynamical attractor, and Gregory-Laflamme perforation hierarchy. Addresses thirty-one cosmological anomalies (the paper's March 2026 snapshot count; the continuously-audited Full Theory below uses the current tiered set of 30 — 4 exact + 13 analytical + 13 exploratory). Ideal for sharing.
+Mathematically rigorous edition with Israel junction conditions, dynamical attractor, and Gregory-Laflamme perforation hierarchy. Addresses thirty-one cosmological anomalies (the paper's March 2026 snapshot count; the continuously-audited Full Theory below uses the current tiered set of 30 — 2 exact + 14 analytical + 14 exploratory). Ideal for sharing.
 
 <div style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(255,51,102,0.1), rgba(0,255,204,0.1)); border-radius: 10px; border: 2px solid #00ffcc;">
   <h4>The Cosmic Yoyo: Stick-Slip Brane Motor</h4>
