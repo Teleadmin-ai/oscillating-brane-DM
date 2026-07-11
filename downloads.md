@@ -8,7 +8,7 @@ permalink: /downloads/
 
 ## White Paper V8.2 (7 pages)
 
-Mathematically rigorous edition with Israel junction conditions, dynamical attractor, and Gregory-Laflamme perforation hierarchy. Resolves thirty-one cosmological anomalies. Ideal for sharing.
+Mathematically rigorous edition with Israel junction conditions, dynamical attractor, and Gregory-Laflamme perforation hierarchy. Addresses thirty-one cosmological anomalies (the paper's March 2026 snapshot count; the continuously-audited Full Theory below uses the current tiered set of 30 — 4 exact + 13 analytical + 13 exploratory). Ideal for sharing.
 
 <div style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, rgba(255,51,102,0.1), rgba(0,255,204,0.1)); border-radius: 10px; border: 2px solid #00ffcc;">
   <h4>The Cosmic Yoyo: Stick-Slip Brane Motor</h4>
@@ -27,7 +27,7 @@ Mathematically rigorous edition with Israel junction conditions, dynamical attra
 
 ## Complete Theory Documentation
 
-### 📄 Full PDF Version (~78 pages)
+### 📄 Full PDF Version (~230 pages)
 
 The complete theory documentation including all mathematical derivations, observational confrontations, and computational validation.
 
@@ -55,7 +55,7 @@ All computational tools are available in the [GitHub repository](https://github.
 
 ### 📊 Data Files
 
-- **MCMC Posterior Samples**: Available in `/data/posterior_v4.npz`
+- **Numerical results**: MCMC/PBH/5D-toy outputs in the `/data/` directory
 - **Generated Figures**: All plots in `/plots/` directory
 
 ## Quick Access Links
@@ -87,10 +87,10 @@ All computational tools are available in the [GitHub repository](https://github.
 If you use this work in your research, please cite:
 
 ```bibtex
-@misc{provencal2025oscillating,
+@misc{provencal2026oscillating,
   title={Oscillating Brane Cosmology: The Universe as a Vibrating Membrane},
   author={Provencal, Romain},
-  year={2025},
+  year={2026},
   url={https://higgs-cosmology.com}
 }
 ```

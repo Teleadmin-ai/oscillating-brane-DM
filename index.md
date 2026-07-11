@@ -95,6 +95,6 @@ The coming decade will be decisive. DESI and Euclid will measure the dark-energy
 ## Download the Theory
 
 - **[White Paper (7 pages)](/cosmic_yoyo_v5_holographic.pdf)** — V8.2 Hybrid Topology Edition
-- **[Full Theory (~100+ pages)](/oscillating_brane_theory_latest.pdf)** — Complete documentation with computational validation
+- **[Full Theory (~230 pages)](/oscillating_brane_theory_latest.pdf)** — Complete documentation with computational validation
 - **[All Downloads](/downloads/)** — Scripts, data, and additional resources
 

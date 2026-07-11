@@ -34,6 +34,7 @@ A 6-part vulgarization series explaining the Oscillating Brane Cosmology V8.2, a
 <div style="margin: 30px 0;">
 <h3>Part 3 — The eROSITA Illusion (γ = 1.19)</h3>
 <p>The eROSITA satellite detected an abnormal growth of galaxy clusters, contradicting Einstein. This is actually a cosmic optical illusion: the gravitational force of our universe oscillates. Currently, our membrane is stretching, which weakens gravity and slows down galaxy formation, thereby fooling classical static calculations.</p>
+<p style="font-size: 0.85em; color: #cc8;">⚠️ Audit note (May 2026): the γ(M) mechanism shown here has since been demoted to an exploratory perspective (Tier 3) — eROSITA's own cosmology (S₈ ≈ 0.86, cluster-abundant) is in tension with the suppression this mechanism requires. See <a href="/discoveries/">Discoveries §6.2</a>.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/8MuNfg1wAh0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
@@ -66,6 +67,16 @@ A 6-part vulgarization series explaining the Oscillating Brane Cosmology V8.2, a
 <hr style="border-color: #333; margin: 50px 0;">
 
 ## Prediction Series: The 3 Crash Tests
+
+> **⚠️ Audit status (May–June 2026).** These videos are kept as published; since their release, the
+> internal audits revised two of the three framings. **qBOUNCE:** the experiment has never reported an
+> anomaly, the "×55 amplification" was a category error, and the predicted level shift
+> (δE/E ~ 10⁻⁸–10⁻⁶) is far below instrument sensitivity — qBOUNCE is now a *consistency check*, not a
+> crash test. **SKA:** the "5.46 mK / 5.5σ definitive" figure came from a flawed mechanism; the
+> corrected forecast is an order-of-magnitude, amplitude-uncertain test (~0.5–8 mK, possibly
+> undetectable). The theory's distinctive near-term test is now the **evolving MOND scale
+> a₀(z) = cH(z)/2π** (Euclid/Rubin) — see [Predictions](/predictions/). The Amaterasu/NANOGrav video's
+> mechanism remains part of the current framework (Tier 2).
 
 Three detailed deep-dives into the key predictions that can confirm or kill the theory. Each prediction is a make-or-break observational test.
 
@@ -116,6 +127,7 @@ Three detailed deep-dives into the key predictions that can confirm or kill the 
 <div style="margin: 30px 0;">
 <h3>Partie 3 — L'Illusion eROSITA (γ = 1.19)</h3>
 <p>Le satellite eROSITA a détecté une croissance anormale des amas de galaxies, contredisant Einstein. C'est en fait une illusion d'optique cosmique : la force de gravité de notre univers oscille. Actuellement, notre membrane s'étire, ce qui affaiblit la gravité et ralentit la formation des galaxies, trompant ainsi les calculs statiques classiques.</p>
+<p style="font-size: 0.85em; color: #cc8;">⚠️ Note d'audit (mai 2026) : le mécanisme γ(M) présenté ici a depuis été rétrogradé en perspective exploratoire (Tier 3) — la cosmologie d'eROSITA elle-même (S₈ ≈ 0,86, riche en amas) est en tension avec la suppression que ce mécanisme requiert. Voir <a href="/discoveries/">Discoveries §6.2</a>.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 1px solid #333;">
 <iframe src="https://www.youtube.com/embed/xkgPrxNwWxg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
 </div>
@@ -148,6 +160,16 @@ Three detailed deep-dives into the key predictions that can confirm or kill the 
 <hr style="border-color: #333; margin: 50px 0;">
 
 ## Série Prédictions : Les 3 Crash Tests
+
+> **⚠️ Statut d'audit (mai–juin 2026).** Ces vidéos sont conservées telles que publiées ; depuis leur
+> sortie, les audits internes ont révisé deux des trois cadrages. **qBOUNCE :** l'expérience n'a jamais
+> rapporté d'anomalie, l'« amplification ×55 » était une erreur de catégorie, et le décalage prédit
+> (δE/E ~ 10⁻⁸–10⁻⁶) est très en dessous de la sensibilité instrumentale — qBOUNCE est désormais un
+> *test de cohérence*, pas un crash test. **SKA :** le « 5,46 mK / 5,5σ définitif » venait d'un
+> mécanisme erroné ; la prévision corrigée est un test en ordre de grandeur, à l'amplitude incertaine
+> (~0,5–8 mK, possiblement indétectable). Le test distinctif à court terme est désormais **l'échelle
+> MOND évolutive a₀(z) = cH(z)/2π** (Euclid/Rubin) — voir [Prédictions](/predictions/). Le mécanisme de
+> la vidéo Amaterasu/NANOGrav reste dans le cadre actuel (Tier 2).
 
 Trois plongées détaillées dans les prédictions clés qui peuvent confirmer ou tuer la théorie. Chaque prédiction est un test observationnel décisif.
 

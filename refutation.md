@@ -6,7 +6,7 @@ permalink: /refutation/
 
 # Open Scientific Peer Review
 
-The Oscillating Brane Cosmology V8.2 invites rigorous scientific scrutiny. This theory addresses 31 cosmological phenomena — 5 exact mathematical resolutions, 15 formal analytical frameworks, and 11 exploratory mechanistic perspectives — extraordinary claims demand extraordinary evidence, and we welcome challenges.
+The Oscillating Brane Cosmology V8.2 invites rigorous scientific scrutiny. This theory addresses 30 cosmological phenomena — 4 exact mathematical resolutions (Tier 1), 13 formal analytical frameworks (Tier 2), and 13 exploratory mechanistic perspectives (Tier 3) — extraordinary claims demand extraordinary evidence, and we welcome challenges.
 
 ## How It Works
 
@@ -94,7 +94,7 @@ All perspectives welcome — skeptics make the best reviewers. The principal inv
 
 ### Why Moderate?
 
-- Your name publicly associated with a theory addressing 31 cosmological phenomena
+- Your name publicly associated with a theory addressing 30 cosmological phenomena
 - Direct influence on the theory's scientific governance
 - Co-authorship opportunity on future publications if your contributions are substantial
 - Be part of a new model of open, transparent physics research
@@ -106,7 +106,7 @@ All perspectives welcome — skeptics make the best reviewers. The principal inv
 - **If we refute your argument, we show our work** — transparently
 - **All exchanges remain public** — science is not done behind closed doors
 
-The theory has been validated numerically (Bayesian evidence $\Delta\ln K = 4.13 \pm 0.07$, nested sampling with dynesty). But no theory is sacred. If you can demonstrate a fatal flaw, we want to know.
+The theory has been validated numerically (Bayesian evidence $\Delta\ln K \approx 5.8$, Decisive, prior-independent after the period's promotion to a derived eigenvalue; nested sampling with dynesty — the original 3-parameter analysis gave 2.8–4.13 across prior choices; plus $\Delta$BIC = −6.4, Strong, on DESI DR2). But no theory is sacred. If you can demonstrate a fatal flaw, we want to know.
 
 > *"The beauty of a theory is measured as much by its elegance as by its vulnerability to facts."*
 
