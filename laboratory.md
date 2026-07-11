@@ -134,7 +134,7 @@ For a realistic levitated silica nanosphere ($R = 100$ nm $\approx 0.5\,L$, mass
 3. **$O(1)$ factor — kernel- *and* displacement-dependent.** The exact enhancement ($\approx$5 at 100 nm) depends on the unresolved RS crossover at the $\sim$30% level *and* on the superposition displacement $\Delta x$: scanning $\eta$ vs $\Delta x$ at $R = 0.5\,L$ gives $\eta \approx 3$–7 across $\Delta x = 0.1$–$2R$ (always $>1$, a factor-$\sim$2 spread). Only the $O(1)$ *size* and the size-scan *shape* (the turn-up below $L$) are robust — not the exact factor.
 4. **Scale-distinctive, not mechanism-unique.** A turn-up below $L$ tests the *existence of an extra dimension at $0.2\,\mu$m* (OBT's specific scale); the 5D-gravity mechanism itself is generic to braneworlds. It is, however, cleanly distinct from collapse models with no characteristic length at $0.2\,\mu$m.
 
-This re-frames the laboratory program: the static Yukawa level shift (§1) is unobservable ($\delta E/E \sim 10^{-8}$), but the *dynamical* gravitational-collapse channel is an $O(1)$ effect with a distinctive scale — the most promising terrestrial avenue, alongside SKA 21cm among cosmological probes, for a genuinely falsifiable OBT signature once the technology matures.
+This re-frames the laboratory program: the static Yukawa level shift (§1) is unobservable ($\delta E/E \sim 10^{-8}$), but the *dynamical* gravitational-collapse channel is an $O(1)$ effect with a distinctive scale — the most promising terrestrial avenue, alongside the evolving MOND scale $a_0(z) = cH(z)/2\pi$ (Euclid/Rubin) among cosmological probes, for a genuinely falsifiable OBT signature once the technology matures.
 
 ### Long-term Theoretical Perspectives: 5D Information Channels
 
@@ -148,13 +148,13 @@ Every parameter ($G_N$, $m_\text{KK}$, $L$, $\alpha$) is already fixed by cosmol
 
 ### A Call to Experimentalists
 
-The **qBOUNCE team at ILL Grenoble** (Hartmut Abele, Tobias Jenke) is uniquely positioned to validate both the extra dimension and the quantum bypass architecture. Their experiment already operates at the correct spatial scale ($\sim 1\,\mu$m resolution, targeting $0.2\,\mu$m with qBOUNCE-II). A confirmed exponential amplification of the Robin parameter $\lambda$ as resolution approaches $L$ would simultaneously:
+The **qBOUNCE team at ILL Grenoble** (Hartmut Abele, Tobias Jenke) and the levitated-optomechanics community are natural partners for physics at exactly this spatial scale. Honesty about the division of labor (§1): improving qBOUNCE's *resolution* does **not** amplify the sub-micron Yukawa footprint — the overlap is geometrically fixed (the category-error note above) — so the GRS program's role is precision consistency limits, not discovery. The discovery-class opportunity is the *dynamical* channel of §2: a **size-scan of gravitational-collapse rates across $R \sim L$** in levitated optomechanics, where OBT predicts an $O(1)$, scale-pinned enhancement. A confirmed turn-up of the collapse rate below $R \approx 0.2\,\mu$m would:
 
-1. **Validate the extra dimension** at $L = 0.2\,\mu$m (first direct detection)
-2. **Confirm the Yukawa potential** that underpins the quantum bypass mechanism
-3. **Open the door** to the 5D Topological Quantum Computer — a machine that reads quantum states through their gravitational shadow in the bulk
+1. **Point to an extra dimension** at OBT's scale $L$ (with the braneworld-generic caveat of §2)
+2. **Confirm objective gravitational collapse** (Penrose-Diósi) in the same stroke
+3. **Open** the long-term 5D readout horizon sketched above
 
-This is a collaboration opportunity where cosmological theory meets terrestrial experiment. The qBOUNCE-II upgrade could deliver the most profound experimental result since the discovery of gravitational waves.
+This is a collaboration opportunity where cosmological theory meets terrestrial experiment — stated with the honest sensitivities (§2, caveat 2) rather than promised amplifications.
 
 ## Summary
 

@@ -13,17 +13,17 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 ```
 2024    ✅ DESI detects dark energy evolution (4σ)
    |
-2025    ✅ S₈ tension resolved (time-dependent growth suppression)
+2025    ✅ S₈ tension addressed (time-dependent suppression ~4–10%, shear-low side)
    |    ⏳ Euclid first data release
    |    ⏳ qBOUNCE / nanoscale optomechanics (sub-micron gravity)
    |
 2026    ⏳ CMB low-ℓ ISW (consistency check, ~1σ)
    |    → cosmic-variance-capped; no 6σ claim (see ISW section)
    |
-2027    DESI full survey → power spectrum modulation
+2027    DESI full survey → anchored w(z) template test (ΔBIC)
    |    SKA-Low → 21cm reionization-history modulation (plausible, amplitude-uncertain)
    |
-2030    CMB-S4 → definitive ISW signature
+2030    CMB-S4 → ISW consistency check (~1σ ceiling, not definitive)
    |    Vera Rubin/LSST → large-scale structural anisotropies
    ↓
 ```
@@ -32,10 +32,10 @@ The oscillating brane theory V8.2 makes specific, testable predictions that dist
 
 **✅ Already Observed:**
 - **DESI 2024-2026**: Dark energy evolves with 4σ significance — exactly matching our oscillating w(z) with φ₀ = π/2
-- **S₈ tension**: Time-dependent growth suppression via oscillating G_eff(t) bridges DES/KiDS gap
+- **S₈ tension**: Time-dependent growth suppression via oscillating G_eff(t), aligned with the cosmic-shear (DES/KiDS) side of the bifurcated tension
 
 **⏳ Imminent Tests:**
-- **Euclid 2025**: Will measure w(z) to 3% precision, detecting our oscillations at >5σ
+- **Euclid 2025+**: sharpens w(z); combined with DESI Year 5 the anchored stick-slip template forecast reaches Decisive (ΔBIC ≈ −22) — a template-level discrimination, not a per-bin 5σ amplitude detection
 - **qBOUNCE (ILL) + levitated optomechanics**: Ultra-cold quantum neutrons and nanosphere experiments — sub-micron gravity test at L = 0.2 μm, bypassing Casimir background
 - **CMB low-ℓ ISW**: OBT predicts a sub-dominant, cosmic-variance-limited ISW modulation — consistent with (deficit-trending) Planck low-ℓ at the ~1σ level, not a falsifiable resonance
 
@@ -49,9 +49,9 @@ The membrane oscillation creates a time-varying equation of state:
 - **Period**: T = 2.000 ± 0.003 Gyr (chronodynamic eigenvalue, N=6 mode)
 - **Phase**: Maxima at $z = 0$ (today), $z \approx 0.16$, $z \approx 0.36$ (periodic)
 
-**Detection**: Euclid will measure w(z) to 3% precision, sufficient to detect our predicted oscillations at >5σ significance.
+**Detection**: template-level — the chronologically anchored stick-slip w(z) (k = 1) is preferred over CPL at ΔBIC = −6.4 on DESI DR2 *today*, with the Year-5 forecast ΔBIC ≈ −22 (Decisive). The amplitude A_w = 0.003 itself is far below any per-bin 5σ detection; the discriminating power lives in the locked template.
 
-### 2. ISW Resonance in the CMB
+### 2. ISW Modulation in the CMB (a ~1σ consistency check)
 
 The membrane oscillation creates a unique signature in the Cosmic Microwave Background through the Integrated Sachs-Wolfe effect:
 
@@ -74,17 +74,17 @@ The membrane oscillation creates a unique signature in the Cosmic Microwave Back
 </div>
 
 **Detection Method**: Our 2 Gyr membrane oscillation (1.6 × 10⁻¹⁷ Hz) manifests through:
-- **ISW effect**: Creates resonance in CMB large-scale anisotropies at ℓ = 10-20 (shown above)
+- **ISW effect**: a weak modulation of the CMB large-scale anisotropies at ℓ = 10-20 (~1σ, cosmic-variance-capped; shown above)
 - **Matter power spectrum**: Periodic modulation detectable by galaxy surveys
 - **Growth history**: Time-varying structure formation rate measurable by weak lensing
 
-The oscillation's imprint appears in the CMB through the Integrated Sachs-Wolfe (ISW) effect, creating the exact pattern observed by Planck. DESI and Euclid measure the corresponding modulation in the matter power spectrum.
+The oscillation's ISW imprint is *consistent with* the (deficit-trending) Planck low-ℓ sky at the ~1σ level — a consistency check, not a detected pattern. DESI and Euclid probe the corresponding expansion-history template.
 
 ### 3. Structure Growth Suppression (Time-Dependent Gravitational Oscillation)
 
 <div style="max-width: 100%; margin: 20px 0;">
 <img src="/plots/s8_tension_resolution.png" alt="S8 Tension Resolution" style="width: 100%; height: auto;">
-<p><em>Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (4.50% slower, exact ODE); CMB/KiDS extrapolations from earlier phases remain quasi-standard.</em></p>
+<p><em>Figure 4: Time-dependent growth suppression. Late-Universe structures (DES, z < 0.5) grew during the current weakened-gravity phase (~4–10% slower, waveform-dependent); CMB/KiDS extrapolations from earlier phases remain quasi-standard.</em></p>
 </div>
 
 The brane oscillation modulates the effective gravitational coupling in time:
@@ -172,7 +172,7 @@ When the membrane reaches maximum extension, the brane oscillation reverses. Thi
 - **Main peak**: $f_0 = 1/T \approx 1.6 \times 10^{-17}$ Hz
 - **Echo**: $2f_0$ (reversal harmonic)
 
-This 2 Gyr oscillation is far too slow for direct gravitational wave detection. Instead, its imprints appear in the CMB large-scale anisotropies through the Integrated Sachs-Wolfe (ISW) effect — a cosmic fingerprint of our universe-membrane.
+This 2 Gyr oscillation is far too slow for direct gravitational wave detection. Instead, a weak (~1σ, cosmic-variance-limited) imprint appears in the CMB large-scale anisotropies through the ISW effect (§2).
 
 ## Experimental Tests
 
@@ -188,9 +188,8 @@ This 2 Gyr oscillation is far too slow for direct gravitational wave detection. 
 
 | Mission | Target Signature | Refutation Threshold |
 |---------|-----------------|---------------------|
-| Euclid | $w(z)$ sinusoidal $A \geq 3\times 10^{-3}$ | Signal $< 5\sigma$ |
-| DESI Full | $\Delta P/P = 0.5\%$ at $k_0$ | Smooth spectrum |
-| CMB-S4 | ISW oscillations | No large-scale pattern |
+| Euclid + DESI Y5 | anchored stick-slip $w(z)$ template ($k=1$) vs CPL | forecast ΔBIC ≈ −22 in OBT's favor; an opposite-sign verdict refutes the anchoring |
+| CMB-S4 | ISW consistency check (~1σ ceiling) | — (not a falsification channel; audit May 2026) |
 | SKA-Low | 21cm reionization signal ~0.5–8 mK (amplitude-unpinned) | No imprint at the ignition-pinned amplitude |
 | Roman/HSC | Microlensing cliff at $M_{crit} \approx 10^{-10} M_\odot$ | Smooth event rate below $10^{-11} M_\odot$ |
 | Fermi/SVOM/AMEGO-X | GRB femtolensing fringes ($M \sim 10^{-12} M_\odot$) *(contested: finite-source washout — see Pillar C)* | Zero spectral oscillations in 0.1-1 MeV |
@@ -338,7 +337,7 @@ $$w(z) \approx -1 + 0.003\left(\frac{\tau_0}{7 \times 10^{19}}\right)\sin\!\left
 
 The Jacobian elements: $\partial w/\partial\tau_0 \propto A_w/\tau_0^{fid}$ (amplitude scaling — how hard the brane swings), $\partial w/\partial T \propto -A_w \times (2\pi t_{lb}/T^2)\cos(\cdots)$ (phase chrono — extreme sensitivity at the LRG3 cliff where the cosine changes sign), $\partial w/\partial L \approx 0$ (dark energy is insensitive to the extra dimension size at leading order).
 
-**(b) ISW resonance** (Planck, compressed likelihood):
+**(b) ISW modulation** (Planck, compressed likelihood — the *pre-audit* weight; post-audit the realistic ISW significance is ~1σ (§2), and the headline $T$ constraint below is DESI-dominated, so it stands):
 
 $$\Delta\chi^2_{ISW} \approx -15.4\left(\frac{\tau_0}{7 \times 10^{19}}\right)\left(\frac{A_w}{3 \times 10^{-3}}\right), \quad \sigma_{\Delta\chi^2} = 4.5$$
 
@@ -408,15 +407,15 @@ The universe has been singing its two-billion-year song all along. Finally, we'r
 
 Our final vision: the cosmos is not an inert theater but a living organism:
 
-- **Birth**: Big Bang, maximum tension, first breath
-- **Childhood**: Relaxation, frequency tuning (0-1 Gyr)
+- **Birth**: Big Bang — the tension already flux-fixed, the motor conformally frozen (first breath held)
+- **Childhood**: QCD ignition and attractor locking of the period (first ~1 Gyr)
 - **Maturity**: Established oscillations (1-50 Gyr, we are here)
 - **Old age**: Progressive damping (50-100 Gyr)
 - **Silence**: The strings relax, space forgets distance (>100 Gyr)
 
 ## Epilogue: The Promise of Revelation
 
-Version 8.2 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the ER=EPR-entangled PBH network provides quantum synchronization (the metronome). Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the OBT-distinctive imminent test is the evolving MOND scale $a_0(z)$ — with the SKA 21cm reionization signal a plausible order-of-magnitude probe.
+Version 8.2 presents a hybrid theory grounded in 5D GR and QFT. The Cosmic Web provides macroscopic forcing (the muscle) while the thermodynamically mandated micro-PBH network provides local dissipation (the metronome) — the ℓ=0 coherence being an inflationary causal fossil, with ER=EPR an optional topological interpretation. Conformal symmetry protects BBN, the QCD trace anomaly ignites the motor, radiative damping ensures stability, temporal gravitational oscillation gives time-dependent $S_8$ suppression, and the OBT-distinctive imminent test is the evolving MOND scale $a_0(z)$ — with the SKA 21cm reionization signal a plausible order-of-magnitude probe.
 
 In the coming years, the universe will answer us. Giant telescopes and pulsar networks will listen to the deep whisper of the cosmos, seeking the two-billion-year melody. They will find either confirmation of a revolutionary vision or the silence that sends us back to our equations.
 
