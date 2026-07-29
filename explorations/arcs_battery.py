@@ -1,5 +1,14 @@
 """THE N-ARCS BATTERY — monster [62b7f086] 'arc-cores vs hydrostatic-calibrated Weyl' vs 9 CLASH lenses.
 
+[!] FOLLOW-UP (2026-07-29): the battery's two measurements STAND (the MONSTER-arm saturation
+    kappa = 0.70 +/- 0.06 and the mass-anchor relocation M5(M-T)/M5(lensing) = 0.59), but the
+    monster they support is DOWNGRADED by `alpha_nt_budget.py` + `card22_lensing_refit.py`
+    (see ALPHA_NT_AND_REFIT_NOTE.md): (i) on PUBLISHED lensing masses the anchor gap is 0.65, and
+    0.75 after de-biasing the M-T bridge on X-COP's own data -> the non-thermal patch is short by
+    x4-6 on the card's own sample; (ii) the SPHERICAL published-lensing NFW itself only reaches
+    kappa = 0.79 at the observed Einstein radii, so the arc deficit is SHARED with the standard
+    model (ellipticity/substructure), and OBT-proper = 0.93 = no OBT-proper deficit.
+
 MODE CHERCHEUR (Romain: 'logue le monstre et lance la batterie N-arcs'). Sanctioned big-compute
 (monster->card rule): validate the monster's signature across systems. AXIOM: OBT true -> the arcs
 exist -> the Weyl makes them; the misfit indicts the EXTERNAL hydrostatic calibration behind

@@ -1,5 +1,14 @@
 """GIANT-ARC CLUSTERS vs OBT's two-scale law — card #22 CONFIRMED or a MONSTER? (2-lens test)
 
+[!] SUPERSEDED VERDICT (2026-07-29) — read `ALPHA_NT_AND_REFIT_NOTE.md` + `card22_lensing_refit.py`
+    before using this file's MONSTER conclusion. The 'OBT-proper x1.56' below is measured against
+    Donnarumma+09's Chandra X-ray NFW for MS2137 (M200 = 4.4e14, c = 9.6), which puts the critical
+    line ON the arc. The published joint strong+weak LENSING model of the same cluster (Merten+15
+    SaWLens, M200 = 1.49e15, c = 3.1 -- a x3.4 discrepancy in M200) gives kappa_NFW(arc) = 0.79,
+    i.e. the STANDARD model does not make the arc spherically either. At equal calibration and equal
+    (spherical) geometry the OBT-proper ratio over 9 CLASH lenses is 0.93: NO OBT-proper deficit.
+    The monster [62b7f086] is DOWNGRADED. The measurement below stands; its VERDICT does not.
+
 Romain, after abell370_obt.py: 'ca sent le monstre. tu as une autre carte dedans ou tu confortes la
 22? surtout en obtenant la meme veracite de calcul avec une autre lentille gravitationnelle.'
 

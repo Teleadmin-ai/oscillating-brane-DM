@@ -325,6 +325,34 @@ the theory. **Today: ZERO confirmed cards → nothing migrates to the theory/sit
   lensing/X-ray ~1.3–1.7 corroborates); (b) re-fit card #22's (f_W, β) on LENSING masses instead
   of X-COP hydrostatic (predicted: same shape, ~×1.7 amplitude — would also retune the f_Weyl
   plateau of Gates 21–23).
+  **⛔ DOWNGRADED (2026-07-29) — the card path was executed and it killed the premise**
+  (`alpha_nt_budget.py`, `card22_lensing_refit.py`, `ALPHA_NT_AND_REFIT_NOTE.md`; Romain: « vas y
+  pour la note α_NT et le re-fit #22 lentillage »). **[A] The WHY does not close.** On PUBLISHED
+  per-cluster lensing masses (Merten+15 SaWLens Table 7) the anchor gap is 0.65 — my 40″ c=3.79
+  extrapolation carried a factor 1.10 of the 0.59 — and **0.75 (= ×1.34)** after de-biasing the M-T
+  bridge measured on X-COP's OWN masses + core-excised spectra (M-T/X-COP = 0.87±0.17, 12 clusters).
+  Exact HSE algebra b = α(1−s/|dlnP/dlnr|) → the gap needs **α_NT = 0.25–0.35**, where X-COP itself
+  measures **~0.06** and publishes (1−b) = 0.85–0.87: **short by ×4–6 on the card's own sample**
+  (simulations 0.10–0.30 reach it only at their extreme top; kT provenance worsens it; the M-T
+  normalisation can move it ~6%, not 34%). The gap is real but sits inside an unresolved EXTERNAL
+  controversy (Planck-SZ 0.6 vs X-COP 0.85–0.87) that is not ours to arbitrate. **[B] The premise
+  falls.** Re-fit of card #22's form on lensing masses with OBT's DERIVED μ(x) and the photon
+  channel (W=1 — under ARA the sinc is the TRACER's response: it applies to X-COP gas dynamics, not
+  to lensing) gives **f_W = 0.59, r_c = 0.037 R500 (~47 kpc)**, absolute Weyl amplitude ×1.12 vs the
+  card (NOT the ×1.7 I hand-waved — corrected). ARC TEST: **the published lensing NFW, evaluated
+  spherically, itself reaches only κ = 0.79** at the observed effective θ_E = a ×1.27 deficit for the
+  STANDARD model (Meneghetti+07: ellipticity ~40%, substructure ~30% of the lensing cross-section;
+  spherical halos "fail to reproduce the lensing signal") → **OBT-proper = 0.93 (0.76–1.12, robust
+  over ×6 in BCG mass) = NO OBT-proper deficit.** **[C] Post-mortem:** the ×1.56 that flipped the
+  verdict came from ONE contested mass model — MS2137's Donnarumma+09 Chandra NFW (M200=4.4e14,
+  c=9.6 → κ_NFW(arc)=0.97) vs Merten's lensing NFW of the same cluster (M200=1.49e15, c=3.1 → 0.79),
+  a ×3.4 discrepancy in M200. That choice, not OBT, made the monster. **NO CARD.** Two residues
+  kept: the external ×1.34 mass gap (priced, not ours), and an OBT-INTERNAL channel tension — a
+  single global Weyl calibrated on the photon channel under-predicts the dynamical channel by
+  ~0.10 dex (~0.17 with the gap applied) = the lensing-vs-dynamics SCISSOR on clusters → **out of
+  the game, into the reviewer ledger.** METHOD LESSON (add to the gate): when a discriminant rests
+  on a per-object reference model, check whether a SECOND published model of the same object flips
+  it before minting a monster.
 
 ## 9-bis. Naked OBT predictions (classified, NOT playable, NOT tested in the game)
 > Direct consequences of OBT. By the AXIOM CHECK they are TRUE within the game and are NEVER tested
