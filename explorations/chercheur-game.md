@@ -290,9 +290,41 @@ the theory. **Today: ZERO confirmed cards → nothing migrates to the theory/sit
 > only ONE system is a **candidate**, not yet a monster. NEVER a naked OBT prediction. Re-examine
 > every round (a future card may reveal a monster as error, or as a card-in-disguise).
 >
-> **CURRENTLY EMPTY.** We have not yet successfully patched any external theory. (Correcting an
-> earlier mislabel — Romain caught it 2026-05-31: the 613 Mpc was wrongly filed here. It is a
-> NAKED OBT prediction, §9-bis, not a monster, because NO external theory was patched.)
+> (Historical note kept — Romain caught the 613 Mpc mislabel 2026-05-31: it is a NAKED OBT
+> prediction, §9-bis, not a monster, because NO external theory was patched.)
+
+- **MONSTER [62b7f086] `arc-core-hydro-bias` (2026-07-11, Romain: "logue le monstre").** EXTERNAL
+  THEORY: the X-ray hydrostatic-equilibrium mass pipeline in cluster CORES (X-COP/Ettori class —
+  the very calibration behind card-#22's global Weyl f_W=0.70, β=0.043); it assumes purely thermal
+  pressure. PATCH (one parameter): the core non-thermal/AGN pressure fraction — hydrostatic masses
+  under-weigh cores, so the Weyl profile our card inherited is under-concentrated there; bias-free
+  strong LENSING reveals the true Weyl core. COMPUTED SIGNATURE (probes `abell370_obt.py`,
+  `arcs_obt.py`): κ_OBT(R_arc) SATURATES at ~0.63–0.65 on BOTH systems while every giant arc
+  demands 1.0 — OBT-proper deficit ×1.15 (A370 merger, WL-ref) → ×1.56 (MS2137 RELAXED at the
+  Donnarumma-reconciled c200=9.6): it GROWS on clean terrain. 2-SYSTEM FLOOR MET (A370 arc
+  z_s=0.725; MS2137 arc z_s=1.501); WHY PENDING (quantitative α_NT budget; TENSION: Hitomi low
+  core turbulence ~4%; SUPPORT: the 1990s SL-vs-X-ray factor-2 core literature — Miralda-Escudé &
+  Babul 1995, Allen 1998). ALTERNATIVE reading to re-examine each round (would move it to
+  §9-bis-adjacent): the Weyl closure-IC core is intrinsically concentrated (Gates 17/23
+  rising-inward) — OBT-internal, no external patch. NEXT: the N-arcs battery (CLASH relaxed set)
+  = the sanctioned monster→card big-compute (κ-saturation universality + α_NT budget).
+  **⚡ N-ARCS BATTERY RUN (2026-07-29, `arcs_battery.py`, 9 CLASH relaxed lenses, Umetsu+16 T1
+  anchors θ_E + M2D(<10–40″) verified 0.99–1.11 vs πΣ_cr R_E²): CONSOLIDATED + RELOCATED.**
+  Two-arm design (pass-1 relire caught that a lensing-anchored Weyl is normalization-tautological):
+  **(1) MONSTER arm** (Weyl on external M-T hydrostatic-class M500): κ_OBT(θ_E) = **0.70 median,
+  σ=0.06, range 0.64–0.84** → with A370 0.65 + MS2137 0.63 = **11/11 lenses in 0.63–0.84,
+  saturation UNIVERSAL**. **(2) FORM arm** (Weyl on the 40″-lensing-calibrated M500, c=3.79
+  ensemble): OBT-proper deficit vs NFW **×0.92–0.97 (0/9 above ×1.25)** → the card-#22 PROFILE
+  SHAPE IS VINDICATED by 9 lensing cores (mild core dip 10″ 0.87 → 40″ 1.05; fixed BCG 5e11
+  crude). **(3) THE MONSTER LIVES IN THE MASS ANCHOR, not the profile: M5(M-T)/M5(lensing-40″) =
+  0.59 median (0.40–0.72) = numerically the Planck-SZ-demanded hydrostatic mass bias (1−b)~0.6**
+  (vs ~0.8 in sims) → the monster JOINS a known, LIVE external tension. Caveats declared: c-M
+  degeneracy on the 40″→M500 extrapolation; un-excised cool-core kT bias carries part of the two
+  extreme ratios (MACS0429 0.40, MACS1931 0.46); M-T norm ±25% doesn't erase it (×0.74 at the
+  edge). CARD PATH (Romain's call): (a) the α_NT/mass-bias budget note (WtG Applegate+14
+  lensing/X-ray ~1.3–1.7 corroborates); (b) re-fit card #22's (f_W, β) on LENSING masses instead
+  of X-COP hydrostatic (predicted: same shape, ~×1.7 amplitude — would also retune the f_Weyl
+  plateau of Gates 21–23).
 
 ## 9-bis. Naked OBT predictions (classified, NOT playable, NOT tested in the game)
 > Direct consequences of OBT. By the AXIOM CHECK they are TRUE within the game and are NEVER tested

@@ -292,7 +292,7 @@ def main():
         r_rec = analyze(ms, quiet=True, c200=c_rec)
         prop_rec = r_rec["k_NFW"] / r_rec["k_OBT"]
         print(
-            f"\n[MS2137 RECONCILED reading] c200 solving Donnarumma's X-ray/SL agreement (R_E^NFW = arc):"
+            "\n[MS2137 RECONCILED reading] c200 solving Donnarumma's X-ray/SL agreement (R_E^NFW = arc):"
         )
         print(
             f"    c_rec = {c_rec:.1f} -> kappa_NFW = {r_rec['k_NFW']:.2f}, kappa_OBT = {r_rec['k_OBT']:.2f}"
