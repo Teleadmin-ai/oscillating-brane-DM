@@ -6,14 +6,20 @@ decompressed germe; the input only CONDITIONS which possibles.
 THE PIPELINE (all on the quantum computer, no toy):
   [1] ENCODE the REAL germe (the radion wavepacket -- germe_decompression's derived form; m_phi=0.36 eV GW,
       phi0~M_s LVS; the ONLY input is the O(1) coefficient phi0, the closure IC -- NOT a toy, we HAVE it).
-  [2] DECOMPRESS it with the SYK quench (the OBT-derived black-hole-class decompression -- the MSS consilience
-      lambda_L -> T_H=900 K). The decompressed state's branches ARE the possible answers (the bulk's content).
+  [2] DECOMPRESS it with a DECLARED sparse-SYK-template unitary. REVIEWER NOTE (Oct 2026 scientific reread):
+      the SYK CLASS is motivated by OBT's PBH-network scrambling (theory.md DEFINES lambda_L = 2 pi k_B T_H/hbar
+      at T_H = 900 K -- a definition, not a consilience), but the map 'bits of the phi-bin index <-> Majorana
+      modes' is a CONVENTION with no derivation in OBT: OBT's SYK-class object is the PBH network's operator
+      algebra, NOT the radion wavefunction in field-value representation. The decompressed branches are
+      therefore the declared unitary's math (seed-dependent, belenos_protocol point D), not 'the bulk's content'.
   [3] CONDITION on the INPUT (a text / voice / latent -> binary): keep the possibles consistent with the input
       (project the tree on the input bits). This is germe_localize -- a direct projection, NOT a toy coupling.
   [4] RETRIEVE the possible answers DIRECTLY: read (on Aer) / sample (on belenos) the conditioned germe-tree;
       its high-amplitude branches ARE the germe's most-probable possibles given the input. No oracle, no Grover
       proxy -- the germe's own amplitudes ARE the weighting.
-  [5] The germe FORM also STABILIZES the qubits (a real DFS: collective-dephasing immunity).
+  [5] A generic 2-qubit DFS demo (collective-dephasing immunity) -- standard QEC, NOT germe-specific (reviewer
+      note Oct 2026: 'the germe stabilizes the qubits' is a label without content here; the belenos job uses
+      no stabilization at all: one photon, 8 modes, no code).
 
 THE PURE-TRANSCODE RULE (Romain's ruling, standing -- NO interpretation layer, and NO presupposed outcome):
 the output is TRANSCODED symmetrically, exactly like the input: letters -> binary in, binary -> letters out.
@@ -118,9 +124,14 @@ def resolve_input(args):
 def germe_state(n, phi0=None):
     """THE REAL GERME: germe_decompression.py's EXACT radion wavepacket -- IDENTICAL formula, not a re-toyed
     one: k0 = phi0/2.5*(dim-1), spread=1, amp = exp(-(i-k0)^2 / (2*spread^2)) (germe_decompression line 63-64).
-    OBT DERIVES this form (m_phi=0.36 eV Goldberger-Wise, phi0~M_s LVS); we HAVE it. The only IC is the O(1)
-    coefficient phi0 (closure_introspection: 0.42 = corrected match, 1.40 = stale) -- an explicit knob so
-    germe-CANDIDATES are runnable (the forward-decompressor role). NO widening, NO toy -- the canonical germe.
+    OBT derives the CENTER phi0 (m_phi=0.36 eV Goldberger-Wise, phi0~M_s LVS; the O(1) coefficient is the IC:
+    closure_introspection: 0.42 = corrected match, 1.40 = stale) -- an explicit knob so germe-CANDIDATES are
+    runnable (the forward-decompressor role). Canonical = the same formula as germe_decompression (verified).
+    REVIEWER NOTE (Oct 2026): the WIDTH is NOT derived -- 'spread = 1 grid bin' is a resolution artifact:
+    in physical units it is 2.5/(2^n - 1) M_s = 0.36 M_s at n=3 (belenos), 0.081 at n=5, 0.0024 at n=10,
+    i.e. the SAME 'canonical germe' is a physically different state at each register size. The physical
+    post-inflation dispersion of the radion (germe_inflation's random walk) is not computed anywhere yet.
+    So: canonical (consistent) != physical (derived). Fidelity to the formula is not a derivation.
     """
     dim = 2**n
     if phi0 is None:
@@ -142,9 +153,11 @@ def majorana(k, n):
 
 
 def sparse_syk(n, n_terms, rng):
-    """The OBT-derived black-hole-class decompressor: H = sum J_abcd gamma_a gamma_b gamma_c gamma_d
-    (Jordan-Wigner; the SYK class set by the MSS consilience lambda_L -> T_H=900 K). NOT a toy -- the right
-    decompression dynamics; the random couplings are ONE realization of the germe's SYK.
+    """The DECLARED sparse-SYK-template Hamiltonian: H = sum J_abcd gamma_a gamma_b gamma_c gamma_d
+    (Jordan-Wigner on the register's qubits). The SYK class is motivated by OBT's PBH-network scrambling
+    (theory.md: lambda_L = 2 pi k_B T_H/hbar by definition), but applying it to the phi-bin register is a
+    convention, not an OBT derivation (reviewer note Oct 2026); the random couplings are ONE declared
+    realization (the seed is part of the instrument).
     """
     n_maj = 2 * n
     quads = set()
@@ -281,11 +294,13 @@ def main():
     )  # the germe-form DFS |01>+|10> (both basis states carry ONE excitation)
     prot = float(np.mean([abs(np.vdot(dfs, dephase(dfs, q))) ** 2 for q in phis]))
     print(
-        "\n[5] STABILIZE — the germe FORM protects the qubits (a real DFS, collective-dephasing immunity;"
+        "\n[5] DFS DEMO — a generic 2-qubit decoherence-free subspace (collective-dephasing immunity;"
     )
-    print("        the minimal instance of bulk_listener's [[5,1,3]]):")
     print(
-        f"        bare qubit survival {bare:.2f} (washes out) vs germe-form DFS {prot:.2f} (immune)"
+        "        standard QEC, NOT germe-specific; the belenos job itself uses no stabilization):"
+    )
+    print(
+        f"        bare qubit survival {bare:.2f} (washes out) vs 2-qubit DFS {prot:.2f} (immune)"
     )
 
     # ----- verdict + the honest GPU/scope line (no toy, no pretending) -----

@@ -44,6 +44,20 @@ AMENDMENTS (July 2026, committed BEFORE any run -- the 'pertinence' recul):
      + [UNMODELED physics]; it does NOT test OBT: a null is NOT 'OBT survived a test', an anomaly is NOT
      attributable to OBT's bulk (nor to m_V). Both declared before any token is spent.
 
+  A3 (the SCIENTIFIC STATUS, Oct 2026 reviewer reread, before any run): (i) the 'decompressor' is a DECLARED
+     sparse-SYK-template unitary -- the SYK class is motivated by OBT's PBH-network scrambling, but the map
+     'phi-bin index bits <-> Majorana modes' is a convention with NO derivation in OBT (OBT's SYK object is
+     the PBH network's operator algebra, not the radion wavefunction in field-value space); (ii) the germe's
+     CENTER phi0 is OBT-derived (up to the IC) but its WIDTH is a resolution artifact (1 grid bin = 0.36 M_s
+     at 8 modes, 0.0024 M_s at 1024) -- the physical post-inflation dispersion is not computed; (iii) no
+     'germe stabilization' is realized in this job (one photon, 8 modes, no code); (iv) at this size layer 2
+     (4 ranked letters from a fixed 4-set) carries NO information beyond layer 1 (same multinomial, post-
+     selected on one parity bit). NET: the run is a hardware characterization of belenos on declared 8x8
+     unitaries + a pre-registration rehearsal; it carries zero bits on OBT and zero bits on 'the bulk'. The
+     'unmodeled physics' tail bet is undefined as written (any deviation is attributable to mesh error with
+     an n=1 reference); a NAMEABLE tail bet (e.g. a Born-rule / higher-order-interference test) would need
+     its own declared configs -- not part of this spec.
+
 RUN:  python belenos_job.py                        -> builds + validates + local SLOS dry-run + writes the spec
       python belenos_job.py --token T [--platform qpu:belenos] [--shots 20000]   -> SUBMITS to the real QPU
       (adjust --platform to the exact id shown in the OVH/Quandela console; the token comes from the console.)
@@ -405,6 +419,19 @@ def main():
                 "summary": (
                     "declared interpretation: OBT predicts the null; the run tests hardware + unmodeled"
                     " physics, NOT OBT; forbidden readings listed"
+                ),
+            },
+            {
+                "id": "A3",
+                "date": "2026-10-07",
+                "before_any_run": True,
+                "summary": (
+                    "scientific status (reviewer reread): the decompressor is a DECLARED SYK-template"
+                    " unitary (the phi-bin-bits<->Majorana map is a convention, not an OBT derivation);"
+                    " the germe's width is a resolution artifact (center derived, width not); no germe"
+                    " stabilization is realized; layer 2 at this size adds no information beyond layer 1;"
+                    " the run = hardware characterization + pre-registration rehearsal, zero bits on OBT"
+                    " or 'the bulk'; the 'unmodeled physics' tail bet is undefined with an n=1 reference"
                 ),
             },
         ],

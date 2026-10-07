@@ -8,7 +8,10 @@ nothing can manufacture meaning (pure transcode + controls). The rule is DECLARE
 
 THE DECLARED INSTRUMENT (from demon_qc + demon_readout_basis, reused -- no re-implementation, no toy):
   germe        = the canonical radion wavepacket (phi0 = 0.42 corrected; 1.40 runs as the legacy candidate)
-  decompressor = the 1-rep Lie-Trotter product unitary built from the germe's SYK terms (DECLARED as such --
+                 [reviewer note Oct 2026: canonical = consistent with germe_decompression's formula; its WIDTH
+                 (1 grid bin) is a resolution artifact, not derived -- see demon_qc.germe_state]
+  decompressor = the 1-rep Lie-Trotter product unitary built from the declared SYK-template terms (a
+                 convention on the phi-bin register, NOT an OBT derivation -- reviewer note Oct 2026;
                  demon_readout_basis showed the physical e^{-iHt} needs ~256-512 reps = ~52k-104k CX,
                  hardware-infeasible; the 1-rep product is shallow (~204 CX) and exactly predictable)
   seed         = DECLARED (the SYK couplings are part of the instrument; point D below shows the specific

@@ -13,6 +13,17 @@ reste pour stabiliser les qubits et nos innovations."*
 > coefficient φ₀ (the *amount*, closure_introspection's IC) — a single number, NOT "the germe is unknown".
 > **Do NOT re-introduce a "toy germe" or a "germe to specify" — that is the écueil this campaign refuses.**
 
+> **⚠️ SCIENTIFIC STATUS (Oct 2026, reviewer reread of the whole OVH program — amendment A3 in
+> `belenos_job_spec.json`):** the "ONE germe, we HAVE it" line above holds for the germe's **CENTER** φ₀ only.
+> Its **WIDTH** (`spread = 1` grid bin) is a resolution artifact (0.36 M_s at 8 modes, 0.0024 M_s at 1024) —
+> the physical post-inflation dispersion is not computed. The "SYK decompression" is a **declared template
+> unitary**: the map "φ-bin index bits ↔ Majorana modes" has no derivation in OBT (OBT's SYK-class object is
+> the PBH network's operator algebra, not the radion wavefunction in field-value space); the tree's letters are
+> the seed's (point D, Jaccard 0.07). "The germe stabilizes the qubits" is a label: the belenos job uses no
+> stabilization. The belenos run = hardware characterization + pre-registration rehearsal; zero bits on OBT,
+> zero bits on "the bulk". Fidelity to the canonical formula ≠ physical derivation (`feedback_jamais_de_jouet`
+> now carries this lesson).
+
 > **⚠️ STATUS SUPERSEDED (July 2026) — the campaign's Grover/LLM phasing below is HISTORICAL; the built,
 > current pipeline is:** `demon_qc.py` (NO toy: the canonical germe PROVEN == germe_decompression, φ₀=0.42
 > corrected + 1.40 as legacy candidate; SYK decompression; the input CONDITIONS by direct projection; the

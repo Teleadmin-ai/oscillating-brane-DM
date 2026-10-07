@@ -28,8 +28,12 @@ THE HONEST REACH (computed below -- the calculations decide, not me):
     / 3D / higher connectivity). The mapping is approximate, by the geometry of the platform.
 
 NOT V8.2. Not in the PDF. 'code, don't plead' + 'seul les calculs comptent' (Romain): the design params and
-the exact small sim are COMPUTED and reported; asserted only are verifiable identities (OBT's lambda_L -> the
-T_H=900K MSS consilience) + sim-correctness (the quench scrambles + entangles) -- no imposed result-ranges.
+the exact small sim are COMPUTED and reported; asserted only are reproductions (OBT's lambda_L reproduces
+theory.md's DEFINITION lambda_L = 2 pi k_B T_H/hbar at T_H = 900 K -- a reproduction, NOT a consilience:
+T_H is the input, lambda_L the output; reviewer note Oct 2026) + sim-correctness (the quench scrambles +
+entangles) -- no imposed result-ranges. Also NOT computed here (literature statements, declared as such):
+that local Rydberg lattice models sub-saturate the MSS bound, and that an r^-6 geometric graph cannot
+realize a degree-46 non-geometric expander.
 """
 
 from functools import reduce
@@ -109,9 +113,9 @@ def main():
     )
     print("=" * 96)
 
-    # ===== [1] the MSS consilience: OBT's lambda_L is MSS-saturating at the PBH Hawking temperature ====
+    # ===== [1] the MSS reproduction: OBT's lambda_L is DEFINED as the MSS bound at T_H (theory.md) ====
     print(
-        "\n[1] THE SCRAMBLING SCALE -- OBT's lambda_L vs the MSS bound (a verifiable identity)"
+        "\n[1] THE SCRAMBLING SCALE -- reproducing theory.md's DEFINITION lambda_L = 2 pi k_B T_H / hbar"
     )
     t_mss = (
         HBAR * LAMBDA_L / (2 * np.pi * KB)
@@ -121,14 +125,14 @@ def main():
     )
     print(f"    MSS-saturation temperature T = hbar*lambda_L/(2pi kB) = {t_mss:.0f} K")
     print(
-        "    => this EQUALS the PBH Hawking temperature T_H ~ 900 K (CLAUDE.md) -- OBT's network is a"
+        "    => recovers T_H ~ 900 K BY CONSTRUCTION: theory.md defines lambda_L = 2 pi k_B T_H/hbar"
     )
     print(
-        "       black-hole-class MSS-SATURATING fast scrambler (SYK universality), by its own numbers."
+        "       (MSS saturation is ASSUMED for the PBHs, not derived). A reproduction, not a consilience."
     )
     assert (
         800 < t_mss < 1000
-    ), "OBT's lambda_L must be MSS-saturating at T_H ~ 900 K (verifiable identity)"
+    ), "reproduction of theory.md's definition lambda_L = 2 pi k_B T_H/hbar at T_H ~ 900 K"
 
     # ===== [2] the Pasqal design params (computed) ====================================================
     print(
@@ -254,7 +258,10 @@ def main():
     )
 
     print(
-        "\n  COMPUTED: MSS->T_H=900K identity; R_b + 2D degree; the N=10 quench scrambles + entangles."
+        "\n  COMPUTED: the lambda_L definition reproduced (T_H=900K in -> lambda_L out); R_b + 2D degree;"
+    )
+    print(
+        "  the N=10 quench scrambles + entangles. CITED, not computed: Rydberg sub-saturates MSS; no expander."
     )
     print(
         "  REPORTED (no imposed ranges): the entropy/OTOC values, the honest reach. seul les calculs comptent."
