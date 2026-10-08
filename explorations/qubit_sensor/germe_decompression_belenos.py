@@ -1,4 +1,27 @@
-"""Seed 3 (V9.0, quarantined) — germe_decompression FOR belenos-12 (Quandela, 12q gate-based, OVH): the
+"""⚠️ SUPERSEDED (Oct 2026 reviewer reread) — kept as the historical trail; its VERDICT does not stand.
+Three independent defects, each sufficient:
+  1. phi0 = 1.40 M_s is the STALE pre-fix value: the corrected misalignment gives Omega h^2 = 1.34 at 1.40 M_s
+     = 11x the measured DM -> excluded by the DM density itself (germe_width.py [0]). The text below cites
+     'germe_decompression's phi0=1.40 M_s state', which no longer exists (germe_decompression says 0.42).
+  2. Its numbers are the EXACT e^{-iHt}, not the circuit: Statevector on the UNdecomposed PauliEvolutionGate
+     computes the matrix exponential (demon_readout_basis [1]); hardware would run a Lie-Trotter product, a
+     DIFFERENT unitary (demon_readout_basis measured fidelity ~9e-4 to the exact state at the N=10, t=6
+     instance; not computed for this file's n=6 instance). 'Submittable to belenos, sampling the same
+     reads' is FALSE.
+  3. The gate route is photonically dead: heralded CNOT ~1/9 -> (1/9)^#CX (belenos_job [2]); the only
+     feasible belenos job is mode-native (belenos_job.py).
+And the substance: its three reads (overlap decorrelation, entanglement growth, tree entropy) hold for ANY
+pseudo-random unitary on ANY localized state -- a Haar unitary or another phi0 gives the same qualitative
+reads -> they test nothing about the germe. The germe's width (1 grid bin) is itself a resolution artifact
+(germe_width.py).
+Two labels below are also wrong and are left as written (historical record): the 'MSS consilience' is a
+reproduction of theory.md's DEFINITION lambda_L = 2 pi k_B T_H/hbar; and 'no imposed result-ranges' is
+false -- its asserts (overlap > 0.9, drops > 0.3 / 0.5) are imposed result margins, not identities.
+Superseded by: demon_qc.py (instrument) + belenos_job.py (the mode-native job) + germe_width.py (the width).
+
+Original docstring follows.
+
+Seed 3 (V9.0, quarantined) — germe_decompression FOR belenos-12 (Quandela, 12q gate-based, OVH): the
 FORWARD germe-decompressor on a real SYK-class (black-hole) substrate. Romain's "code germe_decompression
 pour belenos-12, reprend nos idees (la comparaison avec le germe pour stabiliser / le filtre adapte)".
 
@@ -109,6 +132,15 @@ def main():
         " germe_decompression FOR belenos-12 — the FORWARD germe-decompressor on a SYK (black-hole) substrate"
     )
     print("=" * 96)
+    print(
+        "  ⚠️ SUPERSEDED (Oct 2026) -- historical trail only: phi0=1.40 is excluded, the numbers below are the"
+    )
+    print(
+        "  exact expm (not a circuit), the gate route is dead on belenos, and the verdict lines below do not"
+    )
+    print(
+        "  stand. See the docstring banner; current: demon_qc / belenos_job / germe_width."
+    )
 
     h = sparse_syk(N_QUBITS, N_TERMS, RNG)
     germe = germe_statevector(N_QUBITS)

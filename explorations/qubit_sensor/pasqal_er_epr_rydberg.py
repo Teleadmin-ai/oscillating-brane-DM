@@ -13,33 +13,43 @@ THE MAPPING (OBT's many-body microphysics -> a Rydberg analog quantum simulator)
 THE RYDBERG HAMILTONIAN (Pasqal analog mode):
   H = sum_i (Omega/2) X_i  -  sum_i delta n_i  +  sum_{i<j} (C6/r_ij^6) n_i n_j
 
-WHAT IT TESTS (build-on-OBT): does OBT's network, realized on real neutral-atom hardware, exhibit the
-many-body behavior OBT claims -- fast scrambling, entanglement growth, robustness? Classically intractable
-beyond ~50 atoms (2^N) -> a quantum-advantage simulation on Pasqal (via OVHcloud / Scaleway, Romain's
-sovereign ecosystem). This is a quantum SIMULATION of OBT's MODEL (you read the model's behavior on real
-atoms), NOT a measurement of the real bulk.
+WHAT IT WAS MEANT TO TEST (build-on-OBT; reviewer note Oct 2026: it CANNOT -- see THE HONEST REACH): does
+OBT's network, realized on real neutral-atom hardware, exhibit the many-body behavior OBT claims -- fast
+scrambling, entanglement growth, robustness? Classically intractable beyond ~50 atoms (2^N) -> a
+quantum-advantage simulation on Pasqal (via OVHcloud / Scaleway, Romain's sovereign ecosystem). This is a
+quantum SIMULATION of OBT's MODEL (you read the model's behavior on real atoms), NOT a measurement of the
+real bulk.
 
-THE HONEST REACH (computed below -- the calculations decide, not me):
+THE HONEST REACH (degree + p_c computed below; the MSS sub-saturation is a cited literature statement):
   + Pasqal CAN simulate: the quench dynamics, scrambling (OTOC), entanglement growth, the array percolation.
   - Pasqal CANNOT match: (1) the MSS-SATURATING fast scrambler (lambda_L = 2pi kT/hbar at T_H~900K) -- that
     is SYK / black-hole universality, NOT generic Rydberg (Rydberg sub-saturates); (2) the degree-46 EXPANDER
-    -- a 2D blockade graph has degree ~18 (geometric, computed below), p_c ~ 0.5 vs the expander's ~0.022. So Pasqal
-    is a PROXY for OBT's network DYNAMICS, not its exact SYK/expander structure (that needs an SYK simulator
-    / 3D / higher connectivity). The mapping is approximate, by the geometry of the platform.
+    -- a 2D blockade graph has a degree and a site-percolation threshold computed below (degree 12 at the
+    declared Omega/2pi = 2 MHz and 5 um spacing, its 2nd shell blockaded only marginally; the old 'p_c ~ 0.5'
+    was the NEAREST-NEIGHBOUR value -- reviewer catch Oct 2026) vs the expander's ~0.022. So Pasqal is a PROXY
+    for generic quench DYNAMICS, not for OBT's SYK/expander structure (that needs an SYK simulator / 3D /
+    higher connectivity). Reviewer note (Oct 2026): what Rydberg CAN show (quench scrambling and entanglement
+    growth) is generic to any interacting many-body system -- not OBT-specific; what IS OBT-specific (MSS
+    saturation, the degree-46 expander) is out of its reach. So it cannot confirm or break OBT.
 
 NOT V8.2. Not in the PDF. 'code, don't plead' + 'seul les calculs comptent' (Romain): the design params and
 the exact small sim are COMPUTED and reported; asserted only are reproductions (OBT's lambda_L reproduces
 theory.md's DEFINITION lambda_L = 2 pi k_B T_H/hbar at T_H = 900 K -- a reproduction, NOT a consilience:
-T_H is the input, lambda_L the output; reviewer note Oct 2026) + sim-correctness (the quench scrambles +
-entangles) -- no imposed result-ranges. Also NOT computed here (literature statements, declared as such):
-that local Rydberg lattice models sub-saturate the MSS bound, and that an r^-6 geometric graph cannot
-realize a degree-46 non-geometric expander.
+T_H is the input, lambda_L the output; reviewer note Oct 2026) + the exact nearest-neighbour triangular
+site-percolation threshold 1/2 (the MC check) + the t=0 identities (a product state has zero entanglement;
+operators on distinct sites commute) -- the growth itself is REPORTED, not asserted (the old 'must grow by
+> 0.5 / > 0.1' margins were imposed result-ranges, removed). Also NOT computed here (literature statements,
+declared as such): that local Rydberg lattice models sub-saturate the MSS bound, and that an r^-6 geometric
+graph cannot realize a degree-46 non-geometric expander.
 """
 
 from functools import reduce
 
 import numpy as np
 from scipy.linalg import eigh
+from scipy.sparse import coo_matrix
+from scipy.sparse.csgraph import connected_components
+from scipy.spatial import cKDTree
 
 # physical constants (SI)
 HBAR = 1.054571817e-34
@@ -51,10 +61,10 @@ T_STAR = 0.2e-12  # scrambling time, s
 D_EXPANDER = 46  # ER=EPR expander degree
 PC_EXPANDER = 1.0 / (D_EXPANDER - 1)  # expander percolation threshold ~ 1/(d-1) ~ 0.022
 
-# Pasqal Rydberg parameters (representative, Rb ~70S)
-C6_OVER_2PI = (
-    5420e9 * 1e-36
-)  # C6/2pi in Hz*m^6 (5420 GHz*um^6 -> Hz*m^6); um=1e-6 m -> um^6=1e-36 m^6
+# Pasqal Rydberg parameters (Rb 70S): C6/hbar = 5,420,158.53 rad/us * um^6 (Pulser's C6_coeffs.json, n=70,
+# ARC-computed) -> C6/h = 862.6 GHz*um^6. Reviewer catch Oct 2026: the old 'C6/2pi = 5420 GHz*um^6' read that
+# rad/us figure as GHz -- 2pi too large, which inflated R_b by (2pi)^(1/6) = 1.36 (11.8 um instead of 8.7).
+C6_OVER_HBAR = 5420158.53e6 * 1e-36  # rad/s * m^6 (um^6 = 1e-36 m^6)
 OMEGA_2PI = 2e6  # Rabi drive Omega/2pi, Hz
 SPACING_UM = 5.0  # atom spacing, um (Pasqal typical)
 
@@ -92,6 +102,48 @@ def entanglement_entropy(psi, n, n_a):
     p = s**2
     p = p[p > 1e-12]
     return float(-np.sum(p * np.log(p)))
+
+
+def spanning_probability(coords, rows, pairs, n_rows, p, trials, rng):
+    """Fraction of random site occupations (prob p) with an occupied cluster joining row 0 to the last row."""
+    n = len(coords)
+    hits = 0
+    for _ in range(trials):
+        occ = rng.random(n) < p
+        keep = occ[pairs[:, 0]] & occ[pairs[:, 1]]
+        e = pairs[keep]
+        adj = coo_matrix((np.ones(len(e)), (e[:, 0], e[:, 1])), shape=(n, n))
+        _, lab = connected_components(adj, directed=False)
+        top = set(lab[occ & (rows == 0)])
+        bottom = set(lab[occ & (rows == n_rows - 1)])
+        hits += bool(top & bottom)
+    return hits / trials
+
+
+def site_percolation_threshold(r_cut, spacing, size, rng, trials=200, steps=9):
+    """Finite-size estimate of the site-percolation threshold of the 2D triangular array whose bonds join
+    every pair of atoms within r_cut (the blockade graph): bisection on P(span) = 1/2, L = size.
+    """
+    coords = np.array(
+        [
+            (i * spacing + 0.5 * spacing * (j % 2), j * spacing * np.sqrt(3) / 2)
+            for j in range(size)
+            for i in range(size)
+        ]
+    )
+    rows = np.repeat(np.arange(size), size)
+    # (n_pairs, 2) even when r_cut reaches no neighbour (an empty graph never spans)
+    pairs = np.array(
+        sorted(cKDTree(coords).query_pairs(r_cut * (1 + 1e-9))), dtype=int
+    ).reshape(-1, 2)
+    lo, hi = 0.0, 1.0
+    for _ in range(steps):
+        mid = 0.5 * (lo + hi)
+        if spanning_probability(coords, rows, pairs, size, mid, trials, rng) < 0.5:
+            lo = mid
+        else:
+            hi = mid
+    return 0.5 * (lo + hi)
 
 
 def otoc_squared_commutator(h, psi0, w, v, ts):
@@ -139,10 +191,9 @@ def main():
         "\n[2] THE PASQAL DESIGN -- blockade radius, spacing, the 2D array degree (computed)"
     )
     omega_si = 2 * np.pi * OMEGA_2PI  # rad/s
-    c6_si = 2 * np.pi * C6_OVER_2PI  # rad*m^6/s
-    r_b_um = (c6_si / omega_si) ** (
+    r_b_um = (C6_OVER_HBAR / omega_si) ** (
         1 / 6
-    ) * 1e6  # blockade radius where V(R_b)=Omega, in um
+    ) * 1e6  # blockade radius where V(R_b) = hbar Omega, in um
     # 2D triangular array at SPACING_UM: count atoms within R_b of a central atom
     pts = [
         (i * SPACING_UM + 0.5 * SPACING_UM * (j % 2), j * SPACING_UM * np.sqrt(3) / 2)
@@ -150,21 +201,40 @@ def main():
         for j in range(-4, 5)
     ]
     c = np.array([0.0, 0.0])
-    degree_2d = sum(0 < np.linalg.norm(np.array(p) - c) <= r_b_um for p in pts)
+    dists = [float(np.linalg.norm(np.array(p) - c)) for p in pts]
+    degree_2d = sum(0 < d <= r_b_um for d in dists)
+    r_out = max(d for d in dists if 0 < d <= r_b_um)  # the outermost blockaded shell
     print(
-        f"    Omega/2pi = {OMEGA_2PI/1e6:.0f} MHz, C6/2pi = {C6_OVER_2PI*1e36/1e9:.0f} GHz*um^6, spacing = {SPACING_UM:.0f} um"
+        f"    Omega/2pi = {OMEGA_2PI/1e6:.0f} MHz, C6/2pi = {C6_OVER_HBAR / (2 * np.pi) * 1e36 / 1e9:.1f} GHz*um^6,"
+        f" spacing = {SPACING_UM:.0f} um"
     )
     print(
-        f"    blockade radius R_b = (C6/Omega)^(1/6) = {r_b_um:.1f} um  (> spacing -> neighbours blockaded)"
+        f"    blockade radius R_b = (C6/Omega)^(1/6) = {r_b_um:.2f} um  (> spacing -> neighbours blockaded);"
+        f" outermost blockaded shell at {r_out:.2f} um, V/Omega = {(r_b_um / r_out) ** 6:.3f}"
     )
     print(
         f"    => a 2D triangular array gives degree ~ {degree_2d} (atoms within R_b) vs OBT's expander d = {D_EXPANDER}"
     )
+    # site percolation of the ACTUAL blockade graph, computed -- not assumed to be the nearest-neighbour 0.5
+    rng_perc = np.random.default_rng(20261007)
+    pc_nn = site_percolation_threshold(SPACING_UM, SPACING_UM, 48, rng_perc)
+    assert (
+        abs(pc_nn - 0.5) < 0.03
+    ), "reproduction: nearest-neighbour triangular site percolation p_c = 1/2 (exact, finite-size L=48)"
+    pc_2d = site_percolation_threshold(r_b_um, SPACING_UM, 48, rng_perc)
     print(
-        f"       percolation: 2D site p_c ~ 0.5 vs the expander p_c ~ 1/(d-1) = {PC_EXPANDER:.3f} (the expander is"
+        f"       percolation (site, MC, L=48): nearest-neighbour check p_c = {pc_nn:.3f} (exact 1/2 reproduced);"
     )
     print(
-        "       far more robust; 2D geometry cannot reach the expander's connectivity)."
+        f"       the degree-{degree_2d} blockade graph p_c = {pc_2d:.3f} vs the expander ~1/(d-1) = {PC_EXPANDER:.3f}"
+    )
+    print(
+        f"       (site loss tolerated: {1 - pc_2d:.0%} for the 2D graph vs {1 - PC_EXPANDER:.0%} for the expander;"
+    )
+    print("       2D geometry cannot reach the expander's robustness).")
+    print(
+        f"       (the outermost shell is blockaded only marginally, V/Omega = {(r_b_um / r_out) ** 6:.3f}: without it"
+        f" the graph is the nearest-neighbour one, p_c = {pc_nn:.3f})"
     )
 
     # ===== [3] the exact small sim: the quench scrambles + entangles (numpy, N=10) ====================
@@ -197,8 +267,15 @@ def main():
         Z, n - 1, n
     )  # OTOC between the two ends of the chain
     c_otoc = otoc_squared_commutator(h, psi0, w0, vlast, ts)
+    # Page's exact mean entropy of a random pure state on dims m = d_A <= n = d_B (the volume-law reference):
+    # S = sum_{k=n+1}^{mn} 1/k - (m-1)/(2n)
+    d_a, d_b = 2 ** (n // 2), 2 ** (n - n // 2)
+    s_page = float(
+        np.sum(1.0 / np.arange(d_b + 1, d_a * d_b + 1)) - (d_a - 1) / (2 * d_b)
+    )
     print(
-        f"    entanglement entropy S(half): {s_t[0]:.2f} (germe) -> {s_t.max():.2f} bits-nat (grows + saturates)"
+        f"    entanglement entropy S(half): {s_t[0]:.2f} (germe) -> {s_t.max():.2f} nat (grows + saturates;"
+        f" Page random-state value {s_page:.2f} = the volume law)"
     )
     print(
         f"    OTOC end-to-end C(t): {c_otoc[0]:.3f} (t=0) -> {c_otoc.max():.3f} (scrambles: info spreads 0 -> {n-1})"
@@ -207,17 +284,17 @@ def main():
         f"    germe survival |<g..g|psi(t)>|^2: {surv[0]:.2f} -> {min(surv):.3f} (the germe decompresses)"
     )
     print(
-        "    => the quench SCRAMBLES (OTOC grows from 0) and ENTANGLES (S grows from 0) -- the OBT"
+        "    => the quench SCRAMBLES (OTOC grows from 0) and ENTANGLES (S grows from 0) -- GENERIC for"
     )
     print(
-        "       many-body behavior emerges on the Rydberg Hamiltonian (here exactly, N=10)."
+        "       any interacting chain (here exactly, N=10); not an OBT-specific signature."
     )
     assert (
-        s_t.max() > s_t[0] + 0.5
-    ), "the quench must grow entanglement (the germe decompresses)"
+        abs(s_t[0]) < 1e-12
+    ), "identity: the product germe |g..g> has zero entanglement"
     assert (
-        c_otoc.max() > c_otoc[0] + 0.1
-    ), "the OTOC must grow from 0 (scrambling: info reaches the far end)"
+        abs(c_otoc[0]) < 1e-12
+    ), "identity: operators on distinct sites commute at t=0"
 
     # ===== [4] the honest reach + the verdict ========================================================
     print(
@@ -227,8 +304,9 @@ def main():
         "    PASQAL CAN test (quantum-advantage at N~100, classically intractable): the quench dynamics,"
     )
     print(
-        "    the scrambling (OTOC), the entanglement growth (RT-like area law), the array percolation."
+        "    the scrambling (OTOC), the entanglement growth (toward a thermal VOLUME law after a quench),"
     )
+    print("    the array percolation.")
     print(
         "    PASQAL CANNOT match: (1) the MSS-SATURATING fast scrambler (T_H~900 K, SYK universality) --"
     )
@@ -236,10 +314,10 @@ def main():
         "    Rydberg sub-saturates the MSS bound (it is not SYK); (2) the degree-46 EXPANDER -- a 2D"
     )
     print(
-        f"    blockade graph is degree ~{degree_2d}, p_c~0.5 vs the expander {PC_EXPANDER:.3f}. -> Pasqal is a PROXY for"
+        f"    blockade graph is degree ~{degree_2d}, p_c={pc_2d:.3f} vs the expander {PC_EXPANDER:.3f}. -> Pasqal is a PROXY for"
     )
     print(
-        "    OBT's network DYNAMICS, not its SYK/expander STRUCTURE (that needs an SYK simulator / 3D)."
+        "    generic quench DYNAMICS, not OBT's SYK/expander STRUCTURE (that needs an SYK simulator / 3D)."
     )
     print(
         "    LARGE-RUN SPEC (Pasqal via OVHcloud/Scaleway): N~100 atoms, a 2D/3D array, quench (Omega,delta)"
@@ -248,20 +326,21 @@ def main():
         "    ramp, measure OTOC + S(A) + the connected correlations -> read the scrambling/entanglement of"
     )
     print(
-        "    the OBT-network MODEL on real atoms. VERDICT: a genuine but PARTIAL test -- it confirms (or"
+        "    the OBT-network MODEL on real atoms. VERDICT: NOT a test of OBT -- the reachable behavior is"
     )
     print(
-        "    breaks) OBT's qualitative many-body dynamics; the MSS/expander specifics are out of Pasqal's"
+        "    generic quench scrambling, and the OBT-specific claims (MSS saturation, expander) are out of Pasqal's"
     )
     print(
         "    reach (the platform's geometry, computed above) and would need an SYK-class simulator."
     )
 
     print(
-        "\n  COMPUTED: the lambda_L definition reproduced (T_H=900K in -> lambda_L out); R_b + 2D degree;"
+        "\n  COMPUTED: the lambda_L definition reproduced (T_H=900K in -> lambda_L out); R_b + 2D degree + its site-"
     )
+    print("  percolation threshold (MC, validated on the exact nearest-neighbour 1/2);")
     print(
-        "  the N=10 quench scrambles + entangles. CITED, not computed: Rydberg sub-saturates MSS; no expander."
+        "  the N=10 quench (growth reported). CITED, not computed: Rydberg sub-saturates MSS; no expander."
     )
     print(
         "  REPORTED (no imposed ranges): the entropy/OTOC values, the honest reach. seul les calculs comptent."

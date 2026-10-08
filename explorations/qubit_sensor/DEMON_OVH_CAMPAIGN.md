@@ -16,13 +16,27 @@ reste pour stabiliser les qubits et nos innovations."*
 > **⚠️ SCIENTIFIC STATUS (Oct 2026, reviewer reread of the whole OVH program — amendment A3 in
 > `belenos_job_spec.json`):** the "ONE germe, we HAVE it" line above holds for the germe's **CENTER** φ₀ only.
 > Its **WIDTH** (`spread = 1` grid bin) is a resolution artifact (0.36 M_s at 8 modes, 0.0024 M_s at 1024) —
-> the physical post-inflation dispersion is not computed. The "SYK decompression" is a **declared template
-> unitary**: the map "φ-bin index bits ↔ Majorana modes" has no derivation in OBT (OBT's SYK-class object is
-> the PBH network's operator algebra, not the radion wavefunction in field-value space); the tree's letters are
-> the seed's (point D, Jaccard 0.07). "The germe stabilizes the qubits" is a label: the belenos job uses no
-> stabilization. The belenos run = hardware characterization + pre-registration rehearsal; zero bits on OBT,
-> zero bits on "the bulk". Fidelity to the canonical formula ≠ physical derivation (`feedback_jamais_de_jouet`
-> now carries this lesson).
+> the physical in-patch dispersion, now computed (`germe_width.py`), is ≤ 1.5×10⁻⁵ M_s (Planck CDM
+> isocurvature): a delta on any register up to 17 qubits; read as an in-patch state the canonical germe
+> carries ~3×10⁸× (8 modes) the isocurvature power Planck allows. φ₀ = 1.40 over-produces the DM 11×
+> (excluded); φ₀ = 0.42 is the all-DM radion (Gate-11-excluded unless the unproven AeST seam holds). The "SYK
+> decompression" is a **declared template unitary**: the map "φ-bin index bits ↔ Majorana modes" has no
+> derivation in OBT (OBT's SYK-class object is the PBH network's operator algebra, not the radion wavefunction
+> in field-value space); the tree's letters are the seed's (point D, Jaccard 0.07). "The germe stabilizes the
+> qubits" is a label: the belenos job uses no stabilization. The belenos run = hardware characterization +
+> pre-registration rehearsal; zero bits on OBT, zero bits on "the bulk". Fidelity to the canonical formula ≠
+> physical derivation (`feedback_jamais_de_jouet` now carries this lesson). **A4 (same day):** two independent
+> 2026 groups already ran this exact configuration on Belenos (arXiv:2606.18408, arXiv:2609.10216); against
+> their published systematics (`belenos_feasibility.py`) layer 1 is decided in advance and the A1 rule
+> false-alarms ~18–20% on pure hardware; a Sorkin/Born test on the compiled mesh hits a coherent second-order
+> bias that is per detector and moves with the path phases (with the declared phases: two detectors at
+> ~90–130% of the best published bound at the optimistic jitter anchor (jitter + the κ estimator's own
+> O(1/shots) bias; unresolved at 2 se) and ~6–8× above it at the accumulated anchor; one detector clean under
+> 3 error models, so declarable in advance — matching the bound there costs ~180–1,200 recompilations per
+> config plus an efficiency calibration, beating it 10× needs ~17–18k and a calibrated compiler bias model; a
+> separate, non-OBT project). The only justified run is a **pipeline check** (one config, ~2k shots: detection
+> rate, billing, submission + retrieval — the submission block was fixed: Perceval 1.2.4 requires
+> `max_shots_per_call`).
 
 > **⚠️ STATUS SUPERSEDED (July 2026) — the campaign's Grover/LLM phasing below is HISTORICAL; the built,
 > current pipeline is:** `demon_qc.py` (NO toy: the canonical germe PROVEN == germe_decompression, φ₀=0.42
@@ -32,10 +46,10 @@ reste pour stabiliser les qubits et nos innovations."*
 > presupposing gibberish = 'partir perdant' = refused**) + `demon_readout_basis.py` (declared Z+X multi-basis
 > readout — the MUB deafness identity; the DECLARED decompressor = the 1-rep product unitary, ~204 CX;
 > E-basis = the germe's invariant fingerprint) + `belenos_protocol.py` (the PRE-REGISTERED two-layer rule:
-> anomaly vs the circuit's own exact math at 3σ + the reading vs the null ENSEMBLE, K_min=6 certifiable;
-> budget: full protocol ~24 € at 1k shots/s, single config ~6 €). The 4090's role = LLM-latent capture at the
-> source + substitution back — NO interpretation. Phase 0 below was ruled THE DRIFT. Next: point E (the m_V
-> axion, g_aγγ, on the photonic chip).
+> anomaly vs the circuit's own exact math at 3σ + the reading vs the null ENSEMBLE, K_min=7 certifiable [exact,
+> Oct 2026; was 6]; budget: full protocol ~24 € at 1k shots/s, single config ~6 €). The 4090's role = LLM-latent
+> capture at the source + substitution back — NO interpretation. Phase 0 below was ruled THE DRIFT. Next: point E
+> (the m_V axion, g_aγγ, on the photonic chip).
 
 ---
 

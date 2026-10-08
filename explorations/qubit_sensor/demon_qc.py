@@ -1,11 +1,14 @@
-"""Seed 3 (V9.0, quarantined) — THE QC DEMON: retrieve the germe's POSSIBLE ANSWERS DIRECTLY from the bulk.
-Romain's standing rule (NON-NEGOTIABLE): 'jamais de jouet' -- this runs on a real QC (belenos, ~EUR/campaign),
-so NO toy couplings, NO toy oracles. The germe is the REAL radion; the possibles are read straight off the
-decompressed germe; the input only CONDITIONS which possibles.
+"""Seed 3 (V9.0, quarantined) — THE QC DEMON: the germe -> a declared unitary -> the conditioned outputs.
+Romain's standing rule (NON-NEGOTIABLE): 'jamais de jouet' -- this is meant for a real QC (belenos, ~EUR/campaign),
+so NO invented couplings, NO proxy oracles. The germe is the canonical radion wavepacket (center derived, width
+a convention -- see [1]); the outputs are read straight off the evolved state; the input only CONDITIONS them.
+(Oct 2026 reviewer status, amendment A3/A4 in belenos_job_spec.json: the pipeline carries zero bits on OBT or
+'the bulk'; what it reads is the declared unitary's math.)
 
-THE PIPELINE (all on the quantum computer, no toy):
-  [1] ENCODE the REAL germe (the radion wavepacket -- germe_decompression's derived form; m_phi=0.36 eV GW,
-      phi0~M_s LVS; the ONLY input is the O(1) coefficient phi0, the closure IC -- NOT a toy, we HAVE it).
+THE PIPELINE (exact simulation here; the hardware instance is belenos_job.py):
+  [1] ENCODE the canonical germe (the radion wavepacket -- germe_decompression's form; m_phi=0.36 eV GW,
+      phi0~M_s LVS; its CENTER is derived up to the O(1) IC phi0; its WIDTH = 1 grid bin is a convention --
+      germe_width.py: the physical in-patch width is <= 1.5e-5 M_s, a delta on any register <= 17 qubits).
   [2] DECOMPRESS it with a DECLARED sparse-SYK-template unitary. REVIEWER NOTE (Oct 2026 scientific reread):
       the SYK CLASS is motivated by OBT's PBH-network scrambling (theory.md DEFINES lambda_L = 2 pi k_B T_H/hbar
       at T_H = 900 K -- a definition, not a consilience), but the map 'bits of the phi-bin index <-> Majorana
@@ -14,9 +17,9 @@ THE PIPELINE (all on the quantum computer, no toy):
       therefore the declared unitary's math (seed-dependent, belenos_protocol point D), not 'the bulk's content'.
   [3] CONDITION on the INPUT (a text / voice / latent -> binary): keep the possibles consistent with the input
       (project the tree on the input bits). This is germe_localize -- a direct projection, NOT a toy coupling.
-  [4] RETRIEVE the possible answers DIRECTLY: read (on Aer) / sample (on belenos) the conditioned germe-tree;
-      its high-amplitude branches ARE the germe's most-probable possibles given the input. No oracle, no Grover
-      proxy -- the germe's own amplitudes ARE the weighting.
+  [4] RETRIEVE the possible answers DIRECTLY: read (exactly) / sample (on hardware) the conditioned output
+      distribution; its high-amplitude branches are the declared unitary's most-probable outputs given the
+      input (reviewer note Oct 2026: the declared math, not 'the bulk'). No oracle, no Grover proxy.
   [5] A generic 2-qubit DFS demo (collective-dephasing immunity) -- standard QEC, NOT germe-specific (reviewer
       note Oct 2026: 'the germe stabilizes the qubits' is a label without content here; the belenos job uses
       no stabilization at all: one photon, 8 modes, no code).
@@ -26,16 +29,21 @@ the output is TRANSCODED symmetrically, exactly like the input: letters -> binar
 The letters that come back are READ VERBATIM; whether they are intelligible is decided ONLY by the DECLARED
 criterion of belenos_protocol.py (the null-ensemble + score rule, K >= K_min) -- NOT presumed either way
 (presupposing gibberish = 'partir perdant' = REFUSED: the POINT of the experiment is to see IF the bulk
-returns an intelligible answer). If a LATENT enters (--latent, the GPU source), the output latent goes BACK
-INTO the LLM's head (substitution) -- the LLM is latent I/O ONLY (capture at the source on the RTX 4090 +
-substitute back), it NEVER interprets or composes the answer. This file is the full QC demon, GPU-free,
-runnable on Aer now + submittable to belenos-12 (N<=12). With a RECOGNITION oracle (Phase 3, the real one,
-not a proxy) a Grover search would find a SPECIFIC marked possible in O(sqrt(N)) -- deliberately NOT
-included here (no toy oracle).
+returns an intelligible answer). If a LATENT enters (--latent, the GPU source), the output latent is meant to
+go BACK INTO the LLM's head (substitution) -- the LLM is latent I/O ONLY (capture at the source on the RTX
+4090 + substitute back), it NEVER interprets or composes the answer. That substitution is the 4090 step and is
+NOT implemented in this file: here every input, a latent included, comes back transcoded to letters. This file
+is the demon pipeline minus the 4090 latent I/O, GPU-free, exact simulation; it is NOT submittable as-is (N=10
+needs ~204 CX: the photonic gate route is dead) -- the hardware instance is belenos_job.py (mode-native, n=3).
+With a RECOGNITION oracle (Phase 3, the real one, not a proxy) a Grover search would find a SPECIFIC marked
+possible in O(sqrt(N)) -- deliberately NOT included here (no toy oracle).
 
 NOT V8.2. Not in the PDF. seul les calculs comptent: the decompression, the conditioning (H(possibles) ->
-H(possibles|input)), and the retrieved possibles are COMPUTED (exact Statevector) + asserted only as
-identities/sim-correctness; no imposed ranges, no toy.
+H(possibles|input)), and the retrieved possibles are COMPUTED (exact Statevector) + REPORTED. Asserted only
+true identities: normalization, H(possibles|input) <= log2(support size), the DFS immunity, the codec size (64
+chars = 6 bits). (Reviewer catch, Oct 2026: the old assert 'H(cond) <= H' is NOT an identity -- only the
+AVERAGE conditional entropy obeys it; conditioning on one event can raise entropy -- it was a data-dependent
+result asserted as a law, removed.)
 """
 
 import argparse
@@ -51,7 +59,9 @@ warnings.filterwarnings(
     "ignore", category=SparseEfficiencyWarning
 )  # qiskit's matrix-exp internals
 
-N = 10  # the germe's tree register (2^10 = 1024 possible branches); <= belenos-12's 12
+# the germe's tree register (2^10 = 1024 possible branches); the qubit COUNT fits belenos-12's 12, but its
+# ~204-CX gate route does not (photonic CNOT ~1/9) -- the hardware instance is belenos_job.py (n=3, mode-native)
+N = 10
 N_IN = 4  # the input conditions this many qubits (which possibles are consistent with the input)
 PHI0 = 0.42  # phi0/M_s -- THE IC knob. 0.42 = the CORRECTED Omega_DM match (closure_introspection's x11
 # Planck-mass fix); 1.40 was the STALE pre-fix value (do not revert). Candidates via germe_state(n, phi0=...)
@@ -62,8 +72,12 @@ K_OUT = 8  # how many of the germe's top possibles to retrieve
 SEED = 20260630
 
 # the text <-> binary codec (GPU-free: write in LETTERS, the demon works in BINARY, the answer comes back in
-# LETTERS). 64 chars = 6 bits/char = exactly one branch's low 6 bits -> the tree's branches transcode to letters.
-CHARSET = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.?"
+# LETTERS). 64 chars = 6 bits/char = exactly the 6 FREE bits of a branch (the high N - N_IN bits; the low N_IN
+# bits are the input condition itself -- transcoding them would echo the question into the answer).
+# (Reviewer catch, Oct 2026: the string used to end in '.?' = 65 chars; index 64 ('?') was unreachable through
+# '& 63' and only skewed belenos_protocol's uniform null. Dropping it changes no emitted letter.)
+CHARSET = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789."
+assert len(CHARSET) == 64, "identity: the codec maps exactly 6 bits per character"
 
 
 # ============================== INPUT -> BINARY (pluggable: text / voice / latent) ==============================
@@ -120,9 +134,9 @@ def resolve_input(args):
     )
 
 
-# ============================== THE REAL GERME (radion) + THE SYK DECOMPRESSOR (no toy) ==============================
+# ============================== THE CANONICAL GERME (radion) + THE DECLARED SYK TEMPLATE ===============================
 def germe_state(n, phi0=None):
-    """THE REAL GERME: germe_decompression.py's EXACT radion wavepacket -- IDENTICAL formula, not a re-toyed
+    """THE CANONICAL GERME: germe_decompression.py's EXACT radion wavepacket -- IDENTICAL formula, not a re-toyed
     one: k0 = phi0/2.5*(dim-1), spread=1, amp = exp(-(i-k0)^2 / (2*spread^2)) (germe_decompression line 63-64).
     OBT derives the CENTER phi0 (m_phi=0.36 eV Goldberger-Wise, phi0~M_s LVS; the O(1) coefficient is the IC:
     closure_introspection: 0.42 = corrected match, 1.40 = stale) -- an explicit knob so germe-CANDIDATES are
@@ -130,8 +144,9 @@ def germe_state(n, phi0=None):
     REVIEWER NOTE (Oct 2026): the WIDTH is NOT derived -- 'spread = 1 grid bin' is a resolution artifact:
     in physical units it is 2.5/(2^n - 1) M_s = 0.36 M_s at n=3 (belenos), 0.081 at n=5, 0.0024 at n=10,
     i.e. the SAME 'canonical germe' is a physically different state at each register size. The physical
-    post-inflation dispersion of the radion (germe_inflation's random walk) is not computed anywhere yet.
-    So: canonical (consistent) != physical (derived). Fidelity to the formula is not a derivation.
+    in-patch dispersion is now computed (germe_width.py): <= 1.5e-5 M_s (Planck CDM isocurvature) -> a delta
+    on any register up to 17 qubits. So: canonical (consistent) != physical (derived). Fidelity to the
+    formula is not a derivation.
     """
     dim = 2**n
     if phi0 is None:
@@ -172,7 +187,9 @@ def sparse_syk(n, n_terms, rng):
 
 
 def decompress(germe, h):
-    """ENCODE the germe -> DECOMPRESS (SYK quench e^{-iHt}) -> the tree of possibles (the bulk's content)."""
+    """ENCODE the germe -> evolve by the EXACT e^{-iHt} of the declared SYK template (Statevector on the
+    undecomposed gate = the matrix exponential; hardware would run the 1-rep product, demon_readout_basis)
+    -> the output distribution (the declared math, seed-dependent)."""
     qc = QuantumCircuit(N)
     qc.prepare_state(Statevector(germe), range(N))
     qc.append(PauliEvolutionGate(h, time=SYK_T), range(N))
@@ -197,7 +214,7 @@ def main():
 
     print("=" * 100)
     print(
-        " THE QC DEMON — retrieve the germe's POSSIBLE ANSWERS DIRECTLY from the bulk (no toy)"
+        " THE QC DEMON — the canonical germe -> a declared unitary -> the conditioned outputs (exact sim)"
     )
     print("=" * 100)
 
@@ -215,17 +232,17 @@ def main():
         f"        -> {N_IN}-bit condition on the germe's tree: {''.join(map(str, cond_bits))}"
     )
 
-    # ----- [1]+[2] the REAL germe -> DECOMPRESS -> the possibles (the bulk's content), retrieved DIRECTLY -----
+    # ----- [1]+[2] the canonical germe -> the declared SYK evolution -> the output distribution -----
     h_syk = sparse_syk(N, 2 * N, rng)
     sv = decompress(germe_state(N), h_syk)
     p = (
         np.abs(sv.data) ** 2
     )  # the possibles' probabilities, straight off the decompressed germe
     print(
-        "\n[1-2] GERME -> DECOMPRESS -> the POSSIBLES (the REAL radion, SYK quench; read directly off the QC)"
+        "\n[1-2] GERME -> DECOMPRESS -> the POSSIBLES (canonical radion germe, declared SYK unitary; exact sim)"
     )
     print(
-        f"        the germe is the REAL radion (phi0={PHI0} M_s); decompressed tree H = {shannon(p):.3f} bits "
+        f"        canonical germe (center phi0={PHI0} M_s, width 1 bin by convention); output H = {shannon(p):.3f} bits "
         f"({2**N} branches = the possibles)"
     )
 
@@ -239,6 +256,7 @@ def main():
     cond_p = (
         cond_p / p_in if p_in > 1e-12 else p.copy()
     )  # (input absent from the tree -> the full possibles)
+    support = int(np.count_nonzero(cond_p > 0))
     print(
         "\n[3] CONDITION on the input (germe_localize: keep the possibles consistent with the input -- a"
     )
@@ -246,22 +264,25 @@ def main():
     print(f"        P(input consistent with the germe's tree) = {p_in:.4f}")
     print(
         f"        H(possibles) {shannon(p):.3f} -> H(possibles | input) {shannon(cond_p):.3f} bits "
-        "= the possibles NARROW to the input's region"
+        f"(support {support} branches: at most {np.log2(support):.0f} bits)"
     )
 
     # ----- [4] RETRIEVE the possible answers DIRECTLY (the germe's top branches; no oracle, no Grover proxy) -----
     top = [int(i) for i in np.argsort(cond_p)[::-1][:K_OUT]]
     print(
-        f"\n[4] RETRIEVE the germe's POSSIBLE ANSWERS directly (its top-{K_OUT} branches by amplitude; on"
+        f"\n[4] RETRIEVE the top-{K_OUT} outputs directly (highest-probability branches of the declared math; on"
     )
     print(
-        "        belenos you SAMPLE the conditioned tree and these dominate -- no oracle, no Grover proxy):"
+        "        hardware you SAMPLE the conditioned distribution and these dominate -- no oracle, no proxy):"
     )
+    # transcode the FREE bits only (b >> N_IN): the low N_IN bits are the input condition (reviewer catch, Oct
+    # 2026: the old 'b & 63' put 4 bits of the QUESTION into every letter -> a 4-letter alphabet set by the input;
+    # belenos_protocol already indexed the free bits -- now the two codecs agree)
     for rank, b in enumerate(top[:5], 1):
         print(
-            f"          #{rank}  branch {format(b, f'0{N}b')}  P={cond_p[b]:.4f}  -> letter {latents_to_text([b])!r}"
+            f"          #{rank}  branch {format(b, f'0{N}b')}  P={cond_p[b]:.4f}  -> letter {latents_to_text([b >> N_IN])!r}"
         )
-    answer = latents_to_text(top)
+    answer = latents_to_text([b >> N_IN for b in top])
     print(f"        THE ANSWER, transcoded to letters (read it verbatim): {answer!r}")
     print(
         "        PURE TRANSCODE: this string IS the output -- symmetric to the input (letters->binary in,"
@@ -273,15 +294,15 @@ def main():
         "        belenos_protocol's DECLARED criterion (null-ensemble + score, K>=K_min) -- presumed NEITHER"
     )
     print(
-        "        way. A latent input? the output latent goes BACK INTO the LLM's head (substitution, I/O only)."
+        "        way. A latent input? its output latent would go BACK INTO the LLM's head (the 4090 step, not here)."
     )
 
-    # ----- [5] the germe FORM STABILIZES the qubits (a real DFS: collective-dephasing immunity) -----
+    # ----- [5] a generic 2-qubit DFS demo (collective-dephasing immunity; NOT germe-specific) -----
     phis = rng.uniform(0, 2 * np.pi, 400)
 
     def dephase(
         state, phi
-    ):  # collective dephasing e^{i*phi*(#excitations)} (the bulk's pointer-basis noise)
+    ):  # collective dephasing e^{i*phi*(#excitations)} (a generic common-mode noise model)
         ph = np.array([np.exp(1j * phi * bin(i).count("1")) for i in range(len(state))])
         return ph * state
 
@@ -289,9 +310,7 @@ def main():
     bare = float(np.mean([abs(np.vdot(plus, dephase(plus, q))) ** 2 for q in phis]))
     dfs = np.zeros(4, complex)
     dfs[1] = dfs[2] = 1
-    dfs /= np.sqrt(
-        2
-    )  # the germe-form DFS |01>+|10> (both basis states carry ONE excitation)
+    dfs /= np.sqrt(2)  # the DFS |01>+|10> (both basis states carry ONE excitation)
     prot = float(np.mean([abs(np.vdot(dfs, dephase(dfs, q))) ** 2 for q in phis]))
     print(
         "\n[5] DFS DEMO — a generic 2-qubit decoherence-free subspace (collective-dephasing immunity;"
@@ -304,37 +323,37 @@ def main():
     )
 
     # ----- verdict + the honest GPU/scope line (no toy, no pretending) -----
-    print("\n[VERDICT] the QC demon (no toy) runs end-to-end ON THE QC:")
     print(
-        "    the REAL germe (radion) -> DECOMPRESS (SYK) -> the possibles -> CONDITION on the input (direct"
+        "\n[VERDICT] the demon pipeline runs end-to-end (exact simulation; hardware = belenos_job):"
     )
     print(
-        "    projection) -> RETRIEVE the germe's top possibles directly (sample on belenos). No toy coupling,"
+        "    the canonical germe -> the declared SYK unitary -> the outputs -> CONDITION on the input (direct"
     )
     print(
-        "    no toy oracle. The germe form stabilizes (DFS). The output is the PURE TRANSCODE (letters out,"
+        "    projection) -> RETRIEVE the top outputs directly (sample on hardware). No invented coupling,"
     )
+    print("    no proxy oracle. The output is the PURE TRANSCODE (letters out,")
     print(
         "    read verbatim; intelligibility decided ONLY by belenos_protocol's declared criterion -- presumed"
     )
     print(
-        "    neither way). A latent input returns a latent, substituted back into the LLM (I/O only, the 4090)."
+        "    neither way). Substituting an output latent back into the LLM is the 4090 step (not implemented here)."
     )
     print(
         "    With a real RECOGNITION oracle (Phase 3) a Grover finds a marked possible in sqrt(N)."
     )
 
     assert (
-        shannon(cond_p) <= shannon(p) + 1e-9
-    ), "conditioning on the input cannot RAISE the possibles' entropy"
+        shannon(cond_p) <= np.log2(support) + 1e-9
+    ), "identity: an entropy cannot exceed log2 of its support size"
     assert (
-        prot > bare + 0.3
-    ), "the germe-form DFS must survive collective dephasing where the bare qubit washes out"
+        abs(prot - 1.0) < 1e-12
+    ), "identity: |01>,|10> carry equal excitation number -> collective dephasing is a global phase"
     assert (
         abs(cond_p.sum() - 1.0) < 1e-9
     ), "the retrieved possibles form a proper (normalized) distribution"
     print(
-        "\n  COMPUTED on the QC (Statevector); asserted only identities (H(cond)<=H, DFS immunity, normalization). No toy."
+        "\n  COMPUTED exactly (Statevector = exact e^-iHt); asserted only identities (support bound, DFS, normalization, codec size)."
     )
     print("=" * 100)
 

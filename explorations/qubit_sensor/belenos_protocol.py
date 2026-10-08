@@ -1,4 +1,17 @@
-"""Seed 3 (V9.0, quarantined) — THE BELENOS PROTOCOL (recul point B, with point D folded in): the
+"""STATUS (Oct 2026 reviewer reread): this N=10 protocol is the DESIGN STUDY; it is NOT runnable on belenos
+(the photonic gate route is dead at ~204 CX); the hardware instance is belenos_job.py (n=3, mode-native,
+amendments A1-A4). Limits found in the reread, kept visible rather than silently changed: (i) phi0 = 1.40 is
+EXCLUDED (over-produces the DM 11x, germe_width.py); (ii) 'layer-1 NON-NULL = a physical anomaly' is
+superseded by A1/A4 (ideal-null rejection is EXPECTED from hardware; arXiv:2606.18408, belenos_feasibility.py);
+(iii) the layer-2 rule as COMPUTED is an OR of two 3-sigma tests -> its false-positive rate is ~2 alpha, not
+alpha (Bonferroni would give each test alpha/2); the LAYER 2 paragraph below says 'AND' -- the code applies
+OR, and the code is what was computed; (iv) the verdict's July 'Ready for belenos' meant the design -- it now
+says so ('The DESIGN is ready; the hardware instance is belenos_job.py'); (v) the July K_min = 6 (a Gaussian
+pooled d') is replaced by the exact null distribution: K_min = 7, power 0.69 at the declared 8 chars; (vi) its
+3-sigma thresholds are 3000-draw MC estimates (~4 null draws beyond the quantile) -- coarse; the deciding
+analysis is belenos_job.py --fetch (MC_DECIDE = 100k draws).
+
+Seed 3 (V9.0, quarantined) — THE BELENOS PROTOCOL (recul point B, with point D folded in): the
 pre-registered two-layer decision rule + the shots/EUR budget, computed BEFORE paying (belenos-12 =
 Quandela 12q gate-based, 0.28 EUR/HT-s; Romain: 'un programme qui va me couter 8 euros pour 10 secondes').
 
@@ -7,7 +20,7 @@ toy-free, interpretation-free instrument. NOTHING here presupposes the outcome (
 nothing can manufacture meaning (pure transcode + controls). The rule is DECLARED in advance = pre-registration.
 
 THE DECLARED INSTRUMENT (from demon_qc + demon_readout_basis, reused -- no re-implementation, no toy):
-  germe        = the canonical radion wavepacket (phi0 = 0.42 corrected; 1.40 runs as the legacy candidate)
+  germe        = the canonical radion wavepacket (phi0 = 0.42 corrected; 1.40 legacy, EXCLUDED -- see STATUS)
                  [reviewer note Oct 2026: canonical = consistent with germe_decompression's formula; its WIDTH
                  (1 grid bin) is a resolution artifact, not derived -- see demon_qc.germe_state]
   decompressor = the 1-rep Lie-Trotter product unitary built from the declared SYK-template terms (a
@@ -26,8 +39,9 @@ THE TWO-LAYER DECISION RULE (declared before the run):
   LAYER 2 (the reading, post-selected on the input bits): the retrieved top-K string. Under the null it is
      EXACTLY PREDICTED (the null's own top-K, computed here). NON-NULL reading = the measured string differs
      from the predicted one AND scores above chance on the DECLARED intelligibility criterion (an
-     English-letter-frequency score, declared in advance; K_min = the readout length needed to certify at
-     3 sigma is COMPUTED below -- another anti-deafness number: too-short readouts cannot certify ANY answer).
+     English-letter-frequency score, declared in advance; K_min = the shortest readout whose typical English
+     answer clears the 3-sigma threshold of the uniform null, COMPUTED exactly below -- another anti-deafness
+     number: a too-short readout misses a typical answer, and a 1-char readout cannot certify any).
 
 WHAT IS COMPUTED: [1] the layer-1 calibration + power (shots needed vs effect size epsilon); [2] the layer-2
 post-selection cost + the ranking budget (shots to resolve the top-K) + the codec certification K_min;
@@ -43,6 +57,7 @@ import warnings
 import demon_qc  # the instrument: canonical germe, seeded SYK, codec (no re-implementation)
 import demon_readout_basis as drb  # the declared decompressor (1-rep product) + the X rotation
 import numpy as np
+from scipy.signal import fftconvolve
 from scipy.sparse import SparseEfficiencyWarning
 
 warnings.filterwarnings("ignore", category=SparseEfficiencyWarning)
@@ -84,7 +99,8 @@ ENG_FREQ = {
     "q": 0.0008,
     "z": 0.0006,
 }
-FLOOR = 3e-4  # declared floor for digits + . ?
+FLOOR = 3e-4  # declared floor for digits + '.'
+RES_SCORE = 1e-3  # log10 bin of the EXACT score convolution (K_min)
 
 
 def char_logp(ch):
@@ -96,13 +112,40 @@ def string_score(s):
     return float(np.mean([char_logp(c) for c in s]))
 
 
-def g_stat(counts, p, shots):
-    """G = 2 sum obs ln(obs / (shots p)) over observed cells (the log-likelihood-ratio statistic)."""
-    mask = counts > 0
-    return float(2.0 * np.sum(counts[mask] * np.log(counts[mask] / (shots * p[mask]))))
+def certification_powers(s_uni, s_eng, eng_p, k_max):
+    """EXACT certification power per readout length k = 1..k_max: P(the declared score of an English k-char
+    answer >= the 3-sigma threshold of the uniform null), None where the null has no 3-sigma tail. Per-char
+    scores binned at RES_SCORE (rounding <= 5e-4 per char, the same grid for both), sums by FFT convolution.
+    """
+
+    def one_char(scores, probs):
+        idx = np.round(np.asarray(scores) / RES_SCORE).astype(int)
+        pm = np.zeros(idx.max() - idx.min() + 1)
+        np.add.at(pm, idx - idx.min(), probs)
+        return int(idx.min()), pm
+
+    lo_u1, u1 = one_char(s_uni, np.full(len(s_uni), 1.0 / len(s_uni)))
+    lo_e1, e1 = one_char(s_eng, eng_p)
+    lo_u, pm_u, lo_e, pm_e = 0, np.array([1.0]), 0, np.array([1.0])
+    powers = {}
+    for k in range(1, k_max + 1):
+        lo_u, pm_u = lo_u + lo_u1, np.clip(fftconvolve(pm_u, u1), 0.0, None)
+        lo_e, pm_e = lo_e + lo_e1, np.clip(fftconvolve(pm_e, e1), 0.0, None)
+        assert (
+            abs(pm_u.sum() - 1.0) < 1e-9 and abs(pm_e.sum() - 1.0) < 1e-9
+        ), "the exact score pmfs are normalized"
+        tail = np.cumsum(pm_u[::-1])[::-1]  # P_null(sum >= bin)
+        ok = np.flatnonzero(tail <= ALPHA_3SIG)
+        # k = 1: the best char alone has P = 1/64 > alpha -> no 3-sigma tail, nothing is certifiable
+        if len(ok) == 0:
+            powers[k] = None
+            continue
+        powers[k] = float(pm_e[lo_e + np.arange(len(pm_e)) >= lo_u + ok[0]].sum())
+    return powers
 
 
 def g_stats_batch(count_mat, p, shots):
+    """G = 2 sum obs ln(obs / (shots p)) over observed cells (the log-likelihood-ratio statistic), per row."""
     with np.errstate(divide="ignore", invalid="ignore"):
         ratio = np.where(count_mat > 0, count_mat / (shots * p[None, :]), 1.0)
         return 2.0 * np.sum(
@@ -116,13 +159,19 @@ def main():
         " THE BELENOS PROTOCOL — the pre-registered two-layer rule + the shots/EUR budget (points B + D)"
     )
     print("=" * 100)
+    print(
+        "  STATUS (Oct 2026): the N=10 DESIGN STUDY -- NOT runnable on belenos (gate route dead at ~204 CX);"
+    )
+    print(
+        "  phi0 = 1.40 is excluded; the hardware instance is belenos_job.py (A1-A4). See the docstring STATUS."
+    )
 
     # ---- the DECLARED instrument state (the null): 1-rep product unitary on the canonical germe ----
     rng_h = np.random.default_rng(demon_qc.SEED)
     h = demon_qc.sparse_syk(N, 2 * N, rng_h)
     g = demon_qc.germe_state(
         N
-    )  # phi0 = 0.42 (corrected); 1.40 runs as the legacy candidate
+    )  # phi0 = 0.42 (corrected); 1.40 legacy, excluded (over-produces the DM 11x)
     psi = drb.manual_product_state(
         g, h, 1
     )  # the DECLARED hardware decompressor (validated == circuit)
@@ -207,7 +256,8 @@ def main():
     # the reading criterion must include SAMPLING NOISE: under the null, the MEASURED top-8 at M events is
     # itself random (near-degenerate branches shuffle) -> compare the measured string against the NULL
     # ENSEMBLE of measured readings at the same M, not against the infinite-shots string (the relire catch:
-    # 'exact top-8 recovery' was the wrong, over-strict criterion -- P(exact)=0.17 even at M=3200).
+    # 'exact top-8 recovery' was the wrong, over-strict criterion -- P(exact top-8 set) ~0.2 even at M=3200,
+    # recomputed Oct 2026).
     m_ref = 800  # the declared reading depth (post-selected events)
     diffs, scores = [], []
     for _ in range(2000):
@@ -234,29 +284,49 @@ def main():
     print(
         "         -- the sampling noise of the reading is INSIDE the null; no over-strict criterion."
     )
-    # the codec certification: how long a readout must be to certify English-like structure at 3 sigma
-    charset = np.array(list(demon_qc.CHARSET))
-    uni = RNG.integers(0, len(charset), size=200_000)
-    s_uni = np.array([char_logp(c) for c in charset])[uni]
-    eng_syms = list(ENG_FREQ.keys())
-    eng_p = np.array(list(ENG_FREQ.values()))
-    eng_p = eng_p / eng_p.sum()
-    s_eng = np.log10(eng_p)[RNG.choice(len(eng_syms), size=200_000, p=eng_p)]
-    d1 = float(
-        (s_eng.mean() - s_uni.mean()) / np.sqrt(0.5 * (s_eng.var() + s_uni.var()))
-    )
-    k_min = int(np.ceil((3.0 / d1) ** 2))
+    # the codec certification, EXACT. Reviewer catch (Oct 2026): the July estimate K_min = (3/d')^2 = 6
+    # (per-char d' = 1.31) pooled the English variance into the null's, scored English with renormalized
+    # frequencies (+0.030) and drew the null from 65 chars; the uniform null is strongly skewed (each char's
+    # score is capped at log10(0.18)), so only its exact distribution sets the 3-sigma threshold (exact K_min:
+    # 7). Declared: K_min = the shortest readout whose TYPICAL English answer (power >= 1/2) clears that
+    # threshold.
+    # the 64 codec chars, uniform under the null
+    s_uni = np.array([char_logp(c) for c in demon_qc.CHARSET])
+    eng_f = np.array(list(ENG_FREQ.values()))
+    # English text = sampling the declared frequencies; each symbol scored by the DECLARED char_logp
+    power = certification_powers(s_uni, np.log10(eng_f), eng_f / eng_f.sum(), 16)
+    k_min = next(k for k in sorted(power) if (power[k] or 0.0) >= 0.5)
+    k_90 = next((k for k in sorted(power) if (power[k] or 0.0) >= 0.9), None)
     print(
-        f"      codec certification: per-char d' = {d1:.2f} (English-freq vs uniform-64) -> K_min = {k_min} chars"
-    )
-    print(
-        f"      => the 8-char reading is ABOVE K_min = {k_min}: an English-like answer IS certifiable at 3 sigma"
+        f"      codec certification (EXACT null of the declared score, uniform over the {len(s_uni)} codec chars):"
     )
     print(
-        "         (thin margin at 8 -- retrieving top-16 doubles it); the anti-deafness number is computed,"
+        "        P(an English K-char answer clears the 3-sigma threshold): "
+        + ", ".join(f"K={k} {power[k]:.2f}" for k in (4, 6, 8, 11, 16))
     )
     print(
-        "         not presumed: a shorter readout could NOT have certified any answer, intelligible or not."
+        f"        -> K_min = {k_min} chars (the typical English answer certified); 90% power needs K = {k_90 or '>16'}"
+    )
+    k_read = 8  # the declared reading length (top-8)
+    certified = k_read >= k_min
+    print(
+        f"      => the {k_read}-char reading is {'at/above' if certified else 'BELOW'} K_min = {k_min}: a typical"
+        f" English answer is {'' if certified else 'NOT '}certified at 3 sigma;"
+    )
+    print(
+        f"         power {power[k_read]:.2f} (an English answer is missed {1 - power[k_read]:.0%} of the time;"
+        f" top-16 retrieval gives {power[16]:.2f})."
+    )
+    print(
+        "         The anti-deafness number is computed, not presumed: below K_min a typical English answer is"
+    )
+    print(
+        "         missed"
+        + (
+            "; at K = 1 nothing is certifiable (no 3-sigma tail)."
+            if power[1] is None
+            else "."
+        )
     )
 
     # ===== [3] POINT D — seed-(in)variance: what is the instrument's vs the germe's content? =====
@@ -324,11 +394,13 @@ def main():
         "    measured string vs the NULL ENSEMBLE at the declared depth M + the declared score, K >= K_min),"
     )
     print(
-        "    declared budget. Nothing presupposes the outcome; nothing can fake it; the deafness holes"
+        "    declared budget. Nothing presupposes the outcome; nothing can fake it; the deafness holes are"
     )
     print(
-        "    (basis, readout length) are plugged. Ready for belenos + the 4090 latent I/O (no interpretation)."
+        f"    addressed (basis: Z+X; readout length: {k_read} chars {'>=' if certified else '<'} K_min = {k_min}, at power"
+        f" {power[k_read]:.2f}). The DESIGN is ready;"
     )
+    print("    the hardware instance is belenos_job.py.")
     print("=" * 100)
 
 
